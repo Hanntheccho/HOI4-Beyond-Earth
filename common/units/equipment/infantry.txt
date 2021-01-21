@@ -1,161 +1,111 @@
 equipments = {
+
 	infantry_equipment = {
-		year = 2180
-		#picture = ""
+		
 		is_archetype = yes
-		is_buildable  = yes
-		active = yes
-
+		#picture = archetype_infantry_equipment		
+		type = {
+			infantry
+		}
+		is_buildable = no
 		type = infantry
-
 		group_by = archetype
+		
 		interface_category = interface_category_land
+		
+		active = yes
+		
+		#Misc Abilities
+		reliability = 0.9
+		maximum_speed = 4
 
+		#Defensive Abilities
+		defense = 20
+		breakthrough = 2
+		hardness = 0
+		armor_value = 0
+
+		#Offensive Abilities
+		soft_attack = 3
+		hard_attack = 0.5
+		ap_attack = 1
+		air_attack = 0.5
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+		
+		build_cost_ic = 0.4
 		resources = {
 			steel = 2
 		}
-		build_cost_ic = 0.5
-		lend_lease_cost = 0.5
-		reliability = 0.9
-		maximum_speed = 5
-		defense = 20
-		breakthrough = 4
-		soft_attack = 7
-		hard_attack = 1
-		ap_attack = 5
-		air_attack = 1
-
-
-
+		
 	}
+
 	infantry_equipment_0 = {
-		year = 2202
-		#picture = ""
-		archetype = infantry_equip
-		is_buildable  = yes
-		active = no
-		resources = {
-			steel = 2
-		}
-		
-		#build_cost_ic = 0.5
-		soft_attack = 9
-
-
-
-	}
-	infantry_equipment_1 = {
-		year = 2200
-		#picture = ""
-		archetype = infantry_equip
-		is_buildable  = yes
-		active = no
-		resources = {
-			steel = 2
-		}
-		
-		#build_cost_ic = 0.5
-		soft_attack = 11
-
-
-
-	}
-	infantry_equipment_2 = {
-		year = 2203
-		#picture = ""
-		archetype = infantry_equip
-		is_buildable  = yes
-		active = no
-		resources = {
-			steel = 3
-		}
-		
-		#build_cost_ic = 0.5
-		soft_attack = 15
-	}
-	
-	infantry_equipment_3 = {
-		year = 2203
-		#picture = ""
-		archetype = infantry_equip
-		is_buildable  = yes
-		active = no
-		resources = {
-			steel = 3
-		}
-		
-		#build_cost_ic = 0.5
-		soft_attack = 17
-	}
-	
-	infantry_equipment_4 = {
-		year = 2206
-		#picture = ""
-		archetype = infantry_equip
-		is_buildable  = yes
-		active = no
-		resources = {
-			steel = 3
-		}
-		
-		#build_cost_ic = 0.5
-		soft_attack = 20
-	}
-	
-
-	augment_equipment = {
-		year = 2200
-		#picture = ""
-		is_archetype = yes
-		is_buildable  = yes
+		archetype = infantry_equipment
 		active = yes
+		priority = 05
+		visual_level = 0
+	}
 
-		type = infantry
+	#Regular infantry
+	infantry_equipment_1 = {
+		archetype = infantry_equipment
+		parent = infantry_equipment_0
+		priority = 10
+		visual_level = 1
 
-		group_by = archetype
-		interface_category = interface_category_land
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
 
-		resources = {
-			steel = 2
-		}
-		build_cost_ic = 0.5
-		lend_lease_cost = 0.5
-		reliability = 0.9
-		maximum_speed = 5
-		defense = 20
-		breakthrough = 4
-		soft_attack = 7
+		#Offensive Abilities
+		soft_attack = 6
 		hard_attack = 1
+		ap_attack = 4
+		air_attack = 1
+
+		build_cost_ic = 0.5
+	}
+
+	# Improved weapons
+	infantry_equipment_2 = {
+		archetype = infantry_equipment
+		parent = infantry_equipment_1
+		priority = 10
+		visual_level = 2
+		
+		#Defensive Abilities
+		defense = 28
+		breakthrough = 4
+
+		#Offensive Abilities
+		soft_attack = 9
+		hard_attack = 1.5
 		ap_attack = 5
 		air_attack = 1
+		
+		build_cost_ic = 0.6
 	}
 	
-	augment_equipment_0 = {
-		year = 2203
-		#picture = ""
-		archetype = augment_equip
-		is_buildable  = yes
-		active = no
-		resources = {
-			steel = 3
-		}
+	# Advanced weapons
+	infantry_equipment_3 = {
+		archetype = infantry_equipment
+		parent = infantry_equipment_2
+		priority = 10
+		visual_level = 3
 		
-		#build_cost_ic = 0.5
-		soft_attack = 9
-	}
-	
-	augment_equipment_1 = {
-		year = 2206
-		#picture = ""
-		archetype = augment_equip
-		is_buildable  = yes
-		active = no
-		resources = {
-			steel = 4
-		}
-		
-		#build_cost_ic = 0.5
-		soft_attack = 9
-	}
+		#Defensive Abilities
+		defense = 34
+		breakthrough = 5
 
+		#Offensive Abilities
+		soft_attack = 12
+		hard_attack = 2
+		ap_attack = 10
+		air_attack = 1
+		
+		reliability = 0.8
+		build_cost_ic = 0.7
+	}
 }
