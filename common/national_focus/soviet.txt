@@ -1,0 +1,872 @@
+focus_tree = {
+	id = eurasia
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = SOV
+		}
+	}
+
+	continuous_focus_position = { x = 100 y = 1600 }
+
+	focus = {
+		id = still_standing
+		icon = GFX_goal_unknown
+	
+		x = 6
+		y = 0
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = retaking_the_core
+		icon = GFX_goal_unknown
+	
+		x = 6
+		y = 1
+
+		cost = 4
+
+		prerequisite = {
+			focus = still_standing
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = suburban_restoration
+		icon = GFX_goal_unknown
+	
+		x = 5
+		y = 2
+
+		cost = 4
+
+		mutually_exclusive = {
+			focus = public_safety_detachments
+		}
+
+		prerequisite = {
+			focus = retaking_the_core
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = rehabilitation_programs
+		icon = GFX_goal_unknown
+	
+		x = 5
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = suburban_restoration
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = public_safety_detachments
+		icon = GFX_goal_unknown
+	
+		x = 7
+		y = 2
+
+		cost = 4
+
+		mutually_exclusive = {
+			focus = suburban_restoration
+		}
+
+		prerequisite = {
+			focus = retaking_the_core
+		}
+		
+		completion_reward = {
+			add_stability = 0.1
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = mass_surveillance
+		icon = GFX_goal_unknown
+	
+		x = 7
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = public_safety_detachments
+		}
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = purity
+				popularity = 0.05
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = retaking_the_highways
+		icon = GFX_goal_unknown
+	
+		x = 6
+		y = 4
+
+		cost = 8
+
+		prerequisite = {
+			focus = rehabilitation_programs
+			focus = mass_surveillance
+		}
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = purity
+				popularity = 0.05
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = hacking_the_hackers
+		icon = GFX_goal_unknown
+	
+		x = 5
+		y = 5
+
+		cost = 5
+
+		prerequisite = {
+			focus = retaking_the_highways
+		}
+		
+		completion_reward = {
+			
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = killing_the_killers
+		icon = GFX_goal_unknown
+	
+		x = 7
+		y = 5
+
+		cost = 5
+
+		prerequisite = {
+			focus = retaking_the_highways
+		}
+		
+		completion_reward = {
+			
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = curtail_pollution
+		icon = GFX_goal_unknown
+	
+		x = 2
+		y = 1
+
+		cost = 4
+
+		prerequisite = {
+			focus = still_standing
+		}
+		
+		completion_reward = {
+			
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = expand_core_limits
+		icon = GFX_goal_unknown
+	
+		x = 0
+		y = 2
+
+		cost = 4
+
+		mutually_exclusive = {
+			focus = placate_friendly_warlords
+		}
+
+		prerequisite = {
+			focus = curtail_pollution
+		}
+		
+		completion_reward = {
+			
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = tselosnost_campaign
+		icon = GFX_goal_unknown
+	
+		x = 0
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = expand_core_limits
+		}
+		
+		completion_reward = {
+			
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = utilize_cheap_labor
+		icon = GFX_goal_unknown
+	
+		x = 0
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = tselosnost_campaign
+		}
+		
+		completion_reward = {
+			
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = taxes_for_the_motherland
+		icon = GFX_goal_unknown
+	
+		x = 0
+		y = 5
+
+		cost = 5
+
+		prerequisite = {
+			focus = utilize_cheap_labor
+		}
+		
+		completion_reward = {
+			
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = placate_friendly_warlords
+		icon = GFX_goal_unknown
+	
+		x = 3
+		y = 2
+
+		cost = 4
+
+		mutually_exclusive = {
+			focus = expand_core_limits
+		}
+
+		prerequisite = {
+			focus = curtail_pollution
+		}
+		
+		completion_reward = {
+			
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = rely_on_oligarchs
+		icon = GFX_goal_unknown
+	
+		x = 3
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = placate_friendly_warlords
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = corporate_protection_law
+		icon = GFX_goal_unknown
+	
+		x = 2
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = rely_on_oligarchs
+		}
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = purity
+				popularity = -0.05
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 6
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = designate_new_industrial_towns
+		icon = GFX_goal_unknown
+	
+		x = 4
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = rely_on_oligarchs
+		}
+		
+		completion_reward = {
+			
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = invite_european_businesses
+		icon = GFX_goal_unknown
+	
+		x = 3
+		y = 5
+
+		cost = 5
+
+		prerequisite = {
+			focus = corporate_protection_law
+		}
+		prerequisite = {
+			focus = designate_new_industrial_towns
+		}
+
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = rebuild_the_embassies
+		icon = GFX_goal_unknown
+	
+		x = 10
+		y = 1
+
+		cost = 5
+
+		prerequisite = {
+			focus = still_standing
+		}
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = call_the_urals
+		icon = GFX_goal_unknown
+	
+		x = 10
+		y = 2
+
+		cost = 4
+
+		prerequisite = {
+			focus = rebuild_the_embassies
+		}
+		
+		completion_reward = {
+			add_war_support = 0.05
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = digital_cartography
+		icon = GFX_goal_unknown
+	
+		x = 10
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = call_the_urals
+		}
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = siberian_warfare
+		icon = GFX_goal_unknown
+	
+		x = 9
+		y = 4
+
+		cost = 8
+
+		mutually_exclusive = {
+			focus = lessons_of_the_kazakh_war
+		}
+
+		prerequisite = {
+			focus = digital_cartography
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = lessons_of_the_kazakh_war
+		icon = GFX_goal_unknown
+	
+		x = 11
+		y = 4
+
+		cost = 4
+
+		mutually_exclusive = {
+			focus = siberian_warfare
+		}
+
+		prerequisite = {
+			focus = digital_cartography
+		}
+		
+		completion_reward = {
+			army_experience = 20
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = moscow_military_academy
+		icon = GFX_goal_unknown
+	
+		x = 11
+		y = 5
+
+		cost = 5
+
+		prerequisite = {
+			focus = lessons_of_the_kazakh_war
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = no_name
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = militarize_the_countryside
+		icon = GFX_goal_unknown
+	
+		x = 10
+		y = 6
+
+		cost = 5
+
+		prerequisite = {
+			focus = moscow_military_academy
+			focus = siberian_warfare
+		}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = defending_the_land
+		icon = GFX_goal_unknown
+	
+		x = 3
+		y = 7
+
+		cost = 4
+
+		prerequisite = {
+			focus = hacking_the_hackers
+		}
+		prerequisite = {
+			focus = invite_european_businesses
+			focus = taxes_for_the_motherland
+		}
+		
+		completion_reward = {
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = privatize_military_industry
+		icon = GFX_goal_unknown
+	
+		x = 5
+		y = 7
+
+		cost = 5
+
+		prerequisite = {
+			focus = hacking_the_hackers
+		}
+		prerequisite = {
+			focus = killing_the_killers
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = defending_the_people
+		icon = GFX_goal_unknown
+	
+		x = 9
+		y = 7
+
+		cost = 4
+
+		prerequisite = {
+			focus = hacking_the_hackers
+		}
+		prerequisite = {
+			focus = killing_the_killers
+		}
+		prerequisite = {
+			focus = militarize_the_countryside
+		}
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = purity
+				popularity = 0.05
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = light_up_the_land
+		icon = GFX_goal_unknown
+	
+		x = 7
+		y = 7
+
+		cost = 5
+
+		prerequisite = {
+			focus = hacking_the_hackers
+		}
+		prerequisite = {
+			focus = killing_the_killers
+		}
+		prerequisite = {
+			focus = militarize_the_countryside
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = retaking_the_country
+		icon = GFX_goal_unknown
+	
+		x = 6
+		y = 8
+
+		cost = 6
+
+		prerequisite = {
+			focus = hacking_the_hackers
+		}
+		prerequisite = {
+			focus = killing_the_killers
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = still_flying
+		icon = GFX_goal_unknown
+	
+		x = 6
+		y = 9
+
+		cost = 8
+
+		prerequisite = {
+			focus = retaking_the_country
+		}
+		
+		completion_reward = {
+			add_war_support = 0.1
+			add_stability = 0.1
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = the_frontline
+		icon = GFX_goal_unknown
+	
+		x = 3
+		y = 10
+
+		cost = 8
+
+		mutually_exclusive = {
+			focus = the_university
+		}
+		mutually_exclusive = {
+			focus = the_homefront
+		}
+
+		prerequisite = {
+			focus = still_flying
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = the_university
+		icon = GFX_goal_unknown
+	
+		x = 6
+		y = 10
+
+		cost = 8
+
+		prerequisite = {
+			focus = still_flying
+		}
+		mutually_exclusive = {
+			focus = the_homefront
+		}
+		mutually_exclusive = {
+			focus = the_frontline
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = the_homefront
+		icon = GFX_goal_unknown
+	
+		x = 9
+		y = 10
+
+		cost = 8
+
+		mutually_exclusive = {
+			focus = the_frontline
+		}
+		mutually_exclusive = {
+			focus = the_university
+		}
+
+		prerequisite = {
+			focus = still_flying
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+}
+	
