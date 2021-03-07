@@ -1,0 +1,697 @@
+focus_tree = {
+	id = german
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = GER
+		}
+	}
+
+	continuous_focus_position = { x = 100 y = 1600 }
+
+	focus = {
+		id = integr_win
+		icon = GFX_goal_integr_win
+	
+		x = 6
+		y = 0
+
+		cost = 4
+		
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = industrieprojekte
+		icon = GFX_goal_industrieprojekte
+
+		x = 1
+		y = 1
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = integr_win
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = wind_power
+		icon = GFX_goal_wind_power
+
+		x = 0
+		y = 2
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = industrieprojekte
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = reneveable_components
+		icon = GFX_goal_reneveable_components 
+
+		x = 0
+		y = 3
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = wind_power
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = preparing_terrain
+		icon = GFX_goal_boost_the_build
+
+		x = 0
+		y = 4
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = reneveable_components
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = power_of_wind
+		icon = GFX_goal_power_of_wind
+
+		x = 0
+		y = 5
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = preparing_terrain
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = vertical_farming
+		icon = GFX_goal_vertical_farming
+
+		x = 2
+		y = 2
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = industrieprojekte
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = hire_architects
+		icon = GFX_goal_hire_architects
+
+		x = 2
+		y = 3
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = vertical_farming
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = buy_crops
+		icon = GFX_goal_boost_the_build
+
+		x = 2
+		y = 4
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = hire_architects
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = heaven_crops
+		icon = GFX_goal_heaven_crops
+
+		x = 2
+		y = 5
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = buy_crops
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = look_east
+		icon = GFX_goal_look_east
+
+		x = 5
+		y = 1
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = integr_win
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = befriend_czechia
+		icon = GFX_goal_generic_approach2
+
+		x = 4
+		y = 2
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = look_east
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = befriend_poland
+		icon = GFX_goal_generic_approach2
+
+		x = 6
+		y = 2
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = look_east
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = befriend_slovakia
+		icon = GFX_goal_generic_approach2
+
+		x = 4
+		y = 3
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = befriend_czechia
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = befriend_baltic
+		icon = GFX_goal_generic_approach2
+
+		x = 6
+		y = 3
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = befriend_poland
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = ask_alliance
+		icon = GFX_goal_ask_alliance
+
+		x = 5
+		y = 4
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = befriend_baltic
+		}
+		prerequisite = {
+			focus = befriend_slovakia
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = united_alliance
+		icon = GFX_goal_united_alliance
+
+		x = 5
+		y = 5
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = ask_alliance
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = look_west
+		icon = GFX_goal_look_west
+
+		x = 8
+		y = 1
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = integr_win
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = green_tech
+		icon = GFX_goal_green_tech
+
+		x = 8
+		y = 2
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = look_west
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = condemn_elodie
+		icon = GFX_goal_condemn_elodie
+
+		x = 8
+		y = 3
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = green_tech
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = power_struggle
+		icon = GFX_goal_power_struggle
+
+		x = 8
+		y = 4
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = condemn_elodie
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = befriend_franco_iberia
+		icon = GFX_goal_befriend_franco_iberia
+
+		x = 8
+		y = 5
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = power_struggle
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = harmonize_europe
+		icon = GFX_goal_harmonize_europe
+
+		x = 6
+		y = 6
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = befriend_franco_iberia
+		}
+		prerequisite = {
+			focus = united_alliance
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = transhumanism_orthodoxy
+		icon = GFX_goal_transhumanism_orthodoxy
+
+		x = 5
+		y = 7
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = harmonize_europe
+		}
+		mutually_exclusive = {
+			focus = transtranshumanism
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = transtranshumanism
+		icon = GFX_goal_transtranshumanism
+
+		x = 7
+		y = 7
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = harmonize_europe
+		}
+		mutually_exclusive = {
+			focus = transhumanism_orthodoxy
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = ebner_agenda
+		icon = GFX_goal_ebner_agenda
+
+		x = 11
+		y = 1
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = integr_win
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = citizenry_for_everyone
+		icon = GFX_goal_citizenry_for_everyone
+
+		x = 10
+		y = 2
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = ebner_agenda
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = an_human_culture
+		icon = GFX_goal_an_human_culture
+
+		x = 10
+		y = 3
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = citizenry_for_everyone
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = a_diverse_society
+		icon = GFX_goal_a_diverse_society
+
+		x = 10
+		y = 4
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = an_human_culture
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = green_again
+		icon = GFX_goal_green_again
+
+		x = 12
+		y = 2
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = ebner_agenda
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = greener_than_ever
+		icon = GFX_goal_greener_than_ever
+
+		x = 12
+		y = 3
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = green_again
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = the_greenest
+		icon = GFX_goal_the_greenest
+
+		x = 12
+		y = 4
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = greener_than_ever
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}
