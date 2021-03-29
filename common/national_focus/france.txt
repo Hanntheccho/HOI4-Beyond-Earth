@@ -10,7 +10,7 @@ focus_tree = {
 		}
 	}
 
-	continuous_focus_position = { x = 100 y = 1600 }
+	continuous_focus_position = { x = 1900 y = 2100 }
 
 	focus = {
 		id = a_dream_of_dreamers
@@ -31,8 +31,8 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = a_cultural_boom
-		icon = GFX_goal_cultural_boom
+		id = culture_ministry
+		icon = GFX_goal_culture_ministry
 	
 		x = 2
 		y = 1
@@ -52,11 +52,32 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = a_cultural_boom
+		icon = GFX_goal_cultural_boom
+	
+		x = 2
+		y = 2
+
+		cost = 4
+
+		prerequisite = {
+			focus = culture_ministry
+		}
+		
+		completion_reward = {
+			country_event = { id = franco_event.2 }
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
 		id = exporting_culture
 		icon = GFX_goal_exporting_culture
 	
 		x = 2
-		y = 2
+		y = 3
 
 		cost = 4
 
@@ -77,7 +98,7 @@ focus_tree = {
 		icon = GFX_goal_boosting_national_artworks
 	
 		x = 2
-		y = 3
+		y = 4
 
 		cost = 4
 
@@ -101,7 +122,7 @@ focus_tree = {
 		icon = GFX_goal_renouveau_video
 	
 		x = 0
-		y = 4
+		y = 5
 
 		cost = 4
 
@@ -142,7 +163,7 @@ focus_tree = {
 		icon = GFX_goal_renouveau_video
 	
 		x = 2
-		y = 4
+		y = 5
 
 		cost = 4
 
@@ -183,7 +204,7 @@ focus_tree = {
 		icon = GFX_goal_renouveau_video
 	
 		x = 4
-		y = 4
+		y = 5
 
 		cost = 4
 
@@ -224,7 +245,7 @@ focus_tree = {
 		icon = GFX_goal_national_artworks_sold_out
 	
 		x = 2
-		y = 5
+		y = 6
 
 		cost = 4
 
@@ -752,13 +773,46 @@ focus_tree = {
 		id = side_with_the_goverment
 		icon = GFX_goal_side_with_the_government
 	
-		x = 11
+		x = 10
 		y = 2
 
 		cost = 4
 
 		prerequisite = {
 			focus = realpolitik_franco
+		}
+
+		mutually_exclusive = {
+			focus = decentralized_federation
+		}
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = purity
+				popularity = 0.1
+			}
+			add_stability = -0.1
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = decentralized_federation
+		icon = GFX_goal_decentralized_federation
+	
+		x = 12
+		y = 2
+
+		cost = 4
+
+		prerequisite = {
+			focus = realpolitik_franco
+		}
+
+		mutually_exclusive = {
+			focus = side_with_the_goverment
 		}
 		
 		completion_reward = {
@@ -784,6 +838,7 @@ focus_tree = {
 
 		prerequisite = {
 			focus = side_with_the_goverment
+			focus = decentralized_federation
 		}
 		
 		completion_reward = {
@@ -1138,7 +1193,7 @@ focus_tree = {
 		id = staying_true
 		icon = GFX_goal_staying_true
 	
-		x = 10
+		x = 8
 		y = 11
 
 		cost = 4
@@ -1165,7 +1220,7 @@ focus_tree = {
 		id = mediterranean_union
 		icon = GFX_goal_mediterranean_union
 	
-		x = 10
+		x = 8
 		y = 12
 
 		cost = 4
@@ -1186,7 +1241,7 @@ focus_tree = {
 		id = beyond_pure_flesh
 		icon = GFX_goal_beyond_pure_flesh
 	
-		x = 12
+		x = 14
 		y = 11
 
 		cost = 4
@@ -1216,7 +1271,7 @@ focus_tree = {
 		id = tale_of_giants
 		icon = GFX_goal_tale_of_giants
 	
-		x = 12
+		x = 14
 		y = 12
 
 		cost = 4
@@ -1237,7 +1292,7 @@ focus_tree = {
 		id = ministry_of_industry
 		icon = GFX_goal_ministry_of_industry
 	
-		x = 17
+		x = 18
 		y = 1
 
 		cost = 4
@@ -1342,7 +1397,7 @@ focus_tree = {
 		id = deal_conglomerates
 		icon = GFX_goal_deal_conglomerates
 	
-		x = 17
+		x = 18
 		y = 2
 
 		cost = 4
@@ -1363,7 +1418,7 @@ focus_tree = {
 		id = privatized_or_nationalized
 		icon = GFX_goal_privatized_or_nationalized
 	
-		x = 16
+		x = 17
 		y = 3
 
 		cost = 4
@@ -1387,7 +1442,7 @@ focus_tree = {
 		id = clearly_nationalized
 		icon = GFX_goal_clearly_nationalized
 	
-		x = 18
+		x = 19
 		y = 3
 
 		cost = 4
@@ -1411,7 +1466,7 @@ focus_tree = {
 		id = manpower_needed
 		icon = GFX_goal_manpower_needed
 	
-		x = 17
+		x = 18
 		y = 4
 
 		cost = 4
@@ -1430,10 +1485,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = industrial_boom
-		icon = GFX_goal_industrial_boom
+		id = industrial_paris
+		icon = GFX_goal_industrial_paris
 	
-		x = 17
+		x = 16
 		y = 5
 
 		cost = 4
@@ -1451,10 +1506,85 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = industrial_madrid
+		icon = GFX_goal_industrial_paris
+	
+		x = 18
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = manpower_needed
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = industrial_lisbon
+		icon = GFX_goal_industrial_paris
+	
+		x = 20
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = manpower_needed
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = industrial_boom
+		icon = GFX_goal_industrial_boom
+	
+		x = 18
+		y = 6
+
+		cost = 4
+
+		prerequisite = {
+			focus = industrial_paris
+		}
+		prerequisite = {
+			focus = industrial_madrid
+		}
+		prerequisite = {
+			focus = industrial_lisbon
+		}
+		prerequisite = {
+			focus = yeah_science
+		}
+		prerequisite = {
+			focus = miracle_of_recycling
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
 		id = the_recycling_initiative
 		icon = GFX_goal_the_recycling_initiative
 	
-		x = 20
+		x = 22
 		y = 2
 
 		cost = 4
@@ -1475,7 +1605,7 @@ focus_tree = {
 		id = lithium_monopoly
 		icon = GFX_goal_lithium_monopoly
 	
-		x = 20
+		x = 22
 		y = 3
 
 		cost = 4
@@ -1496,7 +1626,7 @@ focus_tree = {
 		id = joint_research
 		icon = GFX_goal_joint_research
 	
-		x = 20
+		x = 22
 		y = 4
 
 		cost = 4
@@ -1517,7 +1647,7 @@ focus_tree = {
 		id = miracle_of_recycling
 		icon = GFX_goal_miracle_of_recycling
 	
-		x = 20
+		x = 22
 		y = 5
 
 		cost = 4

@@ -763,7 +763,7 @@ focus_tree = {
 		id = ITA_italian_logistics
 		icon = GFX_goal_ITA_italian_logistics
 	
-		x = 12
+		x = 16
 		y = 2
 
 		cost = 4
@@ -784,7 +784,7 @@ focus_tree = {
 		id = ITA_industrial_branch
 		icon = GFX_goal_ITA_industrial_branch
 	
-		x = 11
+		x = 13
 		y = 1
 
 		cost = 4
@@ -802,10 +802,122 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = ITA_national_industry
+		icon = GFX_goal_ITA_national_industry
+	
+		x = 13
+		y = 2
+
+		cost = 4
+
+		prerequisite = {
+			focus = ITA_industrial_branch
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = ITA_centralized_industry
+		icon = GFX_goal_ITA_centralized_industry
+	
+		x = 12
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = ITA_national_industry
+		}
+		mutually_exclusive = {
+			focus = ITA_decentralized_industry
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = ITA_decentralized_industry
+		icon = GFX_goal_ITA_decentralized_industry
+	
+		x = 14
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = ITA_national_industry
+		}
+		mutually_exclusive = {
+			focus = ITA_centralized_industry
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = ITA_meeting_workers
+		icon = GFX_goal_ITA_meeting_workers
+	
+		x = 13
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = ITA_centralized_industry
+			focus = ITA_decentralized_industry
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = ITA_industrial_syndicates
+		icon = GFX_goal_ITA_industrial_syndicates
+	
+		x = 13
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = ITA_meeting_workers
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1industrial_syndicates
+		}
+	}
+	focus = {
 		id = ITA_studying_topography
 		icon = GFX_goal_ITA_studying_topography
 	
-		x = 12
+		x = 16
 		y = 3
 
 		cost = 4
@@ -826,7 +938,7 @@ focus_tree = {
 		id = ITA_removing_barriers
 		icon = GFX_goal_ITA_removing_barriers
 	
-		x = 12
+		x = 16
 		y = 4
 
 		cost = 4
@@ -847,7 +959,7 @@ focus_tree = {
 		id = ITA_hyperloop_railway_expansion
 		icon = GFX_goal_ITA_hyperloop_railway_expansion
 	
-		x = 12
+		x = 16
 		y = 5
 
 		cost = 4
