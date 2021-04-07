@@ -16,7 +16,7 @@ focus_tree = {
 		id = ITA_partito_sociale
 		icon = GFX_goal_partito_sociale
 	
-		x = 5
+		x = 10
 		y = 0
 
 		cost = 4
@@ -33,17 +33,14 @@ focus_tree = {
 		id = ITA_condemn_padania
 		icon = GFX_goal_ITA_condemn_padania
 	
-		x = 9
-		y = 7
+		x = 15
+		y = 6
 
 		cost = 4
 
 		prerequisite = {
-			focus = ITA_padanian_question
-		}
-
-		mutually_exclusive = {
-			focus = ITA_a_peaceful_approach
+			focus = ITA_acquati_agenda
+			focus = ITA_ebner_relations
 		}
 		
 		completion_reward = {
@@ -58,13 +55,13 @@ focus_tree = {
 		id = ITA_padanian_question
 		icon = GFX_goal_ITA_padanian_question
 	
-		x = 10
-		y = 6
+		x = 5
+		y = 11
 
 		cost = 4
 
 		prerequisite = {
-			focus = ITA_acquati_agenda
+			focus = ITA_guaranteeing_padania
 		}
 		
 		completion_reward = {
@@ -79,8 +76,8 @@ focus_tree = {
 		id = ITA_looking_for_support
 		icon = GFX_goal_ITA_looking_for_support
 	
-		x = 9
-		y = 8
+		x = 15
+		y = 7
 
 		cost = 4
 
@@ -100,8 +97,8 @@ focus_tree = {
 		id = ITA_marseille_conference
 		icon = GFX_goal_ITA_marseille_conference
 	
-		x = 9
-		y = 9
+		x = 15
+		y = 8
 
 		cost = 4
 
@@ -121,8 +118,8 @@ focus_tree = {
 		id = ITA_zurich_conference
 		icon = GFX_goal_ITA_zurich_conference
 	
-		x = 9
-		y = 10
+		x = 15
+		y = 9
 
 		cost = 4
 
@@ -142,8 +139,8 @@ focus_tree = {
 		id = ITA_prepare_for_war
 		icon = GFX_goal_ITA_prepare_for_war
 	
-		x = 9
-		y = 11
+		x = 15
+		y = 10
 
 		cost = 4
 
@@ -163,14 +160,13 @@ focus_tree = {
 		id = ITA_again_united
 		icon = GFX_goal_ITA_again_united
 	
-		x = 10
-		y = 12
+		x = 15
+		y = 11
 
 		cost = 4
 
 		prerequisite = {
 			focus = ITA_prepare_for_war
-			focus = ITA_common_aims
 		}
 		
 		completion_reward = {
@@ -185,8 +181,8 @@ focus_tree = {
 		id = ITA_victim
 		icon = GFX_goal_ITA_victim
 	
-		x = 3
-		y = 12
+		x = 12
+		y = 11
 
 		cost = 4
 
@@ -206,8 +202,8 @@ focus_tree = {
 		id = ITA_look_north
 		icon = GFX_goal_ITA_look_north
 	
-		x = 2
-		y = 13
+		x = 11
+		y = 12
 
 		cost = 4
 
@@ -231,8 +227,8 @@ focus_tree = {
 		id = ITA_look_south
 		icon = GFX_goal_ITA_look_south
 	
-		x = 4
-		y = 13
+		x = 13
+		y = 12
 
 		cost = 4
 
@@ -256,15 +252,13 @@ focus_tree = {
 		id = ITA_heard
 		icon = GFX_goal_ITA_heard
 	
-		x = 3
-		y = 14
+		x = 12
+		y = 13
 
 		cost = 4
 
 		prerequisite = {
 			focus = ITA_look_north
-		}
-		prerequisite = {
 			focus = ITA_look_south
 		}
 		
@@ -280,13 +274,14 @@ focus_tree = {
 		id = ITA_a_peaceful_approach
 		icon = GFX_goal_ITA_a_peaceful_approach
 	
-		x = 11
-		y = 7
+		x = 5
+		y = 6
 
 		cost = 4
 
 		prerequisite = {
-			focus = ITA_padanian_question
+			focus = ITA_acquati_agenda
+			focus = ITA_elodie_relations
 		}
 		
 		completion_reward = {
@@ -301,8 +296,8 @@ focus_tree = {
 		id = ITA_investments_exchange
 		icon = GFX_goal_ITA_investments_exchange
 	
-		x = 11
-		y = 8
+		x = 5
+		y = 7
 
 		cost = 4
 
@@ -322,8 +317,8 @@ focus_tree = {
 		id = ITA_solving_disputes
 		icon = GFX_goal_ITA_solving_disputes
 	
-		x = 11
-		y = 9
+		x = 5
+		y = 8
 
 		cost = 4
 
@@ -343,8 +338,29 @@ focus_tree = {
 		id = ITA_guaranteeing_padania
 		icon = GFX_goal_ITA_guaranteeing_padania
 	
-		x = 11
+		x = 5
 		y = 10
+
+		cost = 4
+
+		prerequisite = {
+			focus = ITA_common_aims
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = ITA_common_aims
+		icon = GFX_goal_ITA_common_aims
+	
+		x = 5
+		y = 9
 
 		cost = 4
 
@@ -361,31 +377,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ITA_common_aims
-		icon = GFX_goal_ITA_common_aims
-	
-		x = 11
-		y = 11
-
-		cost = 4
-
-		prerequisite = {
-			focus = ITA_guaranteeing_padania
-		}
-		
-		completion_reward = {
-
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
 		id = ITA_franco_iberia
 		icon = GFX_goal_ITA_franco_iberia
 	
-		x = 3
+		x = 8
 		y = 1
 
 		cost = 4
@@ -406,7 +401,7 @@ focus_tree = {
 		id = ITA_germany
 		icon = GFX_goal_ITA_look_north
 	
-		x = 7
+		x = 12
 		y = 1
 
 		cost = 4
@@ -427,7 +422,7 @@ focus_tree = {
 		id = ITA_or_alone
 		icon = GFX_goal_ITA_or_alone
 	
-		x = 5
+		x = 10
 		y = 1
 
 		cost = 4
@@ -448,7 +443,7 @@ focus_tree = {
 		id = ITA_shared_cultural
 		icon = GFX_goal_ITA_shared_cultural
 	
-		x = 3
+		x = 8
 		y = 2
 
 		cost = 4
@@ -469,7 +464,7 @@ focus_tree = {
 		id = ITA_rome_cultural
 		icon = GFX_goal_ITA_rome_cultural
 	
-		x = 3
+		x = 8
 		y = 3
 
 		cost = 4
@@ -490,7 +485,7 @@ focus_tree = {
 		id = ITA_human_heritage
 		icon = GFX_goal_ITA_human_heritage
 	
-		x = 3
+		x = 8
 		y = 4
 
 		cost = 4
@@ -511,13 +506,40 @@ focus_tree = {
 		id = ITA_elodie_relations
 		icon = GFX_goal_ITA_elodie_relations
 	
-		x = 3
+		x = 0
 		y = 5
 
 		cost = 4
 
 		prerequisite = {
 			focus = ITA_human_heritage
+		}
+		mutually_exclusive = {
+			focus = ITA_acquati_agenda
+		}
+		mutually_exclusive = {
+			focus = ITA_ebner_relations
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = ITA_federal_reform
+		icon = GFX_goal_ITA_federal_reform
+	
+		x = 0
+		y = 6
+
+		cost = 4
+
+		prerequisite = {
+			focus = ITA_elodie_relations
 		}
 		
 		completion_reward = {
@@ -532,7 +554,7 @@ focus_tree = {
 		id = ITA_shared_initiatives
 		icon = GFX_goal_ITA_shared_initiatives
 	
-		x = 7
+		x = 12
 		y = 2
 
 		cost = 4
@@ -553,7 +575,7 @@ focus_tree = {
 		id = ITA_green_rome
 		icon = GFX_goal_ITA_green_rome
 	
-		x = 7
+		x = 12
 		y = 3
 
 		cost = 4
@@ -574,7 +596,7 @@ focus_tree = {
 		id = ITA_earth_heritage
 		icon = GFX_goal_ITA_earth_heritage
 	
-		x = 7
+		x = 12
 		y = 4
 
 		cost = 4
@@ -595,13 +617,19 @@ focus_tree = {
 		id = ITA_ebner_relations
 		icon = GFX_goal_ITA_ebner_relations
 	
-		x = 7
+		x = 20
 		y = 5
 
 		cost = 4
 
 		prerequisite = {
 			focus = ITA_earth_heritage
+		}
+		mutually_exclusive = {
+			focus = ITA_acquati_agenda
+		}
+		mutually_exclusive = {
+			focus = ITA_elodie_relations
 		}
 		
 		completion_reward = {
@@ -616,7 +644,7 @@ focus_tree = {
 		id = ITA_social_engineering
 		icon = GFX_goal_ITA_social_engineering
 	
-		x = 5
+		x = 10
 		y = 2
 
 		cost = 4
@@ -637,7 +665,7 @@ focus_tree = {
 		id = ITA_connected_society
 		icon = GFX_goal_ITA_connected_society
 	
-		x = 5
+		x = 10
 		y = 3
 
 		cost = 4
@@ -658,7 +686,7 @@ focus_tree = {
 		id = ITA_synthetic_society
 		icon = GFX_goal_ITA_synthetic_society
 	
-		x = 5
+		x = 10
 		y = 4
 
 		cost = 4
@@ -679,7 +707,7 @@ focus_tree = {
 		id = ITA_rome_redesign
 		icon = GFX_goal_ITA_rome_redesign
 	
-		x = 1
+		x = 6
 		y = 1
 
 		cost = 4
@@ -700,7 +728,7 @@ focus_tree = {
 		id = ITA_domotic_reconversion
 		icon = GFX_goal_ITA_domotic_reconversion
 	
-		x = 1
+		x = 6
 		y = 2
 
 		cost = 4
@@ -721,7 +749,7 @@ focus_tree = {
 		id = ITA_connected_city
 		icon = GFX_goal_ITA_connected_city
 	
-		x = 1
+		x = 6
 		y = 3
 
 		cost = 4
@@ -742,7 +770,7 @@ focus_tree = {
 		id = ITA_rome_smart_city
 		icon = GFX_goal_ITA_rome_smart_city
 	
-		x = 1
+		x = 6
 		y = 4
 
 		cost = 4
@@ -763,7 +791,7 @@ focus_tree = {
 		id = ITA_italian_logistics
 		icon = GFX_goal_ITA_italian_logistics
 	
-		x = 9
+		x = 14
 		y = 1
 
 		cost = 4
@@ -784,13 +812,16 @@ focus_tree = {
 		id = ITA_industrial_branch
 		icon = GFX_goal_ITA_industrial_branch
 	
-		x = 1
-		y = 6
+		x = 8
+		y = 10
 
 		cost = 4
 
 		prerequisite = {
-			focus = ITA_acquati_agenda
+			focus = ITA_italian_commune
+		}
+		prerequisite = {
+			focus = ITA_commune_economy
 		}
 		
 		completion_reward = {
@@ -805,8 +836,8 @@ focus_tree = {
 		id = ITA_national_industry
 		icon = GFX_goal_ITA_national_industry
 	
-		x = 1
-		y = 7
+		x = 8
+		y = 11
 
 		cost = 4
 
@@ -826,8 +857,8 @@ focus_tree = {
 		id = ITA_centralized_industry
 		icon = GFX_goal_ITA_centralized_industry
 	
-		x = 0
-		y = 8
+		x = 7
+		y = 12
 
 		cost = 4
 
@@ -850,8 +881,8 @@ focus_tree = {
 		id = ITA_decentralized_industry
 		icon = GFX_goal_ITA_decentralized_industry
 	
-		x = 2
-		y = 8
+		x = 9
+		y = 12
 
 		cost = 4
 
@@ -874,8 +905,8 @@ focus_tree = {
 		id = ITA_meeting_workers
 		icon = GFX_goal_ITA_meeting_workers
 	
-		x = 1
-		y = 9
+		x = 8
+		y = 13
 
 		cost = 4
 
@@ -896,8 +927,8 @@ focus_tree = {
 		id = ITA_industrial_syndicates
 		icon = GFX_goal_ITA_industrial_syndicates
 	
-		x = 1
-		y = 10
+		x = 8
+		y = 14
 
 		cost = 4
 
@@ -917,7 +948,7 @@ focus_tree = {
 		id = ITA_studying_topography
 		icon = GFX_goal_ITA_studying_topography
 	
-		x = 9
+		x = 14
 		y = 2
 
 		cost = 4
@@ -938,7 +969,7 @@ focus_tree = {
 		id = ITA_removing_barriers
 		icon = GFX_goal_ITA_removing_barriers
 	
-		x = 9
+		x = 14
 		y = 3
 
 		cost = 4
@@ -959,7 +990,7 @@ focus_tree = {
 		id = ITA_hyperloop_railway_expansion
 		icon = GFX_goal_ITA_hyperloop_railway_expansion
 	
-		x = 9
+		x = 14
 		y = 4
 
 		cost = 4
@@ -980,13 +1011,19 @@ focus_tree = {
 		id = ITA_acquati_agenda
 		icon = GFX_goal_ITA_acquati_agenda
 	
-		x = 5
+		x = 10
 		y = 5
 
 		cost = 4
 
 		prerequisite = {
 			focus = ITA_synthetic_society
+		}
+		mutually_exclusive = {
+			focus = ITA_ebner_relations
+		}
+		mutually_exclusive = {
+			focus = ITA_elodie_relations
 		}
 		
 		completion_reward = {
@@ -1001,7 +1038,7 @@ focus_tree = {
 		id = ITA_gestalt_experiments
 		icon = GFX_goal_ITA_gestalt_experiments
 	
-		x = 5
+		x = 10
 		y = 7
 
 		cost = 4
@@ -1022,7 +1059,7 @@ focus_tree = {
 		id = ITA_great_social_reform
 		icon = GFX_goal_ITA_great_social_reform
 	
-		x = 5
+		x = 10
 		y = 8
 
 		cost = 4
@@ -1049,7 +1086,7 @@ focus_tree = {
 		id = ITA_italian_commune
 		icon = GFX_goal_ITA_italian_commune
 	
-		x = 4
+		x = 9
 		y = 9
 
 		cost = 4
@@ -1070,7 +1107,7 @@ focus_tree = {
 		id = ITA_commune_economy
 		icon = GFX_goal_ITA_commune_economy
 	
-		x = 6
+		x = 11
 		y = 9
 
 		cost = 4
@@ -1091,7 +1128,31 @@ focus_tree = {
 		id = ITA_rome_commune
 		icon = GFX_goal_ITA_rome_commune
 	
-		x = 5
+		x = 10
+		y = 15
+
+		cost = 4
+
+		prerequisite = {
+			focus = ITA_industrial_syndicates
+		}
+		prerequisite = {
+			focus = ITA_heard
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = ITA_italian_manifesto
+		icon = GFX_goal_ITA_italian_manifesto
+	
+		x = 12
 		y = 10
 
 		cost = 4
@@ -1112,34 +1173,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ITA_italian_manifesto
-		icon = GFX_goal_ITA_italian_manifesto
-	
-		x = 3
-		y = 11
-
-		cost = 4
-
-		prerequisite = {
-			focus = ITA_rome_commune
-		}
-		prerequisite = {
-			focus = ITA_industrial_syndicates
-		}
-		
-		completion_reward = {
-
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
 		id = ITA_social_welfare
 		icon = GFX_goal_ITA_social_welfare
 	
-		x = 5
+		x = 10
 		y = 6
 
 		cost = 4
@@ -1160,7 +1197,7 @@ focus_tree = {
 		id = ITA_synthetic_admin
 		icon = GFX_goal_ITA_synthetic_admin
 	
-		x = 3
+		x = 8
 		y = 7
 
 		cost = 4
@@ -1181,7 +1218,7 @@ focus_tree = {
 		id = ITA_synthetic_mil
 		icon = GFX_goal_ITA_synthetic_mil
 	
-		x = 7
+		x = 12
 		y = 7
 
 		cost = 4
