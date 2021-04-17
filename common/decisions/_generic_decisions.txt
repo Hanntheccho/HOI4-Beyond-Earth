@@ -1,0 +1,97 @@
+freefactory_decisions = {
+	freefactory = {
+		icon = GFX_decision_ger_mefo_bills
+		available = {
+			any_controlled_state = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}
+			}
+		}
+		visible = {
+			always = yes
+		}
+		fixed_random_seed = no
+		days_remove = var:ffr
+		days_re_enable = 5
+		complete_effect = {
+			random_list = {
+				var:ROOT.econ_general = {
+					random_list = {
+						var:ROOT.econ_civilian = {
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									OR = {
+										is_in_home_area = yes
+										NOT = {
+											owner = {
+												any_owned_state = {
+													free_building_slots = {
+														building = industrial_complex
+														size > 1
+														include_locked = yes
+													}
+													is_in_home_area = yes
+												}
+											}
+										}
+									}
+								}
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						var:ROOT.econ_military = {
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 1
+										include_locked = yes
+									}
+									OR = {
+										is_in_home_area = yes
+										NOT = {
+											owner = {
+												any_owned_state = {
+													free_building_slots = {
+														building = industrial_complex
+														size > 1
+														include_locked = yes
+													}
+													is_in_home_area = yes
+												}
+											}
+										}
+									}
+								}
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+					}
+				}
+				var:ROOT.econ_general = {
+					
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}
