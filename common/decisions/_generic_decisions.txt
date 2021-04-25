@@ -5,22 +5,29 @@ freefactory_decisions = {
 			any_controlled_state = {
 				free_building_slots = {
 					building = industrial_complex
-					size > 1
+					size > 0
 					include_locked = yes
 				}
 			}
+			hidden_trigger = { always = no }
 		}
-		visible = {
-			always = yes
-		}
+		
 		fixed_random_seed = no
-		days_remove = var:ffr
-		days_re_enable = 5
+		days_mission_timeout = var:ffr
+		is_good = yes
+		days_remove = GER_extend_mefo_bills_days?0
+
+		remove_effect = {
+		}
+
 		complete_effect = {
+		}
+
+		timeout_effect = {
 			random_list = {
-				var:ROOT.econ_general = {
+				var:ROOT.econ_civilian = {
 					random_list = {
-						var:ROOT.econ_civilian = {
+						50 = {
 							random_owned_controlled_state = {
 								limit = {
 									free_building_slots = {
@@ -51,7 +58,67 @@ freefactory_decisions = {
 								}
 							}
 						}
-						var:ROOT.econ_military = {
+						50 = {
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									OR = {
+										is_in_home_area = yes
+										NOT = {
+											owner = {
+												any_owned_state = {
+													free_building_slots = {
+														building = infrastructure
+														size > 0
+													}
+													is_in_home_area = yes
+												}
+											}
+										}
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									OR = {
+										is_in_home_area = yes
+										NOT = {
+											owner = {
+												any_owned_state = {
+													free_building_slots = {
+														building = infrastructure
+														size > 0
+													}
+													is_in_home_area = yes
+												}
+											}
+										}
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+					}
+				}
+				var:ROOT.econ_military = {
+					random_list = {
+						50 = {
 							random_owned_controlled_state = {
 								limit = {
 									free_building_slots = {
@@ -82,10 +149,96 @@ freefactory_decisions = {
 								}
 							}
 						}
+						50 = {
+							if = {
+								limit = {
+									NOT = {
+										any_owned_state = {
+											dockyard > 0
+											free_building_slots = {
+												building = dockyard
+												size > 2
+												include_locked = yes
+											}
+										}
+									}
+									any_owned_state = {
+										is_coastal = yes
+									}
+								}
+								random_owned_controlled_state = {
+									limit = {
+										is_coastal = yes
+										free_building_slots = {
+											building = dockyard
+											size > 2
+											include_locked = yes
+										}
+									}
+									add_building_construction = {
+										type = dockyard
+										level = 1
+										instant_build = yes
+									}
+								}
+							}
+							if = {
+								limit = {
+									any_owned_state = {
+										dockyard > 0
+										free_building_slots = {
+											building = dockyard
+											size > 2
+											include_locked = yes
+										}
+									}
+								}
+								random_owned_controlled_state = {
+									limit = {
+										dockyard > 0
+										free_building_slots = {
+											building = dockyard
+											size > 2
+											include_locked = yes
+										}
+									}
+									add_building_construction = {
+										type = dockyard
+										level = 1
+										instant_build = yes
+									}
+								}
+							}
+							if = {
+								limit = {
+									NOT = {
+										any_owned_state = {
+											free_building_slots = {
+												building = dockyard
+												size > 2
+												include_locked = yes
+											}
+										}
+									}
+								}
+								random_state = {
+									limit = {
+										controller = { tag = ROOT }
+										free_building_slots = {
+											building = dockyard
+											size > 2
+											include_locked = yes
+										}
+									}
+									add_building_construction = {
+										type = dockyard
+										level = 1
+										instant_build = yes
+									}
+								}
+							}
+						}
 					}
-				}
-				var:ROOT.econ_general = {
-					
 				}
 			}
 		}
@@ -93,5 +246,4 @@ freefactory_decisions = {
 			factor = 1
 		}
 	}
-
 }
