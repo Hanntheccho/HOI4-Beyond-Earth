@@ -114,7 +114,7 @@ focus_tree = {
 		id = SIB_redevelop_magadan
 		icon = GFX_unknown
 	
-		x = 10
+		x = 9
         y = 2
 
 		cost = 2
@@ -402,12 +402,14 @@ focus_tree = {
 		id = SIB_loyal_chinese_brigades
 		icon = GFX_unknown
 	
-		x = 6
+		x = 5
         y = 5
 
 		cost = 2
 
 		prerequisite = { focus = SIB_minority_conscription_law }
+
+		mutually_exclusive = { focus = SIB_officer_reassignment_policy }
 		
 		completion_reward = {
 			
@@ -422,12 +424,95 @@ focus_tree = {
 		id = SIB_officer_reassignment_policy
 		icon = GFX_unknown
 	
-		x = 8
+		x = 7
         y = 5
 
 		cost = 2
 
 		prerequisite = { focus = SIB_minority_conscription_law }
+
+		mutually_exclusive = { focus = SIB_loyal_chinese_brigades }
+		
+		completion_reward = {
+			
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = SIB_cutting_ice
+		icon = GFX_unknown
+	
+		x = 9
+        y = 3
+
+		cost = 2
+
+		prerequisite = { focus = SIB_redevelop_magadan }
+		
+		completion_reward = {
+			
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = SIB_irkutsk_aerodrome
+		icon = GFX_unknown
+	
+		x = 9
+        y = 4
+
+		cost = 2
+
+		prerequisite = { focus = SIB_cutting_ice }
+		
+		completion_reward = {
+			
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = SIB_lower_production_standards
+		icon = GFX_unknown
+	
+		x = 9
+        y = 5
+
+		cost = 2
+
+		prerequisite = { focus = SIB_irkutsk_aerodrome }
+		
+		completion_reward = {
+			
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = SIB_anti_guerilla_expertise
+		icon = GFX_unknown
+	
+		x = 8
+        y = 6
+
+		cost = 2 
+
+		prerequisite = {  focus = SIB_lower_production_standards }
+		prerequisite = {  focus = SIB_officer_reassignment_policy focus = SIB_loyal_chinese_brigades  }
 		
 		completion_reward = {
 			
