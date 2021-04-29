@@ -10,35 +10,14 @@ focus_tree = {
 		}
 	}
 
-	continuous_focus_position = { x = 1900 y = 1500 }
+	continuous_focus_position = { x = 650 y = 1420 }
 
 	focus = {
 		id = FRA_franco_iberia
 		icon = GFX_goal_western_culture
 	
-		x = 11
-		y = 3
-
-		cost = 4
-
-		prerequisite = {
-			focus = FRA_speech
-		}
-		
-		completion_reward = {
-
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = FRA_speech
-		icon = GFX_goal_FRA_speech
-	
-		x = 11
-		y = 1
+		x = 24
+		y = 13
 
 		cost = 4
 
@@ -55,18 +34,373 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = realpolitik_franco
-		icon = GFX_goal_realpolitik
+		id = FRA_propaganda_campaign
+		icon = GFX_goal_FRA_propaganda_campaign
 	
-		x = 11
-		y = 6
+		x = 24
+		y = 14
 
 		cost = 4
 
 		prerequisite = {
-			focus = side_with_the_goverment
-			focus = decentralized_federation
+			focus = FRA_franco_iberia
 		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_autarky_plan
+		icon = GFX_goal_FRA_autarky_plan
+	
+		x = 26
+		y = 14
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_defense_ministry
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_military_complex
+		icon = GFX_goal_FRA_military_complex
+	
+		x = 26
+		y = 15
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_autarky_plan
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_war_techniques
+		icon = GFX_goal_FRA_war_techniques
+	
+		x = 28
+		y = 14
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_defense_ministry
+		}
+
+		mutually_exclusive = {
+			focus = FRA_spartan_techniques
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_defense_ministry
+		icon = GFX_goal_FRA_defense_ministry
+	
+		x = 28
+		y = 13
+
+		cost = 4
+
+		prerequisite = {
+			focus = a_dream_of_dreamers
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_spartan_techniques
+		icon = GFX_goal_FRA_spartan_techniques
+	
+		x = 30
+		y = 14
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_defense_ministry
+		}
+
+		mutually_exclusive = {
+			focus = FRA_war_techniques
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_fed_with_hate
+		icon = GFX_goal_FRA_fed_with_hate
+	
+		x = 29
+		y = 15
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_war_techniques
+			focus = FRA_spartan_techniques
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_a_personality_cult
+		icon = GFX_goal_FRA_a_personality_cult
+	
+		x = 24
+		y = 15
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_propaganda_campaign
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_march_paris
+		icon = GFX_goal_FRA_march_paris
+	
+		x = 24
+		y = 16
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_a_personality_cult
+		}
+		prerequisite = {
+			focus = FRA_surveillance
+		}
+		prerequisite = {
+			focus = FRA_a_purge
+		}
+		prerequisite = {
+			focus = FRA_military_complex
+		}
+		prerequisite = {
+			focus = FRA_fed_with_hate
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_communications
+		icon = GFX_goal_FRA_communications
+	
+		x = 22
+		y = 14
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_security_ministry
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_surveillance
+		icon = GFX_goal_FRA_surveillance
+	
+		x = 22
+		y = 15
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_communications
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_military_purges
+		icon = GFX_goal_FRA_military_purges
+	
+		x = 18
+		y = 14
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_security_ministry
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_political_purges
+		icon = GFX_goal_FRA_political_purges
+	
+		x = 20
+		y = 14
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_security_ministry
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_security_ministry
+		icon = GFX_goal_FRA_security_ministry
+	
+		x = 20
+		y = 13
+
+		cost = 4
+
+		prerequisite = {
+			focus = a_dream_of_dreamers
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_a_purge
+		icon = GFX_goal_FRA_a_purge
+	
+		x = 19
+		y = 15
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_military_purges
+		}
+		prerequisite = {
+			focus = FRA_political_purges
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_speech
+		icon = GFX_goal_FRA_speech
+	
+		x = 12
+		y = 0
+
+		cost = 4
+
+		mutually_exclusive = {
+			focus = FRA_hakim
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = realpolitik_franco
+		icon = GFX_goal_realpolitik
+	
+		x = 24
+		y = 8
+
+		cost = 4
 		
 		completion_reward = {
 
@@ -80,13 +414,13 @@ focus_tree = {
 		id = side_with_the_goverment
 		icon = GFX_goal_side_with_the_government
 	
-		x = 10
-		y = 5
+		x = 23
+		y = 9
 
 		cost = 4
 
 		prerequisite = {
-			focus = FRA_franco_iberia
+			focus = realpolitik_franco
 		}
 		mutually_exclusive = {
 			focus = decentralized_federation
@@ -104,13 +438,13 @@ focus_tree = {
 		id = decentralized_federation
 		icon = GFX_goal_decentralized_federation
 	
-		x = 12
-		y = 5
+		x = 25
+		y = 9
 
 		cost = 4
 
 		prerequisite = {
-			focus = FRA_franco_iberia
+			focus = realpolitik_franco
 		}
 		mutually_exclusive = {
 			focus = side_with_the_goverment
@@ -128,13 +462,14 @@ focus_tree = {
 		id = FRA_portugal
 		icon = GFX_goal_FRA_portugal
 	
-		x = 5
-		y = 7
+		x = 18
+		y = 10
 
 		cost = 4
 
 		prerequisite = {
-			focus = realpolitik_franco
+			focus = side_with_the_goverment
+			focus = decentralized_federation
 		}
 		
 		completion_reward = {
@@ -148,9 +483,9 @@ focus_tree = {
 	focus = {
 		id = FRA_meeting_portugal
 		icon = GFX_goal_deal_with_africa
-	
-		x = 4
-		y = 8
+
+		x = 17
+		y = 11
 
 		cost = 4
 
@@ -170,8 +505,8 @@ focus_tree = {
 		id = FRA_districts_portugal
 		icon = GFX_goal_industrial_paris
 	
-		x = 6
-		y = 8
+		x = 19
+		y = 11
 
 		cost = 4
 
@@ -191,8 +526,8 @@ focus_tree = {
 		id = FRA_conference_portugal
 		icon = GFX_goal_FRA_conference_portugal
 	
-		x = 5
-		y = 9
+		x = 18
+		y = 12
 
 		cost = 4
 
@@ -215,13 +550,14 @@ focus_tree = {
 		id = FRA_spain
 		icon = GFX_goal_FRA_spain
 	
-		x = 9
-		y = 7
+		x = 22
+		y = 10
 
 		cost = 4
 
 		prerequisite = {
-			focus = realpolitik_franco
+			focus = side_with_the_goverment
+			focus = decentralized_federation
 		}
 		
 		completion_reward = {
@@ -236,8 +572,8 @@ focus_tree = {
 		id = FRA_meeting_spain
 		icon = GFX_goal_deal_with_africa
 	
-		x = 8
-		y = 8
+		x = 21
+		y = 11
 
 		cost = 4
 
@@ -257,8 +593,8 @@ focus_tree = {
 		id = FRA_districts_spain
 		icon = GFX_goal_industrial_paris
 	
-		x = 10
-		y = 8
+		x = 23
+		y = 11
 
 		cost = 4
 
@@ -278,8 +614,8 @@ focus_tree = {
 		id = FRA_conference_spain
 		icon = GFX_goal_FRA_conference_spain
 	
-		x = 9
-		y = 9
+		x = 22
+		y = 12
 
 		cost = 4
 
@@ -302,13 +638,14 @@ focus_tree = {
 		id = FRA_france
 		icon = GFX_goal_FRA_france
 	
-		x = 13
-		y = 7
+		x = 26
+		y = 10
 
 		cost = 4
 
 		prerequisite = {
-			focus = realpolitik_franco
+			focus = side_with_the_goverment
+			focus = decentralized_federation
 		}
 		
 		completion_reward = {
@@ -323,8 +660,8 @@ focus_tree = {
 		id = FRA_meeting_france
 		icon = GFX_goal_deal_with_africa
 	
-		x = 12
-		y = 8
+		x = 25
+		y = 11
 
 		cost = 4
 
@@ -344,8 +681,8 @@ focus_tree = {
 		id = FRA_districts_france
 		icon = GFX_goal_industrial_paris
 	
-		x = 14
-		y = 8
+		x = 27
+		y = 11
 
 		cost = 4
 
@@ -365,8 +702,8 @@ focus_tree = {
 		id = FRA_conference_france
 		icon = GFX_goal_FRA_conference_france
 	
-		x = 13
-		y = 9
+		x = 26
+		y = 12
 
 		cost = 4
 
@@ -389,13 +726,14 @@ focus_tree = {
 		id = FRA_belgium
 		icon = GFX_goal_FRA_belgium
 	
-		x = 17
-		y = 7
+		x = 30
+		y = 10
 
 		cost = 4
 
 		prerequisite = {
-			focus = realpolitik_franco
+			focus = side_with_the_goverment
+			focus = decentralized_federation
 		}
 		
 		completion_reward = {
@@ -409,9 +747,9 @@ focus_tree = {
 	focus = {
 		id = FRA_meeting_belgium
 		icon = GFX_goal_deal_with_africa
-	
-		x = 16
-		y = 8
+
+		x = 31
+		y = 11
 
 		cost = 4
 
@@ -431,8 +769,8 @@ focus_tree = {
 		id = FRA_districts_belgium
 		icon = GFX_goal_industrial_paris
 	
-		x = 18
-		y = 8
+		x = 29
+		y = 11
 
 		cost = 4
 
@@ -452,8 +790,8 @@ focus_tree = {
 		id = FRA_conference_belgium
 		icon = GFX_goal_FRA_conference_belgium
 	
-		x = 17
-		y = 9
+		x = 30
+		y = 12
 
 		cost = 4
 
@@ -473,43 +811,17 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = united_union
-		icon = GFX_goal_united_union
-	
-		x = 11
-		y = 10
-
-		cost = 4
-
-		prerequisite = {
-			focus = FRA_conference_belgium
-		}
-		prerequisite = {
-			focus = FRA_conference_france
-		}
-		prerequisite = {
-			focus = FRA_conference_spain
-		}
-		prerequisite = {
-			focus = FRA_conference_portugal
-		}
-		
-		completion_reward = {
-
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
 		id = a_dream_of_dreamers
 		icon = GFX_goal_a_dream_of_dreamers
 	
-		x = 11
-		y = 0
+		x = 24
+		y = 12
 
 		cost = 4
+
+		available = {
+			always = no
+		}
 		
 		completion_reward = {
 			add_stability = 0.05
@@ -524,13 +836,13 @@ focus_tree = {
 		id = culture_ministry
 		icon = GFX_goal_culture_ministry
 	
-		x = 2
+		x = 1
 		y = 1
 
 		cost = 4
 
 		prerequisite = {
-			focus = a_dream_of_dreamers
+			focus = FRA_speech
 		}
 		
 		completion_reward = {
@@ -545,7 +857,7 @@ focus_tree = {
 		id = a_cultural_boom
 		icon = GFX_goal_cultural_boom
 	
-		x = 2
+		x = 1
 		y = 2
 
 		cost = 4
@@ -566,7 +878,7 @@ focus_tree = {
 		id = exporting_culture
 		icon = GFX_goal_exporting_culture
 	
-		x = 2
+		x = 1
 		y = 3
 
 		cost = 4
@@ -587,7 +899,7 @@ focus_tree = {
 		id = boosting_national_artworks
 		icon = GFX_goal_boosting_national_artworks
 	
-		x = 2
+		x = 1
 		y = 4
 
 		cost = 4
@@ -609,10 +921,10 @@ focus_tree = {
 	}
 	focus = {
 		id = renouveau_video
-		icon = GFX_goal_renouveau_video
+		icon = GFX_goal_renouveau_art #GFX_goal_renouveau_video
 	
-		x = 4
-		y = 5
+		x = 2
+		y = 6
 
 		cost = 4
 
@@ -650,9 +962,9 @@ focus_tree = {
 	}
 	focus = {
 		id = renouveau_cinema
-		icon = GFX_goal_renouveau_movie
+		icon = GFX_goal_renouveau_art #GFX_goal_renouveau_movie
 	
-		x = 2
+		x = 1
 		y = 5
 
 		cost = 4
@@ -694,7 +1006,7 @@ focus_tree = {
 		icon = GFX_goal_renouveau_art
 	
 		x = 0
-		y = 5
+		y = 6
 
 		cost = 4
 
@@ -734,8 +1046,8 @@ focus_tree = {
 		id = national_artworks_sold_out
 		icon = GFX_goal_national_artworks_sold_out
 	
-		x = 2
-		y = 6
+		x = 1
+		y = 7
 
 		cost = 4
 
@@ -764,13 +1076,14 @@ focus_tree = {
 		id = universite_nationale
 		icon = GFX_goal_universite_nationale
 	
-		x = 7
+		x = 24
 		y = 1
 
 		cost = 4
 
 		prerequisite = {
-			focus = a_dream_of_dreamers
+			focus = FRA_speech
+			focus = FRA_hakim
 		}
 		
 		completion_reward = {
@@ -785,8 +1098,8 @@ focus_tree = {
 		id = andalusian_solar_power_plant
 		icon = GFX_goal_andalusian_solar_power_plant
 	
-		x = 6
-		y = 2
+		x = 25
+		y = 3
 
 		cost = 4
 
@@ -806,8 +1119,8 @@ focus_tree = {
 		id = the_fusion_power_research
 		icon = GFX_goal_the_fusion_power_research
 	
-		x = 8
-		y = 2
+		x = 23
+		y = 3
 
 		cost = 4
 
@@ -827,8 +1140,8 @@ focus_tree = {
 		id = bring_the_sun
 		icon = GFX_goal_bring_the_sun
 	
-		x = 6
-		y = 3
+		x = 25
+		y = 4
 
 		cost = 4
 
@@ -889,8 +1202,8 @@ focus_tree = {
 		id = heavy_machinery
 		icon = GFX_goal_heavy_machinery
 	
-		x = 6
-		y = 4
+		x = 25
+		y = 5
 
 		cost = 4
 
@@ -951,8 +1264,8 @@ focus_tree = {
 		id = boost_the_build
 		icon = GFX_goal_boost_the_build
 	
-		x = 6
-		y = 5
+		x = 25
+		y = 6
 
 		cost = 4
 
@@ -1013,8 +1326,8 @@ focus_tree = {
 		id = power_of_sun
 		icon = GFX_goal_power_of_sun
 	
-		x = 6
-		y = 6
+		x = 25
+		y = 7
 
 		cost = 4
 
@@ -1034,8 +1347,8 @@ focus_tree = {
 		id = feed_the_brains
 		icon = GFX_goal_feed_the_brains
 	
-		x = 8
-		y = 3
+		x = 23
+		y = 4
 
 		cost = 4
 
@@ -1096,8 +1409,8 @@ focus_tree = {
 		id = the_budget_report
 		icon = GFX_goal_the_budget_report
 	
-		x = 8
-		y = 4
+		x = 23
+		y = 5
 
 		cost = 4
 
@@ -1158,8 +1471,8 @@ focus_tree = {
 		id = boost_the_development
 		icon = GFX_goal_boost_the_build
 	
-		x = 8
-		y = 5
+		x = 23
+		y = 6
 
 		cost = 4
 
@@ -1220,8 +1533,8 @@ focus_tree = {
 		id = a_public_announcement
 		icon = GFX_goal_a_public_announcement
 	
-		x = 8
-		y = 6
+		x = 23
+		y = 7
 
 		cost = 4
 
@@ -1239,15 +1552,15 @@ focus_tree = {
 	}
 	focus = {
 		id = east_mediterranean_approach
-		icon = GFX_goal_mediterranean_approach
+		icon = GFX_goal_FRA_african_expansion
 	
-		x = 11
-		y = 11
+		x = 6
+		y = 1
 
 		cost = 4
 
 		prerequisite = {
-			focus = united_union
+			focus = FRA_speech
 		}
 		
 		completion_reward = {
@@ -1260,15 +1573,17 @@ focus_tree = {
 	}
 	focus = {
 		id = boost_greece
-		icon = GFX_goal_boost_greece
+		icon = GFX_goal_boost_cyprus
 	
-		x = 8
-		y = 12
+		x = 9
+		y = 4
 
 		cost = 4
 
 		prerequisite = {
-			focus = east_mediterranean_approach
+			focus = FRA_puppet_africa
+			focus = FRA_war_africa
+			focus = FRA_cooperate_africa
 		}
 		
 		completion_reward = {
@@ -1281,15 +1596,17 @@ focus_tree = {
 	}
 	focus = {
 		id = boost_cyrenaica
-		icon = GFX_goal_boost_cyrenaica
+		icon = GFX_goal_boost_cyprus
 	
-		x = 10
-		y = 12
+		x = 3
+		y = 4
 
 		cost = 4
 
 		prerequisite = {
-			focus = east_mediterranean_approach
+			focus = FRA_puppet_africa
+			focus = FRA_war_africa
+			focus = FRA_cooperate_africa
 		}
 		
 		completion_reward = {
@@ -1302,15 +1619,17 @@ focus_tree = {
 	}
 	focus = {
 		id = boost_tripolitania
-		icon = GFX_goal_boost_tripolitania
+		icon = GFX_goal_boost_cyprus
 	
-		x = 12
-		y = 12
+		x = 5
+		y = 4
 
 		cost = 4
 
 		prerequisite = {
-			focus = east_mediterranean_approach
+			focus = FRA_puppet_africa
+			focus = FRA_war_africa
+			focus = FRA_cooperate_africa
 		}
 		
 		completion_reward = {
@@ -1325,8 +1644,31 @@ focus_tree = {
 		id = boost_cyprus
 		icon = GFX_goal_boost_cyprus
 	
-		x = 14
-		y = 12
+		x = 7
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_puppet_africa
+			focus = FRA_war_africa
+			focus = FRA_cooperate_africa
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_african_expansion
+		icon = GFX_goal_mediterranean_approach
+	
+		x = 6
+		y = 2
 
 		cost = 4
 
@@ -1343,16 +1685,661 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = italian_approach
-		icon = GFX_goal_generic_approach
+		id = FRA_war_africa
+		icon = GFX_goal_FRA_war_africa
 	
-		x = 5
-		y = 11
+		x = 4
+		y = 3
 
 		cost = 4
 
 		prerequisite = {
-			focus = united_union
+			focus = FRA_african_expansion
+		}
+		mutually_exclusive = {
+			focus = FRA_cooperate_africa
+		}
+		mutually_exclusive = {
+			focus = FRA_puppet_africa
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_puppet_africa
+		icon = GFX_goal_FRA_puppet_africa
+	
+		x = 6
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_african_expansion
+		}
+		mutually_exclusive = {
+			focus = FRA_war_africa
+		}
+		mutually_exclusive = {
+			focus = FRA_cooperate_africa
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_cooperate_africa
+		icon = GFX_goal_FRA_cooperate_africa
+	
+		x = 8
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_african_expansion
+		}
+		mutually_exclusive = {
+			focus = FRA_war_africa
+		}
+		mutually_exclusive = {
+			focus = FRA_puppet_africa
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_plan_nile
+		icon = GFX_goal_FRA_plan_nile
+	
+		x = 6
+		y = 6
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_desert_training
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_integrate_nile
+		icon = GFX_goal_FRA_integrate_ger
+	
+		x = 6
+		y = 7
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_plan_nile
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_south_ports
+		icon = GFX_goal_FRA_dockyard_expansion
+	
+		x = 4
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = boost_cyprus
+		}
+		prerequisite = {
+			focus = boost_tripolitania
+		}
+		prerequisite = {
+			focus = boost_greece
+		}
+		prerequisite = {
+			focus = boost_cyrenaica
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_south_logistics
+		icon = GFX_goal_FRA_south_logistics
+	
+		x = 4
+		y = 6
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_south_ports
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_african_wall
+		icon = GFX_goal_FRA_green_line
+	
+		x = 8
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = boost_cyprus
+		}
+		prerequisite = {
+			focus = boost_tripolitania
+		}
+		prerequisite = {
+			focus = boost_greece
+		}
+		prerequisite = {
+			focus = boost_cyrenaica
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_desert_airports
+		icon = GFX_goal_FRA_desert_airports
+	
+		x = 8
+		y = 6
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_african_wall
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_desert_training
+		icon = GFX_goal_FRA_desert_training
+	
+		x = 6
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = boost_cyprus
+		}
+		prerequisite = {
+			focus = boost_tripolitania
+		}
+		prerequisite = {
+			focus = boost_greece
+		}
+		prerequisite = {
+			focus = boost_cyrenaica
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = italian_approach
+		icon = GFX_goal_support_italy
+	
+		x = 12
+		y = 2
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_new_papacy
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_nsa_intervention
+		icon = GFX_goal_FRA_nsa_intervention
+	
+		x = 18
+		y = 1
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_speech
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_tank_designers
+		icon = GFX_goal_FRA_tank_designers
+	
+		x = 22
+		y = 2
+
+		cost = 4
+
+		prerequisite = {
+			focus = universite_nationale
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_gun_designers
+		icon = GFX_goal_FRA_gun_designers
+	
+		x = 24
+		y = 2
+
+		cost = 4
+
+		prerequisite = {
+			focus = universite_nationale
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_naval_designers
+		icon = GFX_goal_FRA_naval_designers
+	
+		x = 26
+		y = 2
+
+		cost = 4
+
+		prerequisite = {
+			focus = universite_nationale
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_nsa_more_intervention
+		icon = GFX_goal_FRA_nsa_more_intervention
+	
+		x = 18
+		y = 2
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_nsa_intervention
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_plan_blue
+		icon = GFX_goal_FRA_plan_blue
+	
+		x = 16
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_nsa_more_intervention
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_plan_greenice
+		icon = GFX_goal_FRA_plan_greenice
+	
+		x = 15
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_plan_blue
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_plan_clover
+		icon = GFX_goal_FRA_plan_clover
+	
+		x = 17
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_plan_blue
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_integrate_north
+		icon = GFX_goal_FRA_integrate_ger
+	
+		x = 16
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_plan_clover
+		}
+		prerequisite = {
+			focus = FRA_plan_greenice
+		}
+		prerequisite = {
+			focus = FRA_plan_blue
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_sabotage_ger
+		icon = GFX_goal_FRA_sabotage_ger
+	
+		x = 18
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_nsa_more_intervention
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_german_frontier
+		icon = GFX_goal_FRA_green_line
+	
+		x = 20
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_nsa_more_intervention
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_north_antiair
+		icon = GFX_goal_FRA_north_antiair
+	
+		x = 21
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_german_frontier
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_eurasian_admin
+		icon = GFX_goal_FRA_integrate_ger
+	
+		x = 20
+		y = 6
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_moscow_paris
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_moscow_paris
+		icon = GFX_goal_FRA_moscow_paris
+	
+		x = 20
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_eurasian_cooperation
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_eurasian_cooperation
+		icon = GFX_goal_FRA_eurasian_cooperation
+	
+		x = 19
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_german_frontier
+		}
+		prerequisite = {
+			focus = FRA_sabotage_ger
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_question_siblings
+		icon = GFX_goal_FRA_question_siblings
+	
+		x = 18
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_sabotage_ger
+		}
+		prerequisite = {
+			focus = FRA_german_frontier
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_plan_rhin
+		icon = GFX_goal_FRA_plan_rhin
+	
+		x = 18
+		y = 6
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_question_siblings
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_integrate_ger
+		icon = GFX_goal_FRA_integrate_ger
+	
+		x = 18
+		y = 7
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_plan_rhin
 		}
 		
 		completion_reward = {
@@ -1365,18 +2352,36 @@ focus_tree = {
 	}
 	focus = {
 		id = support_italy
-		icon = GFX_goal_support_italy
+		icon = GFX_goal_generic_approach
 	
-		x = 4
-		y = 12
+		x = 11
+		y = 5
 
 		cost = 4
 
 		prerequisite = {
-			focus = italian_approach
+			focus = FRA_sanction_italy
 		}
-		mutually_exclusive = {
-			focus = defend_padanian_investors
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_new_papacy
+		icon = GFX_goal_FRA_new_papacy
+	
+		x = 12
+		y = 1
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_speech
 		}
 		
 		completion_reward = {
@@ -1391,16 +2396,13 @@ focus_tree = {
 		id = defend_padanian_investors
 		icon = GFX_goal_defend_padanian_investors
 	
-		x = 6
-		y = 12
+		x = 13
+		y = 5
 
 		cost = 4
 
 		prerequisite = {
-			focus = italian_approach
-		}
-		mutually_exclusive = {
-			focus = support_italy
+			focus = FRA_sanction_italy
 		}
 		
 		completion_reward = {
@@ -1412,16 +2414,79 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = our_cultural_friends
-		icon = GFX_goal_our_cultural_friends
+		id = FRA_green_line
+		icon = GFX_goal_FRA_green_line
 	
-		x = 16
-		y = 11
+		x = 14
+		y = 3
 
 		cost = 4
 
 		prerequisite = {
-			focus = united_union
+			focus = italian_approach
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_pressure_padania
+		icon = GFX_goal_FRA_pressure_padania
+	
+		x = 12
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = italian_approach
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_sanction_italy
+		icon = GFX_goal_FRA_sanction_italy
+	
+		x = 12
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_pressure_padania
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_amphibious_focus
+		icon = GFX_goal_FRA_amphibious_focus
+	
+		x = 10
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = italian_approach
 		}
 		
 		completion_reward = {
@@ -1437,12 +2502,12 @@ focus_tree = {
 		icon = GFX_goal_invite_quebec
 	
 		x = 16
-		y = 12
+		y = 6
 
 		cost = 4
 
 		prerequisite = {
-			focus = our_cultural_friends
+			focus = FRA_integrate_north
 		}
 		
 		completion_reward = {
@@ -1455,33 +2520,20 @@ focus_tree = {
 	}
 	focus = {
 		id = a_promising_alliance
-		icon = GFX_goal_a_promising_alliance
+		icon = GFX_goal_FRA_integrate_ger
 	
-		x = 11
-		y = 13
+		x = 12
+		y = 6
 
 		cost = 4
 
 		prerequisite = {
 			focus = support_italy
+		}
+		prerequisite = {
 			focus = defend_padanian_investors
 		}
-		prerequisite = {
-			focus = boost_greece
-		}
-		prerequisite = {
-			focus = boost_cyrenaica
-		}
-		prerequisite = {
-			focus = boost_tripolitania
-		}
-		prerequisite = {
-			focus = boost_cyprus
-		}
-		prerequisite = {
-			focus = invite_quebec
-		}
-	
+
 		completion_reward = {
 
 		}
@@ -1494,8 +2546,8 @@ focus_tree = {
 		id = a_overwhelming_pride
 		icon = GFX_goal_a_overwhelming_pride
 	
-		x = 11
-		y = 14
+		x = 12
+		y = 7
 
 		cost = 4
 
@@ -1514,77 +2566,26 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = staying_true
-		icon = GFX_goal_staying_true
-	
-		x = 8
-		y = 15
-
-		cost = 4
-
-		prerequisite = {
-			focus = a_overwhelming_pride
-		}
-		mutually_exclusive = {
-			focus = beyond_pure_flesh
-		}
-	
-		completion_reward = {
-			add_popularity = {
-				ideology = purity
-				popularity = 0.1
-			}
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
 		id = mediterranean_union
 		icon = GFX_goal_mediterranean_union
 	
-		x = 8
-		y = 16
-
-		cost = 4
-
-		prerequisite = {
-			focus = staying_true
-		}
-	
-		completion_reward = {
-
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = beyond_pure_flesh
-		icon = GFX_goal_beyond_pure_flesh
-	
-		x = 14
-		y = 15
+		x = 15
+		y = 8
 
 		cost = 4
 
 		prerequisite = {
 			focus = a_overwhelming_pride
 		}
+		prerequisite = {
+			focus = FRA_integrate_ger
+		}
 		mutually_exclusive = {
-			focus = staying_true
+			focus = tale_of_giants
 		}
 	
 		completion_reward = {
-			add_popularity = {
-				ideology = divinity
-				popularity = 0.1
-			}
-			set_politics = {
-				ruling_party = divinity
-			}
+
 		}
 	
 		ai_will_do = {
@@ -1595,13 +2596,19 @@ focus_tree = {
 		id = tale_of_giants
 		icon = GFX_goal_tale_of_giants
 	
-		x = 14
-		y = 16
+		x = 9
+		y = 8
 
 		cost = 4
 
 		prerequisite = {
-			focus = beyond_pure_flesh
+			focus = a_overwhelming_pride
+		}
+		prerequisite = {
+			focus = FRA_integrate_nile
+		}
+		mutually_exclusive = {
+			focus = mediterranean_union
 		}
 	
 		completion_reward = {
@@ -1616,97 +2623,13 @@ focus_tree = {
 		id = ministry_of_industry
 		icon = GFX_goal_ministry_of_industry
 	
-		x = 18
+		x = 47
 		y = 1
 
 		cost = 4
 
 		prerequisite = {
-			focus = a_dream_of_dreamers
-		}
-		
-		completion_reward = {
-
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = the_superalloys
-		icon = GFX_goal_superalloys
-	
-		x = 14
-		y = 2
-
-		cost = 4
-
-		prerequisite = {
-			focus = ministry_of_industry
-		}
-		
-		completion_reward = {
-
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = hire_the_chemists
-		icon = GFX_goal_hire_the_chemists
-	
-		x = 14
-		y = 3
-
-		cost = 4
-
-		prerequisite = {
-			focus = the_superalloys
-		}
-		
-		completion_reward = {
-
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = an_expanding_lab
-		icon = GFX_goal_an_expanding_lab
-	
-		x = 14
-		y = 4
-
-		cost = 4
-
-		prerequisite = {
-			focus = hire_the_chemists
-		}
-		
-		completion_reward = {
-
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = yeah_science
-		icon = GFX_goal_yeah_science 
-	
-		x = 14
-		y = 5
-
-		cost = 4
-
-		prerequisite = {
-			focus = an_expanding_lab
+			focus = FRA_hakim
 		}
 		
 		completion_reward = {
@@ -1721,7 +2644,7 @@ focus_tree = {
 		id = deal_conglomerates
 		icon = GFX_goal_deal_conglomerates
 	
-		x = 18
+		x = 47
 		y = 2
 
 		cost = 4
@@ -1739,43 +2662,16 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = privatized_or_nationalized
-		icon = GFX_goal_privatized_or_nationalized
-	
-		x = 17
-		y = 3
-
-		cost = 4
-
-		prerequisite = {
-			focus = deal_conglomerates
-		}
-		mutually_exclusive = {
-			focus = clearly_nationalized
-		}
-		
-		completion_reward = {
-
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
 		id = clearly_nationalized
 		icon = GFX_goal_clearly_nationalized
 	
-		x = 19
+		x = 47
 		y = 3
 
 		cost = 4
 
 		prerequisite = {
 			focus = deal_conglomerates
-		}
-		mutually_exclusive = {
-			focus = privatized_or_nationalized
 		}
 		
 		completion_reward = {
@@ -1790,13 +2686,12 @@ focus_tree = {
 		id = manpower_needed
 		icon = GFX_goal_manpower_needed
 	
-		x = 18
+		x = 47
 		y = 4
 
 		cost = 4
 
 		prerequisite = {
-			focus = privatized_or_nationalized
 			focus = clearly_nationalized
 		}
 		
@@ -1810,10 +2705,10 @@ focus_tree = {
 	}
 	focus = {
 		id = industrial_paris
-		icon = GFX_goal_industrial_paris
+		icon = GFX_goal_industrial_max
 	
-		x = 16
-		y = 5
+		x = 46
+		y = 6
 
 		cost = 4
 
@@ -1831,9 +2726,9 @@ focus_tree = {
 	}
 	focus = {
 		id = industrial_madrid
-		icon = GFX_goal_industrial_paris
+		icon = GFX_goal_industrial_max
 	
-		x = 18
+		x = 47
 		y = 5
 
 		cost = 4
@@ -1852,10 +2747,10 @@ focus_tree = {
 	}
 	focus = {
 		id = industrial_lisbon
-		icon = GFX_goal_industrial_paris
+		icon = GFX_goal_industrial_max
 	
-		x = 20
-		y = 5
+		x = 48
+		y = 6
 
 		cost = 4
 
@@ -1875,8 +2770,8 @@ focus_tree = {
 		id = industrial_boom
 		icon = GFX_goal_industrial_boom
 	
-		x = 18
-		y = 6
+		x = 47
+		y = 7
 
 		cost = 4
 
@@ -1889,11 +2784,26 @@ focus_tree = {
 		prerequisite = {
 			focus = industrial_lisbon
 		}
-		prerequisite = {
-			focus = yeah_science
+		
+		completion_reward = {
+
 		}
-		prerequisite = {
-			focus = miracle_of_recycling
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_hakim
+		icon = GFX_goal_FRA_hakim
+	
+		x = 36
+		y = 0
+
+		cost = 4
+
+		mutually_exclusive = {
+			focus = FRA_speech
 		}
 		
 		completion_reward = {
@@ -1905,16 +2815,37 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = the_recycling_initiative
-		icon = GFX_goal_the_recycling_initiative
+		id = FRA_condemn_elodie
+		icon = GFX_goal_FRA_condemn_elodie
 	
-		x = 22
+		x = 36
+		y = 1
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_hakim
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_campaign_aristocracy
+		icon = GFX_goal_FRA_campaign_aristocracy
+	
+		x = 36
 		y = 2
 
 		cost = 4
 
 		prerequisite = {
-			focus = ministry_of_industry
+			focus = FRA_condemn_elodie
 		}
 		
 		completion_reward = {
@@ -1926,16 +2857,16 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = lithium_monopoly
-		icon = GFX_goal_lithium_monopoly
+		id = FRA_condemn_padania
+		icon = GFX_goal_FRA_pressure_padania
 	
-		x = 22
+		x = 36
 		y = 3
 
 		cost = 4
 
 		prerequisite = {
-			focus = the_recycling_initiative
+			focus = FRA_campaign_aristocracy
 		}
 		
 		completion_reward = {
@@ -1947,16 +2878,58 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = joint_research
-		icon = GFX_goal_joint_research
+		id = FRA_joint_techniques
+		icon = GFX_goal_FRA_deep_training
 	
-		x = 22
+		x = 38
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_campaign_aristocracy
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_help_italy
+		icon = GFX_goal_FRA_recruiting_campaign
+	
+		x = 34
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_campaign_aristocracy
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_sanction_padania
+		icon = GFX_goal_FRA_sanction_padania
+	
+		x = 36
 		y = 4
 
 		cost = 4
 
 		prerequisite = {
-			focus = lithium_monopoly
+			focus = FRA_condemn_padania
 		}
 		
 		completion_reward = {
@@ -1968,16 +2941,791 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = miracle_of_recycling
-		icon = GFX_goal_miracle_of_recycling
+		id = FRA_attack_padania
+		icon = GFX_goal_defend_padanian_investors
 	
-		x = 22
+		x = 35
 		y = 5
 
 		cost = 4
 
 		prerequisite = {
-			focus = joint_research
+			focus = FRA_sanction_padania
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_split_padania
+		icon = GFX_goal_FRA_split_padania
+	
+		x = 37
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_sanction_padania
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_italian_alliance
+		icon = GFX_goal_FRA_italian_alliance
+	
+		x = 36
+		y = 6
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_split_padania
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_italian_integration
+		icon = GFX_goal_FRA_italian_integration
+	
+		x = 36
+		y = 7
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_italian_alliance
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_commune_of_paris
+		icon = GFX_goal_FRA_commune_of_paris
+	
+		x = 36
+		y = 8
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_higher_taxes
+		}
+		prerequisite = {
+			focus = FRA_italian_integration
+		}
+		prerequisite = {
+			focus = FRA_triunfant_hakim
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_hakim_manifesto
+		icon = GFX_goal_FRA_hakim_manifesto
+	
+		x = 30
+		y = 1
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_hakim
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_social_reform
+		icon = GFX_goal_FRA_social_reform
+	
+		x = 30
+		y = 2
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_hakim_manifesto
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_political_reform
+		icon = GFX_goal_FRA_political_reform
+	
+		x = 28
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_social_reform
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_economical_reform
+		icon = GFX_goal_FRA_economical_reform
+	
+		x = 30
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_social_reform
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_cultural_reform
+		icon = GFX_goal_FRA_cultural_reform
+	
+		x = 32
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_social_reform
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_popular_politicians
+		icon = GFX_goal_FRA_popular_politicians
+	
+		x = 27
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_political_reform
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_cheaper_politicians
+		icon = GFX_goal_FRA_cheaper_politicians
+	
+		x = 29
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_political_reform
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_cap_ceos
+		icon = GFX_goal_FRA_cap_ceos
+	
+		x = 31
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_economical_reform
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_public_culture
+		icon = GFX_goal_FRA_public_culture
+	
+		x = 33
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_cultural_reform
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_defender_pop
+		icon = GFX_goal_FRA_defender_pop
+	
+		x = 28
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_popular_politicians
+		}
+		prerequisite = {
+			focus = FRA_cheaper_politicians
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_open_parliament
+		icon = GFX_goal_FRA_open_parliament
+	
+		x = 28
+		y = 6
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_defender_pop
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_public_libraries
+		icon = GFX_goal_FRA_public_libraries
+	
+		x = 32
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_public_culture
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_public_universities
+		icon = GFX_goal_FRA_public_universities
+	
+		x = 32
+		y = 6
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_public_libraries
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_higher_taxes
+		icon = GFX_goal_FRA_higher_taxes
+	
+		x = 30
+		y = 7
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_public_services
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_public_infrastructure
+		icon = GFX_goal_FRA_public_infrastructure
+	
+		x = 30
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_economical_reform
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_public_services
+		icon = GFX_goal_FRA_public_services
+	
+		x = 30
+		y = 6
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_public_infrastructure
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_foreign_politics
+		icon = GFX_goal_FRA_foreign_politics
+	
+		x = 42
+		y = 1
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_hakim
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_social_propaganda
+		icon = GFX_goal_FRA_military_academy
+	
+		x = 42
+		y = 2
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_foreign_politics
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_help_england
+		icon = GFX_goal_FRA_nsa_intervention
+	
+		x = 40
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_social_propaganda
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_fleet_academy
+		icon = GFX_goal_FRA_naval_academy
+	
+		x = 42
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_social_propaganda
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_german_front
+		icon = GFX_goal_FRA_green_line
+	
+		x = 44
+		y = 3
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_social_propaganda
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_align_england
+		icon = GFX_goal_FRA_align_england
+	
+		x = 39
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_help_england
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_north_ports
+		icon = GFX_goal_FRA_dockyard_expansion
+	
+		x = 43
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_fleet_academy
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_ebner_meeting
+		icon = GFX_goal_FRA_question_siblings
+	
+		x = 45
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_german_front
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_true_humanism
+		icon = GFX_goal_FRA_plan_rhin
+	
+		x = 44
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_ebner_meeting
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_integrate_germany
+		icon = GFX_goal_FRA_integrate_ger
+	
+		x = 44
+		y = 6
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_true_humanism
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_sealion_plan
+		icon = GFX_goal_FRA_naval_studies
+	
+		x = 41
+		y = 4
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_fleet_academy
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_the_nsa
+		icon = GFX_goal_FRA_plan_blue
+	
+		x = 40
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_sealion_plan
+		}
+		prerequisite = {
+			focus = FRA_align_england
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_integrate_england
+		icon = GFX_goal_FRA_integrate_ger
+	
+		x = 40
+		y = 6
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_the_nsa
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_integrate_eurasia
+		icon = GFX_goal_FRA_integrate_ger
+	
+		x = 42
+		y = 6
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_attack_eurasia
+		}
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_attack_eurasia
+		icon = GFX_goal_FRA_moscow_paris
+	
+		x = 42
+		y = 5
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_fleet_academy
+		}
+		
+
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_triunfant_hakim
+		icon = GFX_goal_FRA_triunfant_hakim
+	
+		x = 42
+		y = 7
+
+		cost = 4
+
+		prerequisite = {
+			focus = FRA_integrate_england
+		}
+		prerequisite = {
+			focus = FRA_integrate_eurasia
+		}
+		prerequisite = {
+			focus = FRA_integrate_germany
 		}
 		
 		completion_reward = {
