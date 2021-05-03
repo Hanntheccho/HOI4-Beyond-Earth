@@ -1,26 +1,25 @@
-scripted_gui = {
-    politics_topbartab = {
-        window_name = "newmodtopbar_button"
-        context_type = player_context
+scripted_gui = {    
+	politics_tab = {
+		window_name = "newmodtopbar_button"
+		context_type = player_context
 		parent_window_token = top_bar
-         
-        visible = {
-            always = yes
-        }
 		
-		effects = {
-			politics_button_click = {
-				if = { 
+		visible = {
+    	    always = yes
+		}
+        effects = {
+            politics_button_click = {
+                if = {
                     limit = {
                         has_country_flag = political_moment_flag
                     }
                     clr_country_flag = political_moment_flag
-                    else = {
-                        set_country_flag = political_moment_flag
-                    }
                 }
-			}
-		}
+                else = {
+                    set_country_flag = political_moment_flag
+                }
+            }
+        }
         
         ai_enabled = {
             always = yes
@@ -36,6 +35,9 @@ scripted_gui = {
         }
         
         ai_weights = {
+            else = {
+                set_country_flag = political_moment_flag
+            }
         }
-    }
+	}
 }
