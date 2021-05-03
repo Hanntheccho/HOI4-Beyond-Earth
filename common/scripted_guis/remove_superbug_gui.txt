@@ -36,6 +36,11 @@ scripted_gui = {
                         add_dynamic_modifier = {
                             modifier = superbug_medium
                         }
+                        set_state_flag = {
+                            flag = vax_overdosis_flag
+                            value = 1
+                            days = 180
+                        }
                     }
                     else_if = {
                         limit = {
@@ -48,6 +53,11 @@ scripted_gui = {
                         }
                         add_dynamic_modifier = {
                             modifier = superbug_low
+                        }
+                        set_state_flag = {
+                            flag = vax_overdosis_flag
+                            value = 1
+                            days = 180
                         }
                     }
                     else = {
@@ -63,9 +73,12 @@ scripted_gui = {
 		}
         triggers = {
             remove_superbug_button_click_enabled = {
-                    THIS = {
-                        is_fully_controlled_by = ROOT    
-                        }
+                THIS = {
+                    is_fully_controlled_by = ROOT
+                    NOT = {
+                        has_state_flag = vax_overdosis_flag
+                    }
+                }
                 ROOT = { 
                     check_variable = {
                 	    var = industrial_power
