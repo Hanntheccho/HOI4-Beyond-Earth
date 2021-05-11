@@ -1,0 +1,78 @@
+########## INFORMATION ###########
+## Technology Tags              ##
+## Latest Update: 5/10/2021     ##
+## By: Salad					##
+## DM if things need changing   ##
+##################################
+## Used for custom equipment, so that techs can properly affect them
+## DO NOT MODIFY UNLESS YOU ARE DOING EQUIPMENT/TECHS
+## If you are adding new categories, make sure they are uniquely named. If you are too lazy, just add be_ before
+
+technology_categories = {
+	##Beyond Earth Tags Below
+	be_naval_tech
+	be_sub_tech
+	be_torpedo_tech
+	be_naval_equip
+	be_gunboat_tech
+	be_destroyer_tech
+	be_battlecruiser_hull
+	be_battlecruiser_tech
+	be_light_gun_tech
+	be_medium_gun_tech
+	be_heavy_gun_tech
+	be_transport_tech
+	be_mine_tech
+	electronics
+	be_secondary_gun_tech
+}
+
+## Properly references the different folders into appropriate ledgers for intelligence, and to differentiate between MTG and Non-MTG navals
+technology_folders = {
+	infantry_folder = {
+		ledger = army
+	}
+	support_folder = {
+		ledger = army
+	}
+	armour_folder = {
+		ledger = army
+	}
+	artillery_folder = {
+		ledger = army
+	}
+	air_techs_folder = {
+		ledger = air
+	}
+	naval_folder = {
+		available = {
+			not = { has_dlc = "Man the Guns" }
+		}
+		ledger = navy
+	}
+	be_mtg_naval_folder = {
+		available = {
+			has_dlc = "Man the Guns"
+		}
+		ledger = navy
+	}
+	industry_folder = {
+		ledger = civilian
+	}
+
+	electronics_folder = {
+		ledger = civilian
+	}
+	land_doctrine_folder = {
+		ledger = army
+		doctrine = yes
+	}
+	naval_doctrine_folder = {
+		ledger = navy
+		doctrine = yes
+	}
+	air_doctrine_folder = {
+		ledger = air
+		doctrine = yes
+	}
+}
