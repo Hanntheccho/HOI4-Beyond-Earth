@@ -7,4 +7,29 @@ on_actions = {
             }
 		}
 	}
+	on_startup = {
+		effect = {
+			SIB = {
+                set_variable = { sib_discontent = 0 }
+				set_variable = { sib_socialist_support = 0 }
+				set_variable = { sib_discontent_min = 0 }
+				set_variable = { sib_socialist_support_min = 0 }
+				set_variable = { sib_discontent_max = 100 }
+				set_variable = { sib_socialist_support_max = 100 }
+            }
+		}
+	}
+	on_startup = {
+		effect = {
+			every_state = {
+				limit = { is_owned_by = FRA }
+				add_dynamic_modifier = { modifier = fi_non_federation }
+			}
+		}
+	}
+	on_startup = {
+		effect = {
+			set_global_flag = vax_prepremoment
+		}
+	}
 }
