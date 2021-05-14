@@ -18,7 +18,7 @@ technologies = {
 	## Submarine Hulls
 	sub_1_hull = {
 		enable_equipments = {
-			ship_hull_sub_1
+			ship_hull_submarine_1
 		}
 
 		enable_equipment_modules = {
@@ -57,7 +57,7 @@ technologies = {
 
 	sub_2_hull = {
 		enable_equipments = {
-			ship_hull_sub_2
+			ship_hull_submarine_2
 		}
 
 		enable_equipment_modules = {
@@ -67,6 +67,11 @@ technologies = {
 
 		path = {
 			leads_to_tech = sub_3_hull
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = snorkel_1
 			research_cost_coeff = 1
 		}
 
@@ -96,7 +101,7 @@ technologies = {
 
 	sub_3_hull = {
 		enable_equipments = {
-			ship_hull_sub_3
+			ship_hull_submarine_3
 		}
 
 		enable_equipment_modules = {
@@ -130,7 +135,7 @@ technologies = {
 
 	sub_4_hull = {
 		enable_equipments = {
-			ship_hull_sub_4
+			ship_hull_submarine_4
 		}
 
 		enable_equipment_modules = {
@@ -179,7 +184,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 2 y = @2190 }
+			position = { x = 2 y = 0 }
 		}
 		
 		ai_will_do = {
@@ -209,7 +214,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 2 y = @2200 }
+			position = { x = 2 y = 6 }
 		}
 		
 		ai_will_do = {
@@ -239,7 +244,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 2 y = @2203 }
+			position = { x = 2 y = 12 }
 		}
 		
 		ai_will_do = {
@@ -264,7 +269,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 2 y = @2206 }
+			position = { x = 2 y = 18 }
 		}
 		
 		ai_will_do = {
@@ -277,13 +282,13 @@ technologies = {
 			be_torpedo_tech
 		}
 	}
-	## Offset of 2 instead of 1
+	
 	torpedo_enhance_1 = {
 		submarine = {
 			torpedo_attack = 0.2
 		}
 
-		gunboat = {
+		light_cruiser = {
 			torpedo_attack = 0.2
 		}
 
@@ -301,7 +306,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 4 y = @2195}
+			position = { x = 4 y = 3}
 		}
 
 		ai_will_do = {
@@ -319,7 +324,7 @@ technologies = {
 			torpedo_attack = 0.2
 		}
 
-		gunboat = {
+		light_cruiser = {
 			torpedo_attack = 0.2
 		}
 
@@ -337,7 +342,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 4 y = @2202}
+			position = { x = 4 y = 9}
 		}
 
 		ai_will_do = {
@@ -362,7 +367,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 4 y = @2205 }
+			position = { x = 4 y = 15 }
 		}
 
 		ai_will_do = {
@@ -375,14 +380,67 @@ technologies = {
 		}
 	}
 
+	snorkel_1 = {
+		enable_equipment_modules = { 
+			ship_sub_snorkel_1
+		}
+
+		path = {
+			leads_to_tech = snorkel_2
+			research_cost_coeff =1
+		}
+
+		research_cost = 1
+		start_year = 2202
+
+		folder = {
+			name = be_mtg_naval_folder
+			position = { x = 1 y = 9}
+		}
+
+		ai_will_do ={
+			factor = 1
+		}
+
+		categories ={
+			be_naval_equip
+			be_naval_tech
+			be_sub_tech
+		}
+	}
+
+	snorkel_2 = {
+		enable_equipment_modules = { 
+			ship_sub_snorkel_2
+		}
+
+		research_cost = 1
+		start_year = 2205
+
+		folder = {
+			name = be_mtg_naval_folder
+			position = { x = 1 y = 15}
+		}
+
+		ai_will_do ={
+			factor = 1
+		}
+
+		categories ={
+			be_naval_equip
+			be_naval_tech
+			be_sub_tech
+		}
+	}
+
 	## Gunboat Hulls
 	gunboat_1_hull = {
 		enable_equipments = {
-			ship_hull_gunboat_1
+			ship_hull_cruiser_1
 		}
 
 		enable_equipment_modules = {
-			ship_engine_light_1
+			light_ship_engine_1
 		}
 
 		path = {
@@ -422,11 +480,11 @@ technologies = {
 
 	gunboat_2_hull = {
 		enable_equipments = {
-			ship_hull_gunboat_2
+			ship_hull_cruiser_2
 		}
 
 		enable_equipment_modules = {
-			ship_engine_light_2
+			light_ship_engine_2
 		}
 
 		path = {
@@ -456,11 +514,11 @@ technologies = {
 
 	gunboat_3_hull = {
 		enable_equipments = {
-			ship_hull_gunboat_3
+			ship_hull_cruiser_3
 		}
 
 		enable_equipment_modules = {
-			ship_engine_light_3
+			light_ship_engine_3
 		}
 
 		path = {
@@ -490,11 +548,11 @@ technologies = {
 
 	gunboat_4_hull = {
 		enable_equipments = {
-			ship_hull_gunboat_4
+			ship_hull_cruiser_4
 		}
 
 		enable_equipment_modules = {
-			ship_engine_light_4
+			light_ship_engine_4
 		}
 
 		research_cost = 1.5
@@ -519,7 +577,9 @@ technologies = {
 
 	## Gunboat Techs
 	range_upgrade_1 = {
-		##MODIFIER GOES HERE
+		enable_equipment_modules = {
+			ship_engine_light_gunboat_1
+		}
 
 		research_cost = 1.5
 		
@@ -532,7 +592,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 2 y = @2195}
+			position = { x = 2 y = 0}
 		}
 
 		ai_will_do = {
@@ -546,7 +606,9 @@ technologies = {
 	}
 
 	range_upgrade_2 = {
-		##MODIFIER GOES HERE
+		enable_equipment_modules = {
+			ship_engine_light_gunboat_2
+		}
 
 		research_cost = 1.5
 		
@@ -559,7 +621,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 2 y = @2202}
+			position = { x = 2 y = 9}
 		}
 
 		ai_will_do = {
@@ -573,7 +635,9 @@ technologies = {
 	}
 
 	range_upgrade_3 = {
-		##MODIFIER GOES HERE
+		enable_equipment_modules = {
+			ship_engine_light_gunboat_3
+		}
 
 		research_cost = 1.5
 		
@@ -581,7 +645,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 2 y = @2205}
+			position = { x = 2 y = 15}
 		}
 
 		ai_will_do = {
@@ -613,7 +677,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 4 y = @2200}
+			position = { x = 4 y = 1}
 		}
 
 		ai_will_do = {
@@ -645,7 +709,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 4 y = @2203}
+			position = { x = 4 y = 9}
 		}
 
 		ai_will_do = {
@@ -677,7 +741,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 4 y = @2206}
+			position = { x = 4 y = 18}
 		}
 
 		ai_will_do = {
@@ -693,11 +757,11 @@ technologies = {
 	## Destroyer Hulls
 	destroyer_1_hull = {
 		enable_equipments = {
-			ship_hull_destroyer_1
+			ship_hull_light_1
 		}
 
 		enable_equipment_modules = {
-			ship_engine_light_1
+			light_ship_engine_1
 		}
 
 		path = {
@@ -742,11 +806,11 @@ technologies = {
 
 	destroyer_2_hull = {
 		enable_equipments = {
-			ship_hull_destroyer_2
+			ship_hull_light_2
 		}
 
 		enable_equipment_modules = {
-			ship_engine_light_2
+			light_ship_engine_2
 		}
 
 		path = {
@@ -776,11 +840,11 @@ technologies = {
 
 	destroyer_3_hull = {
 		enable_equipments = {
-			ship_hull_destroyer_3
+			ship_hull_light_3
 		}
 
 		enable_equipment_modules = {
-			ship_engine_light_3
+			light_ship_engine_3
 		}
 
 		path = {
@@ -810,11 +874,11 @@ technologies = {
 
 	destroyer_4_hull = {
 		enable_equipments = {
-			ship_hull_destroyer_4
+			ship_hull_light_4
 		}
 
 		enable_equipment_modules = {
-			ship_engine_light_4
+			light_ship_engine_4
 		}
 
 		research_cost = 1.5
@@ -857,7 +921,7 @@ technologies = {
 		
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 2 y = @2190}
+			position = { x = 2 y = 0}
 		}
 
 		ai_will_do = {
@@ -890,7 +954,7 @@ technologies = {
 		
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 2 y = @2200}
+			position = { x = 2 y = 6}
 		}
 
 		ai_will_do = {
@@ -923,7 +987,7 @@ technologies = {
 		
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 2 y = @2203}
+			position = { x = 2 y = 12}
 		}
 
 		ai_will_do = {
@@ -951,7 +1015,7 @@ technologies = {
 		
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 2 y = @2206}
+			position = { x = 2 y = 18}
 		}
 
 		ai_will_do = {
@@ -974,7 +1038,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 4 y = @2190}
+			position = { x = 1 y = 2} #Move it up and to the left
 		}
 
 		ai_will_do = {
@@ -1004,7 +1068,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 6 y = @2190}
+			position = { x = 4 y = 1}
 		}
 
 		ai_will_do = {
@@ -1034,7 +1098,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 6 y = @2203}
+			position = { x = 4 y = 12}
 		}
 
 		ai_will_do = {
@@ -1051,11 +1115,12 @@ technologies = {
 	## Battlecruiser Hull
 	battlecruiser_1_hull = {
 		enable_equipments = {
-			ship_hull_battlecruiser_1
+			ship_hull_heavy_1
 		}
 
 		enable_equipment_modules = {
-			ship_engine_heavy_1
+			heavy_ship_engine_1
+			ship_armor_battlecruiser_0
 		}
 
 		path = {
@@ -1090,11 +1155,11 @@ technologies = {
 
 	battlecruiser_2_hull = {
 		enable_equipments = {
-			ship_hull_battlecruiser_2
+			ship_hull_heavy_2
 		}
 
 		enable_equipment_modules = {
-			ship_engine_heavy_2
+			heavy_ship_engine_2
 		}
 
 		path = {
@@ -1124,11 +1189,11 @@ technologies = {
 
 	battlecruiser_3_hull = {
 		enable_equipments = {
-			ship_hull_battlecruiser_3
+			ship_hull_heavy_3
 		}
 
 		enable_equipment_modules = {
-			ship_engine_heavy_3
+			heavy_ship_engine_3
 		}
 
 		path = {
@@ -1158,11 +1223,11 @@ technologies = {
 
 	battlecruiser_4_hull = {
 		enable_equipments = {
-			ship_hull_battlecruiser_4
+			ship_hull_heavy_4
 		}
 
 		enable_equipment_modules = {
-			ship_engine_heavy_4
+			heavy_ship_engine_4
 		}
 
 		research_cost = 1.5
@@ -1202,7 +1267,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 2 y = @2195}
+			position = { x = 2 y = 3}
 		}
 
 		ai_will_do = {
@@ -1221,10 +1286,6 @@ technologies = {
 			ship_armor_battlecruiser_2
 		}
 
-		path = {
-			leads_to_tech = battlecruiser_armor_3
-			research_cost_coeff = 1
-		}
 
 		research_cost = 1.5
 		
@@ -1232,32 +1293,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = 2 y = @2202}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_battlecruiser_tech
-		}
-	}
-
-	battlecruiser_armor_3 = {
-		enable_equipment_modules = {
-			ship_armor_battlecruiser_3
-		}
-
-		research_cost = 1.5
-		
-		start_year = 2205
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = @2205}
+			position = { x = 2 y = 9}
 		}
 
 		ai_will_do = {
@@ -1274,7 +1310,7 @@ technologies = {
 	## Carrier Hull
 	carrier_1_hull = {
 		enable_equipments = {
-			ship_hull_be_carrier_1
+			ship_hull_carrier_1
 		}
 
 		enable_equipment_modules = {
@@ -1309,7 +1345,7 @@ technologies = {
 
 	carrier_2_hull = {
 		enable_equipments = {
-			ship_hull_be_carrier_2
+			ship_hull_carrier_2
 		}
 
 		enable_equipment_modules = {
@@ -1342,7 +1378,7 @@ technologies = {
 
 	carrier_3_hull = {
 		enable_equipments = {
-			ship_hull_be_carrier_3
+			ship_hull_carrier_3
 		}
 
 		enable_equipment_modules = {
@@ -1375,7 +1411,7 @@ technologies = {
 
 	carrier_4_hull = {
 		enable_equipments = {
-			ship_hull_be_carrier_4
+			ship_hull_carrier_4
 		}
 
 		enable_equipment_modules = {
@@ -1430,10 +1466,9 @@ technologies = {
 		}
 
 		enable_equipment_modules = {
-			ship_battery_light_1
-			ship_battery_medium_1
-			ship_battery_heavy_1
-			ship_secondaries_1
+			ship_light_battery_1
+			ship_medium_battery_1
+			ship_heavy_battery_1
 		}
 
 		folder = {
@@ -1454,7 +1489,7 @@ technologies = {
 	#Light Gun Tree
 	light_naval_gun_1 = {
 		enable_equipment_modules = {
-			ship_battery_light_2
+			ship_light_battery_2
 		}
 
 		path = {
@@ -1472,7 +1507,7 @@ technologies = {
 
 		folder = {
 			name = be_mtg_naval_folder
-			position = { x = -6 y = @2195}
+			position = { x = -6 y = 4}
 		}
 
 		ai_will_do = {
@@ -1488,7 +1523,7 @@ technologies = {
 
 	light_naval_gun_2 = {
 		enable_equipment_modules = {
-			ship_battery_light_2
+			ship_light_battery_3
 		}
 
 		path = {
@@ -1517,7 +1552,7 @@ technologies = {
 
 	light_naval_gun_3 = {
 		enable_equipment_modules = {
-			ship_battery_light_3
+			ship_light_battery_4
 		}
 
 		research_cost = 1
@@ -1540,7 +1575,7 @@ technologies = {
 	}
 
 	light_shell_1 = {
-		gunboat = {
+		light_cruiser = {
 			lg_attack = 0.05
 			lg_armor_piercing = 0.05
 		}
@@ -1550,7 +1585,7 @@ technologies = {
 			lg_armor_piercing = 0.05
 		}
 
-		battlecruiser = {
+		battleship = {
 			lg_attack = 0.05
 			lg_armor_piercing = 0.05
 		}
@@ -1589,7 +1624,7 @@ technologies = {
 	}
 
 	light_shell_2 = {
-		gunboat = {
+		light_cruiser = {
 			lg_attack = 0.05
 			lg_armor_piercing = 0.05
 		}
@@ -1599,7 +1634,7 @@ technologies = {
 			lg_armor_piercing = 0.05
 		}
 
-		battlecruiser = {
+		battleship = {
 			lg_attack = 0.05
 			lg_armor_piercing = 0.05
 		}
@@ -1635,7 +1670,7 @@ technologies = {
 	#Medium Gun Tree
 	medium_naval_gun_1 = {
 		enable_equipment_modules = {
-			ship_battery_medium_2
+			ship_medium_battery_2
 		}
 
 		path = {
@@ -1669,7 +1704,7 @@ technologies = {
 
 	medium_naval_gun_2 = {
 		enable_equipment_modules = {
-			ship_battery_medium_2
+			ship_medium_battery_3
 		}
 
 		path = {
@@ -1698,7 +1733,7 @@ technologies = {
 
 	medium_naval_gun_3 = {
 		enable_equipment_modules = {
-			ship_battery_medium_3
+			ship_medium_battery_4
 		}
 
 		research_cost = 1
@@ -1721,7 +1756,7 @@ technologies = {
 	}
 
 	medium_shell_1 = {
-		gunboat = {
+		light_cruiser = {
 			lg_attack = 0.05
 			lg_armor_piercing = 0.05
 		}
@@ -1760,7 +1795,7 @@ technologies = {
 	}
 
 	medium_shell_2 = {
-		gunboat = {
+		light_cruiser = {
 			lg_attack = 0.05
 			lg_armor_piercing = 0.05
 		}
@@ -1796,7 +1831,7 @@ technologies = {
 	#Heavy Gun Tree
 	heavy_naval_gun_1 = {
 		enable_equipment_modules = {
-			ship_battery_heavy_2
+			ship_heavy_battery_2
 		}
 
 		path = {
@@ -1830,7 +1865,7 @@ technologies = {
 
 	heavy_naval_gun_2 = {
 		enable_equipment_modules = {
-			ship_battery_heavy_2
+			ship_heavy_battery_3
 		}
 
 		path = {
@@ -1859,7 +1894,7 @@ technologies = {
 
 	heavy_naval_gun_3 = {
 		enable_equipment_modules = {
-			ship_battery_heavy_3
+			ship_heavy_battery_4
 		}
 
 		research_cost = 1
@@ -1882,7 +1917,7 @@ technologies = {
 	}
 
 	heavy_shell_1 = {
-		battlecruiser = {
+		battleship = {
 			lg_attack = 0.05
 			lg_armor_piercing = 0.05
 		}
@@ -1921,7 +1956,7 @@ technologies = {
 	}
 
 	heavy_shell_2 = {
-		battlecruiser = {
+		battleship = {
 			lg_attack = 0.05
 			lg_armor_piercing = 0.05
 		}
@@ -1957,7 +1992,7 @@ technologies = {
 	#Secondary Gun Tree
 	secondary_naval_gun_1 = {
 		enable_equipment_modules = {
-			ship_battery_secondary_2
+			ship_secondaries_1
 		}
 
 		path = {
@@ -1986,7 +2021,7 @@ technologies = {
 
 	secondary_naval_gun_2 = {
 		enable_equipment_modules = {
-			ship_battery_secondary_2
+			ship_secondaries_2
 		}
 
 		path = {
@@ -2015,11 +2050,11 @@ technologies = {
 
 	secondary_naval_gun_3 = {
 		enable_equipment_modules = {
-			ship_battery_secondary_3
+			dp_ship_secondaries
 		}
 
 		research_cost = 1
-		start_year = 2205
+		start_year = 2202
 
 		folder = {
 			name = be_mtg_naval_folder
@@ -2124,7 +2159,7 @@ technologies = {
 
 	#Fire control methods
 	ai_fire_software_1 = {
-		battlecruiser = {
+		battleship = {
 			lg_attack = 0.05
 			hg_attack = 0.05
 		}
@@ -2161,7 +2196,7 @@ technologies = {
 	}
 
 	ai_fire_software_2 = {
-		battlecruiser = {
+		battleship = {
 			lg_attack = 0.05
 			hg_attack = 0.05
 		}
@@ -2203,7 +2238,7 @@ technologies = {
 	}
 
 	ai_fire_software_3 = {
-		battlecruiser = {
+		battleship = {
 			lg_attack = 0.05
 			hg_attack = 0.05
 		}
@@ -2218,7 +2253,7 @@ technologies = {
 			hg_attack = 0.05
 		}
 
-		gunboat = {
+		light_cruiser = {
 			lg_attack = 0.05
 			hg_attack = 0.05
 		}
