@@ -10,37 +10,26 @@ focus_tree = {
 		}
 	}
 
-	continuous_focus_position = { x = 100 y = 1900 }
+	continuous_focus_position = { x = 300 y = 2400 }
 
 	focus = {
-		id = integr_win
-		icon = GFX_goal_integr_win
+		id = GER_party_orthodoxy
+		icon = GFX_goal_transhumanism_orthodoxy
 	
-		x = 12
-		y = 1
-
-		cost = 4
-		
-		completion_reward = {
-			add_stability = 0.05
-			add_political_power = 50
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = GER_initiative_will
-		icon = GFX_goal_GER_initiative_will
-	
-		x = 12
-		y = 2
+		x = 15
+		y = 5
 
 		cost = 4
 
 		prerequisite = {
-			focus = integr_win
+			focus = united_alliance
+		}
+
+		mutually_exclusive = {
+			focus = transhumanism_orthodoxy
+		}
+		mutually_exclusive = {
+			focus = transtranshumanism
 		}
 		
 		completion_reward = {
@@ -55,13 +44,15 @@ focus_tree = {
 		id = GER_party_expansion
 		icon = GFX_goal_GER_party_expansion
 	
-		x = 12
-		y = 5
+		x = 15
+		y = 7
 
 		cost = 4
 
 		prerequisite = {
 			focus = ebner_agenda
+			focus = GER_eva_rosenfeld
+			focus = GER_eugen_langer
 		}
 		
 		completion_reward = {
@@ -76,7 +67,7 @@ focus_tree = {
 		id = industrieprojekte
 		icon = GFX_goal_industrieprojekte
 
-		x = 12
+		x = 15
 		y = 0
 
 		cost = 4
@@ -90,10 +81,279 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = GER_german_minorities
+		icon = GFX_goal_GER_german_minorities
+
+		x = 15
+		y = 1
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_holland
+		icon = GFX_goal_GER_holland
+
+		x = 11
+		y = 2
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_german_minorities
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_land_reclamation_project
+		icon = GFX_goal_GER_german_arks_project
+
+		x = 11
+		y = 3
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_holland
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_new_dikes
+		icon = GFX_goal_GER_german_arks_build
+
+		x = 11
+		y = 4
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_land_reclamation_project
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_german_arks_project
+		icon = GFX_goal_GER_german_arks_project
+
+		x = 13
+		y = 3
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_denmark
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_german_arks_build
+		icon = GFX_goal_GER_german_arks_build
+
+		x = 13
+		y = 4
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_german_arks_project
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_denmark
+		icon = GFX_goal_GER_denmark
+
+		x = 13
+		y = 2
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_german_minorities
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_austria
+		icon = GFX_goal_GER_austria
+
+		x = 17
+		y = 2
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_german_minorities
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_swiss
+		icon = GFX_goal_GER_swiss
+
+		x = 19
+		y = 2
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_german_minorities
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_berlin_zurich
+		icon = GFX_goal_GER_berlin_vienna
+
+		x = 19
+		y = 3
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_swiss
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_swiss_industry
+		icon = GFX_goal_GER_austrian_industry
+
+		x = 19
+		y = 4
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_berlin_zurich
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_berlin_vienna
+		icon = GFX_goal_GER_berlin_vienna
+
+		x = 17
+		y = 3
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_austria
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_austrian_industry
+		icon = GFX_goal_GER_austrian_industry
+
+		x = 17
+		y = 4
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_berlin_vienna
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
 		id = wind_power
 		icon = GFX_goal_wind_power
 
-		x = 19
+		x = 25
 		y = 1
 
 		cost = 4
@@ -114,7 +374,7 @@ focus_tree = {
 		id = GER_recycling
 		icon = GFX_goal_GER_recycling
 
-		x = 15
+		x = 21
 		y = 1
 
 		cost = 4
@@ -135,7 +395,7 @@ focus_tree = {
 		id = GER_recycling_techniques
 		icon = GFX_goal_GER_recycling_techniques
 
-		x = 15
+		x = 21
 		y = 2
 
 		cost = 4
@@ -156,7 +416,7 @@ focus_tree = {
 		id = GER_recycling_complex
 		icon = GFX_goal_GER_recycling_complex
 
-		x = 15
+		x = 21
 		y = 3
 
 		cost = 4
@@ -177,7 +437,7 @@ focus_tree = {
 		id = GER_recycling_miracle
 		icon = GFX_goal_GER_recycling_miracle
 
-		x = 15
+		x = 21
 		y = 4
 
 		cost = 4
@@ -198,7 +458,7 @@ focus_tree = {
 		id = reneveable_components
 		icon = GFX_goal_reneveable_components 
 
-		x = 19
+		x = 25
 		y = 2
 
 		cost = 4
@@ -219,7 +479,7 @@ focus_tree = {
 		id = preparing_terrain
 		icon = GFX_goal_GER_preparing_terrain
 
-		x = 19
+		x = 25
 		y = 3
 
 		cost = 4
@@ -240,7 +500,7 @@ focus_tree = {
 		id = power_of_wind
 		icon = GFX_goal_power_of_wind
 
-		x = 19
+		x = 25
 		y = 4
 
 		cost = 4
@@ -345,8 +605,8 @@ focus_tree = {
 		id = befriend_czechia
 		icon = GFX_goal_generic_approach2
 
-		x = 13
-		y = 7
+		x = 16
+		y = 9
 
 		cost = 4
 		
@@ -366,8 +626,8 @@ focus_tree = {
 		id = befriend_poland
 		icon = GFX_goal_generic_approach2
 
-		x = 12
-		y = 6
+		x = 15
+		y = 8
 
 		cost = 4
 		
@@ -387,8 +647,8 @@ focus_tree = {
 		id = befriend_slovakia
 		icon = GFX_goal_generic_approach2
 
-		x = 11
-		y = 7
+		x = 14
+		y = 9
 
 		cost = 4
 		
@@ -408,8 +668,8 @@ focus_tree = {
 		id = befriend_baltic
 		icon = GFX_goal_generic_approach2
 
-		x = 15
-		y = 7
+		x = 18
+		y = 9
 
 		cost = 4
 		
@@ -429,8 +689,8 @@ focus_tree = {
 		id = befriend_hungary
 		icon = GFX_goal_generic_approach2
 
-		x = 9
-		y = 7
+		x = 12
+		y = 9
 
 		cost = 4
 		
@@ -450,8 +710,8 @@ focus_tree = {
 		id = GER_support_vostaslavia
 		icon = GFX_goal_GER_support_vostaslavia
 
-		x = 10
-		y = 10
+		x = 13
+		y = 12
 
 		cost = 4
 		
@@ -471,8 +731,8 @@ focus_tree = {
 		id = GER_integr_ambassadors
 		icon = GFX_goal_GER_integr_ambassadors
 
-		x = 10
-		y = 8
+		x = 13
+		y = 10
 
 		cost = 4
 		
@@ -482,6 +742,8 @@ focus_tree = {
 
 		prerequisite = {
 			focus = ebner_agenda
+			focus = GER_eva_rosenfeld
+			focus = GER_eugen_langer
 		}
 	
 		ai_will_do = {
@@ -492,8 +754,8 @@ focus_tree = {
 		id = GER_align_vostaslavia
 		icon = GFX_goal_GER_align_vostaslavia
 
-		x = 10
-		y = 9
+		x = 13
+		y = 11
 
 		cost = 4
 		
@@ -513,8 +775,8 @@ focus_tree = {
 		id = GER_east_intervention
 		icon = GFX_goal_GER_east_intervention
 
-		x = 10
-		y = 11
+		x = 13
+		y = 13
 
 		cost = 4
 		
@@ -534,8 +796,8 @@ focus_tree = {
 		id = GER_stabilising_east
 		icon = GFX_goal_GER_stabilising
 
-		x = 10
-		y = 12
+		x = 13
+		y = 14
 
 		cost = 4
 		
@@ -555,8 +817,8 @@ focus_tree = {
 		id = GER_communalists_in_government
 		icon = GFX_goal_GER_support_communalists
 
-		x = 14
-		y = 8
+		x = 17
+		y = 10
 
 		cost = 4
 		
@@ -566,6 +828,8 @@ focus_tree = {
 
 		prerequisite = {
 			focus = ebner_agenda
+			focus = GER_eva_rosenfeld
+			focus = GER_eugen_langer
 		}
 	
 		ai_will_do = {
@@ -573,11 +837,11 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = GER_codemn_jugoslavija
+		id = GER_condemn_jugoslavija
 		icon = GFX_goal_GER_codemn_jugoslavija
 
-		x = 14
-		y = 9
+		x = 17
+		y = 11
 
 		cost = 4
 		
@@ -597,8 +861,8 @@ focus_tree = {
 		id = GER_support_communalists
 		icon = GFX_goal_GER_support_vostaslavia
 
-		x = 14
-		y = 10
+		x = 17
+		y = 12
 
 		cost = 4
 		
@@ -607,7 +871,7 @@ focus_tree = {
 		}
 
 		prerequisite = {
-			focus = GER_codemn_jugoslavija
+			focus = GER_condemn_jugoslavija
 		}
 	
 		ai_will_do = {
@@ -618,8 +882,8 @@ focus_tree = {
 		id = GER_balkan_intervention
 		icon = GFX_goal_GER_balkan_intervention
 
-		x = 14
-		y = 11
+		x = 17
+		y = 13
 
 		cost = 4
 		
@@ -639,8 +903,8 @@ focus_tree = {
 		id = GER_stabilising_south
 		icon = GFX_goal_GER_stabilising
 
-		x = 14
-		y = 12
+		x = 17
+		y = 14
 
 		cost = 4
 		
@@ -660,8 +924,8 @@ focus_tree = {
 		id = GER_joint_development
 		icon = GFX_goal_GER_joint_development
 
-		x = 12
-		y = 8
+		x = 15
+		y = 10
 
 		cost = 4
 		
@@ -693,8 +957,8 @@ focus_tree = {
 		id = GER_joint_defense
 		icon = GFX_goal_GER_joint_defense
 
-		x = 12
-		y = 9
+		x = 15
+		y = 11
 
 		cost = 4
 		
@@ -714,8 +978,8 @@ focus_tree = {
 		id = GER_joint_policies
 		icon = GFX_goal_GER_joint_policies
 
-		x = 12
-		y = 10
+		x = 15
+		y = 12
 
 		cost = 4
 		
@@ -735,8 +999,8 @@ focus_tree = {
 		id = ask_alliance
 		icon = GFX_goal_ask_alliance
 
-		x = 12
-		y = 11
+		x = 15
+		y = 13
 
 		cost = 4
 		
@@ -756,8 +1020,8 @@ focus_tree = {
 		id = GER_integr_england
 		icon = GFX_goal_GER_integr_england
 
-		x = 17
-		y = 5
+		x = 22
+		y = 7
 
 		cost = 4
 		
@@ -767,6 +1031,8 @@ focus_tree = {
 
 		prerequisite = {
 			focus = ebner_agenda
+			focus = GER_eva_rosenfeld
+			focus = GER_eugen_langer
 		}
 	
 		ai_will_do = {
@@ -777,8 +1043,29 @@ focus_tree = {
 		id = GER_berlin_dockyard
 		icon = GFX_goal_GER_berlin_dockyard
 
-		x = 18
-		y = 6
+		x = 24
+		y = 10
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_hannover_dockyard
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_naval_designers
+		icon = GFX_goal_GER_naval_designers
+
+		x = 24
+		y = 8
 
 		cost = 4
 		
@@ -795,11 +1082,95 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = GER_hannover_dockyard
+		icon = GFX_goal_GER_berlin_dockyard
+
+		x = 24
+		y = 9
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_naval_designers
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
 		id = GER_naval_combat
 		icon = GFX_goal_GER_naval_combat
 
-		x = 16
-		y = 6
+		x = 20
+		y = 8
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_integr_england
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_new_techniques
+		icon = GFX_goal_GER_new_techniques
+
+		x = 20
+		y = 10
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_amphibous_focus
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_amphibous_focus
+		icon = GFX_goal_GER_amphibous_focus
+
+		x = 20
+		y = 9
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_naval_combat
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_support_our_side
+		icon = GFX_goal_GER_support_our_side
+
+		x = 22
+		y = 8
 
 		cost = 4
 		
@@ -819,8 +1190,8 @@ focus_tree = {
 		id = GER_support_our_side
 		icon = GFX_goal_GER_support_our_side
 
-		x = 17
-		y = 7
+		x = 22
+		y = 8
 
 		cost = 4
 		
@@ -840,28 +1211,7 @@ focus_tree = {
 		id = GER_interve_ECW
 		icon = GFX_goal_GER_interve_ECW
 
-		x = 17
-		y = 8
-
-		cost = 4
-		
-		completion_reward = {
-
-		}
-
-		prerequisite = {
-			focus = GER_support_our_side
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = GER_attack_scotland
-		icon = GFX_goal_GER_attack_scotland
-
-		x = 17
+		x = 22
 		y = 9
 
 		cost = 4
@@ -879,11 +1229,95 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = GER_align_england
+		icon = GFX_goal_GER_align_vostaslavia
+
+		x = 22
+		y = 10
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_support_our_side
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_port_expansion
+		icon = GFX_goal_GER_german_arks_build
+
+		x = 20
+		y = 11
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_align_england
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_the_hydra
+		icon = GFX_goal_GER_the_hydra
+
+		x = 24
+		y = 11
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_align_england
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_attack_scotland
+		icon = GFX_goal_GER_attack_scotland
+
+		x = 22
+		y = 11
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_align_england
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
 		id = GER_attack_ireland
 		icon = GFX_goal_GER_attack_scotland
 
-		x = 17
-		y = 11
+		x = 22
+		y = 13
 
 		cost = 4
 		
@@ -903,8 +1337,29 @@ focus_tree = {
 		id = GER_attack_iceland
 		icon = GFX_goal_GER_attack_scotland
 
-		x = 16
-		y = 10
+		x = 21
+		y = 12
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_attack_scotland
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_attack_sweden
+		icon = GFX_goal_GER_attack_scotland
+
+		x = 19
+		y = 12
 
 		cost = 4
 		
@@ -924,8 +1379,8 @@ focus_tree = {
 		id = GER_attack_norway
 		icon = GFX_goal_GER_attack_scotland
 
-		x = 18
-		y = 10
+		x = 23
+		y = 12
 
 		cost = 4
 		
@@ -945,8 +1400,8 @@ focus_tree = {
 		id = GER_attack_greenland
 		icon = GFX_goal_GER_attack_scotland
 
-		x = 20
-		y = 10
+		x = 25
+		y = 12
 
 		cost = 4
 		
@@ -966,8 +1421,8 @@ focus_tree = {
 		id = GER_stabilising_north
 		icon = GFX_goal_GER_stabilising
 
-		x = 17
-		y = 12
+		x = 22
+		y = 14
 
 		cost = 4
 		
@@ -987,8 +1442,8 @@ focus_tree = {
 		id = GER_integr_italy
 		icon = GFX_goal_GER_integr_italy
 
-		x = 7
-		y = 5
+		x = 8
+		y = 7
 
 		cost = 4
 		
@@ -998,6 +1453,8 @@ focus_tree = {
 
 		prerequisite = {
 			focus = ebner_agenda
+			focus = GER_eva_rosenfeld
+			focus = GER_eugen_langer
 		}
 	
 		ai_will_do = {
@@ -1009,7 +1466,7 @@ focus_tree = {
 		icon = GFX_goal_GER_italian_cooperation
 
 		x = 6
-		y = 6
+		y = 8
 
 		cost = 4
 		
@@ -1023,6 +1480,69 @@ focus_tree = {
 
 		prerequisite = {
 			focus = GER_integr_italy
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_send_help
+		icon = GFX_goal_GER_support_vostaslavia
+
+		x = 6
+		y = 9
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_italian_cooperation
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_south_line
+		icon = GFX_goal_GER_south_line
+
+		x = 6
+		y = 10
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_send_help
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_shared_industry
+		icon = GFX_goal_GER_austrian_industry
+
+		x = 6
+		y = 11
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_send_help
 		}
 	
 		ai_will_do = {
@@ -1033,8 +1553,8 @@ focus_tree = {
 		id = GER_padanian_cooperation
 		icon = GFX_goal_GER_padanian_cooperation
 
-		x = 8
-		y = 6
+		x = 10
+		y = 8
 
 		cost = 4
 		
@@ -1055,11 +1575,74 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = GER_send_equipment
+		icon = GFX_goal_GER_support_vostaslavia
+
+		x = 10
+		y = 9
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_padanian_cooperation
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_munich_milano
+		icon = GFX_goal_GER_berlin_vienna
+
+		x = 10
+		y = 10
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_send_equipment
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_shared_military
+		icon = GFX_goal_GER_austrian_industry
+
+		x = 10
+		y = 11
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = GER_munich_milano
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
 		id = GER_defense_investment
 		icon = GFX_goal_GER_defense_investment
 
-		x = 7
-		y = 7
+		x = 8
+		y = 9
 
 		cost = 4
 		
@@ -1077,11 +1660,49 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = integr_win
+		icon = GFX_goal_integr_win
+
+		x = 15
+		y = 2
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_initiative_will
+		icon = GFX_goal_GER_initiative_will
+
+		x = 15
+		y = 3
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = integr_win
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
 		id = united_alliance
 		icon = GFX_goal_united_alliance
 
-		x = 12
-		y = 3
+		x = 15
+		y = 4
 
 		cost = 4
 		
@@ -1101,8 +1722,8 @@ focus_tree = {
 		id = green_tech
 		icon = GFX_goal_green_tech
 
-		x = 7
-		y = 9
+		x = 8
+		y = 11
 
 		cost = 4
 		
@@ -1122,8 +1743,8 @@ focus_tree = {
 		id = GER_shield_rhin
 		icon = GFX_goal_GER_shield_rhin
 
-		x = 6
-		y = 10
+		x = 7
+		y = 12
 
 		cost = 4
 		
@@ -1143,8 +1764,8 @@ focus_tree = {
 		id = GER_antiair_rhin
 		icon = GFX_goal_GER_antiair_rhin
 
-		x = 4
-		y = 10
+		x = 5
+		y = 12
 
 		cost = 4
 		
@@ -1164,8 +1785,29 @@ focus_tree = {
 		id = GER_meet_leaders
 		icon = GFX_goal_GER_meet_leaders
 
-		x = 8
-		y = 10
+		x = 9
+		y = 12
+
+		cost = 4
+		
+		completion_reward = {
+
+		}
+
+		prerequisite = {
+			focus = green_tech
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = GER_extensive_recruiting
+		icon = GFX_goal_GER_extensive_recruiting
+
+		x = 11
+		y = 12
 
 		cost = 4
 		
@@ -1185,8 +1827,8 @@ focus_tree = {
 		id = GER_stabilising_west
 		icon = GFX_goal_GER_stabilising
 
-		x = 7
-		y = 12
+		x = 8
+		y = 14
 
 		cost = 4
 		
@@ -1206,8 +1848,8 @@ focus_tree = {
 		id = condemn_elodie
 		icon = GFX_goal_condemn_elodie
 
-		x = 7
-		y = 11
+		x = 8
+		y = 13
 
 		cost = 4
 		
@@ -1227,8 +1869,8 @@ focus_tree = {
 		id = power_struggle
 		icon = GFX_goal_power_struggle
 
-		x = 7
-		y = 8
+		x = 8
+		y = 10
 
 		cost = 4
 		
@@ -1248,8 +1890,8 @@ focus_tree = {
 		id = befriend_franco_iberia
 		icon = GFX_goal_befriend_franco_iberia
 
-		x = 12
-		y = 12
+		x = 15
+		y = 14
 
 		cost = 4
 		
@@ -1269,8 +1911,8 @@ focus_tree = {
 		id = harmonize_europe
 		icon = GFX_goal_harmonize_europe
 
-		x = 12
-		y = 14
+		x = 15
+		y = 16
 
 		cost = 4
 		
@@ -1303,7 +1945,7 @@ focus_tree = {
 		icon = GFX_goal_transhumanism_orthodoxy
 
 		x = 2
-		y = 3
+		y = 5
 
 		cost = 4
 		
@@ -1312,7 +1954,14 @@ focus_tree = {
 		}
 
 		prerequisite = {
-			focus = GER_initiative_will
+			focus = united_alliance
+		}
+
+		mutually_exclusive = {
+			focus = GER_party_orthodoxy
+		}
+		mutually_exclusive = {
+			focus = transtranshumanism
 		}
 	
 		ai_will_do = {
@@ -1324,28 +1973,7 @@ focus_tree = {
 		icon = GFX_goal_GER_eva_rosenfeld
 
 		x = 2
-		y = 4
-
-		cost = 4
-		
-		completion_reward = {
-
-		}
-
-		prerequisite = {
-			focus = transhumanism_orthodoxy
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = GER_eva_rosenfeld
-		icon = GFX_goal_GER_eva_rosenfeld
-
-		x = 2
-		y = 4
+		y = 6
 
 		cost = 4
 		
@@ -1366,7 +1994,7 @@ focus_tree = {
 		icon = GFX_goal_GER_right_of_earth
 
 		x = 2
-		y = 5
+		y = 7
 
 		cost = 4
 		
@@ -1387,7 +2015,7 @@ focus_tree = {
 		icon = GFX_goal_GER_national_parks
 
 		x = 0
-		y = 5
+		y = 7
 
 		cost = 4
 		
@@ -1408,7 +2036,7 @@ focus_tree = {
 		icon = GFX_goal_GER_animal_rights
 
 		x = 0
-		y = 6
+		y = 8
 
 		cost = 4
 		
@@ -1429,7 +2057,7 @@ focus_tree = {
 		icon = GFX_goal_GER_close_zoos
 
 		x = 0
-		y = 7
+		y = 9
 
 		cost = 4
 		
@@ -1450,7 +2078,7 @@ focus_tree = {
 		icon = GFX_goal_GER_intensive_farming
 
 		x = 0
-		y = 8
+		y = 10
 
 		cost = 4
 		
@@ -1471,7 +2099,7 @@ focus_tree = {
 		icon = GFX_goal_GER_green_lifestyle
 
 		x = 4
-		y = 5
+		y = 7
 
 		cost = 4
 		
@@ -1492,7 +2120,7 @@ focus_tree = {
 		icon = GFX_goal_GER_urban_agriculture
 
 		x = 4
-		y = 6
+		y = 8
 
 		cost = 4
 		
@@ -1513,7 +2141,7 @@ focus_tree = {
 		icon = GFX_goal_GER_mindfulness_program
 
 		x = 4
-		y = 7
+		y = 9
 
 		cost = 4
 		
@@ -1534,7 +2162,7 @@ focus_tree = {
 		icon = GFX_goal_GER_plant_a_tree
 
 		x = 4
-		y = 8
+		y = 10
 
 		cost = 4
 		
@@ -1555,7 +2183,7 @@ focus_tree = {
 		icon = GFX_goal_GER_hannover_campaign
 
 		x = 2
-		y = 6
+		y = 8
 
 		cost = 4
 		
@@ -1576,7 +2204,7 @@ focus_tree = {
 		icon = GFX_goal_GER_munich_campaign
 
 		x = 2
-		y = 7
+		y = 9
 
 		cost = 4
 		
@@ -1597,7 +2225,7 @@ focus_tree = {
 		icon = GFX_goal_GER_berlin_campaign
 
 		x = 2
-		y = 8
+		y = 10
 
 		cost = 4
 		
@@ -1618,7 +2246,7 @@ focus_tree = {
 		icon = GFX_goal_GER_green_march
 
 		x = 2
-		y = 9
+		y = 11
 
 		cost = 4
 		
@@ -1639,7 +2267,7 @@ focus_tree = {
 		icon = GFX_goal_GER_name_of_earth
 
 		x = 2
-		y = 10
+		y = 12
 
 		cost = 4
 		
@@ -1659,8 +2287,8 @@ focus_tree = {
 		id = transtranshumanism
 		icon = GFX_goal_transhumanism_orthodoxy
 
-		x = 22
-		y = 3
+		x = 28
+		y = 5
 
 		cost = 4
 		
@@ -1669,7 +2297,14 @@ focus_tree = {
 		}
 
 		prerequisite = {
-			focus = GER_initiative_will
+			focus = united_alliance
+		}
+
+		mutually_exclusive = {
+			focus = GER_party_orthodoxy
+		}
+		mutually_exclusive = {
+			focus = transhumanism_orthodoxy
 		}
 	
 		ai_will_do = {
@@ -1680,8 +2315,8 @@ focus_tree = {
 		id = GER_eugen_langer
 		icon = GFX_goal_GER_eugen_langer
 
-		x = 22
-		y = 4
+		x = 28
+		y = 6
 
 		cost = 4
 		
@@ -1701,29 +2336,8 @@ focus_tree = {
 		id = GER_langer_manifesto
 		icon = GFX_goal_GER_langer_manifesto
 
-		x = 22
-		y = 5
-
-		cost = 4
-		
-		completion_reward = {
-
-		}
-
-		prerequisite = {
-			focus = GER_eugen_langer
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = GER_langer_manifesto
-		icon = GFX_goal_GER_langer_manifesto
-
-		x = 22
-		y = 5
+		x = 28
+		y = 7
 
 		cost = 4
 		
@@ -1743,8 +2357,8 @@ focus_tree = {
 		id = GER_human_genome
 		icon = GFX_goal_GER_human_genome
 
-		x = 24
-		y = 5
+		x = 30
+		y = 7
 
 		cost = 4
 		
@@ -1764,8 +2378,8 @@ focus_tree = {
 		id = GER_genetic_databases
 		icon = GFX_goal_GER_genetic_databases
 
-		x = 24
-		y = 6
+		x = 30
+		y = 8
 
 		cost = 4
 		
@@ -1785,8 +2399,8 @@ focus_tree = {
 		id = GER_langer_report
 		icon = GFX_goal_GER_langer_report
 
-		x = 24
-		y = 7
+		x = 30
+		y = 9
 
 		cost = 4
 		
@@ -1806,8 +2420,8 @@ focus_tree = {
 		id = GER_german_vaccine
 		icon = GFX_goal_GER_german_vaccine
 
-		x = 24
-		y = 8
+		x = 30
+		y = 10
 
 		cost = 4
 		
@@ -1827,8 +2441,8 @@ focus_tree = {
 		id = GER_tech_aktion
 		icon = GFX_goal_GER_tech_aktion
 
-		x = 20
-		y = 5
+		x = 26
+		y = 7
 
 		cost = 4
 		
@@ -1848,8 +2462,8 @@ focus_tree = {
 		id = GER_new_scientists
 		icon = GFX_goal_GER_new_scientists
 
-		x = 20
-		y = 6
+		x = 26
+		y = 8
 
 		cost = 4
 		
@@ -1869,8 +2483,8 @@ focus_tree = {
 		id = GER_quantum_processors
 		icon = GFX_goal_GER_quantum_processors
 
-		x = 20
-		y = 7
+		x = 26
+		y = 9
 
 		cost = 4
 		
@@ -1890,8 +2504,8 @@ focus_tree = {
 		id = GER_university_eurasia
 		icon = GFX_goal_GER_university_eurasia
 
-		x = 20
-		y = 8
+		x = 26
+		y = 10
 
 		cost = 4
 		
@@ -1911,8 +2525,8 @@ focus_tree = {
 		id = GER_condemn_populism
 		icon = GFX_goal_GER_condemn_populism
 
-		x = 22
-		y = 6
+		x = 28
+		y = 8
 
 		cost = 4
 		
@@ -1932,8 +2546,8 @@ focus_tree = {
 		id = GER_condemn_ineptocracy
 		icon = GFX_goal_GER_condemn_ineptocracy
 
-		x = 22
-		y = 7
+		x = 28
+		y = 9
 
 		cost = 4
 		
@@ -1953,8 +2567,8 @@ focus_tree = {
 		id = GER_condemn_democracy
 		icon = GFX_goal_GER_condemn_democracy
 
-		x = 22
-		y = 8
+		x = 28
+		y = 10
 
 		cost = 4
 		
@@ -1972,10 +2586,10 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_meeting_with_ebner
-		icon = GFX_goal_GER_meeting_with_ebner
+		icon = GFX_goal_GER_green_march
 
-		x = 22
-		y = 9
+		x = 28
+		y = 11
 
 		cost = 4
 		
@@ -1995,8 +2609,8 @@ focus_tree = {
 		id = GER_ger_technate
 		icon = GFX_goal_GER_ger_technate
 
-		x = 22
-		y = 10
+		x = 28
+		y = 12
 
 		cost = 4
 		
@@ -2016,8 +2630,8 @@ focus_tree = {
 		id = ebner_agenda
 		icon = GFX_goal_ebner_agenda
 
-		x = 12
-		y = 4
+		x = 15
+		y = 6
 
 		cost = 4
 		
@@ -2026,7 +2640,7 @@ focus_tree = {
 		}
 
 		prerequisite = {
-			focus = GER_initiative_will
+			focus = GER_party_orthodoxy
 		}
 	
 		ai_will_do = {
@@ -2121,7 +2735,7 @@ focus_tree = {
 		id = green_again
 		icon = GFX_goal_green_again
 
-		x = 17
+		x = 23
 		y = 2
 
 		cost = 4
@@ -2142,7 +2756,7 @@ focus_tree = {
 		id = GER_green_austerity
 		icon = GFX_goal_GER_green_austerity
 
-		x = 17
+		x = 23
 		y = 1
 
 		cost = 4
@@ -2247,7 +2861,7 @@ focus_tree = {
 		id = greener_than_ever
 		icon = GFX_goal_greener_than_ever
 
-		x = 17
+		x = 23
 		y = 3
 
 		cost = 4
@@ -2268,7 +2882,7 @@ focus_tree = {
 		id = the_greenest
 		icon = GFX_goal_the_greenest
 
-		x = 17
+		x = 23
 		y = 4
 
 		cost = 4
