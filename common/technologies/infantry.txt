@@ -1,112 +1,981 @@
 technologies = {
-	infantry_weapon = {
-		research_cost = 0.1
-		start_year = 2200
+	gun_equipment_1 = {
 		enable_equipments = {
-			infantry_equip
-		}
-		path = {
-            leads_to_tech = infantry_weapon_1
-            research_cost_coeff = 1
-        }
-		show_equipment_icon = yes
-		folder = {
-			name= infantry_folder
-			position = {
-				x = 0
-				y = 0
-			}
+			gun_equipment
 		}
 		
-	}
-	infantry_weapon_1 = {
-		research_cost = 0.1
-		start_year = 2200
-		enable_equipments = {
-			infantry_equip_0
-		}
 		path = {
-            leads_to_tech = infantry_weapon_2
-            research_cost_coeff = 1
-        }
-		show_equipment_icon = yes
-		folder = {
-			name= infantry_folder
-			position = {
-				x = 0
-				y = 8
-			}
+			leads_to_tech = gun_equipment_2
+			research_cost_coeff = 1
 		}
-		
-	}
-	infantry_weapon_upgrade = {
+
 		research_cost = 0.1
-		start_year = 2200
-		dependencies = {
-			infantry_weapon_1 = 1
-		}
-		on_research_complete = {
-			add_ideas =	infantry_weapon_upgrade_1
-		}
-		folder = {
-			name = infantry_folder
-			position = { 
-				x = -1.5
-				y = 8
-			}
-		}
-	}
-	infantry_weapon_upgrade_1 = {
-		research_cost = 2
-		start_year = 2200
-		dependencies = {
-			infantry_weapon_1 = 1
-		}
-		on_research_complete = {
-			add_ideas =	infantry_weapon_upgrade_11
-		}
-		folder = {
-			name = infantry_folder
-			position = { 
-				x = -1.5
-				y = 10
-			}
-		}
-	}
-	infantry_weapon_2 = {
-		research_cost = 2
-		start_year = 2200
-		enable_equipments = {
-			infantry_equip_1
-		}
-		path = {
-            leads_to_tech = infantry_weapon_3
-            research_cost_coeff = 1
-        }
+		start_year = 2180
+
 		show_equipment_icon = yes
 		folder = {
-			name= infantry_folder
-			position = {
-				x = 0
-				y = 16
-			}
+			name = be_infantry_folder
+			position = {x = 0 y = 0}
 		}
-	}
-	
-	infantry_weapon_3 = {
-		research_cost = 2
-		start_year = 2200
-		enable_equipments = {
-			infantry_equip_2
+
+		ai_will_do = {
+			factor = 1
 		}
-		show_equipment_icon = yes
-		folder = {
-			name= infantry_folder
-			position = {
-				x = 0
-				y = 24
-			}
+
+		categories = {
+			be_infantry_tech
 		}
 	}
 
+	gun_equipment_2 = {
+		enable_equipments = {
+			gun_equipment_1
+		}
+
+		path = {
+			leads_to_tech = gun_improvement_1
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1
+		start_year = 2200
+
+		show_equipment_icon = yes
+		folder = {
+			name = be_infantry_folder
+			position = { x = 0 y = 6}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+		}
+	}
+
+	gun_improvement_1 = {
+		category_light_infantry = {
+			soft_attack = 0.05
+		}
+
+		path = {
+			leads_to_tech = gun_equipment_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1
+		start_year = 2202
+
+		show_equipment_icon = yes
+
+		folder = {
+			name = be_infantry_folder
+			position = {x = 0 y = 9}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+		}
+	}
+
+	gun_equipment_3 = {
+		enable_equipments = {
+			gun_equipment_2
+		}
+
+		path = {
+			leads_to_tech = gun_improvement_2
+			research_cost_coeff = 1
+		}
+
+		start_year = 2203
+		research_cost = 1
+
+		folder = {
+			name = be_infantry_folder
+			position = {x = 0 y = 12}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+		}
+	}
+
+	gun_improvement_2 = {
+		category_light_infantry = {
+			soft_attack = 0.05
+		}
+
+		path = {
+			leads_to_tech = gun_equipment_4
+			research_cost_coeff = 1
+		}
+
+		start_year = 2204
+		research_cost = 1
+
+		folder = {
+			name = be_infantry_folder
+			position = {x = 0 y = 15}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+		}
+	}
+
+	gun_equipment_4 = {
+		enable_equipments = {
+			gun_equipment_3
+		}
+
+		path = {
+			leads_to_tech = gun_improvement_3
+			research_cost_coeff = 1
+		}
+
+		start_year = 2205
+		research_cost = 1
+
+		folder = {
+			name = be_infantry_folder
+			position = {x = 0 y = 18}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+		}
+	}
+
+	gun_improvement_3 = {
+		category_light_infantry = {
+			soft_attack = 0.05
+		}
+
+		start_year = 2206
+		research_cost = 1
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=0 y=21}		
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+		}
+	}
+
+	support_weapons_1 = {
+		infantry = {
+			defense = 0.05
+			breakthrough = 0.05
+		}
+
+		path = {
+			leads_to_tech = support_weapons_2
+			research_cost_coeff = 1
+		}
+
+		start_year = 2200
+
+		folder = {
+			name = be_infantry_folder
+			position = {x = 0 y = 0}
+		}
+
+		ai_will_do = {
+			factor =1
+		}
+
+		categories = {
+			be_infantry_tech
+			be_support_tech
+		}
+	}
+
+	support_weapons_2 = {
+		infantry = {
+			defense = 0.05
+			breakthrough = 0.05
+		}
+
+		path = {
+			leads_to_tech = support_weapons_3
+			research_cost_coeff = 1
+		}
+
+		start_year = 2202
+
+		folder = {
+			name = be_infantry_folder
+			position = {x = 0 y = 6}
+		}
+
+		ai_will_do = {
+			factor =1
+		}
+
+		categories = {
+			be_infantry_tech
+			be_support_tech
+		}
+	}
+
+	support_weapons_3 = {
+		infantry = {
+			defense = 0.05
+			breakthrough = 0.05
+		}
+
+		path = {
+			leads_to_tech = support_weapons_4
+			research_cost_coeff = 1
+		}
+
+		start_year = 2204
+
+		folder = {
+			name = be_infantry_folder
+			position = {x = 0 y = 12}
+		}
+
+		ai_will_do = {
+			factor =1
+		}
+
+		categories = {
+			be_infantry_tech
+			be_support_tech
+		}
+	}
+
+	support_weapons_4 = {
+		infantry = {
+			defense = 0.05
+			breakthrough = 0.05
+		}
+
+		start_year = 2206
+
+		folder = {
+			name = be_infantry_folder
+			position = {x = 0 y = 18}
+		}
+
+		ai_will_do = {
+			factor =1
+		}
+
+		categories = {
+			be_infantry_tech
+			be_support_tech
+		}
+	}
+
+	night_vision_1 = {
+		land_night_attack = 0.33
+
+		path = {
+			leads_to_tech = night_vision_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.5
+		start_year = 2202
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=0 y=0}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+		}
+	}
+
+	night_vision_2 = {
+		land_night_attack = 0.33
+
+		research_cost = 2.5
+		start_year = 2204
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=0 y=6}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+		}
+	}
+
+	infantry_anti_tank_1 = {
+		category_all_infantry = {
+			hard_attack = 0.25
+			ap_attack = 1
+		}
+
+		path = {
+			leads_to_tech = infantry_anti_tank_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2204
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=0 y=0}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+		}
+	}
+
+	infantry_anti_tank_2 = {
+		category_all_infantry = {
+			hard_attack = 0.25
+			ap_attack = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2205
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=0 y=3}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+		}
+	}
+
+	apc_1 = {
+		enable_equipments = {
+			apc_equipment_1
+		}
+
+		path = {
+			leads_to_tech = apc_2
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = apc_gun_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = apc_plating_1
+			research_cost_coeff = 1
+		}
+
+		start_year = 2200
+		research_cost = 1
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=0 y=0}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_apc_tech
+		}
+	}
+
+	apc_gun_1 = {
+		## Temp Stats
+		apc = {
+			soft_attack = 0.08
+			hard_attack = 0.08
+		}
+
+		start_year = 2201
+		research_cost = 1.5
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=-1 y=3}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_apc_tech
+		}
+	}
+
+	apc_plating_1 = {
+		apc = {
+			defense = 0.08
+		}
+
+		start_year = 2201
+		research_cost = 1.5
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=1 y=3}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_apc_tech
+		}
+	}
+
+	apc_2 = {
+		enable_equipments = {
+			apc_equipment_2
+		}
+
+		path = {
+			leads_to_tech = apc_gun_2
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = apc_plating_2
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = apc_3
+			research_cost_coeff = 1
+		}
+
+		start_year = 2202
+		research_cost = 1.5
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=0 y=6}		
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_apc_tech
+		}
+	}
+
+	apc_gun_2 = {
+		apc = {
+			soft_attack = 0.08
+			hard_attack = 0.08
+		}
+
+		start_year = 2203
+		research_cost = 1.5
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=-1 y=9}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_apc_tech
+		}
+	}
+
+	apc_plating_2 = {
+		apc = {
+			defense = 0.08
+		}
+
+		start_year = 2203
+		research_cost = 1.5
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=1 y=9}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_apc_tech
+		}
+	}
+
+	apc_3 = {
+		enable_equipments = {
+			apc_equipment_3
+		}
+
+		path = {
+			leads_to_tech = apc_gun_3
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = apc_plating_3
+			research_cost_coeff = 1
+		}
+
+		start_year = 2204
+		research_cost = 1.5
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=0 y=12}		
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_apc_tech
+		}
+	}
+
+	apc_gun_3 = {
+		apc = {
+			soft_attack = 0.08
+			hard_attack = 0.08
+		}
+
+		start_year = 2206
+		research_cost = 1.5
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=-1 y=18}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_apc_tech
+		}
+	}
+
+	apc_plating_3 = {
+		apc = {
+			defense = 0.08
+		}
+
+		start_year = 2206
+		research_cost = 1.5
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=1 y=18}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_apc_tech
+		}
+	}
+
+	augment_equipment = {
+		path = {
+			leads_to_tech = prime_augment_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = support_augment_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = prime_augment_2
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = support_augment_2
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = prime_augment_3
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = support_augment_3
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = adaptation_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = performance_1
+			research_cost_coeff = 1
+		}
+
+		start_year = 2201
+		research_cost = 1
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=0 y=0}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_apc_tech
+		}
+	}
+
+	prime_augment_1 = {
+		## Effects: TODO later
+
+		start_year = 2202
+		research_cost = 1
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=-1 y=3}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+			be_support_tech
+		}
+	}
+
+	support_augment_1 = {
+		## Effects: TODO later
+
+		start_year = 2202
+		research_cost = 1
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=1 y=3}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+			be_support_tech
+		}
+	}
+
+	prime_augment_2 = {
+		## Effects: TODO later
+		start_year = 2204
+		research_cost = 1
+
+		dependencies = {
+			prime_augment_1 = 1
+		}
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=-1 y=9}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+			be_support_tech
+		}
+	}
+
+	support_augment_2 = {
+		## Effects: TODO later
+		start_year = 2204
+		research_cost = 1
+
+		dependencies = {
+			support_augment_1 = 1
+		}
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=1 y=9}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+			be_support_tech
+		}
+	}	
+
+	prime_augment_3 = {
+		## Effects: TODO later
+		start_year = 2206
+		research_cost = 1
+
+		dependencies = {
+			prime_augment_2 = 1
+		}
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=-1 y=15}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+			be_support_tech
+		}
+	}
+
+	support_augment_3 = {
+		## Effects: TODO later
+		start_year = 2206
+		research_cost = 1
+
+		dependencies = {
+			support_augment_2 = 1
+		}
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=1 y=15}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+			be_support_tech
+		}
+	}
+
+	adaptation_1 = {
+		category_special_forces = {
+			acclimatization_hot_climate_gain_factor = 0.05
+			acclimatization_cold_climate_gain_factor = 0.05
+			supply_consumption_factor = 0.11
+		}
+
+		path = {
+			leads_to_tech = adaptation_2
+			research_cost_coeff = 1
+		}
+
+		start_year = 2203
+		research_cost = 1
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=2 y=6}
+		}
+
+		XOR = {
+            performance_1
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+		}
+	}
+
+	performance_1 = {
+		category_special_forces = {
+			max_organisation = 5
+			defense = 0.05
+			soft_attack = 0.05
+		}
+
+		path = {
+			leads_to_tech = performance_2
+			research_cost_coeff = 1
+		}
+
+		start_year = 2203
+		research_cost = 1
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=4 y=6}
+		}
+
+		XOR = {
+			adaptation_1
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+		}
+	}
+
+	adaptation_2 = {
+		category_special_forces = {
+			acclimatization_hot_climate_gain_factor = 0.15
+			acclimatization_cold_climate_gain_factor = 0.15
+			supply_consumption_factor = 0.11
+		}
+		
+		path = {
+			leads_to_tech = organization
+			research_cost_coeff = 1
+		}
+
+		start_year = 2205
+		research_cost = 1
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=2 y=12}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+		}
+	}
+
+	performance_2 = {
+		category_special_forces = {
+			max_organisation = 10
+			defense = 0.1
+			soft_attack = 0.1
+		}
+		
+		path = {
+			leads_to_tech = organization
+			research_cost_coeff = 1
+		}
+
+		start_year = 2205
+		research_cost = 1
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=4 y=12}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+		}
+	}
+
+	organization = {
+		category_special_forces = {
+			acclimatization_hot_climate_gain_factor = 0.3
+			acclimatization_cold_climate_gain_factor = 0.3
+			supply_consumption_factor = 0.11
+			max_organisation = 15
+			defense = 0.15
+			attack = 0.15
+		}
+
+		start_year = 2206
+		research_cost = 1
+
+		folder = {
+			name = be_infantry_folder
+			position = {x=3 y=15}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_infantry_tech
+		}
+	}
 }
