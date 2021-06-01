@@ -16,11 +16,18 @@ scripted_gui = {
                     clr_country_flag = political_moment_flag
                 }
                 else = {
-                    set_country_flag = political_moment_flag
+                    ROOT = {
+                        set_country_flag = political_moment_flag
+                    }
                 }
             }
         }
         
+        triggers = {
+            politics_button_click_enabled = {
+                is_ai = NO
+            }
+        }
         ai_enabled = {
             always = yes
         }
@@ -35,9 +42,6 @@ scripted_gui = {
         }
         
         ai_weights = {
-            else = {
-                set_country_flag = political_moment_flag
-            }
         }
 	}
 }

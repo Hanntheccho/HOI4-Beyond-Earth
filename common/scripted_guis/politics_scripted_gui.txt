@@ -9,10 +9,890 @@ scripted_gui = {
         }
 		
 		effects = {
+            politics_close_click = {
+                ROOT = {
+                    clr_country_flag = political_moment_flag
+                }
+            }
+            politics_back_click= {
+                ROOT = {
+                    clr_country_flag = political_bills_flag
+                    clr_country_flag = economy_bills_flag
+                    clr_country_flag = military_bills_flag
+                    clr_country_flag = unique_bills_flag
+                }
+            }
+            politicalbills_click = {
+                ROOT = {
+                    set_country_flag = political_bills_flag
+                    clr_country_flag = economy_bills_flag
+                    clr_country_flag = military_bills_flag
+                    clr_country_flag = unique_bills_flag
+                }
+            }
+            bribe_politicians_button_click = {
+                add_political_power = -25
+                add_to_variable = { parliament_support = 10 }
+                add_to_variable = { corruption_variable = 5 }
+            }
+            welfare_programs_button_click = {
+                add_to_variable = { parliament_support = 5 }
+                add_political_power = -50
+                subtract_from_variable = { industrial_power = 50 }
+            }
+            nerve_stapling_button_click = {
+                add_to_variable = { parliament_support = 15 }
+                add_to_variable = { corruption_variable = -5 }
+                add_timed_idea = { idea = nerve_stapling_in_progress days = 40 }
+            }
+
+            increase_trade_law_button_click = {
+                parliament_support_ruling_party = yes
+                support_voracity_undecided_supremacy = yes
+                ROOT = {
+                    set_country_flag = increase_trade_law_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+            increase_conscription_button_click = {
+                parliament_support_ruling_party = yes
+                support_voracity_purity_supremacy = yes
+                ROOT = {
+                    set_country_flag = increase_conscription_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+            war_mobilization_button_click = {
+                parliament_support_ruling_party = yes
+                support_voracity_purity = yes
+                ROOT = {
+                    set_country_flag = war_mobilization_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+            decrease_trade_law_button_click = {
+                parliament_support_ruling_party = yes
+                support_mastery_harmony = yes
+                ROOT = {
+                    set_country_flag = decrease_trade_law_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+            decrease_conscription_button_click = {
+                parliament_support_ruling_party = yes
+                support_mastery_harmony = yes
+                ROOT = {
+                    set_country_flag = decrease_conscription_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+            international_intervention_button_click = {
+                parliament_support_ruling_party = yes
+                support_purity_undecided_supremacy = yes
+                ROOT = {
+                    set_country_flag = international_intervention_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+
+            economybills_click = {
+                ROOT = {
+                    set_country_flag = economy_bills_flag
+                    clr_country_flag = political_bills_flag
+                    clr_country_flag = military_bills_flag
+                    clr_country_flag = unique_bills_flag
+                }
+            }
+            military_industrial_complex_button_click = {
+                parliament_support_ruling_party = yes
+                support_voracity_purity_supremacy = yes
+                ROOT = {
+                    set_country_flag = military_industrial_complex_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+            business_relief_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = business_relief_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+            merchant_navy_draft_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = merchant_navy_draft_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+            military_industrial_integration_button_click = {
+                parliament_support_ruling_party = yes
+                support_voracity_purity_supremacy = yes
+                ROOT = {
+                    set_country_flag = military_industrial_integration_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+            maximized_utilisation_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = maximized_utilisation_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+            orbital_cleaning_initiative_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = orbital_cleaning_initiative_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+
+            militarybills_click = {
+                ROOT = {
+                    set_country_flag = military_bills_flag
+                    clr_country_flag = political_bills_flag
+                    clr_country_flag = economy_bills_flag
+                    clr_country_flag = unique_bills_flag
+                }
+            }
+            interservice_training_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = interservice_training_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+            democratized_logistics_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = democratized_logistics_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+            surveillance_expansion_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = surveillance_expansion_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+            native_pacification_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = native_pacification_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+            general_staff_expansion_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = general_staff_expansion_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+            research_hospital_bypass_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = research_hospital_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+            }
+
+            uniquebills_click = {
+                ROOT = {
+                    set_country_flag = unique_bills_flag
+                    clr_country_flag = political_bills_flag
+                    clr_country_flag = economy_bills_flag
+                    clr_country_flag = military_bills_flag
+                }
+            }
+            impossible_proposition_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = impossible_proposition_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+                subtract_from_variable = { parliament_support = 30 }
+                add_political_power = -40
+            }
+            controversial_proposition_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = controversial_proposition_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+                subtract_from_variable = { parliament_support = 20 }
+                add_political_power = -40
+            }
+            divisive_proposition_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = divisive_proposition_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+                subtract_from_variable = { parliament_support = 15 }
+                add_political_power = -40
+            }
+            partisan_proposition_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = partisan_proposition_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+                subtract_from_variable = { parliament_support = 10 }
+                add_political_power = -40
+            }
+            bipartisan_proposition_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = bipartisan_proposition_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+                subtract_from_variable = { parliament_support = 5 }
+                add_political_power = -40
+            }
+            popular_proposition_button_click = {
+                parliament_support_ruling_party = yes
+                ROOT = {
+                    set_country_flag = popular_proposition_hearing
+                }
+                ROOT = {
+                    set_variable = { hearing_time = 30 }
+                }
+                set_country_flag = law_hearing
+                add_political_power = -40
+            }
+
+            purgecorruption_click = {
+                add_political_power = -200
+                subtract_from_variable = { corruption_variable = 5 }
+            }
+
+            civilian_focus_click = {
+                subtract_from_variable = { military_civilian_slider_var = 16.5 }
+                add_to_variable = { civilian_chance = 0.1 }
+                subtract_from_variable = { military_chance = 0.1 }
+                subtract_from_variable = { industrial_power = 25 }
+            }
+
+            military_focus_click = {
+                add_to_variable = { military_civilian_slider_var = 16.5 }
+                add_to_variable = { military_chance = 0.1 }
+                subtract_from_variable = { civilian_chance = 0.1 }
+                subtract_from_variable = { industrial_power = 25 }
+            }
+
+            light_focus_click = {
+                add_to_variable = { light_heavy_slider_var = 16.5 }
+                add_to_variable = { light_chance = 0.1 }
+                subtract_from_variable = { heavy_chance = 0.1 }
+                subtract_from_variable = { industrial_power = 25 }
+            }
+
+            land_focus_click = {
+                subtract_from_variable = { land_naval_slider_var = 16.5 }
+                add_to_variable = { land_chance = 0.1 }
+                subtract_from_variable = { naval_chance = 0.1 }
+                subtract_from_variable = { industrial_power = 25 }
+            }
+
+            naval_focus_click = {
+                add_to_variable = { land_naval_slider_var = 16.5 }
+                add_to_variable = { naval_chance = 0.1 }
+                subtract_from_variable = { land_chance = 0.1 }
+                subtract_from_variable = { industrial_power = 25 }
+            }
+
+            heavy_focus_click = {
+                subtract_from_variable = { light_heavy_slider_var = 16.5 }
+                add_to_variable = { heavy_chance = 0.1 }
+                subtract_from_variable = { light_chance = 0.1 }
+                subtract_from_variable = { industrial_power = 25 }
+            }
+
+            increase_limit_click = {
+                subtract_from_variable = { industrial_power = 10 }
+                add_to_variable = { division_limit_extra = 4 }
+            }
+            align_warlords_click = {
+                add_to_variable = { division_limit_extra = 4 }
+                add_to_variable = { corruption_variable = 5 }
+            }
 		}
         
         triggers = {
+            politics_back_visible = {
+                ROOT = {
+                    OR = {
+                        has_country_flag = political_bills_flag
+                        has_country_flag = economy_bills_flag
+                        has_country_flag = military_bills_flag
+                        has_country_flag = unique_bills_flag
+                    }
+                }
+            }
+            currentbillnone_visible = {
+                NOT = {
+                    has_country_flag = law_hearing
+                }
+            }
+            currentbillyes_visible = {
+                has_country_flag = law_hearing
+            }
+            bribe_politicians_button_visible = {
+                ROOT = {
+                    has_country_flag = law_hearing
+                }
+            }
+            welfare_programs_button_visible = {
+                ROOT = {
+                    has_country_flag = law_hearing
+                }
+            }
+            nerve_stapling_button_visible = {
+                ROOT = {
+                    has_country_flag = law_hearing
+                }
+            }
+            increase_trade_law_button_visible = {
+                ROOT = {
+                    has_country_flag = political_bills_flag
+                }
+            }
+            increase_conscription_button_visible = {
+                ROOT = {
+                    has_country_flag = political_bills_flag
+                }
+            }
+            war_mobilization_button_visible = {
+                ROOT = {
+                    has_country_flag = political_bills_flag
+                }
+            }
+            decrease_trade_law_button_visible = {
+                ROOT = {
+                    has_country_flag = political_bills_flag
+                }
+            }
+            decrease_conscription_button_visible = {
+                ROOT = {
+                    has_country_flag = political_bills_flag
+                }
+            }
+            international_intervention_button_visible = {
+                ROOT = {
+                    has_country_flag = political_bills_flag
+                }
+            }
+            military_industrial_complex_button_visible = {
+                ROOT = {
+                    has_country_flag = economy_bills_flag
+                }
+            }
+            business_relief_button_visible = {
+                ROOT = {
+                    has_country_flag = economy_bills_flag
+                }
+            }
+            merchant_navy_draft_button_visible = {
+                ROOT = {
+                    has_country_flag = economy_bills_flag
+                }
+            }
+            military_industrial_integration_button_visible = {
+                ROOT = {
+                    has_country_flag = economy_bills_flag
+                }
+            }
+            maximized_utilisation_button_visible = {
+                ROOT = {
+                    has_country_flag = economy_bills_flag
+                }
+            }
+            orbital_cleaning_initiative_button_visible = {
+                ROOT = {
+                    has_country_flag = economy_bills_flag
+                }
+            }
+            interservice_training_button_visible = {
+                ROOT = {
+                    has_country_flag = military_bills_flag
+                }
+            }
+            democratized_logistics_button_visible = {
+                ROOT = {
+                    has_country_flag = military_bills_flag
+                }
+            }
+            surveillance_expansion_button_visible = {
+                ROOT = {
+                    has_country_flag = military_bills_flag
+                }
+            }
+            native_pacification_button_visible = {
+                ROOT = {
+                    has_country_flag = military_bills_flag
+                }
+            }
+            general_staff_expansion_button_visible = {
+                ROOT = {
+                    has_country_flag = military_bills_flag
+                }
+            }
+            research_hospital_bypass_button_visible = {
+                ROOT = {
+                    has_country_flag = military_bills_flag
+                }
+            }
+            impossible_proposition_button_visible = {
+                ROOT = {
+                    has_country_flag = unique_bills_flag
+                }
+            }
+            controversial_proposition_button_visible = {
+                ROOT = {
+                    has_country_flag = unique_bills_flag
+                }
+            }
+            divisive_proposition_button_visible = {
+                ROOT = {
+                    has_country_flag = unique_bills_flag
+                }
+            }
+            partisan_proposition_button_visible = {
+                ROOT = {
+                    has_country_flag = unique_bills_flag
+                }
+            }
+            bipartisan_proposition_button_visible = {
+                ROOT = {
+                    has_country_flag = unique_bills_flag
+                }
+            }
+            popular_proposition_button_visible = {
+                ROOT = {
+                    has_country_flag = unique_bills_flag
+                }
+            }
+
+            politicalbills_click_enabled = {
+                NOT = {
+                    has_idea = anarchy_style
+                }
+            }
+            economybills_click_enabled = {
+                NOT = {
+                    has_idea = anarchy_style
+                }
+            }
+            militarybills_click_enabled = {
+                NOT = {
+                    has_idea = anarchy_style
+                }
+            }
+            uniquebills_click_enabled = {
+                NOT = {
+                    has_idea = anarchy_style
+                }
+            }
+            bribe_politicians_button_click_enabled = {
+                AND = {
+                    has_political_power > 24
+                    check_variable = { parliament_support < 90 }
+                }
+            }
+            welfare_programs_button_click_enabled = {
+                AND = {
+                    has_political_power > 49
+                    check_variable = { parliament_support < 95 }
+                    check_variable = { industrial_power > 49 }
+                }
+            }
+            nerve_stapling_button_click_enabled = {
+                AND = {
+                    check_variable = { parliament_support < 85 }
+                    has_tech = punishment_spheres
+                    check_variable = { corruption_variable > 5 }
+                }
+                NOT = {
+                    has_idea = nerve_stapling_in_progress
+                }
+            }
+            increase_trade_law_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        has_country_flag = law_hearing
+                    }
+                    has_idea = free_trade
+                }
+            }
+            increase_conscription_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        has_country_flag = law_hearing
+                    }
+                    has_idea = scraping_the_barrel
+                }
+            }
+            war_mobilization_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        OR = {
+                            has_country_flag = law_hearing
+                            has_country_flag = war_mobilisation_passed
+                        }
+                    }
+                }	
+                threat > 0.49
+            }
+            decrease_trade_law_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        has_country_flag = law_hearing
+                    }
+                    has_idea = closed_economy
+                }
+            }
+            decrease_conscription_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        has_country_flag = law_hearing
+                    }
+                    has_idea = volunteer_only
+                }
+            }
+            international_intervention_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        OR = {
+                            has_country_flag = international_intervention_passed
+                            has_country_flag = law_hearing
+                        }
+                    }
+                }
+            }
+            military_industrial_complex_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        OR = { 
+                            has_country_flag = law_hearing
+                            has_country_flag = civilian_military_unlocked
+                        }
+                    }
+                }
+            }
+            business_relief_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        has_country_flag = law_hearing
+                    }
+                }
+                num_of_factories > 99
+            }
+            merchant_navy_draft_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        has_country_flag = law_hearing
+                    }
+                }
+                num_of_factories > 99
+            }
+            military_industrial_integration_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        OR = { 
+                            has_country_flag = law_hearing
+                            has_country_flag = land_naval_unlocked
+                        }
+                    }
+                }
+                ROOT = {
+                    has_country_flag = civilian_military_unlocked
+                }
+            }
+            maximized_utilisation_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        has_country_flag = law_hearing
+                    }
+                }
+                num_of_factories > 99
+            }
+            orbital_cleaning_initiative_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        has_country_flag = law_hearing
+                    }
+                }
+                num_of_factories > 149
+            }
+            interservice_training_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        has_country_flag = law_hearing
+                    }
+                }
+            }
+            democratized_logistics_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        has_country_flag = law_hearing
+                    }
+                }
+                check_variable = { division_limit < 186 }
+            }
+            surveillance_expansion_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        has_country_flag = law_hearing
+                    }
+                    has_idea = surveillance_expansion
+                }
+            }
+            native_pacification_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        has_country_flag = law_hearing
+                    }
+                }
+                any_owned_state = {
+                    NOT = {
+                        is_core_of = ROOT
+                    }
+                }
+            }
+            general_staff_expansion_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        has_country_flag = law_hearing
+                    }
+                    has_idea = general_staff_expansion
+                }
+            }
+            research_hospital_bypass_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                        has_country_flag = law_hearing
+                    }
+                    has_idea = research_hospitals
+                }
+            }
+            impossible_proposition_button_click_enabled = {
+                NOT = {
+                    OR = {
+                        ROOT = {
+                            has_country_flag = law_hearing
+                        }
+                        ROOT = {
+                            has_country_flag = impossible_proposition_passed
+                        }
+                    }
+                }
+                has_political_power > 39
+            }
+            controversial_proposition_button_click_enabled = {
+                NOT = {
+                    OR = {
+                        ROOT = {
+                            has_country_flag = law_hearing
+                        }
+                        ROOT = {
+                            has_country_flag = controversial_proposition_passed
+                        }
+                    }
+                }
+                has_political_power > 39
+            }
+            divisive_proposition_button_click_enabled = {
+                NOT = {
+                    OR = {
+                        ROOT = {
+                            has_country_flag = law_hearing
+                        }
+                        ROOT = {
+                            has_country_flag = divisive_proposition_passed
+                        }
+                    }
+                }
+                has_political_power > 39
+            }
+            partisan_proposition_button_click_enabled = {
+                NOT = {
+                    OR = {
+                        ROOT = {
+                            has_country_flag = law_hearing
+                        }
+                        ROOT = {
+                            has_country_flag = partisan_proposition_passed
+                        }
+                    }
+                }
+                has_political_power > 39
+            }
+            bipartisan_proposition_button_click_enabled = {
+                NOT = {
+                    OR = {
+                        ROOT = {
+                            has_country_flag = law_hearing
+                        }
+                        ROOT = {
+                            has_country_flag = bipartisan_proposition_passed
+                        }
+                    }
+                }
+                has_political_power > 39
+            }
+            popular_proposition_button_click_enabled = {
+                NOT = {
+                    OR = {
+                        ROOT = {
+                            has_country_flag = law_hearing
+                        }
+                        ROOT = {
+                            has_country_flag = popular_proposition_passed
+                        }
+                    }
+                }
+                has_political_power > 39
+            }
+            purgecorruption_click_enabled = {
+                has_political_power > 199
+                check_variable = { corruption_variable > 14 }
+            }
+
+            civilian_focus_click_enabled = {
+                ROOT = {
+                    has_country_flag = civilian_military_unlocked
+                }
+                check_variable = { civilian_chance < 1.2 }
+                check_variable = { industrial_power > 24 }
+            }
+            military_focus_click_enabled = {
+                ROOT = {
+                    has_country_flag = civilian_military_unlocked
+                }
+                check_variable = { military_chance < 1.2 }
+                check_variable = { industrial_power > 24 }
+            }
+            light_focus_click_enabled = {
+                check_variable = { light_chance < 1.2 }
+                check_variable = { industrial_power > 24 }
+            }
+            heavy_focus_click_enabled = {
+                check_variable = { heavy_chance < 1.2 }
+                check_variable = { industrial_power > 24 }
+            }
+            land_focus_click_enabled = {
+                ROOT = {
+                    has_country_flag = land_naval_unlocked
+                }
+                check_variable = { land_chance < 1.2 }
+                check_variable = { industrial_power > 24 }
+            }
+            naval_focus_click_enabled = {
+                ROOT = {
+                    has_country_flag = land_naval_unlocked
+                }
+                check_variable = { naval_chance < 1.2 }
+                check_variable = { industrial_power > 24 }
+            }
+
+            increase_limit_click_enabled = {
+                check_variable = { industrial_power > 9 }
+                check_variable = { division_limit < 297 }
+            }
+            align_warlords_click_enabled = {
+                check_variable = { division_limit < 197 }
+            }
         }
+
+		properties = {
+			corruption_progressbar = {
+				frame = corruption_variable
+			}
+			military_civilian_slider = { #Start is at 555 and end is at 720; that's just my guess tho, feel free to test and, if necessary, change this. Also change the variables in on_actions. 
+				x = military_civilian_slider_var
+				y = 425
+			}
+			light_heavy_slider = {
+				x = light_heavy_slider_var
+				y = 455
+			}
+			land_naval_slider = {
+				x = land_naval_slider_var
+				y = 487
+			}
+		}
 		
 		dynamic_lists = {
 		}
