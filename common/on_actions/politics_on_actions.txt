@@ -1,0 +1,597 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            every_country = {
+                set_variable = { free_factory_in = 10 }
+                set_variable = { military_chance = 0 }
+                set_variable = { heavy_chance = 1 }
+                set_variable = { land_chance = 0 }
+                set_variable = { civilian_chance = 2 }
+                set_variable = { light_chance = 1 }
+                set_variable = { naval_chance = 0 }
+                set_variable = { military_civilian_slider_var = 555 }
+                set_variable = { light_heavy_slider_var = 637.5 }
+                set_variable = { land_naval_slider_var = 637.5 }
+                set_variable = { division_limit = num_of_factories }
+                set_variable = { division_limit_extra = 0 }
+                set_variable = { impossible_proposition_expire = -1 }
+                set_variable = { controversial_proposition_expire = -1 }
+                set_variable = { divisive_proposition_expire = -1 }
+                set_variable = { partisan_proposition_expire = -1 }
+                set_variable = { bipartisan_proposition_expire = -1 }
+                set_variable = { popular_proposition_expire = -1 }
+                clamp_variable = {
+                    var = division_limit
+                    min = 1
+                    max = 200
+                }
+                clamp_variable = {
+                    var = military_chance
+                    min = 0
+                    max = 2
+                }
+                clamp_variable = {
+                    var = heavy_chance
+                    min = 0
+                    max = 2
+                }
+                clamp_variable = {
+                    var = land_chance
+                    min = 0
+                    max = 2
+                }
+                clamp_variable = {
+                    var = civilian_chance
+                    min = 0
+                    max = 2
+                }
+                clamp_variable = {
+                    var = light_chance
+                    min = 0
+                    max = 2
+                }
+                clamp_variable = {
+                    var = naval_chance
+                    min = 0
+                    max = 2
+                }
+                clamp_variable = {
+                    var = military_civilian_slider_var
+                    min = 555
+                    max = 720
+                }
+                clamp_variable = {
+                    var = light_heavy_slider_var
+                    min = 555
+                    max = 720
+                }
+                clamp_variable = {
+                    var = land_naval_slider_var
+                    min = 555
+                    max = 720
+                }
+
+                set_variable = { corruption_variable = 11 }
+                clamp_variable = {
+                    var = corruption_variable
+                    min = 1
+                    max = 100
+                }
+                add_dynamic_modifier = {
+                    modifier = corruption_modifier
+                }
+            }
+        }
+    }
+    on_daily = {
+        effect = {
+            subtract_from_variable = { hearing_time = 1 }
+            subtract_from_variable = { free_factory_in = 1 }
+            if = {
+                limit = {
+                    check_variable = { free_factory_in = 0 }
+                }
+                country_event = { id = free_factory_event.1 } 
+            }
+            if = {
+                limit = {
+                    enough_parliament_support = yes
+                    check_variable = { hearing_time = 0 }   
+                    has_country_flag = increase_trade_law_hearing
+                }
+                country_event = { id = politics_event.2 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = increase_conscription_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.3 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = war_mobilization_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.4 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = decrease_trade_law_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.5 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = decrease_conscription_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.6 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = international_intervention_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.7 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = military_industrial_complex_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.8 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = business_relief_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.9 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = merchant_navy_draft_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.10 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = military_industrial_integration_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.11 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = maximized_utilisation_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.12 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = orbital_cleaning_initiative_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.13 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = interservice_training_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.14 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = democratized_logistics_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.15 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = surveillance_expansion_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.16 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = native_pacification_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.17 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = general_staff_expansion_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.18 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    has_country_flag = research_hospital_hearing
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.19 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = yes
+                    check_variable = { hearing_time = 0 }
+                    OR = {
+                        has_country_flag = impossible_proposition_hearing
+                        has_country_flag = controversial_proposition_hearing
+                        has_country_flag = divisive_proposition_hearing
+                        has_country_flag = partisan_proposition_hearing
+                        has_country_flag = bipartisan_proposition_hearing
+                        has_country_flag = popular_proposition_hearing
+                    }
+                }
+                country_event = { id = politics_event.20 days = 0 }
+            }
+            else_if = {
+                limit = {
+                    enough_parliament_support = no
+                    check_variable = { hearing_time = 0 }   
+                }
+                country_event = { id = politics_event.1 days = 0 }
+            }
+
+            if = {
+                limit = {
+                    check_variable = { parliament_support < 0 }
+                }
+                set_variable = { parliament_support = 0 }
+            }
+
+            if = {
+                limit = {
+                    OR = {
+                        check_variable = { impossible_proposition_expire = 0 }
+                        check_variable = { controversial_proposition_expire = 0 }
+                        check_variable = { divisive_proposition_expire = 0 }
+                        check_variable = { partisan_proposition_expire = 0 }
+                        check_variable = { bipartisan_proposition_expire = 0 }
+                        check_variable = { popular_proposition_expire = 0 }
+                    }
+                }
+                country_event = { id = politics_event.21 days = 0 }
+            }
+            
+            subtract_from_variable = { impossible_proposition_expire = 1 }
+            subtract_from_variable = { controversial_proposition_expire = 1 }
+            subtract_from_variable = { divisive_proposition_expire = 1 }
+            subtract_from_variable = { partisan_proposition_expire = 1 }
+            subtract_from_variable = { bipartisan_proposition_expire = 1 }
+            subtract_from_variable = { popular_proposition_expire = 1 }
+
+            if = {
+                limit = {
+                    check_variable = { corruption_variable < 10 }
+                }
+                remove_dynamic_modifier = { modifier = corruption_modifier2 }
+                remove_dynamic_modifier = { modifier = corruption_modifier3 }
+                remove_dynamic_modifier = { modifier = corruption_modifier4 }
+                remove_dynamic_modifier = { modifier = corruption_modifier5 }
+                remove_dynamic_modifier = { modifier = corruption_modifier6 }
+                remove_dynamic_modifier = { modifier = corruption_modifier7 }
+                remove_dynamic_modifier = { modifier = corruption_modifier8 }
+                remove_dynamic_modifier = { modifier = corruption_modifier9 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 10 }
+                    check_variable = { corruption_variable < 20 }
+                    NOT = {
+                        has_dynamic_modifier = { modifier = corruption_modifier }
+                    }
+                }
+                subtract_from_variable = { industrial_power = 0.05 }
+                add_dynamic_modifier = {
+                    modifier = corruption_modifier
+                }
+                remove_dynamic_modifier = { modifier = corruption_modifier2 }
+                remove_dynamic_modifier = { modifier = corruption_modifier3 }
+                remove_dynamic_modifier = { modifier = corruption_modifier4 }
+                remove_dynamic_modifier = { modifier = corruption_modifier5 }
+                remove_dynamic_modifier = { modifier = corruption_modifier6 }
+                remove_dynamic_modifier = { modifier = corruption_modifier7 }
+                remove_dynamic_modifier = { modifier = corruption_modifier8 }
+                remove_dynamic_modifier = { modifier = corruption_modifier9 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 10 }
+                    check_variable = { corruption_variable < 20 }
+                    has_dynamic_modifier = { modifier = corruption_modifier }
+                }
+                subtract_from_variable = { industrial_power = 0.05 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 20 }
+                    check_variable = { corruption_variable < 30 }
+                    NOT = {
+                        has_dynamic_modifier = { modifier = corruption_modifier2 }
+                    }
+                }
+                subtract_from_variable = { industrial_power = 0.05 }
+                add_dynamic_modifier = {
+                    modifier = corruption_modifier2
+                }
+                remove_dynamic_modifier = { modifier = corruption_modifier }
+                remove_dynamic_modifier = { modifier = corruption_modifier3 }
+                remove_dynamic_modifier = { modifier = corruption_modifier4 }
+                remove_dynamic_modifier = { modifier = corruption_modifier5 }
+                remove_dynamic_modifier = { modifier = corruption_modifier6 }
+                remove_dynamic_modifier = { modifier = corruption_modifier7 }
+                remove_dynamic_modifier = { modifier = corruption_modifier8 }
+                remove_dynamic_modifier = { modifier = corruption_modifier9 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 20 }
+                    check_variable = { corruption_variable < 30 }
+                    has_dynamic_modifier = { modifier = corruption_modifier2 }
+                }
+                subtract_from_variable = { industrial_power = 0.05 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 30 }
+                    check_variable = { corruption_variable < 40 }
+                    NOT = {
+                        has_dynamic_modifier = { modifier = corruption_modifier3 }
+                    }
+                }
+                subtract_from_variable = { industrial_power = 0.1 }
+                add_dynamic_modifier = {
+                    modifier = corruption_modifier3
+                }
+                remove_dynamic_modifier = { modifier = corruption_modifier }
+                remove_dynamic_modifier = { modifier = corruption_modifier2 }
+                remove_dynamic_modifier = { modifier = corruption_modifier4 }
+                remove_dynamic_modifier = { modifier = corruption_modifier5 }
+                remove_dynamic_modifier = { modifier = corruption_modifier6 }
+                remove_dynamic_modifier = { modifier = corruption_modifier7 }
+                remove_dynamic_modifier = { modifier = corruption_modifier8 }
+                remove_dynamic_modifier = { modifier = corruption_modifier9 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 30 }
+                    check_variable = { corruption_variable < 40 }
+                    has_dynamic_modifier = { modifier = corruption_modifier3 }
+                }
+                subtract_from_variable = { industrial_power = 0.1 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 40 }
+                    check_variable = { corruption_variable < 50 }
+                    NOT = {
+                        has_dynamic_modifier = { modifier = corruption_modifier4 }
+                    }
+                }
+                subtract_from_variable = { industrial_power = 0.1 }
+                add_dynamic_modifier = {
+                    modifier = corruption_modifier4
+                }
+                remove_dynamic_modifier = { modifier = corruption_modifier }
+                remove_dynamic_modifier = { modifier = corruption_modifier2 }
+                remove_dynamic_modifier = { modifier = corruption_modifier3 }
+                remove_dynamic_modifier = { modifier = corruption_modifier5 }
+                remove_dynamic_modifier = { modifier = corruption_modifier6 }
+                remove_dynamic_modifier = { modifier = corruption_modifier7 }
+                remove_dynamic_modifier = { modifier = corruption_modifier8 }
+                remove_dynamic_modifier = { modifier = corruption_modifier9 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 40 }
+                    check_variable = { corruption_variable < 50 }
+                    has_dynamic_modifier = { modifier = corruption_modifier4 }
+                }
+                subtract_from_variable = { industrial_power = 0.1 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 50 }
+                    check_variable = { corruption_variable < 60 }
+                    NOT = {
+                        has_dynamic_modifier = { modifier = corruption_modifier5 }
+                    }
+                }
+                subtract_from_variable = { industrial_power = 0.15 }
+                add_dynamic_modifier = {
+                    modifier = corruption_modifier5
+                }
+                remove_dynamic_modifier = { modifier = corruption_modifier }
+                remove_dynamic_modifier = { modifier = corruption_modifier2 }
+                remove_dynamic_modifier = { modifier = corruption_modifier3 }
+                remove_dynamic_modifier = { modifier = corruption_modifier4 }
+                remove_dynamic_modifier = { modifier = corruption_modifier6 }
+                remove_dynamic_modifier = { modifier = corruption_modifier7 }
+                remove_dynamic_modifier = { modifier = corruption_modifier8 }
+                remove_dynamic_modifier = { modifier = corruption_modifier9 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 50 }
+                    check_variable = { corruption_variable < 60 }
+                    has_dynamic_modifier = { modifier = corruption_modifier5 }
+                }
+                subtract_from_variable = { industrial_power = 0.15 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 60 }
+                    check_variable = { corruption_variable < 70 }
+                    NOT = {
+                        has_dynamic_modifier = { modifier = corruption_modifier6 }
+                    }
+                }
+                subtract_from_variable = { industrial_power = 0.2 }
+                add_dynamic_modifier = {
+                    modifier = corruption_modifier6
+                }
+                remove_dynamic_modifier = { modifier = corruption_modifier }
+                remove_dynamic_modifier = { modifier = corruption_modifier2 }
+                remove_dynamic_modifier = { modifier = corruption_modifier3 }
+                remove_dynamic_modifier = { modifier = corruption_modifier4 }
+                remove_dynamic_modifier = { modifier = corruption_modifier5 }
+                remove_dynamic_modifier = { modifier = corruption_modifier7 }
+                remove_dynamic_modifier = { modifier = corruption_modifier8 }
+                remove_dynamic_modifier = { modifier = corruption_modifier9 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 60 }
+                    check_variable = { corruption_variable < 70 }
+                    has_dynamic_modifier = { modifier = corruption_modifier6 }
+                }
+                subtract_from_variable = { industrial_power = 0.2 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 70 }
+                    check_variable = { corruption_variable < 80 }
+                    NOT = {
+                        has_dynamic_modifier = { modifier = corruption_modifier7 }
+                    }
+                }
+                subtract_from_variable = { industrial_power = 0.25 }
+                add_dynamic_modifier = {
+                    modifier = corruption_modifier7
+                }
+                remove_dynamic_modifier = { modifier = corruption_modifier }
+                remove_dynamic_modifier = { modifier = corruption_modifier2 }
+                remove_dynamic_modifier = { modifier = corruption_modifier3 }
+                remove_dynamic_modifier = { modifier = corruption_modifier4 }
+                remove_dynamic_modifier = { modifier = corruption_modifier5 }
+                remove_dynamic_modifier = { modifier = corruption_modifier6 }
+                remove_dynamic_modifier = { modifier = corruption_modifier8 }
+                remove_dynamic_modifier = { modifier = corruption_modifier9 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 70 }
+                    check_variable = { corruption_variable < 80 }
+                    has_dynamic_modifier = { modifier = corruption_modifier7 }
+                }
+                subtract_from_variable = { industrial_power = 0.25 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 80 }
+                    check_variable = { corruption_variable < 90 }
+                    NOT = {
+                        has_dynamic_modifier = { modifier = corruption_modifier8 }
+                    }
+                }
+                subtract_from_variable = { industrial_power = 0.3 }
+                add_dynamic_modifier = {
+                    modifier = corruption_modifier8
+                }
+                remove_dynamic_modifier = { modifier = corruption_modifier }
+                remove_dynamic_modifier = { modifier = corruption_modifier2 }
+                remove_dynamic_modifier = { modifier = corruption_modifier3 }
+                remove_dynamic_modifier = { modifier = corruption_modifier4 }
+                remove_dynamic_modifier = { modifier = corruption_modifier5 }
+                remove_dynamic_modifier = { modifier = corruption_modifier6 }
+                remove_dynamic_modifier = { modifier = corruption_modifier7 }
+                remove_dynamic_modifier = { modifier = corruption_modifier9 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 80 }
+                    check_variable = { corruption_variable < 90 }
+                    has_dynamic_modifier = { modifier = corruption_modifier8 }
+                }
+                subtract_from_variable = { industrial_power = 0.3 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 90 }
+                    NOT = {
+                        has_dynamic_modifier = { modifier = corruption_modifier9 }
+                    }
+                }
+                subtract_from_variable = { industrial_power = 0.35 }
+                add_dynamic_modifier = {
+                    modifier = corruption_modifier9
+                }
+                remove_dynamic_modifier = { modifier = corruption_modifier }
+                remove_dynamic_modifier = { modifier = corruption_modifier2 }
+                remove_dynamic_modifier = { modifier = corruption_modifier3 }
+                remove_dynamic_modifier = { modifier = corruption_modifier4 }
+                remove_dynamic_modifier = { modifier = corruption_modifier5 }
+                remove_dynamic_modifier = { modifier = corruption_modifier6 }
+                remove_dynamic_modifier = { modifier = corruption_modifier7 }
+                remove_dynamic_modifier = { modifier = corruption_modifier8 }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { corruption_variable > 90 }
+                    has_dynamic_modifier = { modifier = corruption_modifier9 }
+                }
+                subtract_from_variable = { industrial_power = 0.35 }
+            }
+            set_variable = { division_limit = num_of_factories }
+            add_to_variable = { division_limit = division_limit_extra }
+            clamp_variable = {
+                var = division_limit
+                min = 1
+                max = 200
+            }
+            if = {
+                limit = {
+                    check_variable = { num_divisions > division_limit }
+                }
+                set_variable = { too_many_divs_var = num_divisions }
+                subtract_from_variable = { too_many_divs_var = division_limit }
+                divide_variable = { too_many_divs_var = 100 }
+                multiply_variable = { too_many_divs_var = -1 }
+                set_variable = { too_many_divs_var2 = num_divisions }
+                subtract_from_variable = { too_many_divs_var2 = division_limit }
+                divide_variable = { too_many_divs_var2 = 50 }
+                multiply_variable = { too_many_divs_var2 = -1 }
+                add_dynamic_modifier = {
+                    modifier = too_many_divs
+                }
+            }
+            else_if = {
+                limit = {
+                    check_variable = { num_divisions < division_limit }
+                }
+                clear_variable = too_many_divs_var
+                remove_dynamic_modifier = {
+                    modifier = too_many_divs
+                }
+            }
+        }
+    }
+}

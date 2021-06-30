@@ -2,78 +2,155 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "politics_topbartab_window"
-		position = { x = 0 y = 0 }
-		size = { width = 800 height = 450 }
+		position = { x=-606 y=0 }	
+		size = { width = 1000 height = 575 }
 		orientation = center
 		origo = center
 		fade_time = 100
-		moveable = yes
 		fade_type = linear
 		click_to_front = no
-		clipping = no
+		clipping = yes
+		moveable = yes
+		verticalScrollbar = "right_vertical_slider"
+		
+		show_position = { x=-6 y =0 }
+		hide_animation_type = decelerated
+		show_animation_type = accelerated
+		animation_time = 200
 		
 		background = {
 			name = "Background"		
-			quadTextureSprite ="GFX_tiled_plain_bg"
+			quadTextureSprite ="GFX_politicsbackground"
 		}
-		
+
 		iconType={
 			name ="politicheader"
 			spriteType = "GFX_politicheader"
 			position = { x= 0 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}
-		instantTextBoxType = {
-			name = "politicalviewtext"
-			position = { x = 47 y = 4 }
-			textureFile = ""
-			font = "Beyond"
-			borderSize = {x = 0 y = 0}
-			text = "Social Engineering"	
-			maxWidth = 700
-			maxHeight = 20
-			fixedsize = yes
-
-			Orientation = "UPPER_LEFT"
-			format = centre
-		}
-		instantTextBoxType = {
-			name = "currentbillnone"
-			position = { x = 200 y = 60 }
-			textureFile = ""
-			font = "Arial"
-			borderSize = {x = 0 y = 0}
-			text = "Current Bill: NONE"	
-			maxWidth = 700
-			maxHeight = 20
-			fixedsize = yes
-
-			Orientation = "UPPER_LEFT"
-			format = left
-		}
-		instantTextBoxType = {
-			name = "corruptionscale"
-			position = { x = 480 y = 65 }
-			textureFile = ""
-			font = "Beyondsmall"
-			borderSize = {x = 0 y = 0}
-			text = "Corruption Scale"	
-			maxWidth = 700
-			maxHeight = 20
-			fixedsize = yes
-
-			Orientation = "UPPER_LEFT"
-			format = left
+		buttonType = {
+			name = "politics_close"
+			position = { x = -50 y = 8 }
+			quadTextureSprite ="GFX_closebutton"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			shortcut = "ESCAPE"
+			pdx_tooltip = "CLOSE"
 		}
 		buttonType = {
-			name = "purgecorruption"
-			position = { x = 480 y = 170 }
-			quadTextureSprite ="GFX_button_221x34"
-			buttonText = "PURGE CORRUPTION"
-			buttonFont = "Arialsmall"
+			name = "politics_back"
+			position = { x = 5 y = 5 }
+			quadTextureSprite ="GFX_event_button_minimize"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			pdx_tooltip = "BACK"
+		}
+		instantTextBoxType = {
+			name = "politicalviewtext"
+			position = { x = 0 y = 4 }
+			textureFile = ""
+			font = "Beyond"
+			borderSize = {x = 0 y = 0}
+			text = "social_engineering"	
+			maxWidth = 1000
+			maxHeight = 20
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = centre
+		}
+
+		instantTextBoxType = {
+			name = "current_economic_law"
+			position = { x = 10 y = 60 }
+			textureFile = ""
+			font = "Beyondsmall"
+			borderSize = {x = 0 y = 0}
+			text = "current_economic_system"	
+			maxWidth = 500
+			maxHeight = 20
+			fixedsize = yes
+
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		instantTextBoxType = {
+			name = "current_political_system"
+			position = { x = 500 y = 60 }
+			textureFile = ""
+			font = "Beyondsmall"
+			borderSize = {x = 0 y = 0}
+			text = "current_political_system"	
+			maxWidth = 500
+			maxHeight = 20
+			fixedsize = yes
+
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		instantTextBoxType = {
+			name = "currentbillnone"
+			position = { x = 0 y = 120 }
+			textureFile = ""
+			font = "Beyondsmall"
+			borderSize = {x = 0 y = 0}
+			text = "currentbillnone"	
+			maxWidth = 1000
+			maxHeight = 20
+			fixedsize = yes
+
+			Orientation = "UPPER_LEFT"
+			format = center
+		}
+		instantTextBoxType = {
+			name = "currentbillyes"
+			position = { x = 0 y = 100 }
+			textureFile = ""
+			font = "Beyondsmall"
+			borderSize = {x = 0 y = 0}
+			text = "currentbillyes"	
+			maxWidth = 1000
+			maxHeight = 50
+			fixedsize = no
+
+			Orientation = "UPPER_LEFT"
+			format = center
+		}
+		buttonType = {
+			name = "bribe_politicians_button"
+			position = { x = 10 y = 155 }
+			quadTextureSprite ="GFX_button_large"
+			buttonText = "bribe_politicians_button"
+			buttonFont = "Beyondsmall"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "bribe_politicians_effect"
+		}
+		buttonType = {
+			name = "welfare_programs_button"
+			position = { x = 348 y = 155 }
+			quadTextureSprite ="GFX_button_large"
+			buttonText = "welfare_programs_button"
+			buttonFont = "Beyondsmall"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "welfare_programs_effect"
+		}
+		buttonType = {
+			name = "nerve_stapling_button"
+			position = { x = 685 y = 155 }
+			quadTextureSprite ="GFX_button_large"
+			buttonText = "nerve_stapling_button"
+			buttonFont = "Beyondsmall"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "nerve_stapling_effect"
 		}
 		instantTextBoxType = {
 			name = "possiblebills"
@@ -92,43 +169,566 @@ guiTypes = {
 		buttonType = {
 			name = "politicalbills"
 			position = { x = 10 y = 230 }
-			quadTextureSprite ="GFX_button_148x34"
+			quadTextureSprite ="GFX_button_221x34"
 			buttonText = "POLITICAL"
-			buttonFont = "Arial"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "increase_trade_law_button"
+			position = { x = 5 y = 280 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "increase_trade_law_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "increase_trade_law_effect"
+		}
+		buttonType = {
+			name = "increase_conscription_button"
+			position = { x = 5 y = 340 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "increase_conscription_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "increase_conscription_effect"
+		}
+		buttonType = {
+			name = "war_mobilization_button"
+			position = { x = 335 y = 280 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "war_mobilization_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "war_mobilization_effect"
+		}
+		buttonType = {
+			name = "decrease_trade_law_button"
+			position = { x = 335 y = 340 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "decrease_trade_law_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "decrease_trade_law_effect"
+		}
+		buttonType = {
+			name = "decrease_conscription_button"
+			position = { x = 665 y = 280 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "decrease_conscription_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "decrease_conscription_effect"
+		}
+		buttonType = {
+			name = "international_intervention_button"
+			position = { x = 665 y = 340 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "international_intervention_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "international_intervention_effect"
 		}
 		buttonType = {
 			name = "economybills"
-			position = { x = 170 y = 230 }
-			quadTextureSprite ="GFX_button_148x34"
+			position = { x = 260 y = 230 }
+			quadTextureSprite ="GFX_button_221x34"
 			buttonText = "ECONOMY"
-			buttonFont = "Arial"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "military_industrial_complex_button"
+			position = { x = 5 y = 280 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "military_industrial_complex_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "military_industrial_complex_effect"
+		}
+		buttonType = {
+			name = "business_relief_button"
+			position = { x = 5 y = 340 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "business_relief_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "business_relief_effect"
+		}
+		buttonType = {
+			name = "merchant_navy_draft_button"
+			position = { x = 335 y = 280 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "merchant_navy_draft_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "merchant_navy_draft_effect"
+		}
+		buttonType = {
+			name = "military_industrial_integration_button"
+			position = { x = 335 y = 340 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "military_industrial_integration_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "military_industrial_integration_effect"
+		}
+		buttonType = {
+			name = "maximized_utilisation_button"
+			position = { x = 665 y = 280 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "maximized_utilisation_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "maximized_utilisation_effect"
+		}
+		buttonType = {
+			name = "orbital_cleaning_initiative_button"
+			position = { x = 665 y = 340 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "orbital_cleaning_initiative_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "orbital_cleaning_initiative_effect"
 		}
 		buttonType = {
 			name = "militarybills"
-			position = { x = 330 y = 230 }
-			quadTextureSprite ="GFX_button_148x34"
+			position = { x = 520 y = 230 }
+			quadTextureSprite ="GFX_button_221x34"
 			buttonText = "MILITARY"
-			buttonFont = "Arial"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "uniquebills"
-			position = { x = 490 y = 230 }
-			quadTextureSprite ="GFX_button_148x34"
-			buttonText = "UNIQUE"
-			buttonFont = "Arial"
+			name = "interservice_training_button"
+			position = { x = 5 y = 280 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "interservice_training_button"
+			buttonFont = "Focusfont"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			pdx_tooltip = "interservice_training_effect"
 		}
-		
+		buttonType = {
+			name = "democratized_logistics_button"
+			position = { x = 5 y = 340 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "democratized_logistics_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "democratized_logistics_effect"
 		}
+		buttonType = {
+			name = "surveillance_expansion_button"
+			position = { x = 335 y = 280 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "surveillance_expansion_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "surveillance_expansion_effect"
+		}
+		buttonType = {
+			name = "native_pacification_button"
+			position = { x = 335 y = 340 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "native_pacification_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "native_pacification_effect"
+		}
+		buttonType = {
+			name = "general_staff_expansion_button"
+			position = { x = 665 y = 280 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "general_staff_expansion_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "general_staff_expansion_effect"
+		}
+		buttonType = {
+			name = "research_hospital_bypass_button"
+			position = { x = 665 y = 340 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "research_hospital_bypass_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "research_hospital_bypass_effect"
+		}
+		buttonType = {
+			name = "uniquebills"
+			position = { x = 770 y = 230 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonText = "UNIQUE"
+			buttonFont = "Beyondsmall"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "uniquebills_tp"
+		}
+		buttonType = {
+			name = "impossible_proposition_button"
+			position = { x = 5 y = 280 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "impossible_proposition_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "impossible_proposition_effect"
+		}
+		buttonType = {
+			name = "controversial_proposition_button"
+			position = { x = 5 y = 340 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "controversial_proposition_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "controversial_proposition_effect"
+		}
+		buttonType = {
+			name = "divisive_proposition_button"
+			position = { x = 335 y = 280 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "divisive_proposition_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "divisive_proposition_effect"
+		}
+		buttonType = {
+			name = "partisan_proposition_button"
+			position = { x = 335 y = 340 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "partisan_proposition_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "partisan_proposition_effect"
+		}
+		buttonType = {
+			name = "bipartisan_proposition_button"
+			position = { x = 665 y = 280 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "bipartisan_proposition_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "bipartisan_proposition_effect"
+		}
+		buttonType = {
+			name = "popular_proposition_button"
+			position = { x = 665 y = 340 }
+			quadTextureSprite ="GFX_bill_entry"
+			buttonText = "popular_proposition_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "popular_proposition_effect"
+		}
+		instantTextBoxType = {
+			name = "corruptionscale"
+			position = { x = 100 y = 400 }
+			textureFile = ""
+			font = "Beyondsmall"
+			borderSize = {x = 0 y = 0}
+			text = "corruption_scale"	
+			maxWidth = 300
+			maxHeight = 20
+			fixedsize = yes
+
+			Orientation = "UPPER_LEFT"
+			format = center
+		}
+		iconType = {
+			name = "corruption_progressbar"
+			spriteType = "GFX_politics_progressbar"
+			position = { x = 95 y = 430 }
+			pdx_tooltip = "corruption_effect"
+		}
+		buttonType = {
+			name = "purgecorruption"
+			position = { x = 95 y = 475 }
+			quadTextureSprite ="GFX_button_large"
+			buttonText = "purge_corruption"
+			buttonFont = "Beyondsmall"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "purge_corruption_effect"
+		}
+		instantTextBoxType = {
+			name = "next_free_factory"
+			position = { x = 400 y = 400 }
+			textureFile = ""
+			font = "Beyondsmall"
+			borderSize = {x = 0 y = 0}
+			text = "next_free_factory_in"	
+			maxWidth = 500
+			maxHeight = 20
+			fixedsize = yes
+
+			Orientation = "UPPER_LEFT"
+			format = center
+		}
+		iconType = {
+			name = "military_civilian_focus"
+			spriteType = "GFX_slider_line"
+			position = { x = 565 y = 425 }
+		}
+		buttonType = {
+			name = "civilian_focus"
+			position = { x = 535 y = 428 }
+			quadTextureSprite ="GFX_opinion_arrow_left"
+			buttonText = ""
+			buttonFont = "Arialsmall"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "civilian_focus_effect"
+		}
+		instantTextBoxType = {
+			name = "civilian_focus_text"
+			position = { x = 430 y = 427 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "civilian_focus"	
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+
+			Orientation = "UPPER_LEFT"
+			format = right
+		}
+		buttonType = {
+			name = "military_focus"
+			position = { x = 750 y = 428 }
+			quadTextureSprite ="GFX_opinion_arrow_right"
+			buttonText = ""
+			buttonFont = "Arialsmall"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "military_focus_effect"
+		}
+		instantTextBoxType = {
+			name = "military_focus_text"
+			position = { x = 775 y = 427 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "military_focus"	
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		iconType = {
+			name = "military_civilian_slider"
+			spriteType = "GFX_slider_point"
+		}
+		iconType = {
+			name = "heavy_light_focus"
+			spriteType = "GFX_slider_line"
+			position = { x = 565 y = 457 }
+		}
+		buttonType = {
+			name = "heavy_focus"
+			position = { x = 535 y = 460 }
+			quadTextureSprite ="GFX_opinion_arrow_left"
+			buttonText = ""
+			buttonFont = "Arialsmall"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "heavy_focus_effect"
+		}
+		instantTextBoxType = {
+			name = "heavy_focus_text"
+			position = { x = 430 y = 459 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "heavy_focus"	
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+
+			Orientation = "UPPER_LEFT"
+			format = right
+		}
+		buttonType = {
+			name = "light_focus"
+			position = { x = 750 y = 460 }
+			quadTextureSprite ="GFX_opinion_arrow_right"
+			buttonText = ""
+			buttonFont = "Arialsmall"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "light_focus_effect"
+		}
+		instantTextBoxType = {
+			name = "light_focus_text"
+			position = { x = 775 y = 459 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "light_focus"	
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		iconType = {
+			name = "light_heavy_slider"
+			spriteType = "GFX_slider_point"
+		}
+		iconType = {
+			name = "land_naval_focus"
+			spriteType = "GFX_slider_line"
+			position = { x = 565 y = 489 }
+		}
+		buttonType = {
+			name = "land_focus"
+			position = { x = 535 y = 492 }
+			quadTextureSprite ="GFX_opinion_arrow_left"
+			buttonText = ""
+			buttonFont = "Arialsmall"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "land_focus_effect"
+		}
+		instantTextBoxType = {
+			name = "land_focus_text"
+			position = { x = 430 y = 491 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "land_focus"	
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+
+			Orientation = "UPPER_LEFT"
+			format = right
+		}
+		buttonType = {
+			name = "naval_focus"
+			position = { x = 750 y = 492 }
+			quadTextureSprite ="GFX_opinion_arrow_right"
+			buttonText = ""
+			buttonFont = "Arialsmall"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "naval_focus_effect"
+		}
+		instantTextBoxType = {
+			name = "naval_focus_text"
+			position = { x = 775 y = 491 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "naval_focus"	
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		iconType = {
+			name = "land_naval_slider"
+			spriteType = "GFX_slider_point"
+		}
+		instantTextBoxType = {
+			name = "division_limit_text"
+			position = { x = 30 y = 533 }
+			textureFile = ""
+			font = "Beyondsmall"
+			borderSize = {x = 0 y = 0}
+			text = "division_limit_text"	
+			maxWidth = 500
+			maxHeight = 20
+			fixedsize = yes
+
+			Orientation = "UPPER_LEFT"
+			format = left
+			pdx_tooltip = "division_limit_effects"
+		}
+		buttonType = {
+			name = "increase_limit"
+			position = { x = 300 y = 525 }
+			quadTextureSprite ="GFX_button_large"
+			buttonText = "increase_limit"
+			buttonFont = "Beyondsmall"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "increase_limit_effects"
+		}
+		buttonType = {
+			name = "align_warlords"
+			position = { x = 650 y = 525 }
+			quadTextureSprite ="GFX_button_large"
+			buttonText = "align_warlords"
+			buttonFont = "Beyondsmall"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "align_warlords_effects"
+		}
+	}
 }
