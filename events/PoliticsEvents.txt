@@ -704,8 +704,8 @@ country_event = {
 
 	option = {
 		name = free_factory_event.1.a
-        clear_variable = free_factory_in
-        set_variable = { free_factory_in = 10 }
+        clear_variable = free_factory_progress
+        set_variable = { free_factory_progress = 0 }
         random_list = {
             25 = {
 		        random_owned_controlled_state = {
@@ -772,6 +772,53 @@ country_event = {
                 modifier = {
                     factor = military_chance
                 }
+            }
+        }
+	}
+}
+
+country_event = { #test event cause i am too lazy to add a new namespace
+	id = free_factory_event.2
+	title = free_factory_event.2.t
+	desc = free_factory_event.2.d
+	picture = GFX_news_event_german_soldiers
+    
+    is_triggered_only = yes
+
+    fire_only_once = no
+
+	option = {
+		name = free_factory_event.2.a
+        every_country = {
+            if = {
+                limit = {
+                    NOT = {
+                        is_in_array = { global.spaceship_contribution_array = THIS }
+                    }
+                }
+                add_to_array = {
+                    array = global.spaceship_contribution_array
+                    value = spaceship_contribution_variable
+                }
+            }
+        }
+	}
+	option = {
+		name = free_factory_event.2.b
+        every_country = {
+            remove_from_array = {
+                array = global.spaceship_contribution_array
+                value = THIS.spaceship_contribution_variable
+            }
+        }
+	}
+	option = {
+		name = free_factory_event.3.b
+        every_country = {
+            resize_array = {
+                array = global.spaceship_contribution_array
+                value = THIS.spaceship_contribution_variable
+                size = THIS.spaceship_contribution_variable
             }
         }
 	}

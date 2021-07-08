@@ -1,0 +1,53 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            every_country = {
+                set_variable = { spaceship_contribution_variable = 0 }
+                set_variable = { spaceship_contribution_civilian = num_of_civilian_factories }
+                set_variable = { spaceship_contribution_military = num_of_military_factories }
+                set_variable = { spaceship_contribution_dockyard = num_of_naval_factories }
+                multiply_variable = { spaceship_contribution_civilian = 4 }
+                multiply_variable = { spaceship_contribution_military = 2 }
+                add_to_variable = { spaceship_contribution_variable = spaceship_contribution_civilian }
+                add_to_variable = { spaceship_contribution_variable = spaceship_contribution_military }
+                add_to_variable = { spaceship_contribution_variable = spaceship_contribution_dockyard }
+				#if = {
+				#	limit = {
+				#		NOT = {
+                #            is_in_array = { global.spaceship_contribution_array = THIS }
+                #        }
+				#	}
+                #    add_to_array = {
+                #        array = global.spaceship_contribution_array
+                #        value = spaceship_contribution_variable
+                #    }
+                #}
+            }
+        }
+    }
+    on_daily = {
+        effect = {
+            every_country = {
+                set_variable = { spaceship_contribution_variable = 0 }
+                set_variable = { spaceship_contribution_civilian = num_of_civilian_factories }
+                set_variable = { spaceship_contribution_military = num_of_military_factories }
+                set_variable = { spaceship_contribution_dockyard = num_of_naval_factories }
+                multiply_variable = { spaceship_contribution_civilian = 4 }
+                multiply_variable = { spaceship_contribution_military = 2 }
+                add_to_variable = { spaceship_contribution_variable = spaceship_contribution_civilian }
+                add_to_variable = { spaceship_contribution_variable = spaceship_contribution_military }
+                add_to_variable = { spaceship_contribution_variable = spaceship_contribution_dockyard }
+                #every_country = {
+                #    if = {
+                #        limit = {
+                #            NOT = {
+                #                is_in_array = { global.spaceship_contribution_array = THIS }
+                #            }
+                #        }
+                #        add_to_array = { global.spaceship_contribution_array = THIS }
+                #    }
+                #}
+            }
+        }
+    }
+}

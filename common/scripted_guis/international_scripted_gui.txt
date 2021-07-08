@@ -1,0 +1,33 @@
+scripted_gui = {
+    international_topbartab = {
+        window_name = "international_topbartab_window"
+        context_type = player_context
+		parent_window_token = top_bar
+         
+        visible = {
+            has_country_flag = international_moment_flag
+        }
+        
+        effects = {
+            politics_close_click = {
+                ROOT = {
+                    clr_country_flag = international_moment_flag
+                }
+            }
+        }
+
+        dynamic_lists = {
+			spaceship_contribution_list = {
+				array = global.spaceship_contribution_array
+				change_scope = yes
+				entry_container = "spaceship_contribution_list_entry"
+			}
+		}
+
+        properties = {
+            spaceship_country = {
+                image = [THIS.GetFlag]
+            }
+        }
+    }
+}

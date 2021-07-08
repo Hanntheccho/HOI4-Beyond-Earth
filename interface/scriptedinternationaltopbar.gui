@@ -1,0 +1,115 @@
+guiTypes = {
+	
+	containerWindowType = {
+		name = "international_topbartab_window"
+		position = { x=-606 y=0 }	
+		size = { width = 1000 height = 575 }
+		orientation = center
+		origo = center
+		fade_time = 100
+		fade_type = linear
+		click_to_front = no
+		clipping = yes
+		moveable = yes
+		verticalScrollbar = "right_vertical_slider"
+		
+		show_position = { x=-6 y =0 }
+		hide_animation_type = decelerated
+		show_animation_type = accelerated
+		animation_time = 300
+		
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_plain_bg"
+		}
+
+		iconType={
+			name ="politicheader"
+			spriteType = "GFX_politicheader"
+			position = { x= 0 y = 0 }
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "politicalviewtext"
+			position = { x = 0 y = 4 }
+			textureFile = ""
+			font = "Beyond"
+			borderSize = {x = 0 y = 0}
+			text = "international_stuff"	
+			maxWidth = 1000
+			maxHeight = 20
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = centre
+		}
+		buttonType = {
+			name = "politics_close"
+			position = { x = -35 y = 5 }
+			quadTextureSprite ="GFX_closebutton"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			shortcut = "ESCAPE"
+			pdx_tooltip = "CLOSE"
+		}
+
+        gridboxType = {
+            name ="spaceship_contribution_list"
+            position = { x = 0 y = 0 }
+            size = { width = 150 height = 50 }
+            slotsize = { width = 200 height = 25 }
+            add_horizontal = no
+            max_slots_horizontal = 1
+        }
+    }
+
+    containerWindowType = {
+    	name = "spaceship_contribution_list_entry"
+    	position = { x=0 y =0 }
+    	size = { width = 0 height=0 }
+    	margin = { top = 0 bottom = 0 }
+	    moveable = yes
+		verticalScrollbar = "right_vertical_slider"
+
+    	#background = {
+    	#	name = "Background"
+    	#	quadTextureSprite ="GFX_constructions_bg4"
+    	#}
+
+        iconType= {
+    		name ="spaceship_country"
+    		spriteType = "GFX_flag_small2"
+    		position = { x= 30 y = 60 }
+    		alwaystransparent = yes
+    	}
+		instantTextBoxType = {
+			name = "spaceship_contribution_country"
+			position = { x = 100 y = 70 }
+			textureFile = ""
+			font = "Arial16"
+			borderSize = {x = 0 y = 0}
+			text = "spaceship_contribution_text_country"	
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = centre
+		}
+		instantTextBoxType = {
+			name = "spaceship_contribution_text"
+			position = { x = 200 y = 70 }
+			textureFile = ""
+			font = "Arial16"
+			borderSize = {x = 0 y = 0}
+			text = "[?THIS.spaceship_contribution_variable]"	
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = centre
+		}
+    }
+}
