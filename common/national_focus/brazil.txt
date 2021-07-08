@@ -1,0 +1,644 @@
+﻿focus_tree = {
+	id = brazil
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = BRA
+		}
+	}
+	focus = {
+		id = BRA_limited_purge
+		icon = GFX_unknown
+	
+		x = 10
+		y = 0
+
+		cost = 3
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_finish_military_buildup
+		icon = GFX_unknown
+	
+		x = -5
+		y = 2
+		
+		relative_position_id = BRA_limited_purge
+		
+		prerequisite = {
+			focus = BRA_limited_purge
+		}
+
+		cost = 5
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_draft_additional_production_goals
+		icon = GFX_unknown
+	
+		x = -2
+		y = 1
+		
+		relative_position_id = BRA_finish_military_buildup
+		
+		prerequisite = {
+			focus = BRA_finish_military_buildup
+		}
+
+		cost = 3
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_big_expectations
+		icon = GFX_unknown
+	
+		x = -2
+		y = 2
+		
+		relative_position_id = BRA_finish_military_buildup
+		
+		prerequisite = {
+			focus = BRA_draft_additional_production_goals
+		}
+
+		cost = 3
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_cuiaba_arms_drive
+		icon = GFX_unknown
+	
+		x = 0
+		y = 1
+		
+		relative_position_id = BRA_finish_military_buildup
+		
+		prerequisite = {
+			focus = BRA_finish_military_buildup
+		}
+
+		cost = 3
+		
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = gun_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_deal_with_arc
+		icon = GFX_unknown
+	
+		x = 0
+		y = 2
+		
+		relative_position_id = BRA_finish_military_buildup
+		
+		prerequisite = {
+			focus = BRA_cuiaba_arms_drive
+		}
+
+		cost = 3
+		
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 600
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 800
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_introduce_automation
+		icon = GFX_unknown
+	
+		x = -2
+		y = 3
+		
+		relative_position_id = BRA_limited_purge
+		
+		prerequisite = {
+			focus = BRA_limited_purge
+		}
+
+		cost = 5
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_aim_for_the_industrial_dream
+		icon = GFX_unknown
+	
+		x = -2
+		y = 4
+		
+		relative_position_id = BRA_limited_purge
+		
+		prerequisite = {
+			focus = BRA_introduce_automation
+		}
+
+		cost = 5
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_brasilia_renovations
+		icon = GFX_unknown
+	
+		x = 0
+		y = 2
+		
+		relative_position_id = BRA_limited_purge
+		
+		prerequisite = {
+			focus = BRA_limited_purge
+		}
+
+		cost = 5
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_northern_industrial_expansion
+		icon = GFX_unknown
+	
+		x = 0
+		y = 3
+		
+		relative_position_id = BRA_limited_purge
+		
+		prerequisite = {
+			focus = BRA_brasilia_renovations
+		}
+
+		cost = 5
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_coastal_industrial_expansion
+		icon = GFX_unknown
+	
+		x = 0
+		y = 4
+		
+		relative_position_id = BRA_limited_purge
+		
+		prerequisite = {
+			focus = BRA_northern_industrial_expansion
+		}
+
+		cost = 5
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_amazonian_highways
+		icon = GFX_unknown
+	
+		x = 2
+		y = 3
+		
+		relative_position_id = BRA_limited_purge
+		
+		prerequisite = {
+			focus = BRA_brasilia_renovations
+		}
+
+		cost = 5
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_revive_rainforest_industries
+		icon = GFX_unknown
+	
+		x = 2
+		y = 4
+		
+		relative_position_id = BRA_limited_purge
+		
+		prerequisite = {
+			focus = BRA_amazonian_highways
+		}
+
+		cost = 5
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_continental_powerhouse
+		icon = GFX_unknown
+	
+		x = 0
+		y = 5
+		
+		relative_position_id = BRA_limited_purge
+		
+		prerequisite = {
+			focus = BRA_aim_for_the_industrial_dream
+		}
+		prerequisite = {
+			focus = BRA_coastal_industrial_expansion
+		}
+		prerequisite = {
+			focus = BRA_revive_rainforest_industries
+		}
+
+		cost = 5
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_extended_purge
+		icon = GFX_unknown
+	
+		x = 3
+		y = 1
+		
+		relative_position_id = BRA_limited_purge
+		
+		prerequisite = {
+			focus = BRA_limited_purge
+		}
+
+		cost = 3
+		
+		completion_reward = {
+
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_show_them_the_loot
+		icon = GFX_unknown
+	
+		x = 5
+		y = 2
+		
+		relative_position_id = BRA_limited_purge
+		
+		prerequisite = {
+			focus = BRA_limited_purge
+		}
+		
+		mutually_exclusive = {
+			focus = BRA_offer_them_the_glory
+		}
+
+		cost = 2
+		
+		completion_reward = {
+			remove_ideas = {
+				BRA_lack_of_cohesion
+			}
+			add_political_power = -400
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_offer_them_the_glory
+		icon = GFX_unknown
+	
+		x = 7
+		y = 2
+		
+		relative_position_id = BRA_limited_purge
+		
+		prerequisite = {
+			focus = BRA_limited_purge
+		}
+		
+		mutually_exclusive = {
+			focus = BRA_show_them_the_loot
+		}
+
+		cost = 3
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = BRA_lack_of_cohesion
+				add_idea = BRA_lack_of_cohesion1
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_tier_two_training
+		icon = GFX_unknown
+	
+		x = 7
+		y = 3
+		
+		relative_position_id = BRA_limited_purge
+		
+		prerequisite = {
+			focus = BRA_offer_them_the_glory
+		}
+
+		cost = 5
+		
+		completion_reward = {
+			remove_ideas = {
+				BRA_lack_of_cohesion1
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_militarize_the_universities
+		icon = GFX_unknown
+	
+		x = 22
+		y = 0
+
+		cost = 5
+		
+		completion_reward = {
+			army_experience = 100
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_overhaul_naval_plans
+		icon = GFX_unknown
+	
+		x = -2
+		y = 1
+		
+		relative_position_id = BRA_militarize_the_universities
+		
+		prerequisite = {
+			focus = BRA_militarize_the_universities
+		}
+
+		cost = 5
+		
+		completion_reward = {
+			navy_experience = 100
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_reopen_the_ports
+		icon = GFX_unknown
+	
+		x = -2
+		y = 2
+		
+		relative_position_id = BRA_militarize_the_universities
+		
+		prerequisite = {
+			focus = BRA_overhaul_naval_plans
+		}
+
+		cost = 5
+		
+		completion_reward = {
+		
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_legacy_of_bastos
+		icon = GFX_unknown
+	
+		x = 0
+		y = 1
+		
+		relative_position_id = BRA_militarize_the_universities
+		
+		prerequisite = {
+			focus = BRA_militarize_the_universities
+		}
+
+		cost = 5
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = gun_equipment
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_modern_engineering
+		icon = GFX_unknown
+	
+		x = 0
+		y = 2
+		
+		relative_position_id = BRA_militarize_the_universities
+		
+		prerequisite = {
+			focus = BRA_legacy_of_bastos
+		}
+
+		cost = 5
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 3
+				category = industry
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_walker_innovations
+		icon = GFX_unknown
+	
+		x = 2
+		y = 1
+		
+		relative_position_id = BRA_militarize_the_universities
+		
+		prerequisite = {
+			focus = BRA_militarize_the_universities
+		}
+
+		cost = 7
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = walker_equipment
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BRA_the_air_war
+		icon = GFX_unknown
+	
+		x = 2
+		y = 2
+		
+		relative_position_id = BRA_militarize_the_universities
+		
+		prerequisite = {
+			focus = BRA_walker_innovations
+		}
+
+		cost = 7
+		
+		completion_reward = {
+			air_experience = 200
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
