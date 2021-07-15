@@ -1,0 +1,1977 @@
+focus_tree = {
+	id = peru
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = PRU
+		}
+	}
+
+	continuous_focus_position = {
+		x = 520
+		y = 1600
+	}
+
+	#Focus for The Cracks Show
+	focus = {
+		id = PRU_the_cracks_show
+		icon = GFX_goal_unknown
+		x = 8
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Contact Indigenous Groups
+	focus = {
+		id = PRU_contact_indigenous_groups
+		icon = GFX_goal_unknown
+		x = 5
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_the_cracks_show }
+		mutually_exclusive = { focus = PRU_rebuild_the_party }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Concede Eastern Mines
+	focus = {
+		id = PRU_concede_eastern_mines
+		icon = GFX_goal_unknown
+		x = 5
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_contact_indigenous_groups }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Repeal The Migration Law
+	focus = {
+		id = PRU_repeal_the_migration_law
+		icon = GFX_goal_unknown
+		x = 5
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_concede_eastern_mines }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Raise The Utopian Ideal
+	focus = {
+		id = PRU_raise_the_utopian_ideal
+		icon = GFX_goal_unknown
+		x = 5
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_repeal_the_migration_law }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Rebuild The Party?
+	focus = {
+		id = PRU_rebuild_the_party
+		icon = GFX_goal_unknown
+		x = 8
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_the_cracks_show }
+		mutually_exclusive = { focus = PRU_contact_indigenous_groups }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Pass Minor Bills
+	focus = {
+		id = PRU_pass_minor_bills
+		icon = GFX_goal_unknown
+		x = 8
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_rebuild_the_party }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Agree On Something
+	focus = {
+		id = PRU_agree_on_something
+		icon = GFX_goal_unknown
+		x = 7
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_pass_minor_bills }
+		mutually_exclusive = { focus = PRU_agree_on_nothing }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Agree On Nothing
+	focus = {
+		id = PRU_agree_on_nothing
+		icon = GFX_goal_unknown
+		x = 9
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_pass_minor_bills }
+		mutually_exclusive = { focus = PRU_agree_on_something }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Not All Is Lost
+	focus = {
+		id = PRU_not_all_is_lost
+		icon = GFX_goal_unknown
+		x = 8
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PRU_agree_on_something 
+			focus = PRU_agree_on_nothing 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Unite The Old Guard
+	focus = {
+		id = PRU_unite_the_old_guard
+		icon = GFX_goal_unknown
+		x = 11
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_the_cracks_show }
+		mutually_exclusive = { 
+			focus = PRU_contact_indigenous_groups 
+		}
+		mutually_exclusive = { 
+			focus = PRU_rebuild_the_party 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Stay From The Left
+	focus = {
+		id = PRU_stay_from_the_left
+		icon = GFX_goal_unknown
+		x = 11
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_unite_the_old_guard }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Force Corporations To Compromise
+	focus = {
+		id = PRU_force_corporations_to_compromise
+		icon = GFX_goal_unknown
+		x = 11
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_stay_from_the_left }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Promise The World
+	focus = {
+		id = PRU_promise_the_world
+		icon = GFX_goal_unknown
+		x = 11
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_force_corporations_to_compromise }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for 2201 Comfirmation Ballots
+	focus = {
+		id = PRU_2201_comfirmation_ballots
+		icon = GFX_goal_unknown
+		x = 8
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PRU_raise_the_utopian_ideal 
+			focus = PRU_not_all_is_lost 
+			focus = PRU_promise_the_world 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Pax Andeana
+	focus = {
+		id = PRU_pax_andeana
+		icon = GFX_goal_unknown
+		x = 17
+		y = 0
+		cost = 6
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Over The Amazon
+	focus = {
+		id = PRU_over_the_amazon
+		icon = GFX_goal_unknown
+		x = 15
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_pax_andeana }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			## I'll do this later when I run the game
+		}
+		completion_reward = {
+			## I'll do this later when I run the game
+		}
+	}
+
+	#Focus for Protectors Of The Rainforest
+	focus = {
+		id = PRU_protectors_of_the_rainforest
+		icon = GFX_goal_unknown
+		x = 13
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_over_the_amazon }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			## I'll do this later when I run the game
+		}
+		completion_reward = {
+			## I'll do this later when I run the game
+		}
+	}
+
+	#Focus for In The Mountains
+	focus = {
+		id = PRU_in_the_mountains
+		icon = GFX_goal_unknown
+		x = 19
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_pax_andeana }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Sign The Safehouse Petition
+	focus = {
+		id = PRU_sign_the_safehouse_petition
+		icon = GFX_goal_unknown
+		x = 17
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PRU_over_the_amazon 
+		}
+		prerequisite = { 
+			focus = PRU_in_the_mountains 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_country_flag = divisive_proposition_passed
+		}
+		completion_reward = {
+			swap_ideas= {
+				remove_idea = PRU_the_andean_century
+				add_idea = PRU_the_andean_century_2
+			}			
+		}
+	}
+
+	#Focus for Early Mobilization
+	focus = {
+		id = PRU_early_mobilization
+		icon = GFX_goal_unknown
+		x = 15
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PRU_over_the_amazon 
+		}
+		prerequisite = { 
+			focus = PRU_sign_the_safehouse_petition 
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_country_flag = contraversial_proposition_passed
+		}
+		completion_reward = {
+			swap_ideas= {
+				remove_idea = PRU_the_andean_century_2
+				add_idea = PRU_the_andean_century_3
+			}
+		}
+	}
+
+	#Focus for Limited Social Mobilization
+	focus = {
+		id = PRU_limited_social_mobilization
+		icon = GFX_goal_unknown
+		x = 15
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_early_mobilization }
+		search_filters = { FOCUS_FILTER_MANPOWER } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_country_flag = impossible_proposition_passed
+		}
+		completion_reward = {
+			swap_ideas= {
+				remove_idea = PRU_the_andean_century_3 
+				add_idea = PRU_the_andean_century_4
+			}
+		}
+	}
+
+	#Focus for Loja Arms Factories
+	focus = {
+		id = PRU_loja_arms_factories
+		icon = GFX_goal_unknown
+		x = 17
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_sign_the_safehouse_petition }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Heavy Ordnance Contractors
+	focus = {
+		id = PRU_heavy_ordnance_contractors
+		icon = GFX_goal_unknown
+		x = 17
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_loja_arms_factories }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Great Andean Road
+	focus = {
+		id = PRU_great_andean_road
+		icon = GFX_goal_unknown
+		x = 19
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_in_the_mountains }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Quito Tractor Plants
+	focus = {
+		id = PRU_quito_tractor_plants
+		icon = GFX_goal_unknown
+		x = 19
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_arequipa_light_industry }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Arequipa Light Industry
+	focus = {
+		id = PRU_arequipa_light_industry
+		icon = GFX_goal_unknown
+		x = 19
+		y = 3
+		cost = 7
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_great_andean_road }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Newline Scanners
+	focus = {
+		id = PRU_newline_scanners
+		icon = GFX_goal_unknown
+		x = 21
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_in_the_mountains }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+				bonus = 1 
+				uses = 1 
+				category = radar_tech 
+			}			
+		}
+	}
+
+	#Focus for State Subsidized Education
+	focus = {
+		id = PRU_state_subsidized_education
+		icon = GFX_goal_unknown
+		x = 21
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_newline_scanners }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Order More Terrabytes
+	focus = {
+		id = PRU_order_more_terrabytes
+		icon = GFX_goal_unknown
+		x = 21
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_state_subsidized_education }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+				bonus = 1 
+				uses = 1				
+				category = computing_tech
+			}
+		}
+	}
+
+	#Focus for Maximize Lithium Extraction
+	focus = {
+		id = PRU_maximize_lithium_extraction
+		icon = GFX_goal_unknown
+		x = 19
+		y = 5
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PRU_heavy_ordnance_contractors 
+		}
+		prerequisite = { 
+			focus = PRU_quito_tractor_plants 
+		}
+		prerequisite = { 
+			focus = PRU_order_more_terrabytes 
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas= {
+				remove_idea = PRU_the_lithium_business 
+				add_idea = PRU_the_lithium_business_2
+			}
+		}
+	}
+
+	#Focus for The Army Issue
+	focus = {
+		id = PRU_the_army_issue
+		icon = GFX_goal_unknown
+		x = 27
+		y = 0
+		cost = 2
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event= {
+				days = 0
+				id = peru.1
+			}
+		}
+	}
+
+	#Focus for AI-Assisted Training
+	focus = {
+		id = PRU_aiassisted_training
+		icon = GFX_goal_unknown
+		x = 25
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_the_army_issue }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			army_experience= 40
+		}
+	}
+
+	#Focus for Persons Of Fortune
+	focus = {
+		id = PRU_persons_of_fortune
+		icon = GFX_goal_unknown
+		x = 25
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_aiassisted_training }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas= PRU_the_andean_army
+		}
+	}
+
+	#Focus for Kinetic Weapons Research
+	focus = {
+		id = PRU_kinetic_weapons_research
+		icon = GFX_goal_unknown
+		x = 23
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_persons_of_fortune }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+				bonus = 1
+				uses = 2 
+				category = infantry_weapons
+			}
+		}
+	}
+
+	#Focus for Compact's Finest
+	focus = {
+		id = PRU_compacts_finest
+		icon = GFX_goal_unknown
+		x = 25
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_persons_of_fortune }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas= {
+				remove_idea = PRU_the_andean_army
+				add_idea = PRU_the_andean_army_2 
+			}
+		}
+	}
+
+	#Focus for HealthAid Drones
+	focus = {
+		id = PRU_healthaid_drones
+		icon = GFX_goal_unknown
+		x = 27
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_persons_of_fortune }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+				bonus = 1
+				uses = 2 
+				category = support_tech
+			}
+		}
+	}
+
+	#Focus for Heavy Barrage Developments
+	focus = {
+		id = PRU_heavy_barrage_developments
+		icon = GFX_goal_unknown
+		x = 23
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_compacts_finest }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+				bonus = 1 
+				uses = 2 
+				category = artillery
+			}
+		}
+	}
+
+	#Focus for Doctrine: Loyalty
+	focus = {
+		id = PRU_doctrine_loyalty
+		icon = GFX_goal_unknown
+		x = 25
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_compacts_finest }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas= {
+				remove_idea = PRU_the_andean_army_2
+				add_idea = PRU_the_andean_army_3
+			}
+		}
+	}
+
+	#Focus for Walker Developments
+	focus = {
+		id = PRU_walker_developments
+		icon = GFX_goal_unknown
+		x = 27
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_compacts_finest }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+				bonus = 1 
+				uses = 1 
+				category = walker_equipment
+			}
+		}
+	}
+
+	#Focus for Armor Innovations
+	focus = {
+		id = PRU_armor_innovations
+		icon = GFX_goal_unknown
+		x = 25
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_doctrine_loyalty }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+				bonus = 1
+				uses = 2 
+				category = armor
+			}
+		}
+	}
+
+	#Focus for Rule The Skies
+	focus = {
+		id = PRU_rule_the_skies
+		icon = GFX_goal_unknown
+		x = 29
+		y = 1
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_the_army_issue }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			air_experience= 200
+		}
+	}
+
+	#Focus for Payload Delivery
+	focus = {
+		id = PRU_payload_delivery
+		icon = GFX_goal_unknown
+		x = 28
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_rule_the_skies }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+				bonus = 1
+				uses = 1
+				category = cas_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	#Focus for Jet Prototypes
+	focus = {
+		id = PRU_jet_prototypes
+		icon = GFX_goal_unknown
+		x = 30
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_rule_the_skies }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+				bonus = 1
+				uses = 1
+				category = light_fighter
+			}
+		}
+	}
+
+	#Focus for Uplink Stations
+	focus = {
+		id = PRU_uplink_stations
+		icon = GFX_goal_unknown
+		x = 29
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PRU_payload_delivery 
+			focus = PRU_jet_prototypes 
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+				bonus = 1
+				uses = 1
+				category = nuclear_tech 
+			}
+		}
+	}
+
+	#Focus for Synthetic Fibers
+	focus = {
+		id = PRU_synthetic_fibers
+		icon = GFX_goal_unknown
+		x = 30
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_uplink_stations }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas= PRU_hardened_airframes
+		}
+	}
+
+	#Focus for Advanced Pilot Training
+	focus = {
+		id = PRU_advanced_pilot_training
+		icon = GFX_goal_unknown
+		x = 29
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_uplink_stations }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			air_experience= 200
+		}
+	}
+
+	#Focus for What Will Work
+	focus = {
+		id = PRU_what_will_work
+		icon = GFX_goal_unknown
+		x = 1
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Lift Augmentation Regulations
+	focus = {
+		id = PRU_lift_augmentation_regulations
+		icon = GFX_goal_unknown
+		x = 0
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_what_will_work }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Fix What We Can
+	focus = {
+		id = PRU_fix_what_we_can
+		icon = GFX_goal_unknown
+		x = 0
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_lift_augmentation_regulations }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Protectors Of Earth
+	focus = {
+		id = PRU_protectors_of_earth
+		icon = GFX_goal_unknown
+		x = 0
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_lift_augmentation_regulations }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Trial Of The Right
+	focus = {
+		id = PRU_trial_of_the_right
+		icon = GFX_goal_unknown
+		x = 2
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_what_will_work }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Green Tide
+	focus = {
+		id = PRU_green_tide
+		icon = GFX_goal_unknown
+		x = 2
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_trial_of_the_right }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Purple Flood
+	focus = {
+		id = PRU_purple_flood
+		icon = GFX_goal_unknown
+		x = 2
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_green_tide }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Sideline The Left
+	focus = {
+		id = PRU_sideline_the_left
+		icon = GFX_goal_unknown
+		x = 1
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PRU_protectors_of_earth 
+		}
+		prerequisite = { 
+			focus = PRU_purple_flood 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for What Must Work
+	focus = {
+		id = PRU_what_must_work
+		icon = GFX_goal_unknown
+		x = 4
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Wipe Their Remains
+	focus = {
+		id = PRU_wipe_their_remains
+		icon = GFX_goal_unknown
+		x = 4
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_what_must_work }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Break The Party
+	focus = {
+		id = PRU_break_the_party
+		icon = GFX_goal_unknown
+		x = 4
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_wipe_their_remains }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Repeal The Prosperity And Growth Act
+	focus = {
+		id = PRU_repeal_the_prosperity_and_growth_act
+		icon = GFX_goal_unknown
+		x = 4
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_break_the_party }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Through Gritted Teeth
+	focus = {
+		id = PRU_through_gritted_teeth
+		icon = GFX_goal_unknown
+		x = 8
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Calm The Parliament
+	focus = {
+		id = PRU_calm_the_parliament
+		icon = GFX_goal_unknown
+		x = 8
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_through_gritted_teeth }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Ostracize The Radicals
+	focus = {
+		id = PRU_ostracize_the_radicals
+		icon = GFX_goal_unknown
+		x = 8
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_calm_the_parliament }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+		#Focus for Review The Prosperity And Growth Act
+	focus = {
+		id = PRU_review_the_prosperity_and_growth_act
+		icon = GFX_goal_unknown
+		x = 8
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_ostracize_the_radicals }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for What Always Worked
+	focus = {
+		id = PRU_what_always_worked
+		icon = GFX_goal_unknown
+		x = 12
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Pressure Big Lithium
+	focus = {
+		id = PRU_pressure_big_lithium
+		icon = GFX_goal_unknown
+		x = 10
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PRU_through_gritted_teeth 
+			focus = PRU_what_always_worked 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Trade With Asia?
+	focus = {
+		id = PRU_trade_with_asia
+		icon = GFX_goal_unknown
+		x = 10
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_pressure_big_lithium }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Ban Research Hospitals
+	focus = {
+		id = PRU_ban_research_hospitals
+		icon = GFX_goal_unknown
+		x = 10
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_trade_with_asia }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Party Line
+	focus = {
+		id = PRU_the_party_line
+		icon = GFX_goal_unknown
+		x = 8
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PRU_the_amaya_doctrine 
+		}
+		prerequisite = { 
+			focus = PRU_review_the_prosperity_and_growth_act 
+		}
+		prerequisite = { 
+			focus = PRU_ban_research_hospitals 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Natural Habitat Preservation
+	focus = {
+		id = PRU_natural_habitat_preservation
+		icon = GFX_goal_unknown
+		x = 6
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PRU_through_gritted_teeth 
+			focus = PRU_what_must_work 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Establish The Regulatory Committee
+	focus = {
+		id = PRU_establish_the_regulatory_committee
+		icon = GFX_goal_unknown
+		x = 6
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_natural_habitat_preservation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Amaya Doctrine
+	focus = {
+		id = PRU_the_amaya_doctrine
+		icon = GFX_goal_unknown
+		x = 6
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_establish_the_regulatory_committee }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Restore Governmental Cohesion
+	focus = {
+		id = PRU_restore_governmental_cohesion
+		icon = GFX_goal_unknown
+		x = 5
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PRU_repeal_the_prosperity_and_growth_act 
+		}
+		prerequisite = { 
+			focus = PRU_the_amaya_doctrine 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Deal With The Left
+	focus = {
+		id = PRU_deal_with_the_left
+		icon = GFX_goal_unknown
+		x = 12
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_what_always_worked }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+		#Focus for Entrench Policies
+	focus = {
+		id = PRU_entrench_policies
+		icon = GFX_goal_unknown
+		x = 12
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_deal_with_the_left }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Affirm The Prosperity And Growth Act
+	focus = {
+		id = PRU_affirm_the_prosperity_and_growth_act
+		icon = GFX_goal_unknown
+		x = 12
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_entrench_policies }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Outline Of The Century
+	focus = {
+		id = PRU_outline_of_the_century
+		icon = GFX_goal_unknown
+		x = 11
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PRU_ban_research_hospitals 
+		}
+		prerequisite = { 
+			focus = PRU_affirm_the_prosperity_and_growth_act 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+					#Focus for What We Never Tried
+	focus = {
+		id = PRU_what_we_never_tried
+		icon = GFX_goal_unknown
+		x = 15
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Trial Of The Left
+	focus = {
+		id = PRU_trial_of_the_left
+		icon = GFX_goal_unknown
+		x = 14
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_what_we_never_tried }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Resume Urbanization
+	focus = {
+		id = PRU_resume_urbanization
+		icon = GFX_goal_unknown
+		x = 14
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_trial_of_the_left }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Automated Paradise
+	focus = {
+		id = PRU_automated_paradise
+		icon = GFX_goal_unknown
+		x = 14
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_resume_urbanization }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Double Lithium Extraction
+	focus = {
+		id = PRU_double_lithium_extraction
+		icon = GFX_goal_unknown
+		x = 16
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_what_we_never_tried }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Spare No Expense
+	focus = {
+		id = PRU_spare_no_expense
+		icon = GFX_goal_unknown
+		x = 16
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_double_lithium_extraction }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Nature Bends
+	focus = {
+		id = PRU_nature_bends
+		icon = GFX_goal_unknown
+		x = 16
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_spare_no_expense }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Sideline The Right
+	focus = {
+		id = PRU_sideline_the_right
+		icon = GFX_goal_unknown
+		x = 15
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PRU_automated_paradise 
+		}
+		prerequisite = { 
+			focus = PRU_nature_bends 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for South American Neo-Politics
+	focus = {
+		id = PRU_south_american_neopolitics
+		icon = GFX_goal_unknown
+		x = 20
+		y = 6
+		cost = 3
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power= 100  
+			create_faction= "Lima Accord"
+		}
+	}
+
+	#Focus for Southern Intervention?
+	focus = {
+		id = PRU_southern_intervention
+		icon = GFX_goal_unknown
+		x = 20
+		y = 7
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_south_american_neopolitics }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			ARG = { has_country_flag = argentine_civil_war }
+		}
+		completion_reward = {
+			country_event= {
+				days = 0
+				id = peru.2
+			}
+		}
+	}
+
+	#Focus for Argentine Embassy?
+	focus = {
+		id = PRU_argentine_embassy
+		icon = GFX_goal_unknown
+		x = 20
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_southern_intervention }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			ARG = { NOT = { has_country_flag = argentine_civil_war } }
+		}
+		completion_reward = {
+			ARG = {
+				country_event = {
+					days = 0
+					id = peru.3
+				}
+			}
+		}
+	}
+
+	#Focus for International Issues
+	focus = {
+		id = PRU_international_issues
+		icon = GFX_goal_unknown
+		x = 18
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_south_american_neopolitics }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power= 100
+		}
+	}
+
+	#Focus for Look To The North
+	focus = {
+		id = PRU_look_to_the_north
+		icon = GFX_goal_unknown
+		x = 22
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_south_american_neopolitics }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Times Are Changing
+	focus = {
+		id = PRU_times_are_changing
+		icon = GFX_goal_unknown
+		x = 20
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PRU_international_issues 
+		}
+		prerequisite = { 
+			focus = PRU_argentine_embassy 
+		}
+		prerequisite = { 
+			focus = PRU_look_to_the_north 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Ruler Of The Pacific
+	focus = {
+		id = PRU_ruler_of_the_pacific
+		icon = GFX_goal_unknown
+		x = 26
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			navy_experience= 50
+		}
+	}
+
+	#Focus for Power Projection
+	focus = {
+		id = PRU_power_projection
+		icon = GFX_goal_unknown
+		x = 24
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_ruler_of_the_pacific }
+		mutually_exclusive = { focus = PRU_protecting_the_trade }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas= PRU_power_projection
+		}
+	}
+
+	#Focus for Protecting The Trade
+	focus = {
+		id = PRU_protecting_the_trade
+		icon = GFX_goal_unknown
+		x = 28
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_ruler_of_the_pacific }
+		mutually_exclusive = { focus = PRU_power_projection }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas= PRU_protect_the_trade
+		}
+	}
+
+	#Focus for New Drydocks
+	focus = {
+		id = PRU_new_drydocks
+		icon = GFX_goal_unknown
+		x = 26
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_ruler_of_the_pacific }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 1
+								include_locked = yes
+							}
+						}
+					}
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	#Focus for Battlecruisers
+	focus = {
+		id = PRU_battlecruisers
+		icon = GFX_goal_unknown
+		x = 24
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_power_projection }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+				bonus = 1
+				uses = 2
+				category = bc_tech 
+			}
+		}
+	}
+
+	#Focus for Gunboats
+	focus = {
+		id = PRU_gunboats
+		icon = GFX_goal_unknown
+		x = 28
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_protecting_the_trade }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+				bonus = 1
+				uses = 2 
+				category = gunboat_tech 
+			}
+		}
+	}
+
+	#Focus for Perfect Ships
+	focus = {
+		id = PRU_perfect_ships
+		icon = GFX_goal_unknown
+		x = 25
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_battlecruisers }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+				bonus = 1
+				uses = 1
+				category = dd_tech 
+			}
+		}
+	}
+
+	#Focus for Submarines
+	focus = {
+		id = PRU_submarines
+		icon = GFX_goal_unknown
+		x = 27
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = PRU_gunboats }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+				bonus = 1
+				uses = 1
+				category = ss_tech 
+			}
+		}
+	}
+
+	#Focus for Doctrinal Reassessment
+	focus = {
+		id = PRU_doctrinal_reassessment
+		icon = GFX_goal_unknown
+		x = 26
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PRU_perfect_ships 
+		}
+		prerequisite = { 
+			focus = PRU_new_drydocks 
+		}
+		prerequisite = { 
+			focus = PRU_submarines 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			navy_experience = 200
+		}
+	}
+}
