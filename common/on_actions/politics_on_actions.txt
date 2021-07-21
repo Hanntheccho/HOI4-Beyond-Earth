@@ -2,16 +2,19 @@ on_actions = {
     on_startup = {
         effect = {
             every_country = {
-                set_variable = { free_factory_in = 10 }
+                set_variable = { free_factory_progress = 0 }
+                set_variable = { free_factory_gain = 1 }
+                set_variable = { free_factory_adjustment = 1 }
+                add_to_variable = { free_factory_adjustment = 1 }
                 set_variable = { military_chance = 0 }
                 set_variable = { heavy_chance = 1 }
                 set_variable = { land_chance = 0 }
                 set_variable = { civilian_chance = 2 }
                 set_variable = { light_chance = 1 }
                 set_variable = { naval_chance = 0 }
-                set_variable = { military_civilian_slider_var = 555 }
-                set_variable = { light_heavy_slider_var = 637.5 }
-                set_variable = { land_naval_slider_var = 637.5 }
+                set_variable = { military_civilian_slider_var = 780 }
+                set_variable = { light_heavy_slider_var = 862.5 }
+                set_variable = { land_naval_slider_var = 862.5 }
                 set_variable = { division_limit = num_of_factories }
                 set_variable = { division_limit_extra = 0 }
                 set_variable = { impossible_proposition_expire = -1 }
@@ -57,18 +60,18 @@ on_actions = {
                 }
                 clamp_variable = {
                     var = military_civilian_slider_var
-                    min = 555
-                    max = 720
+                    min = 780
+                    max = 945
                 }
                 clamp_variable = {
                     var = light_heavy_slider_var
-                    min = 555
-                    max = 720
+                    min = 780
+                    max = 945
                 }
                 clamp_variable = {
                     var = land_naval_slider_var
-                    min = 555
-                    max = 720
+                    min = 780
+                    max = 945
                 }
 
                 set_variable = { corruption_variable = 11 }
@@ -85,11 +88,14 @@ on_actions = {
     }
     on_daily = {
         effect = {
+            multiply_variable = { free_factory_gain = free_factory_adjustment }
+            add_to_variable = { free_factory_progress = free_factory_gain }
+            clear_variable = free_factory_gain
+            set_variable = { free_factory_gain = 1 }
             subtract_from_variable = { hearing_time = 1 }
-            subtract_from_variable = { free_factory_in = 1 }
             if = {
                 limit = {
-                    check_variable = { free_factory_in = 0 }
+                    check_variable = { free_factory_progress = 100 }
                 }
                 country_event = { id = free_factory_event.1 } 
             }
@@ -585,7 +591,10 @@ on_actions = {
             }
             else_if = {
                 limit = {
-                    check_variable = { num_divisions < division_limit }
+                    AND = {
+                        check_variable = { num_divisions < division_limit }
+                        has_dynamic_modifier = { modifier = too_many_divs }
+                    }
                 }
                 clear_variable = too_many_divs_var
                 remove_dynamic_modifier = {

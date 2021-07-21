@@ -37,8 +37,7 @@ scripted_gui = {
             }
             welfare_programs_button_click = {
                 add_to_variable = { parliament_support = 5 }
-                add_political_power = -50
-                subtract_from_variable = { industrial_power = 50 }
+                add_political_power = -100
             }
             nerve_stapling_button_click = {
                 add_to_variable = { parliament_support = 15 }
@@ -380,14 +379,14 @@ scripted_gui = {
                 subtract_from_variable = { industrial_power = 25 }
             }
 
-            increase_limit_click = {
-                subtract_from_variable = { industrial_power = 10 }
-                add_to_variable = { division_limit_extra = 4 }
-            }
-            align_warlords_click = {
-                add_to_variable = { division_limit_extra = 4 }
-                add_to_variable = { corruption_variable = 5 }
-            }
+            #increase_limit_click = {
+            #    subtract_from_variable = { industrial_power = 10 }
+            #    add_to_variable = { division_limit_extra = 4 }
+            #}
+            #align_warlords_click = {
+            #    add_to_variable = { division_limit_extra = 4 }
+            #    add_to_variable = { corruption_variable = 5 }
+            #}
 		}
         
         triggers = {
@@ -867,30 +866,33 @@ scripted_gui = {
                 check_variable = { industrial_power > 24 }
             }
 
-            increase_limit_click_enabled = {
-                check_variable = { industrial_power > 9 }
-                check_variable = { division_limit < 297 }
-            }
-            align_warlords_click_enabled = {
-                check_variable = { division_limit < 197 }
-            }
+            #increase_limit_click_enabled = {
+            #    check_variable = { industrial_power > 9 }
+            #    check_variable = { division_limit < 297 }
+            #}
+            #align_warlords_click_enabled = {
+            #    check_variable = { division_limit < 197 }
+            #}
         }
 
 		properties = {
 			corruption_progressbar = {
 				frame = corruption_variable
 			}
+			free_factory_progressbar = {
+				frame = free_factory_progress
+			}
 			military_civilian_slider = { #Start is at 555 and end is at 720; that's just my guess tho, feel free to test and, if necessary, change this. Also change the variables in on_actions. 
 				x = military_civilian_slider_var
-				y = 425
+				y = 485
 			}
 			light_heavy_slider = {
 				x = light_heavy_slider_var
-				y = 455
+				y = 517
 			}
 			land_naval_slider = {
 				x = land_naval_slider_var
-				y = 487
+				y = 548
 			}
 		}
 		
