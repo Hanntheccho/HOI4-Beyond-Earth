@@ -1,0 +1,40 @@
+scripted_gui = {
+	brazil_civil_war_gui_button = {
+		window_name = "brazil_civil_war_gui_button"
+		context_type = selected_state_context
+		parent_window_token = selected_state_view 
+	
+		visible = {
+			BRA = { has_country_flag = brazil_civil_war }
+			BRA = {
+				is_ai = no
+			}
+			is_owned_and_controlled_by = BRA
+		}
+		
+		effects = {
+			open_button_click = {
+				BRA = { set_country_flag = brazil_gui_open }
+			}
+		}
+	}
+}
+	
+scripted_gui = {
+	brazil_civil_war_gui_window = {
+		window_name = "brazil_civil_war_gui_window"
+		context_type = player_context
+	
+		visible = {
+			BRA = {
+				has_country_flag = brazil_gui_open
+			}
+		}
+		
+		effects = {
+			close_button_click = {
+				BRA = { clr_country_flag = brazil_gui_open }
+			}
+		}
+	}
+}
