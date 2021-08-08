@@ -13,8 +13,6 @@ BRA_calculate_radicalized_population = {
 		divide_variable = { temp1 = 100 }
 	
 		multiply_variable = { temp2 = temp1 }
-		
-		round_temp_variable = temp2
 	
 		set_variable = { BRA_state_radicalized_population = temp2 }
 	}
@@ -28,8 +26,6 @@ BRA_calculate_impoverished_population = {
 		divide_variable = { temp3 = 100 }
 	
 		multiply_variable = { temp4 = temp3 }
-		
-		round_temp_variable = temp4
 	
 		set_variable = { BRA_state_impoverished_population = temp4 }
 	}
@@ -41,8 +37,16 @@ BRA_calculate_total_radicalized_population = {
 	
 		add_to_variable = { temp5 = BRA_state_radicalized_population }
 		
-		round_temp_variable = temp5
-		
 		set_variable = { BRA_radicalized_population = temp5 }
+	}
+}
+
+BRA_calculate_total_impoverished_population = {
+	every_owned_state = {
+		set_temp_variable = { temp6 = 0 }
+	
+		add_to_variable = { temp6 = BRA_state_radicalized_population }
+		
+		set_variable = { BRA_impoverished_population = temp6 }
 	}
 }
