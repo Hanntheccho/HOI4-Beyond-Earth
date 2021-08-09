@@ -5,14 +5,9 @@ BRA_calculate_radicalized_population = {
 		set_temp_variable = { temp1 = BRA_state_radicalization }
 		set_temp_variable = { temp2 = BRA_state_population }
 	
-		#set_variable = {
-			#var = BRA_state_radicalized_population
-			#value = ([?var:BRA_civil_war_map_chosen_state:BRA_state_radicalization] / 100) * [?var:BRA_civil_war_map_chosen_state:BRA_state_population] 
-		#}
+		divide_temp_variable = { temp1 = 100 }
 	
-		divide_variable = { temp1 = 100 }
-	
-		multiply_variable = { temp2 = temp1 }
+		multiply_temp_variable = { temp2 = temp1 }
 	
 		set_variable = { BRA_state_radicalized_population = temp2 }
 	}
@@ -23,30 +18,296 @@ BRA_calculate_impoverished_population = {
 		set_temp_variable = { temp3 = BRA_state_poverty }
 		set_temp_variable = { temp4 = BRA_state_population }
 	
-		divide_variable = { temp3 = 100 }
+		divide_temp_variable = { temp3 = 100 }
 	
-		multiply_variable = { temp4 = temp3 }
+		multiply_temp_variable = { temp4 = temp3 }
 	
 		set_variable = { BRA_state_impoverished_population = temp4 }
 	}
 }
 
 BRA_calculate_total_radicalized_population = {
-	every_owned_state = {
-		set_temp_variable = { temp5 = 0 }
+	set_temp_variable = { temp5 = 0 }
 	
-		add_to_variable = { temp5 = BRA_state_radicalized_population }
-		
-		set_variable = { BRA_radicalized_population = temp5 }
+	730 = {
+		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
 	}
+	740 = {
+		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
+	}
+	749 = {
+		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
+	}
+	760 = {
+		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
+	}
+	786 = {
+		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
+	}
+	779 = {
+		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
+	}
+	778 = {
+		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
+	}
+	799 = {
+		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
+	}
+	812 = {
+		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
+	}
+	821 = {
+		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
+	}
+	829 = {
+		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
+	}
+	801 = {
+		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
+	}
+	set_variable = { BRA_radicalized_population = temp5 }
 }
 
 BRA_calculate_total_impoverished_population = {
-	every_owned_state = {
-		set_temp_variable = { temp6 = 0 }
+	set_temp_variable = { temp6 = 0 }
 	
-		add_to_variable = { temp6 = BRA_state_radicalized_population }
-		
-		set_variable = { BRA_impoverished_population = temp6 }
+	730 = {
+		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
 	}
+	740 = {
+		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
+	}
+	749 = {
+		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
+	}
+	760 = {
+		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
+	}
+	786 = {
+		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
+	}
+	779 = {
+		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
+	}
+	778 = {
+		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
+	}
+	799 = {
+		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
+	}
+	812 = {
+		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
+	}
+	821 = {
+		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
+	}
+	829 = {
+		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
+	}
+	801 = {
+		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
+	}
+	set_variable = { BRA_impoverished_population = temp6 }
+}
+
+BRA_calculate_total_population = {
+	set_temp_variable = { temp7 = 0 }
+	
+	730 = {
+		add_to_temp_variable = { temp7 = BRA_state_population }
+	}
+	740 = {
+		add_to_temp_variable = { temp7 = BRA_state_population }
+	}
+	749 = {
+		add_to_temp_variable = { temp7 = BRA_state_population }
+	}
+	760 = {
+		add_to_temp_variable = { temp7 = BRA_state_population }
+	}
+	786 = {
+		add_to_temp_variable = { temp7 = BRA_state_population }
+	}
+	779 = {
+		add_to_temp_variable = { temp7 = BRA_state_population }
+	}
+	778 = {
+		add_to_temp_variable = { temp7 = BRA_state_population }
+	}
+	799 = {
+		add_to_temp_variable = { temp7 = BRA_state_population }
+	}
+	812 = {
+		add_to_temp_variable = { temp7 = BRA_state_population }
+	}
+	821 = {
+		add_to_temp_variable = { temp7 = BRA_state_population }
+	}
+	829 = {
+		add_to_temp_variable = { temp7 = BRA_state_population }
+	}
+	801 = {
+		add_to_temp_variable = { temp7 = BRA_state_population }
+	}
+	
+	log = "[?temp7]"
+	
+	set_variable = { BRA_total_population = temp7 }
+}
+
+BRA_calculate_radicalization_percentage = {
+	set_temp_variable = { temp8 = BRA_total_population }
+	set_temp_variable = { temp9 = BRA_radicalized_population }
+	
+	divide_temp_variable = { temp9 = temp8 }
+	
+	set_variable = { BRA_radicalized_percentage = temp9}
+}
+
+BRA_calculate_poverty_percentage = {
+	set_temp_variable = { temp10 = BRA_total_population }
+	set_temp_variable = { temp11 = BRA_impoverished_population }
+	
+	divide_temp_variable = { temp11 = temp10 }
+	
+	set_variable = { BRA_impoverished_percentage = temp11}
+}
+
+BRA_apply_ideas = {
+	if = {
+		limit = {
+			check_variable = { BRA_radicalized_percentage < 0.2 }
+		}
+		add_ideas = BRA_radicalized_population1
+		remove_ideas = BRA_radicalized_population2
+		remove_ideas = BRA_radicalized_population3
+		remove_ideas = BRA_radicalized_population4
+		remove_ideas = BRA_radicalized_population5
+	}
+	else_if = {
+		limit = {
+			AND = {
+				check_variable = { BRA_radicalized_percentage > 0.2 }
+				check_variable = { BRA_radicalized_percentage < 0.4 }
+			}
+			
+		}
+		add_ideas = BRA_radicalized_population2
+		remove_ideas = BRA_radicalized_population1
+		remove_ideas = BRA_radicalized_population3
+		remove_ideas = BRA_radicalized_population4
+		remove_ideas = BRA_radicalized_population5
+	}
+	else_if = {
+		limit = {
+			AND = {
+				check_variable = { BRA_radicalized_percentage > 0.4 }
+				check_variable = { BRA_radicalized_percentage < 0.6 }
+			}
+			
+		}
+		add_ideas = BRA_radicalized_population3
+		remove_ideas = BRA_radicalized_population1
+		remove_ideas = BRA_radicalized_population2
+		remove_ideas = BRA_radicalized_population4
+		remove_ideas = BRA_radicalized_population5
+	}
+	else_if = {
+		limit = {
+			AND = {
+				check_variable = { BRA_radicalized_percentage > 0.6 }
+				check_variable = { BRA_radicalized_percentage < 0.8 }
+			}
+			
+		}
+		add_ideas = BRA_radicalized_population4
+		remove_ideas = BRA_radicalized_population1
+		remove_ideas = BRA_radicalized_population2
+		remove_ideas = BRA_radicalized_population3
+		remove_ideas = BRA_radicalized_population5
+	}
+	else_if = {
+		limit = {
+			check_variable = { BRA_radicalized_percentage > 0.8 }
+		}
+		add_ideas = BRA_radicalized_population5
+		remove_ideas = BRA_radicalized_population1
+		remove_ideas = BRA_radicalized_population2
+		remove_ideas = BRA_radicalized_population3
+		remove_ideas = BRA_radicalized_population4
+	}
+	if = {
+		limit = {
+			check_variable = { BRA_impoverished_percentage < 0.2 }
+		}
+		add_ideas = BRA_impoverished_population1
+		remove_ideas = BRA_impoverished_population2
+		remove_ideas = BRA_impoverished_population3
+		remove_ideas = BRA_impoverished_population4
+		remove_ideas = BRA_impoverished_population5
+	}
+	else_if = {
+		limit = {
+			AND = {
+				check_variable = { BRA_impoverished_percentage > 0.2 }
+				check_variable = { BRA_impoverished_percentage < 0.4 }
+			}
+			
+		}
+		add_ideas = BRA_impoverished_population2
+		remove_ideas = BRA_impoverished_population1
+		remove_ideas = BRA_impoverished_population3
+		remove_ideas = BRA_impoverished_population4
+		remove_ideas = BRA_impoverished_population5
+	}
+	else_if = {
+		limit = {
+			AND = {
+				check_variable = { BRA_impoverished_percentage > 0.4 }
+				check_variable = { BRA_impoverished_percentage < 0.6 }
+			}
+			
+		}
+		add_ideas = BRA_impoverished_population3
+		remove_ideas = BRA_impoverished_population1
+		remove_ideas = BRA_impoverished_population2
+		remove_ideas = BRA_impoverished_population4
+		remove_ideas = BRA_impoverished_population5
+	}
+	else_if = {
+		limit = {
+			AND = {
+				check_variable = { BRA_impoverished_percentage > 0.6 }
+				check_variable = { BRA_impoverished_percentage < 0.8 }
+			}
+			
+		}
+		add_ideas = BRA_impoverished_population4
+		remove_ideas = BRA_impoverished_population1
+		remove_ideas = BRA_impoverished_population2
+		remove_ideas = BRA_impoverished_population3
+		remove_ideas = BRA_impoverished_population5
+	}
+	else_if = {
+		limit = {
+			check_variable = { BRA_impoverished_percentage > 0.8 }
+		}
+		add_ideas = BRA_impoverished_population5
+		remove_ideas = BRA_impoverished_population1
+		remove_ideas = BRA_impoverished_population2
+		remove_ideas = BRA_impoverished_population3
+		remove_ideas = BRA_impoverished_population4
+	}
+}
+
+BRA_set_starting_values = {
+	set_variable = { BRA_civil_war_map_chosen_state = 730.id }
+	BRA_calculate_radicalized_population = yes
+	BRA_calculate_impoverished_population = yes
+	BRA_calculate_total_radicalized_population = yes
+	BRA_calculate_total_impoverished_population = yes
+	BRA_calculate_total_population = yes
+	BRA_calculate_radicalization_percentage = yes
+	BRA_calculate_poverty_percentage = yes
+	BRA_apply_ideas = yes
 }

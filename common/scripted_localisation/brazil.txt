@@ -50,3 +50,83 @@ defined_text = {
 		localization_key = "STATE_801"
 	}
 }
+
+defined_text = {
+	name = BRA_radicalization
+	
+	text = {
+		trigger = { check_variable = { BRA_radicalized_percentage < 0.2 } }
+		localization_key = "Apathetic"
+	}
+	text = {
+		trigger = {
+			AND = {
+				check_variable = { BRA_radicalized_percentage > 0.2 }
+				check_variable = { BRA_radicalized_percentage < 0.4 }
+			}
+		}
+		localization_key = "Apolitical"
+	}
+	text = {
+		trigger = {
+			AND = {
+				check_variable = { BRA_radicalized_percentage > 0.4 }
+				check_variable = { BRA_radicalized_percentage < 0.6 }
+			}
+		}
+		localization_key = "Invested"
+	}
+	text = {
+		trigger = {
+			AND = {
+				check_variable = { BRA_radicalized_percentage > 0.6 }
+				check_variable = { BRA_radicalized_percentage < 0.8 }
+			}
+		}
+		localization_key = "Rallied"
+	}
+	text = {
+		trigger = { check_variable = { BRA_radicalized_percentage > 0.8 } }
+		localization_key = "Radicalized"
+	}
+}
+
+defined_text = {
+	name = BRA_impoverished
+	
+	text = {
+		trigger = { check_variable = { BRA_impoverished_percentage < 0.2 } }
+		localization_key = "23rd Century Prosperity"
+	}
+	text = {
+		trigger = {
+			AND = {
+				check_variable = { BRA_impoverished_percentage > 0.2 }
+				check_variable = { BRA_impoverished_percentage < 0.4 }
+			}
+		}
+		localization_key = "Pre-Mistake Prosperity"
+	}
+	text = {
+		trigger = {
+			AND = {
+				check_variable = { BRA_impoverished_percentage > 0.4 }
+				check_variable = { BRA_impoverished_percentage < 0.6 }
+			}
+		}
+		localization_key = "Dark Days Prosperity"
+	}
+	text = {
+		trigger = {
+			AND = {
+				check_variable = { BRA_impoverished_percentage > 0.6 }
+				check_variable = { BRA_impoverished_percentage < 0.8 }
+			}
+		}
+		localization_key = "Low Prosperity"
+	}
+	text = {
+		trigger = { check_variable = { BRA_impoverished_percentage > 0.8 } }
+		localization_key = "No Prosperity"
+	}
+}
