@@ -74,6 +74,16 @@ on_actions = {
 				
                 clamp_variable = { var = industrial_power min = 0 max = industrial_power_max }
 			}
+            ## Modifiers ##
+			if = {
+				limit = { 
+                    has_country_flag = consumption_two
+                }
+                
+                add_to_variable = { industrial_power = 0.35 }
+				
+                clamp_variable = { var = industrial_power min = 0 max = industrial_power_max }
+			}
         }
     }
 }

@@ -12,9 +12,9 @@ on_actions = {
                 set_variable = { civilian_chance = 2 }
                 set_variable = { light_chance = 1 }
                 set_variable = { naval_chance = 0 }
-                set_variable = { military_civilian_slider_var = 780 }
-                set_variable = { light_heavy_slider_var = 862.5 }
-                set_variable = { land_naval_slider_var = 862.5 }
+                set_variable = { military_civilian_slider_var = 880 }
+                set_variable = { light_heavy_slider_var = 962.5 }
+                set_variable = { land_naval_slider_var = 962.5 }
                 set_variable = { division_limit = num_of_factories }
                 set_variable = { division_limit_extra = 0 }
                 set_variable = { impossible_proposition_expire = -1 }
@@ -566,8 +566,24 @@ on_actions = {
                 }
                 subtract_from_variable = { industrial_power = 0.35 }
             }
+            if = {
+                limit = {
+                    AND = {
+                        has_country_flag = liberty_one
+                        check_variable = { corruption_variable > 0 }
+                    }
+                }
+                subtract_from_variable = { corruption_variable = 0.05 }
+            }
             set_variable = { division_limit = num_of_factories }
             add_to_variable = { division_limit = division_limit_extra }
+            if = {
+                limit = {
+                    has_country_flag = has_body_tier1
+                }
+                multiply_variable = { division_limit = 1.2 }
+            }
+            round_variable = division_limit
             clamp_variable = {
                 var = division_limit
                 min = 1
