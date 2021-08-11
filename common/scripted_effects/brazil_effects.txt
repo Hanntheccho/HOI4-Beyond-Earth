@@ -1,307 +1,1912 @@
-## Civil War GUI
+## Civil War
 
 BRA_calculate_radicalized_population = {
-	every_owned_state = {
-		set_temp_variable = { temp1 = BRA_state_radicalization }
-		set_temp_variable = { temp2 = BRA_state_population }
+	BGV = {
+		every_owned_state = {
+			set_temp_variable = { temp1 = BRA_state_radicalization }
+			set_temp_variable = { temp2 = BRA_state_population }
+		
+			multiply_temp_variable = { temp2 = temp1 }
+		
+			set_variable = { BRA_state_radicalized_population = temp2 }
+		}
+	}
 	
-		divide_temp_variable = { temp1 = 100 }
+	LEG = {
+		every_owned_state = {
+			set_temp_variable = { temp3 = BRA_state_radicalization }
+			set_temp_variable = { temp4 = BRA_state_population }
+		
+			multiply_temp_variable = { temp4 = temp3 }
+		
+			set_variable = { BRA_state_radicalized_population = temp4 }
+		}
+	}
 	
-		multiply_temp_variable = { temp2 = temp1 }
+	GRP = {
+		every_owned_state = {
+			set_temp_variable = { temp5 = BRA_state_radicalization }
+			set_temp_variable = { temp6 = BRA_state_population }
+		
+			multiply_temp_variable = { temp6 = temp5 }
+		
+			set_variable = { BRA_state_radicalized_population = temp6 }
+		}
+	}
 	
-		set_variable = { BRA_state_radicalized_population = temp2 }
+	LAM = {
+		every_owned_state = {
+			set_temp_variable = { temp7 = BRA_state_radicalization }
+			set_temp_variable = { temp8 = BRA_state_population }
+		
+			multiply_temp_variable = { temp8 = temp7 }
+		
+			set_variable = { BRA_state_radicalized_population = temp8 }
+		}
 	}
 }
 
 BRA_calculate_impoverished_population = {
-	every_owned_state = {
+	BGV = {
+		every_owned_state = {
+		set_temp_variable = { temp1 = BRA_state_poverty }
+		set_temp_variable = { temp2 = BRA_state_population }
+	
+		multiply_temp_variable = { temp2 = temp1 }
+	
+		set_variable = { BRA_state_impoverished_population = temp2 }
+		}
+	}
+	
+	LEG = {
+		every_owned_state = {
 		set_temp_variable = { temp3 = BRA_state_poverty }
 		set_temp_variable = { temp4 = BRA_state_population }
-	
-		divide_temp_variable = { temp3 = 100 }
 	
 		multiply_temp_variable = { temp4 = temp3 }
 	
 		set_variable = { BRA_state_impoverished_population = temp4 }
+		}
+	}
+	
+	GRP = {
+		every_owned_state = {
+		set_temp_variable = { temp5 = BRA_state_poverty }
+		set_temp_variable = { temp6 = BRA_state_population }
+	
+		multiply_temp_variable = { temp6 = temp5 }
+	
+		set_variable = { BRA_state_impoverished_population = temp6 }
+		}
+	}
+	
+	LAM = {
+		every_owned_state = {
+		set_temp_variable = { temp7 = BRA_state_poverty }
+		set_temp_variable = { temp8 = BRA_state_population }
+	
+		multiply_temp_variable = { temp8 = temp7 }
+	
+		set_variable = { BRA_state_impoverished_population = temp8 }
+		}
 	}
 }
 
 BRA_calculate_total_radicalized_population = {
-	set_temp_variable = { temp5 = 0 }
+	set_temp_variable = { temp1 = 0 }
 	
-	730 = {
-		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
+	BGV = {
+		if = {
+			limit = {
+				owns_state = 730
+			}
+			730 = {
+				add_to_temp_variable = { temp1 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 740
+			}
+			740 = {
+				add_to_temp_variable = { temp1 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 749
+			}
+			749 = {
+				add_to_temp_variable = { temp1 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 760
+			}
+			760 = {
+				add_to_temp_variable = { temp1 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 786
+			}
+			786 = {
+				add_to_temp_variable = { temp1 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 779
+			}
+			779 = {
+				add_to_temp_variable = { temp1 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 778
+			}
+			778 = {
+				add_to_temp_variable = { temp1 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 799
+			}
+			799 = {
+				add_to_temp_variable = { temp1 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 812
+			}
+			812 = {
+				add_to_temp_variable = { temp1 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 821
+			}
+			821 = {
+				add_to_temp_variable = { temp1 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 829
+			}
+			829 = {
+				add_to_temp_variable = { temp1 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 801
+			}
+			801 = {
+				add_to_temp_variable = { temp1 = BRA_state_radicalized_population }
+			}
+		}
+		set_variable = { BRA_radicalized_population = temp1 }
 	}
-	740 = {
-		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
+	
+	set_temp_variable = { temp2 = 0 }
+	
+	LEG = {
+		if = {
+			limit = {
+				owns_state = 730
+			}
+			730 = {
+				add_to_temp_variable = { temp2 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 740
+			}
+			740 = {
+				add_to_temp_variable = { temp2 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 749
+			}
+			749 = {
+				add_to_temp_variable = { temp2 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 760
+			}
+			760 = {
+				add_to_temp_variable = { temp2 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 786
+			}
+			786 = {
+				add_to_temp_variable = { temp2 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 779
+			}
+			779 = {
+				add_to_temp_variable = { temp2 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 799
+			}
+			799 = {
+				add_to_temp_variable = { temp2 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 812
+			}
+			812 = {
+				add_to_temp_variable = { temp2 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 821
+			}
+			821 = {
+				add_to_temp_variable = { temp2 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 829
+			}
+			829 = {
+				add_to_temp_variable = { temp2 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 801
+			}
+			801 = {
+				add_to_temp_variable = { temp2 = BRA_state_radicalized_population }
+			}
+		}
+		set_variable = { BRA_radicalized_population = temp2 }
 	}
-	749 = {
-		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
+	
+	set_temp_variable = { temp3 = 0 }
+	
+	GRP = {
+		if = {
+			limit = {
+				owns_state = 730
+			}
+			730 = {
+				add_to_temp_variable = { temp3 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 740
+			}
+			740 = {
+				add_to_temp_variable = { temp3 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 749
+			}
+			749 = {
+				add_to_temp_variable = { temp3 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 760
+			}
+			760 = {
+				add_to_temp_variable = { temp3 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 786
+			}
+			786 = {
+				add_to_temp_variable = { temp3 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 779
+			}
+			779 = {
+				add_to_temp_variable = { temp3 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 799
+			}
+			799 = {
+				add_to_temp_variable = { temp3 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 812
+			}
+			812 = {
+				add_to_temp_variable = { temp3 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 821
+			}
+			821 = {
+				add_to_temp_variable = { temp3 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 829
+			}
+			829 = {
+				add_to_temp_variable = { temp3 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 801
+			}
+			801 = {
+				add_to_temp_variable = { temp3 = BRA_state_radicalized_population }
+			}
+		}
+		set_variable = { BRA_radicalized_population = temp3 }
 	}
-	760 = {
-		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
+	
+	set_temp_variable = { temp4 = 0 }
+	
+	LAM = {
+		if = {
+			limit = {
+				owns_state = 730
+			}
+			730 = {
+				add_to_temp_variable = { temp4 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 740
+			}
+			740 = {
+				add_to_temp_variable = { temp4 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 749
+			}
+			749 = {
+				add_to_temp_variable = { temp4 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 760
+			}
+			760 = {
+				add_to_temp_variable = { temp4 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 786
+			}
+			786 = {
+				add_to_temp_variable = { temp4 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 779
+			}
+			779 = {
+				add_to_temp_variable = { temp4 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 799
+			}
+			799 = {
+				add_to_temp_variable = { temp4 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 812
+			}
+			812 = {
+				add_to_temp_variable = { temp4 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 821
+			}
+			821 = {
+				add_to_temp_variable = { temp4 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 829
+			}
+			829 = {
+				add_to_temp_variable = { temp4 = BRA_state_radicalized_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 801
+			}
+			801 = {
+				add_to_temp_variable = { temp4 = BRA_state_radicalized_population }
+			}
+		}
+		set_variable = { BRA_radicalized_population = temp4 }
 	}
-	786 = {
-		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
-	}
-	779 = {
-		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
-	}
-	778 = {
-		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
-	}
-	799 = {
-		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
-	}
-	812 = {
-		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
-	}
-	821 = {
-		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
-	}
-	829 = {
-		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
-	}
-	801 = {
-		add_to_temp_variable = { temp5 = BRA_state_radicalized_population }
-	}
-	set_variable = { BRA_radicalized_population = temp5 }
 }
 
 BRA_calculate_total_impoverished_population = {
-	set_temp_variable = { temp6 = 0 }
+	set_temp_variable = { temp1 = 0 }
 	
-	730 = {
-		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
+	BGV = {
+		if = {
+			limit = {
+				owns_state = 730
+			}
+			730 = {
+				add_to_temp_variable = { temp1 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 740
+			}
+			740 = {
+				add_to_temp_variable = { temp1 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 749
+			}
+			749 = {
+				add_to_temp_variable = { temp1 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 760
+			}
+			760 = {
+				add_to_temp_variable = { temp1 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 786
+			}
+			786 = {
+				add_to_temp_variable = { temp1 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 779
+			}
+			779 = {
+				add_to_temp_variable = { temp1 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 778
+			}
+			778 = {
+				add_to_temp_variable = { temp1 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 799
+			}
+			799 = {
+				add_to_temp_variable = { temp1 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 812
+			}
+			812 = {
+				add_to_temp_variable = { temp1 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 821
+			}
+			821 = {
+				add_to_temp_variable = { temp1 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 829
+			}
+			829 = {
+				add_to_temp_variable = { temp1 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 801
+			}
+			801 = {
+				add_to_temp_variable = { temp1 = BRA_state_impoverished_population }
+			}
+		}
+		set_variable = { BRA_impoverished_population = temp1 }
 	}
-	740 = {
-		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
+	
+	set_temp_variable = { temp2 = 0 }
+	
+	LEG = {
+		if = {
+			limit = {
+				owns_state = 730
+			}
+			730 = {
+				add_to_temp_variable = { temp2 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 740
+			}
+			740 = {
+				add_to_temp_variable = { temp2 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 749
+			}
+			749 = {
+				add_to_temp_variable = { temp2 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 760
+			}
+			760 = {
+				add_to_temp_variable = { temp2 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 786
+			}
+			786 = {
+				add_to_temp_variable = { temp2 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 779
+			}
+			779 = {
+				add_to_temp_variable = { temp2 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 799
+			}
+			799 = {
+				add_to_temp_variable = { temp2 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 812
+			}
+			812 = {
+				add_to_temp_variable = { temp2 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 821
+			}
+			821 = {
+				add_to_temp_variable = { temp2 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 829
+			}
+			829 = {
+				add_to_temp_variable = { temp2 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 801
+			}
+			801 = {
+				add_to_temp_variable = { temp2 = BRA_state_impoverished_population }
+			}
+		}
+		set_variable = { BRA_impoverished_population = temp2 }
 	}
-	749 = {
-		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
+	
+	set_temp_variable = { temp3 = 0 }
+	
+	GRP = {
+		if = {
+			limit = {
+				owns_state = 730
+			}
+			730 = {
+				add_to_temp_variable = { temp3 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 740
+			}
+			740 = {
+				add_to_temp_variable = { temp3 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 749
+			}
+			749 = {
+				add_to_temp_variable = { temp3 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 760
+			}
+			760 = {
+				add_to_temp_variable = { temp3 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 786
+			}
+			786 = {
+				add_to_temp_variable = { temp3 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 779
+			}
+			779 = {
+				add_to_temp_variable = { temp3 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 799
+			}
+			799 = {
+				add_to_temp_variable = { temp3 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 812
+			}
+			812 = {
+				add_to_temp_variable = { temp3 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 821
+			}
+			821 = {
+				add_to_temp_variable = { temp3 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 829
+			}
+			829 = {
+				add_to_temp_variable = { temp3 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 801
+			}
+			801 = {
+				add_to_temp_variable = { temp3 = BRA_state_impoverished_population }
+			}
+		}
+		set_variable = { BRA_impoverished_population = temp3 }
 	}
-	760 = {
-		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
+	
+	set_temp_variable = { temp4 = 0 }
+	
+	LAM = {
+		if = {
+			limit = {
+				owns_state = 730
+			}
+			730 = {
+				add_to_temp_variable = { temp4 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 740
+			}
+			740 = {
+				add_to_temp_variable = { temp4 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 749
+			}
+			749 = {
+				add_to_temp_variable = { temp4 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 760
+			}
+			760 = {
+				add_to_temp_variable = { temp4 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 786
+			}
+			786 = {
+				add_to_temp_variable = { temp4 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 779
+			}
+			779 = {
+				add_to_temp_variable = { temp4 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 799
+			}
+			799 = {
+				add_to_temp_variable = { temp4 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 812
+			}
+			812 = {
+				add_to_temp_variable = { temp4 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 821
+			}
+			821 = {
+				add_to_temp_variable = { temp4 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 829
+			}
+			829 = {
+				add_to_temp_variable = { temp4 = BRA_state_impoverished_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 801
+			}
+			801 = {
+				add_to_temp_variable = { temp4 = BRA_state_impoverished_population }
+			}
+		}
+		set_variable = { BRA_impoverished_population = temp24 }
 	}
-	786 = {
-		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
-	}
-	779 = {
-		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
-	}
-	778 = {
-		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
-	}
-	799 = {
-		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
-	}
-	812 = {
-		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
-	}
-	821 = {
-		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
-	}
-	829 = {
-		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
-	}
-	801 = {
-		add_to_temp_variable = { temp6 = BRA_state_impoverished_population }
-	}
-	set_variable = { BRA_impoverished_population = temp6 }
 }
 
 BRA_calculate_total_population = {
-	set_temp_variable = { temp7 = 0 }
+	set_temp_variable = { temp1 = 0 }
 	
-	730 = {
-		add_to_temp_variable = { temp7 = BRA_state_population }
-	}
-	740 = {
-		add_to_temp_variable = { temp7 = BRA_state_population }
-	}
-	749 = {
-		add_to_temp_variable = { temp7 = BRA_state_population }
-	}
-	760 = {
-		add_to_temp_variable = { temp7 = BRA_state_population }
-	}
-	786 = {
-		add_to_temp_variable = { temp7 = BRA_state_population }
-	}
-	779 = {
-		add_to_temp_variable = { temp7 = BRA_state_population }
-	}
-	778 = {
-		add_to_temp_variable = { temp7 = BRA_state_population }
-	}
-	799 = {
-		add_to_temp_variable = { temp7 = BRA_state_population }
-	}
-	812 = {
-		add_to_temp_variable = { temp7 = BRA_state_population }
-	}
-	821 = {
-		add_to_temp_variable = { temp7 = BRA_state_population }
-	}
-	829 = {
-		add_to_temp_variable = { temp7 = BRA_state_population }
-	}
-	801 = {
-		add_to_temp_variable = { temp7 = BRA_state_population }
+	BGV = {
+		if = {
+			limit = {
+				owns_state = 730
+			}
+			730 = {
+				add_to_temp_variable = { temp1 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 740
+			}
+			740 = {
+				add_to_temp_variable = { temp1 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 749
+			}
+			749 = {
+				add_to_temp_variable = { temp1 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 760
+			}
+			760 = {
+				add_to_temp_variable = { temp1 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 786
+			}
+			786 = {
+				add_to_temp_variable = { temp1 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 779
+			}
+			779 = {
+				add_to_temp_variable = { temp1 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 778
+			}
+			778 = {
+				add_to_temp_variable = { temp1 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 799
+			}
+			799 = {
+				add_to_temp_variable = { temp1 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 812
+			}
+			812 = {
+				add_to_temp_variable = { temp1 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 821
+			}
+			821 = {
+				add_to_temp_variable = { temp1 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 829
+			}
+			829 = {
+				add_to_temp_variable = { temp1 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 801
+			}
+			801 = {
+				add_to_temp_variable = { temp1 = BRA_state_population }
+			}
+		}
+		set_variable = { BRA_impoverished_population = temp1 }
 	}
 	
-	log = "[?temp7]"
+	set_temp_variable = { temp2 = 0 }
 	
-	set_variable = { BRA_total_population = temp7 }
+	LEG = {
+		if = {
+			limit = {
+				owns_state = 730
+			}
+			730 = {
+				add_to_temp_variable = { temp2 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 740
+			}
+			740 = {
+				add_to_temp_variable = { temp2 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 749
+			}
+			749 = {
+				add_to_temp_variable = { temp2 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 760
+			}
+			760 = {
+				add_to_temp_variable = { temp2 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 786
+			}
+			786 = {
+				add_to_temp_variable = { temp2 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 779
+			}
+			779 = {
+				add_to_temp_variable = { temp2 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 799
+			}
+			799 = {
+				add_to_temp_variable = { temp2 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 812
+			}
+			812 = {
+				add_to_temp_variable = { temp2 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 821
+			}
+			821 = {
+				add_to_temp_variable = { temp2 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 829
+			}
+			829 = {
+				add_to_temp_variable = { temp2 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 801
+			}
+			801 = {
+				add_to_temp_variable = { temp2 = BRA_state_population }
+			}
+		}
+		set_variable = { BRA_impoverished_population = temp2 }
+	}
+	
+	set_temp_variable = { temp3 = 0 }
+	
+	GRP = {
+		if = {
+			limit = {
+				owns_state = 730
+			}
+			730 = {
+				add_to_temp_variable = { temp3 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 740
+			}
+			740 = {
+				add_to_temp_variable = { temp3 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 749
+			}
+			749 = {
+				add_to_temp_variable = { temp3 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 760
+			}
+			760 = {
+				add_to_temp_variable = { temp3 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 786
+			}
+			786 = {
+				add_to_temp_variable = { temp3 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 779
+			}
+			779 = {
+				add_to_temp_variable = { temp3 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 799
+			}
+			799 = {
+				add_to_temp_variable = { temp3 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 812
+			}
+			812 = {
+				add_to_temp_variable = { temp3 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 821
+			}
+			821 = {
+				add_to_temp_variable = { temp3 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 829
+			}
+			829 = {
+				add_to_temp_variable = { temp3 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 801
+			}
+			801 = {
+				add_to_temp_variable = { temp3 = BRA_state_population }
+			}
+		}
+		set_variable = { BRA_impoverished_population = temp3 }
+	}
+	
+	set_temp_variable = { temp4 = 0 }
+	
+	LAM = {
+		if = {
+			limit = {
+				owns_state = 730
+			}
+			730 = {
+				add_to_temp_variable = { temp4 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 740
+			}
+			740 = {
+				add_to_temp_variable = { temp4 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 749
+			}
+			749 = {
+				add_to_temp_variable = { temp4 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 760
+			}
+			760 = {
+				add_to_temp_variable = { temp4 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 786
+			}
+			786 = {
+				add_to_temp_variable = { temp4 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 779
+			}
+			779 = {
+				add_to_temp_variable = { temp4 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 799
+			}
+			799 = {
+				add_to_temp_variable = { temp4 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 812
+			}
+			812 = {
+				add_to_temp_variable = { temp4 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 821
+			}
+			821 = {
+				add_to_temp_variable = { temp4 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 829
+			}
+			829 = {
+				add_to_temp_variable = { temp4 = BRA_state_population }
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 801
+			}
+			801 = {
+				add_to_temp_variable = { temp4 = BRA_state_population }
+			}
+		}
+		set_variable = { BRA_total_population = temp4 }
+	}
 }
 
 BRA_calculate_radicalization_percentage = {
-	set_temp_variable = { temp8 = BRA_total_population }
-	set_temp_variable = { temp9 = BRA_radicalized_population }
+	BGV = {
+		set_temp_variable = { temp1 = BRA_total_population }
+		set_temp_variable = { temp2 = BRA_radicalized_population }
+		
+		divide_temp_variable = { temp2 = temp1 }
+		
+		set_variable = { BRA_radicalized_percentage = temp2}
+	}
 	
-	divide_temp_variable = { temp9 = temp8 }
-	
-	set_variable = { BRA_radicalized_percentage = temp9}
+	LEG = {
+		set_temp_variable = { temp3 = BRA_total_population }
+		set_temp_variable = { temp4 = BRA_radicalized_population }
+		
+		divide_temp_variable = { temp4 = temp3 }
+		
+		set_variable = { BRA_radicalized_percentage = temp4}
+	}
+	GRP = {
+		set_temp_variable = { temp5 = BRA_total_population }
+		set_temp_variable = { temp6 = BRA_radicalized_population }
+		
+		divide_temp_variable = { temp6 = temp5 }
+		
+		set_variable = { BRA_radicalized_percentage = temp6}
+	}
+	LAM = {
+		set_temp_variable = { temp7 = BRA_total_population }
+		set_temp_variable = { temp8 = BRA_radicalized_population }
+		
+		divide_temp_variable = { temp8 = temp7 }
+		
+		set_variable = { BRA_radicalized_percentage = temp8}
+	}
 }
 
 BRA_calculate_poverty_percentage = {
-	set_temp_variable = { temp10 = BRA_total_population }
-	set_temp_variable = { temp11 = BRA_impoverished_population }
+	BGV = {
+		set_temp_variable = { temp1 = BRA_total_population }
+		set_temp_variable = { temp2 = BRA_impoverished_population }
+		
+		divide_temp_variable = { temp2 = temp1 }
+		
+		set_variable = { BRA_impoverished_percentage = temp2}
+	}
 	
-	divide_temp_variable = { temp11 = temp10 }
-	
-	set_variable = { BRA_impoverished_percentage = temp11}
+	LEG = {
+		set_temp_variable = { temp3 = BRA_total_population }
+		set_temp_variable = { temp4 = BRA_impoverished_population }
+		
+		divide_temp_variable = { temp4 = temp3 }
+		
+		set_variable = { BRA_impoverished_percentage = temp4}
+	}
+	GRP = {
+		set_temp_variable = { temp5 = BRA_total_population }
+		set_temp_variable = { temp6 = BRA_impoverished_population }
+		
+		divide_temp_variable = { temp6 = temp5 }
+		
+		set_variable = { BRA_impoverished_percentage = temp6}
+	}
+	LAM = {
+		set_temp_variable = { temp7 = BRA_total_population }
+		set_temp_variable = { temp8 = BRA_impoverished_population }
+		
+		divide_temp_variable = { temp8 = temp7 }
+		
+		set_variable = { BRA_impoverished_percentage = temp8}
+	}
 }
 
 BRA_apply_ideas = {
-	if = {
-		limit = {
-			check_variable = { BRA_radicalized_percentage < 0.2 }
-		}
-		add_ideas = BRA_radicalized_population1
-		remove_ideas = BRA_radicalized_population2
-		remove_ideas = BRA_radicalized_population3
-		remove_ideas = BRA_radicalized_population4
-		remove_ideas = BRA_radicalized_population5
-	}
-	else_if = {
-		limit = {
-			AND = {
-				check_variable = { BRA_radicalized_percentage > 0.2 }
-				check_variable = { BRA_radicalized_percentage < 0.4 }
+	BGV = {
+		if = {
+			limit = {
+				check_variable = { BRA_radicalized_percentage < 0.2 }
 			}
-			
+			add_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population5
 		}
-		add_ideas = BRA_radicalized_population2
-		remove_ideas = BRA_radicalized_population1
-		remove_ideas = BRA_radicalized_population3
-		remove_ideas = BRA_radicalized_population4
-		remove_ideas = BRA_radicalized_population5
-	}
-	else_if = {
-		limit = {
-			AND = {
-				check_variable = { BRA_radicalized_percentage > 0.4 }
-				check_variable = { BRA_radicalized_percentage < 0.6 }
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_radicalized_percentage > 0.2 }
+					check_variable = { BRA_radicalized_percentage < 0.4 }
+				}
+				
 			}
-			
+			add_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population5
 		}
-		add_ideas = BRA_radicalized_population3
-		remove_ideas = BRA_radicalized_population1
-		remove_ideas = BRA_radicalized_population2
-		remove_ideas = BRA_radicalized_population4
-		remove_ideas = BRA_radicalized_population5
-	}
-	else_if = {
-		limit = {
-			AND = {
-				check_variable = { BRA_radicalized_percentage > 0.6 }
-				check_variable = { BRA_radicalized_percentage < 0.8 }
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_radicalized_percentage > 0.4 }
+					check_variable = { BRA_radicalized_percentage < 0.6 }
+				}
+				
 			}
-			
+			add_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population5
 		}
-		add_ideas = BRA_radicalized_population4
-		remove_ideas = BRA_radicalized_population1
-		remove_ideas = BRA_radicalized_population2
-		remove_ideas = BRA_radicalized_population3
-		remove_ideas = BRA_radicalized_population5
-	}
-	else_if = {
-		limit = {
-			check_variable = { BRA_radicalized_percentage > 0.8 }
-		}
-		add_ideas = BRA_radicalized_population5
-		remove_ideas = BRA_radicalized_population1
-		remove_ideas = BRA_radicalized_population2
-		remove_ideas = BRA_radicalized_population3
-		remove_ideas = BRA_radicalized_population4
-	}
-	if = {
-		limit = {
-			check_variable = { BRA_impoverished_percentage < 0.2 }
-		}
-		add_ideas = BRA_impoverished_population1
-		remove_ideas = BRA_impoverished_population2
-		remove_ideas = BRA_impoverished_population3
-		remove_ideas = BRA_impoverished_population4
-		remove_ideas = BRA_impoverished_population5
-	}
-	else_if = {
-		limit = {
-			AND = {
-				check_variable = { BRA_impoverished_percentage > 0.2 }
-				check_variable = { BRA_impoverished_percentage < 0.4 }
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_radicalized_percentage > 0.6 }
+					check_variable = { BRA_radicalized_percentage < 0.8 }
+				}
+				
 			}
-			
+			add_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population5
 		}
-		add_ideas = BRA_impoverished_population2
-		remove_ideas = BRA_impoverished_population1
-		remove_ideas = BRA_impoverished_population3
-		remove_ideas = BRA_impoverished_population4
-		remove_ideas = BRA_impoverished_population5
-	}
-	else_if = {
-		limit = {
-			AND = {
-				check_variable = { BRA_impoverished_percentage > 0.4 }
-				check_variable = { BRA_impoverished_percentage < 0.6 }
+		else_if = {
+			limit = {
+				check_variable = { BRA_radicalized_percentage > 0.8 }
 			}
-			
+			add_ideas = BRA_radicalized_population5
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population4
 		}
-		add_ideas = BRA_impoverished_population3
-		remove_ideas = BRA_impoverished_population1
-		remove_ideas = BRA_impoverished_population2
-		remove_ideas = BRA_impoverished_population4
-		remove_ideas = BRA_impoverished_population5
-	}
-	else_if = {
-		limit = {
-			AND = {
-				check_variable = { BRA_impoverished_percentage > 0.6 }
-				check_variable = { BRA_impoverished_percentage < 0.8 }
+		if = {
+			limit = {
+				check_variable = { BRA_impoverished_percentage < 0.2 }
 			}
-			
+			add_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population5
 		}
-		add_ideas = BRA_impoverished_population4
-		remove_ideas = BRA_impoverished_population1
-		remove_ideas = BRA_impoverished_population2
-		remove_ideas = BRA_impoverished_population3
-		remove_ideas = BRA_impoverished_population5
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_impoverished_percentage > 0.2 }
+					check_variable = { BRA_impoverished_percentage < 0.4 }
+				}
+				
+			}
+			add_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_impoverished_percentage > 0.4 }
+					check_variable = { BRA_impoverished_percentage < 0.6 }
+				}
+				
+			}
+			add_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_impoverished_percentage > 0.6 }
+					check_variable = { BRA_impoverished_percentage < 0.8 }
+				}
+				
+			}
+			add_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population5
+		}
+		else_if = {
+			limit = {
+				check_variable = { BRA_impoverished_percentage > 0.8 }
+			}
+			add_ideas = BRA_impoverished_population5
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population4
+		}
 	}
-	else_if = {
-		limit = {
-			check_variable = { BRA_impoverished_percentage > 0.8 }
+	
+	LEG = {
+		if = {
+			limit = {
+				check_variable = { BRA_radicalized_percentage < 0.2 }
+			}
+			add_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population5
 		}
-		add_ideas = BRA_impoverished_population5
-		remove_ideas = BRA_impoverished_population1
-		remove_ideas = BRA_impoverished_population2
-		remove_ideas = BRA_impoverished_population3
-		remove_ideas = BRA_impoverished_population4
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_radicalized_percentage > 0.2 }
+					check_variable = { BRA_radicalized_percentage < 0.4 }
+				}
+				
+			}
+			add_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_radicalized_percentage > 0.4 }
+					check_variable = { BRA_radicalized_percentage < 0.6 }
+				}
+				
+			}
+			add_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_radicalized_percentage > 0.6 }
+					check_variable = { BRA_radicalized_percentage < 0.8 }
+				}
+				
+			}
+			add_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population5
+		}
+		else_if = {
+			limit = {
+				check_variable = { BRA_radicalized_percentage > 0.8 }
+			}
+			add_ideas = BRA_radicalized_population5
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population4
+		}
+		if = {
+			limit = {
+				check_variable = { BRA_impoverished_percentage < 0.2 }
+			}
+			add_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_impoverished_percentage > 0.2 }
+					check_variable = { BRA_impoverished_percentage < 0.4 }
+				}
+				
+			}
+			add_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_impoverished_percentage > 0.4 }
+					check_variable = { BRA_impoverished_percentage < 0.6 }
+				}
+				
+			}
+			add_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_impoverished_percentage > 0.6 }
+					check_variable = { BRA_impoverished_percentage < 0.8 }
+				}
+				
+			}
+			add_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population5
+		}
+		else_if = {
+			limit = {
+				check_variable = { BRA_impoverished_percentage > 0.8 }
+			}
+			add_ideas = BRA_impoverished_population5
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population4
+		}
+	}
+	
+	GRP = {
+		if = {
+			limit = {
+				check_variable = { BRA_radicalized_percentage < 0.2 }
+			}
+			add_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_radicalized_percentage > 0.2 }
+					check_variable = { BRA_radicalized_percentage < 0.4 }
+				}
+				
+			}
+			add_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_radicalized_percentage > 0.4 }
+					check_variable = { BRA_radicalized_percentage < 0.6 }
+				}
+				
+			}
+			add_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_radicalized_percentage > 0.6 }
+					check_variable = { BRA_radicalized_percentage < 0.8 }
+				}
+				
+			}
+			add_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population5
+		}
+		else_if = {
+			limit = {
+				check_variable = { BRA_radicalized_percentage > 0.8 }
+			}
+			add_ideas = BRA_radicalized_population5
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population4
+		}
+		if = {
+			limit = {
+				check_variable = { BRA_impoverished_percentage < 0.2 }
+			}
+			add_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_impoverished_percentage > 0.2 }
+					check_variable = { BRA_impoverished_percentage < 0.4 }
+				}
+				
+			}
+			add_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_impoverished_percentage > 0.4 }
+					check_variable = { BRA_impoverished_percentage < 0.6 }
+				}
+				
+			}
+			add_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_impoverished_percentage > 0.6 }
+					check_variable = { BRA_impoverished_percentage < 0.8 }
+				}
+				
+			}
+			add_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population5
+		}
+		else_if = {
+			limit = {
+				check_variable = { BRA_impoverished_percentage > 0.8 }
+			}
+			add_ideas = BRA_impoverished_population5
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population4
+		}
+	}
+	
+	LAM = {
+		if = {
+			limit = {
+				check_variable = { BRA_radicalized_percentage < 0.2 }
+			}
+			add_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_radicalized_percentage > 0.2 }
+					check_variable = { BRA_radicalized_percentage < 0.4 }
+				}
+				
+			}
+			add_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_radicalized_percentage > 0.4 }
+					check_variable = { BRA_radicalized_percentage < 0.6 }
+				}
+				
+			}
+			add_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_radicalized_percentage > 0.6 }
+					check_variable = { BRA_radicalized_percentage < 0.8 }
+				}
+				
+			}
+			add_ideas = BRA_radicalized_population4
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population5
+		}
+		else_if = {
+			limit = {
+				check_variable = { BRA_radicalized_percentage > 0.8 }
+			}
+			add_ideas = BRA_radicalized_population5
+			remove_ideas = BRA_radicalized_population1
+			remove_ideas = BRA_radicalized_population2
+			remove_ideas = BRA_radicalized_population3
+			remove_ideas = BRA_radicalized_population4
+		}
+		if = {
+			limit = {
+				check_variable = { BRA_impoverished_percentage < 0.2 }
+			}
+			add_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_impoverished_percentage > 0.2 }
+					check_variable = { BRA_impoverished_percentage < 0.4 }
+				}
+				
+			}
+			add_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_impoverished_percentage > 0.4 }
+					check_variable = { BRA_impoverished_percentage < 0.6 }
+				}
+				
+			}
+			add_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population5
+		}
+		else_if = {
+			limit = {
+				AND = {
+					check_variable = { BRA_impoverished_percentage > 0.6 }
+					check_variable = { BRA_impoverished_percentage < 0.8 }
+				}
+				
+			}
+			add_ideas = BRA_impoverished_population4
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population5
+		}
+		else_if = {
+			limit = {
+				check_variable = { BRA_impoverished_percentage > 0.8 }
+			}
+			add_ideas = BRA_impoverished_population5
+			remove_ideas = BRA_impoverished_population1
+			remove_ideas = BRA_impoverished_population2
+			remove_ideas = BRA_impoverished_population3
+			remove_ideas = BRA_impoverished_population4
+		}
 	}
 }
 
 BRA_set_starting_values = {
-	set_variable = { BRA_civil_war_map_chosen_state = 730.id }
+	779 = {
+		set_variable = { BRA_state_radicalization = 0.78 }
+		set_variable = { BRA_state_poverty = 0.64 }
+		set_variable = { BRA_state_population = 23.56 }
+	}
+	778 = {
+		set_variable = { BRA_state_radicalization = 0.47 }
+		set_variable = { BRA_state_poverty = 0.53 }
+		set_variable = { BRA_state_population = 4.22 }
+	}
+	799 = {
+		set_variable = { BRA_state_radicalization = 0.85 }
+		set_variable = { BRA_state_poverty = 0.73 }
+		set_variable = { BRA_state_population = 56.60 }
+	}
+	801 = {
+		set_variable = { BRA_state_radicalization = 0.71 }
+		set_variable = { BRA_state_poverty = 0.21 }
+		set_variable = { BRA_state_population = 3.53 }
+	}
+	786 = {
+		set_variable = { BRA_state_radicalization = 0.42 }
+		set_variable = { BRA_state_poverty = 0.50 }
+		set_variable = { BRA_state_population = 2.34 }
+	}
+	812 = {
+		set_variable = { BRA_state_radicalization = 0.33 }
+		set_variable = { BRA_state_poverty = 0.61 }
+		set_variable = { BRA_state_population = 34.58 }
+	}
+	821 = {
+		set_variable = { BRA_state_radicalization = 0.45 }
+		set_variable = { BRA_state_poverty = 0.30 }
+		set_variable = { BRA_state_population = 9.35 }
+	}
+	829 = {
+		set_variable = { BRA_state_radicalization = 0.60 }
+		set_variable = { BRA_state_poverty = 0.49 }
+		set_variable = { BRA_state_population = 12.24 }
+	}
+	730 = {
+		set_variable = { BRA_state_radicalization = 0.30 }
+		set_variable = { BRA_state_poverty = 0.81 }
+		set_variable = { BRA_state_population = 2.43 }
+	}
+	749 = {
+		set_variable = { BRA_state_radicalization = 0.51 }
+		set_variable = { BRA_state_poverty = 0.27 }
+		set_variable = { BRA_state_population = 2.23 }
+	}
+	740 = {
+		set_variable = { BRA_state_radicalization = 0.66 }
+		set_variable = { BRA_state_poverty = 0.44 }
+		set_variable = { BRA_state_population = 3.34 }
+	}
+	760 = {
+		set_variable = { BRA_state_radicalization = 0.39 }
+		set_variable = { BRA_state_poverty = 0.62 }
+		set_variable = { BRA_state_population = 5.57 }
+	}
+	
+	BGV = {
+		set_variable = BRA_civil_war_map_chosen_state = 779.id
+	}
+	LEG = {
+		set_variable = BRA_civil_war_map_chosen_state = 760.id
+	}
+	GRP = {
+		set_variable = BRA_civil_war_map_chosen_state = 812.id
+	}
+	LAM = {
+		set_variable = BRA_civil_war_map_chosen_state = 730.id
+	}
+	
 	BRA_calculate_radicalized_population = yes
 	BRA_calculate_impoverished_population = yes
 	BRA_calculate_total_radicalized_population = yes
@@ -310,4 +1915,28 @@ BRA_set_starting_values = {
 	BRA_calculate_radicalization_percentage = yes
 	BRA_calculate_poverty_percentage = yes
 	BRA_apply_ideas = yes
+}
+
+BRA_set_borders = { 
+	BGV = {
+		transfer_state = 778
+		transfer_state = 799
+		transfer_state = 779
+		transfer_state = 801
+		transfer_state = 786
+	}
+	LEG = {
+		transfer_state = 740
+		transfer_state = 760
+	}
+	GRP = {
+		transfer_state = 812
+		transfer_state = 821
+		transfer_state = 829
+	}
+	LAM = {
+		transfer_state = 749
+		transfer_state = 730
+	}
+	BGV = { change_tag_from = BRA }
 }
