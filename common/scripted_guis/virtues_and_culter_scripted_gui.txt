@@ -122,6 +122,7 @@ scripted_gui = {
                     clr_country_flag = has_liberty_tier2
                     clr_country_flag = has_liberty_tier3
                     clr_country_flag = liberty_three
+                    clr_country_flag = cultural_reset_available
                 }
                 add_to_variable = { cultural_power = cultural_power_spent }
                 add_to_variable = { corruption_variable = corruption_clear }
@@ -1338,6 +1339,11 @@ scripted_gui = {
         }
         
         triggers = {
+            reset_virtues_button_click_enabled = {
+                ROOT = {
+                    has_country_flag = cultural_reset_available
+                }
+            }
             hostility_button_click_enabled = {
                 NOT = {
                     ROOT = {
