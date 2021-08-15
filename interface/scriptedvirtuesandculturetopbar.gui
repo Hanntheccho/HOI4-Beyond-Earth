@@ -7,7 +7,9 @@ guiTypes = {
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
-		size = { width=550 height=100%% }
+		size = { width=550 height=995 }
+		clipping = yes
+		verticalScrollbar = "right_vertical_slider"
 		
 		#hide_sound = menu_close_window
 		show_sound = menu_open_window
@@ -17,7 +19,7 @@ guiTypes = {
 			quadTextureSprite ="GFX_tiled_window2_1b_border"
 		}
 
-		iconType={
+		iconType = {
 			name ="virtues_and_culture_header"
 			spriteType = "GFX_header_bg"
 			position = { x= 7 y = 0 }
@@ -44,71 +46,35 @@ guiTypes = {
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			shortcut = "ESCAPE"
 			pdx_tooltip = "CLOSE"
 		}
-		buttonType = {
-			name = "integrity_button"
-			position = { x = -530 y = 100 }
-			quadTextureSprite ="GFX_add_national_goal_button"
-			buttonText = "integrity_button"
-			buttonFont = "Focusfont"
-			Orientation = "UPPER_RIGHT"
-			clicksound = click_close
-			oversound = ui_menu_over
+		instantTextBoxType = {
+			name = "virtues_and_culture_desc"
+			position = { x = 15 y = 50 }
+			textureFile = ""
+			font = "Beyond"
+			borderSize = {x = 0 y = 0}
+			text = "virtues_and_culture_desc"
+			maxWidth = 500
+			maxHeight = 20
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
 		}
 		buttonType = {
-			name = "liberty_button"
-			position = { x = -270 y = 100 }
-			quadTextureSprite ="GFX_add_national_goal_button"
-			buttonText = "liberty_button"
-			buttonFont = "Focusfont"
+			name = "reset_virtues_button"
+			position = { x = -58 y = 7 }
+			quadTextureSprite ="GFX_help_button"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "order_button"
-			position = { x = -530 y = 200 }
-			quadTextureSprite ="GFX_add_national_goal_button"
-			buttonText = "order_button"
-			buttonFont = "Focusfont"
-			Orientation = "UPPER_RIGHT"
-			clicksound = click_close
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "tradition_button"
-			position = { x = -270 y = 200 }
-			quadTextureSprite ="GFX_add_national_goal_button"
-			buttonText = "tradition_button"
-			buttonFont = "Focusfont"
-			Orientation = "UPPER_RIGHT"
-			clicksound = click_close
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "progress_button"
-			position = { x = -530 y = 300 }
-			quadTextureSprite ="GFX_add_national_goal_button"
-			buttonText = "progress_button"
-			buttonFont = "Focusfont"
-			Orientation = "UPPER_RIGHT"
-			clicksound = click_close
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "exploration_button"
-			position = { x = -270 y = 300 }
-			quadTextureSprite ="GFX_add_national_goal_button"
-			buttonText = "progress_button"
-			buttonFont = "Focusfont"
-			Orientation = "UPPER_RIGHT"
-			clicksound = click_close
-			oversound = ui_menu_over
+			pdx_tooltip = "reset_virtues_tp"
 		}
 		buttonType = {
 			name = "hostility_button"
-			position = { x = -530 y = 400 }
+			position = { x = -530 y = 100 }
 			quadTextureSprite ="GFX_add_national_goal_button"
 			buttonText = "hostility_button"
 			buttonFont = "Focusfont"
@@ -116,19 +82,338 @@ guiTypes = {
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
+		iconType = {
+			name ="hostility_effect_bg"
+			spriteType = "GFX_win_header_short"
+			position = { x= 20 y = 183 }
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "hostility_effects"
+			position = { x = 22 y = 187 }
+			textureFile = ""
+			font = "Focusfont"
+			borderSize = {x = 0 y = 0}
+			text = "hostility_effects"	
+			maxWidth = 256
+			maxHeight = 110
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
 		buttonType = {
-			name = "freedom_button"
-			position = { x = -270 y = 400 }
+			name = "benevolence_button"
+			position = { x = -270 y = 100 }
 			quadTextureSprite ="GFX_add_national_goal_button"
-			buttonText = "freedom_button"
+			buttonText = "benevolence_button"
 			buttonFont = "Focusfont"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		iconType = {
+			name ="benevolence_effect_bg"
+			spriteType = "GFX_win_header_short"
+			position = { x= 280 y = 183 }
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "benevolence_effects"
+			position = { x = 280 y = 187 }
+			textureFile = ""
+			font = "Focusfont"
+			borderSize = {x = 0 y = 0}
+			text = "benevolence_effects"	
+			maxWidth = 256
+			maxHeight = 110
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		iconType = {
+			name ="benevolence_hostility_exclusive"
+			spriteType = "GFX_focus_link_exclusive"
+			position = { x= 264 y = 125 }
+			Orientation = "UPPER_LEFT"
+		}
+		buttonType = {
+			name = "hostility_benevolence_collapse_button"
+			position = { x = -40 y = 100 }
+			quadTextureSprite ="GFX_manpower_icon"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "tradition_button"
+			quadTextureSprite ="GFX_add_national_goal_button"
+			buttonText = "tradition_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		iconType = {
+			name ="tradition_effect_bg"
+			spriteType = "GFX_win_header_short"
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "tradition_effects"
+			textureFile = ""
+			font = "Focusfont"
+			borderSize = {x = 0 y = 0}
+			text = "tradition_effects"	
+			maxWidth = 256
+			maxHeight = 110
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		buttonType = {
+			name = "progress_button"
+			quadTextureSprite ="GFX_add_national_goal_button"
+			buttonText = "progress_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		iconType = {
+			name ="progress_effect_bg"
+			spriteType = "GFX_win_header_short"
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "progress_effects"
+			textureFile = ""
+			font = "Focusfont"
+			borderSize = {x = 0 y = 0}
+			text = "progress_effects"	
+			maxWidth = 256
+			maxHeight = 110
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		iconType = {
+			name ="tradition_progress_exclusive"
+			spriteType = "GFX_focus_link_exclusive"
+			Orientation = "UPPER_LEFT"
+		}
+		buttonType = {
+			name = "tradition_progress_collapse_button"
+			quadTextureSprite ="GFX_manpower_icon"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "body_button"
+			quadTextureSprite ="GFX_add_national_goal_button"
+			buttonText = "body_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		iconType = {
+			name ="body_effect_bg"
+			spriteType = "GFX_win_header_short"
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "body_effects"
+			textureFile = ""
+			font = "Focusfont"
+			borderSize = {x = 0 y = 0}
+			text = "body_effects"	
+			maxWidth = 256
+			maxHeight = 110
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		buttonType = {
+			name = "mind_button"
+			quadTextureSprite ="GFX_add_national_goal_button"
+			buttonText = "mind_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		iconType = {
+			name ="mind_effect_bg"
+			spriteType = "GFX_win_header_short"
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "mind_effects"
+			textureFile = ""
+			font = "Focusfont"
+			borderSize = {x = 0 y = 0}
+			text = "mind_effects"	
+			maxWidth = 256
+			maxHeight = 110
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		iconType = {
+			name ="body_mind_exclusive"
+			spriteType = "GFX_focus_link_exclusive"
+			Orientation = "UPPER_LEFT"
+		}
+		buttonType = {
+			name = "body_mind_collapse_button"
+			quadTextureSprite ="GFX_manpower_icon"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "amplification_button"
+			quadTextureSprite ="GFX_add_national_goal_button"
+			buttonText = "amplification_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		iconType = {
+			name ="amplification_effect_bg"
+			spriteType = "GFX_win_header_short"
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "amplification_effects"
+			textureFile = ""
+			font = "Focusfont"
+			borderSize = {x = 0 y = 0}
+			text = "amplification_effects"	
+			maxWidth = 256
+			maxHeight = 110
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		buttonType = {
+			name = "expansion_button"
+			quadTextureSprite ="GFX_add_national_goal_button"
+			buttonText = "expansion_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		iconType = {
+			name ="expansion_effect_bg"
+			spriteType = "GFX_win_header_short"
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "expansion_effects"
+			textureFile = ""
+			font = "Focusfont"
+			borderSize = {x = 0 y = 0}
+			text = "expansion_effects"	
+			maxWidth = 256
+			maxHeight = 110
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		iconType = {
+			name ="amplification_expansion_exclusive"
+			spriteType = "GFX_focus_link_exclusive"
+			Orientation = "UPPER_LEFT"
+		}
+		buttonType = {
+			name = "amplification_expansion_collapse_button"
+			position = { x = -40 y = 405 }
+			quadTextureSprite ="GFX_manpower_icon"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "conservation_button"
+			quadTextureSprite ="GFX_add_national_goal_button"
+			buttonText = "conservation_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		iconType = {
+			name ="conservation_effect_bg"
+			spriteType = "GFX_win_header_short"
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "conservation_effects"
+			textureFile = ""
+			font = "Focusfont"
+			borderSize = {x = 0 y = 0}
+			text = "conservation_effects"	
+			maxWidth = 256
+			maxHeight = 110
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		buttonType = {
+			name = "consumption_button"
+			quadTextureSprite ="GFX_add_national_goal_button"
+			buttonText = "consumption_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		iconType = {
+			name ="consumption_effect_bg"
+			spriteType = "GFX_win_header_short"
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "consumption_effects"
+			textureFile = ""
+			font = "Focusfont"
+			borderSize = {x = 0 y = 0}
+			text = "consumption_effects"	
+			maxWidth = 256
+			maxHeight = 110
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		iconType = {
+			name ="conservation_consumption_exclusive"
+			spriteType = "GFX_focus_link_exclusive"
+			Orientation = "UPPER_LEFT"
+		}
+		buttonType = {
+			name = "conservation_consumption_collapse_button"
+			position = { x = -40 y = 505 }
+			quadTextureSprite ="GFX_manpower_icon"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		buttonType = {
 			name = "prosperity_button"
-			position = { x = -530 y = 500 }
 			quadTextureSprite ="GFX_add_national_goal_button"
 			buttonText = "prosperity_button"
 			buttonFont = "Focusfont"
@@ -136,12 +421,127 @@ guiTypes = {
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
+		iconType = {
+			name ="prosperity_effect_bg"
+			spriteType = "GFX_win_header_short"
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "prosperity_effects"
+			textureFile = ""
+			font = "Focusfont"
+			borderSize = {x = 0 y = 0}
+			text = "prosperity_effects"	
+			maxWidth = 256
+			maxHeight = 110
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
 		buttonType = {
-			name = "idk_button"
-			position = { x = -270 y = 500 }
+			name = "efficiency_button"
 			quadTextureSprite ="GFX_add_national_goal_button"
-			buttonText = "idk_button"
+			buttonText = "efficiency_button"
 			buttonFont = "Focusfont"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		iconType = {
+			name ="efficiency_effect_bg"
+			spriteType = "GFX_win_header_short"
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "efficiency_effects"
+			textureFile = ""
+			font = "Focusfont"
+			borderSize = {x = 0 y = 0}
+			text = "efficiency_effects"	
+			maxWidth = 256
+			maxHeight = 110
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		iconType = {
+			name ="prosperity_efficiency_exclusive"
+			spriteType = "GFX_focus_link_exclusive"
+			Orientation = "UPPER_LEFT"
+		}
+		buttonType = {
+			name = "prosperity_efficiency_collapse_button"
+			position = { x = -40 y = 605 }
+			quadTextureSprite ="GFX_manpower_icon"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "order_button"
+			quadTextureSprite ="GFX_add_national_goal_button"
+			buttonText = "order_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		iconType = {
+			name ="order_effect_bg"
+			spriteType = "GFX_win_header_short"
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "order_effects"
+			textureFile = ""
+			font = "Focusfont"
+			borderSize = {x = 0 y = 0}
+			text = "order_effects"	
+			maxWidth = 256
+			maxHeight = 110
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		buttonType = {
+			name = "liberty_button"
+			quadTextureSprite ="GFX_add_national_goal_button"
+			buttonText = "liberty_button"
+			buttonFont = "Focusfont"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+		}
+		iconType = {
+			name ="liberty_effect_bg"
+			spriteType = "GFX_win_header_short"
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "liberty_effects"
+			textureFile = ""
+			font = "Focusfont"
+			borderSize = {x = 0 y = 0}
+			text = "liberty_effects"	
+			maxWidth = 256
+			maxHeight = 110
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		iconType = {
+			name ="order_liberty_exclusive"
+			spriteType = "GFX_focus_link_exclusive"
+			Orientation = "UPPER_LEFT"
+		}
+		buttonType = {
+			name = "order_liberty_collapse_button"
+			position = { x = -40 y = 705 }
+			quadTextureSprite ="GFX_manpower_icon"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over

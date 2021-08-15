@@ -1,0 +1,165 @@
+#coded by moieight, if this breaks, yell at me on discord
+
+guiTypes = {
+	containerWindowType = {
+		name = "BRA_civil_war_GUI_window"
+		position = { x = 0 y = 0}
+		size = { width = 500 height = 700 }
+		
+		containerWindowType = {
+			name = "BRA_civil_war_GUI_map"
+			size = { width = 0 height = 0 }
+			position = { x = 50 y = 100 }
+			orientation = center
+			
+			buttonType = {
+				name = "BRA_civil_war_map_state730"
+				position = { x = -200 y = -400 }
+				spriteType = "GFX_icon_occupied_territories"
+			}
+			buttonType = {
+				name = "BRA_civil_war_map_state740"
+				position = { x = -100 y = -400 }
+				spriteType = "GFX_icon_manage_subjects"
+			}
+			buttonType = {
+				name = "BRA_civil_war_map_state749"
+				position = { x = 0 y = -400 }
+				spriteType = "GFX_icon_occupied_territories"
+			}
+			buttonType = {
+				name = "BRA_civil_war_map_state760"
+				position = { x = 100 y = -400 }
+				spriteType = "GFX_icon_manage_subjects"
+			}
+			buttonType = {
+				name = "BRA_civil_war_map_state786"
+				position = { x = -200 y = -300 }
+				spriteType = "GFX_icon_occupied_territories"
+			}
+			buttonType = {
+				name = "BRA_civil_war_map_state779"
+				position = { x = -100 y = -300 }
+				spriteType = "GFX_icon_manage_subjects"
+			}
+			buttonType = {
+				name = "BRA_civil_war_map_state778"
+				position = { x = 0 y = -300 }
+				spriteType = "GFX_icon_occupied_territories"
+			}
+			buttonType = {
+				name = "BRA_civil_war_map_state799"
+				position = { x = 100 y = -300 }
+				spriteType = "GFX_icon_occupied_territories"
+			}
+			buttonType = {
+				name = "BRA_civil_war_map_state812"
+				position = { x = -200 y = -200 }
+				spriteType = "GFX_icon_manage_subjects"
+			}
+			buttonType = {
+				name = "BRA_civil_war_map_state821"
+				position = { x = -100 y = -200 }
+				spriteType = "GFX_icon_occupied_territories"
+			}
+			buttonType = {
+				name = "BRA_civil_war_map_state829"
+				position = { x = 0 y = -200 }
+				spriteType = "GFX_icon_manage_subjects"
+			}
+			buttonType = {
+				name = "BRA_civil_war_map_state801"
+				position = { x = 100 y = -200 }
+				spriteType = "GFX_icon_occupied_territories"
+			}
+		}
+		
+		containerWindowType = {
+			name = "BRA_civil_war_GUI_text"
+			position = { x = 0 y = -100}
+			orientation = center
+			
+			instantTextBoxType = {
+				name = "BRA_civil_war_GUI_chosen_state"
+				position = { x = -230 y = 50 }
+				font = "Arialsmall"
+				text = "Selected State: [BRA_civil_war_map_chosen_state]"
+				maxWidth = 500
+				maxHeight = 29
+				format = center
+			}
+			instantTextBoxType = {
+				name = "BRA_civil_war_GUI_radicalization_level"
+				position = { x = -230 y = 100 }
+				font = "Arialsmall"
+				text = "Radicalization Level: [?var:BRA_civil_war_map_chosen_state:BRA_state_radicalization|%Y0]"
+				maxWidth = 500
+				maxHeight = 29
+				format = center
+			}
+			instantTextBoxType = {
+				name = "BRA_civil_war_GUI_radicalized_population"
+				position = { x = -230 y = 120 }
+				font = "Arialsmall"
+				text = "Radicalized Population: [?var:BRA_civil_war_map_chosen_state:BRA_state_radicalized_population|Y] Million"
+				maxWidth = 500
+				maxHeight = 29
+				format = center
+			}
+			instantTextBoxType = {
+				name = "BRA_civil_war_GUI_poverty_level"
+				position = { x = -230 y = 170 }
+				font = "Arialsmall"
+				text = "Poverty Level: [?var:BRA_civil_war_map_chosen_state:BRA_state_poverty|%R0]"
+				maxWidth = 500
+				maxHeight = 29
+				format = center
+			}
+			instantTextBoxType = {
+				name = "BRA_civil_war_GUI_impoverished_population"
+				position = { x = -230 y = 190 }
+				font = "Arialsmall"
+				text = "Impoverished Population: [?var:BRA_civil_war_map_chosen_state:BRA_state_impoverished_population|R] Million"
+				maxWidth = 500
+				maxHeight = 29
+				format = center
+			}
+			instantTextBoxType = {
+				name = "BRA_civil_war_GUI_radicalized_population_number"
+				position = { x = -230 y = 240 }
+				font = "Arialsmall"
+				text = "Radicalized Population: [?BRA_radicalized_population|Y] Million"
+				maxWidth = 500
+				maxHeight = 29
+				format = center
+			}
+			instantTextBoxType = {
+				name = "BRA_civil_war_GUI_radicalized_population_percent"
+				position = { x = -230 y = 260 }
+				font = "Arialsmall"
+				text = "Radicalization Percentage: [?BRA_radicalized_percentage|%Y0] ([BRA_radicalization])"
+				maxWidth = 500
+				maxHeight = 29
+				format = center
+			}
+			instantTextBoxType = {
+				name = "BRA_civil_war_GUI_poverty_level_number"
+				position = { x = -230 y = 310 }
+				font = "Arialsmall"
+				text = "Impoverished Population: [?BRA_impoverished_population|R] Million"
+				maxWidth = 500
+				maxHeight = 29
+				format = center
+			}
+			instantTextBoxType = {
+				name = "BRA_civil_war_GUI_impoverished_population_percent"
+				position = { x = -230 y = 330 }
+				font = "Arialsmall"
+				text = "Impoverished Percentage: [?BRA_impoverished_percentage|%R0] ([BRA_impoverished])"
+				maxWidth = 500
+				maxHeight = 29
+				format = center
+			}
+		}
+	}
+}

@@ -15,6 +15,2062 @@ scripted_gui = {
                     clr_country_flag = virtues_and_culture_moment_flag
                 }
             }
+            reset_virtues_button_click = {
+                ROOT = {
+                    clr_country_flag = has_hostility_tier1
+                    remove_dynamic_modifier = { modifier = hostility_tier1_modifier }
+                    clr_country_flag = has_hostility_tier2
+                    remove_dynamic_modifier = { modifier = hostility_tier2_modifier }
+                    clr_country_flag = has_hostility_tier2
+                    remove_dynamic_modifier = { modifier = hostility_tier2_modifier }
+                    clr_country_flag = has_benevolence_tier1
+                    remove_dynamic_modifier = { modifier = benevolence_tier1_modifier }
+                    clr_country_flag = has_benevolence_tier2
+                    remove_dynamic_modifier = { modifier = benevolence_tier2_modifier }
+                    clr_country_flag = has_benevolence_tier3
+                    remove_ideas = benevolence_tier3_idea
+                    clr_country_flag = has_tradition_tier1
+                    remove_dynamic_modifier = { modifier = tradition_tier1_modifier }
+                    clr_country_flag = has_tradition_tier2
+                    remove_dynamic_modifier = { modifier = tradition_tier2_modifier }
+                    clr_country_flag = has_tradition_tier3
+                    remove_dynamic_modifier = { modifier = tradition_three }
+                    clr_country_flag = has_progress_tier1
+                    clr_country_flag = modifier = progress_one
+                    clr_country_flag = has_progress_tier2
+                    remove_dynamic_modifier = { modifier = progress_tier2_modifier }
+                    clr_country_flag = has_progress_tier3
+                    remove_dynamic_modifier = { modifier = progress_tier3_modifier }
+                    clr_country_flag = has_body_tier1
+                    clr_country_flag = has_tradition_tier2
+                    remove_dynamic_modifier = { modifier = body_tier2_modifier }
+                    clr_country_flag = has_body_tier3
+                    remove_dynamic_modifier = { modifier = body_tier3_modifier }
+                    clr_country_flag = has_mind_tier1
+                    remove_dynamic_modifier = { modifier = mind_tier1_modifier }
+                    clr_country_flag = has_mind_tier2
+                    remove_dynamic_modifier = { modifier = mind_tier2_modifier }
+                    clr_country_flag = has_mind_tier3
+                    remove_dynamic_modifier = { modifier = mind_tier3_modifier }
+                    clr_country_flag = has_amplification_tier1
+                    remove_dynamic_modifier = { modifier = amplification_tier1_modifier }
+                    clr_country_flag = has_amplification_tier2
+                    random_owned_controlled_state = {
+                        limit = {
+                            is_capital = yes
+                        }
+                        set_building_level = {
+                            type = anti_air_building
+                            level = 0
+                            instant_build = yes
+                        }
+                        set_building_level = {
+                            type = radar_station
+                            level = 0
+                            instant_build = yes
+                        }
+                        set_building_level = {
+                            type = bunker
+                            level = 0
+                            province = {
+                                all_provinces = yes
+                                limit_to_border = no
+                                level > 4
+                            }
+                        }
+                    }
+                    clr_country_flag = has_amplification_tier3
+                    remove_dynamic_modifier = { modifier = amplification_tier3_modifier }
+                    clr_country_flag = has_expansion_tier1
+                    remove_dynamic_modifier = { modifier = expansion_tier1_modifier }
+                    clr_country_flag = has_expansion_tier2
+                    remove_dynamic_modifier = { modifier = expansion_tier2_modifier }
+                    clr_country_flag = has_expansion_tier3
+                    clr_country_flag = expansion_three
+                    clr_country_flag = has_conservation_tier1
+                    remove_dynamic_modifier = { modifier = conservation_tier1_modifier }
+                    clr_country_flag = has_conservation_tier2
+                    remove_dynamic_modifier = { modifier = conservation_tier2_modifier }
+                    clr_country_flag = has_conservation_tier3
+                    remove_dynamic_modifier = { modifier = conservation_tier3_modifier }
+                    clr_country_flag = has_consumption_tier1
+                    remove_dynamic_modifier = { modifier = consumption_tier1_modifier }
+                    clr_country_flag = has_consumption_tier2
+                    clr_country_flag = consumption_two
+                    clr_country_flag = has_consumption_tier3
+                    clr_country_flag = consumption_three
+                    clr_country_flag = has_prosperity_tier1
+                    remove_dynamic_modifier = { modifier = prosperity_tier1_modifier }
+                    clr_country_flag = has_prosperity_tier2
+                    remove_dynamic_modifier = { modifier = prosperity_tier2_modifier }
+                    clr_country_flag = has_prosperity_tier3
+                    clr_country_flag = prosperity_three
+                    clr_country_flag = has_efficiency_tier1
+                    remove_dynamic_modifier = { modifier = efficiency_tier1_modifier }
+                    clr_country_flag = has_efficiency_tier2
+                    remove_dynamic_modifier = { modifier = efficiency_tier2_modifier }
+                    clr_country_flag = has_efficiency_tier3
+                    remove_dynamic_modifier = { modifier = efficiency_tier3_modifier }
+                    clr_country_flag = has_order_tier1
+                    clr_country_flag = order_one
+                    clr_country_flag = has_order_tier2
+                    remove_dynamic_modifier = { modifier = order_tier2_modifier }
+                    clr_country_flag = has_order_tier3
+                    clr_country_flag = order_three
+                    clr_country_flag = has_liberty_tier1
+                    clr_country_flag = liberty_one
+                    clr_country_flag = has_liberty_tier2
+                    clr_country_flag = has_liberty_tier3
+                    clr_country_flag = liberty_three
+                    clr_country_flag = cultural_reset_available
+                }
+                add_to_variable = { cultural_power = cultural_power_spent }
+                add_to_variable = { corruption_variable = corruption_clear }
+                clear_variable = cultural_power_spent
+                clear_variable = corruption_clear
+            }
+            hostility_benevolence_collapse_button_click = {
+                collapse_tradition_progress = yes
+                collapse_body_mind = yes
+                collapse_amplification_expansion = yes
+                collapse_conservation_consumption = yes
+                collapse_prosperity_efficiency = yes
+                collapse_order_liberty = yes
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = hostility_benevolence_flag
+                            }
+                        }
+                    }
+                    ROOT = {
+                        set_country_flag = hostility_benevolence_flag
+                    }
+                    add_to_variable = { tradition_progress_position_var = 100 }
+                    add_to_variable = { tradition_progress_exclusive_position_var = 100 }
+                    add_to_variable = { tradition_progress_bg_position_var = 100 }
+                    add_to_variable = { tradition_progress_effect_position_var = 100 }
+                    add_to_variable = { body_mind_position_var = 100 }
+                    add_to_variable = { body_mind_exclusive_position_var = 100 }
+                    add_to_variable = { body_mind_bg_position_var = 100 }
+                    add_to_variable = { body_mind_effect_position_var = 100 }
+                    add_to_variable = { amplification_expansion_position_var = 100 }
+                    add_to_variable = { amplification_expansion_exclusive_position_var = 100 }
+                    add_to_variable = { amplification_expansion_bg_position_var = 100 }
+                    add_to_variable = { amplification_expansion_effect_position_var = 100 }
+                    add_to_variable = { conservation_consumption_position_var = 100 }
+                    add_to_variable = { conservation_consumption_exclusive_position_var = 100 }
+                    add_to_variable = { conservation_consumption_bg_position_var = 100 }
+                    add_to_variable = { conservation_consumption_effect_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_exclusive_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_bg_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_effect_position_var = 100 }
+                    add_to_variable = { order_liberty_position_var = 100 }
+                    add_to_variable = { order_liberty_exclusive_position_var = 100 }
+                    add_to_variable = { order_liberty_bg_position_var = 100 }
+                    add_to_variable = { order_liberty_effect_position_var = 100 }
+                }
+                else = {
+                    ROOT = {
+                        clr_country_flag = hostility_benevolence_flag
+                    }
+                    subtract_from_variable = { tradition_progress_position_var = 100 }
+                    subtract_from_variable = { tradition_progress_exclusive_position_var = 100 }
+                    subtract_from_variable = { tradition_progress_bg_position_var = 100 }
+                    subtract_from_variable = { tradition_progress_effect_position_var = 100 }
+                    subtract_from_variable = { body_mind_position_var = 100 }
+                    subtract_from_variable = { body_mind_exclusive_position_var = 100 }
+                    subtract_from_variable = { body_mind_bg_position_var = 100 }
+                    subtract_from_variable = { body_mind_effect_position_var = 100 }
+                    subtract_from_variable = { amplification_expansion_position_var = 100 }
+                    subtract_from_variable = { amplification_expansion_exclusive_position_var = 100 }
+                    subtract_from_variable = { amplification_expansion_bg_position_var = 100 }
+                    subtract_from_variable = { amplification_expansion_effect_position_var = 100 }
+                    subtract_from_variable = { conservation_consumption_position_var = 100 }
+                    subtract_from_variable = { conservation_consumption_exclusive_position_var = 100 }
+                    subtract_from_variable = { conservation_consumption_bg_position_var = 100 }
+                    subtract_from_variable = { conservation_consumption_effect_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_exclusive_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_bg_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_effect_position_var = 100 }
+                    subtract_from_variable = { order_liberty_position_var = 100 }
+                    subtract_from_variable = { order_liberty_exclusive_position_var = 100 }
+                    subtract_from_variable = { order_liberty_bg_position_var = 100 }
+                    subtract_from_variable = { order_liberty_effect_position_var = 100 }
+                }
+            }
+            hostility_button_click = {
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_benevolence_tier1
+                                    has_country_flag = has_hostility_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_hostility_tier1
+                    add_dynamic_modifier = {
+                        modifier = hostility_tier1_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            NOT = {
+                                ROOT = {
+                                    OR = {
+                                        has_country_flag = has_hostility_tier2
+                                        has_country_flag = has_benevolence_tier2
+                                    }
+                                }
+                            }
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_hostility_tier1
+                                    has_country_flag = has_benevolence_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_hostility_tier2
+                    #add_dynamic_modifier = {
+                    #    modifier = hostility_tier2_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            OR = {
+                                has_country_flag = has_hostility_tier2
+                                has_country_flag = has_benevolence_tier2
+                            }
+                        }
+                    }
+                    set_country_flag = has_hostility_tier3
+                    #add_dynamic_modifier = {
+                    #    modifier = hostility_tier3_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 200 }
+                    add_to_variable = { cultural_power_spent = 200 }
+                }
+            }
+            benevolence_button_click = {
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_hostility_tier1
+                                    has_country_flag = has_benevolence_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_benevolence_tier1
+                    add_dynamic_modifier = {
+                        modifier = benevolence_tier1_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            NOT = {
+                                ROOT = {
+                                    OR = {
+                                        has_country_flag = has_hostility_tier2
+                                        has_country_flag = has_benevolence_tier2
+                                    }
+                                }
+                            }
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_hostility_tier1
+                                    has_country_flag = has_benevolence_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_benevolence_tier2
+                    #add_dynamic_modifier = {
+                    #    modifier = benevolence_tier2_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            OR = {
+                                has_country_flag = has_hostility_tier2
+                                has_country_flag = has_benevolence_tier2
+                            }
+                        }
+                    }
+                    set_country_flag = has_benevolence_tier3
+                    #add_ideas = benevolence_tier3_idea
+                    subtract_from_variable = { cultural_power = 200 }
+                    add_to_variable = { cultural_power_spent = 200 }
+                }
+            }
+            tradition_progress_collapse_button_click = {
+                collapse_hostility_benevolence = yes
+                collapse_body_mind = yes
+                collapse_amplification_expansion = yes
+                collapse_conservation_consumption = yes
+                collapse_prosperity_efficiency = yes
+                collapse_order_liberty = yes
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = tradition_progress_flag
+                            }
+                        }
+                    }
+                    ROOT = {
+                        set_country_flag = tradition_progress_flag
+                    }
+                    add_to_variable = { body_mind_position_var = 100 }
+                    add_to_variable = { body_mind_exclusive_position_var = 100 }
+                    add_to_variable = { body_mind_bg_position_var = 100 }
+                    add_to_variable = { body_mind_effect_position_var = 100 }
+                    add_to_variable = { amplification_expansion_position_var = 100 }
+                    add_to_variable = { amplification_expansion_exclusive_position_var = 100 }
+                    add_to_variable = { amplification_expansion_bg_position_var = 100 }
+                    add_to_variable = { amplification_expansion_effect_position_var = 100 }
+                    add_to_variable = { conservation_consumption_position_var = 100 }
+                    add_to_variable = { conservation_consumption_exclusive_position_var = 100 }
+                    add_to_variable = { conservation_consumption_bg_position_var = 100 }
+                    add_to_variable = { conservation_consumption_effect_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_exclusive_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_bg_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_effect_position_var = 100 }
+                    add_to_variable = { order_liberty_position_var = 100 }
+                    add_to_variable = { order_liberty_exclusive_position_var = 100 }
+                    add_to_variable = { order_liberty_bg_position_var = 100 }
+                    add_to_variable = { order_liberty_effect_position_var = 100 }
+                }
+                else = {
+                    ROOT = {
+                        clr_country_flag = tradition_progress_flag
+                    }
+                    subtract_from_variable = { body_mind_position_var = 100 }
+                    subtract_from_variable = { body_mind_exclusive_position_var = 100 }
+                    subtract_from_variable = { body_mind_bg_position_var = 100 }
+                    subtract_from_variable = { body_mind_effect_position_var = 100 }
+                    subtract_from_variable = { amplification_expansion_position_var = 100 }
+                    subtract_from_variable = { amplification_expansion_exclusive_position_var = 100 }
+                    subtract_from_variable = { amplification_expansion_bg_position_var = 100 }
+                    subtract_from_variable = { amplification_expansion_effect_position_var = 100 }
+                    subtract_from_variable = { conservation_consumption_position_var = 100 }
+                    subtract_from_variable = { conservation_consumption_exclusive_position_var = 100 }
+                    subtract_from_variable = { conservation_consumption_bg_position_var = 100 }
+                    subtract_from_variable = { conservation_consumption_effect_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_exclusive_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_bg_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_effect_position_var = 100 }
+                    subtract_from_variable = { order_liberty_position_var = 100 }
+                    subtract_from_variable = { order_liberty_exclusive_position_var = 100 }
+                    subtract_from_variable = { order_liberty_bg_position_var = 100 }
+                    subtract_from_variable = { order_liberty_effect_position_var = 100 }
+                }
+            }
+            tradition_button_click = {
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_progress_tier1
+                                    has_country_flag = has_tradition_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_tradition_tier1
+                    add_dynamic_modifier = {
+                        modifier = tradition_tier1_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            NOT = {
+                                ROOT = {
+                                    OR = {
+                                        has_country_flag = has_progress_tier2
+                                        has_country_flag = has_tradition_tier2
+                                    }
+                                }
+                            }
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_progress_tier1
+                                    has_country_flag = has_tradition_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_tradition_tier2
+                    #add_dynamic_modifier = {
+                    #    modifier = tradition_tier2_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            OR = {
+                                has_country_flag = has_progress_tier2
+                                has_country_flag = has_tradition_tier2
+                            }
+                        }
+                    }
+                    set_country_flag = has_tradition_tier3
+                    #set_country_flag = tradition_three
+                    subtract_from_variable = { cultural_power = 200 }
+                    add_to_variable = { cultural_power_spent = 200 }
+                }
+            }
+            progress_button_click = {
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_tradition_tier1
+                                    has_country_flag = has_progress_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_progress_tier1
+                    set_country_flag = progress_one
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            NOT = {
+                                ROOT = {
+                                    OR = {
+                                        has_country_flag = has_tradition_tier2
+                                        has_country_flag = has_progress_tier2
+                                    }
+                                }
+                            }
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_tradition_tier1
+                                    has_country_flag = has_progress_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_progress_tier2
+                    #add_dynamic_modifier = {
+                    #    modifier = progress_tier2_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            OR = {
+                                has_country_flag = has_tradition_tier2
+                                has_country_flag = has_progress_tier2
+                            }
+                        }
+                    }
+                    set_country_flag = has_progress_tier3
+                    #add_dynamic_modifier = {
+                    #    modifier = progress_tier3_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 200 }
+                    add_to_variable = { cultural_power_spent = 200 }
+                }
+            }
+            body_mind_collapse_button_click = {
+                collapse_hostility_benevolence = yes
+                collapse_tradition_progress = yes
+                collapse_amplification_expansion = yes
+                collapse_conservation_consumption = yes
+                collapse_prosperity_efficiency = yes
+                collapse_order_liberty = yes
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = body_mind_flag
+                            }
+                        }
+                    }
+                    ROOT = {
+                        set_country_flag = body_mind_flag
+                    }
+                    add_to_variable = { amplification_expansion_position_var = 100 }
+                    add_to_variable = { amplification_expansion_exclusive_position_var = 100 }
+                    add_to_variable = { amplification_expansion_bg_position_var = 100 }
+                    add_to_variable = { amplification_expansion_effect_position_var = 100 }
+                    add_to_variable = { conservation_consumption_position_var = 100 }
+                    add_to_variable = { conservation_consumption_exclusive_position_var = 100 }
+                    add_to_variable = { conservation_consumption_bg_position_var = 100 }
+                    add_to_variable = { conservation_consumption_effect_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_exclusive_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_bg_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_effect_position_var = 100 }
+                    add_to_variable = { order_liberty_position_var = 100 }
+                    add_to_variable = { order_liberty_exclusive_position_var = 100 }
+                    add_to_variable = { order_liberty_bg_position_var = 100 }
+                    add_to_variable = { order_liberty_effect_position_var = 100 }
+                }
+                else = {
+                    ROOT = {
+                        clr_country_flag = body_mind_flag
+                    }
+                    subtract_from_variable = { amplification_expansion_position_var = 100 }
+                    subtract_from_variable = { amplification_expansion_exclusive_position_var = 100 }
+                    subtract_from_variable = { amplification_expansion_bg_position_var = 100 }
+                    subtract_from_variable = { amplification_expansion_effect_position_var = 100 }
+                    subtract_from_variable = { conservation_consumption_position_var = 100 }
+                    subtract_from_variable = { conservation_consumption_exclusive_position_var = 100 }
+                    subtract_from_variable = { conservation_consumption_bg_position_var = 100 }
+                    subtract_from_variable = { conservation_consumption_effect_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_exclusive_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_bg_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_effect_position_var = 100 }
+                    subtract_from_variable = { order_liberty_position_var = 100 }
+                    subtract_from_variable = { order_liberty_exclusive_position_var = 100 }
+                    subtract_from_variable = { order_liberty_bg_position_var = 100 }
+                    subtract_from_variable = { order_liberty_effect_position_var = 100 }
+                }
+            }
+            body_button_click = {
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_mind_tier1
+                                    has_country_flag = has_body_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_body_tier1
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            NOT = {
+                                ROOT = {
+                                    OR = {
+                                        has_country_flag = has_mind_tier2
+                                        has_country_flag = has_body_tier2
+                                    }
+                                }
+                            }
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_mind_tier1
+                                    has_country_flag = has_body_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_body_tier2
+                    #add_dynamic_modifier = {
+                    #    modifier = body_tier2_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            OR = {
+                                has_country_flag = has_mind_tier2
+                                has_country_flag = has_body_tier2
+                            }
+                        }
+                    }
+                    set_country_flag = has_body_tier3
+                    #add_dynamic_modifier = {
+                    #    modifier = body_tier3_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 200 }
+                    add_to_variable = { cultural_power_spent = 200 }
+                }
+            }
+            mind_button_click = {
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_body_tier1
+                                    has_country_flag = has_mind_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_mind_tier1
+                    add_dynamic_modifier = {
+                        modifier = mind_tier1_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            NOT = {
+                                ROOT = {
+                                    OR = {
+                                        has_country_flag = has_body_tier2
+                                        has_country_flag = has_mind_tier2
+                                    }
+                                }
+                            }
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_body_tier1
+                                    has_country_flag = has_mind_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_mind_tier2
+                    #add_dynamic_modifier = {
+                    #    modifier = mind_tier2_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            OR = {
+                                has_country_flag = has_body_tier2
+                                has_country_flag = has_mind_tier2
+                            }
+                        }
+                    }
+                    set_country_flag = has_mind_tier3
+                    #add_dynamic_modifier = {
+                    #    modifier = mind_tier3_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 200 }
+                    add_to_variable = { cultural_power_spent = 200 }
+                }
+            }
+            amplification_expansion_collapse_button_click = {
+                collapse_hostility_benevolence = yes
+                collapse_tradition_progress = yes
+                collapse_body_mind = yes
+                collapse_conservation_consumption = yes
+                collapse_prosperity_efficiency = yes
+                collapse_order_liberty = yes
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = amplification_expansion_flag
+                            }
+                        }
+                    }
+                    ROOT = {
+                        set_country_flag = amplification_expansion_flag
+                    }
+                    add_to_variable = { conservation_consumption_position_var = 100 }
+                    add_to_variable = { conservation_consumption_exclusive_position_var = 100 }
+                    add_to_variable = { conservation_consumption_bg_position_var = 100 }
+                    add_to_variable = { conservation_consumption_effect_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_exclusive_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_bg_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_effect_position_var = 100 }
+                    add_to_variable = { order_liberty_position_var = 100 }
+                    add_to_variable = { order_liberty_exclusive_position_var = 100 }
+                    add_to_variable = { order_liberty_bg_position_var = 100 }
+                    add_to_variable = { order_liberty_effect_position_var = 100 }
+                }
+                else = {
+                    ROOT = {
+                        clr_country_flag = amplification_expansion_flag
+                    }
+                    subtract_from_variable = { conservation_consumption_position_var = 100 }
+                    subtract_from_variable = { conservation_consumption_exclusive_position_var = 100 }
+                    subtract_from_variable = { conservation_consumption_bg_position_var = 100 }
+                    subtract_from_variable = { conservation_consumption_effect_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_exclusive_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_bg_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_effect_position_var = 100 }
+                    subtract_from_variable = { order_liberty_position_var = 100 }
+                    subtract_from_variable = { order_liberty_exclusive_position_var = 100 }
+                    subtract_from_variable = { order_liberty_bg_position_var = 100 }
+                    subtract_from_variable = { order_liberty_effect_position_var = 100 }
+                }
+            }
+            amplification_button_click = {
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_expansion_tier1
+                                    has_country_flag = has_amplification_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_amplification_tier1
+                    add_dynamic_modifier = {
+                        modifier = amplification_tier1_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            NOT = {
+                                ROOT = {
+                                    OR = {
+                                        has_country_flag = has_expansion_tier2
+                                        has_country_flag = has_amplification_tier2
+                                    }
+                                }
+                            }
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_expansion_tier1
+                                    has_country_flag = has_amplification_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_amplification_tier2
+                    random_owned_controlled_state = {
+                        limit = {
+                            is_capital = yes
+                        }
+                        add_building_construction = {
+                            type = anti_air_building
+                            level = 5
+                            instant_build = yes
+                        }
+                        add_building_construction = {
+                            type =  radar_station
+                            level = 6
+                            instant_build = yes
+                        }
+                        add_building_construction = {
+                            type = bunker
+                            level = 5
+                            instant_build = yes
+                            province = {
+                                all_provinces = yes
+                                limit_to_border = no
+                            }
+                        }
+                    }
+                    set_country_flag = amplification_two
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            OR = {
+                                has_country_flag = has_expansion_tier2
+                                has_country_flag = has_amplification_tier2
+                            }
+                        }
+                    }
+                    set_country_flag = has_amplification_tier3
+                    #add_dynamic_modifier = {
+                    #    modifier = amplification_tier3_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 200 }
+                    add_to_variable = { cultural_power_spent = 200 }
+                }
+            }
+            expansion_button_click = {
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_amplification_tier1
+                                    has_country_flag = has_expansion_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_expansion_tier1
+                    add_dynamic_modifier = {
+                        modifier = expansion_tier1_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            NOT = {
+                                ROOT = {
+                                    OR = {
+                                        has_country_flag = has_amplification_tier2
+                                        has_country_flag = has_expansion_tier2
+                                    }
+                                }
+                            }
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_amplification_tier1
+                                    has_country_flag = has_expansion_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_expansion_tier2
+                    #add_dynamic_modifier = {
+                    #    modifier = expansion_tier2_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            OR = {
+                                has_country_flag = has_amplification_tier2
+                                has_country_flag = has_expansion_tier2
+                            }
+                        }
+                    }
+                    set_country_flag = has_expansion_tier3
+                    #set_country_flag = expansion_three
+                    subtract_from_variable = { cultural_power = 200 }
+                    add_to_variable = { cultural_power_spent = 200 }
+                }
+            }
+            conservation_consumption_collapse_button_click = {
+                collapse_hostility_benevolence = yes
+                collapse_tradition_progress = yes
+                collapse_body_mind = yes
+                collapse_amplification_expansion = yes
+                collapse_prosperity_efficiency = yes
+                collapse_order_liberty = yes
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = conservation_consumption_flag
+                            }
+                        }
+                    }
+                    ROOT = {
+                        set_country_flag = conservation_consumption_flag
+                    }
+                    add_to_variable = { prosperity_efficiency_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_exclusive_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_bg_position_var = 100 }
+                    add_to_variable = { prosperity_efficiency_effect_position_var = 100 }
+                    add_to_variable = { order_liberty_position_var = 100 }
+                    add_to_variable = { order_liberty_exclusive_position_var = 100 }
+                    add_to_variable = { order_liberty_bg_position_var = 100 }
+                    add_to_variable = { order_liberty_effect_position_var = 100 }
+                }
+                else = {
+                    ROOT = {
+                        clr_country_flag = conservation_consumption_flag
+                    }
+                    subtract_from_variable = { prosperity_efficiency_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_exclusive_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_bg_position_var = 100 }
+                    subtract_from_variable = { prosperity_efficiency_effect_position_var = 100 }
+                    subtract_from_variable = { order_liberty_position_var = 100 }
+                    subtract_from_variable = { order_liberty_exclusive_position_var = 100 }
+                    subtract_from_variable = { order_liberty_bg_position_var = 100 }
+                    subtract_from_variable = { order_liberty_effect_position_var = 100 }
+                }
+            }
+            conservation_button_click = {
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_consumption_tier1
+                                    has_country_flag = has_conservation_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_conservation_tier1
+                    add_dynamic_modifier = {
+                        modifier = conservation_tier1_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            NOT = {
+                                ROOT = {
+                                    OR = {
+                                        has_country_flag = has_consumption_tier2
+                                        has_country_flag = has_conservation_tier2
+                                    }
+                                }
+                            }
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_consumption_tier1
+                                    has_country_flag = has_conservation_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_conservation_tier2
+                    #add_dynamic_modifier = {
+                    #    modifier = conservation_tier2_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            OR = {
+                                has_country_flag = has_consumption_tier2
+                                has_country_flag = has_conservation_tier2
+                            }
+                        }
+                    }
+                    set_country_flag = has_conservation_tier3
+                    #add_dynamic_modifier = {
+                    #    modifier = conservation_tier3_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 200 }
+                    add_to_variable = { cultural_power_spent = 200 }
+                }
+            }
+            consumption_button_click = {
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_conservation_tier1
+                                    has_country_flag = has_consumption_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_consumption_tier1
+                    add_dynamic_modifier = {
+                        modifier = consumption_tier1_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            NOT = {
+                                ROOT = {
+                                    OR = {
+                                        has_country_flag = has_conservation_tier2
+                                        has_country_flag = has_consumption_tier2
+                                    }
+                                }
+                            }
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_conservation_tier1
+                                    has_country_flag = has_consumption_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_consumption_tier2
+                    #set_country_flag = consumption_two
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            OR = {
+                                has_country_flag = has_conservation_tier2
+                                has_country_flag = has_consumption_tier2
+                            }
+                        }
+                    }
+                    set_country_flag = has_consumption_tier3
+                    #set_country_flag = consumption_three
+                    subtract_from_variable = { cultural_power = 200 }
+                    add_to_variable = { cultural_power_spent = 200 }
+                }
+            }
+            prosperity_efficiency_collapse_button_click = {
+                collapse_hostility_benevolence = yes
+                collapse_tradition_progress = yes
+                collapse_body_mind = yes
+                collapse_amplification_expansion = yes
+                collapse_conservation_consumption = yes
+                collapse_order_liberty = yes
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = prosperity_efficiency_flag
+                            }
+                        }
+                    }
+                    ROOT = {
+                        set_country_flag = prosperity_efficiency_flag
+                    }
+                    add_to_variable = { order_liberty_position_var = 100 }
+                    add_to_variable = { order_liberty_exclusive_position_var = 100 }
+                    add_to_variable = { order_liberty_bg_position_var = 100 }
+                    add_to_variable = { order_liberty_effect_position_var = 100 }
+                }
+                else = {
+                    ROOT = {
+                        clr_country_flag = prosperity_efficiency_flag
+                    }
+                    subtract_from_variable = { order_liberty_position_var = 100 }
+                    subtract_from_variable = { order_liberty_exclusive_position_var = 100 }
+                    subtract_from_variable = { order_liberty_bg_position_var = 100 }
+                    subtract_from_variable = { order_liberty_effect_position_var = 100 }
+                }
+            }
+            prosperity_button_click = {
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_efficiency_tier1
+                                    has_country_flag = has_prosperity_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_prosperity_tier1
+                    add_dynamic_modifier = {
+                        modifier = prosperity_tier1_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            NOT = {
+                                ROOT = {
+                                    OR = {
+                                        has_country_flag = has_efficiency_tier2
+                                        has_country_flag = has_prosperity_tier2
+                                    }
+                                }
+                            }
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_efficiency_tier1
+                                    has_country_flag = has_prosperity_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_prosperity_tier2
+                    #add_dynamic_modifier = {
+                    #    modifier = prosperity_tier2_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            OR = {
+                                has_country_flag = has_efficiency_tier2
+                                has_country_flag = has_prosperity_tier2
+                            }
+                        }
+                    }
+                    set_country_flag = has_prosperity_tier3
+                    #set_country_flag = prosperity_three
+                    subtract_from_variable = { cultural_power = 200 }
+                    add_to_variable = { cultural_power_spent = 200 }
+                }
+            }
+            efficiency_button_click = {
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_prosperity_tier1
+                                    has_country_flag = has_efficiency_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_efficiency_tier1
+                    add_dynamic_modifier = {
+                        modifier = efficiency_tier1_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            NOT = {
+                                ROOT = {
+                                    OR = {
+                                        has_country_flag = has_prosperity_tier2
+                                        has_country_flag = has_efficiency_tier2
+                                    }
+                                }
+                            }
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_prosperity_tier1
+                                    has_country_flag = has_efficiency_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_efficiency_tier2
+                    #add_dynamic_modifier = {
+                    #    modifier = efficiency_tier2_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            OR = {
+                                has_country_flag = has_prosperity_tier2
+                                has_country_flag = has_efficiency_tier2
+                            }
+                        }
+                    }
+                    set_country_flag = has_efficiency_tier3
+                    #add_dynamic_modifier = {
+                    #    modifier = efficiency_tier3_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 200 }
+                    add_to_variable = { cultural_power_spent = 200 }
+                }
+            }
+            order_liberty_collapse_button_click = {
+                collapse_hostility_benevolence = yes
+                collapse_tradition_progress = yes
+                collapse_body_mind = yes
+                collapse_amplification_expansion = yes
+                collapse_conservation_consumption = yes
+                collapse_prosperity_efficiency = yes
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = order_liberty_flag
+                            }
+                        }
+                    }
+                    ROOT = {
+                        set_country_flag = order_liberty_flag
+                    }
+                }
+                else = {
+                    ROOT = {
+                        clr_country_flag = order_liberty_flag
+                    }
+                }
+            }
+            order_button_click = {
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_efficiency_tier1
+                                    has_country_flag = has_order_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_order_tier1
+                    set_country_flag = order_one
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            NOT = {
+                                ROOT = {
+                                    OR = {
+                                        has_country_flag = has_liberty_tier2
+                                        has_country_flag = has_order_tier2
+                                    }
+                                }
+                            }
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_liberty_tier1
+                                    has_country_flag = has_order_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_order_tier2
+                    #add_dynamic_modifier = {
+                    #    modifier = order_tier2_modifier
+                    #}
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            OR = {
+                                has_country_flag = has_liberty_tier2
+                                has_country_flag = has_order_tier2
+                            }
+                        }
+                    }
+                    set_country_flag = has_order_tier3
+                    #set_country_flag = order_three
+                    subtract_from_variable = { cultural_power = 200 }
+                    add_to_variable = { cultural_power_spent = 200 }
+                }
+            }
+            liberty_button_click = {
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_order_tier1
+                                    has_country_flag = has_liberty_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_liberty_tier1
+                    set_country_flag = liberty_one
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            NOT = {
+                                ROOT = {
+                                    OR = {
+                                        has_country_flag = has_order_tier2
+                                        has_country_flag = has_liberty_tier2
+                                    }
+                                }
+                            }
+                            ROOT = {
+                                OR = {
+                                    has_country_flag = has_order_tier1
+                                    has_country_flag = has_liberty_tier1
+                                }
+                            }
+                        }
+                    }
+                    set_country_flag = has_liberty_tier2
+                    #set_variable = { corruption_clear = corruption_variable }
+                    #subtract_from_variable = { corruption_variable = corruption_variable }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            OR = {
+                                has_country_flag = has_order_tier2
+                                has_country_flag = has_liberty_tier2
+                            }
+                        }
+                    }
+                    set_country_flag = has_liberty_tier3
+                    #set_country_flag = liberty_three
+                    subtract_from_variable = { cultural_power = 200 }
+                    add_to_variable = { cultural_power_spent = 200 }
+                }
+            }
+        }
+        
+        triggers = {
+            reset_virtues_button_click_enabled = {
+                ROOT = {
+                    has_country_flag = cultural_reset_available
+                }
+            }
+            hostility_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                            OR = {
+                            has_country_flag = has_hostility_tier3
+                            has_country_flag = has_benevolence_tier1
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = has_hostility_tier2
+                            }
+                        }
+                    }
+                    check_variable = { cultural_power > 149 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_country_flag = has_hostility_tier2
+                        }
+                    }
+                    check_variable = { cultural_power > 199 }
+                }
+            }
+            benevolence_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                            OR = {
+                            has_country_flag = has_hostility_tier1
+                            has_country_flag = has_benevolence_tier3
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = has_benevolence_tier2
+                            }
+                        }
+                    }
+                    check_variable = { cultural_power > 149 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_country_flag = has_benevolence_tier2
+                        }
+                    }
+                    check_variable = { cultural_power > 199 }
+                }
+            }
+            hostility_effect_bg_visible = {
+                ROOT = {
+                    has_country_flag = hostility_benevolence_flag
+                }
+            }
+            hostility_effects_visible = {
+                ROOT = {
+                    has_country_flag = hostility_benevolence_flag
+                }
+            }
+            benevolence_effect_bg_visible = {
+                ROOT = {
+                    has_country_flag = hostility_benevolence_flag
+                }
+            }
+            benevolence_effects_visible = {
+                ROOT = {
+                    has_country_flag = hostility_benevolence_flag
+                }
+            }
+            tradition_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                            OR = {
+                            has_country_flag = has_tradition_tier3
+                            has_country_flag = has_progress_tier1
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = has_tradition_tier2
+                            }
+                        }
+                    }
+                    check_variable = { cultural_power > 149 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_country_flag = has_tradition_tier2
+                        }
+                    }
+                    check_variable = { cultural_power > 199 }
+                }
+            }
+            progress_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                            OR = {
+                            has_country_flag = has_progress_tier3
+                            has_country_flag = has_tradition_tier1
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = has_progress_tier2
+                            }
+                        }
+                    }
+                    check_variable = { cultural_power > 149 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_country_flag = has_progress_tier2
+                        }
+                    }
+                    check_variable = { cultural_power > 199 }
+                }
+            }
+            tradition_effect_bg_visible = {
+                ROOT = {
+                    has_country_flag = tradition_progress_flag
+                }
+            }
+            tradition_effects_visible = {
+                ROOT = {
+                    has_country_flag = tradition_progress_flag
+                }
+            }
+            progress_effect_bg_visible = {
+                ROOT = {
+                    has_country_flag = tradition_progress_flag
+                }
+            }
+            progress_effects_visible = {
+                ROOT = {
+                    has_country_flag = tradition_progress_flag
+                }
+            }
+            body_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                            OR = {
+                            has_country_flag = has_body_tier3
+                            has_country_flag = has_mind_tier1
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = has_body_tier2
+                            }
+                        }
+                    }
+                    check_variable = { cultural_power > 149 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_country_flag = has_body_tier2
+                        }
+                    }
+                    check_variable = { cultural_power > 199 }
+                }
+            }
+            mind_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                            OR = {
+                            has_country_flag = has_body_tier1
+                            has_country_flag = has_mind_tier3
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = has_mind_tier2
+                            }
+                        }
+                    }
+                    check_variable = { cultural_power > 149 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_country_flag = has_mind_tier2
+                        }
+                    }
+                    check_variable = { cultural_power > 199 }
+                }
+            }
+            body_effect_bg_visible = {
+                ROOT = {
+                    has_country_flag = body_mind_flag
+                }
+            }
+            body_effects_visible = {
+                ROOT = {
+                    has_country_flag = body_mind_flag
+                }
+            }
+            mind_effect_bg_visible = {
+                ROOT = {
+                    has_country_flag = body_mind_flag
+                }
+            }
+            mind_effects_visible = {
+                ROOT = {
+                    has_country_flag = body_mind_flag
+                }
+            }
+            amplification_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                            OR = {
+                            has_country_flag = has_amplification_tier3
+                            has_country_flag = has_expansion_tier1
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = has_amplification_tier2
+                            }
+                        }
+                    }
+                    check_variable = { cultural_power > 149 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_country_flag = has_amplification_tier2
+                        }
+                    }
+                    check_variable = { cultural_power > 199 }
+                }
+            }
+            expansion_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                            OR = {
+                            has_country_flag = has_amplification_tier1
+                            has_country_flag = has_expansion_tier3
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = has_expansion_tier2
+                            }
+                        }
+                    }
+                    check_variable = { cultural_power > 149 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_country_flag = has_expansion_tier2
+                        }
+                    }
+                    check_variable = { cultural_power > 199 }
+                }
+            }
+            amplification_effect_bg_visible = {
+                ROOT = {
+                    has_country_flag = amplification_expansion_flag
+                }
+            }
+            amplification_effects_visible = {
+                ROOT = {
+                    has_country_flag = amplification_expansion_flag
+                }
+            }
+            expansion_effect_bg_visible = {
+                ROOT = {
+                    has_country_flag = amplification_expansion_flag
+                }
+            }
+            expansion_effects_visible = {
+                ROOT = {
+                    has_country_flag = amplification_expansion_flag
+                }
+            }
+            conservation_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                            OR = {
+                            has_country_flag = has_conservation_tier3
+                            has_country_flag = has_consumption_tier1
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = has_conservation_tier2
+                            }
+                        }
+                    }
+                    check_variable = { cultural_power > 149 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_country_flag = has_conservation_tier2
+                        }
+                    }
+                    check_variable = { cultural_power > 199 }
+                }
+            }
+            consumption_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                            OR = {
+                            has_country_flag = has_conservation_tier1
+                            has_country_flag = has_consumption_tier3
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = has_consumption_tier2
+                            }
+                        }
+                    }
+                    check_variable = { cultural_power > 149 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_country_flag = has_consumption_tier2
+                        }
+                    }
+                    check_variable = { cultural_power > 199 }
+                }
+            }
+            conservation_effect_bg_visible = {
+                ROOT = {
+                    has_country_flag = conservation_consumption_flag
+                }
+            }
+            conservation_effects_visible = {
+                ROOT = {
+                    has_country_flag = conservation_consumption_flag
+                }
+            }
+            consumption_effect_bg_visible = {
+                ROOT = {
+                    has_country_flag = conservation_consumption_flag
+                }
+            }
+            consumption_effects_visible = {
+                ROOT = {
+                    has_country_flag = conservation_consumption_flag
+                }
+            }
+            prosperity_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                            OR = {
+                            has_country_flag = has_prosperity_tier3
+                            has_country_flag = has_efficiency_tier1
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = has_prosperity_tier2
+                            }
+                        }
+                    }
+                    check_variable = { cultural_power > 149 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_country_flag = has_prosperity_tier2
+                        }
+                    }
+                    check_variable = { cultural_power > 199 }
+                }
+            }
+            efficiency_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                            OR = {
+                            has_country_flag = has_prosperity_tier1
+                            has_country_flag = has_efficiency_tier3
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = has_efficiency_tier2
+                            }
+                        }
+                    }
+                    check_variable = { cultural_power > 149 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_country_flag = has_efficiency_tier2
+                        }
+                    }
+                    check_variable = { cultural_power > 199 }
+                }
+            }
+            prosperity_effect_bg_visible = {
+                ROOT = {
+                    has_country_flag = prosperity_efficiency_flag
+                }
+            }
+            prosperity_effects_visible = {
+                ROOT = {
+                    has_country_flag = prosperity_efficiency_flag
+                }
+            }
+            efficiency_effect_bg_visible = {
+                ROOT = {
+                    has_country_flag = prosperity_efficiency_flag
+                }
+            }
+            efficiency_effects_visible = {
+                ROOT = {
+                    has_country_flag = prosperity_efficiency_flag
+                }
+            }
+            order_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                            OR = {
+                            has_country_flag = has_order_tier3
+                            has_country_flag = has_liberty_tier1
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = has_order_tier2
+                            }
+                        }
+                    }
+                    check_variable = { cultural_power > 149 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_country_flag = has_order_tier2
+                        }
+                    }
+                    check_variable = { cultural_power > 199 }
+                }
+            }
+            liberty_button_click_enabled = {
+                NOT = {
+                    ROOT = {
+                            OR = {
+                            has_country_flag = has_order_tier1
+                            has_country_flag = has_liberty_tier3
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = has_liberty_tier2
+                            }
+                        }
+                    }
+                    check_variable = { cultural_power > 149 }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_country_flag = has_liberty_tier2
+                        }
+                    }
+                    check_variable = { cultural_power > 199 }
+                }
+            }
+            order_effect_bg_visible = {
+                ROOT = {
+                    has_country_flag = order_liberty_flag
+                }
+            }
+            order_effects_visible = {
+                ROOT = {
+                    has_country_flag = order_liberty_flag
+                }
+            }
+            liberty_effect_bg_visible = {
+                ROOT = {
+                    has_country_flag = order_liberty_flag
+                }
+            }
+            liberty_effects_visible = {
+                ROOT = {
+                    has_country_flag = order_liberty_flag
+                }
+            }
+        }
+
+        properties = {
+			tradition_button = {
+				x = -530
+				y = tradition_progress_position_var
+			}
+			progress_button = {
+				x = -270
+				y = tradition_progress_position_var
+			}
+			tradition_effect_bg = {
+				x = 20
+				y = tradition_progress_bg_position_var
+			}
+            tradition_effects = {
+				x = 22
+				y = tradition_progress_effect_position_var
+			}
+			progress_effect_bg = {
+				x = 280
+				y = tradition_progress_bg_position_var
+			}
+            progress_effects = {
+				x = 282
+				y = tradition_progress_effect_position_var
+			}
+			tradition_progress_collapse_button = {
+				x = -40
+				y = tradition_progress_position_var
+			}
+			tradition_progress_exclusive = {
+				x = 264
+				y = tradition_progress_exclusive_position_var
+			}
+			body_button = {
+				x = -530
+				y = body_mind_position_var
+			}
+			mind_button = {
+				x = -270
+				y = body_mind_position_var
+			}
+			body_effect_bg = {
+				x = 20
+				y = body_mind_bg_position_var
+			}
+            body_effects = {
+				x = 22
+				y = body_mind_effect_position_var
+			}
+			mind_effect_bg = {
+				x = 280
+				y = body_mind_bg_position_var
+			}
+            mind_effects = {
+				x = 282
+				y = body_mind_effect_position_var
+			}
+			body_mind_collapse_button = {
+				x = -40
+				y = body_mind_position_var
+			}
+			body_mind_exclusive = {
+				x = 264
+				y = body_mind_exclusive_position_var
+			}
+			amplification_button = {
+				x = -530
+				y = amplification_expansion_position_var
+			}
+			expansion_button = {
+				x = -270
+				y = amplification_expansion_position_var
+			}
+			amplification_effect_bg = {
+				x = 20
+				y = amplification_expansion_bg_position_var
+			}
+            amplification_effects = {
+				x = 22
+				y = amplification_expansion_effect_position_var
+			}
+			expansion_effect_bg = {
+				x = 280
+				y = amplification_expansion_bg_position_var
+			}
+            expansion_effects = {
+				x = 282
+				y = amplification_expansion_effect_position_var
+			}
+			amplification_expansion_collapse_button = {
+				x = -40
+				y = amplification_expansion_position_var
+			}
+			amplification_expansion_exclusive = {
+				x = 264
+				y = amplification_expansion_exclusive_position_var
+			}
+			conservation_button = {
+				x = -530
+				y = conservation_consumption_position_var
+			}
+			conservation_effect_bg = {
+				x = 20
+				y = conservation_consumption_bg_position_var
+			}
+            conservation_effects = {
+				x = 22
+				y = conservation_consumption_effect_position_var
+			}
+			consumption_button = {
+				x = -270
+				y = conservation_consumption_position_var
+			}
+			consumption_effect_bg = {
+				x = 280
+				y = conservation_consumption_bg_position_var
+			}
+            consumption_effects = {
+				x = 282
+				y = conservation_consumption_effect_position_var
+			}
+			conservation_consumption_collapse_button = {
+				x = -40
+				y = conservation_consumption_position_var
+			}
+			conservation_consumption_exclusive = {
+				x = 264
+				y = conservation_consumption_exclusive_position_var
+			}
+			prosperity_button = {
+				x = -530
+				y = prosperity_efficiency_position_var
+			}
+			prosperity_effect_bg = {
+				x = 20
+				y = prosperity_efficiency_bg_position_var
+			}
+            prosperity_effects = {
+				x = 22
+				y = prosperity_efficiency_effect_position_var
+			}
+			efficiency_button = {
+				x = -270
+				y = prosperity_efficiency_position_var
+			}
+			efficiency_effect_bg = {
+				x = 280
+				y = prosperity_efficiency_bg_position_var
+			}
+            efficiency_effects = {
+				x = 282
+				y = prosperity_efficiency_effect_position_var
+			}
+			prosperity_efficiency_collapse_button = {
+				x = -40
+				y = prosperity_efficiency_position_var
+			}
+			prosperity_efficiency_exclusive = {
+				x = 264
+				y = prosperity_efficiency_exclusive_position_var
+			}
+			order_button = {
+				x = -530
+				y = order_liberty_position_var
+			}
+			order_effect_bg = {
+				x = 20
+				y = order_liberty_bg_position_var
+			}
+            order_effects = {
+				x = 22
+				y = order_liberty_effect_position_var
+			}
+			liberty_button = {
+				x = -270
+				y = order_liberty_position_var
+			}
+			liberty_effect_bg = {
+				x = 280
+				y = order_liberty_bg_position_var
+			}
+            liberty_effects = {
+				x = 282
+				y = order_liberty_effect_position_var
+			}
+			order_liberty_collapse_button = {
+				x = -40
+				y = order_liberty_position_var
+			}
+			order_liberty_exclusive = {
+				x = 264
+				y = order_liberty_exclusive_position_var
+			}
         }
     }
 }

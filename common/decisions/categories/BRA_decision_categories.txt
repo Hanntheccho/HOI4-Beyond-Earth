@@ -1,0 +1,49 @@
+BRA_debug_decisions = {
+	icon = GFX_decision_category_generic
+	available = { 
+		is_ai = no
+	}
+	visible = {
+		is_debug = yes
+	}
+	allowed = { tag = BRA }
+	visible_when_empty = yes
+}
+
+BRA_the_inevitable = {
+	icon = GFX_decision_category_generic
+	picture = GFX_the_inevitable_bra
+	visible = {
+		NOT = {
+			has_country_flag = andean_war_over
+		}
+	}
+	available = {
+		NOT = {
+			has_country_flag = andean_war_over
+		}
+	}
+	allowed = { tag = BRA }
+	visible_when_empty = no
+}
+
+BRA_civil_war_gui = {
+	icon = GFX_decision_category_generic
+	scripted_gui = BRA_civil_war_GUI
+	available = {
+		has_global_flag = brazil_civil_war
+	}
+	visible = {
+		has_global_flag = brazil_civil_war
+	}
+	allowed = {
+		OR = {
+			tag = BRA
+			tag = BGV
+			tag = LEG
+			tag = GRP
+			tag = LAM
+		}
+	}
+	visible_when_empty = yes
+}
