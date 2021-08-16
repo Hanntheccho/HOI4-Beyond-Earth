@@ -2,14 +2,14 @@ guiTypes = {
 
     containerWindowType = {
     	name = "virtues_and_culture_stuff"
-		position = { x=-606 y=86 }	
-		show_position = { x=-6 y =86 }
+		position = { x=-606 y=79 }	
+		show_position = { x=-6 y =79 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
 		size = { width=550 height=995 }
 		clipping = yes
-		verticalScrollbar = "right_vertical_slider"
+		#verticalScrollbar = "right_vertical_slider"
 		
 		#hide_sound = menu_close_window
 		show_sound = menu_open_window
@@ -25,9 +25,18 @@ guiTypes = {
 			position = { x= 7 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}
+		buttonType = {
+			name ="help_virtues"
+			spriteType = "GFX_help_button"
+			position = { x= 19 y = 8 }
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "help_virtues"
+		}
 		instantTextBoxType = {
 			name = "virtues_and_culture_viewtext"
-			position = { x = 45 y = 0 }
+			position = { x = 51 y = 1 }
 			textureFile = ""
 			font = "Beyond"
 			borderSize = {x = 0 y = 0}
@@ -41,7 +50,7 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "virtues_and_culture_close"
-			position = { x = -35 y = 3 }
+			position = { x = -43 y = 5 }
 			quadTextureSprite ="GFX_closebutton"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
@@ -49,11 +58,17 @@ guiTypes = {
 			shortcut = "ESCAPE"
 			pdx_tooltip = "CLOSE"
 		}
+		iconType = {
+			name = "hexagon_pattern_culturetab"
+			position = { x = -100 y = 41 }
+			quadTextureSprite ="GFX_background_pattern_culture_tab"
+			Orientation = "UPPER_LEFT"
+		}
 		instantTextBoxType = {
 			name = "virtues_and_culture_desc"
-			position = { x = 15 y = 50 }
+			position = { x = 15 y = 53 }
 			textureFile = ""
-			font = "Beyond"
+			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
 			text = "virtues_and_culture_desc"
 			maxWidth = 500
@@ -65,8 +80,8 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "reset_virtues_button"
-			position = { x = -58 y = 7 }
-			quadTextureSprite ="GFX_help_button"
+			position = { x = -43 y = 47 }
+			quadTextureSprite ="GFX_reset_virtues"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
@@ -74,29 +89,29 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "hostility_button"
-			position = { x = -530 y = 100 }
-			quadTextureSprite ="GFX_add_national_goal_button"
+			#position = { x = -529 y = 87 }
+			quadTextureSprite ="GFX_hostility_button"
 			buttonText = "hostility_button"
-			buttonFont = "Focusfont"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		iconType = {
 			name ="hostility_effect_bg"
-			spriteType = "GFX_win_header_short"
-			position = { x= 20 y = 183 }
+			spriteType = "GFX_hostility_effect_bg"
+			#position = { x= 21 y = 171 }
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
 			name = "hostility_effects"
-			position = { x = 22 y = 187 }
+			#position = { x = 25 y = 173 }
 			textureFile = ""
-			font = "Focusfont"
+			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
 			text = "hostility_effects"	
-			maxWidth = 256
-			maxHeight = 110
+			maxWidth = 245
+			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
@@ -104,70 +119,70 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "benevolence_button"
-			position = { x = -270 y = 100 }
-			quadTextureSprite ="GFX_add_national_goal_button"
+			#position = { x = -270 y = 87 }
+			quadTextureSprite ="GFX_benevolence_button"
 			buttonText = "benevolence_button"
-			buttonFont = "Focusfont"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		iconType = {
 			name ="benevolence_effect_bg"
-			spriteType = "GFX_win_header_short"
-			position = { x= 280 y = 183 }
+			spriteType = "GFX_benevolence_effect_bg"
+			#position = { x= 280 y = 171 }
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
 			name = "benevolence_effects"
-			position = { x = 280 y = 187 }
+			#position = { x = 278 y = 173 }
 			textureFile = ""
-			font = "Focusfont"
+			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
 			text = "benevolence_effects"	
-			maxWidth = 256
-			maxHeight = 110
+			maxWidth = 245
+			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
-			format = left
+			format = right
 		}
 		iconType = {
 			name ="benevolence_hostility_exclusive"
 			spriteType = "GFX_focus_link_exclusive"
-			position = { x= 264 y = 125 }
+			#position = { x= 264 y = 113 }
 			Orientation = "UPPER_LEFT"
 		}
 		buttonType = {
 			name = "hostility_benevolence_collapse_button"
-			position = { x = -40 y = 100 }
-			quadTextureSprite ="GFX_manpower_icon"
+			#position = { x = -55 y = 87 }
+			quadTextureSprite ="GFX_collapse_culture"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		buttonType = {
 			name = "tradition_button"
-			quadTextureSprite ="GFX_add_national_goal_button"
+			quadTextureSprite ="GFX_tradition_button"
 			buttonText = "tradition_button"
-			buttonFont = "Focusfont"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		iconType = {
 			name ="tradition_effect_bg"
-			spriteType = "GFX_win_header_short"
+			spriteType = "GFX_tradition_effect_bg"
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
 			name = "tradition_effects"
 			textureFile = ""
-			font = "Focusfont"
+			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
 			text = "tradition_effects"	
-			maxWidth = 256
-			maxHeight = 110
+			maxWidth = 245
+			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
@@ -175,30 +190,30 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "progress_button"
-			quadTextureSprite ="GFX_add_national_goal_button"
+			quadTextureSprite ="GFX_progress_button"
 			buttonText = "progress_button"
-			buttonFont = "Focusfont"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		iconType = {
 			name ="progress_effect_bg"
-			spriteType = "GFX_win_header_short"
+			spriteType = "GFX_progress_effect_bg"
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
 			name = "progress_effects"
 			textureFile = ""
-			font = "Focusfont"
+			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
 			text = "progress_effects"	
-			maxWidth = 256
-			maxHeight = 110
+			maxWidth = 245
+			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
-			format = left
+			format = right
 		}
 		iconType = {
 			name ="tradition_progress_exclusive"
@@ -207,33 +222,33 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "tradition_progress_collapse_button"
-			quadTextureSprite ="GFX_manpower_icon"
+			quadTextureSprite ="GFX_collapse_culture"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		buttonType = {
 			name = "body_button"
-			quadTextureSprite ="GFX_add_national_goal_button"
+			quadTextureSprite ="GFX_body_button"
 			buttonText = "body_button"
-			buttonFont = "Focusfont"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		iconType = {
 			name ="body_effect_bg"
-			spriteType = "GFX_win_header_short"
+			spriteType = "GFX_body_effect_bg"
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
 			name = "body_effects"
 			textureFile = ""
-			font = "Focusfont"
+			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
 			text = "body_effects"	
-			maxWidth = 256
-			maxHeight = 110
+			maxWidth = 245
+			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
@@ -241,30 +256,30 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "mind_button"
-			quadTextureSprite ="GFX_add_national_goal_button"
+			quadTextureSprite ="GFX_mind_button"
 			buttonText = "mind_button"
-			buttonFont = "Focusfont"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		iconType = {
 			name ="mind_effect_bg"
-			spriteType = "GFX_win_header_short"
+			spriteType = "GFX_mind_effect_bg"
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
 			name = "mind_effects"
 			textureFile = ""
-			font = "Focusfont"
+			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
 			text = "mind_effects"	
-			maxWidth = 256
-			maxHeight = 110
+			maxWidth = 245
+			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
-			format = left
+			format = right
 		}
 		iconType = {
 			name ="body_mind_exclusive"
@@ -273,33 +288,33 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "body_mind_collapse_button"
-			quadTextureSprite ="GFX_manpower_icon"
+			quadTextureSprite ="GFX_collapse_culture"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		buttonType = {
 			name = "amplification_button"
-			quadTextureSprite ="GFX_add_national_goal_button"
+			quadTextureSprite ="GFX_amplification_button"
 			buttonText = "amplification_button"
-			buttonFont = "Focusfont"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		iconType = {
 			name ="amplification_effect_bg"
-			spriteType = "GFX_win_header_short"
+			spriteType = "GFX_amplification_effect_bg"
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
 			name = "amplification_effects"
 			textureFile = ""
-			font = "Focusfont"
+			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
 			text = "amplification_effects"	
-			maxWidth = 256
-			maxHeight = 110
+			maxWidth = 245
+			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
@@ -307,30 +322,30 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "expansion_button"
-			quadTextureSprite ="GFX_add_national_goal_button"
+			quadTextureSprite ="GFX_expansion_button"
 			buttonText = "expansion_button"
-			buttonFont = "Focusfont"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		iconType = {
 			name ="expansion_effect_bg"
-			spriteType = "GFX_win_header_short"
+			spriteType = "GFX_expansion_effect_bg"
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
 			name = "expansion_effects"
 			textureFile = ""
-			font = "Focusfont"
+			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
 			text = "expansion_effects"	
-			maxWidth = 256
-			maxHeight = 110
+			maxWidth = 245
+			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
-			format = left
+			format = right
 		}
 		iconType = {
 			name ="amplification_expansion_exclusive"
@@ -340,33 +355,33 @@ guiTypes = {
 		buttonType = {
 			name = "amplification_expansion_collapse_button"
 			position = { x = -40 y = 405 }
-			quadTextureSprite ="GFX_manpower_icon"
+			quadTextureSprite ="GFX_collapse_culture"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		buttonType = {
 			name = "conservation_button"
-			quadTextureSprite ="GFX_add_national_goal_button"
+			quadTextureSprite ="GFX_conservation_button"
 			buttonText = "conservation_button"
-			buttonFont = "Focusfont"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		iconType = {
 			name ="conservation_effect_bg"
-			spriteType = "GFX_win_header_short"
+			spriteType = "GFX_conservation_effect_bg"
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
 			name = "conservation_effects"
 			textureFile = ""
-			font = "Focusfont"
+			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
 			text = "conservation_effects"	
-			maxWidth = 256
-			maxHeight = 110
+			maxWidth = 245
+			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
@@ -374,30 +389,30 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "consumption_button"
-			quadTextureSprite ="GFX_add_national_goal_button"
+			quadTextureSprite ="GFX_consumption_button"
 			buttonText = "consumption_button"
-			buttonFont = "Focusfont"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		iconType = {
 			name ="consumption_effect_bg"
-			spriteType = "GFX_win_header_short"
+			spriteType = "GFX_consumption_effect_bg"
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
 			name = "consumption_effects"
 			textureFile = ""
-			font = "Focusfont"
+			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
 			text = "consumption_effects"	
-			maxWidth = 256
-			maxHeight = 110
+			maxWidth = 245
+			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
-			format = left
+			format = right
 		}
 		iconType = {
 			name ="conservation_consumption_exclusive"
@@ -407,33 +422,33 @@ guiTypes = {
 		buttonType = {
 			name = "conservation_consumption_collapse_button"
 			position = { x = -40 y = 505 }
-			quadTextureSprite ="GFX_manpower_icon"
+			quadTextureSprite ="GFX_collapse_culture"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		buttonType = {
 			name = "prosperity_button"
-			quadTextureSprite ="GFX_add_national_goal_button"
+			quadTextureSprite ="GFX_prosperity_button"
 			buttonText = "prosperity_button"
-			buttonFont = "Focusfont"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		iconType = {
 			name ="prosperity_effect_bg"
-			spriteType = "GFX_win_header_short"
+			spriteType = "GFX_prosperity_effect_bg"
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
 			name = "prosperity_effects"
 			textureFile = ""
-			font = "Focusfont"
+			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
 			text = "prosperity_effects"	
-			maxWidth = 256
-			maxHeight = 110
+			maxWidth = 245
+			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
@@ -441,30 +456,30 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "efficiency_button"
-			quadTextureSprite ="GFX_add_national_goal_button"
+			quadTextureSprite ="GFX_efficiency_button"
 			buttonText = "efficiency_button"
-			buttonFont = "Focusfont"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		iconType = {
 			name ="efficiency_effect_bg"
-			spriteType = "GFX_win_header_short"
+			spriteType = "GFX_efficiency_effect_bg"
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
 			name = "efficiency_effects"
 			textureFile = ""
-			font = "Focusfont"
+			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
 			text = "efficiency_effects"	
-			maxWidth = 256
-			maxHeight = 110
+			maxWidth = 245
+			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
-			format = left
+			format = right
 		}
 		iconType = {
 			name ="prosperity_efficiency_exclusive"
@@ -474,33 +489,33 @@ guiTypes = {
 		buttonType = {
 			name = "prosperity_efficiency_collapse_button"
 			position = { x = -40 y = 605 }
-			quadTextureSprite ="GFX_manpower_icon"
+			quadTextureSprite ="GFX_collapse_culture"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		buttonType = {
 			name = "order_button"
-			quadTextureSprite ="GFX_add_national_goal_button"
+			quadTextureSprite ="GFX_order_button"
 			buttonText = "order_button"
-			buttonFont = "Focusfont"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		iconType = {
 			name ="order_effect_bg"
-			spriteType = "GFX_win_header_short"
+			spriteType = "GFX_order_effect_bg"
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
 			name = "order_effects"
 			textureFile = ""
-			font = "Focusfont"
+			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
 			text = "order_effects"	
-			maxWidth = 256
-			maxHeight = 110
+			maxWidth = 245
+			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
@@ -508,30 +523,30 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "liberty_button"
-			quadTextureSprite ="GFX_add_national_goal_button"
+			quadTextureSprite ="GFX_liberty_button"
 			buttonText = "liberty_button"
-			buttonFont = "Focusfont"
+			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
 		iconType = {
 			name ="liberty_effect_bg"
-			spriteType = "GFX_win_header_short"
+			spriteType = "GFX_liberty_effect_bg"
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
 			name = "liberty_effects"
 			textureFile = ""
-			font = "Focusfont"
+			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
 			text = "liberty_effects"	
-			maxWidth = 256
-			maxHeight = 110
+			maxWidth = 245
+			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
-			format = left
+			format = right
 		}
 		iconType = {
 			name ="order_liberty_exclusive"
@@ -541,7 +556,7 @@ guiTypes = {
 		buttonType = {
 			name = "order_liberty_collapse_button"
 			position = { x = -40 y = 705 }
-			quadTextureSprite ="GFX_manpower_icon"
+			quadTextureSprite ="GFX_collapse_culture"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
