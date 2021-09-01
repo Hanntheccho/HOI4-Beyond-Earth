@@ -16,6 +16,7 @@ BRA_debug_decisions = {
 		cost = 0
 	
 		complete_effect = {
+			custom_effect_tooltip = BRA_start_civil_war_tt
 			hidden_effect = {
 				set_global_flag = brazil_civil_war
 				BRA_set_starting_values = yes
@@ -27,126 +28,6 @@ BRA_debug_decisions = {
 			factor = 0
 		}
 	}
-	
-#	BRA_BGV_annex = {
-#		icon = generic_industry
-#	
-#		available = {
-#			is_ai = no
-#		}
-#	
-#		visible = {
-#			is_debug = yes
-#		}
-#	
-#		fire_only_once = yes
-#	
-#		cost = 0
-#	
-#		complete_effect = {
-#			BGV = {
-#				annex_country = {
-#					target = BRA
-#					transfer_troops = yes
-#				}
-#				BGV = { change_tag_from = BRA }
-#			}
-#		}
-#		
-#		ai_will_do = {
-#			factor = 0
-#		}
-#	}
-#	
-#	BRA_LEG_annex = {
-#		icon = generic_industry
-#	
-#		available = {
-#			is_ai = no
-#		}
-#	
-#		visible = {
-#			is_debug = yes
-#		}
-#	
-#		fire_only_once = yes
-#	
-#		cost = 0
-#	
-#		complete_effect = {
-#			LEG = {
-#				annex_country = {
-#					target = BRA
-#					transfer_troops = yes
-#				}
-#				LEG = { change_tag_from = BRA }
-#			}
-#		}
-#		
-#		ai_will_do = {
-#			factor = 0
-#		}
-#	}
-#	
-#	BRA_GRP_annex = {
-#		icon = generic_industry
-#	
-#		available = {
-#			is_ai = no
-#		}
-#	
-#		visible = {
-#			is_debug = yes
-#		}
-#	
-#		fire_only_once = yes
-#	
-#		cost = 0
-#	
-#		complete_effect = {
-#			GRP = {
-#				annex_country = {
-#					target = BRA
-#					transfer_troops = yes
-#				}
-#				GRP = { change_tag_from = BRA }
-#			}
-#		}
-#		
-#		ai_will_do = {
-#			factor = 0
-#		}
-#	}
-#	
-#	BRA_LAM_annex = {
-#		icon = generic_industry
-#	
-#		available = {
-#			is_ai = no
-#		}
-#	
-#		visible = {
-#			is_debug = yes
-#		}
-#	
-#		fire_only_once = yes
-#	
-#		cost = 0
-#	
-#		complete_effect = {
-#			LAM = {
-#				annex_country = {
-#					target = BRA
-#					transfer_troops = yes
-#				}
-#				LAM = { change_tag_from = BRA }
-#			}
-#		}
-#		
-#		ai_will_do = {
-#			factor = 0
-#		}
-#	}
 }
 
 BRA_the_inevitable = {
@@ -475,4 +356,34 @@ BRA_the_inevitable = {
 }
 
 BRA_civil_war_gui = {
+	BGV_propaganda_campaign778 = {
+		icon = GFX_decision_generic_police_action
+		allowed = {
+			tag = BGV
+		}
+		visible = {
+			AND = {
+				tag = BGV
+				BGV = {
+					check_variable = { BRA_civil_war_map_chosen_state = 778.id }
+				}
+			}
+		}
+		cost = 40
+		fire_only_once = no
+		days_re_enable = 20
+		complete_effect = {
+			var:BRA_civil_war_map_chosen_state = {
+				add_to_variable = { BRA_state_radicalization_trend = 0.005 }
+				custom_effect_tooltip = BRA_increase_radicalization_trend
+				log = "[?BRA_state_radicalization_trend]"
+			}
+			hidden_effect = {
+				BRA_radicalization_trend = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }
