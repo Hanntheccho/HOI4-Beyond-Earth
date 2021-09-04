@@ -171,6 +171,14 @@ BRA_calculate_total_radicalized_population = {
 	}
 	if = {
 		limit = {
+			owns_state = 192
+		}
+		192 = {
+			add_to_temp_variable = { temp1 = BRA_state_radicalized_population }
+		}
+	}
+	if = {
+		limit = {
 			owns_state = 193
 		}
 		193 = {
@@ -182,6 +190,14 @@ BRA_calculate_total_radicalized_population = {
 			owns_state = 194
 		}
 		194 = {
+			add_to_temp_variable = { temp1 = BRA_state_radicalized_population }
+		}
+	}
+	if = {
+		limit = {
+			owns_state = 195
+		}
+		195 = {
 			add_to_temp_variable = { temp1 = BRA_state_radicalized_population }
 		}
 	}
@@ -409,6 +425,14 @@ BRA_calculate_total_impoverished_population = {
 	}
 	if = {
 		limit = {
+			owns_state = 192
+		}
+		192 = {
+			add_to_temp_variable = { temp1 = BRA_state_impoverished_population }
+		}
+	}
+	if = {
+		limit = {
 			owns_state = 193
 		}
 		193 = {
@@ -420,6 +444,14 @@ BRA_calculate_total_impoverished_population = {
 			owns_state = 194
 		}
 		194 = {
+			add_to_temp_variable = { temp1 = BRA_state_impoverished_population }
+		}
+	}
+	if = {
+		limit = {
+			owns_state = 195
+		}
+		195 = {
 			add_to_temp_variable = { temp1 = BRA_state_impoverished_population }
 		}
 	}
@@ -648,6 +680,14 @@ BRA_calculate_total_population = {
 	}
 	if = {
 		limit = {
+			owns_state = 192
+		}
+		192 = {
+			add_to_temp_variable = { temp1 = BRA_state_population }
+		}
+	}
+	if = {
+		limit = {
 			owns_state = 193
 		}
 		193 = {
@@ -659,6 +699,14 @@ BRA_calculate_total_population = {
 			owns_state = 194
 		}
 		194 = {
+			add_to_temp_variable = { temp1 = BRA_state_population }
+		}
+	}
+	if = {
+		limit = {
+			owns_state = 195
+		}
+		195 = {
 			add_to_temp_variable = { temp1 = BRA_state_population }
 		}
 	}
@@ -899,8 +947,8 @@ BRA_radicalization_trend = {
 	every_owned_state = {
 		add_to_variable = { BRA_state_radicalization = BRA_state_radicalization_trend }
 		BRA_clamp_radicalization = yes
+		log = "[?var:BRA_civil_war_map_chosen_state:BRA_state_radicalization]"
 	}
-	log = "[?var:BRA_civil_war_map_chosen_state:BRA_state_radicalization]"
 }
 
 BRA_clamp_radicalization = {
@@ -930,14 +978,46 @@ BRA_clamp_poverty = {
 }
 
 BRA_set_starting_values = {
-	BRA_calculate_radicalized_population = yes
-	BRA_calculate_impoverished_population = yes
-	BRA_calculate_total_radicalized_population = yes
-	BRA_calculate_total_impoverished_population = yes
-	BRA_calculate_total_population = yes
-	BRA_calculate_radicalization_percentage = yes
-	BRA_calculate_poverty_percentage = yes
-	BRA_apply_ideas = yes
+	BGV = {
+		BRA_calculate_radicalized_population = yes
+		BRA_calculate_impoverished_population = yes
+		BRA_calculate_total_radicalized_population = yes
+		BRA_calculate_total_impoverished_population = yes
+		BRA_calculate_total_population = yes
+		BRA_calculate_radicalization_percentage = yes
+		BRA_calculate_poverty_percentage = yes
+		BRA_apply_ideas = yes
+	}
+	LEG = {
+		BRA_calculate_radicalized_population = yes
+		BRA_calculate_impoverished_population = yes
+		BRA_calculate_total_radicalized_population = yes
+		BRA_calculate_total_impoverished_population = yes
+		BRA_calculate_total_population = yes
+		BRA_calculate_radicalization_percentage = yes
+		BRA_calculate_poverty_percentage = yes
+		BRA_apply_ideas = yes
+	}
+	GRP = {
+		BRA_calculate_radicalized_population = yes
+		BRA_calculate_impoverished_population = yes
+		BRA_calculate_total_radicalized_population = yes
+		BRA_calculate_total_impoverished_population = yes
+		BRA_calculate_total_population = yes
+		BRA_calculate_radicalization_percentage = yes
+		BRA_calculate_poverty_percentage = yes
+		BRA_apply_ideas = yes
+	}
+	LAM = {
+		BRA_calculate_radicalized_population = yes
+		BRA_calculate_impoverished_population = yes
+		BRA_calculate_total_radicalized_population = yes
+		BRA_calculate_total_impoverished_population = yes
+		BRA_calculate_total_population = yes
+		BRA_calculate_radicalization_percentage = yes
+		BRA_calculate_poverty_percentage = yes
+		BRA_apply_ideas = yes
+	}
 }
 
 BRA_set_borders = { 
