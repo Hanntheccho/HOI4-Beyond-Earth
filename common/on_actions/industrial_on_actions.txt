@@ -111,6 +111,15 @@ on_actions = {
 
                 clamp_variable = {var = industrial_power min=0 max=industrial_power_max}
             }
+            if = {
+                limit = {
+                    has_idea = holotheater_concern
+
+                    add_dynamic_modifier = {industrial_power = 0.15}
+
+                    clamp_variable = {var = industrial_power min = 0 max = industrial_power_max}
+                }
+            }
         }
     }
 }
