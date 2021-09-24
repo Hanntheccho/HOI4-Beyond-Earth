@@ -95,6 +95,19 @@ on_actions = {
             subtract_from_variable = { hearing_time = 1 }
             if = {
                 limit = {
+                    has_idea = ai_assisted_admininistration
+                }
+
+                add_to_variable = {corruption_modifier = -0.01}
+            }
+            if = {
+                limit = {
+                    has_idea = uafs
+                }
+                add_to_variable = {free_factory_gain = 0.15}
+            }
+            if = {
+                limit = {
                     check_variable = { free_factory_progress = 100 }
                 }
                 country_event = { id = free_factory_event.1 } 

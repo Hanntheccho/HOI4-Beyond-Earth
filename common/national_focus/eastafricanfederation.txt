@@ -1,0 +1,1095 @@
+focus_tree = {
+	id = eastafricanfederation
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = EAF
+		}
+	}
+
+	#Focus for Circle Lake Nalubaale
+	focus = {
+		id = EAF_circle_lake_nalubaale
+		icon = GFX_goal_unknown
+		x = 10
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Addis Ababa Railhub
+	focus = {
+		id = EAF_addis_ababa_railhub
+		icon = GFX_goal_unknown
+		x = 12
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Tanzania-Sudan Connection
+	focus = {
+		id = EAF_tanzaniasudan_connection
+		icon = GFX_goal_unknown
+		x = 14
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Two Years To Superpower
+	focus = {
+		id = EAF_two_years_to_superpower
+		icon = GFX_goal_unknown
+		x = 12
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = EAF_circle_lake_nalubaale 
+			focus = EAF_addis_ababa_railhub 
+			focus = EAF_tanzaniasudan_connection 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Shipyard Expansion
+	focus = {
+		id = EAF_shipyard_expansion
+		icon = GFX_goal_unknown
+		x = 1
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Naval-Land Coordination
+	focus = {
+		id = EAF_navalland_coordination
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_shipyard_expansion }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for New Fleet Standards
+	focus = {
+		id = EAF_new_fleet_standards
+		icon = GFX_goal_unknown
+		x = 0
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_navalland_coordination }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Focused Design
+	focus = {
+		id = EAF_focused_design
+		icon = GFX_goal_unknown
+		x = 2
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_shipyard_expansion }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Promote Admirals
+	focus = {
+		id = EAF_promote_admirals
+		icon = GFX_goal_unknown
+		x = 1
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_shipyard_expansion }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Wide Sea Fleet
+	focus = {
+		id = EAF_wide_sea_fleet
+		icon = GFX_goal_unknown
+		x = 0
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_promote_admirals }
+		mutually_exclusive = { focus = EAF_coastal_sufficiency }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Coastal Sufficiency
+	focus = {
+		id = EAF_coastal_sufficiency
+		icon = GFX_goal_unknown
+		x = 2
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_promote_admirals }
+		mutually_exclusive = { focus = EAF_wide_sea_fleet }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A Floating Citade
+	focus = {
+		id = EAF_a_floating_citade
+		icon = GFX_goal_unknown
+		x = 0
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_wide_sea_fleet }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Subversive Tactics
+	focus = {
+		id = EAF_subversive_tactics
+		icon = GFX_goal_unknown
+		x = 2
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_coastal_sufficiency }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Submarine Modernization
+	focus = {
+		id = EAF_submarine_modernization
+		icon = GFX_goal_unknown
+		x = 1
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = EAF_wide_sea_fleet 
+			focus = EAF_coastal_sufficiency 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Bluest Sky
+	focus = {
+		id = EAF_the_bluest_sky
+		icon = GFX_goal_unknown
+		x = 5
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Naval-Air Coordination
+	focus = {
+		id = EAF_navalair_coordination
+		icon = GFX_goal_unknown
+		x = 3
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = EAF_shipyard_expansion 
+		}
+		prerequisite = { 
+			focus = EAF_the_bluest_sky 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Ilat's Fury
+	focus = {
+		id = EAF_ilats_fury
+		icon = GFX_goal_unknown
+		x = 4
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_the_bluest_sky }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Kampala International Airport
+	focus = {
+		id = EAF_kampala_international_airport
+		icon = GFX_goal_unknown
+		x = 5
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = EAF_the_bluest_sky 
+		}
+		prerequisite = { 
+			focus = EAF_kigali_railhub 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A Pity You Cannot See From Here
+	focus = {
+		id = EAF_a_pity_you_cannot_see_from_here
+		icon = GFX_goal_unknown
+		x = 4
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = EAF_ilats_fury 
+		}
+		prerequisite = { 
+			focus = EAF_kampala_international_airport 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Supersonic Aircraft
+	focus = {
+		id = EAF_supersonic_aircraft
+		icon = GFX_goal_unknown
+		x = 4
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_a_pity_you_cannot_see_from_here }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for We Will Ground Them
+	focus = {
+		id = EAF_we_will_ground_them
+		icon = GFX_goal_unknown
+		x = 3
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_supersonic_aircraft }
+		mutually_exclusive = { focus = EAF_we_will_drive_them_into_the_ground }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for We Will Drive Them Into The Ground
+	focus = {
+		id = EAF_we_will_drive_them_into_the_ground
+		icon = GFX_goal_unknown
+		x = 5
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_supersonic_aircraft }
+		mutually_exclusive = { focus = EAF_we_will_ground_them }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Reap The Air
+	focus = {
+		id = EAF_reap_the_air
+		icon = GFX_goal_unknown
+		x = 3
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = EAF_we_will_ground_them 
+			focus = EAF_we_will_drive_them_into_the_ground 
+		}
+		mutually_exclusive = { focus = EAF_cover_the_sky }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Cover The Sky
+	focus = {
+		id = EAF_cover_the_sky
+		icon = GFX_goal_unknown
+		x = 5
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = EAF_we_will_ground_them 
+			focus = EAF_we_will_drive_them_into_the_ground 
+		}
+		mutually_exclusive = { focus = EAF_reap_the_air }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Total Annihilation
+	focus = {
+		id = EAF_total_annihilation
+		icon = GFX_goal_unknown
+		x = 4
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = EAF_reap_the_air 
+			focus = EAF_cover_the_sky 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Kigali Railhub
+	focus = {
+		id = EAF_kigali_railhub
+		icon = GFX_goal_unknown
+		x = 9
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_two_years_to_superpower }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Pan-African Line
+	focus = {
+		id = EAF_the_panafrican_line
+		icon = GFX_goal_unknown
+		x = 9
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_kigali_railhub }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Modernize Kenya
+	focus = {
+		id = EAF_modernize_kenya
+		icon = GFX_goal_unknown
+		x = 12
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_two_years_to_superpower }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Sustainable Growth
+	focus = {
+		id = EAF_sustainable_growth
+		icon = GFX_goal_unknown
+		x = 11
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_modernize_kenya }
+		mutually_exclusive = { focus = EAF_unrelenting_industry }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Expand The ABTBIA
+	focus = {
+		id = EAF_expand_the_abtbia
+		icon = GFX_goal_unknown
+		x = 10
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_sustainable_growth }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Unshackle The Hand
+	focus = {
+		id = EAF_unshackle_the_hand
+		icon = GFX_goal_unknown
+		x = 7
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_expand_the_abtbia }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Decentralize Agriculture
+	focus = {
+		id = EAF_decentralize_agriculture
+		icon = GFX_goal_unknown
+		x = 7
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_unshackle_the_hand }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Northern Heavy Industry
+	focus = {
+		id = EAF_northern_heavy_industry
+		icon = GFX_goal_unknown
+		x = 9
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_expand_the_abtbia }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Southern Hydro Plants
+	focus = {
+		id = EAF_southern_hydro_plants
+		icon = GFX_goal_unknown
+		x = 9
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_northern_heavy_industry }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Unrelenting Industry
+	focus = {
+		id = EAF_unrelenting_industry
+		icon = GFX_goal_unknown
+		x = 13
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_modernize_kenya }
+		mutually_exclusive = { focus = EAF_sustainable_growth }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Focus On The MBT
+	focus = {
+		id = EAF_focus_on_the_mbt
+		icon = GFX_goal_unknown
+		x = 14
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_unrelenting_industry }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Legitimize AI Planning
+	focus = {
+		id = EAF_legitimize_ai_planning
+		icon = GFX_goal_unknown
+		x = 15
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_focus_on_the_mbt }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Network Node Expansion
+	focus = {
+		id = EAF_network_node_expansion
+		icon = GFX_goal_unknown
+		x = 15
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_legitimize_ai_planning }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Legitimize Recycling Tanks
+	focus = {
+		id = EAF_legitimize_recycling_tanks
+		icon = GFX_goal_unknown
+		x = 17
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_focus_on_the_mbt }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Soldier Farmers
+	focus = {
+		id = EAF_soldier_farmers
+		icon = GFX_goal_unknown
+		x = 17
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_legitimize_recycling_tanks }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Import Asian Mining Specialists
+	focus = {
+		id = EAF_import_asian_mining_specialists
+		icon = GFX_goal_unknown
+		x = 12
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_modernize_kenya }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Tie Eco To Energy
+	focus = {
+		id = EAF_tie_eco_to_energy
+		icon = GFX_goal_unknown
+		x = 11
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_import_asian_mining_specialists }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Set New Goals
+	focus = {
+		id = EAF_set_new_goals
+		icon = GFX_goal_unknown
+		x = 13
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_import_asian_mining_specialists }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Orbital Academy Of Scientists
+	focus = {
+		id = EAF_orbital_academy_of_scientists
+		icon = GFX_goal_unknown
+		x = 12
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = EAF_tie_eco_to_energy 
+		}
+		prerequisite = { 
+			focus = EAF_set_new_goals 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Enforce Parcel Tracking
+	focus = {
+		id = EAF_enforce_parcel_tracking
+		icon = GFX_goal_unknown
+		x = 10
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = EAF_expand_the_abtbia 
+		}
+		prerequisite = { 
+			focus = EAF_tie_eco_to_energy 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Expand The Workday
+	focus = {
+		id = EAF_expand_the_workday
+		icon = GFX_goal_unknown
+		x = 14
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = EAF_set_new_goals 
+		}
+		prerequisite = { 
+			focus = EAF_focus_on_the_mbt 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Develop Somalia
+	focus = {
+		id = EAF_develop_somalia
+		icon = GFX_goal_unknown
+		x = 15
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_two_years_to_superpower }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Unitary Engineer Board
+	focus = {
+		id = EAF_unitary_engineer_board
+		icon = GFX_goal_unknown
+		x = 15
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_develop_somalia }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Develop Eritrea
+	focus = {
+		id = EAF_develop_eritrea
+		icon = GFX_goal_unknown
+		x = 17
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_two_years_to_superpower }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Bail Out Iniko Bank
+	focus = {
+		id = EAF_bail_out_iniko_bank
+		icon = GFX_goal_unknown
+		x = 17
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_develop_eritrea }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Locked And Loaded
+	focus = {
+		id = EAF_locked_and_loaded
+		icon = GFX_goal_unknown
+		x = 21
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for We Have The Skill
+	focus = {
+		id = EAF_we_have_the_skill
+		icon = GFX_goal_unknown
+		x = 20
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_locked_and_loaded }
+		mutually_exclusive = { focus = EAF_we_have_the_time }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Tier IV Training Sequence
+	focus = {
+		id = EAF_tier_iv_training_sequence
+		icon = GFX_goal_unknown
+		x = 20
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_we_have_the_skill }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Orbital Military Institute
+	focus = {
+		id = EAF_orbital_military_institute
+		icon = GFX_goal_unknown
+		x = 19
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_tier_iv_training_sequence }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Lightspeed Warfare
+	focus = {
+		id = EAF_lightspeed_warfare
+		icon = GFX_goal_unknown
+		x = 20
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_tier_iv_training_sequence }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The O-S Line
+	focus = {
+		id = EAF_the_os_line
+		icon = GFX_goal_unknown
+		x = 21
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_locked_and_loaded }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for We Have The Time
+	focus = {
+		id = EAF_we_have_the_time
+		icon = GFX_goal_unknown
+		x = 22
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_locked_and_loaded }
+		mutually_exclusive = { focus = EAF_we_have_the_skill }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Prepare Fortifications
+	focus = {
+		id = EAF_prepare_fortifications
+		icon = GFX_goal_unknown
+		x = 22
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_we_have_the_time }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Emergency Rotation
+	focus = {
+		id = EAF_emergency_rotation
+		icon = GFX_goal_unknown
+		x = 22
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_prepare_fortifications }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Army Of The People
+	focus = {
+		id = EAF_army_of_the_people
+		icon = GFX_goal_unknown
+		x = 23
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_prepare_fortifications }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for An Undefeated Dream
+	focus = {
+		id = EAF_an_undefeated_dream
+		icon = GFX_goal_unknown
+		x = 26
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Interparty Line
+	focus = {
+		id = EAF_the_interparty_line
+		icon = GFX_goal_unknown
+		x = 24
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_an_undefeated_dream }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for ACALAN Expansion
+	focus = {
+		id = EAF_acalan_expansion
+		icon = GFX_goal_unknown
+		x = 28
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_an_undefeated_dream }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for One Tongue For Africa
+	focus = {
+		id = EAF_one_tongue_for_africa
+		icon = GFX_goal_unknown
+		x = 27
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_acalan_expansion }
+		mutually_exclusive = { focus = EAF_preserve_minor_languages }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Preserve Minor Languages
+	focus = {
+		id = EAF_preserve_minor_languages
+		icon = GFX_goal_unknown
+		x = 29
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_acalan_expansion }
+		mutually_exclusive = { focus = EAF_one_tongue_for_africa }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Secure the Radicals
+	focus = {
+		id = EAF_secure_the_radicals
+		icon = GFX_goal_unknown
+		x = 26
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = EAF_the_interparty_line 
+			focus = EAF_one_tongue_for_africa 
+			focus = EAF_preserve_minor_languages 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Build Democracy
+	focus = {
+		id = EAF_build_democracy
+		icon = GFX_goal_unknown
+		x = 24
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_secure_the_radicals }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Tolerate Dissident Media
+	focus = {
+		id = EAF_tolerate_dissident_media
+		icon = GFX_goal_unknown
+		x = 24
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_build_democracy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Urbanize Towns
+	focus = {
+		id = EAF_urbanize_towns
+		icon = GFX_goal_unknown
+		x = 26
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_secure_the_radicals }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Add And Cut Regulations
+	focus = {
+		id = EAF_add_and_cut_regulations
+		icon = GFX_goal_unknown
+		x = 26
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_urbanize_towns }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Issue Immunizations
+	focus = {
+		id = EAF_issue_immunizations
+		icon = GFX_goal_unknown
+		x = 28
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_secure_the_radicals }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Teach Hygine
+	focus = {
+		id = EAF_teach_hygine
+		icon = GFX_goal_unknown
+		x = 28
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = EAF_issue_immunizations }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Umoja
+	focus = {
+		id = EAF_umoja
+		icon = GFX_goal_unknown
+		x = 26
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = EAF_tolerate_dissident_media 
+		}
+		prerequisite = { 
+			focus = EAF_add_and_cut_regulations 
+		}
+		prerequisite = { 
+			focus = EAF_teach_hygine 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

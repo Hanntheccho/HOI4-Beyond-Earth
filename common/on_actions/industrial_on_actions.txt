@@ -84,6 +84,42 @@ on_actions = {
 				
                 clamp_variable = { var = industrial_power min = 0 max = industrial_power_max }
 			}
+            if = {
+                limit = {
+                    has_idea = nadl_industries
+                }
+
+                add_to_variable = {industrial_power = 0.4}
+
+                clamp_variable = {var = industrial_power min=0 max=industrial_power_max}
+            }
+            if = {
+                limit = {
+                    has_idea = incom_international
+                }
+
+                add_to_variable = {industrial_power = 0.3}
+
+                clamp_variable = {var = industrial_power min=0 max=industrial_power_max}
+            }
+            if = {
+                limit = {
+                    has_idea = pavlov_energy
+                }
+
+                add_to_variable = {industrial_power = -0.1}
+
+                clamp_variable = {var = industrial_power min=0 max=industrial_power_max}
+            }
+            if = {
+                limit = {
+                    has_idea = holotheater_concern
+
+                    add_dynamic_modifier = {industrial_power = 0.15}
+
+                    clamp_variable = {var = industrial_power min = 0 max = industrial_power_max}
+                }
+            }
         }
     }
 }

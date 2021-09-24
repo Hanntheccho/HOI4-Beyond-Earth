@@ -796,10 +796,7 @@ country_event = { #test event cause i am too lazy to add a new namespace
                         is_in_array = { global.spaceship_contribution_array = THIS }
                     }
                 }
-                add_to_array = {
-                    array = global.spaceship_contribution_array
-                    value = spaceship_contribution_variable
-                }
+				add_to_array = { global.spaceship_contribution_array = THIS.id }
             }
         }
 	}
@@ -808,18 +805,15 @@ country_event = { #test event cause i am too lazy to add a new namespace
         every_country = {
             remove_from_array = {
                 array = global.spaceship_contribution_array
-                value = THIS.spaceship_contribution_variable
+                value = THIS.id
             }
         }
 	}
 	option = {
 		name = free_factory_event.3.b
-        every_country = {
-            resize_array = {
-                array = global.spaceship_contribution_array
-                value = THIS.spaceship_contribution_variable
-                size = THIS.spaceship_contribution_variable
-            }
-        }
+        find_highest_in_array = {
+        array = global.spaceship_contribution_array
+	value = spaceship_contribution_variable 
+}
 	}
 }

@@ -22,6 +22,18 @@ on_actions = {
                 #        value = spaceship_contribution_variable
                 #    }
                 #}
+
+                limit = {
+            		NOT = {
+			        	any_other_country = { check_variable = { spaceship_contribution_variable > ROOT.spaceship_contribution_variable } }
+			        }
+                }
+                set_country_flag = {
+                    flag = num_1_contribution_flag
+                    days = 1
+                    value = 1
+                }
+                country_event = { id =  international_event.1 days = 5 }
             }
         }
     }
@@ -47,6 +59,27 @@ on_actions = {
                 #        add_to_array = { global.spaceship_contribution_array = THIS }
                 #    }
                 #}
+                if = {
+                    limit = {
+                        has_idea = ai_concern_orbitalforces
+                    }
+
+                    add_to_variable ={spaceship_contribution_variable = 0.1}
+                }
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        any_other_country = { check_variable = { spaceship_contribution_variable > FROM.spaceship_contribution_variable } }
+                        is_in_array = {
+                            array = global.spaceship_contribution_array
+                            value = THIS.id
+                        }
+                    }
+                }
+				add_to_array = { global.spaceship_contribution_array = THIS.id }
+                set_country_flag = num_1_contribution_flag
+                clear_variable = spaceship_contribution_variable
             }
         }
     }
