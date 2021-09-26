@@ -1,0 +1,39 @@
+scripted_gui = {
+	COL_national_rebuilding_effort_open = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = "COL_national_rebuilding_effort_open"
+		
+		visible = {
+			tag = COL
+			is_ai = no
+		}
+
+		effects = {
+			COL_national_rebuilding_effort_button_click = {
+				if = {
+					limit = { NOT = { has_country_flag = COL_politics_gui_open } }
+					set_country_flag = COL_politics_gui_open
+				}
+				else_if = {
+					limit = { has_country_flag = COL_politics_gui_open }
+					clr_country_flag = COL_politics_gui_open
+				}
+			}
+		}
+		
+		triggers = {
+			
+		}
+	}
+	
+	COL_national_rebuilding_effort_window = {
+		context_type = player_context
+		parent_window_token = "COL_national_rebuilding_effort_open"
+		window_name = "COL_national_rebuilding_effort_window"
+		
+		visible = {
+			has_country_flag = COL_politics_gui_open
+		}
+	}
+}
