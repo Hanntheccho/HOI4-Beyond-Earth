@@ -11,29 +11,6 @@ on_actions = {
                 add_to_variable = { spaceship_contribution_variable = spaceship_contribution_civilian }
                 add_to_variable = { spaceship_contribution_variable = spaceship_contribution_military }
                 add_to_variable = { spaceship_contribution_variable = spaceship_contribution_dockyard }
-				#if = {
-				#	limit = {
-				#		NOT = {
-                #            is_in_array = { global.spaceship_contribution_array = THIS }
-                #        }
-				#	}
-                #    add_to_array = {
-                #        array = global.spaceship_contribution_array
-                #        value = spaceship_contribution_variable
-                #    }
-                #}
-
-                limit = {
-            		NOT = {
-			        	any_other_country = { check_variable = { spaceship_contribution_variable > ROOT.spaceship_contribution_variable } }
-			        }
-                }
-                set_country_flag = {
-                    flag = num_1_contribution_flag
-                    days = 1
-                    value = 1
-                }
-                country_event = { id =  international_event.1 days = 5 }
             }
         }
     }
@@ -49,16 +26,6 @@ on_actions = {
                 add_to_variable = { spaceship_contribution_variable = spaceship_contribution_civilian }
                 add_to_variable = { spaceship_contribution_variable = spaceship_contribution_military }
                 add_to_variable = { spaceship_contribution_variable = spaceship_contribution_dockyard }
-                #every_country = {
-                #    if = {
-                #        limit = {
-                #            NOT = {
-                #                is_in_array = { global.spaceship_contribution_array = THIS }
-                #            }
-                #        }
-                #        add_to_array = { global.spaceship_contribution_array = THIS }
-                #    }
-                #}
                 if = {
                     limit = {
                         has_idea = ai_concern_orbitalforces
@@ -66,20 +33,12 @@ on_actions = {
 
                     add_to_variable ={spaceship_contribution_variable = 0.1}
                 }
-            }
-            if = {
-                limit = {
-                    NOT = {
-                        any_other_country = { check_variable = { spaceship_contribution_variable > FROM.spaceship_contribution_variable } }
-                        is_in_array = {
-                            array = global.spaceship_contribution_array
-                            value = THIS.id
-                        }
+                if = {
+                    limit = {
+                        has_idea = stellar_codex_idea
                     }
+                    multiply_variable = { spaceship_contribution_variable = 1.25 }
                 }
-				add_to_array = { global.spaceship_contribution_array = THIS.id }
-                set_country_flag = num_1_contribution_flag
-                clear_variable = spaceship_contribution_variable
             }
         }
     }
