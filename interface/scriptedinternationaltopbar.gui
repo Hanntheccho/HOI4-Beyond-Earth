@@ -3,23 +3,23 @@ guiTypes = {
 	containerWindowType = {
 		name = "international_topbartab_window"
 		position = { x=0 y=0 }	
-		size = { width = 1236 height = 592 }
+		size = { width = 1228 height = 539 }
 		orientation = center
 		origo = center
 		fade_time = 100
 		fade_type = linear
 		click_to_front = no
 		clipping = yes
-		moveable = yes
+		moveable = no
 		verticalScrollbar = "right_vertical_slider"
 		margin = {
-			top = 4
-			bottom = 4
-			left = 4
-			right = 4
+			top = 1
+			bottom = 1
+			left = 1
+			right = 1
 		}
 		
-		show_position = { x=0 y =45 }
+		show_position = { x=0 y =67 }
 		hide_animation_type = decelerated
 		show_animation_type = accelerated
 		animation_time = 200
@@ -28,9 +28,20 @@ guiTypes = {
 			name = "Background"		
 			quadTextureSprite ="GFX_international_bg"
 		}
+		iconType = {
+			name = "international_spaceship"
+			spriteType = "GFX_international_spaceship"
+    		position = { x= 0 y = 30 }
+		}
+		iconType = {
+			name = "spaceship_contribution_back"
+			spriteType = "GFX_spaceship_contribution_back"
+    		position = { x= 0 y = 0 }
+			Orientation = "UPPER_LEFT"
+		}
 		instantTextBoxType = {
 			name = "spaceship_contribution"
-			position = { x = 15 y = 60 }
+			position = { x = 40 y = 90 }
 			textureFile = ""
 			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
@@ -42,26 +53,45 @@ guiTypes = {
 			Orientation = "UPPER_LEFT"
 			format = left
 		}
-		
+		instantTextBoxType = {
+			name = "spaceship_title"
+			position = { x = 90 y = 5 }
+			textureFile = ""
+			font = "Beyond"
+			borderSize = {x = 0 y = 0}
+			text = "The I.S.S.-Unity"	
+			maxWidth = 700
+			maxHeight = 20
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
+		#buttonType = {
+		#	name = "international_close"
+		#	position = { x = 0 y = 0 }
+		#	quadTextureSprite ="GFX_international_corner_opaque"
+		#	Orientation = "UPPER_LEFT"
+		#	clicksound = click_close
+		#	oversound = ui_menu_over
+		#	shortcut = "ESCAPE"
+		#	pdx_tooltip = "CLOSE"
+		#}
 		buttonType = {
-			name = "international_close"
-			position = { x = -65 y = 8 }
-			quadTextureSprite ="GFX_closebutton"
-			Orientation = "UPPER_RIGHT"
+			name = "help_ss_current_contribution"
+			position = { x = 10 y = 87 }
+			quadTextureSprite ="GFX_help_button"
+			buttonText = ""
+			buttonFont = "Beyondsmall"
+			Orientation = "UPPER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
-			shortcut = "ESCAPE"
-			pdx_tooltip = "CLOSE"
-		}
-		iconType = {
-			name = "international_spaceship"
-			spriteType = "GFX_carrier_4_hull_medium"
-    		position = { x= 500 y = 150 }
+			pdx_tooltip = "help_ss_current_contribution"
 		}
 		buttonType = {
 			name = "international_module_1"
-			position = { x = 30 y = 250 }
-			quadTextureSprite ="GFX_button_221x34_unique"
+			position = { x = 90 y = 130 }
+			quadTextureSprite ="GFX_button_spaceship_parts"
 			buttonText = "module_1_text"
 			buttonFont = "Beyondsmall"
 			clicksound = click_close
@@ -69,8 +99,8 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "international_module_2"
-			position = { x = 275 y = 250 }
-			quadTextureSprite ="GFX_button_221x34_unique"
+			position = { x = 180 y = 320 }
+			quadTextureSprite ="GFX_button_spaceship_parts"
 			buttonText = "module_2_text"
 			buttonFont = "Beyondsmall"
 			clicksound = click_close
@@ -78,8 +108,8 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "international_module_3"
-			position = { x = 510 y = 250 }
-			quadTextureSprite ="GFX_button_221x34_unique"
+			position = { x = 440 y = 360 }
+			quadTextureSprite ="GFX_button_spaceship_parts"
 			buttonText = "module_3_text"
 			buttonFont = "Beyondsmall"
 			clicksound = click_close
@@ -87,8 +117,8 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "international_module_4"
-			position = { x = 750 y = 250 }
-			quadTextureSprite ="GFX_button_221x34_unique"
+			position = { x = 450 y = 60 }
+			quadTextureSprite ="GFX_button_spaceship_parts"
 			buttonText = "module_4_text"
 			buttonFont = "Beyondsmall"
 			clicksound = click_close
@@ -96,21 +126,16 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "international_module_5"
-			position = { x = 990 y = 250 }
-			quadTextureSprite ="GFX_button_221x34_unique"
+			position = { x = 960 y = 300 }
+			quadTextureSprite ="GFX_button_spaceship_parts"
 			buttonText = "module_5_text"
 			buttonFont = "Beyondsmall"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
-		iconType = {
-			name = "international_category_divide"
-			spriteType = "GFX_category_header"
-    		position = { x= 400 y = 300 }
-		}
 		instantTextBoxType = {
 			name = "international_checklist"
-			position = { x = 10 y = 350 }
+			position = { x = 960 y = 50 }
 			textureFile = ""
 			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
@@ -122,26 +147,57 @@ guiTypes = {
 			Orientation = "UPPER_LEFT"
 			format = left
 		}
+		iconType = {
+			name = "spaceship_contribution_back_2"
+			spriteType = "GFX_spaceship_contribution_back"
+    		position = { x= 0 y = 475 }
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextBoxType = {
+			name = "wonders_title"
+			position = { x = 90 y = 480 }
+			textureFile = ""
+			font = "Beyond"
+			borderSize = {x = 0 y = 0}
+			text = "WONDERS"	
+			maxWidth = 700
+			maxHeight = 20
+			fixedsize = yes
+	
+			Orientation = "UPPER_LEFT"
+			format = left
+		}
 		buttonType = {
-			name = "international_wonder_clinical_immortality"
-			position = { x = 600 y = 350 }
-			quadTextureSprite ="GFX_add_national_goal_button"
+			name = "help_wonders"
+			position = { x = 440 y = 488}
+			quadTextureSprite ="GFX_help_button"
+			buttonText = ""
+			buttonFont = "Beyondsmall"
+			Orientation = "UPPER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			pdx_tooltip = "help_wonders"
 		}
 		iconType = {
 			name = "international_wonder_clinical_immortality_icon"
-			spriteType = "GFX_goal_FRA_plan_blue"
-			position = { x = 680 y = 350 }
+			spriteType = "GFX_clinical_immortality_button"
+			position = { x = 630 y = 510 }
+		}
+		buttonType = {
+			name = "international_wonder_clinical_immortality"
+			position = { x = 800 y = 639 }
+			quadTextureSprite ="GFX_build_wonder_button"
+			clicksound = click_close
+			oversound = ui_menu_over
 		}
 		instantTextBoxType = {
 			name = "international_wonder_clinical_immortality_text_header"
-			position = { x = 600 y = 429 }
+			position = { x = 633 y = 713 }
 			textureFile = ""
-			font = "hoi_24header"
+			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_clinical_immortality_text_header"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
@@ -150,38 +206,38 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "international_wonder_clinical_immortality_text"
-			position = { x = 600 y = 453 }
+			position = { x = 640 y = 755 }
 			textureFile = ""
-			font = "Focusfont"
+			font = "Arialsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_clinical_immortality_text"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
 			format = left
 		}
+		iconType = {
+			name = "international_wonder_markov_eclipse_icon"
+			spriteType = "GFX_markov_eclipse_button"
+			position = { x = 930 y = 490 }
+		}
 		buttonType = {
 			name = "international_wonder_markov_eclipse"
-			position = { x = 885 y = 350 }
-			quadTextureSprite ="GFX_add_national_goal_button"
+			position = { x = 1100 y = 619 }
+			quadTextureSprite ="GFX_build_wonder_button"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
-		iconType = {
-			name = "international_wonder_markov_eclipse_icon"
-			spriteType = "GFX_goal_FRA_plan_blue"
-			position = { x = 965 y = 350 }
-		}
 		instantTextBoxType = {
 			name = "international_wonder_markov_eclipse_header"
-			position = { x = 885 y = 429 }
+			position = { x = 933 y = 693 }
 			textureFile = ""
-			font = "hoi_24header"
+			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_markov_eclipse_text_header"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
@@ -190,38 +246,38 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "international_wonder_markov_eclipse_text"
-			position = { x = 885 y = 453 }
+			position = { x = 940 y = 735 }
 			textureFile = ""
-			font = "Focusfont"
+			font = "Arialsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_markov_eclipse_text"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
 			format = left
 		}
+		iconType = {
+			name = "international_wonder_stellar_codex_icon"
+			spriteType = "GFX_stellar_codex_button"
+			position = { x = 30 y = 550 }
+		}
 		buttonType = {
 			name = "international_wonder_stellar_codex"
-			position = { x = 25 y = 500 }
-			quadTextureSprite ="GFX_add_national_goal_button"
+			position = { x = 200 y = 679 }
+			quadTextureSprite ="GFX_build_wonder_button"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
-		iconType = {
-			name = "international_wonder_stellar_codex_icon"
-			spriteType = "GFX_goal_FRA_plan_blue"
-			position = { x = 105 y = 500 }
-		}
 		instantTextBoxType = {
 			name = "international_wonder_stellar_codex_text_header"
-			position = { x = 25 y = 585 }
+			position = { x = 33 y = 753 }
 			textureFile = ""
-			font = "hoi_24header"
+			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_stellar_codex_text_header"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
@@ -230,38 +286,38 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "international_wonder_stellar_codex_text"
-			position = { x = 25 y = 608 }
+			position = { x = 40 y = 795 }
 			textureFile = ""
-			font = "Focusfont"
+			font = "Arialsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_stellar_codex_text"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
 			format = left
 		}
+		iconType = {
+			name = "international_wonder_machine_assisted_free_will_icon"
+			spriteType = "GFX_machine_assisted_free_will_button"
+			position = { x = 330 y = 530 }
+		}
 		buttonType = {
 			name = "international_wonder_machine_assisted_free_will"
-			position = { x = 320 y = 500 }
-			quadTextureSprite ="GFX_add_national_goal_button"
+			position = { x = 500 y = 659 }
+			quadTextureSprite ="GFX_build_wonder_button"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
-		iconType = {
-			name = "international_wonder_machine_assisted_free_will_icon"
-			spriteType = "GFX_goal_FRA_plan_blue"
-			position = { x = 400 y = 500 }
-		}
 		instantTextBoxType = {
 			name = "international_wonder_machine_assisted_free_will_header"
-			position = { x = 320 y = 585 }
+			position = { x = 333 y = 733 }
 			textureFile = ""
-			font = "hoi_24header"
+			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_machine_assisted_free_will_text_header"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
@@ -270,38 +326,38 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "international_wonder_machine_assisted_free_will_text"
-			position = { x = 320 y = 632 }
+			position = { x = 340 y = 775 }
 			textureFile = ""
-			font = "Focusfont"
+			font = "Arialsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_machine_assisted_free_will_text"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
 			format = left
 		}
+		iconType = {
+			name = "international_wonder_virtual_world_icon"
+			spriteType = "GFX_virtual_world_button"
+			position = { x = 630 y = 835 }
+		}
 		buttonType = {
 			name = "international_wonder_virtual_world"
-			position = { x = 600 y = 500 }
-			quadTextureSprite ="GFX_add_national_goal_button"
+			position = { x = 800 y = 964 }
+			quadTextureSprite ="GFX_build_wonder_button"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
-		iconType = {
-			name = "international_wonder_virtual_world_icon"
-			spriteType = "GFX_goal_FRA_plan_blue"
-			position = { x = 680 y = 500 }
-		}
 		instantTextBoxType = {
 			name = "international_wonder_virtual_world_text_header"
-			position = { x = 600 y = 585 }
+			position = { x = 633 y = 1038 }
 			textureFile = ""
-			font = "hoi_24header"
+			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_virtual_world_text_header"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
@@ -310,38 +366,38 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "international_wonder_virtual_world_text"
-			position = { x = 600 y = 608 }
+			position = { x = 640 y = 1080 }
 			textureFile = ""
-			font = "Focusfont"
+			font = "Arialsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_virtual_world_text"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
 			format = left
 		}
+		iconType = {
+			name = "international_wonder_weather_paradigm_icon"
+			spriteType = "GFX_weather_paradigm_button"
+			position = { x = 930 y = 815 }
+		}
 		buttonType = {
 			name = "international_wonder_weather_paradigm"
-			position = { x = 885 y = 500 }
-			quadTextureSprite ="GFX_add_national_goal_button"
+			position = { x = 1100 y = 944 }
+			quadTextureSprite ="GFX_build_wonder_button"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
-		iconType = {
-			name = "international_wonder_weather_paradigm_icon"
-			spriteType = "GFX_goal_FRA_plan_blue"
-			position = { x = 965 y = 500 }
-		}
 		instantTextBoxType = {
 			name = "international_wonder_weather_paradigm_header"
-			position = { x = 885 y = 585 }
+			position = { x = 933 y = 1018 }
 			textureFile = ""
-			font = "hoi_24header"
+			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_weather_paradigm_text_header"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
@@ -350,38 +406,38 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "international_wonder_weather_paradigm_text"
-			position = { x = 885 y = 608 }
+			position = { x = 940 y = 1060 }
 			textureFile = ""
-			font = "Focusfont"
+			font = "Arialsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_weather_paradigm_text"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
 			format = left
 		}
+		iconType = {
+			name = "international_wonder_benthic_auger_icon"
+			spriteType = "GFX_benthic_auger_button"
+			position = { x = 30 y = 875 }
+		}
 		buttonType = {
 			name = "international_wonder_benthic_auger"
-			position = { x = 25 y = 675 }
-			quadTextureSprite ="GFX_add_national_goal_button"
+			position = { x = 200 y = 1004 }
+			quadTextureSprite ="GFX_build_wonder_button"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
-		iconType = {
-			name = "international_wonder_benthic_auger_icon"
-			spriteType = "GFX_goal_FRA_plan_blue"
-			position = { x = 108 y = 675 }
-		}
 		instantTextBoxType = {
 			name = "international_wonder_benthic_auger_text_header"
-			position = { x = 25 y = 760 }
+			position = { x = 33 y = 1078 }
 			textureFile = ""
-			font = "hoi_24header"
+			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_benthic_auger_text_header"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
@@ -390,38 +446,38 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "international_wonder_benthic_auger_text"
-			position = { x = 25 y = 783 }
+			position = { x = 40 y = 1120 }
 			textureFile = ""
-			font = "Focusfont"
+			font = "Arialsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_benthic_auger_text"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
 			format = left
 		}
+		iconType = {
+			name = "international_wonder_neural_amplifier_icon"
+			spriteType = "GFX_neural_amplifier_button"
+			position = { x = 330 y = 855 }
+		}
 		buttonType = {
 			name = "international_wonder_neural_amplifier"
-			position = { x = 320 y = 675 }
-			quadTextureSprite ="GFX_add_national_goal_button"
+			position = { x = 500 y = 984 }
+			quadTextureSprite ="GFX_build_wonder_button"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
-		iconType = {
-			name = "international_wonder_neural_amplifier_icon"
-			spriteType = "GFX_goal_FRA_plan_blue"
-			position = { x = 400 y = 675 }
-		}
 		instantTextBoxType = {
 			name = "international_wonder_neural_amplifier_header"
-			position = { x = 320 y = 760 }
+			position = { x = 333 y = 1058 }
 			textureFile = ""
-			font = "hoi_24header"
+			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_neural_amplifier_text_header"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
@@ -430,38 +486,38 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "international_wonder_neural_amplifier_text"
-			position = { x = 320 y = 783 }
+			position = { x = 340 y = 1100 }
 			textureFile = ""
-			font = "Focusfont"
+			font = "Arialsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_neural_amplifier_text"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
 			format = left
 		}
+		iconType = {
+			name = "international_wonder_cloudbase_academy_icon"
+			spriteType = "GFX_cloudbase_academy_button"
+			position = { x = 630 y = 1160 }
+		}
 		buttonType = {
 			name = "international_wonder_cloudbase_academy"
-			position = { x = 600 y = 675 }
-			quadTextureSprite ="GFX_add_national_goal_button"
+			position = { x = 800 y = 1289 }
+			quadTextureSprite ="GFX_build_wonder_button"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
-		iconType = {
-			name = "international_wonder_cloudbase_academy_icon"
-			spriteType = "GFX_goal_FRA_plan_blue"
-			position = { x = 680 y = 675 }
-		}
 		instantTextBoxType = {
 			name = "international_wonder_cloudbase_academy_text_header"
-			position = { x = 600 y = 760 }
+			position = { x = 633 y = 1363 }
 			textureFile = ""
-			font = "hoi_24header"
+			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_cloudbase_academy_text_header"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
@@ -470,38 +526,38 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "international_wonder_cloudbase_academy_text"
-			position = { x = 600 y = 783 }
+			position = { x = 640 y = 1405 }
 			textureFile = ""
-			font = "Focusfont"
+			font = "Arialsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_cloudbase_academy_text"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
 			format = left
 		}
+		iconType = {
+			name = "international_wonder_universal_translator_icon"
+			spriteType = "GFX_universal_translator_button"
+			position = { x = 930 y = 1140 }
+		}
 		buttonType = {
 			name = "international_wonder_universal_translator"
-			position = { x = 890 y = 675 }
-			quadTextureSprite ="GFX_add_national_goal_button"
+			position = { x = 1100 y = 1269 }
+			quadTextureSprite ="GFX_build_wonder_button"
 			clicksound = click_close
 			oversound = ui_menu_over
 		}
-		iconType = {
-			name = "international_wonder_universal_translator_icon"
-			spriteType = "GFX_goal_FRA_plan_blue"
-			position = { x = 965 y = 675 }
-		}
 		instantTextBoxType = {
 			name = "international_wonder_universal_translator_header"
-			position = { x = 885 y = 760 }
+			position = { x = 933 y = 1343 }
 			textureFile = ""
-			font = "hoi_24header"
+			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_universal_translator_text_header"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
@@ -510,22 +566,22 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "international_wonder_universal_translator_text"
-			position = { x = 885 y = 783 }
+			position = { x = 940 y = 1385 }
 			textureFile = ""
-			font = "Focusfont"
+			font = "Arialsmall"
 			borderSize = {x = 0 y = 0}
 			text = "international_wonder_universal_translator_text"	
-			maxWidth = 259
+			maxWidth = 250
 			maxHeight = 500
 			fixedsize = yes
 	
 			Orientation = "UPPER_LEFT"
 			format = left
 		}
-		iconType = {
-			name = "end_icon_need_this_cuz_scrollbar_is_bugged"
-			spriteType = "GFX_category_header"
-			position = { x = 400 y = 825 }
-		}
+		#iconType = {
+		#	name = "end_icon_need_this_cuz_scrollbar_is_bugged"
+		#	spriteType = "GFX_category_header"
+		#	position = { x = 400 y = 1025 }
+		#}
     }
 }
