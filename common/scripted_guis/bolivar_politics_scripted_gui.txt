@@ -25,6 +25,12 @@ scripted_gui = {
 		triggers = {
 			
 		}
+		
+		properties = {
+			COL_GUI_Bar = {
+				frame = COL_president_stance
+			}
+		}
 	}
 	
 	COL_national_rebuilding_effort_window = {
@@ -34,6 +40,45 @@ scripted_gui = {
 		
 		visible = {
 			has_country_flag = COL_politics_gui_open
+		}
+		
+		effects = {
+			COL_close_button_click = {
+				clr_country_flag = COL_politics_gui_open
+			}
+			COL_president_button_click = {
+				set_variable = { COL_selected_branch = 1 }
+			}
+			COL_parliament_button_click = {
+				set_variable = { COL_selected_branch = 2 }
+			}
+			COL_judiciary_button_click = {
+				set_variable = { COL_selected_branch = 3 }		
+			}
+			COL_defense_button_click = {
+				set_variable = { COL_selected_branch = 4 }				
+			}
+			COL_economic_button_click = {
+				set_variable = { COL_selected_branch = 5 }				
+			}
+			COL_foreign_button_click = {
+				set_variable = { COL_selected_branch = 6 }				
+			}
+			COL_educational_button_click = {
+				set_variable = { COL_selected_branch = 7 }				
+			}
+			COL_agricultural_button_click = {
+				set_variable = { COL_selected_branch = 8 }				
+			}
+			COL_cultural_button_click = {
+				set_variable = { COL_selected_branch = 9 }				
+			}
+			COL_security_button_click = {
+				set_variable = { COL_selected_branch = 10 }				
+			}
+			COL_button1_click = {
+				set_variable = { COL_president_stance = 0.5 }	
+			}
 		}
 	}
 }
