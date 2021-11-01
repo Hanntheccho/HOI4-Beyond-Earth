@@ -38,6 +38,15 @@ scripted_gui = {
                     producer = ROOT
                 }
             }
+            international_wonder_clinical_immortality_conversion_click = {
+                country_event = {id = wonder_event.1 days = 0}
+                add_to_variable = { industrial_power = num_equipment@clinical_immortality_eq/10 }
+                add_equipment_to_stockpile = {
+                    type = infantry_equipment
+                    amount = -num_equipment@clinical_immortality_eq
+                    producer = ROOT
+                }
+            }
             international_wonder_markov_eclipse_click = {
                 country_event = { id = international_event.3 days = 0 }
                 every_country = {
@@ -193,6 +202,12 @@ scripted_gui = {
                 }
                 has_equipment = {
                     clinical_immortality_eq > 499
+                }
+                has_tech = clinical_immortality
+            }
+            international_wonder_clinical_immortality_conversion_click_enable = {
+                has_equipment = {
+                    clinical_immortality_eq > 10
                 }
                 has_tech = clinical_immortality
             }
