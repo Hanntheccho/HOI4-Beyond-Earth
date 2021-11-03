@@ -44,7 +44,7 @@ scripted_gui = {
                 add_to_variable = { industrial_power = temp }
                 add_equipment_to_stockpile = {
                     type = clinical_immortality_eq
-                    amount = -temp
+                    amount = -num_equipment@clinical_immortality_eq
                     producer = ROOT
                 }
             }
@@ -65,6 +65,7 @@ scripted_gui = {
                 }
             }
             international_wonder_markov_eclipse_conversion_click = {
+                country_event = {id= wonder_event.1 days = 0}
 
                 set_temp_variable = { temp = num_equipment@markov_eclipse_eq }
                 divide_temp_variable = { temp = 10 }
@@ -72,8 +73,8 @@ scripted_gui = {
 
                 add_equipment_to_stockpile = {
                     type = markov_eclipse_eq
-                    amount = -temp
-                    producer = ROOT
+                    amount = -num_equipment@markov_eclipse_eq
+                    #producer = ROOT
                 }
             }
             international_wonder_stellar_codex_click = {
@@ -100,7 +101,7 @@ scripted_gui = {
 
                 add_equipment_to_stockpile = {
                     type = stellar_codex_eq
-                    amount = -temp
+                    amount = -num_equipment@stellar_codex_eq
                     producer = ROOT
                 }
             }
@@ -129,7 +130,7 @@ scripted_gui = {
 
                 add_equipment_to_stockpile = {
                     type = machine_assisted_free_will_eq
-                    amount = -temp
+                    amount = -num_equipment@machine_assisted_free_will_eq
                     producer = ROOT
                 }
             }
@@ -159,7 +160,7 @@ scripted_gui = {
 
                 add_equipment_to_stockpile = {
                     type = the_virtual_world_eq
-                    amount = -temp
+                    amount = -num_equipment@the_virtual_world_eq
                     producer = ROOT
                 }
             }
@@ -182,13 +183,13 @@ scripted_gui = {
 
             international_wonder_weather_paradigm_conversion_click = {
                 
-                set_temp_variable = { temp = num_equipment@the_virtual_world_eq }
+                set_temp_variable = { temp = num_equipment@the_weather_paradigm_eq }
                 divide_temp_variable = { temp = 10 }
                 add_to_variable = { industrial_power = temp }
 
                 add_equipment_to_stockpile = {
                     type = the_weather_paradigm_eq
-                    amount = -temp
+                    amount = -num_equipment@the_weather_paradigm_eq
                     producer = ROOT
                 }
             }
@@ -216,7 +217,7 @@ scripted_gui = {
 
                 add_equipment_to_stockpile = {
                     type = benthic_auger_eq
-                    amount = -temp
+                    amount = -num_equipment@benthic_auger_eq
                     producer = ROOT
                 }
             }
@@ -245,7 +246,7 @@ scripted_gui = {
 
                 add_equipment_to_stockpile = {
                     type = the_neural_amplifier_eq
-                    amount = -temp
+                    amount = -num_equipment@the_neural_amplifier_eq
                     producer = ROOT
                 }
             }
@@ -274,7 +275,7 @@ scripted_gui = {
 
                 add_equipment_to_stockpile = {
                     type = the_cloudbase_academy_eq
-                    amount = -temp
+                    amount = -num_equipment@the_cloudbase_academy_eq
                     producer = ROOT
                 }
             }
@@ -304,7 +305,7 @@ scripted_gui = {
 
                 add_equipment_to_stockpile = {
                     type = the_universal_translator_eq
-                    amount = -temp
+                    amount = -num_equipment@the_universal_translator_eq
                     producer = ROOT
                 }
             }
@@ -345,15 +346,15 @@ scripted_gui = {
                 has_tech = markov_eclipse
             }
             international_wonder_markov_eclipse_conversion_click_enabled = {
-                AND = {
-                any_country = {
-                    has_idea = markov_eclipse_idea
-                }
+                #AND = {
+                #any_country = {
+                #    has_idea = markov_eclipse_idea
+                #}
                 has_equipment = {
                     markov_eclipse_eq > 10
                 }
                 has_tech = markov_eclipse
-                }
+                #}
             }
             international_wonder_stellar_codex_click_enabled = {
                 NOT = {
