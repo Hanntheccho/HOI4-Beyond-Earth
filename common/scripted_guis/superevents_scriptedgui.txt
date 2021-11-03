@@ -1,0 +1,29 @@
+scripted_gui = {	
+
+	#superevent_frame_open = { ### VERY IMPORTANT MAKE SURE THIS USES THE SAME NAME AS #IN THE TNO_SG_BigEvent_custom.gui FILE OR YOU'RE GONNA GET A CRASH
+	#	context_type = player_context
+	#	window_name = "superevent_frame"
+	#
+	#	visible = {
+	#		has_country_flag = clinical_immortality_start ### this country flag triggers the #superevent
+	#	}
+	#}
+
+	superevent_frame_close = { ### VERY IMPORTANT MAKE SURE THIS USES THE SAME #NAME AS IN THE TNO_SG_BigEvent_custom.gui FILE OR YOU'RE GONNA GET A CRASH
+		context_type = player_context
+		window_name = "superevent_clinical_immortality"
+
+		visible = {
+			has_country_flag = clinical_immortality_start
+		}
+
+		effects = {
+			Option_click = {
+				#clr_country_flag = superevent_start
+				clr_country_flag = clinical_immortality_start ### this disables the country flag #that fires the superevent (so the superevent actually goes away)
+			}
+		}
+	}
+	
+}
+#set_country_flag big_event_custom_latin_wars ## quick command for testing

@@ -9,11 +9,11 @@ scripted_gui = {
         }
         
         effects = {
-            international_close_click = {
-                ROOT = {
-                    clr_country_flag = international_moment_flag
-                }
-            }
+            #international_close_click = {
+            #    ROOT = {
+            #        clr_country_flag = international_moment_flag
+            #    }
+            #}
             virtues_and_culture_button_click = {
                 ROOT = {
                     set_country_flag = virtues_and_culture_moment_flag
@@ -38,6 +38,16 @@ scripted_gui = {
                     producer = ROOT
                 }
             }
+            international_wonder_clinical_immortality_conversion_click = {
+                set_temp_variable = { temp = num_equipment@clinical_immortality_eq }
+                divide_temp_variable = { temp = 10 }
+                add_to_variable = { industrial_power = temp }
+                add_equipment_to_stockpile = {
+                    type = clinical_immortality_eq
+                    amount = -temp
+                    producer = ROOT
+                }
+            }
             international_wonder_markov_eclipse_click = {
                 country_event = { id = international_event.3 days = 0 }
                 every_country = {
@@ -51,6 +61,18 @@ scripted_gui = {
                 add_equipment_to_stockpile = {
                     type = markov_eclipse_eq
                     amount = -500
+                    producer = ROOT
+                }
+            }
+            international_wonder_markov_eclipse_conversion_click = {
+
+                set_temp_variable = { temp = num_equipment@markov_eclipse_eq }
+                divide_temp_variable = { temp = 10 }
+                add_to_variable = { industrial_power = temp }
+
+                add_equipment_to_stockpile = {
+                    type = markov_eclipse_eq
+                    amount = -temp
                     producer = ROOT
                 }
             }
@@ -70,6 +92,19 @@ scripted_gui = {
                     producer = ROOT
                 }
             }
+            international_wonder_stellar_codex_conversion_click = {
+                
+                set_temp_variable = { temp = num_equipment@stellar_codex_eq }
+                divide_temp_variable = { temp = 10 }
+                add_to_variable = { industrial_power = temp }
+
+                add_equipment_to_stockpile = {
+                    type = stellar_codex_eq
+                    amount = -temp
+                    producer = ROOT
+                }
+            }
+
             international_wonder_machine_assisted_free_will_click = {
                 country_event = { id = international_event.7 days = 0 }
                 every_country = {
@@ -86,6 +121,19 @@ scripted_gui = {
                     producer = ROOT
                 }
             }
+            international_wonder_machine_assisted_free_will_conversion_click = {
+                
+                set_temp_variable = { temp = num_equipment@machine_assisted_free_will_eq }
+                divide_temp_variable = { temp = 10 }
+                add_to_variable = { industrial_power = temp }
+
+                add_equipment_to_stockpile = {
+                    type = machine_assisted_free_will_eq
+                    amount = -temp
+                    producer = ROOT
+                }
+            }
+
             international_wonder_virtual_world_click = {
                 country_event = { id = international_event.9 days = 0 }
                 every_country = {
@@ -99,6 +147,19 @@ scripted_gui = {
                 add_equipment_to_stockpile = {
                     type = the_virtual_world_eq
                     amount = -500
+                    producer = ROOT
+                }
+            }
+
+            international_wonder_virtual_world_conversion_click = {
+                
+                set_temp_variable = { temp = num_equipment@the_virtual_world_eq }
+                divide_temp_variable = { temp = 10 }
+                add_to_variable = { industrial_power = temp }
+
+                add_equipment_to_stockpile = {
+                    type = the_virtual_world_eq
+                    amount = -temp
                     producer = ROOT
                 }
             }
@@ -118,6 +179,19 @@ scripted_gui = {
                     producer = ROOT
                 }
             }
+
+            international_wonder_weather_paradigm_conversion_click = {
+                
+                set_temp_variable = { temp = num_equipment@the_virtual_world_eq }
+                divide_temp_variable = { temp = 10 }
+                add_to_variable = { industrial_power = temp }
+
+                add_equipment_to_stockpile = {
+                    type = the_weather_paradigm_eq
+                    amount = -temp
+                    producer = ROOT
+                }
+            }
             international_wonder_benthic_auger_click = {
                 country_event = { id = international_event.13 days = 0 }
                 every_country = {
@@ -134,6 +208,19 @@ scripted_gui = {
                     producer = ROOT
                 }
             }
+            international_wonder_benthic_auger_conversion_click = {
+                
+                set_temp_variable = { temp = num_equipment@benthic_auger_eq }
+                divide_temp_variable = { temp = 10 }
+                add_to_variable = { industrial_power = temp }
+
+                add_equipment_to_stockpile = {
+                    type = benthic_auger_eq
+                    amount = -temp
+                    producer = ROOT
+                }
+            }
+
             international_wonder_neural_amplifier_click = {
                 country_event = { id = international_event.15 days = 0 }
                 every_country = {
@@ -150,6 +237,19 @@ scripted_gui = {
                     producer = ROOT
                 }
             }
+            international_wonder_neural_amplifier_conversion_click = {
+                
+                set_temp_variable = { temp = num_equipment@the_neural_amplifier_eq }
+                divide_temp_variable = { temp = 10 }
+                add_to_variable = { industrial_power = temp }
+
+                add_equipment_to_stockpile = {
+                    type = the_neural_amplifier_eq
+                    amount = -temp
+                    producer = ROOT
+                }
+            }
+
             international_wonder_cloudbase_academy_click = {
                 country_event = { id = international_event.17 days = 0 }
                 every_country = {
@@ -166,6 +266,19 @@ scripted_gui = {
                     producer = ROOT
                 }
             }
+            international_wonder_cloudbase_academy_conversion_click = {
+                
+                set_temp_variable = { temp = num_equipment@the_cloudbase_academy_eq }
+                divide_temp_variable = { temp = 10 }
+                add_to_variable = { industrial_power = temp }
+
+                add_equipment_to_stockpile = {
+                    type = the_cloudbase_academy_eq
+                    amount = -temp
+                    producer = ROOT
+                }
+            }
+
             international_wonder_universal_translator_click = {
                 country_event = { id = international_event.19 days = 0 }
                 every_country = {
@@ -179,6 +292,19 @@ scripted_gui = {
                 add_equipment_to_stockpile = {
                     type = the_universal_translator_eq
                     amount = -500
+                    producer = ROOT
+                }
+            }
+
+            international_wonder_universal_translator_conversion_click = {
+                
+                set_temp_variable = { temp = num_equipment@the_universal_translator_eq }
+                divide_temp_variable = { temp = 10 }
+                add_to_variable = { industrial_power = temp }
+
+                add_equipment_to_stockpile = {
+                    type = the_universal_translator_eq
+                    amount = -temp
                     producer = ROOT
                 }
             }
@@ -196,6 +322,17 @@ scripted_gui = {
                 }
                 has_tech = clinical_immortality
             }
+            international_wonder_clinical_immortality_conversion_click_enabled = {
+                AND = {
+                any_country = {
+                    has_idea = clinical_immortality_idea
+                }
+                has_equipment = {
+                    clinical_immortality_eq > 10
+                }
+                has_tech = clinical_immortality
+                }
+            }
             international_wonder_markov_eclipse_click_enabled = {
                 NOT = {
                     any_country = {
@@ -206,6 +343,17 @@ scripted_gui = {
                     markov_eclipse_eq > 499
                 }
                 has_tech = markov_eclipse
+            }
+            international_wonder_markov_eclipse_conversion_click_enabled = {
+                AND = {
+                any_country = {
+                    has_idea = markov_eclipse_idea
+                }
+                has_equipment = {
+                    markov_eclipse_eq > 10
+                }
+                has_tech = markov_eclipse
+                }
             }
             international_wonder_stellar_codex_click_enabled = {
                 NOT = {
@@ -218,6 +366,17 @@ scripted_gui = {
                 }
                 has_tech = stellar_codex
             }
+            international_wonder_stellar_codex_conversion_click_enabled = {
+                AND = {
+                any_country = {
+                    has_idea = stellar_codex_idea
+                }
+                has_equipment = {
+                    stellar_codex_eq > 10
+                }
+                has_tech = stellar_codex
+                }
+            }
             international_wonder_machine_assisted_free_will_click_enabled = {
                 NOT = {
                     any_country = {
@@ -228,6 +387,17 @@ scripted_gui = {
                     machine_assisted_free_will_eq > 499
                 }
                 has_tech = machine_assisted_free_will
+            }
+            international_wonder_machine_assisted_free_will_conversion_click_enabled = {
+                AND = {
+                any_country = {
+                    has_idea = machine_assisted_free_will_idea
+                }
+                has_equipment = {
+                    machine_assisted_free_will_eq > 10
+                }
+                has_tech = machine_assisted_free_will
+                }
             }
             international_wonder_virtual_world_click_enabled = {
                 NOT = {
@@ -240,6 +410,17 @@ scripted_gui = {
                 }
                 has_tech = the_virtual_world
             }
+            international_wonder_virtual_world_conversion_click_enabled = {
+                AND = {
+                any_country = {
+                    has_idea = the_virtual_world_idea
+                }
+                has_equipment = {
+                   the_virtual_world_eq > 10
+                }
+                has_tech = the_virtual_world
+                }
+            }
             international_wonder_weather_paradigm_click_enabled = {
                 NOT = {
                     any_country = {
@@ -250,6 +431,17 @@ scripted_gui = {
                     the_weather_paradigm_eq > 499
                 }
                 has_tech = the_weather_paradigm
+            }
+            international_wonder_weather_paradigm_conversion_click_enabled = {
+                AND = {
+                any_country = {
+                    has_idea = the_weather_paradigm_idea
+                }
+                has_equipment = {
+                   the_weather_paradigm_eq > 10
+                }
+                has_tech = the_weather_paradigm
+                }
             }
             international_wonder_benthic_auger_click_enabled = {
                 NOT = {
@@ -262,6 +454,17 @@ scripted_gui = {
                 }
                 has_tech = benthic_auger
             }
+            international_wonder_benthic_auger_conversion_click_enabled = {
+                AND = {
+                any_country = {
+                    has_idea = benthic_auger_idea
+                }
+                has_equipment = {
+                   benthic_auger_eq > 10
+                }
+                has_tech = benthic_auger
+                }
+            }
             international_wonder_neural_amplifier_click_enabled = {
                 NOT = {
                     any_country = {
@@ -272,6 +475,18 @@ scripted_gui = {
                     the_neural_amplifier_eq > 499
                 }
                 has_tech = the_neural_amplifier
+            }
+            international_wonder_neural_amplifier_conversion_click_enabled = {
+                AND = {
+                any_country = {
+                    has_idea = the_neural_amplifier_idea
+                }
+                has_equipment = {
+                   the_neural_amplifier_eq > 10
+                }
+                has_tech = the_neural_amplifier
+
+                }
             }
             international_wonder_cloudbase_academy_click_enabled = {
                 NOT = {
@@ -284,6 +499,17 @@ scripted_gui = {
                 }
                 has_tech = the_cloudbase_academy
             }
+            international_wonder_cloudbase_academy_conversion_click_enabled = {
+                AND = {
+                any_country = {
+                    has_idea = the_cloudbase_academy_idea
+                }
+                has_equipment = {
+                   the_cloudbase_academy_eq > 10
+                }
+                has_tech = the_cloudbase_academy
+                }
+            }
             international_wonder_universal_translator_click_enabled = {
                 NOT = {
                     any_country = {
@@ -294,6 +520,17 @@ scripted_gui = {
                     the_universal_translator_eq > 499
                 }
                 has_tech = the_universal_translator
+            }
+            international_wonder_universal_translator_conversion_click_enabled = {
+                AND = {
+                    any_country = {
+                        has_idea = the_universal_translator_idea
+                    }
+                    has_equipment = {
+                        the_universal_translator_eq > 10
+                    }
+                    has_tech = the_universal_translator
+                }
             }
         }
 
