@@ -1,4 +1,98 @@
 defined_text = {
+	name = GETspaceship_completion_time
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = spaceship_completed_flag
+			}
+		}
+		localization_key = spaceship_finished
+	}
+	text = {
+		trigger = {
+			AND = {
+				any_country = {
+					has_country_flag = engine_uplink_flag
+				}
+				NOT = {
+					any_country = {
+						has_country_flag = spaceship_completed_flag
+					}
+				}
+			}
+		}
+		localization_key = all_spaceship_parts_are_finished
+	}
+	text = {
+		trigger = {
+			NOT = {
+				any_country = {
+					has_country_flag = engine_uplink_flag
+				}
+			}
+		}
+		localization_key = spaceship_completion_countdown
+	}
+}
+
+defined_text = {
+	name = GETchecklist_industrial_goal
+	text = {
+		trigger = {
+			AND = {
+				is_puppet = no
+				num_of_civilian_factories > 299
+			}
+		}
+		localization_key = industrial_goal_achieved
+	}
+	text = {
+		localization_key = industrial_goal_not_achieved
+	}
+}
+
+defined_text = {
+	name = GETchecklist_regional_goal
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					is_puppet = no
+					is_in_faction = yes
+					num_faction_members > 5
+				}
+				AND = {
+					num_subjects > 4
+				}
+			}
+		}
+		localization_key = regional_goal_achieved
+	}
+	text = {
+		localization_key = regional_goal_not_achieved
+	}
+}
+
+defined_text = {
+	name = GETchecklist_spaceship_goal
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = bridge_uplink_flag
+				has_country_flag = quarters_uplink_flag
+				has_country_flag = support_uplink_flag
+				has_country_flag = storage_uplink_flag
+				has_country_flag = engine_uplink_flag
+			}
+		}
+		localization_key = spaceship_goal_achieved
+	}
+	text = {
+		localization_key = spaceship_goal_not_achieved
+	}
+}
+
+defined_text = {
 	name = GETclinical_immortality_built
 	text = {
 		trigger = {
