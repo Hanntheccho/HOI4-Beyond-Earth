@@ -1,5 +1,6 @@
 add_namespace = international_event
 add_namespace = international_news_event
+add_namespace = international_spaceship_event
 
 country_event = {
 	id = international_event.1
@@ -619,5 +620,71 @@ news_event = {
 
 	option = {
 		name = international_news_event.6.a
+	}
+}
+
+country_event = {
+	id = international_spaceship_event.1
+	title = international_spaceship_event.1.t
+	desc = international_spaceship_event.1.d
+	picture = GFX_report_event_gathering_protest
+    
+    is_triggered_only = yes
+
+    fire_only_once = no
+
+	option = {
+		name = international_spaceship_event.1.a
+		every_country = {
+            country_event = { id = international_spaceship_event.3 days = 0 }
+		}
+		set_global_flag = game_over
+	}
+}
+
+country_event = {
+	id = international_spaceship_event.2
+	title = international_spaceship_event.2.t
+	desc = international_spaceship_event.2.d
+	picture = GFX_report_event_gathering_protest
+    
+    is_triggered_only = yes
+
+    fire_only_once = no
+
+	option = {
+		name = international_spaceship_event.2.a
+	}
+}
+
+country_event = {
+	id = international_spaceship_event.3
+	title = international_spaceship_event.3.t
+	desc = international_spaceship_event.3.d
+	picture = GFX_report_event_gathering_protest
+    
+    is_triggered_only = yes
+
+    fire_only_once = no
+
+	option = {
+		name = international_spaceship_event.3.a
+		custom_effect_tooltip = game_over_event_tooltip
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_war = yes
+				}
+				every_enemy_country = {
+					white_peace = PREV
+				}
+			}
+			set_rule = {
+				can_not_declare_war = yes
+			}
+			set_rule = {
+				can_guarantee_other_ideologies = no
+			}
+		}
 	}
 }

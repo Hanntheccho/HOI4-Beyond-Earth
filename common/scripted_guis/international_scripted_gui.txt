@@ -14,6 +14,25 @@ scripted_gui = {
             #        clr_country_flag = international_moment_flag
             #    }
             #}
+            international_launch_spaceship_click = {
+                ROOT = {
+                    country_event = { id = international_spaceship_event.1 days = 0 }
+                }
+                every_country = {
+                    limit = {
+                        AND = {
+                            NOT = {
+                                tag = ROOT
+                            }    
+                            OR = {
+                                is_puppet_of = ROOT
+                                is_in_faction_with = ROOT
+                            }
+                        }
+                    }
+                    country_event = { id = international_spaceship_event.2 days = 0 }
+                }
+            }
             virtues_and_culture_button_click = {
                 ROOT = {
                     set_country_flag = virtues_and_culture_moment_flag
