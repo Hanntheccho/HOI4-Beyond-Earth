@@ -431,19 +431,19 @@ on_actions = {
                 }
                 country_event = { id = international_event.21 } 
             }
-            if = {
-                limit = {
-                    AND = {
-                        check_variable = { spaceschip_completion_time = 1 }
-                        any_owned_state = {
-                            has_dynamic_modifier = {
-                                modifier = spaceship_location_modifier
-                            }
-                        }
-                    }
-                }
-                country_event = { id = international_event.23 } 
-            }
+            #if = {
+            #    limit = {
+            #        AND = {
+            #            check_variable = { spaceschip_completion_time = 1 }
+            #            any_owned_state = {
+            #                has_dynamic_modifier = {
+            #                    modifier = spaceship_location_modifier
+            #                }
+            #            }
+            #        }
+            #    }
+            #    country_event = { id = international_event.23 } 
+            #}
             subtract_from_variable = { spaceschip_completion_time = 1 }
             every_country = {
                 set_variable = { spaceship_contribution_variable = 0 }

@@ -451,30 +451,31 @@ country_event = {
 				modifier = engine_location_modifier
 			}
 		}
-		add_to_variable  { spaceschip_completion_time = 365 }
+		#add_to_variable  { spaceschip_completion_time = 365 }
 		set_country_flag = engine_uplink_flag
+		set_country_flag = spaceship_completed_flag
         ROOT = {
 		    add_to_array = { global.module_five_builder_array = THIS.id }
         }
 	}
-	option = {
-		name = international_event.21.f
-		trigger = {
-            date > 2206.1.1
-            date < 2207.1.1
-		}
-		news_event = { id = international_news_event.6 days = 0 }
-		every_owned_state = {
-			limit = {
-				is_capital = yes
-			}
-			add_dynamic_modifier = {
-				modifier = spaceship_location_modifiers
-			}
-		}
-		set_country_flag = spaceship_completed_flag
-		add_to_variable  { spaceschip_completion_time = 913 }
-	}
+	#option = {
+	#	name = international_event.21.f
+	#	trigger = {
+    #        date > 2206.1.1
+    #        date < 2207.1.1
+	#	}
+	#	news_event = { id = international_news_event.6 days = 0 }
+	#	every_owned_state = {
+	#		limit = {
+	#			is_capital = yes
+	#		}
+	#		add_dynamic_modifier = {
+	#			modifier = spaceship_location_modifiers
+	#		}
+	#	}
+	#	set_country_flag = spaceship_completed_flag
+	#	add_to_variable  { spaceschip_completion_time = 913 }
+	#}
 }
 
 country_event = {
@@ -623,6 +624,39 @@ news_event = {
 	}
 }
 
+news_event = {
+	id = international_news_event.7
+	title = international_news_event.7.t
+	desc = international_news_event.7.d
+	picture = GFX_report_event_gathering_protest
+
+	major = yes
+	
+    trigger = {
+		threat > 0.99
+		NOT = { has_global_flag = civilization_collapses_flag }
+	}
+	
+	immediate = {
+		set_global_flag = civilization_collapses_flag
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+
+    fire_only_once = no
+
+	option = {
+		name = international_news_event.7.a
+		hidden_effect = {
+			every_country = {
+                country_event = { id = international_spaceship_event.4 days = 0 }
+			}
+		}
+	}
+}
+
 country_event = {
 	id = international_spaceship_event.1
 	title = international_spaceship_event.1.t
@@ -670,6 +704,41 @@ country_event = {
 	option = {
 		name = international_spaceship_event.3.a
 		custom_effect_tooltip = game_over_event_tooltip
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_war = yes
+				}
+				every_enemy_country = {
+					white_peace = PREV
+				}
+			}
+			set_rule = {
+				can_not_declare_war = yes
+			}
+			set_rule = {
+				can_guarantee_other_ideologies = no
+			}
+		}
+	}
+}
+
+country_event = {
+	id = international_spaceship_event.4
+	title = international_spaceship_event.4.t
+	desc = international_spaceship_event.4.d
+	picture = GFX_report_event_gathering_protest
+    
+    is_triggered_only = yes
+
+    fire_only_once = no
+
+	option = {
+		name = international_spaceship_event.4.a
+		custom_effect_tooltip = game_over_event_tooltip
+		add_ideas = {
+			nothing_left_idea
+		}
 		hidden_effect = {
 			every_country = {
 				limit = {

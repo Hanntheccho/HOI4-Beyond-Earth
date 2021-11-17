@@ -7,6 +7,7 @@ on_actions = {
                     has_cultural_power = yes
                 }
                 set_variable = { cultural_power = 0 }
+                set_variable = { cultural_power_gain = 0 }
                 set_variable = { cultural_power_max = 2000 }
 				set_variable = { cultural_power_rate_stable = 1 }
 				set_variable = { cultural_power_rate_mobilizing = 0.75 }
@@ -24,7 +25,7 @@ on_actions = {
                     has_idea = stable_culture
                 }
                 
-                add_to_variable = { cultural_power = cultural_power_rate_stable }
+                add_to_variable = { cultural_power_gain = cultural_power_rate_stable }
 				
                 clamp_variable = { var = cultural_power min = 0 max = cultural_power_max }
 			}
@@ -33,7 +34,7 @@ on_actions = {
                     has_idea = mobilizing_culture
                 }
                 
-                add_to_variable = { cultural_power = cultural_power_rate_mobilizing }
+                add_to_variable = { cultural_power_gain = cultural_power_rate_mobilizing }
 				
                 clamp_variable = { var = cultural_power min = 0 max = cultural_power_max }
 			}
@@ -42,7 +43,7 @@ on_actions = {
                     has_idea = mobilized_culture
                 }
                 
-                add_to_variable = { cultural_power = cultural_power_rate_mobilized }
+                add_to_variable = { cultural_power_gain = cultural_power_rate_mobilized }
 				
                 clamp_variable = { var = cultural_power min = 0 max = cultural_power_max }
 			}
@@ -51,7 +52,7 @@ on_actions = {
                     has_idea = radicalized_culture
                 }
                 
-                add_to_variable = { cultural_power = cultural_power_rate_radicalized }
+                add_to_variable = { cultural_power_gain = cultural_power_rate_radicalized }
 				
                 clamp_variable = { var = cultural_power min = 0 max = cultural_power_max }
 			}
@@ -60,7 +61,7 @@ on_actions = {
                     has_idea = rabid_culture
                 }
                 
-                add_to_variable = { cultural_power = cultural_power_rate_rabid }
+                add_to_variable = { cultural_power_gain = cultural_power_rate_rabid }
 				
                 clamp_variable = { var = cultural_power min = 0 max = cultural_power_max }
 			}
@@ -69,8 +70,17 @@ on_actions = {
                     has_idea = universal_translator_idea
                 }
                 
-                add_to_variable = { cultural_power = 0.5 }
+                add_to_variable = { cultural_power_gain = 0.5 }
 			}
+			if = {
+				limit = { 
+                    has_idea = nothing_left_idea
+                }
+                
+                multiply_variable = { cultural_power_gain = 0 }
+			}
+            add_to_variable = { cultural_power = cultural_power_gain }
+            clear_variable = cultural_power_gain
         }
     }
 }
