@@ -14,6 +14,11 @@ scripted_gui = {
             #        clr_country_flag = international_moment_flag
             #    }
             #}
+            international_unify_spaceship_efforts_click = {
+                ROOT = {
+                    set_country_flag = spaceship_internationalized_flag
+                }
+            }
             international_launch_spaceship_click = {
                 ROOT = {
                     country_event = { id = international_spaceship_event.1 days = 0 }
@@ -331,6 +336,29 @@ scripted_gui = {
         }
 
         triggers = {
+            international_unify_spaceship_efforts_click_enabled = {
+                AND = {
+                    is_puppet = no
+                    num_of_civilian_factories > 299
+                    OR = {
+                        AND = {
+                            is_puppet = no
+                            is_in_faction = yes
+                            num_faction_members > 5
+                        }
+                        AND = {
+                            num_subjects > 4
+                        }
+                    }
+                    OR = {
+                        has_country_flag = bridge_uplink_flag
+                        has_country_flag = quarters_uplink_flag
+                        has_country_flag = support_uplink_flag
+                        has_country_flag = storage_uplink_flag
+                        has_country_flag = engine_uplink_flag
+                    }
+                }
+            }
             international_launch_spaceship_click_enabled = {
                 AND = {
                     any_owned_state = {
@@ -462,7 +490,7 @@ scripted_gui = {
             international_wonder_virtual_world_conversion_click_enabled = {
                 AND = {
                 any_country = {
-                    has_idea = the_virtual_world_idea
+                    has_idea = virtual_world_idea
                 }
                 has_equipment = {
                    the_virtual_world_eq > 10
@@ -484,7 +512,7 @@ scripted_gui = {
             international_wonder_weather_paradigm_conversion_click_enabled = {
                 AND = {
                 any_country = {
-                    has_idea = the_weather_paradigm_idea
+                    has_idea = weather_paradigm_idea
                 }
                 has_equipment = {
                    the_weather_paradigm_eq > 10
@@ -528,7 +556,7 @@ scripted_gui = {
             international_wonder_neural_amplifier_conversion_click_enabled = {
                 AND = {
                 any_country = {
-                    has_idea = the_neural_amplifier_idea
+                    has_idea = neural_amplifier_idea
                 }
                 has_equipment = {
                    the_neural_amplifier_eq > 10
@@ -551,7 +579,7 @@ scripted_gui = {
             international_wonder_cloudbase_academy_conversion_click_enabled = {
                 AND = {
                 any_country = {
-                    has_idea = the_cloudbase_academy_idea
+                    has_idea = cloudbase_academy_idea
                 }
                 has_equipment = {
                    the_cloudbase_academy_eq > 10
@@ -573,7 +601,7 @@ scripted_gui = {
             international_wonder_universal_translator_conversion_click_enabled = {
                 AND = {
                     any_country = {
-                        has_idea = the_universal_translator_idea
+                        has_idea = universal_translator_idea
                     }
                     has_equipment = {
                         the_universal_translator_eq > 10
