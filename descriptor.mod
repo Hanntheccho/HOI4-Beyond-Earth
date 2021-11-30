@@ -1,4 +1,4 @@
-version="1.10.*"
+version="1.11.*"
 tags={
 	"Alternative History"
 	"National Focuses"
@@ -10,7 +10,7 @@ tags={
 	"Ideologies"
 }
 name="Beyond Earth"
-supported_version="1.10.1"
+supported_version="1.11.2"
 
 replace_path="gfx/flags"
 replace_path="gfx/flags/medium"
