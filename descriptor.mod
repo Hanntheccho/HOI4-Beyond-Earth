@@ -10,7 +10,7 @@ tags={
 	"Ideologies"
 }
 name="Beyond Earth"
-supported_version="1.11.2"
+supported_version="1.11.*"
 
 replace_path="gfx/flags"
 replace_path="gfx/flags/medium"
