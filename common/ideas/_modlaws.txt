@@ -213,9 +213,9 @@ ideas = {
 		law = yes
 		use_list_view = yes
 		
-		stable_culture = {
+		stable_society = {
 
-			cost = 100
+			#cost = 100
 			removal_cost = -1
 			level = 6
 			
@@ -226,7 +226,7 @@ ideas = {
 			}
 
 			modifier = {
-				custom_modifier_tooltip = stable_culture_tooltip
+				custom_modifier_tooltip = 1_cultural_power_gain
 			}
 
 			default = yes
@@ -234,9 +234,9 @@ ideas = {
 			cancel_if_invalid = no
 		}
 		
-		mobilizing_culture = {
+		mobilizing_society = {
 			
-			cost = 100
+			#cost = 100
 			removal_cost = -1
 			level = 6
 			
@@ -247,19 +247,18 @@ ideas = {
 			}
 
 			modifier = {
-				production_speed_buildings_factor = 0.1
-				industrial_capacity_factory = 0.1
-				industrial_capacity_dockyard = 0.1
-				conscription = 0.005
-				custom_modifier_tooltip = mobilizing_culture_tooltip
+				production_speed_buildings_factor = -0.05
+				mobilization_speed = 0.2
+				custom_modifier_tooltip = 5_free_factory_speed_decrease
+				custom_modifier_tooltip = 08_cultural_power_gain
 			}
 			
 			cancel_if_invalid = no
 		}
 		
-		mobilized_culture = {
+		flaking_society = {
 		
-			cost = 100
+			#cost = 100
 			removal_cost = -1
 			level = 6
 			
@@ -270,19 +269,19 @@ ideas = {
 			}
 
 			modifier = {
-				production_speed_buildings_factor = 0.15
-				industrial_capacity_factory = 0.15
-				industrial_capacity_dockyard = 0.15
-				conscription = 0.01
-				consumer_goods_factor = -0.05
-				custom_modifier_tooltip = mobilized_culture_tooltip
+				production_speed_buildings_factor = -0.1
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				mobilization_speed = 0.4
+				custom_modifier_tooltip = 5_free_factory_speed_decrease
+				custom_modifier_tooltip = 06_cultural_power_gain
 			}
 			
 			cancel_if_invalid = no
 		}
-		radicalized_culture = {
+		crumbling_society = {
 		
-			cost = 100
+			#cost = 100
 			removal_cost = -1
 			level = 6
 			
@@ -293,19 +292,20 @@ ideas = {
 			}
 
 			modifier = {
-				production_speed_buildings_factor = 0.2
-				industrial_capacity_factory = 0.2
-				industrial_capacity_dockyard = 0.2
-				conscription = 0.02
-				consumer_goods_factor = -0.1
-				custom_modifier_tooltip = radicalized_culture_tooltip
+				production_speed_buildings_factor = -0.2
+				stability_factor = -0.15
+				war_support_factor = -0.15
+				mobilization_speed = 0.4
+				custom_modifier_tooltip = 20_free_factory_speed_decrease
+				custom_modifier_tooltip = 02_industrial_power_decrease
+				custom_modifier_tooltip = 04_cultural_power_gain
 			}
 			
 			cancel_if_invalid = no
 		}
-		rabid_culture = {
+		periphal_anarchy = {
 		
-			cost = 100
+			#cost = 100
 			removal_cost = -1
 			level = 6
 			
@@ -316,13 +316,38 @@ ideas = {
 			}
 
 			modifier = {
-				production_speed_buildings_factor = 0.30
-				industrial_capacity_factory = 0.30
-				industrial_capacity_dockyard = 0.30
+				production_speed_buildings_factor = -0.4
+				stability_factor = -0.3
+				war_support_factor = -0.3
+				mobilization_speed = 0.8
 				conscription = 0.05
-				consumer_goods_factor = -0.15
-				surrender_limit = 0.1
-				custom_modifier_tooltip = rabid_culture_tooltip
+				custom_modifier_tooltip = 40_free_factory_speed_decrease
+				custom_modifier_tooltip = 04_industrial_power_decrease
+				custom_modifier_tooltip = 02_cultural_power_gain
+			}
+			
+			cancel_if_invalid = no
+		}
+		urban_collapse = {
+		
+			#cost = 100
+			removal_cost = -1
+			level = 6
+			
+			available = { threat > 0.99 }
+
+			ai_will_do = {
+   				factor = 1
+			}
+
+			modifier = {
+				production_speed_buildings_factor = -0.6
+				stability_factor = -0.6
+				war_support_factor = -0.6
+				mobilization_speed = 1
+				conscription = 0.15
+				custom_modifier_tooltip = 60_free_factory_speed_decrease
+				custom_modifier_tooltip = 08_industrial_power_decrease
 			}
 			
 			cancel_if_invalid = no

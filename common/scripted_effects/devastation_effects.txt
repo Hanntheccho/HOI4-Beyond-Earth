@@ -1,0 +1,79 @@
+increase_devastation_random_state = {
+	random_owned_state = {
+		if = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = minor_devastation
+				}
+			}
+			remove_dynamic_modifier = { modifier = minor_devastation }
+			add_dynamic_modifier = { modifier = notable_devastation }
+		}
+		else_if = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = notable_devastation
+				}
+			}
+			remove_dynamic_modifier = { modifier = notable_devastation }
+			add_dynamic_modifier = { modifier = major_devastation }
+		}
+		else_if = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = major_devastation
+				}
+			}
+			remove_dynamic_modifier = { modifier = major_devastation }
+			add_dynamic_modifier = { modifier = significant_devastation }
+		}
+		if = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = significant_devastation
+				}
+			}
+			remove_dynamic_modifier = { modifier = significant_devastation }
+			add_dynamic_modifier = { modifier = terminal_devastation }
+		}
+	}
+}
+
+decrease_devastation = {
+	if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = notable_devastation
+			}
+		}
+		remove_dynamic_modifier = { modifier = notable_devastation }
+		add_dynamic_modifier = { modifier = minor_devastation }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = major_devastation
+			}
+		}
+		remove_dynamic_modifier = { modifier = major_devastation }
+		add_dynamic_modifier = { modifier = notable_devastation }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = significant_devastation
+			}
+		}
+		remove_dynamic_modifier = { modifier = significant_devastation }
+		add_dynamic_modifier = { modifier = major_devastation }
+	}
+	if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = terminal_devastation
+			}
+		}
+		remove_dynamic_modifier = { modifier = terminal_devastation }
+		add_dynamic_modifier = { modifier = significant_devastation }
+	}
+}

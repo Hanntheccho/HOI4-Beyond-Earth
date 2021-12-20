@@ -85,7 +85,13 @@ scripted_gui = {
                     remove_dynamic_modifier = { modifier = expansion_tier1_modifier }
                     clr_country_flag = has_expansion_tier2
                     remove_dynamic_modifier = { modifier = expansion_tier2_modifier }
-                    clr_country_flag = has_expansion_tier3
+                    if = {
+                        limit = {
+                            has_country_flag = has_expansion_tier3
+                        }
+                        clr_country_flag = has_expansion_tier3
+                        subtract_from_variable = { devastation_modifier = 3 }
+                    }
                     clr_country_flag = expansion_three
                     clr_country_flag = has_conservation_tier1
                     remove_dynamic_modifier = { modifier = conservation_tier1_modifier }
@@ -97,7 +103,13 @@ scripted_gui = {
                     remove_dynamic_modifier = { modifier = consumption_tier1_modifier }
                     clr_country_flag = has_consumption_tier2
                     clr_country_flag = consumption_two
-                    clr_country_flag = has_consumption_tier3
+                    if = {
+                        limit = {
+                            has_country_flag = has_consumption_tier3
+                        }
+                        clr_country_flag = has_consumption_tier3
+                        subtract_from_variable = { devastation_modifier = 3 }
+                    }
                     clr_country_flag = consumption_three
                     clr_country_flag = has_prosperity_tier1
                     remove_dynamic_modifier = { modifier = prosperity_tier1_modifier }
@@ -115,12 +127,24 @@ scripted_gui = {
                     clr_country_flag = order_one
                     clr_country_flag = has_order_tier2
                     remove_dynamic_modifier = { modifier = order_tier2_modifier }
-                    clr_country_flag = has_order_tier3
+                    if = {
+                        limit = {
+                            has_country_flag = has_order_tier3
+                        }
+                        clr_country_flag = has_order_tier3
+                        subtract_from_variable = { devastation_modifier = 3 }
+                    }
                     clr_country_flag = order_three
                     clr_country_flag = has_liberty_tier1
                     clr_country_flag = liberty_one
                     clr_country_flag = has_liberty_tier2
-                    clr_country_flag = has_liberty_tier3
+                    if = {
+                        limit = {
+                            has_country_flag = has_liberty_tier3
+                        }
+                        clr_country_flag = has_liberty_tier3
+                        subtract_from_variable = { devastation_modifier = 3 }
+                    }
                     clr_country_flag = liberty_three
                     clr_country_flag = cultural_reset_available
                 }
@@ -924,6 +948,7 @@ scripted_gui = {
                     }
                     set_country_flag = has_expansion_tier3
                     #set_country_flag = expansion_three
+                    add_to_variable = { devastation_modifier = 3 }
                     subtract_from_variable = { cultural_power = 200 }
                     add_to_variable = { cultural_power_spent = 200 }
                 }
@@ -1117,6 +1142,7 @@ scripted_gui = {
                     }
                     set_country_flag = has_consumption_tier3
                     #set_country_flag = consumption_three
+                    add_to_variable = { devastation_modifier = 3 }
                     subtract_from_variable = { cultural_power = 200 }
                     add_to_variable = { cultural_power_spent = 200 }
                 }
@@ -1443,6 +1469,7 @@ scripted_gui = {
                     }
                     set_country_flag = has_order_tier3
                     #set_country_flag = order_three
+                    add_to_variable = { devastation_modifier = 3 }
                     subtract_from_variable = { cultural_power = 200 }
                     add_to_variable = { cultural_power_spent = 200 }
                 }
@@ -1500,6 +1527,7 @@ scripted_gui = {
                     }
                     set_country_flag = has_liberty_tier3
                     #set_country_flag = liberty_three
+                    add_to_variable = { devastation_modifier = 3 }
                     subtract_from_variable = { cultural_power = 200 }
                     add_to_variable = { cultural_power_spent = 200 }
                 }

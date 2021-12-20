@@ -1,0 +1,384 @@
+on_actions = {
+	on_startup = {
+		effect = {
+            set_variable = { devastation_chance = threat }
+            every_state = {
+                add_dynamic_modifier = {
+                    modifier = minor_devastation
+                }
+            }
+            every_country = {
+                set_variable = { devastation_timeout = 60 }
+                set_variable = { max_devastation = num_controlled_states }
+                multiply_variable = { max_devastation = 5 }
+                set_variable = { current_devastation = 0 }
+                set_variable = { devastation_modifier = 1 }
+                set_variable = { devastation_ratio = current_devastation }
+                divide_variable = { devastation_ratio = max_devastation }
+            }
+            every_state = {
+                set_variable = { devastation_degree = 3 }
+            }
+        }
+    }
+	on_daily = {
+		effect = {
+            subtract_from_variable = { devastation_timeout = 1 }
+            if = {
+                limit = {
+                    AND = {
+                        check_variable = { devastation_timeout = 0 }
+					    threat < 0.11
+                    }
+                }
+				random_list = {
+					5 = {
+						increase_devastation_random_state = yes
+						add_to_variable = { current_devastation = 1 }
+					}
+					95 = {
+
+					}
+				}
+                add_to_variable = { devastation_timeout = 60 }
+            }
+            else_if = {
+                limit = {
+                    AND = {
+                        check_variable = { devastation_timeout = 0 }
+						threat < 0.21
+						threat > 0.10
+					}
+				}
+				random_list = {
+					10 = {
+						increase_devastation_random_state = yes
+						add_to_variable = { current_devastation = 1 }
+					}
+					90 = {
+
+					}
+				}
+                add_to_variable = { devastation_timeout = 60 }
+            }
+            else_if = {
+                limit = {
+                    AND = {
+                        check_variable = { devastation_timeout = 0 }
+						threat < 0.31
+						threat > 0.20
+					}
+				}
+				random_list = {
+					15 = {
+						increase_devastation_random_state = yes
+						add_to_variable = { current_devastation = 1 }
+					}
+					85 = {
+
+					}
+				}
+                add_to_variable = { devastation_timeout = 60 }
+            }
+            else_if = {
+                limit = {
+                    AND = {
+                        check_variable = { devastation_timeout = 0 }
+						threat < 0.41
+						threat > 0.30
+					}
+				}
+				random_list = {
+					20 = {
+						increase_devastation_random_state = yes
+						add_to_variable = { current_devastation = 1 }
+					}
+					80 = {
+
+					}
+				}
+                add_to_variable = { devastation_timeout = 60 }
+            }
+            else_if = {
+                limit = {
+                    AND = {
+                        check_variable = { devastation_timeout = 0 }
+						threat < 0.51
+						threat > 0.40
+					}
+				}
+				random_list = {
+					25 = {
+						increase_devastation_random_state = yes
+						add_to_variable = { current_devastation = 1 }
+					}
+					75 = {
+
+					}
+				}
+                add_to_variable = { devastation_timeout = 30 }
+            }
+            else_if = {
+                limit = {
+                    AND = {
+                        check_variable = { devastation_timeout = 0 }
+						threat < 0.61
+						threat > 0.50
+					}
+				}
+				random_list = {
+					30 = {
+						increase_devastation_random_state = yes
+						add_to_variable = { current_devastation = 1 }
+					}
+					70 = {
+
+					}
+				}
+                add_to_variable = { devastation_timeout = 30 }
+            }
+            else_if = {
+                limit = {
+                    AND = {
+                        check_variable = { devastation_timeout = 0 }
+						threat < 0.71
+						threat > 0.60
+					}
+				}
+				random_list = {
+					35 = {
+						increase_devastation_random_state = yes
+						add_to_variable = { current_devastation = 1 }
+					}
+					65 = {
+
+					}
+				}
+                add_to_variable = { devastation_timeout = 30 }
+            }
+            else_if = {
+                limit = {
+                    AND = {
+                        check_variable = { devastation_timeout = 0 }
+						threat < 0.81
+						threat > 0.70
+					}
+				}
+				random_list = {
+					40 = {
+						increase_devastation_random_state = yes
+						add_to_variable = { current_devastation = 1 }
+					}
+					60 = {
+
+					}
+				}
+                add_to_variable = { devastation_timeout = 20 }
+            }
+            else_if = {
+                limit = {
+                    AND = {
+                        check_variable = { devastation_timeout = 0 }
+						threat < 0.91
+						threat > 0.80
+					}
+				}
+				random_list = {
+					45 = {
+						increase_devastation_random_state = yes
+						add_to_variable = { current_devastation = 1 }
+					}
+					55 = {
+
+					}
+				}
+                add_to_variable = { devastation_timeout = 20 }
+            }
+            else_if = {
+                limit = {
+                    AND = {
+                        check_variable = { devastation_timeout = 0 }
+						threat > 0.9
+					}
+                }
+				random_list = {
+					50 = {
+						increase_devastation_random_state = yes
+						add_to_variable = { current_devastation = 1 }
+					}
+					50 = {
+
+					}
+				}
+                add_to_variable = { devastation_timeout = 20 }
+            }
+			if = {
+				limit = {
+                    check_variable = { devastation_ratio < 0.11 }
+				}
+				remove_ideas = mobilizing_society
+				remove_ideas = flaking_society
+				remove_ideas = crumbling_society
+				remove_ideas = periphal_anarchy
+				remove_ideas = urban_collapse
+				add_ideas = stable_society
+			}
+			else_if = {
+				limit = {
+                    AND = {
+						check_variable = { devastation_ratio < 0.31 }
+						check_variable = { devastation_ratio > 0.1 }
+					}
+				}
+				remove_ideas = stable_society
+				remove_ideas = flaking_society
+				remove_ideas = crumbling_society
+				remove_ideas = periphal_anarchy
+				remove_ideas = urban_collapse
+				add_ideas = mobilizing_society
+			}
+			if = {
+				limit = {
+                    AND = {
+						check_variable = { devastation_ratio < 0.51 }
+						check_variable = { devastation_ratio > 0.3 }
+					}
+				}
+				remove_ideas = stable_society
+				remove_ideas = mobilizing_society
+				remove_ideas = crumbling_society
+				remove_ideas = periphal_anarchy
+				remove_ideas = urban_collapse
+				add_ideas = flaking_society
+			}
+			if = {
+				limit = {
+                    AND = {
+						check_variable = { devastation_ratio < 0.71 }
+						check_variable = { devastation_ratio > 0.5 }
+					}
+				}
+				remove_ideas = stable_society
+				remove_ideas = flaking_society
+				remove_ideas = mobilizing_society
+				remove_ideas = periphal_anarchy
+				remove_ideas = urban_collapse
+				add_ideas = crumbling_society
+			}
+			if = {
+				limit = {
+                    AND = {
+						check_variable = { devastation_ratio < 0.86 }
+						check_variable = { devastation_ratio > 0.7 }
+					}
+				}
+				remove_ideas = stable_society
+				remove_ideas = flaking_society
+				remove_ideas = mobilizing_society
+				remove_ideas = crumbling_society
+				remove_ideas = urban_collapse
+				add_ideas = periphal_anarchy
+			}
+			if = {
+				limit = {
+					check_variable = { devastation_ratio > 0.85 }
+				}
+				remove_ideas = stable_society
+				remove_ideas = flaking_society
+				remove_ideas = mobilizing_society
+				remove_ideas = crumbling_society
+				remove_ideas = periphal_anarchy
+				add_ideas = urban_collapse
+			}
+        }
+    }
+	on_weekly = {
+		effect = {
+			clear_variable = max_devastation
+            set_variable = { max_devastation = num_controlled_states }
+            multiply_variable = { max_devastation = 5 }
+            multiply_variable = { devastation_modifier = 5 }
+			clear_variable = devastation_ratio
+			set_variable = { devastation_ratio = current_devastation }
+			divide_variable = { devastation_ratio = max_devastation }
+			if = {
+				limit = {
+					check_variable = { devastation_ratio < 0.11 }
+				}
+				remove_ideas = mobilizing_society
+				remove_ideas = flaking_society
+				remove_ideas = crumbling_society
+				remove_ideas = periphal_anarchy
+				remove_ideas = urban_collapse
+				add_ideas = stable_society
+			}
+			if = {
+				limit = {
+                    AND = {
+						check_variable = { devastation_ratio < 0.31 }
+						check_variable = { devastation_ratio > 0.1 }
+					}
+				}
+				remove_ideas = stable_society
+				remove_ideas = flaking_society
+				remove_ideas = crumbling_society
+				remove_ideas = periphal_anarchy
+				remove_ideas = urban_collapse
+				add_ideas = mobilizing_society
+			}
+			if = {
+				limit = {
+                    AND = {
+						check_variable = { devastation_ratio < 0.51 }
+						check_variable = { devastation_ratio > 0.3 }
+					}
+				}
+				remove_ideas = stable_society
+				remove_ideas = mobilizing_society
+				remove_ideas = crumbling_society
+				remove_ideas = periphal_anarchy
+				remove_ideas = urban_collapse
+				add_ideas = flaking_society
+			}
+			if = {
+				limit = {
+                    AND = {
+						check_variable = { devastation_ratio < 0.71 }
+						check_variable = { devastation_ratio > 0.5 }
+					}
+				}
+				remove_ideas = stable_society
+				remove_ideas = flaking_society
+				remove_ideas = mobilizing_society
+				remove_ideas = periphal_anarchy
+				remove_ideas = urban_collapse
+				add_ideas = crumbling_society
+			}
+			if = {
+				limit = {
+                    AND = {
+						check_variable = { devastation_ratio < 0.86 }
+						check_variable = { devastation_ratio > 0.7 }
+					}
+				}
+				remove_ideas = stable_society
+				remove_ideas = flaking_society
+				remove_ideas = mobilizing_society
+				remove_ideas = crumbling_society
+				remove_ideas = urban_collapse
+				add_ideas = periphal_anarchy
+			}
+			if = {
+				limit = {
+					check_variable = { devastation_ratio > 0.85 }
+				}
+				remove_ideas = stable_society
+				remove_ideas = flaking_society
+				remove_ideas = mobilizing_society
+				remove_ideas = crumbling_society
+				remove_ideas = periphal_anarchy
+				add_ideas = urban_collapse
+			}
+		}
+	}
+}

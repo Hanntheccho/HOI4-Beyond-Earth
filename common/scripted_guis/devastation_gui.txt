@@ -1,0 +1,59 @@
+scripted_gui = {
+	devastation_gui = {
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+		
+		window_name = "devastation_gui_window"
+		
+		visible = {
+            always = yes
+		}
+		
+		effects = {
+			reduce_devastation_button_click = {
+                THIS = {
+                    decrease_devastation = yes
+                    set_state_flag = {
+                        flag = devastation_reduction_timeout_flag
+                        value = 1
+                        days = 60
+                    }
+                }
+                ROOT = {
+                    subtract_from_variable = { industrial_power = 25 }
+		            subtract_from_variable = { current_devastation = 1 }
+                }
+			}
+		}
+        triggers = {
+            reduce_devastation_button_click_enabled = {
+                THIS = {
+                    OR = {
+                        has_dynamic_modifier = {
+                            modifier = notable_devastation
+                        }
+                        has_dynamic_modifier = {
+                            modifier = major_devastation
+                        }
+                        has_dynamic_modifier = {
+                            modifier = significant_devastation
+                        }
+                        has_dynamic_modifier = {
+                            modifier = terminal_devastation
+                        }
+                    }
+                    NOT = {
+                        has_state_flag = devastation_reduction_timeout_flag
+                    }
+                }
+                ROOT = { 
+                    check_variable = {
+                	    var = industrial_power
+                	    value = 25
+                	    compare = greater_than_or_equals
+                    }
+                }
+            }
+        }
+	}
+}
