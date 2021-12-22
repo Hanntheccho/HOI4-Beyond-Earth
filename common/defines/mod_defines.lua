@@ -33,6 +33,7 @@ NDefines.NCountry.SUPPLY_BASE_MULT = 3                          -- Vanilla: 1
 NDefines.NCountry.NUCLEAR_PRODUCTION_SCALE = 210                 -- Vanilla: 365
 NDefines.NCountry.MIN_STABILITY = -1.0                          -- Vanilla: 0
 NDefines.NResistance.COMPLIANCE_GROWTH_BASE = 0.125                -- Vanilla: 0.075
+NDefines.NProduction.BASE_FACTORY_SPEED = 8                    -- Vanilla: 5
 NDefines.NProduction.BASE_FACTORY_SPEED_MIL = 6                 -- Vanilla: 4.5
 NDefines.NProduction.BASE_FACTORY_SPEED_NAV = 4                   -- Vanilla: 2.5
 NDefines.NAI.MAX_DISTANCE_NALAV_INVASION = 400.0                   -- Vanilla: 200
