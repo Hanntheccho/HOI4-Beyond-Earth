@@ -15,6 +15,24 @@ on_actions = {
                 set_variable = { devastation_modifier = 1 }
                 set_variable = { devastation_ratio = current_devastation }
                 divide_variable = { devastation_ratio = max_devastation }
+                set_variable = { devastation_ratio_new_factory = num_of_civilian_factories }
+                multiply_variable = { devastation_ratio_new_factory = 1.25 }
+                add_to_variable = { devastation_ratio_new_factory = num_of_military_factories }
+                add_to_variable = { devastation_ratio_new_factory = num_of_naval_factories }
+				set_variable = { ROOT.devastation_ratio_new_population = 0 }
+				every_owned_state = {
+					limit = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+					add_to_variable = { ROOT.devastation_ratio_new_population = THIS.state_population_k }
+				}
+				divide_variable = { devastation_ratio_new_population = 4 }
+				add_to_variable = { devastation_ratio_new_population = max_manpower_k }
+				set_variable = { devastation_ratio_new = devastation_ratio_new_factory }
+				divide_variable = { devastation_ratio_new = devastation_ratio_new_population }
+				round_variable = devastation_ratio_new
             }
             every_state = {
                 set_variable = { devastation_degree = 3 }
@@ -379,6 +397,33 @@ on_actions = {
 				remove_ideas = periphal_anarchy
 				add_ideas = urban_collapse
 			}
+		}
+	}
+	on_monthly = {
+		effect = {
+            every_country = {
+				clear_variable = devastation_ratio_new
+				clear_variable = devastation_ratio_new_factory
+				clear_variable = devastation_ratio_new_population
+                set_variable = { devastation_ratio_new_factory = num_of_civilian_factories }
+                multiply_variable = { devastation_ratio_new_factory = 1.25 }
+                add_to_variable = { devastation_ratio_new_factory = num_of_military_factories }
+                add_to_variable = { devastation_ratio_new_factory = num_of_naval_factories }
+				set_variable = { ROOT.devastation_ratio_new_population = 0 }
+				every_owned_state = {
+					limit = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+					add_to_variable = { ROOT.devastation_ratio_new_population = THIS.state_population_k }
+				}
+				divide_variable = { devastation_ratio_new_population = 4 }
+				add_to_variable = { devastation_ratio_new_population = max_manpower_k }
+				set_variable = { devastation_ratio_new = devastation_ratio_new_factory }
+				divide_variable = { devastation_ratio_new = devastation_ratio_new_population }
+				round_variable = devastation_ratio_new
+            }
 		}
 	}
 }
