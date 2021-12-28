@@ -2,6 +2,110 @@ guiTypes = { ######## THE DESCRIPTION AND THE TITLE ARE IN THE LOCALISATION FILE
 ############### THIS FILE DEFINES THE SHAPE, FORM, AND TEXT OF THE GUI FOR THE SUPEREVENT
 
 	containerWindowType = {
+		name = "superevent_peace_window"
+
+		# This is so that when you drag around the super window, the next time a super is triggered, it will always spawn in the center
+		size = { width = 708 height = 592 }
+		position = { x=0 y=-220 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		show_sound = wonder_superevent
+
+		iconType = {
+			name ="peace_event"
+			spriteType = "GFX_clinical_immortality_event" #PLACEHOLDER CHANGE LATER
+			position = { x= -350 y = -20 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+		iconType = {
+			name ="supereventframe"
+			spriteType = "GFX_superevent_frame"
+			position = { x= -350 y = -20 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+		iconType = {
+			name ="globe_spin_superevent"
+			spriteType = "GFX_globe_spin_superevent"
+			position = { x= -45 y = 5 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "text"
+			position = {  x= -250 y = 430 }
+			font = "Beyond"
+			text = "PEACE EVENT" ######## HERE GOES THE DESCRIPTION ###########
+			maxWidth = 900
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = center
+		}
+		instantTextBoxType = {
+			name = "text_2"
+			position = {  x= -500 y = 480 }
+			font = "Beyondsmall"
+			text = "Winner: [winning_country.GetName] | Loser: [losing_country.GetName]" ######## HERE GOES THE DESCRIPTION ###########
+			maxWidth = 900
+			maxHeight = 173
+			fixedsize = no
+			format = center
+			Orientation = center
+		}
+		instantTextBoxType = {
+			name = "text_3"
+			position = {  x= -335 y = 75 }
+			font = "Arialsmallest"
+			text = "Not by speeches and votes of the majority are the great questions of the time decided - but by iron and blood." ######## HERE GOES THE DESCRIPTION ###########
+			maxWidth = 200
+			maxHeight = 300
+			fixedsize = yes
+			format = left
+			Orientation = center
+		}
+		#iconType = {
+		#	name ="supereventframe_animation"
+		#	spriteType = "GFX_superevent_frame_animation"
+		#	position = { x= -350 y = -20 }
+		#	Orientation = center
+		#	alwaystransparent = yes
+		#}
+		iconType = {
+			name ="supereventframe_animation_1"
+			spriteType = "GFX_superevent_frame_animation_1"
+			position = { x= -345 y = -15 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+		iconType = {
+			name ="supereventframe_animation_2"
+			spriteType = "GFX_superevent_frame_animation_2"
+			position = { x= -113 y = -15 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+		iconType = {
+			name ="supereventframe_animation_3"
+			spriteType = "GFX_superevent_frame_animation_3"
+			position = { x= 120 y = -15 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "Option_Peace"
+			text = "AND SO IT IS"  ############## OPTION
+			shortcut = "ESCAPE"
+			position = { x = -100 y = 525 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "Arial"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
 		name = "superevent_clinical_immortality"
 		size = { width = 708 height = 592 }
 		position = { x=0 y=-220 }
