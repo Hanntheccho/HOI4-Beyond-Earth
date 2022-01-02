@@ -6,48 +6,40 @@ guiTypes = { ######## THE DESCRIPTION AND THE TITLE ARE IN THE LOCALISATION FILE
 		name = "superevent_peace_window"
 
 		# This is so that when you drag around the super window, the next time a super is triggered, it will always spawn in the center
-		size = { width = 708 height = 592 }
-		position = { x=0 y=-220 }
+		size = { width = 708 height = 342 }
+		position = { x=0 y=0 }
 		Orientation = center
 		Origo = center
 		clipping = no
 		show_sound = wonder_superevent
 
+		background = {
+			name = "Background"
+			spriteType ="GFX_peace_superevent_bg"
+		} 
+
 		iconType = {
-			name ="peace_event"
-			spriteType = "GFX_clinical_immortality_event" #PLACEHOLDER CHANGE LATER
-			position = { x= -350 y = -20 }
+			name ="flatline_peace_event"
+			spriteType = "GFX_flatline_peace_event"
+			position = { x= -349 y = -170 }
 			Orientation = center
 			alwaystransparent = yes
 		}
-		iconType = {
-			name ="supereventframe"
-			spriteType = "GFX_superevent_frame"
-			position = { x= -350 y = -20 }
-			Orientation = center
-			alwaystransparent = yes
-		}
-		iconType = {
-			name ="globe_spin_superevent"
-			spriteType = "GFX_globe_spin_superevent"
-			position = { x= -45 y = 5 }
-			Orientation = center
-			alwaystransparent = yes
-		}
+
 		instantTextBoxType = {
 			name = "text"
-			position = {  x= -250 y = 430 }
+			position = {  x= -500 y = -155 }
 			font = "Beyond"
-			text = "PEACE EVENT" ######## HERE GOES THE DESCRIPTION ###########
+			text = "A WAR HAS ENDED" ######## HERE GOES THE DESCRIPTION ###########
 			maxWidth = 900
 			maxHeight = 173
 			fixedsize = yes
-			format = left
+			format = center
 			Orientation = center
 		}
 		instantTextBoxType = {
 			name = "text_2"
-			position = {  x= -500 y = 480 }
+			position = {  x= -430 y = 55 }
 			font = "Beyondsmall"
 			text = "Winner: [winning_country.GetName] | Loser: [losing_country.GetName]" ######## HERE GOES THE DESCRIPTION ###########
 			maxWidth = 900
@@ -58,10 +50,10 @@ guiTypes = { ######## THE DESCRIPTION AND THE TITLE ARE IN THE LOCALISATION FILE
 		}
 		instantTextBoxType = {
 			name = "text_3"
-			position = {  x= -335 y = 75 }
+			position = {  x= -335 y = -80 }
 			font = "Arialsmallest"
 			text = "Not by speeches and votes of the majority are the great questions of the time decided - but by iron and blood." ######## HERE GOES THE DESCRIPTION ###########
-			maxWidth = 200
+			maxWidth = 500
 			maxHeight = 300
 			fixedsize = yes
 			format = left
@@ -74,32 +66,11 @@ guiTypes = { ######## THE DESCRIPTION AND THE TITLE ARE IN THE LOCALISATION FILE
 		#	Orientation = center
 		#	alwaystransparent = yes
 		#}
-		iconType = {
-			name ="supereventframe_animation_1"
-			spriteType = "GFX_superevent_frame_animation_1"
-			position = { x= -345 y = -15 }
-			Orientation = center
-			alwaystransparent = yes
-		}
-		iconType = {
-			name ="supereventframe_animation_2"
-			spriteType = "GFX_superevent_frame_animation_2"
-			position = { x= -113 y = -15 }
-			Orientation = center
-			alwaystransparent = yes
-		}
-		iconType = {
-			name ="supereventframe_animation_3"
-			spriteType = "GFX_superevent_frame_animation_3"
-			position = { x= 120 y = -15 }
-			Orientation = center
-			alwaystransparent = yes
-		}
 		buttonType = {
 			name = "Option_Peace"
-			text = "AND SO IT IS"  ############## OPTION
+			text = "CLOSE"  ############## OPTION
 			shortcut = "ESCAPE"
-			position = { x = -100 y = 525 }
+			position = { x = -100 y = 120 }
 			quadTextureSprite ="GFX_button_221x34"
 			buttonFont = "Arial"
 			Orientation = center
