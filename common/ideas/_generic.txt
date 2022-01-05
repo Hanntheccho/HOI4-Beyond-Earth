@@ -271,9 +271,16 @@ industrial_concern = {
             industry = 0.15
         }
 
+        on_add = {
+            add_to_variable = {free_factory_gain = 0.15}
+        }
+
+        on_remove = {
+            add_to_variable = {free_factory_gain = -0.15}
+        }
+
         modifier = {
             custom_modifier_tooltip = free_factory_tooltip
-            free_factory_gain = 0.15
         }
     }
 
@@ -310,10 +317,17 @@ industrial_concern = {
         cost = 150
         removal_cost = 10
 
+        on_add = {
+            add_to_variable = {industrial_power_gain = 0.3}
+        }
+
+        on_remove = {
+            add_to_variable = {industrial_power_gain = -0.3}
+        }
+
         modifier = {
             local_resources_factor = 0.15
             custom_modifier_tooltip = industrial_power_tooltip2
-            industrial_power_gain = 0.3
         }
     }
 
@@ -331,11 +345,18 @@ industrial_concern = {
         cost = 150
         removal_cost = 10
 
+        on_add = {
+            add_to_variable = {industrial_power_gain = 0.1}
+        }
+
+        on_remove = {
+            add_to_variable = {industrial_power_gain = -0.1}
+        }
+
         modifier = {
             local_resources_factor = 0.15
             production_speed_synthetic_refinery_factor = 0.4
             custom_modifier_tooltip = industrial_power_tooltip2
-            industrial_power_gain = 0.1
         }
     }
 }
@@ -402,6 +423,14 @@ theorist = {
             always = yes
         }
 
+        on_add = {
+            set_country_flag = holo_concern
+        }
+
+        on_remove = {
+            clr_country_flag = holo_concern
+        }
+
         cost = 150
         removal_cost = 10
 
@@ -419,6 +448,14 @@ theorist = {
 
         allowed = {
             always = yes
+        }
+
+        on_add = {
+            set_country_flag = ai_admin
+        }
+
+        on_remove = {
+            clr_country_flag = ai_admin
         }
 
         cost = 150
@@ -440,6 +477,14 @@ theorist = {
             always = yes
         }
 
+        on_add = {
+            set_country_flag = ai_land
+        }
+
+        on_remove = {
+            clr_country_flag = ai_land
+        }
+
         cost = 150
         removal_cost = 10
 
@@ -457,6 +502,14 @@ theorist = {
 
         allowed = {
             always = yes
+        }
+
+        on_add = {
+            set_country_flag = ai_air
+        }
+
+        on_remove = {
+            clr_country_flag = ai_air
         }
         
         cost = 150
@@ -477,6 +530,14 @@ theorist = {
         allowed = {
             always = yes
         }
+
+        on_add = {
+            set_country_flag = ai_naval
+        }
+
+        on_remove = {
+            clr_country_flag = ai_naval
+        }
         
         cost = 150
         removal_cost = 10
@@ -496,15 +557,23 @@ theorist = {
         allowed = {
             always = yes
         }
+
+        on_add = {
+            set_country_flag = ai_orbital
+            add_to_variable = {spaceship_contribution_variable = 0.1}
+        }
+
+        on_remove = {
+            clr_country_flag = ai_orbital
+            add_to_variable = {spaceship_contribution_variable = -0.1}
+        }
         
         cost = 150
         removal_cost = 10
 
         modifier = {
-            production_speed_nuclear_reactor_factor = 0.05
+            production_speed_sattelite_uplink_factor = 0.05
             custom_modifier_tooltip = spaceship_contribution_tooltip
-            #ADD LATER#
-            #spaceship_contribution_variable = 0.1#
         }
     }
 
@@ -519,6 +588,14 @@ theorist = {
 
         allowed = {
             always = yes
+        }
+
+        on_add = {
+            set_country_flag = uni_eurasia
+        }
+
+        on_remove = {
+            clr_country_flag = uni_eurasia
         }
 
         cost = 150

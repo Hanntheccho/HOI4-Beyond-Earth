@@ -18,14 +18,14 @@ scripted_gui = {
 		}
 
 		effects = {
-			Option_click = {
+			Option_Clinical_Immortality_click = {
 				#clr_country_flag = superevent_start
 				clr_country_flag = clinical_immortality_start ### this disables the country flag #that fires the superevent (so the superevent actually goes away)
 			}
 		}
 	}
 
-	superevent_frame_close = { ### VERY IMPORTANT MAKE SURE THIS USES THE SAME #NAME AS IN THE TNO_SG_BigEvent_custom.gui FILE OR YOU'RE GONNA GET A CRASH
+	superevent_frame_close_2 = { ### VERY IMPORTANT MAKE SURE THIS USES THE SAME #NAME AS IN THE TNO_SG_BigEvent_custom.gui FILE OR YOU'RE GONNA GET A CRASH
 		context_type = player_context
 		window_name = "superevent_final_war"
 
@@ -34,9 +34,25 @@ scripted_gui = {
 		}
 
 		effects = {
-			Option_click = {
+			Option_Final_War_click = {
 				#clr_country_flag = superevent_start
 				clr_country_flag = final_war_start ### this disables the country flag #that fires the superevent (so the superevent actually goes away)
+			}
+		}
+	}
+
+	superevent_frame_close_3 = { ### VERY IMPORTANT MAKE SURE THIS USES THE SAME #NAME AS IN THE TNO_SG_BigEvent_custom.gui FILE OR YOU'RE GONNA GET A CRASH
+		context_type = player_context
+		window_name = "superevent_unity_launch"
+
+		visible = {
+			has_country_flag = unity_launchs_superevent
+		}
+
+		effects = {
+			Option_Final_War_click = {
+				#clr_country_flag = superevent_start
+				clr_country_flag = unity_launchs_superevent ### this disables the country flag #that fires the superevent (so the superevent actually goes away)
 			}
 		}
 	}

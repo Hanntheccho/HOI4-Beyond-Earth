@@ -1053,27 +1053,45 @@ operation_coup_government = { ### 7 1/70
 			}
 			if = {
 				limit = {
-					PREV.ROOT = { has_government = fascism }
+					PREV.ROOT = { has_government = harmony }
 				}
-				fascism > 0.2
+				harmony > 0.2
 			}
 			if = {
 				limit = {
-					PREV.ROOT = { has_government = communism }
+					PREV.ROOT = { has_government = supremacy }
 				}
-				communism > 0.2
+				supremacy > 0.2
 			}
 			if = {
 				limit = {
-					PREV.ROOT = { has_government = democratic }
+					PREV.ROOT = { has_government = purity }
 				}
-				democratic > 0.2
+				purity > 0.2
 			}
 			if = {
 				limit = {
-					PREV.ROOT = { has_government = neutrality }
+					PREV.ROOT = { has_government = neutral }
 				}
-				neutrality > 0.2
+				neutral > 0.2
+			}
+			if = {
+				limit = {
+					PREV.ROOT = { has_government = divinity }
+				}
+				divinity > 0.2
+			}
+			if = {
+				limit = {
+					PREV.ROOT = { has_government = voracity }
+				}
+				voracity > 0.2
+			}
+			if = {
+				limit = {
+					PREV.ROOT = { has_government = mastery }
+				}
+				mastery > 0.2
 			}
 				#set_temp_variable = { coup_ideology@ROOT = PREV.ROOT.current_party_ideology_group }
 				#set_temp_variable = { coup_ideology_popularity@ROOT = party_popularity@ROOT.coup_ideology }
@@ -2409,10 +2427,10 @@ operation_steal_tech_army = { ### 16 3/55
 	outcome_execute = {
 		ROOT = {
 			steal_random_tech_bonus = {
-				folder = armour_folder
-				folder = artillery_folder
-				folder = infantry_folder
-				folder = support_folder
+				folder = be_armor_folder
+				folder = be_artillery_folder
+				folder = be_infantry_folder
+				folder = be_support_folder
 				bonus = 3.0
 				dynamic = yes
 				instant = yes
@@ -2431,10 +2449,10 @@ operation_steal_tech_army = { ### 16 3/55
 			33 = {
 				ROOT = {
 					steal_random_tech_bonus = {
-						folder = armour_folder
-						folder = artillery_folder
-						folder = infantry_folder
-						folder = support_folder
+						folder = be_armor_folder
+						folder = be_artillery_folder
+						folder = be_infantry_folder
+						folder = be_support_folder
 
 						bonus = 3.0
 						ahead_reduction = 2
@@ -2449,10 +2467,10 @@ operation_steal_tech_army = { ### 16 3/55
 			67 = {
 				ROOT = {
 					steal_random_tech_bonus = {
-						folder = armour_folder
-						folder = artillery_folder
-						folder = infantry_folder
-						folder = support_folder
+						folder = be_armor_folder
+						folder = be_artillery_folder
+						folder = be_infantry_folder
+						folder = be_support_folder
 
 						bonus = 3.0
 						dynamic = yes
@@ -2470,10 +2488,10 @@ operation_steal_tech_army = { ### 16 3/55
 	outcome_potential = {
 		ROOT = {
 			steal_random_tech_bonus = {
-				folder = armour_folder
-				folder = artillery_folder
-				folder = infantry_folder
-				folder = support_folder
+				folder = be_armor_folder
+				folder = be_artillery_folder
+				folder = be_infantry_folder
+				folder = be_support_folder
 				bonus = 3.0
 				dynamic = yes
 				instant = yes
@@ -2582,7 +2600,7 @@ operation_steal_tech_navy = { ### 17 3/55
   			limit = { has_dlc = "Man the Guns"} 
   			ROOT = {
 				steal_random_tech_bonus = {
-					folder = mtgnavalfolder
+					folder = be_mtg_naval_folder
 
 					bonus = 3.0
 					dynamic = yes
@@ -2600,7 +2618,7 @@ operation_steal_tech_navy = { ### 17 3/55
   		else = {
 	  		ROOT = {
 				steal_random_tech_bonus = {
-					folder = naval_folder
+					folder = be_naval_folder
 
 					bonus = 3.0
 					dynamic = yes
@@ -2626,7 +2644,7 @@ operation_steal_tech_navy = { ### 17 3/55
 
   					ROOT = {
 						steal_random_tech_bonus = {
-							folder = mtgnavalfolder
+							folder = be_mtg_naval_folder
 
 							bonus = 3.0
 							ahead_reduction = 2
@@ -2641,7 +2659,7 @@ operation_steal_tech_navy = { ### 17 3/55
   				else = {
 					ROOT = {
 						steal_random_tech_bonus = {
-							folder = naval_folder
+							folder = be_naval_folder
 
 							bonus = 3.0
 							ahead_reduction = 2
@@ -2660,7 +2678,7 @@ operation_steal_tech_navy = { ### 17 3/55
 
 					ROOT = {
 						steal_random_tech_bonus = {
-							folder = mtgnavalfolder
+							folder = be_mtg_naval_folder
 
 							bonus = 3.0
 							ahead_reduction = 1
@@ -2675,7 +2693,7 @@ operation_steal_tech_navy = { ### 17 3/55
 				else = {
 					ROOT = {
 						steal_random_tech_bonus = {
-							folder = naval_folder
+							folder = be_naval_folder
 
 							bonus = 3.0
 							ahead_reduction = 1
@@ -2693,8 +2711,8 @@ operation_steal_tech_navy = { ### 17 3/55
 	outcome_potential = {
 		ROOT = {
 			steal_random_tech_bonus = {
-				folder = naval_folder
-				folder = mtgnavalfolder
+				folder = be_naval_folder
+				folder = be_mtg_naval_folder
 
 				bonus = 3.0
 				dynamic = yes
@@ -2801,7 +2819,7 @@ operation_steal_tech_airforce = { ### 18 3/55
 	outcome_execute = {
 		ROOT = {
 			steal_random_tech_bonus = {
-				folder = air_techs_folder
+				folder = be_air_tech_folder
 				bonus = 3.0
 				dynamic = yes
 				instant = yes
@@ -2820,7 +2838,7 @@ operation_steal_tech_airforce = { ### 18 3/55
 			33 = {
 				ROOT = {
 					steal_random_tech_bonus = {
-						folder = air_techs_folder
+						folder = be_air_tech_folder
 						bonus = 3.0
 						ahead_reduction = 2
 						dynamic = yes
@@ -2834,7 +2852,7 @@ operation_steal_tech_airforce = { ### 18 3/55
 			67 = {
 				ROOT = {
 					steal_random_tech_bonus = {
-						folder = air_techs_folder
+						folder = be_air_tech_folder
 						bonus = 3.0
 						ahead_reduction = 1
 						dynamic = yes
@@ -2851,7 +2869,7 @@ operation_steal_tech_airforce = { ### 18 3/55
 	outcome_potential = {
 		ROOT = {
 			steal_random_tech_bonus = {
-				folder = air_techs_folder
+				folder = be_air_tech_folder
 				bonus = 3.0
 				dynamic = yes
 				instant = yes

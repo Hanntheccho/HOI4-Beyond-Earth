@@ -6,4 +6,70 @@ on_actions = {
 				}
             }
         }
+
+    on_capitulation = {
+        effect = {
+           log = "-----CAPITULATION EVENT TRIGGERED-----"
+           set_global_flag = show_capitulation_super_event
+			FROM = {
+				save_global_event_target_as = winning_country
+			}
+			ROOT = {
+				save_global_event_target_as = losing_country
+			}
+            log = "[GetDateText]: Winner: [winning_country.GetName] | Loser: [losing_country.GetName]"
+
+            #Makes the event show if there are multiple winners/losers
+            if = {
+				limit = {
+					event_target:losing_country = {
+						any_allied_country = {
+							has_war_together_with = event_target:losing_country
+						}
+					}
+				}
+				set_global_flag = losing_country_multiple
+			}
+
+			if = {
+				limit = {
+					event_target:winning_country = {
+						any_allied_country = {
+							has_war_together_with = event_target:winning_country
+						}
+					}
+				}
+				set_global_flag = winning_country_multiple
+			}
+
+            if = {
+				limit = {
+					OR = {
+						ROOT = { is_in_faction = no }
+						ROOT = {
+							all_allied_country = {
+								has_capitulated = yes
+							}
+						}
+					}
+				}
+				log = "[GetDateText]: War has been won!"
+				set_global_flag = war_won
+            }
+        }
     }
+
+    on_nuke_drop = {
+        effect = {
+            log = "---------ORBITAL BOMBARDMENT---------"
+            set_global_flag = first_rod_dropped
+            FROM = {
+                save_global_event_target_as = shafted_state
+            }
+            ROOT = {
+                save_global_event_target_as = shafter
+            }
+            log = "[GetDateText]: [shafter.GetName] has dropped a rod and shafted [shafted_state.Owner.GetName]"
+        }
+    }
+}

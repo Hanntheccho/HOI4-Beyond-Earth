@@ -70,6 +70,8 @@ scripted_gui = {
                 set_temp_variable = { temp2 = num_equipment@clinical_immortality_eq }
                 multiply_temp_variable = {temp2 = -1}
 
+                set_country_flag = clinical_conversion
+
                 add_equipment_to_stockpile = {
                     type = clinical_immortality_eq
                     amount = temp2
@@ -102,6 +104,8 @@ scripted_gui = {
                 set_temp_variable = { temp2 = num_equipment@markov_eclipse_eq }
                 multiply_temp_variable = {temp2 = -1}
 
+                set_country_flag = markov_conversion
+
                 add_equipment_to_stockpile = {
                     type = markov_eclipse_eq
                     amount = temp2
@@ -132,6 +136,8 @@ scripted_gui = {
 
                 set_temp_variable = { temp2 = num_equipment@stellar_codex_eq }
                 multiply_temp_variable = {temp2 = -1}
+
+                set_country_flag = stellar_conversion
 
                 add_equipment_to_stockpile = {
                     type = stellar_codex_eq
@@ -164,7 +170,7 @@ scripted_gui = {
 
                 set_temp_variable = { temp2 = num_equipment@machine_assisted_free_will_eq }
                 multiply_temp_variable = {temp2 = -1}
-
+                set_country_flag = free_will_conversion
                 add_equipment_to_stockpile = {
                     type = machine_assisted_free_will_eq
                     amount = temp2
@@ -197,7 +203,7 @@ scripted_gui = {
 
                 set_temp_variable = { temp2 = num_equipment@the_virtual_world_eq }
                 multiply_temp_variable = {temp2 = -1}
-
+                set_country_flag = virtual_world_conversion
                 add_equipment_to_stockpile = {
                     type = the_virtual_world_eq
                     amount = temp2
@@ -229,7 +235,7 @@ scripted_gui = {
 
                 set_temp_variable = { temp2 = num_equipment@the_weather_paradigm_eq }
                 multiply_temp_variable = {temp2 = -1}
-
+                set_country_flag = weather_conversion
                 add_equipment_to_stockpile = {
                     type = the_weather_paradigm_eq
                     amount = temp2
@@ -259,7 +265,7 @@ scripted_gui = {
 
                 set_temp_variable = { temp2 = num_equipment@benthic_auger_eq }
                 multiply_temp_variable = {temp2 = -1}
-
+                set_country_flag = benthic_conversion
                 add_equipment_to_stockpile = {
                     type = benthic_auger_eq
                     amount = temp2
@@ -291,7 +297,7 @@ scripted_gui = {
 
                 set_temp_variable = { temp2 = num_equipment@the_neural_amplifier_eq }
                 multiply_temp_variable = {temp2 = -1}
-
+                set_country_flag = neural_conversion
                 add_equipment_to_stockpile = {
                     type = the_neural_amplifier_eq
                     amount = temp2
@@ -323,7 +329,7 @@ scripted_gui = {
 
                 set_temp_variable = { temp2 = num_equipment@the_cloudbase_academy_eq }
                 multiply_temp_variable = {temp2 = -1}
-
+                set_country_flag = cloudbase_conversion
                 add_equipment_to_stockpile = {
                     type = the_cloudbase_academy_eq
                     amount = temp2
@@ -357,7 +363,7 @@ scripted_gui = {
                 set_temp_variable = { temp2 = num_equipment@the_universal_translator_eq }
                 multiply_temp_variable = {temp2 = -1}
 
-                
+                set_country_flag = universal_conversion
 
                 add_equipment_to_stockpile = {
                     type = the_universal_translator_eq
@@ -368,6 +374,162 @@ scripted_gui = {
         }
 
         triggers = {
+            international_module_1_button_visible = {
+                NOT = {
+                    OR = {
+                        has_global_flag = module_1_under_construction_flag
+                        has_global_flag = module_1_completed_flag
+                    }
+                }
+            }
+            international_module_1_button_green_visible = {
+                has_global_flag = module_1_under_construction_flag
+            }
+            international_module_1_button_purple_visible = {
+                has_global_flag = module_1_completed_flag
+            }
+            international_module_2_visible = {
+                NOT = {
+                    OR = {
+                        has_global_flag = module_2_under_construction_flag
+                        has_global_flag = module_2_completed_flag
+                    }
+                }
+            }
+            international_module_1_visible = {
+                NOT = {
+                    OR = {
+                        has_global_flag = module_1_under_construction_flag
+                        has_global_flag = module_1_completed_flag
+                    }
+                }
+            }
+            international_module_1_green_visible = {
+                has_global_flag = module_1_under_construction_flag
+            }
+            international_module_1_purple_visible = {
+                has_global_flag = module_1_completed_flag
+            }
+            international_module_2_visible = {
+                NOT = {
+                    OR = {
+                        has_global_flag = module_2_under_construction_flag
+                        has_global_flag = module_2_completed_flag
+                    }
+                }
+            }
+            international_module_2_green_visible = {
+                has_global_flag = module_2_under_construction_flag
+            }
+            international_module_2_purple_visible = {
+                has_global_flag = module_2_completed_flag
+            }
+            international_module_3_visible = {
+                NOT = {
+                    OR = {
+                        has_global_flag = module_3_under_construction_flag
+                        has_global_flag = module_3_completed_flag
+                    }
+                }
+            }
+            international_module_2_button_visible = {
+                NOT = {
+                    OR = {
+                        has_global_flag = module_2_under_construction_flag
+                        has_global_flag = module_2_completed_flag
+                    }
+                }
+            }
+            international_module_2_button_green_visible = {
+                has_global_flag = module_2_under_construction_flag
+            }
+            international_module_2_button_purple_visible = {
+                has_global_flag = module_2_completed_flag
+            }
+            international_module_3_visible = {
+                NOT = {
+                    OR = {
+                        has_global_flag = module_3_under_construction_flag
+                        has_global_flag = module_3_completed_flag
+                    }
+                }
+            }
+            international_module_3_green_visible = {
+                has_global_flag = module_3_under_construction_flag
+            }
+            international_module_3_purple_visible = {
+                has_global_flag = module_3_completed_flag
+            }
+            international_module_3_button_visible = {
+                NOT = {
+                    OR = {
+                        has_global_flag = module_3_under_construction_flag
+                        has_global_flag = module_3_completed_flag
+                    }
+                }
+            }
+            international_module_3_button_green_visible = {
+                has_global_flag = module_3_under_construction_flag
+            }
+            international_module_3_button_purple_visible = {
+                has_global_flag = module_3_completed_flag
+            }
+            international_module_4_visible = {
+                NOT = {
+                    OR = {
+                        has_global_flag = module_4_under_construction_flag
+                        has_global_flag = module_4_completed_flag
+                    }
+                }
+            }
+            international_module_4_green_visible = {
+                has_global_flag = module_4_under_construction_flag
+            }
+            international_module_4_purple_visible = {
+                has_global_flag = module_4_completed_flag
+            }
+            international_module_4_button_visible = {
+                NOT = {
+                    OR = {
+                        has_global_flag = module_4_under_construction_flag
+                        has_global_flag = module_4_completed_flag
+                    }
+                }
+            }
+            international_module_4_button_green_visible = {
+                has_global_flag = module_4_under_construction_flag
+            }
+            international_module_4_button_purple_visible = {
+                has_global_flag = module_4_completed_flag
+            }
+            international_module_5_visible = {
+                NOT = {
+                    OR = {
+                        has_global_flag = module_5_under_construction_flag
+                        has_global_flag = module_5_completed_flag
+                    }
+                }
+            }
+            international_module_5_green_visible = {
+                has_global_flag = module_5_under_construction_flag
+            }
+            international_module_5_purple_visible = {
+                has_global_flag = module_5_completed_flag
+            }
+            international_module_5_button_visible = {
+                NOT = {
+                    OR = {
+                        has_global_flag = module_5_under_construction_flag
+                        has_global_flag = module_5_completed_flag
+                    }
+                }
+            }
+            international_module_5_button_green_visible = {
+                has_global_flag = module_5_under_construction_flag
+            }
+            international_module_5_button_purple_visible = {
+                has_global_flag = module_5_completed_flag
+            }
             international_unify_spaceship_efforts_click_enabled = {
                 AND = {
                     is_puppet = no
@@ -439,6 +601,9 @@ scripted_gui = {
             }
             international_wonder_clinical_immortality_conversion_click_enabled = {
                 AND = {
+                    NOT = {
+                has_country_flag = clinical_conversion
+                    }
                 any_country = {
                     has_idea = clinical_immortality_idea
                 }
@@ -460,15 +625,18 @@ scripted_gui = {
                 has_tech = markov_eclipse
             }
             international_wonder_markov_eclipse_conversion_click_enabled = {
-                #AND = {
-                #any_country = {
-                #    has_idea = markov_eclipse_idea
-                #}
+                AND = {
+                    NOT = {
+                has_country_flag = markov_conversion   
+                    }
+                any_country = {
+                    has_idea = markov_eclipse_idea
+                }
                 has_equipment = {
                     markov_eclipse_eq > 10
                 }
                 has_tech = markov_eclipse
-                #}
+                }
             }
             international_wonder_stellar_codex_click_enabled = {
                 NOT = {
@@ -483,6 +651,9 @@ scripted_gui = {
             }
             international_wonder_stellar_codex_conversion_click_enabled = {
                 AND = {
+                    NOT = {
+                has_country_flag = stellar_conversion
+                    }
                 any_country = {
                     has_idea = stellar_codex_idea
                 }
@@ -505,6 +676,9 @@ scripted_gui = {
             }
             international_wonder_machine_assisted_free_will_conversion_click_enabled = {
                 AND = {
+                    NOT = {
+                has_country_flag = free_will_conversion
+                    }
                 any_country = {
                     has_idea = machine_assisted_free_will_idea
                 }
@@ -527,6 +701,9 @@ scripted_gui = {
             }
             international_wonder_virtual_world_conversion_click_enabled = {
                 AND = {
+                    NOT ={
+                has_country_flag = virtual_world_conversion
+                    }
                 any_country = {
                     has_idea = virtual_world_idea
                 }
@@ -549,6 +726,9 @@ scripted_gui = {
             }
             international_wonder_weather_paradigm_conversion_click_enabled = {
                 AND = {
+                    NOT = {
+                has_country_flag = weather_conversion
+                    }
                 any_country = {
                     has_idea = weather_paradigm_idea
                 }
@@ -571,6 +751,9 @@ scripted_gui = {
             }
             international_wonder_benthic_auger_conversion_click_enabled = {
                 AND = {
+                    NOT = {
+                        has_country_flag = benthic_conversion
+                    }
                 any_country = {
                     has_idea = benthic_auger_idea
                 }
@@ -593,6 +776,9 @@ scripted_gui = {
             }
             international_wonder_neural_amplifier_conversion_click_enabled = {
                 AND = {
+                    NOT = {
+                has_country_flag = neural_conversion
+                    }
                 any_country = {
                     has_idea = neural_amplifier_idea
                 }
@@ -616,6 +802,9 @@ scripted_gui = {
             }
             international_wonder_cloudbase_academy_conversion_click_enabled = {
                 AND = {
+                    NOT = {
+                has_country_flag = cloudbase_conversion
+                    }
                 any_country = {
                     has_idea = cloudbase_academy_idea
                 }
@@ -638,6 +827,9 @@ scripted_gui = {
             }
             international_wonder_universal_translator_conversion_click_enabled = {
                 AND = {
+                    NOT = {
+                    has_country_flag = universal_conversion
+                    }
                     any_country = {
                         has_idea = universal_translator_idea
                     }

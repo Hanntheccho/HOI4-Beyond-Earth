@@ -1,5 +1,103 @@
 guiTypes = { ######## THE DESCRIPTION AND THE TITLE ARE IN THE LOCALISATION FILE ##########
 ############### THIS FILE DEFINES THE SHAPE, FORM, AND TEXT OF THE GUI FOR THE SUPEREVENT
+	##ADD ANOTHER ONE FOR THE ORBITAL BOMBARDMENT AS IT IS A BIG MOMENT
+
+	containerWindowType = {
+		name = "superevent_peace_window"
+
+		# This is so that when you drag around the super window, the next time a super is triggered, it will always spawn in the center
+		size = { width = 708 height = 342 }
+		position = { x=0 y=0 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		show_sound = flatline_sound
+
+		background = {
+			name = "Background"
+			spriteType ="GFX_peace_superevent_bg"
+		}
+
+		#iconType = {
+		#	name ="flatline_peace_event"
+		#	spriteType = "GFX_flatline_peace_event"
+		#	position = { x= -349 y = -170 }
+		#	Orientation = center
+		#	alwaystransparent = yes
+		#}
+
+		iconType = {
+			name ="flatline_peace_event_1"
+			spriteType = "GFX_flatline_peace_event_1"
+			position = { x= -349 y = -170 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+		iconType = {
+			name ="flatline_peace_event_2"
+			spriteType = "GFX_flatline_peace_event_2"
+			position = { x= -117 y = -170 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+		iconType = {
+			name ="flatline_peace_event_3"
+			spriteType = "GFX_flatline_peace_event_3"
+			position = { x= 115 y = -170 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "title"
+			position = {  x= -350 y = -155 }
+			font = "Beyondsmall"
+			text = "[BEPeaceEventGetTitle]" ######## HERE GOES THE DESCRIPTION ###########
+			maxWidth = 708
+			maxHeight = 173
+			fixedsize = no
+			format = center
+			Orientation = center
+		}
+		instantTextBoxType = {
+			name = "quote"
+			position = {  x= -430 y = 55 }
+			font = "Arialsmallest"
+			text = "[BEPeaceEventGetQuote]" ######## HERE GOES THE DESCRIPTION ###########
+			maxWidth = 900
+			maxHeight = 173
+			fixedsize = no
+			format = center
+			Orientation = center
+		}
+		instantTextBoxType = {
+			name = "misc"
+			position = {  x= -335 y = -80 }
+			font = "Arialsmallest"
+			text = "" ######## HERE GOES THE DESCRIPTION ###########
+			maxWidth = 500
+			maxHeight = 300
+			fixedsize = yes
+			format = left
+			Orientation = center
+		}
+		#iconType = {
+		#	name ="supereventframe_animation"
+		#	spriteType = "GFX_superevent_frame_animation"
+		#	position = { x= -350 y = -20 }
+		#	Orientation = center
+		#	alwaystransparent = yes
+		#}
+		buttonType = {
+			name = "Option_Peace"
+			text = "CLOSE"  ############## OPTION
+			shortcut = "ESCAPE"
+			position = { x = -100 y = 120 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "Arial"
+			Orientation = center
+		}
+	}
 
 	containerWindowType = {
 		name = "superevent_clinical_immortality"
@@ -93,7 +191,7 @@ guiTypes = { ######## THE DESCRIPTION AND THE TITLE ARE IN THE LOCALISATION FILE
 			alwaystransparent = yes
 		}
 		buttonType = {
-			name = "Option"
+			name = "Option_Clinical_Immortality"
 			text = "BE_CLINICAL_IMMORTALITY_A"  ############## OPTION
 			shortcut = "ESCAPE"
 			position = { x = -100 y = 525 }
@@ -111,7 +209,7 @@ guiTypes = { ######## THE DESCRIPTION AND THE TITLE ARE IN THE LOCALISATION FILE
 		Origo = center
 		clipping = no
 		#show_sound = final_war_superevent
-		show_sound = wonder_superevent
+		#show_sound = final_war_superevent
 
 		iconType = {
 			name ="final_war_event"
@@ -122,7 +220,7 @@ guiTypes = { ######## THE DESCRIPTION AND THE TITLE ARE IN THE LOCALISATION FILE
 		}
 		iconType = {
 			name ="supereventframe"
-			spriteType = "GFX_superevent_frame"
+			spriteType = "GFX_superevent_frame_2"
 			position = { x= -350 y = -20 }
 			Orientation = center
 			alwaystransparent = yes
@@ -158,10 +256,10 @@ guiTypes = { ######## THE DESCRIPTION AND THE TITLE ARE IN THE LOCALISATION FILE
 		}
 		instantTextBoxType = {
 			name = "text_3"
-			position = {  x= -335 y = 75 }
+			position = {  x= -335 y = 204 }
 			font = "Arialsmallest"
 			text = "BE_FINAL_WAR_D" ######## HERE GOES THE DESCRIPTION ###########
-			maxWidth = 200
+			maxWidth = 230
 			maxHeight = 300
 			fixedsize = yes
 			format = left
@@ -196,7 +294,7 @@ guiTypes = { ######## THE DESCRIPTION AND THE TITLE ARE IN THE LOCALISATION FILE
 			alwaystransparent = yes
 		}
 		buttonType = {
-			name = "Option"
+			name = "Option_Final_War"
 			text = "BE_FINAL_WAR_A"  ############## OPTION
 			shortcut = "ESCAPE"
 			position = { x = -100 y = 525 }
@@ -225,7 +323,7 @@ guiTypes = { ######## THE DESCRIPTION AND THE TITLE ARE IN THE LOCALISATION FILE
 		}
 		iconType = {
 			name ="supereventframe"
-			spriteType = "GFX_superevent_frame"
+			spriteType = "GFX_superevent_frame_3"
 			position = { x= -350 y = -20 }
 			Orientation = center
 			alwaystransparent = yes
@@ -250,10 +348,10 @@ guiTypes = { ######## THE DESCRIPTION AND THE TITLE ARE IN THE LOCALISATION FILE
 		}
 		instantTextBoxType = {
 			name = "text_2"
-			position = {  x= -200 y = 480 }
+			position = {  x= -210 y = 480 }
 			font = "Beyondsmall"
 			text = "BE_UNITY_LAUNCH_TT" ######## HERE GOES THE DESCRIPTION ###########
-			maxWidth = 200
+			maxWidth = 250
 			maxHeight = 173
 			fixedsize = yes
 			format = center
@@ -261,10 +359,10 @@ guiTypes = { ######## THE DESCRIPTION AND THE TITLE ARE IN THE LOCALISATION FILE
 		}
 		instantTextBoxType = {
 			name = "text_3"
-			position = {  x= -335 y = 75 }
+			position = {  x= -335 y = 175 }
 			font = "Arialsmallest"
 			text = "BE_UNITY_LAUNCH_D" ######## HERE GOES THE DESCRIPTION ###########
-			maxWidth = 200
+			maxWidth = 240
 			maxHeight = 300
 			fixedsize = yes
 			format = left
@@ -299,7 +397,7 @@ guiTypes = { ######## THE DESCRIPTION AND THE TITLE ARE IN THE LOCALISATION FILE
 			alwaystransparent = yes
 		}
 		buttonType = {
-			name = "Option"
+			name = "Option_Unity"
 			text = "BE_UNITY_LAUNCH_A"  ############## OPTION
 			shortcut = "ESCAPE"
 			position = { x = -100 y = 525 }
