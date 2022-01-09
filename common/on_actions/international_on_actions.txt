@@ -41,14 +41,18 @@ on_actions = {
 		            news_event = { id = international_news_event.9 days = 0 }
                 }
             }
-            if = {
-                limit = {
-                    any_other_country = { check_variable = { spaceship_contribution_variable > ROOT.spaceship_contribution_variable } }
-                }
-                ROOT = {
-                    remove_from_array = { global.spaceship_contribution_array = ROOT.id }
-                }
-            }
+            #if = {
+            #    limit = {
+            #        any_other_country = { check_variable = { spaceship_contribution_variable > ROOT.spaceship_contribution_variable } }
+            #    }
+            #    ROOT = {
+            #        remove_from_array = {
+            #            array = <name>
+            #            value = <value>
+            #            index = <index>
+            #        }
+            #    }
+            #}
             if = {
                 limit = {
                     NOT = {
