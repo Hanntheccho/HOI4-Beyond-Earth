@@ -147,6 +147,20 @@ on_actions = {
                 multiply_variable = { industrial_power_gain = 0 }
                 add_to_variable = { industrial_power = 0.05 }
 			}
+			if = {
+				limit = { 
+                    has_idea = small_loans
+                }
+                
+                subtract_from_variable = { industrial_power = 1.5 }
+			}
+			if = {
+				limit = { 
+                    has_idea = large_loans
+                }
+                
+                subtract_from_variable = { industrial_power = 2.5 }
+			}
             add_to_variable = { industrial_power = industrial_power_gain }
             clear_variable = industrial_power_gain
         }
