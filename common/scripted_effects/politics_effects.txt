@@ -88,181 +88,29 @@ parliament_support_ruling_party = {
     }
 }
 
-support_voracity_undecided_supremacy = {
-    if = {
+parliament_power_adjustment = {
+	if = {
         limit = {
-            NOT = {
-                has_government = supremacy
-                has_government = voracity
-                has_government = neutral
-            }
+            has_idea = synthetic_democracy
         }
-        set_variable = { bi_partisan_support = party_popularity_100@supremacy }
-        add_to_variable = { bi_partisan_support = party_popularity_100@neutral }
-        add_to_variable = { bi_partisan_support = party_popularity_100@voracity }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
+        multiply_variable = { parliament_support = 1.2 }
     }
     else_if = {
         limit = {
-            has_government = supremacy
+            has_idea = corporate_libertarianism
         }
-        set_variable = { bi_partisan_support = party_popularity_100@neutral }
-        add_to_variable = { bi_partisan_support = party_popularity_100@voracity }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
+        multiply_variable = { parliament_support = 0.9 }
     }
     else_if = {
         limit = {
-            has_government = neutral
+            has_idea = communal_parity
         }
-        set_variable = { bi_partisan_support = party_popularity_100@supremacy }
-        add_to_variable = { bi_partisan_support = party_popularity_100@voracity }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
-    }
-    else = {
-        set_variable = { bi_partisan_support = party_popularity_100@supremacy }
-        add_to_variable = { bi_partisan_support = party_popularity_100@neutral }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
-    }
-}
-
-support_voracity_purity_supremacy = {
-    if = {
-        limit = {
-            NOT = {
-                has_government = supremacy
-                has_government = voracity
-                has_government = purity
-            }
-        }
-        set_variable = { bi_partisan_support = party_popularity_100@supremacy }
-        add_to_variable = { bi_partisan_support = party_popularity_100@purity }
-        add_to_variable = { bi_partisan_support = party_popularity_100@voracity }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
+        multiply_variable = { parliament_support = 0.7 }
     }
     else_if = {
         limit = {
-            has_government = supremacy
+            has_idea = military_government
         }
-        set_variable = { bi_partisan_support = party_popularity_100@purity }
-        add_to_variable = { bi_partisan_support = party_popularity_100@voracity }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
-    }
-    else_if = {
-        limit = {
-            has_government = purity
-        }
-        set_variable = { bi_partisan_support = party_popularity_100@supremacy }
-        add_to_variable = { bi_partisan_support = party_popularity_100@voracity }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
-    }
-    else = {
-        set_variable = { bi_partisan_support = party_popularity_100@supremacy }
-        add_to_variable = { bi_partisan_support = party_popularity_100@purity }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
-    }
-}
-
-support_voracity_purity = {
-    if = {
-        limit = {
-            NOT = {
-                has_government = voracity
-                has_government = purity
-            }
-        }
-        set_variable = { bi_partisan_support = party_popularity_100@purity }
-        add_to_variable = { bi_partisan_support = party_popularity_100@voracity }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
-    }
-    else_if = {
-        limit = {
-            has_government = purity
-        }
-        set_variable = { bi_partisan_support = party_popularity_100@voracity }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
-    }
-    else = {
-        set_variable = { bi_partisan_support = party_popularity_100@purity }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
-    }
-}
-
-support_mastery_harmony = {
-    if = {
-        limit = {
-            NOT = {
-                has_government = mastery
-                has_government = harmony
-            }
-        }
-        set_variable = { bi_partisan_support = party_popularity_100@mastery }
-        add_to_variable = { bi_partisan_support = party_popularity_100@harmony }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
-    }
-    else_if = {
-        limit = {
-            has_government = mastery
-        }
-        set_variable = { bi_partisan_support = party_popularity_100@harmony }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
-    }
-    else = {
-        set_variable = { bi_partisan_support = party_popularity_100@mastery }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
-    }
-}
-
-support_purity_undecided_supremacy = {
-    if = {
-        limit = {
-            NOT = {
-                has_government = supremacy
-                has_government = purity
-                has_government = neutral
-            }
-        }
-        set_variable = { bi_partisan_support = party_popularity_100@supremacy }
-        add_to_variable = { bi_partisan_support = party_popularity_100@neutral }
-        add_to_variable = { bi_partisan_support = party_popularity_100@purity }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
-    }
-    else_if = {
-        limit = {
-            has_government = supremacy
-        }
-        set_variable = { bi_partisan_support = party_popularity_100@neutral }
-        add_to_variable = { bi_partisan_support = party_popularity_100@purity }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
-    }
-    else_if = {
-        limit = {
-            has_government = neutral
-        }
-        set_variable = { bi_partisan_support = party_popularity_100@supremacy }
-        add_to_variable = { bi_partisan_support = party_popularity_100@purity }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
-    }
-    else = {
-        set_variable = { bi_partisan_support = party_popularity_100@supremacy }
-        add_to_variable = { bi_partisan_support = party_popularity_100@neutral }
-        divide_variable = { bi_partisan_support = 2 }
-        add_to_variable = { parliament_support = bi_partisan_support }
+        multiply_variable = { parliament_support = 1.3 }
     }
 }
