@@ -9,10 +9,10 @@ on_actions = {
                 set_variable = { industrial_power = 0 }
                 set_variable = { industrial_power_gain = 0 }
                 set_variable = { industrial_power_max = 2000 }
-				set_variable = { industrial_power_rate_agrarian = 0.2 }
-				set_variable = { industrial_power_rate_developing = 0.4 }
-				set_variable = { industrial_power_rate_developed = 0.6 }
-				set_variable = { industrial_power_rate_regional = 1 }
+				set_variable = { industrial_power_rate_agrarian = 0.5 }
+				set_variable = { industrial_power_rate_developing = 0.8 }
+				set_variable = { industrial_power_rate_developed = 1 }
+				set_variable = { industrial_power_rate_regional = 1.25 }
 				set_variable = { industrial_power_rate_continental = 1.5 }
 				set_variable = { industrial_power_rate_global = 2 }
             }
@@ -146,6 +146,20 @@ on_actions = {
                 
                 multiply_variable = { industrial_power_gain = 0 }
                 add_to_variable = { industrial_power = 0.05 }
+			}
+			if = {
+				limit = { 
+                    has_idea = small_loans
+                }
+                
+                subtract_from_variable = { industrial_power = 1.5 }
+			}
+			if = {
+				limit = { 
+                    has_idea = large_loans
+                }
+                
+                subtract_from_variable = { industrial_power = 2.5 }
 			}
             add_to_variable = { industrial_power = industrial_power_gain }
             clear_variable = industrial_power_gain

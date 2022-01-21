@@ -88,6 +88,7 @@ country_event = {
         clear_variable = parliament_support
         clr_country_flag = increase_trade_law_hearing
         clr_country_flag = law_hearing
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -149,6 +150,7 @@ country_event = {
         clear_variable = parliament_support
         clr_country_flag = increase_conscription_hearing
         clr_country_flag = law_hearing
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -178,6 +180,7 @@ country_event = {
         clr_country_flag = law_hearing
         clr_country_flag = war_mobilization_hearing
         set_country_flag = war_mobilisation_passed
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -221,6 +224,7 @@ country_event = {
         clear_variable = parliament_support
         clr_country_flag = decrease_trade_law_hearing
         clr_country_flag = law_hearing
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 } 
 
@@ -282,6 +286,7 @@ country_event = {
         clear_variable = parliament_support
         clr_country_flag = decrease_conscription_hearing
         clr_country_flag = law_hearing
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 } 
 
@@ -305,6 +310,7 @@ country_event = {
         clr_country_flag = law_hearing
         clr_country_flag = international_intervention_hearing
         set_country_flag = international_intervention_passed
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -330,6 +336,7 @@ country_event = {
         clear_variable = parliament_support
         clr_country_flag = law_hearing
         clr_country_flag = military_industrial_complex_hearing
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -349,7 +356,10 @@ country_event = {
         clear_variable = parliament_support
         clr_country_flag = law_hearing
         clr_country_flag = business_relief_hearing
-        add_offsite_building = { type = industrial_complex level = 3 }
+        add_to_variable = { industrial_power = 50 }
+        custom_effect_tooltip = add_50_industrial_power
+        add_timed_idea = { idea = small_loans days = 50 }
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -369,7 +379,13 @@ country_event = {
         clear_variable = parliament_support
         clr_country_flag = law_hearing
         clr_country_flag = merchant_navy_draft_hearing
-        add_offsite_building = { type = dockyard level = 5 }
+        random_owned_controlled_state = {
+            add_resource = {
+                type = oil
+                amount = 5
+            }
+        }
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -390,6 +406,7 @@ country_event = {
         clr_country_flag = law_hearing
         clr_country_flag = military_industrial_complex_hearing
         set_country_flag = land_naval_unlocked
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -409,7 +426,10 @@ country_event = {
         clear_variable = parliament_support
         clr_country_flag = law_hearing
         clr_country_flag = maximized_utilisation_hearing
-        add_offsite_building = { type = arms_factory level = 5 }
+        add_to_variable = { industrial_power = 100 }
+        custom_effect_tooltip = add_100_industrial_power
+        add_timed_idea = { idea = large_loans days = 50 }
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -429,7 +449,8 @@ country_event = {
         clear_variable = parliament_support
         clr_country_flag = law_hearing
         clr_country_flag = orbital_cleaning_initiative_hearing
-        add_political_power = 69
+        add_timed_idea = { idea = democratized_logistics days = 90 }
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -452,6 +473,7 @@ country_event = {
         army_experience = 10
         navy_experience = 10
         air_experience = 10
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -471,7 +493,8 @@ country_event = {
         clear_variable = parliament_support
         clr_country_flag = law_hearing
         clr_country_flag = democratized_logistics_hearing
-        add_timed_idea = { idea = mass_mobilisation days = 60 }
+        add_timed_idea = { idea = war_propaganda days = 90 }
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -492,6 +515,7 @@ country_event = {
         clr_country_flag = law_hearing
         clr_country_flag = surveillance_expansion_hearing
         add_timed_idea = { idea = surveillance_expansion days = 30 }
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -511,15 +535,10 @@ country_event = {
         clear_variable = parliament_support
         clr_country_flag = law_hearing
         clr_country_flag = native_pacification_hearing
-        every_controlled_state = {
-            limit = {
-                NOT = {
-                    is_core_of = ROOT
-                }
-            }
-            add_compliance = 4
-            add_resistance = -8
+        random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
         }
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -540,6 +559,7 @@ country_event = {
         clr_country_flag = law_hearing
         clr_country_flag = general_staff_expansion_hearing
         add_timed_idea = { idea = general_staff_expansion days = 30 }
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -559,7 +579,11 @@ country_event = {
         clear_variable = parliament_support
         clr_country_flag = law_hearing
         clr_country_flag = research_hospital_hearing
-        add_timed_idea = { idea = research_hospitals days = 30 }
+		add_equipment_to_stockpile = {
+			type = train_equipment
+			amount = 15
+		}
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -638,6 +662,7 @@ country_event = {
                 set_variable = { popular_proposition_expire = 365 }
             }
         }
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -689,6 +714,7 @@ country_event = {
             }
             clr_country_flag = popular_proposition_passed
         }
+        set_variable = { political_bill_cooldown_var = 60 }
 	}
 }
 
@@ -707,7 +733,7 @@ country_event = {
         clear_variable = free_factory_progress
         set_variable = { free_factory_progress = 0 }
         random_list = {
-            25 = {
+            0 = {
 		        random_owned_controlled_state = {
 		        	add_extra_state_shared_building_slots = 1
 		        	add_building_construction = {
@@ -723,11 +749,11 @@ country_event = {
                     factor = civilian_chance
                 }
             }
-            25 = {
+            100 = {
 		        random_owned_controlled_state = {
 		        	add_building_construction = {
-		        		type = infrastructure
-		        		level = 2
+		        		type = generator_building
+		        		level = 1
 		        		instant_build = yes
 		        	}
                 }
@@ -738,7 +764,7 @@ country_event = {
                     factor = civilian_chance
                 }
             }
-            25 = {
+            0 = {
 		        random_owned_controlled_state = {
 		        	add_extra_state_shared_building_slots = 1
 		        	add_building_construction = {
@@ -754,7 +780,7 @@ country_event = {
                     factor = military_chance
                 }
             }
-            25 = {
+            0 = {
                 random_owned_controlled_state = {
 		        	limit = {
 		        		is_coastal = yes
@@ -774,46 +800,5 @@ country_event = {
                 }
             }
         }
-	}
-}
-
-country_event = { #test event cause i am too lazy to add a new namespace
-	id = free_factory_event.2
-	title = free_factory_event.2.t
-	desc = free_factory_event.2.d
-	picture = GFX_news_event_german_soldiers
-    
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = free_factory_event.2.a
-        every_country = {
-            if = {
-                limit = {
-                    NOT = {
-                        is_in_array = { global.spaceship_contribution_array = THIS }
-                    }
-                }
-				add_to_array = { global.spaceship_contribution_array = THIS.id }
-            }
-        }
-	}
-	option = {
-		name = free_factory_event.2.b
-        every_country = {
-            remove_from_array = {
-                array = global.spaceship_contribution_array
-                value = THIS.id
-            }
-        }
-	}
-	option = {
-		name = free_factory_event.3.b
-        find_highest_in_array = {
-        array = global.spaceship_contribution_array
-	value = spaceship_contribution_variable 
-}
 	}
 }
