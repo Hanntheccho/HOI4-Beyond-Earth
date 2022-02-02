@@ -381,22 +381,18 @@ industrial_concern = {
     arc_international = {
         picture = generic_industrial_concern_1
 
-        available = {
-            if = { #if !ARC and ARC Relations > 40 and (ARC exists and independent)
-                and = {
-                    NOT = {
-                        tag = ARC
-                    }
-                    has_opinion = {
-                        target = ARC
-                        value > 39
-                    }
-                    and = {
-                        country_exists = ARC
-                        ARC = {
-                            is_subject = no
-                        }
-                    }
+        available = {   #if !ARC and ARC Relations > 40 and (ARC exists and independent)
+            NOT = {
+                tag = ARC
+            }
+            has_opinion = {
+                target = ARC
+                value > 39
+            }
+            and = {
+                country_exists = ARC
+                ARC = {
+                    is_subject = no
                 }
             }
         }
@@ -551,9 +547,7 @@ industrial_concern = {
 
     pavlov_energy = {
         available = {
-            if = {
-                tag = URA
-            }
+            tag = URA
         }
 
         allowed = {
@@ -799,9 +793,7 @@ theorist_mod = {
         ledger = civilian
     
         available = {
-            if = {
-                tag = URA
-            }
+            tag = URA
         }
     
         allowed = {
@@ -821,6 +813,29 @@ theorist_mod = {
     
         modifier = {
             research_speed_factor = 0.2
+        }
+    }
+
+    SIL_draugr_idea = {
+        ledger = civilian
+
+        available = {
+            tag = SIL
+        }
+
+        allowed = {
+            always = no
+        }
+
+        picture = draugr_idea
+
+        removal_cost = -1
+        
+        modifier = {
+            resistance_growth = -0.2
+            stability_factor = -0.05
+            war_support_factor = -0.05
+            political_power_gain = -0.05
         }
     }
 
