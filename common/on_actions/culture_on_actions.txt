@@ -16,6 +16,8 @@ on_actions = {
 				set_variable = { cultural_power_rate_mobilized = 0.5 }
 				set_variable = { cultural_power_rate_radicalized = 0.25 }
 				set_variable = { cultural_power_rate_rabid = 0 }
+				set_variable = { cultural_power_modifier = 1 }
+				set_variable = { cultural_power_modifier_for_loc = 0 }
             }
 		}
 	}
@@ -25,6 +27,9 @@ on_actions = {
             clear_variable = cultural_power_gain
             clear_variable = cultural_power_gain_society
             clear_variable = cultural_power_gain_ideas
+            clear_variable = cultural_power_modifier
+            clear_variable = cultural_power_modifier_for_loc
+            set_variable = { cultural_power_modifier = 1 }
 			#if = {
 			#	limit = { 
             #        has_idea = stable_culture
@@ -136,8 +141,41 @@ on_actions = {
                 
                 add_to_variable = { cultural_power_gain_ideas = 0.2 }
 			}
+            if = {
+				limit = { 
+                    has_idea = academia_purge_limited
+                }
+                
+                subtract_from_variable = { cultural_power_modifier = 0.2 }
+                subtract_from_variable = { cultural_power_modifier_for_loc = 20 }
+			}
+            if = {
+				limit = { 
+                    has_idea = academia_purge_extensive
+                }
+                
+                subtract_from_variable = { cultural_power_modifier = 0.25 }
+                subtract_from_variable = { cultural_power_modifier_for_loc = 25 }
+			}
+            if = {
+				limit = { 
+                    has_idea = academia_purge_massive
+                }
+                
+                subtract_from_variable = { cultural_power_modifier = 0.3 }
+                subtract_from_variable = { cultural_power_modifier_for_loc = 30 }
+			}
+            if = {
+				limit = { 
+                    has_idea = academia_purge_total
+                }
+                
+                subtract_from_variable = { cultural_power_modifier = 0.4 }
+                subtract_from_variable = { cultural_power_modifier_for_loc = 40 }
+			}
             add_to_variable = { cultural_power_gain = cultural_power_gain_ideas }
             add_to_variable = { cultural_power_gain = cultural_power_gain_society }
+            multiply_variable = { cultural_power_gain = cultural_power_modifier }
             add_to_variable = { cultural_power = cultural_power_gain }
         }
     }

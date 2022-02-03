@@ -360,8 +360,626 @@ scripted_gui = {
             }
 
             purgecorruption_click = {
-                add_political_power = -200
-                subtract_from_variable = { corruption_variable = 5 }
+                if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = military_selected_flag
+                            has_country_flag = limited_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = military_purge_limited days = 60 }
+                    subtract_from_variable = { corruption_variable = 3 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 60
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = military_selected_flag
+                            has_country_flag = limited_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = military_purge_limited days = 120 }
+                    subtract_from_variable = { corruption_variable = 3 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 120
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = military_selected_flag
+                            has_country_flag = extensive_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = military_purge_extensive days = 90 }
+                    subtract_from_variable = { corruption_variable = 5 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 90
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = military_selected_flag
+                            has_country_flag = extensive_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = military_purge_extensive days = 180 }
+                    subtract_from_variable = { corruption_variable = 5 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 180
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = military_selected_flag
+                            has_country_flag = massive_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = military_purge_massive days = 120 }
+                    subtract_from_variable = { corruption_variable = 7 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 120
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = military_selected_flag
+                            has_country_flag = massive_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = military_purge_massive days = 240 }
+                    subtract_from_variable = { corruption_variable = 7 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 240
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = military_selected_flag
+                            has_country_flag = total_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = military_purge_total days = 180 }
+                    subtract_from_variable = { corruption_variable = 9 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 180
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = military_selected_flag
+                            has_country_flag = total_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = military_purge_total days = 360 }
+                    subtract_from_variable = { corruption_variable = 9 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 360
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = administrative_selected_flag
+                            has_country_flag = limited_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = administrative_purge_limited days = 60 }
+                    subtract_from_variable = { corruption_variable = 2 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 60
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = administrative_selected_flag
+                            has_country_flag = limited_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = administrative_purge_limited days = 120 }
+                    subtract_from_variable = { corruption_variable = 2 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 120
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = administrative_selected_flag
+                            has_country_flag = extensive_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = administrative_purge_extensive days = 90 }
+                    subtract_from_variable = { corruption_variable = 4 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 90
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = administrative_selected_flag
+                            has_country_flag = extensive_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = administrative_purge_extensive days = 180 }
+                    subtract_from_variable = { corruption_variable = 4 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 180
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = administrative_selected_flag
+                            has_country_flag = massive_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = administrative_purge_massive days = 120 }
+                    subtract_from_variable = { corruption_variable = 6 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 120
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = administrative_selected_flag
+                            has_country_flag = massive_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = administrative_purge_massive days = 240 }
+                    subtract_from_variable = { corruption_variable = 6 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 240
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = administrative_selected_flag
+                            has_country_flag = total_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = administrative_purge_total days = 180 }
+                    subtract_from_variable = { corruption_variable = 8 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 180
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = administrative_selected_flag
+                            has_country_flag = total_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = administrative_purge_total days = 360 }
+                    subtract_from_variable = { corruption_variable = 8 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 260
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = academia_selected_flag
+                            has_country_flag = limited_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = academia_purge_limited days = 60 }
+                    subtract_from_variable = { corruption_variable = 2 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 60
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = academia_selected_flag
+                            has_country_flag = limited_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = academia_purge_limited days = 120 }
+                    subtract_from_variable = { corruption_variable = 2 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 120
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = academia_selected_flag
+                            has_country_flag = extensive_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = academia_purge_extensive days = 90 }
+                    subtract_from_variable = { corruption_variable = 4 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 90
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = academia_selected_flag
+                            has_country_flag = extensive_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = academia_purge_extensive days = 180 }
+                    subtract_from_variable = { corruption_variable = 4 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 180
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = academia_selected_flag
+                            has_country_flag = massive_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = academia_purge_massive days = 120 }
+                    subtract_from_variable = { corruption_variable = 6 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 120
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = academia_selected_flag
+                            has_country_flag = massive_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = academia_purge_massive days = 240 }
+                    subtract_from_variable = { corruption_variable = 6 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 240
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = academia_selected_flag
+                            has_country_flag = total_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = academia_purge_total days = 180 }
+                    subtract_from_variable = { corruption_variable = 8 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 180
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = academia_selected_flag
+                            has_country_flag = total_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = academia_purge_total days = 360 }
+                    subtract_from_variable = { corruption_variable = 8 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 360
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = business_selected_flag
+                            has_country_flag = limited_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = business_purge_limited days = 60 }
+                    subtract_from_variable = { corruption_variable = 3 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 60
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = business_selected_flag
+                            has_country_flag = limited_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = business_purge_limited days = 120 }
+                    subtract_from_variable = { corruption_variable = 3 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 120
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = business_selected_flag
+                            has_country_flag = extensive_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = business_purge_extensive days = 90 }
+                    subtract_from_variable = { corruption_variable = 5 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 90
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = business_selected_flag
+                            has_country_flag = extensive_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = business_purge_extensive days = 180 }
+                    subtract_from_variable = { corruption_variable = 5 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 180
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = business_selected_flag
+                            has_country_flag = massive_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = business_purge_massive days = 120 }
+                    subtract_from_variable = { corruption_variable = 7 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 120
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = business_selected_flag
+                            has_country_flag = massive_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = business_purge_massive days = 240 }
+                    subtract_from_variable = { corruption_variable = 7 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 240
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = business_selected_flag
+                            has_country_flag = total_selected_flag
+                            has_country_flag = low_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = business_purge_total days = 180 }
+                    subtract_from_variable = { corruption_variable = 9 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 180
+                        value = 1
+                    }
+                }
+                else_if = {
+                    limit = {
+                        AND = {
+                            has_country_flag = business_selected_flag
+                            has_country_flag = total_selected_flag
+                            has_country_flag = high_selected_flag
+                        }
+                    }
+                    add_timed_idea = { idea = business_purge_total days = 360 }
+                    subtract_from_variable = { corruption_variable = 9 }
+                    set_country_flag = {
+                        flag = purge_in_progress_flag
+                        days = 360
+                        value = 1
+                    }
+                }
+                if = {
+                    limit = {
+                        AND = {
+                            high_selected_flag
+                            check_variable = { corruption_variable < corruption_min }
+                            check_variable = { corruption_min > 0 }
+                        }
+                    }
+                    subtract_from_variable = { corruption_min = 10 }
+                }
+                clr_country_flag = military_selected_flag
+                clr_country_flag = administrative_selected_flag
+                clr_country_flag = academia_selected_flag
+                clr_country_flag = business_selected_flag
+                clr_country_flag = limited_selected_flag
+                clr_country_flag = extensive_selected_flag
+                clr_country_flag = massive_selected_flag
+                clr_country_flag = total_selected_flag
+                clr_country_flag = low_selected_flag
+                clr_country_flag = high_selected_flag
+            }
+            corruption_select_military_click = {
+                set_country_flag = military_selected_flag
+                clr_country_flag = administrative_selected_flag
+                clr_country_flag = academia_selected_flag
+                clr_country_flag = business_selected_flag
+            }
+            corruption_military_selected_click = {
+                clr_country_flag = military_selected_flag
+            }
+            corruption_select_administrative_click = {
+                set_country_flag = administrative_selected_flag
+                clr_country_flag = military_selected_flag
+                clr_country_flag = academia_selected_flag
+                clr_country_flag = business_selected_flag
+            }
+            corruption_administrative_selected_click = {
+                clr_country_flag = administrative_selected_flag
+            }
+            corruption_select_academia_click = {
+                set_country_flag = academia_selected_flag
+                clr_country_flag = military_selected_flag
+                clr_country_flag = administrative_selected_flag
+                clr_country_flag = business_selected_flag
+            }
+            corruption_academia_selected_click = {
+                clr_country_flag = academia_selected_flag
+            }
+            corruption_select_business_click = {
+                set_country_flag = business_selected_flag
+                clr_country_flag = military_selected_flag
+                clr_country_flag = administrative_selected_flag
+                clr_country_flag = academia_selected_flag
+            }
+            corruption_business_selected_click = {
+                clr_country_flag = business_selected_flag
+            }
+
+            corruption_select_limited_click = {
+                set_country_flag = limited_selected_flag
+                clr_country_flag = extensive_selected_flag
+                clr_country_flag = massive_selected_flag
+                clr_country_flag = total_selected_flag
+            }
+            corruption_limited_selected_click = {
+                clr_country_flag = limited_selected_flag
+            }
+            corruption_select_extensive_click = {
+                set_country_flag = extensive_selected_flag
+                clr_country_flag = limited_selected_flag
+                clr_country_flag = massive_selected_flag
+                clr_country_flag = total_selected_flag
+            }
+            corruption_extensive_selected_click = {
+                clr_country_flag = extensive_selected_flag
+            }
+            corruption_select_massive_click = {
+                set_country_flag = massive_selected_flag
+                clr_country_flag = limited_selected_flag
+                clr_country_flag = extensive_selected_flag
+                clr_country_flag = total_selected_flag
+            }
+            corruption_massive_selected_click = {
+                clr_country_flag = massive_selected_flag
+            }
+            corruption_select_total_click = {
+                set_country_flag = total_selected_flag
+                clr_country_flag = limited_selected_flag
+                clr_country_flag = extensive_selected_flag
+                clr_country_flag = massive_selected_flag
+            }
+            corruption_total_selected_click = {
+                clr_country_flag = total_selected_flag
+            }
+            
+            corruption_select_low_click = {
+                set_country_flag = low_selected_flag
+                clr_country_flag = high_selected_flag
+            }
+            corruption_low_selected_click = {
+                clr_country_flag = low_selected_flag
+            }
+            corruption_select_high_click = {
+                set_country_flag = high_selected_flag
+                clr_country_flag = low_selected_flag
+            }
+            corruption_high_selected_click = {
+                clr_country_flag = high_selected_flag
             }
 
             civilian_focus_click = {
@@ -882,8 +1500,159 @@ scripted_gui = {
                 check_variable = { political_bill_cooldown_var < 1 }
             }
             purgecorruption_click_enabled = {
-                has_political_power > 199
-                check_variable = { corruption_variable > 14 }
+                AND = {
+                    OR = {
+                        has_country_flag = military_selected_flag
+                        has_country_flag = administrative_selected_flag
+                        has_country_flag = academia_selected_flag
+                        has_country_flag = business_selected_flag
+                    }
+                    OR = {
+                        has_country_flag = limited_selected_flag
+                        has_country_flag = extensive_selected_flag
+                        has_country_flag = massive_selected_flag
+                        has_country_flag = total_selected_flag
+                    }
+                    OR = {
+                        has_country_flag = low_selected_flag
+                        has_country_flag = high_selected_flag
+                    }
+                    NOT = {
+                        has_country_flag = purge_in_progress_flag
+                    }
+                }
+            }
+            corruption_select_military_visible = {
+                NOT = {
+                    has_country_flag = military_selected_flag
+                }
+            }
+            corruption_select_military_click_enabled = {
+                NOT = {
+                    has_country_flag = purge_in_progress_flag
+                }
+            }
+            corruption_military_selected_visible = {
+                has_country_flag = military_selected_flag
+            }
+            corruption_select_administrative_visible = {
+                NOT = {
+                    has_country_flag = administrative_selected_flag
+                }
+            }
+            corruption_select_administrative_click_enabled = {
+                NOT = {
+                    has_country_flag = purge_in_progress_flag
+                }
+            }
+            corruption_administrative_selected_visible = {
+                has_country_flag = administrative_selected_flag
+            }
+            corruption_select_academia_visible = {
+                NOT = {
+                    has_country_flag = academia_selected_flag
+                }
+            }
+            corruption_select_academia_click_enabled = {
+                NOT = {
+                    has_country_flag = purge_in_progress_flag
+                }
+            }
+            corruption_academia_selected_visible = {
+                has_country_flag = academia_selected_flag
+            }
+            corruption_select_business_visible = {
+                NOT = {
+                    has_country_flag = business_selected_flag
+                }
+            }
+            corruption_select_business_click_enabled = {
+                NOT = {
+                    has_country_flag = purge_in_progress_flag
+                }
+            }
+            corruption_business_selected_visible = {
+                has_country_flag = business_selected_flag
+            }
+
+            corruption_select_limited_visible = {
+                NOT = {
+                    has_country_flag = limited_selected_flag
+                }
+            }
+            corruption_select_limited_click_enabled = {
+                NOT = {
+                    has_country_flag = purge_in_progress_flag
+                }
+            }
+            corruption_limited_selected_visible = {
+                has_country_flag = limited_selected_flag
+            }
+            corruption_select_extensive_visible = {
+                NOT = {
+                    has_country_flag = extensive_selected_flag
+                }
+            }
+            corruption_select_extensive_click_enabled = {
+                NOT = {
+                    has_country_flag = purge_in_progress_flag
+                }
+            }
+            corruption_extensive_selected_visible = {
+                has_country_flag = extensive_selected_flag
+            }
+            corruption_select_massive_visible = {
+                NOT = {
+                    has_country_flag = massive_selected_flag
+                }
+            }
+            corruption_select_massive_click_enabled = {
+                NOT = {
+                    has_country_flag = purge_in_progress_flag
+                }
+            }
+            corruption_massive_selected_visible = {
+                has_country_flag = massive_selected_flag
+            }
+            corruption_select_total_visible = {
+                NOT = {
+                    has_country_flag = total_selected_flag
+                }
+            }
+            corruption_select_total_click_enabled = {
+                NOT = {
+                    has_country_flag = purge_in_progress_flag
+                }
+            }
+            corruption_total_selected_visible = {
+                has_country_flag = total_selected_flag
+            }
+            
+            corruption_select_low_visible = {
+                NOT = {
+                    has_country_flag = low_selected_flag
+                }
+            }
+            corruption_select_low_click_enabled = {
+                NOT = {
+                    has_country_flag = purge_in_progress_flag
+                }
+            }
+            corruption_low_selected_visible = {
+                has_country_flag = low_selected_flag
+            }
+            corruption_select_high_visible = {
+                NOT = {
+                    has_country_flag = high_selected_flag
+                }
+            }
+            corruption_select_high_click_enabled = {
+                NOT = {
+                    has_country_flag = purge_in_progress_flag
+                }
+            }
+            corruption_high_selected_visible = {
+                has_country_flag = high_selected_flag
             }
 
             civilian_focus_click_enabled = {
