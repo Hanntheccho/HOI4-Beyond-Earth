@@ -1,31 +1,3287 @@
 ﻿focus_tree = {
-    id = generic_focus
-    
-    country = {
-        factor = 1
-    }
-    
-    default = yes
-    reset_on_civilwar = no
+	id = generic_focus
+	country = {
+		factor = 1
+	}
+	default = yes
+	reset_on_civilwar = no
+	continuous_focus_position = {
+		x = 2000
+		y = 2000
+	}
+	##Political Tree
+	focus = {
+		id = generic_23rd_politics
+		icon = GFX_goal_generic_23rd_politics
+		x = 13
+		y = 0
+		cost = 10
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	#Voracity
+	focus = {
+		id = generic_voracity
+		icon = GFX_goal_generic_voracity
+		x = 1
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = generic_23rd_politics
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_national_institute_sciences
+		icon = GFX_goal_generic_national_institute_sciences
+		x = 0
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_voracity
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_adaptive_sciences
+		icon = GFX_goal_generic_adaptive_sciences
+		x = 2
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_voracity
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_networked_datalinks
+		icon = GFX_goal_generic_networked_datalinks
+		x = 0
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_national_institute_sciences
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_survival_doctrine
+		icon = GFX_goal_generic_survival_doctrine
+		x = 2
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_adaptive_sciences
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_specialization
+		icon = GFX_goal_generic_specialization
+		x = 0
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_networked_datalinks
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_extensive_augmentation
+		icon = GFX_goal_generic_extensive_augmentation
+		x = 2
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_survival_doctrine
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_stealth_actions
+		icon = GFX_goal_generic_stealth_actions
+		x = 0
+		y = 5
+		cost = 10
+		prerequisite = {
+			focus = generic_specialization
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_transhumanism
+		icon = GFX_goal_generic_transhumanism
+		x = 2
+		y = 5
+		cost = 10
+		prerequisite = {
+			focus = generic_extensive_augmentation
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_unbashed_future
+		icon = GFX_goal_generic_unbashed_future
+		x = 1
+		y = 6
+		cost = 10
+		prerequisite = {
+			focus = generic_stealth_actions
+			focus = generic_transhumanism
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	#Divinity
+	focus = {
+		id = generic_divinity
+		icon = GFX_goal_generic_divinity
+		x = 5
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = generic_23rd_politics
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_individualized_collectivism
+		icon = GFX_goal_generic_individualized_collectivism
+		x = 4
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_divinity
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_monumentalism
+		icon = GFX_goal_generic_monumentalism
+		x = 6
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_divinity
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_power_of_the_will
+		icon = GFX_goal_generic_power_of_the_will
+		x = 4
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_individualized_collectivism
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_superior_work_ethic
+		icon = GFX_goal_generic_superior_work_ethic
+		x = 6
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_monumentalism
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_brain_studies
+		icon = GFX_goal_generic_brain_studies
+		x = 4
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_power_of_the_will
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_dogmatic_morals
+		icon = GFX_goal_generic_dogmatic_morals
+		x = 6
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_superior_work_ethic
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_manual_calculations
+		icon = GFX_goal_generic_manual_calculations
+		x = 4
+		y = 5
+		cost = 10
+		prerequisite = {
+			focus = generic_brain_studies
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_euthenics
+		icon = GFX_goal_generic_euthenics
+		x = 6
+		y = 5
+		cost = 10
+		prerequisite = {
+			focus = generic_dogmatic_morals
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_mind_over_matter
+		icon = GFX_goal_generic_mind_over_matter
+		x = 5
+		y = 6
+		cost = 10
+		prerequisite = {
+			focus = generic_manual_calculations
+			focus = generic_euthenics
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	#Mastery
+	focus = {
+		id = generic_mastery
+		icon = GFX_goal_generic_mastery
+		x = 9
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = generic_23rd_politics
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_adaptive_designs
+		icon = GFX_goal_generic_adaptive_designs
+		x = 8
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_mastery
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_automated_labor
+		icon = GFX_goal_generic_automated_labor
+		x = 10
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_mastery
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_eminent_domain
+		icon = GFX_goal_generic_eminent_domain
+		x = 8
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_adaptive_designs
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_industrial_automation
+		icon = GFX_goal_generic_industrial_automation
+		x = 10
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_automated_labor
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_fortress_doctrine
+		icon = GFX_goal_generic_fortress_doctrine
+		x = 8
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_eminent_domain
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_drone_hives
+		icon = GFX_goal_generic_drone_hives
+		x = 10
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_industrial_automation
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_terraforming
+		icon = GFX_goal_generic_terraforming
+		x = 8
+		y = 5
+		cost = 10
+		prerequisite = {
+			focus = generic_fortress_doctrine
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_auxialary_combat_ai
+		icon = GFX_goal_generic_auxialary_combat_ai
+		x = 10
+		y = 5
+		cost = 10
+		prerequisite = {
+			focus = generic_drone_hives
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_mastery_of_nature
+		icon = GFX_goal_generic_mastery_of_nature
+		x = 9
+		y = 6
+		cost = 10
+		prerequisite = {
+			focus = generic_terraforming
+			focus = generic_auxialary_combat_ai
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	#Neutrality
+	focus = {
+		id = generic_neutrality
+		icon = GFX_goal_generic_neutrality
+		x = 13
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = generic_23rd_politics
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_social_cohesion
+		icon = GFX_goal_generic_social_cohesion
+		x = 12
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_neutrality
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_evolved_party_system
+		icon = GFX_goal_generic_evolved_party_system
+		x = 14
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_neutrality
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_global_neutrality
+		icon = GFX_goal_generic_global_neutrality
+		x = 12
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_social_cohesion
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_ethical_calculus
+		icon = GFX_goal_generic_ethical_calculus
+		x = 14
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_evolved_party_system
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_verticle_sustenance
+		icon = GFX_goal_generic_verticle_sustenance
+		x = 12
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_global_neutrality
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_divergent_evolution
+		icon = GFX_goal_generic_divergent_evolution
+		x = 14
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_ethical_calculus
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_united_front
+		icon = GFX_goal_generic_united_front
+		x = 12
+		y = 5
+		cost = 10
+		prerequisite = {
+			focus = generic_verticle_sustenance
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_radical_suppresion
+		icon = GFX_goal_generic_radical_suppresion
+		x = 14
+		y = 5
+		cost = 10
+		prerequisite = {
+			focus = generic_divergent_evolution
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_utilitarianism
+		icon = GFX_goal_generic_utilitarianism
+		x = 13
+		y = 6
+		cost = 10
+		prerequisite = {
+			focus = generic_united_front
+			focus = generic_radical_suppresion
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	#Purity
+	focus = {
+		id = generic_purity
+		icon = GFX_goal_generic_purity
+		x = 17
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = generic_23rd_politics
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_social_mores
+		icon = GFX_goal_generic_social_mores
+		x = 16
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_purity
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_recolonization_corps
+		icon = GFX_goal_generic_recolonization_corps
+		x = 18
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_purity
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_conservative_humanism
+		icon = GFX_goal_generic_conservative_humanism
+		x = 16
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_social_mores
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_reassimilation
+		icon = GFX_goal_generic_reassimilation
+		x = 18
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_recolonization_corps
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_limited_augmentation
+		icon = GFX_goal_generic_limited_augmentation
+		x = 16
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_conservative_humanism
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_channeled_wrath
+		icon = GFX_goal_generic_channeled_wrath
+		x = 18
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_reassimilation
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_united_struggle
+		icon = GFX_goal_generic_united_struggle
+		x = 16
+		y = 5
+		cost = 10
+		prerequisite = {
+			focus = generic_limited_augmentation
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_ubuntu
+		icon = GFX_goal_generic_ubuntu
+		x = 18
+		y = 5
+		cost = 10
+		prerequisite = {
+			focus = generic_channeled_wrath
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_historic_doctrine
+		icon = GFX_goal_generic_historic_doctrine
+		x = 17
+		y = 6
+		cost = 10
+		prerequisite = {
+			focus = generic_united_struggle
+			focus = generic_ubuntu
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	#Supremacy
+	focus = {
+		id = generic_supremacy
+		icon = GFX_goal_generic_supremacy
+		x = 21
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = generic_23rd_politics
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_monorail_initiative
+		icon = GFX_goal_generic_monorail_initiative
+		x = 20
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_supremacy
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_memeweb
+		icon = GFX_goal_generic_memeweb
+		x = 22
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_supremacy
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_synthetic_thought
+		icon = GFX_goal_generic_synthetic_thought
+		x = 20
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_monorail_initiative
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_datalink_consolidation
+		icon = GFX_goal_generic_datalink_consolidation
+		x = 22
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_memeweb
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_energy_maximization
+		icon = GFX_goal_generic_energy_maximization
+		x = 20
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_synthetic_thought
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_monomyth
+		icon = GFX_goal_generic_monomyth
+		x = 22
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_datalink_consolidation
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_combat_pragmatism
+		icon = GFX_goal_generic_combat_pragmatism
+		x = 20
+		y = 5
+		cost = 10
+		prerequisite = {
+			focus = generic_energy_maximization
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_orbital_interoperability
+		icon = GFX_goal_generic_orbital_interoperability
+		x = 22
+		y = 5
+		cost = 10
+		prerequisite = {
+			focus = generic_monomyth
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_perfectionism
+		icon = GFX_goal_generic_perfectionism
+		x = 21
+		y = 6
+		cost = 10
+		prerequisite = {
+			focus = generic_combat_pragmatism
+			focus = generic_orbital_interoperability
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	#Harmony
+	focus = {
+		id = generic_harmony
+		icon = GFX_goal_generic_harmony
+		x = 25
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = generic_23rd_politics
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_democratized_burdens
+		icon = GFX_goal_generic_democratized_burdens
+		x = 24
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_harmony
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_genetic_modifications
+		icon = GFX_goal_generic_genetic_modifications
+		x = 26
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_harmony
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_frugality
+		icon = GFX_goal_generic_frugality
+		x = 24
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_democratized_burdens
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_tissue_growing
+		icon = GFX_goal_generic_tissue_growing
+		x = 26
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_genetic_modifications
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_natural_preserves
+		icon = GFX_goal_generic_natural_preserves
+		x = 24
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_frugality
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_sustainable_industry
+		icon = GFX_goal_generic_sustainable_industry
+		x = 26
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_tissue_growing
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_ecoscaping
+		icon = GFX_goal_generic_ecoscaping
+		x = 24
+		y = 5
+		cost = 10
+		prerequisite = {
+			focus = generic_natural_preserves
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_responsible_mindset
+		icon = GFX_goal_generic_responsible_mindset
+		x = 26
+		y = 5
+		cost = 10
+		prerequisite = {
+			focus = generic_sustainable_industry
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_eudomonia
+		icon = GFX_goal_generic_eudomonia
+		x = 25
+		y = 6
+		cost = 10
+		prerequisite = {
+			focus = generic_ecoscaping
+			focus = generic_responsible_mindset
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	#FUTURE TECHNOLOGY (Continous?)
+	focus = {
+		id = generic_future_technology
+		icon = GFX_goal_generic_future_technology
+		x = 13
+		y = 7
+		cost = 10
+		prerequisite = {
+			focus = generic_unbashed_future
+			focus = generic_mind_over_matter
+			focus = generic_mastery_of_nature
+			focus = generic_utilitarianism
+			focus = generic_historic_doctrine
+			focus = generic_perfectionism
+			focus = generic_eudomonia
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	## Economics Tree
+	focus = {
+		id = generic_industrial_effort
+		icon = GFX_goal_generic_industrial_effort
+		x = 32
+		y = 0
+		cost = 5
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = industry
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = industrious_trait
+				factor = 10
+			}
+		}
+	}
+	# Economy Recalibration
+	focus = {
+		id = generic_economic_recalibration_1
+		icon = GFX_goal_generic_economic_recalibration_1
+		x = 28
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_industrial_effort
+		}
+		completion_reward = {
+			country_event = {
+				id = generic.1
+			}
+		}
+		ai_will_do = {
+			factor = -100
+		}
+	}
+	focus = {
+		id = generic_economic_recalibration_2
+		icon = GFX_goal_generic_economic_recalibration_2
+		x = 28
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_economic_recalibration_1
+		}
+		completion_reward = {
+			country_event = {
+				id = generic.1
+			}
+		}
+		ai_will_do = {
+			factor = -100
+		}
+	}
+	focus = {
+		id = generic_economic_recalibration_3
+		icon = GFX_goal_generic_economic_recalibration_3
+		x = 28
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_economic_recalibration_2
+		}
+		completion_reward = {
+			country_event = {
+				id = generic.1
+			}
+		}
+		ai_will_do = {
+			factor = -100
+		}
+	}
+	#Industrial Branches
+	focus = {
+		id = generic_minor_civilian_effort
+		icon = GFX_goal_generic_minor_civilian_effort
+		x = 30
+		y = 1
+		cost = 6
+		prerequisite = {
+			focus = generic_industrial_effort
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = industrious_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_infrastructure_modernization
+		icon = GFX_goal_generic_infrastructure_modernization
+		x = 32
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = generic_industrial_effort
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = industrious_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_minor_military_effort
+		icon = GFX_goal_generic_minor_military_effort
+		x = 34
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = generic_industrial_effort
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = industrious_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_substantial_civilian_effort
+		icon = GFX_goal_generic_substantial_civilian_effort
+		x = 30
+		y = 2
+		cost = 6
+		prerequisite = {
+			focus = generic_minor_civilian_effort
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = industrious_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_infrastructure_expansion
+		icon = GFX_goal_generic_infrastructure_expansion
+		x = 32
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_infrastructure_modernization
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = industrious_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_substantial_military_effort
+		icon = GFX_goal_generic_substantial_military_effort
+		x = 34
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_minor_military_effort
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = industrious_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_major_civilian_effort
+		icon = GFX_goal_generic_major_civilian_effort
+		x = 31
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_substantial_civilian_effort
+		}
+		prerequisite = {
+			focus = generic_infrastructure_expansion
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = industrious_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_major_military_effort
+		icon = GFX_goal_generic_major_military_effort
+		x = 33
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_infrastructure_expansion
+		}
+		prerequisite = {
+			focus = generic_substantial_military_effort
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = industrious_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_labs_modernization
+		icon = GFX_goal_generic_labs_modernization
+		x = 31
+		y = 4
+		cost = 8
+		prerequisite = {
+			focus = generic_major_civilian_effort
+			focus = generic_major_military_effort
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = industrious_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_satellite_expansion
+		icon = GFX_goal_generic_satellite_expansion
+		x = 33
+		y = 4
+		cost = 5
+		prerequisite = {
+			focus = generic_major_civilian_effort
+			focus = generic_major_military_effort
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = spaceship_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_labs_expansion
+		icon = GFX_goal_generic_labs_expansion
+		x = 31
+		y = 5
+		cost = 8
+		prerequisite = {
+			focus = generic_labs_modernization
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					amount_research_slots > 4
+				}
+				add_ideas = {
+					ai_integrated_research
+				}
+			}
+			else = {
+				add_research_slot = 1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = industrious_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_orbital_cannon_effort
+		icon = GFX_goal_generic_orbital_cannon_effort
+		x = 33
+		y = 5
+		cost = 8
+		prerequisite = {
+			focus = generic_satellite_expansion
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = sattelite_uplink
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	#Generator
+	focus = {
+		id = generic_minor_generator_effort
+		icon = GFX_goal_generic_minor_generator_effort
+		x = 36
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = generic_industrial_effort
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = generator_building
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = industrious_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_substantial_generator_effort
+		icon = GFX_goal_generic_substantial_generator_effort
+		x = 36
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_minor_generator_effort
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = generator_building
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = industrious_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_major_generator_effort
+		icon = GFX_goal_generic_major_generator_effort
+		x = 36
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = generic_substantial_generator_effort
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = generator_building
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = industrious_trait
+				factor = 10
+			}
+		}
+	}
+	## Land Forces Tree
+	focus = {
+		id = generic_land_forces
+		icon = GFX_goal_generic_land_forces
+		bypass = {
+			#Only need gun_equipment_4 because it is the last tech in the tree, and 
+			has_tech = gun_improvement_3
+		}
+		x = 40
+		y = 0
+		cost = 5
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = be_gun_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = militaristic_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_minor_infantry_support
+		icon = GFX_goal_generic_minor_infantry_support
+		bypass = {
+			#Only need to check last tech in tree
+			has_tech = infantry_upgrade_2
+		}
+		x = 38
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = generic_land_forces
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = be_infantry_bonus
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = militaristic_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_digital_exercise_1
+		icon = GFX_goal_generic_digital_exercise_1
+		x = 40
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = generic_land_forces
+		}
+		completion_reward = {
+			army_experience = 50
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = militaristic_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_mechanization
+		icon = GFX_goal_generic_mechanization
+		bypass = {
+			has_tech = rover_1
+		}
+		x = 42
+		y = 1
+		cost = 6
+		prerequisite = {
+			focus = generic_land_forces
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "Rover Bonus"
+				bonus = 1
+				uses = 1
+				category = be_rover_bonus_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = militaristic_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_substantial_infantry_support
+		icon = GFX_goal_generic_substantial_infantry_support
+		bypass = {
+			#Only need to check last tech in tree
+			has_tech = infantry_upgrade_2
+		}
+		x = 38
+		y = 2
+		cost = 5
+		prerequisite = {
+			focus = generic_minor_infantry_support
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = be_infantry_bonus
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = militaristic_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_digital_exercise_2
+		icon = GFX_goal_generic_digital_exercise_2
+		x = 40
+		y = 2
+		cost = 5
+		prerequisite = {
+			focus = generic_digital_exercise_1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = be_land_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = militaristic_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_small_armor_effort
+		icon = GFX_goal_generic_small_armor_effort
+		bypass = {
+			has_tech = walker_3
+		}
+		x = 42
+		y = 2
+		cost = 6
+		prerequisite = {
+			focus = generic_mechanization
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "Walker Bonus"
+				bonus = 1
+				uses = 1
+				category = be_walker_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = militaristic_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_major_infantry_support
+		icon = GFX_goal_generic_major_infantry_support
+		bypass = {
+			has_tech = apc_4
+		}
+		x = 38
+		y = 3
+		cost = 5
+		prerequisite = {
+			focus = generic_substantial_infantry_support
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = be_apc_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = militaristic_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_digital_exercise_3
+		icon = GFX_goal_generic_digital_exercise_3
+		x = 40
+		y = 3
+		cost = 5
+		prerequisite = {
+			focus = generic_digital_exercise_2
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = be_land_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = militaristic_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_large_armor_effort
+		icon = GFX_goal_generic_large_armor_effort
+		bypass = {
+			AND = {
+				has_tech = mbt_4
+				has_tech = spg_mbt_4
+				has_tech = td_mbt_4
+				has_tech = aa_mbt_4
+			}
+		}
+		x = 42
+		y = 3
+		cost = 6
+		prerequisite = {
+			focus = generic_small_armor_effort
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "MBT Bonus"
+				bonus = 1
+				uses = 1
+				category = be_mbt_bonus_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_augment_effort
+		icon = GFX_goal_generic_augment_effort
+		bypass = {
+			AND = {
+				has_tech = support_augment_3
+				has_tech = prime_augment_3
+				has_tech = augment_var_1
+				has_tech = augment_var_2
+				has_tech = augment_var_3
+			}
+		}
+		x = 40
+		y = 4
+		cost = 6
+		prerequisite = {
+			focus = generic_major_infantry_support
+		}
+		prerequisite = {
+			focus = generic_digital_exercise_3
+		}
+		prerequisite = {
+			focus = generic_large_armor_effort
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = be_augment_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = militaristic_trait
+				factor = 10
+			}
+		}
+	}
+	## Air Forces Tree
+	focus = {
+		id = generic_air_forces
+		icon = GFX_goal_generic_air_forces
+		x = 46
+		y = 0
+		cost = 5
+		completion_reward = {
+			air_experience = 50
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = aerial_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_fighter_models
+		icon = GFX_goal_generic_fighter_models
+		bypass = {
+			AND = {
+				has_tech = fighter_3
+				has_tech = cv_fighter_3
+			}
+		}
+		x = 44
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = generic_air_forces
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = be_fighter_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = aerial_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_cas_models
+		icon = GFX_goal_generic_cas_models
+		bypass = {
+			AND = {
+				has_tech = cas_3
+				has_tech = cv_cas_3
+			}
+		}
+		x = 46
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = generic_air_forces
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = be_cas_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = aerial_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_bomber_models
+		icon = GFX_goal_generic_bomber_models
+		bypass = {
+			AND = {
+				has_tech = tac_3
+			}
+		}
+		x = 48
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = generic_air_forces
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = be_tac_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = aerial_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_unified_air_designs
+		icon = GFX_goal_generic_unified_air_designs
+		bypass = {
+			AND = {
+				has_tech = cas_3
+				has_tech = cv_cas_3
+			}
+		}
+		x = 44
+		y = 2
+		cost = 5
+		prerequisite = {
+			focus = generic_fighter_models
+		}
+		prerequisite = {
+			focus = generic_cas_models
+		}
+		prerequisite = {
+			focus = generic_bomber_models
+		}
+		completion_reward = {
+			add_ideas = unified_air_designs
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = aerial_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_minor_air_excercises
+		icon = GFX_goal_generic_minor_air_excercises
+		x = 46
+		y = 2
+		cost = 5
+		prerequisite = {
+			focus = generic_cas_models
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = be_air_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = aerial_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_air_base_expansion
+		icon = GFX_goal_generic_air_base_expansion
+		x = 48
+		y = 2
+		cost = 5
+		prerequisite = {
+			focus = generic_bomber_models
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = aerial_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_substantial_air_exercises
+		icon = GFX_goal_generic_substantial_air_exercises
+		x = 46
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = generic_minor_air_excercises
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = be_air_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = aerial_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_major_air_exercises
+		icon = GFX_goal_generic_major_air_exercises
+		x = 46
+		y = 4
+		cost = 7
+		prerequisite = {
+			focus = generic_substantial_air_exercises
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = be_air_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = aerial_trait
+				factor = 10
+			}
+		}
+	}
+	## Anti Corruption Tree
+	focus = {
+		id = generic_anti_corruption_campaign
+		icon = GFX_goal_generic_anti_corruption_campaign
+		x = 30
+		y = 7
+		cost = 8
+		completion_reward = {
+			custom_effect_tooltip = anti_corruption_campgain_1_tooltip
+			add_to_variable = {
+				corruption_variable = -5
+			}
+			clamp_variable = {
+				var = corruption_variable
+				min = 1
+				max = 100
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = spiritual_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_small_cultural_effort
+		icon = GFX_goal_generic_small_cultural_effort
+		x = 28
+		y = 8
+		cost = 7
+		prerequisite = {
+			focus = generic_anti_corruption_campaign
+		}
+		completion_reward = {
+			custom_effect_tooltip = small_cultural_effort_tooltip
+			add_to_variable = {
+				cultural_power = 100
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = spiritual_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_anti_corruption_campaign_2
+		icon = GFX_goal_generic_anti_corruption_campaign_2
+		x = 30
+		y = 8
+		cost = 8
+		prerequisite = {
+			focus = generic_anti_corruption_campaign
+		}
+		completion_reward = {
+			custom_effect_tooltip = anti_corruption_campgain_1_tooltip
+			add_to_variable = {
+				corruption_variable = -5
+			}
+			clamp_variable = {
+				var = corruption_variable
+				min = 1
+				max = 100
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = spiritual_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_international_espionage
+		icon = GFX_goal_generic_international_espionage
+		x = 32
+		y = 8
+		cost = 7
+		prerequisite = {
+			focus = generic_anti_corruption_campaign
+		}
+		completion_reward = {
+			# if = {
+			#     limit = {
+			#         has_dlc = "La Resistance"
+			#     }
+			#     #OPERATIVE SLOT?
+			# }
+			# if = {
+			#     limit = {
+			#         NOT = {
+			#             has_dlc = "La Resistance"
+			#         }
+			#     }
+			#     add_idea = international_espionage
+			# }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = generic_large_cultural_effort
+		icon = GFX_goal_generic_large_cultural_effort
+		x = 28
+		y = 9
+		cost = 7
+		prerequisite = {
+			focus = generic_small_cultural_effort
+		}
+		completion_reward = {
+			custom_effect_tooltip = small_cultural_effort_tooltip
+			add_to_variable = {
+				cultural_power = 100
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = spiritual_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_anti_corruption_campaign_3
+		icon = GFX_goal_generic_anti_corruption_campaign_3
+		x = 30
+		y = 9
+		cost = 8
+		prerequisite = {
+			focus = generic_anti_corruption_campaign_2
+		}
+		completion_reward = {
+			custom_effect_tooltip = anti_corruption_campgain_3_tooltip
+			add_to_variable = {
+				corruption_variable = -10
+			}
+			clamp_variable = {
+				var = corruption_variable
+				min = 1
+				max = 100
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = spiritual_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_the_hidden_war
+		icon = GFX_goal_generic_the_hidden_war
+		x = 32
+		y = 9
+		cost = 10
+		prerequisite = {
+			focus = generic_international_espionage
+		}
+		completion_reward = {
+			 if = {
+			     limit = {
+			         has_dlc = "La Resistance"
+			     }
+			     #OPERATIVE SLOT
+			 }else = {
+			    if = {
+			        limit = {
+			            has_idea = international_espionage
+			        }
+			        swap_ideas = {
+			        	remove_idea = international_espionage
+			           	add_idea = international_espionage2
+			        }
+			    } 
+			 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	## Naval Forces Tree
+	focus = {
+		id = generic_naval_forces
+		icon = GFX_goal_generic_naval_forces
+		x = 38
+		y = 7
+		cost = 5
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		completion_reward = {
+			navy_experience = 50
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = seafaring_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_coastal_defense
+		icon = GFX_goal_generic_coastal_defense
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		bypass = {
+			OR = {
+				has_tech = gunboat_4
+				AND = {
+					has_tech = gunboat_4_hull
+					has_tech = range_upgrade_3
+					has_tech = gunboat_armor_3
+				}
+			}
+		}
+		x = 36
+		y = 8
+		cost = 8
+		prerequisite = {
+			focus = generic_naval_forces
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = be_gunboat_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = seafaring_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_drydocks
+		icon = GFX_goal_generic_drydocks
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		x = 38
+		y = 9
+		cost = 5
+		prerequisite = {
+			focus = generic_naval_forces
+		}
+		completion_reward = {
+			random_owned_state = {
+			if = {
+				limit = {
+					is_coastal = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}else = {
+				custom_effect_tooltip = no_coastal_states
+			}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = seafaring_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_global_reach
+		icon = GFX_goal_generic_global_reach
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		x = 40
+		y = 8
+		cost = 8
+		prerequisite = {
+			focus = generic_naval_forces
+		}
+		completion_reward = {
+			add_ideas = global_reach
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = seafaring_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_gunboat_iniative
+		icon = GFX_goal_generic_gunboat_iniative
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		bypass = {
+			OR = {
+				has_tech = gunboat_4
+				AND = {
+					has_tech = gunboat_4_hull
+					has_tech = range_upgrade_3
+					has_tech = gunboat_armor_3
+				}
+			}
+		}
+		x = 36
+		y = 9
+		cost = 5
+		prerequisite = {
+			focus = generic_coastal_defense
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = be_gunboat_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = seafaring_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_shore_generators
+		icon = GFX_goal_generic_shore_generators
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		x = 38
+		y = 10
+		cost = 5
+		prerequisite = {
+			focus = generic_drydocks
+		}
+		completion_reward = {
+			random_owned_state = {
+				if = {
+				limit = {
+					is_coastal = yes
+				}
+				add_building_construction = {
+					type = generator_building
+					level = 1
+					instant_build = yes
+				}
+				}else = {
+					custom_effect_tooltip = no_coastal_states
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = seafaring_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_rapid_production_iniative
+		icon = GFX_goal_generic_rapid_production_iniative
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		x = 40
+		y = 9
+		cost = 5
+		prerequisite = {
+			focus = generic_global_reach
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = global_reach
+				add_idea = global_reach2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = seafaring_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_ocean_imperialism
+		icon = GFX_goal_generic_ocean_imperialism
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		x = 38
+		y = 11
+		cost = 7
+		prerequisite = {
+			focus = generic_shore_generators
+		}
+		completion_reward = {
+			add_ideas = ocean_imperialism
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = seafaring_trait
+				factor = 10
+			}
+		}
+	}
+	#Gunboat Initiave Subtree
+	focus = {
+		id = generic_swarm_method
+		icon = GFX_goal_generic_swarm_method
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		x = 34
+		y = 9
+		cost = 5
+		prerequisite = {
+			focus = generic_gunboat_iniative
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = be_adequacy_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = seafaring_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_submarine_doctrines
+		icon = GFX_goal_generic_submarine_doctrines
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		bypass = {
+			OR = {
+				has_tech = sub_4
+				has_tech = sub_4_hull
+			}
+		}
+		x = 34
+		y = 10
+		cost = 5
+		prerequisite = {
+			focus = generic_swarm_method
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = be_sub_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = seafaring_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_lightweight_weapons
+		icon = GFX_goal_generic_lightweight_weapons
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		bypass = {
+			OR = {
+				has_tech = dest_4
+				AND = {
+					has_tech = destroyer_4_hull
+					has_tech = depth_charge_4
+					has_tech = smoke_screen
+					has_tech = sonar_2
+				}
+			}
+		}
+		x = 36
+		y = 10
+		cost = 5
+		prerequisite = {
+			focus = generic_gunboat_iniative
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = be_destroyer_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = seafaring_trait
+				factor = 10
+			}
+		}
+	}
+	# RPI Subtree
+	focus = {
+		id = generic_iceberg_method
+		icon = GFX_goal_generic_iceberg_method
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		x = 42
+		y = 9
+		cost = 5
+		prerequisite = {
+			focus = generic_rapid_production_iniative
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = be_hegemony_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = seafaring_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_carrier_doctrines
+		icon = GFX_goal_generic_carrier_doctrines
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		bypass = {
+			OR = {
+				has_tech = car_4
+				has_tech = carrier_4_hull
+			}
+		}
+		x = 42
+		y = 10
+		cost = 5
+		prerequisite = {
+			focus = generic_iceberg_method
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = be_carrier_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = seafaring_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_modular_designs
+		icon = GFX_goal_generic_modular_designs
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		x = 40
+		y = 10
+		cost = 10
+		prerequisite = {
+			focus = generic_rapid_production_iniative
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = global_reach2
+				add_idea = global_reach3
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = seafaring_trait
+				factor = 10
+			}
+		}
+	}
+	## Space Tree
+	focus = {
+		id = generic_space_race
+		icon = GFX_goal_generic_space_race
+		x = 46
+		y = 7
+		cost = 10
 
-    continuous_focus_position = {
-        x = 300
-        y = 300
-    }
-
-    focus = {
-        
-        id = generic_1
-
-        x = 0
-        y = 0
-        
-        cost = 2
-
-        icon = GFX_goal_unknown
-
-        completion_reward = {
-            
+        bypass = {
+            has_global_flag = module_5_completed_flag
         }
-    }
+
+		completion_reward = {
+            add_ideas = to_the_stars
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_small_module_effort
+		icon = GFX_goal_generic_small_module_effort
+		x = 44
+		y = 8
+		cost = 5
+
+        bypass = {
+            has_global_flag = module_5_completed_flag
+        }
+
+		prerequisite = {
+			focus = generic_space_race
+		}
+
+		completion_reward = {
+            swap_ideas = {
+                remove_idea = to_the_stars
+                add_idea = to_the_stars2
+            }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_social_readiness
+		icon = GFX_goal_generic_social_readiness
+		x = 48
+		y = 8
+		cost = 5
+        bypass = {
+            has_global_flag = module_5_completed_flag
+        }
+
+		prerequisite = {
+			focus = generic_space_race
+		}
+		completion_reward = {
+            custom_effect_tooltip = social_readiness_tooltip
+            #DELAY SOCIETAL COLLAPSE?
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = generic_large_module_effort
+		icon = GFX_goal_generic_large_module_effort
+		x = 44
+		y = 9
+		cost = 5
+
+        bypass = {
+            has_global_flag = module_5_completed_flag
+        }
+
+		prerequisite = {
+			focus = generic_small_module_effort
+		}
+
+		completion_reward = {
+            swap_ideas = {
+                remove_idea = to_the_stars2
+                add_idea = to_the_stars3
+            }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_food_stockpiles
+		icon = GFX_goal_generic_food_stockpiles
+		x = 48
+		y = 9
+		cost = 5
+        bypass = {
+            has_global_flag = module_5_completed_flag
+        }
+		prerequisite = {
+			focus = generic_social_readiness
+		}
+		completion_reward = {
+            custom_effect_tooltip = food_stockpiles_tooltip
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = scientific_trait
+				factor = 10
+			}
+		}
+	}
+	focus = {
+		id = generic_the_final_war
+		icon = GFX_goal_generic_the_final_war
+		x = 46
+		y = 10
+		cost = 0
+        available = {
+            AND = {
+                check_variable = { final_war_timer = 1 }
+                spaceship_completely_internationalized = no
+            }
+        }
+		prerequisite = {
+			focus = generic_large_module_effort
+		}
+        prerequisite = {
+            focus = generic_food_stockpiles
+        }
+		completion_reward = {
+			custom_effect_tooltip = the_final_war_tooltip
+		}
+		ai_will_do = {
+			factor = 100000
+		}
+	}
+	focus = {
+		id = generic_global_campaigns
+		icon = GFX_goal_generic_global_campaigns
+		x = 44
+		y = 11
+		cost = 2
+		prerequisite = {
+			focus = generic_the_final_war
+		}
+		completion_reward = {
+            add_ideas = global_campaigns
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+	}
+	focus = {
+		id = generic_allied_support
+		icon = GFX_goal_generic_allied_support
+		x = 46
+		y = 11
+		cost = 2
+		prerequisite = {
+			focus = generic_the_final_war
+		}
+		completion_reward = {
+            add_ideas = allied_support
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+	}
+	focus = {
+		id = generic_total_war
+		icon = GFX_goal_generic_total_war
+		x = 48
+		y = 11
+		cost = 2
+		prerequisite = {
+			focus = generic_the_final_war
+		}
+
+		completion_reward = {
+            add_ideas = total_war
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+	}
 }

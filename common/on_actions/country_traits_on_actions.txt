@@ -1,0 +1,115 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					always = yes
+				}
+				log = "---------[THIS.GetName] TRAIT ASSIGNMENT---------"
+				THIS = {
+					# Assign Character Trait 1
+					# Will randomly choose from the list with the % chance being 11.1%
+					random_list = {
+						11.1 = {
+							set_country_flag = agricultural_trait
+						}
+						11.1 = {
+							set_country_flag = industrious_trait
+						}
+						11.1 = {
+							set_country_flag = commercial_trait
+						}
+						11.1 = {
+							set_country_flag = militaristic_trait
+						}
+						11.1 = {
+							set_country_flag = scientific_trait
+						}
+						11.1 = {
+							set_country_flag = seafaring_trait
+						}
+						11.1 = {
+							set_country_flag = aerial_trait
+						}
+						11.1 = {
+							set_country_flag = spiritual_trait
+						}
+						11.1 = {
+							set_country_flag = ruinous_trait
+						}
+					}
+					log = "Assigned Trait #1"
+					# Assign Character Trait 2
+					# Will randomly choose from the list with the % chance being 11.1%, if the country already has the idea, it is instead multiplied by 0, to remove the possibility of duplicates
+					random_list = {
+						11.1 = {
+							set_country_flag = agricultural_trait
+							modifier = {
+								factor = 0
+								has_country_flag = agricultural_trait
+							}
+						}
+						11.1 = {
+							set_country_flag = industrious_trait
+							modifier = {
+								factor = 0
+								has_country_flag = industrious_trait
+							}
+						}
+						11.1 = {
+							set_country_flag = commercial_trait
+							modifier = {
+								factor = 0
+								has_country_flag = commercial_trait
+							}
+						}
+						11.1 = {
+							set_country_flag = militaristic_trait
+							modifier = {
+								factor = 0
+								has_country_flag = militaristic_trait
+							}
+						}
+						11.1 = {
+							set_country_flag = scientific_trait
+							modifier = {
+								factor = 0
+								has_country_flag = scientific_trait
+							}
+						}
+						11.1 = {
+							set_country_flag = seafaring_trait
+							modifier = {
+								factor = 0
+								has_country_flag = seafaring_trait
+							}
+						}
+						11.1 = {
+							set_country_flag = aerial_trait
+							modifier = {
+								factor = 0
+								has_country_flag = aerial_trait
+							}
+						}
+						11.1 = {
+							set_country_flag = spiritual_trait
+							modifier = {
+								factor = 0
+								has_country_flag = spiritual_trait
+							}
+						}
+						11.1 = {
+							set_country_flag = ruinous_trait
+							modifier = {
+								factor = 0
+								has_country_flag = ruinous_trait
+							}
+						}
+					}
+					log = "Assigned Trait #2"
+					log = "-----------------------------------------"
+				}
+			}
+		}
+	}
+}
