@@ -935,6 +935,13 @@ scripted_gui = {
                 clr_country_flag = extensive_selected_flag
                 clr_country_flag = massive_selected_flag
                 clr_country_flag = total_selected_flag
+                set_variable = { purge_length_var = 60 }
+                if = {
+                    limit = {
+                        has_country_flag = high_selected_flag
+                    }
+                    multiply_variable = { purge_length_var = 2 }
+                }
             }
             corruption_limited_selected_click = {
                 clr_country_flag = limited_selected_flag
@@ -944,6 +951,13 @@ scripted_gui = {
                 clr_country_flag = limited_selected_flag
                 clr_country_flag = massive_selected_flag
                 clr_country_flag = total_selected_flag
+                set_variable = { purge_length_var = 90 }
+                if = {
+                    limit = {
+                        has_country_flag = high_selected_flag
+                    }
+                    multiply_variable = { purge_length_var = 2 }
+                }
             }
             corruption_extensive_selected_click = {
                 clr_country_flag = extensive_selected_flag
@@ -953,6 +967,13 @@ scripted_gui = {
                 clr_country_flag = limited_selected_flag
                 clr_country_flag = extensive_selected_flag
                 clr_country_flag = total_selected_flag
+                set_variable = { purge_length_var = 120 }
+                if = {
+                    limit = {
+                        has_country_flag = high_selected_flag
+                    }
+                    multiply_variable = { purge_length_var = 2 }
+                }
             }
             corruption_massive_selected_click = {
                 clr_country_flag = massive_selected_flag
@@ -962,6 +983,13 @@ scripted_gui = {
                 clr_country_flag = limited_selected_flag
                 clr_country_flag = extensive_selected_flag
                 clr_country_flag = massive_selected_flag
+                set_variable = { purge_length_var = 180 }
+                if = {
+                    limit = {
+                        has_country_flag = high_selected_flag
+                    }
+                    multiply_variable = { purge_length_var = 2 }
+                }
             }
             corruption_total_selected_click = {
                 clr_country_flag = total_selected_flag
@@ -969,6 +997,12 @@ scripted_gui = {
             
             corruption_select_low_click = {
                 set_country_flag = low_selected_flag
+                if = {
+                    limit = {
+                        has_country_flag = high_selected_flag
+                    }
+                    divide_variable = { purge_length_var = 2 }
+                }
                 clr_country_flag = high_selected_flag
             }
             corruption_low_selected_click = {
@@ -977,9 +1011,11 @@ scripted_gui = {
             corruption_select_high_click = {
                 set_country_flag = high_selected_flag
                 clr_country_flag = low_selected_flag
+                multiply_variable = { purge_length_var = 2 }
             }
             corruption_high_selected_click = {
                 clr_country_flag = high_selected_flag
+                divide_variable = { purge_length_var = 2 }
             }
 
             civilian_focus_click = {
