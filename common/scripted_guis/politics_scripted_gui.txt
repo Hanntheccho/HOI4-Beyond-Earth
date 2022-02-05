@@ -42,18 +42,227 @@ scripted_gui = {
                 }
             }
             bribe_politicians_button_click = {
-                add_political_power = -25
-                add_to_variable = { parliament_support = 10 }
-                add_to_variable = { corruption_variable = 5 }
+                add_political_power = -80
+                if = {
+                    limit = {
+                        has_government = harmony
+                    }
+                    set_variable = { harmony_drift_bribe_politicians_var = 0.1 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = supremacy
+                    }
+                    set_variable = { supremacy_drift_bribe_politicians_var = 0.1 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = purity
+                    }
+                    set_variable = { purity_drift_bribe_politicians_var = 0.1 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = neutral
+                    }
+                    set_variable = { neutral_drift_bribe_politicians_var = 0.1 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = divinity
+                    }
+                    set_variable = { divinity_drift_bribe_politicians_var = 0.1 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = voracity
+                    }
+                    set_variable = { voracity_drift_bribe_politicians_var = 0.1 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = mastery
+                    }
+                    set_variable = { mastery_drift_bribe_politicians_var = 0.1 }
+                }
+                add_dynamic_modifier = { modifier = bribe_politicians_modifier days = 100 }
             }
             welfare_programs_button_click = {
-                add_to_variable = { parliament_support = 5 }
-                add_political_power = -100
+                subtract_from_variable = { cultural_power = 80 }
+                if = {
+                    limit = {
+                        has_government = harmony
+                    }
+                    set_variable = { harmony_drift_welfare_programs_var = 0.01 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = supremacy
+                    }
+                    set_variable = { supremacy_drift_welfare_programs_var = 0.01 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = purity
+                    }
+                    set_variable = { purity_drift_welfare_programs_var = 0.01 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = neutral
+                    }
+                    set_variable = { neutral_drift_welfare_programs_var = 0.01 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = divinity
+                    }
+                    set_variable = { divinity_drift_welfare_programs_var = 0.01 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = voracity
+                    }
+                    set_variable = { voracity_drift_welfare_programs_var = 0.01 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = mastery
+                    }
+                    set_variable = { mastery_drift_welfare_programs_var = 0.01 }
+                }
+                add_dynamic_modifier = { modifier = welfare_programs_modifier days = 60 }
             }
             nerve_stapling_button_click = {
-                add_to_variable = { parliament_support = 15 }
-                add_to_variable = { corruption_variable = -5 }
-                add_timed_idea = { idea = nerve_stapling_in_progress days = 40 }
+                add_political_power = -50
+                if = {
+                    limit = {
+                        has_government = harmony
+                    }
+                    set_variable = { harmony_drift_nerve_stapling_var = -0.05 }
+                    add_popularity = {
+                        ideology = harmony
+                        popularity = 0.05
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_government = supremacy
+                    }
+                    set_variable = { supremacy_drift_nerve_stapling_var = -0.05 }
+                    add_popularity = {
+                        ideology = supremacy
+                        popularity = 0.05
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_government = purity
+                    }
+                    set_variable = { purity_drift_nerve_stapling_var = -0.05 }
+                    add_popularity = {
+                        ideology = purity
+                        popularity = 0.05
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_government = neutral
+                    }
+                    set_variable = { neutral_drift_nerve_stapling_var = -0.05 }
+                    add_popularity = {
+                        ideology = neutral
+                        popularity = 0.05
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_government = divinity
+                    }
+                    set_variable = { divinity_drift_nerve_stapling_var = -0.05 }
+                    add_popularity = {
+                        ideology = divinity
+                        popularity = 0.05
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_government = voracity
+                    }
+                    set_variable = { voracity_drift_nerve_stapling_var = -0.05 }
+                    add_popularity = {
+                        ideology = voracity
+                        popularity = 0.05
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_government = mastery
+                    }
+                    set_variable = { mastery_drift_nerve_stapling_var = -0.05 }
+                    add_popularity = {
+                        ideology = mastery
+                        popularity = 0.05
+                    }
+                }
+                random_list = {
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 10 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 11 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 12 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 13 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 14 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 15 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 16 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 17 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 18 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 19 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 20 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                }
+                add_dynamic_modifier = { modifier = nerve_stapling_modifier days = 50 }
             }
 
             increase_trade_law_button_click = {
@@ -1090,18 +1299,27 @@ scripted_gui = {
                 has_country_flag = law_hearing
             }
             bribe_politicians_button_click_enabled = {
-                ROOT = {
-                    has_country_flag = law_hearing
+                AND = {
+                    has_political_power > 79
+                    NOT = {
+                        has_dynamic_modifier = { modifier = bribe_politicians_modifier }
+                    }
                 }
             }
             welfare_programs_button_click_enabled = {
-                ROOT = {
-                    has_country_flag = law_hearing
+                AND = {
+                    check_variable = { cultural_power > 80 }
+                    NOT = {
+                        has_dynamic_modifier = { modifier = welfare_programs_modifier }
+                    }
                 }
             }
             nerve_stapling_button_click_enabled = {
-                ROOT = {
-                    has_country_flag = law_hearing
+                AND = {
+                    has_political_power > 49
+                    NOT = {
+                        has_dynamic_modifier = { modifier = nerve_stapling_modifier }
+                    }
                 }
             }
             increase_trade_law_button_visible = {
@@ -1243,29 +1461,6 @@ scripted_gui = {
             uniquebills_click_enabled = {
                 NOT = {
                     has_idea = anarchy_style
-                }
-            }
-            bribe_politicians_button_click_enabled = {
-                AND = {
-                    has_political_power > 24
-                    check_variable = { parliament_support < 90 }
-                }
-            }
-            welfare_programs_button_click_enabled = {
-                AND = {
-                    has_political_power > 49
-                    check_variable = { parliament_support < 95 }
-                    check_variable = { industrial_power > 49 }
-                }
-            }
-            nerve_stapling_button_click_enabled = {
-                AND = {
-                    check_variable = { parliament_support < 85 }
-                    has_tech = punishment_spheres
-                    check_variable = { corruption_variable > 5 }
-                }
-                NOT = {
-                    has_idea = nerve_stapling_in_progress
                 }
             }
             increase_trade_law_button_click_enabled = {
