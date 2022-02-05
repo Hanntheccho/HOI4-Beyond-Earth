@@ -499,6 +499,7 @@ weapon_augment = {
         }
     }
 
+    #UPDATE the rest
     skn_utility_hand = {
         ledger = army
         visible = {
@@ -508,9 +509,12 @@ weapon_augment = {
         }
         available = {
             if = {
-                AND = {
+                limit = {
                     has_tech = prime_augment_2
-                    check_variable = {industrial_power > 74}
+                    set_temp_variable = {augment_cost = augment_law_cost}
+                    multiply_temp_variable = {augment_cost = augment_law_cost_factor}
+                    subtract_from_temp_variable = {augment_cost = 1}
+                    check_variable = {industrial_power > augment_cost}
                 }
             }
         }
@@ -524,7 +528,14 @@ weapon_augment = {
         }
 
         on_add = {
-            add_to_variable = {industrial_power = -75}
+            #Create temp variable for the cost of the law set to the base value of 75 industrial power
+            set_temp_variable = {augment_cost = augment_law_cost}
+            #Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
+            multiply_temp_variable = {augment_cost = augment_law_cost_factor}
+            #Negate the value so we can remove the appropriate amount
+            multiply_temp_variable = {augment_cost = -1}
+            #Add the negative value to industrial_power (essentially a subtraction)
+            add_to_variable = {industrial_power = augment_cost}
         }
 
         equipment_bonus = {
