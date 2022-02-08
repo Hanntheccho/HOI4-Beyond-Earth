@@ -115,6 +115,26 @@ parliament_power_adjustment = {
     }
 }
 
+introduce_proposition = {
+    if = {
+        limit = {
+            check_variable = { corruption_variable < 25 }
+        }
+        add_political_power = -25
+    }
+    else_if = {
+        limit = {
+            check_variable = { corruption_variable > 75 }
+        }
+        add_political_power = -75
+    }
+    else = {
+        set_temp_variable = { bill_proposing_cost = corruption_variable }
+        multiply_temp_variable = { bill_proposing_cost = -1 }
+        add_political_power = bill_proposing_cost
+    }
+}
+
 pierce_corruption_dont_check = {
     if = {
         limit = {

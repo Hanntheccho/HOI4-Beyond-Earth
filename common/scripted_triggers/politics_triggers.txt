@@ -22,3 +22,21 @@ enough_parliament_support = {
         }
     }
 }
+
+enough_pp_for_proposing = {
+    if = {
+        limit = {
+            check_variable = { corruption_variable < 25 }
+        }
+        has_political_power > 24
+    }
+    else_if = {
+        limit = {
+            check_variable = { corruption_variable > 75 }
+        }
+        has_political_power > 74
+    }
+    else = {
+        has_political_power > corruption_variable
+    }
+}
