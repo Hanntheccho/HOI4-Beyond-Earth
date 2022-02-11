@@ -1,3 +1,4 @@
+# VORACITY MODIFIERS
 power_of_progress_1 = {
 	enable = {
 		always = yes
@@ -11,7 +12,6 @@ power_of_progress_1 = {
 	custom_modifier_tooltip = power_of_progress_1_tooltip
 	research_speed_factor = 0.03
 }
-
 power_of_progress_2 = {
 	enable = {
 		always = yes
@@ -25,7 +25,6 @@ power_of_progress_2 = {
 	custom_modifier_tooltip = power_of_progress_2_tooltip
 	attrition = -0.1
 }
-
 power_of_progress_3 = {
 	enable = {
 		always = yes
@@ -39,7 +38,6 @@ power_of_progress_3 = {
 	research_speed_factor = 0.02
 	custom_modifier_tooltip = power_of_progress_3_tooltip
 }
-
 power_of_progress_4 = {
 	enable = {
 		always = yes
@@ -56,7 +54,6 @@ power_of_progress_4 = {
 	# }
 	custom_modifier_tooltip = power_of_progress_4_tooltip
 }
-
 power_of_progress_5 = {
 	enable = {
 		always = yes
@@ -64,14 +61,13 @@ power_of_progress_5 = {
 	remove_trigger = {
 		NOT = {
 			has_government = voracity
-			has_country_flag = bipartisan_proposition_passed
+			has_country_flag = divisive_proposition_passed
 		}
 	}
 	production_factory_max_efficiency_factor = 0.05
 	line_change_production_efficiency_factor = -0.1
 	custom_modifier_tooltip = power_of_progress_5_tooltip
 }
-
 power_of_progress_6 = {
 	enable = {
 		always = yes
@@ -79,15 +75,11 @@ power_of_progress_6 = {
 	remove_trigger = {
 		NOT = {
 			has_government = voracity
-			has_country_flag = bipartisan_proposition_passed
+			has_country_flag = divisive_proposition_passed
 		}
-	}
-	add_to_variable = {
-		augment_law_cost_factor = -0.5
 	}
 	custom_modifier_tooltip = power_of_progress_6_tooltip
 }
-
 power_of_progress_7 = {
 	enable = {
 		always = yes
@@ -95,14 +87,13 @@ power_of_progress_7 = {
 	remove_trigger = {
 		NOT = {
 			has_government = voracity
-			has_country_flag = bipartisan_proposition_passed
+			has_country_flag = controversial_proposition_passed
 		}
 	}
 	decryption_factor = 0.5
 	encryption_factor = 0.5
 	custom_modifier_tooltip = power_of_progress_7_tooltip
 }
-
 power_of_progress_8 = {
 	enable = {
 		always = yes
@@ -110,16 +101,15 @@ power_of_progress_8 = {
 	remove_trigger = {
 		NOT = {
 			has_government = voracity
-			has_country_flag = bipartisan_proposition_passed
+			has_country_flag = controversial_proposition_passed
 		}
 	}
 	#Augment division +10% organization
-	augment = {
-		max_organisation = 0.1
-	}
+	#augment = {
+	#	max_organisation = 0.1
+	#}
 	custom_modifier_tooltip = power_of_progress_8_tooltip
 }
-
 power_of_progress_9 = {
 	enable = {
 		always = yes
@@ -127,9 +117,128 @@ power_of_progress_9 = {
 	remove_trigger = {
 		NOT = {
 			has_government = voracity
-			has_country_flag = bipartisan_proposition_passed
 		}
 	}
 	justify_war_goal_time = -0.25
 	custom_modifier_tooltip = power_of_progress_9_tooltip
+}
+
+#DIVINITY MODIFIERS
+power_of_thought_1 = {
+	enable = {
+		always = yes
+	}
+	remove_trigger = {
+		NOT = {
+			has_government = divinity
+			has_country_flag = bipartisan_proposition_passed
+		}
+	}
+	custom_modifier_tooltip = power_of_thought_1_tooltip
+	war_stability_factor = 0.2
+}
+power_of_thought_2 = {
+	enable = {
+		always = yes
+	}
+	remove_trigger = {
+		NOT = {
+			has_government = divinity
+			has_country_flag = bipartisan_proposition_passed
+		}
+	}
+	custom_modifier_tooltip = power_of_thought_2_tooltip
+	production_speed_buildings_factor = -0.05
+}
+power_of_thought_3 = {
+	enable = {
+		always = yes
+	}
+	remove_trigger = {
+		NOT = {
+			has_government = divinity
+			has_country_flag = bipartisan_proposition_passed
+		}
+	}
+	war_support_factor = 0.2
+	custom_modifier_tooltip = power_of_thought_3_tooltip
+}
+power_of_thought_4 = {
+	enable = {
+		always = yes
+	}
+	remove_trigger = {
+		NOT = {
+			has_government = divinity
+			has_country_flag = bipartisan_proposition_passed
+		}
+	}
+	industrial_capacity_factory = 0.05
+	industrial_capacity_dockyard = 0.05
+	custom_modifier_tooltip = power_of_thought_4_tooltip
+}
+power_of_thought_5 = {
+	enable = {
+		always = yes
+	}
+	remove_trigger = {
+		NOT = {
+			has_government = divinity
+			has_country_flag = divisive_proposition_passed
+		}
+	}
+	research_speed_factor = 0.04
+	custom_modifier_tooltip = power_of_thought_5_tooltip
+}
+power_of_thought_6 = {
+	enable = {
+		always = yes
+	}
+	remove_trigger = {
+		NOT = {
+			has_government = divinity
+			has_country_flag = divisive_proposition_passed
+		}
+	}
+	#CORRUPTION GAIN, DONE THROUGH IDEA
+	custom_modifier_tooltip = power_of_thought_6_tooltip
+}
+power_of_thought_7 = {
+	enable = {
+		always = yes
+	}
+	remove_trigger = {
+		NOT = {
+			has_government = divinity
+			has_country_flag = controversial_proposition_passed
+		}
+	}
+	#CORRUPTION GAIN, DONE THROUGH IDEA
+	custom_modifier_tooltip = power_of_thought_7_tooltip
+}
+power_of_thought_8 = {
+	enable = {
+		always = yes
+	}
+	remove_trigger = {
+		NOT = {
+			has_government = divinity
+			has_country_flag = controversial_proposition_passed
+		}
+	}
+	#PARLIAMENT POWER, DONE THROUGH IDEA
+	custom_modifier_tooltip = power_of_thought_8_tooltip
+}
+power_of_thought_9 = {
+	enable = {
+		always = yes
+	}
+	remove_trigger = {
+		NOT = {
+			has_government = divinity
+		}
+	}
+	industrial_capacity_factory = 0.05
+	industrial_capacity_dockyard = 0.05
+	custom_modifier_tooltip = power_of_thought_9_tooltip
 }

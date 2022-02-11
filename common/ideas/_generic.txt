@@ -1,5 +1,182 @@
 ideas = {
 
+    hidden_ideas = {
+        power_of_progress_4_idea = {
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_progress_4
+                    }
+                }
+            }
+
+            removal_cost = -1
+            on_add = {
+                #be_category_army = {
+                #    casualty_trickleback = 0.1
+                #}
+            }
+        }
+
+        power_of_progress_6_idea = {
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_progress_6
+                    }
+                }
+            }
+
+            removal_cost = -1
+            on_add = {
+                add_to_variable = {
+                    augment_law_cost_factor = -0.5
+                }
+            }
+
+            on_remove = {
+                add_to_variable = {
+                    augment_law_cost_factor = 0.5
+                }
+            }
+        }
+
+        power_of_progress_8_idea = {
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_progress_8
+                    }
+                }
+            }
+
+            removal_cost = -1
+            #AUGMENT DIVISION ORG
+        }
+
+        power_of_thought_2_idea = {
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_thought_2
+                    }
+                }
+            }
+            on_add = {
+                add_to_variable = {
+                    cultural_power_gain = 0.2
+                }
+            }
+
+            on_remove = {
+                add_to_variable = {
+                    cultural_power_gain = -0.2
+                }
+            }
+
+            removal_cost = -1
+        }
+
+        power_of_thought_6_idea = {
+            #CORRUPTION GAIN -0.05
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_thought_6
+                    }
+                }
+            }
+
+            removal_cost = -1
+            #on_add = {
+            #    add_to_variable = {
+            #        augment_law_cost_factor = -0.5
+            #    }
+           # }
+
+            #on_remove = {
+            #    add_to_variable = {
+            #        augment_law_cost_factor = 0.5
+            #    }
+            #}
+        }
+
+        power_of_thought_7_idea = {
+            #CORUPTION GAIN -0.05
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_thought_7
+                    }
+                }
+            }
+
+            removal_cost = -1
+            #on_add = {
+            #    add_to_variable = {
+            #        augment_law_cost_factor = -0.5
+            #    }
+           # }
+
+            #on_remove = {
+            #    add_to_variable = {
+            #        augment_law_cost_factor = 0.5
+            #    }
+            #}
+        }
+
+        power_of_thought_8_idea = {
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_thought_2
+                    }
+                }
+            }
+            #on_add = {
+            #    add_to_variable = {
+            #        #PARLIAMENT POWER +5%
+            #    }
+            #}
+
+            #on_remove = {
+            #    add_to_variable = {
+            #        cultural_power_gain = -0.2
+            #    }
+            #}
+
+            removal_cost = -1
+        }
+    }
+
     country = {
         #FINAL WAR IDEAS
         total_war = {
@@ -10,7 +187,7 @@ ideas = {
             removal_cost = -1
 
             modifier = {
-                recruitable_population_factor = 0.2
+                conscription_factor = 0.2
                 mobilization_speed = 1
                 industrial_capacity_dockyard = 0.5
                 industrial_capacity_factory = 0.5
