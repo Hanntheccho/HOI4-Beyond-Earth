@@ -285,6 +285,12 @@ on_actions = {
                 }
                 subtract_from_variable = { free_factory_adjustment = 0.3 }
             }
+            if = {
+                limit = {
+                    has_idea = prosperity_two
+                }
+                add_to_variable = { free_factory_adjustment = 0.1 }
+            }
             add_to_variable = { free_factory_gain = free_factory_base_gain }
             multiply_variable = { free_factory_gain = free_factory_adjustment }
             add_to_variable = { free_factory_progress = free_factory_gain }
@@ -947,12 +953,12 @@ on_actions = {
             }
             set_variable = { division_limit = num_of_factories }
             add_to_variable = { division_limit = division_limit_extra }
-            if = {
-                limit = {
-                    has_country_flag = has_body_tier1
-                }
-                multiply_variable = { division_limit = 1.2 }
-            }
+            #if = {
+            #    limit = {
+            #        has_country_flag = has_body_tier1
+            #    }
+            #    multiply_variable = { division_limit = 1.2 }
+            #}
             round_variable = division_limit
             clamp_variable = {
                 var = division_limit
