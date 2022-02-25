@@ -17,11 +17,7 @@ ideas = {
             }
 
             removal_cost = -1
-            on_add = {
-                #be_category_army = {
-                #    casualty_trickleback = 0.1
-                #}
-            }
+
         }
 
         power_of_progress_6_idea = {
@@ -66,7 +62,6 @@ ideas = {
             }
 
             removal_cost = -1
-            #AUGMENT DIVISION ORG
         }
 
         #Divinity
@@ -98,8 +93,6 @@ ideas = {
         }
 
         power_of_thought_6_idea = {
-            #CORRUPTION GAIN -0.05
-            #BROKEN
             allowed = {
                 always = no
             }
@@ -113,22 +106,20 @@ ideas = {
             }
 
             removal_cost = -1
-            #on_add = {
-            #    add_to_variable = {
-            #        augment_law_cost_factor = -0.5
-            #    }
-           # }
+            on_add = {
+                add_to_variable = {
+                    corruption_variable = -0.05
+                }
+            }
 
-            #on_remove = {
-            #    add_to_variable = {
-            #        augment_law_cost_factor = 0.5
-            #    }
-            #}
+            on_remove = {
+                add_to_variable = {
+                    corruption_variable = 0.05
+                }
+            }
         }
 
         power_of_thought_7_idea = {
-            #CORUPTION GAIN -0.05
-            #BROKEN
             allowed = {
                 always = no
             }
@@ -142,21 +133,20 @@ ideas = {
             }
 
             removal_cost = -1
-            #on_add = {
-            #    add_to_variable = {
-            #        augment_law_cost_factor = -0.5
-            #    }
-           # }
+            on_add = {
+                add_to_variable = {
+                    corruption_variable = -0.05
+                }
+            }
 
-            #on_remove = {
-            #    add_to_variable = {
-            #        augment_law_cost_factor = 0.5
-            #    }
-            #}
+            on_remove = {
+                add_to_variable = {
+                    corruption_variable = 0.05
+                }
+            }
         }
 
         power_of_thought_8_idea = {
-            #BROKEN
             allowed = {
                 always = no
             }
@@ -164,26 +154,21 @@ ideas = {
             cancel = {
                 NOT = {
                     has_dynamic_modifier = {
-                        modifier = power_of_thought_2
+                        modifier = power_of_thought_8
                     }
                 }
             }
-            #on_add = {
-            #    add_to_variable = {
-            #        #PARLIAMENT POWER +5%
-            #    }
-            #}
-
-            #on_remove = {
-            #    add_to_variable = {
-            #        cultural_power_gain = -0.2
-            #    }
-            #}
-
+            
+            on_add = {
+                parliament_power_adjustment = yes
+            }
+            on_remove = {
+                parliament_power_adjustment = yes
+            }
             removal_cost = -1
         }
 
-        #
+        #Mastery
         power_of_technology_1_idea = {
             allowed = {
                 always = no
@@ -199,45 +184,59 @@ ideas = {
 
             equipment_bonus = {
                 anti_air_equipment = {
+                    instant = yes
                     reliability_factor = 0.05
                 }
                 anti_tank_equipment = {
+                    instant = yes
                     reliability_factor = 0.05
                 }
                 apc_equipment = {
+                    instant = yes
                     reliability_factor = 0.05
                 }
                 artillery_equipment = {
+                    instant = yes
                     reliability_factor = 0.05
                 }
                 augment_equipment = {
+                    instant = yes
                     reliability_factor = 0.05
                 }
                 crawler_equipment = {
+                    instant = yes
                     reliability_factor = 0.05
                 }
                 gun_equipment = {
+                    instant = yes
                     reliability_factor = 0.05
                 }
                 infantry_equipment = {
+                    instant = yes
                     reliability_factor = 0.05
                 }
                 MBT_equipment = {
+                    instant = yes
                     reliability_factor = 0.05
                 }
                 mechanized_horror_equipment = {
+                    instant = yes
                     reliability_factor = 0.05
                 }
                 rocket_artillery_equipment = {
+                    instant = yes
                     reliability_factor = 0.05
                 }
                 rover_equipment = {
+                    instant = yes
                     reliability_factor = 0.05
                 }
                 support_equipment = {
+                    instant = yes
                     reliability_factor = 0.05
                 }
                 walker_equipment = {
+                    instant = yes
                     reliability_factor = 0.05
                 }
             }
@@ -258,13 +257,14 @@ ideas = {
 
             equipment_bonus = {
                 support_equipment = {
+                    instant = yes
                     build_cost_ic = -0.15
                 }
             }
         }
 
+        #Neutral
         power_of_control_1_idea = {
-            #BROKEN
             allowed = {
                 always = no
             }
@@ -277,11 +277,18 @@ ideas = {
                 }
             }
 
-            #PARLIAMENT POWER ADJUSTMENT
+            on_add = {
+                parliament_power_adjustment = yes
+            }
+
+            on_remove = {
+                parliament_power_adjustment = yes
+            }
+
+            removal_cost = -1
         }
 
         power_of_control_9_idea = {
-            #BROKEN
             allowed = {
                 always = no
             }
@@ -294,7 +301,15 @@ ideas = {
                 }
             }
 
-            #PARLIAMENT POWER ADJUSTMENT
+            on_add = {
+                parliament_power_adjustment = yes
+            }
+
+            on_remove = {
+                parliament_power_adjustment = yes
+            }
+
+            removal_cost = -1
         }
 
         #PURITY
@@ -376,8 +391,6 @@ ideas = {
         }
 
         power_of_principle_8_idea = {
-            #CORUPTION GAIN -0.05
-            #BROKEN
             allowed = {
                 always = no
             }
@@ -391,17 +404,17 @@ ideas = {
             }
 
             removal_cost = -1
-            #on_add = {
-            #    add_to_variable = {
-            #        augment_law_cost_factor = -0.5
-            #    }
-           # }
+            on_add = {
+                add_to_variable = {
+                    corruption_variable = -0.05
+                }
+            }
 
-            #on_remove = {
-            #    add_to_variable = {
-            #        augment_law_cost_factor = 0.5
-            #    }
-            #}
+            on_remove = {
+                add_to_variable = {
+                    corruption_variable = 0.05
+                }
+            }
         }
 
         #SUPREMACY
@@ -433,7 +446,6 @@ ideas = {
         }
 
         power_of_machinery_2_idea = {
-            #BROKEN
             allowed = {
                 always = no
             }
@@ -448,22 +460,21 @@ ideas = {
             on_add = {
                 add_to_variable = {
                     cultural_power_gain = -0.1
-                    #PARLIAMENT POWER
                 }
+                parliament_power_adjustment = yes
             }
 
             on_remove = {
                 add_to_variable = {
                     cultural_power_gain = 0.1
-                    #PARLIAMENT POWER
                 }
+                parliament_power_adjustment = yes
             }
 
             removal_cost = -1
         }
 
         power_of_machinery_6_idea = {
-            #BROKEN
             allowed = {
                 always = no
             }
@@ -491,7 +502,7 @@ ideas = {
             removal_cost = -1
         }
 
-        #HARMOY
+        #HARMONY
         power_of_nature_1_idea = {
             allowed = {
                 always = no
@@ -505,15 +516,15 @@ ideas = {
                 }
             }
             on_add = {
-                #add_to_variable = {
-                    #FREE FACTORY ADJUSTMENT
-                #}
+                add_to_variable = {
+                    free_factory_adjustment = -0.10
+                }
             }
 
             on_remove = {
-                #add_to_variable = {
-                     #FREE FACTORY ADJUSTMENT
-                #}
+                add_to_variable = {
+                    free_factory_adjustment = 0.1
+                }
             }
 
             removal_cost = -1
@@ -603,8 +614,6 @@ ideas = {
         }
 
         power_of_nature_8_idea = {
-            #CORRUPTION GAIN
-            #BROKEN
             allowed = {
                 always = no
             }
@@ -617,15 +626,15 @@ ideas = {
                 }
             }
             on_add = {
-                #add_to_variable = {
-                #    
-                #}
+                add_to_variable = {
+                    corruption_variable = -0.06
+                }
             }
 
             on_remove = {
-                #add_to_variable = {
-                #    augment_law_cost_factor = 0.15
-                #}
+                add_to_variable = {
+                    corruption_variable = 0.06
+                }
             }
 
             removal_cost = -1
@@ -644,12 +653,14 @@ ideas = {
                 add_to_variable = {
                     spaceship_contribution_modifier = 0.2
                 }
+                #DELAYED SOCIETAL COLLAPSE
             }
 
             on_remove = {
                 add_to_variable = {
                     spaceship_contribution_modifier = 0.2
                 }
+                #DELAYED SOCIETAL COLLAPSE
             }
 
             removal_cost = -1
