@@ -87,6 +87,7 @@
 		}
 
 		completion_reward = {
+			custom_effect_tooltip = power_of_progress_2_tooltip
 			force_update_dynamic_modifier = yes
 			add_dynamic_modifier = {
 				modifier = power_of_progress_2
@@ -112,6 +113,7 @@
 		}
 
 		completion_reward = {
+			custom_effect_tooltip = power_of_progress_3_tooltip
 			force_update_dynamic_modifier = yes
 			add_dynamic_modifier = {
 				modifier = power_of_progress_3
@@ -135,6 +137,7 @@
 			has_country_flag = bipartisan_proposition_passed
 		}
 		completion_reward = {
+			custom_effect_tooltip = power_of_progress_4_tooltip
 			force_update_dynamic_modifier = yes
 			add_dynamic_modifier = {
 				modifier = power_of_progress_4
@@ -160,6 +163,7 @@
 			has_country_flag = divisive_proposition_passed
 		}
 		completion_reward = {
+			custom_effect_tooltip = power_of_progress_5_tooltip
 			force_update_dynamic_modifier = yes
 			add_dynamic_modifier = {
 				modifier = power_of_progress_5
@@ -184,6 +188,7 @@
 			has_country_flag = divisive_proposition_passed
 		}
 		completion_reward = {
+			custom_effect_tooltip = power_of_progress_6_tooltip
 			force_update_dynamic_modifier = yes
 			add_dynamic_modifier = {
 				modifier = power_of_progress_6
@@ -209,6 +214,7 @@
 			has_country_flag = controversial_proposition_passed
 		}
 		completion_reward = {
+			custom_effect_tooltip = power_of_progress_7_tooltip
 			force_update_dynamic_modifier = yes
 			add_dynamic_modifier = {
 				modifier = power_of_progress_7
@@ -233,6 +239,7 @@
 			has_country_flag = controversial_proposition_passed
 		}
 		completion_reward = {
+			custom_effect_tooltip = power_of_progress_8_tooltip
 			force_update_dynamic_modifier = yes
 			add_dynamic_modifier = {
 				modifier = power_of_progress_8
@@ -260,6 +267,7 @@
 			has_government = voracity
 		}
 		completion_reward = {
+			custom_effect_tooltip = power_of_progress_9_tooltip
 			force_update_dynamic_modifier = yes
 			add_dynamic_modifier = {
 				modifier = power_of_progress_9
@@ -949,6 +957,8 @@
 		cost = 10
 		prerequisite = {
 			focus = generic_united_front
+		}
+		prerequisite = {
 			focus = generic_radical_suppresion
 		}
 		available = {
@@ -971,18 +981,18 @@
 		icon = GFX_goal_generic_purity
 		x = 17
 		y = 1
-		cost = 10
+		cost = 1
 		prerequisite = {
 			focus = generic_23rd_politics
 		}
+		available = {
+			has_government = purity
+		}
 		completion_reward = {
+			
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -990,18 +1000,22 @@
 		icon = GFX_goal_generic_social_mores
 		x = 16
 		y = 2
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_purity
 		}
+		available = {
+			has_government = purity
+			has_country_flag = bipartisan_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_principle_1
+			}
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1009,18 +1023,22 @@
 		icon = GFX_goal_generic_recolonization_corps
 		x = 18
 		y = 2
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_purity
 		}
+		available = {
+			has_government = purity
+			has_country_flag = bipartisan_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_principle_2
+			}
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1028,18 +1046,23 @@
 		icon = GFX_goal_generic_conservative_humanism
 		x = 16
 		y = 3
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_social_mores
 		}
+		available = {
+			has_government = purity
+			has_country_flag = bipartisan_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_principle_3
+			}
+			add_ideas = power_of_principle_3_idea
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1047,18 +1070,22 @@
 		icon = GFX_goal_generic_reassimilation
 		x = 18
 		y = 3
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_recolonization_corps
 		}
+		available = {
+			has_government = purity
+			has_country_flag = bipartisan_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_principle_4
+			}
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1066,18 +1093,23 @@
 		icon = GFX_goal_generic_limited_augmentation
 		x = 16
 		y = 4
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_conservative_humanism
 		}
+		available = {
+			has_government = purity
+			has_country_flag = divisive_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_principle_5
+			}
+			add_ideas = power_of_principle_5_idea
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1085,18 +1117,22 @@
 		icon = GFX_goal_generic_channeled_wrath
 		x = 18
 		y = 4
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_reassimilation
 		}
+		available = {
+			has_government = purity
+			has_country_flag = divisive_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_principle_6
+			}
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1104,18 +1140,23 @@
 		icon = GFX_goal_generic_united_struggle
 		x = 16
 		y = 5
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_limited_augmentation
 		}
+		available = {
+			has_government = purity
+			has_country_flag = controversial_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_principle_7
+			}
+			add_ideas = power_of_principle_7_idea
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1123,18 +1164,23 @@
 		icon = GFX_goal_generic_ubuntu
 		x = 18
 		y = 5
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_channeled_wrath
 		}
+		available = {
+			has_government = purity
+			has_country_flag = controversial_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_principle_8
+			}
+			add_ideas = power_of_principle_8_idea
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1142,19 +1188,24 @@
 		icon = GFX_goal_generic_historic_doctrine
 		x = 17
 		y = 6
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_united_struggle
+		}
+		prerequisite = {
 			focus = generic_ubuntu
 		}
+		available = {
+			has_government = purity
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_principle_9
+			}
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	#Supremacy
@@ -1163,18 +1214,17 @@
 		icon = GFX_goal_generic_supremacy
 		x = 21
 		y = 1
-		cost = 10
+		cost = 1
 		prerequisite = {
 			focus = generic_23rd_politics
+		}
+		available = {
+			has_government = purity
 		}
 		completion_reward = {
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1182,18 +1232,22 @@
 		icon = GFX_goal_generic_monorail_initiative
 		x = 20
 		y = 2
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_supremacy
 		}
+		available = {
+			has_government = supremacy
+			has_country_flag = bipartisan_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_machinery_1
+			}
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1201,18 +1255,23 @@
 		icon = GFX_goal_generic_memeweb
 		x = 22
 		y = 2
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_supremacy
 		}
+		available = {
+			has_government = supremacy
+			has_country_flag = bipartisan_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_machinery_2
+			}
+			add_ideas = power_of_machinery_2_idea
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1220,18 +1279,23 @@
 		icon = GFX_goal_generic_synthetic_thought
 		x = 20
 		y = 3
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_monorail_initiative
 		}
+		available = {
+			has_government = supremacy
+			has_country_flag = bipartisan_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_machinery_3
+			}
+			add_ideas = power_of_machinery_3_idea
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1239,18 +1303,22 @@
 		icon = GFX_goal_generic_datalink_consolidation
 		x = 22
 		y = 3
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_memeweb
 		}
+		available = {
+			has_government = supremacy
+			has_country_flag = bipartisan_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_machinery_4
+			}
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1258,18 +1326,22 @@
 		icon = GFX_goal_generic_energy_maximization
 		x = 20
 		y = 4
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_synthetic_thought
 		}
+		available = {
+			has_government = supremacy
+			has_country_flag = divisive_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_machinery_5
+			}
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1277,18 +1349,23 @@
 		icon = GFX_goal_generic_monomyth
 		x = 22
 		y = 4
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_datalink_consolidation
 		}
+		available = {
+			has_government = supremacy
+			has_country_flag = divisive_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_machinery_6
+			}
+			add_ideas = power_of_machinery_6_idea
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1296,18 +1373,22 @@
 		icon = GFX_goal_generic_combat_pragmatism
 		x = 20
 		y = 5
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_energy_maximization
 		}
+		available = {
+			has_government = supremacy
+			has_country_flag = controversial_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_machinery_7
+			}
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1315,18 +1396,22 @@
 		icon = GFX_goal_generic_orbital_interoperability
 		x = 22
 		y = 5
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_monomyth
 		}
+		available = {
+			has_government = supremacy
+			has_country_flag = controversial_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_machinery_8
+			}
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1334,19 +1419,24 @@
 		icon = GFX_goal_generic_perfectionism
 		x = 21
 		y = 6
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_combat_pragmatism
+		}
+		prerequisite = {
 			focus = generic_orbital_interoperability
 		}
+		available = {
+			has_government = supremacy
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_machinery_9
+			}
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	#Harmony
@@ -1355,18 +1445,17 @@
 		icon = GFX_goal_generic_harmony
 		x = 25
 		y = 1
-		cost = 10
+		cost = 1
 		prerequisite = {
 			focus = generic_23rd_politics
+		}
+		available = {
+			has_government = supremacy
 		}
 		completion_reward = {
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1374,18 +1463,23 @@
 		icon = GFX_goal_generic_democratized_burdens
 		x = 24
 		y = 2
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_harmony
 		}
+		available = {
+			has_government = harmony
+			has_country_flag = bipartisan_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_nature_1
+			}
+			add_ideas = power_of_nature_1_idea
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1393,18 +1487,23 @@
 		icon = GFX_goal_generic_genetic_modifications
 		x = 26
 		y = 2
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_harmony
 		}
+		available = {
+			has_government = harmony
+			has_country_flag = bipartisan_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_nature_2
+			}
+			add_ideas = power_of_nature_2_idea
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1412,18 +1511,22 @@
 		icon = GFX_goal_generic_frugality
 		x = 24
 		y = 3
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_democratized_burdens
 		}
+		available = {
+			has_government = harmony
+			has_country_flag = bipartisan_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_nature_3
+			}
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1431,18 +1534,22 @@
 		icon = GFX_goal_generic_tissue_growing
 		x = 26
 		y = 3
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_genetic_modifications
 		}
+		available = {
+			has_government = harmony
+			has_country_flag = bipartisan_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_nature_4
+			}
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1450,18 +1557,23 @@
 		icon = GFX_goal_generic_natural_preserves
 		x = 24
 		y = 4
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_frugality
 		}
+		available = {
+			has_government = harmony
+			has_country_flag = divisive_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_nature_5
+			}
+			add_ideas = power_of_nature_5_idea
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1473,14 +1585,18 @@
 		prerequisite = {
 			focus = generic_tissue_growing
 		}
+		available = {
+			has_government = harmony
+			has_country_flag = divisive_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_nature_6
+			}
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1488,18 +1604,23 @@
 		icon = GFX_goal_generic_ecoscaping
 		x = 24
 		y = 5
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_natural_preserves
 		}
+		available = {
+			has_government = harmony
+			has_country_flag = controversial_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_nature_7
+			}
+			add_ideas = power_of_nature_7_idea
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1507,18 +1628,23 @@
 		icon = GFX_goal_generic_responsible_mindset
 		x = 26
 		y = 5
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_sustainable_industry
 		}
+		available = {
+			has_government = harmony
+			has_country_flag = controversial_proposition_passed
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_nature_8
+			}
+			add_ideas = power_of_nature_8_idea
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	focus = {
@@ -1526,19 +1652,25 @@
 		icon = GFX_goal_generic_eudomonia
 		x = 25
 		y = 6
-		cost = 10
+		cost = 6
 		prerequisite = {
 			focus = generic_ecoscaping
+		}
+		prerequisite = {
 			focus = generic_responsible_mindset
 		}
+		available = {
+			has_government = harmony
+
+		}
 		completion_reward = {
+			force_update_dynamic_modifier = yes
+			add_dynamic_modifier = {
+				modifier = power_of_nature_9
+			}
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	#FUTURE TECHNOLOGY (Continous?)
@@ -1557,14 +1689,20 @@
 			focus = generic_perfectionism
 			focus = generic_eudomonia
 		}
+		available = {
+			NOT = {
+				has_idea = the_final_war_idea
+			}
+		}
+		bypass = {
+			has_idea = the_final_war_idea
+		}
 		completion_reward = {
+			add_ideas = future_technology_idea
+			#DELAYS SOCIETAL COLLAPSE?
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_country_flag = scientific_trait
-				factor = 10
-			}
 		}
 	}
 	## Economics Tree

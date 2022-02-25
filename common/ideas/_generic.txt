@@ -1,7 +1,9 @@
 ideas = {
 
     hidden_ideas = {
+        #Voracity
         power_of_progress_4_idea = {
+            ##BROKEN
             allowed = {
                 always = no
             }
@@ -50,6 +52,7 @@ ideas = {
         }
 
         power_of_progress_8_idea = {
+            #BROKEN
             allowed = {
                 always = no
             }
@@ -66,6 +69,7 @@ ideas = {
             #AUGMENT DIVISION ORG
         }
 
+        #Divinity
         power_of_thought_2_idea = {
             allowed = {
                 always = no
@@ -95,6 +99,7 @@ ideas = {
 
         power_of_thought_6_idea = {
             #CORRUPTION GAIN -0.05
+            #BROKEN
             allowed = {
                 always = no
             }
@@ -123,6 +128,7 @@ ideas = {
 
         power_of_thought_7_idea = {
             #CORUPTION GAIN -0.05
+            #BROKEN
             allowed = {
                 always = no
             }
@@ -150,6 +156,7 @@ ideas = {
         }
 
         power_of_thought_8_idea = {
+            #BROKEN
             allowed = {
                 always = no
             }
@@ -176,6 +183,7 @@ ideas = {
             removal_cost = -1
         }
 
+        #
         power_of_technology_1_idea = {
             allowed = {
                 always = no
@@ -256,6 +264,7 @@ ideas = {
         }
 
         power_of_control_1_idea = {
+            #BROKEN
             allowed = {
                 always = no
             }
@@ -272,6 +281,7 @@ ideas = {
         }
 
         power_of_control_9_idea = {
+            #BROKEN
             allowed = {
                 always = no
             }
@@ -285,6 +295,364 @@ ideas = {
             }
 
             #PARLIAMENT POWER ADJUSTMENT
+        }
+
+        #PURITY
+        power_of_principle_3_idea = {
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_principle_3
+                    }
+                }
+            }
+            on_add = {
+                add_to_variable = {
+                    cultural_power_gain = 0.25
+                }
+            }
+
+            on_remove = {
+                add_to_variable = {
+                    cultural_power_gain = -0.25
+                }
+            }
+
+            removal_cost = -1
+        }
+
+        power_of_principle_5_idea = {
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_principle_5
+                    }
+                }
+            }
+
+            removal_cost = -1
+            on_add = {
+                add_to_variable = {
+                    augment_law_cost_factor = 0.25
+                }
+            }
+
+            on_remove = {
+                add_to_variable = {
+                    augment_law_cost_factor = -0.25
+                }
+            }
+        }
+
+        power_of_principle_7_idea = {
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_principle_7
+                    }
+                }
+            }
+
+            equipment_bonus = {
+                convoy = {
+                    build_cost_ic = -0.10
+                }
+                crawler_equipment = {
+                    build_cost_ic = -0.10
+                }
+            }
+        }
+
+        power_of_principle_8_idea = {
+            #CORUPTION GAIN -0.05
+            #BROKEN
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_principle_8
+                    }
+                }
+            }
+
+            removal_cost = -1
+            #on_add = {
+            #    add_to_variable = {
+            #        augment_law_cost_factor = -0.5
+            #    }
+           # }
+
+            #on_remove = {
+            #    add_to_variable = {
+            #        augment_law_cost_factor = 0.5
+            #    }
+            #}
+        }
+
+        #SUPREMACY
+        power_of_machinery_3_idea = {
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_machinery_3
+                    }
+                }
+            }
+            on_add = {
+                add_to_variable = {
+                    industrial_power_gain = 0.1
+                }
+            }
+
+            on_remove = {
+                add_to_variable = {
+                    industrial_power_gain = -0.1
+                }
+            }
+
+            removal_cost = -1
+        }
+
+        power_of_machinery_2_idea = {
+            #BROKEN
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_machinery_2
+                    }
+                }
+            }
+            on_add = {
+                add_to_variable = {
+                    cultural_power_gain = -0.1
+                    #PARLIAMENT POWER
+                }
+            }
+
+            on_remove = {
+                add_to_variable = {
+                    cultural_power_gain = 0.1
+                    #PARLIAMENT POWER
+                }
+            }
+
+            removal_cost = -1
+        }
+
+        power_of_machinery_6_idea = {
+            #BROKEN
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_machinery_6
+                    }
+                }
+            }
+            on_add = {
+                add_to_variable = {
+                    cultural_power_gain = 0.1
+                }
+            }
+
+            on_remove = {
+                add_to_variable = {
+                    cultural_power_gain = -0.1
+
+                }
+            }
+
+            removal_cost = -1
+        }
+
+        #HARMOY
+        power_of_nature_1_idea = {
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_nature_1
+                    }
+                }
+            }
+            on_add = {
+                #add_to_variable = {
+                    #FREE FACTORY ADJUSTMENT
+                #}
+            }
+
+            on_remove = {
+                #add_to_variable = {
+                     #FREE FACTORY ADJUSTMENT
+                #}
+            }
+
+            removal_cost = -1
+        }
+
+        power_of_nature_5_idea = {
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_nature_5
+                    }
+                }
+            }
+            on_add = {
+                add_to_variable = {
+                    cultural_power_gain = 0.2
+                    industrial_power_gain = -0.1
+                }
+            }
+
+            on_remove = {
+                add_to_variable = {
+                    cultural_power_gain = -0.2
+                    industrial_power_gain = 0.1
+                }
+            }
+
+            removal_cost = -1
+        }
+
+        power_of_nature_7_idea = {
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_nature_7
+                    }
+                }
+            }
+            on_add = {
+                add_to_variable = {
+                    free_factory_gain = 0.1
+                }
+            }
+
+            on_remove = {
+                add_to_variable = {
+                    free_factory_gain = -0.1
+                }
+            }
+
+            removal_cost = -1
+        }
+
+        power_of_nature_2_idea = {
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_nature_2
+                    }
+                }
+            }
+            on_add = {
+                add_to_variable = {
+                    augment_law_cost_factor = -0.15
+                }
+            }
+
+            on_remove = {
+                add_to_variable = {
+                    augment_law_cost_factor = 0.15
+                }
+            }
+
+            removal_cost = -1
+        }
+
+        power_of_nature_8_idea = {
+            #CORRUPTION GAIN
+            #BROKEN
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                NOT = {
+                    has_dynamic_modifier = {
+                        modifier = power_of_nature_8
+                    }
+                }
+            }
+            on_add = {
+                #add_to_variable = {
+                #    
+                #}
+            }
+
+            on_remove = {
+                #add_to_variable = {
+                #    augment_law_cost_factor = 0.15
+                #}
+            }
+
+            removal_cost = -1
+        }
+
+        #FUTURE
+        future_technology_idea = {
+            allowed = {
+                always = no
+            }
+
+            cancel = {
+                has_idea = the_final_war_idea
+            }
+            on_add = {
+                add_to_variable = {
+                    spaceship_contribution_modifier = 0.2
+                }
+            }
+
+            on_remove = {
+                add_to_variable = {
+                    spaceship_contribution_modifier = 0.2
+                }
+            }
+
+            removal_cost = -1
         }
     }
 
