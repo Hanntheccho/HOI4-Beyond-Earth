@@ -32,5 +32,69 @@ add_ideas = {
 		limited_conscription
 }
 
+set_technology = {
+	mbt_1 = 1
+	destroyer_1_hull = 1
+	battlecruiser_1_hull = 1
+	sub_1_hull = 1
+	sub_1 = 1
+	dest_1 = 1
+	battlecruiser_1 = 1
+	airframe = 1
+	cas_1 = 1
+	carrier_1_hull = 1
+	car_1 = 1
+	cv_cas_1 = 1
+	cv_fighter_1 = 1
+}
+
 create_faction = "Mediterranean Bloc"
 add_to_faction = FRA
+
+
+create_equipment_variant = {
+	name = "Union Class"
+	type = ship_hull_light_2
+	#name_group = ENG_DD_HISTORICAL
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_2
+		fixed_ship_anti_air_slot = ship_anti_air_1
+		fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+		fixed_ship_radar_slot = ship_sonar_1
+		fixed_ship_engine_slot = light_ship_engine_2
+		fixed_ship_torpedo_slot = ship_torpedo_1
+		mid_1_custom_slot = ship_light_battery_2
+		rear_1_custom_slot = ship_depth_charge_1
+	}
+	obsolete = yes
+}
+
+create_equipment_variant = {
+	name = "Eagle Class"
+	type = ship_hull_carrier_1
+	#name_group = ENG_CV_HISTORICAL
+	parent_version = 0
+	modules = {
+		fixed_ship_deck_slot_1 = ship_deck_space
+		fixed_ship_deck_slot_2 = ship_deck_space
+		fixed_ship_anti_air_slot = ship_anti_air_1
+		fixed_ship_radar_slot = ship_radar_1
+		fixed_ship_engine_slot = heavy_ship_engine_1
+		fixed_ship_secondaries_slot = empty
+		front_1_custom_slot = ship_deck_space
+	}
+	obsolete = yes
+}
+
+create_equipment_variant = {
+	name = "Diamond Class"
+	type = ship_hull_submarine
+	#name_group = ENG_BB_HISTORICAL
+	parent_version = 0
+	modules = {
+		fixed_ship_torpedo_slot = ship_torpedo_sub_1
+		fixed_ship_engine_slot = sub_ship_engine_1
+		rear_1_custom_slot = ship_torpedo_sub_1
+	}
+}
