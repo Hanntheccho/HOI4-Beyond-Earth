@@ -2,51 +2,39 @@ ideas = {
 	#### ALL VALUES PLACEHOLDERS SUBJECT TO CHANGE ####
 	##PRIME AUGMENTS##
 	body_augment = {
-		# body_info = {
+		#body_info = {
 		#     ledger = army
-		#     #default = yes
-		#     available = {
-		#         hidden_modifier = {
-		#             if = {
-		#                 AND = {
-		#                     NOT = {
-		#                         has_tech = augment_equipment
-		#                     }
-		#                     check_variable = {industrial_power > 100000}
-		#                 }
-		#             }
-		#         }
-		#     }
-		#     visible = {
-		#         if = {
-		#             NOT = {
-		#                 has_tech = augment_equipment
-		#             }
-		#         }
-		#     }
-		#     modifier = {
-		#         custom_modifier_tooltip = augment_research_info_tooltip
-		#     }
-		# }
+		#    default = yes
+		#    available = {
+		#       hidden_trigger = {
+		#          check_variable = {industrial_power > 100000}
+		#       }
+		#   }
+		#   visible = {
+		#       always = yes
+		#   }
+		##   modifier = {
+		#     custom_modifier_tooltip = augment_research_info_tooltip
+		#}
+		#}
 		plated_vests = {
 			ledger = army
 			available = {
-				if = {
-                    limit = {
-                        has_tech = augment_equipment
-                        set_temp_variable = {
-                            augment_cost = augment_law_cost
-                        }
-                        multiply_temp_variable = {
-                            augment_cost = augment_law_cost_factor
-                        }
-                        subtract_from_temp_variable = {
-                            augment_cost = 1
-                        }
-                        check_variable = {
-                            industrial_power > augment_cost
-                        }
-                    }
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
+						has_tech = augment_equipment
+						OR = {
+							hidden_trigger = {
+								has_idea = plated_vests
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
+						}
+					}
 				}
 			}
 			allowed = {
@@ -57,21 +45,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -88,43 +63,30 @@ ideas = {
 				always = yes
 			}
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_1
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = intergrid
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
 			}
+			cost = 0
 			modifier = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -141,20 +103,19 @@ ideas = {
 				always = yes
 			}
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_1
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = plenfor
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -167,21 +128,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -197,45 +145,31 @@ ideas = {
 			allowed = {
 				always = yes
 			}
-
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_2
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = intergrid_plat
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
 			}
+			cost = 0
 			modifier = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -252,20 +186,19 @@ ideas = {
 				always = yes
 			}
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_2
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = plenfor_max
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -278,21 +211,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -308,22 +228,20 @@ ideas = {
 			allowed = {
 				always = yes
 			}
-
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_3
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = dragonware
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -336,21 +254,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -392,24 +297,24 @@ ideas = {
 		meck_power_arm = {
 			ledger = army
 			available = {
-				if = {
-                    limit = {
-                        has_tech = augment_equipment
-                        set_temp_variable = {
-                            augment_cost = augment_law_cost
-                        }
-                        multiply_temp_variable = {
-                            augment_cost = augment_law_cost_factor
-                        }
-                        subtract_from_temp_variable = {
-                            augment_cost = 1
-                        }
-                        check_variable = {
-                            industrial_power > augment_cost
-                        }
-                    }
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
+						has_tech = augment_equipment
+						OR = {
+							hidden_trigger = {
+								has_idea = meck_power_arm
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
+						}
+					}
 				}
 			}
+			cost = 0
 			allowed = {
 				always = yes
 			}
@@ -417,21 +322,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -444,24 +336,24 @@ ideas = {
 		frag_rifle = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_1
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = frag_rifle
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
 			}
+			cost = 0
 			allowed = {
 				always = yes
 			}
@@ -469,21 +361,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -496,24 +375,24 @@ ideas = {
 		utility_hand = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_1
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = utility_hand
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
 			}
+			cost = 0
 			allowed = {
 				always = yes
 			}
@@ -521,21 +400,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -548,24 +414,24 @@ ideas = {
 		high_velocity_rifle = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_1
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = high_velocity_rifle
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
 			}
+			cost = 0
 			allowed = {
 				always = yes
 			}
@@ -573,21 +439,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -601,24 +454,24 @@ ideas = {
 		chain_rifle = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_2
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = chain_rifle
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
 			}
+			cost = 0
 			allowed = {
 				always = yes
 			}
@@ -626,21 +479,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -650,28 +490,27 @@ ideas = {
 				}
 			}
 		}
-		#UPDATE the rest
 		skn_utility_hand = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_2
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = skn_utility_hand
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
 			}
+			cost = 0
 			allowed = {
 				always = yes
 			}
@@ -679,21 +518,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -706,24 +532,24 @@ ideas = {
 		rail_gun_mount = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_2
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = rail_gun_mount
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
 			}
+			cost = 0
 			allowed = {
 				always = yes
 			}
@@ -731,21 +557,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -759,24 +572,24 @@ ideas = {
 		rotating_handgun = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_3
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = rotating_handgun
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
 			}
+			cost = 0
 			allowed = {
 				always = yes
 			}
@@ -784,21 +597,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -840,20 +640,19 @@ ideas = {
 		meck_power_leg = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_1
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = meck_power_leg
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -866,21 +665,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -893,20 +679,19 @@ ideas = {
 		lictor_limb_replacement = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_1
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = lictor_limb_replacement
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -919,21 +704,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -946,20 +718,19 @@ ideas = {
 		meck_power_leg_prem = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_2
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = meck_power_leg_prem
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -972,21 +743,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -999,20 +757,19 @@ ideas = {
 		lictor_limb_deluxe = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_2
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = lictor_limb_deluxe
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -1025,21 +782,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1052,20 +796,19 @@ ideas = {
 		muscle_vats = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_3
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = muscle_vats
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -1078,21 +821,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1105,20 +835,19 @@ ideas = {
 		roundabout_femur = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = prime_augment_3
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = roundabout_femur
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -1131,21 +860,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1187,19 +903,16 @@ ideas = {
 		squad_vision = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					OR = {
+						hidden_trigger = {
+							has_idea = squad_vision
 						}
 						check_variable = {
-							industrial_power > augment_cost
+							var = industrial_power
+							value = augment_law_cost_modified
+							compare = greater_than_or_equals
 						}
 					}
 				}
@@ -1212,21 +925,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1239,19 +939,16 @@ ideas = {
 		inktr_deck = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					OR = {
+						hidden_trigger = {
+							has_idea = inktr_deck
 						}
 						check_variable = {
-							industrial_power > augment_cost
+							var = industrial_power
+							value = augment_law_cost_modified
+							compare = greater_than_or_equals
 						}
 					}
 				}
@@ -1264,21 +961,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1287,23 +971,22 @@ ideas = {
 				}
 			}
 		}
-		stategic_command_uplink = {
+		strategic_command_uplink = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = support_augment_1
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = strategic_command_uplink
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -1316,21 +999,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1343,20 +1013,19 @@ ideas = {
 		headphone = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = support_augment_1
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = headphone
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -1369,21 +1038,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1396,20 +1052,19 @@ ideas = {
 		comm_implant = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = support_augment_2
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = comm_implant
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -1422,21 +1077,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1449,20 +1091,19 @@ ideas = {
 		navbar_microchip = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = support_augment_2
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = navbar_microchip
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -1475,21 +1116,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1502,20 +1130,19 @@ ideas = {
 		painkillers = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = support_augment_2
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = painkillers
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -1528,21 +1155,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1560,20 +1174,19 @@ ideas = {
 		evolved_comm_cell = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = support_augment_3
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = evolved_comm_cell
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -1586,21 +1199,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1613,20 +1213,19 @@ ideas = {
 		refurbished_hippocampus = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = support_augment_3
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = refurbished_hippocampus
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -1639,21 +1238,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1666,20 +1252,19 @@ ideas = {
 		fused_stem = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = support_augment_3
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = fused_stem
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -1692,21 +1277,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1749,19 +1321,16 @@ ideas = {
 		remolder = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					OR = {
+						hidden_trigger = {
+							has_idea = remolder
 						}
 						check_variable = {
-							industrial_power > augment_cost
+							var = industrial_power
+							value = augment_law_cost_modified
+							compare = greater_than_or_equals
 						}
 					}
 				}
@@ -1771,21 +1340,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1799,19 +1355,16 @@ ideas = {
 		scavenger_kit = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					OR = {
+						hidden_trigger = {
+							has_idea = scavenger_kit
 						}
 						check_variable = {
-							industrial_power > augment_cost
+							var = industrial_power
+							value = augment_law_cost_modified
+							compare = greater_than_or_equals
 						}
 					}
 				}
@@ -1821,21 +1374,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1848,19 +1388,16 @@ ideas = {
 		portable_turrets = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					OR = {
+						hidden_trigger = {
+							has_idea = portable_turrets
 						}
 						check_variable = {
-							industrial_power > augment_cost
+							var = industrial_power
+							value = augment_law_cost_modified
+							compare = greater_than_or_equals
 						}
 					}
 				}
@@ -1870,21 +1407,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1898,20 +1422,19 @@ ideas = {
 		trench_kit = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = support_augment_1
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = trench_kit
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -1921,21 +1444,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1948,20 +1458,19 @@ ideas = {
 		scout_drone = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = support_augment_1
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = scout_drone
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -1971,21 +1480,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -1998,20 +1494,19 @@ ideas = {
 		holo_drone = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
 						has_tech = support_augment_1
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = holo_drone
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -2021,21 +1516,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -2048,22 +1530,21 @@ ideas = {
 		shoulder_manpads = {
 			ledger = army
 			available = {
-				if = {
-                    limit = {
-                        has_tech = support_augment_2
-                        set_temp_variable = {
-                            augment_cost = augment_law_cost
-                        }
-                        multiply_temp_variable = {
-                            augment_cost = augment_law_cost_factor
-                        }
-                        subtract_from_temp_variable = {
-                            augment_cost = 1
-                        }
-                        check_variable = {
-                            industrial_power > augment_cost
-                        }
-                    }
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
+						has_tech = support_augment_2
+						OR = {
+							hidden_trigger = {
+								has_idea = shoulder_manpads
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
+						}
+					}
 				}
 			}
 			cost = 0
@@ -2071,21 +1552,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -2098,22 +1566,21 @@ ideas = {
 		stimpacks = {
 			ledger = army
 			available = {
-				if = {
-                    limit = {
-                        has_tech = support_augment_2
-                        set_temp_variable = {
-                            augment_cost = augment_law_cost
-                        }
-                        multiply_temp_variable = {
-                            augment_cost = augment_law_cost_factor
-                        }
-                        subtract_from_temp_variable = {
-                            augment_cost = 1
-                        }
-                        check_variable = {
-                            industrial_power > augment_cost
-                        }
-                    }
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
+						has_tech = support_augment_2
+						OR = {
+							hidden_trigger = {
+								has_idea = stimpacks
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
+						}
+					}
 				}
 			}
 			cost = 0
@@ -2121,21 +1588,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -2148,24 +1602,22 @@ ideas = {
 		}
 		trench_drone = {
 			ledger = army
-
 			available = {
-				if = {
-                    limit = {
-                        has_tech = support_augment_2
-                        set_temp_variable = {
-                            augment_cost = augment_law_cost
-                        }
-                        multiply_temp_variable = {
-                            augment_cost = augment_law_cost_factor
-                        }
-                        subtract_from_temp_variable = {
-                            augment_cost = 1
-                        }
-                        check_variable = {
-                            industrial_power > augment_cost
-                        }
-                    }
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
+						has_tech = support_augment_2
+						OR = {
+							hidden_trigger = {
+								has_idea = trench_drone
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
+						}
+					}
 				}
 			}
 			cost = 0
@@ -2173,21 +1625,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -2200,22 +1639,21 @@ ideas = {
 		aa_targeting_system = {
 			ledger = army
 			available = {
-				if = {
-                    limit = {
-                        has_tech = support_augment_3
-                        set_temp_variable = {
-                            augment_cost = augment_law_cost
-                        }
-                        multiply_temp_variable = {
-                            augment_cost = augment_law_cost_factor
-                        }
-                        subtract_from_temp_variable = {
-                            augment_cost = 1
-                        }
-                        check_variable = {
-                            industrial_power > augment_cost
-                        }
-                    }
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
+						has_tech = support_augment_2
+						OR = {
+							hidden_trigger = {
+								has_idea = aa_targeting_system
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
+						}
+					}
 				}
 			}
 			cost = 0
@@ -2223,21 +1661,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -2250,22 +1675,21 @@ ideas = {
 		drone_uplink = {
 			ledger = army
 			available = {
-				if = {
-                    limit = {
-                        has_tech = support_augment_3
-                        set_temp_variable = {
-                            augment_cost = augment_law_cost
-                        }
-                        multiply_temp_variable = {
-                            augment_cost = augment_law_cost_factor
-                        }
-                        subtract_from_temp_variable = {
-                            augment_cost = 1
-                        }
-                        check_variable = {
-                            industrial_power > augment_cost
-                        }
-                    }
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
+						has_tech = support_augment_2
+						OR = {
+							hidden_trigger = {
+								has_idea = drone_uplink
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
+						}
+					}
 				}
 			}
 			cost = 0
@@ -2273,21 +1697,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -2313,22 +1724,21 @@ ideas = {
 		augmented = {
 			ledger = army
 			available = {
-				if = {
-                    limit = {
-                        has_tech = support_augment_1
-                        set_temp_variable = {
-                            augment_cost = augment_law_cost
-                        }
-                        multiply_temp_variable = {
-                            augment_cost = augment_law_cost_factor
-                        }
-                        subtract_from_temp_variable = {
-                            augment_cost = 1
-                        }
-                        check_variable = {
-                            industrial_power > augment_cost
-                        }
-                    }
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
+						has_tech = support_augment_1
+						OR = {
+							hidden_trigger = {
+								has_idea = augmented
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
+						}
+					}
 				}
 			}
 			cost = 0
@@ -2336,21 +1746,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -2364,8 +1761,10 @@ ideas = {
 		computer_support = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
+						has_tech = support_augment_2
 						NOT = {
 							OR = {
 								has_government = harmony
@@ -2373,18 +1772,15 @@ ideas = {
 								has_government = divinity
 							}
 						}
-						has_tech = support_augment_2
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = fused_stem
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -2394,21 +1790,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
@@ -2422,28 +1805,26 @@ ideas = {
 		artificial_intelligence = {
 			ledger = army
 			available = {
-				if = {
-					limit = {
+				custom_trigger_tooltip = {
+					tooltip = augment_law_cost_tooltip
+					AND = {
+						has_tech = support_augment_3
 						NOT = {
 							OR = {
 								has_government = harmony
 								has_government = purity
 								has_government = divinity
-								has_government = mastery
 							}
 						}
-						has_tech = support_augment_3
-						set_temp_variable = {
-							augment_cost = augment_law_cost
-						}
-						multiply_temp_variable = {
-							augment_cost = augment_law_cost_factor
-						}
-						subtract_from_temp_variable = {
-							augment_cost = 1
-						}
-						check_variable = {
-							industrial_power > augment_cost
+						OR = {
+							hidden_trigger = {
+								has_idea = fused_stem
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
 						}
 					}
 				}
@@ -2453,21 +1834,8 @@ ideas = {
 				custom_modifier_tooltip = augment_cost_tooltip
 			}
 			on_add = {
-				#Create temp variable for the cost of the law set to the base value of 75 industrial power
-				set_temp_variable = {
-					augment_cost = augment_law_cost
-				}
-				#Change the law cost by a factor (default is 1, thus full price) focus decreases by 50% meaning it will be 0.5 and thus half the cost
-				multiply_temp_variable = {
-					augment_cost = augment_law_cost_factor
-				}
-				#Negate the value so we can remove the appropriate amount
-				multiply_temp_variable = {
-					augment_cost = -1
-				}
-				#Add the negative value to industrial_power (essentially a subtraction)
-				add_to_variable = {
-					industrial_power = augment_cost
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
 				}
 			}
 			equipment_bonus = {
