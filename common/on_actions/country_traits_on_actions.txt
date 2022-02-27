@@ -108,6 +108,134 @@ on_actions = {
 					}
 					log = "Assigned Trait #2"
 					log = "-----------------------------------------"
+					if = {#Only if we have ruinous
+						limit = {
+							has_country_flag = ruinous_trait
+						}
+						log = "-----[THIS.GetName] SCAVENGING SYSTEM BOOTUP-----"
+						set_variable = {scavenger_points = 0}
+						set_variable = {monthly_scavenger_rate = 10}
+						set_variable = {international_aid_available = 10} #TEMP
+						set_variable = {areas_left_unsearched = 100} #TEMP
+						set_variable = {additional_scavengers_cooldown_days = 8}
+						set_variable = {has_sent_additional_scavengers = 0}
+						set_variable = {locate_foreign_sponsors_cooldown_days = 16}
+						set_variable = {has_located_foreign_sponsors = 0}
+						set_variable = {take_out_loans_cooldown_days = 30}
+						set_variable = {has_taken_out_loans_scavengers = 0}
+						clamp_variable = {
+							var = monthly_scavenger_rate
+							min = 0
+							max = areas_left_unsearched
+						}
+						clamp_variable = {
+							var = international_aid_available
+							min = 0
+							max = 10
+						}
+						log = "----------SYSTEM BOOTUP COMPLETE----------"
+					}
+				}
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			every_country = {
+				limit = {
+					has_country_flag = ruinous_trait
+				}
+				THIS = {
+					if = { #Decrease cooldown by 1 until it reaches zero, at which point it will reset to 8
+						limit = {
+							AND = {
+								check_variable = {
+									var = has_sent_additional_scavengers
+									value = 1
+									compare = equals
+								}
+								check_variable = {
+									var = additional_scavengers_cooldown_days
+									value = 0
+									compare = greater_than_or_equals
+								}
+							}
+						}
+						subtract_from_variable = {
+							additional_scavengers_cooldown_days = 1
+						}
+					}
+					if = { #If scavenger cooldown is zero, reset and unlock button
+						limit = {
+							check_variable = {
+								var = additional_scavengers_cooldown_days
+								value = 0
+								compare = equals
+							}
+						}
+						set_variable = {has_sent_additional_scavengers = 0}
+						set_variabe = {additional_scavengers_cooldown_days = 8}
+					}
+					if = { #Decrease cooldown by 1 until it reaches zero, at which point it will reset to 16
+						limit = {
+							AND = {
+								check_variable = {
+									var = has_located_foreign_sponsors
+									value = 1
+									compare = equals
+								}
+								check_variable = {
+									var = locate_foreign_sponsors_cooldown_days
+									value = 0
+									compare = greater_than_or_equals
+								}
+							}
+						}
+						subtract_from_variable = {
+							locate_foreign_sponsors_cooldown_days = 1
+						}
+					}
+					if = { #If foreign sponsors cooldown is zero, reset and unlock button
+						limit = {
+							check_variable = {
+								var = locate_foreign_sponsors_cooldown_days
+								value = 0
+								compare = equals
+							}
+						}
+						set_variable = {has_located_foreign_sponsors = 0}
+						set_variabe = {locate_foreign_sponsors_cooldown_days = 16}
+					}
+					if = { #Decrease cooldown by 1 until it reaches zero, at which point it will reset to 30
+						limit = {
+							AND = {
+								check_variable = {
+									var = has_taken_out_loans_scavengers
+									value = 1
+									compare = equals
+								}
+								check_variable = {
+									var = take_out_loans_cooldown_days
+									value = 0
+									compare = greater_than_or_equals
+								}
+							}
+						}
+						subtract_from_variable = {
+							take_out_loans_cooldown_days = 1
+						}
+					}
+					if = { #If loans cooldown is zero, reset and unlock button
+						limit = {
+							check_variable = {
+								var = take_out_loans_cooldown_days
+								value = 0
+								compare = equals
+							}
+						}
+						set_variable = {has_taken_out_loans_scavengers = 0}
+						set_variabe = {take_out_loans_cooldown_days = 30}
+					}
 				}
 			}
 		}
