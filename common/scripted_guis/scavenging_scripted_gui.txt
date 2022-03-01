@@ -5,23 +5,38 @@ scripted_gui = {
 		window_name = "scavenging_decisions_scripted_gui"
 		
 		visible = {
-            tag = FRA
-			#has_country_flag = ruinous_trait
+            #tag = FRA
+			has_country_flag = ruinous_trait
 		}
 
 		effects = {
 			scavenging_decisions_scripted_gui_additional_scavengers_click = {
-				set_variable = {has_sent_additional_scavengers = 1}
+				hidden_effect = {
+					add_timed_idea = {
+						idea = has_sent_additional_scavs
+						days = 8
+					}
+				}
 				add_to_variable = {monthly_scavenger_rate = 10}
 				subtract_from_variable = {industrial_power = 6}
 			}
 			scavenging_decisions_scripted_gui_locate_foreign_sponsors_click = {
-				set_variable = {has_located_foreign_sponsors = 1}
+				hidden_effect = {
+					add_timed_idea = {
+						idea = has_international_aid
+						days = 16
+					}
+				}
 				add_to_variable = {international_aid_available = 1}
 				add_political_power = -50
 			}
 			scavenging_decisions_scripted_gui_take_out_loans_click = {
-				set_variable = {has_taken_out_loans_scavengers = 1}
+				hidden_effect = {
+					add_timed_idea = {
+						idea = has_taken_out_loans
+						days = 30
+					}
+				}
 				country_event = {id=scav.1}
 				subtract_from_variable = {industrial_power = 10}
 			}
@@ -30,6 +45,9 @@ scripted_gui = {
 		triggers = {
 			scavenging_decisions_scripted_gui_additional_scavengers_click_enabled = {
 				AND = {
+					NOT = {
+						has_idea = has_sent_additional_scavs
+					}
 					check_variable = {
 						var = areas_left_unsearched
 						value = 10
@@ -45,6 +63,9 @@ scripted_gui = {
 			}
 			scavenging_decisions_scripted_gui_locate_foreign_sponsors_click_enabled = {
 				AND = {
+					NOT = {
+						has_idea = has_international_aid
+					}
 					check_variable = {
 						var = international_aid_available
 						value = 10
@@ -55,6 +76,9 @@ scripted_gui = {
 			}
 			scavenging_decisions_scripted_gui_take_out_loans_click_enabled = {
 				AND = {
+					NOT = {
+						has_idea = has_taken_out_loans
+					}
 					NOT = {
 						has_idea = anarchy_style
 					}

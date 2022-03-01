@@ -7,6 +7,7 @@ on_actions = {
 				}
 				log = "---------[THIS.GetName] TRAIT ASSIGNMENT---------"
 				THIS = {
+					fixed_random_seed = no
 					# Assign Character Trait 1
 					# Will randomly choose from the list with the % chance being 11.1%
 					random_list = {
@@ -41,6 +42,7 @@ on_actions = {
 					log = "Assigned Trait #1"
 					# Assign Character Trait 2
 					# Will randomly choose from the list with the % chance being 11.1%, if the country already has the idea, it is instead multiplied by 0, to remove the possibility of duplicates
+					fixed_random_seed = no
 					random_list = {
 						11.1 = {
 							set_country_flag = agricultural_trait
@@ -110,9 +112,12 @@ on_actions = {
 					log = "-----------------------------------------"
 					if = {#Only if we have ruinous
 						limit = {
-							has_country_flag = ruinous_trait
+							OR = {
+								has_country_flag = ruinous_trait
+								#tag = FRA #UN-COMMENT TO DEBUG
+							}
 						}
-						log = "-----[THIS.GetName] SCAVENGING SYSTEM BOOTUP-----"
+						log = "-----[THIS.GetTag] SCAVENGING SYSTEM BOOTUP-----"
 						set_variable = {scavenger_points = 0}
 						set_variable = {monthly_scavenger_rate = 10}
 						set_variable = {international_aid_available = 10} #TEMP
@@ -123,6 +128,7 @@ on_actions = {
 						set_variable = {has_located_foreign_sponsors = 0}
 						set_variable = {take_out_loans_cooldown_days = 30}
 						set_variable = {has_taken_out_loans_scavengers = 0}
+						set_variable = {calculated_monthly_rate = 0}
 						clamp_variable = {
 							var = monthly_scavenger_rate
 							min = 0
@@ -143,9 +149,22 @@ on_actions = {
 		effect = {
 			every_country = {
 				limit = {
-					has_country_flag = ruinous_trait
+					OR = {
+						has_country_flag = ruinous_trait
+						#tag = FRA #UN-COMMENT TO DEBUG
+					}
 				}
 				THIS = {
+					if = {
+						limit = {
+							check_variable = {
+								var = calculated_monthly_rate
+								equals = 1
+								compare = equals
+							}
+						}
+						set_variable = {calculated_monthly_rate = 0}
+					}
 					if = { #Decrease cooldown by 1 until it reaches zero, at which point it will reset to 8
 						limit = {
 							AND = {
@@ -174,7 +193,7 @@ on_actions = {
 							}
 						}
 						set_variable = {has_sent_additional_scavengers = 0}
-						set_variabe = {additional_scavengers_cooldown_days = 8}
+						set_variable = {additional_scavengers_cooldown_days = 8}
 					}
 					if = { #Decrease cooldown by 1 until it reaches zero, at which point it will reset to 16
 						limit = {
@@ -204,7 +223,7 @@ on_actions = {
 							}
 						}
 						set_variable = {has_located_foreign_sponsors = 0}
-						set_variabe = {locate_foreign_sponsors_cooldown_days = 16}
+						set_variable = {locate_foreign_sponsors_cooldown_days = 16}
 					}
 					if = { #Decrease cooldown by 1 until it reaches zero, at which point it will reset to 30
 						limit = {
@@ -234,7 +253,7 @@ on_actions = {
 							}
 						}
 						set_variable = {has_taken_out_loans_scavengers = 0}
-						set_variabe = {take_out_loans_cooldown_days = 30}
+						set_variable = {take_out_loans_cooldown_days = 30}
 					}
 				}
 			}
@@ -245,9 +264,29 @@ on_actions = {
 		effect = {
 			every_country = {
 				limit = {
-					has_country_flag = ruinous_trait
+					AND = {
+						OR = {
+							has_country_flag = ruinous_trait
+							#tag = FRA #UN-COMMENT TO DEBUG
+						}
+						check_variable = {
+							var = calculated_monthly_rate
+							value = 0
+							compare = equals
+						}
+					}
+					
 				}
-				add_to_variable = {scavenger_points = monthly_scavenger_rate}
+				THIS = {
+					log = "-------[THIS.GetTag] Scavenger Monthly Add-------"
+					log = "Current Date: [GetDateText]"
+					log = "Previous Scav Points: [?scavenger_points]"
+					log = "Current Monthly Scav Rate: [?monthly_scavenger_rate]"
+					add_to_variable = {scavenger_points = monthly_scavenger_rate}
+					set_variable = {calculated_monthly_rate = 1}
+					log = "New Scav Points: [?scavenger_points]"
+					log = "-------===================================-------"
+				}
 			}
 		}
 	}

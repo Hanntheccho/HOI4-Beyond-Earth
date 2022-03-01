@@ -359,14 +359,30 @@ scavenging = {
 		}
 		complete_effect = {
 			custom_effect_tooltip = scavenger_points_20_tooltip
-			custom_effect_tooltip = warband_tooltip
 			subtract_from_variable = {scavenger_points = 20}
-			any_owned_state = {
-				if = {
-					limit = {
-						is_capital = yes
+			capital_scope = {
+				ROOT = {
+					division_template = {
+						name = "Warband"			# Warband Divisions
+						is_locked = yes
+						priority = 0
+						template_counter = 0
+						regiments = {
+							militia = { x = 0 y = 0 }
+							militia = { x = 0 y = 1 }
+							militia = { x = 0 y = 2 }
+							militia = { x = 0 y = 3 }
+							militia = { x = 1 y = 0 }
+							militia = { x = 1 y = 1 }
+							militia = { x = 1 y = 2 }
+							militia = { x = 1 y = 3 }
+							artillery = { x = 2 y = 0}
+						}
 					}
-					load_oob = "SCAV_warband"
+				}
+				create_unit = {
+					division = "name = \"Warband\" division_template = \"Warband\" start_equipment_factor = 0.75"
+					owner = ROOT
 				}
 			}
 			add_command_power = -10
@@ -394,14 +410,33 @@ scavenging = {
 		}
 		complete_effect = {
 			custom_effect_tooltip = scavenger_points_40_tooltip
-			custom_effect_tooltip = merc_tooltip
 			subtract_from_variable = {scavenger_points = 40}
-			any_owned_state = {
-				if = {
-					limit = {
-						is_capital = yes
+			capital_scope = {
+				ROOT = {
+				division_template = {
+					name = "Mercenary Company"
+					is_locked = yes
+					priority = 0
+					template_counter = 0
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 0 y = 4 }
+						infantry = { x = 0 y = 5 }
+						artillery = { x = 1 y = 0}
+						artillery = { x = 1 y = 1}
 					}
-					load_oob = "SCAV_merc"
+					support = {
+						engineer = { x = 0 y = 0}
+						artillery_brigade = { x = 0 y = 1}
+					} 
+				}
+				}
+				create_unit = {
+					division = "name = \"Mercenary Company\" division_template = \"Mercenary Company\" start_equipment_factor = 1"
+					owner = ROOT
 				}
 			}
 			add_command_power = -20
@@ -459,10 +494,10 @@ scavenging = {
 			}
 		}
 		}
+		fixed_random_seed = no
 		complete_effect = {
 			subtract_from_variable = {industrial_power = 35}
 			custom_effect_tooltip = industrial_power_cost_tooltip
-			fixed_random_seed = no
 			random_list = {
 				50 = {
 					custom_effect_tooltip = areas_left_unsearched_50_tooltip
