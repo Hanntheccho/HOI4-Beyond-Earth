@@ -757,43 +757,6 @@ ideas = {
 				}
 			}
 		}
-		muscle_vats = {
-			ledger = army
-			available = {
-				AND = {
-					has_tech = prime_augment_3
-					custom_trigger_tooltip = {
-						tooltip = augment_law_cost_tooltip
-						OR = {
-							hidden_trigger = {
-								has_idea = muscle_vats
-							}
-							check_variable = {
-								var = industrial_power
-								value = augment_law_cost_modified
-								compare = greater_than_or_equals
-							}
-						}
-					}
-				}
-			}
-			allowed = {
-				always = yes
-			}
-			cost = 0
-			on_add = {
-				custom_effect_tooltip = augment_cost_tooltip
-				subtract_from_variable = {
-					industrial_power = augment_law_cost_modified
-				}
-			}
-			equipment_bonus = {
-				augment_equipment = {
-					breakthrough = 9
-					build_cost_ic = 1.2
-				}
-			}
-		}
 		roundabout_femur = {
 			ledger = army
 			available = {
@@ -828,6 +791,43 @@ ideas = {
 				augment_equipment = {
 					maximum_speed = 0.8
 					build_cost_ic = 0.8
+				}
+			}
+		}
+		muscle_vats = {
+			ledger = army
+			available = {
+				AND = {
+					has_tech = prime_augment_3
+					custom_trigger_tooltip = {
+						tooltip = augment_law_cost_tooltip
+						OR = {
+							hidden_trigger = {
+								has_idea = muscle_vats
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
+						}
+					}
+				}
+			}
+			allowed = {
+				always = yes
+			}
+			cost = 0
+			on_add = {
+				custom_effect_tooltip = augment_cost_tooltip
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
+				}
+			}
+			equipment_bonus = {
+				augment_equipment = {
+					breakthrough = 9
+					build_cost_ic = 1.2
 				}
 			}
 		}
