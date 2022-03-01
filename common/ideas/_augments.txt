@@ -49,6 +49,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					armor_value = 1
 					hardness = 0.5
 					build_cost_ic = 0.5
@@ -87,6 +88,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					max_strength = 1
 					defense = 0.5
 					build_cost_ic = 0.8
@@ -128,6 +130,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					armor_value = 3
 					hardness = 0.8
 					build_cost_ic = 1
@@ -166,6 +169,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					max_strength = 2
 					defense = 0.8
 					build_cost_ic = 1.2
@@ -207,6 +211,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					armor_value = 4
 					hardness = 0.9
 					build_cost_ic = 1.5
@@ -248,6 +253,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					armor_value = 6
 					hardness = 0.95
 					build_cost_ic = 2.5
@@ -314,6 +320,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					soft_attack = 0.1
 					build_cost_ic = 0.25
 				}
@@ -351,6 +358,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					soft_attack = 0.1
 					build_cost_ic = 0.25
 				}
@@ -388,6 +396,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					defense = 0.15
 					build_cost_ic = 0.25
 				}
@@ -425,6 +434,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					hard_attack = 0.3
 					ap_attack = 0.5
 					build_cost_ic = 0.25
@@ -463,6 +473,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					soft_attack = 0.3
 					build_cost_ic = 0.6
 				}
@@ -500,6 +511,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					defense = 0.3
 					build_cost_ic = 0.6
 				}
@@ -537,6 +549,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					hard_attack = 0.6
 					ap_attack = 1
 					build_cost_ic = 0.75
@@ -575,6 +588,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					soft_attack = 0.6
 					defense = 0.6
 					build_cost_ic = 1
@@ -641,6 +655,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					maximum_speed = 0.2
 					build_cost_ic = 0.25
 				}
@@ -678,6 +693,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					breakthrough = 3
 					build_cost_ic = 0.3
 				}
@@ -715,6 +731,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					maximum_speed = 0.4
 					build_cost_ic = 0.4
 				}
@@ -752,44 +769,8 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					breakthrough = 6
-					build_cost_ic = 0.8
-				}
-			}
-		}
-		roundabout_femur = {
-			ledger = army
-			available = {
-				AND = {
-					has_tech = prime_augment_3
-					custom_trigger_tooltip = {
-						tooltip = augment_law_cost_tooltip
-						OR = {
-							hidden_trigger = {
-								has_idea = roundabout_femur
-							}
-							check_variable = {
-								var = industrial_power
-								value = augment_law_cost_modified
-								compare = greater_than_or_equals
-							}
-						}
-					}
-				}
-			}
-			allowed = {
-				always = yes
-			}
-			cost = 0
-			on_add = {
-				custom_effect_tooltip = augment_cost_tooltip
-				subtract_from_variable = {
-					industrial_power = augment_law_cost_modified
-				}
-			}
-			equipment_bonus = {
-				augment_equipment = {
-					maximum_speed = 0.8
 					build_cost_ic = 0.8
 				}
 			}
@@ -826,8 +807,47 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					breakthrough = 9
 					build_cost_ic = 1.2
+				}
+			}
+		}
+		roundabout_femur = {
+			ledger = army
+			available = {
+				AND = {
+					has_tech = prime_augment_3
+					custom_trigger_tooltip = {
+						tooltip = augment_law_cost_tooltip
+						OR = {
+							hidden_trigger = {
+								has_idea = roundabout_femur
+							}
+							check_variable = {
+								var = industrial_power
+								value = augment_law_cost_modified
+								compare = greater_than_or_equals
+							}
+						}
+					}
+				}
+			}
+			allowed = {
+				always = yes
+			}
+			cost = 0
+			on_add = {
+				custom_effect_tooltip = augment_cost_tooltip
+				subtract_from_variable = {
+					industrial_power = augment_law_cost_modified
+				}
+			}
+			equipment_bonus = {
+				augment_equipment = {
+					instant = yes
+					maximum_speed = 0.8
+					build_cost_ic = 0.8
 				}
 			}
 		}
@@ -889,6 +909,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					max_organisation = 0.2
 					build_cost_ic = 0.2
 				}
@@ -923,6 +944,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					build_cost_ic = -1
 				}
 			}
@@ -959,6 +981,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					max_organisation = 0.3
 					build_cost_ic = 0.8
 				}
@@ -996,7 +1019,8 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
-					#default_morale = 0.05
+					instant = yes
+					default_morale = 0.05
 					build_cost_ic = 0.2
 				}
 			}
@@ -1033,7 +1057,8 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
-					#default_morale = 0.1
+					instant = yes
+					default_morale = 0.1
 					build_cost_ic = 0.3
 				}
 			}
@@ -1070,6 +1095,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					max_organisation = 0.4
 					build_cost_ic = 1.4
 				}
@@ -1107,6 +1133,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					casualty_trickleback = 0.1
 					experience_loss_factor = 0.2
 					defense = 0.05
@@ -1149,7 +1176,8 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
-					#default_morale = 0.2
+					instant = yes
+					default_morale = 0.2
 					build_cost_ic = 0.6
 				}
 			}
@@ -1186,6 +1214,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					max_organisation = 0.5
 					build_cost_ic = 2
 				}
@@ -1223,6 +1252,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					soft_attack = 0.2
 					hard_attack = 0.2
 					defense = 0.1
@@ -1284,6 +1314,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					reliability_factor = 0.2
 					max_organisation = -0.05
 					build_cost_ic = 0.6
@@ -1316,6 +1347,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					equipment_capture_factor = 0.6
 					build_cost_ic = 0.25
 				}
@@ -1347,6 +1379,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					soft_attack = 0.05
 					hard_attack = 0.05
 					build_cost_ic = 0.1
@@ -1382,6 +1415,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					entrenchment = 1
 					build_cost_ic = 0.5
 				}
@@ -1416,6 +1450,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					recon = 0.3
 					build_cost_ic = 0.5
 				}
@@ -1450,6 +1485,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					initiative = 0.3
 					build_cost_ic = 0.5
 				}
@@ -1484,6 +1520,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					anti_air_attack = 0.6
 					build_cost_ic = 0.6
 				}
@@ -1518,6 +1555,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					casualty_trickleback = 0.4
 					experience_loss_factor = 0.5
 					build_cost_ic = 0.4
@@ -1553,6 +1591,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					entrenchment = 2
 					build_cost_ic = 1
 				}
@@ -1587,6 +1626,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					anti_air_attack = 10
 					build_cost_ic = 1
 				}
@@ -1621,6 +1661,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					suppression_factor = 10
 					build_cost_ic = 0.35
 				}
@@ -1668,6 +1709,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					soft_attack = 0.05
 					hard_attack = 0.05
 					casualty_trickleback = -0.01
@@ -1710,6 +1752,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					soft_attack = 0.1
 					hard_attack = 0.1
 					casualty_trickleback = -0.02
@@ -1752,6 +1795,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				augment_equipment = {
+					instant = yes
 					soft_attack = 0.15
 					hard_attack = 0.15
 					casualty_trickleback = -0.4
