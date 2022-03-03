@@ -7,14 +7,14 @@ guiTypes = {
 		
 		iconType = {
 			name = "resource"
-			position = { x=53 y=0 }	
+			position = { x=47 y=-5 }	
 			spriteType = "GFX_resources_strip"
 		}
 		
 		instantTextboxType = {
 			name = "amount"
-			position = { x = 82 y = 14 }
-			font = "Arial"
+			position = { x = 82 y = 10 }
+			font = "Beyondsmall"
 			maxWidth = 60
 			maxHeight = 18
 			format = left
@@ -408,17 +408,24 @@ guiTypes = {
 					name = "background"
 					spriteType ="GFX_tiled_window2_1b_border"
 				}
+				
+				iconType ={
+					name ="separator_1"
+					spriteType = "GFX_bg_separator"
+					position = { x = 5 y = 4 }
+					Orientation = "UPPER_LEFT"
+				}
 
 				containerWindowType = {
 					name = "resource_container"
-					position = { x = 20 y = 15 }
+					position = { x = 35 y = 15 }
 					size = { width = 500 height = 60 }
 					clipping = no
 					
-					background = {
-						name = "Background"
-						spriteType ="GFX_mini_bg_grey"
-					}
+					#background = {
+					#	name = "Background"
+					#	spriteType ="GFX_mini_bg_grey"
+					#}
 					gridBoxType = {
 						name = "resource_entries"
 						position = { x = -47 y = 5 }
@@ -435,14 +442,14 @@ guiTypes = {
 					size = { width = 500 height = 75 }
 					clipping = no
 					
-					background = {
-						name = "Background"
-						spriteType ="GFX_mini_bg"
-					}
+					#background = {
+					#	name = "Background"
+					#	spriteType ="GFX_mini_bg"
+					#}
 					
 					containerWindowType = {
 						name = "prod_industry"
-						position = { x = 10 y = 5 }
+						position = { x = -8 y = 22 }
 						size = { width = 100 height = 60 }
 						
 
@@ -455,17 +462,29 @@ guiTypes = {
 						iconType ={
 							name ="industrial_capacity_icon"
 							spriteType = "GFX_industrial_capacity_icon"
-							position = { x= 3 y = 6 } 
+							position = { x= 3 y = 10000 } 
 							Orientation = "UPPER_LEFT"
 							alwaystransparent = yes
 						}
+
+						instantTextBoxType = {
+							name ="industrial_capacity_2"
+							position = { x= -1 y = 0 }
+							font = "Beyond"
+							text = "IC"
+							format = center
+							vertical_alignment = center
+							maxWidth = 44
+							maxHeight = 34
+							alwaystransparent = yes
+						}	
 				
 						instantTextBoxType = {
 							name ="industrial_capacity"
-							position = { x= -1 y = 28 }
-							font = "hoi_16mbs"
+							position = { x= 50 y = 0 }
+							font = "Arialsmall"
 							text = "999"
-							format = center
+							format = left
 							vertical_alignment = center
 							maxWidth = 44
 							maxHeight = 34
@@ -475,7 +494,7 @@ guiTypes = {
 					
 					containerWindowType = {
 						name = "prod_manpower"
-						position = { x = 60 y = 5 }
+						position = { x = 80 y = 22 }
 						size = { width = 100 height = 60 }
 						clipping = no
 						
@@ -488,19 +507,31 @@ guiTypes = {
 						iconType ={
 							name ="manpower_icon"
 							spriteType = "GFX_manpower_icon"
-							position = { x= 7 y = 6 }
+							position = { x= 7 y = 10000 }
 							Orientation = "UPPER_LEFT"
 							alwaystransparent = yes
 						}
 
 						instantTextBoxType = {
-							name ="manpower"
-							position = { x= -1 y = 28 }
-							font = "hoi_16mbs"
-							text = "999"
+							name ="manpower_2"
+							position = { x= -1 y = 0 }
+							font = "Beyond"
+							text = "MP"
 							format = center
 							vertical_alignment = center
-							maxWidth = 44
+							maxWidth = 100
+							maxHeight = 34
+							alwaystransparent = yes
+						}
+
+						instantTextBoxType = {
+							name ="manpower"
+							position = { x= 90 y = 0 }
+							font = "Arialsmall"
+							text = "999"
+							format = left
+							vertical_alignment = center
+							maxWidth = 400
 							maxHeight = 34
 							alwaystransparent = yes
 						}
@@ -509,7 +540,7 @@ guiTypes = {
 					
 					containerWindowType = {
 						name = "prod_convoy"
-						position = { x = 160 y = 5 }
+						position = { x = 270 y = 22 }
 						size = { width = 100 height = 60 }
 						clipping = no
 						
@@ -522,15 +553,27 @@ guiTypes = {
 						iconType ={
 							name ="convoys_icon"
 							spriteType = "GFX_topbar_convoys"
-							position = { x = 7 y = 12 }
+							position = { x = 7 y = 10000 }
 							Orientation = "UPPER_LEFT"
 							alwaystransparent = yes
 						}
 						
 						instantTextBoxType = {
+							name ="convoys_count_2"
+							position = { x= -1 y = 0 }
+							font = "Beyond"
+							text = "CY"
+							format = center
+							vertical_alignment = center
+							maxWidth = 80
+							maxHeight = 34
+							alwaystransparent = yes
+						}
+
+						instantTextBoxType = {
 							name ="convoys_count"
-							position = { x= -1 y = 28 }
-							font = "hoi_16mbs"
+							position = { x= 60 y = 0 }
+							font = "Arialsmall"
 							text = "999"
 							format = center
 							vertical_alignment = center
@@ -542,7 +585,7 @@ guiTypes = {
 					
 					containerWindowType = {
 						name = "prod_fuel"
-						position = { x = 110 y = 5 }
+						position = { x = 390 y = 22 }
 						size = { width = 100 height = 60 }
 						clipping = no
 						iconType = {
@@ -554,17 +597,29 @@ guiTypes = {
 						iconType = {
 							name ="fuel_icon"
 							spriteType = "GFX_fuel_state"
-							position = { x= 6 y = 9 }
+							position = { x= 6 y = 10000 }
 							Orientation = "UPPER_LEFT"
 							alwaystransparent = yes
 						}		
 						
 						instantTextBoxType = {
-							name ="fuel_value"
-							position = { x= -1 y = 28 }
-							font = "hoi_16mbs"
-							text = "999"
+							name ="fuel_value_2"
+							position = { x= -1 y = 0 }
+							font = "Beyond"
+							text = "FU"
 							format = center
+							vertical_alignment = center
+							maxWidth = 80
+							maxHeight = 34
+							alwaystransparent = yes
+						}
+
+						instantTextBoxType = {
+							name ="fuel_value"
+							position = { x= 80 y = 0 }
+							font = "Arialsmall"
+							text = "999"
+							format = left
 							vertical_alignment = center
 							maxWidth = 44
 							maxHeight = 34
@@ -572,28 +627,48 @@ guiTypes = {
 						}
 					} #end prod_manpower_convoy
 				}
-				
+
+				iconType ={
+					name ="separator_2"
+					spriteType = "GFX_bg_separator"
+					position = { x = 5 y = 79 }
+					Orientation = "UPPER_LEFT"
+				}
+
+				iconType ={
+					name ="separator_3"
+					spriteType = "GFX_bg_separator"
+					position = { x = 5 y = 140 }
+					Orientation = "UPPER_LEFT"
+				}
+
+				iconType ={
+					name ="separator_4"
+					spriteType = "GFX_bg_separator"
+					position = { x = 5 y = 330 }
+					Orientation = "UPPER_LEFT"
+				}				
 				
 				containerWindowType = {
 					name = "industry_container"
-					position = { x = 20  y = 150 }
+					position = { x = 8  y = 150 }
 					size = { width = 500 height = 180 }
 
 
-					background = {
-						name = "Background_2"
-						spriteType ="GFX_mini_bg_grey"
-					}	
+					#background = {
+					#	name = "Background_2"
+					#	spriteType ="GFX_mini_bg_grey"
+					#}	
 					
 					containerWindowType = {
 						name = "industry_factory_container"
 						position = { x = 5 y = 0 }
 						
-						iconType = {
-							name = "estimated_civil_industry_bg"
-							quadTextureSprite ="GFX_generic_text_bg_108"
-							position = { x = 15 y = 15 }
-						}
+						#iconType = {
+						#	name = "estimated_civil_industry_bg"
+						#	quadTextureSprite ="GFX_generic_text_bg_108"
+						#	position = { x = 15 y = 15 }
+						#}
 						
 						iconType = {
 							name = "estimated_civil_industry_icon"
@@ -603,45 +678,45 @@ guiTypes = {
 						
 						instantTextboxType = {
 							name = "estimated_civil_industry_size"
-							position = { x = 35 y = 19 }
-							font = "Arial"
+							position = { x = 55 y = 22 }
+							font = "Beyondsmall"
 							text = "45-120"
 							maxWidth = 100
 							maxHeight = 20
-							format = center
+							format = left
 						}
 
-						iconType = {
-							name = "civil_industry_damaged_bg"
-							position = { x = 125 y = 15 }
-							spriteType = "GFX_generic_text_bg_60"
-						}
+						#iconType = {
+						#	name = "civil_industry_damaged_bg"
+						#	position = { x = 125 y = 15 }
+						#	spriteType = "GFX_generic_text_bg_60"
+						#}
 						
 						iconType = {
 							name = "civil_industry_damaged_icon"
-							position = { x = 123 y = 13 }
+							position = { x = 110 y = 8 }
 							quadTextureSprite = "GFX_building_status_overlay"
 							alwaystransparent = yes
 							frame = 3
-							scale = 0.7
+							#scale = 0.7
 						}
 						
 						instantTextboxType = {
 							name = "civil_industry_damaged_rate"
-							position = { x = 139 y = 19 }
-							font = "Arial"
+							position = { x = 158 y = 22 }
+							font = "Beyondsmall"
 							text = "35%"
 							maxWidth = 50
 							maxHeight = 20
-							format = center
+							format = left
 							alwaystransparent = yes
 						}
 						
-						iconType = {
-							name = "estimated_mil_industry_bg"
-							quadTextureSprite ="GFX_generic_text_bg_108"
-							position = { x = 15 y = 75 }
-						}
+						#iconType = {
+						#	name = "estimated_mil_industry_bg"
+						#	quadTextureSprite ="GFX_generic_text_bg_108"
+						#	position = { x = 15 y = 75 }
+						#}
 						
 						iconType = {
 							name = "estimated_mil_industry_icon"
@@ -651,33 +726,33 @@ guiTypes = {
 						
 						instantTextboxType = {
 							name = "estimated_military_industry_size"
-							position = { x = 35 y = 79 }
-							font = "Arial"
+							position = { x = 12 y = 83 }
+							font = "Beyondsmall"
 							text = "45-120"
 							maxWidth = 100
 							maxHeight = 20
 							format = center
 						}
 
-						iconType = {
-							name = "mil_industry_damaged_bg"
-							position = { x = 125 y = 75 }
-							spriteType = "GFX_generic_text_bg_60"
-						}
+						#iconType = {
+						#	name = "mil_industry_damaged_bg"
+						#	position = { x = 125 y = 75 }
+						#	spriteType = "GFX_generic_text_bg_60"
+						#}
 						
 						iconType = {
 							name = "mil_industry_damaged_icon"
-							position = { x = 123 y = 73 }
+							position = { x = 110 y = 70 }
 							quadTextureSprite = "GFX_building_status_overlay"
 							alwaystransparent = yes
 							frame = 3
-							scale = 0.7
+							#scale = 0.7
 						}
 						
 						instantTextboxType = {
 							name = "mil_industry_damaged_rate"
-							position = { x = 139 y = 79 }
-							font = "Arial"
+							position = { x = 137 y = 83 }
+							font = "Beyondsmall"
 							text = "35%"
 							maxWidth = 50
 							maxHeight = 20
@@ -685,11 +760,11 @@ guiTypes = {
 							alwaystransparent = yes
 						}
 						
-						iconType = {
-							name = "estimated_naval_industry_bg"
-							quadTextureSprite ="GFX_generic_text_bg_108"
-							position = { x = 15 y = 135 }
-						}
+						#iconType = {
+						#	name = "estimated_naval_industry_bg"
+						#	quadTextureSprite ="GFX_generic_text_bg_108"
+						#	position = { x = 15 y = 135 }
+						#}
 						
 						iconType = {
 							name = "estimated_naval_industry_icon"
@@ -699,33 +774,33 @@ guiTypes = {
 						
 						instantTextboxType = {
 							name = "estimated_naval_industry_size"
-							position = { x = 35 y = 139 }
-							font = "Arial"
+							position = { x = 12 y = 143 }
+							font = "Beyondsmall"
 							text = "45-120"
 							maxWidth = 100
 							maxHeight = 20
 							format = center
 						}
 					
-						iconType = {
-							name = "naval_industry_damaged_bg"
-							position = { x = 125 y = 135 }
-							spriteType = "GFX_generic_text_bg_60"
-						}
+						#iconType = {
+						#	name = "naval_industry_damaged_bg"
+						#	position = { x = 125 y = 135 }
+						#	spriteType = "GFX_generic_text_bg_60"
+						#}
 						
 						iconType = {
 							name = "naval_industry_damaged_icon"
-							position = { x = 123 y = 133 }
+							position = { x = 110 y = 128 }
 							quadTextureSprite = "GFX_building_status_overlay"
 							alwaystransparent = yes
 							frame = 3
-							scale = 0.7
+							#scale = 0.7
 						}
 						
 						instantTextboxType = {
 							name = "naval_industry_damaged_rate"
-							position = { x = 139 y = 139 }
-							font = "Arial"
+							position = { x = 137 y = 143 }
+							font = "Beyondsmall"
 							text = "35%"
 							maxWidth = 50
 							maxHeight = 20
@@ -734,26 +809,36 @@ guiTypes = {
 						}
 					}
 					
-					iconType = {
-						name = "factory_trade_bg"
-						quadTextureSprite ="GFX_generic_text_bg_88"
-						position = { x = 395 y = 15 }
-					}
+					#iconType = {
+					#	name = "factory_trade_bg"
+					#	quadTextureSprite ="GFX_generic_text_bg_88"
+					#	position = { x = 395 y = 15 }
+					#}
 					
 					iconType = {
 						name = "factory_trade_icon"
 						quadTextureSprite ="GFX_traded_factories_icon"
-						position = { x = 360 y = 8 }
+						position = { x = 360 y = 10000 }
+					}
+					
+					instantTextboxType = {
+						name = "factory_trade_text2"
+						position = { x = 300 y = 22 }
+						font = "Beyondsmall"
+						text = "Traded:"
+						maxWidth = 100
+						maxHeight = 20
+						format = left
 					}
 					
 					instantTextboxType = {
 						name = "factory_trade_text"
-						position = { x = 390 y = 18 }
-						font = "Arial"
+						position = { x = 410 y = 22 }
+						font = "Beyondsmall"
 						text = "45-120"
 						maxWidth = 100
 						maxHeight = 20
-						format = center
+						format = left
 					}
 
 					containerWindowType = {
@@ -761,37 +846,37 @@ guiTypes = {
 						position = { x = 195  y = 75 }
 							
 									
-						iconType = {
-							name = "eq_bg"
-							position = { x = 10 y = 0 }
-							spriteType = "GFX_generic_text_bg_88"	
-						}
+						#iconType = {
+						#	name = "eq_bg"
+						#	position = { x = 10 y = 0 }
+						#	spriteType = "GFX_generic_text_bg_88"	
+						#}
 						iconType = {
 							name = "eq_icon"
-							position = { x = 15 y = -4 }
+							position = { x = 15 y = -2 }
 							quadTextureSprite = "GFX_intel_ledger_eq_icon"
 							alwaystransparent = yes
 						}
 						
 						instantTextboxType = {
 							name = "eq_text"
-							position = { x = 40 y = 5 }
-							font = "Arial"
+							position = { x = 60 y = 9 }
+							font = "Beyondsmall"
 							text = "42-120"
 							maxWidth = 75
 							maxHeight = 20
-							format = center
+							format = left
 							alwaystransparent = yes				
 						}
-						iconType = {
-							name = "armor_bg"
-							position = { x = 105 y = 0 }
-							spriteType = "GFX_generic_text_bg_88"
-						}
+						#iconType = {
+						#	name = "armor_bg"
+						#	position = { x = 105 y = 0 }
+						#	spriteType = "GFX_generic_text_bg_88"
+						#}
 						
 						iconType = {
 							name = "armor_icon"
-							position = { x = 105 y = -4 }
+							position = { x = 115 y = -2 }
 							quadTextureSprite = "GFX_intel_ledger_armor_icon"
 							alwaystransparent = yes
 						}
@@ -799,23 +884,23 @@ guiTypes = {
 						
 						instantTextboxType = {
 							name = "armor_text"
-							position = { x = 135 y = 5 }
-							font = "Arial"
+							position = { x = 163 y = 9 }
+							font = "Beyondsmall"
 							text = "42-120"
 							maxWidth = 75
 							maxHeight = 20
-							format = center
+							format = left
 							alwaystransparent = yes
 						}
-						iconType = {
-							name = "air_bg"
-							position = { x = 200 y = 0 }
-							spriteType = "GFX_generic_text_bg_88"
-						}
+						#iconType = {
+						#	name = "air_bg"
+						#	position = { x = 200 y = 0 }
+						#	spriteType = "GFX_generic_text_bg_88"
+						#}
 						
 						iconType = {
 							name = "air_icon"
-							position = { x = 200 y = -4 }
+							position = { x = 220 y = -2 }
 							quadTextureSprite = "GFX_intel_ledger_air_icon"
 							alwaystransparent = yes
 						}
@@ -823,23 +908,23 @@ guiTypes = {
 						
 						instantTextboxType = {
 							name = "air_text"
-							position = { x = 230 y = 5 }
-							font = "Arial"
+							position = { x = 268 y = 9 }
+							font = "Beyondsmall"
 							text = "42-120"
 							maxWidth = 75
 							maxHeight = 20
-							format = center
+							format = left
 							alwaystransparent = yes
 						}
-						iconType = {
-							name = "capital_bg"
-							position = { x = 10 y = 60 }
-							spriteType = "GFX_generic_text_bg_88"
-						}
+						#iconType = {
+						#	name = "capital_bg"
+						#	position = { x = 10 y = 60 }
+						#	spriteType = "GFX_generic_text_bg_88"
+						#}
 						
 						iconType = {
 							name = "capital_icon"
-							position = { x = 10 y = 54 }
+							position = { x = 12 y = 58 }
 							quadTextureSprite = "GFX_intel_ledger_capital_icon"
 							alwaystransparent = yes
 						}
@@ -847,23 +932,23 @@ guiTypes = {
 						
 						instantTextboxType = {
 							name = "capital_text"
-							position = { x = 40 y = 65 }
-							font = "Arial"
+							position = { x = 60 y = 68 }
+							font = "Beyondsmall"
 							text = "42-120"
 							maxWidth = 75
 							maxHeight = 20
-							format = center
+							format = left
 							alwaystransparent = yes
 						}
-						iconType = {
-							name = "screen_bg"
-							position = { x = 105 y = 60 }
-							spriteType = "GFX_generic_text_bg_88"
-						}
+						#iconType = {
+						#	name = "screen_bg"
+						#	position = { x = 105 y = 60 }
+						#	spriteType = "GFX_generic_text_bg_88"
+						#}
 						
 						iconType = {
 							name = "screen_icon"
-							position = { x = 105 y = 54 }
+							position = { x = 112 y = 58 }
 							quadTextureSprite = "GFX_intel_ledger_navy_icon"
 							alwaystransparent = yes
 						}
@@ -871,23 +956,23 @@ guiTypes = {
 						
 						instantTextboxType = {
 							name = "screen_text"
-							position = { x = 133 y = 65 }
-							font = "Arial"
+							position = { x = 163 y = 68 }
+							font = "Beyondsmall"
 							text = "42-120"
 							maxWidth = 75
 							maxHeight = 20
-							format = center
+							format = left
 							alwaystransparent = yes
 						}
-						iconType = {
-							name = "other_ship_bg"
-							position = { x = 200 y = 60 }
-							spriteType = "GFX_generic_text_bg_88"
-						}
+						#iconType = {
+						#	name = "other_ship_bg"
+						#	position = { x = 200 y = 60 }
+						#	spriteType = "GFX_generic_text_bg_88"
+						#}
 						
 						iconType = {
 							name = "other_ship_icon"
-							position = { x = 200 y = 54 }
+							position = { x = 220 y = 58 }
 							quadTextureSprite = "GFX_intel_ledger_other_icon"
 							alwaystransparent = yes
 						}
@@ -895,12 +980,12 @@ guiTypes = {
 						
 						instantTextboxType = {
 							name = "other_ship_text"
-							position = { x = 230 y = 65 }
-							font = "Arial"
+							position = { x = 268 y = 68 }
+							font = "Beyondsmall"
 							text = "42-120"
 							maxWidth = 75
 							maxHeight = 20
-							format = center
+							format = left
 							alwaystransparent = yes
 						}
 					}
@@ -909,14 +994,14 @@ guiTypes = {
 				
 				containerWindowType = {
 					name = "civilian_production_container"
-					position = { x=20 y=330}
+					position = { x=20 y=340}
 					show_position = { x=539 y =78 }
 					size = { width = 500 height = 240 }
 					
-					background = {
-						name = "Background"
-						spriteType ="GFX_mini_bg"
-					}
+					#background = {
+					#	name = "Background"
+					#	spriteType ="GFX_mini_bg"
+					#}
 						
 					containerWindowType = {
 						name = "linechart_filter_button_container"
@@ -984,7 +1069,7 @@ guiTypes = {
 							quadTextureSprite ="GFX_chart_history_level_button"
 							buttonText = "LEDGER_CIV_LINECHART_DETAILS_3_YEARS"
 							tooltip = "LEDGER_CIV_LINECHART_DETAILS_3_YEARS_TOOLTIP"
-							buttonFont = "hoi_16mbs"
+							buttonFont = "Arial16"
 							clicksound = click_default
 						}
 							
@@ -994,7 +1079,7 @@ guiTypes = {
 							quadTextureSprite ="GFX_chart_history_level_button"
 							buttonText = "LEDGER_CIV_LINECHART_DETAILS_1_YEAR"
 							tooltip = "LEDGER_CIV_LINECHART_DETAILS_1_YEAR_TOOLTIP"
-							buttonFont = "hoi_16mbs"
+							buttonFont = "Arial16"
 							clicksound = click_default
 						}
 							
@@ -1004,7 +1089,7 @@ guiTypes = {
 							quadTextureSprite ="GFX_chart_history_level_button"
 							buttonText = "LEDGER_CIV_LINECHART_DETAILS_3_MONTHS"
 							tooltip = "LEDGER_CIV_LINECHART_DETAILS_3_MONTHS_TOOLTIP"
-							buttonFont = "hoi_16mbs"
+							buttonFont = "Arial16"
 							clicksound = click_default
 						}
 					}
@@ -1051,7 +1136,7 @@ guiTypes = {
 							instantTextboxType = {
 								name = "max_y_value"
 								position = { x = -40 y = 0 }
-								font = "Arial"
+								font = "Focusfont"
 								text = ""
 								maxWidth = 40
 								maxHeight = 30
@@ -1063,7 +1148,7 @@ guiTypes = {
 							instantTextboxType = {
 								name = "min_y_value"
 								position = { x = -40 y = -20 }
-								font = "Arial"
+								font = "Focusfont"
 								text = "0"
 								maxWidth = 40
 								maxHeight = 30
@@ -1075,7 +1160,7 @@ guiTypes = {
 							instantTextboxType = {
 								name = "min_x_value"
 								position = { x = 10 y = 0 }
-								font = "Arial"
+								font = "Focusfont"
 								text = ""
 								maxWidth = 90
 								maxHeight = 30
@@ -1086,7 +1171,7 @@ guiTypes = {
 							instantTextboxType = {
 								name = "max_x_value"
 								position = { x = -155 y = 0 }
-								font = "Arial"
+								font = "Focusfont"
 								text = "TODAY"
 								maxWidth = 100
 								maxHeight = 30
@@ -1101,7 +1186,7 @@ guiTypes = {
 							instantTextboxType = {
 								name = "no_info_container_text"
 								position = { x = 0 y = 0 }
-								font = "Arial"
+								font = "Focusfont"
 								text = "NO_INTEL"
 								maxWidth = 260
 								maxHeight = 20
@@ -1128,14 +1213,14 @@ guiTypes = {
 						horizontalScrollbar = "bottom_horizontal_slider"
 						background_margin = { bottom = 15 }
 						
-						background = {
-							name = "Background"
-							spriteType ="GFX_mini_bg"
-						}
+						#background = {
+						#	name = "Background"
+						#	spriteType ="GFX_mini_bg"
+						#}
 						
 						gridBoxType = {
 							name = "ideas_grid"
-							position = { x = 5 y = 5 }
+							position = { x = 5 y = -15 }
 							size = { width = 255 height = 106}
 							slotsize = { width = 60 height = 50 }
 							format = "UPPER_LEFT"
@@ -1164,7 +1249,7 @@ guiTypes = {
 				
 					gridBoxType = {
 						name = "technology_entries"
-						position = { x = 70 y = 60 }
+						position = { x = 90 y = 67 }
 						size = { width = 300 height = 60 }
 						format = "UPPER_LEFT"
 						slotsize = { width = 80 height = 60 }
@@ -1190,24 +1275,24 @@ guiTypes = {
 
 				containerWindowType = {
 					name = "army_count_panel"
-					position = { x = 20 y = 25 }
+					position = { x = 20 y = 17 }
 					size = { width = 500 height = 55 }
 					
-					background = {
-						name = "Background"
-						spriteType ="GFX_mini_bg_grey"
-					}
+					#background = {
+					#	name = "Background"
+					#	spriteType ="GFX_mini_bg_grey"
+					#}
 					
 					containerWindowType = {
 						name = "army_count_container"
 						position = { x = 10 y = 0 }
 						
 						
-						iconType = {
-							name = "bg"
-							quadTextureSprite ="GFX_generic_text_bg_108"
-							position = { x = 20 y = 12 }
-						}
+						#iconType = {
+						#	name = "bg"
+						#	quadTextureSprite ="GFX_generic_text_bg_108"
+						#	position = { x = 20 y = 12 }
+						#}
 						
 						iconType = {
 							name = "army_icon"
@@ -1218,10 +1303,10 @@ guiTypes = {
 						
 						instantTextboxType = {
 							name = "army_count"
-							position = { x = 35 y = 16 }
-							font = "Arial"
+							position = { x = 60 y = 16 }
+							font = "Beyondsmall"
 							text = "123 - 512"
-							format = center
+							format = left
 							maxWidth = 100
 						}
 					}
@@ -1230,24 +1315,33 @@ guiTypes = {
 						name = "special_forces_container"
 						position = { x = 180 y = 12 }
 						
-						iconType = {
-							name = "bg"
-							quadTextureSprite ="GFX_generic_text_bg_88"
-							position = { x = 0 y = 0 }
-						}
+						#iconType = {
+						#	name = "bg"
+						#	quadTextureSprite ="GFX_generic_text_bg_88"
+						#	position = { x = 0 y = 0 }
+						#}
 						iconType = {
 							name = "icon"
 							spriteType = "GFX_special_forces_icon"
-							position = { x = 3 y = 3 }
+							position = { x = 3 y = 10000 }
 							frame = 3
 						}
 						
 						instantTextboxType = {
+							name = "special_forces_count2"
+							position = { x = -40 y = -5 }
+							font = "Beyond"
+							text = "SF"
+							format = left
+							maxWidth = 60
+						}
+
+						instantTextboxType = {
 							name = "special_forces_count"
-							position = { x = 25 y = 4 }
-							font = "Arial"
+							position = { x = 25 y = 3 }
+							font = "Arialsmall"
 							text = "12-32"
-							format = center
+							format = left
 							maxWidth = 60
 						}
 					}
@@ -1255,50 +1349,68 @@ guiTypes = {
 				
 					containerWindowType = {
 						name = "manpower_in_field_container"
-						position = { x = 280 y = 12 }
+						position = { x = 300 y = 12 }
 						
-						iconType = {
-							name = "bg"
-							quadTextureSprite ="GFX_generic_text_bg_108"
-							position = { x = 0 y = 0 }
-						}
+						#iconType = {
+						#	name = "bg"
+						#	quadTextureSprite ="GFX_generic_text_bg_108"
+						#	position = { x = 0 y = 0 }
+						#}
 						iconType = {
 							name = "icon"
 							spriteType = "GFX_manpower_icon"
-							position = { x = 3 y = 0 }
+							position = { x = 3 y = 10000 }
 						}
 						
 						instantTextboxType = {
+							name = "manpower_in_field2"
+							position = { x = -40 y = -5 }
+							font = "Beyond"
+							text = "MP"
+							format = left
+							maxWidth = 80
+						}
+
+						instantTextboxType = {
 							name = "manpower_in_field"
-							position = { x = 25 y = 4 }
-							font = "Arial"
+							position = { x = 35 y = 3 }
+							font = "Arialsmall"
 							text = "123K"
-							format = center
+							format = left
 							maxWidth = 80
 						}
 					}
 				
 					containerWindowType = {
 						name = "equipment_fulfilled_container"
-						position = { x = 400 y = 12 }
+						position = { x = 440 y = 12 }
 						
-						iconType = {
-							name = "bg"
-							quadTextureSprite ="GFX_generic_text_bg_88"
-							position = { x = 0 y = 0 }
-						}
+						#iconType = {
+						#	name = "bg"
+						#	quadTextureSprite ="GFX_generic_text_bg_88"
+						#	position = { x = 0 y = 0 }
+						#}
 						iconType = {
 							name = "icon"
 							spriteType = "GFX_equipment_icon"
-							position = { x = 3 y = 4 }
+							position = { x = 3 y = 10000 }
 						}
 						
 						instantTextboxType = {
+							name = "equipment_fulfilled2"
+							position = { x = -40 y = -5 }
+							font = "Beyond"
+							text = "EQ"
+							format = left
+							maxWidth = 80
+						}
+
+						instantTextboxType = {
 							name = "equipment_fulfilled"
-							position = { x = 25 y = 4 }
-							font = "Arial"
+							position = { x = 25 y = 3 }
+							font = "Arialsmall"
 							text = "123K"
-							format = center
+							format = left
 							maxWidth = 60
 						}
 					}
@@ -1335,7 +1447,7 @@ guiTypes = {
 						instantTextboxType = {
 							name = "no_info_container_text"
 							position = { x = 114 y = 40 }
-							font = "Arial"
+							font = "Beyondsmall"
 							text = "NO_INTEL"
 							maxWidth = 260
 							maxHeight = 20
@@ -1379,7 +1491,7 @@ guiTypes = {
 						instantTextboxType = {
 							name = "no_info_container_text"
 							position = { x = 114 y = 40 }
-							font = "Arial"
+							font = "Beyondsmall"
 							text = "NO_INTEL"
 							maxWidth = 260
 							maxHeight = 20
@@ -1401,7 +1513,7 @@ guiTypes = {
 					name = "armies_tab_button"
 					quadTextureSprite = "GFX_tab_intel_ledger_2"
 					position = { x=15 y=82 }
-					buttonText = "ARMY_LEDGER_ARMIES"
+					buttonText = "//// DIVISIONS ////"
 					font = "Arial"
 				}
 			
@@ -1409,7 +1521,7 @@ guiTypes = {
 					name = "equipment_tab_button"
 					quadTextureSprite = "GFX_tab_intel_ledger_2"
 					position = { x=265 y= 82 }
-					buttonText = "ARMY_LEDGER_EQUIPMENT"
+					buttonText = "//// STOCKPILE ////"
 					font = "Arial"
 				}
 				
@@ -1430,14 +1542,14 @@ guiTypes = {
 						horizontalScrollbar = "bottom_horizontal_slider"
 						background_margin = { bottom = 15 }
 						
-						background = {
-							name = "Background"
-							spriteType ="GFX_mini_bg"
-						}
+						#background = {
+						#	name = "Background"
+						#	spriteType ="GFX_mini_bg"
+						#}
 
 						gridBoxType = {
 							name = "ideas_grid"
-							position = { x = 5 y = 5 }
+							position = { x = 5 y = -15 }
 							size = { width = 255 height = 106 }
 							slotsize = { width = 60 height = 50 }
 							format = "UPPER_LEFT"
@@ -1465,7 +1577,7 @@ guiTypes = {
 
 					gridBoxType = {
 						name = "technology_entries"
-						position = { x = 70 y = 65 }
+						position = { x = 90 y = 72 }
 						size = { width = 300 height = 60 }
 						format = "UPPER_LEFT"
 						slotsize = { width = 80 height = 60 }
@@ -1491,13 +1603,13 @@ guiTypes = {
 
 				containerWindowType = {
 					name = "navy_count_panel"
-					position = { x = 20 y = 25 }
+					position = { x = 20 y = 9 }
 					size = { width = 500 height = 65 }
 					
-					background = {
-						name = "Background"
-						spriteType ="GFX_mini_bg_grey"
-					}
+					#background = {
+					#	name = "Background"
+					#	spriteType ="GFX_mini_bg_grey"
+					#}
 					
 					iconType = {
 						name = "navy_icon"
@@ -1509,8 +1621,8 @@ guiTypes = {
 				
 					instantTextboxType = {
 						name = "fleet_count"
-						position = { x = 70 y = 12 }
-						font = "Arial"
+						position = { x = 70 y = 15 }
+						font = "Arial16"
 						text = "Fleet Count: 42-64"
 						format = left
 						maxWidth = 200
@@ -1518,8 +1630,8 @@ guiTypes = {
 					
 					instantTextboxType = {
 						name = "task_force_count"
-						position = { x = 70 y = 32 }
-						font = "Arial"
+						position = { x = 70 y = 36 }
+						font = "Arial16"
 						text = "Taskforce Count: 42-64"
 						format = left
 						maxWidth = 200
@@ -1528,50 +1640,68 @@ guiTypes = {
 				
 					containerWindowType = {
 						name = "manpower_in_field_container"
-						position = { x = 260 y = 18 }
+						position = { x = 260 y = 20 }
 						
-						iconType = {
-							name = "bg"
-							quadTextureSprite ="GFX_generic_text_bg_108"
-							position = { x = 0 y = 0 }
-						}
+						#iconType = {
+						#	name = "bg"
+						#	quadTextureSprite ="GFX_generic_text_bg_108"
+						#	position = { x = 0 y = 0 }
+						#}
 						iconType = {
 							name = "icon"
 							spriteType = "GFX_manpower_icon"
-							position = { x = 3 y = 0 }
+							position = { x = 3 y = 10000 }
 						}
 						
 						instantTextboxType = {
-							name = "manpower_in_field"
-							position = { x = 25 y = 4 }
-							font = "Arial"
-							text = "123K"
+							name = "manpower_in_field2"
+							position = { x = -30 y = -5 }
+							font = "Beyond"
+							text = "MP"
 							format = center
+							maxWidth = 80
+						}
+
+						instantTextboxType = {
+							name = "manpower_in_field"
+							position = { x = 55 y = 4 }
+							font = "Arialsmall"
+							text = "123K"
+							format = left
 							maxWidth = 80
 						}
 					}
 				
 					containerWindowType = {
 						name = "ship_count_container"
-						position = { x = 380 y = 18 }
+						position = { x = 410 y = 20 }
 						
-						iconType = {
-							name = "bg"
-							quadTextureSprite ="GFX_generic_text_bg_88"
-							position = { x = 0 y = 0 }
-						}
+						#iconType = {
+						#	name = "bg"
+						#	quadTextureSprite ="GFX_generic_text_bg_88"
+						#	position = { x = 0 y = 0 }
+						#}
 						iconType = {
 							name = "icon"
 							spriteType = "GFX_repair_ships_icon"
-							position = { x = 2 y = 5 }
+							position = { x = 2 y = 10000 }
 						}
 						
 						instantTextboxType = {
-							name = "ship_count"
-							position = { x = 25 y = 4 }
-							font = "Arial"
-							text = "123K"
+							name = "ship_count2"
+							position = { x = -30 y = -5 }
+							font = "Beyond"
+							text = "SH"
 							format = center
+							maxWidth = 80
+						}
+
+						instantTextboxType = {
+							name = "ship_count"
+							position = { x = 55 y = 4 }
+							font = "Arialsmall"
+							text = "123K"
+							format = left
 							maxWidth = 60
 						}
 					}
@@ -1651,7 +1781,7 @@ guiTypes = {
 						instantTextboxType = {
 							name = "no_info_container_text"
 							position = { x = 114 y = 40 }
-							font = "Arial"
+							font = "Beyondsmall"
 							text = "NO_INTEL"
 							maxWidth = 260
 							maxHeight = 20
@@ -1693,7 +1823,7 @@ guiTypes = {
 
 						gridBoxType = {
 							name = "ideas_grid"
-							position = { x = 5 y = 5 }
+							position = { x = 5 y = -15 }
 							size = { width = 255 height = 106 }
 							slotsize = { width = 60 height = 60 }
 							format = "UPPER_LEFT"
@@ -1722,7 +1852,7 @@ guiTypes = {
 				
 					gridBoxType = {
 						name = "technology_entries"
-						position = { x = 70 y = 65 }
+						position = { x = 90 y = 72 }
 						size = { width = 300 height = 60 }
 						format = "UPPER_LEFT"
 						slotsize = { width = 80 height = 60 }
@@ -1748,13 +1878,13 @@ guiTypes = {
 
 				containerWindowType = {
 					name = "air_count_panel"
-					position = { x = 20 y = 25 }
+					position = { x = 20 y = 9 }
 					size = { width = 500 height = 65 }
 					
-					background = {
-						name = "Background"
-						spriteType ="GFX_mini_bg_grey"
-					}
+					#background = {
+					#	name = "Background"
+					#	spriteType ="GFX_mini_bg_grey"
+					#}
 					
 					iconType = {
 						name = "airwing_icon"
@@ -1766,8 +1896,8 @@ guiTypes = {
 				
 					instantTextboxType = {
 						name = "airwing_count"
-						position = { x = 70 y = 22 }
-						font = "Arial"
+						position = { x = 70 y = 23 }
+						font = "Arialsmall"
 						text = "Fleet Count: 42-64"
 						format = left
 						maxWidth = 240
@@ -1778,23 +1908,32 @@ guiTypes = {
 						name = "manpower_in_field_container"
 						position = { x = 360 y = 18 }
 						
-						iconType = {
-							name = "bg"
-							quadTextureSprite ="GFX_generic_text_bg_108"
-							position = { x = 0 y = 0 }
-						}
+						#iconType = {
+						#	name = "bg"
+						#	quadTextureSprite ="GFX_generic_text_bg_108"
+						#	position = { x = 0 y = 0 }
+						#}
 						iconType = {
 							name = "icon"
 							spriteType = "GFX_manpower_icon"
-							position = { x = 3 y = 0 }
+							position = { x = 3 y = 10000 }
+						}
+
+						instantTextboxType = {
+							name = "manpower_in_field2"
+							position = { x = -30 y = -3 }
+							font = "Beyond"
+							text = "MP"
+							format = center
+							maxWidth = 80
 						}
 						
 						instantTextboxType = {
 							name = "manpower_in_field"
-							position = { x = 25 y = 4 }
-							font = "Arial"
+							position = { x = 55 y = 5 }
+							font = "Arialsmall"
 							text = "123K"
-							format = center
+							format = left
 							maxWidth = 80
 						}
 					}
@@ -1822,7 +1961,7 @@ guiTypes = {
 					instantTextboxType = {
 						name = "wing_type_left_text_0"
 						position = { x=21 y=15 }
-						font = "Arial"
+						font = "Arial16"
 						maxWidth = 60
 						maxHeight = 23
 						format = center
@@ -1838,7 +1977,7 @@ guiTypes = {
 					instantTextboxType = {
 						name = "wing_type_left_text_1"
 						position = { x=93 y=15 }
-						font = "Arial"
+						font = "Arial16"
 						maxWidth = 60
 						maxHeight = 23
 						format = center
@@ -1854,7 +1993,7 @@ guiTypes = {
 					instantTextboxType = {
 						name = "wing_type_left_text_2"
 						position = { x=163 y=15 }
-						font = "Arial"
+						font = "Arial16"
 						maxWidth = 60
 						maxHeight = 23
 						format = center
@@ -1870,7 +2009,7 @@ guiTypes = {
 					instantTextboxType = {
 						name = "wing_type_left_text_3"
 						position = { x=233 y=15 }
-						font = "Arial"
+						font = "Arial16"
 						maxWidth = 60
 						maxHeight = 23
 						format = center
@@ -1886,7 +2025,7 @@ guiTypes = {
 					instantTextboxType = {
 						name = "wing_type_left_text_4"
 						position = { x=303 y=15 }
-						font = "Arial"
+						font = "Arial16"
 						text = "123"
 						maxWidth = 60
 						maxHeight = 23
@@ -1903,7 +2042,7 @@ guiTypes = {
 					instantTextboxType = {
 						name = "wing_type_left_text_5"
 						position = { x=373 y=15 }
-						font = "Arial"
+						font = "Arial16"
 						maxWidth = 60
 						maxHeight = 23
 						format = center
@@ -1919,7 +2058,7 @@ guiTypes = {
 					instantTextboxType = {
 						name = "wing_type_left_text_6"
 						position = { x=443 y=15 }
-						font = "Arial"
+						font = "Arial16"
 						maxWidth = 60
 						maxHeight = 23
 						format = center
@@ -1957,7 +2096,7 @@ guiTypes = {
 						instantTextboxType = {
 							name = "no_info_container_text"
 							position = { x = 114 y = 40 }
-							font = "Arial"
+							font = "Beyondsmall"
 							text = "NO_INTEL"
 							maxWidth = 260
 							maxHeight = 20
@@ -1998,7 +2137,7 @@ guiTypes = {
 						}
 						gridBoxType = {
 							name = "ideas_grid"
-							position = { x = 5 y = 5 }
+							position = { x = 5 y = -15 }
 							size = { width = 255 height = 106 }
 							slotsize = { width = 60 height = 60 }
 							format = "UPPER_LEFT"
@@ -2026,7 +2165,7 @@ guiTypes = {
 			
 					gridBoxType = {
 						name = "technology_entries"
-						position = { x = 70 y = 65 }
+						position = { x = 90 y = 72 }
 						size = { width = 300 height = 60 }
 						format = "UPPER_LEFT"
 						slotsize = { width = 80 height = 60 }
@@ -2047,21 +2186,32 @@ guiTypes = {
 				
 				buttonType = {
 					name = "tab_button"
-					position = {x=0 y=0}
+					position = {x=0 y=-5}
 					quadTextureSprite ="GFX_intel_ledger_tab_btn"
 					clicksound = click_checkbox
 				}
 
 				iconType = {
 					name = "civilian_economy"
-					position = { x = 43 y = 3 }
+					position = { x = 43 y = 10000 }
 					quadTextureSprite = "GFX_economy_tab"
 					alwaystransparent = yes
+				}
+
+				instantTextboxType = {
+					name = "civilian_intel_title"
+					position = { x = -37 y = 2 }
+					font = "Arial"
+					text = "/ CIVILIAN /"
+					maxWidth = 200
+					fixedsize = yes
+					maxHeight = 20
+					format = center
 				}
 				
 				instantTextboxType = {
 					name = "intel"
-					position = { x = 20 y = 35 }
+					position = { x = 20 y = 25 }
 					font = "Arial"
 					text = "Germanian"
 					maxWidth = 88
@@ -2079,20 +2229,32 @@ guiTypes = {
 				
 				buttonType = {
 					name = "tab_button"
-					position = {x=0 y=0}
+					position = {x=0 y=-5}
 					quadTextureSprite ="GFX_intel_ledger_tab_btn"
 					clicksound = click_checkbox
 				}
 
 				iconType = {
 					name = "army_overview"
-					position = { x = 43 y = 3 }
+					position = { x = 43 y = 10000 }
 					quadTextureSprite = "GFX_army_tab"
 					alwaystransparent = yes
 				}
+
+				instantTextboxType = {
+					name = "army_intel_title"
+					position = { x = -37 y = 2 }
+					font = "Arial"
+					text = "/ ARMY /"
+					maxWidth = 200
+					fixedsize = yes
+					maxHeight = 20
+					format = center
+				}
+
 				instantTextboxType = {
 					name = "intel"
-					position = { x = 20 y = 35 }
+					position = { x = 20 y = 25 }
 					font = "Arial"
 					text = "Germanian"
 					maxWidth = 88
@@ -2110,20 +2272,32 @@ guiTypes = {
 				
 				buttonType = {
 					name = "tab_button"
-					position = {x=0 y=0}
+					position = {x=0 y=-5}
 					quadTextureSprite ="GFX_intel_ledger_tab_btn"
 					clicksound = click_checkbox
 				}
 
 				iconType = {
 					name = "naval_overview"
-					position = { x = 43 y = 3 }
+					position = { x = 43 y = 10000 }
 					quadTextureSprite = "GFX_navy_tab"
 					alwaystransparent = yes
 				}
+
+				instantTextboxType = {
+					name = "navy_intel_title"
+					position = { x = -37 y = 2 }
+					font = "Arial"
+					text = "/ NAVY /"
+					maxWidth = 200
+					fixedsize = yes
+					maxHeight = 20
+					format = center
+				}
+
 				instantTextboxType = {
 					name = "intel"
-					position = { x = 20 y = 35 }
+					position = { x = 20 y = 25 }
 					font = "Arial"
 					text = "Germanian"
 					maxWidth = 88
@@ -2141,20 +2315,32 @@ guiTypes = {
 				
 				buttonType = {
 					name = "tab_button"
-					position = {x=0 y=0}
+					position = {x=0 y=-5}
 					quadTextureSprite ="GFX_intel_ledger_tab_btn"
 					clicksound = click_checkbox
 				}
 
 				iconType = {
 					name = "air_overview"
-					position = { x = 43 y = 3 }
+					position = { x = 43 y = 10000 }
 					quadTextureSprite = "GFX_air_tab"
 					alwaystransparent = yes
 				}
+
+				instantTextboxType = {
+					name = "air_intel_title"
+					position = { x = -37 y = 2 }
+					font = "Arial"
+					text = "/ AIR /"
+					maxWidth = 200
+					fixedsize = yes
+					maxHeight = 20
+					format = center
+				}
+
 				instantTextboxType = {
 					name = "intel"
-					position = { x = 20 y = 35 }
+					position = { x = 20 y = 25 }
 					font = "Arial"
 					text = "Germanian"
 					maxWidth = 88
