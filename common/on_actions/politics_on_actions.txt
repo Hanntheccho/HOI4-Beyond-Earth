@@ -12,9 +12,9 @@ on_actions = {
                 set_variable = { civilian_chance = 2 }
                 set_variable = { light_chance = 1 }
                 set_variable = { naval_chance = 0 }
-                set_variable = { military_civilian_slider_var = 880 }
-                set_variable = { light_heavy_slider_var = 962.5 }
-                set_variable = { land_naval_slider_var = 962.5 }
+                set_variable = { military_civilian_slider_var = 772 }
+                set_variable = { light_heavy_slider_var = 854.5 }
+                set_variable = { land_naval_slider_var = 854.5 }
                 set_variable = { division_limit = num_of_factories }
                 set_variable = { division_limit_extra = 0 }
                 set_variable = { impossible_proposition_expire = -1 }
@@ -23,6 +23,9 @@ on_actions = {
                 set_variable = { partisan_proposition_expire = -1 }
                 set_variable = { bipartisan_proposition_expire = -1 }
                 set_variable = { popular_proposition_expire = -1 }
+                set_variable = { augment_law_cost_base = 75 }
+                set_variable = { augment_law_cost_factor = 1}
+                set_variable = { augment_law_cost_modified = augment_law_cost_base}
                 clamp_variable = {
                     var = division_limit
                     min = 1
@@ -60,17 +63,17 @@ on_actions = {
                 }
                 clamp_variable = {
                     var = military_civilian_slider_var
-                    min = 780
+                    min = 772
                     max = 945
                 }
                 clamp_variable = {
                     var = light_heavy_slider_var
-                    min = 780
+                    min = 772
                     max = 945
                 }
                 clamp_variable = {
                     var = land_naval_slider_var
-                    min = 780
+                    min = 772
                     max = 945
                 }
 
@@ -255,6 +258,12 @@ on_actions = {
             }
             if = {
                 limit = {
+                    has_dynamic_modifier = { modifier = nerve_stapling_modifier }
+                }
+                subtract_from_variable = { free_factory_adjustment = 0.5 }
+            }
+            if = {
+                limit = {
                     has_idea = business_purge_limited
                 }
                 subtract_from_variable = { free_factory_adjustment = 0.2 }
@@ -276,6 +285,42 @@ on_actions = {
                     has_idea = business_purge_total
                 }
                 subtract_from_variable = { free_factory_adjustment = 0.3 }
+            }
+            if = {
+                limit = {
+                    has_country_flag = prosperity_two
+                }
+                add_to_variable = { free_factory_adjustment = 0.1 }
+            }
+            if = {
+                limit = {
+                    has_tech = corporate_model
+                }
+                add_to_variable = { free_factory_adjustment = 0.1 }
+            }
+            if = {
+                limit = {
+                    has_country_flag = corporate_model_II
+                }
+                add_to_variable = { free_factory_adjustment = 0.1 }
+            }
+            if = {
+                limit = {
+                    has_country_flag = corporate_model_III
+                }
+                add_to_variable = { free_factory_adjustment = 0.1 }
+            }
+            if = {
+                limit = {
+                    has_country_flag = corporate_model_IV
+                }
+                add_to_variable = { free_factory_adjustment = 0.1 }
+            }
+            if = {
+                limit = {
+                    has_country_flag = corporate_model_V
+                }
+                add_to_variable = { free_factory_adjustment = 0.1 }
             }
             add_to_variable = { free_factory_gain = free_factory_base_gain }
             multiply_variable = { free_factory_gain = free_factory_adjustment }
@@ -379,6 +424,20 @@ on_actions = {
                         }
                     }
                 }
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        has_dynamic_modifier = { modifier = bribe_politicians_modifier }
+                    }
+                }
+                clear_variable = harmony_drift_bribe_politicians_var
+                clear_variable = supremacy_drift_bribe_politicians_var
+                clear_variable = purity_drift_bribe_politicians_var
+                clear_variable = neutral_drift_bribe_politicians_var
+                clear_variable = divinity_drift_bribe_politicians_var
+                clear_variable = voracity_drift_bribe_politicians_var
+                clear_variable = mastery_drift_bribe_politicians_var
             }
             if = {
                 limit = {
@@ -917,32 +976,31 @@ on_actions = {
                 }
                 add_to_variable = { corruption_variable = 0.15 }
             }
-            set_variable = { division_limit = num_of_factories }
-            add_to_variable = { division_limit = division_limit_extra }
             if = {
                 limit = {
-                    has_country_flag = has_body_tier1
+                    has_dynamic_modifier = { modifier = bribe_politicians_modifier }
                 }
-                multiply_variable = { division_limit = 1.2 }
+                add_to_variable = { corruption_variable = 0.05 }
             }
-            round_variable = division_limit
-            clamp_variable = {
-                var = division_limit
-                min = 1
-                max = 200
-            }
+
             if = {
                 limit = {
                     check_variable = { num_divisions > division_limit }
                 }
-                set_variable = { too_many_divs_var = num_divisions }
-                subtract_from_variable = { too_many_divs_var = division_limit }
-                divide_variable = { too_many_divs_var = 100 }
+                clear_variable = too_many_divs_var
+                clear_variable = too_many_divs_var_positive
+            	set_variable = { too_many_divs_var = num_divisions }
+            	divide_variable = { too_many_divs_var = division_limit }
+            	subtract_from_variable = { too_many_divs_var = 1 }
+
+            	divide_variable = { too_many_divs_var = 4 }
+                clamp_variable = {
+                    var = too_many_divs_var
+                    min = -0.25
+                    max = 0.25
+                }
+                set_variable = { too_many_divs_var_positive = too_many_divs_var }
                 multiply_variable = { too_many_divs_var = -1 }
-                set_variable = { too_many_divs_var2 = num_divisions }
-                subtract_from_variable = { too_many_divs_var2 = division_limit }
-                divide_variable = { too_many_divs_var2 = 50 }
-                multiply_variable = { too_many_divs_var2 = -1 }
                 add_dynamic_modifier = {
                     modifier = too_many_divs
                 }
@@ -963,6 +1021,52 @@ on_actions = {
     }
     on_weekly = {
         effect = {
+            set_variable = { division_limit_factories = num_of_factories }
+            set_variable = { division_limit = net_factory_count }
+
+	        set_variable = { division_minimum_manpower = max_available_manpower_k }
+	        divide_variable = { division_minimum_manpower = 35 }
+	        round_variable = division_minimum_manpower
+	        set_variable = { division_minimum_states = num_owned_states }
+	        # +15% for majors
+	        if = {
+	        	limit = { is_major = yes }
+	        	multiply_variable = { division_limit = 1.15 }
+	        }
+	        # +5% if WT is 70% or higher
+	        if = {
+	        	limit = { threat > 0.69 }
+	        	multiply_variable = { division_limit = 1.05 }
+	        }
+	        # +5% for faction leaders
+	        if = {
+	        	limit = { is_faction_leader = yes }
+	        	multiply_variable = { division_limit = 1.15 }
+	        }
+            multiply_variable = { division_limit = 1.3 }
+
+	        set_variable = { division_minimum = division_minimum_manpower }
+	        clamp_variable = {
+	        	var = division_minimum
+	        	min = division_minimum_states
+	        	max = 1000
+	        }
+	        clamp_variable = {
+	        	var = division_minimum
+	        	min = 5
+	        	max = 1000
+	        }
+	        if = {
+	        	limit = { check_variable = { division_minimum > division_limit } }
+	        	set_variable = { division_limit = division_minimum }
+	        }
+	        clamp_variable = {
+	        	var = division_limit
+	        	min = 1
+	        	max = 200
+	        }
+            round_variable = division_limit
+
             every_country = {
                 if = {
                     limit = {

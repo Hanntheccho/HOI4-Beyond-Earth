@@ -344,22 +344,27 @@ defined_text = {
 	text = {
 		trigger = {
             NOT = {
-				OR = {
-					has_country_flag = military_selected_flag
-					has_country_flag = administrative_selected_flag
-					has_country_flag = academia_selected_flag
-					has_country_flag = business_selected_flag
-					has_country_flag = limited_selected_flag
-					has_country_flag = extensive_selected_flag
-					has_country_flag = massive_selected_flag
-					has_country_flag = total_selected_flag
-					has_country_flag = low_selected_flag
-					has_country_flag = high_selected_flag
-					has_country_flag = purge_in_progress_flag
+				AND = {
+					OR = {
+						has_country_flag = military_selected_flag
+						has_country_flag = administrative_selected_flag
+						has_country_flag = academia_selected_flag
+						has_country_flag = business_selected_flag
+					}
+					OR = {
+						has_country_flag = limited_selected_flag
+						has_country_flag = extensive_selected_flag
+						has_country_flag = massive_selected_flag
+						has_country_flag = total_selected_flag
+					}
+					OR = {
+						has_country_flag = high_selected_flag
+						has_country_flag = low_selected_flag
+					}
 				}
 			}
 		}
-		localization_key = no_purge_options_selected
+		localization_key = not_all_purge_options_selected
 	}
 	text = {
 		trigger = {
@@ -378,23 +383,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = military_selected_flag
-				NOT = {
-					OR = {
-						has_country_flag = limited_selected_flag
-						has_country_flag = extensive_selected_flag
-						has_country_flag = massive_selected_flag
-						has_country_flag = total_selected_flag
-					}
-				}
-			}
-		}
-		localization_key = military_selected_no_scope
-	}
-	text = {
-		trigger = {
-			AND = {
-				has_country_flag = military_selected_flag
-					has_country_flag = limited_selected_flag
+				has_country_flag = limited_selected_flag
 			}
 		}
 		localization_key = military_selected_limited
@@ -403,7 +392,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = military_selected_flag
-					has_country_flag = extensive_selected_flag
+				has_country_flag = extensive_selected_flag
 			}
 		}
 		localization_key = military_selected_extensive
@@ -412,7 +401,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = military_selected_flag
-					has_country_flag = massive_selected_flag
+				has_country_flag = massive_selected_flag
 			}
 		}
 		localization_key = military_selected_massive
@@ -421,7 +410,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = military_selected_flag
-					has_country_flag = total_selected_flag
+				has_country_flag = total_selected_flag
 			}
 		}
 		localization_key = military_selected_total
@@ -430,23 +419,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = administrative_selected_flag
-				NOT = {
-					OR = {
-						has_country_flag = limited_selected_flag
-						has_country_flag = extensive_selected_flag
-						has_country_flag = massive_selected_flag
-						has_country_flag = total_selected_flag
-					}
-				}
-			}
-		}
-		localization_key = administrative_selected_no_scope
-	}
-	text = {
-		trigger = {
-			AND = {
-				has_country_flag = administrative_selected_flag
-					has_country_flag = limited_selected_flag
+				has_country_flag = limited_selected_flag
 			}
 		}
 		localization_key = administrative_selected_limited
@@ -455,7 +428,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = administrative_selected_flag
-					has_country_flag = extensive_selected_flag
+				has_country_flag = extensive_selected_flag
 			}
 		}
 		localization_key = administrative_selected_extensive
@@ -464,7 +437,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = administrative_selected_flag
-					has_country_flag = massive_selected_flag
+				has_country_flag = massive_selected_flag
 			}
 		}
 		localization_key = administrative_selected_massive
@@ -473,7 +446,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = administrative_selected_flag
-					has_country_flag = total_selected_flag
+				has_country_flag = total_selected_flag
 			}
 		}
 		localization_key = administrative_selected_total
@@ -482,23 +455,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = academia_selected_flag
-				NOT = {
-					OR = {
-						has_country_flag = limited_selected_flag
-						has_country_flag = extensive_selected_flag
-						has_country_flag = massive_selected_flag
-						has_country_flag = total_selected_flag
-					}
-				}
-			}
-		}
-		localization_key = academia_selected_no_scope
-	}
-	text = {
-		trigger = {
-			AND = {
-				has_country_flag = academia_selected_flag
-					has_country_flag = limited_selected_flag
+				has_country_flag = limited_selected_flag
 			}
 		}
 		localization_key = academia_selected_limited
@@ -507,7 +464,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = academia_selected_flag
-					has_country_flag = extensive_selected_flag
+				has_country_flag = extensive_selected_flag
 			}
 		}
 		localization_key = academia_selected_extensive
@@ -516,7 +473,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = academia_selected_flag
-					has_country_flag = massive_selected_flag
+				has_country_flag = massive_selected_flag
 			}
 		}
 		localization_key = academia_selected_massive
@@ -525,7 +482,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = academia_selected_flag
-					has_country_flag = total_selected_flag
+				has_country_flag = total_selected_flag
 			}
 		}
 		localization_key = academia_selected_total
@@ -534,23 +491,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = business_selected_flag
-				NOT = {
-					OR = {
-						has_country_flag = limited_selected_flag
-						has_country_flag = extensive_selected_flag
-						has_country_flag = massive_selected_flag
-						has_country_flag = total_selected_flag
-					}
-				}
-			}
-		}
-		localization_key = business_selected_no_scope
-	}
-	text = {
-		trigger = {
-			AND = {
-				has_country_flag = business_selected_flag
-					has_country_flag = limited_selected_flag
+				has_country_flag = limited_selected_flag
 			}
 		}
 		localization_key = business_selected_limited
@@ -559,7 +500,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = business_selected_flag
-					has_country_flag = extensive_selected_flag
+				has_country_flag = extensive_selected_flag
 			}
 		}
 		localization_key = business_selected_extensive
@@ -568,7 +509,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = business_selected_flag
-					has_country_flag = massive_selected_flag
+				has_country_flag = massive_selected_flag
 			}
 		}
 		localization_key = business_selected_massive
@@ -577,74 +518,10 @@ defined_text = {
 		trigger = {
 			AND = {
 				has_country_flag = business_selected_flag
-					has_country_flag = total_selected_flag
+				has_country_flag = total_selected_flag
 			}
 		}
 		localization_key = business_selected_total
-	}
-	text = {
-		trigger = {
-			AND = {
-				has_country_flag = limited_selected_flag
-				NOT = {
-					OR = {
-						has_country_flag = military_selected_flag
-						has_country_flag = administrative_selected_flag
-						has_country_flag = academia_selected_flag
-						has_country_flag = business_selected_flag
-					}
-				}
-			}
-		}
-		localization_key = limited_selected_no_area
-	}
-	text = {
-		trigger = {
-			AND = {
-				has_country_flag = extensive_selected_flag
-				NOT = {
-					OR = {
-						has_country_flag = military_selected_flag
-						has_country_flag = administrative_selected_flag
-						has_country_flag = academia_selected_flag
-						has_country_flag = business_selected_flag
-					}
-				}
-			}
-		}
-		localization_key = extensive_selected_no_area
-	}
-	text = {
-		trigger = {
-			AND = {
-				has_country_flag = massive_selected_flag
-				NOT = {
-					OR = {
-						has_country_flag = military_selected_flag
-						has_country_flag = administrative_selected_flag
-						has_country_flag = academia_selected_flag
-						has_country_flag = business_selected_flag
-					}
-				}
-			}
-		}
-		localization_key = massive_selected_no_area
-	}
-	text = {
-		trigger = {
-			AND = {
-				has_country_flag = total_selected_flag
-				NOT = {
-					OR = {
-						has_country_flag = military_selected_flag
-						has_country_flag = administrative_selected_flag
-						has_country_flag = academia_selected_flag
-						has_country_flag = business_selected_flag
-					}
-				}
-			}
-		}
-		localization_key = total_selected_no_area
 	}
 }
 
@@ -652,88 +529,13 @@ defined_text = {
 	name = GETcorruption_purge_level
 	text = {
 		trigger = {
-            NOT = {
-				OR = {
-					has_country_flag = low_selected_flag
-					has_country_flag = high_selected_flag
-				}
-			}
-		}
-		localization_key = no_level_selected
-	}
-	text = {
-		trigger = {
-			AND = {
-				has_country_flag = low_selected_flag
-				NOT = {
-					OR = {
-						has_country_flag = military_selected_flag
-						has_country_flag = administrative_selected_flag
-						has_country_flag = academia_selected_flag
-						has_country_flag = business_selected_flag
-						has_country_flag = limited_selected_flag
-						has_country_flag = extensive_selected_flag
-						has_country_flag = massive_selected_flag
-						has_country_flag = total_selected_flag
-					}
-				}
-			}
-		}
-		localization_key = low_level_no_area_or_scope
-	}
-	text = {
-		trigger = {
-			AND = {
-				has_country_flag = high_selected_flag
-				NOT = {
-					OR = {
-						has_country_flag = military_selected_flag
-						has_country_flag = administrative_selected_flag
-						has_country_flag = academia_selected_flag
-						has_country_flag = business_selected_flag
-						has_country_flag = limited_selected_flag
-						has_country_flag = extensive_selected_flag
-						has_country_flag = massive_selected_flag
-						has_country_flag = total_selected_flag
-					}
-				}
-			}
-		}
-		localization_key = high_level_no_area_or_scope
-	}
-	text = {
-		trigger = {
-            AND = {
-				has_country_flag = low_selected_flag
-				OR = {
-					has_country_flag = military_selected_flag
-					has_country_flag = administrative_selected_flag
-					has_country_flag = academia_selected_flag
-					has_country_flag = business_selected_flag
-					has_country_flag = limited_selected_flag
-					has_country_flag = extensive_selected_flag
-					has_country_flag = massive_selected_flag
-					has_country_flag = total_selected_flag
-				}
-			}
+			has_country_flag = low_selected_flag
 		}
 		localization_key = low_level_selected
 	}
 	text = {
 		trigger = {
-            AND = {
-				has_country_flag = high_selected_flag
-				OR = {
-					has_country_flag = military_selected_flag
-					has_country_flag = administrative_selected_flag
-					has_country_flag = academia_selected_flag
-					has_country_flag = business_selected_flag
-					has_country_flag = limited_selected_flag
-					has_country_flag = extensive_selected_flag
-					has_country_flag = massive_selected_flag
-					has_country_flag = total_selected_flag
-				}
-			}
+			has_country_flag = high_selected_flag
 		}
 		localization_key = high_level_selected
 	}

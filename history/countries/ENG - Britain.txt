@@ -7,20 +7,97 @@ set_politics = {
 set_popularities = {
 	harmony = 25
 	purity = 25
-	supremacy = 6
-	neutral = 4
-	mastery = 29
-	divinity = 4
-	voracity = 7
+	supremacy = 0
+	neutral = 10
+	mastery = 40
+	divinity = 0
+	voracity = 0
 }
+
+recruit_character = ENG_barbara_taylor
+recruit_character = ENG_arthur_barr
+recruit_character = ENG_cassie_kenney
+recruit_character = ENG_nigel_john_hall
 
 add_ideas = {
-	digital_democracy
+	synthetic_democracy
 	regional_stage
+	limited_exports
 	partial_economic_mobilisation
-	ENG_political_violence
+	volunteer_only
+	ENG_the_sick_man_of_britannia
+	ENG_stagnant_republican_army
+	ENG_incompetent_parliament
 }
 
-oob = "AAA_filler"
+set_technology = {
+	mbt_1 = 1
+	destroyer_1_hull = 1
+	battlecruiser_1_hull = 1
+	sub_1_hull = 1
+	sub_1 = 1
+	dest_1 = 1
+	battlecruiser_1 = 1
+	airframe = 1
+	cas_1 = 1
+	artillery_1 = 1
+	artillery_chasis_1 = 1
+	be_tech_support = 1
+}
 
-capital = 267
+oob = "ENG_2200"
+
+capital = 266
+set_stability = 0.6
+set_war_support = 0.2
+set_research_slots = 3
+
+create_equipment_variant = {
+	name = "Republic Class"
+	type = ship_hull_light_2
+	#name_group = ENG_DD_HISTORICAL
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_2
+		fixed_ship_anti_air_slot = ship_anti_air_1
+		fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+		fixed_ship_radar_slot = ship_sonar_1
+		fixed_ship_engine_slot = light_ship_engine_2
+		fixed_ship_torpedo_slot = ship_torpedo_1
+		mid_1_custom_slot = ship_torpedo_1
+		rear_1_custom_slot = ship_depth_charge_1
+	}
+	obsolete = yes
+}
+
+create_equipment_variant = {
+	name = "Revenge Class"
+	type = ship_hull_heavy
+	#name_group = ENG_BB_HISTORICAL
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_1
+		fixed_ship_anti_air_slot = ship_anti_air_1
+		fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+		fixed_ship_radar_slot = ship_radar_1
+		fixed_ship_engine_slot = heavy_ship_engine_1
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bb_1
+		front_1_custom_slot = ship_heavy_battery_1
+		mid_1_custom_slot = ship_heavy_battery_1
+		mid_2_custom_slot = empty
+		rear_1_custom_slot = empty
+	}
+}
+
+create_equipment_variant = {
+	name = "Inevitable Class"
+	type = ship_hull_submarine
+	#name_group = ENG_BB_HISTORICAL
+	parent_version = 0
+	modules = {
+		fixed_ship_torpedo_slot = ship_torpedo_sub_1
+		fixed_ship_engine_slot = sub_ship_engine_1
+		rear_1_custom_slot = ship_torpedo_sub_1
+	}
+}

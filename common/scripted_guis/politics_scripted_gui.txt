@@ -42,18 +42,227 @@ scripted_gui = {
                 }
             }
             bribe_politicians_button_click = {
-                add_political_power = -25
-                add_to_variable = { parliament_support = 10 }
-                add_to_variable = { corruption_variable = 5 }
+                add_political_power = -80
+                if = {
+                    limit = {
+                        has_government = harmony
+                    }
+                    set_variable = { harmony_drift_bribe_politicians_var = 0.1 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = supremacy
+                    }
+                    set_variable = { supremacy_drift_bribe_politicians_var = 0.1 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = purity
+                    }
+                    set_variable = { purity_drift_bribe_politicians_var = 0.1 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = neutral
+                    }
+                    set_variable = { neutral_drift_bribe_politicians_var = 0.1 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = divinity
+                    }
+                    set_variable = { divinity_drift_bribe_politicians_var = 0.1 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = voracity
+                    }
+                    set_variable = { voracity_drift_bribe_politicians_var = 0.1 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = mastery
+                    }
+                    set_variable = { mastery_drift_bribe_politicians_var = 0.1 }
+                }
+                add_dynamic_modifier = { modifier = bribe_politicians_modifier days = 100 }
             }
             welfare_programs_button_click = {
-                add_to_variable = { parliament_support = 5 }
-                add_political_power = -100
+                subtract_from_variable = { cultural_power = 80 }
+                if = {
+                    limit = {
+                        has_government = harmony
+                    }
+                    set_variable = { harmony_drift_welfare_programs_var = 0.01 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = supremacy
+                    }
+                    set_variable = { supremacy_drift_welfare_programs_var = 0.01 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = purity
+                    }
+                    set_variable = { purity_drift_welfare_programs_var = 0.01 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = neutral
+                    }
+                    set_variable = { neutral_drift_welfare_programs_var = 0.01 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = divinity
+                    }
+                    set_variable = { divinity_drift_welfare_programs_var = 0.01 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = voracity
+                    }
+                    set_variable = { voracity_drift_welfare_programs_var = 0.01 }
+                }
+                else_if = {
+                    limit = {
+                        has_government = mastery
+                    }
+                    set_variable = { mastery_drift_welfare_programs_var = 0.01 }
+                }
+                add_dynamic_modifier = { modifier = welfare_programs_modifier days = 60 }
             }
             nerve_stapling_button_click = {
-                add_to_variable = { parliament_support = 15 }
-                add_to_variable = { corruption_variable = -5 }
-                add_timed_idea = { idea = nerve_stapling_in_progress days = 40 }
+                add_political_power = -50
+                if = {
+                    limit = {
+                        has_government = harmony
+                    }
+                    set_variable = { harmony_drift_nerve_stapling_var = -0.05 }
+                    add_popularity = {
+                        ideology = harmony
+                        popularity = 0.05
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_government = supremacy
+                    }
+                    set_variable = { supremacy_drift_nerve_stapling_var = -0.05 }
+                    add_popularity = {
+                        ideology = supremacy
+                        popularity = 0.05
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_government = purity
+                    }
+                    set_variable = { purity_drift_nerve_stapling_var = -0.05 }
+                    add_popularity = {
+                        ideology = purity
+                        popularity = 0.05
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_government = neutral
+                    }
+                    set_variable = { neutral_drift_nerve_stapling_var = -0.05 }
+                    add_popularity = {
+                        ideology = neutral
+                        popularity = 0.05
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_government = divinity
+                    }
+                    set_variable = { divinity_drift_nerve_stapling_var = -0.05 }
+                    add_popularity = {
+                        ideology = divinity
+                        popularity = 0.05
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_government = voracity
+                    }
+                    set_variable = { voracity_drift_nerve_stapling_var = -0.05 }
+                    add_popularity = {
+                        ideology = voracity
+                        popularity = 0.05
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_government = mastery
+                    }
+                    set_variable = { mastery_drift_nerve_stapling_var = -0.05 }
+                    add_popularity = {
+                        ideology = mastery
+                        popularity = 0.05
+                    }
+                }
+                random_list = {
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 10 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 11 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 12 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 13 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 14 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 15 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 16 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 17 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 18 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 19 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                    10 = {
+                        subtract_from_variable = { corruption_variable = 20 }
+                        pierce_corruption_dont_check = yes
+                        pierce_corruption_check = yes
+                    }
+                }
+                add_dynamic_modifier = { modifier = nerve_stapling_modifier days = 50 }
             }
 
             increase_trade_law_button_click = {
@@ -292,7 +501,7 @@ scripted_gui = {
                 }
                 set_country_flag = law_hearing
                 subtract_from_variable = { parliament_support = 30 }
-                add_political_power = -40
+                introduce_proposition = yes
             }
             controversial_proposition_button_click = {
                 parliament_support_ruling_party = yes
@@ -305,7 +514,7 @@ scripted_gui = {
                 }
                 set_country_flag = law_hearing
                 subtract_from_variable = { parliament_support = 20 }
-                add_political_power = -40
+                introduce_proposition = yes
             }
             divisive_proposition_button_click = {
                 parliament_support_ruling_party = yes
@@ -318,7 +527,7 @@ scripted_gui = {
                 }
                 set_country_flag = law_hearing
                 subtract_from_variable = { parliament_support = 15 }
-                add_political_power = -40
+                introduce_proposition = yes
             }
             partisan_proposition_button_click = {
                 parliament_support_ruling_party = yes
@@ -331,7 +540,7 @@ scripted_gui = {
                 }
                 set_country_flag = law_hearing
                 subtract_from_variable = { parliament_support = 10 }
-                add_political_power = -40
+                introduce_proposition = yes
             }
             bipartisan_proposition_button_click = {
                 parliament_support_ruling_party = yes
@@ -344,7 +553,7 @@ scripted_gui = {
                 }
                 set_country_flag = law_hearing
                 subtract_from_variable = { parliament_support = 5 }
-                add_political_power = -40
+                introduce_proposition = yes
             }
             popular_proposition_button_click = {
                 parliament_support_ruling_party = yes
@@ -356,7 +565,12 @@ scripted_gui = {
                     set_variable = { hearing_time = 30 }
                 }
                 set_country_flag = law_hearing
-                add_political_power = -40
+                introduce_proposition = yes
+            }
+
+            free_factory_increase_click = {
+                subtract_from_variable = { industrial_power = 100 }
+                add_to_variable = { free_factory_progress = 50 }
             }
 
             purgecorruption_click = {
@@ -935,6 +1149,13 @@ scripted_gui = {
                 clr_country_flag = extensive_selected_flag
                 clr_country_flag = massive_selected_flag
                 clr_country_flag = total_selected_flag
+                set_variable = { purge_length_var = 60 }
+                if = {
+                    limit = {
+                        has_country_flag = high_selected_flag
+                    }
+                    multiply_variable = { purge_length_var = 2 }
+                }
             }
             corruption_limited_selected_click = {
                 clr_country_flag = limited_selected_flag
@@ -944,6 +1165,13 @@ scripted_gui = {
                 clr_country_flag = limited_selected_flag
                 clr_country_flag = massive_selected_flag
                 clr_country_flag = total_selected_flag
+                set_variable = { purge_length_var = 90 }
+                if = {
+                    limit = {
+                        has_country_flag = high_selected_flag
+                    }
+                    multiply_variable = { purge_length_var = 2 }
+                }
             }
             corruption_extensive_selected_click = {
                 clr_country_flag = extensive_selected_flag
@@ -953,6 +1181,13 @@ scripted_gui = {
                 clr_country_flag = limited_selected_flag
                 clr_country_flag = extensive_selected_flag
                 clr_country_flag = total_selected_flag
+                set_variable = { purge_length_var = 120 }
+                if = {
+                    limit = {
+                        has_country_flag = high_selected_flag
+                    }
+                    multiply_variable = { purge_length_var = 2 }
+                }
             }
             corruption_massive_selected_click = {
                 clr_country_flag = massive_selected_flag
@@ -962,6 +1197,13 @@ scripted_gui = {
                 clr_country_flag = limited_selected_flag
                 clr_country_flag = extensive_selected_flag
                 clr_country_flag = massive_selected_flag
+                set_variable = { purge_length_var = 180 }
+                if = {
+                    limit = {
+                        has_country_flag = high_selected_flag
+                    }
+                    multiply_variable = { purge_length_var = 2 }
+                }
             }
             corruption_total_selected_click = {
                 clr_country_flag = total_selected_flag
@@ -969,6 +1211,12 @@ scripted_gui = {
             
             corruption_select_low_click = {
                 set_country_flag = low_selected_flag
+                if = {
+                    limit = {
+                        has_country_flag = high_selected_flag
+                    }
+                    divide_variable = { purge_length_var = 2 }
+                }
                 clr_country_flag = high_selected_flag
             }
             corruption_low_selected_click = {
@@ -977,48 +1225,50 @@ scripted_gui = {
             corruption_select_high_click = {
                 set_country_flag = high_selected_flag
                 clr_country_flag = low_selected_flag
+                multiply_variable = { purge_length_var = 2 }
             }
             corruption_high_selected_click = {
                 clr_country_flag = high_selected_flag
+                divide_variable = { purge_length_var = 2 }
             }
 
             civilian_focus_click = {
-                subtract_from_variable = { military_civilian_slider_var = 16.5 }
+                subtract_from_variable = { military_civilian_slider_var = 34.6 }
                 add_to_variable = { civilian_chance = 0.1 }
                 subtract_from_variable = { military_chance = 0.1 }
                 subtract_from_variable = { industrial_power = 25 }
             }
 
             military_focus_click = {
-                add_to_variable = { military_civilian_slider_var = 16.5 }
+                add_to_variable = { military_civilian_slider_var = 34.6 }
                 add_to_variable = { military_chance = 0.1 }
                 subtract_from_variable = { civilian_chance = 0.1 }
                 subtract_from_variable = { industrial_power = 25 }
             }
 
             light_focus_click = {
-                add_to_variable = { light_heavy_slider_var = 16.5 }
+                add_to_variable = { light_heavy_slider_var = 34.6 }
                 add_to_variable = { light_chance = 0.1 }
                 subtract_from_variable = { heavy_chance = 0.1 }
                 subtract_from_variable = { industrial_power = 25 }
             }
 
             land_focus_click = {
-                subtract_from_variable = { land_naval_slider_var = 16.5 }
+                subtract_from_variable = { land_naval_slider_var = 34.6 }
                 add_to_variable = { land_chance = 0.1 }
                 subtract_from_variable = { naval_chance = 0.1 }
                 subtract_from_variable = { industrial_power = 25 }
             }
 
             naval_focus_click = {
-                add_to_variable = { land_naval_slider_var = 16.5 }
+                add_to_variable = { land_naval_slider_var = 34.6 }
                 add_to_variable = { naval_chance = 0.1 }
                 subtract_from_variable = { land_chance = 0.1 }
                 subtract_from_variable = { industrial_power = 25 }
             }
 
             heavy_focus_click = {
-                subtract_from_variable = { light_heavy_slider_var = 16.5 }
+                subtract_from_variable = { light_heavy_slider_var = 34.6 }
                 add_to_variable = { heavy_chance = 0.1 }
                 subtract_from_variable = { light_chance = 0.1 }
                 subtract_from_variable = { industrial_power = 25 }
@@ -1054,18 +1304,27 @@ scripted_gui = {
                 has_country_flag = law_hearing
             }
             bribe_politicians_button_click_enabled = {
-                ROOT = {
-                    has_country_flag = law_hearing
+                AND = {
+                    has_political_power > 79
+                    NOT = {
+                        has_dynamic_modifier = { modifier = bribe_politicians_modifier }
+                    }
                 }
             }
             welfare_programs_button_click_enabled = {
-                ROOT = {
-                    has_country_flag = law_hearing
+                AND = {
+                    check_variable = { cultural_power > 80 }
+                    NOT = {
+                        has_dynamic_modifier = { modifier = welfare_programs_modifier }
+                    }
                 }
             }
             nerve_stapling_button_click_enabled = {
-                ROOT = {
-                    has_country_flag = law_hearing
+                AND = {
+                    has_political_power > 49
+                    NOT = {
+                        has_dynamic_modifier = { modifier = nerve_stapling_modifier }
+                    }
                 }
             }
             increase_trade_law_button_visible = {
@@ -1207,29 +1466,6 @@ scripted_gui = {
             uniquebills_click_enabled = {
                 NOT = {
                     has_idea = anarchy_style
-                }
-            }
-            bribe_politicians_button_click_enabled = {
-                AND = {
-                    has_political_power > 24
-                    check_variable = { parliament_support < 90 }
-                }
-            }
-            welfare_programs_button_click_enabled = {
-                AND = {
-                    has_political_power > 49
-                    check_variable = { parliament_support < 95 }
-                    check_variable = { industrial_power > 49 }
-                }
-            }
-            nerve_stapling_button_click_enabled = {
-                AND = {
-                    check_variable = { parliament_support < 85 }
-                    has_tech = punishment_spheres
-                    check_variable = { corruption_variable > 5 }
-                }
-                NOT = {
-                    has_idea = nerve_stapling_in_progress
                 }
             }
             increase_trade_law_button_click_enabled = {
@@ -1426,7 +1662,7 @@ scripted_gui = {
                         }
                     }
                 }
-                has_political_power > 39
+                enough_pp_for_proposing = yes
                 check_variable = { political_bill_cooldown_var < 1 }
             }
             controversial_proposition_button_click_enabled = {
@@ -1440,7 +1676,7 @@ scripted_gui = {
                         }
                     }
                 }
-                has_political_power > 39
+                enough_pp_for_proposing = yes
                 check_variable = { political_bill_cooldown_var < 1 }
             }
             divisive_proposition_button_click_enabled = {
@@ -1454,7 +1690,7 @@ scripted_gui = {
                         }
                     }
                 }
-                has_political_power > 39
+                enough_pp_for_proposing = yes
                 check_variable = { political_bill_cooldown_var < 1 }
             }
             partisan_proposition_button_click_enabled = {
@@ -1468,7 +1704,7 @@ scripted_gui = {
                         }
                     }
                 }
-                has_political_power > 39
+                enough_pp_for_proposing = yes
                 check_variable = { political_bill_cooldown_var < 1 }
             }
             bipartisan_proposition_button_click_enabled = {
@@ -1482,7 +1718,7 @@ scripted_gui = {
                         }
                     }
                 }
-                has_political_power > 39
+                enough_pp_for_proposing = yes
                 check_variable = { political_bill_cooldown_var < 1 }
             }
             popular_proposition_button_click_enabled = {
@@ -1496,8 +1732,11 @@ scripted_gui = {
                         }
                     }
                 }
-                has_political_power > 39
+                enough_pp_for_proposing = yes
                 check_variable = { political_bill_cooldown_var < 1 }
+            }
+            free_factory_increase_click_enabled = {
+                check_variable = { industrial_power > 99 }
             }
             purgecorruption_click_enabled = {
                 AND = {

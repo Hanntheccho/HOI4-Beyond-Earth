@@ -37,9 +37,9 @@ technologies = {
 			apc_equipment_1
 		}
 
-		enable_subunits = {
-			apc
-		}
+		#enable_subunits = {
+		#	apc
+		#}
 
 		path = {
 			leads_to_tech = apc_3
@@ -69,9 +69,9 @@ technologies = {
 			apc_equipment_2
 		}
 
-		enable_subunits = {
-			apc
-		}
+		#enable_subunits = {
+		#	apc
+		#}
 
 		path ={
 			leads_to_tech = apc_4
@@ -101,9 +101,9 @@ technologies = {
 			apc_equipment_3
 		}
 
-		enable_subunits = {
-			apc
-		}
+		#enable_subunits = {
+		#	apc
+		#}
 
 		start_year = 2204
 		research_cost = 1.5
@@ -129,15 +129,15 @@ technologies = {
 			MBT_equipment_1
 		}
 
-		enable_subunits = {
-			MBT
-		}
+		#enable_subunits = {
+		#	MBT
+		#}
 
-		sub_technologies = {
-			spg_mbt_1
-			td_mbt_1
-			aa_mbt_1
-		}
+		#sub_technologies = {
+		#	spg_mbt_1
+		#	td_mbt_1
+		#	aa_mbt_1
+		#}
 
 		path = {
 			leads_to_tech = mbt_2
@@ -163,124 +163,124 @@ technologies = {
 		}
 	}
 
-	spg_mbt_1 = {
-		enable_equipments = {
-			spg_MBT_equipment_1
-		}
-
-		enable_subunits = {
-			SPG_MBT
-		}
-
-		research_cost = 0.5
-		start_year = 2180
-
-		ai_will_do = {
-			factor = 0.25
-
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = artillery_chasis_1
-					can_research = artillery_chasis_1
-					is_researching_technology = mbt_2
-				}
-			}
-		}
-
-		categories = {
-			be_land_tech
-			be_armor_tech
-			be_mbt_bonus_tech
-		}
-	}
-
-	td_mbt_1 = {
-		enable_equipments = {
-			td_MBT_equipment_1
-		}
-
-		enable_subunits = {
-			TD_MBT
-		}
-
-		research_cost = 0.5
-		start_year = 2180
-
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				num_of_military_factories > 50
-				num_of_military_factories < 120
-				factor = 2
-			}
-
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = td_mbt_2
-					can_research = td_mbt_2
-					is_researching_technology = mbt_2
-				}
-			}
-		}
-
-		categories = {
-			be_land_tech
-			be_armor_tech
-			be_mbt_bonus_tech
-		}
-	}
-
-	aa_mbt_1 = {
-		enable_equipments = {
-			aa_MBT_equipment_1
-		}
-
-		enable_subunits = {
-			AA_MBT
-		}
-
-		research_cost = 0.5
-		start_year = 2180
-
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				is_major = yes
-				add = 0.25
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = aa_mbt_2
-					can_research = aa_mbt_2
-					is_researching_technology = mbt_2
-				}
-			}
-		}
-
-		categories = {
-			be_land_tech
-			be_armor_tech
-			be_mbt_bonus_tech
-		}
-	}
+	#spg_mbt_1 = {
+	#	enable_equipments = {
+	#		spg_MBT_equipment_1
+	#	}
+#
+	#	enable_subunits = {
+	#		SPG_MBT
+	#	}
+#
+	#	research_cost = 0.5
+	#	start_year = 2180
+#
+	#	ai_will_do = {
+	#		factor = 0.25
+#
+	#		modifier = {
+	#			factor = 0
+	#			OR = {
+	#				has_tech = artillery_chasis_1
+	#				can_research = artillery_chasis_1
+	#				is_researching_technology = mbt_2
+	#			}
+	#		}
+	#	}
+#
+	#	categories = {
+	#		be_land_tech
+	#		be_armor_tech
+	#		be_mbt_bonus_tech
+	#	}
+	#}
+#
+	#td_mbt_1 = {
+	#	enable_equipments = {
+	#		td_MBT_equipment_1
+	#	}
+#
+	#	enable_subunits = {
+	#		TD_MBT
+	#	}
+#
+	#	research_cost = 0.5
+	#	start_year = 2180
+#
+	#	ai_will_do = {
+	#		factor = 0.5
+	#		modifier = {
+	#			num_of_military_factories > 50
+	#			num_of_military_factories < 120
+	#			factor = 2
+	#		}
+#
+	#		modifier = {
+	#			factor = 0
+	#			OR = {
+	#				has_tech = td_mbt_2
+	#				can_research = td_mbt_2
+	#				is_researching_technology = mbt_2
+	#			}
+	#		}
+	#	}
+#
+	#	categories = {
+	#		be_land_tech
+	#		be_armor_tech
+	#		be_mbt_bonus_tech
+	#	}
+	#}
+#
+	#aa_mbt_1 = {
+	#	enable_equipments = {
+	#		aa_MBT_equipment_1
+	#	}
+#
+	#	enable_subunits = {
+	#		AA_MBT
+	#	}
+#
+	#	research_cost = 0.5
+	#	start_year = 2180
+#
+	#	ai_will_do = {
+	#		factor = 0
+	#		modifier = {
+	#			is_major = yes
+	#			add = 0.25
+	#		}
+	#		modifier = {
+	#			factor = 0
+	#			OR = {
+	#				has_tech = aa_mbt_2
+	#				can_research = aa_mbt_2
+	#				is_researching_technology = mbt_2
+	#			}
+	#		}
+	#	}
+#
+	#	categories = {
+	#		be_land_tech
+	#		be_armor_tech
+	#		be_mbt_bonus_tech
+	#	}
+	#}
 
 	mbt_2 = {
 		enable_equipments = {
 			MBT_equipment_2
 		}
 
-		enable_subunits = {
-			MBT
-		}
+		#enable_subunits = {
+		#	MBT
+		#}
 
-		sub_technologies = {
-			spg_mbt_2
-			td_mbt_2
-			aa_mbt_2
-		}
+		#sub_technologies = {
+		#	spg_mbt_2
+		#	td_mbt_2
+		#	aa_mbt_2
+		#}
 
 		path = {
 			leads_to_tech = mbt_3
@@ -306,125 +306,125 @@ technologies = {
 		}
 	}
 
-	spg_mbt_2 = {
-		enable_equipments = {
-			spg_MBT_equipment_2
-		}
-
-		enable_subunits = {
-			SPG_MBT
-		}
-		research_cost = 0.5
-		start_year = 2201
-
-		ai_will_do = {
-			factor = 0.25
-
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = artillery_chasis_2
-					can_research = artillery_chasis_2
-					is_researching_technology = mbt_3
-				}
-			}
-		}
-
-		categories = {
-			be_land_tech
-			be_armor_tech
-			be_mbt_bonus_tech
-		}
-	}
-
-	td_mbt_2 = {
-		enable_equipments = {
-			td_MBT_equipment_2
-		}
-
-		enable_subunits = {
-			TD_MBT
-		}
-
-		research_cost = 0.5
-		start_year = 2201
-
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				num_of_military_factories > 50
-				num_of_military_factories < 120
-				factor = 2
-			}
-
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = td_mbt_3
-					can_research = td_mbt_3
-					is_researching_technology = mbt_3
-				}
-			}
-		}
-
-		categories = {
-			be_land_tech
-			be_armor_tech
-			be_mbt_bonus_tech
-		}
-	}
-
-	aa_mbt_2 = {
-		enable_equipments = {
-			aa_MBT_equipment_2
-		}
-
-		enable_subunits = {
-			AA_MBT
-		}
-
-		research_cost = 0.5
-		start_year = 2201
-
-		ai_will_do = {
-			factor = 0
-			
-			modifier = {
-				is_major = yes
-				add = 0.25
-			}
-
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = aa_mbt_3
-					can_research = aa_mbt_3
-					is_researching_technology = mbt_3
-				}
-			}
-		}
-
-		categories = {
-			be_land_tech
-			be_armor_tech
-			be_mbt_bonus_tech
-		}
-	}
+	#spg_mbt_2 = {
+	#	enable_equipments = {
+	#		spg_MBT_equipment_2
+	#	}
+#
+	#	enable_subunits = {
+	#		SPG_MBT
+	#	}
+	#	research_cost = 0.5
+	#	start_year = 2201
+#
+	#	ai_will_do = {
+	#		factor = 0.25
+#
+	#		modifier = {
+	#			factor = 0
+	#			OR = {
+	#				has_tech = artillery_chasis_2
+	#				can_research = artillery_chasis_2
+	#				is_researching_technology = mbt_3
+	#			}
+	#		}
+	#	}
+#
+	#	categories = {
+	#		be_land_tech
+	#		be_armor_tech
+	#		be_mbt_bonus_tech
+	#	}
+	#}
+#
+	#td_mbt_2 = {
+	#	enable_equipments = {
+	#		td_MBT_equipment_2
+	#	}
+#
+	#	enable_subunits = {
+	#		TD_MBT
+	#	}
+#
+	#	research_cost = 0.5
+	#	start_year = 2201
+#
+	#	ai_will_do = {
+	#		factor = 0.5
+	#		modifier = {
+	#			num_of_military_factories > 50
+	#			num_of_military_factories < 120
+	#			factor = 2
+	#		}
+#
+	#		modifier = {
+	#			factor = 0
+	#			OR = {
+	#				has_tech = td_mbt_3
+	#				can_research = td_mbt_3
+	#				is_researching_technology = mbt_3
+	#			}
+	#		}
+	#	}
+#
+	#	categories = {
+	#		be_land_tech
+	#		be_armor_tech
+	#		be_mbt_bonus_tech
+	#	}
+	#}
+#
+	#aa_mbt_2 = {
+	#	enable_equipments = {
+	#		aa_MBT_equipment_2
+	#	}
+#
+	#	enable_subunits = {
+	#		AA_MBT
+	#	}
+#
+	#	research_cost = 0.5
+	#	start_year = 2201
+#
+	#	ai_will_do = {
+	#		factor = 0
+	#		
+	#		modifier = {
+	#			is_major = yes
+	#			add = 0.25
+	#		}
+#
+	#		modifier = {
+	#			factor = 0
+	#			OR = {
+	#				has_tech = aa_mbt_3
+	#				can_research = aa_mbt_3
+	#				is_researching_technology = mbt_3
+	#			}
+	#		}
+	#	}
+#
+	#	categories = {
+	#		be_land_tech
+	#		be_armor_tech
+	#		be_mbt_bonus_tech
+	#	}
+	#}
 
 	mbt_3 = {
 		enable_equipments = {
 			MBT_equipment_3
 		}
 
-		enable_subunits = {
-			MBT
-		}
+		#enable_subunits = {
+		#	MBT
+		#}
 
-		sub_technologies = {
-			spg_mbt_3
-			td_mbt_3
-			aa_mbt_3
-		}
+		#sub_technologies = {
+		#	spg_mbt_3
+		#	td_mbt_3
+		#	aa_mbt_3
+		#}
 
 		path = {
 			leads_to_tech = mbt_4
@@ -450,127 +450,127 @@ technologies = {
 		}
 	}
 
-	spg_mbt_3 = {
-		enable_equipments = {
-			spg_MBT_equipment_3
-		}
-
-		enable_subunits = {
-			SPG_MBT
-		}
-
-		research_cost = 0.5
-		start_year = 2203
-
-		ai_will_do = {
-			factor = 0.25
-
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = artillery_chasis_3
-					can_research = artillery_chasis_3
-					is_researching_technology = mbt_4
-				}
-			}
-		}
-
-		categories = {
-			be_land_tech
-			be_armor_tech
-			be_mbt_bonus_tech
-		}
-	}
-
-	td_mbt_3 = {
-		enable_equipments = {
-			td_MBT_equipment_3
-		}
-
-		enable_subunits = {
-			TD_MBT
-		}
-
-
-		research_cost = 0.5
-		start_year = 2203
-
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				num_of_military_factories > 50
-				num_of_military_factories < 120
-				factor = 2
-			}
-
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = td_mbt_4
-					can_research = td_mbt_4
-					is_researching_technology = mbt_4
-				}
-			}
-		}
-
-		categories = {
-			be_land_tech
-			be_armor_tech
-			be_mbt_bonus_tech
-		}
-	}
-
-	aa_mbt_3 = {
-		enable_equipments = {
-			aa_MBT_equipment_3
-		}
-
-		enable_subunits = {
-			AA_MBT
-		}
-
-		research_cost = 0.5
-		start_year = 2203
-
-		ai_will_do = {
-			factor = 0
-			
-			modifier = {
-				is_major = yes
-				add = 0.25
-			}
-
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = aa_mbt_4
-					can_research = aa_mbt_4
-					is_researching_technology = mbt_4
-				}
-			}
-		}
-
-		categories = {
-			be_land_tech
-			be_armor_tech
-			be_mbt_bonus_tech
-		}
-	}
+	#spg_mbt_3 = {
+	#	enable_equipments = {
+	#		spg_MBT_equipment_3
+	#	}
+#
+	#	enable_subunits = {
+	#		SPG_MBT
+	#	}
+#
+	#	research_cost = 0.5
+	#	start_year = 2203
+#
+	#	ai_will_do = {
+	#		factor = 0.25
+#
+	#		modifier = {
+	#			factor = 0
+	#			OR = {
+	#				has_tech = artillery_chasis_3
+	#				can_research = artillery_chasis_3
+	#				is_researching_technology = mbt_4
+	#			}
+	#		}
+	#	}
+#
+	#	categories = {
+	#		be_land_tech
+	#		be_armor_tech
+	#		be_mbt_bonus_tech
+	#	}
+	#}
+#
+	#td_mbt_3 = {
+	#	enable_equipments = {
+	#		td_MBT_equipment_3
+	#	}
+#
+	#	enable_subunits = {
+	#		TD_MBT
+	#	}
+#
+#
+	#	research_cost = 0.5
+	#	start_year = 2203
+#
+	#	ai_will_do = {
+	#		factor = 0.5
+	#		modifier = {
+	#			num_of_military_factories > 50
+	#			num_of_military_factories < 120
+	#			factor = 2
+	#		}
+#
+	#		modifier = {
+	#			factor = 0
+	#			OR = {
+	#				has_tech = td_mbt_4
+	#				can_research = td_mbt_4
+	#				is_researching_technology = mbt_4
+	#			}
+	#		}
+	#	}
+#
+	#	categories = {
+	#		be_land_tech
+	#		be_armor_tech
+	#		be_mbt_bonus_tech
+	#	}
+	#}
+#
+	#aa_mbt_3 = {
+	#	enable_equipments = {
+	#		aa_MBT_equipment_3
+	#	}
+#
+	#	enable_subunits = {
+	#		AA_MBT
+	#	}
+#
+	#	research_cost = 0.5
+	#	start_year = 2203
+#
+	#	ai_will_do = {
+	#		factor = 0
+	#		
+	#		modifier = {
+	#			is_major = yes
+	#			add = 0.25
+	#		}
+#
+	#		modifier = {
+	#			factor = 0
+	#			OR = {
+	#				has_tech = aa_mbt_4
+	#				can_research = aa_mbt_4
+	#				is_researching_technology = mbt_4
+	#			}
+	#		}
+	#	}
+#
+	#	categories = {
+	#		be_land_tech
+	#		be_armor_tech
+	#		be_mbt_bonus_tech
+	#	}
+	#}
 
 	mbt_4 = {
 		enable_equipments = {
 			MBT_equipment_4
 		}
 
-		sub_technologies = {
-			spg_mbt_4
-			td_mbt_4
-			aa_mbt_4
-		}
+		#sub_technologies = {
+		#	spg_mbt_4
+		#	td_mbt_4
+		#	aa_mbt_4
+		#}
 
-		enable_subunits = {
-			MBT
-		}
+		#enable_subunits = {
+		#	MBT
+		#}
 
 		research_cost = 1
 		start_year = 2205
@@ -591,80 +591,80 @@ technologies = {
 		}
 	}
 
-	spg_mbt_4 = {
-		enable_equipments = {
-			spg_MBT_equipment_4
-		}
-
-		enable_subunits = {
-			SPG_MBT
-		}
-
-		research_cost = 0.5
-		start_year = 2205
-
-		ai_will_do = {
-			factor = 0.25
-		}
-
-		categories = {
-			be_land_tech
-			be_armor_tech
-			be_mbt_bonus_tech
-		}
-	}
-
-	td_mbt_4 = {
-		enable_equipments = {
-			td_MBT_equipment_4
-		}
-
-		enable_subunits = {
-			TD_MBT
-		}
-
-
-		research_cost = 0.5
-		start_year = 2205
-
-		ai_will_do = {
-			factor = 0.5
-		}
-
-		categories = {
-			be_land_tech
-			be_armor_tech
-			be_mbt_bonus_tech
-		}
-	}
-
-	aa_mbt_4 = {
-		enable_equipments = {
-			aa_MBT_equipment_4
-		}
-
-		enable_subunits = {
-			AA_MBT
-		}
-
-		research_cost = 0.5
-		start_year = 2205
-
-		ai_will_do = {
-			factor = 0
-			
-			modifier = {
-				is_major = yes
-				add = 0.25
-			}
-		}
-
-		categories = {
-			be_land_tech
-			be_armor_tech
-			be_mbt_bonus_tech
-		}
-	}
+	#spg_mbt_4 = {
+	#	enable_equipments = {
+	#		spg_MBT_equipment_4
+	#	}
+#
+	#	enable_subunits = {
+	#		SPG_MBT
+	#	}
+#
+	#	research_cost = 0.5
+	#	start_year = 2205
+#
+	#	ai_will_do = {
+	#		factor = 0.25
+	#	}
+#
+	#	categories = {
+	#		be_land_tech
+	#		be_armor_tech
+	#		be_mbt_bonus_tech
+	#	}
+	#}
+#
+	#td_mbt_4 = {
+	#	enable_equipments = {
+	#		td_MBT_equipment_4
+	#	}
+#
+	#	enable_subunits = {
+	#		TD_MBT
+	#	}
+#
+#
+	#	research_cost = 0.5
+	#	start_year = 2205
+#
+	#	ai_will_do = {
+	#		factor = 0.5
+	#	}
+#
+	#	categories = {
+	#		be_land_tech
+	#		be_armor_tech
+	#		be_mbt_bonus_tech
+	#	}
+	#}
+#
+	#aa_mbt_4 = {
+	#	enable_equipments = {
+	#		aa_MBT_equipment_4
+	#	}
+#
+	#	enable_subunits = {
+	#		AA_MBT
+	#	}
+#
+	#	research_cost = 0.5
+	#	start_year = 2205
+#
+	#	ai_will_do = {
+	#		factor = 0
+	#		
+	#		modifier = {
+	#			is_major = yes
+	#			add = 0.25
+	#		}
+	#	}
+#
+	#	categories = {
+	#		be_land_tech
+	#		be_armor_tech
+	#		be_mbt_bonus_tech
+	#	}
+	#}
 
 
 	## Walkers ##
@@ -705,9 +705,9 @@ technologies = {
 			walker_equipment_1
 		}
 
-		enable_subunits = {
-			walker
-		}
+		#enable_subunits = {
+		#	walker
+		#}
 		
 		path = {
 			leads_to_tech = walker_3
@@ -737,9 +737,9 @@ technologies = {
 			walker_equipment_2
 		}
 
-		enable_subunits = {
-			walker
-		}
+		#enable_subunits = {
+		#	walker
+		#}
 
 		start_year = 2205
 		research_cost = 1

@@ -28,21 +28,24 @@ scripted_gui = {
                     clr_country_flag = has_benevolence_tier2
                     remove_dynamic_modifier = { modifier = benevolence_tier2_modifier }
                     clr_country_flag = has_benevolence_tier3
+                    clr_country_flag = benevolence_three
                     remove_ideas = benevolence_tier3_idea
                     clr_country_flag = has_tradition_tier1
                     remove_dynamic_modifier = { modifier = tradition_tier1_modifier }
                     clr_country_flag = has_tradition_tier2
+                    clr_country_flag = tradition_two
                     remove_dynamic_modifier = { modifier = tradition_tier2_modifier }
                     clr_country_flag = has_tradition_tier3
                     #remove_dynamic_modifier = { modifier = tradition_three }
                     clr_country_flag = has_progress_tier1
-                    #remove_dynamic_modifier = {modifier = progress_one}
+                    remove_dynamic_modifier = { modifier = progress_tier1_modifier }
                     clr_country_flag = has_progress_tier2
-                    remove_dynamic_modifier = { modifier = progress_tier2_modifier }
+                    clr_country_flag = progress_two
                     clr_country_flag = has_progress_tier3
                     remove_dynamic_modifier = { modifier = progress_tier3_modifier }
                     clr_country_flag = has_body_tier1
-                    clr_country_flag = has_tradition_tier2
+                    remove_dynamic_modifier = { modifier = body_tier1_modifier }
+                    clr_country_flag = has_body_tier2
                     remove_dynamic_modifier = { modifier = body_tier2_modifier }
                     clr_country_flag = has_body_tier3
                     remove_dynamic_modifier = { modifier = body_tier3_modifier }
@@ -55,30 +58,7 @@ scripted_gui = {
                     clr_country_flag = has_amplification_tier1
                     remove_dynamic_modifier = { modifier = amplification_tier1_modifier }
                     clr_country_flag = has_amplification_tier2
-                    random_owned_controlled_state = {
-                        limit = {
-                            is_capital = yes
-                        }
-                        set_building_level = {
-                            type = anti_air_building
-                            level = 0
-                            instant_build = yes
-                        }
-                        set_building_level = {
-                            type = radar_station
-                            level = 0
-                            instant_build = yes
-                        }
-                        set_building_level = {
-                            type = bunker
-                            level = 0
-                            province = {
-                                all_provinces = yes
-                                limit_to_border = no
-                                level > 4
-                            }
-                        }
-                    }
+                    remove_dynamic_modifier = { modifier = amplification_tier2_modifier }
                     clr_country_flag = has_amplification_tier3
                     remove_dynamic_modifier = { modifier = amplification_tier3_modifier }
                     clr_country_flag = has_expansion_tier1
@@ -100,6 +80,7 @@ scripted_gui = {
                     clr_country_flag = has_conservation_tier3
                     remove_dynamic_modifier = { modifier = conservation_tier3_modifier }
                     clr_country_flag = has_consumption_tier1
+                    clr_country_flag = consumption_one
                     remove_dynamic_modifier = { modifier = consumption_tier1_modifier }
                     clr_country_flag = has_consumption_tier2
                     clr_country_flag = consumption_two
@@ -114,6 +95,7 @@ scripted_gui = {
                     clr_country_flag = has_prosperity_tier1
                     remove_dynamic_modifier = { modifier = prosperity_tier1_modifier }
                     clr_country_flag = has_prosperity_tier2
+                    clr_country_flag = prosperity_two
                     remove_dynamic_modifier = { modifier = prosperity_tier2_modifier }
                     clr_country_flag = has_prosperity_tier3
                     clr_country_flag = prosperity_three
@@ -138,6 +120,7 @@ scripted_gui = {
                     clr_country_flag = has_liberty_tier1
                     clr_country_flag = liberty_one
                     clr_country_flag = has_liberty_tier2
+                    remove_dynamic_modifier = { modifier = liberty_tier2_modifier }
                     if = {
                         limit = {
                             has_country_flag = has_liberty_tier3
@@ -174,15 +157,15 @@ scripted_gui = {
                     set_variable = { hostility_benevolence_position_var = 727 }
                     set_variable = { hostility_benevolence_exclusive_position_var = 753 }
                     set_variable = { hostility_benevolence_bg_position_var = 507 }
-                    set_variable = { hostility_benevolence_effect_position_var = 434 }
+                    set_variable = { hostility_benevolence_effect_position_var = 428 }
                     set_variable = { prosperity_efficiency_position_var = 812 }
                     set_variable = { prosperity_efficiency_exclusive_position_var = 838 }
                     set_variable = { prosperity_efficiency_bg_position_var = 592 }
-                    set_variable = { prosperity_efficiency_effect_position_var = 3663 }
+                    set_variable = { prosperity_efficiency_effect_position_var = 300 }
                     set_variable = { order_liberty_position_var = 897 }
                     set_variable = { order_liberty_exclusive_position_var = 923 }
                     set_variable = { order_liberty_bg_position_var = 677 }
-                    set_variable = { order_liberty_effect_position_var = 700 }
+                    set_variable = { order_liberty_effect_position_var = 673 }
                 }
                 else = {
                     ROOT = {
@@ -191,15 +174,15 @@ scripted_gui = {
                     set_variable = { hostility_benevolence_position_var = 427 }
                     set_variable = { hostility_benevolence_exclusive_position_var = 453 }
                     set_variable = { hostility_benevolence_bg_position_var = 207 }
-                    set_variable = { hostility_benevolence_effect_position_var = 134 }
+                    set_variable = { hostility_benevolence_effect_position_var = 128 }
                     set_variable = { prosperity_efficiency_position_var = 512 }
                     set_variable = { prosperity_efficiency_exclusive_position_var = 538 }
                     set_variable = { prosperity_efficiency_bg_position_var = 292 }
-                    set_variable = { prosperity_efficiency_effect_position_var = 363 }
+                    set_variable = { prosperity_efficiency_effect_position_var = 300 }
                     set_variable = { order_liberty_position_var = 597 }
                     set_variable = { order_liberty_exclusive_position_var = 623 }
                     set_variable = { order_liberty_bg_position_var = 377 }
-                    set_variable = { order_liberty_effect_position_var = 400 }
+                    set_variable = { order_liberty_effect_position_var = 373 }
                 }
             }
             hostility_button_click = {
@@ -241,9 +224,9 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_hostility_tier2
-                    #add_dynamic_modifier = {
-                    #    modifier = hostility_tier2_modifier
-                    #}
+                    add_dynamic_modifier = {
+                        modifier = hostility_tier2_modifier
+                    }
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -257,11 +240,11 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_hostility_tier3
-                    #add_dynamic_modifier = {
-                    #    modifier = hostility_tier3_modifier
-                    #}
-                    subtract_from_variable = { cultural_power = 200 }
-                    add_to_variable = { cultural_power_spent = 200 }
+                    add_dynamic_modifier = {
+                        modifier = hostility_tier3_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
                 }
             }
             benevolence_button_click = {
@@ -303,9 +286,9 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_benevolence_tier2
-                    #add_dynamic_modifier = {
-                    #    modifier = benevolence_tier2_modifier
-                    #}
+                    add_dynamic_modifier = {
+                        modifier = benevolence_tier2_modifier
+                    }
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -319,9 +302,10 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_benevolence_tier3
+                    set_country_flag = benevolence_three
                     #add_ideas = benevolence_tier3_idea
-                    subtract_from_variable = { cultural_power = 200 }
-                    add_to_variable = { cultural_power_spent = 200 }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
                 }
             }
             tradition_progress_collapse_button_click = {
@@ -345,7 +329,7 @@ scripted_gui = {
                     set_variable = { hostility_benevolence_position_var = 692 }
                     set_variable = { hostility_benevolence_exclusive_position_var = 718 }
                     set_variable = { hostility_benevolence_bg_position_var = 472 }
-                    set_variable = { hostility_benevolence_effect_position_var = 399 }
+                    set_variable = { hostility_benevolence_effect_position_var = 393 }
                     set_variable = { body_mind_position_var = 437 }
                     set_variable = { body_mind_exclusive_position_var = 463 }
                     set_variable = { body_mind_bg_position_var = 521 }
@@ -361,11 +345,11 @@ scripted_gui = {
                     set_variable = { prosperity_efficiency_position_var = 777 }
                     set_variable = { prosperity_efficiency_exclusive_position_var = 803 }
                     set_variable = { prosperity_efficiency_bg_position_var = 557 }
-                    set_variable = { prosperity_efficiency_effect_position_var = 628 }
+                    set_variable = { prosperity_efficiency_effect_position_var = 565 }
                     set_variable = { order_liberty_position_var = 862 }
                     set_variable = { order_liberty_exclusive_position_var = 888 }
                     set_variable = { order_liberty_bg_position_var = 642 }
-                    set_variable = { order_liberty_effect_position_var = 665 }
+                    set_variable = { order_liberty_effect_position_var = 638 }
                 }
                 else = {
                     ROOT = {
@@ -374,7 +358,7 @@ scripted_gui = {
                     set_variable = { hostility_benevolence_position_var = 427 }
                     set_variable = { hostility_benevolence_exclusive_position_var = 453 }
                     set_variable = { hostility_benevolence_bg_position_var = 207 }
-                    set_variable = { hostility_benevolence_effect_position_var = 134 }
+                    set_variable = { hostility_benevolence_effect_position_var = 128 }
                     set_variable = { body_mind_position_var = 172 }
                     set_variable = { body_mind_exclusive_position_var = 198 }
                     set_variable = { body_mind_bg_position_var = 256 }
@@ -390,11 +374,11 @@ scripted_gui = {
                     set_variable = { prosperity_efficiency_position_var = 512 }
                     set_variable = { prosperity_efficiency_exclusive_position_var = 538 }
                     set_variable = { prosperity_efficiency_bg_position_var = 292 }
-                    set_variable = { prosperity_efficiency_effect_position_var = 363 }
+                    set_variable = { prosperity_efficiency_effect_position_var = 300 }
                     set_variable = { order_liberty_position_var = 597 }
                     set_variable = { order_liberty_exclusive_position_var = 623 }
                     set_variable = { order_liberty_bg_position_var = 377 }
-                    set_variable = { order_liberty_effect_position_var = 400 }
+                    set_variable = { order_liberty_effect_position_var = 373 }
                 }
             }
             tradition_button_click = {
@@ -436,6 +420,7 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_tradition_tier2
+                    set_country_flag = tradition_two
                     #add_dynamic_modifier = {
                     #    modifier = tradition_tier2_modifier
                     #}
@@ -452,9 +437,9 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_tradition_tier3
-                    #set_country_flag = tradition_three
-                    subtract_from_variable = { cultural_power = 200 }
-                    add_to_variable = { cultural_power_spent = 200 }
+                    set_country_flag = tradition_three
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
                 }
             }
             progress_button_click = {
@@ -470,7 +455,9 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_progress_tier1
-                    set_country_flag = progress_one
+                    add_dynamic_modifier = {
+                        modifier = progress_tier1_modifier
+                    }
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -494,9 +481,7 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_progress_tier2
-                    #add_dynamic_modifier = {
-                    #    modifier = progress_tier2_modifier
-                    #}
+                    set_country_flag = progress_two
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -510,11 +495,11 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_progress_tier3
-                    #add_dynamic_modifier = {
-                    #    modifier = progress_tier3_modifier
-                    #}
-                    subtract_from_variable = { cultural_power = 200 }
-                    add_to_variable = { cultural_power_spent = 200 }
+                    add_dynamic_modifier = {
+                        modifier = progress_tier3_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
                 }
             }
             body_mind_collapse_button_click = {
@@ -538,7 +523,7 @@ scripted_gui = {
                     set_variable = { hostility_benevolence_position_var = 647 }
                     set_variable = { hostility_benevolence_exclusive_position_var = 673 }
                     set_variable = { hostility_benevolence_bg_position_var = 427 }
-                    set_variable = { hostility_benevolence_effect_position_var = 354 }
+                    set_variable = { hostility_benevolence_effect_position_var = 348 }
                     set_variable = { amplification_expansion_position_var = 562 }
                     set_variable = { amplification_expansion_exclusive_position_var = 588 }
                     set_variable = { amplification_expansion_bg_position_var = 646 }
@@ -550,11 +535,11 @@ scripted_gui = {
                     set_variable = { prosperity_efficiency_position_var = 732 }
                     set_variable = { prosperity_efficiency_exclusive_position_var = 758 }
                     set_variable = { prosperity_efficiency_bg_position_var = 512 }
-                    set_variable = { prosperity_efficiency_effect_position_var = 583 }
+                    set_variable = { prosperity_efficiency_effect_position_var = 520 }
                     set_variable = { order_liberty_position_var = 817 }
                     set_variable = { order_liberty_exclusive_position_var = 843 }
                     set_variable = { order_liberty_bg_position_var = 597 }
-                    set_variable = { order_liberty_effect_position_var = 620 }
+                    set_variable = { order_liberty_effect_position_var = 593 }
                 }
                 else = {
                     ROOT = {
@@ -563,7 +548,7 @@ scripted_gui = {
                     set_variable = { hostility_benevolence_position_var = 427 }
                     set_variable = { hostility_benevolence_exclusive_position_var = 453 }
                     set_variable = { hostility_benevolence_bg_position_var = 207 }
-                    set_variable = { hostility_benevolence_effect_position_var = 134 }
+                    set_variable = { hostility_benevolence_effect_position_var = 128 }
                     set_variable = { amplification_expansion_position_var = 342 }
                     set_variable = { amplification_expansion_exclusive_position_var = 368 }
                     set_variable = { amplification_expansion_bg_position_var = 426 }
@@ -576,11 +561,11 @@ scripted_gui = {
                     set_variable = { prosperity_efficiency_position_var = 512 }
                     set_variable = { prosperity_efficiency_exclusive_position_var = 538 }
                     set_variable = { prosperity_efficiency_bg_position_var = 292 }
-                    set_variable = { prosperity_efficiency_effect_position_var = 363 }
+                    set_variable = { prosperity_efficiency_effect_position_var = 300 }
                     set_variable = { order_liberty_position_var = 597 }
                     set_variable = { order_liberty_exclusive_position_var = 623 }
                     set_variable = { order_liberty_bg_position_var = 377 }
-                    set_variable = { order_liberty_effect_position_var = 400 }
+                    set_variable = { order_liberty_effect_position_var = 373 }
                     }
             }
             body_button_click = {
@@ -596,6 +581,9 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_body_tier1
+                    add_dynamic_modifier = {
+                        modifier = body_tier1_modifier
+                    }
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -619,9 +607,9 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_body_tier2
-                    #add_dynamic_modifier = {
-                    #    modifier = body_tier2_modifier
-                    #}
+                    add_dynamic_modifier = {
+                        modifier = body_tier2_modifier
+                    }
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -635,11 +623,11 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_body_tier3
-                    #add_dynamic_modifier = {
-                    #    modifier = body_tier3_modifier
-                    #}
-                    subtract_from_variable = { cultural_power = 200 }
-                    add_to_variable = { cultural_power_spent = 200 }
+                    add_dynamic_modifier = {
+                        modifier = body_tier3_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
                 }
             }
             mind_button_click = {
@@ -681,9 +669,9 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_mind_tier2
-                    #add_dynamic_modifier = {
-                    #    modifier = mind_tier2_modifier
-                    #}
+                    add_dynamic_modifier = {
+                        modifier = mind_tier2_modifier
+                    }
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -697,11 +685,11 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_mind_tier3
-                    #add_dynamic_modifier = {
-                    #    modifier = mind_tier3_modifier
-                    #}
-                    subtract_from_variable = { cultural_power = 200 }
-                    add_to_variable = { cultural_power_spent = 200 }
+                    add_dynamic_modifier = {
+                        modifier = mind_tier3_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
                 }
             }
             amplification_expansion_collapse_button_click = {
@@ -722,18 +710,18 @@ scripted_gui = {
                     ROOT = {
                         set_country_flag = amplification_expansion_flag
                     }
-                    set_variable = { hostility_benevolence_position_var = 647 }
-                    set_variable = { hostility_benevolence_exclusive_position_var = 673 }
-                    set_variable = { hostility_benevolence_bg_position_var = 427 }
-                    set_variable = { hostility_benevolence_effect_position_var = 354 }
-                    set_variable = { prosperity_efficiency_position_var = 732 }
-                    set_variable = { prosperity_efficiency_exclusive_position_var = 758 }
-                    set_variable = { prosperity_efficiency_bg_position_var = 512 }
-                    set_variable = { prosperity_efficiency_effect_position_var = 583 }
-                    set_variable = { order_liberty_position_var = 817 }
-                    set_variable = { order_liberty_exclusive_position_var = 843 }
-                    set_variable = { order_liberty_bg_position_var = 597 }
-                    set_variable = { order_liberty_effect_position_var = 620 }
+                    set_variable = { hostility_benevolence_position_var = 657 }
+                    set_variable = { hostility_benevolence_exclusive_position_var = 683 }
+                    set_variable = { hostility_benevolence_bg_position_var = 437 }
+                    set_variable = { hostility_benevolence_effect_position_var = 358 }
+                    set_variable = { prosperity_efficiency_position_var = 742 }
+                    set_variable = { prosperity_efficiency_exclusive_position_var = 768 }
+                    set_variable = { prosperity_efficiency_bg_position_var = 522 }
+                    set_variable = { prosperity_efficiency_effect_position_var = 530 }
+                    set_variable = { order_liberty_position_var = 827 }
+                    set_variable = { order_liberty_exclusive_position_var = 853 }
+                    set_variable = { order_liberty_bg_position_var = 607 }
+                    set_variable = { order_liberty_effect_position_var = 603 }
                 }
                 else = {
                     ROOT = {
@@ -742,15 +730,15 @@ scripted_gui = {
                     set_variable = { hostility_benevolence_position_var = 427 }
                     set_variable = { hostility_benevolence_exclusive_position_var = 453 }
                     set_variable = { hostility_benevolence_bg_position_var = 207 }
-                    set_variable = { hostility_benevolence_effect_position_var = 134 }
+                    set_variable = { hostility_benevolence_effect_position_var = 128 }
                     set_variable = { prosperity_efficiency_position_var = 512 }
                     set_variable = { prosperity_efficiency_exclusive_position_var = 538 }
                     set_variable = { prosperity_efficiency_bg_position_var = 292 }
-                    set_variable = { prosperity_efficiency_effect_position_var = 363 }
+                    set_variable = { prosperity_efficiency_effect_position_var = 300 }
                     set_variable = { order_liberty_position_var = 597 }
                     set_variable = { order_liberty_exclusive_position_var = 623 }
                     set_variable = { order_liberty_bg_position_var = 377 }
-                    set_variable = { order_liberty_effect_position_var = 400 }
+                    set_variable = { order_liberty_effect_position_var = 373 }
                 }
             }
             amplification_button_click = {
@@ -792,31 +780,9 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_amplification_tier2
-                    random_owned_controlled_state = {
-                        limit = {
-                            is_capital = yes
-                        }
-                        add_building_construction = {
-                            type = anti_air_building
-                            level = 5
-                            instant_build = yes
-                        }
-                        add_building_construction = {
-                            type =  radar_station
-                            level = 6
-                            instant_build = yes
-                        }
-                        add_building_construction = {
-                            type = bunker
-                            level = 5
-                            instant_build = yes
-                            province = {
-                                all_provinces = yes
-                                limit_to_border = no
-                            }
-                        }
+                    add_dynamic_modifier = {
+                        modifier = amplification_tier2_modifier
                     }
-                    set_country_flag = amplification_two
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -830,11 +796,11 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_amplification_tier3
-                    #add_dynamic_modifier = {
-                    #    modifier = amplification_tier3_modifier
-                    #}
-                    subtract_from_variable = { cultural_power = 200 }
-                    add_to_variable = { cultural_power_spent = 200 }
+                    add_dynamic_modifier = {
+                        modifier = amplification_tier3_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
                 }
             }
             expansion_button_click = {
@@ -876,9 +842,9 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_expansion_tier2
-                    #add_dynamic_modifier = {
-                    #    modifier = expansion_tier2_modifier
-                    #}
+                    add_dynamic_modifier = {
+                        modifier = expansion_tier2_modifier
+                    }
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -892,10 +858,10 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_expansion_tier3
-                    #set_country_flag = expansion_three
+                    set_country_flag = expansion_three
                     add_to_variable = { devastation_modifier = 3 }
-                    subtract_from_variable = { cultural_power = 200 }
-                    add_to_variable = { cultural_power_spent = 200 }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
                 }
             }
             conservation_consumption_collapse_button_click = {
@@ -916,22 +882,22 @@ scripted_gui = {
                     ROOT = {
                         set_country_flag = conservation_consumption_flag
                     }
-                    set_variable = { amplification_expansion_position_var = 567 }
-                    set_variable = { amplification_expansion_exclusive_position_var = 593 }
-                    set_variable = { amplification_expansion_bg_position_var = 651 }
-                    set_variable = { amplification_expansion_effect_position_var = 653 }
-                    set_variable = { hostility_benevolence_position_var = 652 }
-                    set_variable = { hostility_benevolence_exclusive_position_var = 678 }
+                    set_variable = { amplification_expansion_position_var = 600 }
+                    set_variable = { amplification_expansion_exclusive_position_var = 626 }
+                    set_variable = { amplification_expansion_bg_position_var = 684 }
+                    set_variable = { amplification_expansion_effect_position_var = 686 }
+                    set_variable = { hostility_benevolence_position_var = 685 }
+                    set_variable = { hostility_benevolence_exclusive_position_var = 711 }
                     set_variable = { hostility_benevolence_bg_position_var = 432 }
-                    set_variable = { hostility_benevolence_effect_position_var = 359 }
-                    set_variable = { prosperity_efficiency_position_var = 737 }
-                    set_variable = { prosperity_efficiency_exclusive_position_var = 763 }
+                    set_variable = { hostility_benevolence_effect_position_var = 353 }
+                    set_variable = { prosperity_efficiency_position_var = 770 }
+                    set_variable = { prosperity_efficiency_exclusive_position_var = 796 }
                     set_variable = { prosperity_efficiency_bg_position_var = 517 }
-                    set_variable = { prosperity_efficiency_effect_position_var = 588 }
-                    set_variable = { order_liberty_position_var = 822 }
-                    set_variable = { order_liberty_exclusive_position_var = 848 }
+                    set_variable = { prosperity_efficiency_effect_position_var = 525 }
+                    set_variable = { order_liberty_position_var = 855 }
+                    set_variable = { order_liberty_exclusive_position_var = 881 }
                     set_variable = { order_liberty_bg_position_var = 602 }
-                    set_variable = { order_liberty_effect_position_var = 625 }
+                    set_variable = { order_liberty_effect_position_var = 598 }
                 }
                 else = {
                     ROOT = {
@@ -944,15 +910,15 @@ scripted_gui = {
                     set_variable = { hostility_benevolence_position_var = 427 }
                     set_variable = { hostility_benevolence_exclusive_position_var = 453 }
                     set_variable = { hostility_benevolence_bg_position_var = 207 }
-                    set_variable = { hostility_benevolence_effect_position_var = 134 }
+                    set_variable = { hostility_benevolence_effect_position_var = 128 }
                     set_variable = { prosperity_efficiency_position_var = 512 }
                     set_variable = { prosperity_efficiency_exclusive_position_var = 538 }
                     set_variable = { prosperity_efficiency_bg_position_var = 292 }
-                    set_variable = { prosperity_efficiency_effect_position_var = 363 }
+                    set_variable = { prosperity_efficiency_effect_position_var = 300 }
                     set_variable = { order_liberty_position_var = 597 }
                     set_variable = { order_liberty_exclusive_position_var = 623 }
                     set_variable = { order_liberty_bg_position_var = 377 }
-                    set_variable = { order_liberty_effect_position_var = 400 }
+                    set_variable = { order_liberty_effect_position_var = 373 }
                 }
             }
             conservation_button_click = {
@@ -994,9 +960,9 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_conservation_tier2
-                    #add_dynamic_modifier = {
-                    #    modifier = conservation_tier2_modifier
-                    #}
+                    add_dynamic_modifier = {
+                        modifier = conservation_tier2_modifier
+                    }
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -1010,11 +976,11 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_conservation_tier3
-                    #add_dynamic_modifier = {
-                    #    modifier = conservation_tier3_modifier
-                    #}
-                    subtract_from_variable = { cultural_power = 200 }
-                    add_to_variable = { cultural_power_spent = 200 }
+                    add_dynamic_modifier = {
+                        modifier = conservation_tier3_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
                 }
             }
             consumption_button_click = {
@@ -1030,9 +996,7 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_consumption_tier1
-                    add_dynamic_modifier = {
-                        modifier = consumption_tier1_modifier
-                    }
+                    set_country_flag = consumption_one
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -1056,7 +1020,7 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_consumption_tier2
-                    #set_country_flag = consumption_two
+                    set_country_flag = consumption_two
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -1070,10 +1034,10 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_consumption_tier3
-                    #set_country_flag = consumption_three
+                    set_country_flag = consumption_three
                     add_to_variable = { devastation_modifier = 3 }
-                    subtract_from_variable = { cultural_power = 200 }
-                    add_to_variable = { cultural_power_spent = 200 }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
                 }
             }
             prosperity_efficiency_collapse_button_click = {
@@ -1097,11 +1061,11 @@ scripted_gui = {
                     set_variable = { prosperity_efficiency_position_var = 737 }
                     set_variable = { prosperity_efficiency_exclusive_position_var = 763 }
                     set_variable = { prosperity_efficiency_bg_position_var = 517 }
-                    set_variable = { prosperity_efficiency_effect_position_var = 588 }
+                    set_variable = { prosperity_efficiency_effect_position_var = 513 }
                     set_variable = { order_liberty_position_var = 822 }
                     set_variable = { order_liberty_exclusive_position_var = 848 }
                     set_variable = { order_liberty_bg_position_var = 602 }
-                    set_variable = { order_liberty_effect_position_var = 625 }
+                    set_variable = { order_liberty_effect_position_var = 598 }
                 }
                 else = {
                     ROOT = {
@@ -1110,11 +1074,11 @@ scripted_gui = {
                     set_variable = { prosperity_efficiency_position_var = 512 }
                     set_variable = { prosperity_efficiency_exclusive_position_var = 538 }
                     set_variable = { prosperity_efficiency_bg_position_var = 292 }
-                    set_variable = { prosperity_efficiency_effect_position_var = 363 }
+                    set_variable = { prosperity_efficiency_effect_position_var = 300 }
                     set_variable = { order_liberty_position_var = 597 }
                     set_variable = { order_liberty_exclusive_position_var = 623 }
                     set_variable = { order_liberty_bg_position_var = 377 }
-                    set_variable = { order_liberty_effect_position_var = 400 }
+                    set_variable = { order_liberty_effect_position_var = 373 }
                 }
             }
             prosperity_button_click = {
@@ -1156,9 +1120,10 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_prosperity_tier2
-                    #add_dynamic_modifier = {
-                    #    modifier = prosperity_tier2_modifier
-                    #}
+                    add_dynamic_modifier = {
+                        modifier = prosperity_tier2_modifier
+                    }
+                    set_country_flag = prosperity_two
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -1172,9 +1137,9 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_prosperity_tier3
-                    #set_country_flag = prosperity_three
-                    subtract_from_variable = { cultural_power = 200 }
-                    add_to_variable = { cultural_power_spent = 200 }
+                    set_country_flag = prosperity_three
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
                 }
             }
             efficiency_button_click = {
@@ -1216,9 +1181,9 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_efficiency_tier2
-                    #add_dynamic_modifier = {
-                    #    modifier = efficiency_tier2_modifier
-                    #}
+                    add_dynamic_modifier = {
+                        modifier = efficiency_tier2_modifier
+                    }
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -1232,11 +1197,11 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_efficiency_tier3
-                    #add_dynamic_modifier = {
-                    #    modifier = efficiency_tier3_modifier
-                    #}
-                    subtract_from_variable = { cultural_power = 200 }
-                    add_to_variable = { cultural_power_spent = 200 }
+                    add_dynamic_modifier = {
+                        modifier = efficiency_tier3_modifier
+                    }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
                 }
             }
             order_liberty_collapse_button_click = {
@@ -1260,7 +1225,7 @@ scripted_gui = {
                     set_variable = { order_liberty_position_var = 822 }
                     set_variable = { order_liberty_exclusive_position_var = 848 }
                     set_variable = { order_liberty_bg_position_var = 602 }
-                    set_variable = { order_liberty_effect_position_var = 625 }
+                    set_variable = { order_liberty_effect_position_var = 598 }
                 }
                 else = {
                     ROOT = {
@@ -1269,7 +1234,7 @@ scripted_gui = {
                     set_variable = { order_liberty_position_var = 597 }
                     set_variable = { order_liberty_exclusive_position_var = 623 }
                     set_variable = { order_liberty_bg_position_var = 377 }
-                    set_variable = { order_liberty_effect_position_var = 400 }
+                    set_variable = { order_liberty_effect_position_var = 373 }
                 }
             }
             order_button_click = {
@@ -1309,9 +1274,9 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_order_tier2
-                    #add_dynamic_modifier = {
-                    #    modifier = order_tier2_modifier
-                    #}
+                    add_dynamic_modifier = {
+                        modifier = order_tier2_modifier
+                    }
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -1325,10 +1290,10 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_order_tier3
-                    #set_country_flag = order_three
+                    set_country_flag = order_three
                     add_to_variable = { devastation_modifier = 3 }
-                    subtract_from_variable = { cultural_power = 200 }
-                    add_to_variable = { cultural_power_spent = 200 }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
                 }
             }
             liberty_button_click = {
@@ -1368,8 +1333,9 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_liberty_tier2
-                    #set_variable = { corruption_clear = corruption_variable }
-                    #subtract_from_variable = { corruption_variable = corruption_variable }
+                    add_dynamic_modifier = {
+                        modifier = liberty_tier2_modifier
+                    }
                     subtract_from_variable = { cultural_power = 150 }
                     add_to_variable = { cultural_power_spent = 150 }
                 }
@@ -1383,10 +1349,10 @@ scripted_gui = {
                         }
                     }
                     set_country_flag = has_liberty_tier3
-                    #set_country_flag = liberty_three
+                    set_country_flag = liberty_three
                     add_to_variable = { devastation_modifier = 3 }
-                    subtract_from_variable = { cultural_power = 200 }
-                    add_to_variable = { cultural_power_spent = 200 }
+                    subtract_from_variable = { cultural_power = 150 }
+                    add_to_variable = { cultural_power_spent = 150 }
                 }
             }
         }
@@ -1422,7 +1388,8 @@ scripted_gui = {
                             has_country_flag = has_hostility_tier2
                         }
                     }
-                    check_variable = { cultural_power > 199 }
+                    check_variable = { cultural_power > 149 }
+                    has_global_flag = final_war_flag
                 }
             }
             benevolence_button_click_enabled = {
@@ -1450,7 +1417,8 @@ scripted_gui = {
                             has_country_flag = has_benevolence_tier2
                         }
                     }
-                    check_variable = { cultural_power > 199 }
+                    check_variable = { cultural_power > 149 }
+                    has_global_flag = final_war_flag
                 }
             }
             hostility_effect_bg_visible = {
@@ -1498,7 +1466,8 @@ scripted_gui = {
                             has_country_flag = has_tradition_tier2
                         }
                     }
-                    check_variable = { cultural_power > 199 }
+                    check_variable = { cultural_power > 149 }
+                    has_global_flag = final_war_flag
                 }
             }
             progress_button_click_enabled = {
@@ -1526,7 +1495,8 @@ scripted_gui = {
                             has_country_flag = has_progress_tier2
                         }
                     }
-                    check_variable = { cultural_power > 199 }
+                    check_variable = { cultural_power > 149 }
+                    has_global_flag = final_war_flag
                 }
             }
             tradition_effect_bg_visible = {
@@ -1574,7 +1544,8 @@ scripted_gui = {
                             has_country_flag = has_body_tier2
                         }
                     }
-                    check_variable = { cultural_power > 199 }
+                    check_variable = { cultural_power > 149 }
+                    has_global_flag = final_war_flag
                 }
             }
             mind_button_click_enabled = {
@@ -1602,7 +1573,8 @@ scripted_gui = {
                             has_country_flag = has_mind_tier2
                         }
                     }
-                    check_variable = { cultural_power > 199 }
+                    check_variable = { cultural_power > 149 }
+                    has_global_flag = final_war_flag
                 }
             }
             body_effect_bg_visible = {
@@ -1650,7 +1622,8 @@ scripted_gui = {
                             has_country_flag = has_amplification_tier2
                         }
                     }
-                    check_variable = { cultural_power > 199 }
+                    check_variable = { cultural_power > 149 }
+                    has_global_flag = final_war_flag
                 }
             }
             expansion_button_click_enabled = {
@@ -1678,7 +1651,8 @@ scripted_gui = {
                             has_country_flag = has_expansion_tier2
                         }
                     }
-                    check_variable = { cultural_power > 199 }
+                    check_variable = { cultural_power > 149 }
+                    has_global_flag = final_war_flag
                 }
             }
             amplification_effect_bg_visible = {
@@ -1726,7 +1700,8 @@ scripted_gui = {
                             has_country_flag = has_conservation_tier2
                         }
                     }
-                    check_variable = { cultural_power > 199 }
+                    check_variable = { cultural_power > 149 }
+                    has_global_flag = final_war_flag
                 }
             }
             consumption_button_click_enabled = {
@@ -1754,7 +1729,8 @@ scripted_gui = {
                             has_country_flag = has_consumption_tier2
                         }
                     }
-                    check_variable = { cultural_power > 199 }
+                    check_variable = { cultural_power > 149 }
+                    has_global_flag = final_war_flag
                 }
             }
             conservation_effect_bg_visible = {
@@ -1802,7 +1778,8 @@ scripted_gui = {
                             has_country_flag = has_prosperity_tier2
                         }
                     }
-                    check_variable = { cultural_power > 199 }
+                    check_variable = { cultural_power > 149 }
+                    has_global_flag = final_war_flag
                 }
             }
             efficiency_button_click_enabled = {
@@ -1830,7 +1807,8 @@ scripted_gui = {
                             has_country_flag = has_efficiency_tier2
                         }
                     }
-                    check_variable = { cultural_power > 199 }
+                    check_variable = { cultural_power > 149 }
+                    has_global_flag = final_war_flag
                 }
             }
             prosperity_effect_bg_visible = {
@@ -1878,7 +1856,8 @@ scripted_gui = {
                             has_country_flag = has_order_tier2
                         }
                     }
-                    check_variable = { cultural_power > 199 }
+                    check_variable = { cultural_power > 149 }
+                    has_global_flag = final_war_flag
                 }
             }
             liberty_button_click_enabled = {
@@ -1906,7 +1885,8 @@ scripted_gui = {
                             has_country_flag = has_liberty_tier2
                         }
                     }
-                    check_variable = { cultural_power > 199 }
+                    check_variable = { cultural_power > 149 }
+                    has_global_flag = final_war_flag
                 }
             }
             order_effect_bg_visible = {

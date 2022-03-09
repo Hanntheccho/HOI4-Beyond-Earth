@@ -93,24 +93,149 @@ parliament_power_adjustment = {
         limit = {
             has_idea = synthetic_democracy
         }
-        multiply_variable = { parliament_support = 1.2 }
+        add_to_variable = { parliament_support = 20 }
     }
     else_if = {
         limit = {
             has_idea = corporate_libertarianism
         }
-        multiply_variable = { parliament_support = 0.9 }
+        subtract_from_variable = { parliament_support = 10 }
     }
     else_if = {
         limit = {
             has_idea = communal_parity
         }
-        multiply_variable = { parliament_support = 0.7 }
+        subtract_from_variable = { parliament_support = 30 }
     }
     else_if = {
         limit = {
             has_idea = military_government
         }
-        multiply_variable = { parliament_support = 1.3 }
+        add_to_variable = { parliament_support = 30 }
+    }
+    if = {
+        limit = {
+            has_country_flag = benevolence_three
+        }
+        add_to_variable = { parliament_support = 5 }
+    }
+    if = {
+        limit = {
+            has_country_flag = order_one
+        }
+        add_to_variable = { parliament_support = 5 }
+    }
+    if = {
+        limit = {
+            has_dynamic_modifier = {
+                modifier = power_of_thought_8
+            }
+        }
+        add_to_variable = {parliament_support = 5}
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_dynamic_modifier = {
+                    modifier = power_of_thought_8
+                }
+            }
+        }
+        add_to_variable = {parliament_support = -5}
+    }
+    if = {
+        limit = {
+            has_dynamic_modifier = {
+                modifier = power_of_control_1
+            }
+        }
+        add_to_variable = {parliament_support = 10}
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_dynamic_modifier = {
+                    modifier = power_of_control_1
+                }
+            }
+        }
+        add_to_variable = {parliament_support = -10}
+    }
+    if = {
+        limit = {
+            has_dynamic_modifier = {
+                modifier = power_of_control_9
+            }
+        }
+        add_to_variable = {parliament_support = 5}
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_dynamic_modifier = {
+                    modifier = power_of_control_9
+                }
+            }
+        }
+        add_to_variable = {parliament_support = -5}
+    }
+    if = {
+        limit = {
+            has_dynamic_modifier = {
+                modifier = power_of_machinery_2
+            }
+        }
+        add_to_variable = {parliament_support = 5}
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_dynamic_modifier = {
+                    modifier = power_of_machinery_2
+                }
+            }
+        }
+        add_to_variable = {parliament_support = -5}
+    }
+}
+
+introduce_proposition = {
+    if = {
+        limit = {
+            check_variable = { corruption_variable < 25 }
+        }
+        add_political_power = -25
+    }
+    else_if = {
+        limit = {
+            check_variable = { corruption_variable > 75 }
+        }
+        add_political_power = -75
+    }
+    else = {
+        set_temp_variable = { bill_proposing_cost = corruption_variable }
+        multiply_temp_variable = { bill_proposing_cost = -1 }
+        add_political_power = bill_proposing_cost
+    }
+}
+
+pierce_corruption_dont_check = {
+    if = {
+        limit = {
+            check_variable = { corruption_min > 0 }
+        }
+        subtract_from_variable = { corruption_min = 10 }
+    }
+}
+
+pierce_corruption_check = {
+    if = {
+        limit = {
+            AND = {
+                check_variable = { corruption_variable < corruption_min }
+                check_variable = { corruption_min > 0 }
+            }
+        }
+        subtract_from_variable = { corruption_min = 10 }
     }
 }
