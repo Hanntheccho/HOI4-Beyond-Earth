@@ -15,12 +15,12 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "header_desc"
-			position = { x = -177 y = 23 }
-			font = "hoi_24header"
+			position = { x = 20 y = 13 }
+			font = "Beyond"
 			text = "We forgot what this was about"
-			Orientation = center_up
-			format = center			
-			maxWidth = 350
+			Orientation = UPPER_LEFT
+			format = left		
+			maxWidth = 3000
 			maxHeight = 30
 		}
 		
@@ -57,7 +57,7 @@ guiTypes = {
 			name = "filter_minors"
 			position = { x = 374 y = 113 }
 			quadTextureSprite ="GFX_sort_button_140x29"
-			font = "Arial"
+			font = "Arialsmall"
 			buttonText = "WAR_OVERVIEW_FILTER_MINORS"
 			pdx_tooltip = "WAR_OVERVIEW_FILTER_MINORS_DESC"
 		}
@@ -66,7 +66,7 @@ guiTypes = {
 			name = "filter_capitulated"
 			position = { x = 520 y = 113 }
 			quadTextureSprite ="GFX_sort_button_140x29"
-			font = "Arial"
+			font = "Arialsmall"
 			buttonText = "WAR_OVERVIEW_FILTER_CAPITULATED"
 			pdx_tooltip = "WAR_OVERVIEW_FILTER_CAPITULATED_DESC"
 		}
@@ -75,14 +75,14 @@ guiTypes = {
 			name = "filter_callable"
 			position = { x = 665 y = 113 }
 			quadTextureSprite ="GFX_sort_button_140x29"
-			font = "Arial"
+			font = "Arialsmall"
 			buttonText = "WAR_OVERVIEW_FILTER_CALLABLE"
 			pdx_tooltip = "WAR_OVERVIEW_FILTER_CALLABLE_DESC"
 		}
 		
 		buttonType = {
 			name = "attacker_participants"
-			position = { x = 24 y = 155 }
+			position = { x = 24 y = 10000 }
 			quadTextureSprite ="GFX_participants_icon"
 			pdx_tooltip = "PARTICIPANTS"
 		}
@@ -90,47 +90,58 @@ guiTypes = {
 		iconType ={
 			name ="attacker_wargoal"
 			quadTextureSprite = "GFX_wargoal_icon"
-			position = { x= 244 y = 159 }
+			position = { x= 244 y = 10000 }
 		}
 
 		buttonType ={
 			name ="attacker_capitulation"
 			quadTextureSprite = "GFX_surrender_icon"
-			position = { x = 180 y = 158 }
+			position = { x = 180 y = 10000 }
 			pdx_tooltip = "WAR_OVERVIEW_CAPITULATION_PROGRESS"
 		}
 		
 		buttonType ={
 			name ="attacker_warscore"
 			quadTextureSprite = "GFX_warscore_icon"
-			position = { x = 303 y = 158 }
+			position = { x = 303 y = 10000 }
 			pdx_tooltip = "WARSCORE_TITLE"
 		}
 
 		buttonType ={
 			name ="attacker_divisions"
 			quadTextureSprite = "GFX_division_icon"
-			position = { x= 362 y = 159 }
+			position = { x= 362 y = 10000 }
 			pdx_tooltip = "DIVISIONS"
 		}
 
 		buttonType ={
 			name ="attacker_ic"
 			quadTextureSprite = "GFX_industrial_capacity_icon"
-			position = { x= 440 y = 159 }
+			position = { x= 440 y = 10000 }
 			pdx_tooltip = "INDUSTRY"
 		}
 
 		buttonType ={
 			name ="attacker_casualty"
 			quadTextureSprite = "GFX_casuality_icon"
-			position = { x= 504 y = 159 }
+			position = { x= 504 y = 10000 }
 			pdx_tooltip = "CASUALTY"
+		}
+
+		instantTextboxType = {
+			name = "attacker_explanation_war"
+			position = { x = 30 y = 158 }
+			font = "Arial"
+			text = "WAR SCORE ////// DIVISIONS ////// INDUSTRY ////// CASUALTIES"
+			Orientation = UPPER_LEFT
+			format = left		
+			maxWidth = 3000
+			maxHeight = 30
 		}
 		
 		buttonType = {
 			name = "defender_participants"
-			position = { x = 592 y = 155 }
+			position = { x = 592 y = 10000 }
 			quadTextureSprite ="GFX_participants_icon"
 			pdx_tooltip = "PARTICIPANTS"
 		}
@@ -138,73 +149,84 @@ guiTypes = {
 		iconType ={
 			name ="defender_wargoal"
 			quadTextureSprite = "GFX_wargoal_icon"
-			position = { x= 815 y = 159 }
+			position = { x= 815 y = 10000 }
 		}
 
 
 		buttonType ={
 			name ="defender_capitulation"
 			quadTextureSprite = "GFX_surrender_icon"
-			position = { x = 745 y = 158 }
+			position = { x = 745 y = 10000 }
 			pdx_tooltip = "WAR_OVERVIEW_CAPITULATION_PROGRESS"
 		}
 		
 		buttonType ={
 			name ="defender_warscore"
 			quadTextureSprite = "GFX_warscore_icon"
-			position = { x = 868 y = 158 }
+			position = { x = 868 y = 10000 }
 			pdx_tooltip = "WARSCORE_TITLE"
 		}
 
 		buttonType ={
 			name ="defender_divisions"
 			quadTextureSprite = "GFX_division_icon"
-			position = { x= 930 y = 159 }
+			position = { x= 930 y = 10000 }
 			pdx_tooltip = "DIVISIONS"
 		}
 		
 		buttonType ={
 			name ="defender_ic"
 			quadTextureSprite = "GFX_industrial_capacity_icon"
-			position = { x= 1005 y = 159 }
+			position = { x= 1005 y = 10000 }
 			pdx_tooltip = "INDUSTRY"
 		}
 
 		buttonType ={
 			name ="defender_casualty"
 			quadTextureSprite = "GFX_casuality_icon"
-			position = { x= 1071 y = 159 }
+			position = { x= 1071 y = 10000 }
 			pdx_tooltip = "CASUALTY"
 		}
 
 		instantTextboxType = {
-			name = "attacker_fielded_man"
-			position = { x = 20 y = 68 }
+			name = "defender_explanation_war"
+			position = { x = 600 y = 158 }
 			font = "Arial"
+			text = "WAR SCORE ////// DIVISIONS ////// INDUSTRY ////// CASUALTIES"
+			Orientation = UPPER_LEFT
+			format = left		
+			maxWidth = 3000
+			maxHeight = 30
+		}
+
+		instantTextboxType = {
+			name = "attacker_fielded_man"
+			position = { x = 20 y = 65 }
+			font = "Beyondsmall"
 			maxWidth = 250
 			maxHeight = 30
 			format = center
 		}
 		instantTextboxType = {
 			name = "attacker_losses"
-			position = { x = 20 y = 86 }
-			font = "Arial"
+			position = { x = 20 y = 105 }
+			font = "Beyondsmall"
 			maxWidth = 250
 			maxHeight = 30
 			format = center
 		}
 		instantTextboxType = {
 			name = "defender_fielded_man"
-			position = { x = 900 y = 68 }
-			font = "Arial"
+			position = { x = 900 y = 65 }
+			font = "Beyondsmall"
 			maxWidth = 250
 			maxHeight = 30
 			format = center
 		}
 		instantTextboxType = {
 			name = "defender_losses"
-			position = { x = 900 y = 86 }
-			font = "Arial"
+			position = { x = 900 y = 105 }
+			font = "Beyondsmall"
 			maxWidth = 250
 			maxHeight = 30
 			format = center
@@ -258,7 +280,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "close_button"
-			position = { x = -44 y = 22 }
+			position = { x = -48 y = 16 }
 			quadTextureSprite ="GFX_closebutton"
 			shortcut = "ESCAPE"
 			Orientation = UPPER_RIGHT
@@ -335,7 +357,7 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "war_ally_entry"
-		position = { x = 0 y = -4 }
+		position = { x = 0 y = 0 }
 		size = { width = 530 height = 41 }
 		
 		Background = {
@@ -372,11 +394,12 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "country_name"
-			position = { x = 56 y = 4 }
-			font = "Arial"
-			maxWidth = 180
+			position = { x = 56 y = 7 }
+			font = "Focusfont"
+			maxWidth = 160
 			maxHeight = 30
-			fixedsize = yes
+			fixedsize = no
+			multiline = no
 		}
 		
 		iconType = {
@@ -409,8 +432,8 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "warscore"
-			position = { x = 269 y = 11 }
-			font = "Arial"
+			position = { x = 268 y = 13 }
+			font = "Focusfont"
 			text = "-"
 			maxWidth = 50
 			maxHeight = 30
@@ -419,8 +442,8 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "divisions"
-			position = { x = 317 y = 11 }
-			font = "Arial"
+			position = { x = 317 y = 13 }
+			font = "Focusfont"
 			maxWidth = 80
 			maxHeight = 30
 			format = center
@@ -428,8 +451,8 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "ic"
-			position = { x = 393 y = 11 }
-			font = "Arial"
+			position = { x = 391 y = 13 }
+			font = "Focusfont"
 			maxWidth = 80
 			maxHeight = 30
 			format = center
@@ -437,8 +460,8 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "casualties"
-			position = { x = 466 y = 11 }
-			font = "Arial"
+			position = { x = 465 y = 13 }
+			font = "Focusfont"
 			text = "-"
 			maxWidth = 60
 			maxHeight = 30
