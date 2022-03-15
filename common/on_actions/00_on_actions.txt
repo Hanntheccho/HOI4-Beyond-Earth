@@ -1,5 +1,22 @@
 on_actions = {
-
+	on_startup = { 
+		effect = {
+			ARG = {
+				declare_war_on = {
+					target = COS
+					type = annex_everything
+				}
+			 add_manpower = 200000
+			}
+			COS = {
+				declare_war_on = {
+					target = ARG
+					type = annex_everything
+				}
+				add_manpower = 200000
+			}
+		}
+	}
 	on_startup = {
 		effect = {
 			URA = {
