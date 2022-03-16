@@ -1,0 +1,55 @@
+add_namespace = annex
+
+country_event = { #Check for possible annexations
+	id = annex.1
+	hidden = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_subject = no
+	}
+
+	option = {
+		every_owned_state = {
+			limit = {
+				is_in_array = { annexation_states = THIS }
+				NOT = { is_core_of = ROOT }
+				is_controlled_by = ROOT
+			}
+			check_annexations = yes
+		}
+	}
+}
+
+country_event = { #Fate of Brazil
+	id = annex.2
+	title = annex.2.t
+	desc = annex.2.d
+	
+	is_triggered_only = yes
+	
+	option = { #puppet
+		name = annex.2.a
+		
+		ai_chance = {
+			base = 100
+		}
+		
+		release_puppet = BRA
+		
+		BRA = {
+			create_country_leader = {
+				name = "Occupation Board"
+				ideology = neutral_ideology
+			}
+			set_cosmetic_tag = BRA_occupied
+		}
+	}
+	
+	option = { #occupy
+		name = annex.2.b
+		ai_chance = {
+			base = 100
+		}
+	}
+}
