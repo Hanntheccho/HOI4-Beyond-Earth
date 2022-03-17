@@ -22,4 +22,48 @@ annexation_decisions = {
 			factor = 100
 		}
 	}
+	annexation_ol_claims = {
+		icon = generic_industry
+		selectable_mission = yes
+		days_mission_timeout = 60
+		is_good = no
+		available = {
+			188 = { is_owned_and_controlled_by = ROOT }
+			185 = { is_owned_and_controlled_by = ROOT }
+			193 = { is_owned_and_controlled_by = ROOT } 
+			URG = {
+				OR = {
+					is_puppet_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		} 
+		visible = {                                     
+			188 = { is_owned_and_controlled_by = ROOT }
+			185 = { is_owned_and_controlled_by = ROOT }
+			193 = { is_owned_and_controlled_by = ROOT } 
+			release_ol_cores = yes
+		}
+		cancel_trigger = {
+			NOT = {
+				188 = { is_owned_and_controlled_by = ROOT }
+				185 = { is_owned_and_controlled_by = ROOT }
+				193 = { is_owned_and_controlled_by = ROOT } 
+			}
+			URG = {
+				NOT = {
+					OR = {
+						is_puppet_of = ROOT
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
+		complete_effect = {
+			country_event = annex.3
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
 }
