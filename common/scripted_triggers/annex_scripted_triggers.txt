@@ -1,0 +1,51 @@
+#triggers that check whether or not you can release nations you've conquered
+
+release_brazil = {
+	188 = {
+		NOT = {
+			is_controlled_by = BRA
+			is_claimed_by = ROOT
+			is_core_of = ROOT
+		}
+	}
+	NOT = {
+		country_exists = BRA
+	}
+	ROOT = {
+		has_war = no
+	}
+}
+
+release_ol_cores = {
+	193 = {
+		NOT = {
+			is_controlled_by = BRA
+			is_claimed_by = ROOT
+			is_core_of = ROOT
+		}
+	}
+	185 = {
+		NOT = {
+			is_controlled_by = BRA
+			is_claimed_by = ROOT
+			is_core_of = ROOT
+		}
+	}
+	188 = {
+		NOT = {
+			is_controlled_by = BRA
+			is_claimed_by = ROOT
+			is_core_of = ROOT
+		}
+	}
+	ROOT = {
+		has_war = no
+	}
+	URG = {
+		OR = {
+			is_puppet_of = ROOT
+			is_in_faction_with = ROOT
+		}
+	}
+	
+}

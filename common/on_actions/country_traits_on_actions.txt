@@ -1,115 +1,23 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			every_country = {
+			# TAG = { #Copy this for every tag and uncomment the traits you want
+				#set_country_flag = agricultural_trait
+				#set_country_flag = industrious_trait
+				#set_country_flag = commercial_trait
+				#set_country_flag = militaristic_trait
+				#set_country_flag = scientific_trait
+				#set_country_flag = seafaring_trait
+				#set_country_flag = aerial_trait
+				#set_country_flag = spiritual_trait
+				#set_country_flag = ruinous_trait
+			#}
+
+			every_country = { # This will only execute if we have the ruinous trait, so keep it so we don't have to copy it every time
 				limit = {
 					always = yes
 				}
-				log = "---------[THIS.GetName] TRAIT ASSIGNMENT---------"
 				THIS = {
-					fixed_random_seed = no
-					# Assign Character Trait 1
-					# Will randomly choose from the list with the % chance being 11.1%
-					random_list = {
-						11.1 = {
-							set_country_flag = agricultural_trait
-						}
-						11.1 = {
-							set_country_flag = industrious_trait
-						}
-						11.1 = {
-							set_country_flag = commercial_trait
-						}
-						11.1 = {
-							set_country_flag = militaristic_trait
-						}
-						11.1 = {
-							set_country_flag = scientific_trait
-						}
-						11.1 = {
-							set_country_flag = seafaring_trait
-						}
-						11.1 = {
-							set_country_flag = aerial_trait
-						}
-						11.1 = {
-							set_country_flag = spiritual_trait
-						}
-						11.1 = {
-							set_country_flag = ruinous_trait
-						}
-					}
-					log = "Assigned Trait #1"
-					# Assign Character Trait 2
-					# Will randomly choose from the list with the % chance being 11.1%, if the country already has the idea, it is instead multiplied by 0, to remove the possibility of duplicates
-					fixed_random_seed = no
-					random_list = {
-						11.1 = {
-							set_country_flag = agricultural_trait
-							modifier = {
-								factor = 0
-								has_country_flag = agricultural_trait
-							}
-						}
-						11.1 = {
-							set_country_flag = industrious_trait
-							modifier = {
-								factor = 0
-								has_country_flag = industrious_trait
-							}
-						}
-						11.1 = {
-							set_country_flag = commercial_trait
-							modifier = {
-								factor = 0
-								has_country_flag = commercial_trait
-							}
-						}
-						11.1 = {
-							set_country_flag = militaristic_trait
-							modifier = {
-								factor = 0
-								has_country_flag = militaristic_trait
-							}
-						}
-						11.1 = {
-							set_country_flag = scientific_trait
-							modifier = {
-								factor = 0
-								has_country_flag = scientific_trait
-							}
-						}
-						11.1 = {
-							set_country_flag = seafaring_trait
-							modifier = {
-								factor = 0
-								has_country_flag = seafaring_trait
-							}
-						}
-						11.1 = {
-							set_country_flag = aerial_trait
-							modifier = {
-								factor = 0
-								has_country_flag = aerial_trait
-							}
-						}
-						11.1 = {
-							set_country_flag = spiritual_trait
-							modifier = {
-								factor = 0
-								has_country_flag = spiritual_trait
-							}
-						}
-						11.1 = {
-							set_country_flag = ruinous_trait
-							modifier = {
-								factor = 0
-								has_country_flag = ruinous_trait
-							}
-						}
-					}
-					log = "Assigned Trait #2"
-					log = "-----------------------------------------"
 					if = {#Only if we have ruinous
 						limit = {
 							OR = {
@@ -145,7 +53,7 @@ on_actions = {
 			}
 		}
 	}
-	on_daily = {
+	on_daily = { #FIX FOR MONTHLY BUG
 		effect = {
 			every_country = {
 				limit = {
@@ -165,96 +73,7 @@ on_actions = {
 						}
 						set_variable = {calculated_monthly_rate = 0}
 					}
-					if = { #Decrease cooldown by 1 until it reaches zero, at which point it will reset to 8
-						limit = {
-							AND = {
-								check_variable = {
-									var = has_sent_additional_scavengers
-									value = 1
-									compare = equals
-								}
-								check_variable = {
-									var = additional_scavengers_cooldown_days
-									value = 0
-									compare = greater_than_or_equals
-								}
-							}
-						}
-						subtract_from_variable = {
-							additional_scavengers_cooldown_days = 1
-						}
-					}
-					if = { #If scavenger cooldown is zero, reset and unlock button
-						limit = {
-							check_variable = {
-								var = additional_scavengers_cooldown_days
-								value = 0
-								compare = equals
-							}
-						}
-						set_variable = {has_sent_additional_scavengers = 0}
-						set_variable = {additional_scavengers_cooldown_days = 8}
-					}
-					if = { #Decrease cooldown by 1 until it reaches zero, at which point it will reset to 16
-						limit = {
-							AND = {
-								check_variable = {
-									var = has_located_foreign_sponsors
-									value = 1
-									compare = equals
-								}
-								check_variable = {
-									var = locate_foreign_sponsors_cooldown_days
-									value = 0
-									compare = greater_than_or_equals
-								}
-							}
-						}
-						subtract_from_variable = {
-							locate_foreign_sponsors_cooldown_days = 1
-						}
-					}
-					if = { #If foreign sponsors cooldown is zero, reset and unlock button
-						limit = {
-							check_variable = {
-								var = locate_foreign_sponsors_cooldown_days
-								value = 0
-								compare = equals
-							}
-						}
-						set_variable = {has_located_foreign_sponsors = 0}
-						set_variable = {locate_foreign_sponsors_cooldown_days = 16}
-					}
-					if = { #Decrease cooldown by 1 until it reaches zero, at which point it will reset to 30
-						limit = {
-							AND = {
-								check_variable = {
-									var = has_taken_out_loans_scavengers
-									value = 1
-									compare = equals
-								}
-								check_variable = {
-									var = take_out_loans_cooldown_days
-									value = 0
-									compare = greater_than_or_equals
-								}
-							}
-						}
-						subtract_from_variable = {
-							take_out_loans_cooldown_days = 1
-						}
-					}
-					if = { #If loans cooldown is zero, reset and unlock button
-						limit = {
-							check_variable = {
-								var = take_out_loans_cooldown_days
-								value = 0
-								compare = equals
-							}
-						}
-						set_variable = {has_taken_out_loans_scavengers = 0}
-						set_variable = {take_out_loans_cooldown_days = 30}
-					}
+					
 				}
 			}
 		}

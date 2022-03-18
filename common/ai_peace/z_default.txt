@@ -156,210 +156,48 @@ default_peace = {
 
 	# ROOT = Taker, FROM = State
 	take_states = {
-		factor = 50
-
-		modifier = {
-			factor = 20
-			FROM = {
-				OR = {
-					is_claimed_by = ROOT
-					is_core_of = ROOT
-				}
-			}
-		}
-		modifier = { #Do not take human held lands...
-			factor = 0
-			NOT = { 
-				FROM = { 
-					OR = {
-						is_claimed_by = ROOT
-						is_core_of = ROOT
-					}
-				} 
-			}
-			FROM = {
-				controller = { 
-					is_ai = no 
-					has_capitulated = no 
-					is_puppet = no 
-				}
-			}
-		}
-		modifier = {
-			factor = 1.25
-
-			capital_scope = {
-				distance_to = {
-					target = FROM
-					value < 100
-				}
-			}
-		}
-
-		modifier = {
-			factor = 1.25
-
-			capital_scope = {
-				distance_to = {
-					target = FROM
-					value < 200
-				}
-			}
-		}
-
-		modifier = {
-			factor = 1.25
-
-			capital_scope = {
-				distance_to = {
-					target = FROM
-					value < 300
-				}
-			}
-		}
-
-		modifier = {
-			factor = 1.25
-
-			capital_scope = {
-				distance_to = {
-					target = FROM
-					value < 400
-				}
-			}
-		}
-
-		modifier = {
-			factor = 1.5
-			FROM = {
-				OR = {
-					num_owned_neighbour_states = {
-						count > 1
-						owner = ROOT
-					}
-					num_claimed_peace_conference_neighbour_states = {
-						count > 1
-						owner = ROOT
-					}
-				}
-			}
-		}
-
-		modifier = {
-			factor = 1.5
-			FROM = {
-				OR = {
-					num_owned_neighbour_states = {
-						count > 2
-						owner = ROOT
-					}
-					num_claimed_peace_conference_neighbour_states = {
-						count > 2
-						owner = ROOT
-					}
-				}
-			}
-		}
-
-		modifier = {
-			factor = 1.5
-			FROM = {
-				OR = {
-					num_owned_neighbour_states = {
-						count > 3
-						owner = ROOT
-					}
-					num_claimed_peace_conference_neighbour_states = {
-						count > 3
-						owner = ROOT
-					}
-				}
-			}
-		}
-
-		modifier = {
-			factor = 1.5
-			FROM = {
-				OR = {
-					num_owned_neighbour_states = {
-						count > 4
-						owner = ROOT
-					}
-					num_claimed_peace_conference_neighbour_states = {
-						count > 4
-						owner = ROOT
-					}
-				}
-			}
-		}
-
-		modifier = {
-			factor = 1.5
-			FROM = {
-				OR = {
-					num_owned_neighbour_states = {
-						count > 5
-						owner = ROOT
-					}
-					num_claimed_peace_conference_neighbour_states = {
-						count > 5
-						owner = ROOT
-					}
-				}
-			}
-		}
-
-		modifier = {
-			factor = 0		
-			NOT = { FROM = { is_claimed_by = ROOT } }
-			NOT = {
-				FROM = {
-					any_neighbor_state = {
-						OR = {
-							owner = { tag = ROOT }
-							has_claimed_state_in_peace_conference = ROOT
-						}
-					}
-				}
-			}
-			OR = {
-				NOT = {
-					FROM = { 
-						OR = {
-							is_island_state = yes
-							is_coastal = yes
-						}
-					}
-				}
-				NOT = { any_owned_state = { is_coastal = yes } }
-			}
-
-		}
-
-		modifier = { #Only take claims - may also take African colonies if already a colonial power or major European country.
-			factor = 0
-			NOT = { 
-				FROM = { 
-					OR = {
-						is_claimed_by = ROOT
-						is_core_of = ROOT
-					}
-				} 
-			}
-		}
-		modifier = { #Only take claimed/core land if a puppet.
-			factor = 0
-			is_puppet = yes
-			FROM = {
-				NOT = {
-					OR = { 
-						is_claimed_by = ROOT
-						is_core_of = ROOT
-					}
-				}
-			}
-		}
-	}
+        factor = 50
+        modifier = { #Take cores
+            add = 200
+            FROM = {
+                OR = {
+                    is_claimed_by = ROOT
+                    is_core_of = ROOT
+                }
+            }
+        }
+        modifier = { #Take states if country leader, but not if human is in faction, or if state clamied or cored by ally
+            add = 20
+            AND = {
+                OR = {
+                    ROOT = { is_in_faction = no }
+                    OR = {
+                        ROOT = { is_faction_leader = yes }
+                        any_country = {
+                            is_faction_leader = yes 
+                            is_in_faction_with = ROOT
+                            NOT = { has_war_together_with = ROOT }
+                        }
+                    }
+                }
+                NOT = {
+                    any_allied_country = {
+                        OR = {
+                            FROM = {
+                                is_claimed_by = PREV
+                                is_core_of = PREV
+                            }
+                            AND = {
+                                is_ai = no 
+                                has_capitulated = no 
+                                is_puppet = no 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 	# ROOT = Taker, FROM = Giver
 	force_government = {

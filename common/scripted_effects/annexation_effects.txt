@@ -1,0 +1,22 @@
+check_annexations = {
+	if = {
+		limit = { release_brazil = yes }
+		ROOT = { activate_mission = annexation_brazil }
+	}
+	if = {
+		limit = { release_ol_cores = yes }
+		ROOT = { activate_mission = annexation_ol_claims }
+	}
+}
+
+check_annexations_2 = {
+	hidden_effect = {
+		if = {
+			limit = {
+				NOT = { has_country_flag = checking_for_annexations }
+			}
+			set_country_flag = { flag = checking_for_annexations days = 7 value = 1 }
+			country_event = { id = annex.1 days = 1 }
+		}
+	}
+}
