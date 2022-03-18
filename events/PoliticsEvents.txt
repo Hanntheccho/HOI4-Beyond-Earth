@@ -732,71 +732,112 @@ country_event = {
 	option = {
         clear_variable = free_factory_progress
         set_variable = { free_factory_progress = 0 }
-        random_list = {
-            25 = {
-		        random_owned_controlled_state = {
-		        	add_extra_state_shared_building_slots = 1
-		        	add_building_construction = {
-		        		type = industrial_complex
-		        		level = 1
-		        		instant_build = yes
-		        	}
-		        }
-                modifier = {
-                    factor = heavy_chance
-                }
-                modifier = {
-                    factor = civilian_chance
+        add_to_variable = { free_factory_counter = 1 }
+        if = {
+            limit = {
+                any_state = {
+					is_fully_controlled_by = ROOT
+            		free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = no
+					}
                 }
             }
-            25 = {
-		        random_owned_controlled_state = {
-		        	add_building_construction = {
-		        		type = generator_building
-		        		level = 1
-		        		instant_build = yes
-		        	}
+            add_to_variable = { free_factory_counter = 1 }
+            random_list = {
+                25 = {
+                    random_owned_controlled_state = {
+                        limit = {
+                            is_fully_controlled_by = ROOT
+                            free_building_slots = {
+                                building = industrial_complex
+                                size > 1
+                                include_locked = no
+                            }
+                        }
+                        add_building_construction = {
+                            type = industrial_complex
+                            level = 1
+                            instant_build = yes
+                        }
+                    }
+                    modifier = {
+                        factor = heavy_chance
+                    }
+                    modifier = {
+                        factor = civilian_chance
+                    }
                 }
-                modifier = {
-                    factor = light_chance
+                25 = {
+                    random_owned_controlled_state = {
+                        limit = {
+                            is_fully_controlled_by = ROOT
+                            free_building_slots = {
+                                building = generator_building
+                                size > 1
+                                include_locked = no
+                            }
+                        }
+                        add_building_construction = {
+                            type = generator_building
+                            level = 1
+                            instant_build = yes
+                        }
+                    }
+                    modifier = {
+                        factor = light_chance
+                    }
+                    modifier = {
+                        factor = civilian_chance
+                    }
                 }
-                modifier = {
-                    factor = civilian_chance
+                25 = {
+                    random_owned_controlled_state = {
+                        limit = {
+                            is_fully_controlled_by = ROOT
+                            free_building_slots = {
+                                building = arms_factory
+                                size > 1
+                                include_locked = no
+                            }
+                        }
+                        add_building_construction = {
+                            type = arms_factory
+                            level = 1
+                            instant_build = yes
+                        }
+                    }
+                    modifier = {
+                        factor = land_chance
+                    }
+                    modifier = {
+                        factor = military_chance
+                    }
                 }
-            }
-            25 = {
-		        random_owned_controlled_state = {
-		        	add_extra_state_shared_building_slots = 1
-		        	add_building_construction = {
-		        		type = arms_factory
-		        		level = 1
-		        		instant_build = yes
-		        	}
-		        }
-                modifier = {
-                    factor = land_chance
-                }
-                modifier = {
-                    factor = military_chance
-                }
-            }
-            25 = {
-                random_owned_controlled_state = {
-		        	limit = {
-		        		is_coastal = yes
-		        	}
-                    add_extra_state_shared_building_slots = 1
-		        	add_building_construction = {
-		        		type = dockyard
-		        		level = 1
-		        		instant_build = yes
-		        	}
-		        }
-                modifier = {
-                    factor = naval_chance
-                }
-                modifier = {
-                    factor = military_chance
+                25 = {
+                    random_owned_controlled_state = {
+                        limit = {
+                            is_coastal = yes
+                            is_fully_controlled_by = ROOT
+                            free_building_slots = {
+                                building = dockyard
+                                size > 1
+                                include_locked = no
+                            }
+                        }
+                        add_building_construction = {
+                            type = dockyard
+                            level = 1
+                            instant_build = yes
+                        }
+                    }
+                    modifier = {
+                        factor = naval_chance
+                    }
+                    modifier = {
+                        factor = military_chance
+                    }
                 }
             }
         }
