@@ -1,117 +1,85 @@
 equipments = {
-
-	infantry_equipment = {
-		
+	## Infatry Equipment:
+	## Represents small supply kits, heavy guns, MANPADS, armor
+	infantry_eq = {
 		is_archetype = yes
-		#picture = archetype_infantry_equipment		
+		is_buildable = no
+		active = yes
+
 		type = {
+			motorized
 			infantry
 		}
-		is_buildable = no
-		type = infantry
+
 		group_by = archetype
-		
+
 		interface_category = interface_category_land
-		
-		active = yes
-		
+
 		#Misc Abilities
-		reliability = 0.8
+		reliability = 0.9
 		maximum_speed = 4
 
 		#Defensive Abilities
-		defense = 10
+		defense = 0 #20
 		breakthrough = 6
 		hardness = 0
-		armor_value = 0
+		armor_value = 9.35
 
 		#Offensive Abilities
-		soft_attack = 1
-		hard_attack = 28
-		ap_attack = 110
-		air_attack = 0
+		soft_attack = 3
+		hard_attack = 2.5
+		ap_attack = 5.75
+		air_attack = 1.5
 
 		#Space taken in convoy
 		lend_lease_cost = 2
 		
-		build_cost_ic = 1.25
+		build_cost_ic = 1
 		resources = {
-			steel = 3
+			steel = 2
+			aluminium = 1
 		}
-		
 	}
 
-	infantry_equipment_0 = {
-		archetype = infantry_equipment
-		active = yes
+	infantry_eq_0 = {
+		archetype = infantry_eq
 		priority = 05
+		active = yes
 		visual_level = 0
 	}
 
-	#Regular infantry
-	infantry_equipment_1 = {
-		archetype = infantry_equipment
-		parent = infantry_equipment_0
+	infantry_eq_1 = {
+		archetype = infantry_eq
+		parent = infantry_eq_0
 		priority = 10
 		visual_level = 1
 
-		#Defensive Abilities
-		defense = 12.5
-		breakthrough = 8
-
-		#Offensive Abilities
-		soft_attack = 1.5
-		hard_attack = 40
-		ap_attack = 163
-		air_attack = 0
-
-		build_cost_ic = 1.50
-	}
-
-	# Improved weapons
-	infantry_equipment_2 = {
-		archetype = infantry_equipment
-		parent = infantry_equipment_1
-		priority = 10
-		visual_level = 2
 		
 		#Defensive Abilities
-		defense = 15
-		breakthrough = 10
+		defense = 5
+		breakthrough = 11
+		hardness = 0
+		armor_value = 14.35
 
 		#Offensive Abilities
-		soft_attack = 2
-		hard_attack = 50
-		ap_attack = 203
-		air_attack = 0
+		soft_attack = 8
+		hard_attack = 7.5
+		ap_attack = 10.75
+		air_attack = 6.5
 		
-		build_cost_ic = 1.75
-	}
-	
-	# Advanced weapons
-	infantry_equipment_3 = {
-		archetype = infantry_equipment
-		parent = infantry_equipment_2
-		priority = 10
-		visual_level = 3
+		#Space taken in convoy
+		lend_lease_cost = 2
 		
-		#Defensive Abilities
-		defense = 17.5
-		breakthrough = 12
-
-		#Offensive Abilities
-		soft_attack = 2.5
-		hard_attack = 62
-		ap_attack = 253
-		air_attack = 0
-		
-		reliability = 0.8
-		build_cost_ic = 2
+		build_cost_ic = 0.6
+		resources = {
+			steel = 4
+			aluminium = 2
+		}
 	}
 
 	#MECHANIZED HORROR - SPOOKY - TEMP STATS OF INFANTRY 2
 	mechanized_horror_equipment = {
-		archetype = infantry_equipment
+		archetype = infantry_eq
 		priority = 10
 		visual_level = 3
 
