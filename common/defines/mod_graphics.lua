@@ -1,0 +1,8 @@
+NDefines_Graphics.NFrontend.CAMERA_MAX_HEIGHT = 3300.0
+
+NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_PROVINCE_R = 0.5
+NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_PROVINCE_G = 0.85
+NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_PROVINCE_B = 1.0
+NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_STATE_R = 0.5
+NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_STATE_G = 0.85
+NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_STATE_B = 1.0
