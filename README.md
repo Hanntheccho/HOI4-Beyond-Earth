@@ -1,2 +1,41 @@
-# Beyond-Earth
-A HoI4 Mod. #READMETOBEDONE
+# Beyond Earth: A Hoi4 Mod
+## Wiki
+The following sections are made to allow a central database of all the changes and new variables.
+
+### Table of Contents
+1. [Map](#map)
+    1. [Countries](#countries)
+    2. [State Categories](#states)
+    3. [Resources](#resources)
+2. [Technologies](#technologies)
+    1. [New Technologies](#newtechnologies)
+    2. [Technology Tags](#technologytags)
+    3. [Units](#units)
+    4. [Unit Tags](#unittags)
+    5. [Equipment](#equipment)
+3. [Mechanics](#mechanics)
+    1. [Parliament](#parliament)
+    2. [Spaceship](#spaceship)
+    3. [Wonders](#wonders)
+    4. [Vritues & Culture](#virtuesandculture)
+    5. [Industrial Power](#industrialpower)
+    6. [Augments](#augments)
+    7. [Devastation](#devastation)
+    8. [Country Traits](#traits)
+    9. [Scavenging](#scavenging)
+    10. [United Nations](#un)
+    11. [Bolivar](#bolivar)
+    12. [Brazil](#brazil)
+
+## Map <a name="map"></a>
+The map of Beyond Earth is different from the vanilla one as it has been chandged due to flooding and global warming. One can head over to [Floodmap](https://www.floodmap.net/) and set the water level to **50** in order to see what the map is like
+### Countries <a name="countries"></a>
+Beyond Earth changes most of the countries of the world. The following table is a list of all countries with their tag, starting ideology, and starting ideas.
+<details>
+    <summary>Click to expand!</summary>
+
+    | Country Name | Country Tag | Starting Ideology | Starting Ideas |
+    |:-------------|:------------|:------------------|:---------------|
+    |              |             |                   |                |
+    |              |             |                   |                |
+</details>
