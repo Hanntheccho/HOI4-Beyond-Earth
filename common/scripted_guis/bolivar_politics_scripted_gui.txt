@@ -49,52 +49,52 @@ scripted_gui = {
 			COL_president_button_click = {
 				set_variable = { COL_selected_branch = 1 }
 				set_variable = { COL_current_secured = COL_president_secured }
-				set_variable = { COL_current_trend = COL_president_trend}
+				set_variable = { COL_current_stance = COL_president_stance}
 			}
 			COL_parliament_button_click = {
 				set_variable = { COL_selected_branch = 2 }
 				set_variable = { COL_current_secured = COL_parliament_secured }
-				set_variable = { COL_current_trend = COL_parliament_trend}
+				set_variable = { COL_current_stance = COL_parliament_stance}
 			}
 			COL_judiciary_button_click = {
 				set_variable = { COL_selected_branch = 3 }
 				set_variable = { COL_current_secured = COL_judiciary_secured }	
-				set_variable = { COL_current_trend = COL_judiciary_trend}	
+				set_variable = { COL_current_stance = COL_judiciary_stance}	
 			}
 			COL_defense_button_click = {
 				set_variable = { COL_selected_branch = 4 }
 				set_variable = { COL_current_secured = COL_defense_secured }	
-				set_variable = { COL_current_trend = COL_defense_trend}			
+				set_variable = { COL_current_stance = COL_defense_stance}			
 			}
 			COL_economic_button_click = {
 				set_variable = { COL_selected_branch = 5 }				
 				set_variable = { COL_current_secured = COL_economic_secured }
-				set_variable = { COL_current_trend = COL_economic_trend}
+				set_variable = { COL_current_stance = COL_economic_stance}
 			}
 			COL_foreign_button_click = {
 				set_variable = { COL_selected_branch = 6 }				
 				set_variable = { COL_current_secured = COL_foreign_secured }
-				set_variable = { COL_current_trend = COL_foreign_trend}
+				set_variable = { COL_current_stance = COL_foreign_stance}
 			}
 			COL_educational_button_click = {
 				set_variable = { COL_selected_branch = 7 }				
 				set_variable = { COL_current_secured = COL_educational_secured }
-				set_variable = { COL_current_trend = COL_educational_trend}
+				set_variable = { COL_current_stance = COL_educational_stance}
 			}
 			COL_agricultural_button_click = {
 				set_variable = { COL_selected_branch = 8 }				
 				set_variable = { COL_current_secured = COL_agricultural_secured }
-				set_variable = { COL_current_trend = COL_agricultural_trend}
+				set_variable = { COL_current_stance = COL_agricultural_stance}
 			}
 			COL_cultural_button_click = {
 				set_variable = { COL_selected_branch = 9 }				
 				set_variable = { COL_current_secured = COL_cultural_secured }
-				set_variable = { COL_current_trend = COL_cultural_trend}
+				set_variable = { COL_current_stance = COL_cultural_stance}
 			}
 			COL_security_button_click = {
 				set_variable = { COL_selected_branch = 10 }			
 				set_variable = { COL_current_secured = COL_security_secured }
-				set_variable = { COL_current_trend = COL_cultural_trend}
+				set_variable = { COL_current_stance = COL_security_stance}
 			}
 			#OPTION 1
 			COL_button1_click = {
@@ -696,16 +696,7 @@ scripted_gui = {
 			}
 			COL_align_button_click_enabled = {
 				COL_are_branch_requirements_met = yes #Pre-reqs are met
-				check_variable = {
-					var = COL_current_secured
-					value = 60
-					compare = greater_than_or_equals
-				}
-				check_variable = {
-					var = COL_current_secured
-					value = 80
-					compare = less_than_or_equals
-				}
+				check_variable = {COL_current_secured = 100}
 
 			}
 			COL_liberalize_button_click_enabled = {
@@ -714,8 +705,11 @@ scripted_gui = {
 		}
 
 		properties = {
-			COL_GUI_Bar = {
-				frame = COL_current_trend
+			COL_GUI_Bar_stance = {
+				frame = COL_current_stance
+			}
+			COL_GUI_Bar_secured = {
+				frame = COL_current_secured
 			}
 		}
 	}
