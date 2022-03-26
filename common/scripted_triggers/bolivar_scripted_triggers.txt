@@ -1,0 +1,215 @@
+#Checks if the requirements for the branch to be aligned are met
+COL_are_branch_requirements_met = {
+	OR = {
+		AND = {
+			check_variable = {COL_selected_branch = 1}
+			check_variable = {COL_judiciary_liberalized = 1}
+			check_variable = {COL_parliament_liberalized = 1}
+		}
+		AND = {
+			check_variable = {COL_selected_branch = 2}
+			check_variable = {COL_economic_liberalized = 1}
+			check_variable = {COL_defense_liberalized = 1}
+		}
+		AND = {
+			check_variable = {COL_selected_branch = 3}
+			check_variable = {COL_economic_liberalized = 1}
+			check_variable = {COL_foreign_liberalized = 1}
+		}
+		AND = {
+			check_variable = {COL_selected_branch = 4}
+			check_variable = {COL_agricultural_liberalized = 1}
+			check_variable = {COL_educational_liberalized = 1}
+		}
+		AND = {
+			check_variable = {COL_selected_branch = 5}
+			check_variable = {COL_agricultural_liberalized = 1}
+			check_variable = {COL_cultural_liberalized = 1}
+		}
+		AND = {
+			check_variable = {COL_selected_branch = 6}
+			check_variable = {COL_security_liberalized = 1}
+			check_variable = {COL_cultural_liberalized = 1}
+		}
+		AND = {
+			check_variable = {COL_selected_branch = 7}
+		}
+		AND = {
+			check_variable = {COL_selected_branch = 8}
+		}
+		AND = {
+			check_variable = {COL_selected_branch = 9}
+		}
+		AND = {
+			check_variable = {COL_selected_branch = 10}
+		}
+	}
+	# COL = { #Sets the branch to Bolivar
+	# 	if = {
+	# 		limit = {
+	# 			check_variable = { #Check the branch that is being selected
+	# 				var = COL_selected_branch
+	# 				value = 1
+	# 				compare = equals
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				check_variable = { #Check if branch pre-requisite is met
+	# 					var = COL_judiciary_liberalized
+	# 					value = 1
+	# 					compare = equals
+	# 				}
+	# 				check_variable = { #Check if branch pre-requisite is met
+	# 					var = COL_parliament_liberalized
+	# 					value = 1
+	# 					compare = equals
+	# 				}	
+	# 			}
+	# 		}
+	# 	} else_if = {
+	# 		limit = {
+	# 			check_variable = { #Check the branch that is being selected
+	# 				var = COL_selected_branch
+	# 				value = 2
+	# 				compare = equals
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				check_variable = { #Check if branch pre-requisite is met
+	# 					var = COL_economic_liberalized
+	# 					value = 1
+	# 					compare = equals
+	# 				}
+	# 				check_variable = { #Check if branch pre-requisite is met
+	# 					var = COL_defense_liberalized
+	# 					value = 1
+	# 					compare = equals
+	# 				}	
+	# 			}
+	# 		}
+	# 	} else_if = {
+	# 		limit = {
+	# 			check_variable = { #Check the branch that is being selected
+	# 				var = COL_selected_branch
+	# 				value = 3
+	# 				compare = equals
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				check_variable = { #Check if branch pre-requisite is met
+	# 					var = COL_economic_liberalized
+	# 					value = 1
+	# 					compare = equals
+	# 				}
+	# 				check_variable = { #Check if branch pre-requisite is met
+	# 					var = COL_foreign_liberalized
+	# 					value = 1
+	# 					compare = equals
+	# 				}	
+	# 			}
+	# 		}
+	# 	} else_if = {
+	# 		limit = {
+	# 			check_variable = { #Check the branch that is being selected
+	# 				var = COL_selected_branch
+	# 				value = 4
+	# 				compare = equals
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				check_variable = { #Check if branch pre-requisite is met
+	# 					var = COL_agricultural_liberalized
+	# 					value = 1
+	# 					compare = equals
+	# 				}
+	# 				check_variable = { #Check if branch pre-requisite is met
+	# 					var = COL_educational_liberalized
+	# 					value = 1
+	# 					compare = equals
+	# 				}	
+	# 			}
+	# 		}
+	# 	} else_if = {
+	# 		limit = {
+	# 			check_variable = { #Check the branch that is being selected
+	# 				var = COL_selected_branch
+	# 				value = 5
+	# 				compare = equals
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				check_variable = { #Check if branch pre-requisite is met
+	# 					var = COL_cultural_liberalized
+	# 					value = 1
+	# 					compare = equals
+	# 				}
+	# 				check_variable = { #Check if branch pre-requisite is met
+	# 					var = COL_agricultural_liberalized
+	# 					value = 1
+	# 					compare = equals
+	# 				}	
+	# 			}
+	# 		}
+	# 	} else_if = {
+	# 		limit = {
+	# 			check_variable = { #Check the branch that is being selected
+	# 				var = COL_selected_branch
+	# 				value = 6
+	# 				compare = equals
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				check_variable = { #Check if branch pre-requisite is met
+	# 					var = COL_security_liberalized
+	# 					value = 1
+	# 					compare = equals
+	# 				}
+	# 				check_variable = { #Check if branch pre-requisite is met
+	# 					var = COL_cultural_liberalized
+	# 					value = 1
+	# 					compare = equals
+	# 				}	
+	# 			}
+	# 		}
+	# 	} else_if = {
+	# 		limit = {
+	# 			check_variable = { #Check the branch that is being selected
+	# 				var = COL_selected_branch
+	# 				value = 7
+	# 				compare = equals
+	# 			}
+	# 		}
+	# 	} else_if = {
+	# 		limit = {
+	# 			check_variable = { #Check the branch that is being selected
+	# 				var = COL_selected_branch
+	# 				value = 8
+	# 				compare = equals
+	# 			}
+	# 		}
+	# 	} else_if = {
+	# 		limit = {
+	# 			check_variable = { #Check the branch that is being selected
+	# 				var = COL_selected_branch
+	# 				value = 9
+	# 				compare = equals
+	# 			}
+	# 		}
+	# 	} else_if = {
+	# 		limit = {
+	# 			check_variable = { #Check the branch that is being selected
+	# 				var = COL_selected_branch
+	# 				value = 10
+	# 				compare = equals
+	# 			}
+	# 		}
+	# 	}else = {
+	# 		always = no
+	# 	}
+}
