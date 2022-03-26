@@ -674,6 +674,7 @@ scripted_gui = {
 			COL_liberalize_button_click = {
 				set_country_flag = country_liberalized
 				country_event = {id = bolivar.1 days = 0}
+				set_variable = {COL_country_liberalized = 1}
 			}
 		}
 
@@ -700,6 +701,7 @@ scripted_gui = {
 
 			}
 			COL_liberalize_button_click_enabled = {
+				check_variable = {COL_country_liberalized = 0}
 				check_variable = {COL_liberalization_progress > 99}
 			}
 		}
