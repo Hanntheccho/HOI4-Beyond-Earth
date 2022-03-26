@@ -31,11 +31,8 @@ The following sections are made to allow a central database of all the changes a
 The map of Beyond Earth is different from the vanilla one as it has been chandged due to flooding and global warming. One can head over to [Floodmap](https://www.floodmap.net/) and set the water level to **50** in order to see what the map is like
 ### Countries <a name="countries"></a>
 Beyond Earth changes most of the countries of the world. The following table is a list of all countries with their tag, starting ideology, and starting ideas.
-<details>
-    <summary>Click to expand!</summary>
 
-    | Country Name | Country Tag | Starting Ideology | Starting Ideas |
-    |:-------------|:------------|:------------------|:---------------|
-    |              |             |                   |                |
-    |              |             |                   |                |
-</details>
+| Country Name | Country Tag | Starting Ideology | Starting Ideas | Starting Laws|
+|:-------------|:------------|:------------------|:---------------|:---|
+| Franco-Iberia| FRA |Purity| FRA_second_renaissance<br>FRA_mediterranean_business<br>FRA_federal_assembly|Digital Democracy<br>Partial Economic Mobilization<br>Export Focus<br>Limited Conscription |
+|              |             |                   |                |
