@@ -1629,3 +1629,62 @@ gain_random_agency_upgrade = { #Gives a random agency upgrade or grants a free a
 #	# you can specify an on daily action for a specific country
 #}
 
+create_smallish_army = {
+    division_template = {
+        name = "Infantry Division"
+        regiments = {
+            infantry = { x = 0 y = 0 }
+            infantry = { x = 0 y = 1 }
+            infantry = { x = 1 y = 0 }
+            infantry = { x = 1 y = 1 }
+        }
+    }
+
+    set_temp_variable = { num_of_divs = max_available_manpower_k }
+    log = "Population (1000s): [?num_of_divs]"
+    divide_temp_variable = { num_of_divs = 10 }
+    log = "Divisions: [?num_of_divs]"
+
+    set_temp_variable = { i = 0 }
+    while_loop_effect = {
+        limit = { check_variable = { i < num_of_divs } }
+        capital_scope = {
+            create_unit = {
+                division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 0.2"
+                owner = PREV
+            }
+        }
+        add_to_temp_variable = { i = 1 }
+        multiply_temp_variable = { i = 1.05 }
+    }
+}
+
+create_chonker_army = {
+    division_template = {
+        name = "Infantry Division"
+        regiments = {
+            infantry = { x = 0 y = 0 }
+            infantry = { x = 0 y = 1 }
+            infantry = { x = 1 y = 0 }
+            infantry = { x = 1 y = 1 }
+        }
+    }
+
+    set_temp_variable = { num_of_divs = max_available_manpower_k }
+    log = "Population (1000s): [?num_of_divs]"
+    divide_temp_variable = { num_of_divs = 10 }
+    log = "Divisions: [?num_of_divs]"
+
+    set_temp_variable = { i = 0 }
+    while_loop_effect = {
+        limit = { check_variable = { i < num_of_divs } }
+        capital_scope = {
+            create_unit = {
+                division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 0.2"
+                owner = PREV
+            }
+        }
+        add_to_temp_variable = { i = 1 }
+        multiply_temp_variable = { i = 1.02 }
+    }
+}
