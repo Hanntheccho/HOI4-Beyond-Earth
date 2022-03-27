@@ -3,12 +3,26 @@ on_actions = {
 	on_startup = {
 		effect = {
 			every_country = {
-				limit = { NOT = { capital_scope = { OR = { AND = { is_on_continent = africa } is_on_continent = asia } } } NOT = { OR = { tag = ARG tag = BRA tag = COS tag = ENG tag = FRA tag = KAR } } }
+				limit = { 
+					NOT = { capital_scope = { OR = { is_on_continent = africa is_on_continent = asia } } } 
+					NOT = { OR = { tag = ARG tag = COS tag = BRA tag = FRA tag = ENG tag = KAR } } 
+				}
 				create_chonker_army = yes
 			}
 			every_country = {
-				limit = { capital_scope = { OR = { is_on_continent = africa is_on_continent = asia } } NOT = { OR = { tag = SAF tag = ARG tag = BRA tag = COS tag = ENG tag = FRA tag = KAR } } }
+				limit = { 
+					capital_scope = { OR = { is_on_continent = africa is_on_continent = asia } }
+					NOT = { OR = { tag = ARG tag = COS tag = BRA tag = FRA tag = ENG tag = KAR } } 
+				}
 				create_smallish_army = yes
+			}
+			every_country = {
+				limit = {
+					has_tech = mbt_1
+					num_of_military_factories > 19
+					NOT = { OR = { tag = ARG tag = COS tag = BRA tag = FRA tag = ENG tag = KAR } }
+				}
+				create_tankers = yes
 			}
 			URA = {
                 country_lock_all_division_template = yes

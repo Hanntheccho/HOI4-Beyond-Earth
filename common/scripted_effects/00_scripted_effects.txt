@@ -1630,16 +1630,6 @@ gain_random_agency_upgrade = { #Gives a random agency upgrade or grants a free a
 #}
 
 create_smallish_army = {
-    division_template = {
-        name = "Infantry Division"
-        regiments = {
-            infantry = { x = 0 y = 0 }
-            infantry = { x = 0 y = 1 }
-            infantry = { x = 1 y = 0 }
-            infantry = { x = 1 y = 1 }
-        }
-    }
-
     set_temp_variable = { num_of_divs = max_available_manpower_k }
     log = "Population (1000s): [?num_of_divs]"
     divide_temp_variable = { num_of_divs = 10 }
@@ -1648,7 +1638,7 @@ create_smallish_army = {
     set_temp_variable = { i = 0 }
     while_loop_effect = {
         limit = { check_variable = { i < num_of_divs } }
-        capital_scope = {
+        random_owned_controlled_state = {
             create_unit = {
                 division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 0.2"
                 owner = PREV
@@ -1660,16 +1650,6 @@ create_smallish_army = {
 }
 
 create_chonker_army = {
-    division_template = {
-        name = "Infantry Division"
-        regiments = {
-            infantry = { x = 0 y = 0 }
-            infantry = { x = 0 y = 1 }
-            infantry = { x = 1 y = 0 }
-            infantry = { x = 1 y = 1 }
-        }
-    }
-
     set_temp_variable = { num_of_divs = max_available_manpower_k }
     log = "Population (1000s): [?num_of_divs]"
     divide_temp_variable = { num_of_divs = 10 }
@@ -1678,7 +1658,7 @@ create_chonker_army = {
     set_temp_variable = { i = 0 }
     while_loop_effect = {
         limit = { check_variable = { i < num_of_divs } }
-        capital_scope = {
+        random_owned_controlled_state = {
             create_unit = {
                 division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 0.2"
                 owner = PREV
@@ -1687,4 +1667,18 @@ create_chonker_army = {
         add_to_temp_variable = { i = 1 }
         multiply_temp_variable = { i = 1.02 }
     }
+}
+
+create_tankers = {
+	set_temp_variable = { total_tanks = num_of_military_factories }
+	divide_temp_variable = { total_tanks = 20 }
+	round_temp_variable = total_tanks
+	log = "Tank Divisions: [?total_tanks]"
+	capital_scope = {
+		create_unit = {
+            division = "name = \"Tank Brigade\" division_template = \"Tank Brigade\" start_experience_factor = 0.2"
+            owner = PREV
+            count = var:total_tanks
+        }
+	}
 }
