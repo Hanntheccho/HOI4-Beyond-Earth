@@ -1,11 +1,18 @@
 on_actions = {
     on_startup = {
         effect = {
-				FRA = {
-					news_event = { id = newyear_event.1 }
+			every_country = {
+				limit = {
+					is_ai = no
 				}
-            }
+				set_country_flag = opening_screen_flag
+				set_country_flag = opening_screen_intro_flag
+			}
+			FRA = {
+				news_event = { id = newyear_event.1 }
+			}
         }
+    }
 
     on_capitulation = {
         effect = {
