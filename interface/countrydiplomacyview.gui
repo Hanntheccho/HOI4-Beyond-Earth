@@ -56,10 +56,10 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "country_name"
-				position = { x = 191 y = 3 }
-				font = "Arial16"
+				position = { x = 191 y = 7 }
+				font = "Focusfont"
 				text = "Germanian"
-				maxWidth = 145
+				maxWidth = 245
 				fixedsize = yes
 				maxHeight = 20
 				format = left
@@ -67,14 +67,14 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "faction"
-				position = { x = 191 y = 23}	
+				position = { x = 191 y = 25}	
 				size = { width = 175 height = 20 }
 				clipping = no
 			
 				instantTextboxType = {
 					name = "faction_name"
 					position = { x = 0 y = 0 }
-					font = "Arial16"
+					font = "Focusfont"
 					text = "faction"
 					maxWidth = 145
 					maxHeight = 20
@@ -86,7 +86,7 @@ guiTypes = {
 			instantTextboxType = {
 				name = "leader_name"
 				position = { x = 191 y = 43 }
-				font = "Arial16"
+				font = "Focusfont"
 				text = "Rudolf Kittler"
 				maxWidth = 145
 				maxHeight = 20
@@ -115,12 +115,12 @@ guiTypes = {
 				
 				instantTextboxType = {
 					name = "our_opinion_value"
-					position = { x = 72 y = -7 }
+					position = { x = 44 y = -7 }
 					font = "Focusfont"
 					text = "+50"
 					maxWidth = 50
 					maxHeight = 20
-					format = rigth
+					format = right
 				}
 				
 				iconType = {
@@ -271,14 +271,14 @@ guiTypes = {
 				
 				containerWindowType = {
 					name = "ruling_party_info"
-					position = { x = 258 y = 25 }
+					position = { x = 250 y = 25 }
 					size = { width = 255 height = 60 }
 					clipping = no
 							
 					instantTextboxType = {
 						name = "party_name"
-						position = { x = 5 y = -5 }
-						font = "Arial16"
+						position = { x = -5 y = -5 }
+						font = "Focusfont"
 						text = "party"
 						maxWidth = 245
 						maxHeight = 20
@@ -287,8 +287,8 @@ guiTypes = {
 					
 					instantTextboxType = {
 						name = "ideology_name"
-						position = { x = 5 y = 10 }
-						font = "Arial16"
+						position = { x = -5 y = 13 }
+						font = "Focusfont"
 						text = "ideology"
 						maxWidth = 245
 						maxHeight = 20
@@ -296,9 +296,18 @@ guiTypes = {
 					
 					instantTextboxType = {
 						name = "elections"
-						position = { x = 5 y = 25 }
-						font = "Arial16"
+						position = { x = 10000 y = 31 }
+						font = "Focusfont"
 						text = "elections"
+						maxWidth = 245
+						maxHeight = 20
+					}
+
+					instantTextboxType = {
+						name = "elections2"
+						position = { x = -5 y = 31 }
+						font = "Focusfont"
+						text = "/ LOADING FOCUS TREE..."
 						maxWidth = 245
 						maxHeight = 20
 					}
@@ -542,18 +551,69 @@ guiTypes = {
 				iconType = {
 					name = "estimated_military_forces_icon"
 					quadTextureSprite ="GFX_endgame_army_button"
-					position = { x = 45 y = 55 }
+					position = { x = 10000 y = 55 }
 					pdx_tooltip = ESTIMATED_MILITARY_FORCES
+				}
+
+				iconType = {
+					name = "intel_bg_mod2"
+					quadTextureSprite ="GFX_intel_bg_mod"
+					position = { x = 10 y = 57 }
+				}
+				iconType = {
+					name = "intel_bg_mod3"
+					quadTextureSprite ="GFX_intel_bg_mod"
+					position = { x = 10 y = 117 }
+				}
+				iconType = {
+					name = "intel_bg_mod4"
+					quadTextureSprite ="GFX_intel_bg_mod"
+					position = { x = 10 y = 177 }
+				}
+				iconType = {
+					name = "intel_bg_mod5"
+					quadTextureSprite ="GFX_intel_bg_mod"
+					position = { x = 10 y = 237 }
+				}
+				iconType = {
+					name = "intel_bg_mod6"
+					quadTextureSprite ="GFX_intel_bg_mod"
+					position = { x = 10 y = 297 }
+				}
+				iconType = {
+					name = "intel_bg_mod7"
+					quadTextureSprite ="GFX_intel_bg_mod"
+					position = { x = 10 y = 357 }
+				}
+				iconType = {
+					name = "intel_bg_mod8"
+					quadTextureSprite ="GFX_intel_bg_mod"
+					position = { x = 10 y = 417 }
+				}
+				iconType = {
+					name = "intel_bg_mod9"
+					quadTextureSprite ="GFX_intel_bg_mod"
+					position = { x = 10 y = 477 }
 				}
 				
 				instantTextboxType = {
-					name = "estimated_military_forces"
-					position = { x = 21 y = 108 }
-					font = "Beyondsmall"
-					text = "?"
-					maxWidth = 100
+					name = "estimated_military_forces2"
+					position = { x = 15 y = 58 }
+					font = "Arial"
+					text = "/// MILITARY FORCES:"
+					maxWidth = 300
 					maxHeight = 20
-					format = center
+					format = left
+				}
+
+				instantTextboxType = {
+					name = "estimated_military_forces"
+					position = { x = 21 y = 88 }
+					font = "Focusfont"
+					text = "?"
+					maxWidth = 300
+					maxHeight = 20
+					format = left
 				}
 
 				#iconType = {
@@ -565,18 +625,28 @@ guiTypes = {
 				iconType = {
 					name = "estimated_navy_forces_icon"
 					quadTextureSprite ="GFX_endgame_navy_button"
-					position = { x = 45 y = 145 }
+					position = { x = 10000 y = 145 }
 					pdx_tooltip = ESTIMATED_NAVY_FORCES
+				}
+
+				instantTextboxType = {
+					name = "estimated_navy_forces2"
+					position = { x = 15 y = 118 }
+					font = "Arial"
+					text = "/// NAVY FORCES:"
+					maxWidth = 300
+					maxHeight = 20
+					format = left
 				}
 				
 				instantTextboxType = {
 					name = "estimated_navy_forces"
-					position = { x = 21 y = 198 }
-					font = "Beyondsmall"
+					position = { x = 21 y = 148 }
+					font = "Focusfont"
 					text = "?"
-					maxWidth = 100
+					maxWidth = 300
 					maxHeight = 20
-					format = center
+					format = left
 				}
 
 				#iconType = {
@@ -588,18 +658,28 @@ guiTypes = {
 				iconType = {
 					name = "estimated_air_forces_icon"
 					quadTextureSprite ="GFX_endgame_air_button"
-					position = { x = 45 y = 235 }
+					position = { x = 10000 y = 235 }
 					pdx_tooltip = ESTIMATED_AIR_FORCES
+				}
+
+				instantTextboxType = {
+					name = "estimated_airforce2"
+					position = { x = 15 y = 178 }
+					font = "Arial"
+					text = "/// AIR FORCES:"
+					maxWidth = 300
+					maxHeight = 20
+					format = left
 				}
 				
 				instantTextboxType = {
 					name = "estimated_airforce"
-					position = { x = 21 y = 289 }
-					font = "Beyondsmall"
+					position = { x = 21 y = 208 }
+					font = "Focusfont"
 					text = "?"
-					maxWidth = 100
+					maxWidth = 300
 					maxHeight = 20
-					format = center
+					format = left
 				}
 
 				#iconType = {
@@ -611,18 +691,28 @@ guiTypes = {
 				iconType = {
 					name = "estimated_civil_industry_icon"
 					quadTextureSprite ="GFX_endgame_civ_industry_button"
-					position = { x = 160 y = 235 }
+					position = { x = 10000 y = 235 }
 					pdx_tooltip = ESTIMATED_CIVIL_INDUSTRY
+				}
+
+				instantTextboxType = {
+					name = "estimated_civil_industry_size2"
+					position = { x = 15 y = 238 }
+					font = "Arial"
+					text = "/// CIVIL INDUSTRY:"
+					maxWidth = 300
+					maxHeight = 20
+					format = left
 				}
 				
 				instantTextboxType = {
 					name = "estimated_civil_industry_size"
-					position = { x = 135 y = 289 }
-					font = "Beyondsmall"
+					position = { x = 21 y = 268 }
+					font = "Focusfont"
 					text = "?"
-					maxWidth = 100
+					maxWidth = 300
 					maxHeight = 20
-					format = center
+					format = left
 				}
 
 				#iconType = {
@@ -634,18 +724,28 @@ guiTypes = {
 				iconType = {
 					name = "estimated_mil_industry_icon"
 					quadTextureSprite ="GFX_endgame_industry_button"
-					position = { x = 160 y = 55 }
+					position = { x = 10000 y = 55 }
 					pdx_tooltip = ESTIMATED_MIL_INDUSTRY
+				}
+
+				instantTextboxType = {
+					name = "estimated_military_industry_size2"
+					position = { x = 15 y = 298 }
+					font = "Arial"
+					text = "/ MILITARY INDUSTRY:"
+					maxWidth = 300
+					maxHeight = 20
+					format = left
 				}
 				
 				instantTextboxType = {
 					name = "estimated_military_industry_size"
-					position = { x = 135 y = 108 }
-					font = "Beyondsmall"
+					position = { x = 21 y = 328 }
+					font = "Focusfont"
 					text = "?"
-					maxWidth = 100
+					maxWidth = 300
 					maxHeight = 20
-					format = center
+					format = left
 				}
 
 				#iconType = {
@@ -657,18 +757,28 @@ guiTypes = {
 				iconType = {
 					name = "estimated_naval_industry_icon"
 					quadTextureSprite ="GFX_endgame_naval_industry_button"
-					position = { x = 160 y = 145 }
+					position = { x = 10000 y = 145 }
 					pdx_tooltip = ESTIMATED_NAVAL_INDUSTRY
+				}
+
+				instantTextboxType = {
+					name = "estimated_naval_industry_size2"
+					position = { x = 15 y = 358 }
+					font = "Arial"
+					text = "/// NAVAL INDUSTRY:"
+					maxWidth = 300
+					maxHeight = 20
+					format = left
 				}
 				
 				instantTextboxType = {
 					name = "estimated_naval_industry_size"
-					position = { x = 135 y = 198 }
-					font = "Beyondsmall"
+					position = { x = 21 y = 388 }
+					font = "Focusfont"
 					text = "?"
-					maxWidth = 100
+					maxWidth = 300
 					maxHeight = 20
-					format = center
+					format = left
 				}
 
 				#iconType = {
@@ -680,18 +790,28 @@ guiTypes = {
 				iconType = {
 					name = "estimated_convoys_icon"
 					quadTextureSprite ="GFX_endgame_convoys_button"
-					position = { x = 45 y = 325 }
+					position = { x = 10000 y = 325 }
 					pdx_tooltip = ESTIMATED_CONVOYS_ICON
-				}				
+				}
+				
+				instantTextboxType = {
+					name = "estimated_convoy_size2"
+					position = { x = 15 y = 418 }
+					font = "Arial"
+					text = "/// CONVOY SIZE:"
+					maxWidth = 300
+					maxHeight = 20
+					format = left
+				}
 				
 				instantTextboxType = {
 					name = "estimated_convoy_size"
-					position = { x = 21 y = 379 }
-					font = "Beyondsmall"
+					position = { x = 21 y = 448 }
+					font = "Focusfont"
 					text = "?"
-					maxWidth = 100
+					maxWidth = 300
 					maxHeight = 20
-					format = center
+					format = left
 				}
 				
 				#iconType = {
@@ -703,18 +823,28 @@ guiTypes = {
 				iconType = {
 					name = "estimated_manpower_icon"
 					quadTextureSprite ="GFX_endgame_manpower_button"
-					position = { x = 160 y = 325 }
+					position = { x = 10000 y = 325 }
 					pdx_tooltip = ESTIMATED_MANPOWER
-				}				
+				}	
+				
+				instantTextboxType = {
+					name = "estimated_manpower_size2"
+					position = { x = 15 y = 478 }
+					font = "Arial"
+					text = "/// MANPOWER SIZE:"
+					maxWidth = 300
+					maxHeight = 20
+					format = left
+				}
 				
 				instantTextboxType = {
 					name = "estimated_manpower_size"
-					position = { x = 135 y = 379 }
-					font = "Beyondsmall"
+					position = { x = 21 y = 508 }
+					font = "Focusfont"
 					text = "?"
-					maxWidth = 100
+					maxWidth = 300
 					maxHeight = 20
-					format = center
+					format = left
 				}
 			}
 			
