@@ -2,12 +2,27 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "nationalfocusview"
-		position = { x=-3 y=78 }		
+		position = { x=0 y=118 }		
 		size = { width = 100%% height = 100%% }
+		fade_time = 400
+		fade_type = linear
 		
-		background = {
-			name = "Background"
-			quadTextureSprite ="GFX_tiled_plain_bg2"
+		#background = {
+		#	name = "Background"
+		#	quadTextureSprite ="GFX_tiled_bg"
+		#}
+
+		containerWindowType = {
+			name = "top_part_focustree"
+			position = { x=0 y=0 }
+			size = { width=100%% height=47 }
+			Orientation = UPPER_LEFT
+			clipping = no
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_extra_window"
+			}
 		}
 		
 		instantTextboxType = {
@@ -26,7 +41,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "find_view"
-			position = { x=-344 y=8 }
+			position = { x=-344 y=7 }
 			size = { width=385 height=300 }
 			Orientation = upper_right
 			clipping = no
@@ -91,7 +106,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "zoom_slider_container"
-			position = {x=-233 y=10}	
+			position = {x=-233 y=8}	
 			Orientation = UPPER_RIGHT
 			size = {width=244 height=37}
 			
@@ -126,10 +141,10 @@ guiTypes = {
 			verticalScrollbar = "right_vertical_slider"
 			horizontalScrollbar = "bottom_horizontal_slider"
 
-			#background = {
-			#	name = "Background"
-			#	quadTextureSprite ="GFX_tiled_bg"
-			#}
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_bg_alpha"
+			}
 
 			background = {
 				name = "Background"
@@ -402,7 +417,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "close_button"
-			position = { x = -45 y = 9 }
+			position = { x = -45 y = 7 }
 			quadTextureSprite ="GFX_closebutton"
 			buttonFont = "Main_14_black"
 			shortcut = "ESCAPE"
