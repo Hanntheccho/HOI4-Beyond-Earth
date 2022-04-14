@@ -1,6 +1,6 @@
 add_namespace = bolivar
 
-country_event = {
+country_event = { #The Play
     id = bolivar.1
     title = bolivar.1.t
     desc = bolivar.1.d
@@ -11,6 +11,10 @@ country_event = {
 
     option = {
 		name = bolivar.1.a
+		country_event = {
+			id = bolivar.3
+			days = 7
+		}
 	}
 }
 
@@ -144,7 +148,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #The Bulwark
     id = bolivar.3
     title = bolivar.3.t
     desc = bolivar.3.d
@@ -155,5 +159,555 @@ country_event = {
 
     option = {
 		name = bolivar.3.a
+		country_event = {
+			id = bolivar.4
+			days = 7
+		}
+	}
+}
+
+country_event = { #The Public
+    id = bolivar.4
+    title = bolivar.4.t
+    desc = bolivar.4.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.4.a
+		country_event = {
+			id = bolivar.5
+			days = 7
+		}
+	}
+}
+
+country_event = { #The Plebiscite
+    id = bolivar.5
+    title = bolivar.5.t
+    desc = bolivar.5.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.5.a
+		if = {
+			limit = {
+				check_variable = { COL_president_liberalized = 1 }
+			}
+			country_event = {
+				id = bolivar.6
+				days = 7
+			}
+		}
+		else = {
+			country_event = {
+				id = bolivar.7
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { #A New Dawn
+    id = bolivar.6
+    title = bolivar.6.t
+    desc = bolivar.6.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.6.a
+	}
+}
+
+country_event = { #A Brighter Sky
+    id = bolivar.7
+    title = bolivar.7.t
+    desc = bolivar.7.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.7.a
+	}
+}
+
+country_event = { #Changing Of The Guard
+    id = bolivar.8
+    title = bolivar.8.t
+    desc = bolivar.8.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.8.a
+	}
+}
+
+country_event = { #Agricultural Renovation
+    id = bolivar.9
+    title = bolivar.9.t
+    desc = bolivar.9.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.9.a
+		add_to_variable = { industrial_power = -35 }
+		custom_effect_tooltip = bolivar.9.a.tt
+	}
+	option = {
+		name = bolivar.9.b
+		add_to_variable = { COL_agricultural_stance = 30 }
+		custom_effect_tooltip = bolivar.9.b.tt
+	}
+}
+
+country_event = { #Proper Debates
+    id = bolivar.10
+    title = bolivar.10.t
+    desc = bolivar.10.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.10.a
+	}
+	option = {
+		name = bolivar.10.b
+		add_political_power = 75
+	}
+}
+
+country_event = { #The Right To Vote
+    id = bolivar.11
+    title = bolivar.11.t
+    desc = bolivar.11.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.11.a
+		random_list = {
+			80 = {
+				country_event = {
+					id = bolivar.12
+				}
+			}
+			20 = {
+				country_event = {
+					id = bolivar.13
+				}
+			}
+		}
+	}
+	option = {
+		name = bolivar.11.b
+		add_stability = 0.05
+	}
+}
+
+country_event = { #Villages Flip
+    id = bolivar.12
+    title = bolivar.12.t
+    desc = bolivar.12.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.12.a
+		add_to_variable = { COL_cultural_stance = 20 }
+		custom_effect_tooltip = bolivar.12.tt
+		add_political_power = 25
+	}
+}
+
+country_event = { #Apathetic Citizens
+    id = bolivar.13
+    title = bolivar.13.t
+    desc = bolivar.13.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.13.a
+		add_to_variable = { COL_cultural_stance = -40 }
+		custom_effect_tooltip = bolivar.13.tt
+	}
+}
+
+country_event = { #More Muscle
+    id = bolivar.14
+    title = bolivar.14.t
+    desc = bolivar.14.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.14.a
+		add_to_variable = { COL_security_trend = 0.04 }
+		custom_effect_tooltip = bolivar.14.a.tt
+	}
+	option = {
+		name = bolivar.14.b
+		add_to_variable = { COL_security_trend = -0.02 }
+		custom_effect_tooltip = bolivar.14.b.tt
+	}
+}
+
+country_event = { #Political Assassinations
+    id = bolivar.15
+    title = bolivar.15.t
+    desc = bolivar.15.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.15.a
+		random_list = {
+			80 = {
+				country_event = {
+					id = bolivar.16
+				}
+			}
+			20 = {
+				country_event = {
+					id = bolivar.17
+				}
+			}
+		}
+		add_political_power = -50
+	}
+	option = {
+		name = bolivar.15.b
+		add_stability = 0.05
+	}
+}
+
+country_event = { #A New Ally
+    id = bolivar.16
+    title = bolivar.16.t
+    desc = bolivar.16.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.16.a
+		add_to_variable = { COL_security_stance = 20 }
+		custom_effect_tooltip = bolivar.16.tt
+		add_political_power = 25
+	}
+}
+
+country_event = { #The Price of Betrayal
+    id = bolivar.17
+    title = bolivar.17.t
+    desc = bolivar.17.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.17.a
+		add_to_variable = { COL_security_stance = -40 }
+		custom_effect_tooltip = bolivar.17.tt
+	}
+}
+
+country_event = { #Red Tape
+    id = bolivar.18
+    title = bolivar.18.t
+    desc = bolivar.18.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.18.a
+		add_to_variable = { COL_parliament_stance = 10 }
+		add_to_variable = { COL_judiciary_stance = 10 }
+		custom_effect_tooltip = bolivar.18.tt
+	}
+	option = {
+		name = bolivar.18.b
+		#corruption -5
+	}
+}
+
+country_event = { #Where To?
+    id = bolivar.19
+    title = bolivar.19.t
+    desc = bolivar.19.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.19.a
+		add_to_variable = { COL_defense_stance = -10 }
+		custom_effect_tooltip = bolivar.19.a.tt
+		random_owned_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = bolivar.19.b
+		add_to_variable = { COL_defense_stance = -10 }
+		custom_effect_tooltip = bolivar.19.a.tt
+		random_owned_state = {
+			add_building_construction = {
+				type = dockyard
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = bolivar.19.c
+		add_to_variable = { COL_defense_stance = -10 }
+		custom_effect_tooltip = bolivar.19.a.tt
+		add_equipment_to_stockpile = {
+			type = fighter_equipment_1 
+			amount = 250
+		}
+	}
+	option = {
+		name = bolivar.19.e
+		add_to_variable = { COL_defense_stance = 10 }
+		custom_effect_tooltip = bolivar.19.b.tt
+		random_owned_state = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+country_event = { #The Conscription Question
+    id = bolivar.20
+    title = bolivar.20.t
+    desc = bolivar.20.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.20.a
+		add_to_variable = { COL_defense_stance = 25 }
+		add_to_variable = { industrial_power = 100 }
+		#decrease conscription by 1
+		custom_effect_tooltip = bolivar.20.a.tt
+	}
+	option = {
+		name = bolivar.20.b
+		add_to_variable = { COL_defense_stance = -10 }
+		custom_effect_tooltip = bolivar.20.b.tt
+		army_experience = -10
+	}
+}
+
+country_event = { #Time Is Up!
+    id = bolivar.21
+    title = bolivar.21.t
+    desc = bolivar.21.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.21.a
+		add_to_variable = { COL_judiciary_stance = 20 }
+		custom_effect_tooltip = bolivar.21.a.tt
+	}
+	option = {
+		name = bolivar.21.b
+		add_to_variable = { COL_judiciary_stance = -10 }
+		custom_effect_tooltip = bolivar.21.b.tt
+		add_political_power = 40
+		#corruption +3
+	}
+}
+
+country_event = { #Mandatory Attendance
+    id = bolivar.22
+    title = bolivar.22.t
+    desc = bolivar.22.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.22.a
+		add_to_variable = { COL_educational_stance = 20 }
+		custom_effect_tooltip = bolivar.22.a.tt
+		add_political_power = 10
+	}
+	option = {
+		name = bolivar.22.b
+		add_to_variable = { COL_defense_stance = 20 }
+		add_to_variable = { industrial_power = 10 }
+		custom_effect_tooltip = bolivar.22.b.tt
+	}
+}
+
+country_event = { #The Furnace And The Farm
+    id = bolivar.23
+    title = bolivar.23.t
+    desc = bolivar.23.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.23.a
+		random_owned_state = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = bolivar.23.b
+		add_political_power = 30
+	}
+}
+
+country_event = { #Bogotas-Old Caracas Railway
+    id = bolivar.24
+    title = bolivar.24.t
+    desc = bolivar.24.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.24.a
+		92 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		105 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = bolivar.25
+				days = 180
+			}
+		}
+	}
+}
+
+country_event = { #Slippage
+    id = bolivar.25
+    title = bolivar.25.t
+    desc = bolivar.25.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = {
+		name = bolivar.25.a
+		add_stability = -0.03
+	}
+}
+
+country_event = { #Liberalization failed event
+    id = bolivar.26
+    title = bolivar.26.t
+    desc = bolivar.26.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = { #whoops!
+		name = bolivar.26.a
+		mark_focus_tree_layout_dirty = yes
+		set_country_flag = COL_liberalization_failed
+		#load_focus_tree = bolivar_initial
+	}
+}
+
+country_event = { #Liberalized event
+    id = bolivar.27
+    title = bolivar.27.t
+    desc = bolivar.27.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = { #Joe many liberals does it take to change a log by bolb? None , their to busy ???? Their gender 😂😂😂😂😂😂
+		name = bolivar.27.a
+		mark_focus_tree_layout_dirty = yes
+		set_country_flag = COL_liberalized
+	}
+}
+
+country_event = { #Voracist event
+    id = bolivar.28
+    title = bolivar.28.t
+    desc = bolivar.28.d
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+
+    option = { #oh no
+		name = bolivar.28.a
+		mark_focus_tree_layout_dirty = yes
+		set_country_flag = COL_voracist
 	}
 }
