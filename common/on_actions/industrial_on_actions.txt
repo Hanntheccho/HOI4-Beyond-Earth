@@ -157,9 +157,33 @@ on_actions = {
 			}
 			if = {
 				limit = { 
-                    has_country_flag = consumption_one
+                    has_idea = ODS_park_of_rotten_steal
                 }
                 add_to_variable = { industrial_power_modifier = 0.05 }
+			}
+			if = {
+				limit = { 
+                    has_idea = BNG_behavioral_sink
+                }
+                subtract_from_variable = { industrial_power_modifier = 0.5 }
+			}
+			if = {
+				limit = { 
+                    has_idea = BAN_precarious_supply_situation
+                }
+                subtract_from_variable = { industrial_power_modifier = 0.15 }
+			}
+			if = {
+				limit = { 
+                    has_idea = ASM_token_aid_from_north
+                }
+                add_to_variable = { industrial_power_modifier = 0.1 }
+			}
+			if = {
+				limit = { 
+                    has_idea = TAM_civanin_virarkal
+                }
+                subtract_from_variable = { industrial_power_gain = 0.3 }
 			}
             multiply_variable = { industrial_power_gain = industrial_power_modifier }
             add_to_variable = { industrial_power = industrial_power_gain }

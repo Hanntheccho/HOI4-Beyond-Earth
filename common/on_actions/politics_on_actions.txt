@@ -333,6 +333,18 @@ on_actions = {
                 }
                 subtract_from_variable = { free_factory_adjustment = 1 }
             }
+            if = {
+                limit = {
+                    has_idea = BNG_the_dam
+                }
+                subtract_from_variable = { free_factory_adjustment = 1 }
+            }
+            if = {
+                limit = {
+                    has_idea = KAV_delhi_super_slum
+                }
+                subtract_from_variable = { free_factory_adjustment = 0.25 }
+            }
             add_to_variable = { free_factory_gain = free_factory_base_gain }
             multiply_variable = { free_factory_gain = free_factory_adjustment }
             add_to_variable = { free_factory_progress = free_factory_gain }
@@ -1030,6 +1042,14 @@ on_actions = {
                     }
                 }
                 subtract_from_variable = { corruption_variable = 0.25 }
+            }
+            if = {
+                limit = {
+                    any_character = {
+                        has_trait = unscrpulous_overseers
+                    }
+                }
+                add_to_variable = { corruption_variable = 0.5 }
             }
 
             if = {
