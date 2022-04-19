@@ -264,12 +264,17 @@ guiTypes = {
 		origo = center
 		#moveable = yes
 
-		iconType = {
-			name ="bg"
-			spriteType = "GFX_endgame"
-			position = { x= 0 y = 0 }
-			Orientation = "UPPER_LEFT"
+		background = {
+			name = "Background"		
+			spriteType ="GFX_tiled_bg"
 		}
+
+		#iconType = {
+		#	name ="bg"
+		#	spriteType = "GFX_endgame"
+		#	position = { x= 0 y = 0 }
+		#	Orientation = "UPPER_LEFT"
+		#}
 
 		iconType = {
 			name = "country_leader"
@@ -346,12 +351,12 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "country_name"
-			position = { x = 290 y = 14 }
+			position = { x = 230 y = 14 }
 			textureFile = ""
 			font = "Beyond"
 			borderSize = {x = 0 y = 0}
 			text = ""	
-			maxWidth = 450
+			maxWidth = 600
 			maxHeight = 20
 			fixedsize = yes	
 			format = center
@@ -494,13 +499,19 @@ guiTypes = {
 
 			containerWindowType = {
 				name ="factions_list_container"
-				position = { x = -185 y = 46 }
-				size = { width = 438 height = 136 }
+				position = { x = -190 y = 46 }
+				size = { width = 445 height = 145 }
+				margin = {
+					top = 10
+					left = 10
+					bottom = 10
+					right = 10
+				}
 				verticalScrollbar = "right_vertical_slider"
 
 				background = {
 					name = "Background"
-					quadTextureSprite ="GFX_tiled_window_transparent"
+					quadTextureSprite ="GFX_tiled_bg"
 				}				
 
 				gridboxType = {
@@ -542,60 +553,78 @@ guiTypes = {
 				buttonFont = "Arial"
 				pdx_tooltip = "ENDGAME_SORT_FACTION"
 			}
+
+			instantTextBoxType = {
+				name = "endgame_sorts"
+				position = { x = 420 y = -13 }
+				textureFile = ""
+				font = "Arial"
+				borderSize = {x = 0 y = 0}
+				text = "/ TOTAL //// ARMY //// NAVY //// AIR //// INDUSTRY //// LAND /"	
+				maxWidth = 500
+				maxHeight = 20	
+				format = center		
+				Orientation = "UPPER_LEFT"
+			}
 			
 			ButtonType = { 
 				name = "score_icon"
 				spriteType = "GFX_endgame_score_button"
-				position = { x=400 y=-25 }
+				position = { x=10000 y=-25 }
 				pdx_tooltip = "ENDGAME_SORT_SCORE"
 			}
 			
 			ButtonType = { 
 				name = "army_icon"
 				spriteType = "GFX_endgame_army_button"
-				position = { x=500 y=-25 }
+				position = { x=10000 y=-25 }
 				pdx_tooltip = "ENDGAME_SORT_ARMY"
 			}
 			
 			ButtonType = { 
 				name = "navy_icon"
 				spriteType = "GFX_endgame_navy_button"
-				position = { x=600 y=-25 }
+				position = { x=10000 y=-25 }
 				pdx_tooltip = "ENDGAME_SORT_NAVY"
 			}
 			
 			ButtonType = { 
 				name = "air_icon"
 				spriteType = "GFX_endgame_air_button"
-				position = { x=700 y=-25 }
+				position = { x=10000 y=-25 }
 				pdx_tooltip = "ENDGAME_SORT_AIR"
 			}
 			
 			ButtonType = { 
 				name = "industry_icon"
 				spriteType = "GFX_endgame_industry_button"
-				position = { x=800 y=-25 }
+				position = { x=10000 y=-25 }
 				pdx_tooltip = "ENDGAME_SORT_INDUSTRY"
 			}
 			
 			ButtonType = { 
 				name = "province_icon"
 				spriteType = "GFX_endgame_province_button"
-				position = { x=900 y=-25 }
+				position = { x=10000 y=-25 }
 				pdx_tooltip = "ENDGAME_SORT_PROVINCE"
 			}
 			
 			containerWindowType = {
 				name = "countries_info_list"
-				position = { x=0 y =22 }
+				position = { x=-10 y =28 }
 				#clipping = no
 				size = { width = 994 height=320 }
-				margin = { top = 8 bottom = 8 }
+				margin = {
+					top = 10
+					left = 10
+					bottom = 10
+					right = 10
+				}
 				verticalScrollbar = "right_vertical_slider"
 				
 				background = {
 					name = "Background"
-					quadTextureSprite ="GFX_tiled_window_transparent"
+					quadTextureSprite ="GFX_tiled_bg"
 				}
 				
 				gridboxType = {
