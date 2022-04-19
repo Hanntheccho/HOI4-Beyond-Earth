@@ -1,5 +1,5 @@
 NDefines.NGame.START_DATE = "2200.1.1.12"
-NDefines.NGame.END_DATE = "2249.1.1.1"
+NDefines.NGame.END_DATE = "2250.1.1.1"
 NDefines.NGraphics.COUNTRY_FLAG_LARGE_STRIPE_MAX_HEIGHT = 24000        -- VANILLA: 8192
 NDefines.NGraphics.COUNTRY_FLAG_SMALL_TEX_MAX_SIZE = 512            -- VANILLA: 64
 NDefines.NGraphics.COUNTRY_FLAG_STRIPE_TEX_MAX_HEIGHT = 8196        -- VANILLA: 2048
@@ -38,3 +38,6 @@ NDefines.NProduction.BASE_FACTORY_SPEED = 8                    -- Vanilla: 5
 NDefines.NProduction.BASE_FACTORY_SPEED_MIL = 6                 -- Vanilla: 4.5
 NDefines.NProduction.BASE_FACTORY_SPEED_NAV = 4                   -- Vanilla: 2.5
 NDefines.NAI.MAX_DISTANCE_NALAV_INVASION = 400.0                   -- Vanilla: 
+
+NDefines.NDiplomacy.BASE_IMPROVE_RELATION_DIFFERENT_IDEOLOGY_GROUP_MAINTAIN_COST = 0.2
+
