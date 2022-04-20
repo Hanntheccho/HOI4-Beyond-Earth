@@ -33,1937 +33,1937 @@ scripted_gui = {
                     set_country_flag = international_moment_flag
                 }
             }
-            politicalbills_click = {
-                ROOT = {
-                    set_country_flag = political_bills_flag
-                    clr_country_flag = economy_bills_flag
-                    clr_country_flag = military_bills_flag
-                    clr_country_flag = unique_bills_flag
-                }
-            }
-            bribe_politicians_button_click = {
-                add_political_power = -80
-                if = {
-                    limit = {
-                        has_government = harmony
-                    }
-                    set_variable = { harmony_drift_bribe_politicians_var = 0.1 }
-                }
-                else_if = {
-                    limit = {
-                        has_government = supremacy
-                    }
-                    set_variable = { supremacy_drift_bribe_politicians_var = 0.1 }
-                }
-                else_if = {
-                    limit = {
-                        has_government = purity
-                    }
-                    set_variable = { purity_drift_bribe_politicians_var = 0.1 }
-                }
-                else_if = {
-                    limit = {
-                        has_government = neutral
-                    }
-                    set_variable = { neutral_drift_bribe_politicians_var = 0.1 }
-                }
-                else_if = {
-                    limit = {
-                        has_government = divinity
-                    }
-                    set_variable = { divinity_drift_bribe_politicians_var = 0.1 }
-                }
-                else_if = {
-                    limit = {
-                        has_government = voracity
-                    }
-                    set_variable = { voracity_drift_bribe_politicians_var = 0.1 }
-                }
-                else_if = {
-                    limit = {
-                        has_government = mastery
-                    }
-                    set_variable = { mastery_drift_bribe_politicians_var = 0.1 }
-                }
-                add_dynamic_modifier = { modifier = bribe_politicians_modifier days = 100 }
-            }
-            welfare_programs_button_click = {
-                subtract_from_variable = { cultural_power = 80 }
-                if = {
-                    limit = {
-                        has_government = harmony
-                    }
-                    set_variable = { harmony_drift_welfare_programs_var = 0.01 }
-                }
-                else_if = {
-                    limit = {
-                        has_government = supremacy
-                    }
-                    set_variable = { supremacy_drift_welfare_programs_var = 0.01 }
-                }
-                else_if = {
-                    limit = {
-                        has_government = purity
-                    }
-                    set_variable = { purity_drift_welfare_programs_var = 0.01 }
-                }
-                else_if = {
-                    limit = {
-                        has_government = neutral
-                    }
-                    set_variable = { neutral_drift_welfare_programs_var = 0.01 }
-                }
-                else_if = {
-                    limit = {
-                        has_government = divinity
-                    }
-                    set_variable = { divinity_drift_welfare_programs_var = 0.01 }
-                }
-                else_if = {
-                    limit = {
-                        has_government = voracity
-                    }
-                    set_variable = { voracity_drift_welfare_programs_var = 0.01 }
-                }
-                else_if = {
-                    limit = {
-                        has_government = mastery
-                    }
-                    set_variable = { mastery_drift_welfare_programs_var = 0.01 }
-                }
-                add_dynamic_modifier = { modifier = welfare_programs_modifier days = 60 }
-            }
-            nerve_stapling_button_click = {
-                add_political_power = -50
-                if = {
-                    limit = {
-                        has_government = harmony
-                    }
-                    set_variable = { harmony_drift_nerve_stapling_var = -0.05 }
-                    add_popularity = {
-                        ideology = harmony
-                        popularity = 0.05
-                    }
-                }
-                else_if = {
-                    limit = {
-                        has_government = supremacy
-                    }
-                    set_variable = { supremacy_drift_nerve_stapling_var = -0.05 }
-                    add_popularity = {
-                        ideology = supremacy
-                        popularity = 0.05
-                    }
-                }
-                else_if = {
-                    limit = {
-                        has_government = purity
-                    }
-                    set_variable = { purity_drift_nerve_stapling_var = -0.05 }
-                    add_popularity = {
-                        ideology = purity
-                        popularity = 0.05
-                    }
-                }
-                else_if = {
-                    limit = {
-                        has_government = neutral
-                    }
-                    set_variable = { neutral_drift_nerve_stapling_var = -0.05 }
-                    add_popularity = {
-                        ideology = neutral
-                        popularity = 0.05
-                    }
-                }
-                else_if = {
-                    limit = {
-                        has_government = divinity
-                    }
-                    set_variable = { divinity_drift_nerve_stapling_var = -0.05 }
-                    add_popularity = {
-                        ideology = divinity
-                        popularity = 0.05
-                    }
-                }
-                else_if = {
-                    limit = {
-                        has_government = voracity
-                    }
-                    set_variable = { voracity_drift_nerve_stapling_var = -0.05 }
-                    add_popularity = {
-                        ideology = voracity
-                        popularity = 0.05
-                    }
-                }
-                else_if = {
-                    limit = {
-                        has_government = mastery
-                    }
-                    set_variable = { mastery_drift_nerve_stapling_var = -0.05 }
-                    add_popularity = {
-                        ideology = mastery
-                        popularity = 0.05
-                    }
-                }
-                random_list = {
-                    10 = {
-                        subtract_from_variable = { corruption_variable = 10 }
-                        pierce_corruption_dont_check = yes
-                        pierce_corruption_check = yes
-                    }
-                    10 = {
-                        subtract_from_variable = { corruption_variable = 11 }
-                        pierce_corruption_dont_check = yes
-                        pierce_corruption_check = yes
-                    }
-                    10 = {
-                        subtract_from_variable = { corruption_variable = 12 }
-                        pierce_corruption_dont_check = yes
-                        pierce_corruption_check = yes
-                    }
-                    10 = {
-                        subtract_from_variable = { corruption_variable = 13 }
-                        pierce_corruption_dont_check = yes
-                        pierce_corruption_check = yes
-                    }
-                    10 = {
-                        subtract_from_variable = { corruption_variable = 14 }
-                        pierce_corruption_dont_check = yes
-                        pierce_corruption_check = yes
-                    }
-                    10 = {
-                        subtract_from_variable = { corruption_variable = 15 }
-                        pierce_corruption_dont_check = yes
-                        pierce_corruption_check = yes
-                    }
-                    10 = {
-                        subtract_from_variable = { corruption_variable = 16 }
-                        pierce_corruption_dont_check = yes
-                        pierce_corruption_check = yes
-                    }
-                    10 = {
-                        subtract_from_variable = { corruption_variable = 17 }
-                        pierce_corruption_dont_check = yes
-                        pierce_corruption_check = yes
-                    }
-                    10 = {
-                        subtract_from_variable = { corruption_variable = 18 }
-                        pierce_corruption_dont_check = yes
-                        pierce_corruption_check = yes
-                    }
-                    10 = {
-                        subtract_from_variable = { corruption_variable = 19 }
-                        pierce_corruption_dont_check = yes
-                        pierce_corruption_check = yes
-                    }
-                    10 = {
-                        subtract_from_variable = { corruption_variable = 20 }
-                        pierce_corruption_dont_check = yes
-                        pierce_corruption_check = yes
-                    }
-                }
-                add_dynamic_modifier = { modifier = nerve_stapling_modifier days = 50 }
-            }
-
-            increase_trade_law_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = increase_trade_law_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-            increase_conscription_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = increase_conscription_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-            war_mobilization_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = war_mobilization_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-            decrease_trade_law_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = decrease_trade_law_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-            decrease_conscription_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = decrease_conscription_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-            international_intervention_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = international_intervention_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-
-            economybills_click = {
-                ROOT = {
-                    set_country_flag = economy_bills_flag
-                    clr_country_flag = political_bills_flag
-                    clr_country_flag = military_bills_flag
-                    clr_country_flag = unique_bills_flag
-                }
-            }
-            military_industrial_complex_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = military_industrial_complex_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-            business_relief_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = business_relief_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-            merchant_navy_draft_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = merchant_navy_draft_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-            military_industrial_integration_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = military_industrial_integration_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-            maximized_utilisation_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = maximized_utilisation_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-            orbital_cleaning_initiative_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = orbital_cleaning_initiative_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-
-            militarybills_click = {
-                ROOT = {
-                    set_country_flag = military_bills_flag
-                    clr_country_flag = political_bills_flag
-                    clr_country_flag = economy_bills_flag
-                    clr_country_flag = unique_bills_flag
-                }
-            }
-            interservice_training_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = interservice_training_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-            democratized_logistics_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = democratized_logistics_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-            surveillance_expansion_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = surveillance_expansion_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-            native_pacification_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = native_pacification_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-            general_staff_expansion_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = general_staff_expansion_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-            research_hospital_bypass_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = research_hospital_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-            }
-
-            uniquebills_click = {
-                ROOT = {
-                    set_country_flag = unique_bills_flag
-                    clr_country_flag = political_bills_flag
-                    clr_country_flag = economy_bills_flag
-                    clr_country_flag = military_bills_flag
-                }
-            }
-            impossible_proposition_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = impossible_proposition_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-                subtract_from_variable = { parliament_support = 30 }
-                introduce_proposition = yes
-            }
-            controversial_proposition_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = controversial_proposition_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-                subtract_from_variable = { parliament_support = 20 }
-                introduce_proposition = yes
-            }
-            divisive_proposition_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = divisive_proposition_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-                subtract_from_variable = { parliament_support = 15 }
-                introduce_proposition = yes
-            }
-            partisan_proposition_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = partisan_proposition_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-                subtract_from_variable = { parliament_support = 10 }
-                introduce_proposition = yes
-            }
-            bipartisan_proposition_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = bipartisan_proposition_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-                subtract_from_variable = { parliament_support = 5 }
-                introduce_proposition = yes
-            }
-            popular_proposition_button_click = {
-                parliament_support_ruling_party = yes
-                parliament_power_adjustment = yes
-                ROOT = {
-                    set_country_flag = popular_proposition_hearing
-                }
-                ROOT = {
-                    set_variable = { hearing_time = 30 }
-                }
-                set_country_flag = law_hearing
-                introduce_proposition = yes
-            }
-
-            #free_factory_increase_click = {
-            #    subtract_from_variable = { industrial_power = 100 }
-            #    add_to_variable = { free_factory_progress = 50 }
+            #politicalbills_click = {
+            #    ROOT = {
+            #        set_country_flag = political_bills_flag
+            #        clr_country_flag = economy_bills_flag
+            #        clr_country_flag = military_bills_flag
+            #        clr_country_flag = unique_bills_flag
+            #    }
             #}
-
-            purgecorruption_click = {
-                if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = military_selected_flag
-                            has_country_flag = limited_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = military_purge_limited days = 60 }
-                    subtract_from_variable = { corruption_variable = 3 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 60
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = military_selected_flag
-                            has_country_flag = limited_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = military_purge_limited_2 days = 120 }
-                    subtract_from_variable = { corruption_variable = 3 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 120
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = military_selected_flag
-                            has_country_flag = extensive_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = military_purge_extensive days = 90 }
-                    subtract_from_variable = { corruption_variable = 5 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 90
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = military_selected_flag
-                            has_country_flag = extensive_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = military_purge_extensive days = 180 }
-                    subtract_from_variable = { corruption_variable = 5 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 180
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = military_selected_flag
-                            has_country_flag = massive_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = military_purge_massive days = 120 }
-                    subtract_from_variable = { corruption_variable = 7 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 120
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = military_selected_flag
-                            has_country_flag = massive_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = military_purge_massive days = 240 }
-                    subtract_from_variable = { corruption_variable = 7 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 240
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = military_selected_flag
-                            has_country_flag = total_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = military_purge_total days = 180 }
-                    subtract_from_variable = { corruption_variable = 9 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 180
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = military_selected_flag
-                            has_country_flag = total_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = military_purge_total days = 360 }
-                    subtract_from_variable = { corruption_variable = 9 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 360
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = administrative_selected_flag
-                            has_country_flag = limited_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = administrative_purge_limited days = 60 }
-                    subtract_from_variable = { corruption_variable = 2 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 60
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = administrative_selected_flag
-                            has_country_flag = limited_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = administrative_purge_limited days = 120 }
-                    subtract_from_variable = { corruption_variable = 2 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 120
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = administrative_selected_flag
-                            has_country_flag = extensive_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = administrative_purge_extensive days = 90 }
-                    subtract_from_variable = { corruption_variable = 4 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 90
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = administrative_selected_flag
-                            has_country_flag = extensive_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = administrative_purge_extensive days = 180 }
-                    subtract_from_variable = { corruption_variable = 4 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 180
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = administrative_selected_flag
-                            has_country_flag = massive_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = administrative_purge_massive days = 120 }
-                    subtract_from_variable = { corruption_variable = 6 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 120
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = administrative_selected_flag
-                            has_country_flag = massive_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = administrative_purge_massive days = 240 }
-                    subtract_from_variable = { corruption_variable = 6 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 240
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = administrative_selected_flag
-                            has_country_flag = total_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = administrative_purge_total days = 180 }
-                    subtract_from_variable = { corruption_variable = 8 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 180
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = administrative_selected_flag
-                            has_country_flag = total_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = administrative_purge_total days = 360 }
-                    subtract_from_variable = { corruption_variable = 8 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 260
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = academia_selected_flag
-                            has_country_flag = limited_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = academia_purge_limited days = 60 }
-                    subtract_from_variable = { corruption_variable = 2 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 60
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = academia_selected_flag
-                            has_country_flag = limited_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = academia_purge_limited days = 120 }
-                    subtract_from_variable = { corruption_variable = 2 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 120
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = academia_selected_flag
-                            has_country_flag = extensive_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = academia_purge_extensive days = 90 }
-                    subtract_from_variable = { corruption_variable = 4 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 90
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = academia_selected_flag
-                            has_country_flag = extensive_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = academia_purge_extensive days = 180 }
-                    subtract_from_variable = { corruption_variable = 4 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 180
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = academia_selected_flag
-                            has_country_flag = massive_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = academia_purge_massive days = 120 }
-                    subtract_from_variable = { corruption_variable = 6 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 120
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = academia_selected_flag
-                            has_country_flag = massive_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = academia_purge_massive days = 240 }
-                    subtract_from_variable = { corruption_variable = 6 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 240
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = academia_selected_flag
-                            has_country_flag = total_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = academia_purge_total days = 180 }
-                    subtract_from_variable = { corruption_variable = 8 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 180
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = academia_selected_flag
-                            has_country_flag = total_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = academia_purge_total days = 360 }
-                    subtract_from_variable = { corruption_variable = 8 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 360
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = business_selected_flag
-                            has_country_flag = limited_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = business_purge_limited days = 60 }
-                    subtract_from_variable = { corruption_variable = 3 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 60
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = business_selected_flag
-                            has_country_flag = limited_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = business_purge_limited days = 120 }
-                    subtract_from_variable = { corruption_variable = 3 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 120
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = business_selected_flag
-                            has_country_flag = extensive_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = business_purge_extensive days = 90 }
-                    subtract_from_variable = { corruption_variable = 5 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 90
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = business_selected_flag
-                            has_country_flag = extensive_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = business_purge_extensive days = 180 }
-                    subtract_from_variable = { corruption_variable = 5 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 180
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = business_selected_flag
-                            has_country_flag = massive_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = business_purge_massive days = 120 }
-                    subtract_from_variable = { corruption_variable = 7 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 120
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = business_selected_flag
-                            has_country_flag = massive_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = business_purge_massive days = 240 }
-                    subtract_from_variable = { corruption_variable = 7 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 240
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = business_selected_flag
-                            has_country_flag = total_selected_flag
-                            has_country_flag = low_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = business_purge_total days = 180 }
-                    subtract_from_variable = { corruption_variable = 9 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 180
-                        value = 1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = business_selected_flag
-                            has_country_flag = total_selected_flag
-                            has_country_flag = high_selected_flag
-                        }
-                    }
-                    add_timed_idea = { idea = business_purge_total days = 360 }
-                    subtract_from_variable = { corruption_variable = 9 }
-                    set_country_flag = {
-                        flag = purge_in_progress_flag
-                        days = 360
-                        value = 1
-                    }
-                }
-                if = {
-                    limit = {
-                        AND = {
-                            has_country_flag = high_selected_flag
-                            check_variable = { corruption_variable < corruption_min }
-                            check_variable = { corruption_min > 0 }
-                        }
-                    }
-                    subtract_from_variable = { corruption_min = 10 }
-                }
-                clr_country_flag = military_selected_flag
-                clr_country_flag = administrative_selected_flag
-                clr_country_flag = academia_selected_flag
-                clr_country_flag = business_selected_flag
-                clr_country_flag = limited_selected_flag
-                clr_country_flag = extensive_selected_flag
-                clr_country_flag = massive_selected_flag
-                clr_country_flag = total_selected_flag
-                clr_country_flag = low_selected_flag
-                clr_country_flag = high_selected_flag
-            }
-            corruption_select_military_click = {
-                set_country_flag = military_selected_flag
-                clr_country_flag = administrative_selected_flag
-                clr_country_flag = academia_selected_flag
-                clr_country_flag = business_selected_flag
-            }
-            corruption_military_selected_click = {
-                clr_country_flag = military_selected_flag
-            }
-            corruption_select_administrative_click = {
-                set_country_flag = administrative_selected_flag
-                clr_country_flag = military_selected_flag
-                clr_country_flag = academia_selected_flag
-                clr_country_flag = business_selected_flag
-            }
-            corruption_administrative_selected_click = {
-                clr_country_flag = administrative_selected_flag
-            }
-            corruption_select_academia_click = {
-                set_country_flag = academia_selected_flag
-                clr_country_flag = military_selected_flag
-                clr_country_flag = administrative_selected_flag
-                clr_country_flag = business_selected_flag
-            }
-            corruption_academia_selected_click = {
-                clr_country_flag = academia_selected_flag
-            }
-            corruption_select_business_click = {
-                set_country_flag = business_selected_flag
-                clr_country_flag = military_selected_flag
-                clr_country_flag = administrative_selected_flag
-                clr_country_flag = academia_selected_flag
-            }
-            corruption_business_selected_click = {
-                clr_country_flag = business_selected_flag
-            }
-
-            corruption_select_limited_click = {
-                set_country_flag = limited_selected_flag
-                clr_country_flag = extensive_selected_flag
-                clr_country_flag = massive_selected_flag
-                clr_country_flag = total_selected_flag
-                set_variable = { purge_length_var = 60 }
-                if = {
-                    limit = {
-                        has_country_flag = high_selected_flag
-                    }
-                    multiply_variable = { purge_length_var = 2 }
-                }
-            }
-            corruption_limited_selected_click = {
-                clr_country_flag = limited_selected_flag
-            }
-            corruption_select_extensive_click = {
-                set_country_flag = extensive_selected_flag
-                clr_country_flag = limited_selected_flag
-                clr_country_flag = massive_selected_flag
-                clr_country_flag = total_selected_flag
-                set_variable = { purge_length_var = 90 }
-                if = {
-                    limit = {
-                        has_country_flag = high_selected_flag
-                    }
-                    multiply_variable = { purge_length_var = 2 }
-                }
-            }
-            corruption_extensive_selected_click = {
-                clr_country_flag = extensive_selected_flag
-            }
-            corruption_select_massive_click = {
-                set_country_flag = massive_selected_flag
-                clr_country_flag = limited_selected_flag
-                clr_country_flag = extensive_selected_flag
-                clr_country_flag = total_selected_flag
-                set_variable = { purge_length_var = 120 }
-                if = {
-                    limit = {
-                        has_country_flag = high_selected_flag
-                    }
-                    multiply_variable = { purge_length_var = 2 }
-                }
-            }
-            corruption_massive_selected_click = {
-                clr_country_flag = massive_selected_flag
-            }
-            corruption_select_total_click = {
-                set_country_flag = total_selected_flag
-                clr_country_flag = limited_selected_flag
-                clr_country_flag = extensive_selected_flag
-                clr_country_flag = massive_selected_flag
-                set_variable = { purge_length_var = 180 }
-                if = {
-                    limit = {
-                        has_country_flag = high_selected_flag
-                    }
-                    multiply_variable = { purge_length_var = 2 }
-                }
-            }
-            corruption_total_selected_click = {
-                clr_country_flag = total_selected_flag
-            }
-            
-            corruption_select_low_click = {
-                set_country_flag = low_selected_flag
-                if = {
-                    limit = {
-                        has_country_flag = high_selected_flag
-                    }
-                    divide_variable = { purge_length_var = 2 }
-                }
-                clr_country_flag = high_selected_flag
-            }
-            corruption_low_selected_click = {
-                clr_country_flag = low_selected_flag
-            }
-            corruption_select_high_click = {
-                set_country_flag = high_selected_flag
-                clr_country_flag = low_selected_flag
-                multiply_variable = { purge_length_var = 2 }
-            }
-            corruption_high_selected_click = {
-                clr_country_flag = high_selected_flag
-                divide_variable = { purge_length_var = 2 }
-            }
-
-            #civilian_focus_click = {
-            #    subtract_from_variable = { military_civilian_slider_var = 34.6 }
-            #    add_to_variable = { civilian_chance = 0.1 }
-            #    subtract_from_variable = { military_chance = 0.1 }
-            #    subtract_from_variable = { industrial_power = 25 }
+            #bribe_politicians_button_click = {
+            #    add_political_power = -80
+            #    if = {
+            #        limit = {
+            #            has_government = harmony
+            #        }
+            #        set_variable = { harmony_drift_bribe_politicians_var = 0.1 }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = supremacy
+            #        }
+            #        set_variable = { supremacy_drift_bribe_politicians_var = 0.1 }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = purity
+            #        }
+            #        set_variable = { purity_drift_bribe_politicians_var = 0.1 }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = neutral
+            #        }
+            #        set_variable = { neutral_drift_bribe_politicians_var = 0.1 }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = divinity
+            #        }
+            #        set_variable = { divinity_drift_bribe_politicians_var = 0.1 }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = voracity
+            #        }
+            #        set_variable = { voracity_drift_bribe_politicians_var = 0.1 }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = mastery
+            #        }
+            #        set_variable = { mastery_drift_bribe_politicians_var = 0.1 }
+            #    }
+            #    add_dynamic_modifier = { modifier = bribe_politicians_modifier days = 100 }
+            #}
+            #welfare_programs_button_click = {
+            #    subtract_from_variable = { cultural_power = 80 }
+            #    if = {
+            #        limit = {
+            #            has_government = harmony
+            #        }
+            #        set_variable = { harmony_drift_welfare_programs_var = 0.01 }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = supremacy
+            #        }
+            #        set_variable = { supremacy_drift_welfare_programs_var = 0.01 }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = purity
+            #        }
+            #        set_variable = { purity_drift_welfare_programs_var = 0.01 }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = neutral
+            #        }
+            #        set_variable = { neutral_drift_welfare_programs_var = 0.01 }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = divinity
+            #        }
+            #        set_variable = { divinity_drift_welfare_programs_var = 0.01 }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = voracity
+            #        }
+            #        set_variable = { voracity_drift_welfare_programs_var = 0.01 }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = mastery
+            #        }
+            #        set_variable = { mastery_drift_welfare_programs_var = 0.01 }
+            #    }
+            #    add_dynamic_modifier = { modifier = welfare_programs_modifier days = 60 }
+            #}
+            #nerve_stapling_button_click = {
+            #    add_political_power = -50
+            #    if = {
+            #        limit = {
+            #            has_government = harmony
+            #        }
+            #        set_variable = { harmony_drift_nerve_stapling_var = -0.05 }
+            #        add_popularity = {
+            #            ideology = harmony
+            #            popularity = 0.05
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = supremacy
+            #        }
+            #        set_variable = { supremacy_drift_nerve_stapling_var = -0.05 }
+            #        add_popularity = {
+            #            ideology = supremacy
+            #            popularity = 0.05
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = purity
+            #        }
+            #        set_variable = { purity_drift_nerve_stapling_var = -0.05 }
+            #        add_popularity = {
+            #            ideology = purity
+            #            popularity = 0.05
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = neutral
+            #        }
+            #        set_variable = { neutral_drift_nerve_stapling_var = -0.05 }
+            #        add_popularity = {
+            #            ideology = neutral
+            #            popularity = 0.05
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = divinity
+            #        }
+            #        set_variable = { divinity_drift_nerve_stapling_var = -0.05 }
+            #        add_popularity = {
+            #            ideology = divinity
+            #            popularity = 0.05
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = voracity
+            #        }
+            #        set_variable = { voracity_drift_nerve_stapling_var = -0.05 }
+            #        add_popularity = {
+            #            ideology = voracity
+            #            popularity = 0.05
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            has_government = mastery
+            #        }
+            #        set_variable = { mastery_drift_nerve_stapling_var = -0.05 }
+            #        add_popularity = {
+            #            ideology = mastery
+            #            popularity = 0.05
+            #        }
+            #    }
+            #    random_list = {
+            #        10 = {
+            #            subtract_from_variable = { corruption_variable = 10 }
+            #            pierce_corruption_dont_check = yes
+            #            pierce_corruption_check = yes
+            #        }
+            #        10 = {
+            #            subtract_from_variable = { corruption_variable = 11 }
+            #            pierce_corruption_dont_check = yes
+            #            pierce_corruption_check = yes
+            #        }
+            #        10 = {
+            #            subtract_from_variable = { corruption_variable = 12 }
+            #            pierce_corruption_dont_check = yes
+            #            pierce_corruption_check = yes
+            #        }
+            #        10 = {
+            #            subtract_from_variable = { corruption_variable = 13 }
+            #            pierce_corruption_dont_check = yes
+            #            pierce_corruption_check = yes
+            #        }
+            #        10 = {
+            #            subtract_from_variable = { corruption_variable = 14 }
+            #            pierce_corruption_dont_check = yes
+            #            pierce_corruption_check = yes
+            #        }
+            #        10 = {
+            #            subtract_from_variable = { corruption_variable = 15 }
+            #            pierce_corruption_dont_check = yes
+            #            pierce_corruption_check = yes
+            #        }
+            #        10 = {
+            #            subtract_from_variable = { corruption_variable = 16 }
+            #            pierce_corruption_dont_check = yes
+            #            pierce_corruption_check = yes
+            #        }
+            #        10 = {
+            #            subtract_from_variable = { corruption_variable = 17 }
+            #            pierce_corruption_dont_check = yes
+            #            pierce_corruption_check = yes
+            #        }
+            #        10 = {
+            #            subtract_from_variable = { corruption_variable = 18 }
+            #            pierce_corruption_dont_check = yes
+            #            pierce_corruption_check = yes
+            #        }
+            #        10 = {
+            #            subtract_from_variable = { corruption_variable = 19 }
+            #            pierce_corruption_dont_check = yes
+            #            pierce_corruption_check = yes
+            #        }
+            #        10 = {
+            #            subtract_from_variable = { corruption_variable = 20 }
+            #            pierce_corruption_dont_check = yes
+            #            pierce_corruption_check = yes
+            #        }
+            #    }
+            #    add_dynamic_modifier = { modifier = nerve_stapling_modifier days = 50 }
             #}
             #
-            #military_focus_click = {
-            #    add_to_variable = { military_civilian_slider_var = 34.6 }
-            #    add_to_variable = { military_chance = 0.1 }
-            #    subtract_from_variable = { civilian_chance = 0.1 }
-            #    subtract_from_variable = { industrial_power = 25 }
+            #increase_trade_law_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = increase_trade_law_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #}
+            #increase_conscription_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = increase_conscription_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #}
+            #war_mobilization_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = war_mobilization_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #}
+            #decrease_trade_law_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = decrease_trade_law_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #}
+            #decrease_conscription_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = decrease_conscription_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #}
+            #international_intervention_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = international_intervention_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
             #}
             #
-            #light_focus_click = {
-            #    add_to_variable = { light_heavy_slider_var = 34.6 }
-            #    add_to_variable = { light_chance = 0.1 }
-            #    subtract_from_variable = { heavy_chance = 0.1 }
-            #    subtract_from_variable = { industrial_power = 25 }
+            #economybills_click = {
+            #    ROOT = {
+            #        set_country_flag = economy_bills_flag
+            #        clr_country_flag = political_bills_flag
+            #        clr_country_flag = military_bills_flag
+            #        clr_country_flag = unique_bills_flag
+            #    }
+            #}
+            #military_industrial_complex_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = military_industrial_complex_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #}
+            #business_relief_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = business_relief_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #}
+            #merchant_navy_draft_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = merchant_navy_draft_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #}
+            #military_industrial_integration_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = military_industrial_integration_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #}
+            #maximized_utilisation_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = maximized_utilisation_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #}
+            #orbital_cleaning_initiative_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = orbital_cleaning_initiative_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
             #}
             #
-            #land_focus_click = {
-            #    subtract_from_variable = { land_naval_slider_var = 34.6 }
-            #    add_to_variable = { land_chance = 0.1 }
-            #    subtract_from_variable = { naval_chance = 0.1 }
-            #    subtract_from_variable = { industrial_power = 25 }
+            #militarybills_click = {
+            #    ROOT = {
+            #        set_country_flag = military_bills_flag
+            #        clr_country_flag = political_bills_flag
+            #        clr_country_flag = economy_bills_flag
+            #        clr_country_flag = unique_bills_flag
+            #    }
+            #}
+            #interservice_training_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = interservice_training_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #}
+            #democratized_logistics_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = democratized_logistics_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #}
+            #surveillance_expansion_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = surveillance_expansion_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #}
+            #native_pacification_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = native_pacification_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #}
+            #general_staff_expansion_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = general_staff_expansion_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #}
+            #research_hospital_bypass_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = research_hospital_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
             #}
             #
-            #naval_focus_click = {
-            #    add_to_variable = { land_naval_slider_var = 34.6 }
-            #    add_to_variable = { naval_chance = 0.1 }
-            #    subtract_from_variable = { land_chance = 0.1 }
-            #    subtract_from_variable = { industrial_power = 25 }
+            #uniquebills_click = {
+            #    ROOT = {
+            #        set_country_flag = unique_bills_flag
+            #        clr_country_flag = political_bills_flag
+            #        clr_country_flag = economy_bills_flag
+            #        clr_country_flag = military_bills_flag
+            #    }
+            #}
+            #impossible_proposition_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = impossible_proposition_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #    subtract_from_variable = { parliament_support = 30 }
+            #    introduce_proposition = yes
+            #}
+            #controversial_proposition_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = controversial_proposition_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #    subtract_from_variable = { parliament_support = 20 }
+            #    introduce_proposition = yes
+            #}
+            #divisive_proposition_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = divisive_proposition_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #    subtract_from_variable = { parliament_support = 15 }
+            #    introduce_proposition = yes
+            #}
+            #partisan_proposition_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = partisan_proposition_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #    subtract_from_variable = { parliament_support = 10 }
+            #    introduce_proposition = yes
+            #}
+            #bipartisan_proposition_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = bipartisan_proposition_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #    subtract_from_variable = { parliament_support = 5 }
+            #    introduce_proposition = yes
+            #}
+            #popular_proposition_button_click = {
+            #    parliament_support_ruling_party = yes
+            #    parliament_power_adjustment = yes
+            #    ROOT = {
+            #        set_country_flag = popular_proposition_hearing
+            #    }
+            #    ROOT = {
+            #        set_variable = { hearing_time = 30 }
+            #    }
+            #    set_country_flag = law_hearing
+            #    introduce_proposition = yes
             #}
             #
-            #heavy_focus_click = {
-            #    subtract_from_variable = { light_heavy_slider_var = 34.6 }
-            #    add_to_variable = { heavy_chance = 0.1 }
-            #    subtract_from_variable = { light_chance = 0.1 }
-            #    subtract_from_variable = { industrial_power = 25 }
+            ##free_factory_increase_click = {
+            ##    subtract_from_variable = { industrial_power = 100 }
+            ##    add_to_variable = { free_factory_progress = 50 }
+            ##}
+            #
+            #purgecorruption_click = {
+            #    if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = military_selected_flag
+            #                has_country_flag = limited_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = military_purge_limited days = 60 }
+            #        subtract_from_variable = { corruption_variable = 3 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 60
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = military_selected_flag
+            #                has_country_flag = limited_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = military_purge_limited_2 days = 120 }
+            #        subtract_from_variable = { corruption_variable = 3 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 120
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = military_selected_flag
+            #                has_country_flag = extensive_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = military_purge_extensive days = 90 }
+            #        subtract_from_variable = { corruption_variable = 5 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 90
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = military_selected_flag
+            #                has_country_flag = extensive_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = military_purge_extensive days = 180 }
+            #        subtract_from_variable = { corruption_variable = 5 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 180
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = military_selected_flag
+            #                has_country_flag = massive_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = military_purge_massive days = 120 }
+            #        subtract_from_variable = { corruption_variable = 7 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 120
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = military_selected_flag
+            #                has_country_flag = massive_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = military_purge_massive days = 240 }
+            #        subtract_from_variable = { corruption_variable = 7 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 240
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = military_selected_flag
+            #                has_country_flag = total_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = military_purge_total days = 180 }
+            #        subtract_from_variable = { corruption_variable = 9 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 180
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = military_selected_flag
+            #                has_country_flag = total_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = military_purge_total days = 360 }
+            #        subtract_from_variable = { corruption_variable = 9 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 360
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = administrative_selected_flag
+            #                has_country_flag = limited_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = administrative_purge_limited days = 60 }
+            #        subtract_from_variable = { corruption_variable = 2 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 60
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = administrative_selected_flag
+            #                has_country_flag = limited_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = administrative_purge_limited days = 120 }
+            #        subtract_from_variable = { corruption_variable = 2 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 120
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = administrative_selected_flag
+            #                has_country_flag = extensive_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = administrative_purge_extensive days = 90 }
+            #        subtract_from_variable = { corruption_variable = 4 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 90
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = administrative_selected_flag
+            #                has_country_flag = extensive_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = administrative_purge_extensive days = 180 }
+            #        subtract_from_variable = { corruption_variable = 4 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 180
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = administrative_selected_flag
+            #                has_country_flag = massive_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = administrative_purge_massive days = 120 }
+            #        subtract_from_variable = { corruption_variable = 6 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 120
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = administrative_selected_flag
+            #                has_country_flag = massive_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = administrative_purge_massive days = 240 }
+            #        subtract_from_variable = { corruption_variable = 6 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 240
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = administrative_selected_flag
+            #                has_country_flag = total_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = administrative_purge_total days = 180 }
+            #        subtract_from_variable = { corruption_variable = 8 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 180
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = administrative_selected_flag
+            #                has_country_flag = total_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = administrative_purge_total days = 360 }
+            #        subtract_from_variable = { corruption_variable = 8 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 260
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = academia_selected_flag
+            #                has_country_flag = limited_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = academia_purge_limited days = 60 }
+            #        subtract_from_variable = { corruption_variable = 2 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 60
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = academia_selected_flag
+            #                has_country_flag = limited_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = academia_purge_limited days = 120 }
+            #        subtract_from_variable = { corruption_variable = 2 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 120
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = academia_selected_flag
+            #                has_country_flag = extensive_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = academia_purge_extensive days = 90 }
+            #        subtract_from_variable = { corruption_variable = 4 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 90
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = academia_selected_flag
+            #                has_country_flag = extensive_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = academia_purge_extensive days = 180 }
+            #        subtract_from_variable = { corruption_variable = 4 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 180
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = academia_selected_flag
+            #                has_country_flag = massive_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = academia_purge_massive days = 120 }
+            #        subtract_from_variable = { corruption_variable = 6 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 120
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = academia_selected_flag
+            #                has_country_flag = massive_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = academia_purge_massive days = 240 }
+            #        subtract_from_variable = { corruption_variable = 6 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 240
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = academia_selected_flag
+            #                has_country_flag = total_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = academia_purge_total days = 180 }
+            #        subtract_from_variable = { corruption_variable = 8 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 180
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = academia_selected_flag
+            #                has_country_flag = total_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = academia_purge_total days = 360 }
+            #        subtract_from_variable = { corruption_variable = 8 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 360
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = business_selected_flag
+            #                has_country_flag = limited_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = business_purge_limited days = 60 }
+            #        subtract_from_variable = { corruption_variable = 3 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 60
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = business_selected_flag
+            #                has_country_flag = limited_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = business_purge_limited days = 120 }
+            #        subtract_from_variable = { corruption_variable = 3 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 120
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = business_selected_flag
+            #                has_country_flag = extensive_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = business_purge_extensive days = 90 }
+            #        subtract_from_variable = { corruption_variable = 5 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 90
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = business_selected_flag
+            #                has_country_flag = extensive_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = business_purge_extensive days = 180 }
+            #        subtract_from_variable = { corruption_variable = 5 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 180
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = business_selected_flag
+            #                has_country_flag = massive_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = business_purge_massive days = 120 }
+            #        subtract_from_variable = { corruption_variable = 7 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 120
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = business_selected_flag
+            #                has_country_flag = massive_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = business_purge_massive days = 240 }
+            #        subtract_from_variable = { corruption_variable = 7 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 240
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = business_selected_flag
+            #                has_country_flag = total_selected_flag
+            #                has_country_flag = low_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = business_purge_total days = 180 }
+            #        subtract_from_variable = { corruption_variable = 9 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 180
+            #            value = 1
+            #        }
+            #    }
+            #    else_if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = business_selected_flag
+            #                has_country_flag = total_selected_flag
+            #                has_country_flag = high_selected_flag
+            #            }
+            #        }
+            #        add_timed_idea = { idea = business_purge_total days = 360 }
+            #        subtract_from_variable = { corruption_variable = 9 }
+            #        set_country_flag = {
+            #            flag = purge_in_progress_flag
+            #            days = 360
+            #            value = 1
+            #        }
+            #    }
+            #    if = {
+            #        limit = {
+            #            AND = {
+            #                has_country_flag = high_selected_flag
+            #                check_variable = { corruption_variable < corruption_min }
+            #                check_variable = { corruption_min > 0 }
+            #            }
+            #        }
+            #        subtract_from_variable = { corruption_min = 10 }
+            #    }
+            #    clr_country_flag = military_selected_flag
+            #    clr_country_flag = administrative_selected_flag
+            #    clr_country_flag = academia_selected_flag
+            #    clr_country_flag = business_selected_flag
+            #    clr_country_flag = limited_selected_flag
+            #    clr_country_flag = extensive_selected_flag
+            #    clr_country_flag = massive_selected_flag
+            #    clr_country_flag = total_selected_flag
+            #    clr_country_flag = low_selected_flag
+            #    clr_country_flag = high_selected_flag
             #}
-
-            #increase_limit_click = {
-            #    subtract_from_variable = { industrial_power = 10 }
-            #    add_to_variable = { division_limit_extra = 4 }
+            #corruption_select_military_click = {
+            #    set_country_flag = military_selected_flag
+            #    clr_country_flag = administrative_selected_flag
+            #    clr_country_flag = academia_selected_flag
+            #    clr_country_flag = business_selected_flag
             #}
-            #align_warlords_click = {
-            #    add_to_variable = { division_limit_extra = 4 }
-            #    add_to_variable = { corruption_variable = 5 }
+            #corruption_military_selected_click = {
+            #    clr_country_flag = military_selected_flag
             #}
+            #corruption_select_administrative_click = {
+            #    set_country_flag = administrative_selected_flag
+            #    clr_country_flag = military_selected_flag
+            #    clr_country_flag = academia_selected_flag
+            #    clr_country_flag = business_selected_flag
+            #}
+            #corruption_administrative_selected_click = {
+            #    clr_country_flag = administrative_selected_flag
+            #}
+            #corruption_select_academia_click = {
+            #    set_country_flag = academia_selected_flag
+            #    clr_country_flag = military_selected_flag
+            #    clr_country_flag = administrative_selected_flag
+            #    clr_country_flag = business_selected_flag
+            #}
+            #corruption_academia_selected_click = {
+            #    clr_country_flag = academia_selected_flag
+            #}
+            #corruption_select_business_click = {
+            #    set_country_flag = business_selected_flag
+            #    clr_country_flag = military_selected_flag
+            #    clr_country_flag = administrative_selected_flag
+            #    clr_country_flag = academia_selected_flag
+            #}
+            #corruption_business_selected_click = {
+            #    clr_country_flag = business_selected_flag
+            #}
+            #
+            #corruption_select_limited_click = {
+            #    set_country_flag = limited_selected_flag
+            #    clr_country_flag = extensive_selected_flag
+            #    clr_country_flag = massive_selected_flag
+            #    clr_country_flag = total_selected_flag
+            #    set_variable = { purge_length_var = 60 }
+            #    if = {
+            #        limit = {
+            #            has_country_flag = high_selected_flag
+            #        }
+            #        multiply_variable = { purge_length_var = 2 }
+            #    }
+            #}
+            #corruption_limited_selected_click = {
+            #    clr_country_flag = limited_selected_flag
+            #}
+            #corruption_select_extensive_click = {
+            #    set_country_flag = extensive_selected_flag
+            #    clr_country_flag = limited_selected_flag
+            #    clr_country_flag = massive_selected_flag
+            #    clr_country_flag = total_selected_flag
+            #    set_variable = { purge_length_var = 90 }
+            #    if = {
+            #        limit = {
+            #            has_country_flag = high_selected_flag
+            #        }
+            #        multiply_variable = { purge_length_var = 2 }
+            #    }
+            #}
+            #corruption_extensive_selected_click = {
+            #    clr_country_flag = extensive_selected_flag
+            #}
+            #corruption_select_massive_click = {
+            #    set_country_flag = massive_selected_flag
+            #    clr_country_flag = limited_selected_flag
+            #    clr_country_flag = extensive_selected_flag
+            #    clr_country_flag = total_selected_flag
+            #    set_variable = { purge_length_var = 120 }
+            #    if = {
+            #        limit = {
+            #            has_country_flag = high_selected_flag
+            #        }
+            #        multiply_variable = { purge_length_var = 2 }
+            #    }
+            #}
+            #corruption_massive_selected_click = {
+            #    clr_country_flag = massive_selected_flag
+            #}
+            #corruption_select_total_click = {
+            #    set_country_flag = total_selected_flag
+            #    clr_country_flag = limited_selected_flag
+            #    clr_country_flag = extensive_selected_flag
+            #    clr_country_flag = massive_selected_flag
+            #    set_variable = { purge_length_var = 180 }
+            #    if = {
+            #        limit = {
+            #            has_country_flag = high_selected_flag
+            #        }
+            #        multiply_variable = { purge_length_var = 2 }
+            #    }
+            #}
+            #corruption_total_selected_click = {
+            #    clr_country_flag = total_selected_flag
+            #}
+            #
+            #corruption_select_low_click = {
+            #    set_country_flag = low_selected_flag
+            #    if = {
+            #        limit = {
+            #            has_country_flag = high_selected_flag
+            #        }
+            #        divide_variable = { purge_length_var = 2 }
+            #    }
+            #    clr_country_flag = high_selected_flag
+            #}
+            #corruption_low_selected_click = {
+            #    clr_country_flag = low_selected_flag
+            #}
+            #corruption_select_high_click = {
+            #    set_country_flag = high_selected_flag
+            #    clr_country_flag = low_selected_flag
+            #    multiply_variable = { purge_length_var = 2 }
+            #}
+            #corruption_high_selected_click = {
+            #    clr_country_flag = high_selected_flag
+            #    divide_variable = { purge_length_var = 2 }
+            #}
+            #
+            ##civilian_focus_click = {
+            ##    subtract_from_variable = { military_civilian_slider_var = 34.6 }
+            ##    add_to_variable = { civilian_chance = 0.1 }
+            ##    subtract_from_variable = { military_chance = 0.1 }
+            ##    subtract_from_variable = { industrial_power = 25 }
+            ##}
+            ##
+            ##military_focus_click = {
+            ##    add_to_variable = { military_civilian_slider_var = 34.6 }
+            ##    add_to_variable = { military_chance = 0.1 }
+            ##    subtract_from_variable = { civilian_chance = 0.1 }
+            ##    subtract_from_variable = { industrial_power = 25 }
+            ##}
+            ##
+            ##light_focus_click = {
+            ##    add_to_variable = { light_heavy_slider_var = 34.6 }
+            ##    add_to_variable = { light_chance = 0.1 }
+            ##    subtract_from_variable = { heavy_chance = 0.1 }
+            ##    subtract_from_variable = { industrial_power = 25 }
+            ##}
+            ##
+            ##land_focus_click = {
+            ##    subtract_from_variable = { land_naval_slider_var = 34.6 }
+            ##    add_to_variable = { land_chance = 0.1 }
+            ##    subtract_from_variable = { naval_chance = 0.1 }
+            ##    subtract_from_variable = { industrial_power = 25 }
+            ##}
+            ##
+            ##naval_focus_click = {
+            ##    add_to_variable = { land_naval_slider_var = 34.6 }
+            ##    add_to_variable = { naval_chance = 0.1 }
+            ##    subtract_from_variable = { land_chance = 0.1 }
+            ##    subtract_from_variable = { industrial_power = 25 }
+            ##}
+            ##
+            ##heavy_focus_click = {
+            ##    subtract_from_variable = { light_heavy_slider_var = 34.6 }
+            ##    add_to_variable = { heavy_chance = 0.1 }
+            ##    subtract_from_variable = { light_chance = 0.1 }
+            ##    subtract_from_variable = { industrial_power = 25 }
+            ##}
+            #
+            ##increase_limit_click = {
+            ##    subtract_from_variable = { industrial_power = 10 }
+            ##    add_to_variable = { division_limit_extra = 4 }
+            ##}
+            ##align_warlords_click = {
+            ##    add_to_variable = { division_limit_extra = 4 }
+            ##    add_to_variable = { corruption_variable = 5 }
+            ##}
 		}
         
         triggers = {
-            politics_back_visible = {
-                ROOT = {
-                    OR = {
-                        has_country_flag = political_bills_flag
-                        has_country_flag = economy_bills_flag
-                        has_country_flag = military_bills_flag
-                        has_country_flag = unique_bills_flag
-                    }
-                }
-            }
-            currentbillnone_visible = {
-                NOT = {
-                    has_country_flag = law_hearing
-                }
-            }
-            currentbillyes_visible = {
-                has_country_flag = law_hearing
-            }
+        #    politics_back_visible = {
+        #        ROOT = {
+        #            OR = {
+        #                has_country_flag = political_bills_flag
+        #                has_country_flag = economy_bills_flag
+        #                has_country_flag = military_bills_flag
+        #                has_country_flag = unique_bills_flag
+        #            }
+        #        }
+        #    }
+        #    currentbillnone_visible = {
+        #        NOT = {
+        #            has_country_flag = law_hearing
+        #        }
+        #    }
+        #    currentbillyes_visible = {
+        #        has_country_flag = law_hearing
+        #    }
             international_close_click_enabled = {
                 always = no
             }
-            bribe_politicians_button_click_enabled = {
-                AND = {
-                    has_political_power > 79
-                    NOT = {
-                        has_dynamic_modifier = { modifier = bribe_politicians_modifier }
-                    }
-                }
-            }
-            welfare_programs_button_click_enabled = {
-                AND = {
-                    check_variable = { cultural_power > 80 }
-                    NOT = {
-                        has_dynamic_modifier = { modifier = welfare_programs_modifier }
-                    }
-                }
-            }
-            nerve_stapling_button_click_enabled = {
-                AND = {
-                    has_tech = punishment_spheres
-                    has_political_power > 49
-                    NOT = {
-                        has_dynamic_modifier = { modifier = nerve_stapling_modifier }
-                    }
-                }
-            }
-            increase_trade_law_button_visible = {
-                ROOT = {
-                    has_country_flag = political_bills_flag
-                }
-            }
-            increase_conscription_button_visible = {
-                ROOT = {
-                    has_country_flag = political_bills_flag
-                }
-            }
-            war_mobilization_button_visible = {
-                ROOT = {
-                    has_country_flag = political_bills_flag
-                }
-            }
-            decrease_trade_law_button_visible = {
-                ROOT = {
-                    has_country_flag = political_bills_flag
-                }
-            }
-            decrease_conscription_button_visible = {
-                ROOT = {
-                    has_country_flag = political_bills_flag
-                }
-            }
-            international_intervention_button_visible = {
-                ROOT = {
-                    has_country_flag = political_bills_flag
-                }
-            }
-            military_industrial_complex_button_visible = {
-                ROOT = {
-                    has_country_flag = economy_bills_flag
-                }
-            }
-            business_relief_button_visible = {
-                ROOT = {
-                    has_country_flag = economy_bills_flag
-                }
-            }
-            merchant_navy_draft_button_visible = {
-                ROOT = {
-                    has_country_flag = economy_bills_flag
-                }
-            }
-            military_industrial_integration_button_visible = {
-                ROOT = {
-                    has_country_flag = economy_bills_flag
-                }
-            }
-            maximized_utilisation_button_visible = {
-                ROOT = {
-                    has_country_flag = economy_bills_flag
-                }
-            }
-            orbital_cleaning_initiative_button_visible = {
-                ROOT = {
-                    has_country_flag = economy_bills_flag
-                }
-            }
-            interservice_training_button_visible = {
-                ROOT = {
-                    has_country_flag = military_bills_flag
-                }
-            }
-            democratized_logistics_button_visible = {
-                ROOT = {
-                    has_country_flag = military_bills_flag
-                }
-            }
-            surveillance_expansion_button_visible = {
-                ROOT = {
-                    has_country_flag = military_bills_flag
-                }
-            }
-            native_pacification_button_visible = {
-                ROOT = {
-                    has_country_flag = military_bills_flag
-                }
-            }
-            general_staff_expansion_button_visible = {
-                ROOT = {
-                    has_country_flag = military_bills_flag
-                }
-            }
-            research_hospital_bypass_button_visible = {
-                ROOT = {
-                    has_country_flag = military_bills_flag
-                }
-            }
-            impossible_proposition_button_visible = {
-                ROOT = {
-                    has_country_flag = unique_bills_flag
-                }
-            }
-            controversial_proposition_button_visible = {
-                ROOT = {
-                    has_country_flag = unique_bills_flag
-                }
-            }
-            divisive_proposition_button_visible = {
-                ROOT = {
-                    has_country_flag = unique_bills_flag
-                }
-            }
-            partisan_proposition_button_visible = {
-                ROOT = {
-                    has_country_flag = unique_bills_flag
-                }
-            }
-            bipartisan_proposition_button_visible = {
-                ROOT = {
-                    has_country_flag = unique_bills_flag
-                }
-            }
-            popular_proposition_button_visible = {
-                ROOT = {
-                    has_country_flag = unique_bills_flag
-                }
-            }
-
-            politicalbills_click_enabled = {
-                NOT = {
-                    has_idea = anarchy_style
-                }
-            }
-            economybills_click_enabled = {
-                NOT = {
-                    has_idea = anarchy_style
-                }
-            }
-            militarybills_click_enabled = {
-                NOT = {
-                    has_idea = anarchy_style
-                }
-            }
-            uniquebills_click_enabled = {
-                NOT = {
-                    has_idea = anarchy_style
-                }
-            }
-            increase_trade_law_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        has_country_flag = law_hearing
-                    }
-                    has_idea = free_trade
-                }
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            increase_conscription_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        has_country_flag = law_hearing
-                    }
-                    has_idea = scraping_the_barrel
-                }
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            war_mobilization_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        OR = {
-                            has_country_flag = law_hearing
-                            has_country_flag = war_mobilisation_passed
-                        }
-                    }
-                }	
-                threat > 0.24
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            decrease_trade_law_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        has_country_flag = law_hearing
-                    }
-                    has_idea = closed_economy
-                }
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            decrease_conscription_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        has_country_flag = law_hearing
-                    }
-                    has_idea = volunteer_only
-                }
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            international_intervention_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        OR = {
-                            has_country_flag = international_intervention_passed
-                            has_country_flag = law_hearing
-                        }
-                    }
-                }
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            military_industrial_complex_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        OR = { 
-                            has_country_flag = law_hearing
-                            has_country_flag = civilian_military_unlocked
-                        }
-                    }
-                }
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            business_relief_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        has_country_flag = law_hearing
-                    }
-                    OR = {
-                        has_idea = agrarian_stage
-                        has_idea = developing_stage
-                    }
-                }
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            merchant_navy_draft_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        has_country_flag = law_hearing
-                    }
-                    OR = {
-                        has_idea = agrarian_stage
-                        has_idea = developing_stage
-                    }
-                }
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            military_industrial_integration_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        OR = { 
-                            has_country_flag = law_hearing
-                            has_country_flag = land_naval_unlocked
-                        }
-                    }
-                }
-                ROOT = {
-                    has_country_flag = civilian_military_unlocked
-                }
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            maximized_utilisation_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        has_country_flag = law_hearing
-                    }
-                }
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            orbital_cleaning_initiative_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        has_country_flag = law_hearing
-                    }
-                    has_idea = democratized_logistics
-                }
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            interservice_training_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        has_country_flag = law_hearing
-                    }
-                }
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            democratized_logistics_button_click_enabled = {
-                AND = {
-                    OR = {
-                        threat > 49
-                        has_war = yes
-                        has_war_support < 0.2
-                    }
-                    NOT =  {
-                        has_idea = war_propaganda
-                    }
-                }
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            surveillance_expansion_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        has_country_flag = law_hearing
-                    }
-                    has_idea = surveillance_expansion
-                }
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            native_pacification_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        has_country_flag = law_hearing
-                    }
-                }
-                threat > 0.09
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            general_staff_expansion_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        has_country_flag = law_hearing
-                    }
-                    has_idea = general_staff_expansion
-                }
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            research_hospital_bypass_button_click_enabled = {
-                NOT = {
-                    ROOT = {
-                        has_country_flag = law_hearing
-                    }
-                    has_idea = research_hospitals
-                }
-                threat > 0.09
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            impossible_proposition_button_click_enabled = {
-                NOT = {
-                    OR = {
-                        ROOT = {
-                            has_country_flag = law_hearing
-                        }
-                        ROOT = {
-                            has_country_flag = impossible_proposition_passed
-                        }
-                    }
-                }
-                enough_pp_for_proposing = yes
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            controversial_proposition_button_click_enabled = {
-                NOT = {
-                    OR = {
-                        ROOT = {
-                            has_country_flag = law_hearing
-                        }
-                        ROOT = {
-                            has_country_flag = controversial_proposition_passed
-                        }
-                    }
-                }
-                enough_pp_for_proposing = yes
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            divisive_proposition_button_click_enabled = {
-                NOT = {
-                    OR = {
-                        ROOT = {
-                            has_country_flag = law_hearing
-                        }
-                        ROOT = {
-                            has_country_flag = divisive_proposition_passed
-                        }
-                    }
-                }
-                enough_pp_for_proposing = yes
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            partisan_proposition_button_click_enabled = {
-                NOT = {
-                    OR = {
-                        ROOT = {
-                            has_country_flag = law_hearing
-                        }
-                        ROOT = {
-                            has_country_flag = partisan_proposition_passed
-                        }
-                    }
-                }
-                enough_pp_for_proposing = yes
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            bipartisan_proposition_button_click_enabled = {
-                NOT = {
-                    OR = {
-                        ROOT = {
-                            has_country_flag = law_hearing
-                        }
-                        ROOT = {
-                            has_country_flag = bipartisan_proposition_passed
-                        }
-                    }
-                }
-                enough_pp_for_proposing = yes
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            popular_proposition_button_click_enabled = {
-                NOT = {
-                    OR = {
-                        ROOT = {
-                            has_country_flag = law_hearing
-                        }
-                        ROOT = {
-                            has_country_flag = popular_proposition_passed
-                        }
-                    }
-                }
-                enough_pp_for_proposing = yes
-                check_variable = { political_bill_cooldown_var < 1 }
-            }
-            #free_factory_increase_click_enabled = {
-            #    check_variable = { industrial_power > 99 }
-            #}
-            purgecorruption_click_enabled = {
-                AND = {
-                    OR = {
-                        has_country_flag = military_selected_flag
-                        has_country_flag = administrative_selected_flag
-                        has_country_flag = academia_selected_flag
-                        has_country_flag = business_selected_flag
-                    }
-                    OR = {
-                        has_country_flag = limited_selected_flag
-                        has_country_flag = extensive_selected_flag
-                        has_country_flag = massive_selected_flag
-                        has_country_flag = total_selected_flag
-                    }
-                    OR = {
-                        has_country_flag = low_selected_flag
-                        has_country_flag = high_selected_flag
-                    }
-                    NOT = {
-                        has_country_flag = purge_in_progress_flag
-                    }
-                }
-            }
-            corruption_select_military_visible = {
-                NOT = {
-                    has_country_flag = military_selected_flag
-                }
-            }
-            corruption_select_military_click_enabled = {
-                NOT = {
-                    has_country_flag = purge_in_progress_flag
-                }
-            }
-            corruption_military_selected_visible = {
-                has_country_flag = military_selected_flag
-            }
-            corruption_select_administrative_visible = {
-                NOT = {
-                    has_country_flag = administrative_selected_flag
-                }
-            }
-            corruption_select_administrative_click_enabled = {
-                NOT = {
-                    has_country_flag = purge_in_progress_flag
-                }
-            }
-            corruption_administrative_selected_visible = {
-                has_country_flag = administrative_selected_flag
-            }
-            corruption_select_academia_visible = {
-                NOT = {
-                    has_country_flag = academia_selected_flag
-                }
-            }
-            corruption_select_academia_click_enabled = {
-                NOT = {
-                    has_country_flag = purge_in_progress_flag
-                }
-            }
-            corruption_academia_selected_visible = {
-                has_country_flag = academia_selected_flag
-            }
-            corruption_select_business_visible = {
-                NOT = {
-                    has_country_flag = business_selected_flag
-                }
-            }
-            corruption_select_business_click_enabled = {
-                NOT = {
-                    has_country_flag = purge_in_progress_flag
-                }
-            }
-            corruption_business_selected_visible = {
-                has_country_flag = business_selected_flag
-            }
-
-            corruption_select_limited_visible = {
-                NOT = {
-                    has_country_flag = limited_selected_flag
-                }
-            }
-            corruption_select_limited_click_enabled = {
-                NOT = {
-                    has_country_flag = purge_in_progress_flag
-                }
-            }
-            corruption_limited_selected_visible = {
-                has_country_flag = limited_selected_flag
-            }
-            corruption_select_extensive_visible = {
-                NOT = {
-                    has_country_flag = extensive_selected_flag
-                }
-            }
-            corruption_select_extensive_click_enabled = {
-                NOT = {
-                    has_country_flag = purge_in_progress_flag
-                }
-            }
-            corruption_extensive_selected_visible = {
-                has_country_flag = extensive_selected_flag
-            }
-            corruption_select_massive_visible = {
-                NOT = {
-                    has_country_flag = massive_selected_flag
-                }
-            }
-            corruption_select_massive_click_enabled = {
-                NOT = {
-                    has_country_flag = purge_in_progress_flag
-                }
-            }
-            corruption_massive_selected_visible = {
-                has_country_flag = massive_selected_flag
-            }
-            corruption_select_total_visible = {
-                NOT = {
-                    has_country_flag = total_selected_flag
-                }
-            }
-            corruption_select_total_click_enabled = {
-                NOT = {
-                    has_country_flag = purge_in_progress_flag
-                }
-            }
-            corruption_total_selected_visible = {
-                has_country_flag = total_selected_flag
-            }
-            
-            corruption_select_low_visible = {
-                NOT = {
-                    has_country_flag = low_selected_flag
-                }
-            }
-            corruption_select_low_click_enabled = {
-                NOT = {
-                    has_country_flag = purge_in_progress_flag
-                }
-            }
-            corruption_low_selected_visible = {
-                has_country_flag = low_selected_flag
-            }
-            corruption_select_high_visible = {
-                NOT = {
-                    has_country_flag = high_selected_flag
-                }
-            }
-            corruption_select_high_click_enabled = {
-                NOT = {
-                    has_country_flag = purge_in_progress_flag
-                }
-            }
-            corruption_high_selected_visible = {
-                has_country_flag = high_selected_flag
-            }
-
-            #civilian_focus_click_enabled = {
-            #    ROOT = {
-            #        has_country_flag = civilian_military_unlocked
-            #    }
-            #    check_variable = { civilian_chance < 1.2 }
-            #    check_variable = { industrial_power > 24 }
-            #}
-            #military_focus_click_enabled = {
-            #    ROOT = {
-            #        has_country_flag = civilian_military_unlocked
-            #    }
-            #    check_variable = { military_chance < 1.2 }
-            #    check_variable = { industrial_power > 24 }
-            #}
-            #light_focus_click_enabled = {
-            #    check_variable = { light_chance < 1.2 }
-            #    check_variable = { industrial_power > 24 }
-            #}
-            #heavy_focus_click_enabled = {
-            #    check_variable = { heavy_chance < 1.2 }
-            #    check_variable = { industrial_power > 24 }
-            #}
-            #land_focus_click_enabled = {
-            #    ROOT = {
-            #        has_country_flag = land_naval_unlocked
-            #    }
-            #    check_variable = { land_chance < 1.2 }
-            #    check_variable = { industrial_power > 24 }
-            #}
-            #naval_focus_click_enabled = {
-            #    ROOT = {
-            #        has_country_flag = land_naval_unlocked
-            #    }
-            #    check_variable = { naval_chance < 1.2 }
-            #    check_variable = { industrial_power > 24 }
-            #}
-
-            #increase_limit_click_enabled = {
-            #    check_variable = { industrial_power > 9 }
-            #    check_variable = { division_limit < 297 }
-            #}
-            #align_warlords_click_enabled = {
-            #    check_variable = { division_limit < 197 }
-            #}
+        #    bribe_politicians_button_click_enabled = {
+        #        AND = {
+        #            has_political_power > 79
+        #            NOT = {
+        #                has_dynamic_modifier = { modifier = bribe_politicians_modifier }
+        #            }
+        #        }
+        #    }
+        #    welfare_programs_button_click_enabled = {
+        #        AND = {
+        #            check_variable = { cultural_power > 80 }
+        #            NOT = {
+        #                has_dynamic_modifier = { modifier = welfare_programs_modifier }
+        #            }
+        #        }
+        #    }
+        #    nerve_stapling_button_click_enabled = {
+        #        AND = {
+        #            has_tech = punishment_spheres
+        #            has_political_power > 49
+        #            NOT = {
+        #                has_dynamic_modifier = { modifier = nerve_stapling_modifier }
+        #            }
+        #        }
+        #    }
+        #    increase_trade_law_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = political_bills_flag
+        #        }
+        #    }
+        #    increase_conscription_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = political_bills_flag
+        #        }
+        #    }
+        #    war_mobilization_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = political_bills_flag
+        #        }
+        #    }
+        #    decrease_trade_law_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = political_bills_flag
+        #        }
+        #    }
+        #    decrease_conscription_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = political_bills_flag
+        #        }
+        #    }
+        #    international_intervention_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = political_bills_flag
+        #        }
+        #    }
+        #    military_industrial_complex_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = economy_bills_flag
+        #        }
+        #    }
+        #    business_relief_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = economy_bills_flag
+        #        }
+        #    }
+        #    merchant_navy_draft_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = economy_bills_flag
+        #        }
+        #    }
+        #    military_industrial_integration_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = economy_bills_flag
+        #        }
+        #    }
+        #    maximized_utilisation_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = economy_bills_flag
+        #        }
+        #    }
+        #    orbital_cleaning_initiative_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = economy_bills_flag
+        #        }
+        #    }
+        #    interservice_training_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = military_bills_flag
+        #        }
+        #    }
+        #    democratized_logistics_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = military_bills_flag
+        #        }
+        #    }
+        #    surveillance_expansion_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = military_bills_flag
+        #        }
+        #    }
+        #    native_pacification_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = military_bills_flag
+        #        }
+        #    }
+        #    general_staff_expansion_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = military_bills_flag
+        #        }
+        #    }
+        #    research_hospital_bypass_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = military_bills_flag
+        #        }
+        #    }
+        #    impossible_proposition_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = unique_bills_flag
+        #        }
+        #    }
+        #    controversial_proposition_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = unique_bills_flag
+        #        }
+        #    }
+        #    divisive_proposition_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = unique_bills_flag
+        #        }
+        #    }
+        #    partisan_proposition_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = unique_bills_flag
+        #        }
+        #    }
+        #    bipartisan_proposition_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = unique_bills_flag
+        #        }
+        #    }
+        #    popular_proposition_button_visible = {
+        #        ROOT = {
+        #            has_country_flag = unique_bills_flag
+        #        }
+        #    }
+        #
+        #    politicalbills_click_enabled = {
+        #        NOT = {
+        #            has_idea = anarchy_style
+        #        }
+        #    }
+        #    economybills_click_enabled = {
+        #        NOT = {
+        #            has_idea = anarchy_style
+        #        }
+        #    }
+        #    militarybills_click_enabled = {
+        #        NOT = {
+        #            has_idea = anarchy_style
+        #        }
+        #    }
+        #    uniquebills_click_enabled = {
+        #        NOT = {
+        #            has_idea = anarchy_style
+        #        }
+        #    }
+        #    increase_trade_law_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                has_country_flag = law_hearing
+        #            }
+        #            has_idea = free_trade
+        #        }
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    increase_conscription_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                has_country_flag = law_hearing
+        #            }
+        #            has_idea = scraping_the_barrel
+        #        }
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    war_mobilization_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                OR = {
+        #                    has_country_flag = law_hearing
+        #                    has_country_flag = war_mobilisation_passed
+        #                }
+        #            }
+        #        }	
+        #        threat > 0.24
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    decrease_trade_law_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                has_country_flag = law_hearing
+        #            }
+        #            has_idea = closed_economy
+        #        }
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    decrease_conscription_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                has_country_flag = law_hearing
+        #            }
+        #            has_idea = volunteer_only
+        #        }
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    international_intervention_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                OR = {
+        #                    has_country_flag = international_intervention_passed
+        #                    has_country_flag = law_hearing
+        #                }
+        #            }
+        #        }
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    military_industrial_complex_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                OR = { 
+        #                    has_country_flag = law_hearing
+        #                    has_country_flag = civilian_military_unlocked
+        #                }
+        #            }
+        #        }
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    business_relief_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                has_country_flag = law_hearing
+        #            }
+        #            OR = {
+        #                has_idea = agrarian_stage
+        #                has_idea = developing_stage
+        #            }
+        #        }
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    merchant_navy_draft_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                has_country_flag = law_hearing
+        #            }
+        #            OR = {
+        #                has_idea = agrarian_stage
+        #                has_idea = developing_stage
+        #            }
+        #        }
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    military_industrial_integration_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                OR = { 
+        #                    has_country_flag = law_hearing
+        #                    has_country_flag = land_naval_unlocked
+        #                }
+        #            }
+        #        }
+        #        ROOT = {
+        #            has_country_flag = civilian_military_unlocked
+        #        }
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    maximized_utilisation_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                has_country_flag = law_hearing
+        #            }
+        #        }
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    orbital_cleaning_initiative_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                has_country_flag = law_hearing
+        #            }
+        #            has_idea = democratized_logistics
+        #        }
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    interservice_training_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                has_country_flag = law_hearing
+        #            }
+        #        }
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    democratized_logistics_button_click_enabled = {
+        #        AND = {
+        #            OR = {
+        #                threat > 49
+        #                has_war = yes
+        #                has_war_support < 0.2
+        #            }
+        #            NOT =  {
+        #                has_idea = war_propaganda
+        #            }
+        #        }
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    surveillance_expansion_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                has_country_flag = law_hearing
+        #            }
+        #            has_idea = surveillance_expansion
+        #        }
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    native_pacification_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                has_country_flag = law_hearing
+        #            }
+        #        }
+        #        threat > 0.09
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    general_staff_expansion_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                has_country_flag = law_hearing
+        #            }
+        #            has_idea = general_staff_expansion
+        #        }
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    research_hospital_bypass_button_click_enabled = {
+        #        NOT = {
+        #            ROOT = {
+        #                has_country_flag = law_hearing
+        #            }
+        #            has_idea = research_hospitals
+        #        }
+        #        threat > 0.09
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    impossible_proposition_button_click_enabled = {
+        #        NOT = {
+        #            OR = {
+        #                ROOT = {
+        #                    has_country_flag = law_hearing
+        #                }
+        #                ROOT = {
+        #                    has_country_flag = impossible_proposition_passed
+        #                }
+        #            }
+        #        }
+        #        enough_pp_for_proposing = yes
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    controversial_proposition_button_click_enabled = {
+        #        NOT = {
+        #            OR = {
+        #                ROOT = {
+        #                    has_country_flag = law_hearing
+        #                }
+        #                ROOT = {
+        #                    has_country_flag = controversial_proposition_passed
+        #                }
+        #            }
+        #        }
+        #        enough_pp_for_proposing = yes
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    divisive_proposition_button_click_enabled = {
+        #        NOT = {
+        #            OR = {
+        #                ROOT = {
+        #                    has_country_flag = law_hearing
+        #                }
+        #                ROOT = {
+        #                    has_country_flag = divisive_proposition_passed
+        #                }
+        #            }
+        #        }
+        #        enough_pp_for_proposing = yes
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    partisan_proposition_button_click_enabled = {
+        #        NOT = {
+        #            OR = {
+        #                ROOT = {
+        #                    has_country_flag = law_hearing
+        #                }
+        #                ROOT = {
+        #                    has_country_flag = partisan_proposition_passed
+        #                }
+        #            }
+        #        }
+        #        enough_pp_for_proposing = yes
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    bipartisan_proposition_button_click_enabled = {
+        #        NOT = {
+        #            OR = {
+        #                ROOT = {
+        #                    has_country_flag = law_hearing
+        #                }
+        #                ROOT = {
+        #                    has_country_flag = bipartisan_proposition_passed
+        #                }
+        #            }
+        #        }
+        #        enough_pp_for_proposing = yes
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    popular_proposition_button_click_enabled = {
+        #        NOT = {
+        #            OR = {
+        #                ROOT = {
+        #                    has_country_flag = law_hearing
+        #                }
+        #                ROOT = {
+        #                    has_country_flag = popular_proposition_passed
+        #                }
+        #            }
+        #        }
+        #        enough_pp_for_proposing = yes
+        #        check_variable = { political_bill_cooldown_var < 1 }
+        #    }
+        #    #free_factory_increase_click_enabled = {
+        #    #    check_variable = { industrial_power > 99 }
+        #    #}
+        #    purgecorruption_click_enabled = {
+        #        AND = {
+        #            OR = {
+        #                has_country_flag = military_selected_flag
+        #                has_country_flag = administrative_selected_flag
+        #                has_country_flag = academia_selected_flag
+        #                has_country_flag = business_selected_flag
+        #            }
+        #            OR = {
+        #                has_country_flag = limited_selected_flag
+        #                has_country_flag = extensive_selected_flag
+        #                has_country_flag = massive_selected_flag
+        #                has_country_flag = total_selected_flag
+        #            }
+        #            OR = {
+        #                has_country_flag = low_selected_flag
+        #                has_country_flag = high_selected_flag
+        #            }
+        #            NOT = {
+        #                has_country_flag = purge_in_progress_flag
+        #            }
+        #        }
+        #    }
+        #    corruption_select_military_visible = {
+        #        NOT = {
+        #            has_country_flag = military_selected_flag
+        #        }
+        #    }
+        #    corruption_select_military_click_enabled = {
+        #        NOT = {
+        #            has_country_flag = purge_in_progress_flag
+        #        }
+        #    }
+        #    corruption_military_selected_visible = {
+        #        has_country_flag = military_selected_flag
+        #    }
+        #    corruption_select_administrative_visible = {
+        #        NOT = {
+        #            has_country_flag = administrative_selected_flag
+        #        }
+        #    }
+        #    corruption_select_administrative_click_enabled = {
+        #        NOT = {
+        #            has_country_flag = purge_in_progress_flag
+        #        }
+        #    }
+        #    corruption_administrative_selected_visible = {
+        #        has_country_flag = administrative_selected_flag
+        #    }
+        #    corruption_select_academia_visible = {
+        #        NOT = {
+        #            has_country_flag = academia_selected_flag
+        #        }
+        #    }
+        #    corruption_select_academia_click_enabled = {
+        #        NOT = {
+        #            has_country_flag = purge_in_progress_flag
+        #        }
+        #    }
+        #    corruption_academia_selected_visible = {
+        #        has_country_flag = academia_selected_flag
+        #    }
+        #    corruption_select_business_visible = {
+        #        NOT = {
+        #            has_country_flag = business_selected_flag
+        #        }
+        #    }
+        #    corruption_select_business_click_enabled = {
+        #        NOT = {
+        #            has_country_flag = purge_in_progress_flag
+        #        }
+        #    }
+        #    corruption_business_selected_visible = {
+        #        has_country_flag = business_selected_flag
+        #    }
+        #
+        #    corruption_select_limited_visible = {
+        #        NOT = {
+        #            has_country_flag = limited_selected_flag
+        #        }
+        #    }
+        #    corruption_select_limited_click_enabled = {
+        #        NOT = {
+        #            has_country_flag = purge_in_progress_flag
+        #        }
+        #    }
+        #    corruption_limited_selected_visible = {
+        #        has_country_flag = limited_selected_flag
+        #    }
+        #    corruption_select_extensive_visible = {
+        #        NOT = {
+        #            has_country_flag = extensive_selected_flag
+        #        }
+        #    }
+        #    corruption_select_extensive_click_enabled = {
+        #        NOT = {
+        #            has_country_flag = purge_in_progress_flag
+        #        }
+        #    }
+        #    corruption_extensive_selected_visible = {
+        #        has_country_flag = extensive_selected_flag
+        #    }
+        #    corruption_select_massive_visible = {
+        #        NOT = {
+        #            has_country_flag = massive_selected_flag
+        #        }
+        #    }
+        #    corruption_select_massive_click_enabled = {
+        #        NOT = {
+        #            has_country_flag = purge_in_progress_flag
+        #        }
+        #    }
+        #    corruption_massive_selected_visible = {
+        #        has_country_flag = massive_selected_flag
+        #    }
+        #    corruption_select_total_visible = {
+        #        NOT = {
+        #            has_country_flag = total_selected_flag
+        #        }
+        #    }
+        #    corruption_select_total_click_enabled = {
+        #        NOT = {
+        #            has_country_flag = purge_in_progress_flag
+        #        }
+        #    }
+        #    corruption_total_selected_visible = {
+        #        has_country_flag = total_selected_flag
+        #    }
+        #    
+        #    corruption_select_low_visible = {
+        #        NOT = {
+        #            has_country_flag = low_selected_flag
+        #        }
+        #    }
+        #    corruption_select_low_click_enabled = {
+        #        NOT = {
+        #            has_country_flag = purge_in_progress_flag
+        #        }
+        #    }
+        #    corruption_low_selected_visible = {
+        #        has_country_flag = low_selected_flag
+        #    }
+        #    corruption_select_high_visible = {
+        #        NOT = {
+        #            has_country_flag = high_selected_flag
+        #        }
+        #    }
+        #    corruption_select_high_click_enabled = {
+        #        NOT = {
+        #            has_country_flag = purge_in_progress_flag
+        #        }
+        #    }
+        #    corruption_high_selected_visible = {
+        #        has_country_flag = high_selected_flag
+        #    }
+        #
+        #    #civilian_focus_click_enabled = {
+        #    #    ROOT = {
+        #    #        has_country_flag = civilian_military_unlocked
+        #    #    }
+        #    #    check_variable = { civilian_chance < 1.2 }
+        #    #    check_variable = { industrial_power > 24 }
+        #    #}
+        #    #military_focus_click_enabled = {
+        #    #    ROOT = {
+        #    #        has_country_flag = civilian_military_unlocked
+        #    #    }
+        #    #    check_variable = { military_chance < 1.2 }
+        #    #    check_variable = { industrial_power > 24 }
+        #    #}
+        #    #light_focus_click_enabled = {
+        #    #    check_variable = { light_chance < 1.2 }
+        #    #    check_variable = { industrial_power > 24 }
+        #    #}
+        #    #heavy_focus_click_enabled = {
+        #    #    check_variable = { heavy_chance < 1.2 }
+        #    #    check_variable = { industrial_power > 24 }
+        #    #}
+        #    #land_focus_click_enabled = {
+        #    #    ROOT = {
+        #    #        has_country_flag = land_naval_unlocked
+        #    #    }
+        #    #    check_variable = { land_chance < 1.2 }
+        #    #    check_variable = { industrial_power > 24 }
+        #    #}
+        #    #naval_focus_click_enabled = {
+        #    #    ROOT = {
+        #    #        has_country_flag = land_naval_unlocked
+        #    #    }
+        #    #    check_variable = { naval_chance < 1.2 }
+        #    #    check_variable = { industrial_power > 24 }
+        #    #}
+        #
+        #    #increase_limit_click_enabled = {
+        #    #    check_variable = { industrial_power > 9 }
+        #    #    check_variable = { division_limit < 297 }
+        #    #}
+        #    #align_warlords_click_enabled = {
+        #    #    check_variable = { division_limit < 197 }
+        #    #}
         }
 
-		properties = {
-			corruption_progressbar = {
-				frame = corruption_variable
-			}
-			#free_factory_progressbar = {
-			#	frame = free_factory_progress
-			#}
-			#military_civilian_slider = { #Start is at 555 and end is at 720; that's just my guess tho, feel free to test and, if necessary, change this. Also change the variables in on_actions. 
-			#	x = military_civilian_slider_var
-			#	y = 485
-			#}
-			#light_heavy_slider = {
-			#	x = light_heavy_slider_var
-			#	y = 517
-			#}
-			#land_naval_slider = {
-			#	x = land_naval_slider_var
-			#	y = 548
-			#}
-		}
+		#properties = {
+		#	corruption_progressbar = {
+		#		frame = corruption_variable
+		#	}
+		#	#free_factory_progressbar = {
+		#	#	frame = free_factory_progress
+		#	#}
+		#	#military_civilian_slider = { #Start is at 555 and end is at 720; that's just my guess tho, feel free to test and, if necessary, change this. Also change the variables in on_actions. 
+		#	#	x = military_civilian_slider_var
+		#	#	y = 485
+		#	#}
+		#	#light_heavy_slider = {
+		#	#	x = light_heavy_slider_var
+		#	#	y = 517
+		#	#}
+		#	#land_naval_slider = {
+		#	#	x = land_naval_slider_var
+		#	#	y = 548
+		#	#}
+		#}
 		
 		dynamic_lists = {
 		}
@@ -1976,9 +1976,6 @@ scripted_gui = {
         #ai_test_variance = 0.5
         
         ai_check = {
-        }
-        
-        ai_check_scope = {
         }
         
         ai_weights = {
