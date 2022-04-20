@@ -568,10 +568,10 @@ scripted_gui = {
                 introduce_proposition = yes
             }
 
-            free_factory_increase_click = {
-                subtract_from_variable = { industrial_power = 100 }
-                add_to_variable = { free_factory_progress = 50 }
-            }
+            #free_factory_increase_click = {
+            #    subtract_from_variable = { industrial_power = 100 }
+            #    add_to_variable = { free_factory_progress = 50 }
+            #}
 
             purgecorruption_click = {
                 if = {
@@ -1232,47 +1232,47 @@ scripted_gui = {
                 divide_variable = { purge_length_var = 2 }
             }
 
-            civilian_focus_click = {
-                subtract_from_variable = { military_civilian_slider_var = 34.6 }
-                add_to_variable = { civilian_chance = 0.1 }
-                subtract_from_variable = { military_chance = 0.1 }
-                subtract_from_variable = { industrial_power = 25 }
-            }
-
-            military_focus_click = {
-                add_to_variable = { military_civilian_slider_var = 34.6 }
-                add_to_variable = { military_chance = 0.1 }
-                subtract_from_variable = { civilian_chance = 0.1 }
-                subtract_from_variable = { industrial_power = 25 }
-            }
-
-            light_focus_click = {
-                add_to_variable = { light_heavy_slider_var = 34.6 }
-                add_to_variable = { light_chance = 0.1 }
-                subtract_from_variable = { heavy_chance = 0.1 }
-                subtract_from_variable = { industrial_power = 25 }
-            }
-
-            land_focus_click = {
-                subtract_from_variable = { land_naval_slider_var = 34.6 }
-                add_to_variable = { land_chance = 0.1 }
-                subtract_from_variable = { naval_chance = 0.1 }
-                subtract_from_variable = { industrial_power = 25 }
-            }
-
-            naval_focus_click = {
-                add_to_variable = { land_naval_slider_var = 34.6 }
-                add_to_variable = { naval_chance = 0.1 }
-                subtract_from_variable = { land_chance = 0.1 }
-                subtract_from_variable = { industrial_power = 25 }
-            }
-
-            heavy_focus_click = {
-                subtract_from_variable = { light_heavy_slider_var = 34.6 }
-                add_to_variable = { heavy_chance = 0.1 }
-                subtract_from_variable = { light_chance = 0.1 }
-                subtract_from_variable = { industrial_power = 25 }
-            }
+            #civilian_focus_click = {
+            #    subtract_from_variable = { military_civilian_slider_var = 34.6 }
+            #    add_to_variable = { civilian_chance = 0.1 }
+            #    subtract_from_variable = { military_chance = 0.1 }
+            #    subtract_from_variable = { industrial_power = 25 }
+            #}
+            #
+            #military_focus_click = {
+            #    add_to_variable = { military_civilian_slider_var = 34.6 }
+            #    add_to_variable = { military_chance = 0.1 }
+            #    subtract_from_variable = { civilian_chance = 0.1 }
+            #    subtract_from_variable = { industrial_power = 25 }
+            #}
+            #
+            #light_focus_click = {
+            #    add_to_variable = { light_heavy_slider_var = 34.6 }
+            #    add_to_variable = { light_chance = 0.1 }
+            #    subtract_from_variable = { heavy_chance = 0.1 }
+            #    subtract_from_variable = { industrial_power = 25 }
+            #}
+            #
+            #land_focus_click = {
+            #    subtract_from_variable = { land_naval_slider_var = 34.6 }
+            #    add_to_variable = { land_chance = 0.1 }
+            #    subtract_from_variable = { naval_chance = 0.1 }
+            #    subtract_from_variable = { industrial_power = 25 }
+            #}
+            #
+            #naval_focus_click = {
+            #    add_to_variable = { land_naval_slider_var = 34.6 }
+            #    add_to_variable = { naval_chance = 0.1 }
+            #    subtract_from_variable = { land_chance = 0.1 }
+            #    subtract_from_variable = { industrial_power = 25 }
+            #}
+            #
+            #heavy_focus_click = {
+            #    subtract_from_variable = { light_heavy_slider_var = 34.6 }
+            #    add_to_variable = { heavy_chance = 0.1 }
+            #    subtract_from_variable = { light_chance = 0.1 }
+            #    subtract_from_variable = { industrial_power = 25 }
+            #}
 
             #increase_limit_click = {
             #    subtract_from_variable = { industrial_power = 10 }
@@ -1302,6 +1302,9 @@ scripted_gui = {
             }
             currentbillyes_visible = {
                 has_country_flag = law_hearing
+            }
+            international_close_click_enabled = {
+                always = no
             }
             bribe_politicians_button_click_enabled = {
                 AND = {
@@ -1736,9 +1739,9 @@ scripted_gui = {
                 enough_pp_for_proposing = yes
                 check_variable = { political_bill_cooldown_var < 1 }
             }
-            free_factory_increase_click_enabled = {
-                check_variable = { industrial_power > 99 }
-            }
+            #free_factory_increase_click_enabled = {
+            #    check_variable = { industrial_power > 99 }
+            #}
             purgecorruption_click_enabled = {
                 AND = {
                     OR = {
@@ -1895,42 +1898,42 @@ scripted_gui = {
                 has_country_flag = high_selected_flag
             }
 
-            civilian_focus_click_enabled = {
-                ROOT = {
-                    has_country_flag = civilian_military_unlocked
-                }
-                check_variable = { civilian_chance < 1.2 }
-                check_variable = { industrial_power > 24 }
-            }
-            military_focus_click_enabled = {
-                ROOT = {
-                    has_country_flag = civilian_military_unlocked
-                }
-                check_variable = { military_chance < 1.2 }
-                check_variable = { industrial_power > 24 }
-            }
-            light_focus_click_enabled = {
-                check_variable = { light_chance < 1.2 }
-                check_variable = { industrial_power > 24 }
-            }
-            heavy_focus_click_enabled = {
-                check_variable = { heavy_chance < 1.2 }
-                check_variable = { industrial_power > 24 }
-            }
-            land_focus_click_enabled = {
-                ROOT = {
-                    has_country_flag = land_naval_unlocked
-                }
-                check_variable = { land_chance < 1.2 }
-                check_variable = { industrial_power > 24 }
-            }
-            naval_focus_click_enabled = {
-                ROOT = {
-                    has_country_flag = land_naval_unlocked
-                }
-                check_variable = { naval_chance < 1.2 }
-                check_variable = { industrial_power > 24 }
-            }
+            #civilian_focus_click_enabled = {
+            #    ROOT = {
+            #        has_country_flag = civilian_military_unlocked
+            #    }
+            #    check_variable = { civilian_chance < 1.2 }
+            #    check_variable = { industrial_power > 24 }
+            #}
+            #military_focus_click_enabled = {
+            #    ROOT = {
+            #        has_country_flag = civilian_military_unlocked
+            #    }
+            #    check_variable = { military_chance < 1.2 }
+            #    check_variable = { industrial_power > 24 }
+            #}
+            #light_focus_click_enabled = {
+            #    check_variable = { light_chance < 1.2 }
+            #    check_variable = { industrial_power > 24 }
+            #}
+            #heavy_focus_click_enabled = {
+            #    check_variable = { heavy_chance < 1.2 }
+            #    check_variable = { industrial_power > 24 }
+            #}
+            #land_focus_click_enabled = {
+            #    ROOT = {
+            #        has_country_flag = land_naval_unlocked
+            #    }
+            #    check_variable = { land_chance < 1.2 }
+            #    check_variable = { industrial_power > 24 }
+            #}
+            #naval_focus_click_enabled = {
+            #    ROOT = {
+            #        has_country_flag = land_naval_unlocked
+            #    }
+            #    check_variable = { naval_chance < 1.2 }
+            #    check_variable = { industrial_power > 24 }
+            #}
 
             #increase_limit_click_enabled = {
             #    check_variable = { industrial_power > 9 }
@@ -1945,32 +1948,32 @@ scripted_gui = {
 			corruption_progressbar = {
 				frame = corruption_variable
 			}
-			free_factory_progressbar = {
-				frame = free_factory_progress
-			}
-			military_civilian_slider = { #Start is at 555 and end is at 720; that's just my guess tho, feel free to test and, if necessary, change this. Also change the variables in on_actions. 
-				x = military_civilian_slider_var
-				y = 485
-			}
-			light_heavy_slider = {
-				x = light_heavy_slider_var
-				y = 517
-			}
-			land_naval_slider = {
-				x = land_naval_slider_var
-				y = 548
-			}
+			#free_factory_progressbar = {
+			#	frame = free_factory_progress
+			#}
+			#military_civilian_slider = { #Start is at 555 and end is at 720; that's just my guess tho, feel free to test and, if necessary, change this. Also change the variables in on_actions. 
+			#	x = military_civilian_slider_var
+			#	y = 485
+			#}
+			#light_heavy_slider = {
+			#	x = light_heavy_slider_var
+			#	y = 517
+			#}
+			#land_naval_slider = {
+			#	x = land_naval_slider_var
+			#	y = 548
+			#}
 		}
 		
 		dynamic_lists = {
 		}
         
         ai_enabled = {
-            always = yes
+            always = no
         }
         
-        ai_test_interval = 290
-        ai_test_variance = 0.5
+        #ai_test_interval = 290
+        #ai_test_variance = 0.5
         
         ai_check = {
         }
