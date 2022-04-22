@@ -77,3 +77,52 @@ decrease_devastation = {
 		add_dynamic_modifier = { modifier = significant_devastation }
 	}
 }
+
+calculate_current_devastation = {
+	clear_variable = ROOT.current_devastation
+	every_owned_state = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = minor_devastation
+			}
+		}
+		set_variable = { THIS.state_devastation = 0 }
+		add_to_variable = { ROOT.current_devastation = THIS.state_devastation }
+	}
+	every_owned_state = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = notable_devastation
+			}
+		}
+		set_variable = { THIS.state_devastation = 1 }
+		add_to_variable = { ROOT.current_devastation = THIS.state_devastation }
+	}
+	every_owned_state = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = major_devastation
+			}
+		}
+		set_variable = { THIS.state_devastation = 2 }
+		add_to_variable = { ROOT.current_devastation = THIS.state_devastation }
+	}
+	every_owned_state = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = significant_devastation
+			}
+		}
+		set_variable = { THIS.state_devastation = 3 }
+		add_to_variable = { ROOT.current_devastation = THIS.state_devastation }
+	}
+	every_owned_state = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = terminal_devastation
+			}
+		}
+		set_variable = { THIS.state_devastation = 4 }
+		add_to_variable = { ROOT.current_devastation = THIS.state_devastation }
+	}
+}

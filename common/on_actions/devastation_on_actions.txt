@@ -9,11 +9,11 @@ on_actions = {
             }
             every_country = {
                 set_variable = { devastation_timeout = 60 }
+				calculate_current_devastation = yes
                 set_variable = { max_devastation = num_controlled_states }
                 multiply_variable = { max_devastation = 5 }
-                set_variable = { current_devastation = 0 }
                 set_variable = { devastation_modifier = 1 }
-                set_variable = { devastation_ratio = current_devastation }
+                set_variable = { devastation_ratio = ROOT.current_devastation }
                 divide_variable = { devastation_ratio = max_devastation }
                 set_variable = { devastation_ratio_new_factory = num_of_civilian_factories }
                 multiply_variable = { devastation_ratio_new_factory = 1.25 }
@@ -53,7 +53,6 @@ on_actions = {
 				random_list = {
 					5 = {
 						increase_devastation_random_state = yes
-						add_to_variable = { current_devastation = 1 }
 					}
 					95 = {
 
@@ -72,7 +71,6 @@ on_actions = {
 				random_list = {
 					10 = {
 						increase_devastation_random_state = yes
-						add_to_variable = { current_devastation = 1 }
 					}
 					90 = {
 
@@ -91,7 +89,6 @@ on_actions = {
 				random_list = {
 					15 = {
 						increase_devastation_random_state = yes
-						add_to_variable = { current_devastation = 1 }
 					}
 					85 = {
 
@@ -110,7 +107,6 @@ on_actions = {
 				random_list = {
 					20 = {
 						increase_devastation_random_state = yes
-						add_to_variable = { current_devastation = 1 }
 					}
 					80 = {
 
@@ -129,7 +125,6 @@ on_actions = {
 				random_list = {
 					25 = {
 						increase_devastation_random_state = yes
-						add_to_variable = { current_devastation = 1 }
 					}
 					75 = {
 
@@ -148,7 +143,6 @@ on_actions = {
 				random_list = {
 					30 = {
 						increase_devastation_random_state = yes
-						add_to_variable = { current_devastation = 1 }
 					}
 					70 = {
 
@@ -167,7 +161,6 @@ on_actions = {
 				random_list = {
 					35 = {
 						increase_devastation_random_state = yes
-						add_to_variable = { current_devastation = 1 }
 					}
 					65 = {
 
@@ -186,7 +179,6 @@ on_actions = {
 				random_list = {
 					40 = {
 						increase_devastation_random_state = yes
-						add_to_variable = { current_devastation = 1 }
 					}
 					60 = {
 
@@ -205,7 +197,6 @@ on_actions = {
 				random_list = {
 					45 = {
 						increase_devastation_random_state = yes
-						add_to_variable = { current_devastation = 1 }
 					}
 					55 = {
 
@@ -223,7 +214,6 @@ on_actions = {
 				random_list = {
 					50 = {
 						increase_devastation_random_state = yes
-						add_to_variable = { current_devastation = 1 }
 					}
 					50 = {
 
@@ -313,12 +303,13 @@ on_actions = {
     }
 	on_weekly = {
 		effect = {
+			calculate_current_devastation = yes
 			clear_variable = max_devastation
             set_variable = { max_devastation = num_controlled_states }
             multiply_variable = { max_devastation = 5 }
             multiply_variable = { devastation_modifier = 5 }
 			clear_variable = devastation_ratio
-			set_variable = { devastation_ratio = current_devastation }
+			set_variable = { devastation_ratio = ROOT.current_devastation }
 			divide_variable = { devastation_ratio = max_devastation }
 			if = {
 				limit = {
