@@ -5,2621 +5,2621 @@
 ## DM if things need changing   ##
 ##################################
 
-technologies = {
-
-	@2190 = 1
-	@2195 = 4
-	@2200 = 7
-	@2202 = 10
-	@2203 = 13
-	@2205 = 16
-	@2206 = 19
-
-	## Submarine Hulls
-	sub_1_hull = {
-		enable_equipments = {
-			ship_hull_submarine_1
-		}
-
-		enable_equipment_modules = {
-			ship_torpedo_sub_1
-			sub_ship_engine_1
-		}
-
-		path = {
-			leads_to_tech = sub_2_hull
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = torpedo_1
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 2190
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2190 }
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			be_naval_tech
-			be_sub_tech
-		}
-	}
-
-	sub_2_hull = {
-		enable_equipments = {
-			ship_hull_submarine_2
-		}
-
-		enable_equipment_modules = {
-			ship_torpedo_sub_2
-			sub_ship_engine_2
-		}
-
-		path = {
-			leads_to_tech = sub_3_hull
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = snorkel_1
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = sub_stealth_1
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 2200
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2200 }
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			be_naval_tech
-			be_sub_tech
-		}
-	}
-
-	sub_3_hull = {
-		enable_equipments = {
-			ship_hull_submarine_3
-		}
-
-		enable_equipment_modules = {
-			ship_torpedo_sub_3
-			sub_ship_engine_3
-		}
-
-		path = {
-			leads_to_tech = sub_4_hull
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 2203
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2203 }
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			be_naval_tech
-			be_sub_tech
-		}
-	}
-
-	sub_4_hull = {
-		enable_equipments = {
-			ship_hull_submarine_4
-		}
-
-		enable_equipment_modules = {
-			ship_torpedo_sub_4
-			sub_ship_engine_4
-		}
-
-		research_cost = 1.5
-
-		start_year = 2180
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2206 }
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			be_naval_tech
-			be_sub_tech
-		}
-	}
-
-	## Torpedo Techs
-	torpedo_1 = {
-		enable_equipment_modules = { 
-			ship_torpedo_1
-		}
-
-		research_cost = 2.0
-
-		start_year = 2190
-
-		path = {
-			leads_to_tech = torpedo_2
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = torpedo_enhance_1
-			research_cost_coeff = 1
-		}
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = 0 }
-		}
-		
-		ai_will_do = {
-			factor = 2
-		}
-		
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_torpedo_tech
-		}
-	}
-
-	torpedo_2 = {
-		enable_equipment_modules = { 
-			ship_torpedo_2
-		}
-
-		research_cost = 1.5
-
-		start_year = 2200
-
-		path = {
-			leads_to_tech = torpedo_3
-			research_cost_coeff = 1
-		}
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = 6 }
-		}
-		
-		ai_will_do = {
-			factor = 2
-		}
-		
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_torpedo_tech
-		}
-	}
-
-	torpedo_3 = {
-		enable_equipment_modules = { 
-			ship_torpedo_3
-		}
-
-		research_cost = 1.5
-
-		start_year = 2203
-
-		path = {
-			leads_to_tech = torpedo_4
-			research_cost_coeff = 1
-		}
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = 12 }
-		}
-		
-		ai_will_do = {
-			factor = 2
-		}
-		
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_torpedo_tech
-		}
-	}
-
-	torpedo_4 = {
-		enable_equipment_modules = { 
-			ship_torpedo_4
-		}
-
-		research_cost = 1.5
-
-		start_year = 2206
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = 18 }
-		}
-		
-		ai_will_do = {
-			factor = 2
-		}
-		
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_torpedo_tech
-		}
-	}
-	
-	torpedo_enhance_1 = {
-		submarine = {
-			torpedo_attack = 0.2
-		}
-
-		light_cruiser = {
-			torpedo_attack = 0.2
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.5
-		research_cost = 2.5
-
-		start_year = 2195
-
-		path = {
-			leads_to_tech = torpedo_enhance_2
-			research_cost_coeff = 1
-		}
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 4 y = 3}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-		}
-	}
-
-	torpedo_enhance_2 = {
-		submarine = {
-			torpedo_attack = 0.2
-		}
-
-		light_cruiser = {
-			torpedo_attack = 0.2
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.5
-		research_cost = 2.5
-
-		start_year = 2202
-
-		path = {
-			leads_to_tech = torpedo_enhance_3
-			research_cost_coeff = 1
-		}
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 4 y = 9}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-		}
-	}
-
-	torpedo_enhance_3 = {
-		naval_torpedo_reveal_chance_factor = -0.25
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.5
-		research_cost = 2.5
-
-		start_year = 2205
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 4 y = 15 }
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-		}
-	}
-
-	snorkel_1 = {
-		enable_equipment_modules = { 
-			ship_sub_snorkel_1
-		}
-
-		path = {
-			leads_to_tech = snorkel_2
-			research_cost_coeff =1
-		}
-
-		research_cost = 1
-		start_year = 2202
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 1 y = 9}
-		}
-
-		ai_will_do ={
-			factor = 1
-		}
-
-		categories ={
-			be_naval_equip
-			be_naval_tech
-			be_sub_tech
-		}
-	}
-
-	snorkel_2 = {
-		enable_equipment_modules = { 
-			ship_sub_snorkel_2
-		}
-
-		research_cost = 1
-		start_year = 2205
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 1 y = 15}
-		}
-
-		ai_will_do ={
-			factor = 1
-		}
-
-		categories ={
-			be_naval_equip
-			be_naval_tech
-			be_sub_tech
-		}
-	}
-
-	## Gunboat Hulls
-	gunboat_1_hull = {
-		enable_equipments = {
-			ship_hull_cruiser_1
-		}
-
-		enable_equipment_modules = {
-			light_ship_engine_1
-		}
-
-		path = {
-			leads_to_tech = gunboat_2_hull
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = range_upgrade_1
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = gunboat_armor_1
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 2190
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2190}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_gunboat_tech
-		}
-	}
-
-	gunboat_2_hull = {
-		enable_equipments = {
-			ship_hull_cruiser_2
-		}
-
-		enable_equipment_modules = {
-			light_ship_engine_2
-		}
-
-		path = {
-			leads_to_tech = gunboat_3_hull
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 2200
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2200}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_gunboat_tech
-		}
-	}
-
-	gunboat_3_hull = {
-		enable_equipments = {
-			ship_hull_cruiser_3
-		}
-
-		enable_equipment_modules = {
-			light_ship_engine_3
-		}
-
-		path = {
-			leads_to_tech = gunboat_4_hull
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 2203
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2203}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_gunboat_tech
-		}
-	}
-
-	gunboat_4_hull = {
-		enable_equipments = {
-			ship_hull_cruiser_4
-		}
-
-		enable_equipment_modules = {
-			light_ship_engine_4
-		}
-
-		research_cost = 1.5
-
-		start_year = 2206
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2206}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_gunboat_tech
-		}
-	}
-
-	## Gunboat Techs
-	range_upgrade_1 = {
-		enable_equipment_modules = {
-			ship_engine_light_gunboat_1
-		}
-
-		research_cost = 1.5
-		
-		start_year = 2195
-
-		path = {
-			leads_to_tech = range_upgrade_2
-			research_cost_coeff = 1
-		}
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = 0}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_gunboat_tech
-		}
-	}
-
-	range_upgrade_2 = {
-		enable_equipment_modules = {
-			ship_engine_light_gunboat_2
-		}
-
-		research_cost = 1.5
-		
-		start_year = 2202
-
-		path = {
-			leads_to_tech = range_upgrade_3
-			research_cost_coeff = 1
-		}
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = 9}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_gunboat_tech
-		}
-	}
-
-	range_upgrade_3 = {
-		enable_equipment_modules = {
-			ship_engine_light_gunboat_3
-		}
-
-		research_cost = 1.5
-		
-		start_year = 2205
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = 15}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_gunboat_tech
-		}
-	}
-
-	gunboat_armor_1 = {
-		enable_equipment_modules = {
-			ship_armor_gunboat_1
-		}
-
-		path = {
-			leads_to_tech = gunboat_armor_2
-			research_cost_coeff = 1
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 1.25
-
-		start_year = 2200
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 4 y = 1}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-		}
-	}
-
-	gunboat_armor_2 = {
-		enable_equipment_modules = {
-			ship_armor_gunboat_2
-		}
-
-		path = {
-			leads_to_tech = gunboat_armor_3
-			research_cost_coeff = 1
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 1.25
-
-		start_year = 2203
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 4 y = 9}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-		}
-	}
-
-	gunboat_armor_3 = {
-		enable_equipment_modules = {
-			ship_armor_gunboat_3
-		}
-
-		path = {
-			leads_to_tech = gunboat_armor_3
-			research_cost_coeff = 1
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 1.25
-
-		start_year = 2206
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 4 y = 18}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-		}
-	}
-
-	## Destroyer Hulls
-	destroyer_1_hull = {
-		enable_equipments = {
-			ship_hull_light_1
-		}
-
-		enable_equipment_modules = {
-			light_ship_engine_1
-		}
-
-		path = {
-			leads_to_tech = destroyer_2_hull
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = depth_charge_1
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = smoke_screen
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = sonar_1
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 2190
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2190}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_destroyer_tech
-		}
-	}
-
-	destroyer_2_hull = {
-		enable_equipments = {
-			ship_hull_light_2
-		}
-
-		enable_equipment_modules = {
-			light_ship_engine_2
-		}
-
-		path = {
-			leads_to_tech = destroyer_3_hull
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 2200
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2200}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_destroyer_tech
-		}
-	}
-
-	destroyer_3_hull = {
-		enable_equipments = {
-			ship_hull_light_3
-		}
-
-		enable_equipment_modules = {
-			light_ship_engine_3
-		}
-
-		path = {
-			leads_to_tech = destroyer_4_hull
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 2203
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2203}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_destroyer_tech
-		}
-	}
-
-	destroyer_4_hull = {
-		enable_equipments = {
-			ship_hull_light_4
-		}
-
-		enable_equipment_modules = {
-			light_ship_engine_4
-		}
-
-		research_cost = 1.5
-
-		start_year = 2206
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2206}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_destroyer_tech
-		}
-	}
-
-	## Destroyer Techs
-	depth_charge_1 = {
-		enable_equipment_modules = {
-			ship_depth_charge_1
-		}
-
-		path = {
-			leads_to_tech = depth_charge_2
-			research_cost_coeff = 1
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 1.5
-
-		start_year = 2190
-		
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = 0}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_destroyer_tech
-		}
-	}
-
-	depth_charge_2 = {
-		enable_equipment_modules = {
-			ship_depth_charge_2
-		}
-
-		path = {
-			leads_to_tech = depth_charge_3
-			research_cost_coeff = 1
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 1.5
-
-		start_year = 2200
-		
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = 6}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_destroyer_tech
-		}
-	}
-
-	depth_charge_3 = {
-		enable_equipment_modules = {
-			ship_depth_charge_3
-		}
-
-		path = {
-			leads_to_tech = depth_charge_4
-			research_cost_coeff = 1
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 1.5
-
-		start_year = 2203
-		
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = 12}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_destroyer_tech
-		}
-	}
-
-	depth_charge_4 = {
-		enable_equipment_modules = {
-			ship_depth_charge_4
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 1.5
-
-		start_year = 2206
-		
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = 18}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_destroyer_tech
-		}
-	}
-
-	smoke_screen = {
-		naval_retreat_speed = 0.2
-
-		research_cost = 0.75
-
-		start_year = 2190
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 1 y = 2} #Move it up and to the left
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_destroyer_tech
-		}
-	}
-
-	sonar_1 = {
-		enable_equipment_modules = {
-			ship_sonar_1
-		}
-
-		path = {
-			leads_to_tech = sonar_2
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 2190
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 4 y = 1}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_destroyer_tech
-		}
-	}
-
-	sonar_2 = {
-		enable_equipment_modules = {
-			ship_sonar_2
-		}
-
-		path = {
-			leads_to_tech = sonar_2
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 2203
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 4 y = 12}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_destroyer_tech
-		}
-	}
-
-	## Battlecruiser Hull
-	battlecruiser_1_hull = {
-		enable_equipments = {
-			ship_hull_heavy_1
-		}
-
-		enable_equipment_modules = {
-			heavy_ship_engine_1
-			ship_armor_battlecruiser_0
-		}
-
-		path = {
-			leads_to_tech = battlecruiser_2_hull
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = battlecruiser_armor_1
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 2190
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2190}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_battlecruiser_hull
-		}
-	}
-
-	battlecruiser_2_hull = {
-		enable_equipments = {
-			ship_hull_heavy_2
-		}
-
-		enable_equipment_modules = {
-			heavy_ship_engine_2
-		}
-
-		path = {
-			leads_to_tech = battlecruiser_3_hull
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 2200
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2200}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_battlecruiser_hull
-		}
-	}
-
-	battlecruiser_3_hull = {
-		enable_equipments = {
-			ship_hull_heavy_3
-		}
-
-		enable_equipment_modules = {
-			heavy_ship_engine_3
-		}
-
-		path = {
-			leads_to_tech = battlecruiser_4_hull
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 2203
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2203}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_battlecruiser_hull
-		}
-	}
-
-	battlecruiser_4_hull = {
-		enable_equipments = {
-			ship_hull_heavy_4
-		}
-
-		enable_equipment_modules = {
-			heavy_ship_engine_4
-		}
-
-		research_cost = 1.5
-
-		start_year = 2206
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2206}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_battlecruiser_hull
-		}
-	}
-
-	## Battlecruiser Tech
-	battlecruiser_armor_1 = {
-		enable_equipment_modules = {
-			ship_armor_battlecruiser_1
-		}
-
-		path = {
-			leads_to_tech = battlecruiser_armor_2
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-		
-		start_year = 2195
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = 3}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_battlecruiser_tech
-		}
-	}
-
-	battlecruiser_armor_2 = {
-		enable_equipment_modules = {
-			ship_armor_battlecruiser_2
-		}
-
-
-		research_cost = 1.5
-		
-		start_year = 2202
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = 9}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_battlecruiser_tech
-		}
-	}
-
-	## Carrier Hull
-	carrier_1_hull = {
-		enable_equipments = {
-			ship_hull_carrier_1
-		}
-
-		enable_equipment_modules = {
-			carrier_ship_engine_1
-			ship_deck_space
-			ship_armor_carrier_deck
-		}
-
-		path = {
-			leads_to_tech = carrier_2_hull
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.75
-
-		start_year = 2190
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2190}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_carrier_tech
-		}
-	}
-
-	carrier_2_hull = {
-		enable_equipments = {
-			ship_hull_carrier_2
-		}
-
-		enable_equipment_modules = {
-			carrier_ship_engine_2
-		}
-
-		path = {
-			leads_to_tech = carrier_3_hull
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.75
-
-		start_year = 2200
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2200}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_carrier_tech
-			be_naval_equip
-		}
-	}
-
-	carrier_3_hull = {
-		enable_equipments = {
-			ship_hull_carrier_3
-		}
-
-		enable_equipment_modules = {
-			carrier_ship_engine_3
-		}
-
-		path = {
-			leads_to_tech = carrier_4_hull
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.75
-
-		start_year = 2203
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2203}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_carrier_tech
-		}
-	}
-
-	carrier_4_hull = {
-		enable_equipments = {
-			ship_hull_carrier_4
-		}
-
-		enable_equipment_modules = {
-			carrier_ship_engine_4
-		}
-
-		research_cost = 1.75
-
-		start_year = 2206
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2206}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_carrier_tech
-		}
-	}
-
-	## Naval Guns
-
-	#Base Tech
-	naval_gun_research = {
-		research_cost = 1
-
-		start_year = 2190
-
-		path = {
-			leads_to_tech = light_naval_gun_1
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = medium_naval_gun_1
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = heavy_naval_gun_1
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = secondary_naval_gun_1
-			research_cost_coeff = 1
-		}
-
-		enable_equipment_modules = {
-			ship_light_battery_1
-			ship_medium_battery_1
-			ship_heavy_battery_1
-		}
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2190}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-		}
-	}
-
-	#Light Gun Tree
-	light_naval_gun_1 = {
-		enable_equipment_modules = {
-			ship_light_battery_2
-		}
-
-		path = {
-			leads_to_tech = light_naval_gun_2
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = light_shell_1
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-		start_year = 2195
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = -6 y = 4}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_light_gun_tech
-		}
-	}
-
-	light_naval_gun_2 = {
-		enable_equipment_modules = {
-			ship_light_battery_3
-		}
-
-		path = {
-			leads_to_tech = light_naval_gun_3
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-		start_year = 2202
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = -6 y = @2202}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_light_gun_tech
-		}
-	}
-
-	light_naval_gun_3 = {
-		enable_equipment_modules = {
-			ship_light_battery_4
-		}
-
-		research_cost = 1
-		start_year = 2205
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = -6 y = @2205}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_light_gun_tech
-		}
-	}
-
-	light_shell_1 = {
-		light_cruiser = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		destroyer = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		battleship = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		carrier = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		path = {
-			leads_to_tech = light_shell_2
-			research_cost_coeff = 1
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 1.5
-
-		start_year = 2200
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = -4 y = @2200}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_light_gun_tech
-		}
-	}
-
-	light_shell_2 = {
-		light_cruiser = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		destroyer = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		battleship = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		carrier = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 1.5
-
-		start_year = 2203
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = -4 y = @2203}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_light_gun_tech
-		}
-	}
-
-	#Medium Gun Tree
-	medium_naval_gun_1 = {
-		enable_equipment_modules = {
-			ship_medium_battery_2
-		}
-
-		path = {
-			leads_to_tech = medium_naval_gun_2
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = medium_shell_1
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-		start_year = 2195
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = -2 y = @2195}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_medium_gun_tech
-		}
-	}
-
-	medium_naval_gun_2 = {
-		enable_equipment_modules = {
-			ship_medium_battery_3
-		}
-
-		path = {
-			leads_to_tech = medium_naval_gun_3
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-		start_year = 2202
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = -2 y = @2202}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_medium_gun_tech
-		}
-	}
-
-	medium_naval_gun_3 = {
-		enable_equipment_modules = {
-			ship_medium_battery_4
-		}
-
-		research_cost = 1
-		start_year = 2205
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = -2 y = @2205}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_medium_gun_tech
-		}
-	}
-
-	medium_shell_1 = {
-		light_cruiser = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		destroyer = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		path = {
-			leads_to_tech = medium_shell_2
-			research_cost_coeff = 1
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 1.5
-
-		start_year = 2200
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2200}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_medium_gun_tech
-		}
-	}
-
-	medium_shell_2 = {
-		light_cruiser = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		destroyer = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 1.5
-
-		start_year = 2203
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2203}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_medium_gun_tech
-		}
-	}
-
-	#Heavy Gun Tree
-	heavy_naval_gun_1 = {
-		enable_equipment_modules = {
-			ship_heavy_battery_2
-		}
-
-		path = {
-			leads_to_tech = heavy_naval_gun_2
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = heavy_shell_1
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-		start_year = 2195
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = @2195}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_heavy_gun_tech
-		}
-	}
-
-	heavy_naval_gun_2 = {
-		enable_equipment_modules = {
-			ship_heavy_battery_3
-		}
-
-		path = {
-			leads_to_tech = heavy_naval_gun_3
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-		start_year = 2202
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = @2202}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_heavy_gun_tech
-		}
-	}
-
-	heavy_naval_gun_3 = {
-		enable_equipment_modules = {
-			ship_heavy_battery_4
-		}
-
-		research_cost = 1
-		start_year = 2205
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = @2205}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_heavy_gun_tech
-		}
-	}
-
-	heavy_shell_1 = {
-		battleship = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		carrier = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		path = {
-			leads_to_tech = heavy_shell_2
-			research_cost_coeff = 1
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 1.5
-
-		start_year = 2200
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 4 y = @2200}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_heavy_gun_tech
-		}
-	}
-
-	heavy_shell_2 = {
-		battleship = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		carrier = {
-			lg_attack = 0.05
-			lg_armor_piercing = 0.05
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 1.5
-
-		start_year = 2203
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 4 y = @2203}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_heavy_gun_tech
-		}
-	}
-
-	#Secondary Gun Tree
-	secondary_naval_gun_1 = {
-		enable_equipment_modules = {
-			ship_secondaries_1
-		}
-
-		path = {
-			leads_to_tech = secondary_naval_gun_2
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-		start_year = 2195
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 6 y = @2195}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_secondary_gun_tech
-		}
-	}
-
-	secondary_naval_gun_2 = {
-		enable_equipment_modules = {
-			ship_secondaries_2
-		}
-
-		path = {
-			leads_to_tech = secondary_naval_gun_3
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-		start_year = 2202
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 6 y = @2202}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_secondary_gun_tech
-		}
-	}
-
-	secondary_naval_gun_3 = {
-		enable_equipment_modules = {
-			dp_ship_secondaries
-		}
-
-		research_cost = 1
-		start_year = 2202
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 6 y = @2205}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_secondary_gun_tech
-		}
-	}
-
-	## Misc Techs
-
-	#Fire prevention/Damage control
-	fire_fighting_protocols_1 = {
-		critical_receive_chance = -0.1
-		naval_critical_effect_factor = -0.1
-
-		path = {
-			leads_to_tech = fire_fighting_protocols_2
-			research_cost_coeff = 1
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 2.5
-
-		start_year = 2190
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2190}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-		}
-	}
-
-	fire_fighting_protocols_2 = {
-		critical_receive_chance = -0.1
-		naval_critical_effect_factor = -0.1
-
-		path = {
-			leads_to_tech = fire_fighting_protocols_3
-			research_cost_coeff = 1
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 2.5
-
-		start_year = 2200
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2200}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-		}
-	}
-
-	fire_fighting_protocols_3 = {
-		critical_receive_chance = -0.1
-		naval_critical_effect_factor = -0.1
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 2.5
-
-		start_year = 2203
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2203}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-		}
-	}
-
-	#Fire control methods
-	ai_fire_software_1 = {
-		battleship = {
-			lg_attack = 0.05
-			hg_attack = 0.05
-		}
-
-		carrier = {
-			lg_attack = 0.05
-			hg_attack = 0.05
-		}
-
-		path = {
-			leads_to_tech = ai_fire_software_2
-			research_cost_coeff = 1
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 2.5
-
-		start_year = 2190
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2190}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-		}
-	}
-
-	ai_fire_software_2 = {
-		battleship = {
-			lg_attack = 0.05
-			hg_attack = 0.05
-		}
-
-		carrier = {
-			lg_attack = 0.05
-			hg_attack = 0.05
-		}
-
-		destroyer = {
-			lg_attack = 0.05
-			hg_attack = 0.05
-		}
-
-		path = {
-			leads_to_tech = ai_fire_software_3
-			research_cost_coeff = 1
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 2.5
-
-		start_year = 2200
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2200}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-		}
-	}
-
-	ai_fire_software_3 = {
-		battleship = {
-			lg_attack = 0.05
-			hg_attack = 0.05
-		}
-
-		carrier = {
-			lg_attack = 0.05
-			hg_attack = 0.05
-		}
-
-		destroyer = {
-			lg_attack = 0.05
-			hg_attack = 0.05
-		}
-
-		light_cruiser = {
-			lg_attack = 0.05
-			hg_attack = 0.05
-		}
-
-		xp_research_type = navy
-		#xp_unlock_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 2.5
-
-		start_year = 2203
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2203}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-		}
-	}
-
-	# Hover Craft Techs (Transports)
-	hovercraft_1 = {
-		transport_capacity = -0.5
-		naval_invasion_capacity = 10
-
-		path = {
-			leads_to_tech = hovercraft_2
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-		
-		start_year = 2190
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2190}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_transport_tech
-		}
-	}
-
-	hovercraft_2 = {
-		invasion_preparation = -0.5
-		amphibious_invasion_defence = 0.15
-		naval_invasion_capacity = 40
-
-		path = {
-			leads_to_tech = hovercraft_3
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-		
-		start_year = 2203
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2203}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_transport_tech
-		}
-	}
-
-	hovercraft_3 = {
-		amphibious_invasion = 0.25
-		amphibious_invasion_defence = 0.5
-		naval_invasion_capacity = 100
-
-		research_cost = 1.5
-		
-		start_year = 2206
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2206}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_transport_tech
-		}
-	}
-
-	## Mines
-	naval_mine = {
-		enable_equipment_modules = {
-			ship_mine_layer_1
-			ship_mine_sweeper_1
-		}
-
-		path = {
-			leads_to_tech = naval_mine_1
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = mine_laying_tech_1
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = mine_detection_ai
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2
-		
-		start_year = 2190
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2190}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_mine_tech
-		}
-	}
-
-	naval_mine_1 = {
-		naval_mines_damage_factor = 0.2
-
-		path = {
-			leads_to_tech = naval_mine_2
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2
-		
-		start_year = 2200
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2200}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_mine_tech
-		}
-	}
-
-	naval_mine_2 = {
-		naval_mines_damage_factor = 0.2
-
-		path = {
-			leads_to_tech = naval_mine_3
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = aerial_mine_laying
-			research_cost_coeff = 1
-		}
-		research_cost = 2
-		
-		start_year = 2203
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2203}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_mine_tech
-		}
-	}
-
-	naval_mine_3 = {
-		naval_mines_damage_factor = 0.2
-
-		path = {
-			leads_to_tech = aerieal_mine_detection
-			research_cost_coeff = 1
-		}
-		research_cost = 2
-		
-		start_year = 2206
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 0 y = @2206}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_mine_tech
-		}
-	}
-
-	# Minelaying Tech
-	mine_laying_tech_1 = {
-		enable_equipment_modules = {
-			ship_mine_layer_sub
-		}
-
-		research_cost = 2
-		start_year = 2190
-
-		path = {
-			leads_to_tech = mine_laying_tech_2
-			research_cost_coeff = 1
-		}
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 4 y = @2190}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_mine_tech
-		}
-	}
-
-	mine_laying_tech_2 = {
-		submarine = {
-			mines_planting = 0.2
-		}
-
-		research_cost = 2
-		start_year = 2203
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 4 y = @2203}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_tech
-			be_naval_equip
-			be_mine_tech
-		}
-	}
-
-	# Mine Detection AI
-	mine_detection_ai = {
-		naval_mines_effect_reduction = 0.5
-
-		research_cost = 1
-
-		start_year = 2200
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = @2200}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_mine_tech
-		}
-	}
-
-	#Aerial Mine Laying
-	aerial_mine_laying = {
-		be_category_tac_bomber = { 
-			mines_planting = 0.08 
-		}
-
-		research_cost = 2
-
-		start_year = 2203
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = @2203}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_naval_equip
-			be_naval_tech
-			be_mine_tech
-		}
-	}
-
-	#Mine Detection Tech
-	aerieal_mine_detection = {
-		be_category_tac_bomber = { 
-			mines_sweeping = 0.15 
-		}
-
-		research_cost = 2
-		start_year = 2206
-
-		folder = {
-			name = be_mtg_naval_folder
-			position = { x = 2 y = @2206}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			be_mine_tech
-			be_naval_equip
-			be_naval_tech
-		}
-	}
-}
+#technologies = {
+#
+#	@2190 = 1
+#	@2195 = 4
+#	@2200 = 7
+#	@2202 = 10
+#	@2203 = 13
+#	@2205 = 16
+#	@2206 = 19
+#
+#	## Submarine Hulls
+#	sub_1_hull = {
+#		enable_equipments = {
+#			ship_hull_submarine_1
+#		}
+#
+#		enable_equipment_modules = {
+#			ship_torpedo_sub_1
+#			sub_ship_engine_1
+#		}
+#
+#		path = {
+#			leads_to_tech = sub_2_hull
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = torpedo_1
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2190
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2190 }
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#		
+#		categories = {
+#			be_naval_tech
+#			be_sub_tech
+#		}
+#	}
+#
+#	sub_2_hull = {
+#		enable_equipments = {
+#			ship_hull_submarine_2
+#		}
+#
+#		enable_equipment_modules = {
+#			ship_torpedo_sub_2
+#			sub_ship_engine_2
+#		}
+#
+#		path = {
+#			leads_to_tech = sub_3_hull
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = snorkel_1
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = sub_stealth_1
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2200
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2200 }
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#		
+#		categories = {
+#			be_naval_tech
+#			be_sub_tech
+#		}
+#	}
+#
+#	sub_3_hull = {
+#		enable_equipments = {
+#			ship_hull_submarine_3
+#		}
+#
+#		enable_equipment_modules = {
+#			ship_torpedo_sub_3
+#			sub_ship_engine_3
+#		}
+#
+#		path = {
+#			leads_to_tech = sub_4_hull
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2203
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2203 }
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#		
+#		categories = {
+#			be_naval_tech
+#			be_sub_tech
+#		}
+#	}
+#
+#	sub_4_hull = {
+#		enable_equipments = {
+#			ship_hull_submarine_4
+#		}
+#
+#		enable_equipment_modules = {
+#			ship_torpedo_sub_4
+#			sub_ship_engine_4
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2180
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2206 }
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#		
+#		categories = {
+#			be_naval_tech
+#			be_sub_tech
+#		}
+#	}
+#
+#	## Torpedo Techs
+#	torpedo_1 = {
+#		enable_equipment_modules = { 
+#			ship_torpedo_1
+#		}
+#
+#		research_cost = 2.0
+#
+#		start_year = 2190
+#
+#		path = {
+#			leads_to_tech = torpedo_2
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = torpedo_enhance_1
+#			research_cost_coeff = 1
+#		}
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = 0 }
+#		}
+#		
+#		ai_will_do = {
+#			factor = 2
+#		}
+#		
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_torpedo_tech
+#		}
+#	}
+#
+#	torpedo_2 = {
+#		enable_equipment_modules = { 
+#			ship_torpedo_2
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2200
+#
+#		path = {
+#			leads_to_tech = torpedo_3
+#			research_cost_coeff = 1
+#		}
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = 6 }
+#		}
+#		
+#		ai_will_do = {
+#			factor = 2
+#		}
+#		
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_torpedo_tech
+#		}
+#	}
+#
+#	torpedo_3 = {
+#		enable_equipment_modules = { 
+#			ship_torpedo_3
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2203
+#
+#		path = {
+#			leads_to_tech = torpedo_4
+#			research_cost_coeff = 1
+#		}
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = 12 }
+#		}
+#		
+#		ai_will_do = {
+#			factor = 2
+#		}
+#		
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_torpedo_tech
+#		}
+#	}
+#
+#	torpedo_4 = {
+#		enable_equipment_modules = { 
+#			ship_torpedo_4
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2206
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = 18 }
+#		}
+#		
+#		ai_will_do = {
+#			factor = 2
+#		}
+#		
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_torpedo_tech
+#		}
+#	}
+#	
+#	torpedo_enhance_1 = {
+#		submarine = {
+#			torpedo_attack = 0.2
+#		}
+#
+#		light_cruiser = {
+#			torpedo_attack = 0.2
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.5
+#		research_cost = 2.5
+#
+#		start_year = 2195
+#
+#		path = {
+#			leads_to_tech = torpedo_enhance_2
+#			research_cost_coeff = 1
+#		}
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 4 y = 3}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#		}
+#	}
+#
+#	torpedo_enhance_2 = {
+#		submarine = {
+#			torpedo_attack = 0.2
+#		}
+#
+#		light_cruiser = {
+#			torpedo_attack = 0.2
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.5
+#		research_cost = 2.5
+#
+#		start_year = 2202
+#
+#		path = {
+#			leads_to_tech = torpedo_enhance_3
+#			research_cost_coeff = 1
+#		}
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 4 y = 9}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#		}
+#	}
+#
+#	torpedo_enhance_3 = {
+#		naval_torpedo_reveal_chance_factor = -0.25
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.5
+#		research_cost = 2.5
+#
+#		start_year = 2205
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 4 y = 15 }
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#		}
+#	}
+#
+#	snorkel_1 = {
+#		enable_equipment_modules = { 
+#			ship_sub_snorkel_1
+#		}
+#
+#		path = {
+#			leads_to_tech = snorkel_2
+#			research_cost_coeff =1
+#		}
+#
+#		research_cost = 1
+#		start_year = 2202
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 1 y = 9}
+#		}
+#
+#		ai_will_do ={
+#			factor = 1
+#		}
+#
+#		categories ={
+#			be_naval_equip
+#			be_naval_tech
+#			be_sub_tech
+#		}
+#	}
+#
+#	snorkel_2 = {
+#		enable_equipment_modules = { 
+#			ship_sub_snorkel_2
+#		}
+#
+#		research_cost = 1
+#		start_year = 2205
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 1 y = 15}
+#		}
+#
+#		ai_will_do ={
+#			factor = 1
+#		}
+#
+#		categories ={
+#			be_naval_equip
+#			be_naval_tech
+#			be_sub_tech
+#		}
+#	}
+#
+#	## Gunboat Hulls
+#	gunboat_1_hull = {
+#		enable_equipments = {
+#			ship_hull_cruiser_1
+#		}
+#
+#		enable_equipment_modules = {
+#			light_ship_engine_1
+#		}
+#
+#		path = {
+#			leads_to_tech = gunboat_2_hull
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = range_upgrade_1
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = gunboat_armor_1
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2190
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2190}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_gunboat_tech
+#		}
+#	}
+#
+#	gunboat_2_hull = {
+#		enable_equipments = {
+#			ship_hull_cruiser_2
+#		}
+#
+#		enable_equipment_modules = {
+#			light_ship_engine_2
+#		}
+#
+#		path = {
+#			leads_to_tech = gunboat_3_hull
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2200
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2200}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_gunboat_tech
+#		}
+#	}
+#
+#	gunboat_3_hull = {
+#		enable_equipments = {
+#			ship_hull_cruiser_3
+#		}
+#
+#		enable_equipment_modules = {
+#			light_ship_engine_3
+#		}
+#
+#		path = {
+#			leads_to_tech = gunboat_4_hull
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2203
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2203}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_gunboat_tech
+#		}
+#	}
+#
+#	gunboat_4_hull = {
+#		enable_equipments = {
+#			ship_hull_cruiser_4
+#		}
+#
+#		enable_equipment_modules = {
+#			light_ship_engine_4
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2206
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2206}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_gunboat_tech
+#		}
+#	}
+#
+#	## Gunboat Techs
+#	range_upgrade_1 = {
+#		enable_equipment_modules = {
+#			ship_engine_light_gunboat_1
+#		}
+#
+#		research_cost = 1.5
+#		
+#		start_year = 2195
+#
+#		path = {
+#			leads_to_tech = range_upgrade_2
+#			research_cost_coeff = 1
+#		}
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = 0}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_gunboat_tech
+#		}
+#	}
+#
+#	range_upgrade_2 = {
+#		enable_equipment_modules = {
+#			ship_engine_light_gunboat_2
+#		}
+#
+#		research_cost = 1.5
+#		
+#		start_year = 2202
+#
+#		path = {
+#			leads_to_tech = range_upgrade_3
+#			research_cost_coeff = 1
+#		}
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = 9}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_gunboat_tech
+#		}
+#	}
+#
+#	range_upgrade_3 = {
+#		enable_equipment_modules = {
+#			ship_engine_light_gunboat_3
+#		}
+#
+#		research_cost = 1.5
+#		
+#		start_year = 2205
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = 15}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_gunboat_tech
+#		}
+#	}
+#
+#	gunboat_armor_1 = {
+#		enable_equipment_modules = {
+#			ship_armor_gunboat_1
+#		}
+#
+#		path = {
+#			leads_to_tech = gunboat_armor_2
+#			research_cost_coeff = 1
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 1.25
+#
+#		start_year = 2200
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 4 y = 1}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#		}
+#	}
+#
+#	gunboat_armor_2 = {
+#		enable_equipment_modules = {
+#			ship_armor_gunboat_2
+#		}
+#
+#		path = {
+#			leads_to_tech = gunboat_armor_3
+#			research_cost_coeff = 1
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 1.25
+#
+#		start_year = 2203
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 4 y = 9}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#		}
+#	}
+#
+#	gunboat_armor_3 = {
+#		enable_equipment_modules = {
+#			ship_armor_gunboat_3
+#		}
+#
+#		path = {
+#			leads_to_tech = gunboat_armor_3
+#			research_cost_coeff = 1
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 1.25
+#
+#		start_year = 2206
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 4 y = 18}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#		}
+#	}
+#
+#	## Destroyer Hulls
+#	destroyer_1_hull = {
+#		enable_equipments = {
+#			ship_hull_light_1
+#		}
+#
+#		enable_equipment_modules = {
+#			light_ship_engine_1
+#		}
+#
+#		path = {
+#			leads_to_tech = destroyer_2_hull
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = depth_charge_1
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = smoke_screen
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = sonar_1
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2190
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2190}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_destroyer_tech
+#		}
+#	}
+#
+#	destroyer_2_hull = {
+#		enable_equipments = {
+#			ship_hull_light_2
+#		}
+#
+#		enable_equipment_modules = {
+#			light_ship_engine_2
+#		}
+#
+#		path = {
+#			leads_to_tech = destroyer_3_hull
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2200
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2200}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_destroyer_tech
+#		}
+#	}
+#
+#	destroyer_3_hull = {
+#		enable_equipments = {
+#			ship_hull_light_3
+#		}
+#
+#		enable_equipment_modules = {
+#			light_ship_engine_3
+#		}
+#
+#		path = {
+#			leads_to_tech = destroyer_4_hull
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2203
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2203}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_destroyer_tech
+#		}
+#	}
+#
+#	destroyer_4_hull = {
+#		enable_equipments = {
+#			ship_hull_light_4
+#		}
+#
+#		enable_equipment_modules = {
+#			light_ship_engine_4
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2206
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2206}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_destroyer_tech
+#		}
+#	}
+#
+#	## Destroyer Techs
+#	depth_charge_1 = {
+#		enable_equipment_modules = {
+#			ship_depth_charge_1
+#		}
+#
+#		path = {
+#			leads_to_tech = depth_charge_2
+#			research_cost_coeff = 1
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 1.5
+#
+#		start_year = 2190
+#		
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = 0}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_destroyer_tech
+#		}
+#	}
+#
+#	depth_charge_2 = {
+#		enable_equipment_modules = {
+#			ship_depth_charge_2
+#		}
+#
+#		path = {
+#			leads_to_tech = depth_charge_3
+#			research_cost_coeff = 1
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 1.5
+#
+#		start_year = 2200
+#		
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = 6}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_destroyer_tech
+#		}
+#	}
+#
+#	depth_charge_3 = {
+#		enable_equipment_modules = {
+#			ship_depth_charge_3
+#		}
+#
+#		path = {
+#			leads_to_tech = depth_charge_4
+#			research_cost_coeff = 1
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 1.5
+#
+#		start_year = 2203
+#		
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = 12}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_destroyer_tech
+#		}
+#	}
+#
+#	depth_charge_4 = {
+#		enable_equipment_modules = {
+#			ship_depth_charge_4
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 1.5
+#
+#		start_year = 2206
+#		
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = 18}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_destroyer_tech
+#		}
+#	}
+#
+#	smoke_screen = {
+#		naval_retreat_speed = 0.2
+#
+#		research_cost = 0.75
+#
+#		start_year = 2190
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 1 y = 2} #Move it up and to the left
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_destroyer_tech
+#		}
+#	}
+#
+#	sonar_1 = {
+#		enable_equipment_modules = {
+#			ship_sonar_1
+#		}
+#
+#		path = {
+#			leads_to_tech = sonar_2
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2190
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 4 y = 1}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_destroyer_tech
+#		}
+#	}
+#
+#	sonar_2 = {
+#		enable_equipment_modules = {
+#			ship_sonar_2
+#		}
+#
+#		path = {
+#			leads_to_tech = sonar_2
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2203
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 4 y = 12}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_destroyer_tech
+#		}
+#	}
+#
+#	## Battlecruiser Hull
+#	battlecruiser_1_hull = {
+#		enable_equipments = {
+#			ship_hull_heavy_1
+#		}
+#
+#		enable_equipment_modules = {
+#			heavy_ship_engine_1
+#			ship_armor_battlecruiser_0
+#		}
+#
+#		path = {
+#			leads_to_tech = battlecruiser_2_hull
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = battlecruiser_armor_1
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2190
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2190}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_battlecruiser_hull
+#		}
+#	}
+#
+#	battlecruiser_2_hull = {
+#		enable_equipments = {
+#			ship_hull_heavy_2
+#		}
+#
+#		enable_equipment_modules = {
+#			heavy_ship_engine_2
+#		}
+#
+#		path = {
+#			leads_to_tech = battlecruiser_3_hull
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2200
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2200}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_battlecruiser_hull
+#		}
+#	}
+#
+#	battlecruiser_3_hull = {
+#		enable_equipments = {
+#			ship_hull_heavy_3
+#		}
+#
+#		enable_equipment_modules = {
+#			heavy_ship_engine_3
+#		}
+#
+#		path = {
+#			leads_to_tech = battlecruiser_4_hull
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2203
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2203}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_battlecruiser_hull
+#		}
+#	}
+#
+#	battlecruiser_4_hull = {
+#		enable_equipments = {
+#			ship_hull_heavy_4
+#		}
+#
+#		enable_equipment_modules = {
+#			heavy_ship_engine_4
+#		}
+#
+#		research_cost = 1.5
+#
+#		start_year = 2206
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2206}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_battlecruiser_hull
+#		}
+#	}
+#
+#	## Battlecruiser Tech
+#	battlecruiser_armor_1 = {
+#		enable_equipment_modules = {
+#			ship_armor_battlecruiser_1
+#		}
+#
+#		path = {
+#			leads_to_tech = battlecruiser_armor_2
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#		
+#		start_year = 2195
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = 3}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_battlecruiser_tech
+#		}
+#	}
+#
+#	battlecruiser_armor_2 = {
+#		enable_equipment_modules = {
+#			ship_armor_battlecruiser_2
+#		}
+#
+#
+#		research_cost = 1.5
+#		
+#		start_year = 2202
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = 9}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_battlecruiser_tech
+#		}
+#	}
+#
+#	## Carrier Hull
+#	carrier_1_hull = {
+#		enable_equipments = {
+#			ship_hull_carrier_1
+#		}
+#
+#		enable_equipment_modules = {
+#			carrier_ship_engine_1
+#			ship_deck_space
+#			ship_armor_carrier_deck
+#		}
+#
+#		path = {
+#			leads_to_tech = carrier_2_hull
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.75
+#
+#		start_year = 2190
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2190}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_carrier_tech
+#		}
+#	}
+#
+#	carrier_2_hull = {
+#		enable_equipments = {
+#			ship_hull_carrier_2
+#		}
+#
+#		enable_equipment_modules = {
+#			carrier_ship_engine_2
+#		}
+#
+#		path = {
+#			leads_to_tech = carrier_3_hull
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.75
+#
+#		start_year = 2200
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2200}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_carrier_tech
+#			be_naval_equip
+#		}
+#	}
+#
+#	carrier_3_hull = {
+#		enable_equipments = {
+#			ship_hull_carrier_3
+#		}
+#
+#		enable_equipment_modules = {
+#			carrier_ship_engine_3
+#		}
+#
+#		path = {
+#			leads_to_tech = carrier_4_hull
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.75
+#
+#		start_year = 2203
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2203}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_carrier_tech
+#		}
+#	}
+#
+#	carrier_4_hull = {
+#		enable_equipments = {
+#			ship_hull_carrier_4
+#		}
+#
+#		enable_equipment_modules = {
+#			carrier_ship_engine_4
+#		}
+#
+#		research_cost = 1.75
+#
+#		start_year = 2206
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2206}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_carrier_tech
+#		}
+#	}
+#
+#	## Naval Guns
+#
+#	#Base Tech
+#	naval_gun_research = {
+#		research_cost = 1
+#
+#		start_year = 2190
+#
+#		path = {
+#			leads_to_tech = light_naval_gun_1
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = medium_naval_gun_1
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = heavy_naval_gun_1
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = secondary_naval_gun_1
+#			research_cost_coeff = 1
+#		}
+#
+#		enable_equipment_modules = {
+#			ship_light_battery_1
+#			ship_medium_battery_1
+#			ship_heavy_battery_1
+#		}
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2190}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#		}
+#	}
+#
+#	#Light Gun Tree
+#	light_naval_gun_1 = {
+#		enable_equipment_modules = {
+#			ship_light_battery_2
+#		}
+#
+#		path = {
+#			leads_to_tech = light_naval_gun_2
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = light_shell_1
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1
+#		start_year = 2195
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = -6 y = 4}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_light_gun_tech
+#		}
+#	}
+#
+#	light_naval_gun_2 = {
+#		enable_equipment_modules = {
+#			ship_light_battery_3
+#		}
+#
+#		path = {
+#			leads_to_tech = light_naval_gun_3
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1
+#		start_year = 2202
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = -6 y = @2202}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_light_gun_tech
+#		}
+#	}
+#
+#	light_naval_gun_3 = {
+#		enable_equipment_modules = {
+#			ship_light_battery_4
+#		}
+#
+#		research_cost = 1
+#		start_year = 2205
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = -6 y = @2205}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_light_gun_tech
+#		}
+#	}
+#
+#	light_shell_1 = {
+#		light_cruiser = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		destroyer = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		battleship = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		carrier = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		path = {
+#			leads_to_tech = light_shell_2
+#			research_cost_coeff = 1
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 1.5
+#
+#		start_year = 2200
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = -4 y = @2200}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_light_gun_tech
+#		}
+#	}
+#
+#	light_shell_2 = {
+#		light_cruiser = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		destroyer = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		battleship = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		carrier = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 1.5
+#
+#		start_year = 2203
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = -4 y = @2203}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_light_gun_tech
+#		}
+#	}
+#
+#	#Medium Gun Tree
+#	medium_naval_gun_1 = {
+#		enable_equipment_modules = {
+#			ship_medium_battery_2
+#		}
+#
+#		path = {
+#			leads_to_tech = medium_naval_gun_2
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = medium_shell_1
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1
+#		start_year = 2195
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = -2 y = @2195}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_medium_gun_tech
+#		}
+#	}
+#
+#	medium_naval_gun_2 = {
+#		enable_equipment_modules = {
+#			ship_medium_battery_3
+#		}
+#
+#		path = {
+#			leads_to_tech = medium_naval_gun_3
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1
+#		start_year = 2202
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = -2 y = @2202}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_medium_gun_tech
+#		}
+#	}
+#
+#	medium_naval_gun_3 = {
+#		enable_equipment_modules = {
+#			ship_medium_battery_4
+#		}
+#
+#		research_cost = 1
+#		start_year = 2205
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = -2 y = @2205}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_medium_gun_tech
+#		}
+#	}
+#
+#	medium_shell_1 = {
+#		light_cruiser = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		destroyer = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		path = {
+#			leads_to_tech = medium_shell_2
+#			research_cost_coeff = 1
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 1.5
+#
+#		start_year = 2200
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2200}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_medium_gun_tech
+#		}
+#	}
+#
+#	medium_shell_2 = {
+#		light_cruiser = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		destroyer = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 1.5
+#
+#		start_year = 2203
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2203}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_medium_gun_tech
+#		}
+#	}
+#
+#	#Heavy Gun Tree
+#	heavy_naval_gun_1 = {
+#		enable_equipment_modules = {
+#			ship_heavy_battery_2
+#		}
+#
+#		path = {
+#			leads_to_tech = heavy_naval_gun_2
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = heavy_shell_1
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1
+#		start_year = 2195
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = @2195}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_heavy_gun_tech
+#		}
+#	}
+#
+#	heavy_naval_gun_2 = {
+#		enable_equipment_modules = {
+#			ship_heavy_battery_3
+#		}
+#
+#		path = {
+#			leads_to_tech = heavy_naval_gun_3
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1
+#		start_year = 2202
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = @2202}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_heavy_gun_tech
+#		}
+#	}
+#
+#	heavy_naval_gun_3 = {
+#		enable_equipment_modules = {
+#			ship_heavy_battery_4
+#		}
+#
+#		research_cost = 1
+#		start_year = 2205
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = @2205}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_heavy_gun_tech
+#		}
+#	}
+#
+#	heavy_shell_1 = {
+#		battleship = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		carrier = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		path = {
+#			leads_to_tech = heavy_shell_2
+#			research_cost_coeff = 1
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 1.5
+#
+#		start_year = 2200
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 4 y = @2200}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_heavy_gun_tech
+#		}
+#	}
+#
+#	heavy_shell_2 = {
+#		battleship = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		carrier = {
+#			lg_attack = 0.05
+#			lg_armor_piercing = 0.05
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 1.5
+#
+#		start_year = 2203
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 4 y = @2203}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_heavy_gun_tech
+#		}
+#	}
+#
+#	#Secondary Gun Tree
+#	secondary_naval_gun_1 = {
+#		enable_equipment_modules = {
+#			ship_secondaries_1
+#		}
+#
+#		path = {
+#			leads_to_tech = secondary_naval_gun_2
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1
+#		start_year = 2195
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 6 y = @2195}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_secondary_gun_tech
+#		}
+#	}
+#
+#	secondary_naval_gun_2 = {
+#		enable_equipment_modules = {
+#			ship_secondaries_2
+#		}
+#
+#		path = {
+#			leads_to_tech = secondary_naval_gun_3
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1
+#		start_year = 2202
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 6 y = @2202}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_secondary_gun_tech
+#		}
+#	}
+#
+#	secondary_naval_gun_3 = {
+#		enable_equipment_modules = {
+#			dp_ship_secondaries
+#		}
+#
+#		research_cost = 1
+#		start_year = 2202
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 6 y = @2205}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_secondary_gun_tech
+#		}
+#	}
+#
+#	## Misc Techs
+#
+#	#Fire prevention/Damage control
+#	fire_fighting_protocols_1 = {
+#		critical_receive_chance = -0.1
+#		naval_critical_effect_factor = -0.1
+#
+#		path = {
+#			leads_to_tech = fire_fighting_protocols_2
+#			research_cost_coeff = 1
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 2.5
+#
+#		start_year = 2190
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2190}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#		}
+#	}
+#
+#	fire_fighting_protocols_2 = {
+#		critical_receive_chance = -0.1
+#		naval_critical_effect_factor = -0.1
+#
+#		path = {
+#			leads_to_tech = fire_fighting_protocols_3
+#			research_cost_coeff = 1
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 2.5
+#
+#		start_year = 2200
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2200}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#		}
+#	}
+#
+#	fire_fighting_protocols_3 = {
+#		critical_receive_chance = -0.1
+#		naval_critical_effect_factor = -0.1
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 2.5
+#
+#		start_year = 2203
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2203}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#		}
+#	}
+#
+#	#Fire control methods
+#	ai_fire_software_1 = {
+#		battleship = {
+#			lg_attack = 0.05
+#			hg_attack = 0.05
+#		}
+#
+#		carrier = {
+#			lg_attack = 0.05
+#			hg_attack = 0.05
+#		}
+#
+#		path = {
+#			leads_to_tech = ai_fire_software_2
+#			research_cost_coeff = 1
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 2.5
+#
+#		start_year = 2190
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2190}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#		}
+#	}
+#
+#	ai_fire_software_2 = {
+#		battleship = {
+#			lg_attack = 0.05
+#			hg_attack = 0.05
+#		}
+#
+#		carrier = {
+#			lg_attack = 0.05
+#			hg_attack = 0.05
+#		}
+#
+#		destroyer = {
+#			lg_attack = 0.05
+#			hg_attack = 0.05
+#		}
+#
+#		path = {
+#			leads_to_tech = ai_fire_software_3
+#			research_cost_coeff = 1
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 2.5
+#
+#		start_year = 2200
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2200}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#		}
+#	}
+#
+#	ai_fire_software_3 = {
+#		battleship = {
+#			lg_attack = 0.05
+#			hg_attack = 0.05
+#		}
+#
+#		carrier = {
+#			lg_attack = 0.05
+#			hg_attack = 0.05
+#		}
+#
+#		destroyer = {
+#			lg_attack = 0.05
+#			hg_attack = 0.05
+#		}
+#
+#		light_cruiser = {
+#			lg_attack = 0.05
+#			hg_attack = 0.05
+#		}
+#
+#		xp_research_type = navy
+#		#xp_unlock_cost = 50
+#		xp_research_bonus = 1.50
+#		research_cost = 2.5
+#
+#		start_year = 2203
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2203}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#		}
+#	}
+#
+#	# Hover Craft Techs (Transports)
+#	hovercraft_1 = {
+#		transport_capacity = -0.5
+#		naval_invasion_capacity = 10
+#
+#		path = {
+#			leads_to_tech = hovercraft_2
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#		
+#		start_year = 2190
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2190}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_transport_tech
+#		}
+#	}
+#
+#	hovercraft_2 = {
+#		invasion_preparation = -0.5
+#		amphibious_invasion_defence = 0.15
+#		naval_invasion_capacity = 40
+#
+#		path = {
+#			leads_to_tech = hovercraft_3
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 1.5
+#		
+#		start_year = 2203
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2203}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_transport_tech
+#		}
+#	}
+#
+#	hovercraft_3 = {
+#		amphibious_invasion = 0.25
+#		amphibious_invasion_defence = 0.5
+#		naval_invasion_capacity = 100
+#
+#		research_cost = 1.5
+#		
+#		start_year = 2206
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2206}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_transport_tech
+#		}
+#	}
+#
+#	## Mines
+#	naval_mine = {
+#		enable_equipment_modules = {
+#			ship_mine_layer_1
+#			ship_mine_sweeper_1
+#		}
+#
+#		path = {
+#			leads_to_tech = naval_mine_1
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = mine_laying_tech_1
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = mine_detection_ai
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 2
+#		
+#		start_year = 2190
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2190}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_mine_tech
+#		}
+#	}
+#
+#	naval_mine_1 = {
+#		naval_mines_damage_factor = 0.2
+#
+#		path = {
+#			leads_to_tech = naval_mine_2
+#			research_cost_coeff = 1
+#		}
+#
+#		research_cost = 2
+#		
+#		start_year = 2200
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2200}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_mine_tech
+#		}
+#	}
+#
+#	naval_mine_2 = {
+#		naval_mines_damage_factor = 0.2
+#
+#		path = {
+#			leads_to_tech = naval_mine_3
+#			research_cost_coeff = 1
+#		}
+#
+#		path = {
+#			leads_to_tech = aerial_mine_laying
+#			research_cost_coeff = 1
+#		}
+#		research_cost = 2
+#		
+#		start_year = 2203
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2203}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_mine_tech
+#		}
+#	}
+#
+#	naval_mine_3 = {
+#		naval_mines_damage_factor = 0.2
+#
+#		path = {
+#			leads_to_tech = aerieal_mine_detection
+#			research_cost_coeff = 1
+#		}
+#		research_cost = 2
+#		
+#		start_year = 2206
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 0 y = @2206}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_mine_tech
+#		}
+#	}
+#
+#	# Minelaying Tech
+#	mine_laying_tech_1 = {
+#		enable_equipment_modules = {
+#			ship_mine_layer_sub
+#		}
+#
+#		research_cost = 2
+#		start_year = 2190
+#
+#		path = {
+#			leads_to_tech = mine_laying_tech_2
+#			research_cost_coeff = 1
+#		}
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 4 y = @2190}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_mine_tech
+#		}
+#	}
+#
+#	mine_laying_tech_2 = {
+#		submarine = {
+#			mines_planting = 0.2
+#		}
+#
+#		research_cost = 2
+#		start_year = 2203
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 4 y = @2203}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_tech
+#			be_naval_equip
+#			be_mine_tech
+#		}
+#	}
+#
+#	# Mine Detection AI
+#	mine_detection_ai = {
+#		naval_mines_effect_reduction = 0.5
+#
+#		research_cost = 1
+#
+#		start_year = 2200
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = @2200}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_mine_tech
+#		}
+#	}
+#
+#	#Aerial Mine Laying
+#	aerial_mine_laying = {
+#		be_category_tac_bomber = { 
+#			mines_planting = 0.08 
+#		}
+#
+#		research_cost = 2
+#
+#		start_year = 2203
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = @2203}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_naval_equip
+#			be_naval_tech
+#			be_mine_tech
+#		}
+#	}
+#
+#	#Mine Detection Tech
+#	aerieal_mine_detection = {
+#		be_category_tac_bomber = { 
+#			mines_sweeping = 0.15 
+#		}
+#
+#		research_cost = 2
+#		start_year = 2206
+#
+#		folder = {
+#			name = be_mtg_naval_folder
+#			position = { x = 2 y = @2206}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		categories = {
+#			be_mine_tech
+#			be_naval_equip
+#			be_naval_tech
+#		}
+#	}
+#}
