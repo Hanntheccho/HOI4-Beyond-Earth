@@ -1,0 +1,322 @@
+add_namespace = randomevent
+
+country_event = {
+	id = randomevent.1
+	title = randomevent.1.t
+	desc = randomevent.1.d
+	picture = GFX_franco_event.1
+
+	is_triggered_only = yes
+	
+	option = {
+		name = randomevent.1.a
+        random_owned_state = {
+            add_manpower = 10000
+        }
+        add_stability = 0.05
+        hidden_effect = {
+            random_list = {
+                80 = {
+                    add_to_variable = { randomevent_amount = 1 }
+                }
+                20 = {
+                }
+            }
+        }
+	}
+}
+
+country_event = {
+	id = randomevent.2
+	title = randomevent.2.t
+	desc = randomevent.2.d
+	picture = GFX_franco_event.1
+
+	is_triggered_only = yes
+	
+	option = {
+		name = randomevent.2.a
+        add_political_power = 20
+        hidden_effect = {
+            random_list = {
+                80 = {
+                    add_to_variable = { randomevent_amount = 1 }
+                }
+                20 = {
+                }
+            }
+        }
+	}
+	option = {
+		name = randomevent.2.b
+        custom_effect_tooltip = add_20_industrial_power
+        add_to_variable = { industrial_power = 20 }
+        hidden_effect = {
+            random_list = {
+                80 = {
+                    add_to_variable = { randomevent_amount = 1 }
+                }
+                20 = {
+                }
+            }
+        }
+	}
+	option = {
+		name = randomevent.2.c
+        trigger = {
+            check_variable = { corruption_variable < 30 }
+        }
+        add_political_power = 15
+        custom_effect_tooltip = add_15_industrial_power
+        add_to_variable = { industrial_power = 15 }
+        hidden_effect = {
+            random_list = {
+                80 = {
+                    add_to_variable = { randomevent_amount = 1 }
+                }
+                20 = {
+                }
+            }
+        }
+	}
+}
+
+country_event = {
+	id = randomevent.3
+	title = randomevent.3.t
+	desc = randomevent.3.d
+	picture = GFX_franco_event.1
+
+	is_triggered_only = yes
+	
+	option = {
+		name = randomevent.3.a
+        add_war_support = -0.05
+		random_list = {
+			34 = {
+                add_stability = 0.04
+			}
+			33 = {
+                add_stability = 0.08
+			}
+			33 = {
+                add_stability = 0.1
+			}
+		}
+        hidden_effect = {
+            random_list = {
+                80 = {
+                    add_to_variable = { randomevent_amount = 1 }
+                }
+                20 = {
+                }
+            }
+        }
+	}
+}
+
+country_event = {
+	id = randomevent.4
+	title = randomevent.4.t
+	desc = randomevent.4.d
+	picture = GFX_franco_event.1
+
+	is_triggered_only = yes
+	
+	option = {
+		name = randomevent.4.a
+        if = {
+            limit = {
+                num_of_factories > 39
+            }
+            add_offsite_building = { type = industrial_complex level = 1 }
+        }
+        else = {
+            custom_effect_tooltip = add_30_industrial_power
+            add_to_variable = { industrial_power = 30 }
+        }
+        hidden_effect = {
+            random_list = {
+                80 = {
+                    add_to_variable = { randomevent_amount = 1 }
+                }
+                20 = {
+                }
+            }
+        }
+	}
+}
+
+country_event = {
+	id = randomevent.5
+	title = randomevent.5.t
+	desc = randomevent.5.d
+	picture = GFX_franco_event.1
+
+	is_triggered_only = yes
+	
+	option = {
+		name = randomevent.5.a
+        custom_effect_tooltip = add_20_industrial_power
+        add_to_variable = { industrial_power = 20 }
+        hidden_effect = {
+            random_list = {
+                80 = {
+                    add_to_variable = { randomevent_amount = 1 }
+                }
+                20 = {
+                }
+            }
+        }
+	}
+}
+
+country_event = {
+	id = randomevent.6
+	title = randomevent.6.t
+	desc = randomevent.6.d
+	picture = GFX_franco_event.1
+
+	is_triggered_only = yes
+	
+	option = {
+		name = randomevent.6.a
+        add_political_power = 15
+        custom_effect_tooltip = add_5_industrial_power
+        add_to_variable = { industrial_power = 5 }
+        hidden_effect = {
+            random_list = {
+                80 = {
+                    add_to_variable = { randomevent_amount = 1 }
+                }
+                20 = {
+                }
+            }
+        }
+	}
+	option = {
+		name = randomevent.6.b
+        random_owned_state = {
+            add_manpower = 100000
+        }
+        add_manpower = 20000
+        hidden_effect = {
+            random_list = {
+                80 = {
+                    add_to_variable = { randomevent_amount = 1 }
+                }
+                20 = {
+                }
+            }
+        }
+	}
+}
+
+country_event = {
+	id = randomevent.7
+	title = randomevent.7.t
+	desc = randomevent.7.d
+	picture = GFX_franco_event.1
+
+	is_triggered_only = yes
+	
+	option = {
+		name = randomevent.7.a
+        custom_effect_tooltip = add_20_cultural_power
+        add_to_variable = { cultural_power = 20 }
+        hidden_effect = {
+            random_list = {
+                80 = {
+                    add_to_variable = { randomevent_amount = 1 }
+                }
+                20 = {
+                }
+            }
+        }
+	}
+}
+
+country_event = {
+	id = randomevent.8
+	title = randomevent.8.t
+	desc = randomevent.8.d
+	picture = GFX_franco_event.1
+
+	is_triggered_only = yes
+	
+	option = {
+		name = randomevent.8.a
+		random_list = {
+			34 = {
+                custom_effect_tooltip = lose_3_corruption
+                subtract_from_variable = { corruption_variable = 3 }
+			}
+			33 = {
+                add_stability = 0.08
+                custom_effect_tooltip = lose_4_corruption
+                subtract_from_variable = { corruption_variable = 4 }
+			}
+			33 = {
+                add_stability = 0.1
+                custom_effect_tooltip = lose_5_corruption
+                subtract_from_variable = { corruption_variable = 5 }
+			}
+		}
+        hidden_effect = {
+            random_list = {
+                80 = {
+                    add_to_variable = { randomevent_amount = 1 }
+                }
+                20 = {
+                }
+            }
+        }
+	}
+}
+
+country_event = {
+	id = randomevent.9
+	title = randomevent.9.t
+	desc = randomevent.9.d
+	picture = GFX_franco_event.1
+
+	is_triggered_only = yes
+	
+	option = {
+		name = randomevent.9.a
+		add_stability = 0.05
+        hidden_effect = {
+            random_list = {
+                80 = {
+                    add_to_variable = { randomevent_amount = 1 }
+                }
+                20 = {
+                }
+            }
+        }
+	}
+}
+
+country_event = {
+	id = randomevent.10
+	title = randomevent.10.t
+	desc = randomevent.10.d
+	picture = GFX_franco_event.1
+
+	is_triggered_only = yes
+	
+	option = {
+		name = randomevent.10.a
+        custom_effect_tooltip = add_20_cultural_power
+        add_to_variable = { cultural_power = 20 }
+        hidden_effect = {
+            random_list = {
+                80 = {
+                    add_to_variable = { randomevent_amount = 1 }
+                }
+                20 = {
+                }
+            }
+        }
+	}
+}
