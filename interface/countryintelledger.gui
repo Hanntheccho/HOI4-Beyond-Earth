@@ -2,7 +2,7 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "ledger_resource_entry"
-		position = { x=0 y=0 }
+		position = { x=0 y=18 }
 		size = { width=108 height= 27 }
 		
 		iconType = {
@@ -48,9 +48,9 @@ guiTypes = {
 
 		iconType = {
 			name = "icon"
-			position = { x = 0 y = 0 }
+			position = { x = 0 y = -10 }
 			spriteType = "GFX_idea_unknown"
-			scale = 0.8
+			#scale = 0.8
 		}
 	}
 	
@@ -408,6 +408,54 @@ guiTypes = {
 					name = "background"
 					spriteType ="GFX_tiled_window2_1b_border"
 				}
+
+				containerWindowType = {
+					name = "intel_ledger_frame"
+					size = { width = 538 height = 310 }
+					
+					background = {
+						name = "intel_ledger_frame_bg"
+						quadTextureSprite = "GFX_tiled_bg"
+						position = { x = 6 y = 16 }
+						alwaystransparent = yes
+					}
+				}
+
+				containerWindowType = {
+					name = "intel_ledger_frame_1"
+					size = { width = 516 height = 66 }
+					
+					background = {
+						name = "intel_ledger_frame_bg_1"
+						quadTextureSprite = "GFX_tiled_window_1b_thin_border"
+						position = { x = 20 y = 27 }
+						alwaystransparent = yes
+					}
+				}
+
+				containerWindowType = {
+					name = "intel_ledger_frame_2"
+					size = { width = 516 height = 66 }
+					
+					background = {
+						name = "intel_ledger_frame_bg_2"
+						quadTextureSprite = "GFX_generic_background"
+						position = { x = 20 y = 27 }
+						alwaystransparent = yes
+					}
+				}
+
+				containerWindowType = {
+					name = "intel_ledger_frame_3"
+					size = { width = 516 height = 66 }
+					
+					background = {
+						name = "intel_ledger_frame_bg_3"
+						quadTextureSprite = "GFX_generic_background"
+						position = { x = 20 y = 27 }
+						alwaystransparent = yes
+					}
+				}
 				
 				iconType ={
 					name ="separator_1"
@@ -469,24 +517,24 @@ guiTypes = {
 
 						instantTextBoxType = {
 							name ="industrial_capacity_2"
-							position = { x= -1 y = 0 }
-							font = "Beyond"
-							text = "IC"
-							format = center
+							position = { x= 10 y = 0 }
+							font = "Beyondsmall"
+							text = "INDUSTRIAL CAPACITY:"
+							format = left
 							vertical_alignment = center
-							maxWidth = 44
+							maxWidth = 400
 							maxHeight = 34
 							alwaystransparent = yes
 						}	
 				
 						instantTextBoxType = {
 							name ="industrial_capacity"
-							position = { x= 50 y = 1 }
+							position = { x= 50 y = 20 }
 							font = "Focusfont"
 							text = "999"
 							format = left
 							vertical_alignment = center
-							maxWidth = 44
+							maxWidth = 200
 							maxHeight = 34
 							alwaystransparent = yes
 						}	
@@ -494,14 +542,14 @@ guiTypes = {
 					
 					containerWindowType = {
 						name = "prod_manpower"
-						position = { x = 80 y = 22 }
+						position = { x = 290 y = 102 }
 						size = { width = 100 height = 60 }
 						clipping = no
 						
 						iconType = {
 							name ="manpower_bg"
 							spriteType = "GFX_diplo_unity_bg"
-							position = { x= 0 y = 1 }
+							position = { x= 100 y = 1 }
 						}	
 
 						iconType ={
@@ -515,18 +563,18 @@ guiTypes = {
 						instantTextBoxType = {
 							name ="manpower_2"
 							position = { x= -1 y = 0 }
-							font = "Beyond"
-							text = "MP"
-							format = center
+							font = "Beyondsmall"
+							text = "MANPOWER:"
+							format = right
 							vertical_alignment = center
-							maxWidth = 100
+							maxWidth = 200
 							maxHeight = 34
 							alwaystransparent = yes
 						}
 
 						instantTextBoxType = {
 							name ="manpower"
-							position = { x= 90 y = 1 }
+							position = { x= 90 y = 20 }
 							font = "Focusfont"
 							text = "999"
 							format = left
@@ -540,14 +588,14 @@ guiTypes = {
 					
 					containerWindowType = {
 						name = "prod_convoy"
-						position = { x = 270 y = 22 }
+						position = { x = 310 y = 22 }
 						size = { width = 100 height = 60 }
 						clipping = no
 						
 						iconType = {
 							name ="convoys_bg"
 							spriteType = "GFX_diplo_unity_bg"
-							position = { x= 0 y = 1 }
+							position = { x= 120 y = -10 }
 						}	
 						
 						iconType ={
@@ -561,23 +609,23 @@ guiTypes = {
 						instantTextBoxType = {
 							name ="convoys_count_2"
 							position = { x= -1 y = 0 }
-							font = "Beyond"
-							text = "CY"
-							format = center
+							font = "Beyondsmall"
+							text = "CONVOYS:"
+							format = left
 							vertical_alignment = center
-							maxWidth = 80
+							maxWidth = 200
 							maxHeight = 34
 							alwaystransparent = yes
 						}
 
 						instantTextBoxType = {
 							name ="convoys_count"
-							position = { x= 60 y = 1 }
+							position = { x= 130 y = 0 }
 							font = "Focusfont"
 							text = "999"
-							format = center
+							format = left
 							vertical_alignment = center
-							maxWidth = 44
+							maxWidth = 200
 							maxHeight = 34
 							alwaystransparent = yes
 						}
@@ -585,7 +633,7 @@ guiTypes = {
 					
 					containerWindowType = {
 						name = "prod_fuel"
-						position = { x = 390 y = 22 }
+						position = { x = 320 y = 196 }
 						size = { width = 100 height = 60 }
 						clipping = no
 						iconType = {
@@ -605,41 +653,27 @@ guiTypes = {
 						instantTextBoxType = {
 							name ="fuel_value_2"
 							position = { x= -1 y = 0 }
-							font = "Beyond"
-							text = "FU"
-							format = center
+							font = "Beyondsmall"
+							text = "AVAILABLE FUEL:"
+							format = left
 							vertical_alignment = center
-							maxWidth = 80
+							maxWidth = 200
 							maxHeight = 34
 							alwaystransparent = yes
 						}
 
 						instantTextBoxType = {
 							name ="fuel_value"
-							position = { x= 80 y = 1 }
+							position = { x= 80 y = 20 }
 							font = "Focusfont"
 							text = "999"
 							format = left
 							vertical_alignment = center
-							maxWidth = 44
+							maxWidth = 200
 							maxHeight = 34
 							alwaystransparent = yes
 						}
 					} #end prod_manpower_convoy
-				}
-
-				iconType ={
-					name ="separator_2"
-					spriteType = "GFX_bg_separator"
-					position = { x = 5 y = 79 }
-					Orientation = "UPPER_LEFT"
-				}
-
-				iconType ={
-					name ="separator_3"
-					spriteType = "GFX_bg_separator"
-					position = { x = 5 y = 140 }
-					Orientation = "UPPER_LEFT"
 				}
 
 				iconType ={
@@ -654,6 +688,29 @@ guiTypes = {
 					position = { x = 8  y = 150 }
 					size = { width = 500 height = 180 }
 
+					containerWindowType = {
+						name = "intel_ledger_frame_4"
+						size = { width = 286 height = 155 }
+						
+						background = {
+							name = "intel_ledger_frame_bg_4"
+							quadTextureSprite = "GFX_generic_background"
+							position = { x = 13 y = 0 }
+							alwaystransparent = yes
+						}
+					}
+
+					containerWindowType = {
+						name = "intel_ledger_frame_5"
+						size = { width = 286 height = 155 }
+						
+						background = {
+							name = "intel_ledger_frame_bg_5"
+							quadTextureSprite = "GFX_generic_background"
+							position = { x = 13 y = 0 }
+							alwaystransparent = yes
+						}
+					}
 
 					#background = {
 					#	name = "Background_2"
@@ -673,12 +730,22 @@ guiTypes = {
 						iconType = {
 							name = "estimated_civil_industry_icon"
 							quadTextureSprite ="GFX_endgame_civ_industry_button"
-							position = { x = 0 y = 5 }
+							position = { x = 10000 y = 5 }
+						}
+
+						instantTextboxType = {
+							name = "estimated_civil_industry_size_text"
+							position = { x = 20 y = 5 }
+							font = "Arial"
+							text = "/// CIV FACTORIES:"
+							maxWidth = 200
+							maxHeight = 20
+							format = left
 						}
 						
 						instantTextboxType = {
 							name = "estimated_civil_industry_size"
-							position = { x = 55 y = 24 }
+							position = { x = 55 y = 30 }
 							font = "Focusfont"
 							text = "45-120"
 							maxWidth = 100
@@ -694,16 +761,27 @@ guiTypes = {
 						
 						iconType = {
 							name = "civil_industry_damaged_icon"
-							position = { x = 110 y = 8 }
+							position = { x = 10000 y = 8 }
 							quadTextureSprite = "GFX_building_status_overlay"
 							alwaystransparent = yes
 							frame = 3
 							#scale = 0.7
 						}
+
+						instantTextboxType = {
+							name = "civil_industry_damaged_rate_text"
+							position = { x = 138 y = 25 }
+							font = "Arialsmall"
+							text = "/// REPAIR:"
+							maxWidth = 200
+							maxHeight = 20
+							format = left
+							alwaystransparent = yes
+						}
 						
 						instantTextboxType = {
 							name = "civil_industry_damaged_rate"
-							position = { x = 158 y = 24 }
+							position = { x = 225 y = 29 }
 							font = "Focusfont"
 							text = "35%"
 							maxWidth = 50
@@ -721,12 +799,22 @@ guiTypes = {
 						iconType = {
 							name = "estimated_mil_industry_icon"
 							quadTextureSprite ="GFX_endgame_industry_button"
-							position = { x = 0 y = 65 }
+							position = { x = 10000 y = 65 }
+						}
+
+						instantTextboxType = {
+							name = "estimated_military_industry_size_text"
+							position = { x = 20 y = 55 }
+							font = "Arial"
+							text = "/// MIL FACTORIES:"
+							maxWidth = 300
+							maxHeight = 20
+							format = left
 						}
 						
 						instantTextboxType = {
 							name = "estimated_military_industry_size"
-							position = { x = 55 y = 85 }
+							position = { x = 55 y = 80 }
 							font = "Focusfont"
 							text = "45-120"
 							maxWidth = 100
@@ -742,16 +830,27 @@ guiTypes = {
 						
 						iconType = {
 							name = "mil_industry_damaged_icon"
-							position = { x = 110 y = 70 }
+							position = { x = 10000 y = 70 }
 							quadTextureSprite = "GFX_building_status_overlay"
 							alwaystransparent = yes
 							frame = 3
 							#scale = 0.7
 						}
+
+						instantTextboxType = {
+							name = "mil_industry_damaged_rate_text"
+							position = { x = 138 y = 75 }
+							font = "Arialsmall"
+							text = "/// REPAIR:"
+							maxWidth = 200
+							maxHeight = 20
+							format = left
+							alwaystransparent = yes
+						}
 						
 						instantTextboxType = {
 							name = "mil_industry_damaged_rate"
-							position = { x = 158 y = 85 }
+							position = { x = 225 y = 79 }
 							font = "Focusfont"
 							text = "35%"
 							maxWidth = 50
@@ -769,12 +868,22 @@ guiTypes = {
 						iconType = {
 							name = "estimated_naval_industry_icon"
 							quadTextureSprite ="GFX_endgame_naval_industry_button"
-							position = { x = 0 y = 125 }
+							position = { x = 10000 y = 125 }
+						}
+
+						instantTextboxType = {
+							name = "estimated_naval_industry_size_text"
+							position = { x = 20 y = 105 }
+							font = "Arial"
+							text = "/// DOCKYARDS:"
+							maxWidth = 200
+							maxHeight = 20
+							format = left
 						}
 						
 						instantTextboxType = {
 							name = "estimated_naval_industry_size"
-							position = { x = 55 y = 145 }
+							position = { x = 55 y = 130 }
 							font = "Focusfont"
 							text = "45-120"
 							maxWidth = 100
@@ -790,16 +899,27 @@ guiTypes = {
 						
 						iconType = {
 							name = "naval_industry_damaged_icon"
-							position = { x = 110 y = 128 }
+							position = { x = 10000 y = 128 }
 							quadTextureSprite = "GFX_building_status_overlay"
 							alwaystransparent = yes
 							frame = 3
 							#scale = 0.7
 						}
+
+						instantTextboxType = {
+							name = "naval_industry_damaged_rate_text"
+							position = { x = 138 y = 125 }
+							font = "Arialsmall"
+							text = "/// REPAIR:"
+							maxWidth = 200
+							maxHeight = 20
+							format = left
+							alwaystransparent = yes
+						}
 						
 						instantTextboxType = {
 							name = "naval_industry_damaged_rate"
-							position = { x = 158 y = 145 }
+							position = { x = 225 y = 129 }
 							font = "Focusfont"
 							text = "35%"
 							maxWidth = 50
@@ -823,7 +943,7 @@ guiTypes = {
 					
 					instantTextboxType = {
 						name = "factory_trade_text2"
-						position = { x = 220 y = 6 }
+						position = { x = 10000 y = 6 }
 						font = "Focusfont"
 						text = "Traded factories:"
 						maxWidth = 200
@@ -833,7 +953,7 @@ guiTypes = {
 					
 					instantTextboxType = {
 						name = "factory_trade_text"
-						position = { x = 400 y = 6 }
+						position = { x = 10000 y = 6 }
 						font = "Focusfont"
 						text = "45-120"
 						maxWidth = 100
@@ -843,7 +963,7 @@ guiTypes = {
 
 					containerWindowType = {
 						name = "equipment_container"
-						position = { x = 195  y = 57 }
+						position = { x = 10000  y = 57 }
 							
 									
 						#iconType = {
@@ -1063,6 +1183,18 @@ guiTypes = {
 					#	name = "Background"
 					#	spriteType ="GFX_mini_bg"
 					#}
+
+					containerWindowType = {
+						name = "intel_ledger_frame_6"
+						size = { width = 390 height = 195 }
+						
+						background = {
+							name = "intel_ledger_frame_bg_6"
+							quadTextureSprite = "GFX_tiled_bg"
+							position = { x = 64 y = 4 }
+							alwaystransparent = yes
+						}
+					}
 						
 					containerWindowType = {
 						name = "linechart_filter_button_container"
@@ -1281,9 +1413,9 @@ guiTypes = {
 						
 						gridBoxType = {
 							name = "ideas_grid"
-							position = { x = 5 y = -15 }
+							position = { x = 15 y = -15 }
 							size = { width = 255 height = 106}
-							slotsize = { width = 60 height = 50 }
+							slotsize = { width = 80 height = 50 }
 							format = "UPPER_LEFT"
 						}
 						
@@ -1302,9 +1434,33 @@ guiTypes = {
 						}
 					}
 				
+					containerWindowType = {
+						name = "intel_ledger_frame_7"
+						size = { width = 520 height = 60 }
+						
+						background = {
+							name = "intel_ledger_frame_bg_7"
+							quadTextureSprite = "GFX_generic_background"
+							position = { x = 13 y = 57 }
+							alwaystransparent = yes
+						}
+					}
+
+					containerWindowType = {
+						name = "intel_ledger_frame_8"
+						size = { width = 520 height = 60 }
+						
+						background = {
+							name = "intel_ledger_frame_bg_8"
+							quadTextureSprite = "GFX_generic_background"
+							position = { x = 13 y = 57 }
+							alwaystransparent = yes
+						}
+					}
+
 					iconType = {
 						name = "tech_icon_deco"
-						position = { x = 26 y = 55 }
+						position = { x = 10000 y = 55 }
 						spriteType = "GFX_intel_ledger_tech"
 					}
 				
@@ -2272,8 +2428,8 @@ guiTypes = {
 				
 				instantTextboxType = {
 					name = "intel"
-					position = { x = 20 y = 25 }
-					font = "Arial"
+					position = { x = 20 y = 28 }
+					font = "Focusfont"
 					text = "Germanian"
 					maxWidth = 88
 					fixedsize = yes
@@ -2315,8 +2471,8 @@ guiTypes = {
 
 				instantTextboxType = {
 					name = "intel"
-					position = { x = 20 y = 25 }
-					font = "Arial"
+					position = { x = 20 y = 28 }
+					font = "Focusfont"
 					text = "Germanian"
 					maxWidth = 88
 					fixedsize = yes
@@ -2358,8 +2514,8 @@ guiTypes = {
 
 				instantTextboxType = {
 					name = "intel"
-					position = { x = 20 y = 25 }
-					font = "Arial"
+					position = { x = 20 y = 28 }
+					font = "Focusfont"
 					text = "Germanian"
 					maxWidth = 88
 					fixedsize = yes
@@ -2401,8 +2557,8 @@ guiTypes = {
 
 				instantTextboxType = {
 					name = "intel"
-					position = { x = 20 y = 25 }
-					font = "Arial"
+					position = { x = 20 y = 28 }
+					font = "Focusfont"
 					text = "Germanian"
 					maxWidth = 88
 					fixedsize = yes
