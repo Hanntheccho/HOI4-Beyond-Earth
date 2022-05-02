@@ -66,7 +66,7 @@ Beyong Earth does not add any new resources but rather reskins and re-names the 
 |------------------|-----------------------|--------------------------------|
 | Oil              | Energy                | PRODUCTION_MATERIALS_OIL       |
 | Aluminium        | Polymers              | PRODUCTION_MATERIALS_ALUMINIUM |
-| Rubber           | Battery Components    | PRODUCTION_MATERIALS_RUBBER    |
+| Rubber           | Battery Materials     | PRODUCTION_MATERIALS_RUBBER    |
 | Chromium         | Superconductors       | PRODUCTION_MATERIALS_CHROMIUM  |
 | Steel            | Superalloys           | PRODUCTION_MATERIALS_STEEL     |
 | Tungsten         | Electronic Components | PRODUCTION_MATERIALS_TUNGSTEN  |

@@ -18,7 +18,7 @@ guiTypes = {
 		name = "navalregionview"
 		
 		position = { x=-438 y=-280}
-		show_position = { x=-4 y =-276 }
+		show_position = { x=0 y =-276 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
@@ -27,12 +27,16 @@ guiTypes = {
 		
 		background = {
 			name = "Background"		
-			quadTextureSprite ="GFX_naval_region_window_bg"
+			quadTextureSprite ="GFX_tiled_bg"
+			position = {
+				x = 0
+				y = 30
+			}
 		}
 
 		buttonType = {
 			name = "close_button"
-			position = { x = -36 y = 36 }
+			position = { x = -29 y = 33 }
 			quadTextureSprite ="GFX_closebutton_small"
 			buttonFont = "Main_14_black"
 			shortcut = "ESCAPE"
@@ -54,57 +58,94 @@ guiTypes = {
 		iconType = {
 			name = "ship_icon"
 			spriteType = "GFX_naval_region_window_ship_icon"
-			position = {x=13 y=65}
+			position = {x=10000 y=65}
 			orientation = "UPPER_LEFT"
 		}
 
 		instantTextboxType = {
+			name = "ship_text2"
+			position = {x=10 y=60}
+			font = "Arial"
+			text = "FRIENDLY_SHIPS2"
+			fixedsize = yes
+			maxWidth = 200
+			maxHeight = 40
+			format = left
+			tooltip = "NUMBER_OF_ALLY_SHIPS"
+		}
+
+		instantTextboxType = {
 			name = "ship_text"
-			position = {x=38 y=75}
+			position = {x=38 y=85}
 			font = "Focusfont"
 			text = "123"
 			fixedsize = yes
 			maxWidth = 100
 			maxHeight = 40
-			format = center
+			format = left
 			tooltip = "NUMBER_OF_ALLY_SHIPS"
 		}
 			
 		iconType = {
 			name = "plane_icon"
 			spriteType = "GFX_naval_region_window_plane_icon"
-			position = {x=13 y=98}
+			position = {x=10000 y=98}
 			orientation = "UPPER_LEFT"
+		}
+
+		instantTextboxType = {
+			name = "plane_text2"
+			position = {x=15 y=103}
+			font = "Arial"
+			text = "FRIENDLY_PLANES2"
+			fixedsize = yes
+			maxWidth = 100
+			maxHeight = 40
+			format = left
+			tooltip = "EFFECT_OF_OUR_AIR_SUPERIORITY_ON_NAVAL_SUPREMACY"
 		}
 		
 		instantTextboxType = {
 			name = "plane_text"
-			position = {x=30 y=108}
+			position = {x=70 y=110}
 			font = "Focusfont"
 			text = "20%"
 			fixedsize = yes
 			maxWidth = 100
 			maxHeight = 40
-			format = center
+			format = left
 			tooltip = "EFFECT_OF_OUR_AIR_SUPERIORITY_ON_NAVAL_SUPREMACY"
 		}
 
 		iconType = {
 			name = "mine_icon"
 			spriteType = "GFX_naval_region_window_mine_icon"
-			position = {x=110 y=98}
+			position = {x=10000 y=98}
 			orientation = "UPPER_LEFT"
 		}
+
+		instantTextboxType = {
+			name = "mine_text2"
+			position = {x=93 y=85}
+			font = "Arialsmall"
+			text = "FRIENDLY_MINES2"
+			fixedsize = yes
+			maxWidth = 100
+			maxHeight = 40
+			format = left
+			tooltip = "EFFECT_OF_OUR_MINES_ON_NAVAL_SUPREMACY"
+		}
+
 		
 		instantTextboxType = {
 			name = "mine_text"
-			position = {x=126 y=108}
+			position = {x=160 y=89}
 			font = "Focusfont"
 			text = "15%"
 			fixedsize = yes
 			maxWidth = 100
 			maxHeight = 40
-			format = center
+			format = left
 			tooltip = "EFFECT_OF_OUR_MINES_ON_NAVAL_SUPREMACY"
 		}
 
@@ -112,79 +153,139 @@ guiTypes = {
 		iconType = {
 			name = "enemy_ship_icon"
 			spriteType = "GFX_naval_region_window_enemy_ship_icon"
-			position = {x=312 y=65}
+			position = {x=10000 y=65}
 			orientation = "UPPER_LEFT"
 		}
 
 		instantTextboxType = {
+			name = "enemy_ship_text2"
+			position = {x=326 y=60}
+			font = "Arial"
+			text = "ENEMY_SHIPS2"
+			fixedsize = yes
+			maxWidth = 100
+			maxHeight = 40
+			format = right
+			tooltip = "NUMBER_OF_ENEMY_SHIPS"
+		}
+
+		instantTextboxType = {
 			name = "enemy_ship_text"
-			position = {x=293 y=75}
+			position = {x=298 y=85}
 			font = "Focusfont"
 			text = "24-100"
 			fixedsize = yes
 			maxWidth = 100
 			maxHeight = 40
-			format = center
+			format = right
 			tooltip = "NUMBER_OF_ENEMY_SHIPS"
 		}
 			
 		iconType = {
 			name = "enemy_plane_icon"
 			spriteType = "GFX_naval_region_window_enemy_plane_icon"
-			position = {x=335 y=98}
+			position = {x=10000 y=98}
 			orientation = "UPPER_LEFT"
+		}
+
+		instantTextboxType = {
+			name = "enemy_plane_text2"
+			position = {x=311 y=103}
+			font = "Arial"
+			text = "ENEMY_PLANES2"
+			fixedsize = yes
+			maxWidth = 100
+			maxHeight = 40
+			format = right
+			tooltip = "EFFECT_OF_ENEMY_AIR_SUPERIORITY_ON_NAVAL_SUPREMACY"
 		}
 		
 		instantTextboxType = {
 			name = "enemy_plane_text"
-			position = {x=301 y=108}
+			position = {x=255 y=110}
 			font = "Focusfont"
 			text = "20%"
 			fixedsize = yes
 			maxWidth = 100
 			maxHeight = 40
-			format = center
+			format = right
 			tooltip = "EFFECT_OF_ENEMY_AIR_SUPERIORITY_ON_NAVAL_SUPREMACY"
 		}
 
 		iconType = {
 			name = "enemy_mine_icon"
 			spriteType = "GFX_naval_region_window_enemy_mine_icon"
-			position = {x=240 y=98}
+			position = {x=10000 y=98}
 			orientation = "UPPER_LEFT"
+		}
+
+		instantTextboxType = {
+			name = "enemy_mine_text2"
+			position = {x=240 y=85}
+			font = "Arialsmall"
+			text = "ENEMY_MINES2"
+			fixedsize = yes
+			maxWidth = 100
+			maxHeight = 40
+			format = right
+			tooltip = "EFFECT_OF_ENEMY_MINES_ON_NAVAL_SUPREMACY"
 		}
 		
 		instantTextboxType = {
 			name = "enemy_mine_text"
-			position = {x=211 y=108}
+			position = {x=174 y=89}
 			font = "Focusfont"
 			text = "5%"
 			fixedsize = yes
 			maxWidth = 100
 			maxHeight = 40
-			format = center
+			format = right
 			tooltip = "EFFECT_OF_ENEMY_MINES_ON_NAVAL_SUPREMACY"
 		}
 
 		iconType = {
 			name = "progress_disabled"
 			spriteType = "GFX_strategicnavy_progress_disabled"
-			position = {x=126 y=76}
+			position = {x=126 y=68}
 			tooltip = "NO_NAVAL_SUPREMACY_INFO"
 		}
 		
 		iconType = {
 			name = "progress"
 			spriteType = "GFX_strategicanavy_progress"
-			position = {x=126 y=76}
+			position = {x=126 y=68}
 		}
 		
 		iconType = { 
 			name = "progress_frame"
-			position = {x=122 y=73}
+			position = {x=122 y=64}
 			spriteType = "GFX_strategicnavy_progress_frame"
 			alwaystransparent = yes
-		}			
+		}	
+		
+		containerWindowType = {
+			name = "state_extra_bg"
+			size = { width = 418 height = 75 }
+			
+			background = {
+				name = "division_name_frame_bg"
+				quadTextureSprite = "GFX_generic_background"
+				position = { x = 7 y = 135 }
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "state_extra_bg2"
+			size = { width = 418 height = 75 }
+			
+			background = {
+				name = "division_name_frame_bg2"
+				quadTextureSprite = "GFX_generic_background"
+				position = { x = 7 y = 135 }
+				alwaystransparent = yes
+			}
+		}
 
 		iconType = {
 			name = "terrain_picture"
