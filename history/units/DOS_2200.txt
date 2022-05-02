@@ -1,0 +1,59 @@
+division_template = {
+	name = "Infantry Militia"			
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+        infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
+	}
+	support = {
+		recon = { x = 0 y = 0}
+	}
+}
+
+## Units - 2 ##
+units = {
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 331
+		division_template = "Infantry Militia"
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 264
+		division_template = "Infantry Militia"
+		start_experience_factor = 0.3
+	}
+	fleet = {
+		name = "The Triumph Fleet"
+		naval_base = 251
+		task_force = {
+			name = "Triumph Task Force"
+			location = 251
+			ship = { name = "DOS Orkan" definition = destroyer start_experience_factor = 0.1 equipment = { be_destroyer_1  = { amount = 1 owner = DOS } } }
+			ship = { name = "DOS Lilac" definition = destroyer start_experience_factor = 0.1 equipment = { be_destroyer_1  = { amount = 1 owner = DOS } } }
+		}
+	}
+}
+
+air_wings = {
+	17 = {
+		fighter_equipment_0 = {
+			owner = DOS
+			amount = 20
+		}
+		name = "2nd Defiance Fighter Group"
+	}
+}
