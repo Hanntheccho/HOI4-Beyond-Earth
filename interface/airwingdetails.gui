@@ -13,7 +13,7 @@ guiTypes = {
 		
 		Background = {
 			name = "air_wing_stats_bg"
-			quadTextureSprite = "GFX_air_unit_stats_bg"
+			quadTextureSprite = "GFX_tiled_bg"
 		}
 		
 		buttonType = {
@@ -27,20 +27,21 @@ guiTypes = {
 		
 		buttonType = {
 			name = "btn_close"
-			position = { x = -35 y = 3 }
-			quadTextureSprite ="GFX_NV_btn_close"
+			position = { x = -36 y = 3 }
+			quadTextureSprite ="GFX_closebutton"
 			buttonFont = "Main_14_black"
 			shortcut = "ESCAPE"
 			clicksound = click_close
 			pdx_tooltip = "CLOSE"
 			Orientation = "UPPER_RIGHT"
+			#scale = 0.8
 		}
 		
 		instantTextboxType = {
 			name = "ship_title"
-			position = { x = 35 y = 0 }
+			position = { x = 35 y = 10 }
 			textureFile = ""
-			font = "Arialbig"
+			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
 			text = "AIR_WING_STATS"
 			maxWidth = 300
@@ -59,8 +60,8 @@ guiTypes = {
 		iconType = { 
 			name = "type_icon"
 			spriteType = "GFX_technology_medium" # <- Replaced in code
-			position = { x=27 y=43 }
-			scale = 0.5
+			position = { x=10000 y=35 }
+			scale = 0.4
 		}
 				
 		editBoxType = {
@@ -68,40 +69,52 @@ guiTypes = {
 			position = { x = 113 y = 42 }
 			size = {x=267 y=20}
 			#textureFile = ""
-			font = "hoi_20b"
+			font = "Focusfont"
 			borderSize = {x = 0 y = 0}
 			text = ""
 			#maxWidth = 300
 			#maxHeight = 20
 			#format = left
 		}
+
+		iconType = {
+			name = "current_manpower_box"
+			spriteType = "GFX_generic_box_96"
+			position = { x = 33 y = 364  }
+		}
 		
 		iconType = {
 			name = "manpower_icon"
 			spriteType = "GFX_manpower_icon"
-			position = { x=20 y=364 }
+			position = { x=10000 y=364 }
 		}
 		
 		instantTextboxType = {
 			name = "current_manpower"
 			position = { x = 50 y = 369  }
-			font = "Arial"
+			font = "Focusfont"
 			text = "Stuff"
 			maxWidth = 60
 			maxHeight = 20
 			format = center
 		}
+
+		iconType = {
+			name = "equipment_icon_box"
+			spriteType = "GFX_generic_box_96"
+			position = { x = 635 y = 6 }
+		}
 		
 		iconType = {
 			name = "equipment_icon"
 			spriteType = "GFX_equipment_icon"
-			position = { x = 638 y = 8 }
+			position = { x = 638 y = 7 }
 		}
 		
 		instantTextboxType = {
 			name = "equipment_ratio"
-			position = { x = 690 y = 8 }
-			font = "Arial"
+			position = { x = 680 y = 11 }
+			font = "Focusfont"
 			text = "Stuff"
 			maxWidth = 60
 			maxHeight = 20
@@ -123,7 +136,7 @@ guiTypes = {
 				instantTextboxType = {
 					name = "base_stats_label"
 					position = { x = 5 y = 14 }
-					font = "hoi4_typewriter22"
+					font = "Beyondsmall"
 					text = "DESIGNER_BASE_STATS_LABEL"
 					maxWidth = 150
 					maxHeight = 20
@@ -149,8 +162,8 @@ guiTypes = {
 				instantTextboxType = {
 					name = "combat_stats_label"
 					position = { x = 10 y = 14 }
-					font = "hoi4_typewriter22"
-					text = "DESIGNER_COMBAT_STATS_LABEL"
+					font = "Beyondsmall"
+					text = "COMBAT"
 					maxWidth = 150
 					maxHeight = 20
 					format = left
@@ -176,7 +189,7 @@ guiTypes = {
 				instantTextboxType = {
 					name = "misc_stats_label"
 					position = { x = 10 y = 14 }
-					font = "hoi4_typewriter22"
+					font = "Beyondsmall"
 					text = "FE_MISC_STATS"
 					maxWidth = 150
 					maxHeight = 20
@@ -236,7 +249,7 @@ guiTypes = {
 			instantTextBoxType = {
 				name = "equipment_name"
 				position = { x = 85 y = -15 }
-				font = "hoi_24header"
+				font = "Focusfont"
 				borderSize = {x = 0 y = 0}
 				text = "name"	
 				maxWidth = 350
@@ -247,7 +260,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "equipment"
-			position = { x=561 y=30 }	
+			position = { x=561 y=40 }	
 			size = { width=268 height=400 }
 			orientation = upper_left
 			clipping = yes
@@ -277,8 +290,8 @@ guiTypes = {
 		iconType = {
 			name ="equipment_icon"
 			spriteType = "GFX_technology_medium"
-			position = { x=17 y=20 }
-			scale = 0.5
+			position = { x=14 y=7 }
+			scale = 0.3
 			alwaystransparent = yes
 		}
 		
@@ -292,8 +305,8 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "count"
-			position = {x=7 y=4}
-			font = "Arial"
+			position = {x=7 y=5}
+			font = "Focusfont"
 			maxWidth = 450
 			maxHeight = 23
 			format = left
@@ -303,7 +316,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "name"
 			position = {x=90 y=5}
-			font = "Arial"
+			font = "Focusfont"
 			maxWidth = 185
 			maxHeight = 23
 			fixedsize = yes
@@ -314,11 +327,12 @@ guiTypes = {
 		instantTextboxType = {
 			name = "type"
 			position = {x=90 y=23}
-			font = "hoi_16mbs"
+			font = "Focusfont"
 			maxWidth = 150
 			maxHeight = 23
 			format = left
 			alwaystransparent = yes
+			multiline = no
 		}
 	}
 }
