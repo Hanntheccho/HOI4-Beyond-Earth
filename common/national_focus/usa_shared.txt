@@ -1,0 +1,2147 @@
+## Initial Tree ##
+shared_focus = { #Ad Maria Per Aspera
+	id = USA_ad_maria_per_aspera
+
+	x = 10
+	y = 0
+
+	cost = 5
+	
+	completion_reward = {
+		country_event = {
+			id = us_junta.1
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Prepare Our Boats
+	id = USA_prepare_our_boats
+
+	relative_position_id = USA_ad_maria_per_aspera
+
+	x = -2
+	y = 1
+	
+	prerequisite = {
+		focus = USA_ad_maria_per_aspera
+	}
+
+	cost = 5
+	
+	completion_reward = {
+		add_timed_idea = {
+			idea = USA_naval_invasion_preparations
+			days = 360
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Repair Our Boats
+	id = USA_repair_our_boats
+
+	relative_position_id = USA_ad_maria_per_aspera
+
+	x = 2
+	y = 1
+	
+	prerequisite = {
+		focus = USA_ad_maria_per_aspera
+	}
+
+	cost = 5
+	
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = USA_century_navy
+			add_idea = USA_century_navy1
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Prepare Our Army
+	id = USA_prepare_our_army
+
+	relative_position_id = USA_ad_maria_per_aspera
+
+	x = -2
+	y = 2
+	
+	prerequisite = {
+		focus = USA_prepare_our_boats
+	}
+
+	cost = 5
+	
+	completion_reward = {
+		##spawns 1 rover and 1 elite infantry unit
+		#dont know how to add this lol
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Repair Our Army
+	id = USA_repair_our_army
+
+	relative_position_id = USA_ad_maria_per_aspera
+
+	x = 2
+	y = 2
+	
+	prerequisite = {
+		focus = USA_prepare_our_army
+	}
+
+	cost = 5
+	
+	completion_reward = {
+		add_equipment_to_stockpile = {
+			type = infantry_eq
+			amount = 750
+		}
+		add_equipment_to_stockpile = {
+			type = gun_equipment
+			amount = 750
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 50
+		}
+		add_equipment_to_stockpile = {
+			type = rover_equipment
+			amount = 50
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #The Last Voyage
+	id = USA_the_last_voyage
+
+	relative_position_id = USA_ad_maria_per_aspera
+
+	x = 0
+	y = 3
+	
+	prerequisite = {
+		focus = USA_prepare_our_army
+	}
+	prerequisite = {
+		focus = USA_repair_our_army
+	}
+
+	cost = 5
+	
+	completion_reward = {
+		country_event = {
+			id = us_junta.2
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Amphibious Landings
+	id = USA_amphibious_landings
+
+	relative_position_id = USA_the_last_voyage
+
+	x = -2
+	y = 1
+	
+	prerequisite = {
+		focus = USA_the_last_voyage
+	}
+
+	cost = 5
+	
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = USA_century_navy1
+			add_idea = USA_century_navy2
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Recruit From Bluehelmets
+	id = USA_recruit_from_bluehelmets
+
+	relative_position_id = USA_the_last_voyage
+
+	x = 2
+	y = 1
+	
+	prerequisite = {
+		focus = USA_the_last_voyage
+	}
+
+	cost = 5
+	
+	completion_reward = {
+		#spawns 2 militia divisions
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Scavenge A.R.C. Ships
+	id = USA_scavenge_arc_ships
+
+	relative_position_id = USA_the_last_voyage
+
+	x = -2
+	y = 2
+	
+	prerequisite = {
+		focus = USA_amphibious_landings
+	}
+
+	cost = 5
+	
+	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = be_naval_tech
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Steal A.R.C. Aid
+	id = USA_steal_arc_aid
+
+	relative_position_id = USA_the_last_voyage
+
+	x = 2
+	y = 2
+	
+	prerequisite = {
+		focus = USA_recruit_from_bluehelmets
+	}
+
+	cost = 5
+	
+	completion_reward = {
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 100
+		}
+		add_equipment_to_stockpile = {
+			type = rover_equipment
+			amount = 100
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Step Into The 22nd Century
+	id = USA_step_into_the_22nd_century
+
+	relative_position_id = USA_the_last_voyage
+
+	x = -4
+	y = 3
+	
+	prerequisite = {
+		focus = USA_scavenge_arc_ships
+	}
+
+	cost = 5
+	
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = USA_century_navy2
+			add_idea = USA_century_navy3
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Pravin's Patronage
+	id = USA_pravins_patronage
+
+	relative_position_id = USA_the_last_voyage
+
+	x = 0
+	y = 3
+	
+	prerequisite = {
+		focus = USA_scavenge_arc_ships
+	}
+	prerequisite = {
+		focus = USA_steal_arc_aid
+	}
+
+	cost = 5
+	
+	completion_reward = {
+		add_timed_idea = {
+			idea = USA_pravins_approval
+			days = 180
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Promises Of Democracy
+	id = USA_promises_of_democracy
+
+	relative_position_id = USA_the_last_voyage
+
+	x = 4
+	y = 3
+	
+	prerequisite = {
+		focus = USA_steal_arc_aid
+	}
+
+	cost = 5
+	
+	completion_reward = {
+		add_political_power = 150
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+## Second Tree ##
+shared_focus = { #Sic Semper Tyrannis
+	id = USA_sic_semper_tyrannis
+
+	x = 10
+	y = 0
+	
+	cost = 5
+	
+	completion_reward = {
+		country_event = {
+			id = us_junta.3
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Death To Traitors
+	id = USA_death_to_traitors
+	
+	relative_position_id = USA_sic_semper_tyrannis
+
+	x = -2
+	y = 1
+	
+	prerequisite = {
+		focus = USA_sic_semper_tyrannis
+	}
+	
+	cost = 5
+	
+	mutually_exclusive = {
+		focus = USA_restart_the_judicial_process
+	}
+	
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = USA_never_let_the_old_flag_fall
+			add_idea = USA_never_let_the_old_flag_fall1
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Restart The Judicial Process
+	id = USA_restart_the_judicial_process
+	
+	relative_position_id = USA_sic_semper_tyrannis
+
+	x = 2
+	y = 1
+	
+	prerequisite = {
+		focus = USA_sic_semper_tyrannis
+	}
+	
+	cost = 5
+	
+	mutually_exclusive = {
+		focus = USA_death_to_traitors
+	}
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Eliminate Threats To America
+	id = USA_eliminate_threats_to_america
+	
+	relative_position_id = USA_sic_semper_tyrannis
+
+	x = -2
+	y = 2
+	
+	prerequisite = {
+		focus = USA_death_to_traitors
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+		add_ideas = USA_national_security_agency
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Decapitate The Snakes
+	id = USA_decapitate_the_snakes
+	
+	relative_position_id = USA_sic_semper_tyrannis
+
+	x = -2
+	y = 3
+	
+	prerequisite = {
+		focus = USA_eliminate_threats_to_america
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+		add_state_core = 113
+		add_state_core = 114
+		add_state_core = 98
+		add_state_core = 93
+		add_state_core = 91
+		add_state_core = 106
+		add_state_core = 85
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Datalink Propaganda
+	id = USA_datalink_propaganda
+	
+	relative_position_id = USA_decapitate_the_snakes
+
+	x = -3
+	y = 1
+	
+	prerequisite = {
+		focus = USA_decapitate_the_snakes
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Inherit A.R.C. Security
+	id = USA_inherit_arc_security
+	
+	relative_position_id = USA_decapitate_the_snakes
+
+	x = -3
+	y = 2
+	
+	prerequisite = {
+		focus = USA_datalink_propaganda
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Covert Policing Unit
+	id = USA_covert_policing_unit
+	
+	relative_position_id = USA_decapitate_the_snakes
+
+	x = -3
+	y = 3
+	
+	prerequisite = {
+		focus = USA_inherit_arc_security
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Train More Militia
+	id = USA_train_more_militia
+	
+	relative_position_id = USA_decapitate_the_snakes
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_decapitate_the_snakes
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Scavenge For Arms
+	id = USA_scavenge_for_arms
+	
+	relative_position_id = USA_decapitate_the_snakes
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_train_more_militia
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Draft Former ARCites
+	id = USA_draft_former_arcites
+	
+	relative_position_id = USA_decapitate_the_snakes
+
+	x = 0
+	y = 3
+	
+	prerequisite = {
+		focus = USA_scavenge_for_arms
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Appease The Bluehelmets
+	id = USA_appease_the_bluehelmets
+	
+	relative_position_id = USA_restart_the_judicial_process
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_restart_the_judicial_process
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Utilize A.R.C. Infrastructure
+	id = USA_utilize_arc_infrastructure
+	
+	relative_position_id = USA_restart_the_judicial_process
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_appease_the_bluehelmets
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+
+shared_focus = { #Refurbish The Navy
+	id = USA_refurbish_the_navy
+	
+	relative_position_id = USA_utilize_arc_infrastructure
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_utilize_arc_infrastructure
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Use A.R.C. Technology
+	id = USA_use_arc_technology
+	
+	relative_position_id = USA_utilize_arc_infrastructure
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_refurbish_the_navy
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Inherit A.R.C. Construction
+	id = USA_inherit_arc_construction
+	
+	relative_position_id = USA_utilize_arc_infrastructure
+
+	x = 0
+	y = 3
+	
+	prerequisite = {
+		focus = USA_use_arc_technology
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Give Me Liberty...
+	id = USA_give_me_liberty
+	
+	relative_position_id = USA_inherit_arc_construction
+
+	x = -2
+	y = 1
+	
+	prerequisite = {
+		focus = USA_draft_former_arcites
+		focus = USA_inherit_arc_construction
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Forced Freedom
+	id = USA_forced_freedom
+	
+	relative_position_id = USA_utilize_arc_infrastructure
+
+	x = 3
+	y = 1
+	
+	prerequisite = {
+		focus = USA_utilize_arc_infrastructure
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #American Values
+	id = USA_american_values
+	
+	relative_position_id = USA_forced_freedom
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_forced_freedom
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Preaching To The Deaf
+	id = USA_preaching_to_the_deaf
+	
+	relative_position_id = USA_forced_freedom
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_american_values
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+## Final Tree - War ##
+shared_focus = { #...Or Give Me Death
+	id = USA_or_give_me_death
+
+	x = 5
+	y = 0
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #A Land Of Extremes
+	id = USA_a_land_of_extremes
+	
+	relative_position_id = USA_or_give_me_death
+
+	x = -3
+	y = 1
+	
+	prerequisite = {
+		focus = USA_or_give_me_death
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Extreme Weather Training
+	id = USA_extreme_weather_training
+	
+	relative_position_id = USA_a_land_of_extremes
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_a_land_of_extremes
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #A Mari Usque Ad Mare
+	id = USA_a_mari_usque_ad_mare
+	
+	relative_position_id = USA_a_land_of_extremes
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_extreme_weather_training
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Test Out New Ships
+	id = USA_test_out_new_ships
+	
+	relative_position_id = USA_or_give_me_death
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_or_give_me_death
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Blockade The Southerners
+	id = USA_blockade_the_southerners
+	
+	relative_position_id = USA_test_out_new_ships
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_test_out_new_ships
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Speramus In Deo
+	id = USA_speramus_in_deo
+	
+	relative_position_id = USA_test_out_new_ships
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_blockade_the_southerners
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Making The Most Of The Least
+	id = USA_making_the_most_of_the_least
+	
+	relative_position_id = USA_or_give_me_death
+
+	x = 3
+	y = 1
+	
+	prerequisite = {
+		focus = USA_or_give_me_death
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #New Guns
+	id = USA_new_guns
+	
+	relative_position_id = USA_making_the_most_of_the_least
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_making_the_most_of_the_least
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #New Vehicles
+	id = USA_new_vehicles
+	
+	relative_position_id = USA_making_the_most_of_the_least
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_new_guns
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #March To The West
+	id = USA_march_to_the_west
+	
+	relative_position_id = USA_speramus_in_deo
+
+	x = -2
+	y = 1
+	
+	prerequisite = {
+		focus = USA_a_mari_usque_ad_mare
+	}
+	prerequisite = {
+		focus = USA_speramus_in_deo
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #New Planes
+	id = USA_new_planes
+	
+	relative_position_id = USA_speramus_in_deo
+
+	x = 2
+	y = 1
+	
+	prerequisite = {
+		focus = USA_speramus_in_deo
+	}
+	prerequisite = {
+		focus = USA_new_vehicles
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Ad Astra Per Aspera
+	id = USA_ad_astra_per_aspera
+	
+	relative_position_id = USA_speramus_in_deo
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_march_to_the_west
+	}
+	prerequisite = {
+		focus = USA_new_planes
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #One Final Push
+	id = USA_one_final_push
+	
+	relative_position_id = USA_ad_astra_per_aspera
+
+	x = -2
+	y = 1
+	
+	prerequisite = {
+		focus = USA_ad_astra_per_aspera
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #The Eagles Soar
+	id = USA_the_eagles_soar
+	
+	relative_position_id = USA_ad_astra_per_aspera
+
+	x = 2
+	y = 1
+	
+	prerequisite = {
+		focus = USA_ad_astra_per_aspera
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+## Final Tree - Post Unification ##
+
+# A True Democracy Branch #
+
+shared_focus = { #A True Democracy
+	id = USA_a_true_democracy
+
+	x = 15
+	y = 0
+
+	cost = 1
+	
+	allow_branch = {
+		has_country_flag = USA_true_democracy
+	}
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Preparing For Elections
+	id = USA_preparing_for_elections
+	
+	relative_position_id = USA_a_true_democracy
+
+	x = -2
+	y = 1
+	
+	prerequisite = {
+		focus = USA_a_true_democracy
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Limiting The Selection
+	id = USA_limiting_the_selection
+	
+	relative_position_id = USA_preparing_for_elections
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_preparing_for_elections
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Democratic Education
+	id = USA_democratic_education
+	
+	relative_position_id = USA_preparing_for_elections
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_limiting_the_selection
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Ulrik's Sacrifice
+	id = USA_ulriks_sacrifice
+	
+	relative_position_id = USA_preparing_for_elections
+
+	x = 0
+	y = 3
+	
+	prerequisite = {
+		focus = USA_democratic_education
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Liberating Canada
+	id = USA_liberating_canada
+	
+	relative_position_id = USA_a_true_democracy
+
+	x = 2
+	y = 1
+	
+	prerequisite = {
+		focus = USA_a_true_democracy
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Freedom Under Supervision
+	id = USA_freedom_under_supervision
+	
+	relative_position_id = USA_liberating_canada
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_liberating_canada
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Quelling Riots
+	id = USA_quelling_riots
+	
+	relative_position_id = USA_liberating_canada
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_freedom_under_supervision
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Expand The Bluehelmets
+	id = USA_expand_the_bluehelmets
+	
+	relative_position_id = USA_liberating_canada
+
+	x = 0
+	y = 3
+	
+	prerequisite = {
+		focus = USA_quelling_riots
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #The First New Elections
+	id = USA_the_first_new_elections
+	
+	relative_position_id = USA_a_true_democracy
+
+	x = 0
+	y = 5
+	
+	prerequisite = {
+		focus = USA_ulriks_sacrifice
+	}
+	prerequisite = {
+		focus = USA_expand_the_bluehelmets
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Republican Victory!
+	id = USA_republican_victory
+	
+	relative_position_id = USA_the_first_new_elections
+
+	x = -3
+	y = 1
+	
+	prerequisite = {
+		focus = USA_the_first_new_elections
+	}
+
+	cost = 1
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Protectors Of Liberty
+	id = USA_protectors_of_liberty
+	
+	relative_position_id = USA_republican_victory
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_republican_victory
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Instilling Duty
+	id = USA_instilling_duty
+	
+	relative_position_id = USA_republican_victory
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_protectors_of_liberty
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #The Guns Of Freedom
+	id = USA_the_guns_of_freedom
+	
+	relative_position_id = USA_republican_victory
+
+	x = 0
+	y = 3
+	
+	prerequisite = {
+		focus = USA_instilling_duty
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Home Of The Brave
+	id = USA_home_of_the_brave
+	
+	relative_position_id = USA_republican_victory
+
+	x = 0
+	y = 4
+	
+	prerequisite = {
+		focus = USA_the_guns_of_freedom
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #R-D Coalition
+	id = USA_rd_coalition
+	
+	relative_position_id = USA_the_first_new_elections
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_the_first_new_elections
+	}
+
+	cost = 1
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Restoring Old America
+	id = USA_restoring_old_america
+	
+	relative_position_id = USA_rd_coalition
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_rd_coalition
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Instilling Patriotism
+	id = USA_instilling_patriotism
+	
+	relative_position_id = USA_rd_coalition
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_restoring_old_america
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #City On The Hill
+	id = USA_city_on_the_hill
+	
+	relative_position_id = USA_rd_coalition
+
+	x = 0
+	y = 3
+	
+	prerequisite = {
+		focus = USA_instilling_patriotism
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #E Pluribus Unum
+	id = USA_e_pluribus_unum
+	
+	relative_position_id = USA_rd_coalition
+
+	x = 0
+	y = 4
+	
+	prerequisite = {
+		focus = USA_city_on_the_hill
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Democrat Victory!
+	id = USA_democrat_victory
+	
+	relative_position_id = USA_the_first_new_elections
+
+	x = 3
+	y = 1
+	
+	prerequisite = {
+		focus = USA_the_first_new_elections
+	}
+
+	cost = 1
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Fixing Our Mistakes
+	id = USA_fixing_our_mistakes
+	
+	relative_position_id = USA_democrat_victory
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_democrat_victory
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Instilling Responsibility
+	id = USA_instilling_responsibility
+	
+	relative_position_id = USA_democrat_victory
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_fixing_our_mistakes
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Green America
+	id = USA_green_america
+	
+	relative_position_id = USA_democrat_victory
+
+	x = 0
+	y = 3
+	
+	prerequisite = {
+		focus = USA_instilling_responsibility
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Breadbasket Of The World
+	id = USA_breadbasket_of_the_world
+	
+	relative_position_id = USA_democrat_victory
+
+	x = 0
+	y = 4
+	
+	prerequisite = {
+		focus = USA_green_america
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Ulrik's Democracy Branch #
+
+shared_focus = { #Ulrik's Democracy
+	id = USA_ulriks_democracy
+
+	x = 15
+	y = 0
+
+	cost = 1
+	
+	allow_branch = {
+		has_country_flag = USA_ulrik_democracy
+	}
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Preparing The Result
+	id = USA_preparing_the_result
+	
+	relative_position_id = USA_ulriks_democracy
+
+	x = -2
+	y = 1
+	
+	prerequisite = {
+		focus = USA_ulriks_democracy
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Selecting The Coalition
+	id = USA_selecting_the_coalition
+	
+	relative_position_id = USA_preparing_the_result
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_preparing_the_result
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Prevent Chaos
+	id = USA_prevent_chaos
+	
+	relative_position_id = USA_preparing_the_result
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_preparing_the_result
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Ulrik's Vision
+	id = USA_ulriks_vision
+	
+	relative_position_id = USA_preparing_the_result
+
+	x = 0
+	y = 3
+	
+	prerequisite = {
+		focus = USA_prevent_chaos
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Disuading False Hopes
+	id = USA_disuading_false_hopes
+	
+	relative_position_id = USA_ulriks_democracy
+
+	x = 2
+	y = 1
+	
+	prerequisite = {
+		focus = USA_ulriks_democracy
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Trust In Strength
+	id = USA_trust_in_strength
+	
+	relative_position_id = USA_disuading_false_hopes
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_disuading_false_hopes
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #The United In USA
+	id = USA_the_united_in_usa
+	
+	relative_position_id = USA_disuading_false_hopes
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_trust_in_strength
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Stability Above Everything
+	id = USA_stability_above_everything
+	
+	relative_position_id = USA_disuading_false_hopes
+
+	x = 0
+	y = 3
+	
+	prerequisite = {
+		focus = USA_the_united_in_usa
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #The First "Election"
+	id = USA_the_first_election
+	
+	relative_position_id = USA_ulriks_democracy
+
+	x = 0
+	y = 5
+	
+	prerequisite = {
+		focus = USA_ulriks_vision
+	}
+	prerequisite = {
+		focus = USA_stability_above_everything
+	}
+
+	cost = 1
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #The Expected Outcome
+	id = USA_the_expected_outcome
+	
+	relative_position_id = USA_the_first_election
+
+	x = 0
+	y = 1
+	
+	prerequisite = {
+		focus = USA_the_first_election
+	}
+
+	cost = 1
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Aiming Outwards
+	id = USA_aiming_outwards
+	
+	relative_position_id = USA_the_first_election
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_the_expected_outcome
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Hacking Up The Hackers
+	id = USA_hacking_up_the_hackers
+	
+	relative_position_id = USA_aiming_outwards
+
+	x = -1
+	y = 1
+	
+	prerequisite = {
+		focus = USA_aiming_outwards
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Centralising Central America
+	id = USA_centralising_central_america
+	
+	relative_position_id = USA_aiming_outwards
+
+	x = 1
+	y = 1
+	
+	prerequisite = {
+		focus = USA_aiming_outwards
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #Repeating Mistakes?
+	id = USA_repeating_mistakes
+	
+	relative_position_id = USA_aiming_outwards
+
+	x = 0
+	y = 2
+	
+	prerequisite = {
+		focus = USA_hacking_up_the_hackers
+	}
+	prerequisite = {
+		focus = USA_centralising_central_america
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #The Dream is Alive?
+	id = USA_the_dream_is_alive
+	
+	relative_position_id = USA_aiming_outwards
+
+	x = 0
+	y = 3
+	
+	prerequisite = {
+		focus = USA_repeating_mistakes
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+shared_focus = { #What Is America?
+	id = USA_what_is_america
+	
+	relative_position_id = USA_aiming_outwards
+
+	x = 0
+	y = 4
+	
+	prerequisite = {
+		focus = USA_the_dream_is_alive
+	}
+
+	cost = 5
+	
+	completion_reward = {
+
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
