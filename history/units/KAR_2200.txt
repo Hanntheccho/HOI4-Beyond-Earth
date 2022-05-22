@@ -1,121 +1,180 @@
-#division_template = {
-#	name = "Foot Rifle Division"
-#
-#	regiments = {
-#		shock_troops = { x = 0 y = 0 }
-#		shock_troops = { x = 0 y = 1 }
-#		shock_troops = { x = 0 y = 2 }
-#        infantry = { x = 1 y = 0 }
-#		infantry = { x = 1 y = 1 }
-#		infantry = { x = 1 y = 2 }
-#		infantry = { x = 1 y = 3 }
-#	}
-#	priority = 0
-#}
-#
-#division_template = {
-#	name = "Republican Guard Division"
-#
-#	regiments = {
-#		shock_troops = { x = 0 y = 0 }
-#		shock_troops = { x = 0 y = 1 }
-#		shock_troops = { x = 0 y = 2 }
-#        shock_troops = { x = 1 y = 0 }
-#		shock_troops = { x = 1 y = 1 }
-#		shock_troops = { x = 1 y = 2 }
-#        shock_troops = { x = 2 y = 0 }
-#		shock_troops = { x = 2 y = 1 }
-#		shock_troops = { x = 2 y = 2 }
-#	}
-#	support = {
-#		recon = { x = 0 y = 0}
-#		engineer = { x = 0 y = 1}
-#		artillery = { x = 0 y = 2}		
-#	}
-#}
-#
-#division_template = {
-#	name = "Republican Armour Division"
-#
-#	regiments = {
-#		walker = { x = 0 y = 0 }
-#		walker = { x = 0 y = 1 }
-#		walker = { x = 0 y = 2 }
-#        APC = { x = 1 y = 0 }
-#		APC = { x = 1 y = 1 }
-#        MBT = { x = 2 y = 0 }
-#		MBT = { x = 2 y = 1 }
-#		MBT = { x = 2 y = 2 }
-#		MBT = { x = 2 y = 3 }
-#	}
-#	support = {
-#		recon = { x = 0 y = 0}
-#		engineer = { x = 0 y = 1}		
-#	}
-#}
-#
-#units = {
-#	division= {	# "1st Republican Guards Division"
-#		division_name = {
-#			is_name_ordered = yes
-#			name_order = 1
-#		}
-#		location = 7563
-#		division_template = "Republican Guard Division"
-#		start_experience_factor = 0.5
-#	}
-#	division= {	# "Republican Rapid Response Reserve"
-#		division_name = {
-#			is_name_ordered = yes
-#			name_order = 1
-#		}
-#		location = 7488
-#		division_template = "Republican Armour Division"
-#		start_experience_factor = 0.3
-#		start_equipment_factor = 0.9
-#	}
-#	division= {	# "1st Foot Rifle Division"
-#		division_name = {
-#			is_name_ordered = yes
-#			name_order = 1
-#		}
-#		location = 7943
-#		division_template = "Foot Rifle Division"
-#		start_experience_factor = 0.3
-#		start_equipment_factor = 0.8
-#	}
-#	division= {	# "2nd Foot Rifle Division"
-#		division_name = {
-#			is_name_ordered = yes
-#			name_order = 1
-#		}
-#		location = 7682
-#		division_template = "Foot Rifle Division"
-#		start_experience_factor = 0.3
-#		start_equipment_factor = 0.8
-#	}
-#	division= {	# "3rd Foot Rifle Division"
-#		division_name = {
-#			is_name_ordered = yes
-#			name_order = 1
-#		}
-#		location = 7899
-#		division_template = "Foot Rifle Division"
-#		start_experience_factor = 0.3
-#		start_equipment_factor = 0.8
-#	}
-#}
-#
-#air_wings = {
-#	595 = { 
-#		fighter_equipment_0 = {
-#			owner = "KAR" 
-#			amount = 15
-#		}
-#		cas_equipment_1 = {
-#			owner = "KAR" 
-#			amount = 5
-#		}
-#		
-#	}
-#}
+division_template = {
+	name = "National Guard"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		shock_troops = { x = 1 y = 3 }
+	}
+
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Infantry Division"			
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		shock_troops = { x = 0 y = 3 }
+        shock_troops = { x = 1 y = 0 }
+		shock_troops = { x = 1 y = 1 }
+		shock_troops = { x = 1 y = 2 }
+		shock_troops = { x = 1 y = 3 }
+	}
+	support = {
+		recon = { x = 0 y = 0}
+	}
+}
+
+division_template = {
+	name = "Rover Division"			
+
+	regiments = {
+		rover = { x = 0 y = 0 }
+		rover = { x = 0 y = 1 }
+		rover= { x = 0 y = 2 }
+		rover = { x = 0 y = 3 }
+        apc = { x = 1 y = 0 }
+		apc = { x = 1 y = 1 }
+		apc = { x = 1 y = 2 }
+		apc = { x = 1 y = 3 }
+		apc = { x = 1 y = 4 }
+	}
+}
+
+units = {
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7563
+		division_template = "Rover Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7943
+		division_template = "Infantry Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7309
+		division_template = "Infantry Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7584
+		division_template = "Infantry Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7389
+		division_template = "Infantry Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7682
+		division_template = "National Guard"
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7899
+		division_template = "National Guard"
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 8112
+		division_template = "National Guard"
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7275
+		division_template = "National Guard"
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7682
+		division_template = "National Guard"
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7243
+		division_template = "National Guard"
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7242
+		division_template = "National Guard"
+		start_experience_factor = 0.3
+	}
+}
+
+air_wings = {
+	595 = {
+		fighter_equipment_1 = {
+			owner = "KAR" 
+			amount = 50
+		}
+		cas_equipment_1 = {
+			owner = "KAR" 
+			amount = 15
+		}
+		fighter_equipment_0 = {
+			owner = "KAR" 
+			amount = 25
+		}
+	}
+}
