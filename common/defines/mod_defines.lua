@@ -28,6 +28,9 @@ NDefines.NDiplomacy.TENSION_LIBERATE = 0                         -- Vanilla: -1
 NDefines.NDiplomacy.TENSION_CAPITULATE = 0                           -- Vanilla: 0.75
 NDefines.NDiplomacy.CAPITAL_CAPITULATE_BONUS_SCORE_MUL = 0          -- Vanilla: 1.5
 
+NDefines.NDiplomacy.AUTONOMY_LEVEL_CHANGE_PP_ANNEX = 6969
+NDefines.NDiplomacy.AUTONOMY_LEVEL_CHANGE_PP_FREE = 6969
+
 NDefines.NCountry.POPULATION_YEARLY_GROWTH_BASE = 0.045           -- Vanilla: 0.015
 NDefines.NCountry.SUPPLY_BASE_MULT = 3                          -- Vanilla: 1
 NDefines.NCountry.NUCLEAR_PRODUCTION_SCALE = 210                 -- Vanilla: 365
