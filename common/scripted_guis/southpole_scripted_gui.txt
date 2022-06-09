@@ -3,10 +3,20 @@ scripted_gui = {
     south_pole_stuff_gui = {
         window_name = "south_pole_stuff"
         context_type = player_context
-		parent_window_token = top_bar #?¿?¿
+		#parent_window_token = top_bar #?¿?¿
          
         visible = {
-            has_country_flag = south_pole_moment_flag
+            if = {
+                limit = { is_ai = yes }
+                always = yes
+            }
+            else = {
+                has_country_flag = south_pole_moment_flag
+            }
+            NOT = { tag = ADU }
+            exists = yes
+            NOT = { has_country_flag = ruinous_trait }
+            NOT = { has_idea = anarchy_style }
         }
         
         effects = {
@@ -1414,6 +1424,555 @@ scripted_gui = {
             antarctic_sectors_selection_10_flag = {
                 image = "[antarctic_sector_10_var.GetFlag]"
             }
+        }
+
+        ai_enabled = {
+            always = yes
+        }
+
+        ai_test_interval = 6969
+
+        ai_check = {
+            NOT = {
+                any_country = {
+                    check_variable = { num_southpole_sectors = 10 }
+                }
+            }
+		}
+
+        ai_weights = {
+            antarctic_sectors_selection_1_click = {
+                ai_will_do = {
+                    factor = 0#factor = 0.05
+                    modifier = {
+			        	add = 1.5
+                        OR = {
+			        	    has_political_power > 20
+                            political_power_daily > 0.5
+                        }
+			        }
+			        modifier = {
+			        	add = 2
+                        OR = {
+			        	    has_political_power > 100
+                            political_power_daily > 0.6
+                        }
+			        }
+                    modifier = {
+			        	add = 4
+			        	OR = {
+			        	    has_political_power > 200
+                            political_power_daily > 0.8
+                        }
+			        }
+                    modifier = {
+			        	add = 8
+			        	OR = {
+			        	    has_political_power > 300
+                            political_power_daily > 1
+                        }
+			        }
+                    modifier = {
+			        	add = 0
+			        	OR = {
+			        	    has_political_power < 20
+                            political_power_daily < 0.5
+                        }
+			        }
+                    modifier = {
+			        	add = 2
+			        	has_country_flag = antarctic_sector_1
+			        }
+                }
+            }
+            antarctic_sectors_selection_2_click = {
+                ai_will_do = {
+                    factor = 0#factor = 0.05
+                    modifier = {
+			        	add = 1.5
+                        OR = {
+			        	    has_political_power > 20
+                            political_power_daily > 0.5
+                        }
+			        }
+			        modifier = {
+			        	add = 2
+                        OR = {
+			        	    has_political_power > 100
+                            political_power_daily > 0.6
+                        }
+			        }
+                    modifier = {
+			        	add = 4
+			        	OR = {
+			        	    has_political_power > 200
+                            political_power_daily > 0.8
+                        }
+			        }
+                    modifier = {
+			        	add = 8
+			        	OR = {
+			        	    has_political_power > 300
+                            political_power_daily > 1
+                        }
+			        }
+                    modifier = {
+			        	add = 0
+			        	OR = {
+			        	    has_political_power < 20
+                            political_power_daily < 0.5
+                        }
+			        }
+                    modifier = {
+			        	add = 2
+			        	has_country_flag = antarctic_sector_2
+			        }
+                }
+            }
+            antarctic_sectors_selection_3_click = {
+                ai_will_do = {
+                    factor = 0#factor = 0.05
+                    modifier = {
+			        	add = 1.5
+                        OR = {
+			        	    has_political_power > 20
+                            political_power_daily > 0.5
+                        }
+			        }
+			        modifier = {
+			        	add = 2
+                        OR = {
+			        	    has_political_power > 100
+                            political_power_daily > 0.6
+                        }
+			        }
+                    modifier = {
+			        	add = 4
+			        	OR = {
+			        	    has_political_power > 200
+                            political_power_daily > 0.8
+                        }
+			        }
+                    modifier = {
+			        	add = 8
+			        	OR = {
+			        	    has_political_power > 300
+                            political_power_daily > 1
+                        }
+			        }
+                    modifier = {
+			        	add = 0
+			        	OR = {
+			        	    has_political_power < 20
+                            political_power_daily < 0.5
+                        }
+			        }
+                    modifier = {
+			        	add = 2
+			        	has_country_flag = antarctic_sector_3
+			        }
+                }
+            }
+            antarctic_sectors_selection_4_click = {
+                ai_will_do = {
+                    factor = 0#factor = 0.05
+                    modifier = {
+			        	add = 1.5
+                        OR = {
+			        	    has_political_power > 20
+                            political_power_daily > 0.5
+                        }
+			        }
+			        modifier = {
+			        	add = 2
+                        OR = {
+			        	    has_political_power > 100
+                            political_power_daily > 0.6
+                        }
+			        }
+                    modifier = {
+			        	add = 4
+			        	OR = {
+			        	    has_political_power > 200
+                            political_power_daily > 0.8
+                        }
+			        }
+                    modifier = {
+			        	add = 8
+			        	OR = {
+			        	    has_political_power > 300
+                            political_power_daily > 1
+                        }
+			        }
+                    modifier = {
+			        	add = 0
+			        	OR = {
+			        	    has_political_power < 20
+                            political_power_daily < 0.5
+                        }
+			        }
+                    modifier = {
+			        	add = 2
+			        	has_country_flag = antarctic_sector_4
+			        }
+                }
+            }
+            antarctic_sectors_selection_5_click = {
+                ai_will_do = {
+                    factor = 0#factor = 0.05
+                    modifier = {
+			        	add = 1.5
+                        OR = {
+			        	    has_political_power > 20
+                            political_power_daily > 0.5
+                        }
+			        }
+			        modifier = {
+			        	add = 2
+                        OR = {
+			        	    has_political_power > 100
+                            political_power_daily > 0.6
+                        }
+			        }
+                    modifier = {
+			        	add = 4
+			        	OR = {
+			        	    has_political_power > 200
+                            political_power_daily > 0.8
+                        }
+			        }
+                    modifier = {
+			        	add = 8
+			        	OR = {
+			        	    has_political_power > 300
+                            political_power_daily > 1
+                        }
+			        }
+                    modifier = {
+			        	add = 0
+			        	OR = {
+			        	    has_political_power < 20
+                            political_power_daily < 0.5
+                        }
+			        }
+                    modifier = {
+			        	add = 2
+			        	has_country_flag = antarctic_sector_5
+			        }
+                }
+            }
+            antarctic_sectors_selection_6_click = {
+                ai_will_do = {
+                    factor = 0#factor = 0.05
+                    modifier = {
+			        	add = 1.5
+                        OR = {
+			        	    has_political_power > 20
+                            political_power_daily > 0.5
+                        }
+			        }
+			        modifier = {
+			        	add = 2
+                        OR = {
+			        	    has_political_power > 100
+                            political_power_daily > 0.6
+                        }
+			        }
+                    modifier = {
+			        	add = 4
+			        	OR = {
+			        	    has_political_power > 200
+                            political_power_daily > 0.8
+                        }
+			        }
+                    modifier = {
+			        	add = 8
+			        	OR = {
+			        	    has_political_power > 300
+                            political_power_daily > 1
+                        }
+			        }
+                    modifier = {
+			        	add = 0
+			        	OR = {
+			        	    has_political_power < 20
+                            political_power_daily < 0.5
+                        }
+			        }
+                    modifier = {
+			        	add = 2
+			        	has_country_flag = antarctic_sector_6
+			        }
+                }
+            }
+            antarctic_sectors_selection_7_click = {
+                ai_will_do = {
+                    factor = 0#factor = 0.05
+                    modifier = {
+			        	add = 1.5
+                        OR = {
+			        	    has_political_power > 20
+                            political_power_daily > 0.5
+                        }
+			        }
+			        modifier = {
+			        	add = 2
+                        OR = {
+			        	    has_political_power > 100
+                            political_power_daily > 0.6
+                        }
+			        }
+                    modifier = {
+			        	add = 4
+			        	OR = {
+			        	    has_political_power > 200
+                            political_power_daily > 0.8
+                        }
+			        }
+                    modifier = {
+			        	add = 8
+			        	OR = {
+			        	    has_political_power > 300
+                            political_power_daily > 1
+                        }
+			        }
+                    modifier = {
+			        	add = 0
+			        	OR = {
+			        	    has_political_power < 20
+                            political_power_daily < 0.5
+                        }
+			        }
+                    modifier = {
+			        	add = 2
+			        	has_country_flag = antarctic_sector_7
+			        }
+                }
+            }
+            antarctic_sectors_selection_8_click = {
+                ai_will_do = {
+                    factor = 0#factor = 0.05
+                    modifier = {
+			        	add = 1.5
+                        OR = {
+			        	    has_political_power > 20
+                            political_power_daily > 0.5
+                        }
+			        }
+			        modifier = {
+			        	add = 2
+                        OR = {
+			        	    has_political_power > 100
+                            political_power_daily > 0.6
+                        }
+			        }
+                    modifier = {
+			        	add = 4
+			        	OR = {
+			        	    has_political_power > 200
+                            political_power_daily > 0.8
+                        }
+			        }
+                    modifier = {
+			        	add = 8
+			        	OR = {
+			        	    has_political_power > 300
+                            political_power_daily > 1
+                        }
+			        }
+                    modifier = {
+			        	add = 0
+			        	OR = {
+			        	    has_political_power < 20
+                            political_power_daily < 0.5
+                        }
+			        }
+                    modifier = {
+			        	add = 2
+			        	has_country_flag = antarctic_sector_8
+			        }
+                }
+            }
+            antarctic_sectors_selection_9_click = {
+                ai_will_do = {
+                    factor = 0#factor = 0.05
+                    modifier = {
+			        	add = 1.5
+                        OR = {
+			        	    has_political_power > 20
+                            political_power_daily > 0.5
+                        }
+			        }
+			        modifier = {
+			        	add = 2
+                        OR = {
+			        	    has_political_power > 100
+                            political_power_daily > 0.6
+                        }
+			        }
+                    modifier = {
+			        	add = 4
+			        	OR = {
+			        	    has_political_power > 200
+                            political_power_daily > 0.8
+                        }
+			        }
+                    modifier = {
+			        	add = 8
+			        	OR = {
+			        	    has_political_power > 300
+                            political_power_daily > 1
+                        }
+			        }
+                    modifier = {
+			        	add = 0
+			        	OR = {
+			        	    has_political_power < 20
+                            political_power_daily < 0.5
+                        }
+			        }
+                    modifier = {
+			        	add = 2
+			        	has_country_flag = antarctic_sector_9
+			        }
+                }
+            }
+            antarctic_sectors_selection_10_click = {
+                ai_will_do = {
+                    factor = 0#factor = 0.05
+                    modifier = {
+			        	add = 1.5
+                        OR = {
+			        	    has_political_power > 20
+                            political_power_daily > 0.5
+                        }
+			        }
+			        modifier = {
+			        	add = 2
+                        OR = {
+			        	    has_political_power > 100
+                            political_power_daily > 0.6
+                        }
+			        }
+                    modifier = {
+			        	add = 4
+			        	OR = {
+			        	    has_political_power > 200
+                            political_power_daily > 0.8
+                        }
+			        }
+                    modifier = {
+			        	add = 8
+			        	OR = {
+			        	    has_political_power > 300
+                            political_power_daily > 1
+                        }
+			        }
+                    modifier = {
+			        	add = 0
+			        	OR = {
+			        	    has_political_power < 20
+                            political_power_daily < 0.5
+                        }
+			        }
+                    modifier = {
+			        	add = 2
+			        	has_country_flag = antarctic_sector_10
+			        }
+                }
+            }
+
+            leave_sector_1_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_2_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_3_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_4_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_5_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_6_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_7_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_8_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_9_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_10_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+
         }
     }
 }
