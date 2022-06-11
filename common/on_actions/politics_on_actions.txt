@@ -4,17 +4,17 @@ on_actions = {
             every_country = {
                 set_variable = { free_factory_progress = 0 }
                 set_variable = { free_factory_gain = 0 }
-                set_variable = { free_factory_base_gain = 1 }
+                set_variable = { free_factory_base_gain = 0.5 }
                 set_variable = { free_factory_adjustment = 1 }
                 set_variable = { military_chance = 1 }
-                set_variable = { heavy_chance = 1 }
-                set_variable = { land_chance = 1 }
+                #set_variable = { heavy_chance = 1 }
+                #set_variable = { land_chance = 1 }
                 set_variable = { civilian_chance = 1 }
-                set_variable = { light_chance = 1 }
-                set_variable = { naval_chance = 1 }
+                #set_variable = { light_chance = 1 }
+                #set_variable = { naval_chance = 1 }
                 set_variable = { military_civilian_slider_var = 208.5 }
-                set_variable = { light_heavy_slider_var = 208.5 }
-                set_variable = { land_naval_slider_var = 208.5 }
+                #set_variable = { light_heavy_slider_var = 208.5 }
+                #set_variable = { land_naval_slider_var = 208.5 }
                 set_variable = { free_factory_counter = 0 }
                 set_variable = { division_limit = num_of_factories }
                 set_variable = { division_limit_extra = 0 }
@@ -395,7 +395,7 @@ on_actions = {
                 }
                 add_to_variable = { free_factory_counter = 1 }
                 random_list = {
-                    25 = {
+                    40 = {
                         random_owned_controlled_state = {
                             limit = {
                                 is_fully_controlled_by = ROOT
@@ -411,14 +411,14 @@ on_actions = {
                                 instant_build = yes
                             }
                         }
-                        modifier = {
-                            factor = heavy_chance
-                        }
+                        #modifier = {
+                        #    factor = heavy_chance
+                        #}
                         modifier = {
                             factor = civilian_chance
                         }
                     }
-                    25 = {
+                    10 = {
                         random_owned_controlled_state = {
                             limit = {
                                 is_fully_controlled_by = ROOT
@@ -434,14 +434,14 @@ on_actions = {
                                 instant_build = yes
                             }
                         }
-                        modifier = {
-                            factor = light_chance
-                        }
+                        #modifier = {
+                        #    factor = light_chance
+                        #}
                         modifier = {
                             factor = civilian_chance
                         }
                     }
-                    25 = {
+                    40 = {
                         random_owned_controlled_state = {
                             limit = {
                                 is_fully_controlled_by = ROOT
@@ -457,14 +457,14 @@ on_actions = {
                                 instant_build = yes
                             }
                         }
-                        modifier = {
-                            factor = land_chance
-                        }
+                        #modifier = {
+                        #    factor = land_chance
+                        #}
                         modifier = {
                             factor = military_chance
                         }
                     }
-                    25 = {
+                    10 = {
                         random_owned_controlled_state = {
                             limit = {
                                 is_coastal = yes
@@ -481,9 +481,9 @@ on_actions = {
                                 instant_build = yes
                             }
                         }
-                        modifier = {
-                            factor = naval_chance
-                        }
+                        #modifier = {
+                        #    factor = naval_chance
+                        #}
                         modifier = {
                             factor = military_chance
                         }
