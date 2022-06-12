@@ -67,6 +67,9 @@ on_actions = {
                         value = THIS.id
                         index = 0
                     }
+                    every_country = {
+                        set_variable = { number_one_contribution_variable = ROOT.spaceship_contribution_variable }
+                    }
                 }
             }
             if = {
@@ -488,7 +491,10 @@ on_actions = {
                         }
                     }
                 }
-                country_event = { id = international_event.21 } 
+                country_event = { id = international_event.21 }
+                every_country = {
+                    set_variable = { spaceschip_completion_time = 365 }
+                }
             }
             #if = {
             #    limit = {
@@ -504,6 +510,10 @@ on_actions = {
             #    country_event = { id = international_event.23 } 
             #}
             subtract_from_variable = { spaceschip_completion_time = 1 }
+        }
+    }
+    on_weekly = {
+        effect = {
             every_country = {
                 set_variable = { spaceship_contribution_variable = 0 }
                 set_variable = { spaceship_contribution_civilian = num_of_civilian_factories }
