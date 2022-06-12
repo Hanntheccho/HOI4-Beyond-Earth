@@ -29,33 +29,33 @@ scripted_gui = {
                 subtract_from_variable = { industrial_power = 25 }
             }
 
-            light_focus_click = {
-                add_to_variable = { light_heavy_slider_var = 34.6 }
-                add_to_variable = { light_chance = 0.1 }
-                subtract_from_variable = { heavy_chance = 0.1 }
-                subtract_from_variable = { industrial_power = 25 }
-            }
-
-            land_focus_click = {
-                subtract_from_variable = { land_naval_slider_var = 34.6 }
-                add_to_variable = { land_chance = 0.1 }
-                subtract_from_variable = { naval_chance = 0.1 }
-                subtract_from_variable = { industrial_power = 25 }
-            }
-
-            naval_focus_click = {
-                add_to_variable = { land_naval_slider_var = 34.6 }
-                add_to_variable = { naval_chance = 0.1 }
-                subtract_from_variable = { land_chance = 0.1 }
-                subtract_from_variable = { industrial_power = 25 }
-            }
-
-            heavy_focus_click = {
-                subtract_from_variable = { light_heavy_slider_var = 34.6 }
-                add_to_variable = { heavy_chance = 0.1 }
-                subtract_from_variable = { light_chance = 0.1 }
-                subtract_from_variable = { industrial_power = 25 }
-            }
+            #light_focus_click = {
+            #    add_to_variable = { light_heavy_slider_var = 34.6 }
+            #    add_to_variable = { light_chance = 0.1 }
+            #    subtract_from_variable = { heavy_chance = 0.1 }
+            #    subtract_from_variable = { industrial_power = 25 }
+            #}
+            #
+            #land_focus_click = {
+            #    subtract_from_variable = { land_naval_slider_var = 34.6 }
+            #    add_to_variable = { land_chance = 0.1 }
+            #    subtract_from_variable = { naval_chance = 0.1 }
+            #    subtract_from_variable = { industrial_power = 25 }
+            #}
+            #
+            #naval_focus_click = {
+            #    add_to_variable = { land_naval_slider_var = 34.6 }
+            #    add_to_variable = { naval_chance = 0.1 }
+            #    subtract_from_variable = { land_chance = 0.1 }
+            #    subtract_from_variable = { industrial_power = 25 }
+            #}
+            #
+            #heavy_focus_click = {
+            #    subtract_from_variable = { light_heavy_slider_var = 34.6 }
+            #    add_to_variable = { heavy_chance = 0.1 }
+            #    subtract_from_variable = { light_chance = 0.1 }
+            #    subtract_from_variable = { industrial_power = 25 }
+            #}
 
             #increase_limit_click = {
             #    subtract_from_variable = { industrial_power = 10 }
@@ -87,28 +87,28 @@ scripted_gui = {
                 check_variable = { military_chance < 1.2 }
                 check_variable = { industrial_power > 24 }
             }
-            light_focus_click_enabled = {
-                check_variable = { light_chance < 1.2 }
-                check_variable = { industrial_power > 24 }
-            }
-            heavy_focus_click_enabled = {
-                check_variable = { heavy_chance < 1.2 }
-                check_variable = { industrial_power > 24 }
-            }
-            land_focus_click_enabled = {
-                #ROOT = {
-                #    has_country_flag = land_naval_unlocked
-                #}
-                check_variable = { land_chance < 1.2 }
-                check_variable = { industrial_power > 24 }
-            }
-            naval_focus_click_enabled = {
-                #ROOT = {
-                #    has_country_flag = land_naval_unlocked
-                #}
-                check_variable = { naval_chance < 1.2 }
-                check_variable = { industrial_power > 24 }
-            }
+            #light_focus_click_enabled = {
+            #    check_variable = { light_chance < 1.2 }
+            #    check_variable = { industrial_power > 24 }
+            #}
+            #heavy_focus_click_enabled = {
+            #    check_variable = { heavy_chance < 1.2 }
+            #    check_variable = { industrial_power > 24 }
+            #}
+            #land_focus_click_enabled = {
+            #    #ROOT = {
+            #    #    has_country_flag = land_naval_unlocked
+            #    #}
+            #    check_variable = { land_chance < 1.2 }
+            #    check_variable = { industrial_power > 24 }
+            #}
+            #naval_focus_click_enabled = {
+            #    #ROOT = {
+            #    #    has_country_flag = land_naval_unlocked
+            #    #}
+            #    check_variable = { naval_chance < 1.2 }
+            #    check_variable = { industrial_power > 24 }
+            #}
 
             #increase_limit_click_enabled = {
             #    check_variable = { industrial_power > 9 }
@@ -125,35 +125,105 @@ scripted_gui = {
 			}
 			military_civilian_slider = { #Start is at 555 and end is at 720; that's just my guess tho, feel free to test and, if necessary, change this. Also change the variables in on_actions. 
 				x = military_civilian_slider_var
-				y = 55
+				y = 67
 			}
-			light_heavy_slider = {
-				x = light_heavy_slider_var
-				y = 87
-			}
-			land_naval_slider = {
-				x = land_naval_slider_var
-				y = 119
-			}
-		}
-		
-		dynamic_lists = {
+			#light_heavy_slider = {
+			#	x = light_heavy_slider_var
+			#	y = 87
+			#}
+			#land_naval_slider = {
+			#	x = land_naval_slider_var
+			#	y = 119
+			#}
 		}
         
         ai_enabled = {
-            always = no
+            always = yes
         }
-        
-        ai_test_interval = 290
-        ai_test_variance = 0.5
-        
+
+        ai_test_interval = 6969
+
         ai_check = {
-        }
-        
-        ai_check_scope = {
-        }
-        
+            check_variable = {
+                industrial_power > 25
+            }
+		}
+
         ai_weights = {
+            civilian_focus_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 1.5
+                        threat < 0.1
+			        }
+                    modifier = {
+			        	add = 2
+                        has_idea = volunteer_only
+			        }
+                    modifier = {
+			        	add = 1
+                        has_idea = limited_conscription
+			        }
+                    modifier = {
+			        	add = 1
+                        has_war = no
+			        }
+                    modifier = {
+			        	add = 2
+                        has_idea = free_trade
+			        }
+                    modifier = {
+			        	add = 2
+                        has_idea = civilian_economy
+			        }
+                }
+            }
+            military_focus_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 1.5
+                        threat > 0.1
+			        }
+                    modifier = {
+			        	add = 4
+                        threat > 0.5
+			        }
+                    modifier = {
+			        	add = 1
+                        NOT = { has_idea = volunteer_only }
+			        }
+                    modifier = {
+			        	add = 1
+                        NOT = { has_idea = limited_conscription }
+			        }
+                    modifier = {
+			        	add = 100
+                        has_war = yes
+			        }
+                    modifier = {
+			        	add = 1
+                        NOT = { has_idea = free_trade }
+			        }
+                    modifier = {
+			        	add = 1
+                        NOT = { has_idea = civilian_economy }
+			        }
+                }
+            }
+            free_factory_increase_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+                        check_variable = {
+                            industrial_power > 500
+                        }
+			        }
+                }
+            }
         }
+
     }
 }

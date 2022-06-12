@@ -1,845 +1,846 @@
-add_namespace = politics_event
-add_namespace = free_factory_event
-add_namespace = division_limit_event
-
-country_event = {
-	id = politics_event.1
-	title = politics_event.1.t
-	desc = politics_event.1.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.1.a
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = increase_trade_law_hearing
-        clr_country_flag = increase_conscription_hearing
-        clr_country_flag = decrease_trade_law_hearing
-        clr_country_flag = decrease_conscription_hearing
-        clr_country_flag = international_intervention_hearing
-        clr_country_flag = military_industrial_complex_hearing
-        clr_country_flag = business_relief_hearing
-        clr_country_flag = merchant_navy_draft_hearing
-        clr_country_flag = military_industrial_integration_hearing
-        clr_country_flag = maximized_utilisation_hearing
-        clr_country_flag = orbital_cleaning_initiative_hearing
-        clr_country_flag = interservice_training_hearing
-        clr_country_flag = democratized_logistics_hearing
-        clr_country_flag = surveillance_expansion_hearing
-        clr_country_flag = native_pacification_hearing
-        clr_country_flag = general_staff_expansion_hearing
-        clr_country_flag = research_hospital_hearing
-        clr_country_flag = law_hearing
-        if = {
-            limit = {
-                has_country_flag = war_mobilization_hearing
-            }
-            clr_country_flag = war_mobilization_hearing
-        }
-        if = {
-            limit = {
-                has_country_flag = international_intervention_hearing
-            }
-            clr_country_flag = international_intervention_hearing
-        }
-	}
-}
-
-country_event = {
-	id = politics_event.2
-	title = politics_event.2.t
-	desc = politics_event.2.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.2.a
-        if = {
-            limit = {
-                has_idea = closed_economy
-            }
-            swap_ideas = {
-                remove_idea = closed_economy
-                add_idea = limited_exports
-            }
-        }
-        else_if = {
-            limit = {
-                has_idea = limited_exports
-            }
-            swap_ideas = {
-                remove_idea = limited_exports
-                add_idea = export_focus
-            }
-        }
-        else = {
-            swap_ideas = {
-                remove_idea = export_focus
-                add_idea = free_trade
-            }
-        }
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = increase_trade_law_hearing
-        clr_country_flag = law_hearing
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.3
-	title = politics_event.3.t
-	desc = politics_event.3.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.3.a
-        if = {
-            limit = {
-                has_idea = volunteer_only
-            }
-            swap_ideas = {
-                remove_idea = volunteer_only
-                add_idea = limited_conscription
-            }
-        }
-        else_if = {
-            limit = {
-                has_idea = limited_conscription
-            }
-            swap_ideas = {
-                remove_idea = limited_conscription
-                add_idea = extensive_conscription
-            }
-        }
-        else_if = {
-            limit = {
-                has_idea = extensive_conscription
-            }
-            swap_ideas = {
-                remove_idea = extensive_conscription
-                add_idea = service_by_requirement
-            }
-        }
-        else_if = {
-            limit = {
-                has_idea = service_by_requirement
-            }
-            swap_ideas = {
-                remove_idea = service_by_requirement
-                add_idea = all_adults_serve
-            }
-        }
-        else = {
-            swap_ideas = {
-                remove_idea = all_adults_serve
-                add_idea = scraping_the_barrel
-            }
-        }
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = increase_conscription_hearing
-        clr_country_flag = law_hearing
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.4
-	title = politics_event.4.t
-	desc = politics_event.4.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.4.a
-        add_dynamic_modifier = {
-            modifier = politics_wargoal_modifier
-        }
-        set_rule = {
-            can_declare_war_on_same_ideology = yes
-        }
-        set_rule = {
-            can_only_justify_war_on_threat_country = no
-        }
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = law_hearing
-        clr_country_flag = war_mobilization_hearing
-        set_country_flag = war_mobilisation_passed
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.5
-	title = politics_event.5.t
-	desc = politics_event.5.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.5.a
-        if = {
-            limit = {
-                has_idea = free_trade
-            }
-            swap_ideas = {
-                remove_idea = free_trade
-                add_idea = export_focus
-            }
-        }
-        else_if = {
-            limit = {
-                has_idea = export_focus
-            }
-            swap_ideas = {
-                remove_idea = export_focus
-                add_idea = limited_exports
-            }
-        }
-        else = {
-            swap_ideas = {
-                remove_idea = limited_exports
-                add_idea = closed_economy
-            }
-        }
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = decrease_trade_law_hearing
-        clr_country_flag = law_hearing
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-} 
-
-country_event = {
-	id = politics_event.6
-	title = politics_event.6.t
-	desc = politics_event.6.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.6.a
-        if = {
-            limit = {
-                has_idea = scraping_the_barrel
-            }
-            swap_ideas = {
-                remove_idea = scraping_the_barrel
-                add_idea = all_adults_serve
-            }
-        }
-        else_if = {
-            limit = {
-                has_idea = all_adults_serve
-            }
-            swap_ideas = {
-                remove_idea = all_adults_serve
-                add_idea = service_by_requirement
-            }
-        }
-        else_if = {
-            limit = {
-                has_idea = service_by_requirement
-            }
-            swap_ideas = {
-                remove_idea = service_by_requirement
-                add_idea = extensive_conscription
-            }
-        }
-        else_if = {
-            limit = {
-                has_idea = extensive_conscription
-            }
-            swap_ideas = {
-                remove_idea = extensive_conscription
-                add_idea = limited_conscription
-            }
-        }
-        else = {
-            swap_ideas = {
-                remove_idea = limited_conscription
-                add_idea = volunteer_only
-            }
-        }
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = decrease_conscription_hearing
-        clr_country_flag = law_hearing
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-} 
-
-country_event = {
-	id = politics_event.7
-	title = politics_event.7.t
-	desc = politics_event.7.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.7.a
-        set_rule = {
-            can_send_volunteers = yes
-        }
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = law_hearing
-        clr_country_flag = international_intervention_hearing
-        set_country_flag = international_intervention_passed
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.8
-	title = politics_event.8.t
-	desc = politics_event.8.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.8.a
-        add_to_variable = { military_chance = 1 }
-        add_to_variable = { land_chance = 1 }
-        add_to_variable = { naval_chance = 1 }
-        subtract_from_variable = { civilian_chance = 1 }
-        add_to_variable = { military_civilian_slider_var = 82.5 }
-        set_country_flag = civilian_military_unlocked
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = law_hearing
-        clr_country_flag = military_industrial_complex_hearing
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.9
-	title = politics_event.9.t
-	desc = politics_event.9.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.9.a
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = law_hearing
-        clr_country_flag = business_relief_hearing
-        add_to_variable = { industrial_power = 50 }
-        custom_effect_tooltip = add_50_industrial_power
-        add_timed_idea = { idea = small_loans days = 50 }
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.10
-	title = politics_event.10.t
-	desc = politics_event.10.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.10.a
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = law_hearing
-        clr_country_flag = merchant_navy_draft_hearing
-        random_owned_controlled_state = {
-            add_resource = {
-                type = oil
-                amount = 5
-            }
-        }
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.11
-	title = politics_event.11.t
-	desc = politics_event.11.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.11.a
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = law_hearing
-        clr_country_flag = military_industrial_complex_hearing
-        set_country_flag = land_naval_unlocked
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.12
-	title = politics_event.12.t
-	desc = politics_event.12.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.12.a
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = law_hearing
-        clr_country_flag = maximized_utilisation_hearing
-        add_to_variable = { industrial_power = 100 }
-        custom_effect_tooltip = add_100_industrial_power
-        add_timed_idea = { idea = large_loans days = 50 }
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.13
-	title = politics_event.13.t
-	desc = politics_event.13.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.13.a
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = law_hearing
-        clr_country_flag = orbital_cleaning_initiative_hearing
-        add_timed_idea = { idea = democratized_logistics days = 90 }
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.14
-	title = politics_event.14.t
-	desc = politics_event.14.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.14.a
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = law_hearing
-        clr_country_flag = interservice_training_hearing
-        army_experience = 10
-        navy_experience = 10
-        air_experience = 10
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.15
-	title = politics_event.15.t
-	desc = politics_event.15.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.15.a
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = law_hearing
-        clr_country_flag = democratized_logistics_hearing
-        add_timed_idea = { idea = war_propaganda days = 90 }
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.16
-	title = politics_event.16.t
-	desc = politics_event.16.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.16.a
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = law_hearing
-        clr_country_flag = surveillance_expansion_hearing
-        add_timed_idea = { idea = surveillance_expansion days = 30 }
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.17
-	title = politics_event.17.t
-	desc = politics_event.17.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.17.a
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = law_hearing
-        clr_country_flag = native_pacification_hearing
-        random_owned_controlled_state = {
-			add_extra_state_shared_building_slots = 1
-        }
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.18
-	title = politics_event.18.t
-	desc = politics_event.18.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.18.a
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = law_hearing
-        clr_country_flag = general_staff_expansion_hearing
-        add_timed_idea = { idea = general_staff_expansion days = 30 }
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.19
-	title = politics_event.19.t
-	desc = politics_event.19.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.19.a
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = law_hearing
-        clr_country_flag = research_hospital_hearing
-		add_equipment_to_stockpile = {
-			type = maglev_equipment
-			amount = 15
-		}
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.20
-	title = politics_event.20.t
-	desc = politics_event.20.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.20.a
-        clear_variable = hearing_time
-        clear_variable = parliament_support
-        clr_country_flag = law_hearing
-        if = {
-            limit = {
-                has_country_flag = impossible_proposition_hearing
-            }
-            set_country_flag = impossible_proposition_passed
-            clr_country_flag = impossible_proposition_hearing
-            ROOT = {
-                set_variable = { impossible_proposition_expire = 365 }
-            }
-        }
-        else_if = {
-            limit = {
-                has_country_flag = controversial_proposition_hearing
-            }
-            set_country_flag = controversial_proposition_passed
-            clr_country_flag = controversial_proposition_hearing
-            ROOT = {
-                set_variable = { controversial_proposition_expire = 365 }
-            }
-        }
-        else_if = {
-            limit = {
-                has_country_flag = divisive_proposition_hearing
-            }
-            set_country_flag = divisive_proposition_passed
-            clr_country_flag = divisive_proposition_hearing
-            ROOT = {
-                set_variable = { divisive_proposition_expire = 365 }
-            }
-        }
-        else_if = {
-            limit = {
-                has_country_flag = partisan_proposition_hearing
-            }
-            set_country_flag = partisan_proposition_passed
-            clr_country_flag = partisan_proposition_hearing
-            ROOT = {
-                set_variable = { partisan_proposition_expire = 365 }
-            }
-        }
-        else_if = {
-            limit = {
-                has_country_flag = bipartisan_proposition_hearing
-            }
-            set_country_flag = bipartisan_proposition_passed
-            clr_country_flag = bipartisan_proposition_hearing
-            ROOT = {
-                set_variable = { bipartisan_proposition_expire = 365 }
-            }
-        }
-        else_if = {
-            limit = {
-                has_country_flag = popular_proposition_hearing
-            }
-            set_country_flag = popular_proposition_passed
-            clr_country_flag = popular_proposition_hearing
-            ROOT = {
-                set_variable = { popular_proposition_expire = 365 }
-            }
-        }
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = politics_event.21
-	title = politics_event.21.t
-	desc = politics_event.21.d
-	picture = GFX_unknown_event
-	
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-		name = politics_event.21.a
-        if = {
-            limit = {
-                has_country_flag = impossible_proposition_passed
-            }
-            clr_country_flag = impossible_proposition_passed
-        }
-        else_if = {
-            limit = {
-                has_country_flag = controversial_proposition_passed
-            }
-            clr_country_flag = controversial_proposition_passed
-        }
-        else_if = {
-            limit = {
-                has_country_flag = divisive_proposition_passed
-            }
-            clr_country_flag = divisive_proposition_passed
-        }
-        else_if = {
-            limit = {
-                has_country_flag = partisan_proposition_passed
-            }
-            clr_country_flag = partisan_proposition_passed
-        }
-        else_if = {
-            limit = {
-                has_country_flag = bipartisan_proposition_passed
-            }
-            clr_country_flag = bipartisan_proposition_passed
-        }
-        else_if = {
-            limit = {
-                has_country_flag = popular_proposition_passed
-            }
-            clr_country_flag = popular_proposition_passed
-        }
-        set_variable = { political_bill_cooldown_var = 60 }
-	}
-}
-
-country_event = {
-	id = free_factory_event.1
-	title = free_factory_event.1.t
-	desc = free_factory_event.1.d
-	picture = GFX_unknown_event
-    
-    is_triggered_only = yes
-
-    fire_only_once = no
-
-	option = {
-        clear_variable = free_factory_progress
-        set_variable = { free_factory_progress = 0 }
-        add_to_variable = { free_factory_counter = 1 }
-        if = {
-            limit = {
-                any_state = {
-					is_fully_controlled_by = ROOT
-            		free_building_slots = {
-						building = industrial_complex
-						size > 1
-						include_locked = no
-					}
-                }
-            }
-            add_to_variable = { free_factory_counter = 1 }
-            random_list = {
-                25 = {
-                    random_owned_controlled_state = {
-                        limit = {
-                            is_fully_controlled_by = ROOT
-                            free_building_slots = {
-                                building = industrial_complex
-                                size > 1
-                                include_locked = no
-                            }
-                        }
-                        add_building_construction = {
-                            type = industrial_complex
-                            level = 1
-                            instant_build = yes
-                        }
-                    }
-                    modifier = {
-                        factor = heavy_chance
-                    }
-                    modifier = {
-                        factor = civilian_chance
-                    }
-                }
-                25 = {
-                    random_owned_controlled_state = {
-                        limit = {
-                            is_fully_controlled_by = ROOT
-                            free_building_slots = {
-                                building = generator_building
-                                size > 1
-                                include_locked = no
-                            }
-                        }
-                        add_building_construction = {
-                            type = generator_building
-                            level = 1
-                            instant_build = yes
-                        }
-                    }
-                    modifier = {
-                        factor = light_chance
-                    }
-                    modifier = {
-                        factor = civilian_chance
-                    }
-                }
-                25 = {
-                    random_owned_controlled_state = {
-                        limit = {
-                            is_fully_controlled_by = ROOT
-                            free_building_slots = {
-                                building = arms_factory
-                                size > 1
-                                include_locked = no
-                            }
-                        }
-                        add_building_construction = {
-                            type = arms_factory
-                            level = 1
-                            instant_build = yes
-                        }
-                    }
-                    modifier = {
-                        factor = land_chance
-                    }
-                    modifier = {
-                        factor = military_chance
-                    }
-                }
-                25 = {
-                    random_owned_controlled_state = {
-                        limit = {
-                            is_coastal = yes
-                            is_fully_controlled_by = ROOT
-                            free_building_slots = {
-                                building = dockyard
-                                size > 1
-                                include_locked = no
-                            }
-                        }
-                        add_building_construction = {
-                            type = dockyard
-                            level = 1
-                            instant_build = yes
-                        }
-                    }
-                    modifier = {
-                        factor = naval_chance
-                    }
-                    modifier = {
-                        factor = military_chance
-                    }
-                }
-            }
-        }
-	}
-}
+#add_namespace = politics_event
+#add_namespace = free_factory_event
+#add_namespace = division_limit_event
+
+#country_event = {
+#	id = politics_event.1
+#	title = politics_event.1.t
+#	desc = politics_event.1.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.1.a
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = increase_trade_law_hearing
+#        clr_country_flag = increase_conscription_hearing
+#        clr_country_flag = decrease_trade_law_hearing
+#        clr_country_flag = decrease_conscription_hearing
+#        clr_country_flag = international_intervention_hearing
+#        clr_country_flag = military_industrial_complex_hearing
+#        clr_country_flag = business_relief_hearing
+#        clr_country_flag = merchant_navy_draft_hearing
+#        clr_country_flag = military_industrial_integration_hearing
+#        clr_country_flag = maximized_utilisation_hearing
+#        clr_country_flag = orbital_cleaning_initiative_hearing
+#        clr_country_flag = interservice_training_hearing
+#        clr_country_flag = democratized_logistics_hearing
+#        clr_country_flag = surveillance_expansion_hearing
+#        clr_country_flag = native_pacification_hearing
+#        clr_country_flag = general_staff_expansion_hearing
+#        clr_country_flag = research_hospital_hearing
+#        clr_country_flag = law_hearing
+#        if = {
+#            limit = {
+#                has_country_flag = war_mobilization_hearing
+#            }
+#            clr_country_flag = war_mobilization_hearing
+#        }
+#        if = {
+#            limit = {
+#                has_country_flag = international_intervention_hearing
+#            }
+#            clr_country_flag = international_intervention_hearing
+#        }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.2
+#	title = politics_event.2.t
+#	desc = politics_event.2.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.2.a
+#        if = {
+#            limit = {
+#                has_idea = closed_economy
+#            }
+#            swap_ideas = {
+#                remove_idea = closed_economy
+#                add_idea = limited_exports
+#            }
+#        }
+#        else_if = {
+#            limit = {
+#                has_idea = limited_exports
+#            }
+#            swap_ideas = {
+#                remove_idea = limited_exports
+#                add_idea = export_focus
+#            }
+#        }
+#        else = {
+#            swap_ideas = {
+#                remove_idea = export_focus
+#                add_idea = free_trade
+#            }
+#        }
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = increase_trade_law_hearing
+#        clr_country_flag = law_hearing
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.3
+#	title = politics_event.3.t
+#	desc = politics_event.3.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.3.a
+#        if = {
+#            limit = {
+#                has_idea = volunteer_only
+#            }
+#            swap_ideas = {
+#                remove_idea = volunteer_only
+#                add_idea = limited_conscription
+#            }
+#        }
+#        else_if = {
+#            limit = {
+#                has_idea = limited_conscription
+#            }
+#            swap_ideas = {
+#                remove_idea = limited_conscription
+#                add_idea = extensive_conscription
+#            }
+#        }
+#        else_if = {
+#            limit = {
+#                has_idea = extensive_conscription
+#            }
+#            swap_ideas = {
+#                remove_idea = extensive_conscription
+#                add_idea = service_by_requirement
+#            }
+#        }
+#        else_if = {
+#            limit = {
+#                has_idea = service_by_requirement
+#            }
+#            swap_ideas = {
+#                remove_idea = service_by_requirement
+#                add_idea = all_adults_serve
+#            }
+#        }
+#        else = {
+#            swap_ideas = {
+#                remove_idea = all_adults_serve
+#                add_idea = scraping_the_barrel
+#            }
+#        }
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = increase_conscription_hearing
+#        clr_country_flag = law_hearing
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.4
+#	title = politics_event.4.t
+#	desc = politics_event.4.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.4.a
+#        add_dynamic_modifier = {
+#            modifier = politics_wargoal_modifier
+#        }
+#        set_rule = {
+#            can_declare_war_on_same_ideology = yes
+#        }
+#        set_rule = {
+#            can_only_justify_war_on_threat_country = no
+#        }
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = law_hearing
+#        clr_country_flag = war_mobilization_hearing
+#        set_country_flag = war_mobilisation_passed
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.5
+#	title = politics_event.5.t
+#	desc = politics_event.5.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.5.a
+#        if = {
+#            limit = {
+#                has_idea = free_trade
+#            }
+#            swap_ideas = {
+#                remove_idea = free_trade
+#                add_idea = export_focus
+#            }
+#        }
+#        else_if = {
+#            limit = {
+#                has_idea = export_focus
+#            }
+#            swap_ideas = {
+#                remove_idea = export_focus
+#                add_idea = limited_exports
+#            }
+#        }
+#        else = {
+#            swap_ideas = {
+#                remove_idea = limited_exports
+#                add_idea = closed_economy
+#            }
+#        }
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = decrease_trade_law_hearing
+#        clr_country_flag = law_hearing
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#} 
+#
+#country_event = {
+#	id = politics_event.6
+#	title = politics_event.6.t
+#	desc = politics_event.6.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.6.a
+#        if = {
+#            limit = {
+#                has_idea = scraping_the_barrel
+#            }
+#            swap_ideas = {
+#                remove_idea = scraping_the_barrel
+#                add_idea = all_adults_serve
+#            }
+#        }
+#        else_if = {
+#            limit = {
+#                has_idea = all_adults_serve
+#            }
+#            swap_ideas = {
+#                remove_idea = all_adults_serve
+#                add_idea = service_by_requirement
+#            }
+#        }
+#        else_if = {
+#            limit = {
+#                has_idea = service_by_requirement
+#            }
+#            swap_ideas = {
+#                remove_idea = service_by_requirement
+#                add_idea = extensive_conscription
+#            }
+#        }
+#        else_if = {
+#            limit = {
+#                has_idea = extensive_conscription
+#            }
+#            swap_ideas = {
+#                remove_idea = extensive_conscription
+#                add_idea = limited_conscription
+#            }
+#        }
+#        else = {
+#            swap_ideas = {
+#                remove_idea = limited_conscription
+#                add_idea = volunteer_only
+#            }
+#        }
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = decrease_conscription_hearing
+#        clr_country_flag = law_hearing
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#} 
+#
+#country_event = {
+#	id = politics_event.7
+#	title = politics_event.7.t
+#	desc = politics_event.7.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.7.a
+#        set_rule = {
+#            can_send_volunteers = yes
+#        }
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = law_hearing
+#        clr_country_flag = international_intervention_hearing
+#        set_country_flag = international_intervention_passed
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.8
+#	title = politics_event.8.t
+#	desc = politics_event.8.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.8.a
+#        add_to_variable = { military_chance = 1 }
+#        add_to_variable = { land_chance = 1 }
+#        add_to_variable = { naval_chance = 1 }
+#        subtract_from_variable = { civilian_chance = 1 }
+#        add_to_variable = { military_civilian_slider_var = 82.5 }
+#        set_country_flag = civilian_military_unlocked
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = law_hearing
+#        clr_country_flag = military_industrial_complex_hearing
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.9
+#	title = politics_event.9.t
+#	desc = politics_event.9.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.9.a
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = law_hearing
+#        clr_country_flag = business_relief_hearing
+#        add_to_variable = { industrial_power = 50 }
+#        custom_effect_tooltip = add_50_industrial_power
+#        add_timed_idea = { idea = small_loans days = 50 }
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.10
+#	title = politics_event.10.t
+#	desc = politics_event.10.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.10.a
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = law_hearing
+#        clr_country_flag = merchant_navy_draft_hearing
+#        random_owned_controlled_state = {
+#            add_resource = {
+#                type = oil
+#                amount = 5
+#            }
+#        }
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.11
+#	title = politics_event.11.t
+#	desc = politics_event.11.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.11.a
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = law_hearing
+#        clr_country_flag = military_industrial_complex_hearing
+#        set_country_flag = land_naval_unlocked
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.12
+#	title = politics_event.12.t
+#	desc = politics_event.12.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.12.a
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = law_hearing
+#        clr_country_flag = maximized_utilisation_hearing
+#        add_to_variable = { industrial_power = 100 }
+#        custom_effect_tooltip = add_100_industrial_power
+#        add_timed_idea = { idea = large_loans days = 50 }
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.13
+#	title = politics_event.13.t
+#	desc = politics_event.13.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.13.a
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = law_hearing
+#        clr_country_flag = orbital_cleaning_initiative_hearing
+#        add_timed_idea = { idea = democratized_logistics days = 90 }
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.14
+#	title = politics_event.14.t
+#	desc = politics_event.14.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.14.a
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = law_hearing
+#        clr_country_flag = interservice_training_hearing
+#        army_experience = 10
+#        navy_experience = 10
+#        air_experience = 10
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.15
+#	title = politics_event.15.t
+#	desc = politics_event.15.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.15.a
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = law_hearing
+#        clr_country_flag = democratized_logistics_hearing
+#        add_timed_idea = { idea = war_propaganda days = 90 }
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.16
+#	title = politics_event.16.t
+#	desc = politics_event.16.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.16.a
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = law_hearing
+#        clr_country_flag = surveillance_expansion_hearing
+#        add_timed_idea = { idea = surveillance_expansion days = 30 }
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.17
+#	title = politics_event.17.t
+#	desc = politics_event.17.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.17.a
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = law_hearing
+#        clr_country_flag = native_pacification_hearing
+#        random_owned_controlled_state = {
+#			add_extra_state_shared_building_slots = 1
+#        }
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.18
+#	title = politics_event.18.t
+#	desc = politics_event.18.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.18.a
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = law_hearing
+#        clr_country_flag = general_staff_expansion_hearing
+#        add_timed_idea = { idea = general_staff_expansion days = 30 }
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.19
+#	title = politics_event.19.t
+#	desc = politics_event.19.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.19.a
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = law_hearing
+#        clr_country_flag = research_hospital_hearing
+#		add_equipment_to_stockpile = {
+#			type = maglev_equipment
+#			amount = 15
+#		}
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.20
+#	title = politics_event.20.t
+#	desc = politics_event.20.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.20.a
+#        clear_variable = hearing_time
+#        clear_variable = parliament_support
+#        clr_country_flag = law_hearing
+#        if = {
+#            limit = {
+#                has_country_flag = impossible_proposition_hearing
+#            }
+#            set_country_flag = impossible_proposition_passed
+#            clr_country_flag = impossible_proposition_hearing
+#            ROOT = {
+#                set_variable = { impossible_proposition_expire = 365 }
+#            }
+#        }
+#        else_if = {
+#            limit = {
+#                has_country_flag = controversial_proposition_hearing
+#            }
+#            set_country_flag = controversial_proposition_passed
+#            clr_country_flag = controversial_proposition_hearing
+#            ROOT = {
+#                set_variable = { controversial_proposition_expire = 365 }
+#            }
+#        }
+#        else_if = {
+#            limit = {
+#                has_country_flag = divisive_proposition_hearing
+#            }
+#            set_country_flag = divisive_proposition_passed
+#            clr_country_flag = divisive_proposition_hearing
+#            ROOT = {
+#                set_variable = { divisive_proposition_expire = 365 }
+#            }
+#        }
+#        else_if = {
+#            limit = {
+#                has_country_flag = partisan_proposition_hearing
+#            }
+#            set_country_flag = partisan_proposition_passed
+#            clr_country_flag = partisan_proposition_hearing
+#            ROOT = {
+#                set_variable = { partisan_proposition_expire = 365 }
+#            }
+#        }
+#        else_if = {
+#            limit = {
+#                has_country_flag = bipartisan_proposition_hearing
+#            }
+#            set_country_flag = bipartisan_proposition_passed
+#            clr_country_flag = bipartisan_proposition_hearing
+#            ROOT = {
+#                set_variable = { bipartisan_proposition_expire = 365 }
+#            }
+#        }
+#        else_if = {
+#            limit = {
+#                has_country_flag = popular_proposition_hearing
+#            }
+#            set_country_flag = popular_proposition_passed
+#            clr_country_flag = popular_proposition_hearing
+#            ROOT = {
+#                set_variable = { popular_proposition_expire = 365 }
+#            }
+#        }
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+#
+#country_event = {
+#	id = politics_event.21
+#	title = politics_event.21.t
+#	desc = politics_event.21.d
+#	picture = GFX_unknown_event
+#	
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#		name = politics_event.21.a
+#        if = {
+#            limit = {
+#                has_country_flag = impossible_proposition_passed
+#            }
+#            clr_country_flag = impossible_proposition_passed
+#        }
+#        else_if = {
+#            limit = {
+#                has_country_flag = controversial_proposition_passed
+#            }
+#            clr_country_flag = controversial_proposition_passed
+#        }
+#        else_if = {
+#            limit = {
+#                has_country_flag = divisive_proposition_passed
+#            }
+#            clr_country_flag = divisive_proposition_passed
+#        }
+#        else_if = {
+#            limit = {
+#                has_country_flag = partisan_proposition_passed
+#            }
+#            clr_country_flag = partisan_proposition_passed
+#        }
+#        else_if = {
+#            limit = {
+#                has_country_flag = bipartisan_proposition_passed
+#            }
+#            clr_country_flag = bipartisan_proposition_passed
+#        }
+#        else_if = {
+#            limit = {
+#                has_country_flag = popular_proposition_passed
+#            }
+#            clr_country_flag = popular_proposition_passed
+#        }
+#        set_variable = { political_bill_cooldown_var = 60 }
+#	}
+#}
+
+#country_event = {
+#	id = free_factory_event.1
+#	title = free_factory_event.1.t
+#	desc = free_factory_event.1.d
+#	picture = GFX_unknown_event
+#    
+#    is_triggered_only = yes
+#
+#    fire_only_once = no
+#
+#	option = {
+#        clear_variable = free_factory_progress
+#        set_variable = { free_factory_progress = 0 }
+#        add_to_variable = { free_factory_counter = 1 }
+#        if = {
+#            limit = {
+#                any_state = {
+#					is_fully_controlled_by = ROOT
+#            		free_building_slots = {
+#						building = industrial_complex
+#						size > 1
+#						include_locked = no
+#					}
+#                }
+#            }
+#            add_to_variable = { free_factory_counter = 1 }
+#            random_list = {
+#                40 = {
+#                    random_owned_controlled_state = {
+#                        limit = {
+#                            is_fully_controlled_by = ROOT
+#                            free_building_slots = {
+#                                building = industrial_complex
+#                                size > 1
+#                                include_locked = no
+#                            }
+#                        }
+#                        add_building_construction = {
+#                            type = industrial_complex
+#                            level = 1
+#                            instant_build = yes
+#                        }
+#                    }
+#                    #modifier = {
+#                    #    factor = heavy_chance
+#                    #}
+#                    modifier = {
+#                        factor = civilian_chance
+#                    }
+#                }
+#                10 = {
+#                    random_owned_controlled_state = {
+#                        limit = {
+#                            is_fully_controlled_by = ROOT
+#                            free_building_slots = {
+#                                building = generator_building
+#                                size > 1
+#                                include_locked = no
+#                            }
+#                        }
+#                        add_building_construction = {
+#                            type = generator_building
+#                            level = 1
+#                            instant_build = yes
+#                        }
+#                    }
+#                    #modifier = {
+#                    #    factor = light_chance
+#                    #}
+#                    modifier = {
+#                        factor = civilian_chance
+#                    }
+#                }
+#                40 = {
+#                    random_owned_controlled_state = {
+#                        limit = {
+#                            is_fully_controlled_by = ROOT
+#                            free_building_slots = {
+#                                building = arms_factory
+#                                size > 1
+#                                include_locked = no
+#                            }
+#                        }
+#                        add_building_construction = {
+#                            type = arms_factory
+#                            level = 1
+#                            instant_build = yes
+#                        }
+#                    }
+#                    #modifier = {
+#                    #    factor = land_chance
+#                    #}
+#                    modifier = {
+#                        factor = military_chance
+#                    }
+#                }
+#                10 = {
+#                    random_owned_controlled_state = {
+#                        limit = {
+#                            is_coastal = yes
+#                            is_fully_controlled_by = ROOT
+#                            free_building_slots = {
+#                                building = dockyard
+#                                size > 1
+#                                include_locked = no
+#                            }
+#                        }
+#                        add_building_construction = {
+#                            type = dockyard
+#                            level = 1
+#                            instant_build = yes
+#                        }
+#                    }
+#                    #modifier = {
+#                    #    factor = naval_chance
+#                    #}
+#                    modifier = {
+#                        factor = military_chance
+#                    }
+#                }
+#            }
+#        }
+#	}
+#}
+#
