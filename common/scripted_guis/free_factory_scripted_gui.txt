@@ -125,7 +125,7 @@ scripted_gui = {
 			}
 			military_civilian_slider = { #Start is at 555 and end is at 720; that's just my guess tho, feel free to test and, if necessary, change this. Also change the variables in on_actions. 
 				x = military_civilian_slider_var
-				y = 55
+				y = 67
 			}
 			#light_heavy_slider = {
 			#	x = light_heavy_slider_var
@@ -209,6 +209,17 @@ scripted_gui = {
                     modifier = {
 			        	add = 1
                         NOT = { has_idea = civilian_economy }
+			        }
+                }
+            }
+            free_factory_increase_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+                        check_variable = {
+                            industrial_power > 500
+                        }
 			        }
                 }
             }

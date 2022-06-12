@@ -366,7 +366,7 @@ on_actions = {
             add_to_variable = { free_factory_gain = free_factory_base_gain }
             multiply_variable = { free_factory_gain = free_factory_adjustment }
             add_to_variable = { free_factory_progress = free_factory_gain }
-            round_variable = free_factory_progress
+            #round_variable = free_factory_progress
             #subtract_from_variable = { hearing_time = 1 }
             #if = {
             #    limit = {
@@ -377,7 +377,7 @@ on_actions = {
             #}
             if = {
                 limit = {
-                    check_variable = { free_factory_progress > 99 }
+                    check_variable = { free_factory_progress > 100 }
                     any_state = {
                         is_fully_controlled_by = ROOT
                         free_building_slots = {
@@ -486,7 +486,7 @@ on_actions = {
             }
             if = {
                 limit = {
-                    check_variable = { free_factory_progress > 99 }
+                    check_variable = { free_factory_progress > 100 }
                 }
                 clear_variable = free_factory_progress
                 set_variable = { free_factory_progress = 0 }
