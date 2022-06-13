@@ -37,19 +37,19 @@ ideas = {
 			
 			cancel_if_invalid = no
 
-			ai_will_do = {
-   				factor = 2
-
-   				modifier = {
-					factor = 20
-					
-					is_major = yes
-				}
-				modifier = {
-					has_war_support > 0.25
-					factor = 0 #don't even look at it if you could be taking partial mob
-				}
-   			}
+#			ai_will_do = {
+#   				factor = 2
+#
+#   				modifier = {
+#					factor = 20
+#					
+#					is_major = yes
+#				}
+#				modifier = {
+#					has_war_support > 0.25
+#					factor = 0 #don't even look at it if you could be taking partial mob
+#				}
+#   		}
 		}
 		
 		partial_economic_mobilisation = {
@@ -66,15 +66,15 @@ ideas = {
 			
 			cancel_if_invalid = no
 
-			ai_will_do = {
-   				factor = 2
-
-   				modifier = {
-					factor = 20
-					
-					is_major = yes
-				}
-   			}
+#			ai_will_do = {
+#   				factor = 2
+#
+#   				modifier = {
+#					factor = 20
+#					
+#					is_major = yes
+#				}
+#   		}
 		}
 		
 		war_economy = {
@@ -91,54 +91,54 @@ ideas = {
 			
 			cancel_if_invalid = no
 
-			ai_will_do = {
-   				factor = 5
-
-				modifier = {
-					#High prio on production
-					factor = 20
-					manpower_per_military_factory >  1000
-				}
-				
-				modifier = {
-					add = 1800
-					
-					# revert from closed_economy if we have large allies
-					has_idea = closed_economy
-					has_large_ally_not_pick_closed_economy = yes
-				}
-   			}
+#			ai_will_do = {
+#   				factor = 5
+#
+#				modifier = {
+#					#High prio on production
+#					factor = 20
+#					manpower_per_military_factory >  1000
+#				}
+#				
+#				modifier = {
+#					add = 1800
+#					
+#					# revert from closed_economy if we have large allies
+#					has_idea = closed_economy
+#					has_large_ally_not_pick_closed_economy = yes
+#				}
+#   		}
 		}
 		
 		tot_economic_mobilisation = {
 			
 			available = { always = yes }
 			
-			ai_will_do = {
-   				factor = 1
-
-				modifier = {
-					factor = 25
-					#Prio this if nation has a lot of manpower compared to MIC
-					manpower_per_military_factory > 15000
-				}
-
-				modifier = {
-					#Block  unless nation has a lot of manpower
-					factor = 0
-					manpower_per_military_factory <  7000
-				}
-
-				
-				modifier = {
-					# never take this if we are on low conscription laws for safety
-					factor = 0
-					OR = {
-						has_idea = volunteer_only
-						has_idea = limited_conscription
-					}
-				}
-   			}
+#			ai_will_do = {
+#  				factor = 1
+#
+#				modifier = {
+#					factor = 25
+#					#Prio this if nation has a lot of manpower compared to MIC
+#					manpower_per_military_factory > 15000
+#				}
+#
+#				modifier = {
+#					#Block  unless nation has a lot of manpower
+#					factor = 0
+#					manpower_per_military_factory <  7000
+#				}
+#
+#				
+#				modifier = {
+#					# never take this if we are on low conscription laws for safety
+#					factor = 0
+#					OR = {
+#						has_idea = volunteer_only
+#						has_idea = limited_conscription
+#					}
+#				}
+#  			}
 			
 			cost = 9999
 			removal_cost = -1
@@ -158,7 +158,7 @@ ideas = {
 		
 		free_trade = {
 
-			cost = 9999
+			cost = 150
 			removal_cost = -1
 			level = 6
 			
@@ -183,7 +183,7 @@ ideas = {
 		
 		export_focus = {
 			
-			cost = 9999
+			cost = 150
 			removal_cost = -1
 			level = 6
 			
@@ -206,7 +206,7 @@ ideas = {
 		
 		limited_exports = {
 		
-			cost = 9999
+			cost = 150
 			removal_cost = -1
 			level = 6
 			
@@ -229,7 +229,7 @@ ideas = {
 		
 		closed_economy = {
 			
-			cost = 9999
+			cost = 150
 			removal_cost = -1
 			level = 6
 			
