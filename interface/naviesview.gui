@@ -268,7 +268,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "naviesview_window"
 		position = {x=-340 y=82}
-		show_position = {x=0 y=82}
+		position = {x=10 y=125}
 		size = { width=500 height=86%% }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
@@ -311,8 +311,8 @@ guiTypes = {
 		# Tool/selection bar (visibility toggled by code)
 		containerWindowType = {
 			name = "tool_bar_window"
-			position = {x=0 y=0} # vertical position controlled by code
-			size = { width=492 height=44 }
+			position = {x=-2 y=0} # vertical position controlled by code
+			size = { width=493 height=44 }
 			Orientation = upper_left
 
 			background = {
@@ -321,6 +321,10 @@ guiTypes = {
 			}
 
 			iconType = {
+				position = {
+					x = 0
+					y = 1
+				}
 				name = "icn_background"
 				spriteType = "GFX_task_force_actions_bg"
 			}
@@ -331,7 +335,7 @@ guiTypes = {
 			buttonType = {
 				name = "btn_delete"
 				position = {x=6 y=@nv_tb_btn_y}
-				spriteType = "GFX_NV_btn_delete"
+				spriteType = "GFX_delete_template_division"
 				clicksound = click_default
 				pdx_tooltip = ""
 			}
@@ -516,7 +520,7 @@ guiTypes = {
 		iconType = {
 			name = "highlight"
 			spriteType = "GFX_fleet_bg_hl"
-			position = { x=-4 y=0 }
+			position = { x=10000 y=0 }
 			alwaystransparent = yes
 		}
 
@@ -528,16 +532,16 @@ guiTypes = {
 
 		editBoxType = {
 			name = "fleet_name"
-			position = {x=70 y=12}
-			font = "hoi_18"
-			size = { x=212 y=23 }
+			position = {x=63 y=14}
+			font = "Focusfont"
+			size = { x=312 y=23 }
 			text = "FLEET_NAME_HERE"
 		}
 
 		instantTextboxType = {
 			name = "taskforce_count"
-			position = {x=318 y=10}
-			font = "Arial"
+			position = {x=358 y=14}
+			font = "Focusfont"
 			maxWidth = 90
 			maxHeight = 23
 			format = center
@@ -546,8 +550,8 @@ guiTypes = {
 
 		buttonType = {
 			name = "btn_close"
-			position = {x=454 y=5}
-			spriteType = "GFX_NV_btn_close"
+			position = {x=452 y=9}
+			spriteType = "GFX_nf_close_button"
 			pdx_tooltip = "DESELECT_UNIT"
 			clicksound = click_default
 		}
@@ -572,7 +576,7 @@ guiTypes = {
 			name = "fuel_icon"
 			spriteType = "GFX_fuel_extended_strip"
 			frame = 1
-			position = {x=455 y=75}
+			position = {x=10000 y=75}
 		}
 
 		iconType = {
@@ -583,8 +587,8 @@ guiTypes = {
 
 		buttonType ={
 			name = "air_base_btn"
-			quadTextureSprite = "GFX_mapicon_air_base"
-			position = { x=453 y=105 }
+			quadTextureSprite = "GFX_mapmode_buttons_deselected_big"
+			position = { x=425 y=97 }
 			frame = 2
 		}
 
@@ -609,18 +613,18 @@ guiTypes = {
 
 		buttonType = {
 			name = "select_all_btn"
-			spriteType = "GFX_select_all_armylist_short_btn"
-			position = { x=394 y=142 }
+			spriteType = "GFX_button_123x34_xp"
+			position = { x=362 y=132 }
 			clicksound = click_default
-			font = "Arial"
+			font = "Focusfont"
 			text = "SELECT_ALL"
 		}
 
 		instantTextboxType = {
 			name = "active_in_regions"
-			position = {x=16 y=140}
-			font = "Arial"
-			maxWidth = 290
+			position = {x=16 y=142}
+			font = "Focusfont"
+			maxWidth = 320
 			maxHeight = 23
 			format = left
 			text = "Active in Regions: 4"
@@ -651,7 +655,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "click_to_assign"
-			position = { x = 8 y = 68 }
+			position = { x = 10000 y = 68 }
 			font = "hoi_16mbs"
 			text = "CLICK_TO_ASSIGN"
 			maxWidth = 60
@@ -679,8 +683,8 @@ guiTypes = {
 		instantTextboxType = {
 			name = "leader_desc"
 			position = {x=81 y=50}
-			font = "hoi_16mbs"
-			maxWidth = 75
+			font = "Focusfont"
+			maxWidth = 200
 			maxHeight = 23
 			format = left
 			text = "LEADER_DESC"
@@ -689,8 +693,8 @@ guiTypes = {
 		instantTextboxType = {
 			name = "leader_name"
 			position = {x=81 y=66}
-			font = "hoi_16mbs"
-			maxWidth = 140
+			font = "Focusfont"
+			maxWidth = 250
 			maxHeight = 23
 			fixedsize = yes
 			format = left
@@ -699,13 +703,13 @@ guiTypes = {
 		iconType = {
 			name = "leader_stat_attack_icon"
 			spriteType = "GFX_trait_attack"
-			position = { x=218 y=47 }
+			position = { x=395 y=47 }
 		}
 
 		instantTextboxType = {
 			name = "leader_stat_attack_text"
-			position = {x=216 y=69}
-			font = "hoi_16mbs"
+			position = {x=394 y=69}
+			font = "Focusfont"
 			maxWidth = 30
 			maxHeight = 23
 			format = center
@@ -715,13 +719,13 @@ guiTypes = {
 		iconType = {
 			name = "leader_stat_defense_icon"
 			spriteType = "GFX_trait_defense"
-			position = { x=236 y=47 }
+			position = { x=415 y=47 }
 		}
 
 		instantTextboxType = {
 			name = "leader_stat_defense_text"
-			position = {x=234 y=69}
-			font = "hoi_16mbs"
+			position = {x=414 y=69}
+			font = "Focusfont"
 			maxWidth = 30
 			maxHeight = 23
 			format = center
@@ -731,13 +735,13 @@ guiTypes = {
 		iconType = {
 			name = "leader_stat_maneuvering_icon"
 			spriteType = "GFX_trait_maneuvering"
-			position = { x=254 y=47 }
+			position = { x=435 y=47 }
 		}
 
 		instantTextboxType = {
 			name = "leader_stat_maneuvering_text"
-			position = {x=252 y=69}
-			font = "hoi_16mbs"
+			position = {x=434 y=69}
+			font = "Focusfont"
 			maxWidth = 30
 			maxHeight = 23
 			format = center
@@ -747,13 +751,13 @@ guiTypes = {
 		iconType = {
 			name = "leader_stat_coordination_icon"
 			spriteType = "GFX_trait_coordination"
-			position = { x=271 y=47 }
+			position = { x=455 y=47 }
 		}
 
 		instantTextboxType = {
 			name = "leader_stat_coordination_text"
-			position = {x=269 y=69}
-			font = "hoi_16mbs"
+			position = {x=454 y=69}
+			font = "Focusfont"
 			maxWidth = 30
 			maxHeight = 23
 			format = center
@@ -1071,7 +1075,7 @@ guiTypes = {
 		iconType = {
 			name = "highlight"
 			spriteType = "GFX_naval_unit_ship_entry_highlight"
-			position = {x=1 y=1}
+			position = {x=1 y=2}
 			alwaystransparent = yes
 		}
 
@@ -1160,8 +1164,8 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "ship_name"
-			position = {x=184 y=4}
-			font = "Arial"
+			position = {x=184 y=8}
+			font = "Focusfont"
 			maxWidth = 300
 			maxHeight = 23
 			fixedsize = yes
@@ -1180,8 +1184,8 @@ guiTypes = {
 		# NOTE: moved back in code to the role_icon x position if MTG is absent
 		instantTextboxType = {
 			name = "ship_type"
-			position = {x=210 y=20}
-			font = "hoi_18"
+			position = {x=210 y=23}
+			font = "Focusfont"
 			text = "test"
 			maxWidth = 200
 			maxHeight = 23
@@ -1288,8 +1292,8 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "ships_count"
-			position = {x=34 y=2}
-			font = "hoi_16mbs"
+			position = {x=28 y=2}
+			font = "Focusfont"
 			maxWidth = 30
 			maxHeight = 16
 			format = left
