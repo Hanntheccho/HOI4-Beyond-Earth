@@ -24,9 +24,6 @@ on_actions = {
                 #set_variable = { partisan_proposition_expire = -1 }
                 #set_variable = { bipartisan_proposition_expire = -1 }
                 #set_variable = { popular_proposition_expire = -1 }
-                set_variable = { augment_law_cost_base = 75 }
-                set_variable = { augment_law_cost_factor = 1}
-                set_variable = { augment_law_cost_modified = augment_law_cost_base}
                 clamp_variable = {
                     var = division_limit
                     min = 1
@@ -37,46 +34,46 @@ on_actions = {
                     min = 0
                     max = 2
                 }
-                clamp_variable = {
-                    var = heavy_chance
-                    min = 0
-                    max = 2
-                }
-                clamp_variable = {
-                    var = land_chance
-                    min = 0
-                    max = 2
-                }
+                #clamp_variable = {
+                #    var = heavy_chance
+                #    min = 0
+                #    max = 2
+                #}
+                #clamp_variable = {
+                #    var = land_chance
+                #    min = 0
+                #    max = 2
+                #}
                 clamp_variable = {
                     var = civilian_chance
                     min = 0
                     max = 2
                 }
-                clamp_variable = {
-                    var = light_chance
-                    min = 0
-                    max = 2
-                }
-                clamp_variable = {
-                    var = naval_chance
-                    min = 0
-                    max = 2
-                }
+                #clamp_variable = {
+                #    var = light_chance
+                #    min = 0
+                #    max = 2
+                #}
+                #clamp_variable = {
+                #    var = naval_chance
+                #    min = 0
+                #    max = 2
+                #}
                 clamp_variable = {
                     var = military_civilian_slider_var
                     min = 122
                     max = 295
                 }
-                clamp_variable = {
-                    var = light_heavy_slider_var
-                    min = 122
-                    max = 295
-                }
-                clamp_variable = {
-                    var = land_naval_slider_var
-                    min = 122
-                    max = 295
-                }
+                #clamp_variable = {
+                #    var = light_heavy_slider_var
+                #    min = 122
+                #    max = 295
+                #}
+                #clamp_variable = {
+                #    var = land_naval_slider_var
+                #    min = 122
+                #    max = 295
+                #}
 
                 #set_variable = { corruption_variable = 11 }
                 #set_variable = { corruption_min = 10 }
@@ -357,6 +354,12 @@ on_actions = {
                 }
                 subtract_from_variable = { free_factory_adjustment = 0.1 }
             }
+            if = {
+				limit = { 
+                    has_idea = ENG_the_sick_man_of_britannia
+                }
+                add_to_variable = { free_factory_gain = -0.1 }
+			}
             if = {
                 limit = {
                     has_idea = uafs
