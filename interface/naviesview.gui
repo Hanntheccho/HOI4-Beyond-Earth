@@ -314,10 +314,20 @@ guiTypes = {
 			position = {x=-2 y=0} # vertical position controlled by code
 			size = { width=493 height=44 }
 			Orientation = upper_left
+			clipping = no
 
 			background = {
 				name = "Background"
 				spriteType = "GFX_tiled_window_transparent"
+			}
+
+			iconType = {
+				position = {
+					x = -3
+					y = -1
+				}
+				name = "icn_background_back"
+				spriteType = "GFX_task_force_actions_bg_back"
 			}
 
 			iconType = {
@@ -331,7 +341,7 @@ guiTypes = {
 
 			# selection toolbox
 
-			@nv_tb_btn_y = 6
+			@nv_tb_btn_y = 7
 			buttonType = {
 				name = "btn_delete"
 				position = {x=6 y=@nv_tb_btn_y}
@@ -511,6 +521,13 @@ guiTypes = {
 		}
 
 		iconType = {
+			name = "background_image_back"
+			spriteType = "GFX_fleet_bg_back"
+			position = {x=-5 y=-1}
+			alwaystransparent = yes
+		}
+
+		iconType = {
 			name = "background_image"
 			spriteType = "GFX_fleet_bg"
 			position = {x=-2 y=2}
@@ -560,7 +577,7 @@ guiTypes = {
 			name = "btn_fleet_color"
 			quadTextureSprite = "GFX_group_marker3"
 			size = { x = 25 y = 25 }
-			position = { x=461 y = 45}
+			position = { x=470 y = 45}
 			pdx_tooltip = "CHOOSE_INSIGNIA"
 			clicksound = click_default
 		}
@@ -838,6 +855,16 @@ guiTypes = {
 		}
 
 		iconType = {
+			name = "background_sprite_back"
+			spriteType = "GFX_task_force_bg_back"
+			alwaystransparent = yes
+			position = {
+				x = -3
+				y = -3
+			}
+		}
+
+		iconType = {
 			name = "background_sprite"
 			spriteType = "GFX_task_force_bg"
 			alwaystransparent = yes
@@ -1004,7 +1031,7 @@ guiTypes = {
 		# Code toggles visibility on ships_detailed
 		containerWindowType = {
 			name = "ships_detailed"
-			position = {x=0 y=125}
+			position = {x=0 y=130}
 			size = { width=460 height=500 }
 			Orientation = upper_left
 			clipping = no
