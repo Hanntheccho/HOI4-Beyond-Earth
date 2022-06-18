@@ -531,20 +531,26 @@ on_actions = {
                     }
                     add_to_variable = { spaceship_contribution_modifier = 0.1 }
                 }
-                multiply_variable = { spaceship_contribution_variable = spaceship_contribution_modifier }
-                #if = {
-                #    limit = {
-                #        has_idea = ai_concern_orbitalforces
-                #    }
-#
-                #    add_to_variable ={spaceship_contribution_variable = 0.1}
-                #}
+                if = {
+                    limit = {
+                        has_idea = ai_concern_orbitalforces
+                    }
+
+                    add_to_variable = { spaceship_contribution_modifier = 0.1 }
+                }
                 if = {
                     limit = {
                         has_idea = stellar_codex_idea
                     }
-                    multiply_variable = { spaceship_contribution_variable = 1.25 }
+                    add_to_variable = { spaceship_contribution_modifier = 0.25 }
                 }
+                if = {
+                    limit = {
+                        has_idea = continuous_future_technology
+                    }
+                    add_to_variable = { spaceship_contribution_modifier = 0.2 }
+                }
+                multiply_variable = { spaceship_contribution_variable = spaceship_contribution_modifier }
             }
         }
     }
