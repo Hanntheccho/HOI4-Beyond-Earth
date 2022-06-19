@@ -555,7 +555,7 @@
 		id = generic_wonders_research
 		icon = GFX_goal_generic_wonders_research
 		
-		x = 12
+		x = 16
 		y = 2
 		cost = 10 # 8
 		prerequisite = {
@@ -584,7 +584,7 @@
 		id = generic_wonders_research_boost
 		icon = GFX_goal_generic_wonders_research_boost
 		
-		x = 12
+		x = 16
 		y = 3
 		cost = 10 # 8
 		prerequisite = {
@@ -614,9 +614,12 @@
 		id = generic_labs_modernization
 		icon = GFX_goal_generic_labs_modernization
 		
-		x = 16
+		x = 12
 		y = 2
 		cost = 10 # 8
+		available = {
+			NOT = { has_idea = agrarian_stage }
+		}
 		prerequisite = {
 			focus = generic_scientific_reform
 		}
@@ -635,9 +638,13 @@
 		id = generic_labs_expansion
 		icon = GFX_goal_generic_labs_expansion
 
-		x = 16
+		x = 12
 		y = 3
 		cost = 10 # 8
+		available = {
+			NOT = { has_idea = agrarian_stage }
+			NOT = { has_idea = developing_stage }
+		}
 		prerequisite = {
 			focus = generic_labs_modernization
 		}
