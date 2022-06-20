@@ -60,6 +60,32 @@ scripted_gui = {
                 }
             }
         }
+
+        ai_enabled = {
+            always = yes
+        }
+
+        ai_test_interval = 300
+
+        ai_check = {
+            check_variable = {
+                industrial_power > 25
+            }
+		}
+
+        ai_weights = {
+            reduce_devastation_button_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 1
+                        check_variable = {
+                            industrial_power > 500
+                        }
+			        }
+                }
+            }
+        }
 	}
 
     devastation_gui_tooltip = {
