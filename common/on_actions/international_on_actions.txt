@@ -8,6 +8,16 @@ on_actions = {
                 set_variable = { spaceship_contribution_civilian = num_of_civilian_factories }
                 set_variable = { spaceship_contribution_military = num_of_military_factories }
                 set_variable = { spaceship_contribution_dockyard = num_of_naval_factories }
+
+                #SPACESHIP BUILDING
+                set_variable = { spaceship_contribution_spaceship_factory = 0 }
+                every_controlled_state = {
+                    add_to_variable = { PREV.spaceship_contribution_spaceship_factory = building_level@spaceship_factory }
+                }
+                multiply_variable = { spaceship_contribution_spaceship_factory = 10 }
+                add_to_variable = { spaceship_contribution_variable = spaceship_contribution_spaceship_factory }
+                ###
+
                 multiply_variable = { spaceship_contribution_civilian = 4 }
                 multiply_variable = { spaceship_contribution_military = 2 }
                 add_to_variable = { spaceship_contribution_variable = spaceship_contribution_civilian }
@@ -519,6 +529,16 @@ on_actions = {
                 set_variable = { spaceship_contribution_civilian = num_of_civilian_factories }
                 set_variable = { spaceship_contribution_military = num_of_military_factories }
                 set_variable = { spaceship_contribution_dockyard = num_of_naval_factories }
+
+                #SPACESHIP BUILDING
+                set_variable = { spaceship_contribution_spaceship_factory = 0 }
+                every_controlled_state = {
+                    add_to_variable = { PREV.spaceship_contribution_spaceship_factory = building_level@spaceship_factory }
+                }
+                multiply_variable = { spaceship_contribution_spaceship_factory = 10 }
+                add_to_variable = { spaceship_contribution_variable = spaceship_contribution_spaceship_factory }
+                ###
+
                 multiply_variable = { spaceship_contribution_civilian = 4 }
                 multiply_variable = { spaceship_contribution_military = 2 }
                 add_to_variable = { spaceship_contribution_variable = spaceship_contribution_civilian }
