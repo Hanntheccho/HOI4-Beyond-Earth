@@ -1,0 +1,103 @@
+check_europe_war_progress = {
+	if = {
+		limit = { check_variable = { global.europewarprogress_var = 1 } }
+		
+		news_event = {
+			id = newyear_event.17
+		}
+		
+		FRA = {
+			declare_war_on = {
+				target = SCO
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = GER
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+		}
+		SCO = {
+			declare_war_on = {
+				target = FRA
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = GER
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+		}
+		GER = {
+			declare_war_on = {
+				target = SCO
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = FRA
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+		}
+		SOV = {
+			declare_war_on = {
+				target = SCO
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = GER
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = FRA
+				type = annex_everything
+			}
+		}
+		
+		set_country_flag = euro_war_happened
+	}
+}
+
+check_infamy = {
+	if = {
+		limit = { check_variable = { global.nsainfamy_var = 10 } }
+		
+		set_global_flag = nsa_infamous
+	}
+	else = {
+		clr_global_flag = nsa_infamous
+	}
+	if = {
+		limit = { check_variable = { global.francoinfamy_var = 10 } }
+		
+		set_global_flag = franco_infamous
+	}
+	else = {
+		clr_global_flag = franco_infamous
+	}
+	if = {
+		limit = { check_variable = { global.integrinfamy_var = 10 } }
+		
+		set_global_flag = integr_infamous
+	}
+	else = {
+		clr_global_flag = integr_infamous
+	}
+	if = {
+		limit = { check_variable = { global.slavicinfamy_var = 10 } }
+		
+		set_global_flag = slavic_infamous
+	}
+	else = {
+		clr_global_flag = slavic_infamous
+	}
+}
