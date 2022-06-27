@@ -2,8 +2,8 @@ guiTypes = {
 
     containerWindowType = {
     	name = "virtues_and_culture_stuff"
-		position = { x=-602 y=79 }	
-		show_position = { x=-2 y =79 }
+		position = { x=-606 y=78}	
+		show_position = { x=-6 y =78 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
@@ -17,6 +17,26 @@ guiTypes = {
 		background = {
 			name = "Background"		
 			quadTextureSprite ="GFX_tiled_window2_1b_border"
+		}
+
+		iconType ={
+			name ="virtues_bg"
+			spriteType = "GFX_virtues_background"
+			position = { x = 6 y = 93 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		iconType ={
+			name ="separator_1"
+			spriteType = "GFX_bg_separator"
+			position = { x = 5 y = 85 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType ={
+			name ="separator_2"
+			spriteType = "GFX_bg_separator"
+			position = { x = 5 y = 935 }
+			Orientation = "UPPER_LEFT"
 		}
 
 		iconType = {
@@ -58,15 +78,15 @@ guiTypes = {
 			shortcut = "ESCAPE"
 			pdx_tooltip = "CLOSE"
 		}
-		iconType = {
-			name = "hexagon_pattern_culturetab"
-			position = { x = -100 y = 41 }
-			quadTextureSprite ="GFX_background_pattern_culture_tab"
-			Orientation = "UPPER_LEFT"
-		}
+		#iconType = {
+		#	name = "hexagon_pattern_culturetab"
+		#	position = { x = -100 y = 41 }
+		#	quadTextureSprite ="GFX_background_pattern_culture_tab"
+		#	Orientation = "UPPER_LEFT"
+		#}
 		instantTextBoxType = {
 			name = "virtues_and_culture_desc"
-			position = { x = 15 y = 53 }
+			position = { x = 60 y = 53 }
 			textureFile = ""
 			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
@@ -79,488 +99,520 @@ guiTypes = {
 			format = left
 			pdx_tooltip = "virtues_and_culture_gain_tt"
 		}
-		#buttonType = {
-		#	name = "reset_virtues_button"
-		#	position = { x = -43 y = 47 }
-		#	quadTextureSprite ="GFX_reset_virtues"
-		#	Orientation = "UPPER_RIGHT"
-		#	clicksound = click_close
-		#	oversound = ui_menu_over
-		#	pdx_tooltip = "reset_virtues_tp"
-		#}
+		buttonType = {
+			name = "reset_virtues_button"
+			position = { x = -43 y = 47 }
+			quadTextureSprite ="GFX_reset_virtues"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = "reset_virtues_tp"
+		}
 		buttonType = {
 			name = "hostility_button"
-			#position = { x = -529 y = 87 }
+			position = { x = -529 y = 110 }
 			quadTextureSprite ="GFX_hostility_button"
 			buttonText = "hostility_button"
 			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			tooltip = "hostility_effects"
 		}
-		iconType = {
-			name ="hostility_effect_bg"
-			spriteType = "GFX_hostility_effect_bg"
-			#position = { x= 21 y = 171 }
-			Orientation = "UPPER_LEFT"
-		}
-		instantTextBoxType = {
-			name = "hostility_effects"
-			#position = { x = 25 y = 173 }
-			textureFile = ""
-			font = "cg_16b"
-			borderSize = {x = 0 y = 0}
-			text = "hostility_effects"	
-			maxWidth = 245
-			maxHeight = 500
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = left
-		}
+		#iconType = {
+		#	name ="hostility_effect_bg"
+		#	spriteType = "GFX_hostility_effect_bg"
+		#	#position = { x= 21 y = 171 }
+		#	Orientation = "UPPER_LEFT"
+		#}
+		#instantTextBoxType = {
+		#	name = "hostility_effects"
+		#	#position = { x = 25 y = 173 }
+		#	textureFile = ""
+		#	font = "cg_16b"
+		#	borderSize = {x = 0 y = 0}
+		#	text = "hostility_effects"	
+		#	maxWidth = 245
+		#	maxHeight = 500
+		#	fixedsize = yes
+		#
+		#	Orientation = "UPPER_LEFT"
+		#	format = left
+		#}
 		buttonType = {
 			name = "benevolence_button"
-			#position = { x = -270 y = 87 }
+			position = { x = -270 y = 110 }
 			quadTextureSprite ="GFX_benevolence_button"
 			buttonText = "benevolence_button"
 			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			tooltip = "benevolence_effects"
 		}
-		iconType = {
-			name ="benevolence_effect_bg"
-			spriteType = "GFX_benevolence_effect_bg"
-			#position = { x= 280 y = 171 }
-			Orientation = "UPPER_LEFT"
-		}
-		instantTextBoxType = {
-			name = "benevolence_effects"
-			#position = { x = 278 y = 173 }
-			textureFile = ""
-			font = "cg_16b"
-			borderSize = {x = 0 y = 0}
-			text = "benevolence_effects"	
-			maxWidth = 245
-			maxHeight = 500
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = right
-		}
+		#iconType = {
+		#	name ="benevolence_effect_bg"
+		#	spriteType = "GFX_benevolence_effect_bg"
+		#	#position = { x= 280 y = 171 }
+		#	Orientation = "UPPER_LEFT"
+		#}
+		#instantTextBoxType = {
+		#	name = "benevolence_effects"
+		#	#position = { x = 278 y = 173 }
+		#	textureFile = ""
+		#	font = "cg_16b"
+		#	borderSize = {x = 0 y = 0}
+		#	text = "benevolence_effects"	
+		#	maxWidth = 245
+		#	maxHeight = 500
+		#	fixedsize = yes
+		#
+		#	Orientation = "UPPER_LEFT"
+		#	format = right
+		#}
 		iconType = {
 			name ="benevolence_hostility_exclusive"
 			spriteType = "GFX_focus_link_exclusive"
-			#position = { x= 264 y = 113 }
+			position = { x= 264 y = 135 }
 			Orientation = "UPPER_LEFT"
 		}
-		buttonType = {
-			name = "hostility_benevolence_collapse_button"
-			#position = { x = -55 y = 87 }
-			quadTextureSprite ="GFX_collapse_culture"
-			Orientation = "UPPER_RIGHT"
-			clicksound = click_close
-			oversound = ui_menu_over
-		}
+		#buttonType = {
+		#	name = "hostility_benevolence_collapse_button"
+		#	#position = { x = -55 y = 87 }
+		#	quadTextureSprite ="GFX_collapse_culture"
+		#	Orientation = "UPPER_RIGHT"
+		#	clicksound = click_close
+		#	oversound = ui_menu_over
+		#}
 		buttonType = {
 			name = "tradition_button"
 			quadTextureSprite ="GFX_tradition_button"
+			position = { x = -529 y = 230 }
 			buttonText = "tradition_button"
 			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			tooltip = "tradition_effects"
 		}
-		iconType = {
-			name ="tradition_effect_bg"
-			spriteType = "GFX_tradition_effect_bg"
-			Orientation = "UPPER_LEFT"
-		}
-		instantTextBoxType = {
-			name = "tradition_effects"
-			textureFile = ""
-			font = "cg_16b"
-			borderSize = {x = 0 y = 0}
-			text = "tradition_effects"	
-			maxWidth = 245
-			maxHeight = 500
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = left
-		}
+		#iconType = {
+		#	name ="tradition_effect_bg"
+		#	spriteType = "GFX_tradition_effect_bg"
+		#	Orientation = "UPPER_LEFT"
+		#}
+		#instantTextBoxType = {
+		#	name = "tradition_effects"
+		#	textureFile = ""
+		#	font = "cg_16b"
+		#	borderSize = {x = 0 y = 0}
+		#	text = "tradition_effects"	
+		#	maxWidth = 245
+		#	maxHeight = 500
+		#	fixedsize = yes
+		#
+		#	Orientation = "UPPER_LEFT"
+		#	format = left
+		#}
 		buttonType = {
 			name = "progress_button"
 			quadTextureSprite ="GFX_progress_button"
+			position = { x = -270 y = 230 }
 			buttonText = "progress_button"
 			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			tooltip = "progress_effects"
 		}
-		iconType = {
-			name ="progress_effect_bg"
-			spriteType = "GFX_progress_effect_bg"
-			Orientation = "UPPER_LEFT"
-		}
-		instantTextBoxType = {
-			name = "progress_effects"
-			textureFile = ""
-			font = "cg_16b"
-			borderSize = {x = 0 y = 0}
-			text = "progress_effects"	
-			maxWidth = 245
-			maxHeight = 500
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = right
-		}
+		#iconType = {
+		#	name ="progress_effect_bg"
+		#	spriteType = "GFX_progress_effect_bg"
+		#	Orientation = "UPPER_LEFT"
+		#}
+		#instantTextBoxType = {
+		#	name = "progress_effects"
+		#	textureFile = ""
+		#	font = "cg_16b"
+		#	borderSize = {x = 0 y = 0}
+		#	text = "progress_effects"	
+		#	maxWidth = 245
+		#	maxHeight = 500
+		#	fixedsize = yes
+		#
+		#	Orientation = "UPPER_LEFT"
+		#	format = right
+		#}
 		iconType = {
 			name ="tradition_progress_exclusive"
 			spriteType = "GFX_focus_link_exclusive"
 			Orientation = "UPPER_LEFT"
+			position = { x= 264 y = 255 }
 		}
-		buttonType = {
-			name = "tradition_progress_collapse_button"
-			quadTextureSprite ="GFX_collapse_culture"
-			Orientation = "UPPER_RIGHT"
-			clicksound = click_close
-			oversound = ui_menu_over
-		}
+		#buttonType = {
+		#	name = "tradition_progress_collapse_button"
+		#	quadTextureSprite ="GFX_collapse_culture"
+		#	Orientation = "UPPER_RIGHT"
+		#	clicksound = click_close
+		#	oversound = ui_menu_over
+		#}
 		buttonType = {
 			name = "body_button"
 			quadTextureSprite ="GFX_body_button"
+			position = { x = -529 y = 350 }
 			buttonText = "body_button"
 			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			tooltip = "body_effects"
 		}
-		iconType = {
-			name ="body_effect_bg"
-			spriteType = "GFX_body_effect_bg"
-			Orientation = "UPPER_LEFT"
-		}
-		instantTextBoxType = {
-			name = "body_effects"
-			textureFile = ""
-			font = "cg_16b"
-			borderSize = {x = 0 y = 0}
-			text = "body_effects"	
-			maxWidth = 245
-			maxHeight = 500
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = left
-		}
+		#iconType = {
+		#	name ="body_effect_bg"
+		#	spriteType = "GFX_body_effect_bg"
+		#	Orientation = "UPPER_LEFT"
+		#}
+		#instantTextBoxType = {
+		#	name = "body_effects"
+		#	textureFile = ""
+		#	font = "cg_16b"
+		#	borderSize = {x = 0 y = 0}
+		#	text = "body_effects"	
+		#	maxWidth = 245
+		#	maxHeight = 500
+		#	fixedsize = yes
+		#
+		#	Orientation = "UPPER_LEFT"
+		#	format = left
+		#}
 		buttonType = {
 			name = "mind_button"
 			quadTextureSprite ="GFX_mind_button"
+			position = { x = -270 y = 350 }
 			buttonText = "mind_button"
 			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			tooltip = "mind_effects"
 		}
-		iconType = {
-			name ="mind_effect_bg"
-			spriteType = "GFX_mind_effect_bg"
-			Orientation = "UPPER_LEFT"
-		}
-		instantTextBoxType = {
-			name = "mind_effects"
-			textureFile = ""
-			font = "cg_16b"
-			borderSize = {x = 0 y = 0}
-			text = "mind_effects"	
-			maxWidth = 245
-			maxHeight = 500
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = right
-		}
+		#iconType = {
+		#	name ="mind_effect_bg"
+		#	spriteType = "GFX_mind_effect_bg"
+		#	Orientation = "UPPER_LEFT"
+		#}
+		#instantTextBoxType = {
+		#	name = "mind_effects"
+		#	textureFile = ""
+		#	font = "cg_16b"
+		#	borderSize = {x = 0 y = 0}
+		#	text = "mind_effects"	
+		#	maxWidth = 245
+		#	maxHeight = 500
+		#	fixedsize = yes
+		#
+		#	Orientation = "UPPER_LEFT"
+		#	format = right
+		#}
 		iconType = {
 			name ="body_mind_exclusive"
 			spriteType = "GFX_focus_link_exclusive"
 			Orientation = "UPPER_LEFT"
+			position = { x= 264 y = 375 }
 		}
-		buttonType = {
-			name = "body_mind_collapse_button"
-			quadTextureSprite ="GFX_collapse_culture"
-			Orientation = "UPPER_RIGHT"
-			clicksound = click_close
-			oversound = ui_menu_over
-		}
+		#buttonType = {
+		#	name = "body_mind_collapse_button"
+		#	quadTextureSprite ="GFX_collapse_culture"
+		#	Orientation = "UPPER_RIGHT"
+		#	clicksound = click_close
+		#	oversound = ui_menu_over
+		#}
 		buttonType = {
 			name = "amplification_button"
 			quadTextureSprite ="GFX_amplification_button"
+			position = { x = -529 y = 470 }
 			buttonText = "amplification_button"
 			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			tooltip = "amplification_effects"
 		}
-		iconType = {
-			name ="amplification_effect_bg"
-			spriteType = "GFX_amplification_effect_bg"
-			Orientation = "UPPER_LEFT"
-		}
-		instantTextBoxType = {
-			name = "amplification_effects"
-			textureFile = ""
-			font = "cg_16b"
-			borderSize = {x = 0 y = 0}
-			text = "amplification_effects"	
-			maxWidth = 245
-			maxHeight = 500
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = left
-		}
+		#iconType = {
+		#	name ="amplification_effect_bg"
+		#	spriteType = "GFX_amplification_effect_bg"
+		#	Orientation = "UPPER_LEFT"
+		#}
+		#instantTextBoxType = {
+		#	name = "amplification_effects"
+		#	textureFile = ""
+		#	font = "cg_16b"
+		#	borderSize = {x = 0 y = 0}
+		#	text = "amplification_effects"	
+		#	maxWidth = 245
+		#	maxHeight = 500
+		#	fixedsize = yes
+		#
+		#	Orientation = "UPPER_LEFT"
+		#	format = left
+		#}
 		buttonType = {
 			name = "expansion_button"
 			quadTextureSprite ="GFX_expansion_button"
+			position = { x = -270 y = 470 }
 			buttonText = "expansion_button"
 			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			tooltip = "expansion_effects"
 		}
-		iconType = {
-			name ="expansion_effect_bg"
-			spriteType = "GFX_expansion_effect_bg"
-			Orientation = "UPPER_LEFT"
-		}
-		instantTextBoxType = {
-			name = "expansion_effects"
-			textureFile = ""
-			font = "cg_16b"
-			borderSize = {x = 0 y = 0}
-			text = "expansion_effects"	
-			maxWidth = 245
-			maxHeight = 500
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = right
-		}
+		#iconType = {
+		#	name ="expansion_effect_bg"
+		#	spriteType = "GFX_expansion_effect_bg"
+		#	Orientation = "UPPER_LEFT"
+		#}
+		#instantTextBoxType = {
+		#	name = "expansion_effects"
+		#	textureFile = ""
+		#	font = "cg_16b"
+		#	borderSize = {x = 0 y = 0}
+		#	text = "expansion_effects"	
+		#	maxWidth = 245
+		#	maxHeight = 500
+		#	fixedsize = yes
+		#
+		#	Orientation = "UPPER_LEFT"
+		#	format = right
+		#}
 		iconType = {
 			name ="amplification_expansion_exclusive"
 			spriteType = "GFX_focus_link_exclusive"
 			Orientation = "UPPER_LEFT"
+			position = { x= 264 y = 495 }
 		}
-		buttonType = {
-			name = "amplification_expansion_collapse_button"
-			position = { x = -40 y = 405 }
-			quadTextureSprite ="GFX_collapse_culture"
-			Orientation = "UPPER_RIGHT"
-			clicksound = click_close
-			oversound = ui_menu_over
-		}
+		#buttonType = {
+		#	name = "amplification_expansion_collapse_button"
+		#	position = { x = -40 y = 405 }
+		#	quadTextureSprite ="GFX_collapse_culture"
+		#	Orientation = "UPPER_RIGHT"
+		#	clicksound = click_close
+		#	oversound = ui_menu_over
+		#}
 		buttonType = {
 			name = "conservation_button"
 			quadTextureSprite ="GFX_conservation_button"
+			position = { x = -529 y = 590 }
 			buttonText = "conservation_button"
 			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			tooltip = "conservation_effects"
 		}
-		iconType = {
-			name ="conservation_effect_bg"
-			spriteType = "GFX_conservation_effect_bg"
-			Orientation = "UPPER_LEFT"
-		}
-		instantTextBoxType = {
-			name = "conservation_effects"
-			textureFile = ""
-			font = "cg_16b"
-			borderSize = {x = 0 y = 0}
-			text = "conservation_effects"	
-			maxWidth = 245
-			maxHeight = 500
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = left
-		}
+		#iconType = {
+		#	name ="conservation_effect_bg"
+		#	spriteType = "GFX_conservation_effect_bg"
+		#	Orientation = "UPPER_LEFT"
+		#}
+		#instantTextBoxType = {
+		#	name = "conservation_effects"
+		#	textureFile = ""
+		#	font = "cg_16b"
+		#	borderSize = {x = 0 y = 0}
+		#	text = "conservation_effects"	
+		#	maxWidth = 245
+		#	maxHeight = 500
+		#	fixedsize = yes
+		#
+		#	Orientation = "UPPER_LEFT"
+		#	format = left
+		#}
 		buttonType = {
 			name = "consumption_button"
 			quadTextureSprite ="GFX_consumption_button"
+			position = { x = -270 y = 590 }
 			buttonText = "consumption_button"
 			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			tooltip = "consumption_effects"
 		}
-		iconType = {
-			name ="consumption_effect_bg"
-			spriteType = "GFX_consumption_effect_bg"
-			Orientation = "UPPER_LEFT"
-		}
-		instantTextBoxType = {
-			name = "consumption_effects"
-			textureFile = ""
-			font = "cg_16b"
-			borderSize = {x = 0 y = 0}
-			text = "consumption_effects"	
-			maxWidth = 245
-			maxHeight = 500
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = right
-		}
+		#iconType = {
+		#	name ="consumption_effect_bg"
+		#	spriteType = "GFX_consumption_effect_bg"
+		#	Orientation = "UPPER_LEFT"
+		#}
+		#instantTextBoxType = {
+		#	name = "consumption_effects"
+		#	textureFile = ""
+		#	font = "cg_16b"
+		#	borderSize = {x = 0 y = 0}
+		#	text = "consumption_effects"	
+		#	maxWidth = 245
+		#	maxHeight = 500
+		#	fixedsize = yes
+		#
+		#	Orientation = "UPPER_LEFT"
+		#	format = right
+		#}
 		iconType = {
 			name ="conservation_consumption_exclusive"
 			spriteType = "GFX_focus_link_exclusive"
 			Orientation = "UPPER_LEFT"
+			position = { x= 264 y = 615 }
 		}
-		buttonType = {
-			name = "conservation_consumption_collapse_button"
-			position = { x = -40 y = 505 }
-			quadTextureSprite ="GFX_collapse_culture"
-			Orientation = "UPPER_RIGHT"
-			clicksound = click_close
-			oversound = ui_menu_over
-		}
+		#buttonType = {
+		#	name = "conservation_consumption_collapse_button"
+		#	position = { x = -40 y = 505 }
+		#	quadTextureSprite ="GFX_collapse_culture"
+		#	Orientation = "UPPER_RIGHT"
+		#	clicksound = click_close
+		#	oversound = ui_menu_over
+		#}
 		buttonType = {
 			name = "prosperity_button"
 			quadTextureSprite ="GFX_prosperity_button"
+			position = { x = -529 y = 710 }
 			buttonText = "prosperity_button"
 			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			tooltip = "prosperity_effects"
 		}
-		iconType = {
-			name ="prosperity_effect_bg"
-			spriteType = "GFX_prosperity_effect_bg"
-			Orientation = "UPPER_LEFT"
-		}
-		instantTextBoxType = {
-			name = "prosperity_effects"
-			textureFile = ""
-			font = "cg_16b"
-			borderSize = {x = 0 y = 0}
-			text = "prosperity_effects"	
-			maxWidth = 245
-			maxHeight = 500
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = left
-		}
+		#iconType = {
+		#	name ="prosperity_effect_bg"
+		#	spriteType = "GFX_prosperity_effect_bg"
+		#	Orientation = "UPPER_LEFT"
+		#}
+		#instantTextBoxType = {
+		#	name = "prosperity_effects"
+		#	textureFile = ""
+		#	font = "cg_16b"
+		#	borderSize = {x = 0 y = 0}
+		#	text = "prosperity_effects"	
+		#	maxWidth = 245
+		#	maxHeight = 500
+		#	fixedsize = yes
+		#
+		#	Orientation = "UPPER_LEFT"
+		#	format = left
+		#}
 		buttonType = {
 			name = "efficiency_button"
 			quadTextureSprite ="GFX_efficiency_button"
+			position = { x = -270 y = 710 }
 			buttonText = "efficiency_button"
 			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			tooltip = "efficiency_effects"
 		}
-		iconType = {
-			name ="efficiency_effect_bg"
-			spriteType = "GFX_efficiency_effect_bg"
-			Orientation = "UPPER_LEFT"
-		}
-		instantTextBoxType = {
-			name = "efficiency_effects"
-			textureFile = ""
-			font = "cg_16b"
-			borderSize = {x = 0 y = 0}
-			text = "efficiency_effects"	
-			maxWidth = 245
-			maxHeight = 500
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = right
-		}
+		#iconType = {
+		#	name ="efficiency_effect_bg"
+		#	spriteType = "GFX_efficiency_effect_bg"
+		#	Orientation = "UPPER_LEFT"
+		#}
+		#instantTextBoxType = {
+		#	name = "efficiency_effects"
+		#	textureFile = ""
+		#	font = "cg_16b"
+		#	borderSize = {x = 0 y = 0}
+		#	text = "efficiency_effects"	
+		#	maxWidth = 245
+		#	maxHeight = 500
+		#	fixedsize = yes
+		#
+		#	Orientation = "UPPER_LEFT"
+		#	format = right
+		#}
 		iconType = {
 			name ="prosperity_efficiency_exclusive"
 			spriteType = "GFX_focus_link_exclusive"
 			Orientation = "UPPER_LEFT"
+			position = { x= 264 y = 735 }
 		}
-		buttonType = {
-			name = "prosperity_efficiency_collapse_button"
-			position = { x = -40 y = 605 }
-			quadTextureSprite ="GFX_collapse_culture"
-			Orientation = "UPPER_RIGHT"
-			clicksound = click_close
-			oversound = ui_menu_over
-		}
+		#buttonType = {
+		#	name = "prosperity_efficiency_collapse_button"
+		#	position = { x = -40 y = 605 }
+		#	quadTextureSprite ="GFX_collapse_culture"
+		#	Orientation = "UPPER_RIGHT"
+		#	clicksound = click_close
+		#	oversound = ui_menu_over
+		#}
 		buttonType = {
 			name = "order_button"
 			quadTextureSprite ="GFX_order_button"
+			position = { x = -529 y = 830 }
 			buttonText = "order_button"
 			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			tooltip = "order_effects"
 		}
-		iconType = {
-			name ="order_effect_bg"
-			spriteType = "GFX_order_effect_bg"
-			Orientation = "UPPER_LEFT"
-		}
-		instantTextBoxType = {
-			name = "order_effects"
-			textureFile = ""
-			font = "cg_16b"
-			borderSize = {x = 0 y = 0}
-			text = "order_effects"	
-			maxWidth = 245
-			maxHeight = 500
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = left
-		}
+		#iconType = {
+		#	name ="order_effect_bg"
+		#	spriteType = "GFX_order_effect_bg"
+		#	Orientation = "UPPER_LEFT"
+		#}
+		#instantTextBoxType = {
+		#	name = "order_effects"
+		#	textureFile = ""
+		#	font = "cg_16b"
+		#	borderSize = {x = 0 y = 0}
+		#	text = "order_effects"	
+		#	maxWidth = 245
+		#	maxHeight = 500
+		#	fixedsize = yes
+		#
+		#	Orientation = "UPPER_LEFT"
+		#	format = left
+		#}
 		buttonType = {
 			name = "liberty_button"
 			quadTextureSprite ="GFX_liberty_button"
+			position = { x = -270 y = 830 }
 			buttonText = "liberty_button"
 			buttonFont = "Beyondsmall"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			oversound = ui_menu_over
+			tooltip = "liberty_effects"
 		}
-		iconType = {
-			name ="liberty_effect_bg"
-			spriteType = "GFX_liberty_effect_bg"
-			Orientation = "UPPER_LEFT"
-		}
-		instantTextBoxType = {
-			name = "liberty_effects"
-			textureFile = ""
-			font = "cg_16b"
-			borderSize = {x = 0 y = 0}
-			text = "liberty_effects"	
-			maxWidth = 245
-			maxHeight = 500
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = right
-		}
+		#iconType = {
+		#	name ="liberty_effect_bg"
+		#	spriteType = "GFX_liberty_effect_bg"
+		#	Orientation = "UPPER_LEFT"
+		#}
+		#instantTextBoxType = {
+		#	name = "liberty_effects"
+		#	textureFile = ""
+		#	font = "cg_16b"
+		#	borderSize = {x = 0 y = 0}
+		#	text = "liberty_effects"	
+		#	maxWidth = 245
+		#	maxHeight = 500
+		#	fixedsize = yes
+		#
+		#	Orientation = "UPPER_LEFT"
+		#	format = right
+		#}
 		iconType = {
 			name ="order_liberty_exclusive"
 			spriteType = "GFX_focus_link_exclusive"
+			position = { x= 264 y = 855 }
 			Orientation = "UPPER_LEFT"
 		}
-		buttonType = {
-			name = "order_liberty_collapse_button"
-			position = { x = -40 y = 705 }
-			quadTextureSprite ="GFX_collapse_culture"
-			Orientation = "UPPER_RIGHT"
-			clicksound = click_close
-			oversound = ui_menu_over
-		}
+		#buttonType = {
+		#	name = "order_liberty_collapse_button"
+		#	position = { x = -40 y = 705 }
+		#	quadTextureSprite ="GFX_collapse_culture"
+		#	Orientation = "UPPER_RIGHT"
+		#	clicksound = click_close
+		#	oversound = ui_menu_over
+		#}
     }
 }
