@@ -1,0 +1,15 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			set_variable = { global.ewpgain_var = 0.75 }
+		}
+	}
+	on_weekly_FRA = { #for some reason using just 'on_weekly' gives an ungodly huge amount of progress each week
+		effect = {
+			add_to_variable = {
+				var = global.europewarprogress_var
+				value = global.ewpgain_var
+			}
+		}
+	}
+}

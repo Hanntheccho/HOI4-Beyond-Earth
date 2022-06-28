@@ -1,7 +1,12 @@
 check_europe_war_progress = {
 	if = {
-		limit = { check_variable = { global.europewarprogress_var = 1 } }
-		
+		limit = {
+			OR = {
+				check_variable = { global.europewarprogress_var = 100 }
+				check_variable = { global.europewarprogress_var > 100 }
+			}
+		}
+
 		news_event = {
 			id = newyear_event.17
 		}
@@ -69,35 +74,56 @@ check_europe_war_progress = {
 
 check_infamy = {
 	if = {
-		limit = { check_variable = { global.nsainfamy_var = 10 } }
+		limit = {
+			AND = {
+				check_variable = { global.nsainfamy_var = 10 }
+				NOT = {
+					has_global_flag = nsa_infamous
+				}
+			}
+		}
 		
 		set_global_flag = nsa_infamous
-	}
-	else = {
-		clr_global_flag = nsa_infamous
+		add_to_variable = { global.ewpgain_var = 0.5 }
+		
 	}
 	if = {
-		limit = { check_variable = { global.francoinfamy_var = 10 } }
+		limit = {
+			AND = {
+				check_variable = { global.francoinfamy_var = 10 }
+				NOT = {
+					has_global_flag = franco_infamous
+				}
+			}
+		}
 		
 		set_global_flag = franco_infamous
-	}
-	else = {
-		clr_global_flag = franco_infamous
+		add_to_variable = { global.ewpgain_var = 0.5 }
 	}
 	if = {
-		limit = { check_variable = { global.integrinfamy_var = 10 } }
+		limit = {
+			AND = {
+				check_variable = { global.integrinfamy_var = 10 }
+				NOT = {
+					has_global_flag = integr_infamous
+				}
+			}
+		}
 		
 		set_global_flag = integr_infamous
-	}
-	else = {
-		clr_global_flag = integr_infamous
+		add_to_variable = { global.ewpgain_var = 0.5 }
 	}
 	if = {
-		limit = { check_variable = { global.slavicinfamy_var = 10 } }
+		limit = {
+			AND = {
+				check_variable = { global.slavicinfamy_var = 10 }
+				NOT = {
+					has_global_flag = slavic_infamous
+				}
+			}
+		}
 		
 		set_global_flag = slavic_infamous
-	}
-	else = {
-		clr_global_flag = slavic_infamous
+		add_to_variable = { global.ewpgain_var = 0.5 }
 	}
 }

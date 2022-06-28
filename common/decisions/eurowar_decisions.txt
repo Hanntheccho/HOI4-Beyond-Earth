@@ -138,32 +138,32 @@ eurowar_decisions = {
 		}
 	}
 	
-	testing_raise_ewp_decision = {
-		icon = GFX_decision_unknown
-		available = {
-			is_debug = yes
-		}
-		visible = {
-			is_debug = yes
-		}
-		fire_only_once = no
-		complete_effect = {
-			add_to_variable = {
-				var = global.europewarprogress_var
-				value = 0.1
-			}
-			
-			clamp_variable = {
-				var = global.europewarprogress_var
-				min = 0
-				max = 1
-			}
-			
-			hidden_effect = {
-				check_europe_war_progress = yes
-			}
-		}
-	}
+	#testing_raise_ewp_decision = {
+	#	icon = GFX_decision_unknown
+	#	available = {
+	#		is_debug = yes
+	#	}
+	#	visible = {
+	#		is_debug = yes
+	#	}
+	#	fire_only_once = no
+	#	complete_effect = {
+	#		add_to_variable = {
+	#			var = global.europewarprogress_var
+	#			value = 0.1
+	#		}
+	#		
+	#		clamp_variable = {
+	#			var = global.europewarprogress_var
+	#			min = 0
+	#			max = 1
+	#		}
+	#		
+	#		hidden_effect = {
+	#			check_europe_war_progress = yes
+	#		}
+	#	}
+	#}
 	
 	testing_start_europe_war = {
 		icon = GFX_decision_unknown
@@ -177,13 +177,13 @@ eurowar_decisions = {
 		complete_effect = {
 			add_to_variable = {
 				var = global.europewarprogress_var
-				value = 1
+				value = 100
 			}
 			
 			clamp_variable = {
 				var = global.europewarprogress_var
 				min = 0
-				max = 1
+				max = 100
 			}
 			
 			hidden_effect = {
@@ -198,12 +198,16 @@ eurowar_decisions = {
 			has_global_flag = nsa_infamous
 			NOT = {
 				tag = SCO
+				is_in_faction_with = SCO
+				is_puppet_of = SCO
 			}
 		}
 		visible = {
 			has_global_flag = nsa_infamous
 			NOT = {
 				tag = SCO
+				is_in_faction_with = SCO
+				is_puppet_of = SCO
 			}
 		}
 		fire_only_once = no
@@ -221,12 +225,16 @@ eurowar_decisions = {
 			has_global_flag = franco_infamous
 			NOT = {
 				tag = FRA
+				is_in_faction_with = FRA
+				is_puppet_of = FRA
 			}
 		}
 		visible = {
 			has_global_flag = franco_infamous
 			NOT = {
 				tag = FRA
+				is_in_faction_with = FRA
+				is_puppet_of = FRA
 			}
 		}
 		fire_only_once = no
@@ -244,12 +252,16 @@ eurowar_decisions = {
 			has_global_flag = integr_infamous
 			NOT = {
 				tag = GER
+				is_in_faction_with = GER
+				is_puppet_of = GER
 			}
 		}
 		visible = {
 			has_global_flag = integr_infamous
 			NOT = {
 				tag = GER
+				is_in_faction_with = GER
+				is_puppet_of = GER
 			}
 		}
 		fire_only_once = no
@@ -267,12 +279,16 @@ eurowar_decisions = {
 			has_global_flag = slavic_infamous
 			NOT = {
 				tag = SOV
+				is_in_faction_with = SOV
+				is_puppet_of = SOV
 			}
 		}
 		visible = {
 			has_global_flag = slavic_infamous
 			NOT = {
 				tag = SOV
+				is_in_faction_with = SOV
+				is_puppet_of = SOV
 			}
 		}
 		fire_only_once = no
