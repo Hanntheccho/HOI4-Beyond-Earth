@@ -12,17 +12,189 @@ country_event = {
 	
 	option = { 
 		name = england_event_option.1.a
+		custom_effect_tooltip = second_english_civil_war_option_a_tooltip
+		hidden_effect = {
+			add_to_array = {
+				array = english_civilwar_array
+				value = ENG
+				index = 0
+			}
+		}
 	}
 
 	option = { 
 		name = england_event_option.1.b
+		custom_effect_tooltip = second_english_civil_war_option_b_tooltip
+		hidden_effect = {
+			add_to_array = {
+				array = english_civilwar_array
+				value = HNG
+				index = 0
+			}
+		}
 	}
 
 	option = { 
 		name = england_event_option.1.c
+		custom_effect_tooltip = second_english_civil_war_option_c_tooltip
+		hidden_effect = {
+			add_to_array = {
+				array = english_civilwar_array
+				value = JNG
+				index = 0
+			}
+		}
 	}
 
 	option = { 
 		name = england_event_option.1.d
+		custom_effect_tooltip = second_english_civil_war_option_d_tooltip
+		hidden_effect = {
+			add_to_array = {
+				array = english_civilwar_array
+				value = CNG
+				index = 0
+			}
+		}
+	}
+}
+
+country_event = {
+	id = england_event.2
+	title = england_event.2.t
+	desc = england_event.2.d
+	picture = GFX_unknown_event
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	major = yes
+
+	immediate = {
+		hidden_effect = {
+		267 = {
+			transfer_state_to = JNG
+		}
+		JNG = {
+			add_state_core = 267
+			declare_war_on = {
+				target = HNG
+			}
+			declare_war_on = {
+				target = CNG
+			}
+			declare_war_on = {
+				target = ENG
+			}
+		}
+		260 = {
+			transfer_state_to = HNG
+		}
+		HNG = {
+			add_state_core = 260
+			declare_war_on = {
+				target = JNG
+			}
+			declare_war_on = {
+				target = CNG
+			}
+			declare_war_on = {
+				target = ENG
+			}
+		}
+		249 = {
+			transfer_state_to = CNG
+		}
+		277 = {
+			transfer_state_to = CNG
+		}
+		CNG = {
+			add_state_core = 249
+			add_state_core = 277
+			declare_war_on = {
+				target = HNG
+			}
+			declare_war_on = {
+				target = JNG
+			}
+			declare_war_on = {
+				target = ENG
+			}
+		}
+		ENG = {
+			declare_war_on = {
+				target = JNG
+			}
+			declare_war_on = {
+				target = CNG
+			}
+			declare_war_on = {
+				target = HNG
+			}
+		}
+		for_each_scope_loop = {
+			array = english_civilwar_array
+			change_tag_from = ENG
+		}				
+	}
+	custom_effect_tooltip = second_english_civil_war_tooltip
+	}
+
+	option = { ## If Masterist England -> ENG
+		name = england_event_option.2.a
+		trigger = {
+			THIS = {
+				tag = ENG
+			}
+		}
+	}
+	option = { ## If Purist England -> JNG
+		name = england_event_option.2.b
+		trigger = {
+			THIS = {
+				tag = JNG
+			}
+		}
+	}
+	option = { ## If Harmonist England -> HNG
+		name = england_event_option.2.c
+		trigger = {
+			THIS = {
+				tag = HNG
+			}
+		}
+	}
+	option = { ## If Undecided England -> CNG
+		name = england_event_option.2.d
+		trigger = {
+			THIS = {
+				tag = CNG
+				has_government = neutral
+			}
+		}
+	}
+	option = { ## If Scotland
+		name = england_event_option.2.e
+		trigger = {
+			THIS = {
+				tag = SCO
+			}
+		}
+	}
+	option = { ## If anyone else
+		name = england_event_option.2.f
+		trigger = {
+			THIS = {
+				NOT = {
+					OR = {
+						tag = SCO
+						tag = ENG
+						tag = CNG
+						tag = HNG
+						tag = JNG
+					}
+				}
+			}
+		}
 	}
 }
