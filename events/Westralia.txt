@@ -1,0 +1,139 @@
+add_namespace = SHL_event # this is the current tag of WESTRALIA
+
+country_event = {
+	id = SHL_event.1
+	title = SHL_event.1.t
+	desc = SHL_event.1.d
+	picture = GFX_unknown_event
+
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+	date > 22.11.2200
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = SHL_event.1.a
+		set_country_flag = SHL_option_1
+		country_event = {
+		days = 1 id = SHL_event.2
+		}
+	}
+
+	option = {
+		name = SHL_event.1.b
+		set_country_flag = SHL_option_2
+		country_event = {
+		days = 1 id = SHL_event.3
+		}
+	}
+
+}
+#follow event for ruling party
+
+country_event = {
+	id = SHL_event.2
+	title = SHL_event.2.t
+	desc = SHL_event.2.d
+	picture = GFX_unknown_event
+
+	is_triggered_only = yes
+	fire_only_once = no
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = SHL_event.2.a
+		set_ruling_party = supremacy
+	}
+
+
+}
+
+#follow event for ruling party
+country_event = {
+	id = SHL_event.3
+	title = SHL_event.3.t
+	desc = SHL_event.3.d
+	picture = GFX_unknown_event
+
+	is_triggered_only = yes
+	fire_only_once = no
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = SHL_event.3.a
+		set_ruling_party = mastery
+	}
+
+
+}
+
+
+country_event = {
+	id = SHL_event.4
+	title = SHL_event.4.t
+	desc = SHL_event.4.d
+	picture = GFX_unknown_event
+
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+	has_country_flag = SHL_option_1
+	date > 13.1.2201
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = SHL_event.4.a
+		add_to_variable = {industrial_power = 20 }
+		add_ideas = SHL_runaway_investments
+		clr_country_flag = SHL_option_1
+	}
+
+}
+
+country_event = {
+	id = SHL_event.5
+	title = SHL_event.5.t
+	desc = SHL_event.5.d
+	picture = GFX_unknown_event
+
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+	has_country_flag = SHL_option_2
+	date > 13.1.2201
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = SHL_event.5.a
+		add_political_power = -100
+		add_ideas = SHL_balancing_mob_and_mind
+		clr_country_flag = SHL_option_2
+
+	}
+
+}
