@@ -1,4 +1,4 @@
-fi_fed_med = {
+fi_formables = {
 	fi_form_fed_med = {
 		icon = GFX_decision_unknown
 		available = {
@@ -8,17 +8,191 @@ fi_fed_med = {
 					is_controlled_by = FRA
 				}
 			}
-			313 = {
-				is_controlled_by = FRA
+			TUN = {
+				all_core_state = {
+					is_controlled_by = FRA
+				}
+			}
+			ITA = {
+				all_core_state = {
+					is_controlled_by = FRA
+				}
+			}
+			PAD = {
+				all_core_state = {
+					is_controlled_by = FRA
+				}
+			}
+			has_country_leader = {
+				character = FRA_elodie_batteux
+				ruling_only = yes
 			}
 		}
 		visible = {
 			always = yes
 		}
 		fire_only_once = yes
-		days_remove = 5
+		#days_remove = 5
 		complete_effect = {
-
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = PAD
+						is_core_of = ITA
+						is_core_of = TUN
+					}
+				}
+				add_core_of = FRA
+			}
+			FRA = {
+				set_cosmetic_tag = FRA_med_fed
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	fi_form_european_union = {
+		icon = GFX_decision_unknown
+		available = {
+			tag = FRA
+			FRA = {
+				all_core_state = {
+					is_controlled_by = FRA
+				}
+			}
+			GER = {
+				all_core_state = {
+					is_controlled_by = FRA
+				}
+			}
+			ITA = {
+				all_core_state = {
+					is_controlled_by = FRA
+				}
+			}
+			PAD = {
+				all_core_state = {
+					is_controlled_by = FRA
+				}
+			}
+			ENG = {
+				all_core_state = {
+					is_controlled_by = FRA
+				}
+			}
+			SCO = {
+				all_core_state = {
+					is_controlled_by = FRA
+				}
+			}
+			IRE = {
+				all_core_state = {
+					is_controlled_by = FRA
+				}
+			}
+			CZE = {
+				all_core_state = {
+					is_controlled_by = FRA
+				}
+			}
+		}
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		#days_remove = 5
+		complete_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = PAD
+						is_core_of = ITA
+						is_core_of = GER
+						is_core_of = ENG
+						is_core_of = SCO
+						is_core_of = IRE
+						is_core_of = CZE
+					}
+				}
+				add_core_of = FRA
+			}
+			FRA = {
+				set_cosmetic_tag = FRA_eu_union
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	fi_form_rep_lys = {
+		icon = GFX_decision_unknown
+		available = {
+			tag = FRA
+			FRA = {
+				all_core_state = {
+					is_controlled_by = FRA
+				}
+			}
+			ITA = {
+				all_core_state = {
+					is_controlled_by = FRA
+				}
+			}
+			PAD = {
+				all_core_state = {
+					is_controlled_by = FRA
+				}
+			}
+			has_country_leader = {
+				character = FRA_al_hakim
+				ruling_only = yes
+			}
+		}
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		#days_remove = 5
+		complete_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = PAD
+						is_core_of = ITA
+					}
+				}
+				add_core_of = FRA
+			}
+			FRA = {
+				set_cosmetic_tag = FRA_lys_rep
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	fi_form_sos_government = {
+		icon = GFX_decision_unknown
+		available = {
+			tag = FRA
+			FRA = {
+				has_war_with = GER
+				has_war_with = PAD
+			}
+			FRA = {
+				surrender_progress > 0.3
+			}
+		}
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		#days_remove = 5
+		complete_effect = {
+			FRA = {
+				set_cosmetic_tag = FRA_conseil_nacional
+			}
 		}
 		ai_will_do = {
 			factor = 1
