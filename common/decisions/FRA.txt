@@ -1,3 +1,91 @@
+fi_election = {
+	fi_elodie_campaign = {
+		icon = GFX_decision_unknown
+		available = {
+			tag = FRA
+			NOT = {
+				has_country_flag = fi_election_ended
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = fi_election_ended
+			}
+		}
+		cost = 40
+		fire_only_once = no
+		days_remove = 20
+		remove_effect = {
+			add_popularity = {
+				ideology = purity
+				popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	fi_hakim_campaign = {
+		icon = GFX_decision_unknown
+		available = {
+			tag = FRA
+			NOT = {
+				has_country_flag = fi_election_ended
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = fi_election_ended
+			}
+		}
+		cost = 40
+		fire_only_once = no
+		days_remove = 20
+		remove_effect = {
+			add_popularity = {
+				ideology = mastery
+				popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	fi_election_end = {
+		icon = GFX_decision_unknown
+		available = {
+			always = no
+		}
+		visible = {
+			NOT = {
+				has_country_flag = fi_election_ended
+			}
+		}
+		fire_only_once = yes
+		days_mission_timeout = 210
+		complete_effect = {
+			if = {
+				limit = {
+					mastery > party_popularity@purity
+				}
+				set_politics = {
+					ruling_party = mastery
+				}
+				set_country_flag = fi_election_ended
+			}
+			else = {
+				set_politics = {
+					ruling_party = purity
+				}
+				set_country_flag = fi_election_ended
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+
 fi_formables = {
 	fi_form_fed_med = {
 		icon = GFX_decision_unknown

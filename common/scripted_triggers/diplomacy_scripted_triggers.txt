@@ -30,15 +30,27 @@
 #			}
 #		}
 
-# This specifically overrides the rule check as to whether or not you can guarantee other ideologies
-DIPLOMACY_GUARANTEE_ENABLE_TRIGGER_OVERRIDES_GAME = {
+
+DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
 	NOT = {
-		has_game_rule = {
-			rule = allow_guarantees
-			option = LIMITED
-		}
+		has_idea = EU_treaty_of_bern
 	}
 }
+DIPLOMACY_CALL_ALLIES_ENABLE_TRIGGER = {
+	NOT = {
+		has_idea = EU_treaty_of_bern
+	}
+}
+
+# This specifically overrides the rule check as to whether or not you can guarantee other ideologies
+#DIPLOMACY_GUARANTEE_ENABLE_TRIGGER_OVERRIDES_GAME = {
+#	NOT = {
+#		has_game_rule = {
+#			rule = allow_guarantees
+#			option = LIMITED
+#		}
+#	}
+#}
 
 DIPLOMACY_GUARANTEE_ENABLE_TRIGGER = {
 	if = {
