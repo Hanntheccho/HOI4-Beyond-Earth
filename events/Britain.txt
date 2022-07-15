@@ -10,6 +10,24 @@ country_event = {
 	
 	is_triggered_only = yes
 	
+	immediate = {
+		249 = {
+			set_demilitarized_zone = yes
+		}
+		277 = {
+			set_demilitarized_zone = yes
+		}
+		267 = {
+			set_demilitarized_zone = yes
+		}
+		1024 = {
+			set_demilitarized_zone = yes
+		}
+		260 = {
+			set_demilitarized_zone = yes
+		}
+	}
+
 	option = { 
 		name = england_event_option.1.a
 		custom_effect_tooltip = second_english_civil_war_option_a_tooltip
@@ -31,6 +49,9 @@ country_event = {
 				value = HNG
 				index = 0
 			}
+			1023 = {
+				set_demilitarized_zone = yes
+			}
 		}
 	}
 
@@ -43,6 +64,9 @@ country_event = {
 				value = JNG
 				index = 0
 			}
+			1023 = {
+				set_demilitarized_zone = yes
+			}
 		}
 	}
 
@@ -54,6 +78,9 @@ country_event = {
 				array = english_civilwar_array
 				value = CNG
 				index = 0
+			}
+			1023 = {
+				set_demilitarized_zone = yes
 			}
 		}
 	}
@@ -72,34 +99,36 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
+			remove_ideas = ENG_stagnant_republican_army
+			ENG = {
+                country_lock_all_division_template = no
+            }
 		267 = {
 			transfer_state_to = JNG
 		}
 		JNG = {
 			add_state_core = 267
 			declare_war_on = {
-				target = HNG
-			}
-			declare_war_on = {
-				target = CNG
-			}
-			declare_war_on = {
 				target = ENG
+				type = annex_everything
 			}
 		}
 		260 = {
 			transfer_state_to = HNG
 		}
+		1024 = {
+			transfer_state_to = HNG
+		}
 		HNG = {
 			add_state_core = 260
+			add_state_core = 1024
 			declare_war_on = {
 				target = JNG
-			}
-			declare_war_on = {
-				target = CNG
+				type = annex_everything
 			}
 			declare_war_on = {
 				target = ENG
+				type = annex_everything
 			}
 		}
 		249 = {
@@ -113,31 +142,24 @@ country_event = {
 			add_state_core = 277
 			declare_war_on = {
 				target = HNG
+				type = annex_everything
 			}
 			declare_war_on = {
 				target = JNG
+				type = annex_everything
 			}
 			declare_war_on = {
 				target = ENG
-			}
-		}
-		ENG = {
-			declare_war_on = {
-				target = JNG
-			}
-			declare_war_on = {
-				target = CNG
-			}
-			declare_war_on = {
-				target = HNG
+				type = annex_everything
 			}
 		}
 		for_each_scope_loop = {
 			array = english_civilwar_array
+			transfer_state = 1023
 			change_tag_from = ENG
-		}				
-	}
-	custom_effect_tooltip = second_english_civil_war_tooltip
+		}
+		}			
+		custom_effect_tooltip = second_english_civil_war_tooltip
 	}
 
 	option = { ## If Masterist England -> ENG
