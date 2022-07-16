@@ -1,181 +1,278 @@
-#catch_a_mouse = {
-#
-#	sib_import_rifles = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		fire_only_once = yes
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	sib_heavy_equipment = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		fire_only_once = yes
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	sib_guard_locals = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		fire_only_once = yes
-#		cost = 60
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	sib_red_militias = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		fire_only_once = yes
-#		cost = 50
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	sib_socialist_governors = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		fire_only_once = yes
-#		cost = 80
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	sib_double_agents = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		fire_only_once = yes
-#		cost = 30
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	sib_luo_zhenxian_moving = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		allowed = {
-#			
-#		}
-#		activation = {
-#            tag = SIB          
-#        }
-#		is_good = no
-#		fire_only_once = no
-#		days_mission_timeout = 20
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	sib_luo_zhenxian_agitating = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		allowed = {
-#			
-#		}
-#		fire_only_once = no
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	sib_rogue_brigade = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		allowed = {
-#			
-#		}
-#		activation = {
-#            tag = SIB          
-#        }
-#		is_good = no
-#		fire_only_once = yes
-#		days_mission_timeout = 280
-#		days_remove = 10
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#
-#}
+catch_a_mouse = {
+
+	sib_import_rifles = {
+		icon = GFX_decision_unknown
+		available = {
+			#
+		}
+		visible = {
+			#
+		}
+		fire_only_once = no
+		custom_cost_trigger = {
+			check_variable = { industrial_power > 19.9 }
+		}
+		custom_cost_text = decision_cost_20_ip
+		days_remove = 30
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_eq
+				amount = 1000
+				producer = ROOT
+			}
+			subtract_from_variable = {
+				industrial_power = 20
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	sib_heavy_equipment = {
+		icon = GFX_decision_unknown
+		available = {
+			#
+		}
+		visible = {
+			#
+		}
+		fire_only_once = no
+		custom_cost_trigger = {
+			check_variable = { industrial_power > 19.9 }
+		}
+		custom_cost_text = decision_cost_20_ip
+		days_remove = 30
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 100
+				producer = ROOT
+			}
+			subtract_from_variable = {
+				industrial_power = 20
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	sib_guard_locals = {
+		icon = GFX_decision_unknown
+		available = {
+			#
+		}
+		visible = {
+			#
+		}
+		fire_only_once = no
+		cost = 60
+		days_remove = 30
+		remove_effect = {
+			custom_effect_tooltip = sib_guard_locals_tooltip
+			subtract_from_variable = {
+				sib_discontent = 5
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				check_variable = {
+					sib_discontent > 50
+				}
+				add = 2
+			}
+		}
+	}
+	sib_red_militias = {
+		icon = GFX_decision_unknown
+		available = {
+			#
+		}
+		visible = {
+			#
+		}
+		fire_only_once = no
+		cost = 40
+		days_remove = 20
+		remove_effect = {
+			add_manpower = 10000
+			army_experience = 10
+			add_command_power = 10
+			add_to_variable = {
+				sib_socialist_support = 5
+			}
+			custom_effect_tooltip = sib_red_militias_tooltip
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	sib_socialist_governors = {
+		icon = GFX_decision_unknown
+		available = {
+			#
+		}
+		visible = {
+			#
+		}
+		fire_only_once = no
+		cost = 80
+		days_remove = 5
+		remove_effect = {
+			subtract_from_variable = {
+				sib_discontent = 20
+			}
+			add_to_variable = {
+				sib_socialist_support = 10
+			}
+			custom_effect_tooltip = sib_socialist_governors_tooltip
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				check_variable = {
+					sib_discontent > 80
+				}
+				add = 5
+			}
+		}
+	}
+	sib_double_agents = {
+		icon = GFX_decision_unknown
+		available = {
+			NOT = {
+				has_country_flag = SIB_siberian_brigade_located
+			}
+		}
+		visible = {
+			#
+		}
+		fire_only_once = no
+		cost = 30
+		days_remove = 3
+		remove_effect = {
+			random_list = {
+				95 = {
+
+				}
+				5 = {
+					set_country_flag = SIB_siberian_brigade_located
+					custom_effect_tooltip = sib_double_agents_tooltip
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	sib_luo_zhenxian_moving = {
+		icon = GFX_decision_unknown
+		available = {
+			always = no
+		}
+		visible = {
+			#
+		}
+		activation = {
+            tag = SIB
+			has_idea =  SIB_xibolia_lu       
+        }
+		is_good = no
+		fire_only_once = no
+		days_re_enable = 1
+		days_mission_timeout = 20
+		timeout_effect = {
+			add_to_variable = {
+				sib_discontent = 5
+			}
+			custom_effect_tooltip = sib_luo_zhenxian_moving_tooltip
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	sib_end_the_luo_zhenxian = {
+		icon = GFX_decision_unknown
+		available = {
+			has_country_flag = SIB_siberian_brigade_located
+		}
+		visible = {
+			has_idea =  SIB_xibolia_lu
+		}
+		fire_only_once = yes 
+		#cost = 10
+		days_remove = 10
+		remove_effect = {
+			remove_ideas = SIB_xibolia_lu
+			clr_country_flag = SIB_siberian_brigade_located
+			set_country_flag = SIB_siberian_brigade_located_and_eliminated
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	sib_red_alert = {
+		icon = GFX_decision_unknown
+		available = {
+			check_variable = {
+				sib_socialist_support < 100
+			} 
+		}
+		visible = {
+			#
+		}
+		activation = {
+            tag = SIB
+			check_variable = {
+				sib_socialist_support > 99
+			} 
+			NOT = {
+				has_country_flag = SIB_red_flag
+			}          
+        }
+		is_good = no
+		fire_only_once = no
+		days_re_enable = 1
+		days_mission_timeout = 10
+		timeout_effect = {
+			set_cosmetic_tag = SIB_red
+			set_country_flag = SIB_red_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	sib_yellow_alert = {
+		icon = GFX_decision_unknown
+		available = {
+			check_variable = {
+				sib_discontent < 100
+			} 
+		}
+		visible = {
+			#
+		}
+		activation = {
+            tag = SIB
+			check_variable = {
+				sib_discontent > 99
+			}   
+			NOT = {
+				has_country_flag = SIB_china_flag
+			}     
+        }	
+		is_good = no
+		fire_only_once = no
+		days_re_enable = 1
+		days_mission_timeout = 10
+		timeout_effect = {
+			set_cosmetic_tag = SIB_china
+			set_country_flag = SIB_china_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}
 	

@@ -1,192 +1,322 @@
-#matters_of_the_urals = {
-#	scavenge_for_gunss = {
-#		icon = vvv
-#		available = {
-#			
-#		}
-#		visible = {
-#			always = yes
-#		}
-#        cost = 35 
-#		fire_only_once = yes
-#		days_remove = 30
-#		complete_effect = {
-#            add_equipment_to_stockpile = {
-#				type = infantry_eq
-#				amount = 1000
-#				producer = ROOT
-#			}
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#    scavenge_for_artillery = {
-#		icon = GFX_decision_unknown
-#		available = {
-#		
-#		}
-#		visible = {
-#			always = yes
-#		}
-#        cost = 50 
-#		fire_only_once = yes
-#		days_remove = 30
-#		complete_effect = {
-#            add_equipment_to_stockpile = {
-#				type = artillery_equipment
-#				amount = 100
-#				producer = ROOT
-#			}
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#    scavenge_for_supplies = {
-#		icon = GFX_decision_unknown
-#		available = {
-#		
-#		}
-#		visible = {
-#			always = yes
-#		}
-#        cost = 60 
-#		fire_only_once = yes
-#		days_remove = 30
-#		complete_effect = {
-#            add_equipment_to_stockpile = {
-#				type =  support_equipment
-#				amount = 100
-#				producer = ROOT
-#			}
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#    rally_warlords = {
-#		icon = GFX_decision_unknown
-#		available = {
-#		
-#		}
-#		visible = {
-#			always = yes
-#		}
-#        cost = 50  
-#		fire_only_once = yes
-#		days_remove = 30
-#		complete_effect = {
-#            add_manpower = 10000
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#    combine_warlord_assets = {
-#		icon = GFX_decision_unknown
-#		available = {
-#		
-#		}
-#		visible = {
-#			always = yes
-#		}
-#        cost = 60   
-#		fire_only_once = yes
-#		days_remove = 60 
-#		complete_effect = {
-#            add_offsite_building = { 
-#                type = arms_factory level = 1 
-#            }
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#    eurasian_smuggling = {
-#		icon = GFX_decision_unknown
-#		available = {
-#		
-#		}
-#		visible = {
-#			always = yes
-#		}
-#        cost = 50      
-#		fire_only_once = yes
-#		days_remove = 30 
-#		complete_effect = {
-#            
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#    attrition_doctrine = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			has_war = yes
-#		}
-#		visible = {
-#			always = yes
-#		}     
-#		fire_only_once = yes
-#		days_remove = 30 
-#		complete_effect = {
-#            
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	encirclement_doctrine = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			has_war = yes
-#		}
-#		visible = {
-#			always = yes
-#		}     
-#		fire_only_once = yes
-#		days_remove = 20
-#		complete_effect = {
-#            
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	breakthrough_doctrine = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			has_war = yes
-#		}
-#		visible = {
-#			always = yes
-#		}     
-#		fire_only_once = yes
-#		days_remove = 10
-#		complete_effect = {
-#            
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	the_sky_blue = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			date > 2204.01.01
-#		}
-#		visible = {
-#			always = yes
-#		}     
-#		fire_only_once = yes
-#		days_remove = 5
-#		complete_effect = {
-#            
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#}
+matters_of_the_urals = {
+	scavenge_for_guns = {
+		icon = GFX_decision_unknown
+		available = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}
+		visible = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}
+		custom_cost_trigger = {
+			check_variable = { industrial_power > 9.9 }
+		}
+		custom_cost_text = decision_cost_10_ip
+		fire_only_once = no
+		days_remove = 30
+		remove_effect = {
+            add_equipment_to_stockpile = {
+				type = infantry_eq
+				amount = 1000
+				producer = ROOT
+			}
+			subtract_from_variable = {
+				industrial_power = 10
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    scavenge_for_artillery = {
+		icon = GFX_decision_unknown
+		available = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}
+		visible = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}
+		custom_cost_trigger = {
+			check_variable = { industrial_power > 9.9 }
+		}
+		custom_cost_text = decision_cost_10_ip 
+		fire_only_once = no
+		days_remove = 30
+		remove_effect = {
+            add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 100
+				producer = ROOT
+			}
+			subtract_from_variable = {
+				industrial_power = 10
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    scavenge_for_supplies = {
+		icon = GFX_decision_unknown
+		available = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}
+		visible = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}
+		custom_cost_trigger = {
+			check_variable = { industrial_power > 9.9 }
+		}
+		custom_cost_text = decision_cost_10_ip
+		fire_only_once = no
+		days_remove = 30
+		remove_effect = {
+            add_equipment_to_stockpile = {
+				type =  support_equipment
+				amount = 100
+				producer = ROOT
+			}
+			subtract_from_variable = {
+				industrial_power = 10
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    rally_warlords = {
+		icon = GFX_decision_unknown
+		available = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}
+		visible = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}
+        cost = 35  
+		fire_only_once = no
+		days_remove = 30
+		remove_effect = {
+            add_manpower = 10000
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    combine_warlord_assets = {
+		icon = GFX_decision_unknown
+		available = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+			#check_variable = {
+			#	industrial_power > 10
+			#}
+			#custom_trigger_tooltip = {
+			#	tooltip = combine_warlord_assets_ip_tooltip_trigger
+			#}
+		}
+		visible = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}
+		custom_cost_trigger = {
+			check_variable = { industrial_power > 9.9 }
+		}
+		custom_cost_text = decision_cost_10_ip
+        cost = 35   
+		fire_only_once = no
+		days_remove = 60 
+		remove_effect = {
+            random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			subtract_from_variable = {
+				industrial_power = 10
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    attrition_doctrine = {
+		icon = GFX_decision_unknown
+		available = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}
+		visible = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}  
+		cost = 20
+		fire_only_once = no
+		days_remove = 30 
+		remove_effect = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = be_land_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	the_sky_blue = {
+		icon = GFX_decision_unknown
+		available = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}
+		visible = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}    
+		fire_only_once = yes
+		days_remove = 5
+		remove_effect = {
+            declare_war_on = {
+				target = KAZ
+				type = annex_everything
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_army_manpower = {
+					size > 300000
+				}
+				add = 100
+			}
+		}
+	}
+	the_sky_red = {
+		icon = GFX_decision_unknown
+		available = {
+			KAZ = {
+				exists = no
+			}
+			SOV = {
+				exists = yes
+			}
+			NOT = {
+				is_in_faction_with = SOV
+			}
+		}
+		visible = {
+			SOV = {
+				exists = yes
+			}
+			NOT = {
+				is_in_faction_with = SOV
+			}
+		}    
+		fire_only_once = yes
+		days_remove = 5
+		remove_effect = {
+            declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_army_manpower = {
+					size > 1000000
+				}
+				add = 100
+			}
+		}
+	}
+	leave_SOV_faction = {
+		icon = GFX_decision_unknown
+		available = {
+			is_in_faction_with = SOV
+		}
+		visible = {
+			is_in_faction_with = SOV
+		}    
+		fire_only_once = yes
+		days_remove = 10
+		remove_effect = {
+            leave_faction = yes
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_army_manpower = {
+					size > 1000000
+				}
+				add = 100
+			}
+		}
+	}
+	ural_formable = {
+		icon = GFX_decision_unknown
+		available = {
+			SOV = {
+				exists = no
+			}
+			has_army_manpower = {
+				size > 1000000
+			}
+		}
+		visible = {
+			always = yes
+		}    
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+            set_cosmetic_tag = URA_russia
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_army_manpower = {
+					size > 1000000
+				}
+				add = 100
+			}
+		}
+	}
+}
