@@ -107,6 +107,52 @@ SOV_manifest_destiny = {
 			factor = 1
 		}
 	}
+	SOV_war_vostaslavia = {
+		icon = GFX_decision_unknown
+		available = {
+			BLR = {
+				exists = yes
+			}
+		}
+		visible = {
+			BLR = {
+				exists = yes
+			}
+		}
+		days_remove = 10
+		fire_only_once = yes
+		remove_effect = {
+			if = {
+				limit = {
+					has_war = yes
+				}
+				add_stability = -0.25
+			}
+			declare_war_on = {
+				target = BLR
+				type = annex_everything
+			}
+			#add_to_variable = {
+			#	var = global.slavicinfamy_var
+			#	value = 1
+			#}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				NOT = {
+					BLR = {
+						is_guaranteed_by = GER
+					}
+				}
+				factor = 10
+			}
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+	}
 	SOV_war_karelia = {
 		icon = GFX_decision_unknown
 		available = {
@@ -146,6 +192,10 @@ SOV_manifest_destiny = {
 				}
 				add = 100
 			}
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
 		}
 	}
 	SOV_war_central_asia = {
@@ -177,6 +227,45 @@ SOV_manifest_destiny = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+	}
+	SOV_war_siberia = {
+		icon = GFX_decision_unknown
+		available = {
+			URA = {
+				exists = no
+			}
+			SIB = {
+				exists = yes
+			}
+		}
+		visible = {
+			SIB = {
+				exists = yes
+			}
+		}
+		days_remove = 10
+		fire_only_once = yes
+		remove_effect = {
+			declare_war_on = {
+				target = SIB
+				type = annex_everything
+			}
+			#add_to_variable = {
+			#	var = global.slavicinfamy_var
+			#	value = 1
+			#}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
 		}
 	}
 	SOV_our_comrades = {
@@ -213,7 +302,6 @@ SOV_manifest_destiny = {
 			KAZ = {
 				exists = no
 			}
-			has_war = no
 			is_in_faction_with = URA
 		}
 		visible = {
@@ -225,6 +313,12 @@ SOV_manifest_destiny = {
 		days_remove = 180
 		fire_only_once = yes
 		remove_effect = {
+			if = {
+				limit = {
+					has_war = yes
+				}
+				add_stability = -0.25
+			}
 			annex_country = {
 				target = URA
 				transfer_troops = yes
@@ -236,6 +330,10 @@ SOV_manifest_destiny = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
 		}
 	}
 }

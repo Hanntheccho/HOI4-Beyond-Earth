@@ -203,17 +203,21 @@ matters_of_the_urals = {
 			KAZ = {
 				exists = yes
 			}
-			has_war = no
 		}
 		visible = {
 			KAZ = {
 				exists = yes
 			}
-			has_war = no
 		}    
 		fire_only_once = yes
 		days_remove = 5
 		remove_effect = {
+			if = {
+				limit = {
+					has_war = yes
+				}
+				add_stability = -0.25
+			}
             declare_war_on = {
 				target = KAZ
 				type = annex_everything
@@ -226,6 +230,56 @@ matters_of_the_urals = {
 					size > 300000
 				}
 				add = 100
+			}
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+	}
+	the_sky_white = {
+		icon = GFX_decision_unknown
+		available = {
+			KAZ = {
+				exists = no
+			}
+			SIB = {
+				exists = yes
+			}
+		}
+		visible = {
+			KAZ = {
+				exists = no
+			}
+			SIB = {
+				exists = yes
+			}
+		}    
+		fire_only_once = yes
+		days_remove = 5
+		remove_effect = {
+			if = {
+				limit = {
+					has_war = yes
+				}
+				add_stability = -0.25
+			}
+            declare_war_on = {
+				target = SIB
+				type = annex_everything
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_army_manpower = {
+					size > 600000
+				}
+				add = 100
+			}
+			modifier = {
+				has_war = yes
+				factor = 0
 			}
 		}
 	}
@@ -253,6 +307,12 @@ matters_of_the_urals = {
 		fire_only_once = yes
 		days_remove = 5
 		remove_effect = {
+			if = {
+				limit = {
+					has_war = yes
+				}
+				add_stability = -0.25
+			}
             declare_war_on = {
 				target = SOV
 				type = annex_everything
@@ -265,6 +325,10 @@ matters_of_the_urals = {
 					size > 1000000
 				}
 				add = 100
+			}
+			modifier = {
+				has_war = yes
+				factor = 0
 			}
 		}
 	}
