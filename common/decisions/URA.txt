@@ -1,6 +1,6 @@
 matters_of_the_urals = {
 	scavenge_for_guns = {
-		icon = GFX_decision_unknown
+		icon = GFX_decision_industrial
 		available = {
 			KAZ = {
 				exists = yes
@@ -34,7 +34,7 @@ matters_of_the_urals = {
 		}
 	}
     scavenge_for_artillery = {
-		icon = GFX_decision_unknown
+		icon = GFX_decision_industrial
 		available = {
 			KAZ = {
 				exists = yes
@@ -68,7 +68,7 @@ matters_of_the_urals = {
 		}
 	}
     scavenge_for_supplies = {
-		icon = GFX_decision_unknown
+		icon = GFX_decision_industrial
 		available = {
 			KAZ = {
 				exists = yes
@@ -101,32 +101,8 @@ matters_of_the_urals = {
 			factor = 1
 		}
 	}
-    rally_warlords = {
-		icon = GFX_decision_unknown
-		available = {
-			KAZ = {
-				exists = yes
-			}
-			has_war = no
-		}
-		visible = {
-			KAZ = {
-				exists = yes
-			}
-			has_war = no
-		}
-        cost = 35  
-		fire_only_once = no
-		days_remove = 30
-		remove_effect = {
-            add_manpower = 10000
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-    combine_warlord_assets = {
-		icon = GFX_decision_unknown
+	combine_warlord_assets = {
+		icon = GFX_decision_industrial
 		available = {
 			KAZ = {
 				exists = yes
@@ -169,6 +145,30 @@ matters_of_the_urals = {
 			factor = 1
 		}
 	}
+    rally_warlords = {
+		icon = GFX_decision_unknown
+		available = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}
+		visible = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}
+        cost = 35  
+		fire_only_once = no
+		days_remove = 30
+		remove_effect = {
+            add_manpower = 10000
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
     attrition_doctrine = {
 		icon = GFX_decision_unknown
 		available = {
@@ -198,7 +198,7 @@ matters_of_the_urals = {
 		}
 	}
 	the_sky_blue = {
-		icon = GFX_decision_unknown
+		icon = GFX_decision_war
 		available = {
 			KAZ = {
 				exists = yes
@@ -210,7 +210,9 @@ matters_of_the_urals = {
 			}
 		}    
 		fire_only_once = yes
-		days_remove = 5
+		war_with_on_remove = KAZ
+		days_remove = 15
+		targets = { KAZ }
 		remove_effect = {
 			if = {
 				limit = {
@@ -238,7 +240,7 @@ matters_of_the_urals = {
 		}
 	}
 	the_sky_white = {
-		icon = GFX_decision_unknown
+		icon = GFX_decision_war
 		available = {
 			KAZ = {
 				exists = no
@@ -256,7 +258,9 @@ matters_of_the_urals = {
 			}
 		}    
 		fire_only_once = yes
-		days_remove = 5
+		war_with_on_remove = SIB
+		days_remove = 15
+		targets = { SIB }
 		remove_effect = {
 			if = {
 				limit = {
@@ -284,7 +288,7 @@ matters_of_the_urals = {
 		}
 	}
 	the_sky_red = {
-		icon = GFX_decision_unknown
+		icon = GFX_decision_war
 		available = {
 			KAZ = {
 				exists = no
@@ -305,7 +309,9 @@ matters_of_the_urals = {
 			}
 		}    
 		fire_only_once = yes
-		days_remove = 5
+		war_with_on_remove = SOV
+		days_remove = 20
+		targets = { SOV }
 		remove_effect = {
 			if = {
 				limit = {
@@ -356,7 +362,7 @@ matters_of_the_urals = {
 		}
 	}
 	ural_formable = {
-		icon = GFX_decision_unknown
+		icon = GFX_decision_unity
 		available = {
 			SOV = {
 				exists = no
@@ -369,7 +375,7 @@ matters_of_the_urals = {
 			always = yes
 		}    
 		fire_only_once = yes
-		days_remove = 60
+		days_remove = 120
 		remove_effect = {
             set_cosmetic_tag = URA_russia
 		}

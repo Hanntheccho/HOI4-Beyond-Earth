@@ -1,19 +1,479 @@
-#germany_formable = {
-#	germany_europe = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			has_completed_focus = harmonize_europe
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		fire_only_once = yes
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#}
+germany_formable = {
+	GER_support_ukraine = {
+		icon = GFX_decision_political
+		available = {
+			UKR = {
+				exists = yes
+			}
+		}
+		visible = {
+			always = yes
+		}
+		cost = 20
+		fire_only_once = yes
+		days_remove = 10
+		remove_effect = {
+			give_guarantee = UKR
+			UKR = {
+				add_ideas = GER_eurasian_aligned
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	GER_ukraine_refugee_plan = {
+		icon = GFX_decision_cultural
+		available = {
+			UKR = {
+				exists = yes
+				has_idea = GER_eurasian_aligned
+			}
+		}
+		visible = {
+			UKR = {
+				exists = yes
+				has_idea = GER_eurasian_aligned
+			}
+		}
+		custom_cost_trigger = {
+			check_variable = { cultural_power > 59.9 }
+		}
+		custom_cost_text = decision_cost_60_cp
+		fire_only_once = yes
+		days_remove = 100
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = UKR_helped_by_GER
+				}
+				UKR = {
+					swap_ideas = {
+						remove_idea = GER_eurasian_aligned
+						add_idea = GER_german_eurasian_aligned
+					}
+				}
+			}
+			UKR = {
+				remove_ideas = UKR_all_slavs
+			}
+			subtract_from_variable = {
+				cultural_power = 60
+			}
+			set_country_flag = UKR_helped_by_GER
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	GER_ukraine_industrial_plan = {
+		icon = GFX_decision_cultural
+		available = {
+			UKR = {
+				exists = yes
+				has_idea = GER_eurasian_aligned
+			}
+		}
+		visible = {
+			UKR = {
+				exists = yes
+				has_idea = GER_eurasian_aligned
+			}
+		}
+		custom_cost_trigger = {
+			check_variable = { industrial_power > 99.9 }
+		}
+		custom_cost_text = decision_cost_100_ip
+		fire_only_once = yes
+		days_remove = 120
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = UKR_helped_by_GER
+				}
+				UKR = {
+					swap_ideas = {
+						remove_idea = GER_eurasian_aligned
+						add_idea = GER_german_eurasian_aligned
+					}
+				}
+			}
+			UKR = {
+				remove_ideas = UKR_country_life_support
+			}
+			subtract_from_variable = {
+				industrial_power = 100
+			}
+			set_country_flag = UKR_helped_by_GER
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	GER_ukraine_industrial_plan = {
+		icon = GFX_decision_political
+		available = {
+			UKR = {
+				exists = yes
+				has_idea = GER_german_eurasian_aligned
+			}
+		}
+		visible = {
+			UKR = {
+				exists = yes
+				has_idea = GER_german_eurasian_aligned
+			}
+		}
+		cost = 100
+		fire_only_once = yes
+		days_remove = 50
+		remove_effect = {
+			SOV = {
+				end_puppet = UKR
+			}
+			UKR = {
+				leave_faction = yes
+				swap_ideas = {
+					remove_idea = GER_german_eurasian_aligned
+					add_idea = GER_german_aligned
+				}
+				remove_ideas = UKR_eurasian_dominance
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	GER_support_vostaslavia = {
+		icon = GFX_decision_political
+		available = {
+			BLR = {
+				exists = yes
+			}
+		}
+		visible = {
+			always = yes
+		}
+		cost = 20
+		fire_only_once = yes
+		days_remove = 10
+		remove_effect = {
+			give_guarantee = BLR
+			BLR = {
+				add_ideas = GER_eurasian_aligned
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	GER_industrial_help_BLR = {
+		icon = GFX_decision_industrial
+		available = {
+			BLR = {
+				exists = yes
+			}
+			GER = {
+				has_guaranteed = BLR
+			}
+			NOT = {
+				BLR = {
+					has_idea = GER_green_soil_plan
+				}
+			}
+		}
+		visible = {
+			BLR = {
+				exists = yes
+			}
+			GER = {
+				has_guaranteed = BLR
+			}
+			NOT = {
+				BLR = {
+					has_idea = GER_green_soil_plan
+				}
+			}
+		}
+		custom_cost_trigger = {
+			check_variable = { industrial_power > 19.9 }
+		}
+		custom_cost_text = decision_cost_20_ip
+		fire_only_once = no
+		days_remove = 30
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = BLR_helped_by_GER
+				}
+				BLR = {
+					swap_ideas = {
+						remove_idea = GER_eurasian_aligned
+						add_idea = GER_german_eurasian_aligned
+					}
+				}
+			}
+			BLR = {
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			subtract_from_variable = {
+				industrial_power = 20
+			}
+			set_country_flag = BLR_helped_by_GER
+			custom_effect_tooltip = GER_increase_influence_decision_tooltip
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	GER_military_help_BLR = {
+		icon = GFX_decision_industrial
+		available = {
+			BLR = {
+				exists = yes
+			}
+			GER = {
+				has_guaranteed = BLR
+			}
+			NOT = {
+				BLR = {
+					has_idea = GER_green_soil_plan
+				}
+			}
+		}
+		visible = {
+			BLR = {
+				exists = yes
+			}
+			GER = {
+				has_guaranteed = BLR
+			}
+			NOT = {
+				BLR = {
+					has_idea = GER_green_soil_plan
+				}
+			}
+		}
+		custom_cost_trigger = {
+			check_variable = { industrial_power > 19.9 }
+		}
+		custom_cost_text = decision_cost_20_ip
+		fire_only_once = no
+		days_remove = 30
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = BLR_helped_by_GER
+				}
+				BLR = {
+					swap_ideas = {
+						remove_idea = GER_eurasian_aligned
+						add_idea = GER_german_eurasian_aligned
+					}
+				}
+			}
+			BLR = {
+				add_equipment_to_stockpile = {
+					type = infantry_eq
+					amount = 1000
+					producer = GER
+				}
+			}
+			subtract_from_variable = {
+				industrial_power = 20
+			}
+			set_country_flag = BLR_helped_by_GER
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	GER_green_soil_BLR = {
+		icon = GFX_decision_political
+		available = {
+			BLR = {
+				exists = yes
+				has_idea = GER_german_eurasian_aligned
+			}
+			GER = {
+				has_guaranteed = BLR
+			}
+			NOT = {
+				BLR = {
+					has_idea = GER_green_soil_plan
+				}
+			}
+		}
+		visible = {
+			BLR = {
+				exists = yes
+			}
+			GER = {
+				has_guaranteed = BLR
+			}
+			NOT = {
+				BLR = {
+					has_idea = GER_green_soil_plan
+				}
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 40
+		remove_effect = {
+			BLR = {
+				swap_ideas = {
+					remove_idea = GER_german_eurasian_aligned
+					add_idea = GER_german_aligned
+				}
+			}
+			BLR = {
+				add_ideas = GER_green_soil_plan
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	germany_europe = {
+		icon = GFX_decision_unity
+		available = {
+			tag = GER
+			GER = {
+				all_core_state = {
+					is_controlled_by = GER
+				}
+			}
+			FRA = {
+				all_core_state = {
+					is_controlled_by = GER
+				}
+			}
+			ITA = {
+				all_core_state = {
+					is_controlled_by = GER
+				}
+			}
+			PAD = {
+				all_core_state = {
+					is_controlled_by = GER
+				}
+			}
+			POL = {
+				all_core_state = {
+					is_controlled_by = GER
+				}
+			}
+			CZE = {
+				all_core_state = {
+					is_controlled_by = GER
+				}
+			}
+			SLO = {
+				all_core_state = {
+					is_controlled_by = GER
+				}
+			}
+			LAT = {
+				all_core_state = {
+					is_controlled_by = GER
+				}
+			}
+			HUN = {
+				all_core_state = {
+					is_controlled_by = GER
+				}
+			}
+			YUG = {
+				all_core_state = {
+					is_controlled_by = GER
+				}
+			}
+			ROM = {
+				all_core_state = {
+					is_controlled_by = GER
+				}
+			}
+			GRE = {
+				all_core_state = {
+					is_controlled_by = GER
+				}
+			}
+		}
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		days_remove = 180
+		remove_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = PAD
+						is_core_of = ITA
+						is_core_of = FRA
+						is_core_of = HUN
+						is_core_of = SLO
+						is_core_of = POL
+						is_core_of = GRE
+						is_core_of = YUG
+						is_core_of = ROM
+						is_core_of = PAD
+						is_core_of = ITA
+						is_core_of = GER
+						is_core_of = LAT
+						is_core_of = CZE
+					}
+				}
+				add_core_of = GER
+			}
+			GER = {
+				set_cosmetic_tag = GER_green_europe
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#INVITE PEOPLE TO THE COOL CLUB
+	GER_invite_green_soil_enjoyers = {
+		icon = GFX_decision_unity
+		#target_root_trigger = {
+		#	has_completed_focus = my_focus
+		#}
+		#targets = {  }
+		fire_only_once = no
+		#targets_dynamic = yes
+		cost = 100
+		target_trigger = {
+			FROM = {
+				OR = {
+					has_idea = GER_green_soil_plan
+					has_idea = GER_green_soil_plan_2
+					has_idea = GER_green_soil_plan_3
+					has_idea = GER_green_soil_plan_4
+				}
+				is_in_faction = no
+				capital_scope = {
+					is_on_continent = europe
+				}
+			}
+		}
+		days_remove = 100
+		remove_effect = {
+			add_to_faction = FROM
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#
+}
