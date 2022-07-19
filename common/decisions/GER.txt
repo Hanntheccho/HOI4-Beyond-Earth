@@ -40,6 +40,11 @@ germany_formable = {
 			check_variable = { cultural_power > 59.9 }
 		}
 		custom_cost_text = decision_cost_60_cp
+		cancel_trigger = {
+			UKR = {
+				has_idea = GER_german_aligned
+			}
+		}
 		fire_only_once = yes
 		days_remove = 100
 		remove_effect = {
@@ -85,6 +90,11 @@ germany_formable = {
 		}
 		custom_cost_text = decision_cost_100_ip
 		fire_only_once = yes
+		cancel_trigger = {
+			UKR = {
+				has_idea = GER_german_aligned
+			}
+		}
 		days_remove = 120
 		remove_effect = {
 			if = {
@@ -110,7 +120,7 @@ germany_formable = {
 			factor = 1
 		}
 	}
-	GER_ukraine_industrial_plan = {
+	GER_ukraine_political_influencing = {
 		icon = GFX_decision_political
 		available = {
 			UKR = {
@@ -128,11 +138,27 @@ germany_formable = {
 		fire_only_once = yes
 		days_remove = 50
 		remove_effect = {
-			SOV = {
-				end_puppet = UKR
+			if = {
+				limit = {
+					UKR = {
+						is_puppet_of = SOV
+					}
+				}
+				SOV = {
+					end_puppet = UKR
+				}
+			}
+			if = {
+				limit = {
+					UKR = {
+						is_in_faction = yes
+					}
+				}
+				UKR = {
+					leave_faction = yes
+				}
 			}
 			UKR = {
-				leave_faction = yes
 				swap_ideas = {
 					remove_idea = GER_german_eurasian_aligned
 					add_idea = GER_german_aligned
@@ -197,6 +223,11 @@ germany_formable = {
 		}
 		custom_cost_trigger = {
 			check_variable = { industrial_power > 19.9 }
+		}
+		cancel_trigger = {
+			BLR = {
+				has_idea = GER_german_aligned
+			}
 		}
 		custom_cost_text = decision_cost_20_ip
 		fire_only_once = no
@@ -267,6 +298,11 @@ germany_formable = {
 		custom_cost_text = decision_cost_20_ip
 		fire_only_once = no
 		days_remove = 30
+		cancel_trigger = {
+			BLR = {
+				has_idea = GER_german_aligned
+			}
+		}
 		remove_effect = {
 			if = {
 				limit = {
@@ -465,6 +501,81 @@ germany_formable = {
 		days_remove = 100
 		remove_effect = {
 			add_to_faction = FROM
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#
+
+	#GET BETTER (IN GREEN TERMS)
+	GER_improve_green_soil_plan = {
+		icon = GFX_decision_industrial
+		#target_root_trigger = {
+		#	has_completed_focus = my_focus
+		#}
+		#targets = {  }
+		fire_only_once = no
+		#targets_dynamic = yes
+		target_root_trigger = {
+			is_faction_leader = yes
+			tag = GER
+		}
+		target_trigger = {
+			FROM = {
+				OR = {
+					has_idea = GER_green_soil_plan
+					has_idea = GER_green_soil_plan_2
+					has_idea = GER_green_soil_plan_3
+					has_idea = GER_green_soil_plan_4
+				}
+				is_in_faction_with = GER
+			}
+		}
+		custom_cost_trigger = {
+			check_variable = { industrial_power > 99.9 }
+		}
+		custom_cost_text = decision_cost_100_ip
+		days_remove = 60
+		remove_effect = {
+			FROM = {
+				if = {
+					limit = {
+						has_idea = GER_green_soil_plan_3
+					}
+					swap_ideas = {
+						remove_idea = GER_green_soil_plan_3
+						add_idea = GER_green_soil_plan_4
+					}
+					custom_effect_tooltip = GER_improve_green_soil_plan_tooltip
+				}
+				else_if = {
+					limit = {
+						has_idea = GER_green_soil_plan_2
+					}
+					swap_ideas = {
+						remove_idea = GER_green_soil_plan_2
+						add_idea = GER_green_soil_plan_3
+					}
+					custom_effect_tooltip = GER_improve_green_soil_plan_tooltip
+				}
+				else_if = {
+					limit = {
+						has_idea = GER_green_soil_plan
+					}
+					swap_ideas = {
+						remove_idea = GER_green_soil_plan
+						add_idea = GER_green_soil_plan_2
+					}
+					custom_effect_tooltip = GER_improve_green_soil_plan_tooltip
+				}
+				else = {
+					#
+				}
+			}
+			subtract_from_variable = {
+				industrial_power = 100
+			}
 		}
 		ai_will_do = {
 			factor = 1

@@ -1,142 +1,226 @@
 eurowar_decisions = {
-	testing_infamy_raise_decision = {
-		icon = GFX_decision_unknown
+	EU_boost_stability = {
+		icon = GFX_decision_unity
 		available = {
-			is_debug = yes
+			has_stability < 50
 		}
 		visible = {
-			is_debug = yes
+			#
 		}
 		fire_only_once = no
-		complete_effect = {
-			add_to_variable = {
-				var = global.nsainfamy_var
-				value = 1
+		cost = 50
+		days_remove = 30
+		remove_effect = {
+			add_stability = 0.15
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_stability < 1
+				add = 1000
 			}
-			add_to_variable = {
-				var = global.francoinfamy_var
-				value = 1
-			}
-			add_to_variable = {
-				var = global.integrinfamy_var
-				value = 1
-			}
-			add_to_variable = {
-				var = global.slavicinfamy_var
-				value = 1
-			}
-			
-			clamp_variable = {
-				var = global.nsainfamy_var
-				min = 0
-				max = 10
-			}
-			clamp_variable = {
-				var = global.francoinfamy_var
-				min = 0
-				max = 10
-			}
-			clamp_variable = {
-				var = global.integrinfamy_var
-				min = 0
-				max = 10
-			}
-			clamp_variable = {
-				var = global.slavicinfamy_var
-				min = 0
-				max = 10
-			}
-			
-			hidden_effect = {
-				check_infamy = yes
+			modifier = {
+				has_stability < 20
+				add = 1
 			}
 		}
 	}
-	testing_infamy_lower_decision = {
-		icon = GFX_decision_unknown
+	EU_boost_war_support = {
+		icon = GFX_decision_war
 		available = {
-			is_debug = yes
+			has_war_support < 50
 		}
 		visible = {
-			is_debug = yes
+			#
 		}
 		fire_only_once = no
-		complete_effect = {
-			add_to_variable = {
-				var = global.nsainfamy_var
-				value = -1
+		cost = 50
+		days_remove = 30
+		remove_effect = {
+			add_war_support = 0.15
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_war_support < 1
+				add = 1000
 			}
-			add_to_variable = {
-				var = global.francoinfamy_var
-				value = -1
-			}
-			add_to_variable = {
-				var = global.integrinfamy_var
-				value = -1
-			}
-			add_to_variable = {
-				var = global.slavicinfamy_var
-				value = -1
-			}
-			
-			clamp_variable = {
-				var = global.nsainfamy_var
-				min = 0
-				max = 10
-			}
-			clamp_variable = {
-				var = global.francoinfamy_var
-				min = 0
-				max = 10
-			}
-			clamp_variable = {
-				var = global.integrinfamy_var
-				min = 0
-				max = 10
-			}
-			clamp_variable = {
-				var = global.slavicinfamy_var
-				min = 0
-				max = 10
-			}
-			
-			hidden_effect = {
-				check_infamy = yes
+			modifier = {
+				has_war_support < 20
+				add = 1
 			}
 		}
 	}
-	
-	testing_big_infamy = {
-		icon = GFX_decision_unknown
+	EU_joint_training = {
+		icon = GFX_decision_war
 		available = {
-			is_debug = yes
+			OR = {
+				has_army_experience < 50
+				has_navy_experience < 50
+				has_air_experience < 50
+			}
 		}
 		visible = {
-			is_debug = yes
+			#
 		}
 		fire_only_once = no
-		complete_effect = {
-			set_variable = {
-				var = global.nsainfamy_var
-				value = 10
-			}
-			set_variable = {
-				var = global.francoinfamy_var
-				value = 10
-			}
-			set_variable = {
-				var = global.integrinfamy_var
-				value = 10
-			}
-			set_variable = {
-				var = global.slavicinfamy_var
-				value = 10
-			}
-			hidden_effect = {
-				check_infamy = yes
+		cost = 50
+		days_remove = 30
+		remove_effect = {
+			army_experience = 15
+			navy_experience = 15
+			air_experience = 15
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				OR = {
+					has_army_experience < 10
+					has_navy_experience < 10
+					has_air_experience < 10
+				}
+				add = 1
 			}
 		}
 	}
+#	testing_infamy_raise_decision = {
+#		icon = GFX_decision_unknown
+#		available = {
+#			is_debug = yes
+#		}
+#		visible = {
+#			is_debug = yes
+#		}
+#		fire_only_once = no
+#		complete_effect = {
+#			add_to_variable = {
+#				var = global.nsainfamy_var
+#				value = 1
+#			}
+#			add_to_variable = {
+#				var = global.francoinfamy_var
+#				value = 1
+#			}
+#			add_to_variable = {
+#				var = global.integrinfamy_var
+#				value = 1
+#			}
+#			add_to_variable = {
+#				var = global.slavicinfamy_var
+#				value = 1
+#			}
+#			
+#			clamp_variable = {
+#				var = global.nsainfamy_var
+#				min = 0
+#				max = 10
+#			}
+#			clamp_variable = {
+#				var = global.francoinfamy_var
+#				min = 0
+#				max = 10
+#			}
+#			clamp_variable = {
+#				var = global.integrinfamy_var
+#				min = 0
+#				max = 10
+#			}
+#			clamp_variable = {
+#				var = global.slavicinfamy_var
+#				min = 0
+#				max = 10
+#			}
+#			
+#			hidden_effect = {
+#				check_infamy = yes
+#			}
+#		}
+#	}
+#	testing_infamy_lower_decision = {
+#		icon = GFX_decision_unknown
+#		available = {
+#			is_debug = yes
+#		}
+#		visible = {
+#			is_debug = yes
+#		}
+#		fire_only_once = no
+#		complete_effect = {
+#			add_to_variable = {
+#				var = global.nsainfamy_var
+#				value = -1
+#			}
+#			add_to_variable = {
+#				var = global.francoinfamy_var
+#				value = -1
+#			}
+#			add_to_variable = {
+#				var = global.integrinfamy_var
+#				value = -1
+#			}
+#			add_to_variable = {
+#				var = global.slavicinfamy_var
+#				value = -1
+#			}
+#			
+#			clamp_variable = {
+#				var = global.nsainfamy_var
+#				min = 0
+#				max = 10
+#			}
+#			clamp_variable = {
+#				var = global.francoinfamy_var
+#				min = 0
+#				max = 10
+#			}
+#			clamp_variable = {
+#				var = global.integrinfamy_var
+#				min = 0
+#				max = 10
+#			}
+#			clamp_variable = {
+#				var = global.slavicinfamy_var
+#				min = 0
+#				max = 10
+#			}
+#			
+#			hidden_effect = {
+#				check_infamy = yes
+#			}
+#		}
+#	}
+#	
+#	testing_big_infamy = {
+#		icon = GFX_decision_unknown
+#		available = {
+#			is_debug = yes
+#		}
+#		visible = {
+#			is_debug = yes
+#		}
+#		fire_only_once = no
+#		complete_effect = {
+#			set_variable = {
+#				var = global.nsainfamy_var
+#				value = 10
+#			}
+#			set_variable = {
+#				var = global.francoinfamy_var
+#				value = 10
+#			}
+#			set_variable = {
+#				var = global.integrinfamy_var
+#				value = 10
+#			}
+#			set_variable = {
+#				var = global.slavicinfamy_var
+#				value = 10
+#			}
+#			hidden_effect = {
+#				check_infamy = yes
+#			}
+#		}
+#	}
 	
 	#testing_raise_ewp_decision = {
 	#	icon = GFX_decision_unknown
@@ -165,32 +249,32 @@ eurowar_decisions = {
 	#	}
 	#}
 	
-	testing_start_europe_war = {
-		icon = GFX_decision_unknown
-		available = {
-			is_debug = yes
-		}
-		visible = {
-			is_debug = yes
-		}
-		fire_only_once = no
-		complete_effect = {
-			add_to_variable = {
-				var = global.europewarprogress_var
-				value = 100
-			}
-			
-			clamp_variable = {
-				var = global.europewarprogress_var
-				min = 0
-				max = 100
-			}
-			
-			hidden_effect = {
-				check_europe_war_progress = yes
-			}
-		}
-	}
+#	testing_start_europe_war = {
+#		icon = GFX_decision_unknown
+#		available = {
+#			is_debug = yes
+#		}
+#		visible = {
+#			is_debug = yes
+#		}
+#		fire_only_once = no
+#		complete_effect = {
+#			add_to_variable = {
+#				var = global.europewarprogress_var
+#				value = 100
+#			}
+#			
+#			clamp_variable = {
+#				var = global.europewarprogress_var
+#				min = 0
+#				max = 100
+#			}
+#			
+#			hidden_effect = {
+#				check_europe_war_progress = yes
+#			}
+#		}
+#	}
 	
 	declare_war_on_nsa = {
 		icon = GFX_decision_unknown

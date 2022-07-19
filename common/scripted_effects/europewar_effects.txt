@@ -1,15 +1,12 @@
 check_europe_war_progress = {
 	if = {
 		limit = {
-			OR = {
-				check_variable = { global.europewarprogress_var = 100 }
-				check_variable = { global.europewarprogress_var > 100 }
-			}
+			check_variable = { global.europewarprogress_var > 99.9 }
 		}
 
-		news_event = {
-			id = newyear_event.17
-		}
+		#news_event = {
+		#	id = newyear_event.17
+		#}
 		
 		FRA = {
 			declare_war_on = {
@@ -76,7 +73,7 @@ check_infamy = {
 	if = {
 		limit = {
 			AND = {
-				check_variable = { global.nsainfamy_var = 10 }
+				check_variable = { global.nsainfamy_var > 9.9 }
 				NOT = {
 					has_global_flag = nsa_infamous
 				}
@@ -90,7 +87,7 @@ check_infamy = {
 	if = {
 		limit = {
 			AND = {
-				check_variable = { global.francoinfamy_var = 10 }
+				check_variable = { global.francoinfamy_var > 9.9 }
 				NOT = {
 					has_global_flag = franco_infamous
 				}
@@ -103,7 +100,7 @@ check_infamy = {
 	if = {
 		limit = {
 			AND = {
-				check_variable = { global.integrinfamy_var = 10 }
+				check_variable = { global.integrinfamy_var > 9.9 }
 				NOT = {
 					has_global_flag = integr_infamous
 				}
@@ -116,7 +113,7 @@ check_infamy = {
 	if = {
 		limit = {
 			AND = {
-				check_variable = { global.slavicinfamy_var = 10 }
+				check_variable = { global.slavicinfamy_var > 9.9 }
 				NOT = {
 					has_global_flag = slavic_infamous
 				}

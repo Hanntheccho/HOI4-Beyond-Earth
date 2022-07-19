@@ -39,6 +39,11 @@ SOV_manifest_destiny = {
 				add_state_core = 526
 				add_state_core = 562
 			}
+			UKR = {
+				add_state_core = 567
+				add_state_core = 581
+				add_state_core = 631
+			}
 			activate_mission = vostaslavia_rebellion_start_3
 		}
 		ai_will_do = {
@@ -130,14 +135,20 @@ SOV_manifest_destiny = {
 				}
 				add_stability = -0.25
 			}
-			declare_war_on = {
-				target = BLR
+			create_wargoal = {
 				type = annex_everything
+				target = BLR
 			}
-			add_to_variable = {
-				var = global.slavicinfamy_var
-				value = 1
+			every_state = {
+				limit = {
+					is_core_of = BLR
+				}
+				add_core_of = SOV
 			}
+			#add_to_variable = {
+			#	var = global.slavicinfamy_var
+			#	value = 3
+			#}
 		}
 		ai_will_do = {
 			factor = 1
@@ -172,9 +183,15 @@ SOV_manifest_destiny = {
 		targets = { KAR }
 		war_with_on_remove = KAR
 		remove_effect = {
-			declare_war_on = {
-				target = KAR
+			create_wargoal = {
 				type = annex_everything
+				target = KAR
+			}
+			every_state = {
+				limit = {
+					is_core_of = KAR
+				}
+				add_core_of = SOV
 			}
 			#add_to_variable = {
 			#	var = global.slavicinfamy_var
@@ -202,6 +219,118 @@ SOV_manifest_destiny = {
 			}
 		}
 	}
+	SOV_ukraine_claims = {
+		icon = GFX_decision_unknown
+		available = {
+			SOV = {
+				has_war = no
+			}
+		}
+		activation = {
+			SOV = {
+				has_war = yes
+				has_war_support < 0.25
+			}
+		}
+		fire_only_once = yes
+		war_with_on_timeout = UKR
+		days_mission_timeout = 120
+		timeout_effect = {
+			UKR = {
+				set_state_owner = 567
+				set_state_owner = 581
+				set_state_owner = 631
+			}
+			add_war_support = -0.1
+			add_stability = -0.1
+			create_wargoal = {
+				type = annex_everything
+				target = UKR
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	SOV_karelia_FIN = {
+		icon = GFX_decision_unknown
+		available = {
+			NOT = { country_exists = KAR }
+		}
+		activation = {
+			SOV = {
+				has_war_with = KAR
+			}
+			FIN = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+		days_mission_timeout = 2
+		timeout_effect = {
+			FIN = {
+				add_state_core = 557
+				add_state_core = 549
+				set_state_owner = 557
+				set_state_owner = 549
+			}
+			add_war_support = -0.1
+			activate_mission = SOV_karelia_FIN_end
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	SOV_karelia_FIN_end = {
+		icon = GFX_decision_unknown
+		available = {
+			OR = {
+				NOT = { country_exists = KAR }
+			}
+		}
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		days_mission_timeout = 280
+		war_with_on_timeout = FIN
+		war_with_on_timeout = KAR
+		timeout_effect = {
+			white_peace = KAR
+			FIN = {
+				puppet = KAR
+			}
+			KAR = {
+				add_ideas = EU_treaty_of_bern
+				set_cosmetic_tag = KAR_karjala
+				remove_ideas = KAR_finno_slavic_tension
+				remove_ideas = KAR_keepers_of_revolution
+			}
+			if = {
+				limit = {
+					KAR = {
+						surrender_progress > 0.05
+					}
+				}
+				SOV = {
+					set_state_owner = 565
+					set_state_owner = 595
+				}
+			}
+			add_war_support = -0.2
+			create_wargoal = {
+				type = annex_everything
+				target = FIN
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = KAR
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	SOV_war_central_asia = {
 		icon = GFX_decision_war
 		available = {
@@ -222,9 +351,15 @@ SOV_manifest_destiny = {
 		targets = { KAZ }
 		war_with_on_remove = KAZ
 		remove_effect = {
-			declare_war_on = {
-				target = KAZ
+			create_wargoal = {
 				type = annex_everything
+				target = KAZ
+			}
+			every_state = {
+				limit = {
+					is_core_of = KAZ
+				}
+				add_core_of = SOV
 			}
 			#add_to_variable = {
 			#	var = global.slavicinfamy_var
@@ -259,9 +394,15 @@ SOV_manifest_destiny = {
 		targets = { SIB }
 		war_with_on_remove = SIB
 		remove_effect = {
-			declare_war_on = {
-				target = SIB
+			create_wargoal = {
 				type = annex_everything
+				target = SIB
+			}
+			every_state = {
+				limit = {
+					is_core_of = SIB
+				}
+				add_core_of = SOV
 			}
 			#add_to_variable = {
 			#	var = global.slavicinfamy_var
@@ -305,7 +446,7 @@ SOV_manifest_destiny = {
 		}
 	}
 	SOV_war_army_group_south = {
-		icon = GFX_decision_unknown
+		icon = GFX_decision_unity
 		available = {
 			URA = {
 				exists = yes
@@ -321,6 +462,11 @@ SOV_manifest_destiny = {
 			}
 			is_in_faction_with = URA
 		}
+		cancel_trigger = {
+			NOT = {
+				is_in_faction_with = URA
+			}
+		}
 		days_remove = 180
 		fire_only_once = yes
 		remove_effect = {
@@ -329,6 +475,12 @@ SOV_manifest_destiny = {
 					has_war = yes
 				}
 				add_stability = -0.25
+			}
+			every_state = {
+				limit = {
+					is_core_of = URA
+				}
+				add_core_of = SOV
 			}
 			annex_country = {
 				target = URA

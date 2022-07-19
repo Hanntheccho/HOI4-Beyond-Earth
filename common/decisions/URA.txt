@@ -124,8 +124,7 @@ matters_of_the_urals = {
 		custom_cost_trigger = {
 			check_variable = { industrial_power > 9.9 }
 		}
-		custom_cost_text = decision_cost_10_ip
-        cost = 35   
+		custom_cost_text = decision_cost_10_ip  
 		fire_only_once = no
 		days_remove = 60 
 		remove_effect = {
@@ -145,7 +144,7 @@ matters_of_the_urals = {
 			factor = 1
 		}
 	}
-    rally_warlords = {
+	rally_warlords = {
 		icon = GFX_decision_unknown
 		available = {
 			KAZ = {
@@ -197,6 +196,33 @@ matters_of_the_urals = {
 			factor = 1
 		}
 	}
+	URA_eurasian_mercenaries = {
+		icon = GFX_decision_political
+		available = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}
+		visible = {
+			KAZ = {
+				exists = yes
+			}
+			has_war = no
+		}
+        cost = 80
+		fire_only_once = no
+		days_remove = 30
+		remove_effect = {
+			hidden_effect = {
+				load_oob = URA_rally_warlords_OOB
+			}
+            custom_effect_tooltip = URA_eurasian_mercenaries_tooltip
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
 	the_sky_blue = {
 		icon = GFX_decision_war
 		available = {
@@ -220,17 +246,15 @@ matters_of_the_urals = {
 				}
 				add_stability = -0.25
 			}
-            declare_war_on = {
-				target = KAZ
+            create_wargoal = {
 				type = annex_everything
+				target = KAZ
 			}
 		}
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				has_army_manpower = {
-					size > 300000
-				}
+				num_divisions > 23
 				add = 100
 			}
 			modifier = {
@@ -250,11 +274,11 @@ matters_of_the_urals = {
 			}
 		}
 		visible = {
-			KAZ = {
-				exists = no
-			}
 			SIB = {
 				exists = yes
+			}
+			KAZ = {
+				exists = no
 			}
 		}    
 		fire_only_once = yes
@@ -268,19 +292,25 @@ matters_of_the_urals = {
 				}
 				add_stability = -0.25
 			}
-            declare_war_on = {
-				target = SIB
+            create_wargoal = {
 				type = annex_everything
+				target = SIB
+			}
+			every_state = {
+				limit = {
+					is_core_of = SIB
+				}
+				add_core_of = URA
 			}
 		}
 		ai_will_do = {
-			factor = 0
-			modifier = {
-				has_army_manpower = {
-					size > 600000
-				}
-				add = 100
-			}
+			factor = 1
+			#modifier = {
+			#	has_army_manpower = {
+			#		size > 600000
+			#	}
+			#	add = 100
+			#}
 			modifier = {
 				has_war = yes
 				factor = 0
@@ -304,6 +334,12 @@ matters_of_the_urals = {
 			SOV = {
 				exists = yes
 			}
+			KAZ = {
+				exists = no
+			}
+			SIB = {
+				exists = no
+			}
 			NOT = {
 				is_in_faction_with = SOV
 			}
@@ -319,16 +355,16 @@ matters_of_the_urals = {
 				}
 				add_stability = -0.25
 			}
-            declare_war_on = {
-				target = SOV
+            create_wargoal = {
 				type = annex_everything
+				target = SOV
 			}
 		}
 		ai_will_do = {
 			factor = 0
 			modifier = {
 				has_army_manpower = {
-					size > 1000000
+					size > 600000
 				}
 				add = 100
 			}
@@ -336,6 +372,50 @@ matters_of_the_urals = {
 				has_war = yes
 				factor = 0
 			}
+		}
+	}
+	URA_victory_over_KAZ = {
+		icon = GFX_decision_political
+		available = {
+			KAZ = {
+				exists = no
+				all_core_state = {
+					is_controlled_by = URA
+				}
+			}
+		}
+		visible = {
+			KAZ = {
+				exists = no
+				all_core_state = {
+					is_controlled_by = URA
+				}
+			}
+		}    
+		fire_only_once = yes
+		cost = 100
+		days_remove = 60
+		remove_effect = {
+            remove_ideas = URA_no_army
+			swap_ideas = {
+				remove_idea = anarchy_style
+				add_idea = military_government
+			}
+			every_state = {
+				limit = {
+					is_core_of = KAZ
+				}
+				add_core_of = URA
+			}
+			hidden_effect = {
+				delete_unit_template_and_units = {
+					division_template = "Eurasian Mercenary"
+				}
+			}
+			custom_effect_tooltip = URA_victory_over_KAZ_tooltip
+		}
+		ai_will_do = {
+			factor = 10000
 		}
 	}
 	leave_SOV_faction = {
@@ -355,7 +435,7 @@ matters_of_the_urals = {
 			factor = 0
 			modifier = {
 				has_army_manpower = {
-					size > 1000000
+					size > 600000
 				}
 				add = 100
 			}
@@ -378,6 +458,12 @@ matters_of_the_urals = {
 		days_remove = 120
 		remove_effect = {
             set_cosmetic_tag = URA_russia
+			every_state = {
+				limit = {
+					is_core_of = SOV
+				}
+				add_core_of = URA
+			}
 		}
 		ai_will_do = {
 			factor = 0
