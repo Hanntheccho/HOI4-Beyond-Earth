@@ -220,35 +220,7 @@ eurowar_decisions = {
 #				check_infamy = yes
 #			}
 #		}
-#	}
-	
-	#testing_raise_ewp_decision = {
-	#	icon = GFX_decision_unknown
-	#	available = {
-	#		is_debug = yes
-	#	}
-	#	visible = {
-	#		is_debug = yes
-	#	}
-	#	fire_only_once = no
-	#	complete_effect = {
-	#		add_to_variable = {
-	#			var = global.europewarprogress_var
-	#			value = 0.1
-	#		}
-	#		
-	#		clamp_variable = {
-	#			var = global.europewarprogress_var
-	#			min = 0
-	#			max = 1
-	#		}
-	#		
-	#		hidden_effect = {
-	#			check_europe_war_progress = yes
-	#		}
-	#	}
-	#}
-	
+#	}		#testing_raise_ewp_decision = {	#	icon = GFX_decision_unknown	#	available = {	#		is_debug = yes	#	}	#	visible = {	#		is_debug = yes	#	}	#	fire_only_once = no	#	complete_effect = {	#		add_to_variable = {	#			var = global.europewarprogress_var	#			value = 0.1	#		}	#			#		clamp_variable = {	#			var = global.europewarprogress_var	#			min = 0	#			max = 1	#		}	#			#		hidden_effect = {	#			check_europe_war_progress = yes	#		}	#	}	#}	
 #	testing_start_europe_war = {
 #		icon = GFX_decision_unknown
 #		available = {
@@ -277,7 +249,7 @@ eurowar_decisions = {
 #	}
 	
 	declare_war_on_nsa = {
-		icon = GFX_decision_unknown
+		icon = GFX_decision_war
 		available = {
 			has_global_flag = nsa_infamous
 			NOT = {
@@ -296,15 +268,15 @@ eurowar_decisions = {
 		}
 		fire_only_once = no
 		complete_effect = {
-			declare_war_on = {
-				target = SCO
+			create_wargoal = {
 				type = annex_everything
+				target = SCO
 			}
 		}
 	}
 	
 	declare_war_on_franco_iberia = {
-		icon = GFX_decision_unknown
+		icon = GFX_decision_war
 		available = {
 			has_global_flag = franco_infamous
 			NOT = {
@@ -323,15 +295,15 @@ eurowar_decisions = {
 		}
 		fire_only_once = no
 		complete_effect = {
-			declare_war_on = {
-				target = FRA
+			create_wargoal = {
 				type = annex_everything
+				target = FRA
 			}
 		}
 	}
 	
 	declare_war_on_integr = {
-		icon = GFX_decision_unknown
+		icon = GFX_decision_war
 		available = {
 			has_global_flag = integr_infamous
 			NOT = {
@@ -350,15 +322,15 @@ eurowar_decisions = {
 		}
 		fire_only_once = no
 		complete_effect = {
-			declare_war_on = {
-				target = GER
+			create_wargoal = {
 				type = annex_everything
+				target = GER
 			}
 		}
 	}
 	
 	declare_war_on_slavic_union = {
-		icon = GFX_decision_unknown
+		icon = GFX_decision_war
 		available = {
 			has_global_flag = slavic_infamous
 			NOT = {
@@ -377,9 +349,9 @@ eurowar_decisions = {
 		}
 		fire_only_once = no
 		complete_effect = {
-			declare_war_on = {
-				target = SOV
+			create_wargoal = {
 				type = annex_everything
+				target = SOV
 			}
 		}
 	}
