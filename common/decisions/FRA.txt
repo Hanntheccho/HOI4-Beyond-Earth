@@ -91,8 +91,358 @@ fi_election = {
 }
 
 fi_formables = {
+	fi_guarantee_PAD = {
+		icon = GFX_decision_political
+		available = {
+			PAD = {
+				exists = yes
+			}
+			ITA = {
+				exists = yes
+			}
+			has_country_leader = {
+				character = FRA_elodie_batteux
+				ruling_only = yes
+			}
+		}
+		visible = {
+			PAD = {
+				exists = yes
+			}
+			ITA = {
+				exists = yes
+			}
+			has_country_leader = {
+				character = FRA_elodie_batteux
+				ruling_only = yes
+			}
+		}
+		cost = 20
+		fire_only_once = yes
+		days_remove = 10
+		remove_effect = {
+			give_guarantee = PAD
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	fi_guarantee_ITA = {
+		icon = GFX_decision_political
+		available = {
+			PAD = {
+				exists = yes
+			}
+			ITA = {
+				exists = yes
+			}
+			has_country_leader = {
+				character = FRA_al_hakim
+				ruling_only = yes
+			}
+		}
+		visible = {
+			PAD = {
+				exists = yes
+			}
+			ITA = {
+				exists = yes
+			}
+			has_country_leader = {
+				character = FRA_al_hakim
+				ruling_only = yes
+			}
+		}
+		cost = 20
+		fire_only_once = yes
+		days_remove = 10
+		remove_effect = {
+			give_guarantee = ITA
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	fi_unite_ITA = {
+		icon = GFX_decision_political
+		available = {
+			ITA = {
+				exists = yes
+			}
+			has_country_leader = {
+				character = FRA_al_hakim
+				ruling_only = yes
+			}
+			FRA = {
+				has_guaranteed = ITA
+			}
+		}
+		visible = {
+			ITA = {
+				exists = yes
+			}
+			has_country_leader = {
+				character = FRA_al_hakim
+				ruling_only = yes
+			}
+			FRA = {
+				has_guaranteed = ITA
+			}
+		}
+		cost = 200
+		fire_only_once = yes
+		days_remove = 205
+		remove_effect = {
+			annex_country = {
+				target = ITA
+				transfer_troops = yes
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	fi_war_ITA = {
+		icon = GFX_decision_war
+		available = {
+			ITA = {
+				exists = yes
+			}
+		}
+		visible = {
+			ITA = {
+				exists = yes
+			}
+		}
+		targets = {
+			ITA
+		}
+		war_with_on_remove = ITA
+		cost = 40
+		fire_only_once = yes
+		days_remove = 10
+		remove_effect = {
+			create_wargoal = {
+				type = annex_everything
+				target = ITA
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				NOT = {
+					country_exists = PAD
+				}
+				add = 1
+			}
+		}
+	}
+	fi_war_PAD = {
+		icon = GFX_decision_war
+		available = {
+			PAD = {
+				exists = yes
+			}
+		}
+		visible = {
+			PAD = {
+				exists = yes
+			}
+		}
+		targets = {
+			PAD
+		}
+		war_with_on_remove = PAD
+		cost = 40
+		fire_only_once = yes
+		days_remove = 10
+		remove_effect = {
+			create_wargoal = {
+				type = annex_everything
+				target = PAD
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				PAD = {
+					has_idea = GER_german_aligned
+				}
+				add = 1000
+			}
+			modifier = {
+				has_country_leader = {
+					character = FRA_al_hakim
+					ruling_only = yes
+				}
+				add = 1000
+			}
+		}
+	}
+	#fi_italian_question = {
+	#	icon = GFX_decision_war
+	#	available = {
+	#		PAD = {
+	#			exists = no
+	#		}
+	#		ITA = {
+	#			exists = no
+	#		}
+	#	}
+	#	activation = {
+	#		PAD = {
+	#			exists = yes
+	#		}
+	#		ITA = {
+	#			exists = yes
+	#		}
+	#	}
+	#	fire_only_once = yes
+	#	days_mission_timeout = 495
+	#	timeout_effect = {
+	#		if = {
+	#			limit = {
+	#				country_exists = PAD
+	#			}
+	#			ITA = {
+	#				create_wargoal = {
+	#					type = annex_everything
+	#					target = PAD
+	#				}
+	#			}
+	#			every_state = {
+	#				limit = {
+	#						is_core_of = PAD
+	#				}
+	#				add_core_of = ITA
+	#			}
+	#			every_state = {
+	#				limit = {
+	#						is_core_of = ITA
+	#				}
+	#				add_core_of = PAD
+	#			}
+	#		}
+	#		else = {
+	#			FRA = {
+	#				create_wargoal = {
+	#					type = annex_everything
+	#					target = ITA
+	#				}
+	#			}
+	#		}
+	#	}
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#}
+	#fi_PAD_reborn = {
+	#	icon = GFX_decision_unity
+	#	available = {
+	#		PAD = {
+	#			has_capitulated = yes
+	#		}
+	#	}
+	#	activation = {
+	#		PAD = {
+	#			exists = yes
+	#		}
+	#		ITA = {
+	#			exists = no
+	#			all_core_state = {
+	#				is_controlled_by = PAD
+	#			}
+	#		}
+	#	}
+	#	fire_only_once = yes
+	#	days_mission_timeout = 60
+	#	timeout_effect = {
+	#		PAD = {
+	#			set_cosmetic_tag = PAD_italy
+	#		}
+	#	}
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#}
+	fi_war_TUN = {
+		icon = GFX_decision_war
+		available = {
+			TUN = {
+				exists = yes
+			}
+			has_country_leader = {
+				character = FRA_elodie_batteux
+				ruling_only = yes
+			}
+		}
+		visible = {
+			TUN = {
+				exists = yes
+			}
+			has_country_leader = {
+				character = FRA_elodie_batteux
+				ruling_only = yes
+			}
+		}
+		cost = 50
+		targets = {
+			TUN
+		}
+		war_with_on_remove = TUN
+		fire_only_once = yes
+		days_remove = 30
+		remove_effect = {
+			create_wargoal = {
+				type = annex_everything
+				target = TUN
+			}
+			#if = {
+			#	limit = {
+			#		country_exists = ALG
+			#	}
+			#	create_wargoal = {
+			#		type = annex_everything
+			#		target = ALG
+			#	}
+			#}
+			#if = {
+			#	limit = {
+			#		country_exists = WES
+			#	}
+			#	create_wargoal = {
+			#		type = annex_everything
+			#		target = WES
+			#	}
+			#}
+			#if = {
+			#	limit = {
+			#		country_exists = LBA
+			#	}
+			#	create_wargoal = {
+			#		type = annex_everything
+			#		target = LBA
+			#	}
+			#}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				TUN = {
+					has_war = no
+				}
+				NOT = {
+					country_exists = LBA
+					country_exists = WES
+					country_exists = ALG
+				}
+				has_war = no
+				add = 1000
+			}
+		}
+	}
 	fi_form_fed_med = {
-		icon = GFX_decision_unknown
+		icon = GFX_decision_unity
 		available = {
 			tag = FRA
 			FRA = {
@@ -145,7 +495,7 @@ fi_formables = {
 		}
 	}
 	fi_form_european_union = {
-		icon = GFX_decision_unknown
+		icon = GFX_decision_unity
 		available = {
 			tag = FRA
 			FRA = {
@@ -218,7 +568,7 @@ fi_formables = {
 		}
 	}
 	fi_form_rep_lys = {
-		icon = GFX_decision_unknown
+		icon = GFX_decision_unity
 		available = {
 			tag = FRA
 			FRA = {
@@ -265,7 +615,7 @@ fi_formables = {
 		}
 	}
 	#fi_form_sos_government = {
-	#	icon = GFX_decision_unknown
+	#	icon = GFX_decision_unity
 	#	available = {
 	#		tag = FRA
 	#		FRA = {

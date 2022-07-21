@@ -1,88 +1,347 @@
 eurowar_decisions = {
-	EU_boost_stability = {
+	fi_italian_question = {
+		icon = GFX_decision_war
+		available = {
+			PAD = {
+				exists = no
+			}
+			ITA = {
+				exists = no
+			}
+		}
+		activation = {
+			PAD = {
+				exists = yes
+			}
+			ITA = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+		days_mission_timeout = 495
+		timeout_effect = {
+			if = {
+				limit = {
+					country_exists = PAD
+				}
+				ITA = {
+					create_wargoal = {
+						type = annex_everything
+						target = PAD
+					}
+				}
+				every_state = {
+					limit = {
+							is_core_of = PAD
+					}
+					add_core_of = ITA
+				}
+				every_state = {
+					limit = {
+							is_core_of = ITA
+					}
+					add_core_of = PAD
+				}
+			}
+			else = {
+				FRA = {
+					create_wargoal = {
+						type = annex_everything
+						target = ITA
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	fi_PAD_reborn = {
 		icon = GFX_decision_unity
 		available = {
-			has_stability < 50
+			PAD = {
+				has_capitulated = yes
+			}
 		}
-		visible = {
-			#
+		activation = {
+			PAD = {
+				exists = yes
+			}
+			ITA = {
+				exists = no
+				all_core_state = {
+					is_controlled_by = PAD
+				}
+			}
 		}
-		fire_only_once = no
-		cost = 50
-		days_remove = 30
-		remove_effect = {
-			add_stability = 0.15
+		fire_only_once = yes
+		days_mission_timeout = 60
+		timeout_effect = {
+			PAD = {
+				set_cosmetic_tag = PAD_italy
+			}
 		}
 		ai_will_do = {
-			factor = 0
-			modifier = {
-				has_stability < 1
-				add = 1000
-			}
-			modifier = {
-				has_stability < 20
-				add = 1
-			}
+			factor = 1
 		}
 	}
-	EU_boost_war_support = {
-		icon = GFX_decision_war
+
+
+	ENG_civil_war = {
+		icon = GFX_decision_unknown
 		available = {
-			has_war_support < 50
+			NOT = { country_exists = ENG }
 		}
-		visible = {
-			#
+		activation = {
+			country_exists = ENG
 		}
-		fire_only_once = no
-		cost = 50
-		days_remove = 30
-		remove_effect = {
-			add_war_support = 0.15
+		fire_only_once = yes
+		days_mission_timeout = 165
+		timeout_effect = {
+			custom_effect_tooltip = ENG_civil_war_tooltip
 		}
 		ai_will_do = {
-			factor = 0
-			modifier = {
-				has_war_support < 1
-				add = 1000
-			}
-			modifier = {
-				has_war_support < 20
-				add = 1
-			}
+			factor = 1
 		}
 	}
-	EU_joint_training = {
-		icon = GFX_decision_war
+
+
+	vostaslavia_rebellion_start = {
+		icon = GFX_decision_unknown
+		available = {
+			country_exists = BLR
+		}
+		fire_only_once = yes
+		days_mission_timeout = 20
+		timeout_effect = {
+			BLR = {
+				add_state_core = 471
+				add_state_core = 500
+				add_state_core = 517
+				add_state_core = 345
+			}
+			UKR = {
+				add_state_core = 508
+			}
+			activate_mission = vostaslavia_rebellion_start_2
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	vostaslavia_rebellion_start_2 = {
+		icon = GFX_decision_unknown
+		available = {
+			country_exists = BLR
+		}
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		days_mission_timeout = 20
+		timeout_effect = {
+			BLR = {
+				add_state_core = 531
+				add_state_core = 514
+				add_state_core = 526
+				add_state_core = 562
+			}
+			UKR = {
+				add_state_core = 567
+				add_state_core = 581
+				add_state_core = 631
+			}
+			activate_mission = vostaslavia_rebellion_start_3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	vostaslavia_rebellion_start_3 = {
+		icon = GFX_decision_unknown
+		available = {
+			country_exists = BLR
+		}
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		days_mission_timeout = 20
+		timeout_effect = {
+			BLR = {
+				add_state_core = 574
+				add_state_core = 529
+			}
+			activate_mission = vostaslavia_rebellion_start_4
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	vostaslavia_rebellion_start_4 = {
+		icon = GFX_decision_unknown
+		available = {
+			country_exists = BLR
+		}
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		days_mission_timeout = 20
+		timeout_effect = {
+			hidden_effect = {
+				UKR = {
+					set_state_owner = 508
+				}
+			}
+			activate_mission = vostaslavia_rebellion_start_5
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	vostaslavia_rebellion_start_5 = {
+		icon = GFX_decision_unknown
+		available = {
+			country_exists = BLR
+		}
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		days_mission_timeout = 20
+		timeout_effect = {
+			SOV = {
+				release = BLR
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	SOV_ukraine_claims = {
+		icon = GFX_decision_unknown
+		available = {
+			SOV = {
+				has_war = no
+			}
+		}
+		activation = {
+			SOV = {
+				has_war = yes
+				has_war_support < 0.25
+			}
+		}
+		fire_only_once = yes
+		war_with_on_timeout = UKR
+		days_mission_timeout = 310
+		timeout_effect = {
+			SOV = {
+				add_war_support = -0.1
+				add_stability = -0.1
+				create_wargoal = {
+					type = annex_everything
+					target = UKR
+				}
+				end_puppet = UKR
+			}
+			UKR = {
+				set_state_owner = 567
+				set_state_owner = 581
+				set_state_owner = 631
+				leave_faction = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	SOV_karelia_FIN = {
+		icon = GFX_decision_unknown
+		available = {
+			NOT = { country_exists = KAR }
+		}
+		activation = {
+			SOV = {
+				has_war_with = KAR
+			}
+			FIN = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+		days_mission_timeout = 65
+		timeout_effect = {
+			FIN = {
+				add_state_core = 557
+				add_state_core = 549
+				set_state_owner = 557
+				set_state_owner = 549
+			}
+			SOV = {
+				add_war_support = -0.1
+			}
+			activate_mission = SOV_karelia_FIN_end
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	SOV_karelia_FIN_end = {
+		icon = GFX_decision_unknown
 		available = {
 			OR = {
-				has_army_experience < 50
-				has_navy_experience < 50
-				has_air_experience < 50
+				NOT = { country_exists = KAR }
 			}
 		}
-		visible = {
-			#
+		activation = {
+			always = no
 		}
-		fire_only_once = no
-		cost = 50
-		days_remove = 30
-		remove_effect = {
-			army_experience = 15
-			navy_experience = 15
-			air_experience = 15
+		fire_only_once = yes
+		days_mission_timeout = 280
+		war_with_on_timeout = FIN
+		war_with_on_timeout = KAR
+		timeout_effect = {
+			FIN = {
+				puppet = KAR
+			}
+			KAR = {
+				add_ideas = EU_treaty_of_bern
+				set_cosmetic_tag = KAR_karjala
+				remove_ideas = KAR_finno_slavic_tension
+				remove_ideas = KAR_keepers_of_revolution
+			}
+			if = {
+				limit = {
+					KAR = {
+						surrender_progress > 0.05
+					}
+				}
+				SOV = {
+					set_state_owner = 565
+					set_state_owner = 595
+				}
+			}
+			SOV = {
+				white_peace = KAR
+				add_war_support = -0.2	
+				create_wargoal = {
+					type = annex_everything
+					target = FIN
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = KAR
+				}
+			}
 		}
 		ai_will_do = {
-			factor = 0
-			modifier = {
-				OR = {
-					has_army_experience < 10
-					has_navy_experience < 10
-					has_air_experience < 10
-				}
-				add = 1
-			}
+			factor = 1
 		}
 	}
+
+
 #	testing_infamy_raise_decision = {
 #		icon = GFX_decision_unknown
 #		available = {

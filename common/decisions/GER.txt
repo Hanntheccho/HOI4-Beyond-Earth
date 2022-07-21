@@ -1,4 +1,115 @@
 germany_formable = {
+	GER_support_padania = {
+		icon = GFX_decision_political
+		available = {
+			PAD = {
+				exists = yes
+			}
+		}
+		visible = {
+			always = yes
+		}
+		cost = 10
+		fire_only_once = yes
+		days_remove = 5
+		remove_effect = {
+			give_guarantee = PAD
+			PAD = {
+				add_ideas = GER_eurasian_aligned
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				ITA = {
+					has_wargoal_against = PAD
+				}
+				add = 100000
+			}
+		}
+	}
+	GER_padanian_joint_space_plan = {
+		icon = GFX_decision_industrial
+		available = {
+			PAD = {
+				exists = yes
+				has_idea = GER_eurasian_aligned
+			}
+		}
+		visible = {
+			PAD = {
+				exists = yes
+				has_idea = GER_eurasian_aligned
+			}
+		}
+		custom_cost_trigger = {
+			check_variable = { industrial_power > 199.9 }
+		}
+		custom_cost_text = decision_cost_200_ip
+		fire_only_once = yes
+		days_remove = 240
+		remove_effect = {
+			PAD = {
+				swap_ideas = {
+					remove_idea = GER_eurasian_aligned
+					add_idea = GER_german_eurasian_aligned
+				}
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = spaceship_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = spaceship_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			subtract_from_variable = {
+				industrial_power = 200
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	GER_padanian_political_influencing = {
+		icon = GFX_decision_political
+		available = {
+			PAD = {
+				exists = yes
+				has_idea = GER_german_eurasian_aligned
+			}
+		}
+		visible = {
+			PAD = {
+				exists = yes
+				has_idea = GER_german_eurasian_aligned
+			}
+		}
+		cost = 200
+		fire_only_once = yes
+		days_remove = 110
+		remove_effect = {
+			PAD = {
+				swap_ideas = {
+					remove_idea = GER_german_eurasian_aligned
+					add_idea = GER_german_aligned
+				}
+				add_ideas = GER_green_soil_plan
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	GER_support_ukraine = {
 		icon = GFX_decision_political
 		available = {
@@ -72,7 +183,7 @@ germany_formable = {
 		}
 	}
 	GER_ukraine_industrial_plan = {
-		icon = GFX_decision_cultural
+		icon = GFX_decision_industrial
 		available = {
 			UKR = {
 				exists = yes
@@ -163,6 +274,7 @@ germany_formable = {
 					remove_idea = GER_german_eurasian_aligned
 					add_idea = GER_german_aligned
 				}
+				add_ideas = GER_green_soil_plan
 				remove_ideas = UKR_eurasian_dominance
 			}
 		}
@@ -369,8 +481,6 @@ germany_formable = {
 					remove_idea = GER_german_eurasian_aligned
 					add_idea = GER_german_aligned
 				}
-			}
-			BLR = {
 				add_ideas = GER_green_soil_plan
 			}
 		}
@@ -498,7 +608,7 @@ germany_formable = {
 				}
 			}
 		}
-		days_remove = 100
+		days_remove = 50
 		remove_effect = {
 			add_to_faction = FROM
 		}
