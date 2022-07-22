@@ -86,6 +86,40 @@ eurowar_decisions = {
 		}
 	}
 
+	NOR_SWE_war = {
+		icon = GFX_decision_war
+		available = {
+			OR = {
+				NOR = {
+					exists = no
+				}
+				SWE = {
+					exists = no
+				}
+			}
+		}
+		activation = {
+			NOR = {
+				exists = yes
+			}
+			SWE = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+		days_mission_timeout = 570
+		timeout_effect = {
+			SWE = {
+				create_wargoal = {
+					type = annex_everything
+					target = NOR
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
 	ENG_civil_war = {
 		icon = GFX_decision_unknown
@@ -214,6 +248,9 @@ eurowar_decisions = {
 			SOV = {
 				release = BLR
 			}
+			BLR = {
+				inherit_technology = SOV
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -299,7 +336,7 @@ eurowar_decisions = {
 			always = no
 		}
 		fire_only_once = yes
-		days_mission_timeout = 280
+		days_mission_timeout = 470
 		war_with_on_timeout = FIN
 		war_with_on_timeout = KAR
 		timeout_effect = {
@@ -325,11 +362,7 @@ eurowar_decisions = {
 			}
 			SOV = {
 				white_peace = KAR
-				add_war_support = -0.2	
-				create_wargoal = {
-					type = annex_everything
-					target = FIN
-				}
+				add_war_support = -0.2
 				create_wargoal = {
 					type = annex_everything
 					target = KAR

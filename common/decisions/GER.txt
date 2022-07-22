@@ -1,4 +1,47 @@
 germany_formable = {
+	GER_support_eng = {
+		icon = GFX_decision_war
+		available = {
+			HNG = {
+				exists = yes
+			}
+		}
+		visible = {
+			HNG = {
+				exists = yes
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 20
+		remove_effect = {
+			create_wargoal = {
+				type = annex_everything
+				target = ENG
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = CNG
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = JNG
+			}
+			HNG = {
+				give_military_access = GER
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				HNG = {
+					surrender_progress > 0.2
+				}
+				factor = 100
+			}
+		}
+	}
+
 	GER_support_padania = {
 		icon = GFX_decision_political
 		available = {

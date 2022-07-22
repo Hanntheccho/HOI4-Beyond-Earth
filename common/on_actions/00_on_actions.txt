@@ -1,5 +1,154 @@
 on_actions = {
 	
+	#ECW
+	on_capitulation = {
+		effect = {
+			if = {
+				limit =  {
+					NOT = {
+						has_global_flag = ECW_end
+						country_exists = HNG
+						country_exists = JNG
+						country_exists = CNG
+					}
+					ENG = {
+						has_war = yes
+					}
+				}
+				FRA = {
+					white_peace = ENG
+					remove_wargoal = {
+						type = annex_everything
+						target = ENG
+					}
+				}
+				GER = {
+					white_peace = ENG
+					remove_wargoal = {
+						type = annex_everything
+						target = ENG
+					}
+				}
+				SCO = {
+					diplomatic_relation = {
+						country = ENG
+						relation = guarantee
+						active = no
+					}
+					add_to_faction = ENG
+				}
+				set_global_flag = ECW_end
+			}
+			if = {
+				limit =  {
+					NOT = {
+						has_global_flag = ECW_end
+						country_exists = ENG
+						country_exists = JNG
+						country_exists = CNG
+					}
+					HNG = {
+						has_war = yes
+					}
+				}
+				FRA = {
+					white_peace = HNG
+					remove_wargoal = {
+						type = annex_everything
+						target = HNG
+					}
+				}
+				SCO = {
+					white_peace = HNG
+					remove_wargoal = {
+						type = annex_everything
+						target = HNG
+					}
+				}
+				GER = {
+					diplomatic_relation = {
+						country = HNG
+						relation = guarantee
+						active = no
+					}
+					add_to_faction = HNG
+				}
+				set_global_flag = ECW_end
+			}
+			if = {
+				limit =  {
+					NOT = {
+						has_global_flag = ECW_end
+						country_exists = HNG
+						country_exists = ENG
+						country_exists = CNG
+					}
+					JNG = {
+						has_war = yes
+					}
+				}
+				GER = {
+					white_peace = JNG
+					remove_wargoal = {
+						type = annex_everything
+						target = JNG
+					}
+				}
+				SCO = {
+					white_peace = JNG
+					remove_wargoal = {
+						type = annex_everything
+						target = JNG
+					}
+				}
+				FRA = {
+					diplomatic_relation = {
+						country = JNG
+						relation = guarantee
+						active = no
+					}
+					add_to_faction = JNG
+				}
+				set_global_flag = ECW_end
+			}
+			if = {
+				limit =  {
+					NOT = {
+						has_global_flag = ECW_end
+						country_exists = HNG
+						country_exists = JNG
+						country_exists = ENG
+					}
+					CNG = {
+						has_war = yes
+					}
+				}
+				GER = {
+					white_peace = CNG
+					remove_wargoal = {
+						type = annex_everything
+						target = CNG
+					}
+				}
+				SCO = {
+					white_peace = CNG
+					remove_wargoal = {
+						type = annex_everything
+						target = CNG
+					}
+				}
+				FRA = {
+					white_peace = CNG
+					remove_wargoal = {
+						type = annex_everything
+						target = CNG
+					}
+				}
+				set_global_flag = ECW_end
+			}
+		}
+	}
+
 	#EU WAR STUFF
 	on_declare_war = {
 		effect = {

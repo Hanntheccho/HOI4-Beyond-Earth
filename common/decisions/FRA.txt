@@ -91,6 +91,58 @@ fi_election = {
 }
 
 fi_formables = {
+	FRA_support_eng = {
+		icon = GFX_decision_war
+		available = {
+			JNG = {
+				exists = yes
+			}
+			hidden_trigger = {
+				has_country_leader = {
+					character = FRA_elodie_batteux
+					ruling_only = yes
+				}
+			}
+		}
+		visible = {
+			JNG = {
+				exists = yes
+			}
+			has_country_leader = {
+				character = FRA_elodie_batteux
+				ruling_only = yes
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 20
+		remove_effect = {
+			create_wargoal = {
+				type = annex_everything
+				target = ENG
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = CNG
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = HNG
+			}
+			JNG = {
+				give_military_access = FRA
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				JNG = {
+					surrender_progress > 0.2
+				}
+				factor = 100
+			}
+		}
+	}
 	fi_guarantee_PAD = {
 		icon = GFX_decision_political
 		available = {
@@ -197,9 +249,13 @@ fi_formables = {
 				target = ITA
 				transfer_troops = yes
 			}
+			add_timed_idea = {
+				idea = ITA_rich_exodus
+				days = 430
+			}
 		}
 		ai_will_do = {
-			factor = 10
+			factor = 1
 		}
 	}
 	fi_war_ITA = {
