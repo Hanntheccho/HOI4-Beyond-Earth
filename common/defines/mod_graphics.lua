@@ -6,3 +6,6 @@ NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_PROVINCE_B = 1.0
 NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_STATE_R = 0.4
 NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_STATE_G = 0.6
 NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_STATE_B = 1.0
+
+NDefines_Graphics.NGraphics.POLITICAL_GRID_SMALL_BOX_LIMIT = 8
+NDefines_Graphics.NGraphics.SETUP_SPIRIT_GRID_BOX_LIMIT = 0
