@@ -598,12 +598,12 @@ guiTypes = {
 			verticalScrollbar = "right_vertical_slider"
 			margin = { top = 14 bottom = 13}
 		
-			background = {
-				name = "Background"
-				#quadTextureSprite ="GFX_tiled_window_2b_border"
-				#quadTextureSprite ="GFX_tiled_window_1b_border"
-				quadTextureSprite ="GFX_tiled_window_1b_border"
-			}
+			#background = {
+			#	name = "Background"
+			#	#quadTextureSprite ="GFX_tiled_window_2b_border"
+			#	#quadTextureSprite ="GFX_tiled_window_1b_border"
+			#	quadTextureSprite ="GFX_tiled_window_1b_border"
+			#}
 			
 			gridBoxType = {
 				name = "idea_categories_grid"
@@ -637,12 +637,19 @@ guiTypes = {
 		}
 
 
+		#iconType ={
+		#	name ="politics_bottom"
+		#	spriteType = "GFX_main_screens_bottom"
+		#	position = { x = -6 y = 430 }
+		#	Orientation = "UPPER_LEFT"
+		#	scale = 1.02
+		#}
+
 		iconType ={
-			name ="politics_bottom"
-			spriteType = "GFX_main_screens_bottom"
-			position = { x = -6 y = 430 }
+			name ="separator_1"
+			spriteType = "GFX_bg_separator"
+			position = { x = 5 y = 520 }
 			Orientation = "UPPER_LEFT"
-			scale = 1.02
 		}
 		
 		iconType = {
@@ -653,15 +660,15 @@ guiTypes = {
 		
 		buttonType = {
 			name = "manage_occupied_button"
-			position = { x = 60 y = 435 }
-			quadTextureSprite = "GFX_government_button"
+			position = { x = 450 y = 385 }
+			quadTextureSprite = "GFX_government_button_mod"
 			buttonFont = "Arial16"
 			Orientation = "UPPER_LEFT"
 		}
 
 		instantTextboxType = {
 			name = "manage_occupied_button_text"
-			position = { x = 87 y = 440 }
+			position = { x = 10000 y = 440 }
 			font = "Arial"
 			text = "MANAGE_OCCUPIED_TERRITORIES"
 			maxWidth = 200
@@ -701,16 +708,17 @@ guiTypes = {
 		
 		buttonType = {
 			name = "show_exiles_collaborations_button"
-			position = { x = 280 y = 435 }
+			position = { x = 10000 y = 435 } #position = { x = 280 y = 435 }
 			quadTextureSprite = "GFX_government_button"
 			buttonFont = "Arial16"
 			Orientation = "UPPER_LEFT"
 			format = right
+			alwaystransparent = yes #disable
 		}
 
 		instantTextboxType = {
 			name = "manage_exiled_collaborations_governments"
-			position = { x = 302 y = 440 }
+			position = { x = 10000 y = 440 } #position = { x = 302 y = 440 }
 			font = "Arial"
 			maxWidth = 130
 			maxHeight = 20
@@ -735,7 +743,7 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "country_politics_idea_category_entry"
-		position = { x = 0 y = 0 }
+		position = { x = 0 y = 40 }
 		size = { width=550 height= 100 }
 		clipping = no
 		
