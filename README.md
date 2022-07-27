@@ -20,7 +20,7 @@ The following sections are made to allow a central database of all the changes a
     4. [Vritues & Culture](#virtuesandculture)
     5. [Industrial Power](#industrialpower)
     6. [Augments](#augments)
-    7. [Devastation](#devastation)
+    7. [Ecobalance Decay](#ecobalance) #ALSO FORMELY KNOWN AS "DEVASTATION"
     8. [Country Traits](#traits)
     9. [Scavenging](#scavenging)
     10. [United Nations](#un)
