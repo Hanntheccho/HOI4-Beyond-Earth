@@ -15,15 +15,15 @@ scotland_formable = {
 		fire_only_once = yes
 		days_remove = 20
 		remove_effect = {
-			create_wargoal = {
+			declare_war_on = {
 				type = annex_everything
 				target = JNG
 			}
-			create_wargoal = {
+			declare_war_on = {
 				type = annex_everything
 				target = CNG
 			}
-			create_wargoal = {
+			declare_war_on = {
 				type = annex_everything
 				target = HNG
 			}
@@ -95,12 +95,14 @@ scotland_formable = {
 		fire_only_once = yes
 		days_remove = 35
 		remove_effect = {
-			FIN = {
-				add_to_faction = SCO
+			FIN = {	
 				create_wargoal = {
 					type = annex_everything
 					target = SWE
 				}
+			}
+			SCO = {
+				add_to_faction = FIN
 			}
 		}
 		ai_will_do = {

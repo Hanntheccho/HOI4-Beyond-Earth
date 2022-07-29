@@ -451,7 +451,7 @@ SOV_manifest_destiny = {
 			factor = 1
 		}
 	}
-	SOV_war_army_group_south = {
+	SOV_annex_army_group_south = {
 		icon = GFX_decision_unity
 		available = {
 			URA = {
@@ -502,6 +502,56 @@ SOV_manifest_destiny = {
 			modifier = {
 				has_war = yes
 				factor = 0
+			}
+		}
+	}
+	SOV_war_army_group_south = {
+		icon = GFX_decision_war
+		available = {
+			URA = {
+				exists = yes
+			}
+			#KAZ = {
+			#	exists = no
+			#}
+			#is_in_faction_with = URA
+		}
+		visible = {
+			URA = {
+				exists = yes
+			}
+			#is_in_faction_with = URA
+		}
+		days_remove = 35
+		targets = {
+			URA
+		}
+		war_with_on_remove = URA
+		fire_only_once = yes
+		remove_effect = {
+			if = {
+				limit = {
+					has_war = yes
+				}
+				add_stability = -0.25
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = URA
+			}
+			every_state = {
+				limit = {
+					is_core_of = URA
+				}
+				add_core_of = SOV
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				date > 2203.05.20
+				has_war = no
+				add = 100
 			}
 		}
 	}

@@ -2,11 +2,138 @@ on_actions = {
 	on_startup = {
 		effect = {
             set_variable = { devastation_chance = threat }
+			#ADDING DYNAMIC MODIFIERS
             every_state = {
-                add_dynamic_modifier = {
-                    modifier = minor_devastation
-                }
+				if = {
+					limit = {
+						is_owned_by = ADU
+					}
+					add_dynamic_modifier = {
+						modifier = terminal_devastation
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_resources_amount = {
+								resource = oil
+								amount > 100
+							}
+							has_resources_amount = {
+								resource = aluminium
+								amount > 100
+							}
+							has_resources_amount = {
+								resource = rubber
+								amount > 100
+							}
+							has_resources_amount = {
+								resource = tungsten
+								amount > 100
+							}
+							has_resources_amount = {
+								resource = steel
+								amount > 100
+							}
+							has_resources_amount = {
+								resource = chromium
+								amount > 100
+							}
+							OR = {
+								check_variable = {
+									building_level@industrial_complex > 5
+								}
+								check_variable = {
+									building_level@arms_factory > 5
+								}
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = significant_devastation
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_resources_amount = {
+								resource = oil
+								amount > 50
+							}
+							has_resources_amount = {
+								resource = aluminium
+								amount > 50
+							}
+							has_resources_amount = {
+								resource = rubber
+								amount > 50
+							}
+							has_resources_amount = {
+								resource = tungsten
+								amount > 50
+							}
+							has_resources_amount = {
+								resource = steel
+								amount > 50
+							}
+							has_resources_amount = {
+								resource = chromium
+								amount > 50
+							}
+							OR = {
+								check_variable = {
+									building_level@industrial_complex > 2
+								}
+								check_variable = {
+									building_level@arms_factory > 2
+								}
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = major_devastation
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_resources_amount = {
+								resource = oil
+								amount > 10
+							}
+							has_resources_amount = {
+								resource = aluminium
+								amount > 10
+							}
+							has_resources_amount = {
+								resource = rubber
+								amount > 10
+							}
+							has_resources_amount = {
+								resource = tungsten
+								amount > 10
+							}
+							has_resources_amount = {
+								resource = steel
+								amount > 10
+							}
+							has_resources_amount = {
+								resource = chromium
+								amount > 10
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = notable_devastation
+					}
+				}
+				else = {
+					add_dynamic_modifier = {
+						modifier = minor_devastation
+					}
+				}
             }
+			###
             every_country = {
                 set_variable = { devastation_timeout = 60 }
 				calculate_current_devastation = yes
@@ -34,6 +161,84 @@ on_actions = {
 				#set_variable = { devastation_ratio_new = devastation_ratio_new_factory }
 				#divide_variable = { devastation_ratio_new = devastation_ratio_new_population }
 				#round_variable = devastation_ratio_new
+				if = {
+					limit = {
+						check_variable = { devastation_ratio < 0.11 }
+					}
+					remove_ideas = mobilizing_society
+					remove_ideas = flaking_society
+					remove_ideas = crumbling_society
+					remove_ideas = periphal_anarchy
+					remove_ideas = urban_collapse
+					add_ideas = stable_society
+				}
+				else_if = {
+					limit = {
+						AND = {
+							check_variable = { devastation_ratio < 0.31 }
+							check_variable = { devastation_ratio > 0.1 }
+						}
+					}
+					remove_ideas = stable_society
+					remove_ideas = flaking_society
+					remove_ideas = crumbling_society
+					remove_ideas = periphal_anarchy
+					remove_ideas = urban_collapse
+					add_ideas = mobilizing_society
+				}
+				if = {
+					limit = {
+						AND = {
+							check_variable = { devastation_ratio < 0.51 }
+							check_variable = { devastation_ratio > 0.3 }
+						}
+					}
+					remove_ideas = stable_society
+					remove_ideas = mobilizing_society
+					remove_ideas = crumbling_society
+					remove_ideas = periphal_anarchy
+					remove_ideas = urban_collapse
+					add_ideas = flaking_society
+				}
+				if = {
+					limit = {
+						AND = {
+							check_variable = { devastation_ratio < 0.71 }
+							check_variable = { devastation_ratio > 0.5 }
+						}
+					}
+					remove_ideas = stable_society
+					remove_ideas = flaking_society
+					remove_ideas = mobilizing_society
+					remove_ideas = periphal_anarchy
+					remove_ideas = urban_collapse
+					add_ideas = crumbling_society
+				}
+				if = {
+					limit = {
+						AND = {
+							check_variable = { devastation_ratio < 0.86 }
+							check_variable = { devastation_ratio > 0.7 }
+						}
+					}
+					remove_ideas = stable_society
+					remove_ideas = flaking_society
+					remove_ideas = mobilizing_society
+					remove_ideas = crumbling_society
+					remove_ideas = urban_collapse
+					add_ideas = periphal_anarchy
+				}
+				if = {
+					limit = {
+						check_variable = { devastation_ratio > 0.85 }
+					}
+					remove_ideas = stable_society
+					remove_ideas = flaking_society
+					remove_ideas = mobilizing_society
+					remove_ideas = crumbling_society
+					remove_ideas = periphal_anarchy
+					add_ideas = urban_collapse
+				}
             }
             #every_state = {
             #    set_variable = { devastation_degree = 3 }
@@ -232,7 +437,7 @@ on_actions = {
 				remove_ideas = urban_collapse
 				add_ideas = stable_society
 			}
-			else_if = {
+			if = {
 				limit = {
                     AND = {
 						check_variable = { devastation_ratio < 0.31 }

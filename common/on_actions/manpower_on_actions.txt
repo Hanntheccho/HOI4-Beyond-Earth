@@ -1,0 +1,35 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            every_country = {
+                if = {
+                    limit = {
+                        has_manpower < 10000
+                    }
+                    add_ideas = all_adults_serve
+                } 
+                else_if = {
+                    limit = {
+                        OR = {
+                            has_idea = communal_parity
+                            has_idea = military_government
+                        }
+                    }
+                    add_ideas = service_by_requirement
+                }
+                else_if = {
+                    limit = {
+                        OR = {
+                            has_idea = digital_democracy
+                            has_idea = corporate_libertarianism
+                        }
+                    }
+                    add_ideas = limited_conscription
+                }
+                else = {
+                    add_ideas = extensive_conscription
+                }
+            }
+        }
+    }
+}

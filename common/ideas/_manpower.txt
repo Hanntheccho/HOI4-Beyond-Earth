@@ -2,45 +2,45 @@ ideas = {
 	mobilization_laws = {
 		law = yes
 		use_list_view = yes
-		volunteer_only = {
-			cost = 150
-			removal_cost = -1
-			level = 6
-			available = {
-				always = yes
-			}
-			ai_will_do = {
-				factor = 1
-			}
-			modifier = {
-				conscription = 0.005
-				training_time_factor = -0.1
-			}
-			default = yes
-			cancel_if_invalid = no
-		}
+		#volunteer_only = {
+		#	cost = 150
+		#	removal_cost = -1
+		#	level = 6
+		#	available = {
+		#		always = yes
+		#	}
+		#	ai_will_do = {
+		#		factor = 1
+		#	}
+		#	modifier = {
+		#		conscription = 0.005
+		#		training_time_factor = -0.1
+		#	}
+		#	default = yes
+		#	cancel_if_invalid = no
+		#}
 		limited_conscription = {
 			cost = 150
 			removal_cost = -1
-			level = 5
+			level = 4
 			available = {
 				always = yes
 			}
 			ai_will_do = {
-				factor = 1
-			 modifier = {
-				 # Ignore if high on manpower
-				 factor = 0.5
-				 manpower_per_military_factory > 5000
-			 }
-			 modifier = {
-				 #Prio if low on manpower
-				 factor = 20
-				 manpower_per_military_factory < 1000
-			 }
+				factor = 0
+				modifier = {
+					has_war = no
+					OR = {
+						has_idea = digital_democracy
+						has_idea = corporate_libertarianism
+					}
+					add = 1
+				}
 		 	}
 			modifier = {
-				conscription = 0.015
+				conscription = 0.005
+				stability_factor = 0.25
+				war_support_factor = -0.25
 			}
 			#hidden_effect = {
 			#	equipment_bonus = {
@@ -83,28 +83,28 @@ ideas = {
 		extensive_conscription = {
 			cost = 150
 			removal_cost = -1
-			level = 4
+			level = 3
+			default = yes
 			available = {
 				always = yes
 			}
 			ai_will_do = {
-				factor = 1
-
-			 modifier = {
-				 # Ignore if high on manpower
-				 factor = 0.5
-				 manpower_per_military_factory > 3000
-			 }
-
-			 modifier = {
-				 #Prio if low on manpower
-				 factor = 20
-				 manpower_per_military_factory <  800
-			 }
+				factor = 0
+				modifier = {
+					has_idea = anarchy_style
+					add = 10
+				}
+				modifier = {
+					has_war = yes
+					add = 50
+				}
+				modifier = {
+					has_idea = synthetic_democracy
+					add = 100
+				}
 		 	}
 			modifier = {
-				conscription = 0.05
-				training_time_factor = 0.1
+				conscription = 0.01
 			}
 			cancel_if_invalid = no
 			#hidden_effect = {
@@ -147,35 +147,24 @@ ideas = {
 		service_by_requirement = {
 			cost = 150
 			removal_cost = -1
-			level = 3
+			level = 2
 			available = {
 				always = yes
 			}
 			ai_will_do = {
-				factor = 1
-			 modifier = {
-				 #Prio if low on manpower
-				 factor = 20
-				 manpower_per_military_factory <  700
-			 }
-			 modifier = {
-				 #Lower chance if has decent amount
-				 factor = 0.5
-				 manpower_per_military_factory >  1000
-			 }
-			 modifier = {
-				 #Block has plenty manpower
-				 factor = 0
-				 manpower_per_military_factory >  3000
-			 }
-			}
+				factor = 0
+				modifier = {
+					OR = {
+						has_idea = communal_parity
+						has_idea = military_government
+					}
+					add = 100
+				}
+		 	}
 			modifier = {
-				conscription = 0.1
-				training_time_factor = 0.2
-				industrial_capacity_factory = -0.1
-				industrial_capacity_dockyard = -0.1
-				production_speed_buildings_factor = -0.1
-				army_org_factor = -0.1
+				conscription = 0.025
+				stability_factor = -0.25
+				war_support_factor = 0.25
 			}
 			#hidden_effect = {
 			#	equipment_bonus = {
@@ -218,144 +207,141 @@ ideas = {
 		all_adults_serve = {
 			cost = 150
 			removal_cost = -1
-			level = 2
-			available = {
-				always = yes
-			}
-			ai_will_do = {
-				factor = 1
-			 modifier = {
-				 #Prio if low on manpower
-				 factor = 20
-				 manpower_per_military_factory <  600
-			 }
-			 modifier = {
-				 #Lower chance if has decent amount
-				 factor = 0.5
-				 manpower_per_military_factory >  1000
-			 }
-			 modifier = {
-				 #Block has plenty manpower
-				 factor = 0
-				 manpower_per_military_factory >  5000
-			 }
-		 	}
-			modifier = {
-				conscription = 0.15
-				training_time_factor = 0.3
-				industrial_capacity_factory = -0.2
-				industrial_capacity_dockyard = -0.2
-				production_speed_buildings_factor = -0.2
-				army_org_factor = -0.2
-			}
-			#hidden_effect = {
-			#	equipment_bonus = {
-			#		anti_air_equipment = {
-			#			instant = yes
-			#			max_strength = -0.6
-			#		}
-			#		anti_tank_equipment = {
-			#			instant = yes
-			#			max_strength = -0.6
-			#		}
-			#		gun_equipment = {
-			#			instant = yes
-			#			max_strength = -0.6
-			#		}
-			#		artillery_equipment = {
-			#			instant = yes
-			#			max_strength = -0.6
-			#		}
-			#		mechanized_horror_equipment = {
-			#			instant = yes
-			#			max_strength = -0.6
-			#		}
-			#		walker_equipment = {
-			#			instant = yes
-			#			max_strength = -0.6
-			#		}
-			#		rocket_artillery_equipment = {
-			#			instant = yes
-			#			max_strength = -0.6
-			#		}
-			#		MBT_equipment = {
-			#			instant = yes
-			#			max_strength = -0.6
-			#		}
-			#	}
-			#}
-			cancel_if_invalid = no
-		}
-		scraping_the_barrel = {
-			cost = 150
-			removal_cost = -1
 			level = 1
 			available = {
 				always = yes
 			}
 			ai_will_do = {
-				factor = 1
-			 modifier = {
-				 #Prio if low on manpower
-				 factor = 20
-				 manpower_per_military_factory <  500
-			 }
-			 modifier = {
-				 #Lower chance if has decent amount
-				 factor = 0.5
-				 manpower_per_military_factory >  1000
-			 }
-			 modifier = {
-				 #Block has plenty manpower
-				 factor = 0
-				 manpower_per_military_factory >  5000
-			 }
+				factor = 0
+				modifier = {
+					has_manpower < 10000
+					has_war = yes
+					NOT = {
+						OR = {
+							has_idea = digital_democracy
+							has_idea = corporate_libertarianism
+						}
+					}
+					add = 1000
+				}
 		 	}
 			modifier = {
-				conscription = 0.2
-				training_time_factor = 0.4
-				industrial_capacity_factory = -0.4
-				industrial_capacity_dockyard = -0.4
-				production_speed_buildings_factor = -0.4
-				army_org_factor = -0.3
+				conscription = 0.05
+				training_time_factor = 0.1
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				production_speed_buildings_factor = -0.1
+				army_org_factor = -0.1
+
 			}
 			#hidden_effect = {
 			#	equipment_bonus = {
 			#		anti_air_equipment = {
 			#			instant = yes
-			#			max_strength = -0.8
+			#			max_strength = -0.6
 			#		}
 			#		anti_tank_equipment = {
 			#			instant = yes
-			#			max_strength = -0.8
+			#			max_strength = -0.6
 			#		}
 			#		gun_equipment = {
 			#			instant = yes
-			#			max_strength = -0.8
+			#			max_strength = -0.6
 			#		}
 			#		artillery_equipment = {
 			#			instant = yes
-			#			max_strength = -0.8
+			#			max_strength = -0.6
 			#		}
 			#		mechanized_horror_equipment = {
 			#			instant = yes
-			#			max_strength = -0.8
+			#			max_strength = -0.6
 			#		}
 			#		walker_equipment = {
 			#			instant = yes
-			#			max_strength = -0.8
+			#			max_strength = -0.6
 			#		}
 			#		rocket_artillery_equipment = {
 			#			instant = yes
-			#			max_strength = -0.8
+			#			max_strength = -0.6
 			#		}
 			#		MBT_equipment = {
 			#			instant = yes
-			#			max_strength = -0.8
+			#			max_strength = -0.6
 			#		}
 			#	}
 			#}
 			cancel_if_invalid = no
 		}
+		#scraping_the_barrel = {
+		#	cost = 150
+		#	removal_cost = -1
+		#	level = 1
+		#	available = {
+		#		always = yes
+		#	}
+		#	ai_will_do = {
+		#		factor = 1
+		#	 modifier = {
+		#		 #Prio if low on manpower
+		#		 factor = 20
+		#		 manpower_per_military_factory <  500
+		#	 }
+		#	 modifier = {
+		#		 #Lower chance if has decent amount
+		#		 factor = 0.5
+		#		 manpower_per_military_factory >  1000
+		#	 }
+		#	 modifier = {
+		#		 #Block has plenty manpower
+		#		 factor = 0
+		#		 manpower_per_military_factory >  5000
+		#	 }
+		# 	}
+		#	modifier = {
+		#		conscription = 0.2
+		#		training_time_factor = 0.4
+		#		industrial_capacity_factory = -0.4
+		#		industrial_capacity_dockyard = -0.4
+		#		production_speed_buildings_factor = -0.4
+		#		army_org_factor = -0.3
+		#	}
+		#	#hidden_effect = {
+		#	#	equipment_bonus = {
+		#	#		anti_air_equipment = {
+		#	#			instant = yes
+		#	#			max_strength = -0.8
+		#	#		}
+		#	#		anti_tank_equipment = {
+		#	#			instant = yes
+		#	#			max_strength = -0.8
+		#	#		}
+		#	#		gun_equipment = {
+		#	#			instant = yes
+		#	#			max_strength = -0.8
+		#	#		}
+		#	#		artillery_equipment = {
+		#	#			instant = yes
+		#	#			max_strength = -0.8
+		#	#		}
+		#	#		mechanized_horror_equipment = {
+		#	#			instant = yes
+		#	#			max_strength = -0.8
+		#	#		}
+		#	#		walker_equipment = {
+		#	#			instant = yes
+		#	#			max_strength = -0.8
+		#	#		}
+		#	#		rocket_artillery_equipment = {
+		#	#			instant = yes
+		#	#			max_strength = -0.8
+		#	#		}
+		#	#		MBT_equipment = {
+		#	#			instant = yes
+		#	#			max_strength = -0.8
+		#	#		}
+		#	#	}
+		#	#}
+		#	cancel_if_invalid = no
+		#}
 	}
 }
