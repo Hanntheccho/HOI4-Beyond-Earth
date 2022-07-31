@@ -1,61 +1,5 @@
 catch_a_mouse = {
 
-	sib_import_rifles = {
-		icon = GFX_decision_industrial
-		available = {
-			#
-		}
-		visible = {
-			#
-		}
-		fire_only_once = no
-		custom_cost_trigger = {
-			check_variable = { industrial_power > 19.9 }
-		}
-		custom_cost_text = decision_cost_20_ip
-		days_remove = 30
-		remove_effect = {
-			add_equipment_to_stockpile = {
-				type = infantry_eq
-				amount = 1000
-				producer = ROOT
-			}
-			subtract_from_variable = {
-				industrial_power = 20
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	sib_heavy_equipment = {
-		icon = GFX_decision_industrial
-		available = {
-			#
-		}
-		visible = {
-			#
-		}
-		fire_only_once = no
-		custom_cost_trigger = {
-			check_variable = { industrial_power > 19.9 }
-		}
-		custom_cost_text = decision_cost_20_ip
-		days_remove = 30
-		remove_effect = {
-			add_equipment_to_stockpile = {
-				type = artillery_equipment
-				amount = 100
-				producer = ROOT
-			}
-			subtract_from_variable = {
-				industrial_power = 20
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
 	sib_guard_locals = {
 		icon = GFX_decision_unknown
 		available = {
@@ -92,7 +36,7 @@ catch_a_mouse = {
 			#
 		}
 		fire_only_once = no
-		cost = 40
+		cost = 30
 		days_remove = 20
 		remove_effect = {
 			add_manpower = 10000
@@ -105,6 +49,12 @@ catch_a_mouse = {
 		}
 		ai_will_do = {
 			factor = 0
+			modifier = {
+				check_variable = {
+					sib_discontent > 90 
+				}
+				add = 10
+			}
 		}
 	}
 	sib_socialist_governors = {
@@ -131,9 +81,15 @@ catch_a_mouse = {
 			factor = 1
 			modifier = {
 				check_variable = {
-					sib_discontent > 80
+					sib_discontent > 60
 				}
 				add = 5
+			}
+			modifier = {
+				check_variable = {
+					sib_discontent > 80
+				}
+				add = 1000
 			}
 		}
 	}
@@ -162,7 +118,7 @@ catch_a_mouse = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
 		}
 	}
 	sib_luo_zhenxian_moving = {

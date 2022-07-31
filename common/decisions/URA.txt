@@ -215,7 +215,7 @@ matters_of_the_urals = {
 		days_remove = 30
 		remove_effect = {
 			hidden_effect = {
-				load_oob = URA_rally_warlords_OOB
+				load_oob = URA_OOB
 			}
             custom_effect_tooltip = URA_eurasian_mercenaries_tooltip
 		}
@@ -240,12 +240,6 @@ matters_of_the_urals = {
 		days_remove = 15
 		targets = { KAZ }
 		remove_effect = {
-			if = {
-				limit = {
-					has_war = yes
-				}
-				add_stability = -0.25
-			}
             create_wargoal = {
 				type = annex_everything
 				target = KAZ
@@ -258,7 +252,9 @@ matters_of_the_urals = {
 				add = 100
 			}
 			modifier = {
-				has_war = yes
+				any_neighbor_country = {
+					has_war_with = ROOT
+				}
 				factor = 0
 			}
 		}
@@ -286,12 +282,6 @@ matters_of_the_urals = {
 		days_remove = 15
 		targets = { SIB }
 		remove_effect = {
-			if = {
-				limit = {
-					has_war = yes
-				}
-				add_stability = -0.25
-			}
             create_wargoal = {
 				type = annex_everything
 				target = SIB
@@ -312,7 +302,9 @@ matters_of_the_urals = {
 			#	add = 100
 			#}
 			modifier = {
-				has_war = yes
+				any_neighbor_country = {
+					has_war_with = ROOT
+				}
 				factor = 0
 			}
 		}
@@ -349,12 +341,6 @@ matters_of_the_urals = {
 		days_remove = 20
 		targets = { SOV }
 		remove_effect = {
-			if = {
-				limit = {
-					has_war = yes
-				}
-				add_stability = -0.25
-			}
             create_wargoal = {
 				type = annex_everything
 				target = SOV
@@ -369,7 +355,9 @@ matters_of_the_urals = {
 				add = 100
 			}
 			modifier = {
-				has_war = yes
+				any_neighbor_country = {
+					has_war_with = ROOT
+				}
 				factor = 0
 			}
 		}

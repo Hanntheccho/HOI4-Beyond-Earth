@@ -5,11 +5,15 @@ scotland_formable = {
 			ENG = {
 				exists = yes
 			}
+			has_global_flag = ECW_start
+			NOT = { has_global_flag = ECW_end }
 		}
 		visible = {
 			ENG = {
 				exists = yes
 			}
+			has_global_flag = ECW_start
+			NOT = { has_global_flag = ECW_end }
 		}
 		cost = 50
 		fire_only_once = yes
@@ -97,7 +101,7 @@ scotland_formable = {
 		remove_effect = {
 			FIN = {	
 				create_wargoal = {
-					type = annex_everything
+					type = puppet_wargoal_focus
 					target = SWE
 				}
 			}
@@ -141,16 +145,8 @@ scotland_formable = {
 			modifier = {
 				SCO = {
 					is_faction_leader = yes
-					is_in_faction_with = IRE
-					is_in_faction_with = GRN
-					is_in_faction_with = ENG
-					is_in_faction_with = ICE
-					is_in_faction_with = NOR
-					is_in_faction_with = SWE
-					is_in_faction_with = LAT
-					is_in_faction_with = FIN
 				}
-				factor = 1000
+				factor = 10
 			}
 		}
 	}

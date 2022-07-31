@@ -1,186 +1,256 @@
 on_actions = {
 	
-	#ECW
-	on_capitulation = {
+	#ARGENTINA
+	on_peaceconference_ended = {
 		effect = {
-			if = {
-				limit =  {
-					NOT = {
-						has_global_flag = ECW_end
-						country_exists = HNG
-						country_exists = JNG
-						country_exists = CNG
-					}
-					ENG = {
-						has_war = yes
-					}
-				}
-				every_state = {
+			PAD = {
+				if = {
 					limit = {
-						is_core_of = ENG
+						country_exists = PAD
+						NOT = { country_exists = ITA }
+						ITA = {
+							all_core_state = {
+								is_controlled_by = PAD
+							}
+						}
 					}
-					remove_core_of = HNG
-					remove_core_of = JNG
-					remove_core_of = CNG
-					set_state_owner_to = ENG
+					set_cosmetic_tag = PAD_italy
 				}
-				FRA = {
-					white_peace = ENG
-					remove_wargoal = {
-						type = annex_everything
-						target = ENG
-					}
-				}
-				GER = {
-					white_peace = ENG
-					remove_wargoal = {
-						type = annex_everything
-						target = ENG
-					}
-				}
-				SCO = {
-					diplomatic_relation = {
-						country = ENG
-						relation = guarantee
-						active = no
-					}
-					add_to_faction = ENG
-				}
-				set_global_flag = ECW_end
 			}
-			if = {
-				limit =  {
-					NOT = {
-						has_global_flag = ECW_end
-						country_exists = ENG
-						country_exists = JNG
-						country_exists = CNG
-					}
-					HNG = {
-						has_war = yes
-					}
-				}
-				every_state = {
+		}
+	}
+	on_peaceconference_ended = {
+		effect = {
+			COS = {
+				if = {
 					limit = {
-						is_core_of = HNG
+						country_exists = COS
+						NOT = { country_exists = ARG }
 					}
-					remove_core_of = ENG
-					remove_core_of = JNG
-					remove_core_of = CNG
-					set_state_owner_to = HNG
+					set_cosmetic_tag = ARG_COS
 				}
-				FRA = {
-					white_peace = HNG
-					remove_wargoal = {
-						type = annex_everything
-						target = HNG
-					}
-				}
-				SCO = {
-					white_peace = HNG
-					remove_wargoal = {
-						type = annex_everything
-						target = HNG
-					}
-				}
-				GER = {
-					diplomatic_relation = {
-						country = HNG
-						relation = guarantee
-						active = no
-					}
-					add_to_faction = HNG
-				}
-				set_global_flag = ECW_end
 			}
-			if = {
-				limit =  {
-					NOT = {
-						has_global_flag = ECW_end
-						country_exists = HNG
-						country_exists = ENG
-						country_exists = CNG
-					}
-					JNG = {
-						has_war = yes
-					}
-				}
-				every_state = {
+			ARG = {
+				if = {
 					limit = {
-						is_core_of = JNG
+						country_exists = ARG
+						NOT = { country_exists = COS }
 					}
-					remove_core_of = HNG
-					remove_core_of = ENG
-					remove_core_of = CNG
-					set_state_owner_to = JNG
+					set_cosmetic_tag = ARG_COS
 				}
-				GER = {
-					white_peace = JNG
-					remove_wargoal = {
-						type = annex_everything
-						target = JNG
-					}
-				}
-				SCO = {
-					white_peace = JNG
-					remove_wargoal = {
-						type = annex_everything
-						target = JNG
-					}
-				}
-				FRA = {
-					diplomatic_relation = {
-						country = JNG
-						relation = guarantee
-						active = no
-					}
-					add_to_faction = JNG
-				}
-				set_global_flag = ECW_end
 			}
-			if = {
-				limit =  {
-					NOT = {
-						has_global_flag = ECW_end
-						country_exists = HNG
-						country_exists = JNG
-						country_exists = ENG
+		}
+	}
+	#ECW
+	on_peaceconference_ended = {
+		effect = {
+			ENG = {
+				if = {
+					limit =  {
+						NOT = {
+							has_global_flag = ECW_end
+						}
+						HNG = {
+							OR = {
+								exists = no
+								has_capitulated = yes
+							}
+						}
+						JNG = {
+							OR = {
+								exists = no
+								has_capitulated = yes
+							}
+						}
+						CNG = {
+							OR = {
+								exists = no
+								has_capitulated = yes
+							}
+						}
+						ENG = {
+							has_war = yes
+						}
 					}
-					CNG = {
-						has_war = yes
+					every_state = {
+						limit = {
+							is_core_of = ENG
+						}
+						remove_core_of = HNG
+						remove_core_of = JNG
+						remove_core_of = CNG
+						set_state_owner_to = ENG
+						remove_dynamic_modifier = {
+							modifier = eng_cw_modifier
+						}
 					}
+					FRA = {
+						white_peace = ENG
+					}
+					GER = {
+						white_peace = ENG
+					}
+					SCO = {
+						add_to_faction = ENG
+					}
+					set_global_flag = ECW_end
 				}
-				every_state = {
-					limit = {
-						is_core_of = CNG
+			}
+			HNG = {
+				if = {
+					limit =  {
+						NOT = {
+							has_global_flag = ECW_end
+						}
+						ENG = {
+							OR = {
+								exists = no
+								has_capitulated = yes
+							}
+						}
+						JNG = {
+							OR = {
+								exists = no
+								has_capitulated = yes
+							}
+						}
+						CNG = {
+							OR = {
+								exists = no
+								has_capitulated = yes
+							}
+						}
+						HNG = {
+							has_war = yes
+						}
 					}
-					remove_core_of = HNG
-					remove_core_of = JNG
-					remove_core_of = ENG
-					set_state_owner_to = CNG
-				}
-				GER = {
-					white_peace = CNG
-					remove_wargoal = {
-						type = annex_everything
-						target = CNG
+					every_state = {
+						limit = {
+							is_core_of = HNG
+						}
+						remove_core_of = ENG
+						remove_core_of = JNG
+						remove_core_of = CNG
+						set_state_owner_to = HNG
+						remove_dynamic_modifier = {
+							modifier = eng_cw_modifier
+						}
 					}
-				}
-				SCO = {
-					white_peace = CNG
-					remove_wargoal = {
-						type = annex_everything
-						target = CNG
+					FRA = {
+						white_peace = HNG
 					}
-				}
-				FRA = {
-					white_peace = CNG
-					remove_wargoal = {
-						type = annex_everything
-						target = CNG
+					SCO = {
+						white_peace = HNG
 					}
+					GER = {
+						add_to_faction = HNG
+					}
+					set_global_flag = ECW_end
 				}
-				set_global_flag = ECW_end
+			}
+			JNG = {
+				if = {
+					limit =  {
+						NOT = {
+							has_global_flag = ECW_end
+						}
+						HNG = {
+							OR = {
+								exists = no
+								has_capitulated = yes
+							}
+						}
+						ENG = {
+							OR = {
+								exists = no
+								has_capitulated = yes
+							}
+						}
+						CNG = {
+							OR = {
+								exists = no
+								has_capitulated = yes
+							}
+						}
+						JNG = {
+							has_war = yes
+						}
+					}
+					every_state = {
+						limit = {
+							is_core_of = JNG
+						}
+						remove_core_of = HNG
+						remove_core_of = ENG
+						remove_core_of = CNG
+						set_state_owner_to = JNG
+						remove_dynamic_modifier = {
+							modifier = eng_cw_modifier
+						}
+					}
+					GER = {
+						white_peace = JNG
+					}
+					SCO = {
+						white_peace = JNG
+					}
+					FRA = {
+						add_to_faction = JNG
+					}
+					set_global_flag = ECW_end
+				}
+			}
+			CNG = {
+				if = {
+					limit =  {
+						NOT = {
+							has_global_flag = ECW_end
+						}
+						HNG = {
+							OR = {
+								exists = no
+								has_capitulated = yes
+							}
+						}
+						JNG = {
+							OR = {
+								exists = no
+								has_capitulated = yes
+							}
+						}
+						ENG = {
+							OR = {
+								exists = no
+								has_capitulated = yes
+							}
+						}
+						CNG = {
+							has_war = yes
+						}
+					}
+					every_state = {
+						limit = {
+							is_core_of = CNG
+						}
+						remove_core_of = HNG
+						remove_core_of = JNG
+						remove_core_of = ENG
+						set_state_owner_to = CNG
+						remove_dynamic_modifier = {
+							modifier = eng_cw_modifier
+						}
+					}
+					GER = {
+						white_peace = CNG
+					}
+					SCO = {
+						white_peace = CNG
+					}
+					FRA = {
+						white_peace = CNG
+					}
+					set_global_flag = ECW_end
+				}
 			}
 		}
 	}

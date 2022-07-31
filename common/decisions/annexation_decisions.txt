@@ -1,72 +1,72 @@
-annexation_decisions = {
-	# Brazil
-	annexation_brazil = {
-		icon = generic_industry
-		selectable_mission = yes
-		days_mission_timeout = 60
-		is_good = no
-		available = { 
-			release_brazil = yes
-		}
-		visible = { 
-			release_brazil = yes
-		}
-		cancel_trigger = {
-			release_brazil = no
-		}
-		complete_effect = {
-			country_event = annex.2
-		}
-		ai_will_do = {
-			factor = 100
-		}
-	}
-	annexation_ol_claims = {
-		icon = generic_industry
-		selectable_mission = yes
-		days_mission_timeout = 60
-		is_good = no
-		available = {
-			188 = { is_owned_and_controlled_by = ROOT }
-			185 = { is_owned_and_controlled_by = ROOT }
-			193 = { is_owned_and_controlled_by = ROOT } 
-			URG = {
-				OR = {
-					is_puppet_of = ROOT
-					is_in_faction_with = ROOT
-				}
-			}
-			NOT = {
-				has_global_flag = final_war_flag
-			}
-		} 
-		visible = {                                     
-			188 = { is_owned_and_controlled_by = ROOT }
-			185 = { is_owned_and_controlled_by = ROOT }
-			193 = { is_owned_and_controlled_by = ROOT } 
-			release_ol_cores = yes
-			is_debug = yes
-		}
-		cancel_trigger = {
-			NOT = {
-				188 = { is_owned_and_controlled_by = ROOT }
-				185 = { is_owned_and_controlled_by = ROOT }
-				193 = { is_owned_and_controlled_by = ROOT } 
-			}
-			URG = {
-				NOT = {
-					OR = {
-						is_puppet_of = ROOT
-						is_in_faction_with = ROOT
-					}
-				}
-			}
-		}
-		complete_effect = {
-			country_event = annex.3
-		}
-		ai_will_do = {
-			factor = 100
-		}
-	}
-}
+#annexation_decisions = {
+#	# Brazil
+#	annexation_brazil = {
+#		icon = generic_industry
+#		selectable_mission = yes
+#		days_mission_timeout = 60
+#		is_good = no
+#		available = { 
+#			release_brazil = yes
+#		}
+#		visible = { 
+#			release_brazil = yes
+#		}
+#		cancel_trigger = {
+#			release_brazil = no
+#		}
+#		complete_effect = {
+#			country_event = annex.2
+#		}
+#		ai_will_do = {
+#			factor = 100
+#		}
+#	}
+#	annexation_ol_claims = {
+#		icon = generic_industry
+#		selectable_mission = yes
+#		days_mission_timeout = 60
+#		is_good = no
+#		available = {
+#			188 = { is_owned_and_controlled_by = ROOT }
+#			185 = { is_owned_and_controlled_by = ROOT }
+#			193 = { is_owned_and_controlled_by = ROOT } 
+#			URG = {
+#				OR = {
+#					is_puppet_of = ROOT
+#					is_in_faction_with = ROOT
+#				}
+#			}
+#			NOT = {
+#				has_global_flag = final_war_flag
+#			}
+#		} 
+#		visible = {                                     
+#			188 = { is_owned_and_controlled_by = ROOT }
+#			185 = { is_owned_and_controlled_by = ROOT }
+#			193 = { is_owned_and_controlled_by = ROOT } 
+#			release_ol_cores = yes
+#			is_debug = yes
+#		}
+#		cancel_trigger = {
+#			NOT = {
+#				188 = { is_owned_and_controlled_by = ROOT }
+#				185 = { is_owned_and_controlled_by = ROOT }
+#				193 = { is_owned_and_controlled_by = ROOT } 
+#			}
+#			URG = {
+#				NOT = {
+#					OR = {
+#						is_puppet_of = ROOT
+#						is_in_faction_with = ROOT
+#					}
+#				}
+#			}
+#		}
+#		complete_effect = {
+#			country_event = annex.3
+#		}
+#		ai_will_do = {
+#			factor = 100
+#		}
+#	}
+#}

@@ -129,12 +129,6 @@ SOV_manifest_destiny = {
 		fire_only_once = yes
 		targets = { BLR }
 		remove_effect = {
-			if = {
-				limit = {
-					has_war = yes
-				}
-				add_stability = -0.25
-			}
 			create_wargoal = {
 				type = annex_everything
 				target = BLR
@@ -145,10 +139,6 @@ SOV_manifest_destiny = {
 				}
 				add_core_of = SOV
 			}
-			#add_to_variable = {
-			#	var = global.slavicinfamy_var
-			#	value = 3
-			#}
 		}
 		ai_will_do = {
 			factor = 1
@@ -161,8 +151,101 @@ SOV_manifest_destiny = {
 				factor = 10
 			}
 			modifier = {
-				has_war = yes
+				any_neighbor_country = {
+					has_war_with = ROOT
+				}
 				factor = 0
+			}
+		}
+	}
+	SOV_war_ukraine = {
+		icon = GFX_decision_war
+		available = {
+			UKR = {
+				exists = yes
+			}
+		}
+		visible = {
+			UKR = {
+				exists = yes
+			}
+		}
+		days_remove = 35
+		targets = {
+			UKR
+		}
+		war_with_on_remove = UKR
+		fire_only_once = yes
+		remove_effect = {
+			create_wargoal = {
+				type = annex_everything
+				target = UKR
+			}
+			every_state = {
+				limit = {
+					is_core_of = UKR
+				}
+				add_core_of = SOV
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				BLR = {
+					has_capitulated = yes
+					has_war_with = SOV
+				}
+				add = 100
+			}
+			modifier = {
+				UKR = {
+					OR = {
+						owns_state = 567
+						owns_state = 581
+						owns_state = 631
+					}
+				}
+			}
+		}
+	}
+	SOV_war_baltics = {
+		icon = GFX_decision_war
+		available = {
+			LAT = {
+				exists = yes
+			}
+		}
+		visible = {
+			LAT = {
+				exists = yes
+			}
+		}
+		days_remove = 35
+		targets = {
+			LAT
+		}
+		war_with_on_remove = LAT
+		fire_only_once = yes
+		remove_effect = {
+			create_wargoal = {
+				type = annex_everything
+				target = LAT
+			}
+			every_state = {
+				limit = {
+					is_core_of = LAT
+				}
+				add_core_of = SOV
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				BLR = {
+					has_capitulated = yes
+					has_war_with = SOV
+				}
+				add = 100
 			}
 		}
 	}
@@ -445,64 +528,16 @@ SOV_manifest_destiny = {
 		days_remove = 30
 		fire_only_once = yes
 		remove_effect = {
-			add_to_faction = URA
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	SOV_annex_army_group_south = {
-		icon = GFX_decision_unity
-		available = {
-			URA = {
-				exists = yes
-			}
-			KAZ = {
-				exists = no
-			}
-			is_in_faction_with = URA
-		}
-		visible = {
-			URA = {
-				exists = yes
-			}
-			is_in_faction_with = URA
-		}
-		cancel_trigger = {
-			NOT = {
-				is_in_faction_with = URA
-			}
-		}
-		days_remove = 180
-		fire_only_once = yes
-		remove_effect = {
-			if = {
-				limit = {
-					has_war = yes
-				}
-				add_stability = -0.25
-			}
 			every_state = {
 				limit = {
 					is_core_of = URA
 				}
 				add_core_of = SOV
 			}
-			annex_country = {
-				target = URA
-				transfer_troops = yes
-			}
-			#add_to_variable = {
-			#	var = global.slavicinfamy_var
-			#	value = 1
-			#}
+			puppet = URA
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_war = yes
-				factor = 0
-			}
 		}
 	}
 	SOV_war_army_group_south = {
@@ -529,12 +564,6 @@ SOV_manifest_destiny = {
 		war_with_on_remove = URA
 		fire_only_once = yes
 		remove_effect = {
-			if = {
-				limit = {
-					has_war = yes
-				}
-				add_stability = -0.25
-			}
 			create_wargoal = {
 				type = annex_everything
 				target = URA
@@ -550,7 +579,11 @@ SOV_manifest_destiny = {
 			factor = 0
 			modifier = {
 				date > 2203.05.20
-				has_war = no
+				NOT = {
+					any_neighbor_country = {
+						has_war_with = ROOT
+					}
+				}
 				add = 100
 			}
 		}

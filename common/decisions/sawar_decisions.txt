@@ -1,0 +1,50 @@
+sawar_decisions = {
+	BRA_PRU_war = {
+		icon = GFX_decision_unknown
+		available = {
+			NOT = {
+				country_exists = PRU
+			}
+		}
+		visible = {
+			#
+		}
+		fire_only_once = yes
+		days_mission_timeout = 250
+		timeout_effect = {
+			custom_effect_tooltip = BRA_PRU_war_tooltip
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	COS_ARG_war = {
+		icon = GFX_decision_unknown
+		available = {
+			OR = {
+				NOT = {
+					country_exists = COS
+				}
+				NOT = {
+					country_exists = ARG
+				}
+			}
+		}
+		visible = {
+			#
+		}
+		fire_only_once = yes
+		days_mission_timeout = 95
+		timeout_effect = {
+			COS = {
+				declare_war_on = {
+					target = ARG
+					type = annex_everything
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

@@ -489,14 +489,12 @@ on_actions = {
             }
             if = {
                 limit = {
-                    AND = {
-                        check_variable = { spaceschip_completion_time = 1 }
-			            NOT = {
-                            any_other_country = { check_variable = { spaceship_contribution_variable > ROOT.spaceship_contribution_variable } }
-                            any_owned_state = {
-                                has_dynamic_modifier = {
-                                    modifier = spaceship_location_modifier
-                                }
+                    check_variable = { spaceschip_completion_time = 1 }
+			        NOT = {
+                        any_other_country = { check_variable = { spaceship_contribution_variable > ROOT.spaceship_contribution_variable } }
+                        any_owned_state = {
+                            has_dynamic_modifier = {
+                                modifier = spaceship_location_modifier
                             }
                         }
                     }

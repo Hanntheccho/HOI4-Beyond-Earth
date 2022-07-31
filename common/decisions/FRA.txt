@@ -66,7 +66,7 @@ fi_election = {
 			}
 		}
 		fire_only_once = yes
-		days_mission_timeout = 210
+		days_mission_timeout = 105
 		timeout_effect = {
 			if = {
 				limit = {
@@ -97,6 +97,8 @@ fi_formables = {
 			JNG = {
 				exists = yes
 			}
+			has_global_flag = ECW_start
+			NOT = { has_global_flag = ECW_end }
 			hidden_trigger = {
 				has_country_leader = {
 					character = FRA_elodie_batteux
@@ -108,6 +110,8 @@ fi_formables = {
 			JNG = {
 				exists = yes
 			}
+			has_global_flag = ECW_start
+			NOT = { has_global_flag = ECW_end }
 			has_country_leader = {
 				character = FRA_elodie_batteux
 				ruling_only = yes
@@ -279,7 +283,7 @@ fi_formables = {
 		days_remove = 10
 		remove_effect = {
 			create_wargoal = {
-				type = annex_everything
+				type = puppet_wargoal_focus
 				target = ITA
 			}
 		}
@@ -314,7 +318,7 @@ fi_formables = {
 		days_remove = 10
 		remove_effect = {
 			create_wargoal = {
-				type = annex_everything
+				type = puppet_wargoal_focus
 				target = PAD
 			}
 		}
@@ -335,92 +339,6 @@ fi_formables = {
 			}
 		}
 	}
-	#fi_italian_question = {
-	#	icon = GFX_decision_war
-	#	available = {
-	#		PAD = {
-	#			exists = no
-	#		}
-	#		ITA = {
-	#			exists = no
-	#		}
-	#	}
-	#	activation = {
-	#		PAD = {
-	#			exists = yes
-	#		}
-	#		ITA = {
-	#			exists = yes
-	#		}
-	#	}
-	#	fire_only_once = yes
-	#	days_mission_timeout = 495
-	#	timeout_effect = {
-	#		if = {
-	#			limit = {
-	#				country_exists = PAD
-	#			}
-	#			ITA = {
-	#				create_wargoal = {
-	#					type = annex_everything
-	#					target = PAD
-	#				}
-	#			}
-	#			every_state = {
-	#				limit = {
-	#						is_core_of = PAD
-	#				}
-	#				add_core_of = ITA
-	#			}
-	#			every_state = {
-	#				limit = {
-	#						is_core_of = ITA
-	#				}
-	#				add_core_of = PAD
-	#			}
-	#		}
-	#		else = {
-	#			FRA = {
-	#				create_wargoal = {
-	#					type = annex_everything
-	#					target = ITA
-	#				}
-	#			}
-	#		}
-	#	}
-	#	ai_will_do = {
-	#		factor = 1
-	#	}
-	#}
-	#fi_PAD_reborn = {
-	#	icon = GFX_decision_unity
-	#	available = {
-	#		PAD = {
-	#			has_capitulated = yes
-	#		}
-	#	}
-	#	activation = {
-	#		PAD = {
-	#			exists = yes
-	#		}
-	#		ITA = {
-	#			exists = no
-	#			all_core_state = {
-	#				is_controlled_by = PAD
-	#			}
-	#		}
-	#	}
-	#	fire_only_once = yes
-	#	days_mission_timeout = 60
-	#	timeout_effect = {
-	#		PAD = {
-	#			set_cosmetic_tag = PAD_italy
-	#		}
-	#	}
-	#	ai_will_do = {
-	#		factor = 1
-	#	}
-	#}
 	fi_war_TUN = {
 		icon = GFX_decision_war
 		available = {
@@ -450,36 +368,9 @@ fi_formables = {
 		days_remove = 30
 		remove_effect = {
 			create_wargoal = {
-				type = annex_everything
+				type = puppet_wargoal_focus
 				target = TUN
 			}
-			#if = {
-			#	limit = {
-			#		country_exists = ALG
-			#	}
-			#	create_wargoal = {
-			#		type = annex_everything
-			#		target = ALG
-			#	}
-			#}
-			#if = {
-			#	limit = {
-			#		country_exists = WES
-			#	}
-			#	create_wargoal = {
-			#		type = annex_everything
-			#		target = WES
-			#	}
-			#}
-			#if = {
-			#	limit = {
-			#		country_exists = LBA
-			#	}
-			#	create_wargoal = {
-			#		type = annex_everything
-			#		target = LBA
-			#	}
-			#}
 		}
 		ai_will_do = {
 			factor = 0
@@ -488,7 +379,6 @@ fi_formables = {
 					has_war = no
 				}
 				NOT = {
-					country_exists = LBA
 					country_exists = WES
 					country_exists = ALG
 				}

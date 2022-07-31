@@ -25,7 +25,7 @@ eurowar_decisions = {
 					country_exists = PAD
 				}
 				ITA = {
-					create_wargoal = {
+					declare_war_on = {
 						type = annex_everything
 						target = PAD
 					}
@@ -46,39 +46,10 @@ eurowar_decisions = {
 			else = {
 				FRA = {
 					create_wargoal = {
-						type = annex_everything
+						type = puppet_wargoal_focus
 						target = ITA
 					}
 				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	fi_PAD_reborn = {
-		icon = GFX_decision_unity
-		available = {
-			PAD = {
-				has_capitulated = yes
-			}
-		}
-		activation = {
-			PAD = {
-				exists = yes
-			}
-			ITA = {
-				exists = no
-				all_core_state = {
-					is_controlled_by = PAD
-				}
-			}
-		}
-		fire_only_once = yes
-		days_mission_timeout = 60
-		timeout_effect = {
-			PAD = {
-				set_cosmetic_tag = PAD_italy
 			}
 		}
 		ai_will_do = {
@@ -110,8 +81,8 @@ eurowar_decisions = {
 		days_mission_timeout = 570
 		timeout_effect = {
 			SWE = {
-				create_wargoal = {
-					type = annex_everything
+				declare_war_on = {
+					type = puppet_wargoal_focus
 					target = NOR
 				}
 			}
@@ -121,7 +92,7 @@ eurowar_decisions = {
 		}
 	}
 
-	ENG_civil_war = {
+	ENG_civil_war_part_1 = {
 		icon = GFX_decision_unknown
 		available = {
 			NOT = { country_exists = ENG }
@@ -130,9 +101,32 @@ eurowar_decisions = {
 			country_exists = ENG
 		}
 		fire_only_once = yes
-		days_mission_timeout = 165
+		days_mission_timeout = 140
 		timeout_effect = {
-			custom_effect_tooltip = ENG_civil_war_tooltip
+			ENG = {
+				country_event = england_event.1
+			}
+			activate_mission = ENG_civil_war_part_2
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ENG_civil_war_part_2 = {
+		icon = GFX_decision_unknown
+		available = {
+			NOT = { country_exists = ENG }
+		}
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		days_mission_timeout = 25
+		timeout_effect = {
+			ENG = {
+				country_event = england_event.2
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -146,15 +140,13 @@ eurowar_decisions = {
 			country_exists = BLR
 		}
 		fire_only_once = yes
-		days_mission_timeout = 20
+		days_mission_timeout = 25
 		timeout_effect = {
 			BLR = {
 				add_state_core = 471
 				add_state_core = 500
 				add_state_core = 517
 				add_state_core = 345
-			}
-			UKR = {
 				add_state_core = 508
 			}
 			activate_mission = vostaslavia_rebellion_start_2
@@ -172,7 +164,7 @@ eurowar_decisions = {
 			always = no
 		}
 		fire_only_once = yes
-		days_mission_timeout = 20
+		days_mission_timeout = 25
 		timeout_effect = {
 			BLR = {
 				add_state_core = 531
@@ -200,7 +192,7 @@ eurowar_decisions = {
 			always = no
 		}
 		fire_only_once = yes
-		days_mission_timeout = 20
+		days_mission_timeout = 25
 		timeout_effect = {
 			BLR = {
 				add_state_core = 574
@@ -221,35 +213,14 @@ eurowar_decisions = {
 			always = no
 		}
 		fire_only_once = yes
-		days_mission_timeout = 20
-		timeout_effect = {
-			hidden_effect = {
-				UKR = {
-					set_state_owner = 508
-				}
-			}
-			activate_mission = vostaslavia_rebellion_start_5
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	vostaslavia_rebellion_start_5 = {
-		icon = GFX_decision_unknown
-		available = {
-			country_exists = BLR
-		}
-		activation = {
-			always = no
-		}
-		fire_only_once = yes
-		days_mission_timeout = 20
+		days_mission_timeout = 25
 		timeout_effect = {
 			SOV = {
 				release = BLR
 			}
 			BLR = {
 				inherit_technology = SOV
+				set_oob = BLR_OOB
 			}
 		}
 		ai_will_do = {
@@ -267,11 +238,14 @@ eurowar_decisions = {
 		activation = {
 			SOV = {
 				has_war = yes
-				has_war_support < 0.25
+				OR = {
+					has_war_support < 0.25
+					has_stability < 0.25
+				}
 			}
+			country_exists = BLR
 		}
-		fire_only_once = yes
-		war_with_on_timeout = UKR
+		fire_only_once = no
 		days_mission_timeout = 415
 		timeout_effect = {
 			SOV = {
@@ -281,7 +255,6 @@ eurowar_decisions = {
 				#	type = annex_everything
 				#	target = UKR
 				#}
-				end_puppet = UKR
 			}
 			UKR = {
 				set_state_owner = 567
@@ -332,13 +305,16 @@ eurowar_decisions = {
 				NOT = { country_exists = KAR }
 			}
 		}
+		cancel_trigger = {
+			KAR = {
+				surrender_progress > 0.2
+			}
+		}
 		activation = {
 			always = no
 		}
 		fire_only_once = yes
 		days_mission_timeout = 770
-		war_with_on_timeout = FIN
-		war_with_on_timeout = KAR
 		timeout_effect = {
 			FIN = {
 				puppet = KAR
@@ -373,172 +349,6 @@ eurowar_decisions = {
 			factor = 1
 		}
 	}
-
-
-#	testing_infamy_raise_decision = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			is_debug = yes
-#		}
-#		visible = {
-#			is_debug = yes
-#		}
-#		fire_only_once = no
-#		complete_effect = {
-#			add_to_variable = {
-#				var = global.nsainfamy_var
-#				value = 1
-#			}
-#			add_to_variable = {
-#				var = global.francoinfamy_var
-#				value = 1
-#			}
-#			add_to_variable = {
-#				var = global.integrinfamy_var
-#				value = 1
-#			}
-#			add_to_variable = {
-#				var = global.slavicinfamy_var
-#				value = 1
-#			}
-#			
-#			clamp_variable = {
-#				var = global.nsainfamy_var
-#				min = 0
-#				max = 10
-#			}
-#			clamp_variable = {
-#				var = global.francoinfamy_var
-#				min = 0
-#				max = 10
-#			}
-#			clamp_variable = {
-#				var = global.integrinfamy_var
-#				min = 0
-#				max = 10
-#			}
-#			clamp_variable = {
-#				var = global.slavicinfamy_var
-#				min = 0
-#				max = 10
-#			}
-#			
-#			hidden_effect = {
-#				check_infamy = yes
-#			}
-#		}
-#	}
-#	testing_infamy_lower_decision = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			is_debug = yes
-#		}
-#		visible = {
-#			is_debug = yes
-#		}
-#		fire_only_once = no
-#		complete_effect = {
-#			add_to_variable = {
-#				var = global.nsainfamy_var
-#				value = -1
-#			}
-#			add_to_variable = {
-#				var = global.francoinfamy_var
-#				value = -1
-#			}
-#			add_to_variable = {
-#				var = global.integrinfamy_var
-#				value = -1
-#			}
-#			add_to_variable = {
-#				var = global.slavicinfamy_var
-#				value = -1
-#			}
-#			
-#			clamp_variable = {
-#				var = global.nsainfamy_var
-#				min = 0
-#				max = 10
-#			}
-#			clamp_variable = {
-#				var = global.francoinfamy_var
-#				min = 0
-#				max = 10
-#			}
-#			clamp_variable = {
-#				var = global.integrinfamy_var
-#				min = 0
-#				max = 10
-#			}
-#			clamp_variable = {
-#				var = global.slavicinfamy_var
-#				min = 0
-#				max = 10
-#			}
-#			
-#			hidden_effect = {
-#				check_infamy = yes
-#			}
-#		}
-#	}
-#	
-#	testing_big_infamy = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			is_debug = yes
-#		}
-#		visible = {
-#			is_debug = yes
-#		}
-#		fire_only_once = no
-#		complete_effect = {
-#			set_variable = {
-#				var = global.nsainfamy_var
-#				value = 10
-#			}
-#			set_variable = {
-#				var = global.francoinfamy_var
-#				value = 10
-#			}
-#			set_variable = {
-#				var = global.integrinfamy_var
-#				value = 10
-#			}
-#			set_variable = {
-#				var = global.slavicinfamy_var
-#				value = 10
-#			}
-#			hidden_effect = {
-#				check_infamy = yes
-#			}
-#		}
-#	}		#testing_raise_ewp_decision = {	#	icon = GFX_decision_unknown	#	available = {	#		is_debug = yes	#	}	#	visible = {	#		is_debug = yes	#	}	#	fire_only_once = no	#	complete_effect = {	#		add_to_variable = {	#			var = global.europewarprogress_var	#			value = 0.1	#		}	#			#		clamp_variable = {	#			var = global.europewarprogress_var	#			min = 0	#			max = 1	#		}	#			#		hidden_effect = {	#			check_europe_war_progress = yes	#		}	#	}	#}	
-#	testing_start_europe_war = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			is_debug = yes
-#		}
-#		visible = {
-#			is_debug = yes
-#		}
-#		fire_only_once = no
-#		complete_effect = {
-#			add_to_variable = {
-#				var = global.europewarprogress_var
-#				value = 100
-#			}
-#			
-#			clamp_variable = {
-#				var = global.europewarprogress_var
-#				min = 0
-#				max = 100
-#			}
-#			
-#			hidden_effect = {
-#				check_europe_war_progress = yes
-#			}
-#		}
-#	}
 	
 	declare_war_on_nsa = {
 		icon = GFX_decision_war
@@ -561,7 +371,7 @@ eurowar_decisions = {
 		fire_only_once = no
 		complete_effect = {
 			create_wargoal = {
-				type = annex_everything
+				type = puppet_wargoal_focus
 				target = SCO
 			}
 		}
@@ -588,7 +398,7 @@ eurowar_decisions = {
 		fire_only_once = no
 		complete_effect = {
 			create_wargoal = {
-				type = annex_everything
+				type = puppet_wargoal_focus
 				target = FRA
 			}
 		}
@@ -615,7 +425,7 @@ eurowar_decisions = {
 		fire_only_once = no
 		complete_effect = {
 			create_wargoal = {
-				type = annex_everything
+				type = puppet_wargoal_focus
 				target = GER
 			}
 		}
@@ -642,7 +452,7 @@ eurowar_decisions = {
 		fire_only_once = no
 		complete_effect = {
 			create_wargoal = {
-				type = annex_everything
+				type = puppet_wargoal_focus
 				target = SOV
 			}
 		}

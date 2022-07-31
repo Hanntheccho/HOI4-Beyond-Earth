@@ -1,363 +1,27 @@
-BRA_debug_decisions = {
-	BRA_start_civil_war = {
-	
-		icon = generic_industry
-	
-		available = {
-			is_ai = no
-		}
-	
-		visible = {
-			is_debug = yes
-		}
-	
-		fire_only_once = yes
-	
-		cost = 0
-	
-		complete_effect = {
-			custom_effect_tooltip = BRA_start_civil_war_tt
-			hidden_effect = {
-				set_global_flag = brazil_civil_war
-				##BRA_set_starting_values = yes
-				BRA_set_borders = yes
-			}
-		}
-		
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	annexation_claim_testing = {
-		icon = generic_industry
-	
-		available = {
-			is_ai = no
-		}
-	
-		visible = {
-			is_debug = yes
-		}
-	
-		fire_only_once = yes
-	
-		cost = 0
-	
-		complete_effect = {
-			URG = {
-				add_state_core = 185
-				add_state_core = 183
-				add_state_core = 193
-			}
-			
-			PRU = {
-				puppet = URG
-			}
-		}
-		
-		ai_will_do = {
-			factor = 0
-		}
-	}
-}
-
 BRA_the_inevitable = {
-	BRA_scrounge_up_more_guns = {
-		icon = GFX_decision_unknown
-		available = {
-			check_variable = {
-				var = industrial_power
-				value = 10
-				compare = greater_than_or_equals
-			}
-		}
-		visible = {
-			always = yes
-		}
-		fire_only_once = no
-		days_re_enable = 20
-		complete_effect = {
-			add_to_variable = {
-				var = industrial_power
-				value = -10
-			}
-			add_equipment_to_stockpile = {
-				type = gun_equipment
-				amount = 1000
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	BRA_buy_infantry_survival_kits = {
-		icon = GFX_decision_unknown
-		available = {
-			check_variable = {
-				var = industrial_power
-				value = 10
-				compare = greater_than_or_equals
-			}
-		}
-		visible = {
-			always = yes
-		}
-		fire_only_once = no
-		days_re_enable = 20
-		complete_effect = {
-			add_to_variable = {
-				var = industrial_power
-				value = -10
-			}
-			add_equipment_to_stockpile = {
-				type = infantry_eq
-				amount = 500
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	BRA_tune_production = {
-		icon = GFX_decision_unknown
-		available = {
-			check_variable = {
-				var = industrial_power
-				value = 20
-				compare = greater_than_or_equals
-			}
-		}
-		visible = {
-			always = yes
-		}
-		fire_only_once = yes
-		days_remove = 35
-		complete_effect = {
-			add_to_variable = {
-				var = industrial_power
-				value = -20
-			}
-		}
-		modifier = {
-			production_factory_efficiency_gain_factor = 0.3
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	BRA_foreign_lease_for_factories = {
-		icon = GFX_decision_unknown
-		available = {
-			check_variable = {
-				var = industrial_power
-				value = 30
-				compare = greater_than_or_equals
-			}
-		}
-		visible = {
-			always = yes
-		}
-		fire_only_once = yes
-		days_remove = 60
-		complete_effect = {
-			add_to_variable = {
-				var = industrial_power
-				value = -30
-			}
-		}
-		remove_effect = {
-			add_offsite_building = {
-				type = arms_factory
-				level = 1
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	BRA_clean_house = {
-		icon = GFX_decision_unknown
-		cost = 40
-		visible = {
-			always = yes
-		}
-		fire_only_once = yes
-		days_remove = 10
-		remove_effect = {
-			subtract_from_variable = {
-				var = corruption_variable
-				value = 5
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	BRA_hire_better_propagandists = {
-		icon = GFX_decision_unknown
-		cost = 40
-		visible = {
-			always = yes
-		}
-		fire_only_once = yes
-		days_remove = 10
-		remove_effect = {
-			add_war_support = 0.05
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	BRA_authorize_use_of_force = {
-		icon = GFX_decision_unknown
-		cost = 40
-		visible = {
-			always = yes
-		}
-		fire_only_once = yes
-		days_remove = 10
-		remove_effect = {
-			add_stability = 0.05
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	BRA_mobilize_reservists = {
-		icon = GFX_decision_unknown
-		cost = 40
-		visible = {
-			always = yes
-		}
-		fire_only_once = yes
-		days_remove = 10
-		remove_effect = {
-			add_manpower = 100000
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
 	BRA_cross_the_andes = {
 		icon = GFX_decision_unknown
-		visible = {
-			always = yes
-		}
-		fire_only_once = yes
-		days_mission_timeout = 250
-		timeout_effect = {
-			country_event = {
-				id = brazil.5
+		available = {
+			NOT = {
+				country_exists = PRU
 			}
 		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	BRA_breakthrough_priority = {
-		icon = GFX_decision_unknown
-		allowed = {
-			tag = BRA
-		}
-		available = {
-			has_war_with = PRU
-			command_power > 25
-		}
 		visible = {
-			always = yes
+			#
 		}
 		fire_only_once = yes
-		days_remove = 10
-		complete_effect = {
-			add_command_power = -25
-		}
-		modifier = {
-			breakthrough_factor = 0.1
-			army_attack_factor = 0.1
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	BRA_drone_police = {
-		icon = GFX_decision_unknown
-		allowed = {
-			tag = BRA	
-		}
-		visible = {
-			always = yes
-		}
-		available = {
-			has_war_with = PRU
-			command_power > 25
-		}
-		fire_only_once = yes
-		days_remove = 60
-		complete_effect = {
-			add_command_power = -25
-		}
-		modifier = {
-			resistance_growth = -0.1
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	BRA_risky_maneuvers = {
-		icon = GFX_decision_unknown
-		allowed = {
-			tag = BRA
-		}
-		visible = {
-			always = yes
-		}
-		available = {
-			has_war_with = PRU
-			command_power > 25
-		}
-		fire_only_once = yes
-		days_remove = 20
-		complete_effect = {
-			add_command_power = -25
-		}
-		modifier = {
-			army_speed_factor = 0.1
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	BRA_entrenchment_doctrine = {
-		icon = GFX_decision_unknown
-		allowed = {
-			tag = BRA
-		}
-		visible = {
-			always = yes
-		}
-		available = {
-			has_war_with = PRU
-			command_power > 25
-		}
-		fire_only_once = yes
-		days_remove = 20
-		complete_effect = {
-			add_command_power = -25
-		}
-		modifier = {
-			army_defence_factor = 0.1
+		war_with_on_timeout = PRU
+		days_mission_timeout = 250
+		timeout_effect = {
+			BRA = {
+				#country_event = {
+				#	id = brazil.5
+				#}
+				declare_war_on = {
+					target = PRU
+					type = puppet_wargoal_focus
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -368,21 +32,25 @@ BRA_the_inevitable = {
 		icon = GFX_decision_unknown
 		activation = { 
 			has_war_with = PRU
-		} 
-		visible = {
-			always = yes
+		}
+		available = {
+			PRU = {
+				surrender_progress > 0.5
+			}
 		}
 		fire_only_once = yes
 		days_mission_timeout = 100
 		timeout_effect = {
-			country_event = {
-				id = brazil.7
+			custom_effect_tooltip = BRA_start_civil_war_tt
+			hidden_effect = {
+				set_global_flag = brazil_civil_war
+				##BRA_set_starting_values = yes
+				BRA_set_borders = yes
 			}
 		}
 		complete_effect = {
-			country_event = {
-				id = brazil.6
-			}
+			add_war_support = 1
+			add_stability = 0.2
 		}
 		ai_will_do = {
 			factor = 1
