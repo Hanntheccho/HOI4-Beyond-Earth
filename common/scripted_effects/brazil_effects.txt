@@ -1020,6 +1020,28 @@
 ##	}
 ##}
 
+BRA_set_borders_legiao = {
+	URG = {
+		transfer_state = 185
+		add_state_core = 185
+	}
+	LEG = {
+		inherit_technology = BRA
+		transfer_state = 205
+		transfer_state = 194
+		declare_war_on = {
+			target = BRA
+			type = annex_everything
+		}
+		every_state = {
+			limit = {
+				is_core_of = BRA
+			}
+			add_core_of = LEG
+		}
+	}
+}
+
 BRA_set_borders = { 
 	BGV = {
 		annex_country = {
@@ -1053,15 +1075,13 @@ BRA_set_borders = {
 		transfer_state = 204
 		transfer_state = 198
 	}
-	LEG = {
-		inherit_technology = BRA
-		transfer_state = 205
-		transfer_state = 194
-	}
 	GRP = {
 		inherit_technology = PRU
 		transfer_state = 120
 		transfer_state = 170
+		transfer_state = 193
+		transfer_state = 196
+		transfer_state = 203
 	}
 	LAM = {
 		inherit_technology = BRA
@@ -1069,7 +1089,15 @@ BRA_set_borders = {
 		transfer_state = 151
 		transfer_state = 153
 		transfer_state = 136
-		transfer_state = 122
+		transfer_state = 122	
+	}
+	every_state = {
+		limit = {
+			is_core_of = BRA
+		}
+		add_core_of = BGV
+		add_core_of = GRP
+		add_core_of = LAM
 	}
 	#PRU = { puppet = GRP }
 	BGV = { change_tag_from = BRA }

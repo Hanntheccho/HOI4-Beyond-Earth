@@ -21,11 +21,10 @@ The following sections are made to allow a central database of all the changes a
     5. [Industrial Power](#industrialpower)
     6. [Augments](#augments)
     7. [Ecobalance Decay](#ecobalance) #ALSO FORMELY KNOWN AS "DEVASTATION"
-    8. [Country Traits](#traits)
-    9. [Scavenging](#scavenging)
-    10. [United Nations](#un)
-    11. [Bolivar](#bolivar)
-    12. [Brazil](#brazil)
+    8. [Scavenging](#scavenging)
+    9. [United Nations](#un)
+    10. [Bolivar](#bolivar)
+    11. [Brazil](#brazil)
 
 ## Map <a name="map"></a>
 ---
