@@ -1021,38 +1021,47 @@
 ##}
 
 BRA_set_borders_legiao = {
+	every_state = {
+		limit = {
+			is_core_of = BRA
+		}
+		add_core_of = LEG
+	}
 	URG = {
-		transfer_state = 185
 		add_state_core = 185
+		transfer_state = 185
 	}
 	LEG = {
-		inherit_technology = BRA
 		transfer_state = 205
 		transfer_state = 194
+		inherit_technology = BRA
 		declare_war_on = {
 			target = BRA
 			type = annex_everything
 		}
-		every_state = {
-			limit = {
-				is_core_of = BRA
-			}
-			add_core_of = LEG
-		}
+		load_oob = LEG_OOB
 	}
 }
 
 BRA_set_borders = { 
+	every_state = {
+		limit = {
+			is_core_of = BRA
+		}
+		add_core_of = BGV
+		add_core_of = GRP
+		add_core_of = LAM
+		remove_core_of = BRA
+	}
 	BGV = {
+		declare_war_on = {
+			target = LEG
+			type = annex_everything
+		}
 		annex_country = {
 			target = BRA
 			transfer_troops = yes
 		}
-		inherit_technology = BRA
-		transfer_state = 203
-		transfer_state = 196
-		transfer_state = 193
-		transfer_state = 185
 		transfer_state = 183
 		transfer_state = 192
 		transfer_state = 200
@@ -1070,35 +1079,31 @@ BRA_set_borders = {
 		transfer_state = 169
 		transfer_state = 180
 		transfer_state = 169
-		transfer_state = 162
 		transfer_state = 197
 		transfer_state = 204
 		transfer_state = 198
-	}
-	GRP = {
-		inherit_technology = PRU
-		transfer_state = 120
-		transfer_state = 170
-		transfer_state = 193
-		transfer_state = 196
-		transfer_state = 203
-	}
-	LAM = {
+		transfer_state = 162
 		inherit_technology = BRA
+	}
+	#GRP = {
+	#	inherit_technology = PRU
+	#	transfer_state = 193
+	#	transfer_state = 196
+	#	transfer_state = 203
+	#	load_oob = GRP_OOB
+	#}
+	LAM = {
 		transfer_state = 167
 		transfer_state = 151
 		transfer_state = 153
 		transfer_state = 136
 		transfer_state = 122	
+		#transfer_state = 162
+		inherit_technology = BRA
+		load_oob = LAM_OOB
 	}
-	every_state = {
-		limit = {
-			is_core_of = BRA
-		}
-		add_core_of = BGV
-		add_core_of = GRP
-		add_core_of = LAM
+	PRU = {
+		transfer_state = 120
 	}
-	#PRU = { puppet = GRP }
 	BGV = { change_tag_from = BRA }
 }

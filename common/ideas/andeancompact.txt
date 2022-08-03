@@ -60,6 +60,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
+				army_org_factor = -0.15
 				experience_gain_army = -0.5
 				experience_gain_air = -0.5
 				experience_gain_navy = -0.5
@@ -74,168 +75,182 @@ ideas = {
 			}
 		}
 
+		PRU_brazilian_war = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+			
+		}
+
 		#NON INITIAL IDEAS
 		
-		PRU_the_andean_century_2 = {
-			allowed = {
-				tag = PRU
-			}
-			allowed_civil_war = {
-				always = no
-			}
-			on_add = {
-				add_to_variable = {industrial_power_gain = 0.1}
-			}
-			on_remove = {
-				add_to_variable = {industrial_power_gain = -0.1}
-			}
-			modifier = {
-				political_power_gain = 0.25
-				command_power_gain = 0.1
-				research_speed_factor = 0.05
-				production_speed_bunker_factor = 0.1
-				production_speed_coastal_bunker_factor = 0.1
-			}
-		}
-
-		PRU_the_andean_century_3 = {
-			allowed = {
-				tag = PRU
-			}
-			allowed_civil_war = {
-				always = no
-			}
-			on_add = {
-				add_to_variable = {industrial_power_gain = 0.1}
-			}
-			on_remove = {
-				add_to_variable = {industrial_power_gain = -0.1}
-			}
-			modifier = {
-				political_power_gain = 0.25
-				command_power_gain = 0.1
-				research_speed_factor = 0.05
-				production_speed_bunker_factor = 0.1
-				production_speed_coastal_bunker_factor = 0.1
-				production_speed_industrial_complex_factor = -0.05
-				production_speed_arms_factory_factor = 0.1
-			}
-		}
-
-		PRU_the_andean_century_4 = {
-			allowed = {
-				tag = PRU
-			}
-			allowed_civil_war = {
-				always = no
-			}
-			on_add = {
-				add_to_variable = {industrial_power_gain = 0.1}
-			}
-			on_remove = {
-				add_to_variable = {industrial_power_gain = -0.1}
-			}
-			modifier = {
-				political_power_gain = 0.25
-				command_power_gain = 0.1
-				research_speed_factor = 0.05
-				production_speed_bunker_factor = 0.1
-				production_speed_coastal_bunker_factor = 0.1
-				production_speed_industrial_complex_factor = -0.05
-				production_speed_arms_factory_factor = 0.1
-				conscription = 0.05
-			}
-		}
-
-		PRU_the_lithium_business_2 = {
-			allowed = {
-				tag = PRU
-			}
-			allowed_civil_war = {
-				always = no
-			}
-			modifier = {
-				consumer_goods_factor = -0.15
-				production_speed_buildings_factor = 0.1
-				industry_free_repair_factor = 0.1
-			}
-		}
-
-		PRU_the_andean_army = {
-			allowed = {
-				tag = PRU
-			}
-			allowed_civil_war = {
-				always = no
-			}
-			modifier = {
-				experience_gain_army = 0.05
-			}
-		}
-
-		PRU_the_andean_army_2 = {
-			allowed = {
-				tag = PRU
-			}
-			allowed_civil_war = {
-				always = no
-			}
-			modifier = {
-				experience_gain_army = 0.05
-				special_forces_cap = 0.03
-			}
-		}
-
-		PRU_the_andean_army_3 = {
-			allowed = {
-				tag = PRU
-			}
-			allowed_civil_war = {
-				always = no
-			}
-			modifier = {
-				experience_gain_army = 0.05
-				special_forces_cap = 0.03
-				army_core_attack_factor = 0.05
-				army_core_defence_factor = 0.05
-			}
-		}
-
-		PRU_hardened_airframes = {
-			allowed = {
-				tag = PRU
-			}
-			allowed_civil_war = {
-				always = no
-			}
-			modifier = {
-				## WIP
-			}
-		}
-
-		PRU_power_projection = {
-			allowed = {
-				tag = PRU
-			}
-			allowed_civil_war = {
-				always = no
-			}
-			modifier = {
-				navy_max_range_factor = 0.05
-			}
-		}
-
-		PRU_protect_the_trade = {
-			allowed = {
-				tag = PRU
-			}
-			allowed_civil_war = {
-				always = no
-			}
-			modifier = {
-				naval_detection = 0.05
-			}
-		}
+#		PRU_the_andean_century_2 = {
+#			allowed = {
+#				tag = PRU
+#			}
+#			allowed_civil_war = {
+#				always = no
+#			}
+#			on_add = {
+#				add_to_variable = {industrial_power_gain = 0.1}
+#			}
+#			on_remove = {
+#				add_to_variable = {industrial_power_gain = -0.1}
+#			}
+#			modifier = {
+#				political_power_gain = 0.25
+#				command_power_gain = 0.1
+#				research_speed_factor = 0.05
+#				production_speed_bunker_factor = 0.1
+#				production_speed_coastal_bunker_factor = 0.1
+#			}
+#		}
+#
+#		PRU_the_andean_century_3 = {
+#			allowed = {
+#				tag = PRU
+#			}
+#			allowed_civil_war = {
+#				always = no
+#			}
+#			on_add = {
+#				add_to_variable = {industrial_power_gain = 0.1}
+#			}
+#			on_remove = {
+#				add_to_variable = {industrial_power_gain = -0.1}
+#			}
+#			modifier = {
+#				political_power_gain = 0.25
+#				command_power_gain = 0.1
+#				research_speed_factor = 0.05
+#				production_speed_bunker_factor = 0.1
+#				production_speed_coastal_bunker_factor = 0.1
+#				production_speed_industrial_complex_factor = -0.05
+#				production_speed_arms_factory_factor = 0.1
+#			}
+#		}
+#
+#		PRU_the_andean_century_4 = {
+#			allowed = {
+#				tag = PRU
+#			}
+#			allowed_civil_war = {
+#				always = no
+#			}
+#			on_add = {
+#				add_to_variable = {industrial_power_gain = 0.1}
+#			}
+#			on_remove = {
+#				add_to_variable = {industrial_power_gain = -0.1}
+#			}
+#			modifier = {
+#				political_power_gain = 0.25
+#				command_power_gain = 0.1
+#				research_speed_factor = 0.05
+#				production_speed_bunker_factor = 0.1
+#				production_speed_coastal_bunker_factor = 0.1
+#				production_speed_industrial_complex_factor = -0.05
+#				production_speed_arms_factory_factor = 0.1
+#				conscription = 0.05
+#			}
+#		}
+#
+#		PRU_the_lithium_business_2 = {
+#			allowed = {
+#				tag = PRU
+#			}
+#			allowed_civil_war = {
+#				always = no
+#			}
+#			modifier = {
+#				consumer_goods_factor = -0.15
+#				production_speed_buildings_factor = 0.1
+#				industry_free_repair_factor = 0.1
+#			}
+#		}
+#
+#		PRU_the_andean_army = {
+#			allowed = {
+#				tag = PRU
+#			}
+#			allowed_civil_war = {
+#				always = no
+#			}
+#			modifier = {
+#				experience_gain_army = 0.05
+#			}
+#		}
+#
+#		PRU_the_andean_army_2 = {
+#			allowed = {
+#				tag = PRU
+#			}
+#			allowed_civil_war = {
+#				always = no
+#			}
+#			modifier = {
+#				experience_gain_army = 0.05
+#				special_forces_cap = 0.03
+#			}
+#		}
+#
+#		PRU_the_andean_army_3 = {
+#			allowed = {
+#				tag = PRU
+#			}
+#			allowed_civil_war = {
+#				always = no
+#			}
+#			modifier = {
+#				experience_gain_army = 0.05
+#				special_forces_cap = 0.03
+#				army_core_attack_factor = 0.05
+#				army_core_defence_factor = 0.05
+#			}
+#		}
+#
+#		PRU_hardened_airframes = {
+#			allowed = {
+#				tag = PRU
+#			}
+#			allowed_civil_war = {
+#				always = no
+#			}
+#			modifier = {
+#				## WIP
+#			}
+#		}
+#
+#		PRU_power_projection = {
+#			allowed = {
+#				tag = PRU
+#			}
+#			allowed_civil_war = {
+#				always = no
+#			}
+#			modifier = {
+#				navy_max_range_factor = 0.05
+#			}
+#		}
+#
+#		PRU_protect_the_trade = {
+#			allowed = {
+#				tag = PRU
+#			}
+#			allowed_civil_war = {
+#				always = no
+#			}
+#			modifier = {
+#				naval_detection = 0.05
+#			}
+#		}
 		
 	}
 }

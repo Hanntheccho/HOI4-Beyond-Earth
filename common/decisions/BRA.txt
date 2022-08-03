@@ -23,7 +23,7 @@ BRA_the_inevitable = {
 				}
 				activate_mission = BRA_cross_the_andes
 				activate_mission = BRA_legiao_uprising
-				activate_mission = BRA_cross_the_andes
+				activate_mission = BRA_conquer_the_acre_line
 			}
 		}
 		ai_will_do = {
@@ -80,6 +80,104 @@ BRA_the_inevitable = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+	}
+}
+
+BRA_the_recovery = {
+	BRA_oriental_league_war = {
+		icon = GFX_decision_war
+		available = {
+			URG = {
+				exists = yes
+			}
+		}
+		visible = {
+			#
+		}
+		war_with_on_remove = URG
+		targets = { URG }
+		fire_only_once = yes
+		days_remove = 30
+		remove_effect = {
+			declare_war_on = {
+				target = URG
+				type = annex_everything
+			}
+			every_state = {
+				limit = {
+					is_core_of = URG
+				}
+				add_core_of = BGV
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_war = no
+				add = 10
+			}
+		}
+	}
+	BRA_lamentadores_war = {
+		icon = GFX_decision_war
+		available = {
+			LAM = {
+				exists = yes
+			}
+		}
+		visible = {
+			#
+		}
+		war_with_on_remove = LAM
+		targets = { LAM }
+		fire_only_once = yes
+		days_remove = 30
+		remove_effect = {
+			declare_war_on = {
+				target = LAM
+				type = annex_everything
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_war = no
+				add = 10
+			}
+		}
+	}
+	BRA_cross_the_andes_again = {
+		icon = GFX_decision_war
+		available = {
+			PRU = {
+				exists = yes
+			}
+			BGV = {
+				all_core_state = {
+					is_controlled_by = BGV
+				}
+			}
+		}
+		visible = {
+			#
+		}
+		war_with_on_remove = PRU
+		targets = { PRU }
+		fire_only_once = yes
+		days_remove = 30
+		remove_effect = {
+			declare_war_on = {
+				target = PRU
+				type = puppet_wargoal_focus
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_war = no
+				add = 10
+			}
 		}
 	}
 }
