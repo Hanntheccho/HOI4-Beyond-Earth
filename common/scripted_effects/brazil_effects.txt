@@ -1033,7 +1033,6 @@ BRA_set_borders_legiao = {
 	}
 	LEG = {
 		transfer_state = 205
-		transfer_state = 194
 		inherit_technology = BRA
 		declare_war_on = {
 			target = BRA
@@ -1049,19 +1048,20 @@ BRA_set_borders = {
 			is_core_of = BRA
 		}
 		add_core_of = BGV
-		add_core_of = GRP
+		#add_core_of = GRP
 		add_core_of = LAM
 		remove_core_of = BRA
 	}
 	BGV = {
-		declare_war_on = {
-			target = LEG
-			type = annex_everything
-		}
 		annex_country = {
 			target = BRA
 			transfer_troops = yes
 		}
+		declare_war_on = {
+			target = LEG
+			type = annex_everything
+		}
+		transfer_state = 194
 		transfer_state = 183
 		transfer_state = 192
 		transfer_state = 200
