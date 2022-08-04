@@ -317,14 +317,24 @@ eurowar_decisions = {
 		fire_only_once = yes
 		days_mission_timeout = 770
 		timeout_effect = {
-			FIN = {
-				puppet = KAR
-			}
 			KAR = {
 				add_ideas = EU_treaty_of_bern
 				set_cosmetic_tag = KAR_karjala
 				remove_ideas = KAR_finno_slavic_tension
 				remove_ideas = KAR_keepers_of_revolution
+				if = {
+					limit = {
+						FIN = {
+							is_in_faction_with = SCO
+						}
+						SCO = {
+							is_faction_leader = yes
+						}
+					}
+					SCO = {
+						add_to_faction = KAR
+					}
+				}
 			}
 			if = {
 				limit = {
@@ -338,12 +348,7 @@ eurowar_decisions = {
 				}
 			}
 			SOV = {
-				white_peace = KAR
 				add_war_support = -0.2
-				create_wargoal = {
-					type = annex_everything
-					target = KAR
-				}
 			}
 		}
 		ai_will_do = {
