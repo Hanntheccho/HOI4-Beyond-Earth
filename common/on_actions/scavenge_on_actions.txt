@@ -8,7 +8,10 @@ on_actions = {
 				THIS = {
 					if = {
 						limit = {
-							has_idea = agrarian_stage
+							OR = {
+								has_idea = agrarian_stage
+								has_idea = developing_stage
+							}
 						}
 						log = "-----[THIS.GetTag] SCAVENGING SYSTEM BOOTUP-----"
 						set_variable = {scavenger_points = 0}
@@ -42,7 +45,10 @@ on_actions = {
 		effect = {
 			every_country = {
 				limit = {
-					has_idea = agrarian_stage
+					OR = {
+						has_idea = agrarian_stage
+						has_idea = developing_stage
+					}
 				}
 				THIS = {
 					if = {
@@ -76,15 +82,15 @@ on_actions = {
 		effect = {
 			every_country = {
 				limit = {
-					AND = {
+					OR = {
 						has_idea = agrarian_stage
-						check_variable = {
-							var = calculated_monthly_rate
-							value = 0
-							compare = equals
-						}
+						has_idea = developing_stage
 					}
-					
+					check_variable = {
+						var = calculated_monthly_rate
+						value = 0
+						compare = equals
+					}					
 				}
 				THIS = {
 					log = "-------[THIS.GetTag] Scavenger Monthly Add-------"
