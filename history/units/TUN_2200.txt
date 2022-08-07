@@ -66,9 +66,36 @@ division_template = {
 	}
 }
 
-###REDUCE THE NUMBER OF UNITS#######################################################################################################################################
+division_template = {
+	name = "Armoured Group"			
+
+	regiments = {
+		MBT = { x = 0 y = 0 }
+		MBT = { x = 0 y = 1 }
+		MBT= { x = 0 y = 2 }
+		rocket_artillery_brigade = {x = 0 y = 3}
+        apc = { x = 1 y = 0 }
+		apc = { x = 1 y = 1 }
+		apc = { x = 1 y = 2 }
+		apc = { x = 1 y = 3 }
+		apc = { x = 1 y = 4 }
+		apc = { x = 2 y = 0 }
+	}
+	support = {
+		artillery = {x = 0 y = 0}
+	}
+}
 
 units = {
+    division= {
+	    division_name = {
+	        is_name_ordered = yes
+	        name_order = 1
+	    }
+	    location = 4273
+	    division_template = "Armoured Group"
+	    start_experience_factor = 0.3
+	}
 	division= {
 	    division_name = {
 	        is_name_ordered = yes
@@ -129,7 +156,7 @@ units = {
 	        name_order = 1
 	    }
 	    location = 3427
-	    division_template = "Regular Riflemen"
+	    division_template = "Light Riflemen"
 	    start_experience_factor = 0.3
 	}
 	division = {
@@ -138,7 +165,7 @@ units = {
 	        name_order = 1
 	    }
 	    location = 3417
-	    division_template = "Regular Riflemen"
+	    division_template = "Light Riflemen"
 	    start_experience_factor = 0.3
 	}
 	division = {
@@ -147,7 +174,7 @@ units = {
 	        name_order = 1
 	    }
 	    location = 3804
-	    division_template = "Regular Riflemen"
+	    division_template = "Light Riflemen"
 	    start_experience_factor = 0.3
 	}
 	division = {
@@ -208,7 +235,7 @@ units = {
 	    name = "Maghreb Mediterranean Fleet"
 	    naval_base = 4273
 	    task_force = {
-	        name = "Maghreb Strike Force"
+	        name = "Blida Strike Force"
 	        location = 4273
 	        ship = { name = "MSS Azao" definition = light_cruiser start_experience_factor = 0.1 equipment = { be_battlecruiser_1  = { amount = 1 owner = TUN } } }
 	        ship = { name = "MSS Tessala" definition = destroyer start_experience_factor = 0.1 equipment = { be_destroyer_1  = { amount = 1 owner = TUN } } }
@@ -220,6 +247,14 @@ units = {
 	        ship = { name = "MSS Valva" definition = submarine start_experience_factor = 0.1 equipment = { be_submarine_1  = { amount = 1 owner = TUN } } }
 	        ship = { name = "MSS Bouzegza" definition = submarine start_experience_factor = 0.1 equipment = { be_submarine_1  = { amount = 1 owner = TUN } } }
 	        ship = { name = "MSS Choukchout" definition = submarine start_experience_factor = 0.1 equipment = { be_submarine_1  = { amount = 1 owner = TUN } } }
+	    }
+	    task_force = {
+	        name = "Beja Strike Force"
+	        location = 4772
+	        ship = { name = "MSS Chambi" definition = destroyer start_experience_factor = 0.1 equipment = { be_destroyer_1  = { amount = 1 owner = TUN } } }
+	        ship = { name = "MSS Bireno" definition = destroyer start_experience_factor = 0.1 equipment = { be_destroyer_1  = { amount = 1 owner = TUN } } }
+	        ship = { name = "MSS Ajered" definition = destroyer start_experience_factor = 0.1 equipment = { be_destroyer_1  = { amount = 1 owner = TUN } } }
+	        ship = { name = "MSS Selloum" definition = destroyer start_experience_factor = 0.1 equipment = { be_destroyer_1  = { amount = 1 owner = TUN } } }
 	    }
 	}
 }
