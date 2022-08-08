@@ -594,134 +594,69 @@ on_actions = {
 				remove_ideas = periphal_anarchy
 				add_ideas = urban_collapse
 			}
-			if = {
-				limit = {
-					has_country_flag = tradition_three
-				}
-				add_to_variable = { max_devastation = 5 }
-			}
-			if = {
-				limit = {
-					has_country_flag = expansion_three
-				}
-				add_to_variable = { max_devastation = 5 }
-			}
-			if = {
-				limit = {
-					has_country_flag = consumption_three
-				}
-				add_to_variable = { max_devastation = 5 }
-			}
-			if = {
-				limit = {
-					has_country_flag = prosperity_three
-				}
-				add_to_variable = { max_devastation = 5 }
-			}
-			if = {
-				limit = {
-					has_country_flag = order_three
-				}
-				add_to_variable = { max_devastation = 5 }
-			}
-			if = {
-				limit = {
-					has_country_flag = liberty_three
-				}
-				add_to_variable = { max_devastation = 5 }
-			}
 		}
 	}
 	###
 	#MONTHLY INCREASING WORLD TENSION
-	on_monthly = {
+	on_monthly_ADU = {
 		effect = {
-			if = {
-				limit = {
-					threat < 1
-				}
-				set_variable = { global.total_global_devastation = 0 }
-				every_state = {
-					if = {
-						limit = {
-							has_dynamic_modifier = {
-								modifier = terminal_devastation
-							}
-						}
-						add_to_variable = {
-							global.total_global_devastation = 4
-						}
-					}
-					if = {
-						limit = {
-							has_dynamic_modifier = {
-								modifier = significant_devastation
-							}
-						}
-						add_to_variable = {
-							global.total_global_devastation = 3
-						}
-					}
-					if = {
-						limit = {
-							has_dynamic_modifier = {
-								modifier = major_devastation
-							}
-						}
-						add_to_variable = {
-							global.total_global_devastation = 2
-						}
-					}
-					if = {
-						limit = {
-							has_dynamic_modifier = {
-								modifier = notable_devastation
-							}
-						}
-						add_to_variable = {
-							global.total_global_devastation = 1
-						}
-					}
-				}
-				divide_variable = { global.total_global_devastation = 100000 }
-				random_country = {
+			limit = {
+				threat < 1
+			}
+			set_variable = { global.total_global_devastation = 0 }
+			every_state = {
+				if = {
 					limit = {
-						owns_state = 333
+						has_dynamic_modifier = {
+							modifier = terminal_devastation
+						}
 					}
-					add_named_threat = { 
-						threat = global.total_global_devastation 
-						name = total_global_devastation_added
+					add_to_variable = {
+						global.total_global_devastation = 4
 					}
+				}
+				if = {
+					limit = {
+						has_dynamic_modifier = {
+							modifier = significant_devastation
+						}
+					}
+					add_to_variable = {
+						global.total_global_devastation = 3
+					}
+				}
+				if = {
+					limit = {
+						has_dynamic_modifier = {
+							modifier = major_devastation
+						}
+					}
+					add_to_variable = {
+						global.total_global_devastation = 2
+					}
+				}
+				if = {
+					limit = {
+						has_dynamic_modifier = {
+							modifier = notable_devastation
+						}
+					}
+					add_to_variable = {
+						global.total_global_devastation = 1
+					}
+				}
+			}
+			divide_variable = { global.total_global_devastation = 1000 }
+			random_country = {
+				limit = {
+					owns_state = 333
+				}
+				add_named_threat = { 
+					threat = global.total_global_devastation
+					name = total_global_devastation_added
 				}
 			}
 		}
 	}
-	#on_monthly = {
-	#	effect = {
-    #        every_country = {
-	#			clear_variable = devastation_ratio_new
-	#			clear_variable = devastation_ratio_new_factory
-	#			clear_variable = devastation_ratio_new_population
-    #            set_variable = { devastation_ratio_new_factory = num_of_civilian_factories }
-    #            multiply_variable = { devastation_ratio_new_factory = 1.25 }
-    #            add_to_variable = { devastation_ratio_new_factory = num_of_military_factories }
-    #            add_to_variable = { devastation_ratio_new_factory = num_of_naval_factories }
-	#			set_variable = { ROOT.devastation_ratio_new_population = 0 }
-	#			every_owned_state = {
-	#				limit = {
-	#					NOT = {
-	#						is_core_of = ROOT
-	#					}
-	#				}
-	#				add_to_variable = { ROOT.devastation_ratio_new_population = THIS.state_population_k }
-	#			}
-	#			divide_variable = { devastation_ratio_new_population = 4 }
-	#			add_to_variable = { devastation_ratio_new_population = max_manpower_k }
-	#			round_variable = devastation_ratio_new_population
-	#			set_variable = { devastation_ratio_new = devastation_ratio_new_factory }
-	#			divide_variable = { devastation_ratio_new = devastation_ratio_new_population }
-	#			round_variable = devastation_ratio_new
-    #        }
-	#	}
-	#}
+	###
 }

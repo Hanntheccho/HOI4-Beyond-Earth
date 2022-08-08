@@ -1084,59 +1084,54 @@ on_actions = {
 
     on_daily = {
         effect = {
-            every_country = {
-                set_variable = { division_limit = num_of_military_factories }
-                add_to_variable = { division_limit = num_of_controlled_states }
-
-                if = { 
-                    limit = { has_idea = agrarian_stage }
-                    add_to_variable = { division_limit = 1 }
-                }
-                if = { 
-                    limit = { has_idea = developing_stage }
-                    add_to_variable = { division_limit = 5 }
-                }
-                if = { 
-                    limit = { has_idea = developed_stage }
-                    add_to_variable = { division_limit = 10 }
-                }
-                if = { 
-                    limit = { 
-                        OR = {
-                            has_idea = regional_stage 
-                            has_idea = continental_stage 
-                            has_idea = global_stage
-                        }
-                    }
-                    add_to_variable = { division_limit = 10 }
-                }
-
-                round_variable = division_limit
-
-                if = {
-                    limit = {
-                        check_variable = { num_divisions > division_limit }
-                    }
-                    clear_variable = too_many_divs_var
-                	set_variable = { too_many_divs_var = num_divisions }
-                	divide_variable = { too_many_divs_var = division_limit }
-                    divide_variable = { too_many_divs_var = 20 }
-                    multiply_variable = { too_many_divs_var = -1 }
-                    add_dynamic_modifier = {
-                        modifier = too_many_divs
+            set_variable = { division_limit = num_of_military_factories }
+            add_to_variable = { division_limit = num_of_controlled_states }
+            if = { 
+                limit = { has_idea = agrarian_stage }
+                add_to_variable = { division_limit = 1 }
+            }
+            if = { 
+                limit = { has_idea = developing_stage }
+                add_to_variable = { division_limit = 5 }
+            }
+            if = { 
+                limit = { has_idea = developed_stage }
+                add_to_variable = { division_limit = 10 }
+            }
+            if = { 
+                limit = { 
+                    OR = {
+                        has_idea = regional_stage 
+                        has_idea = continental_stage 
+                        has_idea = global_stage
                     }
                 }
-                else_if = {
-                    limit = {
-                        AND = {
-                            check_variable = { num_divisions < division_limit }
-                            has_dynamic_modifier = { modifier = too_many_divs }
-                        }
+                add_to_variable = { division_limit = 10 }
+            }
+            round_variable = division_limit
+            if = {
+                limit = {
+                    check_variable = { num_divisions > division_limit }
+                }
+                clear_variable = too_many_divs_var
+            	set_variable = { too_many_divs_var = num_divisions }
+            	divide_variable = { too_many_divs_var = division_limit }
+                divide_variable = { too_many_divs_var = 20 }
+                multiply_variable = { too_many_divs_var = -1 }
+                add_dynamic_modifier = {
+                    modifier = too_many_divs
+                }
+            }
+            else_if = {
+                limit = {
+                    AND = {
+                        check_variable = { num_divisions < division_limit }
+                        has_dynamic_modifier = { modifier = too_many_divs }
                     }
-                    clear_variable = too_many_divs_var
-                    remove_dynamic_modifier = {
-                        modifier = too_many_divs
-                    }
+                }
+                clear_variable = too_many_divs_var
+                remove_dynamic_modifier = {
+                    modifier = too_many_divs
                 }
             }
         }
@@ -1144,92 +1139,89 @@ on_actions = {
 
     on_daily = {
         effect = {
-            every_country = {
+            if = {
+                limit = { num_of_factories < 198 }
                 if = {
-                    limit = { num_of_factories < 198 }
-                    if = {
-                        limit = {
-                            num_of_factories > 8
-                            NOT = { num_of_factories > 18 }
-                            NOT = { has_idea = developing_stage }
-                        }
-                        remove_ideas = agrarian_stage
-                        remove_ideas = developed_stage
-                        remove_ideas = regional_stage
-                        remove_ideas = continental_stage
-                        remove_ideas = global_stage
-                        add_ideas = developing_stage
+                    limit = {
+                        num_of_factories > 8
+                        NOT = { num_of_factories > 18 }
+                        NOT = { has_idea = developing_stage }
                     }
-                    else_if = {
-                        limit = {
-                            num_of_factories > 17
-                            NOT = { num_of_factories > 28 }
-                            NOT = { has_idea = developed_stage }
-                        }
-                        remove_ideas = agrarian_stage
-                        remove_ideas = developing_stage
-                        remove_ideas = regional_stage
-                        remove_ideas = continental_stage
-                        remove_ideas = global_stage
-                        add_ideas = developed_stage
-                    }
-                    else_if = {
-                        limit = {
-                            num_of_factories > 27
-                            NOT = { num_of_factories > 98 }
-                            NOT = { has_idea = regional_stage }
-                        }
-                        remove_ideas = agrarian_stage
-                        remove_ideas = developed_stage
-                        remove_ideas = developing_stage
-                        remove_ideas = continental_stage
-                        remove_ideas = global_stage
-                        add_ideas = regional_stage
-                    }
-                    else_if = {
-                        limit = {
-                            num_of_factories > 97
-                            NOT = { num_of_factories > 198 }
-                            NOT = { has_idea = continental_stage }
-                        }
-                        remove_ideas = agrarian_stage
-                        remove_ideas = developed_stage
-                        remove_ideas = developing_stage
-                        remove_ideas = regional_stage
-                        remove_ideas = global_stage
-                        add_ideas = continental_stage
-                    }
-                    else_if = {
-                        limit = {
-                            num_of_factories < 9
-                            NOT = { has_idea = agrarian_stage }
-                        }
-                        remove_ideas = developed_stage
-                        remove_ideas = developing_stage
-                        remove_ideas = regional_stage
-                        remove_ideas = continental_stage
-                        remove_ideas = global_stage
-                        add_ideas = agrarian_stage
-                    }
-                    else = {
-    
-                    }
+                    remove_ideas = agrarian_stage
+                    remove_ideas = developed_stage
+                    remove_ideas = regional_stage
+                    remove_ideas = continental_stage
+                    remove_ideas = global_stage
+                    add_ideas = developing_stage
                 }
                 else_if = {
                     limit = {
-                        num_of_factories > 197
-                        NOT = { has_idea = global_stage }
+                        num_of_factories > 17
+                        NOT = { num_of_factories > 28 }
+                        NOT = { has_idea = developed_stage }
+                    }
+                    remove_ideas = agrarian_stage
+                    remove_ideas = developing_stage
+                    remove_ideas = regional_stage
+                    remove_ideas = continental_stage
+                    remove_ideas = global_stage
+                    add_ideas = developed_stage
+                }
+                else_if = {
+                    limit = {
+                        num_of_factories > 27
+                        NOT = { num_of_factories > 98 }
+                        NOT = { has_idea = regional_stage }
+                    }
+                    remove_ideas = agrarian_stage
+                    remove_ideas = developed_stage
+                    remove_ideas = developing_stage
+                    remove_ideas = continental_stage
+                    remove_ideas = global_stage
+                    add_ideas = regional_stage
+                }
+                else_if = {
+                    limit = {
+                        num_of_factories > 97
+                        NOT = { num_of_factories > 198 }
+                        NOT = { has_idea = continental_stage }
+                    }
+                    remove_ideas = agrarian_stage
+                    remove_ideas = developed_stage
+                    remove_ideas = developing_stage
+                    remove_ideas = regional_stage
+                    remove_ideas = global_stage
+                    add_ideas = continental_stage
+                }
+                else_if = {
+                    limit = {
+                        num_of_factories < 9
+                        NOT = { has_idea = agrarian_stage }
                     }
                     remove_ideas = developed_stage
                     remove_ideas = developing_stage
                     remove_ideas = regional_stage
                     remove_ideas = continental_stage
-                    add_ideas = global_stage
+                    remove_ideas = global_stage
+                    add_ideas = agrarian_stage
                 }
                 else = {
 
-                }  
+                }
             }
+            else_if = {
+                limit = {
+                    num_of_factories > 197
+                    NOT = { has_idea = global_stage }
+                }
+                remove_ideas = developed_stage
+                remove_ideas = developing_stage
+                remove_ideas = regional_stage
+                remove_ideas = continental_stage
+                add_ideas = global_stage
+            }
+            else = {
+            }  
         }
     }
 }

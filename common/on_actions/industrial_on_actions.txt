@@ -3,17 +3,8 @@ on_actions = {
 	on_startup = {
 		effect = {
 			every_country = {
-				limit = { 
-                    has_industrial_power = yes
-                }
                 set_variable = { industrial_power = 0 }
                 set_variable = { industrial_power_gain = 0 }
-				set_variable = { industrial_power_rate_agrarian = 0.2 }
-				set_variable = { industrial_power_rate_developing = 0.4 }
-				set_variable = { industrial_power_rate_developed = 0.8 }
-				set_variable = { industrial_power_rate_regional = 1 }
-				set_variable = { industrial_power_rate_continental = 1.5 }
-				set_variable = { industrial_power_rate_global = 2 }
             }
 		}
 	}
@@ -141,12 +132,6 @@ on_actions = {
             #    }
             #    subtract_from_variable = { industrial_power_gain = 2.5 }
 			#}
-			if = {
-				limit = { 
-                    has_country_flag = consumption_one
-                }
-                add_to_variable = { industrial_power_modifier = 0.15 }
-			}
 			if = {
 				limit = { 
                     has_idea = PUN_earths_gaping_wound
