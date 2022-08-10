@@ -36,7 +36,34 @@ scripted_gui = {
 			mastery_word_visible = {
 				has_government = mastery
 			}
+
+			supremacy_glow_visible = {
+				has_government = supremacy
+			}
+			purity_glow_visible = {
+				has_government = purity
+			}
+			harmony_glow_visible = {
+				has_government = harmony
+			}
+			neutral_glow_visible = {
+				has_government = neutral
+			}
+			divinity_glow_visible = {
+				has_government = divinity
+			}
+			voracity_glow_visible = {
+				has_government = voracity
+			}
+			mastery_glow_visible = {
+				has_government = mastery
+			}
 			#
+			utopian_energy_dudes_visible = {
+				check_variable = {
+					ecoscore_total = 5
+				}
+			}
 			positive_energy_dudes_visible = {
 				check_variable = {
 					ecoscore_total = 4
@@ -58,8 +85,23 @@ scripted_gui = {
 				}
 			}
 			#
+			utopian_ecobalance_dudes_visible = {
+				has_idea = stable_society
+				all_owned_state = {
+					has_dynamic_modifier = {
+						modifier = no_devastation
+					}
+				}
+			}
 			good_ecobalance_dudes_visible = {
 				has_idea = stable_society
+				NOT = {
+					all_owned_state = {
+						has_dynamic_modifier = {
+							modifier = no_devastation
+						}
+					}
+				}
 			}
 			neutral_ecobalance_dudes_visible = {
 				has_idea = mobilizing_society
