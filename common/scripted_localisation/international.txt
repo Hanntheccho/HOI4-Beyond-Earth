@@ -204,10 +204,7 @@ defined_text = {
 	name = GETchecklist_industrial_goal
 	text = {
 		trigger = {
-			AND = {
-				is_puppet = no
-				num_of_civilian_factories > 299
-			}
+			has_idea = global_stage
 		}
 		localization_key = industrial_goal_achieved
 	}
@@ -220,21 +217,32 @@ defined_text = {
 	name = GETchecklist_regional_goal
 	text = {
 		trigger = {
-			OR = {
-				AND = {
-					is_puppet = no
-					is_in_faction = yes
-					num_faction_members > 5
-				}
-				AND = {
-					num_subjects > 4
-				}
+			NOT = {
+				has_idea = periphal_anarchy
+			}
+			NOT = {
+				has_idea = urban_collapse
 			}
 		}
 		localization_key = regional_goal_achieved
 	}
 	text = {
 		localization_key = regional_goal_not_achieved
+	}
+}
+
+defined_text = {
+	name = GETchecklist_government_goal
+	text = {
+		trigger = {
+			NOT = {
+				has_idea = anarchy_style
+			}
+		}
+		localization_key = government_goal_achieved
+	}
+	text = {
+		localization_key = government_goal_not_achieved
 	}
 }
 
