@@ -51,13 +51,20 @@ generic_decisions = {
 
 scavenging = {
 	icon = GFX_decision_category_generic
-	scripted_gui = scavenging_decisions_scripted_gui
-	allowed = {
+	visible = {
 		OR = {
 			has_idea = agrarian_stage
 			has_idea = developing_stage
 	    }
 	}
+	available = {
+		OR = {
+			has_idea = agrarian_stage
+			has_idea = developing_stage
+	    }
+	}
+	priority = 110
+	visible_when_empty = yes
 }
 
 #annexation_decisions = {

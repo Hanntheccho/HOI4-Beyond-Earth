@@ -1,9 +1,99 @@
 scavenging = {
-	convert_old_rifles = {
-		custom_cost_trigger = {
-			command_power > 4
+	scavenging_decisions_locate_foreign_sponsors = {
+		icon = GFX_decision_political
+		cost = 50
+		visible = {
+			#
 		}
-		custom_cost_text = scavenging_cost_5
+		available = {
+			check_variable = {
+				var = international_aid_available
+				value = 10
+				compare = less_than_or_equals
+			}
+			custom_trigger_tooltip = {
+				tooltip = scavenging_decisions_locate_foreign_sponsors_tooltip
+			}
+		}
+		complete_effect = {
+			add_to_variable = {international_aid_available = 1}
+		}
+		days_re_enable = 16
+		fire_only_once = no
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	scavenging_decisions_take_out_loans = {
+		icon = GFX_decision_industrial
+		custom_cost_trigger = {
+			check_variable = {
+				industrial_power > 9.99
+			}
+		}
+		custom_cost_text = decision_cost_10_ip
+		visible = {
+			#
+		}
+		available = {
+			NOT = {
+				has_idea = anarchy_style
+			}
+			has_war = no
+		}
+		complete_effect = {
+			country_event = {id=scav.1}
+			subtract_from_variable = {industrial_power = 10}
+		}
+		days_re_enable = 30
+		fire_only_once = no
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	scavenging_decisions_additional_scavengers = {
+		icon = GFX_decision_industrial
+		custom_cost_trigger = {
+			check_variable = {
+				industrial_power > 4.99
+			}
+		}
+		custom_cost_text = decision_cost_5_ip
+		visible = {
+			#
+		}
+		available = {
+			check_variable = {
+				var = areas_left_unsearched
+				value = 10
+				compare = greater_than_or_equals
+			}
+			custom_trigger_tooltip = {
+				tooltip = scavenging_decisions_additional_scavengers_tooltip
+			}
+			has_war = no
+		}
+		complete_effect = {
+			add_to_variable = {monthly_scavenger_rate = 10}
+			subtract_from_variable = {industrial_power = 5}
+		}
+		days_re_enable = 8
+		fire_only_once = no
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	convert_old_rifles = {
+		icon = GFX_decision_industrial
+		custom_cost_trigger = {
+			check_variable = {
+				industrial_power > 4.99
+			}
+		}
+		custom_cost_text = decision_cost_5_ip
+		visible = {
+			#
+		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = scavenger_point_cost_5
@@ -24,38 +114,36 @@ scavenging = {
 			add_command_power = -5
 		}
 		days_re_enable = 1
-		# ai_will_do = {
-		# 	factor = 1
-		# 	modifer = {
-		# 		if = {
-		# 			limit = {
-		# 				has_equipment = {
-		# 					gun_equipment < -150
-		# 				}
-		# 			}
-		# 			factor = 1000
-		# 		}
-		# 	}
-		# 	modifer = {
-		# 		if = {
-		# 			limit = {
-		# 				check_variable = {
-		# 					var = scavenger_points
-		# 					value = 40
-		# 					compare = greater_than_or_equals
-		# 				}
-		# 			}
-		# 			factor = 10 #Prioritize when avaiable, not always
-		# 		}
-		# 	}
-		# }
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_equipment = {
+					gun_equipment < -150
+				}
+				factor = 1000
+			}
+			modifier = {
+				check_variable = {
+					var = scavenger_points
+					value = 40
+					compare = greater_than_or_equals
+				}
+				factor = 10
+			}
+		}
 	}
 
 	convert_manpads = {
+		icon = GFX_decision_industrial
 		custom_cost_trigger = {
-			command_power > 4
+			check_variable = {
+				industrial_power > 4.99
+			}
 		}
-		custom_cost_text = scavenging_cost_5
+		custom_cost_text = decision_cost_5_ip
+		visible = {
+			#
+		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = scavenger_point_cost_5
@@ -96,10 +184,16 @@ scavenging = {
 	}
 
 	convert_artillery = {
+		icon = GFX_decision_industrial
 		custom_cost_trigger = {
-			command_power > 4
+			check_variable = {
+				industrial_power > 4.99
+			}
 		}
-		custom_cost_text = scavenging_cost_5
+		custom_cost_text = decision_cost_5_ip
+		visible = {
+			#
+		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = scavenger_point_cost_5
@@ -140,10 +234,16 @@ scavenging = {
 	}
 
 	convert_trucks = {
+		icon = GFX_decision_industrial
 		custom_cost_trigger = {
-			command_power > 4
+			check_variable = {
+				industrial_power > 4.99
+			}
 		}
-		custom_cost_text = scavenging_cost_5
+		custom_cost_text = decision_cost_5_ip
+		visible = {
+			#
+		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = scavenger_point_cost_5
@@ -184,10 +284,16 @@ scavenging = {
 	}
 
 	convert_supplies = {
+		icon = GFX_decision_industrial
 		custom_cost_trigger = {
-			command_power > 4
+			check_variable = {
+				industrial_power > 4.99
+			}
 		}
-		custom_cost_text = scavenging_cost_5
+		custom_cost_text = decision_cost_5_ip
+		visible = {
+			#
+		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = scavenger_point_cost_5
@@ -227,42 +333,17 @@ scavenging = {
 		# }
 	}
 
-	mobilize_migrating_tribes = {
+	organize_scrap_tank_brigrade = {
+		icon = GFX_decision_industrial
 		custom_cost_trigger = {
-			command_power > 9
-		}
-		custom_cost_text = scavenging_cost_10
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = scavenger_point_cost_10
 			check_variable = {
-				var = scavenger_points
-				value = 10
-				compare = greater_than_or_equals
+				industrial_power > 4.99
 			}
 		}
+		custom_cost_text = decision_cost_5_ip
+		visible = {
+			#
 		}
-		complete_effect = {
-			subtract_from_variable = {scavenger_points = 10}
-			custom_effect_tooltip = scavenger_points_10_tooltip
-			add_manpower = 10000
-			add_command_power = -10
-		}
-		days_re_enable = 1
-		# priority = {
-		# 	factor = 0
-		# 	modifer = {
-		# 		has_manpower < 101000
-		# 		factor = 1000 #Always
-		# 	}
-		# }
-	}
-
-	organize_scrap_tank_brigrade = {
-		custom_cost_trigger = {
-			command_power > 4
-		}
-		custom_cost_text = scavenging_cost_5
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = scavenger_point_cost_20
@@ -301,10 +382,16 @@ scavenging = {
 	}
 
 	form_scrap_airforce = {
+		icon = GFX_decision_industrial
 		custom_cost_trigger = {
-			command_power > 4
+			check_variable = {
+				industrial_power > 4.99
+			}
 		}
-		custom_cost_text = scavenging_cost_5
+		custom_cost_text = decision_cost_5_ip
+		visible = {
+			#
+		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = scavenger_point_cost_20
@@ -343,10 +430,16 @@ scavenging = {
 	}
 
 	hire_a_warband = {
+		icon = GFX_decision_industrial
 		custom_cost_trigger = {
-			command_power > 9
+			check_variable = {
+				industrial_power > 9.99
+			}
 		}
-		custom_cost_text = scavenging_cost_10
+		custom_cost_text = decision_cost_10_ip
+		visible = {
+			#
+		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = scavenger_point_cost_20
@@ -394,10 +487,16 @@ scavenging = {
 	}
 
 	hire_the_soldiers_without_borders = {
+		icon = GFX_decision_industrial
 		custom_cost_trigger = {
-			command_power > 19
+			check_variable = {
+				industrial_power > 9.99
+			}
 		}
-		custom_cost_text = scavenging_cost_10
+		custom_cost_text = decision_cost_10_ip
+		visible = {
+			#
+		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = scavenger_point_cost_40
@@ -448,10 +547,16 @@ scavenging = {
 	}
 
 	cash_in_foreign_aid = {
+		icon = GFX_decision_industrial
 		custom_cost_trigger = {
-			has_political_power > 9
+			check_variable = {
+				industrial_power > 9.99
+			}
 		}
-		custom_cost_text = scavenging_cost_10_pp
+		custom_cost_text = decision_cost_10_ip
+		visible = {
+			#
+		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = international_aid_cost
@@ -476,14 +581,16 @@ scavenging = {
 	}
 
 	locate_caches = {
+		icon = GFX_decision_industrial
 		custom_cost_trigger = {
 			check_variable = {
-				var = industrial_power
-				value = 35
-				compare = greater_than_or_equals
+				industrial_power > 39.99
 			}
 		}
-		custom_cost_text = scavenging_cost_industrial
+		custom_cost_text = decision_cost_40_ip
+		visible = {
+			#
+		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = areas_left_unsearched_cost
@@ -494,10 +601,10 @@ scavenging = {
 			}
 		}
 		}
+		fire_only_once = no
 		fixed_random_seed = no
 		complete_effect = {
-			subtract_from_variable = {industrial_power = 35}
-			custom_effect_tooltip = industrial_power_cost_tooltip
+			subtract_from_variable = {industrial_power = 40}
 			random_list = {
 				50 = {
 					custom_effect_tooltip = areas_left_unsearched_50_tooltip
@@ -518,16 +625,16 @@ scavenging = {
 			}
 		}
 		days_re_enable = 20
-		# priority = {
-		# 	factor = 0
-		# 	modifer = {
-		# 		check_variable = {
-		# 			var = areas_left_unsearched
-		# 			value = 150
-		# 			compare = less_than_or_equals
-		# 		}
-		# 		factor = 1000 #Always
-		# 	}
-		# }
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				check_variable = {
+					var = areas_left_unsearched
+					value = 150
+					compare = less_than_or_equals
+				}
+				add = 1000 #Always
+			}
+		}
 	}
 }
