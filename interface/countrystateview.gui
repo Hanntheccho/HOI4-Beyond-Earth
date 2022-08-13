@@ -13,18 +13,18 @@ guiTypes = {
 	
 	positionType = {
 		name = "countrystateview_weathericons_position"
-		position = { x = 383 y= -23 }
+		position = { x = 196 y= -8 }
 	}
 
 	positionType = {
 		name = "countrystateview_weathericons_offset"
-		position = { x = -40 y = 0 }
+		position = { x = 40 y = 0 }
 	}	
 	
 	containerWindowType = {
 		name = "countrystateview"
-		position = { x=-416 y=-548}
-		show_position = { x=-9 y =-660 }
+		position = { x=-416 y=-720}
+		show_position = { x=10 y =-720 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
@@ -36,43 +36,53 @@ guiTypes = {
 			position = { x = 2 y = 0 }
 			size = { width=436 height=696 }
 			
-			
 			background = {
 				name = "Background"
 				quadTextureSprite = "GFX_tiled_bg"
 				position = { x = 5 y = 5 }
 			}
 
+			instantTextboxType = {
+				name = "state_name"
+				position = { x = 14 y = 10 }
+				textureFile = ""
+				font = "Beyond"
+				text = "STATE_NAME_TEST"
+				maxWidth = 370
+				maxHeight = 30
+				format = left
+				fixedsize = yes
+			}
+
+			containerWindowType = {
+				name = "Background_2"
+				size = { width=100%% height=100%% } 
+
+				background = {
+					name = "Background"
+					quadTextureSprite = "GFX_tiled_bg_alpha"
+					position = { x = 5 y = 5 }
+				}
+			} 
+
 			iconType ={
 				name ="filling_stateview_entry"
 				spriteType = "GFX_building_entry_stateview"
-				position = { x = 292 y = 147 }
-			}
-						
-			instantTextboxType = {
-				name = "state_name"
-				position = { x = 20 y = 14 }
-				textureFile = ""
-				font = "Beyondsmall"
-				text = "STATE_NAME_TEST"
-				maxWidth = 310
-				maxHeight = 30
-				format = left
-				multiline = no
+				position = { x = 302 y = 160 }
 			}
 			
 			gridBoxType = {
 				name = "state_building_entries"
-				position = { x = 155 y = 43 }
+				position = { x = 147 y = 56 }
 				size = { width = 480 height = 105 }
 				format = "UPPER_LEFT"
-				slotsize = { width = 137 height = 52 }
+				slotsize = { width = 155 height = 52 }
 				max_slots_horizontal = 2
 			}
 			
 			instantTextboxType = {
 				name = "shared_slot_count"
-				position = { x = 194 y = 205 }
+				position = { x = 10000 y = 205 }#position = { x = 194 y = 205 }
 				textureFile = ""
 				font = "Arialsmallest"
 				text = "SLOTS"
@@ -98,7 +108,7 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "victory_points"
-				position = { x = 322 y = 16 }
+				position = { x = 316 y = 23 }
 				textureFile = ""
 				font = "Focusfont"
 				text = ""
@@ -106,10 +116,23 @@ guiTypes = {
 				maxHeight = 30
 				format = right
 			}
+
+			iconType ={
+				name ="owner_word"
+				quadTextureSprite = "GFX_owner_word"
+				position = { x= 15 y = 60 }
+				alwaystransparent = yes
+			}
+			iconType ={
+				name ="claims_word"
+				quadTextureSprite = "GFX_claims_word"
+				position = { x= 15 y = 108 }
+				alwaystransparent = yes
+			}
 			
 			instantTextboxType = {
 				name = "claims"
-				position = { x = 15 y = 97 }
+				position = { x = 10000 y = 97 }
 				textureFile = ""
 				font = "Arial16"
 				text = ""
@@ -121,7 +144,7 @@ guiTypes = {
 			
 			OverlappingElementsBoxType = {
 				name = "state_claims"
-				position = { x = 35 y = 118 }
+				position = { x = 25 y = 128 }
 				size = { x = 110 y = 40 }
 				format = left
 				spacing = 1.0
@@ -129,7 +152,7 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "owner"
-				position = { x = 15 y = 42 }
+				position = { x = 10000 y = 42 }
 				textureFile = ""
 				font = "Arial16"
 				text = ""
@@ -142,7 +165,7 @@ guiTypes = {
 			buttonType = {
 				name = "owner_flag"
 				quadTextureSprite ="GFX_flag_small2"
-				position = { x= 34 y = 63 }
+				position = { x= 24 y = 80 }
 			}
 			
 			iconType ={
@@ -155,19 +178,19 @@ guiTypes = {
 			buttonType = {
 				name = "controller_flag"
 				quadTextureSprite = "GFX_flag_small2"
-				position = { x= 74 y = 63 }
+				position = { x= 65 y = 80 }
 			}	
 			
 			iconType ={
 				name ="controller_flag_border"
 				quadTextureSprite = "GFX_diplo_countrylist_flag_frame"
-				position = { x= 70 y = 59 }
+				position = { x= 70 y = 80 }
 				alwaystransparent = yes
 			}
 			
 			containerWindowType = {
 				name = "state_resources"
-				position = { x= 10 y=374}
+				position = { x= 10 y=404}
 				size = { width=135 height=99 }
 				
 				
@@ -197,7 +220,7 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "manpower2"
-				position = { x = 15 y = 155 }
+				position = { x = 15 y = 195 }
 				textureFile = ""
 				text = "MANPOWER:"
 				font = "Arialsmallest"
@@ -209,12 +232,12 @@ guiTypes = {
 			iconType ={
 				name ="manpower_bg"
 				spriteType = "GFX_generic_box_small"
-				position = { x = 46 y = 178 }
+				position = { x = 46 y = 218 }
 			}
 			
 			instantTextboxType = {
 				name = "manpower"
-				position = { x = 50 y = 183 }
+				position = { x = 50 y = 223 }
 				textureFile = ""
 				font = "Focusfont"
 				maxWidth = 80
@@ -224,7 +247,7 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "resistance_container"
-				position = { x = 10 y = 226}	
+				position = { x = 10 y = 266}	
 				size = { width = 519 height = 100 }
 				
 				iconType ={
@@ -321,7 +344,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "province_info_window"
-			position = { x = 5 y = 505 }
+			position = { x = 8 y = 515 }
 			size = { width=480 height=29%% }
 
 			containerWindowType = {
@@ -449,7 +472,7 @@ guiTypes = {
 			
 			gridBoxType = {
 				name = "province_building_entries"
-				position = { x = 12 y = 48 }
+				position = { x = 12 y = 63 }
 				size = { width = 480 height = 90%% }
 				format = "UPPER_LEFT"
 				slotsize = { width = 130 height = 54 }
@@ -480,8 +503,8 @@ guiTypes = {
 		
 		buttonType = {
 			name = "close_button"
-			position = { x = -28 y = 11 }
-			quadTextureSprite ="GFX_closebutton_small"
+			position = { x = -36 y = 15 }
+			quadTextureSprite ="GFX_closebutton"
 			buttonFont = "Main_14_black"
 			shortcut = "ESCAPE"
 			Orientation = "UPPER_RIGHT"
@@ -587,8 +610,8 @@ guiTypes = {
 		
 		buttonType = {
 			name = "remove"
-			position = { x = 40 y = 29 }
-			spriteType = "GFX_cancel_conversion_button"
+			position = { x = 30 y = 23 }
+			spriteType = "GFX_nf_close_button"
 		}
 		
 		iconType = {
