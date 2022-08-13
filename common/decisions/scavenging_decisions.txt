@@ -15,7 +15,9 @@ scavenging = {
 				tooltip = scavenging_decisions_locate_foreign_sponsors_tooltip
 			}
 		}
-		complete_effect = {
+		days_remove = 10
+		remove_effect = {
+			custom_effect_tooltip = scavenging_decisions_locate_foreign_sponsors_tooltip_effect
 			add_to_variable = {international_aid_available = 1}
 		}
 		days_re_enable = 16
@@ -25,13 +27,8 @@ scavenging = {
 		}
 	}
 	scavenging_decisions_take_out_loans = {
-		icon = GFX_decision_industrial
-		custom_cost_trigger = {
-			check_variable = {
-				industrial_power > 9.99
-			}
-		}
-		custom_cost_text = decision_cost_10_ip
+		icon = GFX_decision_political
+		cost = 20
 		visible = {
 			#
 		}
@@ -41,9 +38,9 @@ scavenging = {
 			}
 			has_war = no
 		}
-		complete_effect = {
+		days_remove = 5
+		remove_effect = {
 			country_event = {id=scav.1}
-			subtract_from_variable = {industrial_power = 10}
 		}
 		days_re_enable = 30
 		fire_only_once = no

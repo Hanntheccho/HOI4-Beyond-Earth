@@ -203,10 +203,18 @@ scripted_gui = {
                 ai_will_do = {
                     factor = 0
                     modifier = {
-			        	add = 100000
-                        check_variable = {
-                            industrial_power > 500
+                        OWNER = {
+                            check_variable = {
+                                industrial_power > 500
+                            }
                         }
+                        add = 100000
+			        }
+                    modifier = {	
+                        OWNER = {
+                            has_idea = crumbling_society
+                        }
+                        add = 100000
 			        }
                 }
             }
