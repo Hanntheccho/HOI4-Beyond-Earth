@@ -1,108 +1,109 @@
-on_actions = {
-	on_startup = {
-		effect = {
-			every_country = {
-				limit = {
-					always = yes
-				}
-				THIS = {
-					if = {
-						limit = {
-							OR = {
-								has_idea = agrarian_stage
-								has_idea = developing_stage
-							}
-						}
-						log = "-----[THIS.GetTag] SCAVENGING SYSTEM BOOTUP-----"
-						set_variable = {scavenger_points = 0}
-						set_variable = {monthly_scavenger_rate = 10}
-						set_variable = {international_aid_available = 10} #TEMP
-						set_variable = {areas_left_unsearched = 100} #TEMP
-						set_variable = {additional_scavengers_cooldown_days = 8}
-						set_variable = {has_sent_additional_scavengers = 0}
-						set_variable = {locate_foreign_sponsors_cooldown_days = 16}
-						set_variable = {has_located_foreign_sponsors = 0}
-						set_variable = {take_out_loans_cooldown_days = 30}
-						set_variable = {has_taken_out_loans_scavengers = 0}
-						set_variable = {calculated_monthly_rate = 0}
-						clamp_variable = {
-							var = monthly_scavenger_rate
-							min = 0
-							max = areas_left_unsearched
-						}
-						clamp_variable = {
-							var = international_aid_available
-							min = 0
-							max = 10
-						}
-						log = "----------SYSTEM BOOTUP COMPLETE----------"
-					}
-				}
-			}
-		}
-	}
-	on_daily = { #FIX FOR MONTHLY BUG
-		effect = {
-			if = {
-				limit = {
-					OR = {
-						has_idea = agrarian_stage
-						has_idea = developing_stage
-					}
-				}
-				THIS = {
-					if = {
-						limit = {
-							check_variable = {
-								var = calculated_monthly_rate
-								value = 1
-								compare = equals
-							}
-						}
-						set_variable = {calculated_monthly_rate = 0}
-					}
-					
-				}
-			}
-		}
-	}
-
-	on_weekly = {
-		effect = {
-			if = {
-				limit = {
-					has_idea = ODS_park_of_rotten_steal
-				}
-				add_to_variable = { scavenger_points = 1 }
-			}
-		}
-	}
-
-	on_monthly ={
-		effect = {
-			if = {
-				limit = {
-					OR = {
-						has_idea = agrarian_stage
-						has_idea = developing_stage
-					}
-					check_variable = {
-						var = calculated_monthly_rate
-						value = 0
-						compare = equals
-					}					
-				}
-				THIS = {
-					log = "-------[THIS.GetTag] Scavenger Monthly Add-------"
-					log = "Current Date: [GetDateText]"
-					log = "Previous Scav Points: [?scavenger_points]"
-					log = "Current Monthly Scav Rate: [?monthly_scavenger_rate]"
-					add_to_variable = {scavenger_points = monthly_scavenger_rate}
-					set_variable = {calculated_monthly_rate = 1}
-					log = "New Scav Points: [?scavenger_points]"
-					log = "-------===================================-------"
-				}
-			}
-		}
-	}
-}
+#on_actions = {
+#	on_startup = {
+#		effect = {
+#			every_country = {
+#				limit = {
+#					always = yes
+#				}
+#				THIS = {
+#					if = {
+#						limit = {
+#							OR = {
+#								has_idea = agrarian_stage
+#								has_idea = developing_stage
+#							}
+#						}
+#						log = "-----[THIS.GetTag] SCAVENGING SYSTEM BOOTUP-----"
+#						set_variable = {scavenger_points = 0}
+#						set_variable = {monthly_scavenger_rate = 10}
+#						set_variable = {international_aid_available = 10} #TEMP
+#						set_variable = {areas_left_unsearched = 100} #TEMP
+#						set_variable = {additional_scavengers_cooldown_days = 8}
+#						set_variable = {has_sent_additional_scavengers = 0}
+#						set_variable = {locate_foreign_sponsors_cooldown_days = 16}
+#						set_variable = {has_located_foreign_sponsors = 0}
+#						set_variable = {take_out_loans_cooldown_days = 30}
+#						set_variable = {has_taken_out_loans_scavengers = 0}
+#						set_variable = {calculated_monthly_rate = 0}
+#						clamp_variable = {
+#							var = monthly_scavenger_rate
+#							min = 0
+#							max = areas_left_unsearched
+#						}
+#						clamp_variable = {
+#							var = international_aid_available
+#							min = 0
+#							max = 10
+#						}
+#						log = "----------SYSTEM BOOTUP COMPLETE----------"
+#					}
+#				}
+#			}
+#		}
+#	}
+#	on_daily = { #FIX FOR MONTHLY BUG
+#		effect = {
+#			if = {
+#				limit = {
+#					OR = {
+#						has_idea = agrarian_stage
+#						has_idea = developing_stage
+#					}
+#				}
+#				THIS = {
+#					if = {
+#						limit = {
+#							check_variable = {
+#								var = calculated_monthly_rate
+#								value = 1
+#								compare = equals
+#							}
+#						}
+#						set_variable = {calculated_monthly_rate = 0}
+#					}
+#					
+#				}
+#			}
+#		}
+#	}
+#
+#	on_weekly = {
+#		effect = {
+#			if = {
+#				limit = {
+#					has_idea = ODS_park_of_rotten_steal
+#				}
+#				add_to_variable = { scavenger_points = 1 }
+#			}
+#		}
+#	}
+#
+#	on_monthly ={
+#		effect = {
+#			if = {
+#				limit = {
+#					OR = {
+#						has_idea = agrarian_stage
+#						has_idea = developing_stage
+#					}
+#					check_variable = {
+#						var = calculated_monthly_rate
+#						value = 0
+#						compare = equals
+#					}					
+#				}
+#				THIS = {
+#					log = "-------[THIS.GetTag] Scavenger Monthly Add-------"
+#					log = "Current Date: [GetDateText]"
+#					log = "Previous Scav Points: [?scavenger_points]"
+#					log = "Current Monthly Scav Rate: [?monthly_scavenger_rate]"
+#					add_to_variable = {scavenger_points = monthly_scavenger_rate}
+#					set_variable = {calculated_monthly_rate = 1}
+#					log = "New Scav Points: [?scavenger_points]"
+#					log = "-------===================================-------"
+#				}
+#			}
+#		}
+#	}
+#}
+#
