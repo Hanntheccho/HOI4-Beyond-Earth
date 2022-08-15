@@ -40,7 +40,7 @@ guiTypes = {
 			font = "Beyond"
 			text = "-------------------------------"
 			maxWidth = 370
-			maxHeight = 40
+			maxHeight = 80
 			format = left
 			fixedsize = yes
 		}
@@ -53,6 +53,7 @@ guiTypes = {
 				name = "Background"
 				quadTextureSprite = "GFX_tiled_bg_alpha"
 				position = { x = 0 y = 0 }
+				alwaystransparent = yes
 			}
 		} 
 
@@ -66,6 +67,19 @@ guiTypes = {
 			clicksound = click_close
 			pdx_tooltip = "CLOSE"
 		}
+
+		iconType = {
+			name = "naval_access_word"
+			spriteType = "GFX_naval_access_word"
+			position = {x=32 y=222}
+			orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "naval_words"
+			spriteType = "GFX_naval_words"
+			position = {x=5 y=52}
+			orientation = "UPPER_LEFT"
+		}
 		
 		iconType = {
 			name = "ship_icon"
@@ -74,21 +88,21 @@ guiTypes = {
 			orientation = "UPPER_LEFT"
 		}
 
-		instantTextboxType = {
-			name = "ship_text2"
-			position = {x=10 y=65}
-			font = "Beyondsmall"
-			text = "FRIENDLY_SHIPS2"
-			fixedsize = yes
-			maxWidth = 200
-			maxHeight = 40
-			format = left
-			tooltip = "NUMBER_OF_ALLY_SHIPS"
-		}
+		#instantTextboxType = {
+		#	name = "ship_text2"
+		#	position = {x=10 y=65}
+		#	font = "Beyondsmall"
+		#	text = "FRIENDLY_SHIPS2"
+		#	fixedsize = yes
+		#	maxWidth = 200
+		#	maxHeight = 40
+		#	format = left
+		#	tooltip = "NUMBER_OF_ALLY_SHIPS"
+		#}
 
 		instantTextboxType = {
 			name = "ship_text"
-			position = {x=65 y=85}
+			position = {x=65 y=67}
 			font = "Focusfont"
 			text = "123"
 			fixedsize = yes
@@ -105,21 +119,21 @@ guiTypes = {
 			orientation = "UPPER_LEFT"
 		}
 
-		instantTextboxType = {
-			name = "plane_text2"
-			position = {x=55 y=103}
-			font = "Beyondsmall"
-			text = "FRIENDLY_PLANES2"
-			fixedsize = yes
-			maxWidth = 100
-			maxHeight = 40
-			format = left
-			tooltip = "EFFECT_OF_OUR_AIR_SUPERIORITY_ON_NAVAL_SUPREMACY"
-		}
+		#instantTextboxType = {
+		#	name = "plane_text2"
+		#	position = {x=55 y=103}
+		#	font = "Beyondsmall"
+		#	text = "FRIENDLY_PLANES2"
+		#	fixedsize = yes
+		#	maxWidth = 100
+		#	maxHeight = 40
+		#	format = left
+		#	tooltip = "EFFECT_OF_OUR_AIR_SUPERIORITY_ON_NAVAL_SUPREMACY"
+		#}
 		
 		instantTextboxType = {
 			name = "plane_text"
-			position = {x=120 y=105}
+			position = {x=163 y=105}
 			font = "Focusfont"
 			text = "20%"
 			fixedsize = yes
@@ -134,18 +148,6 @@ guiTypes = {
 			spriteType = "GFX_naval_region_window_mine_icon"
 			position = {x=10000 y=98}
 			orientation = "UPPER_LEFT"
-		}
-
-		instantTextboxType = {
-			name = "mine_text2"
-			position = {x=10000 y=85}
-			font = "Arialsmall"
-			text = "FRIENDLY_MINES2"
-			fixedsize = yes
-			maxWidth = 100
-			maxHeight = 40
-			format = left
-			tooltip = "EFFECT_OF_OUR_MINES_ON_NAVAL_SUPREMACY"
 		}
 
 		
@@ -169,21 +171,21 @@ guiTypes = {
 			orientation = "UPPER_LEFT"
 		}
 
-		instantTextboxType = {
-			name = "enemy_ship_text2"
-			position = {x=280 y=65}
-			font = "Beyondsmall"
-			text = "ENEMY_SHIPS2"
-			fixedsize = yes
-			maxWidth = 150
-			maxHeight = 40
-			format = right
-			tooltip = "NUMBER_OF_ENEMY_SHIPS"
-		}
+		#instantTextboxType = {
+		#	name = "enemy_ship_text2"
+		#	position = {x=280 y=65}
+		#	font = "Beyondsmall"
+		#	text = "ENEMY_SHIPS2"
+		#	fixedsize = yes
+		#	maxWidth = 150
+		#	maxHeight = 40
+		#	format = right
+		#	tooltip = "NUMBER_OF_ENEMY_SHIPS"
+		#}
 
 		instantTextboxType = {
 			name = "enemy_ship_text"
-			position = {x=298 y=85}
+			position = {x=270 y=67}
 			font = "Focusfont"
 			text = "24-100"
 			fixedsize = yes
@@ -200,21 +202,21 @@ guiTypes = {
 			orientation = "UPPER_LEFT"
 		}
 
-		instantTextboxType = {
-			name = "enemy_plane_text2"
-			position = {x=231 y=103}
-			font = "Beyondsmall"
-			text = "ENEMY_PLANES2"
-			fixedsize = yes
-			maxWidth = 100
-			maxHeight = 40
-			format = right
-			tooltip = "EFFECT_OF_ENEMY_AIR_SUPERIORITY_ON_NAVAL_SUPREMACY"
-		}
+		#instantTextboxType = {
+		#	name = "enemy_plane_text2"
+		#	position = {x=231 y=103}
+		#	font = "Beyondsmall"
+		#	text = "ENEMY_PLANES2"
+		#	fixedsize = yes
+		#	maxWidth = 100
+		#	maxHeight = 40
+		#	format = right
+		#	tooltip = "EFFECT_OF_ENEMY_AIR_SUPERIORITY_ON_NAVAL_SUPREMACY"
+		#}
 		
 		instantTextboxType = {
 			name = "enemy_plane_text"
-			position = {x=265 y=105}
+			position = {x=170 y=105}
 			font = "Focusfont"
 			text = "20%"
 			fixedsize = yes
@@ -229,18 +231,6 @@ guiTypes = {
 			spriteType = "GFX_naval_region_window_enemy_mine_icon"
 			position = {x=10000 y=98}
 			orientation = "UPPER_LEFT"
-		}
-
-		instantTextboxType = {
-			name = "enemy_mine_text2"
-			position = {x=10000 y=85}
-			font = "Arialsmall"
-			text = "ENEMY_MINES2"
-			fixedsize = yes
-			maxWidth = 100
-			maxHeight = 40
-			format = right
-			tooltip = "EFFECT_OF_ENEMY_MINES_ON_NAVAL_SUPREMACY"
 		}
 		
 		instantTextboxType = {
@@ -282,7 +272,7 @@ guiTypes = {
 			background = {
 				name = "division_name_frame_bg"
 				quadTextureSprite = "GFX_generic_background"
-				position = { x = 7 y = 135 }
+				position = { x = 9 y = 135 }
 				alwaystransparent = yes
 			}
 		}
@@ -294,7 +284,7 @@ guiTypes = {
 			background = {
 				name = "division_name_frame_bg2"
 				quadTextureSprite = "GFX_generic_background"
-				position = { x = 7 y = 135 }
+				position = { x = 9 y = 135 }
 				alwaystransparent = yes
 			}
 		}
@@ -306,7 +296,7 @@ guiTypes = {
 			background = {
 				name = "division_name_frame_bg3"
 				quadTextureSprite = "GFX_generic_background"
-				position = { x = 7 y = 135 }
+				position = { x = 9 y = 135 }
 				alwaystransparent = yes
 			}
 		}
@@ -318,21 +308,21 @@ guiTypes = {
 			background = {
 				name = "division_name_frame_bg4"
 				quadTextureSprite = "GFX_generic_background"
-				position = { x = 7 y = 135 }
+				position = { x = 9 y = 135 }
 				alwaystransparent = yes
 			}
 		}
 
 		iconType = {
 			name = "terrain_picture"
-			position = { x = 10 y = 138 }
+			position = { x = 12 y = 138 }
 			spriteType = "GFX_terrain_default"
 			Orientation = "UPPER_LEFT"
 		}
 		
 		gridboxType = {
 			name = "modifier_grid"
-			position = { x = 273 y = 134 }
+			position = { x = 273 y = 147 }
 			size = { width = 148 height = 47 }
 			slotsize = { width = 37 height = 47 }
 			format = "RIGHT"
@@ -345,33 +335,33 @@ guiTypes = {
 			name = "naval_access"
 			position = { x=20 y=220}
 			
-			instantTextboxType = {
-				name = "naval_access_text"
-				position = {x=-8 y=9}
-				font = "Beyondsmall"
-				text = "NAVAL_ACCESS"
-				fixedsize = yes
-				maxWidth = 525
-				maxHeight = 100
-			}
+			#instantTextboxType = {
+			#	name = "naval_access_text"
+			#	position = {x=-8 y=9}
+			#	font = "Beyondsmall"
+			#	text = "NAVAL_ACCESS"
+			#	fixedsize = yes
+			#	maxWidth = 525
+			#	maxHeight = 100
+			#}
 		
 			buttonType = {
 				name = "naval_access_rule_allowed"
-				position = { x = 90 y = 3 }
+				position = { x = 210 y = 2 }
 				spriteType ="GFX_naval_access_rule"
 				frame = 1
 			}
 
 			buttonType = {
 				name = "naval_access_rule_avoid"
-				position = { x = 125 y = 3 }
+				position = { x = 265 y = 2 }
 				spriteType ="GFX_naval_access_rule"
 				frame = 2
 			}
 
 			buttonType = {
 				name = "naval_access_rule_blocked"
-				position = { x = 160 y = 3 }
+				position = { x = 320 y = 2 }
 				spriteType ="GFX_naval_access_rule"
 				frame = 3
 			}
