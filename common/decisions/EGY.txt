@@ -1,53 +1,158 @@
 egypt_expansion = {
-	GER_support_eng = {
+	EGY_SUD_war = {
 		icon = GFX_decision_war
 		available = {
-			HNG = {
+			SUD = {
 				exists = yes
 			}
-			has_global_flag = ECW_start
-			NOT = { has_global_flag = ECW_end }
 		}
 		visible = {
-			HNG = {
+			SUD = {
 				exists = yes
 			}
-			has_global_flag = ECW_start
-			NOT = { has_global_flag = ECW_end }
 		}
 		cancel_trigger = {
-			HNG = {
+			SUD = {
 				exists = no
 			}
 		}
 		cost = 50
 		fire_only_once = yes
 		days_remove = 20
+		targets = {
+			SUD
+		}
+		war_with_on_remove = SUD
 		remove_effect = {
 			declare_war_on = {
-				type = annex_everything
-				target = ENG
+				type = puppet_wargoal_focus
+				target = SUD
 			}
-			declare_war_on = {
-				type = annex_everything
-				target = CNG
-			}
-			declare_war_on = {
-				type = annex_everything
-				target = JNG
-			}
-			HNG = {
-				give_military_access = GER
+			566 = {
+				add_core_of = EGY
 			}
 		}
 		ai_will_do = {
 			factor = 10
-			modifier = {
-				HNG = {
-					surrender_progress > 0.2
-				}
-				factor = 100
+		}
+	}
+	EGY_SIE_war = {
+		icon = GFX_decision_war
+		available = {
+			SIE = {
+				exists = yes
 			}
+		}
+		visible = {
+			SIE = {
+				exists = yes
+			}
+		}
+		cancel_trigger = {
+			SIE = {
+				exists = no
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 20
+		targets = {
+			SIE
+		}
+		war_with_on_remove = SIE
+		remove_effect = {
+			declare_war_on = {
+				type = puppet_wargoal_focus
+				target = SIE
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 10
+				SUD = {
+					is_puppet_of = EGY
+				}
+			}
+		}
+	}
+	EGY_ETH_war = {
+		icon = GFX_decision_war
+		available = {
+			ETH = {
+				exists = yes
+			}
+		}
+		visible = {
+			ETH = {
+				exists = yes
+			}
+		}
+		cancel_trigger = {
+			ETH = {
+				exists = no
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 20
+		targets = {
+			ETH
+		}
+		war_with_on_remove = ETH
+		remove_effect = {
+			hidden_effect = {
+				activate_mission = EGY_somalian_invasion
+			}
+			declare_war_on = {
+				type = puppet_wargoal_focus
+				target = ETH
+			}
+			if = {
+				limit = {
+					country_exists = QAF
+				}
+				declare_war_on = {
+					type = puppet_wargoal_focus
+					target = QAF
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 10
+				SUD = {
+					is_puppet_of = EGY
+				}
+			}
+		}
+	}
+	EGY_somalian_invasion = {
+		icon = GFX_decision_war
+		available = {
+			ETH = {
+				exists = no
+			}
+		}
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		days_mission_timeout = 35
+		remove_effect = {
+			SOM = {
+				declare_war_on = {
+					type = puppet_wargoal_focus
+					target = ETH
+				}
+			}
+			633 = {
+				add_core_of = SOM
+			}
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 }
