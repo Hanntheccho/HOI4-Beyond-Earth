@@ -12,7 +12,7 @@ on_actions = {
                 set_variable = { civilian_chance = 1 }
                 #set_variable = { light_chance = 1 }
                 #set_variable = { naval_chance = 1 }
-                set_variable = { military_civilian_slider_var = 208.5 }
+                #set_variable = { military_civilian_slider_var = 208.5 }
                 #set_variable = { light_heavy_slider_var = 208.5 }
                 #set_variable = { land_naval_slider_var = 208.5 }
                 set_variable = { free_factory_counter = 0 }
@@ -59,11 +59,11 @@ on_actions = {
                 #    min = 0
                 #    max = 2
                 #}
-                clamp_variable = {
-                    var = military_civilian_slider_var
-                    min = 122
-                    max = 295
-                }
+                #clamp_variable = {
+                #    var = military_civilian_slider_var
+                #    min = 122
+                #    max = 295
+                #}
                 #clamp_variable = {
                 #    var = light_heavy_slider_var
                 #    min = 122
@@ -410,7 +410,7 @@ on_actions = {
                 }
                 add_to_variable = { free_factory_counter = 1 }
                 random_list = {
-                    40 = {
+                    50 = {
                         random_owned_controlled_state = {
                             limit = {
                                 is_fully_controlled_by = ROOT
@@ -429,34 +429,34 @@ on_actions = {
                         #modifier = {
                         #    factor = heavy_chance
                         #}
-                        modifier = {
-                            factor = civilian_chance
-                        }
-                    }
-                    10 = {
-                        random_owned_controlled_state = {
-                            limit = {
-                                is_fully_controlled_by = ROOT
-                                free_building_slots = {
-                                    building = generator_building
-                                    size > 1
-                                    include_locked = no
-                                }
-                            }
-                            add_building_construction = {
-                                type = generator_building
-                                level = 1
-                                instant_build = yes
-                            }
-                        }
                         #modifier = {
-                        #    factor = light_chance
+                        #    factor = civilian_chance
                         #}
-                        modifier = {
-                            factor = civilian_chance
-                        }
                     }
-                    40 = {
+                    #10 = {
+                    #    random_owned_controlled_state = {
+                    #        limit = {
+                    #            is_fully_controlled_by = ROOT
+                    #            free_building_slots = {
+                    #                building = generator_building
+                    #                size > 1
+                    #                include_locked = no
+                    #            }
+                    #        }
+                    #        add_building_construction = {
+                    #            type = generator_building
+                    #            level = 1
+                    #            instant_build = yes
+                    #        }
+                    #    }
+                    #    #modifier = {
+                    #    #    factor = light_chance
+                    #    #}
+                    #    modifier = {
+                    #        factor = civilian_chance
+                    #    }
+                    #}
+                    50 = {
                         random_owned_controlled_state = {
                             limit = {
                                 is_fully_controlled_by = ROOT
@@ -475,34 +475,34 @@ on_actions = {
                         #modifier = {
                         #    factor = land_chance
                         #}
-                        modifier = {
-                            factor = military_chance
-                        }
-                    }
-                    10 = {
-                        random_owned_controlled_state = {
-                            limit = {
-                                is_coastal = yes
-                                is_fully_controlled_by = ROOT
-                                free_building_slots = {
-                                    building = dockyard
-                                    size > 1
-                                    include_locked = no
-                                }
-                            }
-                            add_building_construction = {
-                                type = dockyard
-                                level = 1
-                                instant_build = yes
-                            }
-                        }
                         #modifier = {
-                        #    factor = naval_chance
+                        #    factor = military_chance
                         #}
-                        modifier = {
-                            factor = military_chance
-                        }
                     }
+                    #10 = {
+                    #    random_owned_controlled_state = {
+                    #        limit = {
+                    #            is_coastal = yes
+                    #            is_fully_controlled_by = ROOT
+                    #            free_building_slots = {
+                    #                building = dockyard
+                    #                size > 1
+                    #                include_locked = no
+                    #            }
+                    #        }
+                    #        add_building_construction = {
+                    #            type = dockyard
+                    #            level = 1
+                    #            instant_build = yes
+                    #        }
+                    #    }
+                    #    #modifier = {
+                    #    #    factor = naval_chance
+                    #    #}
+                    #    modifier = {
+                    #        factor = military_chance
+                    #    }
+                    #}
                 }
             }
             if = {

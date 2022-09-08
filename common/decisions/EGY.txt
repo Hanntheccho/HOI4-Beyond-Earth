@@ -1,0 +1,53 @@
+egypt_expansion = {
+	GER_support_eng = {
+		icon = GFX_decision_war
+		available = {
+			HNG = {
+				exists = yes
+			}
+			has_global_flag = ECW_start
+			NOT = { has_global_flag = ECW_end }
+		}
+		visible = {
+			HNG = {
+				exists = yes
+			}
+			has_global_flag = ECW_start
+			NOT = { has_global_flag = ECW_end }
+		}
+		cancel_trigger = {
+			HNG = {
+				exists = no
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 20
+		remove_effect = {
+			declare_war_on = {
+				type = annex_everything
+				target = ENG
+			}
+			declare_war_on = {
+				type = annex_everything
+				target = CNG
+			}
+			declare_war_on = {
+				type = annex_everything
+				target = JNG
+			}
+			HNG = {
+				give_military_access = GER
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				HNG = {
+					surrender_progress > 0.2
+				}
+				factor = 100
+			}
+		}
+	}
+}

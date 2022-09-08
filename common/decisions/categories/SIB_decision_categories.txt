@@ -2,14 +2,23 @@ catch_a_mouse = {
 	icon = GFX_decision_category_generic
 	#picture = GFX_catch_a_mouse
 	priority = 200
-	allowed = {
+	visible = {
 		tag = SIB
 		hidden_trigger = {
+			is_ai = no
 			NOT = {
-				OR = {
-					has_country_flag = SIB_soviet_flag
-					has_country_flag = SIB_china_flag
-				}
+				has_country_flag = SIB_soviet_flag
+				has_country_flag = SIB_china_flag
+			}
+		}
+	}
+	available = {
+		tag = SIB
+		hidden_trigger = {
+			is_ai = no
+			NOT = {
+				has_country_flag = SIB_soviet_flag
+				has_country_flag = SIB_china_flag
 			}
 		}
 	}

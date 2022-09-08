@@ -15,19 +15,19 @@ scripted_gui = {
                 add_to_variable = { free_factory_progress = 50 }
             }
 
-            civilian_focus_click = {
-                subtract_from_variable = { military_civilian_slider_var = 34.6 }
-                add_to_variable = { civilian_chance = 0.1 }
-                subtract_from_variable = { military_chance = 0.1 }
-                subtract_from_variable = { industrial_power = 25 }
-            }
-
-            military_focus_click = {
-                add_to_variable = { military_civilian_slider_var = 34.6 }
-                add_to_variable = { military_chance = 0.1 }
-                subtract_from_variable = { civilian_chance = 0.1 }
-                subtract_from_variable = { industrial_power = 25 }
-            }
+            #civilian_focus_click = {
+            #    subtract_from_variable = { military_civilian_slider_var = 34.6 }
+            #    add_to_variable = { civilian_chance = 0.1 }
+            #    subtract_from_variable = { military_chance = 0.1 }
+            #    subtract_from_variable = { industrial_power = 25 }
+            #}
+            #
+            #military_focus_click = {
+            #    add_to_variable = { military_civilian_slider_var = 34.6 }
+            #    add_to_variable = { military_chance = 0.1 }
+            #    subtract_from_variable = { civilian_chance = 0.1 }
+            #    subtract_from_variable = { industrial_power = 25 }
+            #}
 
             #light_focus_click = {
             #    add_to_variable = { light_heavy_slider_var = 34.6 }
@@ -73,20 +73,20 @@ scripted_gui = {
                 check_variable = { industrial_power > 99 }
             }
             
-            civilian_focus_click_enabled = {
-                #ROOT = {
-                #    has_country_flag = civilian_military_unlocked
-                #}
-                check_variable = { civilian_chance < 1.2 }
-                check_variable = { industrial_power > 24 }
-            }
-            military_focus_click_enabled = {
-                #ROOT = {
-                #    has_country_flag = civilian_military_unlocked
-                #}
-                check_variable = { military_chance < 1.2 }
-                check_variable = { industrial_power > 24 }
-            }
+#            civilian_focus_click_enabled = {
+#                #ROOT = {
+#                #    has_country_flag = civilian_military_unlocked
+#                #}
+#                check_variable = { civilian_chance < 1.2 }
+#                check_variable = { industrial_power > 24 }
+#            }
+#            military_focus_click_enabled = {
+#                #ROOT = {
+#                #    has_country_flag = civilian_military_unlocked
+#                #}
+#                check_variable = { military_chance < 1.2 }
+#                check_variable = { industrial_power > 24 }
+#            }
             #light_focus_click_enabled = {
             #    check_variable = { light_chance < 1.2 }
             #    check_variable = { industrial_power > 24 }
@@ -123,10 +123,10 @@ scripted_gui = {
 			free_factory_progressbar = {
 				frame = free_factory_progress
 			}
-			military_civilian_slider = { #Start is at 555 and end is at 720; that's just my guess tho, feel free to test and, if necessary, change this. Also change the variables in on_actions. 
-				x = military_civilian_slider_var
-				y = 69
-			}
+			#military_civilian_slider = { #Start is at 555 and end is at 720; that's just my guess tho, feel free to test and, if necessary, change this. Also change the variables in on_actions. 
+			#	x = military_civilian_slider_var
+			#	y = 69
+			#}
 			#light_heavy_slider = {
 			#	x = light_heavy_slider_var
 			#	y = 87
@@ -150,68 +150,68 @@ scripted_gui = {
 		}
 
         ai_weights = {
-            civilian_focus_click = {
-                ai_will_do = {
-                    factor = 0
-                    modifier = {
-			        	add = 1.5
-                        threat < 0.1
-			        }
-                    #modifier = {
-			        #	add = 2
-                    #    has_idea = volunteer_only
-			        #}
-                    modifier = {
-			        	add = 2
-                        has_idea = limited_conscription
-			        }
-                    modifier = {
-			        	add = 1
-                        has_war = no
-			        }
-                    modifier = {
-			        	add = 2
-                        has_idea = free_trade
-			        }
-                    modifier = {
-			        	add = 2
-                        has_idea = civilian_economy
-			        }
-                }
-            }
-            military_focus_click = {
-                ai_will_do = {
-                    factor = 0
-                    modifier = {
-			        	add = 1.5
-                        threat > 0.1
-			        }
-                    modifier = {
-			        	add = 4
-                        threat > 0.5
-			        }
-                    #modifier = {
-			        #	add = 1
-                    #    NOT = { has_idea = volunteer_only }
-			        #}
-                    modifier = {
-			        	add = 1
-                        NOT = { has_idea = limited_conscription }
-			        }
-                    modifier = {
-			        	add = 100
-                        has_war = yes
-			        }
-                    modifier = {
-			        	add = 1
-                        NOT = { has_idea = free_trade }
-			        }
-                    modifier = {
-			        	add = 1
-                        NOT = { has_idea = civilian_economy }
-			        }
-                }
-            }
+#            civilian_focus_click = {
+#                ai_will_do = {
+#                    factor = 0
+#                    modifier = {
+#			        	add = 1.5
+#                        threat < 0.1
+#			        }
+#                    #modifier = {
+#			        #	add = 2
+#                    #    has_idea = volunteer_only
+#			        #}
+#                    modifier = {
+#			        	add = 2
+#                        has_idea = limited_conscription
+#			        }
+#                    modifier = {
+#			        	add = 1
+#                        has_war = no
+#			        }
+#                    modifier = {
+#			        	add = 2
+#                        has_idea = free_trade
+#			        }
+#                    modifier = {
+#			        	add = 2
+#                        has_idea = civilian_economy
+#			        }
+#                }
+#            }
+#            military_focus_click = {
+#                ai_will_do = {
+#                    factor = 0
+#                    modifier = {
+#			        	add = 1.5
+#                        threat > 0.1
+#			        }
+#                    modifier = {
+#			        	add = 4
+#                        threat > 0.5
+#			        }
+#                    #modifier = {
+#			        #	add = 1
+#                    #    NOT = { has_idea = volunteer_only }
+#			        #}
+#                    modifier = {
+#			        	add = 1
+#                        NOT = { has_idea = limited_conscription }
+#			        }
+#                    modifier = {
+#			        	add = 100
+#                        has_war = yes
+#			        }
+#                    modifier = {
+#			        	add = 1
+#                        NOT = { has_idea = free_trade }
+#			        }
+#                    modifier = {
+#			        	add = 1
+#                        NOT = { has_idea = civilian_economy }
+#			        }
+#                }
+#            }
             free_factory_increase_click = {
                 ai_will_do = {
                     factor = 0

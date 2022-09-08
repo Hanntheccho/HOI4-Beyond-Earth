@@ -47,4 +47,41 @@ sawar_decisions = {
 			factor = 1
 		}
 	}
+
+	COS_CHL_war = {
+		icon = GFX_decision_unknown
+		available = {
+			OR = {
+				NOT = {
+					country_exists = CHL
+				}
+				NOT = {
+					country_exists = COS
+				}
+			}
+		}
+		activation = {
+			NOT = {
+				country_exists = ARG
+			}
+			country_exists = CHL
+			country_exists = COS
+		}
+		visible = {
+			#
+		}
+		fire_only_once = yes
+		days_mission_timeout = 123
+		timeout_effect = {
+			COS = {
+				declare_war_on = {
+					target = CHL
+					type = annex_everything
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }
