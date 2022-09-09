@@ -1,4 +1,44 @@
 egypt_expansion = {
+	EGY_LBA_war = {
+		icon = GFX_decision_war
+		available = {
+			LBA = {
+				exists = yes
+			}
+		}
+		visible = {
+			LBA = {
+				exists = yes
+			}
+		}
+		cancel_trigger = {
+			LBA = {
+				exists = no
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 20
+		targets = {
+			LBA
+		}
+		war_with_on_remove = LBA
+		remove_effect = {
+			declare_war_on = {
+				type = annex_everything
+				target = LBA
+			}
+			every_state = {
+				limit = {
+					is_core_of = LBA
+				}
+				add_core_of = EGY
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
 	EGY_SUD_war = {
 		icon = GFX_decision_war
 		available = {
@@ -100,6 +140,8 @@ egypt_expansion = {
 			ETH
 		}
 		war_with_on_remove = ETH
+		war_with_on_remove = SOM
+		war_with_on_remove = QAF
 		remove_effect = {
 			hidden_effect = {
 				activate_mission = EGY_somalian_invasion
@@ -108,15 +150,15 @@ egypt_expansion = {
 				type = puppet_wargoal_focus
 				target = ETH
 			}
-			if = {
-				limit = {
-					country_exists = QAF
-				}
-				declare_war_on = {
-					type = puppet_wargoal_focus
-					target = QAF
-				}
+			declare_war_on = {
+				type = puppet_wargoal_focus
+				target = SOM
 			}
+			declare_war_on = {
+				type = puppet_wargoal_focus
+				target = QAF
+			}
+
 		}
 		ai_will_do = {
 			factor = 0
