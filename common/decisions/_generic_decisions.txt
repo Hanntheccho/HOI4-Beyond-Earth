@@ -1,5 +1,44 @@
 generic_decisions = {
 
+	TZN_COG_war = {
+		icon = GFX_decision_political
+		available = {
+			always = no
+		}
+		visible = {
+			#
+		}
+		activation = {
+			country_exists = CHI
+		}
+		fire_only_once = yes
+		days_mission_timeout = 285	
+		timeout_effect = {
+			COG = {
+				declare_war_on = {
+					target = TZN
+					type = puppet_wargoal_focus
+				}
+			}
+			SAF = {
+				declare_war_on = {
+					target = TZN
+					type = puppet_wargoal_focus
+				}
+			}
+			ANG = {
+				declare_war_on = {
+					target = TZN
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
 	balkanize_china = {
 		icon = GFX_decision_political
 		available = {

@@ -234,11 +234,13 @@ eurowar_decisions = {
 	SOV_ukraine_claims = {
 		icon = GFX_decision_unknown
 		available = {
-			SOV = {
-				has_war = no
-			}
-			NOT = {
-				country_exists = UKR
+			OR = {
+				SOV = {
+					has_war = no
+				}
+				NOT = {
+					country_exists = UKR
+				}
 			}
 		}
 		activation = {
@@ -249,7 +251,7 @@ eurowar_decisions = {
 					has_stability < 0.25
 				}
 			}
-			country_exists = BLR
+			#country_exists = BLR
 			country_exists = UKR
 		}
 		fire_only_once = no

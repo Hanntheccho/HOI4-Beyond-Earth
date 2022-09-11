@@ -1,3 +1,97 @@
+BRA_set_borders_legiao = {
+	every_state = {
+		limit = {
+			is_core_of = BRA
+		}
+		add_core_of = LEG
+	}
+	URG = {
+		add_state_core = 185
+		transfer_state = 185
+	}
+	LEG = {
+		transfer_state = 205
+		inherit_technology = BRA
+		declare_war_on = {
+			target = BRA
+			type = annex_everything
+		}
+		load_oob = LEG_OOB
+	}
+}
+
+BRA_set_borders = {
+	BRA = {
+		white_peace = PRU
+	}
+	every_state = {
+		limit = {
+			is_core_of = BRA
+		}
+		add_core_of = BGV
+		#add_core_of = GRP
+		add_core_of = LAM
+		remove_core_of = BRA
+	}
+	BGV = {
+		annex_country = {
+			target = BRA
+			transfer_troops = yes
+		}
+		declare_war_on = {
+			target = LEG
+			type = annex_everything
+		}
+		transfer_state = 194
+		transfer_state = 183
+		transfer_state = 192
+		transfer_state = 200
+		transfer_state = 202
+		transfer_state = 188
+		transfer_state = 195
+		transfer_state = 190
+		transfer_state = 199
+		transfer_state = 178
+		transfer_state = 180
+		transfer_state = 186
+		transfer_state = 182
+		transfer_state = 177
+		transfer_state = 157
+		transfer_state = 169
+		transfer_state = 180
+		transfer_state = 169
+		transfer_state = 197
+		transfer_state = 204
+		transfer_state = 198
+		transfer_state = 162
+		inherit_technology = BRA
+
+		create_faction = "Brasilia's Military Command"
+		add_to_faction = BGV
+	}
+	#GRP = {
+	#	inherit_technology = PRU
+	#	transfer_state = 193
+	#	transfer_state = 196
+	#	transfer_state = 203
+	#	load_oob = GRP_OOB
+	#}
+	LAM = {
+		transfer_state = 167
+		transfer_state = 151
+		transfer_state = 153
+		transfer_state = 136
+		transfer_state = 122	
+		#transfer_state = 162
+		inherit_technology = BRA
+		load_oob = LAM_OOB
+	}
+	PRU = {
+		transfer_state = 120
+	}
+	BGV = { change_tag_from = BRA }
+}
+
 ## Civil War
 
 ##BRA_calculate_radicalized_population = {
@@ -1019,94 +1113,3 @@
 ##		BRA_apply_ideas = yes
 ##	}
 ##}
-
-BRA_set_borders_legiao = {
-	every_state = {
-		limit = {
-			is_core_of = BRA
-		}
-		add_core_of = LEG
-	}
-	URG = {
-		add_state_core = 185
-		transfer_state = 185
-	}
-	LEG = {
-		transfer_state = 205
-		inherit_technology = BRA
-		declare_war_on = {
-			target = BRA
-			type = annex_everything
-		}
-		load_oob = LEG_OOB
-	}
-}
-
-BRA_set_borders = {
-	BRA = {
-		white_peace = PRU
-	}
-	every_state = {
-		limit = {
-			is_core_of = BRA
-		}
-		add_core_of = BGV
-		#add_core_of = GRP
-		add_core_of = LAM
-		remove_core_of = BRA
-	}
-	BGV = {
-		annex_country = {
-			target = BRA
-			transfer_troops = yes
-		}
-		declare_war_on = {
-			target = LEG
-			type = annex_everything
-		}
-		transfer_state = 194
-		transfer_state = 183
-		transfer_state = 192
-		transfer_state = 200
-		transfer_state = 202
-		transfer_state = 188
-		transfer_state = 195
-		transfer_state = 190
-		transfer_state = 199
-		transfer_state = 178
-		transfer_state = 180
-		transfer_state = 186
-		transfer_state = 182
-		transfer_state = 177
-		transfer_state = 157
-		transfer_state = 169
-		transfer_state = 180
-		transfer_state = 169
-		transfer_state = 197
-		transfer_state = 204
-		transfer_state = 198
-		transfer_state = 162
-		inherit_technology = BRA
-	}
-	#GRP = {
-	#	inherit_technology = PRU
-	#	transfer_state = 193
-	#	transfer_state = 196
-	#	transfer_state = 203
-	#	load_oob = GRP_OOB
-	#}
-	LAM = {
-		transfer_state = 167
-		transfer_state = 151
-		transfer_state = 153
-		transfer_state = 136
-		transfer_state = 122	
-		#transfer_state = 162
-		inherit_technology = BRA
-		load_oob = LAM_OOB
-	}
-	PRU = {
-		transfer_state = 120
-	}
-	BGV = { change_tag_from = BRA }
-}

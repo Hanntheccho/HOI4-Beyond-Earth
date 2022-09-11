@@ -164,13 +164,6 @@ BRA_the_recovery = {
 		cost = 30
 		days_remove = 30
 		remove_effect = {
-			every_state = {
-				limit = {
-					is_core_of = URG
-					is_core_of = BGV
-				}
-				remove_core_of = BGV
-			}
 			COS = {
 				declare_war_on = {
 					target = URG
@@ -193,9 +186,16 @@ BRA_the_recovery = {
 			PRU = {
 				exists = yes
 			}
-			BGV = {
-				all_core_state = {
-					is_controlled_by = BGV
+			LAM = {
+				exists = no
+			}
+			LEG = {
+				exists = no
+			}
+			URG = {
+				OR = {
+					is_puppet = yes
+					exists = no
 				}
 			}
 		}
@@ -207,9 +207,28 @@ BRA_the_recovery = {
 		fire_only_once = yes
 		days_remove = 30
 		remove_effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						COS = {
+							has_country_flag = COS_CHL
+						}
+					}
+					activate_mission = COS_PRU_war
+				}
+			}
 			declare_war_on = {
 				target = PRU
 				type = puppet_wargoal_focus
+			}
+			170 = {
+				add_core_of = BGV
+			}
+			141 = {
+				add_core_of = BGV
+			}
+			112 = {
+				add_core_of = BGV
 			}
 		}
 		ai_will_do = {
