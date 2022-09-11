@@ -184,6 +184,155 @@ scripted_gui = {
                     }
                 }
             }
+            reduce_devastation_load_click_enabled = {
+                if = {
+                    limit = {
+                        ROOT = {
+                            has_government = harmony
+                            has_country_flag = has_mind_tier3
+                        }
+                    }
+                    THIS = {
+                        OR = {
+                            is_owned_by = ROOT
+                            OWNER = { is_ally_with = ROOT }
+                        }
+                        OR = {
+                            has_dynamic_modifier = {
+                                modifier = minor_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = notable_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = major_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = significant_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = terminal_devastation
+                            }
+                        }
+                        NOT = {
+                            has_state_flag = devastation_reduction_timeout_flag
+                        }
+                    }
+                    ROOT = { 
+                        check_variable = {
+                            var = industrial_power
+                            value = 10
+                            compare = greater_than_or_equals
+                        }
+                    }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_government = harmony
+                        }
+                    }
+                    THIS = {
+                        OR = {
+                            is_owned_by = ROOT
+                            OWNER = { is_ally_with = ROOT }
+                        }
+                        OR = {
+                            has_dynamic_modifier = {
+                                modifier = notable_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = major_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = significant_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = terminal_devastation
+                            }
+                        }
+                        NOT = {
+                            has_state_flag = devastation_reduction_timeout_flag
+                        }
+                    }
+                    ROOT = { 
+                        check_variable = {
+                            var = industrial_power
+                            value = 10
+                            compare = greater_than_or_equals
+                        }
+                    }
+                }
+                else = {
+                    THIS = {
+                        OR = {
+                            is_owned_by = ROOT
+                            OWNER = { is_ally_with = ROOT }
+                        }
+                        OR = {
+                            has_dynamic_modifier = {
+                                modifier = notable_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = major_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = significant_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = terminal_devastation
+                            }
+                        }
+                        NOT = {
+                            has_state_flag = devastation_reduction_timeout_flag
+                        }
+                        NOT = {
+                            ROOT = {
+                                has_idea = the_final_war_idea
+                            }
+                        }
+                    }
+                    ROOT = {
+                        check_variable = {
+                            var = industrial_power
+                            value = 25
+                            compare = greater_than_or_equals
+                        }
+                    }
+                }
+            }
+
+            #
+            no_devastation_icon_click_enabled = {
+                has_dynamic_modifier = {
+                    modifier = no_devastation
+                }
+            }
+            minor_devastation_icon_click_enabled = {
+                has_dynamic_modifier = {
+                    modifier = minor_devastation
+                }
+            }
+            notable_devastation_icon_click_enabled = {
+                has_dynamic_modifier = {
+                    modifier = notable_devastation
+                }
+            }
+            major_devastation_icon_click_enabled = {
+                has_dynamic_modifier = {
+                    modifier = major_devastation
+                }
+            }
+            significant_devastation_icon_click_enabled = {
+                has_dynamic_modifier = {
+                    modifier = significant_devastation
+                }
+            }
+            terminal_devastation_icon_click_enabled = {
+                has_dynamic_modifier = {
+                    modifier = terminal_devastation
+                }
+            }
         }
 
         ai_enabled = {
