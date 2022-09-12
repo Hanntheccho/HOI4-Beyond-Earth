@@ -14,7 +14,6 @@ scripted_gui = {
                 if = {
                     limit = {
                         ROOT = {
-                            has_government = harmony
                             has_country_flag = has_mind_tier3
                         }
                     }
@@ -23,11 +22,11 @@ scripted_gui = {
                         set_state_flag = {
                             flag = devastation_reduction_timeout_flag
                             value = 1
-                            days = 20
+                            days = 30
                         }
                     }
                     ROOT = {
-                        subtract_from_variable = { industrial_power = 10 }
+                        subtract_from_variable = { industrial_power = 40 }
                         subtract_from_variable = { current_devastation = 1 }
                     }
                 }
@@ -42,11 +41,11 @@ scripted_gui = {
                         set_state_flag = {
                             flag = devastation_reduction_timeout_flag
                             value = 1
-                            days = 20
+                            days = 30
                         }
                     }
                     ROOT = {
-                        subtract_from_variable = { industrial_power = 10 }
+                        subtract_from_variable = { industrial_power = 40 }
                         subtract_from_variable = { current_devastation = 1 }
                     }
                 }
@@ -65,13 +64,109 @@ scripted_gui = {
                     }
                 }
 			}
+            reduce_devastation_button_mastery_click = {
+                THIS = {
+                    increase_devastation = yes
+                    set_state_flag = {
+                        flag = devastation_reduction_timeout_flag
+                        value = 1
+                        days = 60
+                    }
+                    add_extra_state_shared_building_slots = 1
+				    add_building_construction = {
+				    	type = industrial_complex
+				    	level = 1
+				    	instant_build = yes
+				    }
+                    add_building_construction = {
+				    	type = infrastructure
+				    	level = 1
+				    	instant_build = yes
+				    }
+                    if = {
+                        limit = {
+                            has_resources_amount = {
+                                resource = oil
+                                amount > 0
+                            }
+                        }
+                        add_resource = {
+                            type = oil
+                            amount = 10
+                        }
+                    }
+                    if = {
+                        limit = {
+                            has_resources_amount = {
+                                resource = rubber
+                                amount > 0
+                            }
+                        }
+                        add_resource = {
+                            type = rubber
+                            amount = 10
+                        }
+                    }
+                    if = {
+                        limit = {
+                            has_resources_amount = {
+                                resource = tungsten
+                                amount > 0
+                            }
+                        }
+                        add_resource = {
+                            type = tungsten
+                            amount = 10
+                        }
+                    }
+                    if = {
+                        limit = {
+                            has_resources_amount = {
+                                resource = chromium
+                                amount > 0
+                            }
+                        }
+                        add_resource = {
+                            type = chromium
+                            amount = 10
+                        }
+                    }
+                    if = {
+                        limit = {
+                            has_resources_amount = {
+                                resource = steel
+                                amount > 0
+                            }
+                        }
+                        add_resource = {
+                            type = steel
+                            amount = 10
+                        }
+                    }
+                    if = {
+                        limit = {
+                            has_resources_amount = {
+                                resource = aluminium
+                                amount > 0
+                            }
+                        }
+                        add_resource = {
+                            type = aluminium
+                            amount = 10
+                        }
+                    }
+                }
+                ROOT = {
+                    subtract_from_variable = { industrial_power = 40 }
+                    add_to_variable = { current_devastation = 1 }
+                }
+            }
 		}
         triggers = {
             reduce_devastation_button_click_enabled = {
                 if = {
                     limit = {
                         ROOT = {
-                            has_government = harmony
                             has_country_flag = has_mind_tier3
                         }
                     }
@@ -104,7 +199,7 @@ scripted_gui = {
                     ROOT = { 
                         check_variable = {
                             var = industrial_power
-                            value = 10
+                            value = 40
                             compare = greater_than_or_equals
                         }
                     }
@@ -141,7 +236,7 @@ scripted_gui = {
                     ROOT = { 
                         check_variable = {
                             var = industrial_power
-                            value = 10
+                            value = 40
                             compare = greater_than_or_equals
                         }
                     }
@@ -184,6 +279,46 @@ scripted_gui = {
                     }
                 }
             }
+            reduce_devastation_button_mastery_click_enabled = {
+                THIS = {
+                    OR = {
+                        is_owned_by = ROOT
+                        OWNER = { is_ally_with = ROOT }
+                    }
+                    OR = {
+                        has_dynamic_modifier = {
+                            modifier = no_devastation
+                        }
+                        has_dynamic_modifier = {
+                            modifier = minor_devastation
+                        }
+                        has_dynamic_modifier = {
+                            modifier = notable_devastation
+                        }
+                        has_dynamic_modifier = {
+                            modifier = major_devastation
+                        }
+                        has_dynamic_modifier = {
+                            modifier = significant_devastation
+                        }
+                    }
+                    NOT = {
+                        has_state_flag = devastation_reduction_timeout_flag
+                    }
+                }
+                ROOT = {
+                    check_variable = {
+                        var = industrial_power
+                        value = 40
+                        compare = greater_than_or_equals
+                    }
+                }
+            }
+            reduce_devastation_button_mastery_visible = {
+                ROOT = { 
+                    has_country_flag = has_body_tier3
+                }
+            }
             reduce_devastation_load_click_enabled = {
                 if = {
                     limit = {
@@ -221,7 +356,7 @@ scripted_gui = {
                     ROOT = { 
                         check_variable = {
                             var = industrial_power
-                            value = 10
+                            value = 40
                             compare = greater_than_or_equals
                         }
                     }
@@ -258,7 +393,7 @@ scripted_gui = {
                     ROOT = { 
                         check_variable = {
                             var = industrial_power
-                            value = 10
+                            value = 40
                             compare = greater_than_or_equals
                         }
                     }
@@ -357,11 +492,27 @@ scripted_gui = {
                                 industrial_power > 500
                             }
                         }
-                        add = 100000
+                        add = 1000
 			        }
                     modifier = {	
                         OWNER = {
                             has_idea = crumbling_society
+                        }
+                        add = 10000
+			        }
+                }
+            }
+            reduce_devastation_button_mastery_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+                        OWNER = {
+                            check_variable = {
+                                industrial_power > 500
+                            }
+                            NOT =  {
+                                has_idea = crumbling_society
+                            }
                         }
                         add = 100000
 			        }
