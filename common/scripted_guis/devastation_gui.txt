@@ -11,6 +11,20 @@ scripted_gui = {
 		
 		effects = {
 			reduce_devastation_button_click = {
+                THIS = {
+                    decrease_devastation = yes
+                    set_state_flag = {
+                        flag = devastation_reduction_timeout_flag
+                        value = 1
+                        days = 60
+                    }
+                }
+                ROOT = {
+                    subtract_from_variable = { industrial_power = 25 }
+                    subtract_from_variable = { current_devastation = 1 }
+                }
+			}
+            reduce_devastation_button_harmony_click = {
                 if = {
                     limit = {
                         ROOT = {
@@ -30,12 +44,7 @@ scripted_gui = {
                         subtract_from_variable = { current_devastation = 1 }
                     }
                 }
-                else_if = {
-                    limit = {
-                        ROOT = {
-                            has_government = harmony
-                        }
-                    }
+                else = {
                     THIS = {
                         decrease_devastation = yes
                         set_state_flag = {
@@ -49,21 +58,7 @@ scripted_gui = {
                         subtract_from_variable = { current_devastation = 1 }
                     }
                 }
-                else = {
-                    THIS = {
-                        decrease_devastation = yes
-                        set_state_flag = {
-                            flag = devastation_reduction_timeout_flag
-                            value = 1
-                            days = 60
-                        }
-                    }
-                    ROOT = {
-                        subtract_from_variable = { industrial_power = 25 }
-		                subtract_from_variable = { current_devastation = 1 }
-                    }
-                }
-			}
+            }
             reduce_devastation_button_mastery_click = {
                 THIS = {
                     increase_devastation = yes
@@ -163,119 +158,60 @@ scripted_gui = {
             }
 		}
         triggers = {
-            reduce_devastation_button_click_enabled = {
-                if = {
-                    limit = {
-                        ROOT = {
+            reduce_devastation_button_visible = {
+                ROOT = {
+                    NOT = {
+                        OR = {
+                            has_government = harmony
                             has_country_flag = has_mind_tier3
                         }
                     }
-                    THIS = {
-                        OR = {
-                            is_owned_by = ROOT
-                            OWNER = { is_ally_with = ROOT }
-                        }
-                        OR = {
-                            has_dynamic_modifier = {
-                                modifier = minor_devastation
-                            }
-                            has_dynamic_modifier = {
-                                modifier = notable_devastation
-                            }
-                            has_dynamic_modifier = {
-                                modifier = major_devastation
-                            }
-                            has_dynamic_modifier = {
-                                modifier = significant_devastation
-                            }
-                            has_dynamic_modifier = {
-                                modifier = terminal_devastation
-                            }
-                        }
-                        NOT = {
-                            has_state_flag = devastation_reduction_timeout_flag
-                        }
-                    }
-                    ROOT = { 
-                        check_variable = {
-                            var = industrial_power
-                            value = 40
-                            compare = greater_than_or_equals
-                        }
-                    }
                 }
-                else_if = {
-                    limit = {
-                        ROOT = {
+            }
+            reduce_devastation_load_visible = {
+                ROOT = {
+                    NOT = {
+                        OR = {
                             has_government = harmony
-                        }
-                    }
-                    THIS = {
-                        OR = {
-                            is_owned_by = ROOT
-                            OWNER = { is_ally_with = ROOT }
-                        }
-                        OR = {
-                            has_dynamic_modifier = {
-                                modifier = notable_devastation
-                            }
-                            has_dynamic_modifier = {
-                                modifier = major_devastation
-                            }
-                            has_dynamic_modifier = {
-                                modifier = significant_devastation
-                            }
-                            has_dynamic_modifier = {
-                                modifier = terminal_devastation
-                            }
-                        }
-                        NOT = {
-                            has_state_flag = devastation_reduction_timeout_flag
-                        }
-                    }
-                    ROOT = { 
-                        check_variable = {
-                            var = industrial_power
-                            value = 40
-                            compare = greater_than_or_equals
+                            has_country_flag = has_mind_tier3
                         }
                     }
                 }
-                else = {
-                    THIS = {
-                        OR = {
-                            is_owned_by = ROOT
-                            OWNER = { is_ally_with = ROOT }
+            }
+            reduce_devastation_button_click_enabled = {
+                THIS = {
+                    OR = {
+                        is_owned_by = ROOT
+                        OWNER = { is_ally_with = ROOT }
+                    }
+                    OR = {
+                        has_dynamic_modifier = {
+                            modifier = notable_devastation
                         }
-                        OR = {
-                            has_dynamic_modifier = {
-                                modifier = notable_devastation
-                            }
-                            has_dynamic_modifier = {
-                                modifier = major_devastation
-                            }
-                            has_dynamic_modifier = {
-                                modifier = significant_devastation
-                            }
-                            has_dynamic_modifier = {
-                                modifier = terminal_devastation
-                            }
+                        has_dynamic_modifier = {
+                            modifier = major_devastation
                         }
-                        NOT = {
-                            has_state_flag = devastation_reduction_timeout_flag
+                        has_dynamic_modifier = {
+                            modifier = significant_devastation
                         }
-                        NOT = {
-                            ROOT = {
-                                has_idea = the_final_war_idea
-                            }
+                        has_dynamic_modifier = {
+                            modifier = terminal_devastation
                         }
                     }
-                    ROOT = {
-                        check_variable = {
-                            var = industrial_power
-                            value = 25
-                            compare = greater_than_or_equals
+                    NOT = {
+                        has_state_flag = devastation_reduction_timeout_flag
+                    }
+                    NOT = {
+                        ROOT = {
+                            has_idea = the_final_war_idea
                         }
+                    }
+                }
+                ROOT = {
+                    check_variable = {
+                        var = industrial_power
+                        value = 25
+                        compare = greater_than_or_equals
                     }
                 }
             }
@@ -314,16 +250,32 @@ scripted_gui = {
                     }
                 }
             }
+            reduce_devastation_button_harmony_visible = {
+                ROOT = {
+                    OR = { 
+                        has_country_flag = has_mind_tier3
+                        has_government = harmony
+                    }
+                }
+            }
+            reduce_devastation_load_harmony_visible = {
+                ROOT = {
+                    OR = { 
+                        has_country_flag = has_mind_tier3
+                        has_government = harmony
+                    }
+                }
+            }
             reduce_devastation_button_mastery_visible = {
                 ROOT = { 
                     has_country_flag = has_body_tier3
                 }
             }
-            reduce_devastation_load_click_enabled = {
+            reduce_devastation_load_harmony_click_enabled = {
                 if = {
                     limit = {
                         ROOT = {
-                            has_government = harmony
+                            #has_government = harmony
                             has_country_flag = has_mind_tier3
                         }
                     }
@@ -336,43 +288,6 @@ scripted_gui = {
                             has_dynamic_modifier = {
                                 modifier = minor_devastation
                             }
-                            has_dynamic_modifier = {
-                                modifier = notable_devastation
-                            }
-                            has_dynamic_modifier = {
-                                modifier = major_devastation
-                            }
-                            has_dynamic_modifier = {
-                                modifier = significant_devastation
-                            }
-                            has_dynamic_modifier = {
-                                modifier = terminal_devastation
-                            }
-                        }
-                        NOT = {
-                            has_state_flag = devastation_reduction_timeout_flag
-                        }
-                    }
-                    ROOT = { 
-                        check_variable = {
-                            var = industrial_power
-                            value = 40
-                            compare = greater_than_or_equals
-                        }
-                    }
-                }
-                else_if = {
-                    limit = {
-                        ROOT = {
-                            has_government = harmony
-                        }
-                    }
-                    THIS = {
-                        OR = {
-                            is_owned_by = ROOT
-                            OWNER = { is_ally_with = ROOT }
-                        }
-                        OR = {
                             has_dynamic_modifier = {
                                 modifier = notable_devastation
                             }
@@ -421,18 +336,125 @@ scripted_gui = {
                         NOT = {
                             has_state_flag = devastation_reduction_timeout_flag
                         }
-                        NOT = {
-                            ROOT = {
-                                has_idea = the_final_war_idea
-                            }
-                        }
                     }
-                    ROOT = {
+                    ROOT = { 
                         check_variable = {
                             var = industrial_power
-                            value = 25
+                            value = 40
                             compare = greater_than_or_equals
                         }
+                    }
+                }
+            }
+            reduce_devastation_button_harmony_click_enabled = {
+                if = {
+                    limit = {
+                        ROOT = {
+                            #has_government = harmony
+                            has_country_flag = has_mind_tier3
+                        }
+                    }
+                    THIS = {
+                        OR = {
+                            is_owned_by = ROOT
+                            OWNER = { is_ally_with = ROOT }
+                        }
+                        OR = {
+                            has_dynamic_modifier = {
+                                modifier = minor_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = notable_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = major_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = significant_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = terminal_devastation
+                            }
+                        }
+                        NOT = {
+                            has_state_flag = devastation_reduction_timeout_flag
+                        }
+                    }
+                    ROOT = { 
+                        check_variable = {
+                            var = industrial_power
+                            value = 40
+                            compare = greater_than_or_equals
+                        }
+                    }
+                }
+                else = {
+                    THIS = {
+                        OR = {
+                            is_owned_by = ROOT
+                            OWNER = { is_ally_with = ROOT }
+                        }
+                        OR = {
+                            has_dynamic_modifier = {
+                                modifier = notable_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = major_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = significant_devastation
+                            }
+                            has_dynamic_modifier = {
+                                modifier = terminal_devastation
+                            }
+                        }
+                        NOT = {
+                            has_state_flag = devastation_reduction_timeout_flag
+                        }
+                    }
+                    ROOT = { 
+                        check_variable = {
+                            var = industrial_power
+                            value = 40
+                            compare = greater_than_or_equals
+                        }
+                    }
+                }
+            }
+            reduce_devastation_load_click_enabled = {
+                THIS = {
+                    OR = {
+                        is_owned_by = ROOT
+                        OWNER = { is_ally_with = ROOT }
+                    }
+                    OR = {
+                        has_dynamic_modifier = {
+                            modifier = notable_devastation
+                        }
+                        has_dynamic_modifier = {
+                            modifier = major_devastation
+                        }
+                        has_dynamic_modifier = {
+                            modifier = significant_devastation
+                        }
+                        has_dynamic_modifier = {
+                            modifier = terminal_devastation
+                        }
+                    }
+                    NOT = {
+                        has_state_flag = devastation_reduction_timeout_flag
+                    }
+                    NOT = {
+                        ROOT = {
+                            has_idea = the_final_war_idea
+                        }
+                    }
+                }
+                ROOT = {
+                    check_variable = {
+                        var = industrial_power
+                        value = 25
+                        compare = greater_than_or_equals
                     }
                 }
             }
