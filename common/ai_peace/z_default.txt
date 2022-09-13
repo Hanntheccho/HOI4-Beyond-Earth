@@ -40,30 +40,12 @@ default_peace = {
 	
 	# ROOT = Taker, FROM = Giver
 	annex = {
-		factor = 50
-
-		modifier = {
-			factor = 0
-			NOT = {
-				has_annex_war_goal = FROM
-			}
-			FROM = {
-				any_owned_state = { 
-					NOT = {
-						OR = { 
-							is_claimed_by = ROOT
-							is_core_of = ROOT
-							has_claimed_state_in_peace_conference = ROOT
-						}
-					}
-				}
-			}
-		}
+		factor = 0
 	}
 
 	# ROOT = Taker, FROM = Liberated
 	liberate = {
-		factor = 0 #100
+		factor = 0
 	}
 
 	# ROOT = Taker, FROM = Giver
@@ -73,10 +55,6 @@ default_peace = {
 			factor = 0
 			has_annex_war_goal = FROM
 		}
-		modifier = { #Don't puppet nations in civil war... this is too buggy.
-			factor = 0
-			FROM = { has_civil_war = yes }
-		}
 		modifier = { #Not if we claim anything
 			factor = 0
 			FROM = {
@@ -85,7 +63,7 @@ default_peace = {
 						is_claimed_by = ROOT
 						is_core_of = ROOT
 					}
-					NOT = { has_claimed_state_in_peace_conference = ROOT }
+					#?¿?¿?¿ #NOT = { has_claimed_state_in_peace_conference = ROOT }
 				}
 			}
 		}
@@ -93,12 +71,12 @@ default_peace = {
 	
 	# ROOT = Taker, FROM = Giver
 	puppet_all = {
-		base = 0 
+		factor = 0
 	}
 	
 	# ROOT = STATE, FROM = Taker, FROM.FROM = Giver
 	puppet_state = {
-		base = 0 
+		factor = 0 
 		modifier = { #puppet state only if already puppeted
 			add = 200
 			#only if already puppetted the country
@@ -112,9 +90,9 @@ default_peace = {
 
 	# ROOT = Taker, FROM = State
 	take_states = {
-        factor = 50
+        factor = 0
         modifier = { #Take cores
-            add = 400
+            add = 10000
             FROM = {
                 OR = {
                     is_claimed_by = ROOT

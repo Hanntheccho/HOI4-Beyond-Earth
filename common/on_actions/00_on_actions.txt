@@ -200,239 +200,186 @@ on_actions = {
 	}
 
 	#ECW
-	on_peaceconference_ended = {
+	on_capitulation_immediate = {
+		effect = {
+			if = {
+				limit = { 
+					has_global_flag = ECW_start 
+					FROM = {
+						OR = {
+							tag = ENG
+							tag = HNG
+							tag = JNG
+							tag = CNG
+						}
+					}
+					ROOT = {
+						OR = {
+							tag = ENG
+							tag = HNG
+							tag = JNG
+							tag = CNG
+						}
+					}
+				}
+				FROM = {
+					annex_country = {
+						target = ROOT
+						#transfer_troops = yes
+					}
+				}
+			}
+		}
+	}
+	on_weekly_ADU = { #on_peaceconference_ended
 		effect = {
 			if = {
 				limit = {
+					has_global_flag = ECW_start
 					country_exists = ENG
+					NOT = {
+						country_exists = HNG
+						country_exists = JNG
+						country_exists = CNG
+						has_global_flag = ECW_end
+					}
 				}
 				ENG = {
-					if = {
-						limit =  {
-							NOT = {
-								has_global_flag = ECW_end
-							}
-							HNG = {
-								OR = {
-									exists = no
-									has_capitulated = yes
-								}
-							}
-							JNG = {
-								OR = {
-									exists = no
-									has_capitulated = yes
-								}
-							}
-							CNG = {
-								OR = {
-									exists = no
-									has_capitulated = yes
-								}
-							}
-							ENG = {
-								has_war = yes
-							}
+					every_state = {
+						limit = {
+							is_core_of = ENG
 						}
-						every_state = {
-							limit = {
-								is_core_of = ENG
-							}
-							remove_core_of = HNG
-							remove_core_of = JNG
-							remove_core_of = CNG
-							transfer_state_to = ENG
-							remove_dynamic_modifier = {
-								modifier = eng_cw_modifier
-							}
+						remove_core_of = HNG
+						remove_core_of = JNG
+						remove_core_of = CNG
+						transfer_state_to = ENG
+						remove_dynamic_modifier = {
+							modifier = eng_cw_modifier
 						}
-						FRA = {
-							white_peace = ENG
-						}
-						GER = {
-							white_peace = ENG
-						}
-						SCO = {
-							add_to_faction = ENG
-						}
-						set_global_flag = ECW_end
-						set_cosmetic_tag = ENG
 					}
+					FRA = {
+						white_peace = ENG
+					}
+					GER = {
+						white_peace = ENG
+					}
+					SCO = {
+						add_to_faction = ENG
+					}
+					set_cosmetic_tag = ENG
 				}
+				set_global_flag = ECW_end
 			}
-			if = {
+			else_if = {
 				limit = {
+					has_global_flag = ECW_start
 					country_exists = HNG
+					NOT = {
+						country_exists = ENG
+						country_exists = JNG
+						country_exists = CNG
+						has_global_flag = ECW_end
+					}
 				}
 				HNG = {
-					if = {
-						limit =  {
-							NOT = {
-								has_global_flag = ECW_end
-							}
-							ENG = {
-								OR = {
-									exists = no
-									has_capitulated = yes
-								}
-							}
-							JNG = {
-								OR = {
-									exists = no
-									has_capitulated = yes
-								}
-							}
-							CNG = {
-								OR = {
-									exists = no
-									has_capitulated = yes
-								}
-							}
-							HNG = {
-								has_war = yes
-							}
+					every_state = {
+						limit = {
+							is_core_of = HNG
 						}
-						every_state = {
-							limit = {
-								is_core_of = HNG
-							}
-							remove_core_of = ENG
-							remove_core_of = JNG
-							remove_core_of = CNG
-							transfer_state_to = HNG
-							remove_dynamic_modifier = {
-								modifier = eng_cw_modifier
-							}
+						remove_core_of = ENG
+						remove_core_of = JNG
+						remove_core_of = CNG
+						transfer_state_to = HNG
+						remove_dynamic_modifier = {
+							modifier = eng_cw_modifier
 						}
-						FRA = {
-							white_peace = HNG
-						}
-						SCO = {
-							white_peace = HNG
-						}
-						GER = {
-							add_to_faction = HNG
-						}
-						set_global_flag = ECW_end
-						set_cosmetic_tag = ENG
 					}
+					FRA = {
+						white_peace = HNG
+					}
+					SCO = {
+						white_peace = HNG
+					}
+					GER = {
+						add_to_faction = HNG
+					}
+					set_cosmetic_tag = ENG
 				}
+				set_global_flag = ECW_end
 			}
-			if = {
+			else_if = {
 				limit = {
+					has_global_flag = ECW_start
 					country_exists = JNG
+					NOT = {
+						country_exists = ENG
+						country_exists = HNG
+						country_exists = CNG
+						has_global_flag = ECW_end
+					}
 				}
 				JNG = {
-					if = {
-						limit =  {
-							NOT = {
-								has_global_flag = ECW_end
-							}
-							HNG = {
-								OR = {
-									exists = no
-									has_capitulated = yes
-								}
-							}
-							ENG = {
-								OR = {
-									exists = no
-									has_capitulated = yes
-								}
-							}
-							CNG = {
-								OR = {
-									exists = no
-									has_capitulated = yes
-								}
-							}
-							JNG = {
-								has_war = yes
-							}
+					every_state = {
+						limit = {
+							is_core_of = JNG
 						}
-						every_state = {
-							limit = {
-								is_core_of = JNG
-							}
-							remove_core_of = HNG
-							remove_core_of = ENG
-							remove_core_of = CNG
-							transfer_state_to = JNG
-							remove_dynamic_modifier = {
-								modifier = eng_cw_modifier
-							}
+						remove_core_of = HNG
+						remove_core_of = ENG
+						remove_core_of = CNG
+						transfer_state_to = JNG
+						remove_dynamic_modifier = {
+							modifier = eng_cw_modifier
 						}
-						GER = {
-							white_peace = JNG
-						}
-						SCO = {
-							white_peace = JNG
-						}
-						FRA = {
-							add_to_faction = JNG
-						}
-						set_global_flag = ECW_end
-						set_cosmetic_tag = ENG
 					}
+					GER = {
+						white_peace = JNG
+					}
+					SCO = {
+						white_peace = JNG
+					}
+					FRA = {
+						add_to_faction = JNG
+					}
+					set_cosmetic_tag = ENG
 				}
+				set_global_flag = ECW_end
 			}
-			if = {
+			else_if = {
 				limit = {
-					country_exists = CNG
+					has_global_flag = ECW_start
+					country_exists = JNG
+					NOT = {
+						country_exists = ENG
+						country_exists = HNG
+						country_exists = CNG
+						has_global_flag = ECW_end
+					}
 				}
 				CNG = {
-					if = {
-						limit =  {
-							NOT = {
-								has_global_flag = ECW_end
-							}
-							HNG = {
-								OR = {
-									exists = no
-									has_capitulated = yes
-								}
-							}
-							JNG = {
-								OR = {
-									exists = no
-									has_capitulated = yes
-								}
-							}
-							ENG = {
-								OR = {
-									exists = no
-									has_capitulated = yes
-								}
-							}
-							CNG = {
-								has_war = yes
-							}
+					every_state = {
+						limit = {
+							is_core_of = CNG
 						}
-						every_state = {
-							limit = {
-								is_core_of = CNG
-							}
-							remove_core_of = HNG
-							remove_core_of = JNG
-							remove_core_of = ENG
-							transfer_state_to = CNG
-							remove_dynamic_modifier = {
-								modifier = eng_cw_modifier
-							}
+						remove_core_of = HNG
+						remove_core_of = JNG
+						remove_core_of = ENG
+						transfer_state_to = CNG
+						remove_dynamic_modifier = {
+							modifier = eng_cw_modifier
 						}
-						GER = {
-							white_peace = CNG
-						}
-						SCO = {
-							white_peace = CNG
-						}
-						FRA = {
-							white_peace = CNG
-						}
-						set_global_flag = ECW_end
-						set_cosmetic_tag = ENG
 					}
+					GER = {
+						white_peace = CNG
+					}
+					SCO = {
+						white_peace = CNG
+					}
+					FRA = {
+						white_peace = CNG
+					}
+					set_cosmetic_tag = ENG
 				}
+				set_global_flag = ECW_end
 			}			
 		}
 	}
@@ -761,6 +708,34 @@ on_actions = {
 			}
 			ITA = {
 				add_ideas = EU_treaty_of_bern
+			}
+			#
+			OCH = {
+				add_ideas = NAU_central_authority
+			}
+			SIT = {
+				add_ideas = NAU_central_authority
+			}
+			SEI = {
+				add_ideas = NAU_central_authority
+			}
+			CIN = {
+				add_ideas = NAU_central_authority
+			}
+			CUA = {
+				add_ideas = NAU_central_authority
+			}
+			TRE = {
+				add_ideas = NAU_central_authority
+			}
+			DOS = {
+				add_ideas = NAU_central_authority
+			}
+			ONE = {
+				add_ideas = NAU_central_authority
+			}
+			PNM = {
+				add_ideas = NAU_central_authority
 			}
 		}
 	}

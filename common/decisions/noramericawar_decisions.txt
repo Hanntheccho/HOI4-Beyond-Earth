@@ -1,0 +1,145 @@
+noramericawar_decisions = {
+	TRE_rebellion = {
+		icon = GFX_decision_unknown
+		available = {
+			TRE = {
+				OR = {
+					is_in_faction = no
+					is_puppet = yes
+				}				
+			}
+		}
+		visible = {
+			#
+		}
+		fire_only_once = yes
+		days_mission_timeout = 25
+		timeout_effect = {
+			TRE = {
+				leave_faction = yes
+				add_stability = -1
+				add_war_support = -1
+				remove_ideas = NAU_central_authority
+			}
+			every_state = {
+				limit = {
+					is_owned_by = TRE
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 10
+				}
+				damage_building = {
+					type = industrial_complex
+					damage = 5
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ARC_TRE_intervention = {
+		icon = GFX_decision_war
+		available = {
+			tag = ARC
+			TRE = {
+				exists = yes
+			}
+		}
+		visible = {
+			tag = ARC
+			TRE = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+		targets = {
+			TRE
+		}
+		war_with_on_remove = TRE
+		cost = 30
+		days_remove = 50
+		remove_effect = {
+			declare_war_on = {
+				target = TRE
+				type = puppet_wargoal_focus
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				TRE = {
+					is_in_faction = no
+				}
+				add = 10
+			}
+		}
+	}
+	ARC_TRE_pacify = {
+		icon = GFX_decision_political
+		available = {
+			tag = ARC
+			TRE = {
+				exists = yes
+				is_puppet_of = ARC
+			}
+		}
+		visible = {
+			tag = ARC
+			TRE = {
+				exists = yes
+				is_puppet_of = ARC
+			}
+		}
+		fire_only_once = yes
+		cost = 100
+		days_remove = 100
+		remove_effect = {
+			TRE = {
+				remove_ideas = TRE_absence_of_civilization
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	ARC_HQ_expansion = {
+		icon = GFX_decision_unity
+		available = {
+			tag = ARC
+			TRE = {
+				exists = yes
+				is_puppet_of = ARC
+			}
+		}
+		visible = {
+			tag = ARC
+			TRE = {
+				exists = yes
+				#is_puppet_of = ARC
+			}
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			add_state_core = 106
+			transfer_state = 106 
+			106 = {
+				set_state_category = state_20
+			}
+			set_province_name = {
+				id = 1788
+				name = "Arcopolis Proxima"
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}
