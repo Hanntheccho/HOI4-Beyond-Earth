@@ -7,20 +7,46 @@ on_actions = {
 				if = {
 					limit = {
 						OR = {
-							state = 949
-							state = 113
+							is_owned_by = ADU
 						}
 					}
 					add_dynamic_modifier = {
-						modifier = notable_devastation
+						modifier = terminal_devastation
 					}
 				}
 				else_if = {
 					limit = {
-						is_owned_by = ADU
+						OR = {
+							state = 16
+							state = 14
+						}
 					}
 					add_dynamic_modifier = {
 						modifier = terminal_devastation
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							state = 18
+							state = 19
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = major_devastation
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							state = 949
+							state = 113
+							state = 13
+							state = 23
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = notable_devastation
 					}
 				}
 				else_if = {

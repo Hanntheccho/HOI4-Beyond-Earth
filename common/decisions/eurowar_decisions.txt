@@ -266,9 +266,9 @@ eurowar_decisions = {
 				#}
 			}
 			UKR = {
-				#set_state_owner = 567
-				#set_state_owner = 581
-				#set_state_owner = 631
+				#transfer_state = 567
+				#transfer_state = 581
+				#transfer_state = 631
 				leave_faction = yes
 			}
 		}
@@ -295,8 +295,8 @@ eurowar_decisions = {
 			FIN = {
 				#add_state_core = 557 #already in state history
 				#add_state_core = 549 #already in state history
-				set_state_owner = 557
-				set_state_owner = 549
+				transfer_state = 557
+				transfer_state = 549
 			}
 			SOV = {
 				add_war_support = -0.1
@@ -315,8 +315,13 @@ eurowar_decisions = {
 			}
 		}
 		cancel_trigger = {
-			KAR = {
-				surrender_progress > 0.2
+			OR = {
+				KAR = {
+					surrender_progress > 0.2
+				}
+				SOV = {
+					surrender_progress > 0.2
+				}
 			}
 		}
 		activation = {
@@ -351,8 +356,8 @@ eurowar_decisions = {
 					}
 				}
 				SOV = {
-					set_state_owner = 565
-					set_state_owner = 595
+					transfer_state = 565
+					transfer_state = 595
 				}
 			}
 			SOV = {
