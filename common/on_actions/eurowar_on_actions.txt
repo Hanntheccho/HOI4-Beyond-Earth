@@ -1,4 +1,5 @@
 on_actions = {
+	###
 	on_startup = {
 		effect = {
 			set_variable = { global.ewpgain_var = 0.5 }
@@ -12,4 +13,318 @@ on_actions = {
 			}
 		}
 	}
+	###
+	on_startup = {
+		effect = {
+			SCO = {
+				add_ideas = EU_treaty_of_bern
+			}
+			FRA = {
+				add_ideas = EU_treaty_of_bern
+			}
+			GER = {
+				add_ideas = EU_treaty_of_bern
+			}
+			SOV = {
+				add_ideas = EU_treaty_of_bern
+			}
+			GRN = {
+				add_ideas = EU_treaty_of_bern
+			}
+			ICE = {
+				add_ideas = EU_treaty_of_bern
+			}
+			ENG = {
+				add_ideas = EU_treaty_of_bern
+			}
+			IRE = {
+				add_ideas = EU_treaty_of_bern
+			}
+			NOR = {
+				add_ideas = EU_treaty_of_bern
+			}
+			SWE = {
+				add_ideas = EU_treaty_of_bern
+			}
+			FIN = {
+				add_ideas = EU_treaty_of_bern
+			}
+			LAT = {
+				add_ideas = EU_treaty_of_bern
+			}
+			UKR = {
+				add_ideas = EU_treaty_of_bern
+			}
+			POL = {
+				add_ideas = EU_treaty_of_bern
+			}
+			ROM = {
+				add_ideas = EU_treaty_of_bern
+			}
+			HUN = {
+				add_ideas = EU_treaty_of_bern
+			}
+			SLO = {
+				add_ideas = EU_treaty_of_bern
+			}
+			CZE = {
+				add_ideas = EU_treaty_of_bern
+			}
+			YUG = {
+				add_ideas = EU_treaty_of_bern
+			}
+			GRE = {
+				add_ideas = EU_treaty_of_bern
+			}
+			PAD = {
+				add_ideas = EU_treaty_of_bern
+			}
+			ITA = {
+				add_ideas = EU_treaty_of_bern
+			}
+		}
+	}
+	#EU WAR STUFF
+	on_declare_war = {
+		effect = {
+			check_europe_war_progress = yes
+			check_infamy = yes
+		}
+	}
+	on_declare_war = { 
+		effect = {
+			if = {
+				limit = {
+					ROOT = { tag = SOV }
+					FROM = { 
+						check_variable = {
+							num_owned_states < 5 
+						}
+						capital_scope = {
+							is_on_continent = europe
+						}
+						has_idea = EU_treaty_of_bern
+					}
+				}
+				add_to_variable = {
+					var = global.slavicinfamy_var
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { tag = SOV }
+					FROM = { 
+						check_variable = {
+							num_owned_states > 4 
+						}
+						check_variable = {
+							num_owned_states < 10 
+						}
+						capital_scope = {
+							is_on_continent = europe
+						}
+						has_idea = EU_treaty_of_bern
+					}
+				}
+				add_to_variable = {
+					var = global.slavicinfamy_var
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { tag = SOV }
+					FROM = { 
+						check_variable = {
+							num_owned_states > 9
+						}
+						capital_scope = {
+							is_on_continent = europe
+						}
+						has_idea = EU_treaty_of_bern
+					}
+				}
+				add_to_variable = {
+					var = global.slavicinfamy_var
+					value = 4
+				}
+			}
+
+			if = {
+				limit = {
+					ROOT = { tag = FRA }
+					FROM = { 
+						check_variable = {
+							num_owned_states < 5 
+						}
+						capital_scope = {
+							is_on_continent = europe
+						}
+						has_idea = EU_treaty_of_bern
+					}
+				}
+				add_to_variable = {
+					var = global.francoinfamy_var
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { tag = FRA }
+					FROM = { 
+						check_variable = {
+							num_owned_states > 4 
+						}
+						check_variable = {
+							num_owned_states < 10 
+						}
+						capital_scope = {
+							is_on_continent = europe
+						}
+						has_idea = EU_treaty_of_bern
+					}
+				}
+				add_to_variable = {
+					var = global.francoinfamy_var
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { tag = FRA }
+					FROM = { 
+						check_variable = {
+							num_owned_states > 9
+						}
+						capital_scope = {
+							is_on_continent = europe
+						}
+						has_idea = EU_treaty_of_bern
+					}
+				}
+				add_to_variable = {
+					var = global.francoinfamy_var
+					value = 4
+				}
+			}
+
+			if = {
+				limit = {
+					ROOT = { tag = GER }
+					FROM = { 
+						check_variable = {
+							num_owned_states < 5 
+						}
+						capital_scope = {
+							is_on_continent = europe
+						}
+						has_idea = EU_treaty_of_bern
+					}
+				}
+				add_to_variable = {
+					var = global.integrinfamy_var
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { tag = GER }
+					FROM = { 
+						check_variable = {
+							num_owned_states > 4 
+						}
+						check_variable = {
+							num_owned_states < 10 
+						}
+						capital_scope = {
+							is_on_continent = europe
+						}
+						has_idea = EU_treaty_of_bern
+					}
+				}
+				add_to_variable = {
+					var = global.integrinfamy_var
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { tag = GER }
+					FROM = { 
+						check_variable = {
+							num_owned_states > 9
+						}
+						capital_scope = {
+							is_on_continent = europe
+						}
+						has_idea = EU_treaty_of_bern
+					}
+				}
+				add_to_variable = {
+					var = global.integrinfamy_var
+					value = 4
+				}
+			}
+
+			if = {
+				limit = {
+					ROOT = { tag = SCO }
+					FROM = { 
+						check_variable = {
+							num_owned_states < 5 
+						}
+						capital_scope = {
+							is_on_continent = europe
+						}
+						has_idea = EU_treaty_of_bern
+					}
+				}
+				add_to_variable = {
+					var = global.nsainfamy_var
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { tag = SCO }
+					FROM = { 
+						check_variable = {
+							num_owned_states > 4 
+						}
+						check_variable = {
+							num_owned_states < 10 
+						}
+						capital_scope = {
+							is_on_continent = europe
+						}
+						has_idea = EU_treaty_of_bern
+					}
+				}
+				add_to_variable = {
+					var = global.nsainfamy_var
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { tag = SCO }
+					FROM = { 
+						check_variable = {
+							num_owned_states > 9
+						}
+						capital_scope = {
+							is_on_continent = europe
+						}
+						has_idea = EU_treaty_of_bern
+					}
+				}
+				add_to_variable = {
+					var = global.nsainfamy_var
+					value = 4
+				}
+			}
+		}
+	}
+	###
 }

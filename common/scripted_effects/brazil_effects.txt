@@ -1,25 +1,3 @@
-BRA_set_borders_legiao = {
-	every_state = {
-		limit = {
-			is_core_of = BRA
-		}
-		add_core_of = LEG
-	}
-	URG = {
-		add_state_core = 185
-		transfer_state = 185
-	}
-	LEG = {
-		transfer_state = 205
-		inherit_technology = BRA
-		declare_war_on = {
-			target = BRA
-			type = annex_everything
-		}
-		load_oob = LEG_OOB
-	}
-}
-
 BRA_set_borders = {
 	BRA = {
 		white_peace = PRU
@@ -29,18 +7,24 @@ BRA_set_borders = {
 			is_core_of = BRA
 		}
 		add_core_of = BGV
-		#add_core_of = GRP
-		add_core_of = LAM
 		remove_core_of = BRA
+	}
+	URG = {
+		add_state_core = 185
+		transfer_state = 185
+	}
+	LEG = {
+		transfer_state = 205
+		transfer_state = 194
+		add_state_core = 205
+		add_state_core = 194
+		inherit_technology = BRA
+		load_oob = LEG_OOB
 	}
 	BGV = {
 		annex_country = {
 			target = BRA
 			transfer_troops = yes
-		}
-		declare_war_on = {
-			target = LEG
-			type = annex_everything
 		}
 		transfer_state = 194
 		transfer_state = 183
@@ -66,8 +50,25 @@ BRA_set_borders = {
 		transfer_state = 162
 		inherit_technology = BRA
 
-		create_faction = "Brasilia's Military Command"
+		create_faction = "Brasilia Military Command"
 		add_to_faction = BGV
+	}
+	LEG = {
+		declare_war_on = {
+			target = BGV
+			type = annex_everything
+		}
+		set_province_controller = 3073
+		set_province_controller = 3093
+		set_province_controller = 3105
+		set_province_controller = 3123
+		set_province_controller = 3121
+		set_province_controller = 3112
+	}
+	BGV = {
+		set_province_controller = 2967
+		set_province_controller = 3010
+		set_province_controller = 3039
 	}
 	#GRP = {
 	#	inherit_technology = PRU
@@ -83,11 +84,18 @@ BRA_set_borders = {
 		transfer_state = 136
 		transfer_state = 122	
 		#transfer_state = 162
+		add_state_core = 167
+		add_state_core = 151
+		add_state_core = 153
+		add_state_core = 136
+		add_state_core = 122
+		#add_state_core = 162
 		inherit_technology = BRA
 		load_oob = LAM_OOB
 	}
 	PRU = {
 		transfer_state = 120
+		add_state_core = 120
 	}
 	BGV = { change_tag_from = BRA }
 }

@@ -31,87 +31,27 @@ default_peace = {
 
 	# ROOT = Taker, FROM = Giver
 	annex = {
-		factor = 0 #500
+		factor = 0
 	}
 
 	# ROOT = Taker, FROM = Liberated
 	liberate = {
-		factor = 0 #100
+		factor = 0
 	}
 
 	# ROOT = Taker, FROM = Giver
 	puppet = {
-		base = 1
-		#modifier = { #No cores
-		#	add = 200
-		#	NOT = {
-		#		FROM = {
-		#			any_owned_state = {
-		#				OR = {
-		#					is_claimed_by = ROOT
-		#					is_core_of = ROOT
-		#				}
-		#			}
-		#		}
-		#		any_country = { #No other country has anything to say?
-		#			is_in_peace_conference = yes
-		#			FROM = {
-		#				any_owned_state = {
-		#					is_claimed_by = PREV.PREV
-		#					is_core_of = PREV.PREV
-		#				}
-		#			}
-		#		}
-		#	}
-		#}
+		base = 1 #1
 	}
 
 	# ROOT = Taker, FROM = Giver
 	puppet_all = {
 		base = 0
-		#modifier = { #No cores
-		#	add = 200
-		#	NOT = {
-		#		FROM = {
-		#			any_owned_state = {
-		#				OR = {
-		#					is_claimed_by = ROOT
-		#					is_core_of = ROOT
-		#				}
-		#			}
-		#		}
-		#		any_country = { #No other country has anything to say?
-		#			is_in_peace_conference = yes
-		#			FROM = {
-		#				any_owned_state = {
-		#					is_claimed_by = PREV.PREV
-		#					is_core_of = PREV.PREV
-		#				}
-		#			}
-		#		}
-		#	}
-		#}
 	}
 
 	# ROOT = STATE, FROM = Taker, FROM.FROM = Giver
 	puppet_state = {
 		base = 0
-		#modifier = { #No cores
-		#	add = 200
-		#	ROOT = {
-		#		NOT = {
-		#			is_claimed_by = FROM
-		#			is_core_of = FROM
-		#			any_country = { #No other country has anything to say?
-		#				is_in_peace_conference = yes
-		#				ROOT = {
-		#					is_claimed_by = PREV
-		#					is_core_of = PREV
-		#				}
-		#			}
-		#		}
-		#	}
-		#}
 	}
 
 	# ROOT = Taker, FROM = State
@@ -126,37 +66,6 @@ default_peace = {
 				}
 			}
 		}
-		#modifier = { #Take states if country leader, but not if human is in faction, or if state clamied or cored by ally
-		#	add = 20
-		#	AND = {
-		#		OR = {
-		#			ROOT = { is_in_faction = no }
-		#			OR = {
-		#				ROOT = { is_faction_leader = yes }
-		#				any_country = {
-		#					is_faction_leader = yes 
-		#					is_in_faction_with = ROOT
-		#					NOT = { has_war_together_with = ROOT }
-		#				}
-		#			}
-		#		}
-		#		NOT = {
-		#			any_allied_country = {
-		#				OR = {
-		#					FROM = {
-		#						is_claimed_by = PREV
-		#						is_core_of = PREV
-		#					}
-		#					AND = {
-		#						is_ai = no 
-		#						has_capitulated = no 
-		#						is_puppet = no 
-		#					}
-		#				}
-		#			}
-		#		}
-		#	}
-		#}
 	}
 
 	# ROOT = Taker, FROM = Giver

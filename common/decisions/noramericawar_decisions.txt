@@ -1,41 +1,133 @@
 noramericawar_decisions = {
+	DOS_rebellion = {
+		icon = GFX_decision_unknown
+		available = {
+			CAS = {
+				exists = yes
+			}
+		}
+		visible = {
+			#
+		}
+		activation = {
+			SIL = {
+				exists = no
+			}
+		}
+		fire_only_once = yes
+		days_mission_timeout = 43
+		timeout_effect = {
+			DOS = {
+				remove_ideas = DOS_divided_leadership
+				remove_ideas = NAU_central_authority_low
+				leave_faction = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = DOS
+				}
+				add_core_of = CAS
+			}
+			CAS = {
+				transfer_state = 15
+				inherit_technology = DOS
+				load_oob = CAS_OOB
+				declare_war_on = {
+					target = DOS
+					type = annex_everything
+				}
+				add_ideas = NAU_central_authority_low
+			}
+			#PNM = {
+			#	add_to_faction = CAS
+			#}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	TRE_rebellion = {
 		icon = GFX_decision_unknown
 		available = {
-			TRE = {
-				OR = {
-					is_in_faction = no
-					is_puppet = yes
-				}				
+			ONU = {
+				exists = yes
 			}
 		}
 		visible = {
 			#
 		}
 		fire_only_once = yes
-		days_mission_timeout = 25
+		days_mission_timeout = 133
 		timeout_effect = {
 			TRE = {
 				leave_faction = yes
-				add_stability = -1
-				add_war_support = -1
-				remove_ideas = NAU_central_authority
+				remove_ideas = NAU_central_authority_low
+				remove_ideas = TRE_the_last_earthlings
 			}
 			every_state = {
 				limit = {
-					is_owned_by = TRE
+					is_core_of = TRE
 				}
-				damage_building = {
-					type = infrastructure
-					damage = 10
+				add_core_of = ONU
+			}
+			ONU = {
+				transfer_state = 98
+				inherit_technology = TRE
+				load_oob = ONU_OOB
+				declare_war_on = {
+					target = TRE
+					type = annex_everything
 				}
-				damage_building = {
-					type = industrial_complex
-					damage = 5
+				add_ideas = TRE_the_last_earthlings
+			}
+			ARC = {
+				add_to_faction = TRE
+				add_to_war = {
+					targeted_alliance = TRE
+					enemy = ONU
 				}
-				damage_building = {
-					type = arms_factory
-					damage = 5
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ONE_rebellion = {
+		icon = GFX_decision_unknown
+		available = {
+			CAL = {
+				exists = yes
+			}
+		}
+		visible = {
+			#
+		}
+		fire_only_once = yes
+		days_mission_timeout = 96
+		timeout_effect = {
+			#ONE = {
+			#	leave_faction = yes
+			#	remove_ideas = NAU_central_authority_low
+			#}
+			every_state = {
+				limit = {
+					is_core_of = ONE
+				}
+				add_core_of = CAL
+			}
+			CAL = {
+				transfer_state = 16
+				inherit_technology = ONE
+				load_oob = CAL_OOB
+				declare_war_on = {
+					target = ONE
+					type = annex_everything
+				}
+			}
+			PNM = {
+				add_to_war = {
+					targeted_alliance = ONE
+					enemy = CAL
 				}
 			}
 		}

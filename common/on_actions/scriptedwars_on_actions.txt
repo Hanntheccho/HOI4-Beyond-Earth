@@ -1,0 +1,377 @@
+on_actions = {
+	###
+	on_peaceconference_ended = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = final_war_flag
+				}
+				#
+			}
+			#DOS-CAS WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = CAS
+					}
+					ROOT = {
+						tag = DOS
+					}
+				}
+				ROOT = {
+					every_owned_state = {
+						limit = {
+							is_core_of = FROM
+						}
+						remove_core_of = FROM
+					}
+				}
+				ARC = {
+					add_to_faction = ROOT
+				}
+			}
+			#CAS-DOS WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = DOS
+					}
+					ROOT = {
+						tag = CAS
+					}
+				}
+				ROOT = {
+					every_owned_state = {
+						limit = {
+							is_core_of = FROM
+						}
+						remove_core_of = FROM
+					}
+					add_ideas = NAU_central_authority_low
+				}
+				PNM = {
+					add_to_faction = ROOT
+				}
+			}
+			#TRE-ONU WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = ONU
+					}
+					ROOT = {
+						tag = TRE
+					}
+				}
+				ROOT = {
+					annex_country = {
+						target = FROM
+					}
+					every_owned_state = {
+						limit = {
+							is_core_of = FROM
+						}
+						remove_core_of = FROM
+					}
+				}
+			}
+			#DOS-SIL WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = SIL
+					}
+					ROOT = {
+						tag = DOS
+					}
+				}
+				ROOT = {
+					remove_ideas = DOS_to_the_coast
+					every_owned_state = {
+						limit = {
+							is_core_of = FROM
+						}
+						remove_core_of = FROM
+					}
+					set_capital = { #gives error if capital set to 12 in history file ;_;
+						state = 12
+						remember_old_capital = no
+					}
+				}
+			}
+			#ONE-CAL WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = CAL
+					}
+					ROOT = {
+						tag = ONE
+					}
+				}
+				ROOT = {
+					annex_country = {
+						target = FROM
+					}
+					every_owned_state = {
+						limit = {
+							is_core_of = FROM
+						}
+						remove_core_of = FROM
+					}
+				}
+			}
+			#TZN-COG WAR
+			else_if = {
+				limit = {
+					FROM = {
+						OR = {
+							tag = COG
+							tag = SAF
+							tag = ANG
+						}
+						is_puppet_of = ROOT
+					}
+					ROOT = {
+						tag = TZN
+					}
+				}
+				FROM = {
+					every_owned_state = {
+						remove_core_of = FROM
+						add_core_of = ROOT
+						transfer_state_to = ROOT
+					}
+				}
+				ROOT = {
+					set_cosmetic_tag = TZN_AFRICA
+				}
+			}
+			#KAZ-URA WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = URA
+						is_puppet_of = ROOT
+					}
+					ROOT = {
+						tag = KAZ
+					}
+				}
+				FROM = {
+					every_owned_state = {
+						remove_core_of = FROM
+						add_core_of = ROOT
+						transfer_state_to = ROOT
+					}
+				}
+			}
+			#GRP-BGV WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = BGV
+					}
+					ROOT = {
+						tag = GRP
+					}
+				}
+				FROM = {
+					every_owned_state = {
+						remove_core_of = FROM
+						add_core_of = ROOT
+						transfer_state_to = ROOT
+					}
+				}
+				ROOT = {
+					set_cosmetic_tag = GRP_BRA
+				}
+			}
+			#BGV-LEG WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = LEG
+					}
+					ROOT = {
+						tag = BGV
+					}
+				}
+				FROM = {
+					every_core_state = {
+						remove_core_of = FROM
+					}
+				}
+			}
+			#PAD-ITA WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = ITA
+					}
+					ROOT = {
+						tag = PAD
+					}
+				}
+				FROM = {
+					every_core_state = {
+						remove_core_of = FROM
+						add_core_of = ROOT
+						transfer_state_to = ROOT
+					}
+				}
+				ROOT = {
+					set_cosmetic_tag = PAD_italy
+					set_capital = {
+						state = 334
+						#remember_old_capital = no #?
+					}
+				}
+			}
+			#COS-ARG WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = ARG
+					}
+					ROOT = {
+						tag = COS
+					}
+				}
+				FROM = {
+					every_core_state = {
+						remove_core_of = FROM
+						add_core_of = ROOT
+						transfer_state_to = ROOT
+					}
+				}
+				ROOT = {
+					set_cosmetic_tag = ARG_COS
+					set_capital = {
+						state = 154
+						remember_old_capital = no
+					}
+				}
+			}
+			#ARG-COS WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = COS
+					}
+					ROOT = {
+						tag = ARG
+					}
+				}
+				FROM = {
+					every_core_state = {
+						remove_core_of = FROM
+						add_core_of = ROOT
+						transfer_state_to = ROOT
+					}
+				}
+				ROOT = {
+					set_cosmetic_tag = ARG_ARG
+				}
+				PRU = { #SHOULD BE REMOVED FROM HERE SOMEHOW!
+					add_to_faction = ARG
+					add_to_faction = CHL
+				}
+			}
+			#COS-CHL WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = CHL
+					}
+					ROOT = {
+						tag = COS
+					}
+				}
+				FROM = {
+					every_core_state = {
+						#remove_core_of = FROM
+						add_core_of = ROOT
+						transfer_state_to = ROOT
+					}
+				}
+				ROOT = {
+					set_cosmetic_tag = COS_CHL
+				}
+			}
+			#ENG CIVIL WAR
+			else_if = {
+				limit = {
+					FROM = {
+						OR = {
+							tag = HNG
+							tag = CNG
+							tag = JNG
+							tag = ENG
+						}
+					}
+					ROOT = {
+						OR = {
+							tag = HNG
+							tag = CNG
+							tag = JNG
+							tag = ENG
+						}
+					}
+					OR = {
+						AND = {
+							NOT = {
+								country_exists = HNG
+								country_exists = JNG
+								country_exists = CNG
+							}
+						}
+						AND = {
+							NOT = {
+								country_exists = ENG
+								country_exists = JNG
+								country_exists = CNG
+							}
+						}
+						AND = {
+							NOT = {
+								country_exists = HNG
+								country_exists = ENG
+								country_exists = CNG
+							}
+						}
+						AND = {
+							NOT = {
+								country_exists = HNG
+								country_exists = JNG
+								country_exists = ENG
+							}
+						}
+					}
+				}
+				FROM = {
+					every_core_state = {
+						remove_core_of = FROM
+						#add_core_of = ROOT
+						transfer_state_to = ROOT
+						remove_dynamic_modifier = {
+							modifier = eng_cw_modifier
+						}
+					}
+				}
+				ROOT = {
+					set_cosmetic_tag = ENG
+					set_capital = {
+						state = 1023
+						remember_old_capital = no
+					}
+				}
+				set_global_flag = ECW_end
+			}
+			else = {
+				#
+			}
+		}
+	}
+	###
+}
