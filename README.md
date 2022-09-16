@@ -17,7 +17,7 @@ The following sections are made to allow a central database of all the changes a
     1. [Parliament](#parliament)
     2. [Spaceship](#spaceship)
     3. [Wonders](#wonders)
-    4. [Vritues & Culture](#virtuesandculture)
+    4. [Affinities & Culture](#affinitiesandculture)
     5. [Industrial Power](#industrialpower)
     6. [Augments](#augments)
     7. [Ecobalance Decay](#ecobalance) #ALSO FORMELY KNOWN AS "DEVASTATION"
