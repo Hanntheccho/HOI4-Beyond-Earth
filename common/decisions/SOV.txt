@@ -301,10 +301,24 @@ SOV_manifest_destiny = {
 					is_core_of = URA
 				}
 				add_core_of = SOV
+				remove_core_of = URA
+			}
+			if = {
+				limit = {
+					URA = {
+						has_war_with = KAZ
+					}
+				}
+				SOV = {
+					declare_war_on = {
+						target = KAZ
+						type = annex_everything
+					}
+				}
 			}
 			annex_country = {
 				target = URA
-				transfer_troops = yes
+				#transfer_troops = yes
 			}
 		}
 		ai_will_do = {

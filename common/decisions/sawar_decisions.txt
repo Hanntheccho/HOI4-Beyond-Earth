@@ -2,8 +2,8 @@ sawar_decisions = {
 	BRA_PRU_war = {
 		icon = GFX_decision_unknown
 		available = {
-			NOT = {
-				country_exists = PRU
+			BRA = {
+				has_war_with = PRU
 			}
 		}
 		visible = {
@@ -51,13 +51,8 @@ sawar_decisions = {
 	COS_CHL_war = {
 		icon = GFX_decision_unknown
 		available = {
-			OR = {
-				NOT = {
-					country_exists = CHL
-				}
-				NOT = {
-					country_exists = COS
-				}
+			COS = {
+				has_war_with = CHL
 			}
 		}
 		activation = {
@@ -94,12 +89,28 @@ sawar_decisions = {
 	COS_PRU_war = {
 		icon = GFX_decision_unknown
 		available = {
-			NOT = {
-				country_exists = PRU
+			OR = {
+				NOT = {
+					OR = {
+						country_exists = PRU
+						PRU = {
+							is_puppet = yes
+						}
+					}
+				}
+				COS = {
+					has_war_with = PRU
+				}
 			}
 		}
 		activation = {
-			always = no
+			BGV = {
+				has_war_with = PRU
+			}
+			country_exists = COS
+			NOT = {
+				country_exists = CHL
+			}
 		}
 		visible = {
 			#

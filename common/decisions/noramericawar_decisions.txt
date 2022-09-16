@@ -135,57 +135,20 @@ noramericawar_decisions = {
 			factor = 1
 		}
 	}
-	ARC_TRE_intervention = {
-		icon = GFX_decision_war
-		available = {
-			tag = ARC
-			TRE = {
-				exists = yes
-			}
-		}
-		visible = {
-			tag = ARC
-			TRE = {
-				exists = yes
-			}
-		}
-		fire_only_once = yes
-		targets = {
-			TRE
-		}
-		war_with_on_remove = TRE
-		cost = 30
-		days_remove = 50
-		remove_effect = {
-			declare_war_on = {
-				target = TRE
-				type = puppet_wargoal_focus
-			}
-		}
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				TRE = {
-					is_in_faction = no
-				}
-				add = 10
-			}
-		}
-	}
 	ARC_TRE_pacify = {
 		icon = GFX_decision_political
 		available = {
 			tag = ARC
 			TRE = {
 				exists = yes
-				is_puppet_of = ARC
+				is_in_faction_with = ARC
 			}
 		}
 		visible = {
 			tag = ARC
 			TRE = {
 				exists = yes
-				is_puppet_of = ARC
+				is_in_faction_with = ARC
 			}
 		}
 		fire_only_once = yes
@@ -206,14 +169,14 @@ noramericawar_decisions = {
 			tag = ARC
 			TRE = {
 				exists = yes
-				is_puppet_of = ARC
+				is_in_faction_with = ARC
 			}
 		}
 		visible = {
 			tag = ARC
 			TRE = {
 				exists = yes
-				#is_puppet_of = ARC
+				#is_in_faction_with = ARC
 			}
 		}
 		fire_only_once = yes

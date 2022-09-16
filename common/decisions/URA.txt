@@ -30,36 +30,36 @@ matters_of_the_urals = {
 		icon = GFX_decision_war
 		available = {
 			KAZ = {
-				exists = yes
+				OR = {
+					exists = no
+					is_puppet = yes
+				}
 			}
 		}
 		visible = {
-			KAZ = {
-				exists = yes
-			}
+			#
 		}    
 		fire_only_once = yes
-		war_with_on_remove = KAZ
-		days_remove = 15
-		targets = { KAZ }
-		remove_effect = {
+		war_with_on_timeout = KAZ
+		days_mission_timeout = 210
+		timeout_effect = {
             declare_war_on = {
 				type = annex_everything
 				target = KAZ
 			}
 		}
-		ai_will_do = {
+		ai_will_do = {  #NOW TIMEOUT MISSION, AI DOESN'T MATTER
 			factor = 0
-			modifier = {
-				num_divisions > 23
-				add = 100
-			}
-			modifier = {
-				any_neighbor_country = {
-					has_war_with = ROOT
-				}
-				factor = 0
-			}
+			#modifier = {
+			#	num_divisions > 23
+			#	add = 100
+			#}
+			#modifier = {
+			#	any_neighbor_country = {
+			#		has_war_with = ROOT
+			#	}
+			#	factor = 0
+			#}
 		}
 	}
 	the_sky_white = {
@@ -79,7 +79,7 @@ matters_of_the_urals = {
 			KAZ = {
 				exists = no
 			}
-		}    
+		}
 		fire_only_once = yes
 		war_with_on_remove = SIB
 		days_remove = 15

@@ -4,9 +4,85 @@ on_actions = {
 		effect = {
 			if = {
 				limit = {
-					has_global_flag = final_war_flag
+					OR = {
+						has_global_flag = final_war_flag
+						ROOT = {
+							is_ai = no
+						}
+					}
 				}
 				#
+			}
+			#FRA-TUN WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = TUN
+						is_puppet_of = FRA
+					}
+					ROOT = {
+						tag = FRA
+					}
+				}
+				ROOT = {
+					transfer_state = 240
+				}
+			}
+			#SOV-KAZ WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = KAZ
+					}
+					ROOT = {
+						tag = SOV
+					}
+				}
+				FROM = {
+					every_core_state = {
+						remove_core_of = FROM
+						add_core_of = ROOT
+						transfer_state_to = ROOT
+					}
+				}
+			}
+			#NOR-SWE WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = SWE
+					}
+					ROOT = {
+						tag = NOR
+					}
+				}
+				SCO = {
+					puppet = FROM
+				}
+			}
+			#COS-URG-BRA WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = URG
+						is_puppet_of = COS
+						any_core_state = {
+							is_owned_by = BGV
+						}
+					}
+					ROOT = {
+						tag = COS
+					}
+				}
+				FROM = {
+					every_core_state = {
+						transfer_state_to = FROM
+					}
+				}
+				BGV = {
+					transfer_state = 176
+					transfer_state = 185
+				}
 			}
 			#DOS-CAS WAR
 			else_if = {
