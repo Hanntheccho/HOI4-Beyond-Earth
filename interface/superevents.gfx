@@ -53,47 +53,54 @@ spriteTypes = { ##### THIS FILE DEFINES THE PICTURE FOR EACH SUPER EVENT
 		play_on_show = yes
 		alwaystransparent = yes
 	}
-	frameAnimatedSpriteType = {
-		name = "GFX_flatline_peace_event"
-		texturefile = "gfx//interface//superevents//flatline_peace_event.dds"
-		noOfFrames = 7
-		animation_rate_fps = 8
-		looping = yes
-		play_on_show = yes
-		alwaystransparent = yes
-		effectFile = "gfx/FX/buttonstate_blendframes.lua"
-	}
 
 	#FLATLINE ANIMATION
-	frameAnimatedSpriteType = {
-		name = "GFX_flatline_peace_event_1"
-		texturefile = "gfx//interface//superevents//flatline_peace_event_1.dds"
-		noOfFrames = 35
-		animation_rate_fps = 8
-		looping = yes
-		play_on_show = yes
-		alwaystransparent = yes
-		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	SpriteType = {
+		name = "GFX_flatline_peace_line"
+		textureFile = "gfx/interface/flatline_peace_line_red.dds"
+	} 
+	SpriteType = {
+		name = "GFX_flatline_peace_line_animation"
+		texturefile = "gfx/interface/flatline_peace_line_red_texture.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/flatline_peace_line_red_texture.dds"
+			animationtexturefile = "gfx/interface/flatline_peace_line_red_shine.dds"
+			animationrotation = -148.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 10			# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 3.2 y = 1.0 } 
+		}
+
+		legacy_lazy_load = no
 	}
-	frameAnimatedSpriteType = {
-		name = "GFX_flatline_peace_event_2"
-		texturefile = "gfx//interface//superevents//flatline_peace_event_2.dds"
-		noOfFrames = 35
-		animation_rate_fps = 8
-		looping = yes
-		play_on_show = yes
-		alwaystransparent = yes
-		effectFile = "gfx/FX/buttonstate_blendframes.lua"
-	}
-	frameAnimatedSpriteType = {
-		name = "GFX_flatline_peace_event_3"
-		texturefile = "gfx//interface//superevents//flatline_peace_event_3.dds"
-		noOfFrames = 35
-		animation_rate_fps = 8
-		looping = yes
-		play_on_show = yes
-		alwaystransparent = yes
-		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+
+	SpriteType = {
+		name = "GFX_flatline_peace_line_green"
+		textureFile = "gfx/interface/flatline_peace_line_green.dds"
+	} 
+	SpriteType = {
+		name = "GFX_flatline_peace_line_animation_green"
+		texturefile = "gfx/interface/flatline_peace_line_green_texture.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/flatline_peace_line_green_texture.dds"
+			animationtexturefile = "gfx/interface/flatline_peace_line_red_shine.dds"
+			animationrotation = -148.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 10			# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 3.2 y = 1.0 } 
+		}
+
+		legacy_lazy_load = no
 	}
 
 #EVENTS PICS

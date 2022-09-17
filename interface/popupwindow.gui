@@ -760,6 +760,15 @@ guiTypes = {
 		click_to_front = yes
 
 		background = {
+			name = "Background_2"	
+			quadTextureSprite ="GFX_focus_finished_back"
+			position = {
+				x = -4
+				y = -4
+			} 
+		}
+
+		background = {
 			name = "Background"	
 			quadTextureSprite ="GFX_tiled_bg"
 		}		
@@ -785,16 +794,26 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "title"
-			position = { x = 72 y = 29 }
+			position = { x = 17 y = 10 } #position = { x = 20 y = 10 }
 			textureFile = ""
-			font = "Beyondsmall"
+			font = "Beyond"
 			borderSize = {x = 0 y = 0}
 			text = "Title"	
-			format = center
-			maxWidth = 350
+			format = left
+			maxWidth = 400
 			maxHeight = 24
-			fixedsize = yes
-			truncate = yes
+			#fixedsize = yes
+		}
+
+		containerWindowType = {
+			name = "Background_3"
+			size = { width=100%% height=100%% } 
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_bg_alpha"
+				alwaystransparent = yes
+			}
 		}
 		
 		iconType = {
@@ -1165,19 +1184,55 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "surrendered_country_popup"
-		position = { x = -225 y = -160 }
-		size = { width = 520 height = 320 }
+		position = { x = 0 y = 0 }
+		size = { width = 584 height = 280 }
 		orientation= center
+		origo = center
 		moveable = yes
 		fade_time = 200
 		fade_type = linear
-		show_sound = diplomatic_notification
+		show_sound = flatline_sound #diplomatic_notification
 		hide_sound = menu_close_window
 		click_to_front = yes		
 		
 		background = {
+			name = "Background_2"	
+			quadTextureSprite ="GFX_peace_summery_back"
+			position = {
+				x = -4
+				y = -4
+			} 
+		}
+		
+		background = {
 			name = "Background"	
-			quadTextureSprite ="GFX_tiled_bg"
+			quadTextureSprite ="GFX_tiled_bg" 
+		}
+
+		#
+		iconType = {
+			name ="flatline_peace_line_animation"
+			spriteType = "GFX_flatline_peace_line_animation_green"
+			position = { x= 1 y = 1 }
+			alwaystransparent = yes
+		}
+		#iconType = {
+		#	name ="flatline_peace_line"
+		#	spriteType = "GFX_flatline_peace_line_green"
+		#	position = { x= 1 y = 1 }
+		#	alwaystransparent = yes
+		#}
+		#
+
+		containerWindowType = {
+			name = "Background_3"
+			size = { width=100%% height=100%% } 
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_bg_alpha"
+				alwaystransparent = yes
+			}
 		}
 
 		iconType = {
@@ -1190,7 +1245,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "title"
-			position = { x = 123 y = 25 }
+			position = { x = -210 y = 25 }
 			textureFile = ""
 			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
@@ -1198,12 +1253,13 @@ guiTypes = {
 			maxWidth = 400
 			maxHeight = 24
 			format = centre
+			orientation = CENTER_UP
 		}
 
 		iconType = {
 			name = "sender_flag"
-			quadTextureSprite ="GFX_flag_small2"
-			position = { x= 20 y = 85 }
+			quadTextureSprite ="GFX_shield_medium_mod"
+			position = { x= 30 y = 100 }
 			Orientation = "UPPER_LEFT"
 		}	
 
@@ -1215,13 +1271,12 @@ guiTypes = {
 		
 		iconType = {
 			name = "receiver_flag"
-			quadTextureSprite ="GFX_flag_small2"
-			position = { x= 466 y = 85 }
+			quadTextureSprite ="GFX_shield_medium_mod_reverse"
+			position = { x= 466 y = 100 }
 			Orientation = "UPPER_LEFT"
 		}
 
-		iconType =
-		{
+		iconType = {
 			name ="receiver_flag_frame"
 			spriteType = "GFX_diplo_countrylist_flag_frame"
 			position = { x= 463 y = 83 }
@@ -1229,7 +1284,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "message"
-			position = { x = 68 y = 82 }
+			position = { x = 86 y = 56 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
@@ -1237,12 +1292,13 @@ guiTypes = {
 			maxWidth = 395
 			maxHeight = 150
 			format = center
+			vertical_alignment = center
 			scrollbartype = "standardtext_slider"
 		}
 		
 		OverlappingElementsBoxType = {
 			name = "equipment_items"
-			position = { x = 0 y = 150 }
+			position = { x = 10000 y = 150 } #position = { x = 0 y = 150 }
 			size = { x = 527 y = 2 }
 			format = center
 			spacing = 30.0
@@ -1257,11 +1313,12 @@ guiTypes = {
 		
 		buttonType = {
 			name = "ok_button"
-			position = { x=205 y =265}
+			position = { x=230 y =231}
 			quadTextureSprite ="GFX_button_123x34"
-			buttonText = "OK"
+			buttonText = "BUTTON_OK"
 			buttonFont = "Arial"
 			shortcut = "RETURN"
+			clicksound = click_ok
 		}
 	}
 
@@ -1698,23 +1755,29 @@ guiTypes = {
 		show_sound = complete_focus
 		hide_sound = menu_close_window
 		click_to_front = yes
+
+		background = {
+			name = "Background_2"	
+			quadTextureSprite ="GFX_focus_finished_back"
+			position = {
+				x = -4
+				y = -4
+			} 
+		}
 		
 		background = {
 			name = "Background"	
 			quadTextureSprite ="GFX_tiled_bg"
 		}
-
 		
-		iconType =
-		{
+		iconType = {
 			name ="focus_popup_bg"
 			spriteType = "GFX_focus_popup_bg"
 			position = { x= 10000 y = 72 }
 			alwaystransparent = yes
 		}	
 		
-		iconType =
-		{
+		iconType = {
 			name ="diplo_popup_header_bg"
 			spriteType = "GFX_diplo_popup_header_bg"
 			position = { x= 1 y = 8 }
@@ -1723,15 +1786,26 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "title"
-			position = { x = 20 y = 10 }
+			position = { x = 17 y = 10 } #position = { x = 20 y = 10 }
 			textureFile = ""
-			font = "Beyondsmall"
+			font = "Beyond"
 			borderSize = {x = 0 y = 0}
 			text = "Title"	
 			format = left
 			maxWidth = 400
 			maxHeight = 24
-			fixedsize = yes
+			#fixedsize = yes
+		}
+
+		containerWindowType = {
+			name = "Background_3"
+			size = { width=100%% height=100%% } 
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_bg_alpha"
+				alwaystransparent = yes
+			}
 		}
 		
 		iconType = {
@@ -1751,8 +1825,7 @@ guiTypes = {
 			format = center
 		}
 
-		iconType =
-		{
+		iconType = {
 			name ="diplo_popup_bottom"
 			spriteType = "GFX_diplo_popup_bottom"
 			position = { x= 3 y = 189 }
@@ -1787,7 +1860,7 @@ guiTypes = {
 		moveable = yes
 		fade_time = 200
 		fade_type = linear
-		show_sound = peace_summary_message
+		show_sound = flatline_sound #peace_summary_message
 		hide_sound = menu_close_window
 		click_to_front = yes
 
@@ -1805,9 +1878,24 @@ guiTypes = {
 			quadTextureSprite ="GFX_tiled_bg" 
 		}
 
+		#
+		iconType = {
+			name ="flatline_peace_line_animation"
+			spriteType = "GFX_flatline_peace_line_animation"
+			position = { x= 1 y = 1 }
+			alwaystransparent = yes
+		}
+		#iconType = {
+		#	name ="flatline_peace_line"
+		#	spriteType = "GFX_flatline_peace_line"
+		#	position = { x= 1 y = 1 }
+		#	alwaystransparent = yes
+		#}
+		#
+
 		instantTextBoxType = {
 			name = "title"
-			position = { x = 25 y = 20 }
+			position = { x = 20 y = 15 }
 			textureFile = ""
 			font = "Beyond"
 			borderSize = {x = 0 y = 0}
@@ -1826,7 +1914,7 @@ guiTypes = {
 				quadTextureSprite = "GFX_tiled_bg_alpha"
 				alwaystransparent = yes
 			}
-		} 
+		}
 
 		iconType ={
 			name ="peace_popup_bg"
@@ -1844,13 +1932,13 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "description"
-			position = { x = 60 y = 95 }
+			position = { x = 60 y = 100 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0} 
 			text = "Long text here!"	
 			maxWidth = 460
-			maxHeight = 250
+			maxHeight = 300
 			format = centre
 			scrollbartype = "standardtext_slider"
 		}
