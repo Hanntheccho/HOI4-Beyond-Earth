@@ -906,11 +906,46 @@ guiTypes = {
 		fade_type = linear
 		show_sound = diplomatic_notification
 		hide_sound = menu_close_window
-		click_to_front = yes		
+		click_to_front = yes
+		
+		background = {
+			name = "Background_2"	
+			quadTextureSprite ="GFX_message_popup_back"
+			position = {
+				x = -4
+				y = -4
+			}
+		}
 		
 		background = {
 			name = "Background"	
 			quadTextureSprite ="GFX_tiled_bg"
+		}
+
+		iconType = {
+			name = "sender_flag"
+			quadTextureSprite ="GFX_shield_medium_mod"
+			position = { x= 24 y = 20 }
+			Orientation = "UPPER_LEFT"
+		}	
+
+		iconType = {
+			name ="sender_flag_frame"
+			spriteType = "GFX_diplo_countrylist_flag_frame"
+			position = { x= 20 y = 26 }
+		}		
+		
+		iconType = {
+			name = "receiver_flag"
+			quadTextureSprite ="GFX_shield_medium_mod_reverse"
+			position = { x= 394 y = 20 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		iconType = {
+			name ="receiver_flag_frame"
+			spriteType = "GFX_diplo_countrylist_flag_frame"
+			position = { x= 431 y = 26 }
 		}
 
 		iconType = {
@@ -922,7 +957,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "title"
-			position = { x = 70 y = 16 }
+			position = { x = 70 y = 18 }
 			textureFile = ""
 			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
@@ -948,32 +983,6 @@ guiTypes = {
 			position = { x= 10000 y = 6 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes			
-		}
-		
-		iconType = {
-			name = "sender_flag"
-			quadTextureSprite ="GFX_flag_small2"
-			position = { x= 24 y = 29 }
-			Orientation = "UPPER_LEFT"
-		}	
-
-		iconType = {
-			name ="sender_flag_frame"
-			spriteType = "GFX_diplo_countrylist_flag_frame"
-			position = { x= 20 y = 26 }
-		}		
-		
-		iconType = {
-			name = "receiver_flag"
-			quadTextureSprite ="GFX_flag_small2"
-			position = { x= 434 y = 29 }
-			Orientation = "UPPER_LEFT"
-		}
-
-		iconType = {
-			name ="receiver_flag_frame"
-			spriteType = "GFX_diplo_countrylist_flag_frame"
-			position = { x= 431 y = 26 }
 		}
 		
 		instantTextBoxType = {
@@ -1781,11 +1790,43 @@ guiTypes = {
 		show_sound = peace_summary_message
 		hide_sound = menu_close_window
 		click_to_front = yes
+
+		background = {
+			name = "Background_2"	
+			quadTextureSprite ="GFX_peace_summery_back"
+			position = {
+				x = -4
+				y = -4
+			} 
+		}
 		
 		background = {
 			name = "Background"	
 			quadTextureSprite ="GFX_tiled_bg" 
 		}
+
+		instantTextBoxType = {
+			name = "title"
+			position = { x = 25 y = 20 }
+			textureFile = ""
+			font = "Beyond"
+			borderSize = {x = 0 y = 0}
+			text = "Title"	
+			maxWidth = 490
+			maxHeight = 40
+			format = left
+		}
+
+		containerWindowType = {
+			name = "Background_3"
+			size = { width=100%% height=100%% } 
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_bg_alpha"
+				alwaystransparent = yes
+			}
+		} 
 
 		iconType ={
 			name ="peace_popup_bg"
@@ -1802,33 +1843,19 @@ guiTypes = {
 		}
 		
 		instantTextBoxType = {
-			name = "title"
-			position = { x = 110 y = 25 }
-			textureFile = ""
-			font = "Beyondsmall"
-			borderSize = {x = 0 y = 0}
-			text = "Title"	
-			maxWidth = 360
-			maxHeight = 40
-			fixedsize = yes
-			format = centre
-		}
-		
-		instantTextBoxType = {
 			name = "description"
-			position = { x = 60 y = 105 }
+			position = { x = 60 y = 95 }
 			textureFile = ""
-			font = "Arialsmall"
+			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0} 
 			text = "Long text here!"	
 			maxWidth = 460
-			maxHeight = 100
+			maxHeight = 250
 			format = centre
 			scrollbartype = "standardtext_slider"
 		}
 
-		iconType =
-		{
+		iconType = {
 			name ="diplo_popup_bottom"
 			spriteType = "GFX_diplo_popup_bottom_large"
 			position = { x= 0 y = 218 }

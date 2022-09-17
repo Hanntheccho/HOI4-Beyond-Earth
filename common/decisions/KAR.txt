@@ -1,134 +1,83 @@
-#heirs_of_russia = {
-#
-#	kar_guns = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		fire_only_once = yes
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	kar_gear = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		fire_only_once = yes
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	kar_artillery = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		fire_only_once = yes
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	kar_medkits = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		fire_only_once = yes
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	kar_immigrants = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		fire_only_once = yes
-#		cost = 20
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	kar_parade = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		fire_only_once = yes
-#		cost = 20
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	kar_strike = {
-#		icon = GFX_decision_unknown
-#		available = {
-#			always = no
-#		}
-#		visible = {
-#			always = yes
-#		}
-#		allowed = {
-#			
-#		}
-#		activation = {
-#            tag = KAR         
-#        }
-#		is_good = no
-#		fire_only_once = yes
-#		days_mission_timeout = 100
-#		days_remove = 5
-#		complete_effect = {
-#
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#
-#}
+heirs_of_russia = {
+
+	KAR_SIB_alliance = {
+		icon = GFX_decision_unknown
+		available = {
+			SOV = {
+				surrender_progress > 0.1
+			}
+			KAR = {
+				has_war_with = SOV
+			}
+		}
+		visible = {
+			SIB = {
+				has_country_leader = {
+					character = SIB_boris_morozov
+					ruling_only = yes
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 40
+		cost = 40
+		remove_effect = {
+			create_faction = "Russian Republican Coalition"
+			add_to_faction = SIB
+			SIB = {
+				add_to_war = {
+					targeted_alliance = KAR
+					enemy = SOV
+				}
+				declare_war_on = {
+					target = URA
+					type = annex_everything
+				}
+			}
+			URA = {
+				every_core_state = {
+					add_core_of = SIB
+				}
+			}
+			SOV = {
+				every_core_state = {
+					add_core_of = KAR
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	KAR_KAZ_alliance = {
+		icon = GFX_decision_unknown
+		available = {
+			SOV = {
+				surrender_progress > 0.1
+			}
+			KAR = {
+				has_war_with = SOV
+				is_faction_leader = yes
+			}
+			KAZ = {
+				has_war_with = SOV
+			}
+		}
+		visible = {
+			KAZ = {
+				has_war_with = SOV
+			}
+		}
+		fire_only_once = yes
+		days_remove = 20
+		cost = 20
+		remove_effect = {
+			add_to_faction = KAZ
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+}
 	

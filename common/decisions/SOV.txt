@@ -148,42 +148,7 @@ SOV_manifest_destiny = {
 			}
 		}
 	}
-	#SOV_war_karelia = { #war from the start! using history file!
-	#	icon = GFX_decision_war
-	#	available = {
-	#		KAR = {
-	#			exists = yes
-	#		}
-	#	}
-	#	visible = {
-	#		KAR = {
-	#			exists = yes
-	#		}
-	#	}
-	#	days_remove = 20
-	#	fire_only_once = yes
-	#	targets = { KAR }
-	#	war_with_on_remove = KAR
-	#	remove_effect = {
-	#		create_wargoal = {
-	#			type = annex_everything
-	#			target = KAR
-	#		}
-	#		every_state = {
-	#			limit = {
-	#				is_core_of = KAR
-	#			}
-	#			add_core_of = SOV
-	#		}
-	#	}
-	#	ai_will_do = {
-	#		factor = 10
-	#		modifier = {
-	#			has_war = yes
-	#			factor = 0
-	#		}
-	#	}
-	#}
+	#
 	SOV_war_central_asia = {
 		icon = GFX_decision_war
 		available = {
@@ -197,6 +162,9 @@ SOV_manifest_destiny = {
 		visible = {
 			KAZ = {
 				exists = yes
+			}
+			NOT = {
+				has_war_with = KAZ
 			}
 		}
 		days_remove = 20

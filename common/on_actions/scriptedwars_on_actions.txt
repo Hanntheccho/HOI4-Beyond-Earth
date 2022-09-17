@@ -1,6 +1,6 @@
 on_actions = {
 	###
-	on_peaceconference_ended = {
+	on_peaceconference_ended = {  #REMOVE IS_PUPPET TRIGGERS????
 		effect = {
 			if = {
 				limit = {
@@ -12,6 +12,83 @@ on_actions = {
 					}
 				}
 				#
+			}
+			#INDIA
+			else_if = {
+				limit = {
+					FROM = {
+						is_puppet_of = BHR
+						OR = {
+							tag = KAS
+							tag = PUN
+							tag = SIN
+							tag = RAJ
+							tag = NAX
+							tag = MAH
+							tag = ODS
+							tag = KRT
+							tag = KRL
+							tag = TAM
+							tag = SRL
+							tag = BNG
+						}
+					}
+					ROOT = {
+						tag = BHR
+					}
+				}
+				FROM = {
+					every_core_state = {
+						remove_core_of = FROM
+						add_core_of = ROOT
+						transfer_state_to = ROOT
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						is_puppet_of = KAV
+						OR = {
+							tag = KAS
+							tag = PUN
+							tag = SIN
+							tag = RAJ
+							tag = NAX
+							tag = MAH
+							tag = ODS
+							tag = KRT
+							tag = KRL
+							tag = TAM
+							tag = SRL
+							tag = BNG
+						}
+					}
+					ROOT = {
+						tag = KAV
+					}
+				}
+				FROM = {
+					every_core_state = {
+						remove_core_of = FROM
+						add_core_of = ROOT
+						transfer_state_to = ROOT
+					}
+				}
+			}
+			#KAR-SOV WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = SOV
+					}
+					ROOT = {
+						tag = KAR
+					}
+				}
+				ROOT = {
+					set_cosmetic_tag = KAR_russia
+				}
 			}
 			#FRA-TUN WAR
 			else_if = {
