@@ -12,7 +12,22 @@ news_event = {
 	
 	major = yes  
 
-	is_triggered_only = yes
+	trigger = {
+		date > 2200.3.5
+	}
+
+	fire_only_once = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = eurotunnel_opened
+				}
+			}
+			set_global_flag = eurotunnel_opened
+		}
+	}
 	
 	option = { 
 		name = news_event_option.13.a
