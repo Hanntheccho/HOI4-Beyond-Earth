@@ -2,7 +2,7 @@ on_actions = {
     on_startup = {
         effect = {
             every_country = {
-                set_variable = { spaceschip_completion_time = 180 }
+                set_variable = { spaceship_completion_time = 180 }
                 set_variable = { spaceship_contribution_variable = 0 }
                 set_variable = { spaceship_contribution_modifier = 1 }
                 set_variable = { spaceship_contribution_civilian = num_of_civilian_factories }
@@ -489,7 +489,7 @@ on_actions = {
             }
             if = {
                 limit = {
-                    check_variable = { spaceschip_completion_time = 1 }
+                    check_variable = { spaceship_completion_time = 1 }
 			        NOT = {
                         any_other_country = { check_variable = { spaceship_contribution_variable > ROOT.spaceship_contribution_variable } }
                         any_owned_state = {
@@ -499,15 +499,50 @@ on_actions = {
                         }
                     }
                 }
-                country_event = { id = international_event.21 }
+                if = {
+                    limit = {
+                        NOT = {
+                            has_global_flag = module_1_completed_flag
+                        }
+                    }
+                    news_event = international_news_event.1
+                }
+                else_if = {
+                    limit = {
+                        NOT = {
+                            has_global_flag = module_2_completed_flag
+                        }
+                    }
+                    news_event = international_news_event.2
+                }
+                else_if = {
+                    limit = {
+                        NOT = {
+                            has_global_flag = module_3_completed_flag
+                        }
+                    }
+                    news_event = international_news_event.3
+                }
+                else_if = {
+                    limit = {
+                        NOT = {
+                            has_global_flag = module_4_completed_flag
+                        }
+                    }
+                    news_event = international_news_event.4
+                }
+                else = {
+                    news_event = international_news_event.5
+                }
+                #country_event = { id = international_event.21 }
                 every_country = {
-                    set_variable = { spaceschip_completion_time = 365 }
+                    set_variable = { spaceship_completion_time = 365 }
                 }
             }
             #if = {
             #    limit = {
             #        AND = {
-            #            check_variable = { spaceschip_completion_time = 1 }
+            #            check_variable = { spaceship_completion_time = 1 }
             #            any_owned_state = {
             #                has_dynamic_modifier = {
             #                    modifier = spaceship_location_modifier
@@ -517,7 +552,7 @@ on_actions = {
             #    }
             #    country_event = { id = international_event.23 } 
             #}
-            subtract_from_variable = { spaceschip_completion_time = 1 }
+            subtract_from_variable = { spaceship_completion_time = 1 }
         }
     }
     on_weekly = {
