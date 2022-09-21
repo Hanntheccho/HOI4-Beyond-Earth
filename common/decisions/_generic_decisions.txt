@@ -3,7 +3,7 @@ generic_decisions = {
 	TZN_COG_war = {
 		icon = GFX_decision_political
 		available = {
-			always = no
+			has_global_flag = TZN_african_war_start
 		}
 		visible = {
 			#
@@ -14,6 +14,9 @@ generic_decisions = {
 		fire_only_once = yes
 		days_mission_timeout = 285	
 		timeout_effect = {
+			hidden_effect = {
+				set_global_flag = TZN_african_war_start
+			}
 			COG = {
 				declare_war_on = {
 					target = TZN
@@ -42,7 +45,7 @@ generic_decisions = {
 	balkanize_china = {
 		icon = GFX_decision_political
 		available = {
-			always = no
+			has_global_flag = CHI_balkanization
 		}
 		visible = {
 			#
@@ -51,11 +54,12 @@ generic_decisions = {
 			country_exists = CHI
 		}
 		fire_only_once = yes
-		days_mission_timeout = 155	
+		days_mission_timeout = 10
 		timeout_effect = {
-			news_event = news_event.16
 			hidden_effect = {
+				set_global_flag = CHI_balkanization
 				CHI = {
+					news_event = news_event.16
 					set_cosmetic_tag = CHI_CENTRAL_GOVERNMENT
 					dismantle_faction = yes
 				}

@@ -1,0 +1,116 @@
+on_actions = {
+	###
+	on_startup = {
+		effect = {
+			#URA = {
+            #    country_lock_all_division_template = yes
+            #}
+			PRU = {
+                country_lock_all_division_template = yes
+            }
+			ENG = {
+                country_lock_all_division_template = yes
+            }
+		}
+	}
+	###
+	on_startup = {
+		effect = {
+			every_country = {
+				set_variable = { augment_law_cost_base = 75 }
+                set_variable = { augment_law_cost_factor = 1}
+                set_variable = { augment_law_cost_modified = augment_law_cost_base}
+			}
+		}
+	}
+	on_startup = {
+		effect = {
+			SIB = {
+                set_variable = { sib_discontent = 0 }
+				set_variable = { sib_socialist_support = 0 }
+				set_variable = { sib_discontent_min = 0 }
+				set_variable = { sib_socialist_support_min = 0 }
+				set_variable = { sib_discontent_max = 100 }
+				set_variable = { sib_socialist_support_max = 100 }
+            }
+			KAZ = {
+				set_variable = { harmony_ticker = 1 }
+				set_variable = { divinity_ticker = 1 }
+				set_variable = { supremacist_ticker = 0 }
+				set_variable = { undecided_ticker = 2 }
+				set_country_flag = kaz_before_elections
+			}
+			JAP = {
+				set_variable = { JAP_meka_factories = 0 }
+				set_variable = { JAP_meka_parts = 0 }
+			}
+			#SOV = {
+			#	set_variable = { titan_global_devastation = 0 }
+			#	clamp_variable = {
+			#		var = titan_global_devastation
+			#		min = 0
+			#		max = 100
+			#	}
+			#}
+		}
+	}
+	on_startup = {
+		effect = {
+			318 = {
+				add_dynamic_modifier = { modifier = swi_regional_government }
+			}
+		}
+	}
+
+	#THIS IS FOR FRA CHANGING CAPITAL AROUND GOD DAMN SO COOL IT IS MADRID, THEN LISBON, THEN IDK IT IS JUST EPIC LOL OMG SAVE ME IT IS SO HOT IN SPAIN
+	on_monthly_FRA = {
+		effect = {
+			add_to_variable = { change_FRA_capital_please = 1 }
+			if = {
+				limit = { 
+					check_variable = { change_FRA_capital_please = 12 }
+					297 = { 
+						is_capital = yes 
+						is_owned_by = FRA
+					}
+				}
+				set_variable = { change_FRA_capital_please = 0 }
+				set_capital = { state = 273 }
+			}
+			if = {
+				limit = { 
+					check_variable = { change_FRA_capital_please = 12 }
+					273 = { 
+						is_capital = yes 
+						is_owned_by = FRA
+					}
+				}
+				set_variable = { change_FRA_capital_please = 0 }
+				set_capital = { state = 256 }
+			}
+			if = {
+				limit = { 
+					check_variable = { change_FRA_capital_please = 12 }
+					256 = { 
+						is_capital = yes 
+						is_owned_by = FRA
+					}
+				}
+				set_variable = { change_FRA_capital_please = 0 }
+				set_capital = { state = 234 }
+			}
+			if = {
+				limit = { 
+					check_variable = { change_FRA_capital_please = 12 }
+					234 = { 
+						is_capital = yes 
+						is_owned_by = FRA
+					}
+				}
+				set_variable = { change_FRA_capital_please = 0 }
+				set_capital = { state = 297 }
+			}
+		}
+	}
+	###
+}
