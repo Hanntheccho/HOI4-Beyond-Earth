@@ -293,7 +293,27 @@ SOV_manifest_destiny = {
 			factor = 1
 		}
 	}
-}
+    SOV_invite_to_faction = {
+		icon = GFX_decision_unity
+		fire_only_once = no
+		cost = 100
+		target_trigger = {
+			FROM = {
+				has_idea = GER_eurasian_aligned
+				is_in_faction = no
+				capital_scope = {
+					is_on_continent = europe
+				}
+			}
+		}
+		days_remove = 50
+		remove_effect = {
+			add_to_faction = FROM
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
 
 #keeper_kazan = {

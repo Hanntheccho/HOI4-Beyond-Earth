@@ -483,4 +483,93 @@ eurowar_decisions = {
 			}
 		}
 	}
+
+    HUN_revolution_1 = {
+        icon = GFX_decision_unknown
+		available = {
+            NOT = {
+                has_country_leader = {
+                name = "Miklós Háry"
+                ruling_only = yes
+                }
+            }
+        }
+        activation = {
+            country_exists = HUN
+        }
+        fire_only_once = yes
+        days_mission_timeout = 180
+        timeout_effect = {
+            HUN = {
+                kill_country_leader = yes
+                create_country_leader = {
+                    name = "Chiefs of Staff"
+                    ideology = neutral_ideology
+                }
+                add_stability = -0.1
+                add_popularity = {
+                    ideology = harmony
+                    popularity = 0.08
+                add_popularity = {
+                    ideology = purity
+                    popularity = 0.08
+				add_popularity = {
+                    ideology = supremacy
+                    popularity = 0.04
+                    }
+                }
+		    }
+            activate_mission = HUN_revolution_end
+            }
+        }
+	}
+
+	HUN_revolution_end = {
+		icon = GFX_decision_unknown
+		available = {
+			NOT = { country_exists = HUN }
+		}
+		activation = {
+            country_exists = HUN
+        }
+		fire_only_once = yes
+		days_mission_timeout = 60
+        activation = {
+			always = no
+        }
+		timeout_effect = {
+			if = {
+				limit = {
+					harmony > party_popularity@purity
+				}
+				set_politics = {
+					ruling_party = harmony
+				}
+				hidden_effect = {
+				    remove_ideas = HUN_rock_and_hard_place
+					remove_ideas = HUN_popular_front
+					remove_ideas = HUN_hermit_kingdom
+					add_ideas = GER_german_aligned
+					add_ideas = EU_treaty_of_bern
+					add_ideas = digital_democracy
+					add_ideas = war_economy
+					add_ideas = limited_exports
+                }
+			else = {
+				set_politics = {
+					ruling_party = purity
+				}
+				hidden_effect = {
+				    remove_ideas = HUN_rock_and_hard_place
+					remove_ideas = HUN_popular_front
+					remove_ideas = HUN_hermit_kingdom
+                    add_ideas = GER_eurasian_aligned
+					add_ideas = EU_treaty_of_bern
+					add_ideas = corporate_libertarianism
+					add_ideas = partial_economic_mobilisation
+					add_ideas = export_focus
+                }
+            }
+        }
+    }
 }
