@@ -15,13 +15,16 @@ news_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = eurotunnel_opened
+		custom_effect_tooltip = eurotunnel_opened_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = eurotunnel_opened
+					}
 				}
+				set_global_flag = eurotunnel_opened
 			}
-			set_global_flag = eurotunnel_opened
 		}
 	}
 	
@@ -66,6 +69,10 @@ news_event = {
 	major = yes  
 
 	is_triggered_only = yes
+
+	immediate = {
+		custom_effect_tooltip = news_event_16_tt
+	}
 	
 	option = { 
 		name = news_event_option.16.a

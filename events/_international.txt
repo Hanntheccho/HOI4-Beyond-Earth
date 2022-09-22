@@ -577,21 +577,21 @@ news_event = {
     major = yes
 
 	immediate = {
-		ROOT = {
-			every_owned_state = {
-				limit = {
-					is_capital = yes
+		custom_effect_tooltip = international_news_event_1_tt
+		hidden_effect = {
+			ROOT = {
+				capital_scope = {
+					add_dynamic_modifier = {
+						modifier = bridge_location_modifier
+					}
 				}
-				add_dynamic_modifier = {
-					modifier = bridge_location_modifier
-				}
+				set_country_flag = bridge_uplink_flag
+				add_to_array = { global.module_one_builder_array = THIS.id }
 			}
-			set_country_flag = bridge_uplink_flag
-			add_to_array = { global.module_one_builder_array = THIS.id }
-        }
-		clr_global_flag = module_1_under_construction_flag
-		set_global_flag = module_1_completed_flag
-		set_global_flag = module_2_under_construction_flag
+			clr_global_flag = module_1_under_construction_flag
+			set_global_flag = module_1_completed_flag
+			set_global_flag = module_2_under_construction_flag
+		}
 	}
 
 	option = {
@@ -609,21 +609,21 @@ news_event = {
     major = yes
 
 	immediate = {
-		ROOT = {
-			every_owned_state = {
-				limit = {
-					is_capital = yes
+		custom_effect_tooltip = international_news_event_2_tt
+		hidden_effect = {
+			ROOT = {
+				capital_scope = {
+					add_dynamic_modifier = {
+						modifier = quarters_location_modifier
+					}
 				}
-				add_dynamic_modifier = {
-					modifier = quarters_location_modifier
-				}
-			}
-			set_country_flag = quarters_uplink_flag
-			add_to_array = { global.module_two_builder_array = THIS.id }
-		}	
-		clr_global_flag = module_2_under_construction_flag
-		set_global_flag = module_2_completed_flag
-		set_global_flag = module_3_under_construction_flag
+				set_country_flag = quarters_uplink_flag
+				add_to_array = { global.module_two_builder_array = THIS.id }
+			}	
+			clr_global_flag = module_2_under_construction_flag
+			set_global_flag = module_2_completed_flag
+			set_global_flag = module_3_under_construction_flag
+		}
 	}
 
 	option = {
@@ -641,21 +641,21 @@ news_event = {
     major = yes
 
 	immediate = {
-		ROOT = {
-			every_owned_state = {
-				limit = {
-					is_capital = yes
+		custom_effect_tooltip = international_news_event_3_tt
+		hidden_effect = {
+			ROOT = {
+				capital_scope = {
+					add_dynamic_modifier = {
+						modifier = support_location_modifier
+					}
 				}
-				add_dynamic_modifier = {
-					modifier = support_location_modifier
-				}
+				set_country_flag = support_uplink_flag
+				add_to_array = { global.module_three_builder_array = THIS.id }
 			}
-			set_country_flag = support_uplink_flag
-			add_to_array = { global.module_three_builder_array = THIS.id }
+			clr_global_flag = module_3_under_construction_flag
+			set_global_flag = module_3_completed_flag
+			set_global_flag = module_4_under_construction_flag
 		}
-		clr_global_flag = module_3_under_construction_flag
-		set_global_flag = module_3_completed_flag
-		set_global_flag = module_4_under_construction_flag
 	}
 
 	option = {
@@ -673,21 +673,21 @@ news_event = {
     major = yes
 
 	immediate = {
-		ROOT = {
-			every_owned_state = {
-				limit = {
-					is_capital = yes
+		custom_effect_tooltip = international_news_event_4_tt
+		hidden_effect = {
+			ROOT = {
+				capital_scope = {
+					add_dynamic_modifier = {
+						modifier = storage_location_modifier
+					}
 				}
-				add_dynamic_modifier = {
-					modifier = storage_location_modifier
-				}
+				set_country_flag = storage_uplink_flag
+				add_to_array = { global.module_four_builder_array = THIS.id }
 			}
-			set_country_flag = storage_uplink_flag
-			add_to_array = { global.module_four_builder_array = THIS.id }
-		}
-		clr_global_flag = module_4_under_construction_flag
+			clr_global_flag = module_4_under_construction_flag
 			set_global_flag = module_4_completed_flag
 			set_global_flag = module_5_under_construction_flag
+		}
 	}
 
 	option = {
@@ -705,22 +705,22 @@ news_event = {
     major = yes
 
 	immediate = {
-		ROOT = {
-			every_owned_state = {
-				limit = {
-					is_capital = yes
+		custom_effect_tooltip = international_news_event_5_tt
+		hidden_effect = {
+			ROOT = {
+				capital_scope = {
+					add_dynamic_modifier = {
+						modifier = engine_location_modifier
+					}
 				}
-				add_dynamic_modifier = {
-					modifier = engine_location_modifier
-				}
+				#add_to_variable = { spaceship_completion_time = 365 }
+				set_country_flag = engine_uplink_flag
+				set_country_flag = spaceship_completed_flag
+				add_to_array = { global.module_five_builder_array = THIS.id }
 			}
-			#add_to_variable = { spaceship_completion_time = 365 }
-			set_country_flag = engine_uplink_flag
-			set_country_flag = spaceship_completed_flag
-			add_to_array = { global.module_five_builder_array = THIS.id }
+			clr_global_flag = module_5_under_construction_flag
+			set_global_flag = module_5_completed_flag
 		}
-		clr_global_flag = module_5_under_construction_flag
-		set_global_flag = module_5_completed_flag
 	}
 
 	option = {
@@ -734,7 +734,7 @@ news_event = {
 	id = international_news_event.6
 	title = international_news_event.6.t
 	desc = international_news_event.6.d
-	picture = GFX_report_event_gathering_protest
+	#picture = GFX_unknown_event
     
     is_triggered_only = yes
 
