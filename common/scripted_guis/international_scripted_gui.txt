@@ -4,7 +4,13 @@ scripted_gui = {
 		context_type = player_context
 		parent_window_token = top_bar
 		visible = {
-			has_country_flag = political_moment_flag
+			if = {
+                limit = { is_ai = yes }
+                always = yes
+            }
+            else = {
+                has_country_flag = political_moment_flag
+            }
 		}
 		effects = {
 			#international_close_click = {
@@ -16,28 +22,35 @@ scripted_gui = {
 				ROOT = {
 					set_country_flag = spaceship_internationalized_flag
 				}
+				#set_global_flag = unify_spaceship_button_disabled
 			}
 			international_launch_spaceship_click = {
+				set_global_flag = spaceship_launched_already
+				set_global_flag = unify_spaceship_button_disabled
 				ROOT = {
-					country_event = {
-						id = international_spaceship_event.1
-						days = 0
-					}
-				}
-				every_country = {
-					limit = {
-						AND = {
-							NOT = {
-								tag = ROOT
-							}
-							OR = {
-								is_puppet_of = ROOT
-								is_in_faction_with = ROOT
-							}
+					capital_scope = {
+						remove_dynamic_modifier = {
+							modifier = bridge_location_modifier
+						}
+						remove_dynamic_modifier = {
+							modifier = quarters_location_modifier
+						}
+						remove_dynamic_modifier = {
+							modifier = support_location_modifier
+						}
+						remove_dynamic_modifier = {
+							modifier = storage_location_modifier
+						}
+						remove_dynamic_modifier = {
+							modifier = engine_location_modifier
+						}
+						add_dynamic_modifier = {
+							modifier = spaceship_location_modifier
 						}
 					}
-					country_event = {
-						id = international_spaceship_event.2
+					add_ideas = awaiting_return_idea
+					news_event = {
+						id = international_news_event.9
 						days = 0
 					}
 				}
@@ -682,6 +695,12 @@ scripted_gui = {
 				}
 			}
 			international_launch_spaceship_click_enabled = {
+				NOT = {
+					OR = {
+						has_global_flag = spaceship_launched_already
+						has_global_flag = spaceship_already_internationalized
+					}
+				}
 				AND = {
 					any_owned_state = {
 						has_dynamic_modifier = {
@@ -1004,12 +1023,28 @@ scripted_gui = {
 				}
 			}
 		}
-		dynamic_lists = {
-		}
-		properties = {
-		}
+
 		ai_enabled = {
-			always = no
+            always = yes
+        }
+
+        ai_test_interval = 96969
+
+        ai_check = {
+            always = yes
+		}
+
+		ai_weights = {
+			international_unify_spaceship_efforts_click = {
+				ai_will_do = {
+					factor = 100
+				}
+			}
+			international_launch_spaceship_click = {
+				ai_will_do = {
+					factor = 1000
+				}
+			}
 		}
 	}
 }
