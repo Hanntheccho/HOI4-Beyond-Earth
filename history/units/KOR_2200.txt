@@ -1,0 +1,186 @@
+division_template = {
+	name = "National Guard"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		shock_troops = { x = 1 y = 3 }
+	}
+
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Rover Division"			
+
+	regiments = {
+		rover = { x = 0 y = 0 }
+		rover = { x = 0 y = 1 }
+		rover= { x = 0 y = 2 }
+		rover = { x = 0 y = 3 }
+        apc = { x = 1 y = 0 }
+		apc = { x = 1 y = 1 }
+		apc = { x = 1 y = 2 }
+		apc = { x = 1 y = 3 }
+		apc = { x = 1 y = 4 }
+	}
+
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+	}
+}
+
+units = {
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12901
+		division_template = "National Guard"
+		start_experience_factor = 0.9
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12801
+		division_template = "National Guard"
+		start_experience_factor = 0.9
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12835
+		division_template = "National Guard"
+		start_experience_factor = 0.9
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12933
+		division_template = "National Guard"
+		start_experience_factor = 0.9
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12850
+		division_template = "National Guard"
+		start_experience_factor = 0.9
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12823
+		division_template = "National Guard"
+		start_experience_factor = 0.9
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12975
+		division_template = "National Guard"
+		start_experience_factor = 0.9
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12819
+		division_template = "National Guard"
+		start_experience_factor = 0.9
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12901
+		division_template = "Rover Division"
+		start_experience_factor = 0.9
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12933
+		division_template = "Rover Division"
+		start_experience_factor = 0.9
+	}
+
+	fleet = {
+		name = "Marine Defense Group"
+		naval_base = 12850
+		task_force = {
+			name = "Defense Force Alpha"
+			location = 12850
+			ship = { name = "KOR Sejong the Great" definition = destroyer start_experience_factor = 0.1 equipment = { be_destroyer_1  = { amount = 1 owner = KOR } } }
+			ship = { name = "KOR Yulgok Yi I" definition = destroyer start_experience_factor = 0.1 equipment = { be_destroyer_1  = { amount = 1 owner = KOR } } }
+			ship = { name = "KOR Seoae Ryu Sungryong" definition = destroyer start_experience_factor = 0.1 equipment = { be_destroyer_1  = { amount = 1 owner = KOR } } }
+			ship = { name = "KOR Jeongjo the Great" definition = destroyer start_experience_factor = 0.1 equipment = { be_destroyer_1  = { amount = 1 owner = KOR } } }
+			ship = { name = "KOR Chungmugong Yi Sunshin" definition = destroyer start_experience_factor = 0.1 equipment = { be_destroyer_1  = { amount = 1 owner = KOR } } }
+			ship = { name = "KOR Munmu the Great" definition = destroyer start_experience_factor = 0.1 equipment = { be_destroyer_1  = { amount = 1 owner = KOR } } }
+		}
+		task_force = {
+			name = "Submarine Force Alpha"
+			location = 12850
+			ship = { name = "KOR Dosan Ahn Changho" definition = submarine start_experience_factor = 0.1 equipment = { be_submarine_1  = { amount = 1 owner = KOR } } }
+			ship = { name = "KOR Ahn Mu" definition = submarine start_experience_factor = 0.1 equipment = { be_submarine_1  = { amount = 1 owner = KOR } } }
+			ship = { name = "KOR Yi Dong-nyeong" definition = submarine start_experience_factor = 0.1 equipment = { be_submarine_1  = { amount = 1 owner = KOR } } }
+			ship = { name = "KOR Jeong Ji" definition = submarine start_experience_factor = 0.1 equipment = { be_submarine_1  = { amount = 1 owner = KOR } } }
+			ship = { name = "KOR Lee Beom-seok" definition = submarine start_experience_factor = 0.1 equipment = { be_submarine_1  = { amount = 1 owner = KOR } } }
+			ship = { name = "KOR Shin Dol-seok" definition = submarine start_experience_factor = 0.1 equipment = { be_submarine_1  = { amount = 1 owner = KOR } } }
+		}
+	}
+}
+
+air_wings = {
+	982 = {
+		fighter_equipment_1 = {
+			owner = KOR
+			amount = 75
+		}
+		name = "1st Fighter Wing"
+		cas_equipment_1 = {
+			owner = KOR
+			amount = 25
+		}
+		name = "1st Close Air Support Wing"
+	}
+
+	978 = {
+		fighter_equipment_1 = {
+			owner = KOR
+			amount = 75
+		}
+		name = "8th Fighter Wing"
+		cas_equipment_1 = {
+			owner = KOR
+			amount = 25
+		}
+		name = "8th Close Air Support Wing"
+	}
+}
