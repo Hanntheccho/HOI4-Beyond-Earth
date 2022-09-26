@@ -484,8 +484,39 @@ guiTypes = {
 
 		background = {
 			name = "Background"
-			quadTextureSprite ="GFX_construction_entry_bg"
+			quadTextureSprite ="GFX_tiled_invisible"
 			pdx_tooltip = "PRODUCTION_DRAG_N_DROP"
+		}
+
+		instantTextboxType = {
+			name = "factories"
+			position = { x = 65 y = 6 }
+			textureFile = ""
+			font = "Beyond"
+			text = "-"
+			maxWidth = 200
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+
+		instantTextboxType = {
+			name = "queued"
+			position = { x = 234 y = 6 }
+			textureFile = ""
+			font = "Beyond"
+			text = "-"
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "hide_that_now"
+			spriteType = "GFX_construction_entry_bg"
+			position = { x= 0 y = 0 }
+			alwaystransparent = yes
 		}
 
 		iconType = {
@@ -524,49 +555,38 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "location"
-			position = { x = 20 y = 8 }
+			position = { x = 70 y = 17 }
 			textureFile = ""
 			font = "Focusfont"
 			borderSize = {x = 0 y = 0}
 			text = "Maus"
-			maxWidth = 150
+			maxWidth = 300
 			maxHeight = 40
 			format = left
-			fixedsize = yes
+			#fixedsize = yes
+			multiline = no
 			vertical_alignment = center
 			alwaystransparent = yes
 		}
 		
 		iconType = {
 			name = "picture"
-			position = { x = 172 y = 4 }
+			position = { x = 15 y = 4 }
 			spriteType = "GFX_buildings_strip"
 		}
 		
 		iconType = {
 			name = "overlay"
-			position = { x = 172 y = 5 }
+			position = { x = 15 y = 5 }
 			spriteType = "GFX_building_status_overlay"
 			frame = 2
-			alwaystransparent = yes
-		}
-		
-		instantTextboxType = {
-			name = "queued"
-			position = { x = 192 y = 31 }
-			textureFile = ""
-			font = "Focusfont"
-			text = "-"
-			maxWidth = 20
-			maxHeight = 20
-			format = right
 			alwaystransparent = yes
 		}
 		
 		iconType = {
 			name = "repair"
 			spriteType = "GFX_building_repair"
-			position = { x= 174 y = 7 }
+			position = { x= 17 y = 7 }
 		}
 
 		iconType = {
@@ -574,21 +594,10 @@ guiTypes = {
 			spriteType = "GFX_ongoing_contruction_anim"
 			position = { x = 254 y = 10000 }
 		}
-		
-		instantTextboxType = {
-			name = "factories"
-			position = { x = 254 y = 18 }
-			textureFile = ""
-			font = "Focusfont"
-			text = "-"
-			maxWidth = 50
-			maxHeight = 20
-			format = center
-		}
 	
 		buttonType = {
 			name = "increase_priority"
-			position = { x=320 y=11 }
+			position = { x=10000 y=11 } #position = { x=320 y=11 }
 			quadTextureSprite = "GFX_arrow_up_small"
 			pdx_tooltip = "PRODUCTION_INCREASE_PRIORITY_LABEL"
 			pdx_tooltip_delayed = "PRODUCTION_PRIORITY_DELAYED"
@@ -597,7 +606,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "decrease_priority"
-			position = { x=351 y=11	 }
+			position = { x=10000 y=11 } #position = { x=351 y=11 }
 			quadTextureSprite = "GFX_arrow_down_small"
 			pdx_tooltip = "PRODUCTION_DECREASE_PRIORITY_LABEL"
 			pdx_tooltip_delayed = "PRODUCTION_PRIORITY_DELAYED"
@@ -607,7 +616,7 @@ guiTypes = {
 		buttonType = {
 			name = "increase_amount"
 			quadTextureSprite ="GFX_add_one"
-			position = { x = 220 y = 5 }
+			position = { x = 10000 y = 5 } #position = { x = 220 y = 5 }
 			pdx_tooltip = "CONSTRUCTION_INCREASE_AMOUNT_LABEL"
 			pdx_tooltip_delayed = "CONSTRUCTION_MAXIMIZE"
 			#scale = 0.9
@@ -617,14 +626,14 @@ guiTypes = {
 		buttonType = {
 			name = "decrease_amount"
 			quadTextureSprite ="GFX_subtract_one"
-			position = { x = 220 y = 28 }
+			position = { x = 10000 y = 28 } #position = { x = 220 y = 28 }
 			#scale = 0.9	
 			clicksound = click_default		
 		}
 		
 		buttonType = {
 			name = "close_production_line"
-			position = { x = 387 y = 8 }
+			position = { x = 387 y = 10 }
 			quadTextureSprite = "GFX_dismantle_faction_button"
 			clicksound = click_default
 		}		

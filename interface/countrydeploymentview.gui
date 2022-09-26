@@ -76,14 +76,20 @@ guiTypes = {
 			position = { x = 0 y = -8 }
 			size = { width = 100%% height = 100%% }
 
+			iconType ={
+				name ="extra_header_bg"
+				spriteType = "GFX_deploy_header"
+				position = { x = 6 y = 55 }
+			}
+
 			containerWindowType = {
 				name = "divisions"
-				position = { x=0 y=40 }
+				position = { x=0 y=100 }
 				size = { width=552 height=-2 }
 				verticalScrollbar = "right_vertical_slider"
 				scroll_wheel_factor = 40
 				smooth_scrolling = yes
-				margin = { top = 13 bottom = 18}
+				margin = { top = 18 bottom = 18}
 
 				background = {
 					name = "Background"
@@ -105,7 +111,6 @@ guiTypes = {
 				}
 			}
 		}
-
 
 		buttonType = {
 			name = "close_button"
@@ -490,12 +495,25 @@ guiTypes = {
 	containerWindowType = {
 		name = "deploy_entry"
 		position = { x = 0 y = 0}
-		size = { width = 493 height = 47 }
+		size = { width = 493 height = 40 }
+		clipping = no
 
 		background = {
 			name = "Background"
 			quadTextureSprite ="GFX_deploy_reinforcements_entry"
 			position = { x = -43 y = -5}
+		}
+
+		instantTextboxType = {
+			name = "extra_detail_here"
+			position = { x = -10 y = 15 }
+			textureFile = ""
+			font = "Beyondsmall"
+			borderSize = {x = 0 y = 0}
+			text = "//////                                                       /"
+			maxWidth = 700
+			maxHeight = 20
+			format = left	
 		}
 
 		iconType = {
@@ -556,7 +574,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "low_prio"
-			position = { x = 410 y = 15 }
+			position = { x = 407 y = 15 }
 			buttonFont = "Arialsmallest"
 			quadTextureSprite = "GFX_deploy_priority"
 			frame = 1
@@ -565,7 +583,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "medium_prio"
-			position = { x = 430 y = 15 }
+			position = { x = 427 y = 15 }
 			buttonFont = "Arialsmallest"
 			quadTextureSprite = "GFX_deploy_priority"
 			frame = 3
@@ -574,7 +592,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "high_prio"
-			position = { x = 450 y = 15 }
+			position = { x = 447 y = 15 }
 			buttonFont = "Arialsmallest"
 			quadTextureSprite = "GFX_deploy_priority"
 			frame = 1
@@ -585,12 +603,25 @@ guiTypes = {
 	containerWindowType = {
 		name = "supply_deploy_entry"
 		position = { x = 0 y = 0}
-		size = { width = 493 height = 47 }
+		size = { width = 493 height = 40 }
+		clipping = no
 
 		background = {
 			name = "Background"
 			quadTextureSprite ="GFX_deploy_reinforcements_entry"
 			position = { x = -43 y = -5}
+		}
+
+		instantTextboxType = {
+			name = "extra_detail_here"
+			position = { x = -10 y = 15 }
+			textureFile = ""
+			font = "Beyondsmall"
+			borderSize = {x = 0 y = 0}
+			text = "//////                                                       /"
+			maxWidth = 700
+			maxHeight = 20
+			format = left	
 		}
 
 		iconType = {
@@ -652,7 +683,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "low_prio"
-			position = { x = 410 y = 15 }
+			position = { x = 407 y = 15 }
 			buttonFont = "Arialsmallest"
 			quadTextureSprite = "GFX_deploy_priority"
 			frame = 1
@@ -661,7 +692,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "medium_prio"
-			position = { x = 430 y = 15 }
+			position = { x = 427 y = 15 }
 			buttonFont = "Arialsmallest"
 			quadTextureSprite = "GFX_deploy_priority"
 			frame = 3
@@ -670,7 +701,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "high_prio"
-			position = { x = 450 y = 15 }
+			position = { x = 447 y = 15 }
 			buttonFont = "Arialsmallest"
 			quadTextureSprite = "GFX_deploy_priority"
 			frame = 1
@@ -679,18 +710,18 @@ guiTypes = {
 	}
 	containerWindowType = {
 		name = "military_deployment_conveyor_summary_view"
-		position = { x=-13 y=0 }
+		position = { x=-48 y=10 }
 		size = { width=510 height=40 }
 		
-		background = {
-			name = "background"
-			quadTextureSprite ="GFX_military_deployment_end_line_view_bg"
-		}
+		#background = {
+		#	name = "background"
+		#	quadTextureSprite ="GFX_military_deployment_end_line_view_bg"
+		#}
 		
 		buttonType = {
 			name = "conveyor_collapse_btn"
-			position = { x=470 y=8 }
-			quadTextureSprite = "GFX_conveyor_collapse_btn"
+			position = { x=0 y=0 }
+			quadTextureSprite = "GFX_military_deployment_end_line_view_bg"
 			buttonFont = "Arial"
 			clicksound = click_default
 			frame = 1
@@ -698,7 +729,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "lines_count"
-			position = { x = 310 y = 13 }
+			position = { x = 350 y = 13 }
 			font = "Focusfont"
 			borderSize = {x = 0 y = 0}
 			text = "1"
@@ -711,18 +742,18 @@ guiTypes = {
 		iconType = {
 			name = "army_equipment"
 			spriteType = "GFX_equipment_state_icon"
-			position = { x=205 y=9 }		
+			position = { x=190 y=9 }		
 		}
 		
 		iconType = {
 			name = "equipment_progressbar"
 			spriteType = "GFX_deployment_entry_progressbar"
-			position = { x=235 y=16 }
+			position = { x=220 y=16 }
 		}
 		
 		buttonType = {
 			name = "priority_up_btn"
-			position = { x=11 y=4 }
+			position = { x=10000 y=4 } #position = { x=51 y=4 }
 			quadTextureSprite = "GFX_change_conveyor_order_btn"
 			buttonFont = "Arial"
 			clicksound = click_default
@@ -731,7 +762,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "priority_down_btn"
-			position = { x=36 y=4 }
+			position = { x=10000 y=4 } #position = { x=76 y=4 }
 			quadTextureSprite = "GFX_change_conveyor_order_btn"
 			buttonFont = "Arial"
 			clicksound = click_default
@@ -752,12 +783,24 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "military_deployment_line_view"
-		position = { x=-13 y=0 }
-		size = { width=520 height=40 }
+		position = { x=-5 y=10 }
+		size = { width=450 height=40 }
 		
 		background = {
 			name = "background"
-			quadTextureSprite ="GFX_military_deployment_line_view_bg"
+			quadTextureSprite ="GFX_tiled_generic_bg_1" #2"
+			position = {
+				x = 0
+				y = -3
+			}
+		}
+		background = {
+			name = "background2"
+			quadTextureSprite ="GFX_tiled_generic_bg_1" #2"
+			position = {
+				x = 0
+				y = -3
+			}
 		}
 
 		dropDownBoxType = {
@@ -767,14 +810,14 @@ guiTypes = {
 			
 			editBoxType = {
 				name = "editbox"
-				position = { x = 3 y = 5 }
-				font = "Arialsmallest"
+				position = { x = 10000 y = 8 } #position = { x = 3 y = 8 }
+				font = "Focusfont"
 				size = { x=175 y=19 }
 			}
 			
 			expandButton = {
 				name = "expand_button"	
-				position = { x = 30 y = 7 }
+				position = { x = 10000 y = 7 } #position = { x = 30 y = 7 }
 				quadTextureSprite ="GFX_collapse_or_close" # Frame 1 = down, 2 = up, 3 = cancel
 				buttonFont = "Main_14_black"
 				Orientation = "UPPER_RIGHT"
@@ -824,50 +867,50 @@ guiTypes = {
 		iconType = {
 			name = "army_equipment"
 			spriteType = "GFX_equipment_state_icon"
-			position = { x=205 y=9 }		
+			position = { x=10 y=9 }		
 		}
 		
 		iconType = {
 			name = "equipment_progressbar"
 			spriteType = "GFX_deployment_entry_progressbar"
-			position = { x=235 y=16 }
+			position = { x=40 y=16 }
 		}
 		
 		iconType = {
 			name = "army_training"
 			spriteType = "GFX_army_experience"
-			position = { x=312 y=13 }		
+			position = { x=152 y=13 }		
 		}
 		
 		iconType = {
 			name = "training_progressbar"
 			spriteType = "GFX_deployment_entry_progressbar"
-			position = { x=331 y=16 }
+			position = { x=175 y=16 }
 		}
 		
 		instantTextboxType = {
 			name = "series_number"
-			position = { x = 398 y = 12 }
+			position = { x = 270 y = 13 }
 			font = "Focusfont"
 			borderSize = {x = 0 y = 0}
 			text = "1"
 			maxWidth = 65
 			maxHeight = 20
 			pdx_tooltip = "CONVEYOR_SERIES_CURRENT_AMOUNT_DESC"
-			format = center
+			format = right
 			fixedsize = yes
 		}
 		
 		buttonType = {
 			name = "deploy_line_button"
-			position = { x=458 y=7 }
+			position = { x=383 y=7 }
 			quadTextureSprite = "GFX_deploy_line_button"
 			clicksound = click_default
 		}
 		
 		buttonType = {
 			name = "cancel_line_button"
-			position = { x=484 y=7 }
+			position = { x=414 y=7 }
 			quadTextureSprite = "GFX_closebutton_small"
 			pdx_tooltip = "CONVEYOR_LINE_CANCEL_DESC"
 			clicksound = click_close
@@ -903,17 +946,35 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "military_deployment_conveyor_view"
-		position = { x=-13 y=0 }
+		position = { x=-13 y=10 }
 		size = { width=488 height=84 }
 		
 		background = {
 			name = "background"
 			quadTextureSprite ="GFX_military_deployment_conveyor_view_bg"
+			position = {
+				x = -20
+				y = 0
+			}
+		}
+
+		instantTextboxType = {
+			name = "extra_stuff"
+			position = { x = 228 y = 12 }
+			textureFile = ""
+			font = "Beyondsmall"
+			borderSize = {x = 0 y = 0}
+			text = "////          ///   ///////  ///"
+			maxWidth = 280
+			maxHeight = 30
+			fixedsize = yes
+			format = left
+			alwaystransparent = yes
 		}
 		
 		iconType = {
 			name = "template_icon"
-			position = { x=5 y=17 }
+			position = { x=-2 y=17 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
 		}
@@ -954,8 +1015,8 @@ guiTypes = {
 
 		editBoxType = {
 			name = "generic_name_edit"
-			position = { x = 100 y = 11 }
-			font = "Arialsmallest"
+			position = { x = 10000 y = 14 } #position = { x = 100 y = 14 }
+			font = "Focusfont"
 			size = { x=200 y=25 }
 			pdx_tooltip = "CONVEYOR_GENERIC_NAME_EDIT_DESC"
 		}
@@ -971,29 +1032,31 @@ guiTypes = {
 		buttonType = {
 			name = "deploy_group_button"
 			spriteType = "GFX_conveyor_group_btn"
-			position = { x=96 y=50 }
+			position = { x=10000 y=50 } #position = { x=96 y=50 }
 			clicksound = click_default
 		}
 
 		iconType = {
 			name = "deploy_group_button_icon"
-			position = { x=94 y=48 }
+			position = { x=10000 y=48 } #position = { x=94 y=48 }
 			spriteType = "GFX_conveyor_group_btn_frame"
 			alwaystransparent = yes		
 		}
 		
 		buttonType = {
 			name = "decrease_amount"
-			position = { x = 312 y = 6 }
-			quadTextureSprite = "GFX_naval_decrease_amount"
+			position = { x = 107 y = 10 }
+			quadTextureSprite = "GFX_increase_decrease_amount_invisible"
 			pdx_tooltip = "CONVEYOR_SERIES_DECREASE_DESC"
 			font = "Arialsmallest"
 			clicksound = click_default
+			buttonFont = "Focusfont"
+			buttonText = "<<<"
 		}
 		
 		instantTextboxType = {
 			name = "amount"
-			position = { x = 349 y = 14 }
+			position = { x = 149 y = 14 }
 			font = "Focusfont"
 			text = "INFINITY"
 			maxWidth = 33
@@ -1004,15 +1067,17 @@ guiTypes = {
 		
 		buttonType = {
 			name = "increase_amount"
-			position = { x = 383 y = 6 }
-			quadTextureSprite = "GFX_naval_increase_amount"
+			position = { x = 183 y = 10 }
+			quadTextureSprite = "GFX_increase_decrease_amount_invisible"
 			pdx_tooltip = "CONVEYOR_SERIES_INCREASE_DESC"
 			clicksound = click_default
+			buttonFont = "Focusfont"
+			buttonText = ">>>"
 		}
 		
 		buttonType = {
 			name = "low_prio"
-			position = { x = 420 y = 12 }
+			position = { x = 270 y = 12 }
 			buttonFont = "Arialsmallest"
 			quadTextureSprite = "GFX_deploy_priority"
 			pdx_tooltip = "DEPLOYMENT_LOW_PRIORITY_DESC"
@@ -1022,7 +1087,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "medium_prio"
-			position = { x = 440 y = 12 }
+			position = { x = 290 y = 12 }
 			buttonFont = "Arialsmallest"
 			quadTextureSprite = "GFX_deploy_priority"
 			pdx_tooltip = "DEPLOYMENT_MEDIUM_PRIORITY_DESC"
@@ -1032,7 +1097,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "high_prio"
-			position = { x = 460 y = 12 }
+			position = { x = 310 y = 12 }
 			buttonFont = "Arialsmallest"
 			quadTextureSprite = "GFX_deploy_priority"
 			pdx_tooltip = "DEPLOYMENT_HIGH_PRIORITY_DESC"
