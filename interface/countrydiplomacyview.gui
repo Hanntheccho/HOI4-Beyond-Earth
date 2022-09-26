@@ -510,27 +510,35 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "ideas_info"
-				position = { x = 10 y = 113 }
-				size = { width = 265 height = -50 }
-				verticalScrollbar = "right_vertical_slider"
+				position = { x = 10 y = 133 }
+				size = { width = 525 height = -50 }
+				#verticalScrollbar = "right_vertical_slider"
 				margin = { top = 7 bottom = 7 }
+				clipping = no
 				
 				background = {
 					name = "Background"
-					spriteType ="GFX_tiled_window_1b_thin_border"
+					spriteType ="GFX_tiled_invisible"
+				}
+
+				iconType = {
+					name = "diplo_details_header"
+					quadTextureSprite ="GFX_production_win_top2"
+					position = { x = -2 y = -38 }
 				}
 			}
 			
 			containerWindowType = {
 				name = "trade_info"
-				position = { x = 272 y = 113 }
+				position = { x = 7 y = 103 }
 				size = { width = 265 height = 84 }
 				verticalScrollbar = "right_vertical_slider"
+				clipping = no
 				
-				background = {
-					name = "Background"
-					spriteType ="GFX_tiled_plain_bg"
-				}
+				#background = {
+				#	name = "Background"
+				#	spriteType ="GFX_production_win_top2"
+				#}
 
 #				iconType = {
 #					name = "diplo_details_header"
@@ -542,7 +550,7 @@ guiTypes = {
 					name = "trade_grid"
 					position = { x = 27 y = 5 }
 					size = { width = 255 height = 100%% }
-					slotsize = { width = 38 height = 76 }
+					slotsize = { width = 81 height = 76 }
 					max_slots = { x = 6 y = 1 }
 					format = "UPPER_LEFT"
 				}
@@ -550,30 +558,43 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "estimated_enemy_force_info"
-				position = { x = 272 y = 196 }
-				size = { width = 265 height = -50 }
-				verticalScrollbar = "right_vertical_slider"
+				position = { x = 0 y = 650 }
+				size = { width = 545 height = -50 }
+				#verticalScrollbar = "right_vertical_slider"
 				margin = { top=6 bottom=8 }
+				clipping = no
 				
 				background = {
 					name = "Background"
-					spriteType ="GFX_tiled_plain_bg"
+					spriteType ="GFX_tiled_invisible"
 				}
 
 				iconType = {
 					name = "diplo_details_header"
-					quadTextureSprite ="GFX_diplo_details_header"
-					position = { x = 8 y = 5 }
+					quadTextureSprite ="GFX_category_header"
+					position = { x = -20 y = 5 }
 				}
 				
 				instantTextboxType = {
 					name = "window_header_text"
-					position = { x = 30 y = 20 }
+					position = { x = 30 y = 23 }
 					font = "Beyondsmall"
-					text = "INTELLIGENCE"
+					text = "/////"
 					maxWidth = 200
 					maxHeight = 20
-					format = center
+					format = left
+				}
+
+				instantTextboxType = {
+					name = "title_extra"
+					position = { x = 280 y = 21 }
+					font = "Beyondsmall"
+					text = "/////////////////////"
+					maxWidth = 240
+					maxHeight = 40
+					format = centre
+					fixedsize = yes
+					multiline = no
 				}
 
 				#iconType = {
@@ -581,68 +602,34 @@ guiTypes = {
 				#	quadTextureSprite ="GFX_generic_text_bg_108"
 				#	position = { x = 10 y = 105 }
 				#}
-				
-				iconType = {
-					name = "estimated_military_forces_icon"
-					quadTextureSprite ="GFX_endgame_army_button"
-					position = { x = 10000 y = 55 }
-					pdx_tooltip = ESTIMATED_MILITARY_FORCES
-				}
 
 				iconType = {
 					name = "intel_bg_mod2"
-					quadTextureSprite ="GFX_intel_bg_mod"
-					position = { x = 10 y = 57 }
+					quadTextureSprite ="GFX_idea_category_black"
+					position = { x = -10 y = 43 }
 				}
 				iconType = {
 					name = "intel_bg_mod3"
-					quadTextureSprite ="GFX_intel_bg_mod"
-					position = { x = 10 y = 117 }
+					quadTextureSprite ="GFX_idea_category_black"
+					position = { x = -10 y = 123 }
 				}
 				iconType = {
 					name = "intel_bg_mod4"
-					quadTextureSprite ="GFX_intel_bg_mod"
-					position = { x = 10 y = 177 }
-				}
-				iconType = {
-					name = "intel_bg_mod5"
-					quadTextureSprite ="GFX_intel_bg_mod"
-					position = { x = 10 y = 237 }
-				}
-				iconType = {
-					name = "intel_bg_mod6"
-					quadTextureSprite ="GFX_intel_bg_mod"
-					position = { x = 10 y = 297 }
-				}
-				iconType = {
-					name = "intel_bg_mod7"
-					quadTextureSprite ="GFX_intel_bg_mod"
-					position = { x = 10 y = 357 }
-				}
-				iconType = {
-					name = "intel_bg_mod8"
-					quadTextureSprite ="GFX_intel_bg_mod"
-					position = { x = 10 y = 417 }
-				}
-				iconType = {
-					name = "intel_bg_mod9"
-					quadTextureSprite ="GFX_intel_bg_mod"
-					position = { x = 10 y = 477 }
+					quadTextureSprite ="GFX_idea_category_black"
+					position = { x = -10 y = 203 }
 				}
 				
-				instantTextboxType = {
-					name = "estimated_military_forces2"
-					position = { x = 15 y = 58 }
-					font = "Arial"
-					text = "/// MILITARY FORCES:"
-					maxWidth = 300
-					maxHeight = 20
-					format = left
+				iconType = {
+					name = "estimated_military_forces_icon"
+					quadTextureSprite ="GFX_mapmode_buttons_deselected_big"
+					frame = 1
+					position = { x = 30 y = 75 }
+					pdx_tooltip = ESTIMATED_MILITARY_FORCES
 				}
 
 				instantTextboxType = {
 					name = "estimated_military_forces"
-					position = { x = 21 y = 88 }
+					position = { x = 81 y = 83 }
 					font = "Focusfont"
 					text = "?"
 					maxWidth = 300
@@ -658,24 +645,15 @@ guiTypes = {
 				
 				iconType = {
 					name = "estimated_navy_forces_icon"
-					quadTextureSprite ="GFX_endgame_navy_button"
-					position = { x = 10000 y = 145 }
+					quadTextureSprite ="GFX_mapmode_buttons_deselected_big"
+					frame = 3
+					position = { x = 180 y = 75 }
 					pdx_tooltip = ESTIMATED_NAVY_FORCES
-				}
-
-				instantTextboxType = {
-					name = "estimated_navy_forces2"
-					position = { x = 15 y = 118 }
-					font = "Arial"
-					text = "/// NAVY FORCES:"
-					maxWidth = 300
-					maxHeight = 20
-					format = left
 				}
 				
 				instantTextboxType = {
 					name = "estimated_navy_forces"
-					position = { x = 21 y = 148 }
+					position = { x = 231 y = 83 }
 					font = "Focusfont"
 					text = "?"
 					maxWidth = 300
@@ -691,24 +669,15 @@ guiTypes = {
 				
 				iconType = {
 					name = "estimated_air_forces_icon"
-					quadTextureSprite ="GFX_endgame_air_button"
-					position = { x = 10000 y = 235 }
+					quadTextureSprite ="GFX_mapmode_buttons_deselected_big"
+					frame = 2
+					position = { x = 330 y = 75 }
 					pdx_tooltip = ESTIMATED_AIR_FORCES
-				}
-
-				instantTextboxType = {
-					name = "estimated_airforce2"
-					position = { x = 15 y = 178 }
-					font = "Arial"
-					text = "/// AIR FORCES:"
-					maxWidth = 300
-					maxHeight = 20
-					format = left
 				}
 				
 				instantTextboxType = {
 					name = "estimated_airforce"
-					position = { x = 21 y = 208 }
+					position = { x = 381 y = 83 }
 					font = "Focusfont"
 					text = "?"
 					maxWidth = 300
@@ -724,24 +693,15 @@ guiTypes = {
 				
 				iconType = {
 					name = "estimated_civil_industry_icon"
-					quadTextureSprite ="GFX_endgame_civ_industry_button"
-					position = { x = 10000 y = 235 }
+					quadTextureSprite ="GFX_buildings_strip"
+					frame = 1
+					position = { x = 27 y = 153 }
 					pdx_tooltip = ESTIMATED_CIVIL_INDUSTRY
-				}
-
-				instantTextboxType = {
-					name = "estimated_civil_industry_size2"
-					position = { x = 15 y = 238 }
-					font = "Arial"
-					text = "/// CIVIL INDUSTRY:"
-					maxWidth = 300
-					maxHeight = 20
-					format = left
 				}
 				
 				instantTextboxType = {
 					name = "estimated_civil_industry_size"
-					position = { x = 21 y = 268 }
+					position = { x = 80 y = 170 }
 					font = "Focusfont"
 					text = "?"
 					maxWidth = 300
@@ -757,24 +717,15 @@ guiTypes = {
 				
 				iconType = {
 					name = "estimated_mil_industry_icon"
-					quadTextureSprite ="GFX_endgame_industry_button"
-					position = { x = 10000 y = 55 }
+					quadTextureSprite ="GFX_buildings_strip"
+					frame = 2
+					position = { x = 177 y = 153 }
 					pdx_tooltip = ESTIMATED_MIL_INDUSTRY
-				}
-
-				instantTextboxType = {
-					name = "estimated_military_industry_size2"
-					position = { x = 15 y = 298 }
-					font = "Arial"
-					text = "/ MILITARY INDUSTRY:"
-					maxWidth = 300
-					maxHeight = 20
-					format = left
 				}
 				
 				instantTextboxType = {
 					name = "estimated_military_industry_size"
-					position = { x = 21 y = 328 }
+					position = { x = 230 y = 170 }
 					font = "Focusfont"
 					text = "?"
 					maxWidth = 300
@@ -790,24 +741,15 @@ guiTypes = {
 				
 				iconType = {
 					name = "estimated_naval_industry_icon"
-					quadTextureSprite ="GFX_endgame_naval_industry_button"
-					position = { x = 10000 y = 145 }
+					quadTextureSprite ="GFX_buildings_strip"
+					frame = 4
+					position = { x = 327 y = 153 }
 					pdx_tooltip = ESTIMATED_NAVAL_INDUSTRY
-				}
-
-				instantTextboxType = {
-					name = "estimated_naval_industry_size2"
-					position = { x = 15 y = 358 }
-					font = "Arial"
-					text = "/// NAVAL INDUSTRY:"
-					maxWidth = 300
-					maxHeight = 20
-					format = left
 				}
 				
 				instantTextboxType = {
 					name = "estimated_naval_industry_size"
-					position = { x = 21 y = 388 }
+					position = { x = 380 y = 170 }
 					font = "Focusfont"
 					text = "?"
 					maxWidth = 300
@@ -830,9 +772,9 @@ guiTypes = {
 				
 				instantTextboxType = {
 					name = "estimated_convoy_size2"
-					position = { x = 15 y = 418 }
-					font = "Arial"
-					text = "/// CONVOY SIZE:"
+					position = { x = 225 y = 243 }
+					font = "Focusfont"
+					text = "CONVOYS:"
 					maxWidth = 300
 					maxHeight = 20
 					format = left
@@ -840,7 +782,7 @@ guiTypes = {
 				
 				instantTextboxType = {
 					name = "estimated_convoy_size"
-					position = { x = 21 y = 448 }
+					position = { x = 320 y = 243 }
 					font = "Focusfont"
 					text = "?"
 					maxWidth = 300
@@ -856,24 +798,14 @@ guiTypes = {
 				
 				iconType = {
 					name = "estimated_manpower_icon"
-					quadTextureSprite ="GFX_endgame_manpower_button"
-					position = { x = 10000 y = 325 }
+					quadTextureSprite ="GFX_manpower_icon"
+					position = { x = 50 y = 237 }
 					pdx_tooltip = ESTIMATED_MANPOWER
-				}	
-				
-				instantTextboxType = {
-					name = "estimated_manpower_size2"
-					position = { x = 15 y = 478 }
-					font = "Arial"
-					text = "/// MANPOWER SIZE:"
-					maxWidth = 300
-					maxHeight = 20
-					format = left
 				}
 				
 				instantTextboxType = {
 					name = "estimated_manpower_size"
-					position = { x = 21 y = 508 }
+					position = { x = 85 y = 243 }
 					font = "Focusfont"
 					text = "?"
 					maxWidth = 300
@@ -1207,27 +1139,27 @@ guiTypes = {
 		size = { width = 30 height = 60 }
 		clipping = no
 		
-		background = {
-			name = "Background"
-			spriteType ="GFX_diplo_trade_entry_bg"
-		}
+		#background = {
+		#	name = "Background"
+		#	spriteType ="GFX_diplo_trade_entry_bg"
+		#}
 		
 		iconType = {
 			name = "icon"
 			spriteType = "GFX_resources_strip"
-			position = { x = 4 y = 7 }			
+			position = { x = 4 y = 10 }			
 		}
 		
 		iconType = {
 			name = "chart"
-			position = { x = 17 y = 48 }
+			position = { x = 54 y = 13 }
 			spriteType = "GFX_trade_resource_chart"
 		}
 		
 		iconType = {
 			name = "mini_piechart_overlay"
 			spriteType = "GFX_mini_piechart_overlay"
-			position = { x = 5 y = 46 }			
+			position = { x = 42 y = 11 }			
 		}
 	}
 	
@@ -1236,11 +1168,15 @@ guiTypes = {
 		size = { width = 255 height = 100 }
 		clipping = no
 	
-		
 		background = {
 			name = "Background"		
-			spriteType = "GFX_diplo_details_header"
-			position = { x = 4 y = 6 }			
+			spriteType = "GFX_category_header" #spriteType = "GFX_diplo_details_header"
+			position = { x = -30 y = 4 }			
+		}
+		background = {
+			name = "Background2"		
+			spriteType = "GFX_idea_category_black" #spriteType = "GFX_diplo_details_header"
+			position = { x = -20 y = 40 }			
 		}
 
 		iconType = {
@@ -1248,6 +1184,18 @@ guiTypes = {
 			spriteType = "GFX_idea_categories"
 			position = { x = 23 y = 12 }	
 			frame = 1
+		}
+
+		instantTextboxType = {
+			name = "title_extra"
+			position = { x = 280 y = 21 }
+			font = "Beyondsmall"
+			text = "/////////////////////"
+			maxWidth = 240
+			maxHeight = 40
+			format = centre
+			fixedsize = yes
+			multiline = no
 		}
 		
 		instantTextboxType = {
@@ -1257,23 +1205,23 @@ guiTypes = {
 			text = "category"
 			maxWidth = 240
 			maxHeight = 40
-			format = centre
+			format = left
 			fixedsize = yes
 			multiline = no
 		}
 		
 		containerWindowType = {
 			name = "ideas"
-			position = { x = 14 y = 50 }
+			position = { x = 10 y = 50 }
 			size = { width = 100%% height = 100%% }
 			verticalScrollbar = "right_vertical_slider"
 		
 			gridBoxType = {
 				name = "ideas_grid"
-				position = { x = 0 y = -8 }
+				position = { x = 0 y = 0 }
 				size = { width = 255 height = 106 }
-				slotsize = { width = 70 height = 60 }
-				max_slots_horizontal = 3
+				slotsize = { width = 75 height = 80 }
+				max_slots_horizontal = 6
 				format = "UPPER_LEFT"
 			}
 		}
