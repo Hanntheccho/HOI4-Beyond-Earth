@@ -10,6 +10,7 @@ tags={
 	"Ideologies"
 }
 name="Beyond Earth"
+picture="thumbnail.png"
 supported_version="1.12.*"
 
 replace_path="common/ai_areas"

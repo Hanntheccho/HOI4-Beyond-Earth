@@ -649,6 +649,31 @@ guiTypes = {
 
 
 	#### RESOURCE MAP ICON
+
+	containerWindowType = {
+		name = "resource_mapicon_item"
+		position = { x = 0 y = 0 }
+		size = { width = 100 height = 16 }
+		orientation = upper_left
+
+		instantTextboxType = {
+			name = "desc"
+			position = { x = 0 y = 0 }
+			font = "Focusfont"
+			text = ""
+			maxWidth = 200
+			maxHeight = 20
+			format = left
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "flag"
+			quadTextureSprite ="GFX_flag_smallest"
+			position = { x= -25 y = -5 }
+		}
+	}
+
 	containerWindowType = {
 		name = "resource_mapicon"
 		#backGround =""
@@ -656,14 +681,13 @@ guiTypes = {
 		size = { width = 100 height = 25 }
 		orientation = upper_left
 
-		instantTextboxType = {
-			name = "text"
+		listboxType = {
+			name ="resources_list"
 			position = { x = 0 y = 0 }
-			font = "Focusfont"
-			text = ""
-			maxWidth = 200
-			maxHeight = 20
-			format = left
+			size = { x= 485 y = 460 }
+			horizontal = 0
+			spacing = 0
+			borderSize = {x = 0 y = 0}
 			alwaystransparent = yes
 		}
 
@@ -1608,7 +1632,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "cost"
 			position = {x= 0 y=0}
-			font = "hoi_20bs"
+			font = "Focusfont"
 			maxWidth = 100
 			maxHeight = 24
 			format = center
@@ -1846,7 +1870,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "text"
 			position = { x = 0 y = 0 }
-			font = "hoi_20bs"
+			font = "Focusfont"
 			text = "100%"
 			maxWidth = 100
 			maxHeight = 20
@@ -1911,7 +1935,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "rating_txt"
 			position = { x = 10000 y = 14 }
-			font = "hoi_20bs"
+			font = "Focusfont"
 			text = "999"
 			maxWidth = @intel_map_mode_map_icon_width
 			maxHeight = 20
@@ -2561,7 +2585,7 @@ guiTypes = {
 			instantTextBoxType = {
 				name ="cost"
 				position = { x= 0 y = 6 }
-				font = "hoi_18mbs"
+				font = "Focusfont"
 				text = "9999"
 				format = CENTER
 				maxWidth = 100
@@ -2596,10 +2620,10 @@ guiTypes = {
 		instantTextboxType = {
 			name = "amount"
 			position = { x= 28 y = 3 }
-			font = "hoi_16mbs"
+			font = "Focusfont"
 			text = "99"
 			format = left
-			maxWidth = 30
+			maxWidth = 150
 			alwaystransparent = yes
 		}
 	}
