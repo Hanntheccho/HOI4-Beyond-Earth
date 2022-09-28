@@ -17,16 +17,22 @@ NDefines.NDiplomacy.TENSION_ANNEX_CLAIM = 0                           -- Vanilla
 NDefines.NDiplomacy.TENSION_CIVIL_WAR_IMPACT = 0                    -- Vanilla: 0.2
 NDefines.NDiplomacy.TENSION_ANNEX_CORE = 0                        -- Vanilla: 0.5
 NDefines.NDiplomacy.TENSION_PUPPET = 0                               -- Vanilla: 2
+NDefines.NDiplomacy.TENSION_FORCE_GOVERNMENT = 0                     -- Vanilla: 0.75
 NDefines.NDiplomacy.TENSION_VOLUNTEER_FORCE_DIVISION = 0            -- Vanilla: 0.2
-NDefines.NDiplomacy.TENSION_DECAY = 0                                   -- Vanilla: 0.1
+NDefines.NDiplomacy.TENSION_DECAY_DAILY = 0                                   -- Vanilla: 0.005
 NDefines.NDiplomacy.TENSION_TIME_SCALE_MONTHLY_FACTOR = 0              -- Vanilla: -0.005
 NDefines.NDiplomacy.TENSION_GUARANTEE = 0                            -- Vanilla: -5
 NDefines.NDiplomacy.TENSION_FACTION_JOIN = 0                       -- Vanilla: 4
 NDefines.NDiplomacy.TENSION_JOIN_ATTACKER = 0                      -- Vanilla: 2
 NDefines.NDiplomacy.TENSION_PEACE_FACTOR = 0                      -- Vanilla: 0.25
 NDefines.NDiplomacy.TENSION_LIBERATE = 0                         -- Vanilla: -1
+NDefines.NDiplomacy.TENSION_TAKE_ONE_CAPITAL_SHIP = 0                      -- Vanilla: 0.25
+NDefines.NDiplomacy.TENSION_DEMILITARIZE_ZONE = 0                      -- Vanilla: 0.25
+NDefines.NDiplomacy.TENSION_WAR_REPARATION = 0                         -- Vanilla: 0.25
+NDefines.NDiplomacy.TENSION_RESOURCE_RIGHTS = 0                           -- Vanilla: 0.25
+NDefines.NDiplomacy.TENSION_DISMANTLE_INDUSTRY = 0                           -- Vanilla: 0.25
 NDefines.NDiplomacy.TENSION_CAPITULATE = 0                           -- Vanilla: 0.75
-NDefines.NDiplomacy.CAPITAL_CAPITULATE_BONUS_SCORE_MUL = 0          -- Vanilla: 1.5
+
 
 NDefines.NDiplomacy.AUTONOMY_LEVEL_CHANGE_PP_ANNEX = 6969
 NDefines.NDiplomacy.AUTONOMY_LEVEL_CHANGE_PP_FREE = 6969
