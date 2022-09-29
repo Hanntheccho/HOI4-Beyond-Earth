@@ -941,10 +941,34 @@ guiTypes = {
 			quadTextureSprite ="GFX_tiled_bg"
 		}
 
+		instantTextBoxType = {
+			name = "title"
+			position = { x = 17 y = 10 } #position = { x = 20 y = 10 }
+			textureFile = ""
+			font = "Beyond"
+			borderSize = {x = 0 y = 0}
+			text = "Title"	
+			format = left
+			maxWidth = 400
+			maxHeight = 24
+			#fixedsize = yes
+		}
+
+		containerWindowType = {
+			name = "Background_3"
+			size = { width=100%% height=100%% } 
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_bg_alpha"
+				alwaystransparent = yes
+			}
+		}
+
 		iconType = {
 			name = "sender_flag"
 			quadTextureSprite ="GFX_shield_medium_mod"
-			position = { x= 24 y = 20 }
+			position = { x= 24 y = 245 }
 			Orientation = "UPPER_LEFT"
 		}	
 
@@ -957,7 +981,7 @@ guiTypes = {
 		iconType = {
 			name = "receiver_flag"
 			quadTextureSprite ="GFX_shield_medium_mod_reverse"
-			position = { x= 394 y = 20 }
+			position = { x= 397 y = 20 }
 			Orientation = "UPPER_LEFT"
 		}
 
@@ -972,20 +996,6 @@ guiTypes = {
 			spriteType = "GFX_diplo_popup_header_bg"
 			position = { x= 3 y = 8 }
 			alwaystransparent = yes
-		}	
-		
-		instantTextBoxType = {
-			name = "title"
-			position = { x = 70 y = 18 }
-			textureFile = ""
-			font = "Beyondsmall"
-			borderSize = {x = 0 y = 0}
-			text = "Title"	
-			maxWidth = 360
-			maxHeight = 60
-			vertical_alignment = center
-			fixedsize = yes
-			format = centre
 		}
 
 		iconType = {
@@ -1006,15 +1016,16 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "message"
-			position = { x = 27 y = 95 }
+			position = { x = 27 y = 35 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
 			text = "Long text here!"
 			maxWidth = 438
-			maxHeight = 150
+			maxHeight = 200
 			format = centre
 			scrollbartype = "standardtext_slider"
+			vertical_alignment = center
 		}
 
 		iconType = {
@@ -1025,7 +1036,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "ok_button"
-			position = { x=189 y =265}
+			position = { x=289 y =265}
 			quadTextureSprite ="GFX_button_123x34"
 			buttonText = "OK"
 			buttonFont = "Arial"
@@ -1850,9 +1861,9 @@ guiTypes = {
 			clicksound = click_ok
 		}
 	}
-	
+
 	containerWindowType = {
-		name = "peace_summery_popup_window"
+		name = "peace_summary_popup_window"
 		position = { x = 0 y = 0 }
 		size = { width = 584 height = 280 }
 		orientation= center
@@ -1916,20 +1927,6 @@ guiTypes = {
 			}
 		}
 
-		iconType ={
-			name ="peace_popup_bg"
-			spriteType = "GFX_peace_popup_bg"
-			position = { x= 14 y = 63 }
-			alwaystransparent = yes
-		}			
-		
-		iconType ={
-			name ="diplo_popup_header_bg"
-			spriteType = "GFX_diplo_popup_header_bg_large"
-			position = { x= 0 y = 8 }
-			alwaystransparent = yes
-		}
-		
 		instantTextBoxType = {
 			name = "description"
 			position = { x = 60 y = -20 }
@@ -1944,12 +1941,21 @@ guiTypes = {
 			scrollbartype = "standardtext_slider"
 		}
 
-		iconType = {
-			name ="diplo_popup_bottom"
-			spriteType = "GFX_diplo_popup_bottom_large"
-			position = { x= 0 y = 218 }
-		}	
-		
+		iconType =	{        
+			name = "pc_decoration_top_left"         
+			spriteType = "GFX_pc_decoration_top_left"         
+			position = { x= -4 y = -6 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+			
+		iconType =	{         
+			name = "pc_decoration_top_right"         
+			spriteType = "GFX_pc_decoration_top_right"         
+			position = { x= 392 y = -6 }
+			alwaystransparent = yes
+		}		
+
 		buttonType = {
 			name = "ok_button"
 			position = { x=230 y =231}

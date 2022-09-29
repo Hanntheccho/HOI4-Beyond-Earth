@@ -129,7 +129,7 @@ guiTypes = {
 			
 			gridBoxType = {
 				name ="list"
-				position = { x=28 y=2 }
+				position = { x=28 y=13 }
 				size = {width=447 height=100%%}
 				max_slots_horizontal = 1
 				slotsize = {width=465 height=70}
@@ -152,6 +152,7 @@ guiTypes = {
 		position = { x=0 y=0 }	
 		size = { width =449 height=41 }
 		orientation = upper_left
+		clipping = no
 		
 		background = {
 			name = "Background"	
@@ -161,51 +162,52 @@ guiTypes = {
 		iconType = {
 			name = "tension_war_list_major"
 			spriteType = "GFX_tension_war_list_major"
-			position = { x=5 y=5 }
+			position = { x=10000 y=5 }
 			pdx_tooltip = WAR_HAS_MAJOR
+		}
+
+		iconType = {
+			name = "warscore_progressbar"
+			spriteType = "GFX_warscore_progressbar_small"
+			position = { x=2 y=41 }
 		}
 		
 		instantTextboxType = {
 			name = "war_name"
-			position = {x=45 y=4}
-			font = "Arial16"
+			position = {x=100 y=1}
+			font = "Focusfont"
 			maxWidth = 250
 			maxHeight = 40
 			fixedsize = yes
-			format = left
-		}
-		
-		iconType = {
-			name = "warscore_progressbar"
-			spriteType = "GFX_warscore_progressbar_small"
-			position = { x=45 y=26 }
+			format = center
+			vertical_alignment = center
 		}
 		
 		iconType = {
 			name = "attacker_country_flag"
-			quadTextureSprite ="GFX_flag_small2"
-			position = { x= 325 y = 7 }
+			quadTextureSprite ="GFX_construction_flag_mod_mod"
+			position = { x= 1 y = -6 }
 			Orientation = "UPPER_LEFT"
 		}
 		
 		iconType ={
 			name ="attacker_flag_border"
 			quadTextureSprite = "GFX_diplo_countrylist_flag_frame"
-			position = { x= 321 y = 3 }
+			position = { x= 10000 y = 3 }
 			alwaystransparent = yes
 		}
 		
 		iconType = {
 			name = "defender_country_flag"
-			quadTextureSprite ="GFX_flag_small2"
-			position = { x= 400 y = 7 }
+			quadTextureSprite ="GFX_construction_flag_mod_mod_reverse"
+			position = { x= 368 y = -6 }
 			Orientation = "UPPER_LEFT"
 		}
 		
 		iconType ={
 			name ="defender_flag_border"
 			quadTextureSprite = "GFX_diplo_countrylist_flag_frame"
-			position = { x= 396 y = 3 }
+			position = { x= 10000 y = 3 }
 			alwaystransparent = yes
 		}
 	}
@@ -236,7 +238,7 @@ guiTypes = {
 		iconType = {
 			name = "country_flag_frame"
 			spriteType = "GFX_diplo_countrylist_flag_frame"
-			position = { x = 2 y = 23 }			
+			position = { x = 10000 y = 23 }			
 			alwaystransparent = yes
 		}
 		
@@ -262,18 +264,19 @@ guiTypes = {
 
 		iconType = {
 			name = "tracking_icon"
-			position = {x=172 y=7}
+			position = {x=10000 y=7}
 			quadTextureSprite ="GFX_leader_en_route"
 			alwaystransparent = yes
 		}
 		
 		instantTextboxType = {
 			name = "value"
-			position = {x=365 y=2}
+			position = {x=215 y=2}
 			font = "Focusfont"
-			maxWidth = 50
+			maxWidth = 200
 			maxHeight = 40
 			format = right
+			multiline = no
 		}
 		
 		instantTextboxType = {
