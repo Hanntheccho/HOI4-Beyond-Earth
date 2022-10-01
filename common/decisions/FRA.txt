@@ -152,48 +152,9 @@ fi_formables = {
 	#		}
 	#	}
 	#}
-	fi_guarantee_PAD = {
-		icon = GFX_decision_political
-		available = {
-			PAD = {
-				exists = yes
-			}
-			ITA = {
-				exists = yes
-			}
-			has_country_leader = {
-				character = FRA_elodie_batteux
-				ruling_only = yes
-			}
-		}
-		visible = {
-			PAD = {
-				exists = yes
-			}
-			ITA = {
-				exists = yes
-			}
-			has_country_leader = {
-				character = FRA_elodie_batteux
-				ruling_only = yes
-			}
-		}
-		cost = 20
-		fire_only_once = yes
-		days_remove = 10
-		remove_effect = {
-			give_guarantee = PAD
-		}
-		ai_will_do = {
-			factor = 10
-		}
-	}
 	fi_guarantee_ITA = {
 		icon = GFX_decision_political
 		available = {
-			PAD = {
-				exists = yes
-			}
 			ITA = {
 				exists = yes
 			}
@@ -203,9 +164,6 @@ fi_formables = {
 			}
 		}
 		visible = {
-			PAD = {
-				exists = yes
-			}
 			ITA = {
 				exists = yes
 			}
@@ -219,6 +177,11 @@ fi_formables = {
 		days_remove = 10
 		remove_effect = {
 			give_guarantee = ITA
+			diplomatic_relation = {
+				country = PAD
+				relation = guarantee
+				active = no
+			}
 		}
 		ai_will_do = {
 			factor = 10

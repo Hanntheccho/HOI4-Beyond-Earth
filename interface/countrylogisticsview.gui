@@ -204,14 +204,14 @@ guiTypes = {
 			
 			iconType ={
 				name ="fuel_header"
-				spriteType = "GFX_deployment_binding"
-				position = { x= 7 y = 0 }
+				spriteType = "GFX_category_header"
+				position = { x= -10 y = -9 }
 				Orientation = "UPPER_LEFT"
 			}
 			
 			iconType = {
 				name = "icon"
-				position = { x=23 y=4 }
+				position = { x=10000 y=4 }
 				spriteType = "GFX_fuel_logisctics_icon"
 			}
 
@@ -221,6 +221,16 @@ guiTypes = {
 				font = "Beyondsmall"
 				text = "LOGISTICS_FUEL_PRIORITIZATION"
 				maxWidth = 300
+				maxHeight = 20
+				format = left
+			}
+
+			instantTextboxType = {
+				name = "extra_detail_fuel"
+				position = { x = 15 y = 8 }
+				font = "Beyondsmall"
+				text = "/////                                      //   //////////////"
+				maxWidth = 700
 				maxHeight = 20
 				format = left
 			}
@@ -598,15 +608,13 @@ guiTypes = {
 			clicksound = click_close
 			pdx_tooltip = "CLOSE"
 		}
-		
-		
-		
+			
 	}
 	
 	containerWindowType = {
 		name = "logistics_info_window"
 		position = { x=-356 y=78}
-		show_position = { x=539 y =78 }
+		show_position = { x=559 y =178 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
@@ -614,29 +622,29 @@ guiTypes = {
 		
 		background = {
 			name = "Background"
-			quadTextureSprite ="GFX_tiled_window2_1b_border"
+			quadTextureSprite ="GFX_tiled_black"
 		}
 
 		containerWindowType = {
 			name = "linechart_tiling_bg"
-			position = { x=14 y=40}
+			position = { x=14 y=33}
 			show_animation_type = decelerated
 			hide_animation_type = accelerated
 			animation_time = 300
-			size = { width=356 height=220 }
+			size = { width=356 height=230 }
 			
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_tiled_bg"
+				quadTextureSprite ="GFX_tiled_black"
 			}
 		}	
 		
 		ButtonType = {
 			name = "btn_years"
-			position = {x=232 y=39}
+			position = {x=230 y=39}
 			quadTextureSprite ="GFX_chart_history_level_button"
 			buttonText = "LINECHART_DETAILS_YEARS"
-			buttonFont = "Arialsmallest"
+			buttonFont = "Arial16"
 			clicksound = click_default
 		}
 			
@@ -645,28 +653,28 @@ guiTypes = {
 			position = {x=154 y=39}
 			quadTextureSprite ="GFX_chart_history_level_button"
 			buttonText = "LINECHART_DETAILS_MONTHS"
-			buttonFont = "Arialsmallest"
+			buttonFont = "Arial16"
 			clicksound = click_default
 		}
 			
 		ButtonType = {
 			name = "btn_days"
-			position = {x=76 y=39}
+			position = {x=77 y=39}
 			quadTextureSprite ="GFX_chart_history_level_button"
 			buttonText = "LINECHART_DETAILS_DAYS"
-			buttonFont = "Arialsmallest"
+			buttonFont = "Arial16"
 			clicksound = click_default
 		}
-	
+
 		iconType = {
 			name = "linechart_bg"
 			spriteType = "GFX_strategicair_details_linechart_bg"
 			position = {x=80 y=78}
 		}
-		
+
 		iconType = {
 			name = "linechart"
-			spriteType = "GFX_strategicair_linechart"
+			spriteType = "GFX_logistics_details_linechart"
 			position = {x=80 y=78}
 		}
 
@@ -679,13 +687,13 @@ guiTypes = {
 		iconType = {
 			name = "header_bg"
 			spriteType = "GFX_unit_list_header"
-			position = {x=3 y=7}
+			position = {x=10000 y=7}
 		}	
 
 		instantTextboxType = {
 			name = "equipment_variant"
-			position = { x = 89 y = 13 }
-			font = "Beyondsmall"
+			position = { x = 10000 y = 13 }
+			font = "hoi_18mbs"
 			text = "PRODUCTION_OUTPUT"
 			maxWidth = 200
 			maxHeight = 20
@@ -694,8 +702,8 @@ guiTypes = {
 		
 		buttonType = {
 			name = "close_button"
-			position = { x = -35 y = 10 }
-			quadTextureSprite ="GFX_nf_close_button"
+			position = { x = -33 y = 2 }
+			quadTextureSprite ="GFX_NV_btn_close"
 			buttonFont = "hoi_16mbs"
 			shortcut = "ESCAPE"
 			Orientation = "UPPER_RIGHT"
@@ -705,7 +713,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "max_value"
-			position = { x = 319 y = 78 }
+			position = { x = 316 y = 78 }
 			font = "Focusfont"
 			text = "0.0"
 			maxWidth = 60
@@ -715,7 +723,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "avg_value"
-			position = { x = 316 y = 144 }
+			position = { x = 316 y = 142 }
 			font = "Focusfont"
 			text = "0.0"
 			maxWidth = 60
@@ -725,7 +733,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "min_value"
-			position = { x = 314 y = 210 }
+			position = { x = 316 y = 210 }
 			font = "Focusfont"
 			text = "0.0"
 			maxWidth = 60
@@ -735,7 +743,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "min_x_value"
-			position = { x = 77 y = 233 }
+			position = { x = 79 y = 233 }
 			font = "Focusfont"
 			text = "0"
 			maxWidth = 30
@@ -744,7 +752,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "max_x_value"
-			position = { x = 275 y = 233 }
+			position = { x = 278 y = 233 }
 			font = "Focusfont"
 			text = "30"
 			maxWidth = 30
@@ -754,7 +762,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "x_axis_type"
-			position = { x = 99 y = 233 }
+			position = { x = 104 y = 233 }
 			font = "Focusfont"
 			text = "LINECHART_DETAILS_DAYS"
 			maxWidth = 180
@@ -764,19 +772,19 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "headers"
-			position = { x=0 y=260 }
+			position = { x=10000 y=260 }
 			size = { width = 375 height = 30 }
 
 			iconType = {
 				name = "header_bg"
 				spriteType = "GFX_unit_list_header"
-				position = {x=3 y=1}
+				position = {x=1 y=1}
 			}			
 			
 			instantTextboxType = {
 				name = "equipment_variant"
-				position = { x = 32 y = 7 }
-				font = "Arialsmallest"
+				position = { x = 32 y = 9 }
+				font = "Arial16"
 				text = "LOGISTICS_EQUIPMENT_VARIANT_LABEL"
 				maxWidth = 200
 				maxHeight = 20
@@ -785,8 +793,8 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "in_stock"
-				position = { x = 205 y = 7 }
-				font = "Arialsmallest"
+				position = { x = 210 y = 9 }
+				font = "Arial16"
 				text = "LOGISTICS_IN_STOCK_LABEL"
 				maxWidth = 50
 				maxHeight = 20
@@ -795,8 +803,8 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "in_need"
-				position = { x = 140 y = 7 }
-				font = "Arialsmallest"
+				position = { x = 140 y = 9 }
+				font = "Arial16"
 				text = "LOGISTICS_NEEDS_LABEL"
 				maxWidth = 50
 				maxHeight = 20
@@ -805,8 +813,8 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "weekly_production"
-				position = { x = 267 y = 7 }
-				font = "Arialsmallest"
+				position = { x = 267 y = 9 }
+				font = "Arial16"
 				text = "LOGISTICS_WEEKLY_PRODUCTION_LABEL"
 				maxWidth = 100
 				maxHeight = 20
@@ -817,14 +825,16 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "variants"
-			position = { x=0 y=290 }
-			size = { width=395 height=100%% }
-			margin = { top = 3 left = 8 bottom = 15 right = 25}			
+			position = { x=12 y=290 }
+			size = { width=370 height=98%% }
+			margin = { top = 13 left = 13 bottom = 15 right = 25}			
 			verticalScrollbar = "right_vertical_slider"
+			scroll_wheel_factor = 38
+			smooth_scrolling = yes
 		
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_tiled_window_1b_border"
+				quadTextureSprite ="GFX_tiled_black"
 			}
 		
 			gridBoxType = {
@@ -842,7 +852,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "logistics_fuel_window"
 		position = { x=-356 y=78}
-		show_position = { x=539 y =78 }
+		show_position = { x=559 y =178 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
@@ -850,7 +860,7 @@ guiTypes = {
 		
 		background = {
 			name = "Background"
-			quadTextureSprite ="GFX_tiled_window2_1b_border"
+			quadTextureSprite ="GFX_tiled_black"
 		}
 
 		containerWindowType = {
@@ -863,13 +873,13 @@ guiTypes = {
 			
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_tiled_plain_bg"
+				quadTextureSprite ="GFX_tiled_black"
 			}
 		}	
 		
 		ButtonType = {
 			name = "btn_stored"
-			position = {x=76 y=39}
+			position = {x=77 y=39}
 			quadTextureSprite ="GFX_chart_history_type_button"
 			buttonText = "LOGISTICS_FUEL_STORED"
 			buttonFont = "Arial16"
@@ -878,7 +888,7 @@ guiTypes = {
 	
 		ButtonType = {
 			name = "btn_consumed"
-			position = {x=194 y=39}
+			position = {x=196 y=39}
 			quadTextureSprite ="GFX_chart_history_type_button"
 			buttonText = "LOGISTICS_FUEL_CONSUMED"
 			buttonFont = "Arial16"
@@ -887,7 +897,7 @@ guiTypes = {
 		
 		ButtonType = {
 			name = "btn_years"
-			position = {x=232 y=69}
+			position = {x=234 y=69}
 			quadTextureSprite ="GFX_chart_history_level_button"
 			buttonText = "LINECHART_DETAILS_YEARS"
 			buttonFont = "Arial16"
@@ -905,7 +915,7 @@ guiTypes = {
 			
 		ButtonType = {
 			name = "btn_days"
-			position = {x=76 y=69}
+			position = {x=77 y=69}
 			quadTextureSprite ="GFX_chart_history_level_button"
 			buttonText = "LINECHART_DETAILS_DAYS"
 			buttonFont = "Arial16"
@@ -920,7 +930,7 @@ guiTypes = {
 		
 		iconType = {
 			name = "linechart"
-			spriteType = "GFX_strategicair_linechart"
+			spriteType = "GFX_logistics_details_linechart"
 			position = {x=85 y=105}
 		}
 
@@ -933,13 +943,13 @@ guiTypes = {
 		iconType = {
 			name = "header_bg"
 			spriteType = "GFX_unit_list_header"
-			position = {x=3 y=7}
+			position = {x=10000 y=7}
 		}	
 		
 		instantTextboxType = {
 			name = "equipment_variant"
-			position = { x = 92 y = 14 }
-			font = "Beyondsmall"
+			position = { x = 10000 y = 13 }
+			font = "Arial16"
 			text = "PRODUCTION_OUTPUT"
 			maxWidth = 200
 			maxHeight = 20
@@ -948,7 +958,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "close_button"
-			position = { x = -35 y = 8 }
+			position = { x = -33 y = 2 }
 			quadTextureSprite ="GFX_NV_btn_close"
 			buttonFont = "hoi_16mbs"
 			shortcut = "ESCAPE"
@@ -959,7 +969,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "max_value"
-			position = { x = 310 y = 108 }
+			position = { x = 310 y = 104 }
 			font = "Focusfont"
 			text = "0.0"
 			maxWidth = 90
@@ -969,7 +979,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "min_value"
-			position = { x = 315 y = 245 }
+			position = { x = 310 y = 245 }
 			font = "Focusfont"
 			text = "0.0"
 			maxWidth = 90
@@ -998,7 +1008,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "x_axis_type"
-			position = { x = 101 y = 263 }
+			position = { x = 104 y = 263 }
 			font = "Focusfont"
 			text = "LINECHART_DETAILS_DAYS"
 			maxWidth = 180
@@ -1015,7 +1025,7 @@ guiTypes = {
 		
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_tiled_window_1b_border"
+				quadTextureSprite ="GFX_tiled_invisible"
 			}
 		
 			gridBoxType = {
@@ -1045,16 +1055,16 @@ guiTypes = {
 		iconType = {
 			name = "efficiency_progressbar"
 			spriteType = "GFX_unit_xp_bar"
-			position = { x=13 y=35 }
+			position = { x=10000 y=35 }
 			rotation = 1.5708
 		}
 
 		instantTextboxType = {
 			name = "equipment_type"
-			position = { x = 25 y = 3 }
+			position = { x = 8 y = 3 }
 			font = "Focusfont"
 			text = "name"
-			maxWidth = 300
+			maxWidth = 280
 			maxHeight = 20
 			fixedsize = yes
 			format = left
@@ -1062,7 +1072,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "equipment_type_extra"
-			position = { x = 325 y = 3 }
+			position = { x = 300 y = 3 }
 			font = "Focusfont"
 			text = "/////     -      //////// - //"
 			maxWidth = 400
@@ -1084,18 +1094,18 @@ guiTypes = {
 		iconType = {
 			name = "status_progressbar"
 			spriteType = "GFX_logistics_progressbar"
-			position = { x=192 y=32 }
+			position = { x=10000 y=32 }
 		}
 
 		iconType = {
 			name = "status_progress_marker"
 			spriteType = "GFX_progress_marker"
-			position = { x=174 y=18 }
+			position = { x=10000 y=18 }
 		}
 
 		instantTextboxType = {
 			name = "needs"
-			position = { x = 256 y = 29 }
+			position = { x = 10000 y = 29 }
 			font = "Focusfont"
 			text = "amount"
 			maxWidth = 50
@@ -1105,7 +1115,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "produced"
-			position = { x = 140 y = 29 }
+			position = { x = 10000 y = 29 }
 			font = "Focusfont"
 			text = "amount"
 			maxWidth = 50
@@ -1115,7 +1125,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "balance"
-			position = { x = 325 y = 29 }
+			position = { x = 195 y = 29 }
 			font = "Focusfont"
 			text = "amount"
 			maxWidth = 50
@@ -1125,7 +1135,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "in_stock"
-			position = { x = 375 y = 29 }
+			position = { x = 295 y = 29 }
 			font = "Focusfont"
 			text = "amount"
 			maxWidth = 120
@@ -1157,16 +1167,16 @@ guiTypes = {
 		iconType = {
 			name = "efficiency_progressbar"
 			spriteType = "GFX_unit_xp_bar"
-			position = { x=13 y=35 }
+			position = { x=10000 y=35 }
 			rotation = 1.5708
 		}
 
 		instantTextboxType = {
 			name = "equipment_type"
-			position = { x = 25 y = 3 }
+			position = { x = 8 y = 3 }
 			font = "Focusfont"
 			text = "name"
-			maxWidth = 300
+			maxWidth = 280
 			maxHeight = 20
 			fixedsize = yes
 			format = left
@@ -1174,7 +1184,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "equipment_type_extra"
-			position = { x = 325 y = 3 }
+			position = { x = 300 y = 3 }
 			font = "Focusfont"
 			text = "/////     -      //////// - //"
 			maxWidth = 400
@@ -1196,18 +1206,18 @@ guiTypes = {
 		iconType = {
 			name = "status_progressbar"
 			spriteType = "GFX_logistics_progressbar"
-			position = { x=192 y=32 }
+			position = { x=10000 y=32 }
 		}
 
 		iconType = {
 			name = "status_progress_marker"
 			spriteType = "GFX_progress_marker"
-			position = { x=174 y=18 }
+			position = { x=10000 y=18 }
 		}
 
 		instantTextboxType = {
 			name = "needs"
-			position = { x = 256 y = 29 }
+			position = { x = 10000 y = 29 }
 			font = "Focusfont"
 			text = "amount"
 			maxWidth = 50
@@ -1217,7 +1227,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "produced"
-			position = { x = 140 y = 29 }
+			position = { x = 10000 y = 29 }
 			font = "Focusfont"
 			text = "amount"
 			maxWidth = 50
@@ -1227,7 +1237,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "balance"
-			position = { x = 325 y = 29 }
+			position = { x = 195 y = 29 }
 			font = "Focusfont"
 			text = "amount"
 			maxWidth = 50
@@ -1237,7 +1247,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "in_stock"
-			position = { x = 375 y = 29 }
+			position = { x = 295 y = 29 }
 			font = "Focusfont"
 			text = "amount"
 			maxWidth = 120
@@ -1269,16 +1279,16 @@ guiTypes = {
 		iconType = {
 			name = "efficiency_progressbar"
 			spriteType = "GFX_unit_xp_bar"
-			position = { x=13 y=35 }
+			position = { x=10000 y=35 }
 			rotation = 1.5708
 		}
 
 		instantTextboxType = {
 			name = "equipment_type"
-			position = { x = 25 y = 3 }
+			position = { x = 8 y = 3 }
 			font = "Focusfont"
 			text = "name"
-			maxWidth = 300
+			maxWidth = 280
 			maxHeight = 20
 			fixedsize = yes
 			format = left
@@ -1286,7 +1296,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "equipment_type_extra"
-			position = { x = 325 y = 3 }
+			position = { x = 300 y = 3 }
 			font = "Focusfont"
 			text = "/////     -      //////// - //"
 			maxWidth = 400
@@ -1308,18 +1318,18 @@ guiTypes = {
 		iconType = {
 			name = "status_progressbar"
 			spriteType = "GFX_logistics_progressbar"
-			position = { x=192 y=32 }
+			position = { x=10000 y=32 }
 		}
 
 		iconType = {
 			name = "status_progress_marker"
 			spriteType = "GFX_progress_marker"
-			position = { x=174 y=18 }
+			position = { x=10000 y=18 }
 		}
 
 		instantTextboxType = {
 			name = "needs"
-			position = { x = 256 y = 29 }
+			position = { x = 10000 y = 29 }
 			font = "Focusfont"
 			text = "amount"
 			maxWidth = 50
@@ -1329,7 +1339,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "produced"
-			position = { x = 140 y = 29 }
+			position = { x = 10000 y = 29 }
 			font = "Focusfont"
 			text = "amount"
 			maxWidth = 50
@@ -1339,7 +1349,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "balance"
-			position = { x = 325 y = 29 }
+			position = { x = 195 y = 29 }
 			font = "Focusfont"
 			text = "amount"
 			maxWidth = 50
@@ -1349,7 +1359,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "in_stock"
-			position = { x = 375 y = 29 }
+			position = { x = 295 y = 29 }
 			font = "Focusfont"
 			text = "amount"
 			maxWidth = 120

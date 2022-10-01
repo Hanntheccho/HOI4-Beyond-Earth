@@ -28,12 +28,15 @@ SOV_manifest_destiny = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
-				NOT = {
-					BLR = {
-						is_guaranteed_by = GER
+				OR = {
+					NOT = {
+						BLR = {
+							is_guaranteed_by = GER
+						}
 					}
+					date > 2203
 				}
 				factor = 10
 			}
@@ -79,23 +82,15 @@ SOV_manifest_destiny = {
 			factor = 0
 			modifier = {
 				BLR = {
-					has_capitulated = yes
-					has_war_with = SOV
-				}
-				add = 1000
-			}
-			modifier = {
-				UKR = {
-					#OR = {
-					#	owns_state = 567
-					#	owns_state = 581
-					#	owns_state = 631
-					#}
-					NOT = {
-						is_in_faction_with = SOV
+					OR = {
+						AND = {
+							has_capitulated = yes
+							has_war_with = SOV
+						}
+						exists = no
 					}
 				}
-				add = 100
+				add = 1000
 			}
 		}
 	}
@@ -126,7 +121,7 @@ SOV_manifest_destiny = {
 				limit = {
 					is_core_of = LAT
 				}
-				add_core_of = SOV
+				add_claim_by = SOV
 			}
 		}
 		ai_will_do = {
@@ -141,10 +136,15 @@ SOV_manifest_destiny = {
 						exists = no
 					}
 				}
-				KAR = {
-					exists = no
+				UKR = {
+					OR = {
+						AND = {
+							has_capitulated = yes
+							has_war_with = SOV
+						}
+						exists = no
+					}
 				}
-				add = 100
 			}
 		}
 	}
@@ -180,14 +180,19 @@ SOV_manifest_destiny = {
 				limit = {
 					is_core_of = KAZ
 				}
-				add_core_of = SOV
+				add_claim_by = SOV
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
-				has_war = yes
-				factor = 0
+				URA = {
+					exists = no
+				}
+				NOT = {
+					has_war_with = SIB
+				}
+				add = 10000
 			}
 		}
 	}
@@ -223,10 +228,15 @@ SOV_manifest_destiny = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
-				has_war = yes
-				factor = 0
+				SOV = {
+					is_neighbor_of = SIB
+				}
+				NOT = {
+					has_war_with = KAZ
+				}
+				add = 10000
 			}
 		}
 	}
@@ -293,27 +303,27 @@ SOV_manifest_destiny = {
 			factor = 1
 		}
 	}
-    SOV_invite_to_faction = {
-		icon = GFX_decision_unity
-		fire_only_once = no
-		cost = 100
-		target_trigger = {
-			FROM = {
-				has_idea = GER_eurasian_aligned
-				is_in_faction = no
-				capital_scope = {
-					is_on_continent = europe
-				}
-			}
-		}
-		days_remove = 50
-		remove_effect = {
-			add_to_faction = FROM
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
+    #SOV_invite_to_faction = {
+	#	icon = GFX_decision_unity
+	#	fire_only_once = no
+	#	cost = 100
+	#	target_trigger = {
+	#		FROM = {
+	#			has_idea = GER_eurasian_aligned
+	#			is_in_faction = no
+	#			capital_scope = {
+	#				is_on_continent = europe
+	#			}
+	#		}
+	#	}
+	#	days_remove = 50
+	#	remove_effect = {
+	#		add_to_faction = FROM
+	#	}
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#}
 
 
 #keeper_kazan = {
