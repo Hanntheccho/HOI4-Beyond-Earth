@@ -272,13 +272,25 @@ guiTypes = {
 			}
 		}
 
-		background = {
-			name = "Background2"		
-			spriteType ="GFX_endgame_mod"
-			position = {
-				x = -4
-				y = -4
-			}
+		iconType = {
+			name ="selection_screen_animation_1"
+			spriteType = "GFX_selection_screen_animation"
+			position = { x= 130 y = 130 }
+		}
+		iconType = {
+			name ="selection_screen_animation_2"
+			spriteType = "GFX_selection_screen_animation"
+			position = { x= 390 y = 200 }
+		}
+		iconType = {
+			name ="selection_screen_animation_3"
+			spriteType = "GFX_selection_screen_animation"
+			position = { x= 220 y = 370 }
+		}
+		iconType = {
+			name ="selection_screen_animation_4"
+			spriteType = "GFX_selection_screen_animation"
+			position = { x= 420 y = 430 }
 		}
 
 		containerWindowType = {
@@ -294,6 +306,15 @@ guiTypes = {
 				name = "endgame_mod_extra_animation"
 				quadTextureSprite ="GFX_sponsor_animated"
 				position = { x = 0 y = 0 }
+			}
+		}
+
+		iconType = { #background
+			name = "endgame_mod_black"		
+			spriteType ="GFX_endgame_mod"
+			position = {
+				x = -4
+				y = -4
 			}
 		}
 
@@ -326,7 +347,7 @@ guiTypes = {
 		iconType = {
 			name = "country_flag"
 			quadTextureSprite ="GFX_shield_medium"
-			position = { x = 54 y = 100 }
+			position = { x = 54 y = 157 }
 			Orientation = "UPPER_LEFT"
 			#scale=0.75
 			alwaystransparent = yes
@@ -341,14 +362,14 @@ guiTypes = {
 		iconType = {
 			name = "player_flag_frame_mod"
 			quadTextureSprite ="GFX_large_flag_frame_mod"
-			position = { x= 49 y = 98 }
+			position = { x= 49 y = 155 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
 			name = "country_score_label"
-			position = { x = 58 y = 16 }
+			position = { x = 58 y = 10000 }
 			textureFile = ""
 			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
@@ -363,9 +384,9 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "country_score"
-			position = { x = -48 y = 194 }
+			position = { x = 143 y = 226 }
 			textureFile = ""
-			font = "Beyondsmall"
+			font = "Focusfont"
 			borderSize = {x = 0 y = 0}
 			text = ""	
 			maxWidth = 285
@@ -378,9 +399,9 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "country_score_pos"
-			position = { x = -43 y = 236 }
+			position = { x = 243 y = 226 }
 			textureFile = ""
-			font = "Beyondsmall"
+			font = "Focusfont"
 			borderSize = {x = 0 y = 0}
 			text = ""	
 			maxWidth = 285
@@ -393,7 +414,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "country_name"
-			position = { x = 20 y = 37 }
+			position = { x = 20 y = 27 }
 			textureFile = ""
 			font = "Beyond"
 			borderSize = {x = 0 y = 0}
@@ -413,7 +434,13 @@ guiTypes = {
 			iconType = {
 				name = "leader_word_endgame"
 				spriteType = "GFX_leader_word_pol_view"
-				position = { x= 10 y = 10 }
+				position = { x= 0 y = 38 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "score_word_endgame"
+				spriteType = "GFX_score_word_pol_view"
+				position = { x= 10 y = 110 }
 				alwaystransparent = yes
 			}
 			
@@ -430,7 +457,7 @@ guiTypes = {
 			
 			instantTextBoxType = {
 				name = "leader"
-				position = { x = 0 y = 27 }
+				position = { x = 30 y = 66 }
 				textureFile = ""
 				font = "Focusfont"
 				borderSize = {x = 0 y = 0}
@@ -484,29 +511,6 @@ guiTypes = {
 				maxWidth = 230
 				format = left
 				multiline = no
-			}
-
-			instantTextBoxType = {
-				name = "government_2"
-				position = { x = 10000 y = 98 }
-				textureFile = ""
-				font = "Beyondsmall"
-				borderSize = {x = 0 y = 0}
-				text = "/// - //"
-				maxWidth = 230
-				format = left
-				multiline = no
-			}
-
-			instantTextBoxType = {
-				name = "party_label_2"
-				position = { x = 10000 y = 115 }
-				textureFile = ""
-				font = "Beyondsmall"
-				borderSize = {x = 0 y = 0}
-				text = "NO MORE INFO TO LOAD..."
-				maxWidth = 230
-				format = left
 			}
 			
 			instantTextBoxType = {
@@ -606,7 +610,7 @@ guiTypes = {
 			
 			ButtonType = {
 				name = "country_icon"
-				position = { x=20 y =-18}
+				position = { x=10000 y =-18}
 				quadTextureSprite ="GFX_button_148x34"
 			
 			
@@ -617,7 +621,7 @@ guiTypes = {
 			
 			ButtonType = {
 				name = "faction_icon"
-				position = { x=220 y =-18}
+				position = { x=10000 y =-18}
 				quadTextureSprite ="GFX_button_148x34"
 			
 			
@@ -1622,8 +1626,7 @@ guiTypes = {
 			}
 		}
 		
-		windowType = 
-		{
+		windowType = {
 			name = "messagelog_window"
 			backGround=""
 			position = { x=-1270 y=-100 }	
