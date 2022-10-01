@@ -14,7 +14,7 @@ guiTypes = {
 			quadTextureSprite = "GFX_button_148x34"
 			position = { x=0 y=0 }
 			buttonText = "PlaceHolder"
-			font = "hoi_16mbs"
+			font = "Arial16"
 		}
 	}
 
@@ -314,7 +314,7 @@ guiTypes = {
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
-		size = { width=550 height=100%% }
+		size = { width=544 height=100%% }
 		clipping = no
 
 		#hide_sound = ui_window_hide
@@ -322,19 +322,41 @@ guiTypes = {
 
 		background = {
 			name = "Background"
-			quadTextureSprite ="GFX_tiled_window"
+			quadTextureSprite ="GFX_tiled_invisible"
 		}
 
-		containerWindowType = {
-			name = "Background_2"
-			size = { width=8 height=100%% } 
+		#containerWindowType = {
+		#	name = "Background_2"
+		#	size = { width=8 height=100%% } 
+		#
+		#	background = {
+		#		name = "Background"
+		#		quadTextureSprite = "GFX_tiled_black_border_vertical"
+		#		position = { x = 550 y = 0 }
+		#		alwaystransparent = yes
+		#	}
+		#}
 
-			background = {
-				name = "Background"
-				quadTextureSprite = "GFX_tiled_black_border_vertical"
-				position = { x = 550 y = 0 }
-				alwaystransparent = yes
-			}
+		background ={
+			name ="pol_view_bg"
+			spriteType = "GFX_decision_view_bg_large"
+			position = { x= 6 y = 41 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		iconType ={
+			name ="production_header_bg"
+			spriteType = "GFX_header_bg_mod"
+			position = { x= 4 y = 0 }
+			Orientation = "UPPER_LEFT"
+		}	
+
+		iconType ={
+			name ="separator_2"
+			spriteType = "GFX_bg_separator_end"
+			position = { x = 4 y = -21 }
+			Orientation = "LOWER_LEFT"
 		}
 
 		iconType ={
@@ -346,18 +368,18 @@ guiTypes = {
 
 		iconType ={
 			name ="xp_top_bg"
-			quadTextureSprite = "GFX_deployment_binding"
-			position = { x= -36 y = 44 }
+			quadTextureSprite = "GFX_category_header"
+			position = { x= -5 y = 35 }
 			Orientation = "UPPER_LEFT"
 			# scale = 1.25
 		}
 
-		iconType ={
-			name ="army_header_bg"
-			spriteType = "GFX_header_bg"
-			position = { x= 4 y = 0 }
-			Orientation = "UPPER_LEFT"
-		}
+		#iconType ={
+		#	name ="army_header_bg"
+		#	spriteType = "GFX_header_bg"
+		#	position = { x= 4 y = 0 }
+		#	Orientation = "UPPER_LEFT"
+		#}
 
 		instantTextboxType = {
 			name = "army_title"
@@ -374,7 +396,7 @@ guiTypes = {
 			name = "close_button"
 			position = { x = -43 y = 5 }
 			quadTextureSprite ="GFX_closebutton"
-			buttonFont = "hoi_16mbs"
+			buttonFont = "Arial16"
 			shortcut = "ESCAPE"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
@@ -402,7 +424,7 @@ guiTypes = {
 			
 		containerWindowType = {
 			name = "landxp"
-			position = { x= 324 y = 48}
+			position = { x= 220 y = 49}
 			clipping = no
 			Orientation = UPPER_LEFT
 
@@ -427,7 +449,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "navyxp"
-			position = { x= 396 y = 48}
+			position = { x= 310 y = 49}
 			clipping = no
 			Orientation = UPPER_LEFT
 
@@ -452,7 +474,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "airxp"
-			position = { x= 468 y = 48}
+			position = { x= 400 y = 49}
 			clipping = no
 			Orientation = UPPER_LEFT
 
@@ -477,7 +499,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "commandpower"
-			position = { x= 30 y = 48 }
+			position = { x= 30 y = 49 }
 			clipping = no
 			# size = { width=50 height=24 }
 			Orientation = UPPER_LEFT
@@ -513,27 +535,17 @@ guiTypes = {
 			}
 		}
 
-	buttonType = {
-		name = "commander_roster_army"
-		quadTextureSprite = "GFX_diplo_filter_entry"
-		position = { x=371 y=80 }
-		buttonText = "Placeholder"
-		font = "Arialsmallest"
-		frame = 2
-		pdx_tooltip = "COMMANDER_ROSTER_ARMY_TOOLTIP"
-		pdx_tooltip_delayed = "COMMANDER_ROSTER_ARMY_TOOLTIP_DELAYED"
-     }
-
-	buttonType = {
-		name = "commander_roster_navy"
-		quadTextureSprite = "GFX_diplo_filter_entry"
-		position = { x=371 y=120 }
-		buttonText = "Placeholder"
-		font = "Arialsmallest"
-		frame = 2
-		pdx_tooltip = "COMMANDER_ROSTER_NAVY_TOOLTIP"
-		pdx_tooltip_delayed = "COMMANDER_ROSTER_NAVY_TOOLTIP_DELAYED"
-     }
+	containerWindowType = {
+		name = "Background_3"
+		size = { width=513 height=85 } 
+	
+		background = {
+			name = "Background"
+			quadTextureSprite = "GFX_tiled_black"
+			position = { x = 13 y = 82 }
+			alwaystransparent = yes
+		}
+	}
 
 	containerWindowType = {
 		name = "high_command"
@@ -543,9 +555,9 @@ guiTypes = {
 
 		gridBoxType = {
 			name = "high_command_advisors"
-			position = { x = -30 y = 20 }
+			position = { x = -30 y = 27 }
 			size = { width = 100% height = 100% }
-			slotsize = { width = 60 height = 150 }
+			slotsize = { width = 200 height = 150 }
 			max_slots_horizontal = 5
 			max_slots_vertical = 1
 			format = "UPPER_LEFT"
@@ -609,12 +621,12 @@ guiTypes = {
 		containerWindowType = {
 			name = "army_header"
 			position = { x = 0 y = 5 }
-			size = { width = 98% height = 270 }
+			size = { width = 99% height = 270 }
 			margin = { top = 0 left = 0 bottom = 0 right = 0}
 			
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_tiled_bg"
+				quadTextureSprite ="GFX_tiled_black"
 			}
 
 			gridBoxType = {
@@ -652,19 +664,7 @@ guiTypes = {
 				maxWidth = 240
 				maxHeight = 20
 				format = left
-			}			
-
-			buttonType ={
-                name ="button_prefered_tactic_selection"
-                spriteType = "GFX_preferred_tactic_button"
-	            position = { x=10000 y=40 }
-            }
-
-            iconType ={
-                name ="icon_prefered_tactic_type"
-                spriteType = "GFX_attacker_damage_icon"
-	            position = { x=390 y=80 }
-            }
+			}		
 
 			containerWindowType = {
 				name = "army_chief"
@@ -725,17 +725,39 @@ guiTypes = {
 					fixedsize = yes
 				}
 			}
+
+			buttonType = {
+				name = "commander_roster_army"
+				quadTextureSprite = "GFX_diplo_filter_entry"
+				position = { x=382 y=36 }
+				buttonText = "Placeholder"
+				font = "Arial16"
+				frame = 2
+				pdx_tooltip = "COMMANDER_ROSTER_ARMY_TOOLTIP"
+				pdx_tooltip_delayed = "COMMANDER_ROSTER_ARMY_TOOLTIP_DELAYED"
+			}
+			
+			buttonType = {
+				name = "commander_roster_division"
+				quadTextureSprite = "GFX_diplo_filter_entry"
+				position = { x=382 y=70 }
+				buttonText = "Placeholder"
+				font = "Arial16"
+				frame = 2
+				pdx_tooltip = "COMMANDER_ROSTER_DIVISION_TOOLTIP"
+				pdx_tooltip_delayed = "COMMANDER_ROSTER_DIVISION_TOOLTIP_DELAYED"
+			}
 		}
 
 		containerWindowType = {
 			name = "navy_header"
 			position = { x = 0 y = 285 }
-			size = { width = 98% height = 237 }
+			size = { width = 99% height = 237 }
 			margin = { top = 0 left = 0 bottom = 0 right = 0}
 
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_tiled_bg"
+				quadTextureSprite ="GFX_tiled_black"
 			}
 
 			iconType ={
@@ -834,17 +856,28 @@ guiTypes = {
 					fixedsize = yes
 				}
 			}
+
+			buttonType = {
+				name = "commander_roster_navy"
+				quadTextureSprite = "GFX_diplo_filter_entry"
+				position = { x=396 y=476 }
+				buttonText = "Placeholder"
+				font = "Arial16"
+				frame = 2
+				pdx_tooltip = "COMMANDER_ROSTER_NAVY_TOOLTIP"
+				pdx_tooltip_delayed = "COMMANDER_ROSTER_NAVY_TOOLTIP_DELAYED"
+			}
 		}
 
 		containerWindowType = {
 			name = "air_header"
 			position = { x = 0 y = 533 }
-			size = { width = 98% height = 277 }
+			size = { width = 99% height = 277 }
 			margin = { top = 0 left = 0 bottom = 0 right = 0}
 
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_tiled_bg"
+				quadTextureSprite ="GFX_tiled_black"
 			}
 
 			iconType ={
@@ -1008,20 +1041,20 @@ guiTypes = {
         verticalScrollbar = "right_vertical_slider"
         margin = { top = 13 left = 13 bottom = 10 right = 13 }
 
-        background = {
-           name = "Background"
-            quadTextureSprite ="GFX_tiled_window_1b_border"
-        }
+        #background = {
+        #   name = "Background"
+        #    quadTextureSprite ="GFX_tiled_window_1b_border"
+        #}
 		
 		containerWindowType = {
 			name = "army_header"
 			position = { x = 0 y = 5 }
-			size = { width = 98% height = 200 }
+			size = { width = 99% height = 200 }
 			margin = { top = 0 left = 0 bottom = 0 right = 0}
 			
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_tiled_bg"
+				quadTextureSprite ="GFX_tiled_black"
 			}
 
 			gridBoxType = {
@@ -1060,18 +1093,6 @@ guiTypes = {
 				maxHeight = 20
 				format = left
 			}			
-
-			buttonType ={
-                name ="button_prefered_tactic_selection"
-                spriteType = "GFX_preferred_tactic_button"
-	            position = { x=10000 y=40 }
-            }
-
-            iconType ={
-                name ="icon_prefered_tactic_type"
-                spriteType = "GFX_attacker_damage_icon"
-	            position = { x=10000 y=80 }
-            }
 
 			containerWindowType = {
 				name = "army_chief"
@@ -1132,17 +1153,39 @@ guiTypes = {
 					fixedsize = yes
 				}
 			}
+
+			buttonType = {
+				name = "commander_roster_army"
+				quadTextureSprite = "GFX_diplo_filter_entry"
+				position = { x=10000 y=36 }
+				buttonText = "Placeholder"
+				font = "Arial16"
+				frame = 2
+				pdx_tooltip = "COMMANDER_ROSTER_ARMY_TOOLTIP"
+				pdx_tooltip_delayed = "COMMANDER_ROSTER_ARMY_TOOLTIP_DELAYED"
+			}
+			
+			buttonType = {
+				name = "commander_roster_division"
+				quadTextureSprite = "GFX_diplo_filter_entry"
+				position = { x=10000 y=79	}
+				buttonText = "Placeholder"
+				font = "Arial16"
+				frame = 2
+				pdx_tooltip = "COMMANDER_ROSTER_DIVISION_TOOLTIP"
+				pdx_tooltip_delayed = "COMMANDER_ROSTER_DIVISION_TOOLTIP_DELAYED"
+			}
 		}
 		
 		containerWindowType = {
 			name = "navy_header"
 			position = { x = 0 y = 215 }
-			size = { width = 98% height = 167 }
+			size = { width = 99% height = 167 }
 			margin = { top = 0 left = 0 bottom = 0 right = 0}
 
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_tiled_bg"
+				quadTextureSprite ="GFX_tiled_black"
 			}
 
 			iconType ={
@@ -1241,17 +1284,28 @@ guiTypes = {
 					fixedsize = yes
 				}
 			}
+
+			buttonType = {
+				name = "commander_roster_navy"
+				quadTextureSprite = "GFX_diplo_filter_entry"
+				position = { x=396 y=476 }
+				buttonText = "Placeholder"
+				font = "Arial16"
+				frame = 2
+				pdx_tooltip = "COMMANDER_ROSTER_NAVY_TOOLTIP"
+				pdx_tooltip_delayed = "COMMANDER_ROSTER_NAVY_TOOLTIP_DELAYED"
+			}
 		}
 		
 		containerWindowType = {
 			name = "air_header"
 			position = { x = 0 y = 393 }
-			size = { width = 98% height = 207 }
+			size = { width = 99% height = 207 }
 			margin = { top = 0 left = 0 bottom = 0 right = 0}
 
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_tiled_bg"
+				quadTextureSprite ="GFX_tiled_black"
 			}
 
 			iconType ={
@@ -1909,7 +1963,7 @@ guiTypes = {
 			instantTextboxType = {
 				name = "traits"
 				position = { x = 0 y = 28 }
-				font = "hoi_16mbs"
+				font = "Arial16"
 				fixedsize = yes
 				text = ""
 				maxWidth = 140
@@ -1922,7 +1976,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "cost"
 			position = { x = 80 y = 47 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -1933,7 +1987,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "stats"
 			position = { x = 300 y = 32 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -1990,7 +2044,7 @@ guiTypes = {
 			instantTextboxType = {
 				name = "traits"
 				position = { x = 0 y = 28 }
-				font = "hoi_16mbs"
+				font = "Arial16"
 				fixedsize = yes
 				text = ""
 				maxWidth = 140
@@ -2003,7 +2057,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "cost"
 			position = { x = 80 y = 47 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -2014,7 +2068,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "stats"
 			position = { x = 300 y = 32 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -2071,7 +2125,7 @@ guiTypes = {
 			instantTextboxType = {
 				name = "traits"
 				position = { x = 0 y = 28 }
-				font = "hoi_16mbs"
+				font = "Arial16"
 				fixedsize = yes
 				text = ""
 				maxWidth = 140
@@ -2084,7 +2138,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "cost"
 			position = { x = 80 y = 47 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -2095,7 +2149,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "stats"
 			position = { x = 300 y = 32 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -2152,7 +2206,7 @@ guiTypes = {
 			instantTextboxType = {
 				name = "traits"
 				position = { x = 0 y = 28 }
-				font = "hoi_16mbs"
+				font = "Arial16"
 				fixedsize = yes
 				text = ""
 				maxWidth = 140
@@ -2165,7 +2219,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "cost"
 			position = { x = 80 y = 47 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -2176,7 +2230,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "stats"
 			position = { x = 300 y = 32 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -2233,7 +2287,7 @@ guiTypes = {
 			instantTextboxType = {
 				name = "traits"
 				position = { x = 0 y = 28 }
-				font = "hoi_16mbs"
+				font = "Arial16"
 				fixedsize = yes
 				text = ""
 				maxWidth = 140
@@ -2246,7 +2300,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "cost"
 			position = { x = 80 y = 47 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -2257,7 +2311,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "stats"
 			position = { x = 300 y = 32 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -2314,7 +2368,7 @@ guiTypes = {
 			instantTextboxType = {
 				name = "traits"
 				position = { x = 0 y = 28 }
-				font = "hoi_16mbs"
+				font = "Arial16"
 				fixedsize = yes
 				text = ""
 				maxWidth = 140
@@ -2327,7 +2381,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "cost"
 			position = { x = 80 y = 47 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -2338,7 +2392,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "stats"
 			position = { x = 300 y = 32 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -2395,7 +2449,7 @@ guiTypes = {
 			instantTextboxType = {
 				name = "traits"
 				position = { x = 0 y = 28 }
-				font = "hoi_16mbs"
+				font = "Arial16"
 				fixedsize = yes
 				text = ""
 				maxWidth = 140
@@ -2408,7 +2462,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "cost"
 			position = { x = 80 y = 47 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -2419,7 +2473,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "stats"
 			position = { x = 300 y = 32 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -2476,7 +2530,7 @@ guiTypes = {
 			instantTextboxType = {
 				name = "traits"
 				position = { x = 0 y = 28 }
-				font = "hoi_16mbs"
+				font = "Arial16"
 				fixedsize = yes
 				text = ""
 				maxWidth = 140
@@ -2489,7 +2543,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "cost"
 			position = { x = 80 y = 47 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -2500,7 +2554,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "stats"
 			position = { x = 300 y = 32 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -2557,7 +2611,7 @@ guiTypes = {
 			instantTextboxType = {
 				name = "traits"
 				position = { x = 0 y = 28 }
-				font = "hoi_16mbs"
+				font = "Arial16"
 				fixedsize = yes
 				text = ""
 				maxWidth = 140
@@ -2570,7 +2624,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "cost"
 			position = { x = 80 y = 47 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10
@@ -2581,7 +2635,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "stats"
 			position = { x = 300 y = 32 }
-			font = "hoi_16mbs"
+			font = "Arial16"
 			text = ""
 			maxWidth = 142
 			maxHeight = 10

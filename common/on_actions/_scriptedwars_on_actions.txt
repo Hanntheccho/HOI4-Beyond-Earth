@@ -2,10 +2,16 @@ on_actions = {
 	###
 	on_declare_war = {
 		effect = {
-			if = {
-				limit = {
-					FROM = {
-						is_guaranteed_by =
+			every_country = {
+				if = {
+					limit = {
+						any_guaranteed_country = {
+							tag = FROM
+						}
+					}
+					declare_war_on = {
+						target = ROOT
+						type = puppet_wargoal_focus
 					}
 				}
 			}
@@ -497,42 +503,12 @@ on_actions = {
 							tag = ENG
 						}
 					}
-					OR = {
-						AND = {
-							NOT = {
-								country_exists = HNG
-								country_exists = JNG
-								country_exists = CNG
-							}
-						}
-						AND = {
-							NOT = {
-								country_exists = ENG
-								country_exists = JNG
-								country_exists = CNG
-							}
-						}
-						AND = {
-							NOT = {
-								country_exists = HNG
-								country_exists = ENG
-								country_exists = CNG
-							}
-						}
-						AND = {
-							NOT = {
-								country_exists = HNG
-								country_exists = JNG
-								country_exists = ENG
-							}
-						}
-					}
 				}
 				FROM = {
 					every_core_state = {
 						remove_core_of = FROM
 						#add_core_of = ROOT
-						transfer_state_to = ROOT
+						#transfer_state_to = ROOT
 						remove_dynamic_modifier = {
 							modifier = eng_cw_modifier
 						}
