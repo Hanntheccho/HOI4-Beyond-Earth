@@ -50,7 +50,6 @@ replace_path="common/scripted_triggers"
 replace_path="map/strategicregions"
 
 replace_path="gfx/loadingscreens"
-replace_path="gfx/event_pictures"
 
 replace_path="history/countries"
 replace_path="history/states"
