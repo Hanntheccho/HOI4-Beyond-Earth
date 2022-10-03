@@ -716,8 +716,8 @@ guiTypes = {
 	}
 	containerWindowType = {
 		name = "military_deployment_conveyor_summary_view"
-		position = { x=-48 y=8 }
-		size = { width=510 height=40 }
+		position = { x=-48 y=22 }
+		size = { width=510 height=50 }
 		
 		#background = {
 		#	name = "background"
@@ -969,7 +969,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "military_deployment_conveyor_view"
 		position = { x=-13 y=10 }
-		size = { width=488 height=84 }
+		size = { width=488 height=98 }
 		clipping = no
 		
 		#background = {
@@ -983,7 +983,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "back_military_deployment_mod"
-			size = { width=490 height=104 }
+			size = { width=490 height=128 }
 
 			background = {
 				name = "background"
@@ -992,6 +992,26 @@ guiTypes = {
 					x = 0
 					y = 20
 				}
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "extra_box_mod"
+			size = { width=382 height=30 }
+			position = {
+				x = 94
+				y = 40
+			}
+
+			background = {
+				name = "background"
+				quadTextureSprite ="GFX_tiled_generic_bg_1" #2"
+				alwaystransparent = yes
+			}
+			background = {
+				name = "background2"
+				quadTextureSprite ="GFX_tiled_generic_bg_1" #2"
 				alwaystransparent = yes
 			}
 		}
@@ -1019,7 +1039,7 @@ guiTypes = {
 		
 		iconType = {
 			name = "template_icon"
-			position = { x=10 y=60 }
+			position = { x=8 y=70 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
 		}
@@ -1060,15 +1080,15 @@ guiTypes = {
 
 		editBoxType = {
 			name = "generic_name_edit"
-			position = { x = 10000 y = 14 } #position = { x = 100 y = 14 }
+			position = { x = 105 y = 48 } #position = { x = 100 y = 14 }
 			font = "Focusfont"
-			size = { x=200 y=25 }
+			size = { x=255 y=25 }
 			pdx_tooltip = "CONVEYOR_GENERIC_NAME_EDIT_DESC"
 		}
 				
 		buttonType = {
 			name = "deploy_location_button"
-			position = { x=91 y=46 }
+			position = { x=91 y=78 }
 			quadTextureSprite = "GFX_conveyor_location_btn"
 			buttonFont = "Arial16"
 			clicksound = click_default
@@ -1090,7 +1110,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "decrease_amount"
-			position = { x = 267 y = 10 }
+			position = { x = 365 y = 44 }
 			quadTextureSprite = "GFX_increase_decrease_amount_invisible"
 			pdx_tooltip = "CONVEYOR_SERIES_DECREASE_DESC"
 			font = "Arialsmallest"
@@ -1101,7 +1121,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "amount"
-			position = { x = 319 y = 14 }
+			position = { x = 405 y = 48 }
 			font = "Focusfont"
 			text = "INFINITY"
 			maxWidth = 33
@@ -1112,7 +1132,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "increase_amount"
-			position = { x = 363 y = 10 }
+			position = { x = 436 y = 44 }
 			quadTextureSprite = "GFX_increase_decrease_amount_invisible"
 			pdx_tooltip = "CONVEYOR_SERIES_INCREASE_DESC"
 			clicksound = click_default
@@ -1122,7 +1142,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "low_prio"
-			position = { x = 113 y = 9 }
+			position = { x = 313 y = 9 }
 			buttonFont = "Arialsmallest"
 			quadTextureSprite = "GFX_deploy_priority"
 			pdx_tooltip = "DEPLOYMENT_LOW_PRIORITY_DESC"
@@ -1132,7 +1152,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "medium_prio"
-			position = { x = 153 y = 9 }
+			position = { x = 353 y = 9 }
 			buttonFont = "Arialsmallest"
 			quadTextureSprite = "GFX_deploy_priority"
 			pdx_tooltip = "DEPLOYMENT_MEDIUM_PRIORITY_DESC"
@@ -1142,7 +1162,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "high_prio"
-			position = { x = 193 y = 9 }
+			position = { x = 393 y = 9 }
 			buttonFont = "Arialsmallest"
 			quadTextureSprite = "GFX_deploy_priority"
 			pdx_tooltip = "DEPLOYMENT_HIGH_PRIORITY_DESC"
@@ -1152,7 +1172,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "add_button"
-			position = { x = 315 y = 46 }
+			position = { x = 315 y = 78 }
 			quadTextureSprite ="GFX_military_deployment_add_line_btn"
 			buttonText = "ADD_CONVEYOR_LINE_BUTTON_LABEL"
 			buttonFont = "Arial16"
@@ -1161,7 +1181,7 @@ guiTypes = {
 		
 		iconType = {
 			name = "add_limit_bg"
-			position = { x=315 y=52 }
+			position = { x=315 y=78 }
 			spriteType = "GFX_add_limit_bg"
 			alwaystransparent = yes		
 		}
@@ -1187,14 +1207,14 @@ guiTypes = {
 				
 		buttonType = {
 			name = "deploy_conveyor_button"
-			position = { x=421 y=47 }
+			position = { x=421 y=79 }
 			quadTextureSprite = "GFX_deploy_conveyor_button"
 			clicksound = click_default
 		}
 		
 		buttonType = {
 			name = "cancel_conveyor_button"
-			position = { x=450 y=47 }
+			position = { x=450 y=79 }
 			quadTextureSprite = "GFX_cancel_conveyor_button"
 			pdx_tooltip = "CANCEL_CONVEYOR_TOOLTIP"
 			clicksound = click_close
