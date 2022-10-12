@@ -9,9 +9,10 @@ guiTypes = {
 	containerWindowType = {
 		name = "EventWindow"
 		position = { x=-422 y=-35% }	
-		size = { width = 881 height =427 }
+		size = { width = 671 height =427 }
 		moveable = yes
-		Orientation = CENTER		
+		Orientation = CENTER
+		clipping = no		
 		
 		show_sound = event_popup
 		hide_sound = menu_close_window
@@ -27,6 +28,7 @@ guiTypes = {
 			size = { width = 858 height =121 }
 			moveable = yes
 			Orientation = UPPER_LEFT
+			clipping = no
 
 			background = {
 				name = "Background"	
@@ -35,7 +37,7 @@ guiTypes = {
 		
 			instantTextBoxType = {
 				name = "Title"
-				position = { x = 55 y = 16 }
+				position = { x = 20 y = 25 }
 				font = "Beyondsmall"
 				borderSize = {x = 0 y = 0}
 				text = "Title text here!"	
@@ -47,17 +49,18 @@ guiTypes = {
 
 			buttonType = {
 				name = "btn_minimize"
-				position = {x=10 y=9}
-				spriteType = "GFX_event_button_minimize"
+				position = {x=616 y=-30}
+				spriteType = "GFX_exit_button"
 				clicksound = click_default
 				pdx_tooltip = "MINIMIZE_EVENT"
+				scale = 0.7
 			}
 		}
 
 		containerWindowType = {
 			name = "midsection"
 			position = { x=0 y=48 }	
-			size = { width = 858 height = 100 }
+			size = { width = 671 height = 100 }
 			moveable = yes
 			clipping = no
 			Orientation = UPPER_LEFT
@@ -73,7 +76,7 @@ guiTypes = {
 				font = "Arial16"
 				borderSize = {x = 0 y = 0}
 				text = "Long text here!"	
-				maxWidth = 812
+				maxWidth = 620
 				maxHeight = 230
 				format = left
 			}	
@@ -100,7 +103,7 @@ guiTypes = {
 			iconType = {
 				name ="event_picture"
 				spriteType = "GFX_report_event_001"
-				position = { x = 6 y = 13 }
+				position = { x = 10000 y = 13 } #position = { x = 6 y = 13 }
 				Orientation = "UPPER_LEFT"
 				alwaystransparent = yes				
 			}
@@ -108,7 +111,7 @@ guiTypes = {
 			iconType = {
 				name ="event_overlayyeah"
 				spriteType = "GFX_newscursedevent"
-				position = { x = 3 y = -1 }
+				position = { x = 10000 y = -1 } #position = { x = 3 y = -1 }
 				Orientation = "UPPER_LEFT"
 				alwaystransparent = yes				
 			}
@@ -116,14 +119,14 @@ guiTypes = {
 			iconType = {
 				name ="event_pic_clip"
 				spriteType = "GFX_event_pic_clip"
-				position = { x = 688 y = 55 }
+				position = { x = 28 y = 75 }
 				Orientation = "UPPER_LEFT"
 			}
 
 
 			gridBoxType = {
 				name = "options_grid"
-				position = { x = 220 y = -1 }
+				position = { x = 18 y = -1 }
 				size = { width = 632 height = 30 }
 				slotsize = { width = 632 height = 52 }
 				max_slots_horizontal = 1
