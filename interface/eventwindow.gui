@@ -483,6 +483,7 @@ guiTypes = {
 		Orientation = CENTER
 		show_sound = world_news_effect
 		hide_sound = menu_close_window
+		clipping = no
 		
 		background = {
 			name = "Background"	
@@ -493,21 +494,31 @@ guiTypes = {
 			name = "Background_2"	
 			spriteType ="GFX_event_news_bg_black"
 		}
-		
-		iconType =	{
+
+		containerWindowType = {
+			name = "news_animation"
+			size = { width = 528 height = 694 }
+			clipping = yes
+			position = {
+				x = 7
+				y = 11
+			}
+
+			iconType =	{
 				name ="newsnewsnews"
 				spriteType = "GFX_newsnewsnews"
-				position = { x = 7 y = 12 }
+				position = { x = 0 y = 0 }
 				Orientation = "UPPER_LEFT"
 				alwaystransparent = yes
 			}
-		iconType =	{
+			iconType =	{
 				name ="newsnewsnews2"
 				spriteType = "GFX_newsnewsnews2"
-				position = { x = 7 y = 650 }
+				position = { x = 0 y = 640 }
 				Orientation = "UPPER_LEFT"
 				alwaystransparent = yes
 			}
+		}
 
 		containerWindowType = {
 			name = "top_Window"
@@ -545,8 +556,12 @@ guiTypes = {
 
 			buttonType = {
 				name = "btn_minimize"
-				position = {x=-4 y=664}
-				spriteType = "GFX_event_option_entry"
+				position = {x=-110 y=-21}
+				spriteType = "GFX_exit_button"
+				orientation = "UPPER_RIGHT"
+				scale = 0.8
+				#position = {x=-4 y=664}
+				#spriteType = "GFX_event_option_entry"
 				clicksound = click_default
 			}
 
@@ -569,17 +584,6 @@ guiTypes = {
 				format = left
 				scrollbarType = standardtext_slider
 			}
-			
-			instantTextBoxType = {
-				name = "btn_minimize_text"
-				position = { x = 190 y = 562 }
-				font = "Arial"
-				borderSize = {x = 5 y = 0}
-				text = "//// CLOSE ////"	
-				maxWidth = 200
-				maxHeight = 20
-				format = center
-			}	
 		}			
 
 
