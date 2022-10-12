@@ -829,7 +829,7 @@ news_event = {
 			custom_effect_tooltip = international_news_event_8_tt
 			#every_country = {
 			#	add_ideas = awaiting_return_idea
-			#}			
+			#}
 			hidden_effect = {
 				set_global_flag = unify_spaceship_button_disabled
 				set_global_flag = spaceship_already_internationalized
@@ -876,7 +876,14 @@ news_event = {
 
 	immediate = {
 		hidden_effect = {
-			news_event = { id = international_news_event.11 days = 5 }
+			random_list = {
+				80 =  {
+					news_event = { id = international_news_event.11 days = 5 }
+				}
+				20 = {
+					news_event = { id = international_news_event.12 days = 5 }
+				}
+			}
 		}
 		custom_effect_tooltip = tensions_rise_event_tooltip
 	}
@@ -907,6 +914,34 @@ news_event = {
 
 	option = {
 		name = international_news_event.11.a
+	}
+}
+#UNITY DESTROYED
+news_event = {
+	id = international_news_event.12
+	title = international_news_event.12.t
+	desc = international_news_event.12.d
+	picture = GFX_international_news_event.12
+    
+    is_triggered_only = yes
+
+    major = yes
+
+	immediate = {
+		hidden_effect = {
+			news_event = { id = international_news_event.11 days = 5 }
+		}
+		custom_effect_tooltip = unity_hijacked_tooltip
+		every_country = {
+			limit = {
+				has_idea = awaiting_return_idea
+			}
+			remove_ideas = awaiting_return_idea
+		}
+	}
+
+	option = {
+		name = international_news_event.12.a
 	}
 }
 ###

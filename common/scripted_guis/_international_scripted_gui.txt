@@ -1001,7 +1001,19 @@ scripted_gui = {
 		ai_weights = {
 			international_unify_spaceship_efforts_click = {
 				ai_will_do = {
-					factor = 100
+					factor = 1
+					modifier = {
+						OR = {
+							has_stability < 0.2
+							has_war_support < 0.2
+							has_war = yes
+							has_idea = military_government
+							has_idea = anarchy_style
+							has_idea = communal_parity
+							has_idea = closed_economy
+						}
+						factor = 0
+					}
 				}
 			}
 			international_launch_spaceship_click = {
