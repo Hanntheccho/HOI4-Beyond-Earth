@@ -765,6 +765,11 @@ guiTypes = {
 			position = {x=45 y=-28}
 			quadTextureSprite ="GFX_army_load"
 		}
+		iconType = {
+			name = "research_progressbar"
+			spriteType = "GFX_techtree_details_progress_bar"
+			position = { x=54 y=-19 }
+		}
 		buttonType = {
 			name = "start"
 			quadTextureSprite = "GFX_focus_state" #"GFX_button_123x34"
@@ -873,18 +878,13 @@ guiTypes = {
 			name = "research_progressbar_frame"
 			spriteType = "GFX_production_progressbar_frame22"
 			position = { x=10000 y=57 }
-		}	
-		iconType = {
-			name = "research_progressbar"
-			spriteType = "GFX_prod_progress_bar3_2"
-			position = { x=10000 y=65 }
 		}
 	}
 	
 	containerWindowType = {
 		name = "coninuous_focus_detail_view"
 		position = { x=500 y=100 }
-		size = { width = 550 height = 550 }
+		size = { width = 550 height = 574 }
 		Orientation = UPPER_LEFT
 		moveable = yes
 		clipping = no
@@ -895,40 +895,56 @@ guiTypes = {
 
 		background = {
 			name = "Background"
-			#SpriteType ="GFX_technology_info_bg"
-			SpriteType = "GFX_tiled_window_thin_border2"
+			SpriteType ="GFX_technology_info_bg"
+			#SpriteType = "GFX_tiled_bg"
+			position = {
+				x = -4
+				y = -4
+			}
+		}
+
+		containerWindowType = {
+			name = "extra_bg"
+			size = { width = 100%% height = 100%% }
+
+			background = {
+				name = "extra_bg_bg"
+				SpriteType = "GFX_tiled_bg_alpha"
+				alwaystransparent = yes
+			}
+		}
+
+		instantTextboxType = {
+			name = "name"
+			position = { x = 17 y = 11 }
+			textureFile = ""
+			font = "Beyond"
+			borderSize = {x = 0 y = 0}
+			text = ""
+			maxWidth = 515
+			maxHeight = 90
+			format = left	
+			fixedsize = yes	
 		}
 		
 		iconType ={
 			name ="info_top_win"
 			spriteType = "GFX_tech_info_top_win"
-			position = { x= 1 y = 1 }
+			position = { x= 10000 y = 1 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
 
 		buttonType = {
 			name = "close"
-			quadTextureSprite = "GFX_closebutton"
+			quadTextureSprite = "GFX_exit_button"
 			buttonFont = "vic_18"
-			position = { x=-43 y=9 }
+			position = { x=-51 y=-34 }
 			shortcut = "ESCAPE"
 			Orientation = "UPPER_RIGHT"
 			pdx_tooltip = "CLOSE"
 			clicksound = click_close
-		}
-
-		instantTextboxType = {
-			name = "name"
-			position = { x = 15 y = 15 }
-			textureFile = ""
-			font = "Beyondsmall"
-			borderSize = {x = 0 y = 0}
-			text = ""
-			maxWidth = 450
-			maxHeight = 30
-			format = left
-			multiline = no		
+			scale = 0.7
 		}
 		iconType = {
 			name = "symbol"
@@ -938,13 +954,13 @@ guiTypes = {
 		}
 		iconType = {
 			name = "prerequisites_bg"
-			position = { x = 35 y = 92 }
+			position = { x = 10000 y = 92 }
 			spriteType = "GFX_generic_bg_307x113_extra"
 			alwaystransparent = yes
 		}		
 		instantTextboxType = {
 			name = "prerequisites"
-			position = { x = 45 y = 100 }
+			position = { x = 10000 y = 100 }
 			textureFile = ""
 			font = "Arial16"
 			borderSize = {x = 0 y = 0}
@@ -957,8 +973,8 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "statsarea"
-			position = { x=20 y=220 }
-			size = { width = 97%% height = 98%% }
+			position = { x=17 y=100 }
+			size = { width = 97%% height = 96%% }
 			horizontalScrollbar = "bottom_horizontal_slider"
 			verticalScrollbar = "right_vertical_slider"
 			margin = { top = 4 left = 13 bottom = 0 right = 5}
@@ -966,13 +982,13 @@ guiTypes = {
 			
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_tiled_paper_bg2"
+				quadTextureSprite ="GFX_tiled_bg"
 			}
 			
 		}
 		instantTextboxType = {
 			name = "desc"
-			position = { x = 30 y = 235 }
+			position = { x = 10000 y = 235 }
 			textureFile = ""
 			font = "Arial16"
 			borderSize = {x = 5 y = 0}
@@ -991,7 +1007,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "reward_label"
-			position = { x = 34 y = 368 }
+			position = { x = 34 y = 128 }
 			textureFile = ""
 			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
@@ -1003,13 +1019,13 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "reward"
-			position = { x = 50 y = 400 }
+			position = { x = 50 y = 170 }
 			textureFile = ""
 			font = "Arial16"
 			borderSize = {x = 0 y = 0}
 			text = ""
 			maxWidth = 455
-			maxHeight = 125
+			maxHeight = 325
 			scrollbarType = standardtext_slider
 #			format = center
 		}
@@ -1017,21 +1033,22 @@ guiTypes = {
 
 		buttonType = {
 			name = "start"
-			quadTextureSprite = "GFX_button_123x34"
-			buttonText = "START_FOCUS"
+			quadTextureSprite = "GFX_focus_state" #"GFX_button_123x34"
+			text = ""
 			buttonFont = "Arial"
-			position = { x=390 y=53 }
-			clicksound = select_focus
+			position = { x=-60 y=-49 }
 			shortcut = "RETURN"
+			orientation = "UPPER_LEFT"
 		}
 
 		buttonType = {
 			name = "stop"
-			quadTextureSprite = "GFX_button_123x34"
-			buttonText = "STOP_FOCUS"
+			quadTextureSprite = "GFX_focus_state" #"GFX_button_123x34"
+			text = ""
 			buttonFont = "Arial"
-			position = { x=390 y=53 }
-			clicksound = click_default
+			position = { x=-60 y=-49 }
+			shortcut = "RETURN"
+			orientation = "UPPER_LEFT"
 			hide = yes
 		}
 		

@@ -333,36 +333,44 @@ guiTypes = {
 		#	alwaystransparent = yes
 		#}
 
+		buttonType = {
+			name = "leader_button"
+			position = {x=306 y=-47}
+			spriteType = "GFX_leader_army_overlay"
+			clicksound = click_default
+		}
+
 		iconType = {
 			name = "army_bg"
 			spriteType = "GFX_army_bg"
-			position = { x=-9 y=1 }
+			position = { x=-1 y=-1 }
 			alwaystransparent = yes
 		}
 
 		iconType = {
 			name = "army_group_bg"
 			spriteType = "GFX_army_group_bg"
-			position = { x=-9 y=0 }
+			position = { x=-1 y=-1 }
 			alwaystransparent = yes
 		}
 
-		instantTextBoxType = {
-			name = "group_name_extra"
-			position = {x=7 y=7}
+		editBoxType = {
+			name = "group_name"
+			position = {x=15 y=11}
+			size = {x=395 y=40}
 			font = "Beyond"
-			text = "///////////  /////// ////"
-			maxWidth = 500
-			maxHeight = 20
+			text = ""
+			#maxWidth = 300
+			#maxHeight = 20
 			#format = left
 		}
 
 		containerWindowType = {
 			name = "extra_thing"
-			size = {width=420 height=134}
+			size = {width=424 height=134}
 			position = {
-				x = 5
-				y = 5
+				x = 3
+				y = 4
 			}
 
 			background = {
@@ -372,50 +380,23 @@ guiTypes = {
 			}
 		}
 
-		editBoxType = {
-			name = "group_name"
-			position = {x=15 y=17}
-			size = {x=275 y=20}
-			font = "Beyondsmall"
-			text = ""
-			#maxWidth = 300
-			#maxHeight = 20
-			#format = left
-		}
-
-		#
-		iconType = {
-			name = "army_load"
-			position = {x=98 y=-26}
-			quadTextureSprite ="GFX_army_load"
-		}
-		#
-		buttonType = {
-			name = "leader_button"
-			position = {x=446 y=15}
-			spriteType = "GFX_leader_army_overlay"
-			scale = 1 #scale = 0.515
-			clicksound = click_default
-		}
-
 		iconType = {
 			name = "leader_icon"
-			position = {x=446 y=15}
+			position = {x=10000 y=8}
 			quadTextureSprite ="GFX_leader_unknown"
-			scale = 0.515 #scale = 0.515
 			alwaystransparent = yes
 		}
 
 		buttonType = {
 			name ="army_item_bg"
 			quadTextureSprite = "GFX_theatre_army_shield"
-			position = { x = -38 y = 53 }
+			position = { x = -34 y = 53 }
 			frame = 1
 		}
 
 		instantTextBoxType = {
 			name = "armies_count_box"
-			position = { x = -30 y = 70 }
+			position = { x = -26 y = 70 }
 			font = "Focusfont"
 			maxWidth = 28
 			maxHeight = 23
@@ -469,7 +450,7 @@ guiTypes = {
 			name = "supply_icon"
 			spriteType = "GFX_supply_strip"
 			frame = 1
-			position = { x=109 y=13 }
+			position = { x=372 y=13 }
 		}
 
 		iconType = {
@@ -491,10 +472,11 @@ guiTypes = {
 
 		buttonType = {
 			name = "close_button"
-			position = {x=405 y=3}
-			spriteType = "GFX_NV_btn_close"
+			position = {x=10000 y=-36} #position = {x=193 y=-36}
+			spriteType = "GFX_exit_button_top"
 			pdx_tooltip = "DESELECT_UNIT"
 			clicksound = click_close
+			scale = 0.8
 		}
 
 		iconType = {
@@ -613,12 +595,12 @@ guiTypes = {
 		iconType = {
 			name = "leader_stat_attack_bg"
 			spriteType = "GFX_trait_attack"
-			position = { x=125 y=47 }
+			position = { x=45 y=54 }
 		}
 
 		instantTextboxType = {
 			name = "leader_stat_attack"
-			position = {x=150 y=52}
+			position = {x=80 y=59}
 			font = "Focusfont"
 			maxWidth = 30
 			maxHeight = 23
@@ -629,12 +611,12 @@ guiTypes = {
 		iconType = {
 			name = "leader_stat_defense_bg"
 			spriteType = "GFX_trait_defense"
-			position = { x=180 y=47 }
+			position = { x=125 y=54 }
 		}
 
 		instantTextboxType = {
 			name = "leader_stat_defense"
-			position = {x=205 y=52}
+			position = {x=160 y=59}
 			font = "Focusfont"
 			maxWidth = 30
 			maxHeight = 23
@@ -645,12 +627,12 @@ guiTypes = {
 		iconType = {
 			name = "leader_stat_planning_bg"
 			spriteType = "GFX_trait_planning"
-			position = { x=235 y=47 }
+			position = { x=205 y=54 }
 		}
 
 		instantTextboxType = {
 			name = "leader_stat_planning"
-			position = {x=260 y=52}
+			position = {x=240 y=59}
 			font = "Focusfont"
 			maxWidth = 30
 			maxHeight = 23
@@ -661,12 +643,12 @@ guiTypes = {
 		iconType = {
 			name = "leader_stat_logistics_bg"
 			spriteType = "GFX_trait_logistics"
-			position = { x=290 y=47 }
+			position = { x=285 y=54 }
 		}
 
 		instantTextboxType = {
 			name = "leader_stat_logistics"
-			position = {x=315 y=52}
+			position = {x=320 y=59}
 			font = "Focusfont"
 			maxWidth = 30
 			maxHeight = 23
@@ -726,7 +708,7 @@ guiTypes = {
 
 		OverlappingElementsBoxType = {
 			name = "divisions_summary"
-			position = { x=0 y=79 }
+			position = { x=5 y=83 }
 			size = { x=300 y=27 }
 			spacing = 0
 		}
@@ -752,24 +734,24 @@ guiTypes = {
 
 		buttonType = {
 			name = "army_motorization_priority_button"
-			position = {x=245 y=40}
+			position = {x=372 y=45}
 			spriteType = "GFX_motorization_level_toggle_btn"
 			clicksound = click_default
 		}
 		positionType = {
 			name = "army_motorization_priority_button_army_group_position"
-			position = {x=245 y=40}
+			position = {x=372 y=45}
 		}
 
 		iconType = {
 			name = "army_motorization_priority_button_overlay"
-			position = {x=353 y=40}
+			position = {x=372 y=45}
 			spriteType = "GFX_motorization_level_toggle_strip"
 			alwaystransparent = yes
 		}
 		positionType = {
 			name = "army_motorization_priority_button_overlay_army_group_position"
-			position = {x=245 y=40}
+			position = {x=372 y=45}
 		}
 
 		buttonType = {
@@ -789,8 +771,9 @@ guiTypes = {
 
 		buttonType = {
 			name = "select_all_wings_button"
-			position = {x=362 y=84}
-			spriteType = "GFX_airoverview_button"
+			position = {x=372 y=84}
+			spriteType = "GFX_buildings_strip"
+			frame = 5
 			buttonFont = "hoi_18mbs"
 			clicksound = click_default
 		}
@@ -868,7 +851,7 @@ guiTypes = {
 				quadTextureSprite ="GFX_focus_tooltip"
 				position = {
 					x = 0
-					y = -8
+					y = -4
 				}
 				alwaystransparent = yes
 			}
@@ -876,7 +859,7 @@ guiTypes = {
 			iconType = {
 				name = "army_group_header"
 				spriteType = "GFX_unit_list_header_mod"
-				position = { x = 0 y = -3 }
+				position = { x = 0 y = 0 }
 			}
 
 			buttonType = {
@@ -993,10 +976,10 @@ guiTypes = {
 
 			buttonType = {
 				name = "btn_close"
-				position = {x=383 y=14}
-				spriteType = "GFX_dismantle_faction_button"
+				position = {x=383 y=-29}
+				spriteType = "GFX_exit_button"
 				pdx_tooltip = "DESELECT_UNIT"
-				#scale = 1.5
+				scale = 0.6
 			}
 
 			containerWindowType = {
@@ -1803,15 +1786,13 @@ guiTypes = {
 		}
 	}
 
-	containerWindowType =
-	{
+	containerWindowType = {
 		name = "stat_equipment_entry_naval"
 		position = {x=0 y=0}
 		size = { width = 50 height = 50 }
 
 
-		iconType =
-		{
+		iconType = {
 			name ="equipment_icon"
 			spriteType = "GFX_equipment_item"
 			position = { x= 105 y = 43 }
@@ -1840,15 +1821,13 @@ guiTypes = {
 
 	}
 
-	containerWindowType =
-	{
+	containerWindowType = {
 		name = "stat_equipment_entry_railway_gun"
 		position = {x=0 y=0}
 		size = { width = 50 height = 50 }
 
 
-		iconType =
-		{
+		iconType = {
 			name ="equipment_icon"
 			spriteType = "GFX_equipment_item"
 			position = { x= 105 y = 43 }
