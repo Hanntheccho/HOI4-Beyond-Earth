@@ -9,16 +9,22 @@ guiTypes = {
 		moveable = yes
 		fade_time = 500
 		fade_type = linear
-		click_to_front = yes		
+		click_to_front = yes
+		clipping = no
+		
+		positionType = {
+			name = "pos_roster_overview_orientation_top_left"
+			position = { x = 540 y = 80 }
+		}
 				
 		background = {
 			name = "Background"		
-			spriteType ="GFX_tiled_bg"
+			spriteType ="GFX_leader_selection_bg"
 		}
 		
 		instantTextboxType = {
 			name = "header_text"
-			position = { x =20 y = 10 }
+			position = { x =10000 y = 10 }
 			textureFile = ""
 			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
@@ -30,7 +36,7 @@ guiTypes = {
 
 		ButtonType = {
 			name = "sort_name"
-			position = {x=95 y=39}
+			position = {x=10000 y=39}
 			spriteType = "GFX_sort_up_down_button_83x29"
 			buttonText = UNIT_LEADER_NAME_SORT
 			buttonFont = "Arialsmallest"
@@ -53,7 +59,7 @@ guiTypes = {
 			
 		ButtonType = {
 			name = "sort_skills"
-			position = {x=13 y=39}
+			position = {x=10000 y=39}
 			spriteType = "GFX_sort_up_down_button_83x29"
 			buttonText = UNIT_LEADER_SKILL_SORT
 			buttonFont = "Arialsmallest"
@@ -62,7 +68,7 @@ guiTypes = {
 		}
 		ButtonType = {
 			name = "sort_capacity"
-			position = {x=440 y=39}
+			position = {x=10000 y=39}
 			spriteType = "GFX_sort_up_down_button_83x29"
 			buttonText = UNIT_LEADER_CAPACITY_SORT
 			buttonFont = "Arialsmallest"
@@ -108,10 +114,10 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "leaders"
-			position = { x = 0 y = 60 }
-			size = { width = 100%% height = 490 }
+			position = { x = 0 y = 20 }
+			size = { width = 550 height = 505 }
+
 			verticalScrollbar = "right_vertical_slider"
-			margin = { top = 14 bottom = 14 }
 			scroll_wheel_factor = 98
 			
 			background = {
@@ -121,7 +127,7 @@ guiTypes = {
 			
 			gridBoxType = {
 				name = "leaders_grid"
-				position = { x = 13 y = 15 }
+				position = { x = 13 y = 20 }
 				size = { width = 100%% height = 100%% }
 				slotsize = { width = 510 height = 98 }
 				max_slots_horizontal = 1
@@ -135,13 +141,13 @@ guiTypes = {
 			quadTextureSprite ="GFX_button_221x34"
 			buttonFont = "Arial"
 			Orientation = "LOWER_RIGHT"
-			buttonText = "// UNASSIGN //"
+			buttonText = "REMOVE"
 			pdx_tooltip = "UNASSIGN"
 		}
 		
 		buttonType = {
 			name = "new_leader_button"
-			position = { x = -520 y = -45 }
+			position = { x = -510 y = -45 }
 			quadTextureSprite = "GFX_button_221x34_black"
 			buttonFont = "Focusfont"
 			Orientation = "LOWER_RIGHT"
@@ -150,27 +156,28 @@ guiTypes = {
 
 		buttonType = {
 			name = "show_divisional_commanders_button"
-			position = { x = -535 y = -31 }
-			quadTextureSprite = "GFX_button_261x34"
-			buttonFont = "hoi_18mbs"
+			position = { x = -515 y = -45 }
+			quadTextureSprite = "GFX_button_221x34"
+			buttonFont = "Arial"
 			Orientation = "LOWER_RIGHT"
 			buttonText = "UNIT_LEADER_NEW_LEADER_DIVC"
 		}
 		
 		buttonType = {
 			name = "close_button"
-			position = { x = -38 y = 7 }
-			quadTextureSprite ="GFX_nf_close_button"
+			position = { x = -55 y = -35 }
+			quadTextureSprite ="GFX_exit_button"
 			buttonFont = "Main_14_black"
 			shortcut = "ESCAPE"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			pdx_tooltip = "CLOSE"
+			scale = 0.8
 		}
 		
 		instantTextboxType = {
 			name = "show_assigned_text"
-			position = { x = 395 y = 9 }
+			position = { x = 10000 y = 9 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
@@ -183,7 +190,7 @@ guiTypes = {
 		
 		checkboxType = {
 			name = "show_assigned"
-			position = { x = 470  y = 4 }
+			position = { x = 10000  y = 4 }
 			quadTextureSprite ="GFX_generic_checkbox"	
 			Orientation = "UPPER_LEFT"
 			clicksound = click_default
@@ -395,15 +402,16 @@ guiTypes = {
 		size = { width=550 height=590 }
 		orientation = center
 		moveable = yes
+		clipping = no
 				
 		background = {
 			name = "Background"		
-			spriteType ="GFX_tiled_bg"
+			spriteType ="GFX_leader_selection_bg"
 		}
 		
 		instantTextboxType = {
 			name = "header_text"
-			position = { x = 20 y = 10 }
+			position = { x = 10000 y = 10 }
 			textureFile = ""
 			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
@@ -415,7 +423,7 @@ guiTypes = {
 		
 		ButtonType = {
 			name = "sort_name"
-			position = {x=95 y=39}
+			position = {x=10000 y=39}
 			spriteType = "GFX_sort_up_down_button_83x29"
 			buttonText = UNIT_LEADER_NAME_SORT
 			buttonFont = "Arialsmallest"
@@ -438,7 +446,7 @@ guiTypes = {
 			
 		ButtonType = {
 			name = "sort_skills"
-			position = {x=13 y=39}
+			position = {x=10000 y=39}
 			spriteType = "GFX_sort_up_down_button_83x29"
 			buttonText = UNIT_LEADER_SKILL_SORT
 			buttonFont = "Arialsmallest"
@@ -447,7 +455,7 @@ guiTypes = {
 		}
 		ButtonType = {
 			name = "sort_capacity"
-			position = {x=440 y=39}
+			position = {x=10000 y=39}
 			spriteType = "GFX_sort_up_down_button_83x29"
 			buttonText = UNIT_LEADER_CAPACITY_SORT
 			buttonFont = "Arialsmallest"
@@ -493,10 +501,10 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "leaders"
-			position = { x = 0 y = 60 }
-			size = { width = 100%% height = 490 }
+			position = { x = 0 y = 20 }
+			size = { width = 550 height = 505 }
+
 			verticalScrollbar = "right_vertical_slider"
-			margin = { top = 14 bottom = 14 }
 			scroll_wheel_factor = 98
 			
 			background = {
@@ -506,7 +514,7 @@ guiTypes = {
 			
 			gridBoxType = {
 				name = "leaders_grid"
-				position = { x = 13 y = 15 }
+				position = { x = 13 y = 20 }
 				size = { width = 100%% height = 100%% }
 				slotsize = { width = 510 height = 98 }
 				max_slots_horizontal = 1
@@ -520,13 +528,13 @@ guiTypes = {
 			quadTextureSprite ="GFX_button_221x34"
 			buttonFont = "Arial"
 			Orientation = "LOWER_RIGHT"
-			buttonText = "// UNASSIGN //"
+			buttonText = "REMOVE"
 			pdx_tooltip = "UNASSIGN"
 		}
 		
 		buttonType = {
 			name = "new_leader_button"
-			position = { x = -520 y = -45 }
+			position = { x = -510 y = -45 }
 			quadTextureSprite = "GFX_button_221x34_black"
 			buttonFont = "Focusfont"
 			Orientation = "LOWER_RIGHT"
@@ -535,18 +543,19 @@ guiTypes = {
 		
 		buttonType = {
 			name = "close_button"
-			position = { x = -38 y = 7 }
-			quadTextureSprite ="GFX_nf_close_button"
+			position = { x = -55 y = -35 }
+			quadTextureSprite ="GFX_exit_button"
 			buttonFont = "Main_14_black"
 			shortcut = "ESCAPE"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			pdx_tooltip = "CLOSE"
+			scale = 0.8
 		}
 		
 		instantTextboxType = {
 			name = "show_assigned_text"
-			position = { x = 395 y = 9 }
+			position = { x = 10000 y = 9 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
@@ -559,7 +568,7 @@ guiTypes = {
 		
 		checkboxType = {
 			name = "show_assigned"
-			position = { x = 470  y = 4 }
+			position = { x = 10000  y = 4 }
 			quadTextureSprite ="GFX_generic_checkbox"	
 			Orientation = "UPPER_LEFT"
 			clicksound = click_default

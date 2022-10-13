@@ -782,7 +782,7 @@ news_event = {
 	id = international_news_event.7
 	title = international_news_event.7.t
 	desc = international_news_event.7.d
-	picture = GFX_report_event_gathering_protest
+	picture = GFX_international_news_event.7
 
 	major = yes
 	
@@ -794,7 +794,11 @@ news_event = {
 	immediate = {
 		hidden_effect = {
 			set_global_flag = civilization_collapses_flag
+			every_state = {
+				increase_devastation = yes
+			}
 		}
+		custom_effect_tooltip = civilization_collapses_event_tt
 		every_country = {
 			add_ideas = nothing_left_idea
 		}
