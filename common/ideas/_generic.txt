@@ -6,13 +6,12 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             research_bonus = {
                 armor = 0.15
@@ -27,6 +26,50 @@ ideas = {
                 }
             }
         }
+
+        localized_gunsmiths = {
+            available = {
+                always = yes
+            }
+            ai_will_do = {
+                factor = 1
+            }
+
+            cost = 150
+            removal_cost = 30
+
+            research_bonus = {
+                infantry_weapons = 0.15
+            }
+
+            equipment_bonus = {
+                infantry_eq = {
+                    build_cost_ic = -0.05
+                }
+            }
+        }
+
+        low_artillery_foundries = {
+            available = {
+                always = yes
+            }
+            ai_will_do = {
+                factor = 1
+            }
+
+            cost = 150
+            removal_cost = 30
+
+            research_bonus = {
+                artillery = 0.15
+            }
+
+            equipment_bonus = {
+                artillery_equipment = {
+                    build_cost_ic = -0.05
+                }
+            }
+        }
     }
 
     naval_manufacturer = {
@@ -36,13 +79,12 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             research_bonus = {
                 naval_equipment = 0.15
@@ -60,12 +102,11 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
+            ai_will_do = {
+                factor = 1
             }
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             research_bonus = {
                 naval_equipment = 0.15
@@ -89,13 +130,12 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             research_bonus = {
                 air_equipment = 0.15
@@ -113,13 +153,12 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             research_bonus = {
                 air_equipment = 0.15
@@ -137,13 +176,12 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             research_bonus = {
                 air_equipment = 0.15
@@ -158,31 +196,18 @@ ideas = {
         }
     }
 
-    industrial_concern = {
+    theorist_mod = {
         arc_international = {
 
-            available = {   #if !ARC and ARC Relations > 40 and (ARC exists and independent)
+            available = {
                 NOT = {
                     tag = ARC
                 }
-                has_opinion = {
-                    target = ARC
-                    value > 39
-                }
-                and = {
-                    country_exists = ARC
-                    ARC = {
-                        is_subject = no
-                    }
-                }
-            }
-
-            allowed = {
-                always = yes
+                has_non_aggression_pact_with = ARC
             }
 
             cost = 150
-    		removal_cost = 10
+    		removal_cost = 30
 
             research_bonus = {
                 industry = 0.15
@@ -198,13 +223,12 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             modifier = {
                 production_speed_infrastructure_factor = 0.25
@@ -216,13 +240,12 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             modifier = {
                 production_speed_bunker_factor = 0.10
@@ -235,13 +258,12 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             modifier = {
                 monthly_population = 0.5
@@ -253,24 +275,15 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             research_bonus = {
                 industry = 0.15
-            }
-
-            on_add = {
-                add_to_variable = {free_factory_gain = 0.15}
-            }
-
-            on_remove = {
-                add_to_variable = {free_factory_gain = -0.15}
             }
 
             modifier = {
@@ -282,13 +295,12 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             research_bonus = {
                 industry = 0.15
@@ -303,24 +315,15 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
+            ai_will_do = {
+                factor = 1
             }
-
+        
             cost = 150
-            removal_cost = 10
-
-            on_add = {
-                add_to_variable = {industrial_power_gain = 0.3}
-            }
-
-            on_remove = {
-                add_to_variable = {industrial_power_gain = -0.3}
-            }
-
+            removal_cost = 30
+        
             modifier = {
-                local_resources_factor = 0.15
+                local_resources_factor = 0.1
                 custom_modifier_tooltip = industrial_power_tooltip2
             }
         }
@@ -330,101 +333,28 @@ ideas = {
                 tag = URA
             }
 
-            allowed = {
-                always = yes
-            }
-
             cost = 150
-            removal_cost = 10
-
-            on_add = {
-                add_to_variable = {industrial_power_gain = 0.1}
-            }
-
-            on_remove = {
-                add_to_variable = {industrial_power_gain = -0.1}
-            }
+            removal_cost = 30
 
             modifier = {
                 local_resources_factor = 0.15
                 production_speed_synthetic_refinery_factor = 0.4
-                custom_modifier_tooltip = industrial_power_tooltip2
-            }
-        }
-    }
-
-    materiel_manufacturer = {
-        designer = yes
-
-        localized_gunsmiths = {
-            available = {
-                always = yes
-            }
-
-            allowed = {
-                always = yes
-            }
-
-            cost = 150
-            removal_cost = 10
-
-            research_bonus = {
-                infantry_weapons = 0.15
-            }
-
-            equipment_bonus = {
-                infantry_eq = {
-                    build_cost_ic = -0.05
-                }
+                custom_modifier_tooltip = industrial_power_tooltip3
             }
         }
 
-        low_artillery_foundries = {
-            available = {
-                always = yes
-            }
-
-            allowed = {
-                always = yes
-            }
-
-            cost = 150
-            removal_cost = 10
-
-            research_bonus = {
-                artillery = 0.15
-            }
-
-            equipment_bonus = {
-                artillery_equipment = {
-                    build_cost_ic = -0.05
-                }
-            }
-        }
-    }
-
-    theorist_mod = {
         holotheater_concern = {
             ledger = civilian
 
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
-            }
-
-            on_add = {
-                set_country_flag = holo_concern
-            }
-
-            on_remove = {
-                clr_country_flag = holo_concern
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             modifier = {
                 custom_modifier_tooltip = industrial_power_tooltip4
@@ -437,21 +367,12 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
-            }
-
-            on_add = {
-                set_country_flag = ai_admin
-            }
-
-            on_remove = {
-                clr_country_flag = ai_admin
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             modifier = {
                 #custom_modifier_tooltip = corruption_tooltip
@@ -465,21 +386,12 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
-            }
-
-            on_add = {
-                set_country_flag = ai_land
-            }
-
-            on_remove = {
-                clr_country_flag = ai_land
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             modifier = {
                 experience_gain_army = 0.05
@@ -492,21 +404,12 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
-            }
-
-            on_add = {
-                set_country_flag = ai_air
-            }
-
-            on_remove = {
-                clr_country_flag = ai_air
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             modifier = {
                 experience_gain_air = 0.05
@@ -519,21 +422,12 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
-            }
-
-            on_add = {
-                set_country_flag = ai_naval
-            }
-
-            on_remove = {
-                clr_country_flag = ai_naval
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             modifier = {
                 experience_gain_navy = 0.05
@@ -546,23 +440,12 @@ ideas = {
             available = {
                 always = yes
             }
-
-            allowed = {
-                always = yes
-            }
-
-            on_add = {
-                set_country_flag = ai_orbital
-                add_to_variable = {spaceship_contribution_variable = 0.1}
-            }
-
-            on_remove = {
-                clr_country_flag = ai_orbital
-                add_to_variable = {spaceship_contribution_variable = -0.1}
+            ai_will_do = {
+                factor = 1
             }
 
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
 
             modifier = {
                 #production_speed_sattelite_uplink_factor = 0.05
@@ -577,20 +460,8 @@ ideas = {
                 tag = URA
             }
         
-            allowed = {
-                always = yes
-            }
-        
-            on_add = {
-                set_country_flag = uni_eurasia
-            }
-        
-            on_remove = {
-                clr_country_flag = uni_eurasia
-            }
-        
             cost = 150
-            removal_cost = 10
+            removal_cost = 30
         
             modifier = {
                 research_speed_factor = 0.2
