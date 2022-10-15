@@ -16,15 +16,6 @@ on_actions = {
 	###
 	on_startup = {
 		effect = {
-			every_country = {
-				set_variable = { augment_law_cost_base = 75 }
-                set_variable = { augment_law_cost_factor = 1}
-                set_variable = { augment_law_cost_modified = augment_law_cost_base}
-			}
-		}
-	}
-	on_startup = {
-		effect = {
 			SIB = {
                 set_variable = { sib_discontent = 0 }
 				set_variable = { sib_socialist_support = 0 }
@@ -49,56 +40,4 @@ on_actions = {
 	#		}
 	#	}
 	#}
-
-	#THIS IS FOR FRA CHANGING CAPITAL AROUND GOD DAMN SO COOL IT IS MADRID, THEN LISBON, THEN IDK IT IS JUST EPIC LOL OMG SAVE ME IT IS SO HOT IN SPAIN
-	on_monthly_FRA = {
-		effect = {
-			add_to_variable = { change_FRA_capital_please = 1 }
-			if = {
-				limit = { 
-					check_variable = { change_FRA_capital_please = 12 }
-					297 = { 
-						is_capital = yes 
-						is_owned_by = FRA
-					}
-				}
-				set_variable = { change_FRA_capital_please = 0 }
-				set_capital = { state = 273 }
-			}
-			if = {
-				limit = { 
-					check_variable = { change_FRA_capital_please = 12 }
-					273 = { 
-						is_capital = yes 
-						is_owned_by = FRA
-					}
-				}
-				set_variable = { change_FRA_capital_please = 0 }
-				set_capital = { state = 256 }
-			}
-			if = {
-				limit = { 
-					check_variable = { change_FRA_capital_please = 12 }
-					256 = { 
-						is_capital = yes 
-						is_owned_by = FRA
-					}
-				}
-				set_variable = { change_FRA_capital_please = 0 }
-				set_capital = { state = 234 }
-			}
-			if = {
-				limit = { 
-					check_variable = { change_FRA_capital_please = 12 }
-					234 = { 
-						is_capital = yes 
-						is_owned_by = FRA
-					}
-				}
-				set_variable = { change_FRA_capital_please = 0 }
-				set_capital = { state = 297 }
-			}
-		}
-	}
-	###
 }
