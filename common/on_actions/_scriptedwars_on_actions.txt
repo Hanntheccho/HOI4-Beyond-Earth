@@ -131,6 +131,24 @@ on_actions = {
 					set_cosmetic_tag = KAR_russia
 				}
 			}
+			#SOV-KAR WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = KAR
+					}
+					ROOT = {
+						tag = SOV
+					}
+				}
+				FROM = {
+					every_core_state = {
+						remove_core_of = FROM
+						#add_core_of = ROOT #not needed
+						#transfer_state_to = ROOT #not needed
+					}
+				}
+			}
 			#SOV-KAZ WAR
 			else_if = {
 				limit = {
@@ -508,7 +526,7 @@ on_actions = {
 					every_core_state = {
 						remove_core_of = FROM
 						#add_core_of = ROOT
-						#transfer_state_to = ROOT
+						transfer_state_to = ROOT
 						#remove_dynamic_modifier = {
 						#	modifier = eng_cw_modifier
 						#}
