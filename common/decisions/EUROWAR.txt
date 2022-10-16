@@ -70,12 +70,25 @@ eurowar_decisions = {
 					type = puppet_wargoal_focus
 					target = SWE
 				}
+				country_event = norway_event.1
+			}
+			SWE = {
+				country_event = sweden_event.1
+			}
+			hidden_effect = {
+				GER = {
+					country_event = {
+						id = german_event.3
+						days = 6
+					}
+				}
 			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
 	}
+
 	YUG_ROM_war = {
 		icon = GFX_decision_war
 		available = {
@@ -94,6 +107,7 @@ eurowar_decisions = {
 					type = puppet_wargoal_focus
 					target = ROM
 				}
+				country_event = balkan_event.1
 			}
 			hidden_effect = {
 				if = {
@@ -109,6 +123,27 @@ eurowar_decisions = {
 						}
 					}
 				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	POL_LAT_war = {
+		icon = GFX_decision_war
+		available = {
+			has_global_flag = LAT_ahti_bad_news
+		}
+		activation = {
+			#
+		}
+		fire_only_once = yes
+		days_mission_timeout = 203
+		timeout_effect = {
+			set_global_flag = LAT_ahti_bad_news
+			LAT = {
+				country_event = baltic_event.1
 			}
 		}
 		ai_will_do = {

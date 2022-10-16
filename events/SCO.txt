@@ -1,22 +1,37 @@
 ﻿add_namespace = scotland_event
 
-country_event = {
+country_event = { #AHTI'S BAD NEWS - WELCOME TO KAUNAS
 	id = scotland_event.1
 	title = scotland_event.1.t
 	desc = scotland_event.1.d
-	picture = GFX_unknown_event 
 
-	fire_only_once = yes
-	
-	trigger = { 
-			is_ai = no
-			date > 2200.01.05
-			tag = SCO
-		}
-	
-	mean_time_to_happen = { days = 5 }
+	is_triggered_only = yes
 	
 	option = { 
-		name = scotland_event_option.1.a 
+		name = scotland_event_option.1.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = scotland_event_option.1.b
+		send_equipment = {
+			equipment = gun_equipment
+			amount = 2500
+			target = LAT
+		}
+		send_equipment = {
+			equipment = infantry_eq
+			amount = 400
+			target = LAT
+		}
+		add_to_variable = {
+			var = global.nsainfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+		ai_chance = {
+			factor = 1
+		}
 	}
 }

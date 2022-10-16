@@ -1,76 +1,215 @@
 ﻿add_namespace = german_event
 
-country_event = {
+country_event = { #LEADER SELECTION EVENT!
 	id = german_event.1
 	title = german_event.1.t
 	desc = german_event.1.d
-	picture = GFX_german_event.1
 
-	fire_only_once = yes
-	
-	trigger = { 
-			is_ai = no
-			date > 2200.01.05
-			tag = GER
-		}
-	
-	mean_time_to_happen = { days = 5 }
+	is_triggered_only = yes
 	
 	option = { 
-		name = german_event_option.1.a 
+		name = german_event_option.1.a
+		add_popularity = {
+			ideology = harmony
+			popularity = 0.1
+		}
+		hidden_effect = {
+			country_event = {
+				id = german_event.4
+				days = 23
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = german_event_option.1.b
+		add_popularity = {
+			ideology = divinity
+			popularity = 0.1
+		}
+		set_politics = {
+			ruling_party = divinity
+		}
+		hidden_effect = {
+			country_event = {
+				id = german_event.5
+				days = 11
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = german_event_option.1.c
+		add_popularity = {
+			ideology = voracity
+			popularity = 0.1
+		}
+		set_politics = {
+			ruling_party = voracity
+		}
+		ai_chance = {
+			factor = 1
+		}
 	}
 }
-
-#refugees support NSA event ebner
-country_event = {
-	id = german_event.11
-	title = german_event.11.t
-	desc = german_event.11.d
-	picture = GFX_german_event.1
+country_event = { #ECW - HARMONY VICTORY!
+	id = german_event.2
+	title = german_event.2.t
+	desc = german_event.2.d
 
 	fire_only_once = yes
-	
-	trigger = { 
-			is_ai = no
-			date > 2200.01.05
-			tag = GER
-			has_country_leader = {
-				character = GER_lena_ebner
-				}
-			# NSA support
+
+	trigger = {
+		tag = GER
+		HNG = {
+			has_war = no
+			exists = yes
 		}
-	
-	mean_time_to_happen = { months = 7 }
+	}
+
+	mean_time_to_happen = {
+		days = 5
+	}
 	
 	option = { 
-		name = german_event_option.11.a
-		# lower NSA support
+		name = german_event_option.2.a
+		add_to_faction = HNG
 	}
 }
-
-#refugees support NSA event rosenfeld
-country_event = {
-	id = german_event.12
-	title = german_event.12.t
-	desc = german_event.12.d
-	picture = GFX_german_event.1
-
-	fire_only_once = yes
+country_event = { #NOR-SWE WAR
+	id = german_event.3
+	title = german_event.3.t
+	desc = german_event.3.d
 	
-	trigger = { 
-			is_ai = no
-			date > 2200.01.05
-			tag = GER
-			has_country_leader = {
-				character = GER_eva_rosenfeld
-				}
-			# NSA support
-		}
-	
-	mean_time_to_happen = { months = 7 }
+	is_triggered_only = yes
 	
 	option = { 
-		name = german_event_option.12.a
-		# lower NSA support
+		name = german_event.3.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = german_event_option.3.b
+		send_equipment = {
+			equipment = gun_equipment
+			amount = 3000
+			target = SWE
+		}
+		send_equipment = {
+			equipment = infantry_eq
+			amount = 500
+			target = SWE
+		}
+		add_to_variable = {
+			var = global.integrinfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = german_event_option.3.c
+		send_equipment = {
+			equipment = gun_equipment
+			amount = 7000
+			target = SWE
+		}
+		send_equipment = {
+			equipment = infantry_eq
+			amount = 1000
+			target = SWE
+		}
+		add_manpower = -8000
+		SWE = {
+			add_manpower = 8000
+		}
+		add_to_variable = {
+			var = global.integrinfamy_var
+			value = 2
+		}
+		custom_effect_tooltip = add_infamy_mid
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = german_event_option.3.d
+		add_to_faction = SWE
+		add_to_war = {
+			targeted_alliance = SWE
+			enemy = NOR
+		}
+		add_to_variable = {
+			var = global.integrinfamy_var
+			value = 4
+		}
+		custom_effect_tooltip = add_infamy_high
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+country_event = { #RANDOM EBNER EVENT
+	id = german_event.4
+	title = german_event.4.t
+	desc = german_event.4.d
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = german_event_option.4.a
+	}
+}
+country_event = { #RANDOM EVA EVENT
+	id = german_event.5
+	title = german_event.5.t
+	desc = german_event.5.d
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = german_event_option.5.a
+	}
+}
+country_event = { #AHTI'S BAD NEWS DAY
+	id = german_event.6
+	title = german_event.6.t
+	desc = german_event.6.d
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = german_event_option.6.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = german_event_option.6.b
+		send_equipment = {
+			equipment = gun_equipment
+			amount = 5000
+			target = POL
+		}
+		send_equipment = {
+			equipment = infantry_eq
+			amount = 600
+			target = POL
+		}
+		add_to_variable = {
+			var = global.integrinfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+		ai_chance = {
+			factor = 1
+		}
 	}
 }
