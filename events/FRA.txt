@@ -35,51 +35,37 @@ country_event = { #ELECTION EVENT
 			ruling_party = mastery
 		}
 		set_country_flag = FRA_election_ended
+		hidden_effect = {
+			country_event = {
+				id = franco_event.4
+				days = 3
+			}
+		}
 		ai_chance = {
 			factor = 1
 		}
 	
 	}
 }
-#country_event = {
-#	id = franco_event.2
-#	title = franco_event.2.t
-#	desc = franco_event.2.d
-#
-#	fire_only_once = yes
-#	
-#	is_triggered_only = yes
-#	
-#	option = { 
-#		name = franco_event_option.2.a 
-#	}
-#}
-#country_event = {
-#	id = franco_event.3
-#	title = franco_event.3.t
-#	desc = franco_event.3.d
-#
-#	fire_only_once = yes
-#	
-#	is_triggered_only = yes
-#	
-#	option = { 
-#		name = franco_event_option.3.a 
-#	}
-#}
-#country_event = {
-#	id = franco_event.4
-#	title = franco_event.4.t
-#	desc = franco_event.4.d
-#
-#	fire_only_once = yes
-#	
-#	is_triggered_only = yes
-#	
-#	option = { 
-#		name = franco_event_option.4.a 
-#	}
-#}
+###
+#franco_event.2 & 3?¿?¿?¿?
+###
+country_event = { #AL-HAKIM POST-ELECTION
+	id = franco_event.4
+	title = franco_event.4.t
+	desc = franco_event.4.d
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = franco_event_option.4.a 
+		swap_ideas = {
+			remove_idea = low_economic_mobilisation
+			add_idea = partial_economic_mobilisation
+		}		
+		add_political_power = -100
+	}
+}
 country_event = { #ÉLODIE POST-ELECTION
 	id = franco_event.5
 	title = franco_event.5.t
