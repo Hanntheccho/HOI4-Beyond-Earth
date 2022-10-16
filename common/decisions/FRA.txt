@@ -1,313 +1,5 @@
-fi_election = {
-	fi_elodie_campaign = {
-		icon = GFX_decision_unknown
-		available = {
-			tag = FRA
-			hidden_trigger = {
-				NOT = {
-					has_country_flag = fi_election_ended
-				}
-			}
-		}
-		visible = {
-			NOT = {
-				has_country_flag = fi_election_ended
-			}
-		}
-		cost = 40
-		fire_only_once = no
-		days_remove = 10
-		remove_effect = {
-			add_popularity = {
-				ideology = purity
-				popularity = 0.05
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	fi_hakim_campaign = {
-		icon = GFX_decision_unknown
-		available = {
-			tag = FRA
-			hidden_trigger = {
-				NOT = {
-					has_country_flag = fi_election_ended
-				}
-			}
-		}
-		visible = {
-			NOT = {
-				has_country_flag = fi_election_ended
-			}
-		}
-		cost = 40
-		fire_only_once = no
-		days_remove = 10
-		remove_effect = {
-			add_popularity = {
-				ideology = mastery
-				popularity = 0.05
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	fi_election_end = {
-		icon = GFX_decision_unknown
-		available = {
-			always = no
-		}
-		visible = {
-			NOT = {
-				has_country_flag = fi_election_ended
-			}
-		}
-		fire_only_once = yes
-		days_mission_timeout = 105
-		timeout_effect = {
-			if = {
-				limit = {
-					mastery > party_popularity@purity
-				}
-				set_politics = {
-					ruling_party = mastery
-				}
-				set_country_flag = fi_election_ended
-			}
-			else = {
-				set_politics = {
-					ruling_party = purity
-				}
-				set_country_flag = fi_election_ended
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-}
-
-fi_formables = {
-	#FRA_support_eng = {
-	#	icon = GFX_decision_war
-	#	available = {
-	#		JNG = {
-	#			exists = yes
-	#		}
-	#		has_global_flag = ECW_start
-	#		NOT = { has_global_flag = ECW_end }
-	#		hidden_trigger = {
-	#			has_country_leader = {
-	#				character = FRA_elodie_batteux
-	#				ruling_only = yes
-	#			}
-	#		}
-	#	}
-	#	visible = {
-	#		JNG = {
-	#			exists = yes
-	#		}
-	#		has_global_flag = ECW_start
-	#		NOT = { has_global_flag = ECW_end }
-	#		has_country_leader = {
-	#			character = FRA_elodie_batteux
-	#			ruling_only = yes
-	#		}
-	#	}
-	#	cancel_trigger = {
-	#		JNG = {
-	#			exists = no
-	#		}
-	#	}
-	#	cost = 50
-	#	fire_only_once = yes
-	#	days_remove = 20
-	#	remove_effect = {
-	#		declare_war_on = {
-	#			type = annex_everything
-	#			target = ENG
-	#		}
-	#		declare_war_on = {
-	#			type = annex_everything
-	#			target = CNG
-	#		}
-	#		declare_war_on = {
-	#			type = annex_everything
-	#			target = HNG
-	#		}
-	#		JNG = {
-	#			give_military_access = FRA
-	#		}
-	#	}
-	#	ai_will_do = {
-	#		factor = 10
-	#		modifier = {
-	#			JNG = {
-	#				surrender_progress > 0.2
-	#			}
-	#			factor = 100
-	#		}
-	#	}
-	#}
-	fi_guarantee_ITA = {
-		icon = GFX_decision_political
-		available = {
-			ITA = {
-				exists = yes
-			}
-			has_country_leader = {
-				character = FRA_al_hakim
-				ruling_only = yes
-			}
-		}
-		visible = {
-			ITA = {
-				exists = yes
-			}
-			has_country_leader = {
-				character = FRA_al_hakim
-				ruling_only = yes
-			}
-		}
-		cost = 20
-		fire_only_once = yes
-		days_remove = 10
-		remove_effect = {
-			give_guarantee = ITA
-			diplomatic_relation = {
-				country = PAD
-				relation = guarantee
-				active = no
-			}
-		}
-		ai_will_do = {
-			factor = 10
-		}
-	}
-	fi_unite_ITA = {
-		icon = GFX_decision_political
-		available = {
-			ITA = {
-				exists = yes
-			}
-			has_country_leader = {
-				character = FRA_al_hakim
-				ruling_only = yes
-			}
-			FRA = {
-				has_guaranteed = ITA
-			}
-		}
-		visible = {
-			ITA = {
-				exists = yes
-			}
-			has_country_leader = {
-				character = FRA_al_hakim
-				ruling_only = yes
-			}
-			FRA = {
-				has_guaranteed = ITA
-			}
-		}
-		cost = 200
-		fire_only_once = yes
-		days_remove = 205
-		remove_effect = {
-			annex_country = {
-				target = ITA
-				#transfer_troops = yes
-			}
-			add_timed_idea = {
-				idea = ITA_rich_exodus
-				days = 430
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	fi_war_ITA = {
-		icon = GFX_decision_war
-		available = {
-			ITA = {
-				exists = yes
-			}
-		}
-		visible = {
-			ITA = {
-				exists = yes
-			}
-		}
-		targets = {
-			ITA
-		}
-		war_with_on_remove = ITA
-		cost = 40
-		fire_only_once = yes
-		days_remove = 10
-		remove_effect = {
-			declare_war_on = {
-				type = puppet_wargoal_focus
-				target = ITA
-			}
-		}
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				NOT = {
-					country_exists = PAD
-				}
-				add = 1
-			}
-		}
-	}
-	fi_war_PAD = {
-		icon = GFX_decision_war
-		available = {
-			PAD = {
-				exists = yes
-			}
-		}
-		visible = {
-			PAD = {
-				exists = yes
-			}
-		}
-		targets = {
-			PAD
-		}
-		war_with_on_remove = PAD
-		cost = 40
-		fire_only_once = yes
-		days_remove = 10
-		remove_effect = {
-			declare_war_on = {
-				type = puppet_wargoal_focus
-				target = PAD
-			}
-		}
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				PAD = {
-					has_idea = GER_german_aligned
-				}
-				add = 1000
-			}
-			modifier = {
-				has_country_leader = {
-					character = FRA_al_hakim
-					ruling_only = yes
-				}
-				add = 1000
-			}
-		}
-	}
-	fi_war_TUN = {
+FRA_africa_war = {
+	FRA_war_TUN = {
 		icon = GFX_decision_war
 		available = {
 			TUN = {
@@ -355,29 +47,71 @@ fi_formables = {
 			}
 		}
 	}
-	fi_form_fed_med = {
+}
+FRA_formables = {
+	FRA_form_european_union = {
+		icon = GFX_decision_unity
+		available = {
+			GER = {
+				is_puppet_of = FRA
+			}
+			SOV = {
+				is_puppet_of = FRA
+			}
+			SCO = {
+				is_puppet_of = FRA
+			}
+		}
+		visible = {
+			always = yes
+		}
+		cost = 300
+		fire_only_once = yes
+		days_remove = 300
+		remove_effect = {
+			every_state = {
+				limit = {
+					is_owned_by = FRA
+					is_on_continent = europe
+				}
+				add_core_of = FRA
+			}
+			every_country = {
+				limit = {
+					is_puppet_of = FRA
+					capital_scope = {
+						is_on_continent = europe
+					}
+				}
+				every_core_state = {
+					add_core_of = FRA
+				}
+				FRA = {
+					annex_country = {
+						target = PREV
+						#transfer_troops = yes
+					}
+				}
+			}
+			FRA = {
+				set_cosmetic_tag = FRA_eu_union
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	FRA_form_fed_med = {
 		icon = GFX_decision_unity
 		available = {
 			tag = FRA
-			FRA = {
+			ITA = {
 				all_core_state = {
-					is_controlled_by = FRA
+					is_owned_by = PAD
 				}
 			}
 			TUN = {
-				all_core_state = {
-					is_controlled_by = FRA
-				}
-			}
-			ITA = {
-				all_core_state = {
-					is_controlled_by = FRA
-				}
-			}
-			PAD = {
-				all_core_state = {
-					is_controlled_by = FRA
-				}
+				is_puppet_of = FRA
 			}
 			has_country_leader = {
 				character = FRA_elodie_batteux
@@ -387,117 +121,41 @@ fi_formables = {
 		visible = {
 			always = yes
 		}
+		cost = 150
 		fire_only_once = yes
-		days_remove = 100
+		days_remove = 150
 		remove_effect = {
 			every_state = {
 				limit = {
 					OR = {
 						is_core_of = PAD
-						is_core_of = ITA
 						is_core_of = TUN
 					}
 				}
 				add_core_of = FRA
+			}
+			annex_country = {
+				target = PAD
+				#transfer_troops = yes
+			}
+			annex_country = {
+				target = TUN
+				#transfer_troops = yes
 			}
 			FRA = {
 				set_cosmetic_tag = FRA_med_fed
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 	}
-	fi_form_european_union = {
+	FRA_form_rep_lys = {
 		icon = GFX_decision_unity
 		available = {
-			tag = FRA
-			FRA = {
-				all_core_state = {
-					is_controlled_by = FRA
-				}
-			}
-			GER = {
-				all_core_state = {
-					is_controlled_by = FRA
-				}
-			}
-			ITA = {
-				all_core_state = {
-					is_controlled_by = FRA
-				}
-			}
 			PAD = {
 				all_core_state = {
-					is_controlled_by = FRA
-				}
-			}
-			ENG = {
-				all_core_state = {
-					is_controlled_by = FRA
-				}
-			}
-			SCO = {
-				all_core_state = {
-					is_controlled_by = FRA
-				}
-			}
-			IRE = {
-				all_core_state = {
-					is_controlled_by = FRA
-				}
-			}
-			CZE = {
-				all_core_state = {
-					is_controlled_by = FRA
-				}
-			}
-		}
-		visible = {
-			always = yes
-		}
-		fire_only_once = yes
-		days_remove = 100
-		remove_effect = {
-			every_state = {
-				limit = {
-					OR = {
-						is_core_of = PAD
-						is_core_of = ITA
-						is_core_of = GER
-						is_core_of = ENG
-						is_core_of = SCO
-						is_core_of = IRE
-						is_core_of = CZE
-					}
-				}
-				add_core_of = FRA
-			}
-			FRA = {
-				set_cosmetic_tag = FRA_eu_union
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	fi_form_rep_lys = {
-		icon = GFX_decision_unity
-		available = {
-			tag = FRA
-			FRA = {
-				all_core_state = {
-					is_controlled_by = FRA
-				}
-			}
-			ITA = {
-				all_core_state = {
-					is_controlled_by = FRA
-				}
-			}
-			PAD = {
-				all_core_state = {
-					is_controlled_by = FRA
+					is_owned_by = ITA
 				}
 			}
 			has_country_leader = {
@@ -508,27 +166,29 @@ fi_formables = {
 		visible = {
 			always = yes
 		}
+		cost = 100
 		fire_only_once = yes
 		days_remove = 100
 		remove_effect = {
 			every_state = {
 				limit = {
-					OR = {
-						is_core_of = PAD
-						is_core_of = ITA
-					}
+					is_core_of = ITA
 				}
 				add_core_of = FRA
+			}
+			annex_country = {
+				target = ITA
+				#transfer_troops = yes
 			}
 			FRA = {
 				set_cosmetic_tag = FRA_lys_rep
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 	}
-	#fi_form_sos_government = {
+	#FRA_form_sos_government = {
 	#	icon = GFX_decision_unity
 	#	available = {
 	#		tag = FRA

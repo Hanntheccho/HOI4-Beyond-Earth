@@ -4,9 +4,6 @@ country_event = {
 	id = england_event.1
 	title = england_event.1.t
 	desc = england_event.1.d
-	picture = GFX_unknown_event
-	
-	fire_only_once = yes
 	
 	is_triggered_only = yes
 	
@@ -38,6 +35,9 @@ country_event = {
 				index = 0
 			}
 		}
+		ai_chance = {
+			factor = 1
+		}
 	}
 
 	option = { 
@@ -52,6 +52,9 @@ country_event = {
 			1023 = {
 				set_demilitarized_zone = yes
 			}
+		}
+		ai_chance = {
+			factor = 0
 		}
 	}
 
@@ -68,6 +71,9 @@ country_event = {
 				set_demilitarized_zone = yes
 			}
 		}
+		ai_chance = {
+			factor = 0
+		}
 	}
 
 	option = { 
@@ -83,15 +89,17 @@ country_event = {
 				set_demilitarized_zone = yes
 			}
 		}
+		ai_chance = {
+			factor = 0
+		}
 	}
 }
 
-country_event = {
+news_event = {
 	id = england_event.2
 	title = england_event.2.t
 	desc = england_event.2.d
-	picture = GFX_unknown_event
-	fire_only_once = yes
+	picture = GFX_england_event.2
 	
 	is_triggered_only = yes
 
@@ -100,8 +108,8 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			set_global_flag = ECW_start
-			remove_ideas = ENG_stagnant_republican_army
 			ENG = {
+				remove_ideas = ENG_stagnant_republican_army
                 country_lock_all_division_template = no
 				delete_unit_template_and_units = {
 					division_template = "Rover Division"

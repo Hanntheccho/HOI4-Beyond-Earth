@@ -1,55 +1,48 @@
 eurowar_decisions = {
-	fi_italian_question = {
+	ITA_PAD_war = {
 		icon = GFX_decision_war
 		available = {
-			OR = {
-				FRA = {
-					has_war_with = ITA
-				}
-				ITA = {
-					has_war_with = PAD
-				}
+			ITA = {
+				has_war_with = PAD
 			}
 		}
 		activation = {
-			PAD = {
-				exists = yes
-			}
-			ITA = {
-				exists = yes
-			}
+			#
 		}
 		fire_only_once = yes
 		days_mission_timeout = 595
 		timeout_effect = {
-			if = {
-				limit = {
-					country_exists = PAD
+			ITA = {
+				declare_war_on = {
+					type = annex_everything
+					target = PAD
 				}
-				ITA = {
-					declare_war_on = {
-						type = annex_everything
-						target = PAD
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						FRA = {
+							has_government = purity
+						}
+					}
+					FRA = {
+						country_event = {
+							id = franco_event.10
+							days = 4
+						}
 					}
 				}
-				#every_state = {
-				#	limit = {
-				#			is_core_of = PAD
-				#	}
-				#	add_core_of = ITA
-				#}
-				#every_state = {
-				#	limit = {
-				#			is_core_of = ITA
-				#	}
-				#	add_core_of = PAD
-				#}
-			}
-			else = {
-				FRA = {
-					declare_war_on = {
-						type = puppet_wargoal_focus
-						target = ITA
+				if = {
+					limit = {
+						FRA = {
+							has_government = mastery
+						}
+					}
+					FRA = {
+						country_event = {
+							id = franco_event.11
+							days = 4
+						}
 					}
 				}
 			}
@@ -62,25 +55,59 @@ eurowar_decisions = {
 	NOR_SWE_war = {
 		icon = GFX_decision_war
 		available = {
-			SWE = {
-				has_war_with = NOR
+			NOR = {
+				has_war_with = SWE
 			}
 		}
 		activation = {
-			NOR = {
-				exists = yes
-			}
-			SWE = {
-				exists = yes
-			}
+			#
 		}
 		fire_only_once = yes
 		days_mission_timeout = 570
 		timeout_effect = {
-			SWE = {
+			NOR = {
 				declare_war_on = {
 					type = puppet_wargoal_focus
-					target = NOR
+					target = SWE
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	YUG_ROM_war = {
+		icon = GFX_decision_war
+		available = {
+			YUG = {
+				has_war_with = ROM
+			}
+		}
+		activation = {
+			#
+		}
+		fire_only_once = yes
+		days_mission_timeout = 452
+		timeout_effect = {
+			YUG = {
+				declare_war_on = {
+					type = puppet_wargoal_focus
+					target = ROM
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						FRA = {
+							has_government = purity
+						}
+					}
+					FRA = {
+						country_event = {
+							id = franco_event.6
+							days = 7
+						}
+					}
 				}
 			}
 		}
@@ -126,14 +153,13 @@ eurowar_decisions = {
 		days_mission_timeout = 25
 		timeout_effect = {
 			ENG = {
-				country_event = england_event.2
+				news_event = england_event.2
 			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
 	}
-
 
 	vostaslavia_rebellion_start = {
 		icon = GFX_decision_unknown
@@ -534,17 +560,17 @@ eurowar_decisions = {
                 add_popularity = {
                     ideology = harmony
                     popularity = 0.08
+				}
                 add_popularity = {
                     ideology = purity
                     popularity = 0.08
+				}
 				add_popularity = {
                     ideology = supremacy
                     popularity = 0.04
-                    }
                 }
 		    }
             activate_mission = HUN_revolution_end
-            }
         }
 	}
 
@@ -553,9 +579,6 @@ eurowar_decisions = {
 		available = {
 			NOT = { country_exists = HUN }
 		}
-		activation = {
-            country_exists = HUN
-        }
 		fire_only_once = yes
 		days_mission_timeout = 60
         activation = {
@@ -579,6 +602,7 @@ eurowar_decisions = {
 					add_ideas = war_economy
 					add_ideas = limited_exports
                 }
+			}
 			else = {
 				set_politics = {
 					ruling_party = purity

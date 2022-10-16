@@ -1,58 +1,475 @@
 ﻿add_namespace = franco_event
+#add_namespace = francoemergency_event
 
-country_event = {
+country_event = { #ELECTION EVENT
 	id = franco_event.1
 	title = franco_event.1.t
 	desc = franco_event.1.d
-	picture = GFX_franco_event.1
-
-	fire_only_once = yes
 	
 	is_triggered_only = yes
 	
 	option = { 
-		name = franco_event_option.1.a 
+		name = franco_event_option.1.a
+		add_popularity = {
+			ideology = purity
+			popularity = 0.1
+		}
+		set_country_flag = FRA_election_ended
+		hidden_effect = {
+			country_event = {
+				id = franco_event.5
+				days = 3
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = franco_event_option.1.b
+		add_popularity = {
+			ideology = mastery
+			popularity = 0.1
+		}
+		set_politics = {
+			ruling_party = mastery
+		}
+		set_country_flag = FRA_election_ended
+		ai_chance = {
+			factor = 1
+		}
+	
 	}
 }
-country_event = {
-	id = franco_event.2
-	title = franco_event.2.t
-	desc = franco_event.2.d
-	picture = GFX_franco_event.2
-
-	fire_only_once = yes
+#country_event = {
+#	id = franco_event.2
+#	title = franco_event.2.t
+#	desc = franco_event.2.d
+#
+#	fire_only_once = yes
+#	
+#	is_triggered_only = yes
+#	
+#	option = { 
+#		name = franco_event_option.2.a 
+#	}
+#}
+#country_event = {
+#	id = franco_event.3
+#	title = franco_event.3.t
+#	desc = franco_event.3.d
+#
+#	fire_only_once = yes
+#	
+#	is_triggered_only = yes
+#	
+#	option = { 
+#		name = franco_event_option.3.a 
+#	}
+#}
+#country_event = {
+#	id = franco_event.4
+#	title = franco_event.4.t
+#	desc = franco_event.4.d
+#
+#	fire_only_once = yes
+#	
+#	is_triggered_only = yes
+#	
+#	option = { 
+#		name = franco_event_option.4.a 
+#	}
+#}
+country_event = { #ÉLODIE POST-ELECTION
+	id = franco_event.5
+	title = franco_event.5.t
+	desc = franco_event.5.d
 	
 	is_triggered_only = yes
 	
 	option = { 
-		name = franco_event_option.2.a 
+		name = franco_event_option.5.a 
+		add_stability = 0.1
 	}
 }
-country_event = {
-	id = franco_event.3
-	title = franco_event.3.t
-	desc = franco_event.3.d
-	picture = GFX_unknown_event 
-
-	fire_only_once = yes
+country_event = { #YUG-ROM WAR
+	id = franco_event.6
+	title = franco_event.6.t
+	desc = franco_event.6.d
 	
 	is_triggered_only = yes
 	
 	option = { 
-		name = franco_event_option.3.a 
+		name = franco_event_option.6.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = franco_event_option.6.b
+		send_equipment = {
+			equipment = gun_equipment
+			amount = 2000
+			target = ROM
+		}
+		send_equipment = {
+			equipment = infantry_eq
+			amount = 400
+			target = ROM
+		}
+		add_to_variable = {
+			var = global.francoinfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = franco_event_option.6.c
+		send_equipment = {
+			equipment = gun_equipment
+			amount = 4000
+			target = ROM
+		}
+		send_equipment = {
+			equipment = infantry_eq
+			amount = 800
+			target = ROM
+		}
+		add_manpower = -10000
+		ROM = {
+			add_manpower = 10000
+		}
+		add_to_variable = {
+			var = global.francoinfamy_var
+			value = 2
+		}
+		custom_effect_tooltip = add_infamy_mid
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = franco_event_option.6.d
+		add_to_faction = ROM
+		add_to_war = {
+			targeted_alliance = ROM
+			enemy = YUG
+		}
+		add_to_variable = {
+			var = global.francoinfamy_var
+			value = 4
+		}
+		custom_effect_tooltip = add_infamy_high
+		ai_chance = {
+			factor = 1
+		}
 	}
 }
-country_event = {
-	id = franco_event.4
-	title = franco_event.4.t
-	desc = franco_event.4.d
-	picture = GFX_unknown_event
-
-	fire_only_once = yes
+country_event = { #ECW
+	id = franco_event.7
+	title = franco_event.7.t
+	desc = franco_event.7.d
 	
 	is_triggered_only = yes
 	
 	option = { 
-		name = franco_event_option.4.a 
+		name = franco_event_option.7.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = franco_event_option.7.b
+		send_equipment = {
+			equipment = gun_equipment
+			amount = 2000
+			target = JNG
+		}
+		send_equipment = {
+			equipment = infantry_eq
+			amount = 400
+			target = JNG
+		}
+		add_manpower = -2000
+		JNG = {
+			add_manpower = 2000
+		}
+		add_to_variable = {
+			var = global.francoinfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = franco_event_option.7.c
+		send_equipment = {
+			equipment = gun_equipment
+			amount = 4000
+			target = JNG
+		}
+		send_equipment = {
+			equipment = infantry_eq
+			amount = 800
+			target = JNG
+		}
+		add_manpower = -4000
+		JNG = {
+			add_manpower = 4000
+		}
+		add_to_variable = {
+			var = global.francoinfamy_var
+			value = 2
+		}
+		custom_effect_tooltip = add_infamy_mid
+		ai_chance = {
+			factor = 1
+		}
 	}
 }
+country_event = { #POST-ECW VICTORY
+	id = franco_event.8
+	title = franco_event.8.t
+	desc = franco_event.8.d
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+		has_government = purity
+		JNG = {
+			has_war = no
+			exists = yes
+		}
+	}
+	
+	option = { 
+		name = franco_event_option.8.a 
+		add_to_faction = JNG
+	}
+}
+#country_event = { #IRISH CW
+#	id = franco_event.9
+#	title = franco_event.9.t
+#	desc = franco_event.9.d
+#
+#	is_triggered_only = yes
+#	
+#	option = { 
+#		name = franco_event_option.9.a 
+#	}
+#	option = { 
+#		name = franco_event_option.9.b 
+#	}
+#	option = { 
+#		name = franco_event_option.9.c 
+#	}
+#}
+country_event = { #ITALIAN WAR - ÉLODIE
+	id = franco_event.10
+	title = franco_event.10.t
+	desc = franco_event.10.d
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = franco_event_option.10.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = franco_event_option.10.b
+		send_equipment = {
+			equipment = gun_equipment
+			amount = 2000
+			target = PAD
+		}
+		send_equipment = {
+			equipment = infantry_eq
+			amount = 400
+			target = PAD
+		}
+		add_to_variable = {
+			var = global.francoinfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = franco_event_option.10.c
+		send_equipment = {
+			equipment = gun_equipment
+			amount = 4000
+			target = PAD
+		}
+		send_equipment = {
+			equipment = infantry_eq
+			amount = 800
+			target = PAD
+		}
+		add_to_variable = {
+			var = global.francoinfamy_var
+			value = 2
+		}
+		custom_effect_tooltip = add_infamy_mid
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = franco_event_option.10.d
+		add_to_faction = PAD
+		add_to_war = {
+			targeted_alliance = PAD
+			enemy = ITA
+		}
+		add_to_variable = {
+			var = global.francoinfamy_var
+			value = 4
+		}
+		custom_effect_tooltip = add_infamy_high
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+country_event = { #ITALIAN WAR - AL-HAKIM
+	id = franco_event.11
+	title = franco_event.11.t
+	desc = franco_event.11.d
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = franco_event_option.11.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = franco_event_option.11.b
+		send_equipment = {
+			equipment = gun_equipment
+			amount = 2000
+			target = ITA
+		}
+		send_equipment = {
+			equipment = infantry_eq
+			amount = 400
+			target = ITA
+		}
+		add_to_variable = {
+			var = global.francoinfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = franco_event_option.11.c
+		send_equipment = {
+			equipment = gun_equipment
+			amount = 4000
+			target = ITA
+		}
+		send_equipment = {
+			equipment = infantry_eq
+			amount = 800
+			target = ITA
+		}
+		add_to_variable = {
+			var = global.francoinfamy_var
+			value = 2
+		}
+		custom_effect_tooltip = add_infamy_mid
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = franco_event_option.11.d
+		add_to_faction = ITA
+		add_to_war = {
+			targeted_alliance = ITA
+			enemy = PAD
+		}
+		add_to_variable = {
+			var = global.francoinfamy_var
+			value = 4
+		}
+		custom_effect_tooltip = add_infamy_high
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+country_event = { #RANDOM +1 INFAMY EVENT
+	id = franco_event.12
+	title = franco_event.12.t
+	desc = franco_event.12.d
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+	}
+
+	mean_time_to_happen = {
+		days = 600
+	}
+	
+	option = { 
+		name = franco_event_option.12.a 
+		add_to_variable = {
+			var = global.francoinfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+	}
+}
+
+##
+
+#country_event = {
+#	id = francoemergency_event.1
+#	title = francoemergency_event.1.t
+#	desc = francoemergency_event.1.d
+#
+#	fire_only_once = yes
+#	
+#	is_triggered_only = yes
+#	
+#	option = { 
+#		name = francoemergency_event_option.1.a 
+#	}
+#	option = { 
+#		name = francoemergency_event_option.1.b
+#	}
+#}
+#country_event = {
+#	id = francoemergency_event.2
+#	title = francoemergency_event.2.t
+#	desc = francoemergency_event.2.d
+#
+#	fire_only_once = yes
+#	
+#	is_triggered_only = yes
+#	
+#	option = { 
+#		name = francoemergency_event_option.2.a 
+#	}
+#	option = { 
+#		name = francoemergency_event_option.2.b 
+#	}
+#}
