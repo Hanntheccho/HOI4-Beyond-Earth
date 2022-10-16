@@ -27,27 +27,62 @@ scripted_gui = {
 			international_launch_spaceship_click = {
 				set_global_flag = spaceship_launched_already
 				set_global_flag = unify_spaceship_button_disabled
-				ROOT = {
-					capital_scope = {
-						remove_dynamic_modifier = {
+				every_state = {
+					limit = {
+						has_dynamic_modifier = {
 							modifier = bridge_location_modifier
 						}
-						remove_dynamic_modifier = {
+					}
+					remove_dynamic_modifier = {
+						modifier = bridge_location_modifier
+					}
+				}
+				every_state = {
+					limit = {
+						has_dynamic_modifier = {
 							modifier = quarters_location_modifier
 						}
-						remove_dynamic_modifier = {
+					}
+					remove_dynamic_modifier = {
+						modifier = quarters_location_modifier
+					}
+				}
+				every_state = {
+					limit = {
+						has_dynamic_modifier = {
 							modifier = support_location_modifier
 						}
-						remove_dynamic_modifier = {
+					}
+					remove_dynamic_modifier = {
+						modifier = support_location_modifier
+					}
+				}
+				every_state = {
+					limit = {
+						has_dynamic_modifier = {
 							modifier = storage_location_modifier
 						}
-						remove_dynamic_modifier = {
+					}
+					remove_dynamic_modifier = {
+						modifier = storage_location_modifier
+					}
+				}
+				every_state = {
+					limit = {
+						has_dynamic_modifier = {
 							modifier = engine_location_modifier
 						}
+					}
+					remove_dynamic_modifier = {
+						modifier = engine_location_modifier
+					}
+				}
+				ROOT = {
+					capital_scope = {
 						add_dynamic_modifier = {
 							modifier = spaceship_location_modifier
 						}
-					}
+					}	
 					add_ideas = awaiting_return_idea
 					news_event = {
 						id = international_news_event.9
@@ -825,29 +860,74 @@ scripted_gui = {
 					}
 				}
 				AND = {
-					any_owned_state = {
-						has_dynamic_modifier = {
-							modifier = bridge_location_modifier
+					OR = {
+						any_owned_state = {
+							has_dynamic_modifier = {
+								modifier = bridge_location_modifier
+							}
+						}
+						any_allied_country = {
+							any_owned_state = {
+								has_dynamic_modifier = {
+									modifier = bridge_location_modifier
+								}
+							}
 						}
 					}
-					any_owned_state = {
-						has_dynamic_modifier = {
-							modifier = quarters_location_modifier
+					OR = {
+						any_owned_state = {
+							has_dynamic_modifier = {
+								modifier = quarters_location_modifier
+							}
+						}
+						any_allied_country = {
+							any_owned_state = {
+								has_dynamic_modifier = {
+									modifier = quarters_location_modifier
+								}
+							}
 						}
 					}
-					any_owned_state = {
-						has_dynamic_modifier = {
-							modifier = support_location_modifier
+					OR = {
+						any_owned_state = {
+							has_dynamic_modifier = {
+								modifier = support_location_modifier
+							}
+						}
+						any_allied_country = {
+							any_owned_state = {
+								has_dynamic_modifier = {
+									modifier = support_location_modifier
+								}
+							}
 						}
 					}
-					any_owned_state = {
-						has_dynamic_modifier = {
-							modifier = storage_location_modifier
+					OR = {
+						any_owned_state = {
+							has_dynamic_modifier = {
+								modifier = storage_location_modifier
+							}
+						}
+						any_allied_country = {
+							any_owned_state = {
+								has_dynamic_modifier = {
+									modifier = storage_location_modifier
+								}
+							}
 						}
 					}
-					any_owned_state = {
-						has_dynamic_modifier = {
-							modifier = engine_location_modifier
+					OR = {
+						any_owned_state = {
+							has_dynamic_modifier = {
+								modifier = engine_location_modifier
+							}
+						}
+						any_allied_country = {
+							any_owned_state = {
+								has_dynamic_modifier = {
+									modifier = engine_location_modifier
+								}
+							}
 						}
 					}
 				}
@@ -1003,13 +1083,85 @@ scripted_gui = {
 					factor = 1
 					modifier = {
 						OR = {
-							has_stability < 0.2
-							has_war_support < 0.2
-							has_war = yes
 							has_idea = military_government
 							has_idea = anarchy_style
 							has_idea = communal_parity
 							has_idea = closed_economy
+							NOT = {
+								has_global_flag = module_5_completed_flag
+							}
+							AND = {
+								OR = {
+									any_owned_state = {
+										has_dynamic_modifier = {
+											modifier = bridge_location_modifier
+										}
+									}
+									any_allied_country = {
+										any_owned_state = {
+											has_dynamic_modifier = {
+												modifier = bridge_location_modifier
+											}
+										}
+									}
+								}
+								OR = {
+									any_owned_state = {
+										has_dynamic_modifier = {
+											modifier = quarters_location_modifier
+										}
+									}
+									any_allied_country = {
+										any_owned_state = {
+											has_dynamic_modifier = {
+												modifier = quarters_location_modifier
+											}
+										}
+									}
+								}
+								OR = {
+									any_owned_state = {
+										has_dynamic_modifier = {
+											modifier = support_location_modifier
+										}
+									}
+									any_allied_country = {
+										any_owned_state = {
+											has_dynamic_modifier = {
+												modifier = support_location_modifier
+											}
+										}
+									}
+								}
+								OR = {
+									any_owned_state = {
+										has_dynamic_modifier = {
+											modifier = storage_location_modifier
+										}
+									}
+									any_allied_country = {
+										any_owned_state = {
+											has_dynamic_modifier = {
+												modifier = storage_location_modifier
+											}
+										}
+									}
+								}
+								OR = {
+									any_owned_state = {
+										has_dynamic_modifier = {
+											modifier = engine_location_modifier
+										}
+									}
+									any_allied_country = {
+										any_owned_state = {
+											has_dynamic_modifier = {
+												modifier = engine_location_modifier
+											}
+										}
+									}
+								}
+							}
 						}
 						factor = 0
 					}
