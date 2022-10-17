@@ -52,7 +52,7 @@ on_actions = {
 						}
 					}
 				}
-				#
+				log = "A WAR HAS ENDED!"
 			}
 			#INDIA
 			else_if = {
@@ -114,6 +114,34 @@ on_actions = {
 						remove_core_of = FROM
 						add_core_of = ROOT
 						transfer_state_to = ROOT
+					}
+				}
+			}
+			#POL-LAT WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = LAT
+					}
+					ROOT = {
+						tag = POL
+					}
+				}
+				POL = {
+					end_puppet = LAT
+				}
+				GER = {
+					add_to_faction = LAT
+				}
+				LAT = {
+					set_politics = {
+						ruling_party = harmony
+					}
+					retire_ideology_leader = harmony
+					create_country_leader = {
+						name = "INTEGR Committee"
+						ideology = harmony_ideology
+						picture = GFX_portrait_government_character_harmony
 					}
 				}
 			}
@@ -410,10 +438,16 @@ on_actions = {
 			else_if = {
 				limit = {
 					FROM = {
-						tag = ITA
+						OR = {
+							tag = ITA
+							tag = PAD
+						}
 					}
 					ROOT = {
-						tag = PAD
+						OR = {
+							tag = ITA
+							tag = PAD
+						}
 					}
 				}
 				FROM = {
@@ -423,11 +457,18 @@ on_actions = {
 						transfer_state_to = ROOT
 					}
 				}
-				ROOT = {
-					set_cosmetic_tag = PAD_italy
-					set_capital = {
-						state = 334
-						#remember_old_capital = no #?
+				if = {
+					limit = {
+						ROOT = {
+							tag = PAD
+						}
+					}
+					ROOT = {
+						set_cosmetic_tag = PAD_italy
+						set_capital = {
+							state = 334
+							#remember_old_capital = no #?
+						}
 					}
 				}
 			}

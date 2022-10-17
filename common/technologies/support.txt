@@ -13,7 +13,6 @@ technologies = {
 			support_equipment_1
 		}
 		
-		
 		path = {
 			leads_to_tech = be_engineers_tech_1
 			research_cost_coeff = 1
@@ -57,7 +56,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 2
+			factor = 1
 		}
 	}
 	
@@ -87,11 +86,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
-			modifier = {
-				factor = 2
-				is_major = yes
-			}
 		}
 	}
 	
@@ -126,7 +120,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 2
+			factor = 1
 		}
 	}
 	
@@ -158,7 +152,11 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 2
+			factor = 1
+			modifier = {
+				date < 2203.01.01
+				factor = 0
+			}
 		}
 	}
 	
@@ -186,7 +184,11 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 2
+			factor = 1
+			modifier = {
+				date < 2206.01.01
+				factor = 0
+			}
 		}
 	}	
 	
@@ -194,9 +196,6 @@ technologies = {
 
 		enable_subunits = {
 			recon
-			#mot_recon
-			#armored_car_recon
-			#light_tank_recon
 		}
 		
 		path = {
@@ -219,11 +218,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
-			modifier = {
-				factor = 2
-				is_major = yes
-			}
 		}
 	}
 	
@@ -281,6 +275,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				date < 2203.01.01
+				factor = 0
+			}
 		}
 	}
 
@@ -305,6 +303,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				date < 2206.01.01
+				factor = 0
+			}
 		}
 	}
 	
@@ -333,45 +335,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0.5
-			
-			modifier = {
-				factor = 5
-				tag = GER
-			}
-
-			modifier = {
-				factor = 10
-				tag = GER
-
-				POL = { has_capitulated = yes }
-				GER = { has_war = yes }
-			}
-			
-			modifier = {
-				factor = 5
-				tag = JAP
-			}
-			
-			modifier = {
-				factor = 2
-				tag = ITA
-			}
-			
-			modifier = {
-				factor = 2
-				tag = ENG
-			}
-			
-			modifier = {
-				factor = 2
-				tag = USA
-			}
-			
-			modifier = {
-				factor = 2
-				has_war = yes
-			}
+			factor = 1
 		}
 	}
 	
@@ -401,12 +365,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0.5
-			
-			modifier = {
-				factor = 2
-				has_war = yes
-			}
+			factor = 1
 		}
 	}
 	
@@ -434,12 +393,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0.5
-			
-			modifier = {
-				factor = 2
-				has_war = yes
-			}
+			factor = 1
 		}
 	}
 
@@ -463,11 +417,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0.5
-			
+			factor = 1
 			modifier = {
-				factor = 2
-				has_war = yes
+				date < 2206.01.01
+				factor = 0
 			}
 		}
 	}
@@ -558,6 +511,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				date < 2203.01.01
+				factor = 0
+			}
 		}
 	}
 
@@ -583,6 +540,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				date < 2206.01.01
+				factor = 0
+			}
 		}
 	}
 
@@ -678,6 +639,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				date < 2203.01.01
+				factor = 0
+			}
 		}
 	}
 
@@ -704,10 +669,13 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				date < 2206.01.01
+				factor = 0
+			}
 		}
 	}
 
-	## Fix Logistics
 	be_logistics_tech_1 = {
 
 		enable_subunits = {
@@ -718,10 +686,6 @@ technologies = {
 			leads_to_tech = be_logistics_tech_2
 			research_cost_coeff = 1
 		}
-
-		#dependencies = {
-		#	motorised_infantry = 1
-		#}
 
 		research_cost = 2
 		start_year = 2190
@@ -770,11 +734,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-
-			modifier = {
-				factor = 2
-				tag = GER
-			}
 		}
 	}
 	
@@ -805,6 +764,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				date < 2203.01.01
+				factor = 0
+			}
 		}
 	}
 
@@ -831,10 +794,13 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				date < 2206.01.01
+				factor = 0
+			}
 		}
 	}
 
-	## Fix Signal
 	be_signal_company_1 = {
 
 		enable_subunits = {
@@ -845,11 +811,6 @@ technologies = {
 			leads_to_tech = be_signal_company_2
 			research_cost_coeff = 1
 		}
-
-		#dependencies = {
-		#	radio = 1
-		#	motorised_infantry = 1
-		#}
 
 		research_cost = 2
 		start_year = 2190
@@ -924,6 +885,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				date < 2203.01.01
+				factor = 0
+			}
 		}
 	}
 	
@@ -948,6 +913,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				date < 2206.01.01
+				factor = 0
+			}
 		}
 	}
 
