@@ -1,7 +1,7 @@
 BHR_preparing_for_war = {
 	BHR_initiate_remilitarization = {
 	
-		icon = generic_industry
+		icon = GFX_decision_war
 	
 		available = {
 			has_war = no
@@ -31,7 +31,7 @@ BHR_preparing_for_war = {
 
 	BHR_foster_industrial_growth = {
 	
-		icon = generic_industry
+		icon = GFX_decision_industrial
 	
 		available = {
 			has_war = no
@@ -61,7 +61,7 @@ BHR_preparing_for_war = {
 
 	BHR_rebuild_lucknow = {
 	
-		icon = generic_industry
+		icon = GFX_decision_industrial
 	
 		available = {
 			has_war = no
@@ -95,7 +95,7 @@ BHR_preparing_for_war = {
 
 	BHR_reinforce_the_cities = {
 	
-		icon = generic_industry
+		icon = GFX_decision_industrial
 	
 		available = {
 			has_war = no
@@ -129,7 +129,7 @@ BHR_preparing_for_war = {
 
 	BHR_levy_weapon_tributes = {
 	
-		icon = generic_industry
+		icon = GFX_decision_war
 	
 		available = {
 			has_war = no
@@ -169,7 +169,7 @@ BHR_preparing_for_war = {
 
 	BHR_levy_supply_tributes = {
 	
-		icon = generic_industry
+		icon = GFX_decision_war
 	
 		available = {
 			has_war = no
@@ -209,7 +209,7 @@ BHR_preparing_for_war = {
 
 	BHR_levy_united_forces = {
 	
-		icon = generic_industry
+		icon = GFX_decision_war
 	
 		available = {
 			has_war = no
@@ -248,133 +248,133 @@ BHR_preparing_for_war = {
 	}
 }
 
-ODS_starting_decisions= {
-
-	ODS_justify_keonjihar_rebuilding = {
-	
-		icon = generic_industry
-	
-		available = {
-			is_puppet = no
-		}
-	
-		visible = {
-			tag = ODS
-		}
-	
-		fire_only_once = yes
-		
-		cost = 100
-		days_remove = 50
-	
-		remove_effect = {
-			country_event = { id = odisha_event.1 days = 1 }
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	ODS_revitalizing_keonjhar_stage_1 = {
-	
-		icon = generic_industry
-	
-		available = {
-			is_puppet = no
-			has_country_flag = ODS_justified_keonjihar_rebuilding_flag
-		}
-	
-		visible = {
-			tag = ODS
-		}
-	
-		fire_only_once = yes
-		
-		custom_cost_trigger = {
-			check_variable = { industrial_power > 100 }
-		}
-		custom_cost_text = decision_cost_100_ip
-		days_remove = 100
-
-		complete_effect = {
-			subtract_from_variable = { industrial_power = 100 }
-		}
-	
-		remove_effect = {
-			country_event = { id = odisha_event.2 days = 1 }
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	ODS_revitalizing_keonjhar_stage_2 = {
-	
-		icon = generic_industry
-	
-		available = {
-			is_puppet = no
-			has_country_flag = ODS_revitalized_keonjhar_stage_1_flag
-		}
-	
-		visible = {
-			tag = ODS
-		}
-	
-		fire_only_once = yes
-		
-		custom_cost_trigger = {
-			check_variable = { industrial_power > 200 }
-		}
-		custom_cost_text = decision_cost_200_ip
-		days_remove = 150
-
-		complete_effect = {
-			subtract_from_variable = { industrial_power = 200 }
-		}
-	
-		remove_effect = {
-			country_event = { id = odisha_event.3 days = 1 }
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	ODS_revitalizing_keonjhar_stage_3 = {
-	
-		icon = generic_industry
-	
-		available = {
-			is_puppet = no
-			has_country_flag = ODS_revitalized_keonjhar_stage_2_flag
-		}
-	
-		visible = {
-			tag = ODS
-		}
-	
-		fire_only_once = yes
-		
-		custom_cost_trigger = {
-			check_variable = { industrial_power > 250 }
-		}
-		custom_cost_text = decision_cost_250_ip
-		days_remove = 200
-
-		complete_effect = {
-			subtract_from_variable = { industrial_power = 250 }
-		}
-	
-		remove_effect = {
-			country_event = { id = odisha_event.4 days = 1 }
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-}
+#ODS_starting_decisions= {
+#
+#	ODS_justify_keonjihar_rebuilding = {
+#	
+#		icon = generic_industry
+#	
+#		available = {
+#			is_puppet = no
+#		}
+#	
+#		visible = {
+#			tag = ODS
+#		}
+#	
+#		fire_only_once = yes
+#		
+#		cost = 100
+#		days_remove = 50
+#	
+#		remove_effect = {
+#			country_event = { id = odisha_event.1 days = 1 }
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	ODS_revitalizing_keonjhar_stage_1 = {
+#	
+#		icon = generic_industry
+#	
+#		available = {
+#			is_puppet = no
+#			has_country_flag = ODS_justified_keonjihar_rebuilding_flag
+#		}
+#	
+#		visible = {
+#			tag = ODS
+#		}
+#	
+#		fire_only_once = yes
+#		
+#		custom_cost_trigger = {
+#			check_variable = { industrial_power > 100 }
+#		}
+#		custom_cost_text = decision_cost_100_ip
+#		days_remove = 100
+#
+#		complete_effect = {
+#			subtract_from_variable = { industrial_power = 100 }
+#		}
+#	
+#		remove_effect = {
+#			country_event = { id = odisha_event.2 days = 1 }
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	ODS_revitalizing_keonjhar_stage_2 = {
+#	
+#		icon = generic_industry
+#	
+#		available = {
+#			is_puppet = no
+#			has_country_flag = ODS_revitalized_keonjhar_stage_1_flag
+#		}
+#	
+#		visible = {
+#			tag = ODS
+#		}
+#	
+#		fire_only_once = yes
+#		
+#		custom_cost_trigger = {
+#			check_variable = { industrial_power > 200 }
+#		}
+#		custom_cost_text = decision_cost_200_ip
+#		days_remove = 150
+#
+#		complete_effect = {
+#			subtract_from_variable = { industrial_power = 200 }
+#		}
+#	
+#		remove_effect = {
+#			country_event = { id = odisha_event.3 days = 1 }
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	ODS_revitalizing_keonjhar_stage_3 = {
+#	
+#		icon = generic_industry
+#	
+#		available = {
+#			is_puppet = no
+#			has_country_flag = ODS_revitalized_keonjhar_stage_2_flag
+#		}
+#	
+#		visible = {
+#			tag = ODS
+#		}
+#	
+#		fire_only_once = yes
+#		
+#		custom_cost_trigger = {
+#			check_variable = { industrial_power > 250 }
+#		}
+#		custom_cost_text = decision_cost_250_ip
+#		days_remove = 200
+#
+#		complete_effect = {
+#			subtract_from_variable = { industrial_power = 250 }
+#		}
+#	
+#		remove_effect = {
+#			country_event = { id = odisha_event.4 days = 1 }
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#}

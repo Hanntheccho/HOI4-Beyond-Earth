@@ -18,4 +18,3 @@ NDefines_Graphics.NGraphics.COUNTER_MODE_ALLEGIANCE_OURS = { 0.7, 0.6, 1.25, 1.0
 NDefines_Graphics.NGraphics.COUNTER_MODE_ALLEGIANCE_ALLIED = { 0.5, 0.6, 1.2, 1.0 }
 NDefines_Graphics.NGraphics.COUNTER_MODE_ALLEGIANCE_ENEMY = { 1.2, 0.4, 0.3, 1.0 }
 NDefines_Graphics.NGraphics.COUNTER_MODE_ALLEGIANCE_OTHER = { 0.8, 0.8, 0.8, 1.0 }
-
