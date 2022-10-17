@@ -168,13 +168,19 @@ on_actions = {
                 limit = {
                     has_idea = developing_stage
                 }
-                set_variable = { free_factory_base_gain = 1.5 }
+                set_variable = { free_factory_base_gain = 1 }
             }
             if = {
                 limit = {
-                    has_idea = global_stage
+                    has_idea = developed_stage
                 }
-                set_variable = { free_factory_base_gain = 0.2 }
+                set_variable = { free_factory_base_gain = 1.2 }
+            }
+            if = {
+                limit = {
+                    has_idea = regional_stage
+                }
+                set_variable = { free_factory_base_gain = 0.8 }
             }
             if = {
                 limit = {
@@ -184,15 +190,9 @@ on_actions = {
             }
             if = {
                 limit = {
-                    has_idea = developed_stage
+                    has_idea = global_stage
                 }
-                set_variable = { free_factory_base_gain = 2 }
-            }
-            if = {
-                limit = {
-                    has_idea = regional_stage
-                }
-                set_variable = { free_factory_base_gain = 0.8 }
+                set_variable = { free_factory_base_gain = 0.2 }
             }
             clear_variable = free_factory_adjustment
             set_variable = { free_factory_adjustment = 1 }
@@ -203,55 +203,55 @@ on_actions = {
                         has_idea = flaking_society
                     }
                 }
-                subtract_from_variable = { free_factory_adjustment = 0.05 }
+                multiply_variable = { free_factory_adjustment = 0.95 }
             }
             if = {
                 limit = {
                     has_idea = crumbling_society
                 }
-                subtract_from_variable = { free_factory_adjustment = 0.2 }
+                multiply_variable = { free_factory_adjustment = 0.8 }
             }
             if = {
                 limit = {
                     has_idea = periphal_anarchy
                 }
-                subtract_from_variable = { free_factory_adjustment = 0.4 }
+                multiply_variable = { free_factory_adjustment = 0.6 }
             }
             if = {
                 limit = {
                     has_idea = urban_collapse
                 }
-                subtract_from_variable = { free_factory_adjustment = 0.6 }
+                multiply_variable = { free_factory_adjustment = 0.4 }
             }
             if = {
                 limit = {
                     has_idea = civilian_economy
                 }
-                add_to_variable = { free_factory_adjustment = 4 }
+                multiply_variable = { free_factory_adjustment = 4 }
             }
             if = {
                 limit = {
                     has_idea = low_economic_mobilisation
                 }
-                add_to_variable = { free_factory_adjustment = 2 }
+                multiply_variable = { free_factory_adjustment = 2 }
             }
             if = {
                 limit = {
                     has_idea = partial_economic_mobilisation
                 }
-                add_to_variable = { free_factory_adjustment = 0.5 }
+                multiply_variable = { free_factory_adjustment = 0.5 }
             }
             if = {
                 limit = {
                     has_idea = war_economy
                 }
-                subtract_from_variable = { free_factory_adjustment = 0.9 }
+                multiply_variable = { free_factory_adjustment = 0.1 }
             }
             if = {
                 limit = {
                     has_idea = tot_economic_mobilisation
                 }
-                subtract_from_variable = { free_factory_adjustment = 0.95 }
+                multiply_variable = { free_factory_adjustment = 0.01 }
             }
             #if = {
             #    limit = {
@@ -299,103 +299,103 @@ on_actions = {
                 limit = {
                     has_tech = corporate_model
                 }
-                add_to_variable = { free_factory_adjustment = 0.1 }
+                multiply_variable = { free_factory_adjustment = 1.1 }
             }
             if = {
                 limit = {
                     has_tech = corporate_model_II
                 }
-                add_to_variable = { free_factory_adjustment = 0.1 }
+                multiply_variable = { free_factory_adjustment = 1.1 }
             }
             if = {
                 limit = {
                     has_tech = corporate_model_III
                 }
-                add_to_variable = { free_factory_adjustment = 0.1 }
+                multiply_variable = { free_factory_adjustment = 1.1 }
             }
             if = {
                 limit = {
                     has_tech = corporate_model_IV
                 }
-                add_to_variable = { free_factory_adjustment = 0.1 }
+                multiply_variable = { free_factory_adjustment = 1.1 }
             }
             if = {
                 limit = {
                     has_tech = corporate_model_V
                 }
-                add_to_variable = { free_factory_adjustment = 0.1 }
+                multiply_variable = { free_factory_adjustment = 1.1 }
             }
             if = {
                 limit = {
                     has_idea = PUN_earths_gaping_wound
                 }
-                subtract_from_variable = { free_factory_adjustment = 1 }
+                multiply_variable = { free_factory_adjustment = 0.1 }
             }
             if = {
                 limit = {
                     has_idea = BNG_the_dam
                 }
-                subtract_from_variable = { free_factory_adjustment = 1 }
+                multiply_variable = { free_factory_adjustment = 0.1 }
             }
             if = {
                 limit = {
                     has_idea = KAV_delhi_super_slum
                 }
-                subtract_from_variable = { free_factory_adjustment = 0.25 }
+                multiply_variable = { free_factory_adjustment = 0.75 }
             }
             if = {
                 limit = {
                     has_idea = PER_humiliation
                 }
-                subtract_from_variable = { free_factory_adjustment = 0.2 }
+                multiply_variable = { free_factory_adjustment = 0.8 }
             }
             if = {
                 limit = {
                     has_idea = PER_winning_minds_not_hearts
                 }
-                subtract_from_variable = { free_factory_adjustment = 0.1 }
+                multiply_variable = { free_factory_adjustment = 0.9 }
             }
             if = {
                 limit = {
                     has_idea = PRU_the_lithium_business
                 }
-                add_to_variable = { free_factory_adjustment = 0.1 }
+                multiply_variable = { free_factory_adjustment = 1.1 }
             }
             if = {
 				limit = { 
                     has_idea = ENG_the_sick_man_of_britannia
                 }
-                add_to_variable = { free_factory_adjustment = -0.1 }
+                multiply_variable = { free_factory_adjustment = 0.9 }
 			}
             if = {
 				limit = { 
                     has_idea = JAP_hikaemena_dairiten
                 }
-                add_to_variable = { free_factory_adjustment = 0.2 }
+                multiply_variable = { free_factory_adjustment = 1.2 }
 			}
             if = {
 				limit = { 
                     has_idea = TRE_absence_of_civilization
                 }
-                add_to_variable = { free_factory_adjustment = -1 }
+                multiply_variable = { free_factory_adjustment = 0.1 }
 			}
             if = {
 				limit = { 
                     has_idea = CIN_last_bastion_of_american_prosperity
                 }
-                add_to_variable = { free_factory_adjustment = 0.1 }
+                multiply_variable = { free_factory_adjustment = 1.1 }
 			}
             if = {
                 limit = {
                     has_idea = uafs
                 }
-                add_to_variable = { free_factory_adjustment = 0.15 }
+                multiply_variable = { free_factory_adjustment = 1.15 }
             }
             if = {
                 limit = {
                     has_idea = KAZ_apple_asia
                 }
-                add_to_variable = { free_factory_adjustment = 0.05 }
+                multiply_variable = { free_factory_adjustment = 1.05 }
             }
             add_to_variable = { free_factory_gain = free_factory_base_gain }
             multiply_variable = { free_factory_gain = free_factory_adjustment }
