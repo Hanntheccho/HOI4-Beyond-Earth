@@ -6,9 +6,6 @@ NDefines.NGraphics.COUNTRY_FLAG_STRIPE_TEX_MAX_HEIGHT = 8196        -- VANILLA: 
 NDefines.NGraphics.COUNTRY_FLAG_TEX_MAX_SIZE = 2048                   -- VANILLA: 256
 NDefines.NGame.HANDS_OFF_START_TAG = "GRN"
 
-NDefines.NDiplomacy.NAP_EXPIRY_MONTHS = 24                         -- Vanilla: 48
-NDefines.NDiplomacy.DIPLOMACY_HOURS_BETWEEN_REQUESTS = 12            -- Vanilla: 24
-NDefines.NDiplomacy.VOLUNTEERS_TRANSFER_SPEED = 7                   -- Vanilla: 14
 NDefines.NDiplomacy.TENSION_STATE_VALUE = 0                            -- Vanilla: 2
 NDefines.NDiplomacy.TENSION_NO_CB_WAR = 0                            -- Vanilla: 15
 NDefines.NDiplomacy.TENSION_CB_WAR = 0                              -- Vanilla: 5
@@ -33,21 +30,11 @@ NDefines.NDiplomacy.TENSION_RESOURCE_RIGHTS = 0                           -- Van
 NDefines.NDiplomacy.TENSION_DISMANTLE_INDUSTRY = 0                           -- Vanilla: 0.25
 NDefines.NDiplomacy.TENSION_CAPITULATE = 0                           -- Vanilla: 0.75
 
-
 NDefines.NDiplomacy.AUTONOMY_LEVEL_CHANGE_PP_ANNEX = 6969
 NDefines.NDiplomacy.AUTONOMY_LEVEL_CHANGE_PP_FREE = 6969
 
-NDefines.NCountry.POPULATION_YEARLY_GROWTH_BASE = 0.045           -- Vanilla: 0.015
-NDefines.NCountry.SUPPLY_BASE_MULT = 3                          -- Vanilla: 1
-NDefines.NCountry.NUCLEAR_PRODUCTION_SCALE = 210                 -- Vanilla: 365
-NDefines.NCountry.MIN_STABILITY = -1.0                          -- Vanilla: 0
-NDefines.NResistance.COMPLIANCE_GROWTH_BASE = 0.125                -- Vanilla: 0.075
-NDefines.NResistance.RESISTANCE_GROWTH_BASE = 0.4                -- Vanilla: 0.2
-NDefines.NProduction.BASE_FACTORY_SPEED = 8                    -- Vanilla: 5
-NDefines.NProduction.BASE_FACTORY_SPEED_MIL = 6                 -- Vanilla: 4.5
-NDefines.NProduction.BASE_FACTORY_SPEED_NAV = 4                   -- Vanilla: 2.5
-
-NDefines.NDiplomacy.BASE_IMPROVE_RELATION_DIFFERENT_IDEOLOGY_GROUP_MAINTAIN_COST = 0.2
+NDefines.NCountry.POPULATION_YEARLY_GROWTH_BASE = 0.005           -- Vanilla: 0.015
+NDefines.NCountry.SUPPLY_BASE_MULT = 10                          -- Vanilla: 1
 
 NDefines.NDiplomacy.WARGOAL_JUSTIFY_TENSION_FROM_PRODUCTION = 0
 
@@ -58,7 +45,7 @@ NDefines.NAI.ENEMY_NAVY_STRENGTH_DONT_BOTHER = 10.0     -- Vanilla: 1.9
 NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE = 0.01           -- Vanilla: 0.09
 NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE_DEFENSIVE = 0.01   -- Vanilla: 0.1
 
-NDefines.NAI.MAX_DISTANCE_NALAV_INVASION = 400.0                   -- Vanilla: 200.0
+NDefines.NAI.MAX_DISTANCE_NAVAL_INVASION = 400.0                   -- Vanilla: 200.0
 NDefines.NAI.MAX_UNIT_RATIO_FOR_INVASIONS = 1.0               -- Vanilla: 0.3
 NDefines.NAI.MIN_UNIT_RATIO_FOR_INVASIONS = 1.0              -- Vanilla: 0.1
 NDefines.NAI.MIN_INVASION_PLAN_VALUE_TO_EXECUTE = 0.02          -- Vanilla: 0.2
