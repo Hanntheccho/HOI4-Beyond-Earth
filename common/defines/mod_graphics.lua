@@ -1,3 +1,4 @@
+NDefines_Graphics.NFrontend.CAMERA_MIN_HEIGHT = 50.0
 NDefines_Graphics.NFrontend.CAMERA_MAX_HEIGHT = 3300.0
 
 NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_PROVINCE_R = 0.3
