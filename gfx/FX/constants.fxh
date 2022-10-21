@@ -145,10 +145,10 @@ static const float  WATER_HEIGHT_RECP_SQUARED = WATER_HEIGHT_RECP * WATER_HEIGHT
 // ------------------    FOG            -------------------------
 // --------------------------------------------------------------
 
-static const float3 FOG_COLOR 					= float3( 0.12, 0.28, 0.6 );
+static const float3 FOG_COLOR 					= float3( 0.0, 0.0, 0.0 );
 static const float 	FOG_BEGIN					= 1.0f;
 static const float 	FOG_END 					= 150.0f;
-static const float 	FOG_MAX 					= 0.35f; 
+static const float 	FOG_MAX 					= 0.25f; 
 
 //static const float 	FOG_MAX 					= 1000.7f;
 
@@ -191,7 +191,7 @@ static const float  SHADOW_WEIGHT_TREE   		= 0.7f;
 static const float GB_CAM_MIN = 0.0f;
 static const float GB_CAM_MAX = 1.0f;
 static const float GB_CAM_MAX_FILLING_CLAMP = 1.0f; // 0 to 1 value for clamping the fill when camera is at max distance
-static const float GB_THRESHOLD = 0.05f; // interpolation time
+static const float GB_THRESHOLD = 0.01f; // interpolation time
 static const float GB_THRESHOLD2 = 0.25f; // interpolation time
 //static const float3 GB_OUTLINE_COLOR = float3( 0.0f, 0.0f, 0.0f );
 static const float GB_OUTLINE_CUTOFF_SEA = 0.990f; // Magic number to balance cutoff on edges without neighbor (over Sea)
