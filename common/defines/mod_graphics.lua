@@ -1,5 +1,8 @@
 NDefines_Graphics.NFrontend.CAMERA_MIN_HEIGHT = 50.0
-NDefines_Graphics.NFrontend.CAMERA_MAX_HEIGHT = 3300.0
+NDefines_Graphics.NFrontend.CAMERA_MAX_HEIGHT = 2800.0
+
+NDefines_Graphics.NGraphics.CAMERA_OUTSIDE_MAP_DISTANCE_TOP = 0.0
+NDefines_Graphics.NGraphics.CAMERA_OUTSIDE_MAP_DISTANCE_BOTTOM = 0.0
 
 NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_PROVINCE_R = 0.3
 NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_PROVINCE_G = 0.5
