@@ -218,7 +218,9 @@ guiTypes = {
 					
 					background = {
 						name = "Background"
-						quadTextureSprite ="GFX_tiled_bg_black"
+						quadTextureSprite ="GFX_tiled_invisible" #"GFX_tiled_bg_black"
+						#
+						alwaystransparent = yes
 					}
 					
 					instantTextboxType = {
@@ -246,7 +248,7 @@ guiTypes = {
 					
 					containerWindowType = {
 						name = "focus_progress_window"
-						position = { x=180 y=0 }
+						position = { x=180 y=-1000 }
 						size = { width=395 height=67 }
 						clipping = no
 
@@ -286,8 +288,9 @@ guiTypes = {
 						
 						background = {
 							name = "Background"
-							spriteType ="GFX_tiled_bg"
-							alwaystransparent = no
+							spriteType ="GFX_tiled_invisible" #"GFX_tiled_bg"
+							#
+							alwaystransparent = yes
 						} 
 						
 						gridBoxType = {
@@ -414,14 +417,15 @@ guiTypes = {
 		
 		buttonType = {
 			name = "close_button"
-			position = { x = -54 y = 3 }
+			position = { x = -58 y = 3 }
 			quadTextureSprite ="GFX_exit_button_left"
 			buttonFont = "Main_14_black"
 			shortcut = "ESCAPE"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			pdx_tooltip = "CLOSE"
-			scale = 0.9
+			#scale = 0.9
+			shortcut = "ESCAPE"
 		}
 	}
 
