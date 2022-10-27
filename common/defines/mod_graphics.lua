@@ -1,4 +1,4 @@
-NDefines_Graphics.NFrontend.CAMERA_MIN_HEIGHT = 50.0
+NDefines_Graphics.NFrontend.CAMERA_MIN_HEIGHT = 25.0
 NDefines_Graphics.NFrontend.CAMERA_MAX_HEIGHT = 2800.0
 
 NDefines_Graphics.NGraphics.SUN_LATITUDE = 0
