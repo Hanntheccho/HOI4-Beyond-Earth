@@ -185,13 +185,13 @@ focus_tree = {
 			ITA = {
 				add_timed_idea = {
 					idea = FRA_franco_iberian_imports
-					days = 174
+					days = 204
 				}
 			}
 			PAD = {
 				add_timed_idea = {
 					idea = FRA_franco_iberian_imports
-					days = 87
+					days = 107
 				}
 			}
 			GRE = {
@@ -203,43 +203,43 @@ focus_tree = {
 			YUG = {
 				add_timed_idea = {
 					idea = FRA_franco_iberian_imports
-					days = 50
+					days = 90
 				}
 			}
 			TUR = {
 				add_timed_idea = {
 					idea = FRA_franco_iberian_imports
-					days = 149
+					days = 169
 				}
 			}
 			EGY = {
 				add_timed_idea = {
 					idea = FRA_franco_iberian_imports
-					days = 184
+					days = 194
 				}
 			}
 			LBA = {
 				add_timed_idea = {
 					idea = FRA_franco_iberian_imports
-					days = 43
+					days = 53
 				}
 			}
 			SYR = {
 				add_timed_idea = {
 					idea = FRA_franco_iberian_imports
-					days = 76
+					days = 96
 				}
 			}
 			PAL = {
 				add_timed_idea = {
 					idea = FRA_franco_iberian_imports
-					days = 23
+					days = 33
 				}
 			}
 			ISR = {
 				add_timed_idea = {
 					idea = FRA_franco_iberian_imports
-					days = 20
+					days = 40
 				}
 			}
 		}
@@ -282,7 +282,11 @@ focus_tree = {
 
 		cost = 5
 
-		bypass_if_unavailable = yes
+		bypass = {
+			TUN = {
+				exists = no
+			}
+		}
 
 		available = {
 			country_exists = TUN
@@ -330,7 +334,11 @@ focus_tree = {
 
 		cost = 5
 
-		bypass_if_unavailable = yes
+		bypass = {
+			TUN = {
+				exists = no
+			}
+		}
 
 		available = {
 			country_exists = TUN
@@ -543,7 +551,17 @@ focus_tree = {
 
 		cost = 5
 
-		bypass_if_unavailable = yes
+		bypass = {
+			TUN = {
+				exists = no
+			}
+			WES = {
+				exists = no
+			}
+			ALG = {
+				exists = no
+			}
+		}
 
 		will_lead_to_war_with = ALG
 		will_lead_to_war_with = WES
@@ -585,10 +603,9 @@ focus_tree = {
 			factor = 0
 			modifier = {
 				add = 10
-				OR = {
-					has_country_flag = FRA_WES_resistance_pact
-					has_country_flag = FRA_ALG_resistance_pact
-				} 
+				NOT = {
+					has_war_with = TUN
+				}
 			}
 		}
 	}
