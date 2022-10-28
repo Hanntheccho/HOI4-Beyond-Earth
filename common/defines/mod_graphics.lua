@@ -3,6 +3,9 @@ NDefines_Graphics.NFrontend.CAMERA_MAX_HEIGHT = 2800.0
 
 NDefines_Graphics.NGraphics.SUN_LATITUDE = 0
 
+NDefines_Graphics.NGraphics.MIN_TRAIN_WAGON_COUNT = 1
+NDefines_Graphics.NGraphics.MAX_TRAIN_WAGON_COUNT = 1
+
 NDefines_Graphics.NGraphics.CAMERA_OUTSIDE_MAP_DISTANCE_TOP = 0.0
 NDefines_Graphics.NGraphics.CAMERA_OUTSIDE_MAP_DISTANCE_BOTTOM = 0.0
 
