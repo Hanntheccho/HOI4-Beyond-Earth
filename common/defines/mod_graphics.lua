@@ -1,6 +1,11 @@
 NDefines_Graphics.NFrontend.CAMERA_MIN_HEIGHT = 25.0
 NDefines_Graphics.NFrontend.CAMERA_MAX_HEIGHT = 2800.0
 
+NDefines_Graphics.NSound.HEIGHT_SOUND_MIN_ALTITUDE = 30.0
+NDefines_Graphics.NSound.HEIGHT_SOUND_MAX_ALTITUDE = 300.0
+NDefines_Graphics.NSound.HEIGHT_SOUND_MIN_VOLUME = 0.7
+NDefines_Graphics.NSound.HEIGHT_SOUND_MAX_VOLUME = 0.1
+
 NDefines_Graphics.NGraphics.SUN_LATITUDE = 0
 
 NDefines_Graphics.NGraphics.MIN_TRAIN_WAGON_COUNT = 1

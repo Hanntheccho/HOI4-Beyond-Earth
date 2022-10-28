@@ -71,6 +71,11 @@ focus_tree = {
 
 		cost = 5
 
+		prerequisite = {
+			focus = FRA_with_elodie
+			focus = FRA_with_alhakim
+		}
+
 		available = {
 			has_country_flag = FRA_election_ended
 		}
@@ -113,7 +118,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 	
 		x = 5
-		y = 3
+		y = 2
 
 		cost = 5
 
@@ -277,6 +282,8 @@ focus_tree = {
 
 		cost = 5
 
+		bypass_if_unavailable = yes
+
 		available = {
 			country_exists = TUN
 			has_equipment = {
@@ -322,6 +329,8 @@ focus_tree = {
 		y = 4
 
 		cost = 5
+
+		bypass_if_unavailable = yes
 
 		available = {
 			country_exists = TUN
@@ -395,6 +404,8 @@ focus_tree = {
 
 		cost = 5
 
+		bypass_if_unavailable = yes
+
 		available = {
 			country_exists = TUN
 		}
@@ -416,10 +427,12 @@ focus_tree = {
 		id = FRA_war_in_maghreb
 		icon = GFX_goal_unknown
 	
-		x = 5
-		y = 6
+		x = 7
+		y = 3
 
 		cost = 5
+
+		bypass_if_unavailable = yes
 
 		will_lead_to_war_with = TUN
 
@@ -494,9 +507,77 @@ focus_tree = {
 					}
 				}
 			}
+			TUN = {
+				every_core_state = {
+					add_claim_by = FRA
+				}
+			}
 			declare_war_on = {
 				target = TUN
 				type = puppet_wargoal_focus
+			}
+		}
+	
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				OR = {
+					has_country_flag = FRA_WES_resistance_pact
+					has_country_flag = FRA_ALG_resistance_pact
+				} 
+			}
+			modifier = {
+				add = 10
+				has_country_flag = FRA_WES_resistance_pact
+				has_country_flag = FRA_ALG_resistance_pact
+			}
+		}
+	}
+	focus = {
+		id = FRA_end_africa_rebellion
+		icon = GFX_goal_unknown
+	
+		x = 5
+		y = 6
+
+		cost = 5
+
+		bypass_if_unavailable = yes
+
+		will_lead_to_war_with = ALG
+		will_lead_to_war_with = WES
+
+		prerequisite = {
+			focus = FRA_promise_resistance_groups_ALG
+			focus = FRA_promise_resistance_groups_WES
+		}
+
+		available = {
+			OR = {
+				country_exists = WES
+				country_exists = ALG
+			}
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = WES
+				}
+				declare_war_on = {
+					target = WES
+					type = puppet_wargoal_focus
+				}
+			}
+			if = {
+				limit = {
+					country_exists = ALG
+				}
+				declare_war_on = {
+					target = ALG
+					type = puppet_wargoal_focus
+				}
 			}
 		}
 	
@@ -509,6 +590,59 @@ focus_tree = {
 					has_country_flag = FRA_ALG_resistance_pact
 				} 
 			}
+		}
+	}
+	focus = {
+		id = FRA_reorganize_north_africa
+		icon = GFX_goal_unknown
+	
+		x = 5
+		y = 7
+
+		cost = 5
+
+		prerequisite = {
+			focus = FRA_end_africa_rebellion
+		}
+
+		available = {
+			TUN = {
+				all_core_state = {
+					is_owned_and_controlled_by = FRA
+				}
+			}
+		}
+		
+		completion_reward = {
+			release_puppet = TUN
+			TUN = {
+				if = {
+					limit = {
+						has_idea = TUN_wes_alg_resistance
+					}
+					remove_ideas = TUN_wes_alg_resistance
+				}
+				if = {
+					limit = {
+						has_idea = TUN_wes_alg_resistance_2
+					}
+					remove_ideas = TUN_wes_alg_resistance_2
+				}
+				if = {
+					limit = {
+						has_idea = TUN_wes_alg_resistance_3
+					}
+					remove_ideas = TUN_wes_alg_resistance_3
+				}
+			}
+			transfer_state = 240
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_political_power = 50
+		}
+	
+		ai_will_do = {
+			factor = 100
 		}
 	}
 
