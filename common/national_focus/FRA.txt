@@ -176,70 +176,125 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			TUN = {
-				add_timed_idea = {
-					idea = FRA_franco_iberian_imports
-					days = 262
+			if = {
+				limit = {
+					country_exists = TUN
+				}
+				TUN = {
+					add_timed_idea = {
+						idea = FRA_franco_iberian_imports
+						days = 262
+					}
 				}
 			}
-			ITA = {
-				add_timed_idea = {
-					idea = FRA_franco_iberian_imports
-					days = 204
+			if = {
+				limit = {
+					country_exists = ITA
+				}
+				ITA = {
+					add_timed_idea = {
+						idea = FRA_franco_iberian_imports
+						days = 262
+					}
 				}
 			}
-			PAD = {
-				add_timed_idea = {
-					idea = FRA_franco_iberian_imports
-					days = 107
+			if = {
+				limit = {
+					country_exists = PAD
+				}
+				PAD = {
+					add_timed_idea = {
+						idea = FRA_franco_iberian_imports
+						days = 262
+					}
 				}
 			}
-			GRE = {
-				add_timed_idea = {
-					idea = FRA_franco_iberian_imports
-					days = 75
+			if = {
+				limit = {
+					country_exists = GRE
+				}
+				GRE = {
+					add_timed_idea = {
+						idea = FRA_franco_iberian_imports
+						days = 262
+					}
 				}
 			}
-			YUG = {
-				add_timed_idea = {
-					idea = FRA_franco_iberian_imports
-					days = 90
+			if = {
+				limit = {
+					country_exists = YUG
+				}
+				YUG = {
+					add_timed_idea = {
+						idea = FRA_franco_iberian_imports
+						days = 262
+					}
 				}
 			}
-			TUR = {
-				add_timed_idea = {
-					idea = FRA_franco_iberian_imports
-					days = 169
+			if = {
+				limit = {
+					country_exists = TUR
+				}
+				TUR = {
+					add_timed_idea = {
+						idea = FRA_franco_iberian_imports
+						days = 262
+					}
 				}
 			}
-			EGY = {
-				add_timed_idea = {
-					idea = FRA_franco_iberian_imports
-					days = 194
+			if = {
+				limit = {
+					country_exists = EGY
+				}
+				EGY = {
+					add_timed_idea = {
+						idea = FRA_franco_iberian_imports
+						days = 262
+					}
 				}
 			}
-			LBA = {
-				add_timed_idea = {
-					idea = FRA_franco_iberian_imports
-					days = 53
+			if = {
+				limit = {
+					country_exists = LBA
+				}
+				LBA = {
+					add_timed_idea = {
+						idea = FRA_franco_iberian_imports
+						days = 262
+					}
 				}
 			}
-			SYR = {
-				add_timed_idea = {
-					idea = FRA_franco_iberian_imports
-					days = 96
+			if = {
+				limit = {
+					country_exists = SYR
+				}
+				SYR = {
+					add_timed_idea = {
+						idea = FRA_franco_iberian_imports
+						days = 262
+					}
 				}
 			}
-			PAL = {
-				add_timed_idea = {
-					idea = FRA_franco_iberian_imports
-					days = 33
+			if = {
+				limit = {
+					country_exists = PAL
+				}
+				PAL = {
+					add_timed_idea = {
+						idea = FRA_franco_iberian_imports
+						days = 262
+					}
 				}
 			}
-			ISR = {
-				add_timed_idea = {
-					idea = FRA_franco_iberian_imports
-					days = 40
+			if = {
+				limit = {
+					country_exists = ISR
+				}
+				ISR = {
+					add_timed_idea = {
+						idea = FRA_franco_iberian_imports
+						days = 262
+					}
 				}
 			}
 		}
@@ -522,7 +577,7 @@ focus_tree = {
 			}
 			declare_war_on = {
 				target = TUN
-				type = puppet_wargoal_focus
+				type = annex_everything
 			}
 		}
 	
@@ -585,7 +640,7 @@ focus_tree = {
 				}
 				declare_war_on = {
 					target = WES
-					type = puppet_wargoal_focus
+					type = annex_everything
 				}
 			}
 			if = {
@@ -594,7 +649,7 @@ focus_tree = {
 				}
 				declare_war_on = {
 					target = ALG
-					type = puppet_wargoal_focus
+					type = annex_everything
 				}
 			}
 		}
@@ -632,26 +687,6 @@ focus_tree = {
 		
 		completion_reward = {
 			release_puppet = TUN
-			TUN = {
-				if = {
-					limit = {
-						has_idea = TUN_wes_alg_resistance
-					}
-					remove_ideas = TUN_wes_alg_resistance
-				}
-				if = {
-					limit = {
-						has_idea = TUN_wes_alg_resistance_2
-					}
-					remove_ideas = TUN_wes_alg_resistance_2
-				}
-				if = {
-					limit = {
-						has_idea = TUN_wes_alg_resistance_3
-					}
-					remove_ideas = TUN_wes_alg_resistance_3
-				}
-			}
 			transfer_state = 240
 			add_stability = 0.05
 			add_war_support = 0.05
@@ -662,5 +697,452 @@ focus_tree = {
 			factor = 100
 		}
 	}
+	#ITALY-PADANIA
+	focus = {
+		id = FRA_our_closest_friend
+		icon = GFX_goal_unknown
+	
+		x = 10
+		y = 2
 
+		cost = 5
+
+		prerequisite = {
+			focus = FRA_franco_elections
+		}
+
+		available = {
+			country_exists = PAD
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = purity
+				}
+				PAD = {
+					swap_ideas = {
+						remove_idea = PAD_fi_tension
+						add_idea = PAD_fi_tension_good
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_government = mastery
+				}
+				PAD = {
+					swap_ideas = {
+						remove_idea = PAD_fi_tension
+						add_idea = PAD_fi_tension_bad
+					}
+				}
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_defense_joint_design
+		icon = GFX_goal_unknown
+	
+		x = 9
+		y = 3
+
+		cost = 5
+
+		prerequisite = {
+			focus = FRA_our_closest_friend
+		}
+
+		available = {
+			country_exists = PAD
+			country_exists = ITA
+		}
+		
+		completion_reward = {
+			add_to_variable = {
+				FRA_pad_ita_annexation_rng = 20
+			}
+			add_timed_idea = {
+				idea = FRA_italo_padanian_expenditures
+				days = 200
+			}
+			if = {
+				limit = {
+					has_government = purity
+				}
+				313 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 4746
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 4729
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_government = mastery
+				}
+				334 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 4831
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 4817
+					}
+				}
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_send_arm_industry
+		icon = GFX_goal_unknown
+	
+		x = 11
+		y = 3
+
+		cost = 5
+
+		prerequisite = {
+			focus = FRA_our_closest_friend
+		}
+
+		available = {
+			country_exists = PAD
+			country_exists = ITA
+		}
+		
+		completion_reward = {
+			add_to_variable = {
+				FRA_pad_ita_annexation_rng = 20
+			}
+			add_timed_idea = {
+				idea = FRA_italo_padanian_expenditures_2
+				days = 200
+			}
+			if = {
+				limit = {
+					has_government = purity
+				}
+				PAD = {
+					capital_scope = {
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_government = mastery
+				}
+				ITA = {
+					capital_scope = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = arms_factory
+							level = 3
+						}
+					}
+				}
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_join_the_fight
+		icon = GFX_goal_unknown
+
+		x = 10
+		y = 4
+
+		cost = 5
+
+		bypass = {
+			OR = {
+				NOT = {
+					country_exists = PAD
+				}
+				NOT = {
+					country_exists = ITA
+				}
+			}
+		}
+
+		prerequisite = {
+			focus = FRA_our_closest_friend
+		}
+
+		available = {
+			ITA = {
+				has_war_with = PAD
+			}
+			NOT = {
+				FRA = {
+					has_war_together_with = PAD
+				}
+			}
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = purity
+				}
+				add_to_faction = PAD
+				add_to_war = {
+					targeted_alliance = PAD
+					enemy = ITA
+				}
+			}
+			if = {
+				limit = {
+					has_government = mastery
+				}
+				add_to_faction = ITA
+				add_to_war = {
+					targeted_alliance = ITA
+					enemy = PAD
+				}
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_war_reparations_help
+		icon = GFX_goal_unknown
+
+		x = 10
+		y = 5
+
+		cost = 5
+
+		prerequisite = {
+			focus = FRA_join_the_fight
+		}
+
+		available = {
+			if = {
+				limit = {
+					has_government = purity
+				}
+				NOT = {
+					country_exists = ITA
+				}
+			}
+			if = {
+				limit = {
+					has_government = mastery
+				}
+				NOT = {
+					country_exists = PAD
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_to_variable = {
+				FRA_pad_ita_annexation_rng = 20
+			}
+			add_timed_idea = {
+				idea = FRA_italo_padanian_expenditures_2
+				days = 200
+			}
+			if = {
+				limit = {
+					has_government = purity
+				}
+				PAD = {
+					random_owned_state = {
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = industrial_complex
+							level = 2
+						}
+					}
+					random_owned_state = {
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = industrial_complex
+							level = 2
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_government = mastery
+				}
+				ITA = {
+					random_owned_state = {
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = industrial_complex
+							level = 2
+						}
+					}
+					random_owned_state = {
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = industrial_complex
+							level = 2
+						}
+					}
+				}
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_technology_sharing
+		icon = GFX_goal_unknown
+	
+		x = 11
+		y = 6
+
+		cost = 5
+
+		prerequisite = {
+			focus = FRA_war_reparations_help
+		}
+
+		available = {
+			if = {
+				limit = {
+					has_government = purity
+				}
+				country_exists = PAD
+			}
+			if = {
+				limit = {
+					has_government = mastery
+				}
+				country_exists = ITA
+			}
+		}
+		
+		completion_reward = {
+			add_to_variable = {
+				FRA_pad_ita_annexation_rng = 20
+			}
+			if = {
+				limit = {
+					has_government = purity
+				}
+				PAD = {
+					inherit_technology = FRA
+				}
+			}
+			if = {
+				limit = {
+					has_government = mastery
+				}
+				ITA = {
+					inherit_technology = FRA
+				}
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_mare_nostrum
+		icon = GFX_goal_unknown
+
+		x = 10
+		y = 7
+
+		cost = 5
+
+		prerequisite = {
+			focus = FRA_war_reparations_help
+		}
+
+		available = {
+			if = {
+				limit = {
+					has_government = purity
+				}
+				NOT = {
+					country_exists = ITA
+				}
+			}
+			if = {
+				limit = {
+					has_government = mastery
+				}
+				NOT = {
+					country_exists = PAD
+				}
+			}
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = purity
+				}
+				random_list = {
+					var.FRA_pad_ita_annexation_rng = {
+						puppet = PAD
+					}
+					100 = {
+						#
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_government = mastery
+				}
+				random_list = {
+					var.FRA_pad_ita_annexation_rng = {
+						puppet = ITA
+					}
+					100 = {
+						#
+					}
+				}
+			}
+		}
+	
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 100
+				check_variable = {
+					FRA_pad_ita_annexation_rng > 100
+				}
+			}
+		}
+	}
 }
