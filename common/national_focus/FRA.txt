@@ -111,13 +111,42 @@ focus_tree = {
 			factor = 1
 		}
 	}
+	#PARIS-MADRID
+	focus = {
+		id = FRA_paris_madrid_highway
+		icon = GFX_goal_unknown
+	
+		x = 7
+		y = 2
+
+		cost = 5
+
+		prerequisite = {
+			focus = FRA_franco_elections
+		}
+		
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 50
+			build_railway = {
+				level = 5
+				build_only_on_allied = yes
+				start_province = 4251
+				target_province = 3857
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
 	#MEDITERRANEAN STUFF
 	focus = {
 		id = FRA_matters_of_the_mediterranean
 		icon = GFX_goal_unknown
 	
-		x = 5
+		x = 4
 		y = 2
 
 		cost = 5
@@ -138,7 +167,7 @@ focus_tree = {
 		id = FRA_mediterranean_trade_open
 		icon = GFX_goal_unknown
 	
-		x = 2
+		x = 1
 		y = 3
 
 		cost = 5
@@ -166,7 +195,7 @@ focus_tree = {
 		id = FRA_partnership_deals
 		icon = GFX_goal_unknown
 	
-		x = 2
+		x = 1
 		y = 4
 
 		cost = 5
@@ -307,7 +336,7 @@ focus_tree = {
 		id = FRA_partnership_benefits
 		icon = GFX_goal_unknown
 	
-		x = 2
+		x = 1
 		y = 5
 
 		cost = 5
@@ -332,7 +361,7 @@ focus_tree = {
 		id = FRA_contact_resistance_groups
 		icon = GFX_goal_unknown
 	
-		x = 5
+		x = 4
 		y = 3
 
 		cost = 5
@@ -384,7 +413,7 @@ focus_tree = {
 		id = FRA_armed_resistance_groups
 		icon = GFX_goal_unknown
 	
-		x = 5
+		x = 4
 		y = 4
 
 		cost = 5
@@ -436,7 +465,7 @@ focus_tree = {
 		id = FRA_promise_resistance_groups_WES
 		icon = GFX_goal_unknown
 	
-		x = 6
+		x = 5
 		y = 5
 
 		cost = 5
@@ -462,7 +491,7 @@ focus_tree = {
 		id = FRA_promise_resistance_groups_ALG
 		icon = GFX_goal_unknown
 	
-		x = 4
+		x = 3
 		y = 5
 
 		cost = 5
@@ -490,7 +519,7 @@ focus_tree = {
 		id = FRA_war_in_maghreb
 		icon = GFX_goal_unknown
 	
-		x = 7
+		x = 6
 		y = 3
 
 		cost = 5
@@ -601,7 +630,7 @@ focus_tree = {
 		id = FRA_end_africa_rebellion
 		icon = GFX_goal_unknown
 	
-		x = 5
+		x = 4
 		y = 6
 
 		cost = 5
@@ -668,7 +697,7 @@ focus_tree = {
 		id = FRA_reorganize_north_africa
 		icon = GFX_goal_unknown
 	
-		x = 5
+		x = 4
 		y = 7
 
 		cost = 5
@@ -706,6 +735,8 @@ focus_tree = {
 		y = 2
 
 		cost = 5
+
+		bypass_if_unavailable = yes
 
 		prerequisite = {
 			focus = FRA_franco_elections
@@ -906,6 +937,9 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			add_to_variable = {
+				FRA_pad_ita_annexation_rng = 20
+			}
 			if = {
 				limit = {
 					has_government = purity
@@ -936,7 +970,7 @@ focus_tree = {
 		id = FRA_war_reparations_help
 		icon = GFX_goal_unknown
 
-		x = 10
+		x = 9
 		y = 5
 
 		cost = 5
@@ -953,6 +987,7 @@ focus_tree = {
 				NOT = {
 					country_exists = ITA
 				}
+				country_exists = PAD
 			}
 			if = {
 				limit = {
@@ -961,6 +996,7 @@ focus_tree = {
 				NOT = {
 					country_exists = PAD
 				}
+				country_exists = ITA
 			}
 		}
 		
@@ -969,7 +1005,7 @@ focus_tree = {
 				FRA_pad_ita_annexation_rng = 20
 			}
 			add_timed_idea = {
-				idea = FRA_italo_padanian_expenditures_2
+				idea = FRA_italo_padanian_expenditures_3
 				days = 200
 			}
 			if = {
@@ -1025,12 +1061,12 @@ focus_tree = {
 		icon = GFX_goal_unknown
 	
 		x = 11
-		y = 6
+		y = 5
 
 		cost = 5
 
 		prerequisite = {
-			focus = FRA_war_reparations_help
+			focus = FRA_join_the_fight
 		}
 
 		available = {
@@ -1038,11 +1074,17 @@ focus_tree = {
 				limit = {
 					has_government = purity
 				}
+				NOT = {
+					country_exists = ITA
+				}
 				country_exists = PAD
 			}
 			if = {
 				limit = {
 					has_government = mastery
+				}
+				NOT = {
+					country_exists = PAD
 				}
 				country_exists = ITA
 			}
@@ -1050,7 +1092,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_to_variable = {
-				FRA_pad_ita_annexation_rng = 20
+				FRA_pad_ita_annexation_rng = 40
 			}
 			if = {
 				limit = {
@@ -1075,16 +1117,159 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = FRA_mare_nostrum
+		id = FRA_astro_civilian_investment
 		icon = GFX_goal_unknown
-
-		x = 10
-		y = 7
+	
+		x = 13
+		y = 5
 
 		cost = 5
 
 		prerequisite = {
-			focus = FRA_war_reparations_help
+			focus = FRA_join_the_fight
+		}
+
+		available = {
+			if = {
+				limit = {
+					has_government = purity
+				}
+				NOT = {
+					country_exists = ITA
+				}
+				country_exists = PAD
+			}
+			if = {
+				limit = {
+					has_government = mastery
+				}
+				NOT = {
+					country_exists = PAD
+				}
+				country_exists = ITA
+			}
+		}
+		
+		completion_reward = {
+			add_to_variable = {
+				FRA_pad_ita_annexation_rng = 30
+			}
+			add_timed_idea = {
+				idea = FRA_italo_padanian_expenditures_4
+				days = 200
+			}
+			if = {
+				limit = {
+					has_government = purity
+				}
+				PAD = {
+					random_owned_state = {
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = spaceship_factory
+							level = 1
+						}
+					}
+					random_owned_state = {
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = spaceship_factory
+							level = 1
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_government = mastery
+				}
+				ITA = {
+					random_owned_state = {
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = spaceship_factory
+							level = 1
+						}
+					}
+					random_owned_state = {
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = spaceship_factory
+							level = 1
+						}
+					}
+				}				
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_paris_rome_highway
+		icon = GFX_goal_unknown
+	
+		x = 7
+		y = 5
+
+		cost = 5
+
+		prerequisite = {
+			focus = FRA_join_the_fight
+		}
+
+		available = {
+			if = {
+				limit = {
+					has_government = purity
+				}
+				NOT = {
+					country_exists = ITA
+				}
+				country_exists = PAD
+			}
+			if = {
+				limit = {
+					has_government = mastery
+				}
+				NOT = {
+					country_exists = PAD
+				}
+				country_exists = ITA
+			}
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = FRA_italo_padanian_expenditures_5
+				days = 200
+			}
+			add_to_variable = {
+				FRA_pad_ita_annexation_rng = 20
+			}
+			build_railway = {
+				level = 5
+				start_province = 4251
+				target_province = 5209
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_mare_nostrum
+		icon = GFX_goal_unknown
+
+		x = 10
+		y = 6
+
+		cost = 5
+
+		prerequisite = {
+			focus = FRA_join_the_fight
 		}
 
 		available = {
@@ -1107,16 +1292,22 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			custom_effect_tooltip = FRA_mare_nostrum_tt
 			if = {
 				limit = {
 					has_government = purity
 				}
 				random_list = {
-					var.FRA_pad_ita_annexation_rng = {
+					var:FRA_pad_ita_annexation_rng = {
 						puppet = PAD
 					}
-					100 = {
-						#
+					25 = {
+						custom_effect_tooltip = FRA_mare_nostrum_tttt
+						hidden_effect = {
+							declare_war_on = {
+								target = PAD
+							}
+						}
 					}
 				}
 			}
@@ -1125,11 +1316,16 @@ focus_tree = {
 					has_government = mastery
 				}
 				random_list = {
-					var.FRA_pad_ita_annexation_rng = {
+					var:FRA_pad_ita_annexation_rng = {
 						puppet = ITA
 					}
-					100 = {
-						#
+					25 = {
+						custom_effect_tooltip = FRA_mare_nostrum_tttt
+						hidden_effect = {
+							declare_war_on = {
+								target = PAD
+							}
+						}
 					}
 				}
 			}
