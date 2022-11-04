@@ -7,9 +7,9 @@ guiTypes = {
 
 	containerWindowType =  {
 		name = "MapmodesInterface_Ingame"
-		position = { x=-631 y=-244 }
+		position = { x=-631 y=-44 }
 		size = { width=314 height=31 }
-		Orientation = lower_RIGHT
+		Orientation = UPPER_RIGHT
 
 		containerWindowType = {
 			name = "social_view_interface_window"
@@ -58,14 +58,8 @@ guiTypes = {
 
 		iconType = {
 			name ="map_modes_bg"
-			spriteType = "GFX_map_modes_bg"
-			position = { x=460 y = -25 }
-		}
-
-		iconType = {
-			name = "map_modes_bottom_bg"
-			spriteType = "GFX_map_modes_bottom_bg"
-			position = { x=10000 y = 190 }
+			spriteType = "GFX_armyoverview_buttons_bg"
+			position = { x=110 y = 78 }
 		}
 		
 		buttonType = {
@@ -80,9 +74,11 @@ guiTypes = {
 		# All Map Modes button
 		buttonType = {
 			name = "mapmodes_all"
-			position = { x=478 y=-5 }
-			quadTextureSprite ="GFX_mapmode_button_all"
+			position = { x=170 y=90 }
+			quadTextureSprite = "GFX_difficulty_button_civilian" #"GFX_mapmode_button_all"
 			shortcut = "ctrl+F1"
+			buttonFont = "Arialsmall"
+			buttonText = "MAPMODES //"
 			pdx_tooltip = "MAPMODE_ALL"
 			pdx_tooltip_anchor = {
 				x = -310
@@ -97,8 +93,8 @@ guiTypes = {
 			name = "3_button_mapmode"
 			size = { width = 50 height = 153 }
 			position = {
-				x = -50
-				y = -7
+				x = -298
+				y = 40
 			}
 		
 			## 1st BUTTON (BIG)
@@ -107,12 +103,12 @@ guiTypes = {
 				name = "mapmode_button_1_bg"
 				quadTextureSprite = "GFX_mapmode_button_bg"
 				alwaysTransparent = yes
-				position = { x=560 y=38 }
+				position = { x=560 y=50 }
 			}
 		
 			buttonType = {
 				name = "mapmode_button_1"
-				position = { x=560 y=50 }	
+				position = { x=584 y=50 }	
 				quadTextureSprite ="GFX_mapmode_buttons_deselected_big"
 				#shortcut = "q"
 				clicksound = land_mapmode
@@ -125,7 +121,7 @@ guiTypes = {
 			}
 			buttonType = {
 				name = "mapmode_button_1_s"
-				position = { x=560 y=50 }	
+				position = { x=584 y=50 }	
 				quadTextureSprite ="GFX_mapmode_buttons_selected_big"
 				#shortcut = "q"
 				shortcut = "F1"
@@ -135,27 +131,19 @@ guiTypes = {
 					relative = yes #It is default set to yes ( to the gui object )
 				}			
 			}
-			iconType = {
-				name = "tutorial_highlight_default_mapmode"
-				position = { x=562 y=46 }
-				quadTextureSprite ="GFX_tutorial_default_mapmode_highlight"
-				alwaystransparent = yes
-				hide = yes
-			}
 		
 			# 2nd BUTTON (BIG)
-		
 		
 			iconType = {
 				name = "mapmode_button_2_bg"
 				quadTextureSprite = "GFX_mapmode_button_bg"
 				alwaysTransparent = yes
-				position = { x=560 y=85 }
+				position = { x=560 y=50 }
 			}
 		
 			buttonType = {
 				name = "mapmode_button_2"
-				position = { x=560 y=100 }	
+				position = { x=670 y=50 }	
 				quadTextureSprite ="GFX_mapmode_buttons_deselected_big"
 				#shortcut = "w"
 				clicksound = naval_mapmode
@@ -168,7 +156,7 @@ guiTypes = {
 			}
 			buttonType = {
 				name = "mapmode_button_2_s"
-				position = { x=560 y=100 }	
+				position = { x=670 y=50 }	
 				quadTextureSprite ="GFX_mapmode_buttons_selected_big"
 				#shortcut = "w"
 				shortcut = "F2"
@@ -185,12 +173,12 @@ guiTypes = {
 				name = "mapmode_button_3_bg"
 				quadTextureSprite = "GFX_mapmode_button_bg"
 				alwaysTransparent = yes
-				position = { x=560 y=133 }
+				position = { x=560 y=50 }
 			}
 		
 			buttonType = {
 				name = "mapmode_button_3"
-				position = { x=560 y=150 }	
+				position = { x=755 y=50 }	
 				quadTextureSprite ="GFX_mapmode_buttons_deselected_big"
 				#shortcut = "e"
 				clicksound = air_mapmode
@@ -203,7 +191,7 @@ guiTypes = {
 			}
 			buttonType = {
 				name = "mapmode_button_3_s"
-				position = { x=560 y=150 }	
+				position = { x=755 y=50 }	
 				quadTextureSprite ="GFX_mapmode_buttons_selected_big"
 				#shortcut = "e"
 				shortcut = "F3"
@@ -501,35 +489,11 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "army_text"
-				position = { x= 524 y = -96 }
+				position = { x= 542 y = -96 }
 				font = "Arialsmall"
 				borderSize = {x = 0 y = 0}
-				text = "/ ARMY //// ///"
-				maxWidth = 200
-				maxHeight = 32
-				fixedsize = yes
-				format = left
-				orientation = "LOWER_RIGHT"
-			}
-			instantTextboxType = {
-				name = "naval_text"
-				position = { x= 414 y = -46 }
-				font = "Arialsmall"
-				borderSize = {x = 0 y = 0}
-				text = "//// ///// NAVY /"
-				maxWidth = 200
-				maxHeight = 32
-				fixedsize = yes
-				format = right
-				orientation = "LOWER_RIGHT"
-			}
-			instantTextboxType = {
-				name = "air_text"
-				position = { x= 524 y = 6 }
-				font = "Arialsmall"
-				borderSize = {x = 0 y = 0}
-				text = "/ AIR ///// ///////"
-				maxWidth = 200
+				text = "ARMY //////    NAVY //////    AIR ///// ////"
+				maxWidth = 340
 				maxHeight = 32
 				fixedsize = yes
 				format = left
@@ -996,7 +960,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "day_night_toggle"
-			position = { x=536 y=216 }
+			position = { x=10000 y=216 }
 			quadTextureSprite = "GFX_player_counters_toggle" #"GFX_day_night_toggle"
 			shortcut = "n"
 			clicksound = click_default
@@ -1018,7 +982,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "player_counters_toggle"
-			position = { x=516 y=190 }
+			position = { x=10000 y=190 }
 			quadTextureSprite ="GFX_player_counters_toggle"
 			shortcut = "m"
 			clicksound = click_default
@@ -1039,7 +1003,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "button_counters_color_mode"
-			position = { x=556 y=190 }
+			position = { x=10000 y=190 }
 			quadTextureSprite = "GFX_player_counters_toggle" #"GFX_button_counters_color_mode"
 			shortcut = ","
 			clicksound = click_default
@@ -1060,7 +1024,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "button_allied_plans"
-			position = { x=596 y=190 }
+			position = { x=10000 y=190 }
 			quadTextureSprite = "GFX_player_counters_toggle" #"GFX_button_allied_plans"
 			shortcut = "."
 			clicksound = click_default
@@ -1080,7 +1044,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "button_fog"
-			position = { x=576 y=216 }
+			position = { x=10000 y=216 }
 			quadTextureSprite = "GFX_player_counters_toggle" #"GFX_button_fog_of_war"
 			clicksound = click_default
 			pdx_tooltip = "TOGGLE_FOG_OF_WAR"
@@ -1266,9 +1230,9 @@ guiTypes = {
 	# A window with the list of all possible map modes that is attached to the main map-modes window.
 	containerWindowType =  {
 		name = "WindowWithAllMapModes_Standalone"
-		position = { x=-380 y=-450 }	
+		position = { x=-700 y=130 }	
 		size = { width=200 height=314 } 
-		Orientation = lower_RIGHT
+		Orientation = UPPER_RIGHT
 		fade_time = 500
 		fade_type = linear
 
