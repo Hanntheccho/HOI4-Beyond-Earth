@@ -716,7 +716,12 @@ focus_tree = {
 		
 		completion_reward = {
 			release_puppet = TUN
-			transfer_state = 240
+			if = {
+				limit = {
+					has_government = purity
+				}
+				transfer_state = 240
+			}
 			add_stability = 0.05
 			add_war_support = 0.05
 			add_political_power = 50
