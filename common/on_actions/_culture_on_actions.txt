@@ -1,28 +1,9 @@
 on_actions = {
-
     on_ruling_party_change = {
         effect = {
             reset_virtues_effect = yes
         }
     }
-
-	on_startup = {
-		effect = {
-			every_country = {
-                set_variable = { cultural_power = 0 }
-                set_variable = { cultural_power_gain = 0 }
-				set_variable = { cultural_power_rate_stable = 1 }
-				set_variable = { cultural_power_rate_mobilizing = 0.75 }
-				set_variable = { cultural_power_rate_mobilized = 0.5 }
-				set_variable = { cultural_power_rate_radicalized = 0.25 }
-				set_variable = { cultural_power_rate_rabid = 0 }
-				set_variable = { culutal_power_gain_virtues = 0 }
-				set_variable = { cultural_power_modifier = 1 }
-				set_variable = { cultural_power_modifier_for_loc = 0 }
-            }
-		}
-	}
-    
     on_daily = {
 		effect = {
             clear_variable = cultural_power_gain
@@ -74,130 +55,6 @@ on_actions = {
                 add_to_variable = { cultural_power_gain_society = 0.2 }
                 #clamp_variable = { var = cultural_power min = 0 max = 2000 }
 			}
-			if = {
-				limit = { 
-                    has_idea = universal_translator_idea
-                }
-                add_to_variable = { cultural_power_gain_ideas = 0.5 }
-			}
-			if = {
-				limit = { 
-                    has_idea = nothing_left_idea
-                }
-                multiply_variable = { cultural_power_modifier = 0.1 }
-			}
-            if = {
-				limit = { 
-                    has_idea = GRE_heart_of_old_athens
-                }
-                add_to_variable = { cultural_power_gain_ideas = 0.2 }
-			}
-            #if = {
-			#	limit = { 
-            #        has_dynamic_modifier = { modifier = nerve_stapling_modifier }
-            #    }
-            #    subtract_from_variable = { cultural_power_modifier = 0.8 }
-            #    subtract_from_variable = { cultural_power_modifier_for_loc = 0.8 }
-			#}
-            #if = {
-			#	limit = { 
-            #        has_idea = academia_purge_limited
-            #    }
-            #    subtract_from_variable = { cultural_power_modifier = 0.2 }
-            #    subtract_from_variable = { cultural_power_modifier_for_loc = 0.2 }
-			#}
-            #if = {
-			#	limit = { 
-            #        has_idea = academia_purge_extensive
-            #    }
-            #    subtract_from_variable = { cultural_power_modifier = 0.25 }
-            #    subtract_from_variable = { cultural_power_modifier_for_loc = 0.25 }
-			#}
-            #if = {
-			#	limit = { 
-            #        has_idea = academia_purge_massive
-            #    }
-            #    subtract_from_variable = { cultural_power_modifier = 0.3 }
-            #    subtract_from_variable = { cultural_power_modifier_for_loc = 0.3 }
-			#}
-            #if = {
-			#	limit = { 
-            #        has_idea = academia_purge_total
-            #    }
-            #    subtract_from_variable = { cultural_power_modifier = 0.4 }
-            #    subtract_from_variable = { cultural_power_modifier_for_loc = 0.4 }
-			#}
-            if = {
-				limit = { 
-                    has_idea = KRT_the_bangalore_academy
-                }
-                add_to_variable = { cultural_power_gain_ideas = 0.05 }
-			}
-            if = {
-				limit = { 
-                    has_idea = BNG_behavioral_sink
-                }
-                subtract_from_variable = { cultural_power_modifier = 1 }
-			}
-            if = {
-				limit = { 
-                    has_idea = TAM_verumai
-                }
-                subtract_from_variable = { cultural_power_gain_ideas = 0.3 }
-			}
-            if = {
-				limit = { 
-                    has_idea = TAM_civanin_virarkal
-                }
-                add_to_variable = { cultural_power_gain_ideas = 0.1 }
-			}
-            if = {
-				limit = { 
-                    has_idea = RAJ_religious_polarisation
-                }
-                add_to_variable = { cultural_power_gain_ideas = 0.05 }
-			}
-            if = {
-				limit = { 
-                    has_idea = KAV_delhi_super_slum
-                }
-                add_to_variable = { cultural_power_gain_ideas = 0.2 }
-			}
-            if = {
-				limit = { 
-                    has_idea = PRU_the_andean_century
-                }
-                add_to_variable = { cultural_power_gain_ideas = 0.1 }
-			}
-            if = {
-                limit = {
-                    has_idea = POL_an_unorthodox_orthodoxy
-                }
-                add_to_variable = { cultural_power_gain_ideas = 0.05}
-            }
-            if = {
-                limit = {
-                    has_idea = ARG_embraced_argentinists
-                }
-                add_to_variable = { cultural_power_gain_ideas = 0.1}
-            }
-            if = {
-                limit = {
-                    has_idea = CUA_war_on_the_future
-                }
-                add_to_variable = { cultural_power_gain_ideas = 0.05}
-            }
-            if = {
-                limit = {
-                    has_idea = FRA_second_renaissance
-                }
-                add_to_variable = { cultural_power_gain_ideas = 0.2}
-            }
-            add_to_variable = { cultural_power_gain = cultural_power_gain_ideas }
-            add_to_variable = { cultural_power_gain = cultural_power_gain_society }
-            add_to_variable = { cultural_power_gain = culutal_power_gain_virtues }
-            multiply_variable = { cultural_power_gain = cultural_power_modifier }
-            add_to_variable = { cultural_power = cultural_power_gain }
         }
     }
 }
