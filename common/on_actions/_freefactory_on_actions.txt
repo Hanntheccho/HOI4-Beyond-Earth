@@ -198,12 +198,15 @@ on_actions = {
             set_variable = { free_factory_adjustment = 1 }
             if = {
                 limit = {
-                    OR = {
-                        has_idea = mobilizing_society
-                        has_idea = flaking_society
-                    }
+                    has_idea = mobilizing_society
                 }
                 multiply_variable = { free_factory_adjustment = 0.95 }
+            }
+            if = {
+                limit = {
+                    has_idea = flaking_society
+                }
+                multiply_variable = { free_factory_adjustment = 0.9 }
             }
             if = {
                 limit = {
@@ -216,12 +219,6 @@ on_actions = {
                     has_idea = periphal_anarchy
                 }
                 multiply_variable = { free_factory_adjustment = 0.6 }
-            }
-            if = {
-                limit = {
-                    has_idea = urban_collapse
-                }
-                multiply_variable = { free_factory_adjustment = 0.4 }
             }
             if = {
                 limit = {
