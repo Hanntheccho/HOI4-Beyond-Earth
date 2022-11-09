@@ -4,7 +4,6 @@ idea_categories = {
 	# multiple ledgers can be defined, in that case will show on all
 	# possible values : army, air, navy, military (shows on all military ledgers), civilian, all (shows up everywhere), hidden (does not show up)
 	
-	
 	hidden_ideas = {
 		hidden = yes
 	
@@ -27,29 +26,29 @@ idea_categories = {
 		slot = mobilization_laws
 		slot = trade_laws
 		slot = economy
-		slot = culture_development
-		slot = development_law
-		slot = government_style
+		#slot = culture_development
+		#slot = development_law
+		#slot = government_style
 		
-		ledger = civilian
+		ledger = hidden # must be overridden
 		
 		cost = 150
 		removal_cost = 0
 	}
 	
-#	research_production = {
-#		slot = tank_manufacturer
-#		slot = naval_manufacturer
-#		slot = aircraft_manufacturer
-#		slot = theorist_mod
-#		slot = theorist_mod
-#		slot = theorist_mod
-#	
-#		ledger = civilian
-#		
-#		cost = 150
-#		removal_cost = 0
-#	}
+	research_production = {
+		slot = civilian_military_contractor
+		slot = civilian_military_contractor
+		slot = civilian_military_contractor
+		slot = civilian_military_contractor
+		slot = civilian_military_contractor
+		slot = civilian_military_contractor
+	
+		ledger = hidden
+		
+		cost = 150
+		removal_cost = 0
+	}
 	
 #	military_staff = {
 #		character_slot = army_chief 
@@ -73,119 +72,10 @@ idea_categories = {
 		slot = auxilary_augment
 		slot = type_augment
 		
-		ledger = invalid # must be overridden
+		ledger = hidden # must be overridden
 		
 		cost = 150
 		removal_cost = 0
-	}
-
-	academy_spirit = {
-		type = army_spirit
-
-		cost = 25
-		removal_cost = -1
-		
-		politics_tab = no
-		
-		ledger = hidden
-
-		slot = academy_spirit
-	}
-
-	army_spirit = {
-		type = army_spirit
-
-		cost = 50
-		removal_cost = -1
-		
-		politics_tab = no
-		
-		ledger = hidden
-		slot = army_spirit
-	}
-
-	division_command_spirit = {
-		type = army_spirit
-		
-		cost = 75
-		removal_cost = -1
-		
-		politics_tab = no
-		
-		ledger = hidden
-		slot = division_command_spirit
-	}
-
-	naval_academy_spirit = {
-		type = navy_spirit
-
-		cost = 25
-		removal_cost = -1
-		
-		politics_tab = no
-		
-		ledger = hidden
-		slot = naval_academy_spirit
-	}
-
-	navy_spirit = {
-		type = navy_spirit
-
-		cost = 50
-		removal_cost = -1
-		
-		politics_tab = no
-		
-		ledger = hidden
-		slot = navy_spirit
-	}
-
-	naval_command_spirit = {
-		type = navy_spirit
-		
-		cost = 75
-		removal_cost = -1
-		
-		politics_tab = no
-		
-		ledger = hidden
-		slot = naval_command_spirit
-	}
-
-	air_force_academy_spirit = {
-		type = air_spirit
-
-		cost = 25
-		removal_cost = -1
-		
-		politics_tab = no
-		
-		ledger = hidden
-		slot = air_force_academy_spirit
-	}
-
-	air_force_spirit = {
-		type = air_spirit
-
-		cost = 75
-		removal_cost = -1
-		
-		politics_tab = no
-		
-		ledger = hidden
-		slot = air_force_spirit
-	}
-
-	air_force_command_spirit = {
-		type = air_spirit
-		
-		politics_tab = no
-		
-		cost = 75
-		removal_cost = -1
-		
-		ledger = hidden
-		slot = air_force_command_spirit
 	}
 }
 
@@ -195,12 +85,12 @@ slot_ledgers = {
 	#navy_chief = navy
 	#air_chief = air
 	
-	body_augment = army
-	weapon_augment = army
-	leg_augment = army
-	matrix_augment = army
-	auxilary_augment = army
-	type_augment = army
+	#body_augment = army
+	#weapon_augment = army
+	#leg_augment = army
+	#matrix_augment = army
+	#auxilary_augment = army
+	#type_augment = army
 	
 	#tank_manufacturer = army
 	#naval_manufacturer = navy
@@ -209,6 +99,5 @@ slot_ledgers = {
 	#theorist = invalid # must be overridden
 	#high_command = invalid # must be overridden
 	
-	
-	mobilization_laws = civilian
+	#mobilization_laws = civilian
 }

@@ -1,7 +1,7 @@
 guiTypes = {
 	containerWindowType = {
 		name = "extra_political_stuff"
-		position = { x = 370 y = 315 }
+		position = { x = 370 y = 411 }
 
 #		containerWindowType = {
 #			name = "all_laws_window"
@@ -46,19 +46,19 @@ guiTypes = {
 		iconType = {
 			name = "leader_word"
 			spriteType = "GFX_leader_word_pol_view"
-			position = { x= -340 y = -250 }
+			position = { x= -340 y = -345 }
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "government_word"
 			spriteType = "GFX_government_word_pol_view"
-			position = { x= -220 y = 120 }
+			position = { x= -235 y = 120 }
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "development_word"
 			spriteType = "GFX_development_word_pol_view"
-			position = { x= -230 y = -32 }
+			position = { x= -235 y = -32 }
 			alwaystransparent = yes
 		}
 		iconType = {
@@ -67,29 +67,29 @@ guiTypes = {
 			position = { x= -235 y = 44 }
 			alwaystransparent = yes
 		}
-		#iconType = {
-		#	name = "ecobalance_word"
-		#	spriteType = "GFX_ecobalance_word_pol_view"
-		#	position = { x= -200 y = 44 }
-		#	alwaystransparent = yes
-		#}
-		#iconType = {
-		#	name = "faction_word"
-		#	spriteType = "GFX_faction_word_pol_view"
-		#	position = { x= -356 y = 134 }
-		#	alwaystransparent = yes
-		#}
 
-		#iconType = {
-		#	name = "approval_word"
-		#	spriteType = "GFX_approval_word_pol_view"
-		#	position = { x = -5 y = -43 }
-		#	alwaystransparent = yes
-		#}
+		iconType = {
+			name = "economy_word"
+			spriteType = "GFX_economy_word_pol_view"
+			position = { x= -235 y = 259 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "mobilization_word"
+			spriteType = "GFX_mobilization_word_pol_view"
+			position = { x= -235 y = 335 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "trade_word"
+			spriteType = "GFX_trade_word_pol_view"
+			position = { x= -235 y = 411 }
+			alwaystransparent = yes
+		}
 
 		instantTextboxType = {
 			name = "leader_name"
-			position = { x = -345 y = -267 }
+			position = { x = -345 y = -362 }
 			font = "Focusfont"
 			text = "current_leader"
 			maxWidth = 210
@@ -139,6 +139,25 @@ guiTypes = {
 			name = "extra_detail_pol_view3"
 			spriteType = "GFX_extra_detail_pol_view"
 			position = { x= -360 y = -29 }
+			alwaystransparent = yes
+		}
+		#
+		iconType = {
+			name = "extra_detail_pol_view4"
+			spriteType = "GFX_extra_detail_pol_view"
+			position = { x= -360 y = 262 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "extra_detail_pol_view5"
+			spriteType = "GFX_extra_detail_pol_view"
+			position = { x= -360 y = 338 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "extra_detail_pol_view6"
+			spriteType = "GFX_extra_detail_pol_view"
+			position = { x= -360 y = 414 }
 			alwaystransparent = yes
 		}
 
@@ -276,6 +295,236 @@ guiTypes = {
 			#alwaystransparent = yes
 		}
 		###
+
+		instantTextboxType = {
+			name = "law_cost_mod"
+			position = { x = -310 y = 201 }
+			font = "Focusfont"
+			text = "law_cost_mod"
+			maxWidth = 400
+			maxHeight = 20
+		}
+
+		containerWindowType = {
+			name = "mobilization_icons"
+			position = { x= -310 y = 316 }
+			instantTextboxType = {
+				name = "mobilization_system"
+				position = { x = 100 y = 35 }
+				font = "Focusfont"
+				text = "current_mobilization_system"
+				maxWidth = 400
+				maxHeight = 20
+			}
+			#
+			buttonType = {
+				name = "low_mobilization_selected"
+				spriteType = "GFX_idea_limited_conscription"
+				pdx_tooltip = limited_conscription_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "mid_mobilization_selected"
+				spriteType = "GFX_idea_extensive_conscription"
+				pdx_tooltip = extensive_conscription_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "high_mobilization_selected"
+				spriteType = "GFX_idea_service_by_requirement"
+				pdx_tooltip = service_by_requirement_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "total_mobilization_selected"
+				spriteType = "GFX_idea_all_adults_serve"
+				pdx_tooltip = all_adults_serve_effects
+				#alwaystransparent = yes
+			}
+		}
+		containerWindowType = {
+			name = "economy_icons"
+			position = { x= -310 y = 240 }
+			instantTextboxType = {
+				name = "economy_system"
+				position = { x = 100 y = 35 }
+				font = "Focusfont"
+				text = "current_economic_system"
+				maxWidth = 400
+				maxHeight = 20
+			}
+			#
+			buttonType = {
+				name = "low_economy_selected"
+				spriteType = "GFX_idea_civilian_economy"
+				pdx_tooltip = civilian_economy_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "mid_economy_selected"
+				spriteType = "GFX_idea_low_economic_mobilisation"
+				pdx_tooltip = low_economic_mobilisation_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "high_economy_selected"
+				spriteType = "GFX_idea_partial_economic_mobilisation"
+				pdx_tooltip = partial_economic_mobilisation_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "total_economy_selected"
+				spriteType = "GFX_idea_war_economy"
+				pdx_tooltip = war_economy_effects
+				#alwaystransparent = yes
+			}
+		}
+		containerWindowType = {
+			name = "trade_icons"
+			position = { x= -310 y = 392 }
+			instantTextboxType = {
+				name = "trade_system"
+				position = { x = 100 y = 35 }
+				font = "Focusfont"
+				text = "current_trade_system"
+				maxWidth = 400
+				maxHeight = 20
+			}
+			#
+			buttonType = {
+				name = "low_trade_selected"
+				spriteType = "GFX_idea_free_trade"
+				pdx_tooltip = free_trade_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "mid_trade_selected"
+				spriteType = "GFX_idea_export_focus"
+				pdx_tooltip = export_focus_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "high_trade_selected"
+				spriteType = "GFX_idea_limited_exports"
+				pdx_tooltip = limited_exports_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "total_trade_selected"
+				spriteType = "GFX_idea_closed_economy"
+				pdx_tooltip = closed_economy_effects
+				#alwaystransparent = yes
+			}
+		}
+
+		###MOBILIZATION
+		containerWindowType = {
+			name = "mobilization_laws"
+			position = {
+				x = 150
+				y = 316
+			}
+			buttonType = {
+				name = "low_mobilization"
+				spriteType = "GFX_idea_limited_conscription"
+				position = { x= 20 y = 0 }
+				pdx_tooltip = limited_conscription_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "mid_mobilization"
+				spriteType = "GFX_idea_extensive_conscription"
+				position = { x= 100 y = 0 }
+				pdx_tooltip = extensive_conscription_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "high_mobilization"
+				spriteType = "GFX_idea_service_by_requirement"
+				position = { x= 180 y = 0 }
+				pdx_tooltip = service_by_requirement_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "total_mobilization"
+				spriteType = "GFX_idea_all_adults_serve"
+				position = { x= 260 y = 0 }
+				pdx_tooltip = all_adults_serve_effects
+				#alwaystransparent = yes
+			}
+		}
+		###TRADE
+		containerWindowType = {
+			name = "trade_laws"
+			position = {
+				x = 150
+				y = 392
+			}
+			buttonType = {
+				name = "low_trade"
+				spriteType = "GFX_idea_free_trade"
+				position = { x= 20 y = 0 }
+				pdx_tooltip = free_trade_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "mid_trade"
+				spriteType = "GFX_idea_export_focus"
+				position = { x= 100 y = 0 }
+				pdx_tooltip = export_focus_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "high_trade"
+				spriteType = "GFX_idea_limited_exports"
+				position = { x= 180 y = 0 }
+				pdx_tooltip = limited_exports_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "total_trade"
+				spriteType = "GFX_idea_closed_economy"
+				position = { x= 260 y = 0 }
+				pdx_tooltip = closed_economy_effects
+				#alwaystransparent = yes
+			}
+		}
+		###ECONOMY
+		containerWindowType = {
+			name = "economy_laws"
+			position = {
+				x = 150
+				y = 240
+			}
+			buttonType = {
+				name = "low_economy"
+				spriteType = "GFX_idea_civilian_economy"
+				position = { x= 20 y = 0 }
+				pdx_tooltip = civilian_economy_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "mid_economy"
+				spriteType = "GFX_idea_low_economic_mobilisation"
+				position = { x= 100 y = 0 }
+				pdx_tooltip = low_economic_mobilisation_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "high_economy"
+				spriteType = "GFX_idea_partial_economic_mobilisation"
+				position = { x= 180 y = 0 }
+				pdx_tooltip = partial_economic_mobilisation_effects
+				#alwaystransparent = yes
+			}
+			buttonType = {
+				name = "total_economy"
+				spriteType = "GFX_idea_war_economy"
+				position = { x= 260 y = 0 }
+				pdx_tooltip = war_economy_effects
+				#alwaystransparent = yes
+			}
+		}
 	}
 
 	containerWindowType = {
