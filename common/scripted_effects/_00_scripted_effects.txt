@@ -987,6 +987,36 @@ upgrade_economy_law = {
 	}
 }
 
+upgrade_mobilization_law = {
+	if = {
+		limit = {
+			has_idea = civilian_economy
+		}
+		add_ideas = low_economic_mobilisation
+	}
+	else_if = {
+		limit = {
+			has_idea = low_economic_mobilisation
+		}
+		add_ideas = partial_economic_mobilisation
+	}
+	else_if = {
+		limit = {
+			has_idea = partial_economic_mobilisation
+		}
+		add_ideas = war_economy
+	}
+	#else_if = {
+	#	limit = {
+	#		has_idea = war_economy
+	#	}
+	#	add_ideas = tot_economic_mobilisation
+	#}
+	else = {
+		add_political_power = 150
+	}
+}
+
 #gain_random_agency_upgrade = { #Gives a random agency upgrade or grants a free agency if one has not yet been established
 #	custom_effect_tooltip = free_agency_upgrade_tt
 #	hidden_effect = {
