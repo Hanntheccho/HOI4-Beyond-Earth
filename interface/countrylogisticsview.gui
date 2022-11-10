@@ -89,7 +89,7 @@ guiTypes = {
 			name = "materiel"
 			position = { x = 0 y = 0 }
 			size = { width = 550 height = -98 }
-			margin = { top = 46 bottom = 33}
+			margin = { top = 46 bottom = 15}
 			verticalScrollbar = "right_vertical_slider"
 			
 			background = {
@@ -106,7 +106,7 @@ guiTypes = {
 				name = "materiel_grid"
 				position = { x = 13 y = 0 }
 				size = { width = 565 height = 100%% }
-				slotsize = { width = 100% height = 58 }
+				slotsize = { width = 100% height = 90 }
 				max_slots_horizontal = 1
 				format = "UPPER_LEFT"
 
@@ -134,7 +134,7 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "equipment_type_label"
-				position = { x = 10 y = 0 }
+				position = { x = 10000 y = 0 }
 				font = "Arialsmall"
 				text = ""
 				maxWidth = 500
@@ -210,37 +210,10 @@ guiTypes = {
 				Orientation = "UPPER_LEFT"
 			}
 			
-			iconType ={
-				name ="fuel_header"
-				spriteType = "GFX_category_header"
-				position = { x= -5 y = -9 }
-				Orientation = "UPPER_LEFT"
-			}
-			
 			iconType = {
 				name = "icon"
 				position = { x=10000 y=4 }
 				spriteType = "GFX_fuel_logisctics_icon"
-			}
-
-			instantTextboxType = {
-				name = "label"
-				position = { x = 60 y = 8 }
-				font = "Beyondsmall"
-				text = "LOGISTICS_FUEL_PRIORITIZATION"
-				maxWidth = 300
-				maxHeight = 20
-				format = left
-			}
-
-			instantTextboxType = {
-				name = "extra_detail_fuel"
-				position = { x = 15 y = 8 }
-				font = "Beyondsmall"
-				text = "/////                                      //   //////////////"
-				maxWidth = 700
-				maxHeight = 20
-				format = left
 			}
 
 			iconType = {
@@ -494,6 +467,13 @@ guiTypes = {
 					position = { x=10000 y = 46 }
 					frame = 100
 				}
+			}
+
+			iconType ={
+				name ="fuel_header"
+				spriteType = "GFX_fuel_header"
+				position = { x= 30 y = 20 }
+				Orientation = "UPPER_LEFT"
 			}
 		}
 		
@@ -1057,8 +1037,8 @@ guiTypes = {
 	containerWindowType = {
 		name = "logistics_overview_land_equipment_entry"
 		position = { x=0 y=5 }
-		size = { width = 565 height = 57 }
-		clipping = no
+		size = { width = 565 height = 85 }
+		clipping = yes
 
 		background = {
 			name = "Background"
@@ -1066,31 +1046,13 @@ guiTypes = {
 			clicksound = click_default
 		}
 
-		iconType = {
-			name = "efficiency_progressbar"
-			spriteType = "GFX_unit_xp_bar"
-			position = { x=10000 y=35 }
-			rotation = 1.5708
-		}
-
 		instantTextboxType = {
 			name = "equipment_type"
-			position = { x = 8 y = 3 }
-			font = "Focusfont"
+			position = { x = 8 y = 5 }
+			font = "Beyond"
 			text = "name"
-			maxWidth = 280
-			maxHeight = 20
-			fixedsize = yes
-			format = left
-		}
-
-		instantTextboxType = {
-			name = "equipment_type_extra"
-			position = { x = 300 y = 3 }
-			font = "Focusfont"
-			text = "/////     -      //////// - //"
-			maxWidth = 400
-			maxHeight = 20
+			maxWidth = 450
+			maxHeight = 80
 			fixedsize = yes
 			format = left
 		}
@@ -1098,11 +1060,24 @@ guiTypes = {
 		iconType = {
 			name = "equipment_icon"
 			spriteType = "GFX_equipment_item"
-			position = { x= 85 y = 35 }
+			position = { x= 145 y = 65 }
 			Orientation = "UPPER_LEFT"
-			scale = 0.4
+			scale = 0.0 #1
 			centerposition = yes
 			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "fake_background"
+			spriteType ="GFX_logistics_equipment_entry_bg_blank"
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "efficiency_progressbar"
+			spriteType = "GFX_unit_xp_bar"
+			position = { x=10000 y=35 }
+			rotation = 1.5708
 		}
 
 		iconType = {
@@ -1139,17 +1114,17 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "balance"
-			position = { x = 195 y = 29 }
+			position = { x = 195 y = 39 }
 			font = "Focusfont"
 			text = "amount"
-			maxWidth = 50
+			maxWidth = 100
 			maxHeight = 20
 			format = centre
 		}
 		
 		instantTextboxType = {
 			name = "in_stock"
-			position = { x = 295 y = 29 }
+			position = { x = 295 y = 39 }
 			font = "Focusfont"
 			text = "amount"
 			maxWidth = 120
@@ -1170,8 +1145,8 @@ guiTypes = {
 	containerWindowType = {
 		name = "logistics_overview_naval_equipment_entry"
 		position = { x=0 y=5 }
-		size = { width = 565 height = 57 }
-		clipping = no
+		size = { width = 565 height = 85 }
+		clipping = yes
 
 		background = {
 			name = "Background"
@@ -1187,22 +1162,11 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "equipment_type"
-			position = { x = 8 y = 3 }
-			font = "Focusfont"
+			position = { x = 8 y = 5 }
+			font = "Beyond"
 			text = "name"
-			maxWidth = 280
-			maxHeight = 20
-			fixedsize = yes
-			format = left
-		}
-
-		instantTextboxType = {
-			name = "equipment_type_extra"
-			position = { x = 300 y = 3 }
-			font = "Focusfont"
-			text = "/////     -      //////// - //"
-			maxWidth = 400
-			maxHeight = 20
+			maxWidth = 450
+			maxHeight = 80
 			fixedsize = yes
 			format = left
 		}
@@ -1210,10 +1174,16 @@ guiTypes = {
 		iconType = {
 			name = "equipment_icon"
 			spriteType = "GFX_equipment_item"
-			position = { x= 85 y = 35 }
+			position = { x= 145 y = 65 }
 			Orientation = "UPPER_LEFT"
-			scale = 0.4
+			scale = 0.0 #1
 			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "fake_background"
+			spriteType ="GFX_logistics_equipment_entry_bg_blank"
 			alwaystransparent = yes
 		}
 
@@ -1251,17 +1221,17 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "balance"
-			position = { x = 195 y = 29 }
+			position = { x = 195 y = 39 }
 			font = "Focusfont"
 			text = "amount"
-			maxWidth = 50
+			maxWidth = 100
 			maxHeight = 20
 			format = centre
 		}
 		
 		instantTextboxType = {
 			name = "in_stock"
-			position = { x = 295 y = 29 }
+			position = { x = 295 y = 39 }
 			font = "Focusfont"
 			text = "amount"
 			maxWidth = 120
@@ -1282,8 +1252,8 @@ guiTypes = {
 	containerWindowType = {
 		name = "logistics_overview_air_equipment_entry"
 		position = { x=0 y=5 }
-		size = { width = 565 height = 57 }
-		clipping = no
+		size = { width = 565 height = 85 }
+		clipping = yes
 
 		background = {
 			name = "Background"
@@ -1299,22 +1269,11 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "equipment_type"
-			position = { x = 8 y = 3 }
-			font = "Focusfont"
+			position = { x = 8 y = 5 }
+			font = "Beyond"
 			text = "name"
-			maxWidth = 280
-			maxHeight = 20
-			fixedsize = yes
-			format = left
-		}
-
-		instantTextboxType = {
-			name = "equipment_type_extra"
-			position = { x = 300 y = 3 }
-			font = "Focusfont"
-			text = "/////     -      //////// - //"
-			maxWidth = 400
-			maxHeight = 20
+			maxWidth = 450
+			maxHeight = 80
 			fixedsize = yes
 			format = left
 		}
@@ -1322,10 +1281,16 @@ guiTypes = {
 		iconType = {
 			name = "equipment_icon"
 			spriteType = "GFX_equipment_item"
-			position = { x= 85 y = 35 }
+			position = { x= 145 y = 65 }
 			Orientation = "UPPER_LEFT"
-			scale = 0.4
+			scale = 0.0 #1
 			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "fake_background"
+			spriteType ="GFX_logistics_equipment_entry_bg_blank"
 			alwaystransparent = yes
 		}
 
@@ -1363,17 +1328,17 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "balance"
-			position = { x = 195 y = 29 }
+			position = { x = 195 y = 39 }
 			font = "Focusfont"
 			text = "amount"
-			maxWidth = 50
+			maxWidth = 100
 			maxHeight = 20
 			format = centre
 		}
 		
 		instantTextboxType = {
 			name = "in_stock"
-			position = { x = 295 y = 29 }
+			position = { x = 295 y = 39 }
 			font = "Focusfont"
 			text = "amount"
 			maxWidth = 120
