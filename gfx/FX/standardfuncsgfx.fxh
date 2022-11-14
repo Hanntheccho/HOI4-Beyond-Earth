@@ -317,9 +317,9 @@ PixelShader =
 	//#define NO_NIGHT
 
 	static const float GMT_OFFSET = 2793.0f; // X position on map, of Greenwitch GMT+0
-	static const float FEATHER_MIN = -0.01f;
+	static const float FEATHER_MIN = -1.0f;
 	static const float FEATHER_MAX = 0.01f;
-	static const float MOON_FEATHER_MIN = -0.01f;
+	static const float MOON_FEATHER_MIN = -1.0f;
 	static const float MOON_FEATHER_MAX = 0.01;
 	static const float NIGHT_OPACITY = 0.85f;
 	static const float NIGHT_DARKNESS = 0.7f;
