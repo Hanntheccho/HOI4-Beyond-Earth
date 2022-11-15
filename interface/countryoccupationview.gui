@@ -2,30 +2,48 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "countryoccupationview"
-		position = { x = -606 y = 78}	
-		show_position = { x = -6 y = 78 }
+		position = { x=-606 y=78}	
+		show_position = { x=-6 y =78 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300	
-		size = { width = 550 height = 100%% }
-		verticalScrollbar = "right_vertical_slider"
+		size = { width=544 height=100%% }
+		clipping = no
 		
 		show_sound = menu_open_window
-		
-		containerWindowType = {
-			name = "bg_cointainer"
-			position = { x = 0 y = 0 }
-			size = { width = 100% height = 100% }
-			background = {
-				name = "Background"
-				spriteType = "GFX_tiled_bg"
-			 }
+
+		#containerWindowType = {
+		#	name = "Background_2"
+		#	size = { width=8 height=100%% } 
+		#	
+		#	background = {
+		#		name = "Background"
+		#		quadTextureSprite = "GFX_tiled_black_border_vertical"
+		#		position = { x = 550 y = 0 }
+		#		alwaystransparent = yes
+		#	}
+		#}
+
+		background ={
+			name ="pol_view_bg"
+			spriteType = "GFX_decision_view_bg_large"
+			position = { x= 6 y = 41 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
 		}
-		
-		iconType = {
-			name = "header_bg"
-			spriteType = "GFX_header_bg"
-			position = { x = 4 y = 0 }
+
+		background ={
+			name ="pol_view_bg2"
+			spriteType = "GFX_tiled_side_mod"
+			position = { x= 6 y = 41 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		iconType ={
+			name ="production_header_bg"
+			spriteType = "GFX_header_bg_mod"
+			position = { x= 4 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}
 		
@@ -43,7 +61,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "garrison_log_open"
-			position = {x=-138 y=3}
+			position = {x=10000 y=0} #position = {x=-138 y=3}
 			spriteType = "GFX_sunk_ships_button"
 			orientation = "UPPER_RIGHT"
 			clicksound = click_default
@@ -52,7 +70,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "equipment_open"
-			position = {x=-98 y=3}
+			position = {x=10000 y=0} #position = {x=-98 y=3}
 			spriteType = "GFX_equip_overview_button"
 			orientation = "UPPER_RIGHT"
 			clicksound = click_default
@@ -79,7 +97,7 @@ guiTypes = {
 			iconType = {
 				name = "header_bg"
 				spriteType = "GFX_occupation_header_bg"
-				position = { x = -3 y = -1 }
+				position = { x = 10 y = -1 }
 				Orientation = "UPPER_LEFT"
 			}
 			
@@ -201,7 +219,7 @@ guiTypes = {
 			
 			buttonType = {
 				name = "resistance_tab_button"
-				position = { x = 435 y = 6 }
+				position = { x = 380 y = 6 }
 				spriteType = "GFX_occupation_resistance_tab_button"
 				tooltip = "OCCUPATION_RESISTANCE_TAB_TOOLTIP"
 				clicksound = click_default
@@ -210,7 +228,7 @@ guiTypes = {
 			
 			buttonType = {
 				name = "compliance_tab_button"
-				position = { x = 480 y = 6 }
+				position = { x = 430 y = 6 }
 				spriteType = "GFX_occupation_compliance_tab_button"
 				tooltip = "OCCUPATION_COMPLIANCE_TAB_TOOLTIP"
 				clicksound = click_default
@@ -306,7 +324,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "occupation_territories_list_container"
 				position = { x = 0 y = 0 }
-				size = { width = 540 height = 100% }
+				size = { width = 550 height = 100% }
 				verticalScrollbar = "right_vertical_slider"
 				margin = { top = 0 left = 10 bottom = 195 right = 0 }
 				
@@ -360,7 +378,7 @@ guiTypes = {
 		iconType = {
 			name = "top_bg"		
 			spriteType = "GFX_occupation_country_entry_bg_top"
-			tooltip = "OCCUPATION_ZOOM_TO_STATE_TOOLTIP"
+			#tooltip = "OCCUPATION_ZOOM_TO_STATE_TOOLTIP"
 			position = { x = -5 y = 0 }
 		}
 		
@@ -369,15 +387,24 @@ guiTypes = {
 			spriteType = "GFX_occupation_country_entry_bg_top_locked"
 			position = { x = -5 y = 0 }
 		}
+
+		instantTextboxType = {
+			name = "country_name"
+			position = { x = 90 y = 11 }
+			font = "Beyond"
+			text = "Country Name"
+			maxWidth = 380
+			maxHeight = 80
+			fixedsize = yes
+			alwaystransparent = yes
+		}
 		
 		buttonType = {
 			name = "expand"
-			position = { x = -520 y = 38 }
-			quadTextureSprite = "GFX_strategicair_expand"
-			font = "hoi_16mbs"
+			position = { x = -5 y = 0 }
+			quadTextureSprite = "GFX_occupation_country_entry_bg_top_blank"
 			frame = 1
 			clicksound = click_default
-			Orientation = "UPPER_RIGHT"
 		}
 		
 		containerWindowType = {
@@ -387,26 +414,9 @@ guiTypes = {
 			
 			buttonType = {
 				name = "flag"
-				spriteType = "GFX_flag_small2"
+				spriteType = "GFX_shield_medium_mod"
 				position = { x = -3 y = 2 }
-			}
-			
-			iconType = {
-				name = "flag_frame"
-				spriteType = "GFX_small_flag_frame_thin"
-				position = { x = 0 y = 0 }
-				alwaystransparent = yes
-			}		
-		}
-		
-		instantTextboxType = {
-			name = "country_name"
-			position = { x = 50 y = 11 }
-			font = "Focusfont"
-			text = "Country Name"
-			maxWidth = 180
-			multiline = no
-			alwaystransparent = yes
+			}	
 		}
 		
 		iconType = {
@@ -426,7 +436,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "state_info_container"
-			position = { x = 20 y = 46 }
+			position = { x = -50 y = 36 }
 			
 			iconType = {
 				name = "manpower_icon"
@@ -434,19 +444,11 @@ guiTypes = {
 				position = { x = 10000 y = 0 }
 			}
 			instantTextBoxType = {
-				name ="manpower2"
-				position = { x = 35 y = -15 }
-				font = "Arial16"
-				text = "/ MANPOWER:"
-				maxWidth = 100
-				maxHeight = 24
-			}
-			instantTextBoxType = {
 				name ="manpower"
-				position = { x = 134 y = -15 }
-				font = "Arial16"
+				position = { x = 134 y = -25 }
+				font = "Beyondsmall"
 				text = "+150K"
-				maxWidth = 57
+				maxWidth = 200
 				maxHeight = 24
 				format = left
 			}
@@ -456,19 +458,11 @@ guiTypes = {
 				position = { x = 10000 y = 0 } 
 			}
 			instantTextBoxType = {
-				name = "industrial_capacity2"
-				position = { x = 35 y = 0 }
-				font = "Arial16"
-				text = "/// INDUSTRY:"
-				maxWidth = 120
-				maxHeight = 24
-			}
-			instantTextBoxType = {
 				name = "industrial_capacity"
 				position = { x = 134 y = 0 }
-				font = "Arial16"
+				font = "Beyondsmall"
 				text = "10/25"
-				maxWidth = 57
+				maxWidth = 200
 				maxHeight = 24
 				format = left
 			}
@@ -478,19 +472,11 @@ guiTypes = {
 				position = { x = 10000 y = 0 } 
 			}
 			instantTextBoxType = {
-				name ="resources2"
-				position = { x = 35 y = 15 }
-				font = "Arial16"
-				text = "/ RESOURCES:"
-				maxWidth = 120
-				maxHeight = 24
-			}
-			instantTextBoxType = {
 				name ="resources"
-				position = { x = 134 y = 15 }
-				font = "Arial16"
+				position = { x = 134 y = 25 }
+				font = "Beyondsmall"
 				text = "50%"
-				maxWidth = 57
+				maxWidth = 200
 				maxHeight = 24
 				format = left
 			}
@@ -620,14 +606,13 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "occupied_territory_state_entry"
-		position = { x = -4 y = 0}	
+		position = { x = -8 y = 0}	
 		size = { width = 519 height = 60 }
 
 		background = {
 			name = "Background"		
 			spriteType = "GFX_occupation_state_entry_bg"
 			tooltip = "OCCUPATION_ZOOM_TO_STATE_TOOLTIP"
-
 		}
 		
 		iconType = {
@@ -638,7 +623,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "state_name"
-			position = { x = 10 y = 6 }
+			position = { x = 10 y = 8 }
 			font = "Focusfont"
 			text = "State Name"
 			maxWidth = 180
@@ -716,7 +701,7 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "occupied_territory_state_entry_no_resistance"
-		position = { x = -4 y = 0}	
+		position = { x = -7 y = 0}	
 		size = { width = 519 height = 30 }
 		
 		background = {
@@ -732,7 +717,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "state_name"
-			position = { x = 10 y = 6 }
+			position = { x = 10 y = 8 }
 			font = "Focusfont"
 			text = "State Name"
 			maxWidth = 180
@@ -762,11 +747,6 @@ guiTypes = {
 			spriteType = "GFX_occupation_resistance_bar_large"
 			position = { x = 31 y = 20 }
 			frame = 100
-		}
-		iconType = {
-			name = "bg"
-			spriteType = "GFX_occupation_large_resistance_bar_bg"
-			position = { x = 7 y = 4 }
 		}
 
 		gridboxtype = {
@@ -800,11 +780,6 @@ guiTypes = {
 			position = { x = 31 y = 5 }
 			frame = 100
 		}
-		iconType = {
-			name = "bg"
-			spriteType = "GFX_occupation_large_compliance_bar_bg"
-			position = { x = 7 y = 0 }
-		}
 		
 		gridboxtype = {
 			name = "modifier_container"
@@ -828,12 +803,6 @@ guiTypes = {
 		name = "medium_resistance_status_container"
 		position = { x = 300 y = 40 }	
 		size = { width = 45 height = 31 }
-		
-		iconType = {
-			name = "bg"
-			spriteType = "GFX_occupation_medium_resistance_bar_bg"
-			position = { x = 0 y = 0 }
-		}
 			
 		iconType = {
 			name = "progress"
@@ -878,12 +847,6 @@ guiTypes = {
 		name = "tiny_compliance_status_container"
 		position = { x = 300 y = 40 }	
 		size = { width = 45 height = 31 }
-		
-		iconType = {
-			name = "bg"
-			spriteType = "GFX_occupation_tiny_compliance_bar_bg"
-			position = { x = 0 y = 0 }
-		}
 			
 		iconType = {
 			name = "progress"
@@ -929,35 +892,30 @@ guiTypes = {
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300	
+		clipping = no
 	
 		size = { width = 540 height = 400 }
 		
 		background = {
 			name = "Background"
-			spriteType = "GFX_tiled_bg"
+			spriteType = "GFX_tiled_bg_black"
 		}
-			
-		iconType = {
-			name = "header_bg"
-			spriteType = "GFX_occupation_select_law_header"
-			position = { x = 7 y = 10000 }
-			Orientation = "UPPER_LEFT"
-		}	
 			
 		buttonType = {
 			name = "close_button"
-			position = { x = -44 y = 8 }
-			quadTextureSprite = "GFX_closebutton"
+			position = { x = -54 y = -31 }
+			quadTextureSprite = "GFX_exit_button"
 			buttonFont = "Main_14_black"
 			shortcut = "ESCAPE"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			pdx_tooltip = "CLOSE"
+			scale = 0.7
 		}
 		
 		instantTextboxType = {
 			name = "title"
-			position = { x = 25 y = 13 }
+			position = { x = 25 y = 16 }
 			textureFile = ""
 			font = "Beyondsmall"
 			borderSize = {x = 0 y = 0}
@@ -1127,8 +1085,8 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "select_garrison_name"
-			position = { x = 70 y = 8 }
-			font = "Arialsmall"
+			position = { x = 70 y = 11 }
+			font = "Focusfont"
 			Orientation = "LEFT"
 			vertical_alignment = center 
 			maxWidth = 270
@@ -1146,21 +1104,22 @@ guiTypes = {
 		iconType = {
 			name = "manpower_icon"
 			spriteType = "GFX_occupation_manpower_cost"
-			position = { x = 285 y = 12 }
+			position = { x = 10000 y = 12 }
 		}
 		
 		instantTextBoxType = {
 			name = "manpower_value"
-			position = { x = 310 y = 13 }
-			font = "Arialsmall"
+			position = { x = 290 y = 15 }
+			font = "Focusfont"
 			text = "24.0"
 			maxWidth = 57
+			format = right
 		}
 		
 		instantTextBoxType = {
 			name = "IC_value"
-			position = { x = 360 y = 13 }
-			font = "Arialsmall"
+			position = { x = 360 y = 15 }
+			font = "Focusfont"
 			text = "24.0"
 			maxWidth = 57
 		}
@@ -1168,16 +1127,17 @@ guiTypes = {
 		iconType = {
 			name = "softness_icon"
 			spriteType = "GFX_armor_softness_icon"
-			position = { x = 428 y = 17 }
+			position = { x = 10000 y = 17 }
 			tooltip = "GARRISON_HARDNESS_TOOLTIP"
 		}
 		
 		instantTextBoxType = {
 			name = "softness_value"
-			position = { x = 465 y = 13 }
-			font = "Arialsmall"
+			position = { x = 425 y = 15 }
+			font = "Focusfont"
 			text = "24.0"
 			maxWidth = 57
+			format = right
 			tooltip = "GARRISON_HARDNESS_TOOLTIP"
 		}
 	}

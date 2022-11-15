@@ -9,469 +9,473 @@ scripted_gui = {
 		visible = {
             is_ai = no
 		}
+
+        ai_enabled = {
+            always = no
+        }
 		
-		effects = {
-			low_mobilization_click = {
-                swap_ideas = {
-                    remove_idea = extensive_conscription
-                    add_idea = limited_conscription
-                }
-                add_political_power = -150
-                clr_country_flag = show_mobilization_laws
-            }
-            mid_mobilization_click = {
-                if = {
-                    limit = {
-                        has_idea = limited_conscription
-                    }
-                    swap_ideas = {
-                        remove_idea = limited_conscription
-                        add_idea = extensive_conscription
-                    }
-                }
-                if = {
-                    limit = {
-                        has_idea = service_by_requirement
-                    }
-                    swap_ideas = {
-                        remove_idea = service_by_requirement
-                        add_idea = extensive_conscription
-                    }
-                }
-                add_political_power = -150
-                clr_country_flag = show_mobilization_laws
-            }
-            high_mobilization_click = {
-                if = {
-                    limit = {
-                        has_idea = all_adults_serve
-                    }
-                    swap_ideas = {
-                        remove_idea = all_adults_serve
-                        add_idea = service_by_requirement
-                    }
-                }
-                if = {
-                    limit = {
-                        has_idea = extensive_conscription
-                    }
-                    swap_ideas = {
-                        remove_idea = extensive_conscription
-                        add_idea = service_by_requirement
-                    }
-                }
-                add_political_power = -150
-                clr_country_flag = show_mobilization_laws
-            }
-            total_mobilization_click = {
-                swap_ideas = {
-                    remove_idea = service_by_requirement
-                    add_idea = all_adults_serve
-                }
-                add_political_power = -150
-                clr_country_flag = show_mobilization_laws
-            }
-            #
-            low_trade_click = {
-                swap_ideas = {
-                    remove_idea = export_focus
-                    add_idea = free_trade
-                }
-                add_political_power = -150
-                clr_country_flag = show_trade_laws
-            }
-            mid_trade_click = {
-                if = {
-                    limit = {
-                        has_idea = free_trade
-                    }
-                    swap_ideas = {
-                        remove_idea = free_trade
-                        add_idea = export_focus
-                    }
-                }
-                if = {
-                    limit = {
-                        has_idea = limited_exports
-                    }
-                    swap_ideas = {
-                        remove_idea = limited_exports
-                        add_idea = export_focus
-                    }
-                }
-                add_political_power = -150
-                clr_country_flag = show_trade_laws
-            }
-            high_trade_click = {
-                if = {
-                    limit = {
-                        has_idea = closed_economy
-                    }
-                    swap_ideas = {
-                        remove_idea = closed_economy
-                        add_idea = limited_exports
-                    }
-                }
-                if = {
-                    limit = {
-                        has_idea = export_focus
-                    }
-                    swap_ideas = {
-                        remove_idea = export_focus
-                        add_idea = limited_exports
-                    }
-                }
-                add_political_power = -150
-                clr_country_flag = show_trade_laws
-            }
-            total_trade_click = {
-                swap_ideas = {
-                    remove_idea = limited_exports
-                    add_idea = closed_economy
-                }
-                add_political_power = -150
-                clr_country_flag = show_trade_laws
-            }
-            #
-            low_economy_click = {
-                swap_ideas = {
-                    remove_idea = low_economic_mobilisation
-                    add_idea = civilian_economy
-                }
-                add_political_power = -150
-                clr_country_flag = show_economy_laws
-            }
-            mid_economy_click = {
-                if = {
-                    limit = {
-                        has_idea = civilian_economy
-                    }
-                    swap_ideas = {
-                        remove_idea = civilian_economy
-                        add_idea = low_economic_mobilisation
-                    }
-                }
-                if = {
-                    limit = {
-                        has_idea = partial_economic_mobilisation
-                    }
-                    swap_ideas = {
-                        remove_idea = partial_economic_mobilisation
-                        add_idea = low_economic_mobilisation
-                    }
-                }
-                add_political_power = -150
-                clr_country_flag = show_economy_laws
-            }
-            high_economy_click = {
-                if = {
-                    limit = {
-                        has_idea = war_economy
-                    }
-                    swap_ideas = {
-                        remove_idea = war_economy
-                        add_idea = partial_economic_mobilisation
-                    }
-                }
-                if = {
-                    limit = {
-                        has_idea = low_economic_mobilisation
-                    }
-                    swap_ideas = {
-                        remove_idea = low_economic_mobilisation
-                        add_idea = partial_economic_mobilisation
-                    }
-                }
-                add_political_power = -150
-                clr_country_flag = show_economy_laws
-            }
-            total_economy_click = {
-                swap_ideas = {
-                    remove_idea = partial_economic_mobilisation
-                    add_idea = war_economy
-                }
-                add_political_power = -150
-                clr_country_flag = show_economy_laws
-            }
-            #
-            #
-            #
-            low_mobilization_selected_click = {
-                if = {
-                    limit = {
-                        has_country_flag = show_mobilization_laws
-                    }
-                    clr_country_flag = show_mobilization_laws
-                }
-                else = {
-                    set_country_flag = show_mobilization_laws 
-                }
-            }
-            mid_mobilization_selected_click = {
-                if = {
-                    limit = {
-                        has_country_flag = show_mobilization_laws
-                    }
-                    clr_country_flag = show_mobilization_laws
-                }
-                else = {
-                    set_country_flag = show_mobilization_laws 
-                }
-            }
-            high_mobilization_selected_click = {
-                if = {
-                    limit = {
-                        has_country_flag = show_mobilization_laws
-                    }
-                    clr_country_flag = show_mobilization_laws
-                }
-                else = {
-                    set_country_flag = show_mobilization_laws 
-                }
-            }
-            total_mobilization_selected_click = {
-                if = {
-                    limit = {
-                        has_country_flag = show_mobilization_laws
-                    }
-                    clr_country_flag = show_mobilization_laws
-                }
-                else = {
-                    set_country_flag = show_mobilization_laws 
-                }
-            }
-            #
-            low_trade_selected_click = {
-                if = {
-                    limit = {
-                        has_country_flag = show_trade_laws
-                    }
-                    clr_country_flag = show_trade_laws
-                }
-                else = {
-                    set_country_flag = show_trade_laws 
-                }
-            }
-            mid_trade_selected_click = {
-                if = {
-                    limit = {
-                        has_country_flag = show_trade_laws
-                    }
-                    clr_country_flag = show_trade_laws
-                }
-                else = {
-                    set_country_flag = show_trade_laws 
-                }
-            }
-            high_trade_selected_click = {
-                if = {
-                    limit = {
-                        has_country_flag = show_trade_laws
-                    }
-                    clr_country_flag = show_trade_laws
-                }
-                else = {
-                    set_country_flag = show_trade_laws 
-                }
-            }
-            total_trade_selected_click = {
-                if = {
-                    limit = {
-                        has_country_flag = show_trade_laws
-                    }
-                    clr_country_flag = show_trade_laws
-                }
-                else = {
-                    set_country_flag = show_trade_laws 
-                }
-            }
-            #
-            low_economy_selected_click = {
-                if = {
-                    limit = {
-                        has_country_flag = show_economy_laws
-                    }
-                    clr_country_flag = show_economy_laws
-                }
-                else = {
-                    set_country_flag = show_economy_laws 
-                }
-            }
-            mid_economy_selected_click = {
-                if = {
-                    limit = {
-                        has_country_flag = show_economy_laws
-                    }
-                    clr_country_flag = show_economy_laws
-                }
-                else = {
-                    set_country_flag = show_economy_laws 
-                }
-            }
-            high_economy_selected_click = {
-                if = {
-                    limit = {
-                        has_country_flag = show_economy_laws
-                    }
-                    clr_country_flag = show_economy_laws
-                }
-                else = {
-                    set_country_flag = show_economy_laws 
-                }
-            }
-            total_economy_selected_click = {
-                if = {
-                    limit = {
-                        has_country_flag = show_economy_laws
-                    }
-                    clr_country_flag = show_economy_laws
-                }
-                else = {
-                    set_country_flag = show_economy_laws 
-                }
-            }
-		}
+#		effects = {
+#			low_mobilization_click = {
+#                swap_ideas = {
+#                    remove_idea = extensive_conscription
+#                    add_idea = limited_conscription
+#                }
+#                add_political_power = -150
+#                clr_country_flag = show_mobilization_laws
+#            }
+#            mid_mobilization_click = {
+#                if = {
+#                    limit = {
+#                        has_idea = limited_conscription
+#                    }
+#                    swap_ideas = {
+#                        remove_idea = limited_conscription
+#                        add_idea = extensive_conscription
+#                    }
+#                }
+#                if = {
+#                    limit = {
+#                        has_idea = service_by_requirement
+#                    }
+#                    swap_ideas = {
+#                        remove_idea = service_by_requirement
+#                        add_idea = extensive_conscription
+#                    }
+#                }
+#                add_political_power = -150
+#                clr_country_flag = show_mobilization_laws
+#            }
+#            high_mobilization_click = {
+#                if = {
+#                    limit = {
+#                        has_idea = all_adults_serve
+#                    }
+#                    swap_ideas = {
+#                        remove_idea = all_adults_serve
+#                        add_idea = service_by_requirement
+#                    }
+#                }
+#                if = {
+#                    limit = {
+#                        has_idea = extensive_conscription
+#                    }
+#                    swap_ideas = {
+#                        remove_idea = extensive_conscription
+#                        add_idea = service_by_requirement
+#                    }
+#                }
+#                add_political_power = -150
+#                clr_country_flag = show_mobilization_laws
+#            }
+#            total_mobilization_click = {
+#                swap_ideas = {
+#                    remove_idea = service_by_requirement
+#                    add_idea = all_adults_serve
+#                }
+#                add_political_power = -150
+#                clr_country_flag = show_mobilization_laws
+#            }
+#            #
+#            low_trade_click = {
+#                swap_ideas = {
+#                    remove_idea = export_focus
+#                    add_idea = free_trade
+#                }
+#                add_political_power = -150
+#                clr_country_flag = show_trade_laws
+#            }
+#            mid_trade_click = {
+#                if = {
+#                    limit = {
+#                        has_idea = free_trade
+#                    }
+#                    swap_ideas = {
+#                        remove_idea = free_trade
+#                        add_idea = export_focus
+#                    }
+#                }
+#                if = {
+#                    limit = {
+#                        has_idea = limited_exports
+#                    }
+#                    swap_ideas = {
+#                        remove_idea = limited_exports
+#                        add_idea = export_focus
+#                    }
+#                }
+#                add_political_power = -150
+#                clr_country_flag = show_trade_laws
+#            }
+#            high_trade_click = {
+#                if = {
+#                    limit = {
+#                        has_idea = closed_economy
+#                    }
+#                    swap_ideas = {
+#                        remove_idea = closed_economy
+#                        add_idea = limited_exports
+#                    }
+#                }
+#                if = {
+#                    limit = {
+#                        has_idea = export_focus
+#                    }
+#                    swap_ideas = {
+#                        remove_idea = export_focus
+#                        add_idea = limited_exports
+#                    }
+#                }
+#                add_political_power = -150
+#                clr_country_flag = show_trade_laws
+#            }
+#            total_trade_click = {
+#                swap_ideas = {
+#                    remove_idea = limited_exports
+#                    add_idea = closed_economy
+#                }
+#                add_political_power = -150
+#                clr_country_flag = show_trade_laws
+#            }
+#            #
+#            low_economy_click = {
+#                swap_ideas = {
+#                    remove_idea = low_economic_mobilisation
+#                    add_idea = civilian_economy
+#                }
+#                add_political_power = -150
+#                clr_country_flag = show_economy_laws
+#            }
+#            mid_economy_click = {
+#                if = {
+#                    limit = {
+#                        has_idea = civilian_economy
+#                    }
+#                    swap_ideas = {
+#                        remove_idea = civilian_economy
+#                        add_idea = low_economic_mobilisation
+#                    }
+#                }
+#                if = {
+#                    limit = {
+#                        has_idea = partial_economic_mobilisation
+#                    }
+#                    swap_ideas = {
+#                        remove_idea = partial_economic_mobilisation
+#                        add_idea = low_economic_mobilisation
+#                    }
+#                }
+#                add_political_power = -150
+#                clr_country_flag = show_economy_laws
+#            }
+#            high_economy_click = {
+#                if = {
+#                    limit = {
+#                        has_idea = war_economy
+#                    }
+#                    swap_ideas = {
+#                        remove_idea = war_economy
+#                        add_idea = partial_economic_mobilisation
+#                    }
+#                }
+#                if = {
+#                    limit = {
+#                        has_idea = low_economic_mobilisation
+#                    }
+#                    swap_ideas = {
+#                        remove_idea = low_economic_mobilisation
+#                        add_idea = partial_economic_mobilisation
+#                    }
+#                }
+#                add_political_power = -150
+#                clr_country_flag = show_economy_laws
+#            }
+#            total_economy_click = {
+#                swap_ideas = {
+#                    remove_idea = partial_economic_mobilisation
+#                    add_idea = war_economy
+#                }
+#                add_political_power = -150
+#                clr_country_flag = show_economy_laws
+#            }
+#            #
+#            #
+#            #
+#            low_mobilization_selected_click = {
+#                if = {
+#                    limit = {
+#                        has_country_flag = show_mobilization_laws
+#                    }
+#                    clr_country_flag = show_mobilization_laws
+#                }
+#                else = {
+#                    set_country_flag = show_mobilization_laws 
+#                }
+#            }
+#            mid_mobilization_selected_click = {
+#                if = {
+#                    limit = {
+#                        has_country_flag = show_mobilization_laws
+#                    }
+#                    clr_country_flag = show_mobilization_laws
+#                }
+#                else = {
+#                    set_country_flag = show_mobilization_laws 
+#                }
+#            }
+#            high_mobilization_selected_click = {
+#                if = {
+#                    limit = {
+#                        has_country_flag = show_mobilization_laws
+#                    }
+#                    clr_country_flag = show_mobilization_laws
+#                }
+#                else = {
+#                    set_country_flag = show_mobilization_laws 
+#                }
+#            }
+#            total_mobilization_selected_click = {
+#                if = {
+#                    limit = {
+#                        has_country_flag = show_mobilization_laws
+#                    }
+#                    clr_country_flag = show_mobilization_laws
+#                }
+#                else = {
+#                    set_country_flag = show_mobilization_laws 
+#                }
+#            }
+#            #
+#            low_trade_selected_click = {
+#                if = {
+#                    limit = {
+#                        has_country_flag = show_trade_laws
+#                    }
+#                    clr_country_flag = show_trade_laws
+#                }
+#                else = {
+#                    set_country_flag = show_trade_laws 
+#                }
+#            }
+#            mid_trade_selected_click = {
+#                if = {
+#                    limit = {
+#                        has_country_flag = show_trade_laws
+#                    }
+#                    clr_country_flag = show_trade_laws
+#                }
+#                else = {
+#                    set_country_flag = show_trade_laws 
+#                }
+#            }
+#            high_trade_selected_click = {
+#                if = {
+#                    limit = {
+#                        has_country_flag = show_trade_laws
+#                    }
+#                    clr_country_flag = show_trade_laws
+#                }
+#                else = {
+#                    set_country_flag = show_trade_laws 
+#                }
+#            }
+#            total_trade_selected_click = {
+#                if = {
+#                    limit = {
+#                        has_country_flag = show_trade_laws
+#                    }
+#                    clr_country_flag = show_trade_laws
+#                }
+#                else = {
+#                    set_country_flag = show_trade_laws 
+#                }
+#            }
+#            #
+#            low_economy_selected_click = {
+#                if = {
+#                    limit = {
+#                        has_country_flag = show_economy_laws
+#                    }
+#                    clr_country_flag = show_economy_laws
+#                }
+#                else = {
+#                    set_country_flag = show_economy_laws 
+#                }
+#            }
+#            mid_economy_selected_click = {
+#                if = {
+#                    limit = {
+#                        has_country_flag = show_economy_laws
+#                    }
+#                    clr_country_flag = show_economy_laws
+#                }
+#                else = {
+#                    set_country_flag = show_economy_laws 
+#                }
+#            }
+#            high_economy_selected_click = {
+#                if = {
+#                    limit = {
+#                        has_country_flag = show_economy_laws
+#                    }
+#                    clr_country_flag = show_economy_laws
+#                }
+#                else = {
+#                    set_country_flag = show_economy_laws 
+#                }
+#            }
+#            total_economy_selected_click = {
+#                if = {
+#                    limit = {
+#                        has_country_flag = show_economy_laws
+#                    }
+#                    clr_country_flag = show_economy_laws
+#                }
+#                else = {
+#                    set_country_flag = show_economy_laws 
+#                }
+#            }
+#		}
 
 		triggers = {
-            low_mobilization_click_enabled = {
-                has_idea = extensive_conscription
-                has_political_power > 149
-            }
-            mid_mobilization_click_enabled = {
-                OR = {
-                    has_idea = limited_conscription
-                    has_idea = service_by_requirement
-                }
-                has_political_power > 149
-            }
-            high_mobilization_click_enabled = {
-                OR = {
-                    has_idea = extensive_conscription
-                    has_idea = all_adults_serve
-                }
-                has_political_power > 149
-            }
-            total_mobilization_click_enabled = {
-                has_idea = service_by_requirement
-                has_political_power > 149
-            }
-            #
-            low_trade_click_enabled = {
-                has_idea = export_focus
-                has_political_power > 149
-            }
-            mid_trade_click_enabled = {
-                OR = {
-                    has_idea = free_trade
-                    has_idea = limited_exports
-                }
-                has_political_power > 149
-            }
-            high_trade_click_enabled = {
-                OR = {
-                    has_idea = export_focus
-                    has_idea = closed_economy
-                }
-                has_political_power > 149
-            }
-            total_trade_click_enabled = {
-                has_idea = limited_exports
-                has_political_power > 149
-            }
-            #
-            low_economy_click_enabled = {
-                has_idea = low_economic_mobilisation
-                has_political_power > 149
-            }
-            mid_economy_click_enabled = {
-                OR = {
-                    has_idea = civilian_economy
-                    has_idea = partial_economic_mobilisation
-                }
-                has_political_power > 149
-            }
-            high_economy_click_enabled = {
-                OR = {
-                    has_idea = low_economic_mobilisation
-                    has_idea = war_economy
-                }
-                has_political_power > 149
-            }
-            total_economy_click_enabled = {
-                has_idea = partial_economic_mobilisation
-                has_political_power > 149
-            }
-            #
-            #
-            #
-            low_mobilization_visible = {
-                has_idea = extensive_conscription
-                has_country_flag = show_mobilization_laws
-            }
-            mid_mobilization_visible = {
-                OR = {
-                    has_idea = limited_conscription
-                    has_idea = service_by_requirement
-                }
-                has_country_flag = show_mobilization_laws
-            }
-            high_mobilization_visible = {
-                OR = {
-                    has_idea = extensive_conscription
-                    has_idea = all_adults_serve
-                }
-                has_country_flag = show_mobilization_laws
-            }
-            total_mobilization_visible = {
-                has_idea = service_by_requirement
-                has_country_flag = show_mobilization_laws
-            }
-            #
-            low_trade_visible = {
-                has_idea = export_focus
-                has_country_flag = show_trade_laws
-            }
-            mid_trade_visible = {
-                OR = {
-                    has_idea = free_trade
-                    has_idea = limited_exports
-                }
-                has_country_flag = show_trade_laws
-            }
-            high_trade_visible = {
-                OR = {
-                    has_idea = export_focus
-                    has_idea = closed_economy
-                }
-                has_country_flag = show_trade_laws
-            }
-            total_trade_visible = {
-                has_idea = limited_exports
-                has_country_flag = show_trade_laws
-            }
-            #
-            low_economy_visible = {
-                has_idea = low_economic_mobilisation
-                has_country_flag = show_economy_laws
-            }
-            mid_economy_visible = {
-                OR = {
-                    has_idea = civilian_economy
-                    has_idea = partial_economic_mobilisation
-                }
-                has_country_flag = show_economy_laws
-            }
-            high_economy_visible = {
-                OR = {
-                    has_idea = low_economic_mobilisation
-                    has_idea = war_economy
-                }
-                has_country_flag = show_economy_laws
-            }
-            total_economy_visible = {
-                has_idea = partial_economic_mobilisation
-                has_country_flag = show_economy_laws
-            }
+            #low_mobilization_click_enabled = {
+            #    has_idea = extensive_conscription
+            #    has_political_power > 149
+            #}
+            #mid_mobilization_click_enabled = {
+            #    OR = {
+            #        has_idea = limited_conscription
+            #        has_idea = service_by_requirement
+            #    }
+            #    has_political_power > 149
+            #}
+            #high_mobilization_click_enabled = {
+            #    OR = {
+            #        has_idea = extensive_conscription
+            #        has_idea = all_adults_serve
+            #    }
+            #    has_political_power > 149
+            #}
+            #total_mobilization_click_enabled = {
+            #    has_idea = service_by_requirement
+            #    has_political_power > 149
+            #}
+            ##
+            #low_trade_click_enabled = {
+            #    has_idea = export_focus
+            #    has_political_power > 149
+            #}
+            #mid_trade_click_enabled = {
+            #    OR = {
+            #        has_idea = free_trade
+            #        has_idea = limited_exports
+            #    }
+            #    has_political_power > 149
+            #}
+            #high_trade_click_enabled = {
+            #    OR = {
+            #        has_idea = export_focus
+            #        has_idea = closed_economy
+            #    }
+            #    has_political_power > 149
+            #}
+            #total_trade_click_enabled = {
+            #    has_idea = limited_exports
+            #    has_political_power > 149
+            #}
+            ##
+            #low_economy_click_enabled = {
+            #    has_idea = low_economic_mobilisation
+            #    has_political_power > 149
+            #}
+            #mid_economy_click_enabled = {
+            #    OR = {
+            #        has_idea = civilian_economy
+            #        has_idea = partial_economic_mobilisation
+            #    }
+            #    has_political_power > 149
+            #}
+            #high_economy_click_enabled = {
+            #    OR = {
+            #        has_idea = low_economic_mobilisation
+            #        has_idea = war_economy
+            #    }
+            #    has_political_power > 149
+            #}
+            #total_economy_click_enabled = {
+            #    has_idea = partial_economic_mobilisation
+            #    has_political_power > 149
+            #}
+            ##
+            ##
+            ##
+            #low_mobilization_visible = {
+            #    has_idea = extensive_conscription
+            #    has_country_flag = show_mobilization_laws
+            #}
+            #mid_mobilization_visible = {
+            #    OR = {
+            #        has_idea = limited_conscription
+            #        has_idea = service_by_requirement
+            #    }
+            #    has_country_flag = show_mobilization_laws
+            #}
+            #high_mobilization_visible = {
+            #    OR = {
+            #        has_idea = extensive_conscription
+            #        has_idea = all_adults_serve
+            #    }
+            #    has_country_flag = show_mobilization_laws
+            #}
+            #total_mobilization_visible = {
+            #    has_idea = service_by_requirement
+            #    has_country_flag = show_mobilization_laws
+            #}
+            ##
+            #low_trade_visible = {
+            #    has_idea = export_focus
+            #    has_country_flag = show_trade_laws
+            #}
+            #mid_trade_visible = {
+            #    OR = {
+            #        has_idea = free_trade
+            #        has_idea = limited_exports
+            #    }
+            #    has_country_flag = show_trade_laws
+            #}
+            #high_trade_visible = {
+            #    OR = {
+            #        has_idea = export_focus
+            #        has_idea = closed_economy
+            #    }
+            #    has_country_flag = show_trade_laws
+            #}
+            #total_trade_visible = {
+            #    has_idea = limited_exports
+            #    has_country_flag = show_trade_laws
+            #}
+            ##
+            #low_economy_visible = {
+            #    has_idea = low_economic_mobilisation
+            #    has_country_flag = show_economy_laws
+            #}
+            #mid_economy_visible = {
+            #    OR = {
+            #        has_idea = civilian_economy
+            #        has_idea = partial_economic_mobilisation
+            #    }
+            #    has_country_flag = show_economy_laws
+            #}
+            #high_economy_visible = {
+            #    OR = {
+            #        has_idea = low_economic_mobilisation
+            #        has_idea = war_economy
+            #    }
+            #    has_country_flag = show_economy_laws
+            #}
+            #total_economy_visible = {
+            #    has_idea = partial_economic_mobilisation
+            #    has_country_flag = show_economy_laws
+            #}
             #
             #
             #
