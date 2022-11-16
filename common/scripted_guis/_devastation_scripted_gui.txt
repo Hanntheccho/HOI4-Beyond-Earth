@@ -10,6 +10,16 @@ scripted_gui = {
 		}
 		
 		effects = {
+            auto_reduce_devastation_button_click = {
+                ROOT = {
+                    clr_country_flag = auto_reduce_devastation_enabled
+                }
+			}
+            auto_reduce_devastation_button_disabled_click = {
+                ROOT = {
+                    set_country_flag = auto_reduce_devastation_enabled
+                }
+			}
 			reduce_devastation_button_click = {
                 THIS = {
                     decrease_devastation = yes
@@ -158,6 +168,18 @@ scripted_gui = {
             }
 		}
         triggers = {
+            auto_reduce_devastation_button_visible = {
+                ROOT = {
+                    has_country_flag = auto_reduce_devastation_enabled
+                }
+			}
+            auto_reduce_devastation_button_disabled_visible = {
+                NOT = {
+                    ROOT = {
+                        has_country_flag = auto_reduce_devastation_enabled
+                    }
+                }
+			}
             reduce_devastation_button_visible = {
                 ROOT = {
                     NOT = {

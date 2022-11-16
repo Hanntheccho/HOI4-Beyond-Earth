@@ -1,6 +1,12 @@
 on_actions = {
 	on_startup = {
 		effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = auto_reduce_devastation_enabled
+			}
             set_variable = { devastation_chance = threat }
 			#ADDING DYNAMIC MODIFIERS
             every_state = {
@@ -427,6 +433,67 @@ on_actions = {
     }
 	on_weekly = {
 		effect = {
+			if = {
+				limit = {
+					has_country_flag = auto_reduce_devastation_enabled
+					check_variable = {
+						industrial_power > 200
+					}
+					NOT = {
+						OR = {
+							has_government = harmony
+							has_country_flag = has_mind_tier3
+						}
+					}
+					any_owned_state = {
+						NOT = {
+							has_state_flag = devastation_reduction_timeout_flag
+						}
+					}
+				}
+				add_to_variable = {
+					industrial_power = -25
+				}
+				random_owned_state = {
+					limit = {
+						NOT = {
+							has_state_flag = devastation_reduction_timeout_flag
+						}
+					}
+					decrease_devastation = yes
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = auto_reduce_devastation_enabled
+					check_variable = {
+						industrial_power > 200
+					}
+					OR = {
+						has_government = harmony
+						has_country_flag = has_mind_tier3
+					}
+					any_owned_state = {
+						NOT = {
+							has_state_flag = devastation_reduction_timeout_flag
+						}
+					}
+				}
+				add_to_variable = {
+					industrial_power = -40
+				}
+				random_owned_state = {
+					limit = {
+						NOT = {
+							has_state_flag = devastation_reduction_timeout_flag
+						}
+					}
+					decrease_devastation = yes
+				}
+			}
+			else = {
+
+			}
 			calculate_current_devastation = yes
 			clear_variable = max_devastation
             set_variable = { max_devastation = num_controlled_states }
