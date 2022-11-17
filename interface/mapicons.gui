@@ -653,12 +653,21 @@ guiTypes = {
 	containerWindowType = {
 		name = "resource_mapicon_item"
 		position = { x = 0 y = 0 }
-		size = { width = 100 height = 16 }
+		size = { width = 120 height = 33 }
 		orientation = upper_left
+
+		background = {
+			name = "bg"
+			quadTextureSprite = "GFX_focus_tooltip"
+			position = {
+				x = 0
+				y = 0
+			}
+		}
 
 		instantTextboxType = {
 			name = "desc"
-			position = { x = 0 y = 0 }
+			position = { x = 4 y = 9 }
 			font = "Focusfont"
 			text = ""
 			maxWidth = 200
@@ -710,7 +719,7 @@ guiTypes = {
 			position = { x=20 y=0 }
 			size = { width=95 height=44 }
 			orientation = upper_left
-			clipping = no
+			clipping = yes
 
 			iconType = {
 				name = "flag"
@@ -728,10 +737,10 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "text"
-				position = { x=0 y=5 }
+				position = { x=100 y=5 }
 				font = "Focusfont"
 				text = ""
-				maxWidth = 95
+				maxWidth = 30
 				alwaystransparent = yes
 				format = center
 			}
@@ -744,63 +753,66 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "infrastructure_effect"
-				position = { x=8 y=25 }
+				position = { x=2 y=18 }
 				font = "Focusfont"
 				text = "+25%"
 				maxWidth = 94
 				maxHeight = 20
+				multiline = no
 				alwaystransparent = yes
-				format = left
+				format = center
 			}
 		}
 
 		containerWindowType = {
 			name = "conversion_info_window"
 			position = { x=0 y=0 }
-			size = { width=92 height=20 }
+			size = { width=100 height=54 }
 			orientation = upper_left
-
-			iconType = {
-				name ="Background"
-				spriteType = "GFX_conversion_mapicon"
-				position = { x=-6 y=-3 }
-				Orientation = "UPPER_LEFT"
-				alwaystransparent = yes
+			clipping = yes
+			
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_focus_tooltip"
 			}
 
 			buttonType = {
 				name = "industry_btn"
-				spriteType = "GFX_conversion_mapicon_industry"
-				position = { x=0 y=0 }
+				spriteType = "GFX_buildings_strip"
+				frame = 1
+				position = { x=4 y=4 }
 				Orientation = "UPPER_LEFT"
 			}
 
 			iconType = {
 				name ="industry_btn_disabled"
-				spriteType = "GFX_conversion_mapicon_industry_disabled"
-				position = { x=0 y=0 }
+				spriteType = "GFX_buildings_strip"
+				frame = 19
+				position = { x=4 y=4 }
 				Orientation = "UPPER_LEFT"
 				alwaystransparent = yes
 			}
 
 			buttonType = {
 				name = "arms_btn"
-				spriteType = "GFX_conversion_mapicon_arms"
-				position = { x=72 y=0 }
+				spriteType = "GFX_buildings_strip"
+				frame = 2
+				position = { x=50 y=4 }
 				Orientation = "UPPER_LEFT"
 			}
 
 			iconType = {
 				name ="arms_btn_disabled"
-				spriteType = "GFX_conversion_mapicon_arms_disabled"
-				position = { x=72 y=0 }
+				spriteType = "GFX_buildings_strip"
+				frame = 19
+				position = { x=50 y=4 }
 				Orientation = "UPPER_LEFT"
 				alwaystransparent = yes
 			}
 
 			instantTextboxType = {
 				name = "industry_count"
-				position = { x=25 y=1 }
+				position = { x=25 y=100 }
 				font = "Focusfont"
 				text = ""
 				maxWidth = 52
@@ -811,7 +823,7 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "arms_count"
-				position = { x=60 y=1 }
+				position = { x=60 y=100 }
 				font = "Focusfont"
 				text = ""
 				maxWidth = 52

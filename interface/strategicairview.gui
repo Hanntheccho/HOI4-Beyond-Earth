@@ -26,7 +26,7 @@ guiTypes = {
 		name = "strategicairview"
 #		position = {x=550 y=280}
 		position = {x=-276 y=-220}
-		size = { width = 552 height = 327 }
+		size = { width = 552 height = 457 }
 
 		Orientation = center
 		clipping = no
@@ -36,8 +36,36 @@ guiTypes = {
 
 		background = {
 			name = "strategic_air_bg"
-			position = {x=-4 y=-5}
-			spriteType = "GFX_strategic_air_bg"	
+			spriteType = "GFX_tiled_bg_black"
+			position = {
+				x = 0
+				y = -20
+			}	
+		}
+
+		instantTextboxType = {
+			name = "region_name2"
+			position = {x=20 y=-10}
+			font = "Beyond"
+			text = "/////////// ////////////////"
+			maxWidth = 538
+			maxHeight = 23
+			format = left
+			alwaystransparent = yes
+		}
+
+		containerWindowType = {
+			name = "bg"
+			size = { width = 546 height = 451 }
+
+			background = {
+				name = "strategic_air_bg"
+				spriteType = "GFX_tiled_bg_alpha"
+				position = {
+					x = 3
+					y = -17
+				}	
+			}
 		}
 		
 		iconType = { 
@@ -100,12 +128,12 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "region_name"
-			position = {x=0 y=2}
-			font = "hoi_18mbs"
+			position = {x=30 y=1}
+			font = "Beyondsmall"
 			text = ""
 			maxWidth = 538
 			maxHeight = 23
-			format = center
+			format = left
 			alwaystransparent = yes
 		}
 		
@@ -440,12 +468,13 @@ guiTypes = {
 
 		buttonType = {
 			name = "close_button"
-			position = {x=511 y=1}	
-			spriteType = "GFX_closebutton_small"
+			position = {x=491 y=-54}	
+			spriteType = "GFX_exit_button"
 			orientation = "UPPER_LEFT"
 			clicksound = click_close
 			shortcut = "ESCAPE"
 			pdx_tooltip = "CLOSE"
+			scale = 0.8
 		}
 
 

@@ -3,8 +3,8 @@ guiTypes = {
 	containerWindowType = {
 		name = "battleplantools_window"
 		position = {x=-270 y=0}
-		show_position = {x=-270 y=-245}
-		size = { width=505 height=60 }
+		show_position = {x=-20 y=-245}
+		size = { width=670 height=92 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
@@ -16,18 +16,18 @@ guiTypes = {
 
 		background = {
 			name = "Background"
-			spriteType = "GFX_BPT_bg"
-			position = {x=-36 y=0 }
+			spriteType = "GFX_tiled_bg_black"
+			position = {x=0 y=0 }
 		}
 
 		containerWindowType = {
 			name = "ability_list_container"
-			position = {x=250 y=61}
+			position = {x=10000 y=61}
 		}
 		
 		editBoxType = {
 			name = "operation_name"
-			position = {x=-22 y=8}
+			position = {x=10000 y=8}
 			size = {x=380 y=23}
 			font = "hoi_18mbs"
 			text = ""
@@ -41,17 +41,19 @@ guiTypes = {
 
 			buttonType = {
 				name = "btn_exercise"
-				position = {x=-25 y=37}
-				spriteType ="GFX_exercise_icon"
+				position = {x=10 y=10}
+				spriteType ="GFX_difficulty_button_veteran"
 				clicksound = click_battleplan
 				oversound = ui_menu_over
 				shortcut = "k"
 				shortcut = "shift+k"
+				buttonFont = "Arialsmall"
+				buttonText = "TRAIN //"
 			}
 
 			buttonType = {
 				name = "btn_priority"
-				position = {x=5 y=32}
+				position = {x=5 y=-42}
 				buttonFont = "hoi_16mbs"
 				quadTextureSprite = "GFX_BPT_execute_mid"
 				frame = 2
@@ -61,7 +63,7 @@ guiTypes = {
 			
 			buttonType = {
 				name = "btn_cohesion"
-				position = {x=40 y=32} 
+				position = {x=45 y=-41} 
 				buttonFont = "hoi_16mbs"
 				quadTextureSprite = "GFX_BPT_execute_mid"
 				frame = 2
@@ -71,12 +73,15 @@ guiTypes = {
 
 			buttonType = {
 				name = "btn_exercise_anim"
-				position = {x=-24 y=38}
-				spriteType ="GFX_exercise_icon_anim_strip_big"
+				position = {x=10 y=10}
+				spriteType ="GFX_difficulty_button_veteran"
+				frame = 2
 				clicksound = click_battleplan
 				oversound = ui_menu_over
 				shortcut = "k"
 				shortcut = "shift+k"
+				buttonFont = "Arialsmall"
+				buttonText = "TRAIN //"
 			}
 
 			iconType = {
@@ -88,15 +93,17 @@ guiTypes = {
 
 			buttonType = {
 				name = "btn_order_draw_naval_inv"
-				position = {x=88 y=33}
-				spriteType = "GFX_BPT_order_draw_naval_inv_btn"
+				position = {x=98 y=10}
+				spriteType = "GFX_difficulty_button_veteran"
 				clicksound = click_battleplan
 				oversound = ui_menu_over
+				buttonFont = "Arialsmall"
+				buttonText = "NAVAL //"
 			}
 
 			buttonType = {
 				name = "btn_order_draw_naval_inv_with_harbor"
-				position = {x=123 y=33}
+				position = {x=10000 y=33}
 				spriteType = "GFX_BPT_order_draw_naval_inv_with_harbor_btn"
 				clicksound = click_battleplan
 				oversound = ui_menu_over
@@ -104,7 +111,7 @@ guiTypes = {
 
 			buttonType = {
 				name = "btn_order_draw_paradrop"
-				position = {x=158 y=33}
+				position = {x=10000 y=33}
 				spriteType = "GFX_BPT_order_draw_paradrop_btn"
 				clicksound = click_battleplan
 				oversound = ui_menu_over
@@ -112,50 +119,37 @@ guiTypes = {
 
 			buttonType = {
 				name = "btn_order_draw_defence"
-				position = {x=204 y=33}
-				spriteType = "GFX_BPT_order_draw_defence_btn"
+				position = {x=187 y=10}
+				spriteType = "GFX_difficulty_button_civilian"
 				shortcut = "z"
 				clicksound = click_battleplan
 				oversound = ui_menu_over
-			}
-
-			iconType = {
-				name = "draw_defence_tutorial_glow"
-				position = {x=202 y=30}
-				spriteType ="GFX_tutorial_highlight_battleplan_btn"
-				alwaystransparent = yes
-				hide = yes
+				buttonFont = "Arialsmall"
+				buttonText = "FRONT LINE /"
 			}
 
 			buttonType = {
 				name = "btn_order_draw_offence"
-
-				position = {x=241 y=33}
-				spriteType = "GFX_BPT_order_draw_offence_btn"
+				position = {x=306 y=10}
+				spriteType = "GFX_difficulty_button_civilian"
 				shortcut = "x"
 				clicksound = click_battleplan
 				oversound = ui_menu_over
+				buttonFont = "Arialsmall"
+				buttonText = "OFFENSIVE //"
 			}
 
 			iconType = {
 				name = "icon_execute_type"
-				position = {x=240 y=45}
+				position = {x=10000 y=45}
 				spriteType ="GFX_BPT_execute_strip"
 				frame = 3
-			}
-
-			iconType = {
-				name = "draw_offense_tutorial_glow"
-				position = {x=240 y=31}
-				spriteType ="GFX_tutorial_highlight_battleplan_btn"
-				alwaystransparent = yes
-				hide = yes
 			}
 
 			buttonType = {
 				name = "btn_order_draw_blitz"
 
-				position = {x=276 y=33}
+				position = {x=10000 y=33}
 				spriteType = "GFX_BPT_order_draw_blitz_btn"
 				shortcut = "shift+x"
 				clicksound = click_battleplan
@@ -164,60 +158,72 @@ guiTypes = {
 
 			buttonType = {
 				name = "btn_order_draw_fallback"
-				position = {x=320 y=33}
-				spriteType = "GFX_BPT_order_draw_fallback_btn"
+				position = {x=425 y=10}
+				spriteType = "GFX_difficulty_button_civilian"
 				shortcut = "c"
 				clicksound = click_battleplan
 				oversound = ui_menu_over
+				buttonFont = "Arialsmall"
+				buttonText = "FALLBACK /"
 			}
 
 			buttonType = {
 				name = "btn_area_defense"
-				position = {x=356 y=33}
-				spriteType = "GFX_BPT_order_area_defense_btn"
+				position = {x=544 y=10}
+				spriteType = "GFX_difficulty_button_civilian"
 				clicksound = click_battleplan
 				oversound = ui_menu_over
 				shortcut = "v"
+				buttonFont = "Arialsmall"
+				buttonText = "DEFENSE ///"
 			}
 
 			buttonType = {
 				name = "btn_assign_units"
-				position = {x=402 y=33}
-				spriteType = "GFX_BPT_order_assign_units_btn"
+				position = {x=130 y=47}
+				spriteType = "GFX_difficulty_button_veteran"
 				clicksound = click_battleplan
 				oversound = ui_menu_over
+				buttonFont = "Arialsmall"
+				buttonText = "ADD /////"
 			}
 
 			buttonType = {
 				name = "btn_unassign_units"
-				position = {x=437 y=33}
-				spriteType = "GFX_BPT_order_unassign_units_btn"
+				position = {x=220 y=47}
+				spriteType = "GFX_difficulty_button_veteran"
 				clicksound = click_battleplan
 				oversound = ui_menu_over
 				shortcut = "ctrl+h"
+				buttonFont = "Arialsmall"
+				buttonText = "REMOVE"
 			}
 
 			buttonType = {
 				name = "btn_order_reshape"
-				position = {x=482 y=32}
-				spriteType = "GFX_BPT_order_reshape_btn"
+				position = {x=310 y=47}
+				spriteType = "GFX_difficulty_button_veteran"
 				#shortcut = "d"
 				clicksound = click_battleplan
 				oversound = ui_menu_over
+				buttonFont = "Arialsmall"
+				buttonText = "EDIT ///"
 			}
 
 			buttonType = {
 				name = "btn_order_delete"
-				position = {x=528 y=33}
-				spriteType = "GFX_BPT_order_delete_btn"
+				position = {x=424 y=47}
+				spriteType = "GFX_difficulty_button_civilian"
 				shortcut = "DEL"
 				clicksound = click_battleplan
 				oversound = ui_menu_over
+				buttonFont = "Arialsmall"
+				buttonText = "DELETE ///"
 			}
 
 			instantTextboxType = {
 				name = "title"
-				position = {x=-22 y=8}
+				position = {x=10000 y=8}
 				font = "hoi_18mbs"
 				text = "BATTLE_PLANS"
 				maxWidth = 346
@@ -228,7 +234,7 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "hint"
-				position = {x=172 y=8}
+				position = {x=10000 y=8}
 				font = "hoi_18mbs"
 				text = "?"
 				maxWidth = 346
@@ -239,8 +245,8 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "battleplantools_area_defense_config_window"
-				position = {x=202 y=-50}
-				size = { width=494 height=280 }
+				position = {x=162 y=-80}
+				size = { width=644 height=70 }
 				#animation_time = 300
 				#Orientation = center_down
 				#clipping = yes
@@ -249,76 +255,88 @@ guiTypes = {
 
 				background = {
 					name = "Background"
-					spriteType = "GFX_BPT_areadef_conf_bg"
+					spriteType = "GFX_tiled_bg_black"
 				}
 
 				instantTextboxType = {
 					name = "garrison_order_headline"
-					position = {x=14 y=6}
-					font = "hoi_18mbs"
+					position = {x=290 y=10}
+					font = "Beyond"
 					text = "GARRISON_ORDER_CONF"
 					maxWidth = 340
 					maxHeight = 23
-					format = left
+					format = right
 				}
 
 				buttonType = {
 					name = "btn_setting_victorypoints"
-					position = {x=15 y=31}
-					spriteType = "GFX_garr_vp"
+					position = {x=15 y=20}
+					spriteType = "GFX_difficulty_button_regular"
 					clicksound = click_battleplan
 					oversound = ui_menu_over
 					pdx_tooltip = "GARRISON_CONF_VP"
+					buttonFont = "Arialsmall"
+					buttonText = "VPs ///"
 				}
 
 				buttonType = {
 					name = "btn_setting_ports"
-					position = {x=55 y=31}
-					spriteType = "GFX_garr_port"
+					position = {x=105 y=20}
+					spriteType = "GFX_difficulty_button_regular"
 					clicksound = click_battleplan
 					oversound = ui_menu_over
 					pdx_tooltip = "GARRISON_CONF_PORT"
+					buttonFont = "Arialsmall"
+					buttonText = "PORTS ///"
 				}
 
 				buttonType = {
 					name = "btn_setting_coastlines"
-					position = {x=95 y=31}
-					spriteType = "GFX_garr_coastline"
+					position = {x=195 y=20}
+					spriteType = "GFX_difficulty_button_regular"
 					clicksound = click_battleplan
 					oversound = ui_menu_over
 					pdx_tooltip = "GARRISON_CONF_COAST"
+					buttonFont = "Arialsmall"
+					buttonText = "COAST ///"
 				}
 
 				buttonType = {
 					name = "btn_setting_airbases"
-					position = {x=135 y=31}
-					spriteType = "GFX_garr_airbase"
+					position = {x=285 y=20}
+					spriteType = "GFX_difficulty_button_regular"
 					clicksound = click_battleplan
 					oversound = ui_menu_over
 					pdx_tooltip = "GARRISON_CONF_AIRBASE"
+					buttonFont = "Arialsmall"
+					buttonText = "AIRBASE"
 				}
 
 				buttonType = {
 					name = "btn_setting_forts"
-					position = {x=175 y=31}
-					spriteType = "GFX_garr_fort"
+					position = {x=375 y=20}
+					spriteType = "GFX_difficulty_button_regular"
 					clicksound = click_battleplan
 					oversound = ui_menu_over
 					pdx_tooltip = "GARRISON_CONF_FORT"
+					buttonFont = "Arialsmall"
+					buttonText = "FORTS ///"
 				}
 
 				buttonType = {
 					name = "btn_setting_rail"
-					position = {x=215 y=31}
-					spriteType = "GFX_garr_rail"
+					position = {x=465 y=20}
+					spriteType = "GFX_difficulty_button_regular"
 					clicksound = click_battleplan
 					oversound = ui_menu_over
 					pdx_tooltip = "GARRISON_CONF_RAIL"
+					buttonFont = "Arialsmall"
+					buttonText = "RAILS ///"
 				}
 
 				iconType = {
 					name = "selected_order_overlay"
-					position = { x = 103 y = 65 }
+					position = { x = 10000 y = 65 }
 					spriteType = "GFX_selected_order_overlay"
 					alwaystransparent = yes
 				}
@@ -328,8 +346,8 @@ guiTypes = {
 			containerWindowType = {
 				name = "planning_speed_window"
 				position = {x=-49 y=-40}
-				show_position = {x=-49 y=-50}
-				size = { width=148 height=117 }
+				show_position = {x=-49 y=-120}
+				size = { width=148 height=70 }
 				show_animation_type = decelerated
 				hide_animation_type = accelerated
 				animation_time = 200
@@ -340,13 +358,13 @@ guiTypes = {
 
 				background = {
 					name = "Background"
-					spriteType = "GFX_battle_plan_speed_bg"
+					spriteType = "GFX_tiled_bg_black"
 					alwaystransparent = yes
 				}
 
 				buttonType = {
 					name = "btn_execute_0"
-					position = {x=15 y=30}
+					position = {x=15 y=20}
 					buttonFont = "hoi_16mbs"
 					quadTextureSprite = "GFX_BPT_execute_slow"
 					pdx_tooltip = "PLAN_EXECUTE_CAREFUL_TITLE"
@@ -358,7 +376,7 @@ guiTypes = {
 
 				buttonType = {
 					name = "btn_execute_1"
-					position = {x=55 y=30}
+					position = {x=55 y=20}
 					buttonFont = "hoi_16mbs"
 					quadTextureSprite = "GFX_BPT_execute_mid"
 					pdx_tooltip = "PLAN_EXECUTE_BALANCED_TITLE"
@@ -370,7 +388,7 @@ guiTypes = {
 
 				buttonType = {
 					name = "btn_execute_2"
-					position = {x=96 y=30}
+					position = {x=96 y=20}
 					buttonFont = "hoi_16mbs"
 					quadTextureSprite = "GFX_BPT_execute_fast"
 					pdx_tooltip = "PLAN_EXECUTE_RUSH_TITLE"
@@ -379,24 +397,13 @@ guiTypes = {
 					clicksound = click_default
 					oversound = ui_menu_over
 				}
-
-				instantTextboxType = {
-					name = "title"
-					position = {x=13 y=8}
-					font = "hoi_18mbs"
-					text = "EXECUTION"
-					maxWidth = 346
-					maxHeight = 23
-					format = left
-					alwaystransparent = yes
-				}
 			}
 			
 			containerWindowType = {
 				name = "cohesion_window"
 				position = {x=-13 y=-40}
-				show_position = {x=-13 y=-50}
-				size = { width=148 height=117 }
+				show_position = {x=-13 y=-120}
+				size = { width=148 height=70 }
 				show_animation_type = decelerated
 				hide_animation_type = accelerated
 				animation_time = 200
@@ -407,13 +414,13 @@ guiTypes = {
 
 				background = {
 					name = "Background"
-					spriteType = "GFX_battle_plan_speed_bg"
+					spriteType = "GFX_tiled_bg_black"
 					alwaystransparent = yes
 				}
 
 				buttonType = {
 					name = "btn_cohesion_0"
-					position = {x=15 y=30}
+					position = {x=15 y=20}
 					buttonFont = "hoi_16mbs"
 					quadTextureSprite = "GFX_BPT_cohesion_loose"
 					pdx_tooltip = "PLAN_COHESION_LOOSE_TITLE"
@@ -425,7 +432,7 @@ guiTypes = {
 
 				buttonType = {
 					name = "btn_cohesion_1"
-					position = {x=55 y=30}
+					position = {x=55 y=20}
 					buttonFont = "hoi_16mbs"
 					quadTextureSprite = "GFX_BPT_cohesion_balanced"
 					pdx_tooltip = "PLAN_COHESION_BALANCED_TITLE"
@@ -437,7 +444,7 @@ guiTypes = {
 
 				buttonType = {
 					name = "btn_cohesion_2"
-					position = {x=96 y=30}
+					position = {x=96 y=20}
 					buttonFont = "hoi_16mbs"
 					quadTextureSprite = "GFX_BPT_cohesion_strict"
 					pdx_tooltip = "PLAN_COHESION_STRICT_TITLE"
@@ -445,17 +452,6 @@ guiTypes = {
 					frame = 1
 					clicksound = click_default
 					oversound = ui_menu_over
-				}
-
-				instantTextboxType = {
-					name = "title"
-					position = {x=13 y=8}
-					font = "hoi_18mbs"
-					text = "COHESION"
-					maxWidth = 346
-					maxHeight = 23
-					format = left
-					alwaystransparent = yes
 				}
 			}
 			
