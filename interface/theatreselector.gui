@@ -205,31 +205,39 @@ guiTypes = {
 	containerWindowType = {
 		name = "theater_group_item"
 		position = { x=445 y=0 }
-		size = { width=300 height=80 }
+		size = { width=300 height=60 }
 		
 		#background = {
 		#	name = "Background"
 		#	spriteType ="GFX_tiled_bg"
 		#} 
+
+		instantTextBoxType = {
+			name = "armies_count_box"
+			position = { x = 145 y = 10 }
+			font = "Beyond"
+			maxWidth = 150
+			maxHeight = 32
+			fixedsize = yes
+			format = right
+		}
 		
 		iconType = {
 			name ="background"
-			quadTextureSprite = "GFX_theater_group_bg"	
-			position = { x = -1 y = -2 }
+			quadTextureSprite = "GFX_theater_group_bg"
 			frame = 2	
 		}
 		
 		iconType = {
 			name ="selected_theatre_frame"
 			quadTextureSprite = "GFX_selected_theatre_frame"	
-			position = { x = 0 y = 0 }
+			position = { x = 0 y = 10000 } #0 }
 			alwaystransparent = yes
 		}
 		
  		buttonType = {
 			name = "assign_button"
-			position = { x = 3 y= 38 }
-			spriteType = "GFX_assign_group_button"
+			spriteType = "GFX_theater_group_bg_blank"
 		}
 		
 		buttonType = {
@@ -237,20 +245,10 @@ guiTypes = {
 			position = { x=10000 y=7 }	
 			spriteType = "GFX_theater_group_settings_btn"
 		}
-				
-		instantTextBoxType = {
-			name = "armies_count_box"
-			position = { x = 250 y = 47 }
-			font = "Beyondsmall"
-			maxWidth = 40
-			maxHeight = 32
-			fixedsize = yes
-			format = right
-		}
 
 		editBoxType = {
 			name = "name_box"
-			position = { x = 16 y = 16 }
+			position = { x = 16 y = 10000 } #16 }
 			font = "Focusfont"
 			size = { x=185 y=32 }
 			text = "NEW_THEATER_GROUP"
@@ -259,7 +257,7 @@ guiTypes = {
 		OverlappingElementsBoxType = {
 			name = "orders_group_box"
 			first_on_top = yes
-			position = { x = 10 y = 43 }
+			position = { x = 10 y = 20 }
 			size = { x = 260 y = 23 }
 			format = left
 			spacing = 8.0
@@ -267,7 +265,7 @@ guiTypes = {
 		
 		OverlappingElementsBoxType = {
 			name = "alerts"
-			position = { x = -430 y = 0 }
+			position = { x = -430 y = 10000 } #0 }
 			size = { x = 130 y = 32 }
 			Orientation = "UPPER_RIGHT"
 			format = right
@@ -277,14 +275,14 @@ guiTypes = {
 		buttonType = {
 			name ="attack_combat_btn"
 			spriteType = "GFX_theatre_battle_indicator"
-			position = { x = 235 y = 5 }
+			position = { x = 235 y = 10000 } #5 }
 			frame = 1
 			#scale= 0.9
 		}
 		
 		instantTextBoxType = {
 			name = "attack_combat_count"
-			position = { x = 235 y = 5 }
+			position = { x = 235 y = 10000 } #5 }
 			font = "Focusfont"
 			maxWidth = 32
 			maxHeight = 32
@@ -297,21 +295,21 @@ guiTypes = {
 		buttonType = {
 			name ="combat_logs_btn"
 			spriteType = "GFX_theatre_combat_log_icon"
-			position = { x = 205 y = 5 }
+			position = { x = 205 y = 10000 } #5 }
 			#scale = 0.9
 		}
 		
 		buttonType = {
 			name ="defence_combat_btn"
 			spriteType = "GFX_theatre_battle_indicator"
-			position = { x = 265 y = 5 }
+			position = { x = 265 y = 10000 } #5 }
 			frame = 2
 			#scale = 0.9
 		}
 		
 		instantTextBoxType = {
 			name = "defence_combat_count"
-			position = { x = 263 y = 5 }
+			position = { x = 263 y = 10000 } #5 }
 			font = "Focusfont"
 			maxWidth = 32
 			maxHeight = 32
@@ -387,7 +385,7 @@ guiTypes = {
 		
 		OverlappingElementsBoxType = {
 			name = "alerts"
-			position = { x = -430 y = 0 }
+			position = { x = -430 y = 10000 } #0 }
 			size = { x = 130 y = 32 }
 			Orientation = "UPPER_RIGHT"
 			format = right
@@ -464,7 +462,7 @@ guiTypes = {
 		
 		OverlappingElementsBoxType = {
 			name = "alerts"
-			position = { x = -430 y = 0 }
+			position = { x = -430 y = 10000 } #0 }
 			size = { x = 130 y = 32 }
 			Orientation = "UPPER_RIGHT"
 			format = right
@@ -483,23 +481,23 @@ guiTypes = {
 		name = "new_theater_group_item"
 		position = { x=445 y=0 }
 		size = { width=300 height=40 }
-		
-		buttonType = {
-			name = "new_theater_group_button"
-			position = { x = 0 y = 0 }
-			spriteType = "GFX_theater_group_assign_btn"
-		}
-		
+
 		instantTextBoxType = {
 			name ="text"
-			position = { x = 10 y = 11 }
-			font = "Focusfont"
+			position = { x = 10 y = 8 }
+			font = "Beyond"
 			text = "100%"
 			format = centre
 			maxWidth = 280
 			maxHeight = 28
 			fixedsize = yes
 			alwaystransparent = yes
+		}
+		
+		buttonType = {
+			name = "new_theater_group_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_theater_group_assign_btn"
 		}
 	}
 	
@@ -511,7 +509,7 @@ guiTypes = {
 		buttonType = {
 			name ="icon"
 			spriteType = "GFX_alerts"
-			position = { x = 0 y = 0 }
+			position = { x = 0 y = 10000 } #0 }
 		}
 
 		iconType = {
@@ -569,7 +567,7 @@ guiTypes = {
 		
 		OverlappingElementsBoxType = {
 			name = "alerts"
-			position = { x = -387 y = 0 }
+			position = { x = -387 y = 10000 } #0 }
 			size = { x = 130 y = 32 }
 			Orientation = "UPPER_RIGHT"
 			format = right
@@ -656,7 +654,7 @@ guiTypes = {
 
 		OverlappingElementsBoxType = {
 			name = "alerts"
-			position = { x = -325 y = 0 }
+			position = { x = -325 y = 10000 } #0 }
 			size = { x = 130 y = 32 }
 			Orientation = "UPPER_RIGHT"
 			format = right
