@@ -1499,7 +1499,7 @@ guiTypes = {
 		position = { x = -339 y = -360 }
 		show_position = { x = -150 y = -300 }
 		hide_position = { x = -150 y = 10 }
-		size = { width = 678 height = 600 }
+		size = { width = 678 height = 400 }
 		Orientation = center
 		moveable = yes
 		fade_time = 500
@@ -1507,17 +1507,8 @@ guiTypes = {
 		clipping = no
 
 		background = {
-			name = "Background_2"
-			quadTextureSprite = "GFX_custom_settings_back_black"
-			position = {
-				x = -4
-				y = -4
-			}
-		}
-
-		background = {
 			name = "Background"
-			quadTextureSprite = "GFX_tiled_bg"
+			quadTextureSprite = "GFX_tiled_bg_black"
 		}
 
 		containerWindowType = {
@@ -1531,28 +1522,19 @@ guiTypes = {
 #				clicksound = click_default
 #			}
 
-			instantTextboxType = {
-				name = "window_title"
-				position = { x = -262 y = -23 }
-				font = "Beyond"
-				text = "CUSTOM_GAME_RULES_TITLE"
-				maxWidth = 524
-				maxHeight = 24
-				format = center
-				Orientation = "CENTER"
-			}
 		}
 		
 		containerWindowType = {
 			name = "scrollable_container"
-			position = { x = 0 y = 56 }
-			size = { width = 100%% height = 484 }
+			position = { x = 0 y = 10 }
+			size = { width = 100%% height = 380 }
 			margin = { top = 0 bottom = 0 right = 26 left = 15 }
 			verticalScrollbar = "right_vertical_slider"
 
 			background = {
 				name = "Background"
 				quadTextureSprite = "GFX_tiled_window_transparent"
+				alwaystransparent = yes
 			}
 
 			gridBoxType = {
@@ -1571,17 +1553,16 @@ guiTypes = {
 
 			buttonType = {
 				name = "close_button"
-				position = { x = 10 y = -39}
-				quadTextureSprite ="GFX_button_123x34"
-				orientation = "LOWER_LEFT"
-				buttonText = "BACK"
-				buttonFont = "Arial"
+				position = { x = -34 y = -586 }
+				quadTextureSprite ="GFX_exit_button"
+				orientation = "UPPER_RIGHT"
 				clicksound = click_default
+				scale = 0.8
 			}
 
 			buttonType = {
 				name = "revert_button"
-				position = { x = -31 y = -589 }
+				position = { x = -34 y = 10000 }
 				quadTextureSprite ="GFX_exit_button"
 				orientation = "UPPER_RIGHT"
 				buttonText = ""
@@ -1592,7 +1573,7 @@ guiTypes = {
 
 			buttonType = {
 				name = "load_button"
-				position = { x = -264 y = -39 }
+				position = { x = 10000 y = -39 }
 				quadTextureSprite ="GFX_button_123x34"
 				orientation = "LOWER_RIGHT"
 				buttonText = "LOAD"
@@ -1602,7 +1583,7 @@ guiTypes = {
 
 			buttonType = {
 				name = "save_button"
-				position = { x = -135 y = -39 }
+				position = { x = 10000 y = -39 }
 				quadTextureSprite ="GFX_button_123x34"
 				orientation = "LOWER_RIGHT"
 				buttonText = "SAVE"
@@ -1620,6 +1601,7 @@ guiTypes = {
 			name = "group_header_bg"
 			quadTextureSprite = "GFX_tiled_header_1"
 			clicksound = click_default
+			alwaystransparent = yes
 		}
 
 		instantTextboxType = {
@@ -1902,59 +1884,52 @@ guiTypes = {
 	
 	containerWindowType = {
 		name ="gamesetup_gameplay_settings_window"
-		position = { x=8 y=240}	
-		show_position = { x=8 y =-200}
+		position = { x=0 y=240}	
+		show_position = { x=0 y =0}
 		animation_type = decelerated
 		animation_time = 1000
 		
-		size = {width=630 height=226}
+		size = {width=100%% height=226}
 		orientation = CENTER_DOWN
 		origo = CENTER_DOWN
 		click_to_front = yes
 		moveable = yes
-	
-		Background = {
-			name = "game_settings_bg"
-			quadTextureSprite = "GFX_lobby_lower_right_sidepanel_bg"
-			position = {
-				x = 3
-				y = 45
+
+		containerWindowType = {
+			name = "random_frontend_bg_mod"
+			size = { width=100% height =300}
+			position = { x=0 y =-250}
+			orientation = LOWER_LEFT
+
+			Background = {
+				name ="random_bg_mod"
+				spriteType = "GFX_tiled_bg_alpha_fade"
+				alwaystransparent = yes
+			}
+			Background = {
+				name = "Background2"
+				quadTextureSprite ="GFX_wonders_techtree_bg"
+				alwaystransparent = yes
+			}
+			Background = {
+				name ="random_bg_mod"
+				spriteType = "GFX_tiled_bg_alpha_fade"
+				alwaystransparent = yes
 			}
 		}
 		
 		buttonType = {
 			name = "custom_settings_btn"
-			position = { x = 120 y = 120 }
-			quadTextureSprite ="GFX_custom_set_button_2"	
+			position = { x = 10000 y = 120 }
+			quadTextureSprite ="GFX_interesting_button"	
 			pdx_tooltip = FE_CUSTOM_DIFFUCULTY
+			buttonFont = "Arial"
+			buttonText = "CHEATS ON!"
 		}
-
-		instantTextBoxType={
-			position = { x = 121 y = 126 }
-			name = "custom_text"
-			font = "Arialsmall"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 230
-			maxHeight = 16
-			text = "FE_DIFFICULTY_CUSTOM_BTN"
-			format = centre
-			alwaystransparent = yes
-		}
-		
-		#instantTextBoxType={
-		#	position = {x = 9 y = 37 }
-		#	name = "difficulty_text"
-		#	font = "Beyondsmall"
-		#	borderSize = {x = -50 y = 0}
-		#	maxWidth = 348
-		#	maxHeight = 16
-		#	text = "//DIFFICULTY//"
-		#	format = center
-		#}
 		
 		checkboxType = {
 			name = "very_easy_cb"
-			position = { x=29 y=72}
+			position = { x=10000 y=72}
 			quadTextureSprite ="GFX_difficulty_button_civilian"	
 			buttonText = ""
 			buttonFont = "Arialsmall"
@@ -1963,7 +1938,7 @@ guiTypes = {
 
 		checkboxType = {
 			name = "easy_cb"
-			position = { x=145 y=72}
+			position = { x=10000 y=72}
 			quadTextureSprite ="GFX_difficulty_button_civilian"	
 			buttonText = ""
 			buttonFont = "Arial"
@@ -1972,7 +1947,7 @@ guiTypes = {
 		
 		checkboxType = {
 			name = "normal_cb"
-			position = { x=261 y=72}
+			position = { x=10000 y=72}
 			quadTextureSprite ="GFX_difficulty_button_civilian"	
 			clicksound = click_checkbox
 			buttonText = ""
@@ -1981,7 +1956,7 @@ guiTypes = {
 		
 		checkboxType = {
 			name = "hard_cb"
-			position = { x=377 y=72}
+			position = { x=10000 y=72}
 			quadTextureSprite ="GFX_difficulty_button_civilian"
 			buttonText = ""
 			buttonFont = "Arial"
@@ -1990,103 +1965,20 @@ guiTypes = {
 		
 		checkboxType = {
 			name = "very_hard_cb"
-			position = { x=493 y=72}
+			position = { x=10000 y=72}
 			quadTextureSprite ="GFX_difficulty_button_civilian"
 			buttonText = ""
 			buttonFont = "Arial"
 			clicksound = click_checkbox
 		}
-
-		instantTextBoxType={
-			position = {x=31 y=78 }
-			name = "civilian_text"
-			font = "Arialsmall"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 115
-			maxHeight = 16
-			text = "FE_DIFFICULTY_VERY_EASY"
-			format = centre
-			alwaystransparent = yes
-		}
-
-		instantTextBoxType={
-			position = {x=147 y=78 }
-			name = "beginner_text"
-			font = "Arialsmall"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 115
-			maxHeight = 16
-			text = "FE_DIFFICULTY_EASY"
-			format = centre
-			alwaystransparent = yes
-		}
-		
-		instantTextBoxType={
-			position = {x=263 y=78 }
-			name = "normal_text"
-			font = "Arialsmall"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 115
-			maxHeight = 16
-			text = "FE_DIFFICULTY_NORMAL"
-			format = centre
-			alwaystransparent = yes
-		}
-		
-		instantTextBoxType={
-			position = {x=380 y=78 }
-			name = "hard_text"
-			font = "Arialsmall"
-			borderSize = {x = 0 y = 0}
-			maxWidth = 115
-			maxHeight = 16
-			text = "FE_DIFFICULTY_HARD"	
-			format = centre
-			alwaystransparent = yes
-		}
-		
-		instantTextBoxType={
-			position = {x=495 y=78 }
-			name = "very_hard_text"
-			font = "Arialsmall"
-			borderSize = {x = 0 y = 0}
-			maxWidth = 115
-			maxHeight = 16
-			text = "FE_DIFFICULTY_VERY_HARD"	
-			format = centre
-			alwaystransparent = yes
-		}
-		
-		instantTextBoxType={
-			position = {x = 431 y = 126 }
-			name = "ironman_text"
-			font = "Arialsmall"
-			maxWidth = 100
-			maxHeight = 16
-			text = "FE_IRONMAN"
-			pdx_tooltip = "FE_IRONMAN_TOOLTIP"
-			format = left
-			fixedsize = yes
-		}
 		
 		checkboxType = {
 			name = "ironman_cb"
-			position = { x=420 y =120}
-			quadTextureSprite ="GFX_difficulty_button_civilian" #quadTextureSprite ="GFX_generic_checkbox_ironman"	
+			position = { x=-70 y =90}
+			quadTextureSprite ="GFX_generic_checkbox_ironman"	
 			clicksound = click_checkbox
 			pdx_tooltip = "FE_IRONMAN_TOOLTIP"
-		}
-		
-		instantTextBoxType={
-			position = {x = 10000 y = 181 }
-			name = "historical_text"
-			font = "Beyondsmall"
-			maxWidth = 370
-			maxHeight = 16
-			text = "FE_HISTORICAL"
-			pdx_tooltip = "FE_HISTORICAL_TOOLTIP"
-			format = left
-			fixedsize = yes			
+			orientation = UPPER_RIGHT
 		}
 		
 		checkboxType = {
@@ -2136,29 +2028,6 @@ guiTypes = {
 		clipping = no
 
 		containerWindowType = {
-			name = "random_frontend_bg_mod"
-			size = { width=100% height =300}
-			position = { x=0 y =-250}
-			orientation = LOWER_LEFT
-
-			Background = {
-				name ="random_bg_mod"
-				spriteType = "GFX_tiled_bg_alpha_fade"
-				alwaystransparent = yes
-			}
-			Background = {
-				name = "Background2"
-				quadTextureSprite ="GFX_wonders_techtree_bg"
-				alwaystransparent = yes
-			}
-			Background = {
-				name ="random_bg_mod"
-				spriteType = "GFX_tiled_bg_alpha_fade"
-				alwaystransparent = yes
-			}
-		}
-
-		containerWindowType = {
 			name = "random_frontend_bg_mod2"
 			size = { width=100% height =300}
 			position = { x=0 y =-100}
@@ -2184,12 +2053,12 @@ guiTypes = {
 		containerWindowType = {
 			name ="top"
 			position = { x=0 y = 0}
-			show_position = { x=0 y =-250 }
+			show_position = { x=0 y =-150 }
 			animation_type = decelerated
 			animation_time = 1000
-			size = { width=100% height =128}
+			size = { width=100%% height =128}
 			clipping = no
-			orientation = LOWER_LEFT
+			orientation = UPPER_LEFT
 
 			#iconType = {
 			#	name = "sponsor_lower_animation_1"
@@ -2224,18 +2093,13 @@ guiTypes = {
 
 			containerWindowType = {
 				name ="scenario_window"
-				position = { x=50% y = -80}
-				show_position = { x=50% y =-30}
+				position = { x=0 y = -80}
+				show_position = { x=10000 y =-30}
 				animation_type = decelerated
 				animation_time = 1000
 				size = { width=340 height =128}
 				clipping = no
 
-				iconType ={
-					name ="menu_top_date_bg"
-					spriteType = "GFX_menu_top_bg_bg"
-					position = { x= -200 y = 54 }
-				}
 				instantTextBoxType = {
 					name = "date"
 					position = { x = -170 y = -3000 }
@@ -2312,11 +2176,8 @@ guiTypes = {
 			
 			ButtonType = {
 				name = "interesting_countries_button"
-				position = { x = 650 y = 166 }
-				quadTextureSprite ="GFX_interesting_button"
-				buttonText = "SELECTION"
-				buttonFont = "Arial"
-				Orientation = "UPPER_LEFT"
+				position = { x =20 y =170 }
+				quadTextureSprite ="GFX_interesting_button_old"
 				clicksound = click_default
 				oversound = ui_menu_over
 				#shortcut = "i"

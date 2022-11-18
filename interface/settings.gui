@@ -1151,26 +1151,38 @@ guiTypes = {
 			position = { x= -240 y = -200 }	
 			show_position = { x= -150 y = -450 }
 			hide_position = { x= -150 y = 10 }
-			size = { width=480 height = 600 }
+			size = { width=480 height = 530 }
 			Orientation = center
 			moveable = yes
 			fade_time = 500
 			fade_type = linear
+			clipping = no
 
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_settings_popup_bg"
-				position = { x= -4 y = -4 }
+				quadTextureSprite ="GFX_tiled_bg_black"
 			}
 			
 			instantTextBoxType={
-				position = {x = 110 y = 20 }
+				position = {x = 110 y = 14 }
 				name = "settings_label"
 				font = "Beyond"
 				borderSize = {x = 0 y = 0}
 				maxWidth = 250
 				maxHeight = 18
 				text = "SM_OPTIONS"	
+				orientation = "UPPER_LEFT"
+				format = centre
+			}
+
+			instantTextBoxType={
+				position = {x = 35 y = 50 }
+				name = "settings_label2"
+				font = "Beyondsmall"
+				borderSize = {x = 0 y = 0}
+				maxWidth = 400
+				maxHeight = 18
+				text = "------------------------------------------------------"	
 				orientation = "UPPER_LEFT"
 				format = centre
 			}
@@ -1218,7 +1230,7 @@ guiTypes = {
 				position = { x = 355 y = 68 }
 				quadTextureSprite ="GFX_button_94x31"	
 				font = "Arial"
-				text = "ACCESSIBILITY"	
+				text = "ACCESS"	
 				clicksound = click_checkbox
 				oversound = ui_menu_over
 			}
@@ -2721,22 +2733,23 @@ guiTypes = {
 			
 			buttonType = {
 					name = "ApplyButton"
-					position = { x = 324 y = 470 }
+					position = { x = -60 y = -50}
 					quadTextureSprite ="GFX_button_123x34"
 					buttonText = "APPLY"
 					buttonFont = "Arial"
 					clicksound = click_default
+					orientation = CENTER_DOWN
 				}
 
 
 			buttonType = {
 				name = "BackButton"
-				position = { x = 34 y = 470 }
-				quadTextureSprite ="GFX_button_123x34"	
-				buttonText = "BACK"
-				buttonFont = "Arial"
+				position = { x = -69 y = -40 }
+				quadTextureSprite ="GFX_exit_button"	
 				clicksound = click_close
 				shortcut = "ESCAPE"
+				scale = 0.9
+				orientation = UPPER_RIGHT
 			}
 		}	
 }
