@@ -131,8 +131,8 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "countrydivisiondesignerview"
-		position = { x=0 y=0}	
-		size = { width = 1092 height = 493 }
+		position = { x=-200 y=0}	
+		size = { width = 550 height = 493 }
 		moveable = yes
 		fade_time = 500
 		fade_type = linear
@@ -144,17 +144,29 @@ guiTypes = {
 		background = {
 			name = "Background"
 			position = { x=-4 y=-4 }	
-			quadTextureSprite = "GFX_division_designer_popup_bg"
+			quadTextureSprite = "GFX_tiled_bg_black"
+		}
+
+		instantTextboxType = {
+			name = "division_title"
+			position = { x = 14 y = 10 }
+			textureFile = ""
+			font = "Beyond"
+			borderSize = {x = 0 y = 0}
+			text = "DIVISION_DIVISION"
+			maxWidth = 500
+			maxHeight = 20
+			format = left
 		}
 
 		containerWindowType = {
-			name = "tiled_bg_div_designer"
-			size = { width = 542 height = 493 }
-
+			name = "bg_top"
+			position = { x=-1 y=-1 }
+			size = { width = 544 height = 487 }
+			
 			background = {
-				name = "Background2"		
-				spriteType ="GFX_tiled_bg"
-				alwaystransparent = yes
+				name ="bg"
+				spriteType = "GFX_tiled_bg_alpha"
 			}
 		}
 		
@@ -202,18 +214,6 @@ guiTypes = {
 			name = "equipment_warning"
 			spriteType = "GFX_warning_icon_l"
 			position = { x = 496 y = 66 }
-		}
-
-		instantTextboxType = {
-			name = "division_title"
-			position = { x = 18 y = 15 }
-			textureFile = ""
-			font = "Beyond"
-			borderSize = {x = 0 y = 0}
-			text = "DIVISION_DIVISION"
-			maxWidth = 700
-			maxHeight = 20
-			format = left
 		}
 
 		containerWindowType = {
@@ -417,7 +417,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "experience"
-			position = { x = 272 y = 451 }
+			position = { x = 276 y = 451 }
 			font = "Focusfont"
 			maxWidth = 126
 			maxHeight = 20
@@ -428,7 +428,7 @@ guiTypes = {
 		
 		ButtonType = {
 			name = "duplicate_button"
-			position = { x=150 y=440 }
+			position = { x=170 y=440 }
 			quadTextureSprite ="GFX_button_123x34_xp"
 			buttonText = "DUPLICATE_TEMPLATE_DIV"
 			buttonFont = "Focusfont"
@@ -437,11 +437,13 @@ guiTypes = {
 
 		ButtonType = {
 			name = "reset_button"
-			position = { x=20 y=434 }
+			position = { x=10 y=441 }
 			quadTextureSprite ="GFX_button_reset_123x34_mod"
 			pdx_tooltip = "DESIGNER_RESET_DESC"
 			clicksound = click_default
 			scale = 0.8
+			buttonFont = "Beyond"
+			buttonText = "DESIGNER_RESET"
 		}
 
 		ButtonType = {
@@ -771,7 +773,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "close_button"
-			position = { x = -609 y = -39 }
+			position = { x = -66 y = -39 }
 			quadTextureSprite ="GFX_exit_button"
 			buttonFont = "Main_14_black"
 			shortcut = "ESCAPE"
