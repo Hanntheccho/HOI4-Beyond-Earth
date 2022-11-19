@@ -2048,17 +2048,40 @@ guiTypes = {
 				spriteType = "GFX_tiled_bg_alpha_fade_flip"
 				alwaystransparent = yes
 			}
+
+			containerWindowType = {
+				name = "mod_bg_ignore"
+				size = { width=100% height =108}
+			
+				Background = {
+					name ="top_bg"
+					spriteType = "GFX_tiled_frontend_upper_bar"
+					position = { x=0 y=110 }
+					alwaystransparent = yes
+				}
+			}
 		}
 		
 		containerWindowType = {
 			name ="top"
-			position = { x=0 y = 0}
-			show_position = { x=0 y =-150 }
+			position = { x=0 y =0}
+			show_position = { x=0 y =-250 }
 			animation_type = decelerated
-			animation_time = 1000
-			size = { width=100%% height =128}
-			clipping = no
-			orientation = UPPER_LEFT
+			animation_time = 1000				
+			size = { width=100% height=128}
+			Orientation = LOWER_LEFT
+
+			containerWindowType = {
+				name = "mod_bg_ignore"
+				size = { width=100% height =108}
+			
+				Background ={
+					name ="bottom_win"
+					spriteType = "GFX_tiled_frontend_lower_bar"
+					position = { x=0 y =125}	
+					alwaystransparent = yes			
+				}
+			}
 
 			#iconType = {
 			#	name = "sponsor_lower_animation_1"
@@ -2077,18 +2100,6 @@ guiTypes = {
 			#	position = { x = -3730 y = 47 }
 			#	quadTextureSprite ="GFX_sponsor_animated"
 			#	Orientation = "UPPER_RIGHT"
-			#}
-
-			#containerWindowType = {
-			#	name = "mod_bg_ignore"
-			#	size = { width=102% height =128}
-			#
-			#	Background = {
-			#		name ="top_bg"
-			#		spriteType = "GFX_tiled_frontend_upper_bar"
-			#		position = { x=-10 y=0 }
-			#		alwaystransparent = yes
-			#	}
 			#}
 
 			containerWindowType = {
@@ -2176,11 +2187,14 @@ guiTypes = {
 			
 			ButtonType = {
 				name = "interesting_countries_button"
-				position = { x =20 y =170 }
-				quadTextureSprite ="GFX_interesting_button_old"
+				position = { x =650 y = 38 }
+				quadTextureSprite ="GFX_interesting_button" #interesting_button_old
 				clicksound = click_default
 				oversound = ui_menu_over
 				#shortcut = "i"
+				buttonFont = "Arial"
+				buttonText = "SELECT" 
+				orientation = LOWER_LEFT
 			}
 
 			ButtonType = {
@@ -2284,18 +2298,6 @@ guiTypes = {
 			animation_time = 1000				
 			size = { width=100% height=128}
 			Orientation = LOWER_LEFT
-
-			#containerWindowType = {
-			#	name = "mod_bg_ignore"
-			#	size = { width=102% height =128}
-			#
-			#	Background ={
-			#		name ="bottom_win"
-			#		spriteType = "GFX_tiled_frontend_lower_bar"
-			#		position = { x=-45 y =0}	
-			#		alwaystransparent = yes			
-			#	}
-			#}
 			
 			ButtonType = {
 				name = "back_button"
