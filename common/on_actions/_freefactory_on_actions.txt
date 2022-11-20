@@ -6,81 +6,9 @@ on_actions = {
                 set_variable = { free_factory_gain = 0 }
                 set_variable = { free_factory_base_gain = 1 }
                 set_variable = { free_factory_adjustment = 1 }
-                #set_variable = { military_chance = 1 }
-                #set_variable = { heavy_chance = 1 }
-                #set_variable = { land_chance = 1 }
-                #set_variable = { civilian_chance = 1 }
-                #set_variable = { light_chance = 1 }
-                #set_variable = { naval_chance = 1 }
-                #set_variable = { military_civilian_slider_var = 208.5 }
-                #set_variable = { light_heavy_slider_var = 208.5 }
-                #set_variable = { land_naval_slider_var = 208.5 }
                 set_variable = { free_factory_counter = 0 }
                 set_variable = { division_limit = num_of_military_factories }
                 multiply_variable = { division_limit = 2 }
-                set_variable = { division_limit_extra = 0 }
-                #set_variable = { impossible_proposition_expire = -1 }
-                #set_variable = { controversial_proposition_expire = -1 }
-                #set_variable = { divisive_proposition_expire = -1 }
-                #set_variable = { partisan_proposition_expire = -1 }
-                #set_variable = { bipartisan_proposition_expire = -1 }
-                #set_variable = { popular_proposition_expire = -1 }
-                #clamp_variable = {
-                #    var = military_chance
-                #    min = 0
-                #    max = 2
-                #}
-                #clamp_variable = {
-                #    var = heavy_chance
-                #    min = 0
-                #    max = 2
-                #}
-                #clamp_variable = {
-                #    var = land_chance
-                #    min = 0
-                #    max = 2
-                #}
-                #clamp_variable = {
-                #    var = civilian_chance
-                #    min = 0
-                #    max = 2
-                #}
-                #clamp_variable = {
-                #    var = light_chance
-                #    min = 0
-                #    max = 2
-                #}
-                #clamp_variable = {
-                #    var = naval_chance
-                #    min = 0
-                #    max = 2
-                #}
-                #clamp_variable = {
-                #    var = military_civilian_slider_var
-                #    min = 122
-                #    max = 295
-                #}
-                #clamp_variable = {
-                #    var = light_heavy_slider_var
-                #    min = 122
-                #    max = 295
-                #}
-                #clamp_variable = {
-                #    var = land_naval_slider_var
-                #    min = 122
-                #    max = 295
-                #}
-
-                #set_variable = { corruption_variable = 11 }
-                #set_variable = { corruption_min = 10 }
-                #clamp_variable = {
-                #    var = corruption_variable
-                #    min = corruption_min
-                #    max = 100
-                #}
-                #add_dynamic_modifier = {
-                #    modifier = corruption_modifier
-                #}
                 if = {
                     limit = {
                         num_of_factories > 8
@@ -136,6 +64,13 @@ on_actions = {
                 else_if = {
                     limit = {
                         num_of_factories > 198
+                        NOT = {
+                            any_country = {
+                                check_variable = {
+                                    THIS.num_of_factories > ROOT.num_of_factories
+                                }
+                            }
+                        }
                     }
                     remove_ideas = developed_stage
                     remove_ideas = developing_stage
@@ -245,48 +180,6 @@ on_actions = {
                 }
                 multiply_variable = { free_factory_adjustment = 0.1 }
             }
-            #if = {
-            #    limit = {
-            #        has_idea = democratized_logistics
-            #    }
-            #    subtract_from_variable = { free_factory_adjustment = 0.5 }
-            #}
-            #if = {
-            #    limit = {
-            #        has_dynamic_modifier = { modifier = nerve_stapling_modifier }
-            #    }
-            #    subtract_from_variable = { free_factory_adjustment = 0.5 }
-            #}
-            #if = {
-            #    limit = {
-            #        has_idea = business_purge_limited
-            #    }
-            #    subtract_from_variable = { free_factory_adjustment = 0.2 }
-            #}
-            #if = {
-            #    limit = {
-            #        has_idea = business_purge_extensive
-            #    }
-            #    subtract_from_variable = { free_factory_adjustment = 0.2 }
-            #}
-            #if = {
-            #    limit = {
-            #        has_idea = business_purge_massive
-            #    }
-            #    subtract_from_variable = { free_factory_adjustment = 0.25 }
-            #}
-            #if = {
-            #    limit = {
-            #        has_idea = business_purge_total
-            #    }
-            #    subtract_from_variable = { free_factory_adjustment = 0.3 }
-            #}
-            #if = {
-            #    limit = {
-            #        has_country_flag = prosperity_two
-            #    }
-            #    add_to_variable = { free_factory_adjustment = 0.1 }
-            #}
             if = {
                 limit = {
                     has_tech = corporate_model
@@ -392,15 +285,6 @@ on_actions = {
             add_to_variable = { free_factory_gain = free_factory_base_gain }
             multiply_variable = { free_factory_gain = free_factory_adjustment }
             add_to_variable = { free_factory_progress = free_factory_gain }
-            #round_variable = free_factory_progress
-            #subtract_from_variable = { hearing_time = 1 }
-            #if = {
-            #    limit = {
-            #        has_idea = ai_assisted_admininistration
-            #    }
-            #
-            #    add_to_variable = {corruption_modifier = -0.01}
-            #}
             if = {
                 limit = {
                     check_variable = { free_factory_progress > 100 }
@@ -431,36 +315,7 @@ on_actions = {
                                 instant_build = yes
                             }
                         }
-                        #modifier = {
-                        #    factor = heavy_chance
-                        #}
-                        #modifier = {
-                        #    factor = civilian_chance
-                        #}
                     }
-                    #10 = {
-                    #    random_owned_controlled_state = {
-                    #        limit = {
-                    #            is_fully_controlled_by = ROOT
-                    #            free_building_slots = {
-                    #                building = generator_building
-                    #                size > 1
-                    #                include_locked = no
-                    #            }
-                    #        }
-                    #        add_building_construction = {
-                    #            type = generator_building
-                    #            level = 1
-                    #            instant_build = yes
-                    #        }
-                    #    }
-                    #    #modifier = {
-                    #    #    factor = light_chance
-                    #    #}
-                    #    modifier = {
-                    #        factor = civilian_chance
-                    #    }
-                    #}
                     50 = {
                         random_owned_controlled_state = {
                             limit = {
@@ -477,37 +332,7 @@ on_actions = {
                                 instant_build = yes
                             }
                         }
-                        #modifier = {
-                        #    factor = land_chance
-                        #}
-                        #modifier = {
-                        #    factor = military_chance
-                        #}
                     }
-                    #10 = {
-                    #    random_owned_controlled_state = {
-                    #        limit = {
-                    #            is_coastal = yes
-                    #            is_fully_controlled_by = ROOT
-                    #            free_building_slots = {
-                    #                building = dockyard
-                    #                size > 1
-                    #                include_locked = no
-                    #            }
-                    #        }
-                    #        add_building_construction = {
-                    #            type = dockyard
-                    #            level = 1
-                    #            instant_build = yes
-                    #        }
-                    #    }
-                    #    #modifier = {
-                    #    #    factor = naval_chance
-                    #    #}
-                    #    modifier = {
-                    #        factor = military_chance
-                    #    }
-                    #}
                 }
             }
             if = {
@@ -517,579 +342,6 @@ on_actions = {
                 clear_variable = free_factory_progress
                 set_variable = { free_factory_progress = 0 }
             }
-            #if = {
-            #    limit = {
-            #        NOT = {
-            #            has_dynamic_modifier = { modifier = bribe_politicians_modifier }
-            #        }
-            #    }
-            #    clear_variable = harmony_drift_bribe_politicians_var
-            #    clear_variable = supremacy_drift_bribe_politicians_var
-            #    clear_variable = purity_drift_bribe_politicians_var
-            #    clear_variable = neutral_drift_bribe_politicians_var
-            #    clear_variable = divinity_drift_bribe_politicians_var
-            #    clear_variable = voracity_drift_bribe_politicians_var
-            #    clear_variable = mastery_drift_bribe_politicians_var
-            #}
-            #if = {
-            #    limit = {
-            #        check_variable = { parliament_support > 49 }
-            #        check_variable = { hearing_time = 0 }   
-            #        has_country_flag = increase_trade_law_hearing
-            #    }
-            #    country_event = { id = politics_event.2 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { parliament_support > 59 }
-            #        has_country_flag = increase_conscription_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.3 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { parliament_support > 79 }
-            #        has_country_flag = war_mobilization_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.4 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { parliament_support > 59 }
-            #        has_country_flag = decrease_trade_law_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.5 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { parliament_support > 49 }
-            #        has_country_flag = decrease_conscription_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.6 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { parliament_support > 59 }
-            #        has_country_flag = international_intervention_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.7 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { parliament_support > 39 }
-            #        has_country_flag = military_industrial_complex_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.8 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        enough_parliament_support = yes
-            #        has_country_flag = business_relief_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.9 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        enough_parliament_support = yes
-            #        has_country_flag = merchant_navy_draft_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.10 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { parliament_support > 59 }
-            #        has_country_flag = military_industrial_integration_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.11 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        enough_parliament_support = yes
-            #        has_country_flag = maximized_utilisation_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.12 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        enough_parliament_support = yes
-            #        has_country_flag = orbital_cleaning_initiative_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.13 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { parliament_support > 69 }
-            #        has_country_flag = interservice_training_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.14 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { parliament_support > 59 }
-            #        has_country_flag = democratized_logistics_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.15 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { parliament_support > 79 }
-            #        has_country_flag = surveillance_expansion_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.16 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        enough_parliament_support = yes
-            #        has_country_flag = native_pacification_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.17 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { parliament_support > 89 }
-            #        has_country_flag = general_staff_expansion_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.18 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        enough_parliament_support = yes
-            #        has_country_flag = research_hospital_hearing
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.19 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        enough_parliament_support = yes
-            #        check_variable = { hearing_time = 0 }
-            #        OR = {
-            #            has_country_flag = impossible_proposition_hearing
-            #            has_country_flag = controversial_proposition_hearing
-            #            has_country_flag = divisive_proposition_hearing
-            #            has_country_flag = partisan_proposition_hearing
-            #            has_country_flag = bipartisan_proposition_hearing
-            #            has_country_flag = popular_proposition_hearing
-            #        }
-            #    }
-            #    country_event = { id = politics_event.20 days = 0 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        enough_parliament_support = no
-            #        check_variable = { hearing_time = 0 }   
-            #    }
-            #    country_event = { id = politics_event.1 days = 0 }
-            #}
-#
-            #if = {
-            #    limit = {
-            #        check_variable = { parliament_support < 0 }
-            #    }
-            #    set_variable = { parliament_support = 0 }
-            #}
-#
-            #if = {
-            #    limit = {
-            #        OR = {
-            #            check_variable = { impossible_proposition_expire = 0 }
-            #            check_variable = { controversial_proposition_expire = 0 }
-            #            check_variable = { divisive_proposition_expire = 0 }
-            #            check_variable = { partisan_proposition_expire = 0 }
-            #            check_variable = { bipartisan_proposition_expire = 0 }
-            #            check_variable = { popular_proposition_expire = 0 }
-            #        }
-            #    }
-            #    country_event = { id = politics_event.21 days = 0 }
-            #}
-            #
-            #subtract_from_variable = { impossible_proposition_expire = 1 }
-            #subtract_from_variable = { controversial_proposition_expire = 1 }
-            #subtract_from_variable = { divisive_proposition_expire = 1 }
-            #subtract_from_variable = { partisan_proposition_expire = 1 }
-            #subtract_from_variable = { bipartisan_proposition_expire = 1 }
-            #subtract_from_variable = { popular_proposition_expire = 1 }
-#
-            #clamp_variable = {
-            #    var = corruption_variable
-            #    min = corruption_min
-            #    max = 100
-            #}
-#
-            #if = {
-            #    limit = {
-            #        check_variable = { corruption_variable < 10 }
-            #    }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier2 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier3 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier4 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier5 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier6 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier7 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier8 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier9 }
-            #    set_variable = { corruption_min = 1 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 10 }
-            #        check_variable = { corruption_variable < 20 }
-            #        NOT = {
-            #            has_dynamic_modifier = { modifier = corruption_modifier }
-            #        }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.05 }
-            #    add_dynamic_modifier = {
-            #        modifier = corruption_modifier
-            #    }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier2 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier3 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier4 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier5 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier6 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier7 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier8 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier9 }
-            #    set_variable = { corruption_min = 10 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 10 }
-            #        check_variable = { corruption_variable < 20 }
-            #        has_dynamic_modifier = { modifier = corruption_modifier }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.05 }
-            #    set_variable = { corruption_min = 10 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 20 }
-            #        check_variable = { corruption_variable < 30 }
-            #        NOT = {
-            #            has_dynamic_modifier = { modifier = corruption_modifier2 }
-            #        }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.05 }
-            #    add_dynamic_modifier = {
-            #        modifier = corruption_modifier2
-            #    }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier3 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier4 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier5 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier6 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier7 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier8 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier9 }
-            #    set_variable = { corruption_min = 20 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 20 }
-            #        check_variable = { corruption_variable < 30 }
-            #        has_dynamic_modifier = { modifier = corruption_modifier2 }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.05 }
-            #    set_variable = { corruption_min = 20 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 30 }
-            #        check_variable = { corruption_variable < 40 }
-            #        NOT = {
-            #            has_dynamic_modifier = { modifier = corruption_modifier3 }
-            #        }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.1 }
-            #    add_dynamic_modifier = {
-            #        modifier = corruption_modifier3
-            #    }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier2 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier4 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier5 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier6 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier7 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier8 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier9 }
-            #    set_variable = { corruption_min = 30 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 30 }
-            #        check_variable = { corruption_variable < 40 }
-            #        has_dynamic_modifier = { modifier = corruption_modifier3 }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.1 }
-            #    set_variable = { corruption_min = 30 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 40 }
-            #        check_variable = { corruption_variable < 50 }
-            #        NOT = {
-            #            has_dynamic_modifier = { modifier = corruption_modifier4 }
-            #        }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.1 }
-            #    add_dynamic_modifier = {
-            #        modifier = corruption_modifier4
-            #    }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier2 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier3 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier5 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier6 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier7 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier8 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier9 }
-            #    set_variable = { corruption_min = 40 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 40 }
-            #        check_variable = { corruption_variable < 50 }
-            #        has_dynamic_modifier = { modifier = corruption_modifier4 }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.1 }
-            #    set_variable = { corruption_min = 40 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 50 }
-            #        check_variable = { corruption_variable < 60 }
-            #        NOT = {
-            #            has_dynamic_modifier = { modifier = corruption_modifier5 }
-            #        }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.15 }
-            #    add_dynamic_modifier = {
-            #        modifier = corruption_modifier5
-            #    }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier2 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier3 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier4 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier6 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier7 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier8 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier9 }
-            #    set_variable = { corruption_min = 50 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 50 }
-            #        check_variable = { corruption_variable < 60 }
-            #        has_dynamic_modifier = { modifier = corruption_modifier5 }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.15 }
-            #    set_variable = { corruption_min = 50 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 60 }
-            #        check_variable = { corruption_variable < 70 }
-            #        NOT = {
-            #            has_dynamic_modifier = { modifier = corruption_modifier6 }
-            #        }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.2 }
-            #    add_dynamic_modifier = {
-            #        modifier = corruption_modifier6
-            #    }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier2 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier3 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier4 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier5 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier7 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier8 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier9 }
-            #    set_variable = { corruption_min = 60 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 60 }
-            #        check_variable = { corruption_variable < 70 }
-            #        has_dynamic_modifier = { modifier = corruption_modifier6 }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.2 }
-            #    set_variable = { corruption_min = 60 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 70 }
-            #        check_variable = { corruption_variable < 80 }
-            #        NOT = {
-            #            has_dynamic_modifier = { modifier = corruption_modifier7 }
-            #        }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.25 }
-            #    add_dynamic_modifier = {
-            #        modifier = corruption_modifier7
-            #    }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier2 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier3 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier4 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier5 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier6 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier8 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier9 }
-            #    set_variable = { corruption_min = 70 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 70 }
-            #        check_variable = { corruption_variable < 80 }
-            #        has_dynamic_modifier = { modifier = corruption_modifier7 }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.25 }
-            #    set_variable = { corruption_min = 70 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 80 }
-            #        check_variable = { corruption_variable < 90 }
-            #        NOT = {
-            #            has_dynamic_modifier = { modifier = corruption_modifier8 }
-            #        }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.3 }
-            #    add_dynamic_modifier = {
-            #        modifier = corruption_modifier8
-            #    }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier2 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier3 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier4 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier5 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier6 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier7 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier9 }
-            #    set_variable = { corruption_min = 80 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 80 }
-            #        check_variable = { corruption_variable < 90 }
-            #        has_dynamic_modifier = { modifier = corruption_modifier8 }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.3 }
-            #    set_variable = { corruption_min = 80 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 90 }
-            #        NOT = {
-            #            has_dynamic_modifier = { modifier = corruption_modifier9 }
-            #        }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.35 }
-            #    add_dynamic_modifier = {
-            #        modifier = corruption_modifier9
-            #    }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier2 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier3 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier4 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier5 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier6 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier7 }
-            #    remove_dynamic_modifier = { modifier = corruption_modifier8 }
-            #    set_variable = { corruption_min = 90 }
-            #}
-            #else_if = {
-            #    limit = {
-            #        check_variable = { corruption_variable > 90 }
-            #        has_dynamic_modifier = { modifier = corruption_modifier9 }
-            #    }
-            #    subtract_from_variable = { industrial_power = 0.35 }
-            #    set_variable = { corruption_min = 90 }
-            #}
-            #if = {
-            #    limit = {
-            #        AND = {
-            #            has_country_flag = liberty_one
-            #            check_variable = { corruption_variable > 0 }
-            #        }
-            #    }
-            #    subtract_from_variable = { corruption_variable = 0.05 }
-            #}
-            #if = {
-            #    limit = {
-            #        has_idea = synthetic_democracy
-            #    }
-            #    add_to_variable = { corruption_variable = 0.1 }
-            #}
-            #if = {
-            #    limit = {
-            #        has_idea = corporate_libertarianism
-            #    }
-            #    add_to_variable = { corruption_variable = 0.05 }
-            #}
-            #if = {
-            #    limit = {
-            #        has_idea = digital_democracy
-            #    }
-            #    add_to_variable = { corruption_variable = 0.08 }
-            #}
-            #if = {
-            #    limit = {
-            #        has_idea = communal_parity
-            #    }
-            #    add_to_variable = { corruption_variable = 0.01 }
-            #}
-            #if = {
-            #    limit = {
-            #        has_idea = military_government
-            #    }
-            #    add_to_variable = { corruption_variable = 0.15 }
-            #}
-            #if = {
-            #    limit = {
-            #        has_idea = anarchy_style
-            #    }
-            #    add_to_variable = { corruption_variable = 0.15 }
-            #}
-            #if = {
-            #    limit = {
-            #        has_dynamic_modifier = { modifier = bribe_politicians_modifier }
-            #    }
-            #    add_to_variable = { corruption_variable = 0.05 }
-            #}
-            #if = {
-            #    limit = {
-            #        any_character = {
-            #            has_trait = the_modern_gandhi
-            #        }
-            #    }
-            #    subtract_from_variable = { corruption_variable = 0.25 }
-            #}
-            #if = {
-            #    limit = {
-            #        any_character = {
-            #            has_trait = unscrpulous_overseers
-            #        }
-            #    }
-            #    add_to_variable = { corruption_variable = 0.5 }
-            #}
         }
     }
 
@@ -1183,6 +435,13 @@ on_actions = {
             else_if = {
                 limit = {
                     num_of_factories > 198
+                    NOT = {
+                        any_country = {
+                            check_variable = {
+                                THIS.num_of_factories > ROOT.num_of_factories
+                            }
+                        }
+                    }
                 }
                 remove_ideas = developed_stage
                 remove_ideas = developing_stage
@@ -1190,6 +449,11 @@ on_actions = {
                 remove_ideas = continental_stage
                 add_ideas = global_stage
                 set_research_slots = 6
+                add_to_array = {
+                    array = global.global_superpower_title
+                    value = THIS.id
+                    index = 0
+                }
             }
             else = {
                 remove_ideas = developed_stage

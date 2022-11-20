@@ -9,18 +9,24 @@ scripted_gui = {
                 always = yes
             }
             else = {
-                has_country_flag = political_moment_flag
+                has_country_flag = international_moment_flag
             }
 		}
 		effects = {
-			#international_close_click = {
-			#    ROOT = {
-			#        clr_country_flag = international_moment_flag
-			#    }
-			#}
+			international_close_click = {
+			    ROOT = {
+			        clr_country_flag = international_moment_flag
+			    }
+			}
 			international_unify_spaceship_efforts_click = {
 				ROOT = {
 					set_country_flag = spaceship_internationalized_flag
+				}
+				#set_global_flag = unify_spaceship_button_disabled
+			}
+			international_unify_spaceship_efforts2_click = {
+				ROOT = {
+					clr_country_flag = spaceship_internationalized_flag
 				}
 				#set_global_flag = unify_spaceship_button_disabled
 			}
@@ -846,6 +852,9 @@ scripted_gui = {
 					}
 				}
 			}
+			international_unify_spaceship_efforts2_visible = {
+				has_country_flag = spaceship_internationalized_flag
+			}
 			international_launch_spaceship_click_enabled = {
 				NOT = {
 					OR = {
@@ -1074,7 +1083,7 @@ scripted_gui = {
 		ai_weights = {
 			international_unify_spaceship_efforts_click = {
 				ai_will_do = {
-					factor = 1
+					base = 1
 					modifier = {
 						OR = {
 							has_idea = military_government
@@ -1157,6 +1166,94 @@ scripted_gui = {
 							}
 						}
 						factor = 0
+					}
+				}
+			}
+			international_unify_spaceship_efforts2_click = {
+				ai_will_do = {
+					base = 0
+					modifier = {
+						OR = {
+							has_idea = military_government
+							has_idea = anarchy_style
+							has_idea = closed_economy
+							NOT = {
+								has_global_flag = module_5_completed_flag
+							}
+							AND = {
+								OR = {
+									any_owned_state = {
+										has_dynamic_modifier = {
+											modifier = bridge_location_modifier
+										}
+									}
+									any_allied_country = {
+										any_owned_state = {
+											has_dynamic_modifier = {
+												modifier = bridge_location_modifier
+											}
+										}
+									}
+								}
+								OR = {
+									any_owned_state = {
+										has_dynamic_modifier = {
+											modifier = quarters_location_modifier
+										}
+									}
+									any_allied_country = {
+										any_owned_state = {
+											has_dynamic_modifier = {
+												modifier = quarters_location_modifier
+											}
+										}
+									}
+								}
+								OR = {
+									any_owned_state = {
+										has_dynamic_modifier = {
+											modifier = support_location_modifier
+										}
+									}
+									any_allied_country = {
+										any_owned_state = {
+											has_dynamic_modifier = {
+												modifier = support_location_modifier
+											}
+										}
+									}
+								}
+								OR = {
+									any_owned_state = {
+										has_dynamic_modifier = {
+											modifier = storage_location_modifier
+										}
+									}
+									any_allied_country = {
+										any_owned_state = {
+											has_dynamic_modifier = {
+												modifier = storage_location_modifier
+											}
+										}
+									}
+								}
+								OR = {
+									any_owned_state = {
+										has_dynamic_modifier = {
+											modifier = engine_location_modifier
+										}
+									}
+									any_allied_country = {
+										any_owned_state = {
+											has_dynamic_modifier = {
+												modifier = engine_location_modifier
+											}
+										}
+									}
+								}
+							}
+						}
+						add = 1
 					}
 				}
 			}
