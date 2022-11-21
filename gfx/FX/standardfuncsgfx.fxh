@@ -317,12 +317,12 @@ PixelShader =
 	//#define NO_NIGHT
 
 	static const float GMT_OFFSET = 2793.0f; // X position on map, of Greenwitch GMT+0
-	static const float FEATHER_MIN = -1.0f;
+	static const float FEATHER_MIN = -0.01f;
 	static const float FEATHER_MAX = 0.01f;
-	static const float MOON_FEATHER_MIN = -1.0f;
+	static const float MOON_FEATHER_MIN = -0.01f;
 	static const float MOON_FEATHER_MAX = 0.01;
 	static const float NIGHT_OPACITY = 0.85f;
-	static const float NIGHT_DARKNESS = 0.7f;
+	static const float NIGHT_DARKNESS = 0.6f;
 	static const float SOUTH_POLE_OFFSET = 0.17f; // Our map is missing big parts of globe on north and south
 	static const float NORTH_POLE_OFFSET = 0.93f;
 	static const float GLOBE_NORMAL_LIMIT = 0.8f;
@@ -342,9 +342,9 @@ PixelShader =
 
 	float3 CalcGlobeNormal( float2 vWorldXZ )
 	{
-		float x = fmod_loop( ( vWorldXZ.x - 0 ) / MAP_SIZE_X + DayNight_Hour_SunDir.x, 1.0f );
+		float x = fmod_loop( ( vWorldXZ.x - GMT_OFFSET ) / MAP_SIZE_X + DayNight_Hour_SunDir.x, 1.0f );
 		float y = vWorldXZ.y / MAP_SIZE_Y;
-		y = 1;
+		y = SOUTH_POLE_OFFSET + ( NORTH_POLE_OFFSET - SOUTH_POLE_OFFSET ) * y;
 		y = -cos( y * 3.1415f );
 		float xzLen = 1.0f - abs( y );
 		float3 vGlobeNormal = float3( sin( x * 6.2831f ) * xzLen, y, cos( x * 6.2831f ) * xzLen );
@@ -354,7 +354,7 @@ PixelShader =
 	float DayNightFactor( float3 vGlobeNormal, float vMin, float vMax )
 	{
 		float vDot = dot( vGlobeNormal, DayNight_Hour_SunDir.yzw );
-		return saturate( ( vDot - vMin ) / ( vMax - vMin ) ) * vFoWOpacity_FoWTime_SnowMudFade_MaxGameSpeed.w;
+		return saturate ( 1.0 );
 	}
 
 
@@ -678,7 +678,7 @@ PixelShader =
 
 		float3 vAmbientColor = AmbientLight(aProperties._Normal, vDayNight);
 		float3 diffuse = ((vAmbientColor + aDiffuseLight) * aProperties._Diffuse) * HdrRange;
-		float3 specular = aSpecularLight;
+		float3 specular = 0.0 * aSpecularLight;
 
 		return diffuse + specular;
 	}
