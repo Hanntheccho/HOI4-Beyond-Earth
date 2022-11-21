@@ -43,12 +43,15 @@ NDefines_Graphics.NGraphics.RAILWAY_CAMERA_CUTOFF_SPEED = 1.0
 NDefines_Graphics.NGraphics.MAP_MODE_TERRAIN_TRANSPARENCY = 0.9
 
 NDefines_Graphics.NGraphics.MOON_HEIGHT = 10000 -- higher means softer shadows and more intense light
-NDefines_Graphics.NGraphics.SUN_HEIGHT  = 600 -- higher means softer shadows and more intense light
+NDefines_Graphics.NGraphics.SUN_HEIGHT  = 1000 -- higher means softer shadows and more intense light
 NDefines_Graphics.NGraphics.MOON_HEIGHT_WATER = 10000   -- higher means softer shadows and more intense light
 NDefines_Graphics.NGraphics.SUN_HEIGHT_WATER  = 5000  -- higher means softer shadows and more intense light
 NDefines_Graphics.NGraphics.MOON_LATITUDE = 0 -- NOT USED
 NDefines_Graphics.NGraphics.SECOND_MOON_LATITUDE = 0 -- Used to put a "fake" sun/moon on the other side of the globe to hide the seem that would otherwise appear there
 NDefines_Graphics.NGraphics.SECOND_SUN_LATITUDE = 100
+
+NDefines_Graphics.NGraphics.COUNTRY_COLOR_SATURATION_MODIFIER = 0.45
+NDefines_Graphics.NGraphics.COUNTRY_COLOR_BRIGHTNESS_MODIFIER = 0.75
 
 NDefines_Graphics.NGraphics.SUN_DIFFUSE_COLOR   	= {0.0, 0.0, 1.0}
 NDefines_Graphics.NGraphics.SUN_INTENSITY 			= 1.0 -- 0.4
