@@ -50,8 +50,8 @@ NDefines_Graphics.NGraphics.MOON_LATITUDE = 0 -- NOT USED
 NDefines_Graphics.NGraphics.SECOND_MOON_LATITUDE = 0 -- Used to put a "fake" sun/moon on the other side of the globe to hide the seem that would otherwise appear there
 NDefines_Graphics.NGraphics.SECOND_SUN_LATITUDE = 100
 
-NDefines_Graphics.NGraphics.COUNTRY_COLOR_SATURATION_MODIFIER = 0.45
-NDefines_Graphics.NGraphics.COUNTRY_COLOR_BRIGHTNESS_MODIFIER = 0.75
+NDefines_Graphics.NGraphics.COUNTRY_COLOR_SATURATION_MODIFIER = 0.55
+NDefines_Graphics.NGraphics.COUNTRY_COLOR_BRIGHTNESS_MODIFIER = 0.8
 
 NDefines_Graphics.NGraphics.SUN_DIFFUSE_COLOR   	= {0.0, 0.0, 1.0}
 NDefines_Graphics.NGraphics.SUN_INTENSITY 			= 1.0 -- 0.4
