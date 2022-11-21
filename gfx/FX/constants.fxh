@@ -47,8 +47,8 @@ static const float MAP_SPECULAR_WIDTH			= 0.0;
 // ------------------    TERRAIN        -------------------------
 // --------------------------------------------------------------
 static const float CITY_LIGHTS_TILING 			= 0.04103; // used to be 0.03103
-static const float CITY_LIGHTS_INTENSITY 		= 7.5;
-static const float CITY_LIGHTS_BLOOM_FACTOR 	= 0.5;
+static const float CITY_LIGHTS_INTENSITY 		= 9.0; // used to be 7.5
+static const float CITY_LIGHTS_BLOOM_FACTOR 	= 0.6; // used t be 0.5
 
 static const float TERRAIN_TILE_FREQ 			= 128.0f;
 static const float MAP_NUM_TILES 				= 4.0f;
