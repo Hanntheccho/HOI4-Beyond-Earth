@@ -1,36 +1,3 @@
-#	Triggers to control if diplomatic actions are enabled:
-#		Format:
-#
-#		<diplomatic action tag>_enabled_trigger = {
-#			<trigger contents>
-#		}
-#
-#		ROOT is the country initiating the diplomatic action.
-#		FROM is the recipient or target of the diplomatic action.
-#
-#		Note:  For cleaner tooltips, it is recommended that you use
-#			if triggers within the enable triggers, and a single
-#			custom_trigger_tooltip trigger within each if trigger.
-#
-#		Example: (Germany is prevented from declaring war on the Soviet Union.)
-#
-#		DIPLOMACY_WAR_ENABLE_TRIGGER = {
-#			if = {
-#				limit = {
-#					tag = GER
-#				}
-#				custom_trigger_tooltip = {
-#					tooltip = PREVENT_GER_WAR_ON_SOV
-#					FROM = {
-#						NOT = {
-#							tag = SOV
-#						}
-#					}
-#				}
-#			}
-#		}
-
-
 DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
 	NOT = {
 		has_idea = EU_treaty_of_bern
@@ -47,7 +14,6 @@ DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
 		has_idea = NAU_central_authority_low
 	}
 }
-
 ###
 #DIPLOMACY_WAR_ENABLE_TRIGGER = {
 #	always = no

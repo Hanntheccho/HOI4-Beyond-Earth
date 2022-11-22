@@ -50,3 +50,14 @@ NDefines_Graphics.NGraphics.COUNTRY_COLOR_BRIGHTNESS_MODIFIER = 0.8
 
 NDefines_Graphics.NGraphics.MOON_DIFFUSE_COLOR  	= {0.7, 0.1, 1.0}
 NDefines_Graphics.NGraphics.MOON_INTENSITY 			= 1.0
+
+NDefines_Graphics.NGraphics.RAILWAY_BRIDGE_ENTITY = ""
+NDefines_Graphics.NGraphics.RAILWAY_BRIDGE_LARGE_ENTITY = ""
+NDefines_Graphics.NGraphics.RAILWAY_Y_OFFSET = 0.9						-- Railways are offset by this amount vertically from the map
+NDefines_Graphics.NGraphics.RAILWAY_BRIDGE_Y_OFFSET = 0.0					-- Railway bridges are offset by this amount vertically from the map
+NDefines_Graphics.NGraphics.RAILWAY_BRIDGE_WIDTH = 0.0					-- Railways will have straight segments of this length for regular bridges
+NDefines_Graphics.NGraphics.RAILWAY_BRIDGE_LARGE_WIDTH = 0.0				-- Railways will have straight segments of this length for large bridges
+NDefines_Graphics.NGraphics.RAILWAY_BRIDGE_GAP_WIDTH = 0.0			-- Railways will have gaps of this length for regular bridges
+NDefines_Graphics.NGraphics.RAILWAY_BRIDGE_GAP_LARGE_WIDTH = 0.0			-- Railways will have gaps of this length for large bridges
+NDefines_Graphics.NGraphics.TRAIN_MAP_SPEED = 5.0							-- Trains will move at this relative speed. This has no gameplay implications. Changing this value (originally 4.0) may cause audio effects to lose sync with animation.
+NDefines_Graphics.NGraphics.TUNNELBANA_TIMETABLE = { 4000, 6000 }		

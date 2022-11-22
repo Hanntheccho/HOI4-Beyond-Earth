@@ -1,17 +1,45 @@
-#	Example:
-#
-#	example_trigger = {
-#		tag = GER
-#		is_ai = no
-#	}
-#
-#
-#	In a script file:
-#
-#	trigger = {
-#		exampel_trigger = yes
-#	}
-#
+###
+is_india_tag = { #except for BHR and KAV
+	OR = {
+		original_tag = KAS
+		original_tag = PUN
+		#original_tag = SIN
+		original_tag = RAJ
+		original_tag = NAX
+		original_tag = MAH
+		original_tag = ODS
+		original_tag = KRT
+		original_tag = KRL
+		original_tag = TAM
+		#original_tag = SRL
+		original_tag = BNG
+	}
+}
+is_china_tag = {
+	OR = {
+		original_tag = DNG
+		original_tag = IMO
+		original_tag = XIN
+		original_tag = GAN
+		original_tag = SHA
+		original_tag = QIN
+		original_tag = TIB
+		original_tag = SIC
+		original_tag = CHO
+		original_tag = YAN
+		original_tag = ZHE
+		original_tag = FUJ
+		original_tag = GUI
+		original_tag = TAI
+		original_tag = GND
+		original_tag = GNX
+		original_tag = HAN
+		original_tag = YNN
+		original_tag = KAC
+		original_tag = WAA
+	}
+}
+###
 
 can_ROOT_get_wargoal_on_THIS = {
 	exists = yes
@@ -20,7 +48,6 @@ can_ROOT_get_wargoal_on_THIS = {
 }
 
 #Country scope
-
 is_border_conflict_defender_vs_FROM = {
 	has_variable = ROOT.defender_state_vs_@FROM
 }
