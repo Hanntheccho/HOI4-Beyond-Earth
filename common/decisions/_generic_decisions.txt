@@ -61,10 +61,6 @@ generic_decisions = {
 					news_event = news_event.16
 					set_cosmetic_tag = CHI_CENTRAL_GOVERNMENT
 					dismantle_faction = yes
-					remove_from_array = {
-						array = global.global_superpower_title
-						index = 0
-					}
 				}
 				963 = {
 					transfer_state_to = DNG
@@ -388,6 +384,13 @@ generic_decisions = {
 					}
 					declare_war_on = {
 						target = CHI
+						type = puppet_wargoal_focus
+					}
+				}
+				CHI = {
+					remove_from_array = {
+						array = global.global_superpower_title_array
+						index = 0
 					}
 				}
 			}

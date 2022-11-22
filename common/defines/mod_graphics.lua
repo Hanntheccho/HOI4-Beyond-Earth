@@ -59,5 +59,5 @@ NDefines_Graphics.NGraphics.RAILWAY_BRIDGE_WIDTH = 0.0					-- Railways will have
 NDefines_Graphics.NGraphics.RAILWAY_BRIDGE_LARGE_WIDTH = 0.0				-- Railways will have straight segments of this length for large bridges
 NDefines_Graphics.NGraphics.RAILWAY_BRIDGE_GAP_WIDTH = 0.0			-- Railways will have gaps of this length for regular bridges
 NDefines_Graphics.NGraphics.RAILWAY_BRIDGE_GAP_LARGE_WIDTH = 0.0			-- Railways will have gaps of this length for large bridges
-NDefines_Graphics.NGraphics.TRAIN_MAP_SPEED = 5.0							-- Trains will move at this relative speed. This has no gameplay implications. Changing this value (originally 4.0) may cause audio effects to lose sync with animation.
+NDefines_Graphics.NGraphics.TRAIN_MAP_SPEED = 4.0							-- Trains will move at this relative speed. This has no gameplay implications. Changing this value (originally 4.0) may cause audio effects to lose sync with animation.
 NDefines_Graphics.NGraphics.TUNNELBANA_TIMETABLE = { 4000, 6000 }		

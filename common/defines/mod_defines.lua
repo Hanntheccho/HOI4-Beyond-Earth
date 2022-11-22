@@ -38,6 +38,8 @@ NDefines.NDiplomacy.AUTONOMY_LEVEL_CHANGE_PP_FREE = 6969
 NDefines.NCountry.POPULATION_YEARLY_GROWTH_BASE = 0.005           -- Vanilla: 0.015
 NDefines.NCountry.SUPPLY_BASE_MULT = 10                          -- Vanilla: 1
 
+NDefines.NCountry.SCORCHED_EARTH_STATE_COST = 6969
+
 NDefines.NDiplomacy.WARGOAL_JUSTIFY_TENSION_FROM_PRODUCTION = 0
 
 NDefines.NOperatives.AGENCY_CREATION_FACTORIES = 1000101
@@ -54,3 +56,13 @@ NDefines.NAI.MIN_INVASION_PLAN_VALUE_TO_EXECUTE = 0.02          -- Vanilla: 0.2
 NDefines.NAI.MIN_INVASION_ORG_FACTOR_TO_EXECUTE = 0.25               -- Vanilla: 0.75
 
 NDefines.NAI.FAILED_INVASION_AVOID_DURATION = 90           -- Vanilla: 135
+
+--NDefines.NCountry.WEEKLY_STABILITY_GAIN = 0.0
+--NDefines.NCountry.WEEKLY_WAR_SUPPORT_GAIN = 0.0
+
+NDefines.NProduction.DEFAULT_MAX_NAV_FACTORIES_PER_LINE = 15
+NDefines.NProduction.CONVOY_MAX_NAV_FACTORIES_PER_LINE = 15
+NDefines.NProduction.CAPITAL_SHIP_MAX_NAV_FACTORIES_PER_LINE = 15
+
+--NDefines.NFocus.FOCUS_PROGRESS_PEACE = 1
+--NDefines.NFocus.FOCUS_PROGRESS_WAR = 1
