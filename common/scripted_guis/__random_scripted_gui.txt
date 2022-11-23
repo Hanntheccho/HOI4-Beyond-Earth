@@ -10,17 +10,7 @@ scripted_gui = {
         }
 		
 		effects = {
-            law_decisions_click = {
-                if = {
-                    limit = {
-                        has_country_flag = show_political_window
-                    }
-                    clr_country_flag = show_political_window
-                }
-                else = {
-                    set_country_flag = show_political_window
-                }
-            }
+            #
 		}
 
 		triggers = {
@@ -276,17 +266,12 @@ scripted_gui = {
             politics_button_click = {
                 if = {
                     limit = {
-                        has_country_flag = south_pole_moment_flag
+                        has_country_flag = political_moment_flag
                     }
-                    clr_country_flag = south_pole_moment_flag
+                    clr_country_flag = political_moment_flag
+                    clr_country_flag = international_moment_flag
                 }
-                if = {
-                    limit = {
-                        has_country_flag = virtues_and_culture_moment_flag
-                    }
-                    clr_country_flag = virtues_and_culture_moment_flag
-                }
-                ROOT = {
+                else = {
                     set_country_flag = political_moment_flag
                 }
             }
@@ -296,8 +281,15 @@ scripted_gui = {
                         has_country_flag = south_pole_moment_flag
                     }
                     clr_country_flag = south_pole_moment_flag
+                    set_country_flag = virtues_and_culture_moment_flag
                 }
-                ROOT = {
+                else_if = {
+                    limit = {
+                        has_country_flag = virtues_and_culture_moment_flag
+                    }
+                    clr_country_flag = virtues_and_culture_moment_flag
+                }
+                else = {
                     set_country_flag = virtues_and_culture_moment_flag
                 }
             }
@@ -307,8 +299,15 @@ scripted_gui = {
                         has_country_flag = virtues_and_culture_moment_flag
                     }
                     clr_country_flag = virtues_and_culture_moment_flag
+                    set_country_flag = south_pole_moment_flag
                 }
-                ROOT = {
+                else_if = {
+                    limit = {
+                        has_country_flag = south_pole_moment_flag
+                    }
+                    clr_country_flag = south_pole_moment_flag
+                }
+                else = {
                     set_country_flag = south_pole_moment_flag
                 }
             }
