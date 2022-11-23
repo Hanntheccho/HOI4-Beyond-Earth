@@ -17,30 +17,38 @@ on_actions = {
 			}
 		}
 	}
-	###
-	#on_peaceconference_ended = {  #EVERY TECH GIVEN GENERATES A POPUP!
-	#	effect = {
-	#		if = {
-	#			limit = {
-	#				FROM = {
-	#					OR = {
-	#						capital_scope = {
-	#							is_owned_by = ROOT
-	#						}
-	#						is_puppet_of = ROOT
-	#					}
-	#				}
-	#			}
-	#			ROOT = {
-	#				inherit_technology = FROM
-	#			}
-	#		}
-	#		else = {
-	#			#
-	#		}
-	#	}
-	#}
-	###
+	#
+	on_puppet = {
+		effect = {
+			ROOT = {
+				every_owned_state = {
+					limit = {
+						OR = {
+							is_claimed_by = FROM
+							is_core_of = FROM
+						}
+					}
+					transfer_state_to = FROM
+				}
+			}
+		}
+	}
+	on_peaceconference_started = {
+		effect = {
+			FROM = {
+				every_owned_state = {
+					limit = {
+						OR = {
+							is_claimed_by = ROOT
+							is_core_of = ROOT
+						}
+					}
+					transfer_state_to = ROOT
+				}
+			}
+		}
+	}
+	#
 	on_peaceconference_ended = {  #REMOVE IS_PUPPET TRIGGERS????
 		effect = {
 			if = {
@@ -54,41 +62,23 @@ on_actions = {
 				}
 				log = "A WAR HAS ENDED!"
 			}
-			#INDIA
+			#CHINA
 			else_if = {
 				limit = {
 					FROM = {
-						is_puppet_of = BHR
-						is_india_tag = yes
+						is_china_tag = yes
 					}
 					ROOT = {
-						tag = BHR
+						tag = CHI
+					}
+					NOT = {
+						any_country = {
+							is_china_tag = yes
+						}
 					}
 				}
-				FROM = {
-					every_core_state = {
-						remove_core_of = FROM
-						add_core_of = ROOT
-						transfer_state_to = ROOT
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					FROM = {
-						is_puppet_of = KAV
-						is_india_tag = yes
-					}
-					ROOT = {
-						tag = KAV
-					}
-				}
-				FROM = {
-					every_core_state = {
-						remove_core_of = FROM
-						add_core_of = ROOT
-						transfer_state_to = ROOT
-					}
+				CHI = {
+					drop_cosmetic_tag = yes
 				}
 			}
 			#POL-LAT WAR
@@ -133,54 +123,19 @@ on_actions = {
 					set_cosmetic_tag = KAR_russia
 				}
 			}
-			#SOV-KAR WAR
+			#KAZ-URA WAR
 			else_if = {
 				limit = {
 					FROM = {
-						tag = KAR
+						tag = URA
 					}
 					ROOT = {
-						tag = SOV
-					}
-				}
-				FROM = {
-					every_core_state = {
-						remove_core_of = FROM
-						#add_core_of = ROOT #not needed
-						#transfer_state_to = ROOT #not needed
-					}
-				}
-			}
-			#SOV-KAZ WAR
-			else_if = {
-				limit = {
-					FROM = {
 						tag = KAZ
 					}
-					ROOT = {
-						tag = SOV
-					}
 				}
 				FROM = {
-					every_core_state = {
-						remove_core_of = FROM
-						add_core_of = ROOT
-						transfer_state_to = ROOT
-					}
-				}
-			}
-			#NOR-SWE WAR
-			else_if = {
-				limit = {
-					FROM = {
-						tag = SWE
-					}
-					ROOT = {
-						tag = NOR
-					}
-				}
-				SCO = {
-					puppet = FROM
+					remove_ideas = URA_no_army
+					set_cosmetic_tag = URA_democratic
 				}
 			}
 			#COS-URG-BRA WAR
@@ -352,25 +307,6 @@ on_actions = {
 					set_cosmetic_tag = TZN_AFRICA
 				}
 			}
-			#KAZ-URA WAR
-			else_if = {
-				limit = {
-					FROM = {
-						tag = URA
-						is_puppet_of = ROOT
-					}
-					ROOT = {
-						tag = KAZ
-					}
-				}
-				FROM = {
-					every_owned_state = {
-						remove_core_of = FROM
-						add_core_of = ROOT
-						transfer_state_to = ROOT
-					}
-				}
-			}
 			#GRP-BGV WAR
 			else_if = {
 				limit = {
@@ -412,37 +348,23 @@ on_actions = {
 			else_if = {
 				limit = {
 					FROM = {
-						OR = {
-							tag = ITA
-							tag = PAD
-						}
+						tag = ITA
 					}
 					ROOT = {
-						OR = {
-							tag = ITA
-							tag = PAD
-						}
+						tag = PAD
 					}
 				}
-				FROM = {
+				ITA = {
 					every_core_state = {
-						remove_core_of = FROM
-						add_core_of = ROOT
-						transfer_state_to = ROOT
+						add_core_of = PAD
+						transfer_state_to = PAD
 					}
 				}
-				if = {
-					limit = {
-						ROOT = {
-							tag = PAD
-						}
-					}
-					ROOT = {
-						set_cosmetic_tag = PAD_italy
-						set_capital = {
-							state = 334
-							#remember_old_capital = no #?
-						}
+				PAD = {
+					set_cosmetic_tag = PAD_italy
+					set_capital = {
+						state = 334
+						#remember_old_capital = no #?
 					}
 				}
 			}
@@ -516,45 +438,6 @@ on_actions = {
 				ROOT = {
 					set_cosmetic_tag = COS_CHL
 				}
-			}
-			#ENG CIVIL WAR
-			else_if = {
-				limit = {
-					FROM = {
-						OR = {
-							tag = HNG
-							tag = CNG
-							tag = JNG
-							tag = ENG
-						}
-					}
-					ROOT = {
-						OR = {
-							tag = HNG
-							tag = CNG
-							tag = JNG
-							tag = ENG
-						}
-					}
-				}
-				FROM = {
-					every_core_state = {
-						remove_core_of = FROM
-						#add_core_of = ROOT
-						transfer_state_to = ROOT
-						#remove_dynamic_modifier = {
-						#	modifier = eng_cw_modifier
-						#}
-					}
-				}
-				#ROOT = {
-				#	set_cosmetic_tag = ENG
-				#	set_capital = {
-				#		state = 1023
-				#		remember_old_capital = no
-				#	}
-				#}
-				#set_global_flag = ECW_end
 			}
 			else = {
 				#

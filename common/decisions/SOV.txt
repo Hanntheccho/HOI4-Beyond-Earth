@@ -20,12 +20,6 @@ SOV_manifest_destiny = {
 				type = annex_everything
 				target = BLR
 			}
-			every_state = {
-				limit = {
-					is_core_of = BLR
-				}
-				add_core_of = SOV
-			}
 		}
 		ai_will_do = {
 			factor = 0
@@ -74,12 +68,6 @@ SOV_manifest_destiny = {
 				type = annex_everything
 				target = UKR
 			}
-			every_state = {
-				limit = {
-					is_core_of = UKR
-				}
-				add_core_of = SOV
-			}
 		}
 		ai_will_do = {
 			factor = 0
@@ -118,14 +106,8 @@ SOV_manifest_destiny = {
 		fire_only_once = yes
 		remove_effect = {
 			declare_war_on = {
-				type = annex_everything
+				type = puppet_wargoal_focus
 				target = LAT
-			}
-			every_state = {
-				limit = {
-					is_core_of = LAT
-				}
-				add_claim_by = SOV
 			}
 		}
 		ai_will_do = {
@@ -177,14 +159,8 @@ SOV_manifest_destiny = {
 		war_with_on_remove = KAZ
 		remove_effect = {
 			declare_war_on = {
-				type = annex_everything
+				type = puppet_wargoal_focus
 				target = KAZ
-			}
-			every_state = {
-				limit = {
-					is_core_of = KAZ
-				}
-				add_claim_by = SOV
 			}
 		}
 		ai_will_do = {
@@ -223,12 +199,6 @@ SOV_manifest_destiny = {
 			declare_war_on = {
 				type = annex_everything
 				target = SIB
-			}
-			every_state = {
-				limit = {
-					is_core_of = SIB
-				}
-				add_core_of = SOV
 			}
 		}
 		ai_will_do = {
@@ -275,16 +245,14 @@ SOV_manifest_destiny = {
 				}
 			}
 		}
+		cancel_trigger = {
+			URA = {
+				is_puppet = yes
+			}
+		}
 		days_remove = 30
 		fire_only_once = yes
 		remove_effect = {
-			every_state = {
-				limit = {
-					is_core_of = URA
-				}
-				add_core_of = SOV
-				remove_core_of = URA
-			}
 			if = {
 				limit = {
 					URA = {
@@ -328,7 +296,7 @@ SOV_manifest_destiny = {
 	#		factor = 1
 	#	}
 	#}
-
+}
 
 #keeper_kazan = {
 #	kazan_send_rifles = {
