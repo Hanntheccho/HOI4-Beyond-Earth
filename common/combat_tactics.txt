@@ -55,10 +55,6 @@ tactic_counterattack = { # counters basic attack, assault
 	
 	base =  {
 		factor = 4
-		#modifier = {
-		#	add = 4
-		#	has_trait = unyielding_defender
-		#}
 	}
 	picture = counterattack
 	
@@ -77,12 +73,6 @@ tactic_assault = {
 	
 	base =  {
 		factor = 2
-		#modifier = {
-		#	add = 2
-		#
-		#	has_trait = aggressive_assaulter
-		#}
-
 		modifier = {
 			factor = 0.2
 
@@ -181,7 +171,6 @@ tactic_cc_withdraw = {
 	defender = -0.05
 }
 
-
 tactic_encirclement = {
 	is_attacker = yes
 	trigger = {
@@ -189,24 +178,13 @@ tactic_encirclement = {
 		phase = no
 		frontage_full = yes
 		has_reserves = yes
-		OR = {
-			skill_advantage > 0
-			#has_trait = panzer_leader
-			#has_trait = trickster
-		}
+		skill_advantage > 0
 	}
 	
 	active = yes
 	
 	base =  { 
 		factor = 4
-		#modifier = {
-		#	add = 4
-		#	OR = {
-		#		has_trait = panzer_expert
-		#		has_trait = combined_arms_expert
-		#	}
-		#}
 	}
 	
 	picture = encircle
@@ -248,10 +226,6 @@ tactic_shock = { #counters delay
 	
 	base =  {
 		factor = 4
-		modifier = {
-			add = 4
-			#has_trait = aggressive_assaulter
-		}
 	}
 	picture = shock
 	countered_by = tactic_ambush
@@ -264,10 +238,7 @@ tactic_tactical_withdrawal = { #counters encirclement
 	trigger = {
 		is_attacker = no
 		phase = no
-		OR = {
-			skill_advantage > 0
-			#has_trait = trickster
-		}
+		skill_advantage > 0
 	}
 	
 	active = no
@@ -396,7 +367,6 @@ tactic_ambush = { #counters shock
 		OR = {
 			skill_advantage > 1
 			skill > 2
-			#has_trait = trickster
 		}
 	}
 	
@@ -417,23 +387,14 @@ tactic_blitz = {
 		phase = no
 		OR = {
 			skill > 2
-			#has_trait = panzer_leader
 			skill_advantage > 1
 		}
-		#OWNER = { NOT = { has_tech = masterful_blitz } } #Soviet improved version of blitz will replace this
 	}
 	
 	active = no
 	
 	base =  { 
 		factor = 4
-		#modifier = {
-		#	add = 4
-		#	OR = {
-		#		has_trait = panzer_expert
-		#		has_trait = combined_arms_expert
-		#	}
-		#}
 	}
 	
 	picture = blitz
@@ -450,10 +411,7 @@ tactic_elastic_defense = { #counters blitz
 	trigger = {
 		is_attacker = no
 		phase = no
-		OR = {
-			#has_trait = defensive_doctrine
-			skill > 2
-		}
+		skill > 2
 	}
 	
 	active = no
@@ -473,13 +431,7 @@ tactic_backhand_blow = { #counters breakthrough
 	trigger = {
 		is_attacker = no
 		phase = no
-		OR = {
-			skill > 4
-			AND = {
-				#has_trait = defensive_doctrine
-				skill > 3
-			}
-		}
+		skill > 4
 	}
 	
 	active = no
@@ -498,13 +450,7 @@ tactic_seize_bridge = {
 		is_attacker = yes
 		has_combat_modifier = river_crossing
 		phase = no
-		OR = {
-			skill > 3
-			AND = {
-				#has_trait = offensive_doctrine
-				skill > 2
-			}
-		}
+		skill > 3
 	}
 	
 	base =  {
@@ -584,10 +530,7 @@ tactic_defender_sb_retake_bridge = {
 	trigger = {
 		is_attacker = no
 		phase = seize_bridge
-		OR = {
-			skill > 2
-			#has_trait = trickster
-		}
+		skill > 2
 	}
 	
 	countered_by = tactic_attacker_sb_skillful_defence
@@ -608,10 +551,7 @@ tactic_hold_bridge = {
 		has_combat_modifier = river_crossing
 		is_attacker = no
 		phase = no
-		OR = {
-			skill > 2
-			#has_trait = defensive_doctrine
-		}
+		skill > 2
 	}
 	
 	base =  { factor = 2 }
@@ -693,10 +633,7 @@ tactic_defender_hb_skillful_defence = {
 	trigger = {
 		is_attacker = no
 		phase = hold_bridge
-		OR = {
-			skill > 2
-			#has_trait = trickster
-		}
+		skill > 2
 	}
 	
 	base =  { factor = 2 }
@@ -713,10 +650,7 @@ tactic_guerrilla_tactics = { #People's army defender tactic. also for German vol
 	trigger = {
 		is_attacker = no
 		phase = no
-		OR = {
-			skill > 2
-			#has_trait = trickster
-		}
+		skill > 2
 	}
 	
 	active = no
@@ -881,7 +815,7 @@ tactic_barrage = { #Superior firepower attacker tactic
 }
 
 tactic_masterful_blitz = { #Improved version of Blitz for Soviets
-	#only_show_for = SOV
+	only_show_for = SOV
 	
 	is_attacker = yes
 	trigger = {
@@ -890,7 +824,6 @@ tactic_masterful_blitz = { #Improved version of Blitz for Soviets
 		phase = no
 		OR = {
 			skill > 2
-			#has_trait = panzer_leader
 			skill_advantage > 1
 		}
 	}
@@ -899,13 +832,6 @@ tactic_masterful_blitz = { #Improved version of Blitz for Soviets
 	
 	base =  { 
 		factor = 4
-		#modifier = {
-		#	add = 4
-		#	OR = {
-		#		has_trait = panzer_expert
-		#		has_trait = combined_arms_expert
-		#	}
-		#}
 	}
 	
 	picture = SOV_tank_desant_blitz

@@ -69,5 +69,7 @@ NDefines.NProduction.BASE_FACTORY_SPEED = 2.5
 NDefines.NProduction.BASE_FACTORY_SPEED_MIL = 2.5 				
 NDefines.NProduction.BASE_FACTORY_SPEED_NAV = 2.5 
 
+NDefines.NMilitary.BASE_NIGHT_ATTACK_PENALTY = 0.0
+
 --NDefines.NFocus.FOCUS_PROGRESS_PEACE = 1
 --NDefines.NFocus.FOCUS_PROGRESS_WAR = 1
