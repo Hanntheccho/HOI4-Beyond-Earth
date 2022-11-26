@@ -33,21 +33,6 @@ on_actions = {
 			}
 		}
 	}
-	on_peaceconference_started = {
-		effect = {
-			FROM = {
-				every_owned_state = {
-					limit = {
-						OR = {
-							is_claimed_by = ROOT
-							is_core_of = ROOT
-						}
-					}
-					transfer_state_to = ROOT
-				}
-			}
-		}
-	}
 	#
 	on_peaceconference_ended = {  #REMOVE IS_PUPPET TRIGGERS????
 		effect = {
@@ -114,7 +99,22 @@ on_actions = {
 						tag = KAR
 					}
 				}
-				ROOT = {
+				KAR = {
+					country_event = { 
+						id = karelia_event.5
+						days = 0
+					}
+					country_event = { 
+						id = karelia_event.6
+						days = 25
+					}
+					FROM = {
+						every_owned_state = {
+							remove_core_of = FROM
+							add_core_of = ROOT
+							transfer_state_to = ROOT
+						}
+					}
 					set_cosmetic_tag = KAR_russia
 				}
 			}

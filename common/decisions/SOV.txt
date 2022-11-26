@@ -139,18 +139,20 @@ SOV_manifest_destiny = {
 		icon = GFX_decision_war
 		available = {
 			URA = {
-				exists = no
+				OR = {
+					exists = no
+					is_puppet_of = KAZ
+				}
 			}
 			KAZ = {
 				exists = yes
+				is_puppet = no
 			}
 		}
 		visible = {
 			KAZ = {
 				exists = yes
-			}
-			NOT = {
-				has_war_with = KAZ
+				is_puppet = no
 			}
 		}
 		days_remove = 20
@@ -165,6 +167,12 @@ SOV_manifest_destiny = {
 		}
 		ai_will_do = {
 			factor = 0
+			modifier = {
+				URA = {
+					is_puppet_of = KAZ
+				}
+				add = 10000
+			}
 			modifier = {
 				URA = {
 					exists = no
@@ -224,7 +232,7 @@ SOV_manifest_destiny = {
 				URA = {
 					AND = {
 						has_war_with = KAZ
-						surrender_progress > 0.7
+						surrender_progress > 0.6
 					}
 				}
 				KAZ = {

@@ -138,47 +138,26 @@ germany_formable = {
 		available = {
 			UKR = {
 				exists = yes
-				OR = {
-					has_idea = GER_eurasian_aligned
-					has_idea = GER_german_eurasian_aligned
-					has_idea = GER_german_aligned
-				}
+				has_idea = GER_eurasian_aligned
 			}
 		}
 		visible = {
 			UKR = {
 				exists = yes
-				OR = {
-					has_idea = GER_eurasian_aligned
-					has_idea = GER_german_eurasian_aligned
-					has_idea = GER_german_aligned
-				}
+				has_idea = GER_eurasian_aligned
 			}
 		}
 		cost = 60
-		cancel_trigger = {
-			UKR = {
-				has_idea = GER_german_aligned
-			}
-		}
 		fire_only_once = yes
 		days_remove = 100
 		remove_effect = {
-			if = {
-				limit = {
-					has_country_flag = UKR_helped_by_GER
-				}
-				UKR = {
-					swap_ideas = {
-						remove_idea = GER_eurasian_aligned
-						add_idea = GER_german_eurasian_aligned
-					}
-				}
-			}
 			UKR = {
+				swap_ideas = {
+					remove_idea = GER_eurasian_aligned
+					add_idea = GER_german_eurasian_aligned
+				}
 				remove_ideas = UKR_all_slavs
 			}
-			set_country_flag = UKR_helped_by_GER
 		}
 		ai_will_do = {
 			factor = 1
@@ -189,21 +168,13 @@ germany_formable = {
 		available = {
 			UKR = {
 				exists = yes
-				OR = {
-					has_idea = GER_eurasian_aligned
-					has_idea = GER_german_eurasian_aligned
-					has_idea = GER_german_aligned
-				}
+				has_idea = GER_eurasian_aligned
 			}
 		}
 		visible = {
 			UKR = {
 				exists = yes
-				OR = {
-					has_idea = GER_eurasian_aligned
-					has_idea = GER_german_eurasian_aligned
-					has_idea = GER_german_aligned
-				}
+				has_idea = GER_eurasian_aligned
 			}
 		}
 		custom_cost_trigger = {
@@ -211,31 +182,18 @@ germany_formable = {
 		}
 		custom_cost_text = decision_cost_100_ip
 		fire_only_once = yes
-		cancel_trigger = {
-			UKR = {
-				has_idea = GER_german_aligned
-			}
-		}
 		days_remove = 120
 		remove_effect = {
-			if = {
-				limit = {
-					has_country_flag = UKR_helped_by_GER
-				}
-				UKR = {
-					swap_ideas = {
-						remove_idea = GER_eurasian_aligned
-						add_idea = GER_german_eurasian_aligned
-					}
-				}
-			}
 			UKR = {
 				remove_ideas = UKR_country_life_support
+				swap_ideas = {
+					remove_idea = GER_eurasian_aligned
+					add_idea = GER_german_eurasian_aligned
+				}
 			}
 			subtract_from_variable = {
 				industrial_power = 100
 			}
-			set_country_flag = UKR_helped_by_GER
 		}
 		ai_will_do = {
 			factor = 1
@@ -246,21 +204,16 @@ germany_formable = {
 		available = {
 			UKR = {
 				exists = yes
-				OR = {
-					has_idea = GER_eurasian_aligned
-					has_idea = GER_german_eurasian_aligned
-					has_idea = GER_german_aligned
+				NOT = {
+					has_idea = UKR_country_life_support
+					has_idea = UKR_all_slavs
 				}
 			}
 		}
 		visible = {
 			UKR = {
 				exists = yes
-				OR = {
-					has_idea = GER_eurasian_aligned
-					has_idea = GER_german_eurasian_aligned
-					has_idea = GER_german_aligned
-				}
+				has_idea = GER_eurasian_aligned
 			}
 		}
 		cost = 100
@@ -318,54 +271,22 @@ germany_formable = {
 		available = {
 			BLR = {
 				exists = yes
-				OR = {
-					has_idea = GER_eurasian_aligned
-					has_idea = GER_german_eurasian_aligned
-					has_idea = GER_german_aligned
-				}
-			}
-			NOT = {
-				BLR = {
-					has_idea = GER_green_soil_plan
-				}
+				has_idea = GER_eurasian_aligned
 			}
 		}
 		visible = {
 			BLR = {
 				exists = yes
-			}
-			GER = {
-				has_guaranteed = BLR
-			}
-			NOT = {
-				BLR = {
-					has_idea = GER_green_soil_plan
-				}
+				has_idea = GER_eurasian_aligned
 			}
 		}
 		custom_cost_trigger = {
 			check_variable = { industrial_power > 19.9 }
 		}
-		cancel_trigger = {
-			BLR = {
-				has_idea = GER_german_aligned
-			}
-		}
 		custom_cost_text = decision_cost_20_ip
-		fire_only_once = no
+		fire_only_once = yes
 		days_remove = 30
 		remove_effect = {
-			if = {
-				limit = {
-					has_country_flag = BLR_helped_by_GER
-				}
-				BLR = {
-					swap_ideas = {
-						remove_idea = GER_eurasian_aligned
-						add_idea = GER_german_eurasian_aligned
-					}
-				}
-			}
 			BLR = {
 				random_owned_state = {
 					add_extra_state_shared_building_slots = 1
@@ -375,12 +296,15 @@ germany_formable = {
 						instant_build = yes
 					}
 				}
+				swap_ideas = {
+					remove_idea = GER_eurasian_aligned
+					add_idea = GER_german_eurasian_aligned
+				}
 			}
 			subtract_from_variable = {
 				industrial_power = 20
 			}
-			set_country_flag = BLR_helped_by_GER
-			custom_effect_tooltip = GER_increase_influence_decision_tooltip
+			set_country_flag = GER_helped_BLR_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -391,67 +315,37 @@ germany_formable = {
 		available = {
 			BLR = {
 				exists = yes
-				OR = {
-					has_idea = GER_eurasian_aligned
-					has_idea = GER_german_eurasian_aligned
-					has_idea = GER_german_aligned
-				}
-			}
-			NOT = {
-				BLR = {
-					has_idea = GER_green_soil_plan
-				}
+				has_idea = GER_eurasian_aligned
 			}
 		}
 		visible = {
 			BLR = {
 				exists = yes
-				OR = {
-					has_idea = GER_eurasian_aligned
-					has_idea = GER_german_eurasian_aligned
-					has_idea = GER_german_aligned
-				}
-			}
-			NOT = {
-				BLR = {
-					has_idea = GER_green_soil_plan
-				}
+				has_idea = GER_eurasian_aligned
 			}
 		}
 		custom_cost_trigger = {
 			check_variable = { industrial_power > 19.9 }
 		}
 		custom_cost_text = decision_cost_20_ip
-		fire_only_once = no
+		fire_only_once = yes
 		days_remove = 30
-		cancel_trigger = {
-			BLR = {
-				has_idea = GER_german_aligned
-			}
-		}
 		remove_effect = {
-			if = {
-				limit = {
-					has_country_flag = BLR_helped_by_GER
-				}
-				BLR = {
-					swap_ideas = {
-						remove_idea = GER_eurasian_aligned
-						add_idea = GER_german_eurasian_aligned
-					}
-				}
-			}
 			BLR = {
 				add_equipment_to_stockpile = {
 					type = infantry_eq
 					amount = 1000
 					producer = GER
 				}
+				swap_ideas = {
+					remove_idea = GER_eurasian_aligned
+					add_idea = GER_german_eurasian_aligned
+				}
 			}
 			subtract_from_variable = {
 				industrial_power = 20
 			}
-			set_country_flag = BLR_helped_by_GER
+			set_country_flag = GER_helped_BLR_2
 		}
 		ai_will_do = {
 			factor = 1
@@ -462,32 +356,16 @@ germany_formable = {
 		available = {
 			BLR = {
 				exists = yes
-				OR = {
-					has_idea = GER_eurasian_aligned
-					has_idea = GER_german_eurasian_aligned
-					has_idea = GER_german_aligned
-				}
-			}
-			NOT = {
-				BLR = {
-					has_idea = GER_green_soil_plan
-				}
+				has_idea = GER_german_eurasian_aligned
 			}
 		}
 		visible = {
 			BLR = {
 				exists = yes
-				OR = {
-					has_idea = GER_eurasian_aligned
-					has_idea = GER_german_eurasian_aligned
-					has_idea = GER_german_aligned
-				}
+				has_idea = GER_eurasian_aligned
 			}
-			NOT = {
-				BLR = {
-					has_idea = GER_green_soil_plan
-				}
-			}
+			has_country_flag = GER_helped_BLR_1
+			has_country_flag = GER_helped_BLR_2
 		}
 		cost = 50
 		fire_only_once = yes
