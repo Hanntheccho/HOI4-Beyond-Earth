@@ -18,7 +18,7 @@ on_actions = {
 		}
 	}
 	#
-	on_puppet = {
+	on_puppet = { #ROOT is the puppet tag, FROM is OVERLORD
 		effect = {
 			ROOT = {
 				every_owned_state = {
@@ -34,7 +34,7 @@ on_actions = {
 		}
 	}
 	#
-	on_peaceconference_ended = {  #REMOVE IS_PUPPET TRIGGERS????
+	on_peaceconference_ended = { #FROM is looser, ROOT is winner
 		effect = {
 			if = {
 				limit = {
@@ -440,4 +440,38 @@ on_actions = {
 		}
 	}
 	###
+	on_capitulation_immediate = { #ROOT is looser, FROM is winner
+		effect = {
+			#YUG-ROM WAR
+			if = {
+				limit = {
+					ROOT = {
+						tag = ROM
+					}
+					FROM = {
+						tag = YUG
+					}
+				}
+				FRA = {
+					white_peace = SOV
+					white_peace = YUG
+				}
+			}
+			#ROM-YUG WAR
+			else_if = {
+				limit = {
+					ROOT = {
+						tag = YUG
+					}
+					FROM = {
+						tag = ROM
+					}
+				}
+				SOV = {
+					white_peace = FRA
+					white_peace = ROM
+				}
+			}
+		}
+	}
 }

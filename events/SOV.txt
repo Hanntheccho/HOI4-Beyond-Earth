@@ -1,33 +1,315 @@
 ﻿add_namespace = eurasia_event
 
-country_event = {
-	id = eurasia_event.1
-	title = eurasia_event.1.t
-	desc = eurasia_event.1.d
-	picture = GFX_unknown_event
+#country_event = {
+#	id = eurasia_event.1
+#	title = eurasia_event.1.t
+#	desc = eurasia_event.1.d
+#	picture = GFX_unknown_event
+#
+#	is_triggered_only = yes
+#	
+#	option = { 
+#		name = eurasia_event_option.1.a 
+#		add_political_power = 50
+#	}
+#}
+#
+#country_event = {
+#	id = eurasia_event.2
+#	title = eurasia_event.2.t
+#	desc = eurasia_event.2.d
+#	picture = GFX_unknown_event
+#	
+#	is_triggered_only = yes
+#	
+#	option = { 
+#		name = eurasia_event_option.2.a 
+#		add_stability = 0.05
+#	}
+#}
 
-	fire_only_once = yes
+country_event = {
+	id = eurasia_event.3
+	title = eurasia_event.3.t
+	desc = eurasia_event.3.d
+	picture = GFX_unknown_event
 	
 	is_triggered_only = yes
 	
 	option = { 
-		name = eurasia_event_option.1.a 
+		name = eurasia_event_option.3.a 
+		add_manpower = -10000
+	}
+}
+
+country_event = {
+	id = eurasia_event.4
+	title = eurasia_event.4.t
+	desc = eurasia_event.4.d
+	picture = GFX_unknown_event
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = eurasia_event_option.4.a
+	}
+}
+
+country_event = { #TOBE DONE, for when KAR wars
+	id = eurasia_event.5
+	title = eurasia_event.5.t
+	desc = eurasia_event.5.d
+	picture = GFX_unknown_event
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = eurasia_event_option.5.a
+	}
+}
+
+country_event = {
+	id = eurasia_event.6
+	title = eurasia_event.6.t
+	desc = eurasia_event.6.d
+	picture = GFX_unknown_event
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = eurasia_event_option.6.a
 		add_political_power = 50
+		add_stability = 0.2
 	}
 }
 
 country_event = {
-	id = eurasia_event.2
-	title = eurasia_event.2.t
-	desc = eurasia_event.2.d
+	id = eurasia_event.7
+	title = eurasia_event.7.t
+	desc = eurasia_event.7.d
 	picture = GFX_unknown_event
-
-	fire_only_once = yes
 	
 	is_triggered_only = yes
 	
 	option = { 
-		name = eurasia_event_option.2.a 
-		add_stability = 0.05
+		name = eurasia_event_option.7.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = eurasia_event_option.7.b
+		send_equipment = {
+			equipment = gun_equipment
+			amount = 2000
+			target = YUG
+		}
+		send_equipment = {
+			equipment = infantry_eq
+			amount = 400
+			target = YUG
+		}
+		add_to_variable = {
+			var = global.slavicinfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = eurasia_event_option.7.c
+		send_equipment = {
+			equipment = gun_equipment
+			amount = 4000
+			target = YUG
+		}
+		send_equipment = {
+			equipment = infantry_eq
+			amount = 800
+			target = YUG
+		}
+		add_manpower = -10000
+		YUG = {
+			add_manpower = 10000
+		}
+		add_to_variable = {
+			var = global.slavicinfamy_var
+			value = 2
+		}
+		custom_effect_tooltip = add_infamy_mid
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = eurasia_event_option.7.d
+		add_to_faction = YUG
+		add_to_war = {
+			targeted_alliance = YUG
+			enemy = ROM
+		}
+		add_to_variable = {
+			var = global.slavicinfamy_var
+			value = 4
+		}
+		custom_effect_tooltip = add_infamy_high
+		ai_chance = {
+			factor = 1
+		}
 	}
 }
+
+#INFAMY
+country_event = {
+	id = eurasia_event.8
+	title = eurasia_event.8.t
+	desc = eurasia_event.8.d
+	picture = GFX_unknown_event
+	
+	trigger = {
+		tag = SOV
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 165
+	}
+	
+	option = { 
+		name = eurasia_event_option.8.a
+		add_to_variable = {
+			var = global.slavicinfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+	}
+}
+country_event = {
+	id = eurasia_event.9
+	title = eurasia_event.9.t
+	desc = eurasia_event.9.d
+	picture = GFX_unknown_event
+	
+	trigger = {
+		tag = SOV
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 265
+	}
+	
+	option = { 
+		name = eurasia_event_option.9.a
+		add_to_variable = {
+			var = global.slavicinfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+	}
+}
+country_event = {
+	id = eurasia_event.10
+	title = eurasia_event.10.t
+	desc = eurasia_event.10.d
+	picture = GFX_unknown_event
+	
+	trigger = {
+		tag = SOV
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 365
+	}
+	
+	option = { 
+		name = eurasia_event_option.10.a
+		add_to_variable = {
+			var = global.slavicinfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+	}
+}
+country_event = {
+	id = eurasia_event.11
+	title = eurasia_event.11.t
+	desc = eurasia_event.11.d
+	picture = GFX_unknown_event
+	
+	trigger = {
+		tag = SOV
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 465
+	}
+	
+	option = { 
+		name = eurasia_event_option.11.a
+		add_to_variable = {
+			var = global.slavicinfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+	}
+}
+country_event = {
+	id = eurasia_event.12
+	title = eurasia_event.12.t
+	desc = eurasia_event.12.d
+	picture = GFX_unknown_event
+	
+	trigger = {
+		tag = SOV
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 565
+	}
+	
+	option = { 
+		name = eurasia_event_option.12.a
+		add_to_variable = {
+			var = global.slavicinfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+	}
+}
+country_event = {
+	id = eurasia_event.13
+	title = eurasia_event.13.t
+	desc = eurasia_event.13.d
+	picture = GFX_unknown_event
+	
+	trigger = {
+		tag = SOV
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 665
+	}
+	
+	option = { 
+		name = eurasia_event_option.13.a
+		add_to_variable = {
+			var = global.slavicinfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+	}
+}
+###

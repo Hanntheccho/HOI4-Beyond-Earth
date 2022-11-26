@@ -1,0 +1,95 @@
+add_namespace = ukraine_event
+
+country_event = {
+	id = ukraine_event.1
+	title = ukraine_event.1.t
+	desc = ukraine_event.1.d
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = ukraine_event_option.1.a 
+		leave_faction = yes
+		add_popularity = {
+			ideology = harmony
+			popularity = 0.05
+		}
+	}
+
+	option = { 
+		name = ukraine_event_option.1.b
+		add_political_power = -150
+		hidden_effect = {
+			country_event = {
+				id = ukraine_event.3
+				days = 45
+			}
+		}
+	}
+}
+
+country_event = { #TOBE DONE, for when KAR wins
+	id = ukraine_event.2
+	title = ukraine_event.2.t
+	desc = ukraine_event.2.d
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = ukraine_event_option.2.a 
+	}
+
+	option = { 
+		name = ukraine_event_option.2.b
+	}
+}
+
+country_event = {
+	id = ukraine_event.3
+	title = ukraine_event.3.t
+	desc = ukraine_event.3.d
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = ukraine_event_option.3.a 
+		add_popularity = {
+			ideology = neutral
+			popularity = -0.15
+		}
+		add_popularity = {
+			ideology = purity
+			popularity = 0.05
+		}
+		set_politics = {
+			ruling_party = purity
+		}
+	}
+}
+
+country_event = {
+	id = ukraine_event.4
+	title = ukraine_event.4.t
+	desc = ukraine_event.4.d
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = ukraine_event_option.4.a 
+		add_popularity = {
+			ideology = neutral
+			popularity = 0.05
+		}
+	}
+
+	option = { 
+		name = ukraine_event_option.4.b 
+		add_popularity = {
+			ideology = harmony
+			popularity = 0.05
+		}
+		set_politics = {
+			ruling_party = harmony
+		}
+	}
+}
