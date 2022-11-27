@@ -130,6 +130,78 @@ on_actions = {
             }
             if = {
                 limit = {
+                    any_owned_state = {
+                        AND = {
+                            has_dynamic_modifier = {
+                                modifier = quarters_location_modifier
+                            }
+                        }
+                    }
+                }
+                ROOT = {
+                    add_to_array = {
+                        array = global.module_two_builder_array
+                        value = THIS.id
+                        index = 0
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    any_owned_state = {
+                        AND = {
+                            has_dynamic_modifier = {
+                                modifier = support_location_modifier
+                            }
+                        }
+                    }
+                }
+                ROOT = {
+                    add_to_array = {
+                        array = global.module_three_builder_array
+                        value = THIS.id
+                        index = 0
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    any_owned_state = {
+                        AND = {
+                            has_dynamic_modifier = {
+                                modifier = storage_location_modifier
+                            }
+                        }
+                    }
+                }
+                ROOT = {
+                    add_to_array = {
+                        array = global.module_four_builder_array
+                        value = THIS.id
+                        index = 0
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    any_owned_state = {
+                        AND = {
+                            has_dynamic_modifier = {
+                                modifier = engine_location_modifier
+                            }
+                        }
+                    }
+                }
+                ROOT = {
+                    add_to_array = {
+                        array = global.module_five_builder_array
+                        value = THIS.id
+                        index = 0
+                    }
+                }
+            }
+            if = {
+                limit = {
                     any_state = {
                         AND = {
                             has_dynamic_modifier = {

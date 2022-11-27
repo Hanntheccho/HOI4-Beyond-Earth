@@ -91,6 +91,11 @@ defined_text = {
                 has_dynamic_modifier = {
                     modifier = quarters_location_modifier
                 }
+				NOT = {
+					controller = {
+						has_country_flag = spaceship_internationalized_flag
+					}
+				}
 			}
 		}
 		localization_key = module_two_builder
@@ -123,6 +128,11 @@ defined_text = {
                 has_dynamic_modifier = {
                     modifier = support_location_modifier
                 }
+				NOT = {
+					controller = {
+						has_country_flag = spaceship_internationalized_flag
+					}
+				}
 			}
 		}
 		localization_key = module_three_builder
@@ -155,6 +165,11 @@ defined_text = {
                 has_dynamic_modifier = {
                     modifier = storage_location_modifier
                 }
+				NOT = {
+					controller = {
+						has_country_flag = spaceship_internationalized_flag
+					}
+				}
 			}
 		}
 		localization_key = module_four_builder
@@ -187,6 +202,11 @@ defined_text = {
                 has_dynamic_modifier = {
                     modifier = engine_location_modifier
                 }
+				NOT = {
+					controller = {
+						has_country_flag = spaceship_internationalized_flag
+					}
+				}
 			}
 		}
 		localization_key = module_five_builder
@@ -215,35 +235,11 @@ defined_text = {
 	name = GETspaceship_completion_time
 	text = {
 		trigger = {
-			any_country = {
-				has_country_flag = spaceship_completed_flag
-			}
+			has_global_flag = module_5_completed_flag
 		}
 		localization_key = spaceship_finished
 	}
 	text = {
-		trigger = {
-			AND = {
-				any_country = {
-					has_country_flag = engine_uplink_flag
-				}
-				NOT = {
-					any_country = {
-						has_country_flag = spaceship_completed_flag
-					}
-				}
-			}
-		}
-		localization_key = all_spaceship_parts_are_finished
-	}
-	text = {
-		trigger = {
-			NOT = {
-				any_country = {
-					has_country_flag = engine_uplink_flag
-				}
-			}
-		}
 		localization_key = spaceship_completion_countdown
 	}
 }
