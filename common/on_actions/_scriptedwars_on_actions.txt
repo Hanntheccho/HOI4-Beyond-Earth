@@ -87,6 +87,7 @@ on_actions = {
 						ideology = harmony_ideology
 						picture = GFX_portrait_government_character_harmony
 					}
+					add_ideas = GER_german_aligned
 				}
 			}
 			#KAR-SOV WAR
@@ -432,6 +433,24 @@ on_actions = {
 				}
 				ROOT = {
 					set_cosmetic_tag = COS_CHL
+				}
+			}
+			#GER-FRA WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = FRA
+					}
+					ROOT = {
+						tag = GER
+					}
+				}
+				FRA = {
+					release = SPR
+					set_cosmetic_tag = FRA_FRA
+				}
+				GER = {
+					puppet = SPR
 				}
 			}
 			else = {

@@ -323,50 +323,302 @@ instantiate_collaboration_government = {
 	}
 }
 
+###
+
 upgrade_economy_law = {
 	if = {
 		limit = {
 			has_idea = civilian_economy
 		}
 		add_ideas = low_economic_mobilisation
+		add_political_power = -150
 	}
 	else_if = {
 		limit = {
 			has_idea = low_economic_mobilisation
 		}
 		add_ideas = partial_economic_mobilisation
+		add_political_power = -150
 	}
 	else_if = {
 		limit = {
 			has_idea = partial_economic_mobilisation
 		}
 		add_ideas = war_economy
+		add_political_power = -150
 	}
 	else = {
-		add_political_power = 150
+		#
 	}
 }
 
 upgrade_mobilization_law = {
 	if = {
 		limit = {
-			has_idea = civilian_economy
+			has_idea = limited_conscription
 		}
-		add_ideas = low_economic_mobilisation
+		add_ideas = extensive_conscription
+		add_political_power = -150
 	}
 	else_if = {
 		limit = {
-			has_idea = low_economic_mobilisation
+			has_idea = extensive_conscription
+		}
+		add_ideas = service_by_requirement
+		add_political_power = -150
+	}
+	else_if = {
+		limit = {
+			has_idea = service_by_requirement
+		}
+		add_ideas = all_adults_serve
+		add_political_power = -150
+	}
+	else = {
+		#
+	}
+}
+
+upgrade_trade_law = {
+	if = {
+		limit = {
+			has_idea = free_trade
+		}
+		add_ideas = export_focus
+		add_political_power = -150
+	}
+	else_if = {
+		limit = {
+			has_idea = export_focus
+		}
+		add_ideas = limited_exports
+		add_political_power = -150
+	}
+	else_if = {
+		limit = {
+			has_idea = limited_exports
+		}
+		add_ideas = closed_economy
+		add_political_power = -150
+	}
+	else = {
+		#
+	}
+}
+
+downgrade_economy_law = {
+	if = {
+		limit = {
+			has_idea = war_economy
 		}
 		add_ideas = partial_economic_mobilisation
+		add_political_power = -150
 	}
 	else_if = {
 		limit = {
 			has_idea = partial_economic_mobilisation
 		}
-		add_ideas = war_economy
+		add_ideas = low_economic_mobilisation
+		add_political_power = -150
+	}
+	else_if = {
+		limit = {
+			has_idea = low_economic_mobilisation
+		}
+		add_ideas = civilian_economy
+		add_political_power = -150
 	}
 	else = {
-		add_political_power = 150
+		#
+	}
+}
+
+downgrade_mobilization_law = {
+	if = {
+		limit = {
+			has_idea = all_adults_serve
+		}
+		add_ideas = service_by_requirement
+		add_political_power = -150
+	}
+	else_if = {
+		limit = {
+			has_idea = service_by_requirement
+		}
+		add_ideas = extensive_conscription
+		add_political_power = -150
+	}
+	else_if = {
+		limit = {
+			has_idea = extensive_conscription
+		}
+		add_ideas = limited_conscription
+		add_political_power = -150
+	}
+	else = {
+		#
+	}
+}
+
+downgrade_trade_law = {
+	if = {
+		limit = {
+			has_idea = closed_economy
+		}
+		add_ideas = limited_exports
+		add_political_power = -150
+	}
+	else_if = {
+		limit = {
+			has_idea = limited_exports
+		}
+		add_ideas = export_focus
+		add_political_power = -150
+	}
+	else_if = {
+		limit = {
+			has_idea = export_focus
+		}
+		add_ideas = free_trade
+		add_political_power = -150
+	}
+	
+	else = {
+		#
+	}
+}
+
+puppet_government_too = {
+	if = {
+		limit = {
+			FROM = {
+				has_idea = synthetic_democracy
+			}
+		}
+		ROOT = {
+			add_ideas = synthetic_democracy
+		}
+	}
+	if = {
+		limit = {
+			FROM = {
+				has_idea = corporate_libertarianism
+			}
+		}
+		ROOT = {
+			add_ideas = corporate_libertarianism
+		}
+	}
+	if = {
+		limit = {
+			FROM = {
+				has_idea = digital_democracy
+			}
+		}
+		ROOT = {
+			add_ideas = digital_democracy
+		}
+	}
+	if = {
+		limit = {
+			FROM = {
+				has_idea = communal_parity
+			}
+		}
+		ROOT = {
+			add_ideas = communal_parity
+		}
+	}
+	if = {
+		limit = {
+			FROM = {
+				has_idea = military_government
+			}
+		}
+		ROOT = {
+			add_ideas = military_government
+		}
+	}
+	#
+	if = {
+		limit = {
+			FROM = {
+				has_idea = civilian_economy
+			}
+		}
+		ROOT = {
+			add_ideas = civilian_economy
+		}
+	}
+	if = {
+		limit = {
+			FROM = {
+				has_idea = low_economic_mobilisation
+			}
+		}
+		ROOT = {
+			add_ideas = low_economic_mobilisation
+		}
+	}
+	if = {
+		limit = {
+			FROM = {
+				has_idea = partial_economic_mobilisation
+			}
+		}
+		ROOT = {
+			add_ideas = partial_economic_mobilisation
+		}
+	}
+	if = {
+		limit = {
+			FROM = {
+				has_idea = war_economy
+			}
+		}
+		ROOT = {
+			add_ideas = war_economy
+		}
+	}
+	#
+	if = {
+		limit = {
+			FROM = {
+				has_idea = free_trade
+			}
+		}
+		ROOT = {
+			add_ideas = free_trade
+		}
+	}
+	if = {
+		limit = {
+			FROM = {
+				has_idea = export_focus
+			}
+		}
+		ROOT = {
+			add_ideas = export_focus
+		}
+	}
+	if = {
+		limit = {
+			FROM = {
+				has_idea = limited_exports
+			}
+		}
+		ROOT = {
+			add_ideas = limited_exports
+		}
+	}
+	if = {
+		limit = {
+			FROM = {
+				has_idea = closed_economy
+			}
+		}
+		ROOT = {
+			add_ideas = closed_economy
+		}
 	}
 }
