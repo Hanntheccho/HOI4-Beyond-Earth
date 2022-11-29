@@ -62,32 +62,42 @@ guiTypes = {
 			pdx_tooltip = "CLOSE"
 			scale = 0.8
 		}
-
 		#
-		iconType = {
-			name = "global_power_back"
-			position = { x = 10 y = 60 }
-			quadTextureSprite ="GFX_diplo_opinion_bg3"
-			pdx_tooltip = is_the_big_guy
-			pdx_tooltip_delayed = is_the_big_guy_delayed
-		}
-		instantTextBoxType = {
-			name = "big_guy"
-			position = { x = 105 y = 71 }
-			font = "Beyond"
-			text = "there_is_a_big_guy"	
-			maxWidth = 495
-			maxHeight = 80
-			alwaystransparent = yes
-			format = left
-			fixedsize = yes
-		}
-		iconType = {
-			name = "global_power_icon"
-			position = { x = 15 y = 77 }
-			quadTextureSprite ="GFX_idea_global_stage"
-			alwaystransparent = yes
-		}
+		#instantTextBoxType = {
+		#	name = "big_guy"
+		#	position = { x = 105 y = 71 }
+		#	font = "Beyond"
+		#	text = "there_is_a_big_guy"	
+		#	maxWidth = 495
+		#	maxHeight = 80
+		#	alwaystransparent = yes
+		#	format = left
+		#	fixedsize = yes
+		#}
+		#iconType = {
+		#	name = "global_power_back"
+		#	position = { x = 10 y = 60 }
+		#	quadTextureSprite ="GFX_diplo_opinion_bg3"
+		#	pdx_tooltip = is_the_big_guy
+		#	pdx_tooltip_delayed = is_the_big_guy_delayed
+		#}
+		#instantTextBoxType = {
+		#	name = "big_guy2"
+		#	position = { x = 100 y = 110 }
+		#	font = "Beyond"
+		#	text = "there_is_a_big_guy_num"	
+		#	maxWidth = 495
+		#	maxHeight = 80
+		#	alwaystransparent = yes
+		#	format = right
+		#	fixedsize = yes
+		#}
+		#iconType = {
+		#	name = "global_power_icon"
+		#	position = { x = 15 y = 77 }
+		#	quadTextureSprite ="GFX_idea_global_stage"
+		#	alwaystransparent = yes
+		#}
 		#
 		instantTextBoxType = {
 			name = "our_diplo_power"
@@ -120,9 +130,9 @@ guiTypes = {
 		#
 		containerWindowType = {
 			name = "propositions_list"
-			position = { x=22 y=170 }	
-			size = { width = 580 height = 400 } 
-			verticalScrollbar = right_vertical_slider
+			position = { x=22 y=69 }	
+			size = { width = 580 height = 500 } 
+			#verticalScrollbar = right_vertical_slider
 			margin = {
 				bottom = 10
 				top = 10
@@ -131,6 +141,57 @@ guiTypes = {
 			background = {
 				name = "Background"		
 				quadTextureSprite ="GFX_tiled_black"
+			}
+
+			iconType = {
+				name = "resolutions_list_icons"
+				position = { x=10 y=2 }
+				spriteType = "GFX_resolutions_list"
+			}
+			#
+			buttonType = {
+				name = "resolutions_list_button_economy"
+				position = { x=10 y=2 }
+				spriteType = "GFX_resolutions_list_button"
+			}
+				containerWindowType = {
+					name = "propositions_list"
+					position = { x=100 y=40 }	
+					size = { width = 450 height = 400 } 
+
+					background = {
+						name = "Background"		
+						quadTextureSprite ="GFX_tiled_black"
+					}
+
+					iconType = {
+						name = "header"
+						position = { x=10 y=10 }
+						spriteType = "GFX_economy_header"
+					}
+					iconType = {
+						name = "icon"
+						position = { x=10 y=10 }
+						spriteType = "GFX_resolutions_list_frames"
+					}
+					#
+					instantTextBoxType = {
+						name = "economy_resolutions"
+						position = { x = 50 y = 90 }
+						font = "Beyondsmall"
+						text = "Buzzword Standardization"	
+						maxWidth = 400
+						maxHeight = 80
+						alwaystransparent = yes
+						format = left
+						fixedsize = yes
+					}
+				}
+			#
+			buttonType = {
+				name = "resolutions_list_button_industry"
+				position = { x=10 y=62 } #y +60
+				spriteType = "GFX_resolutions_list_button"
 			}
 		}
 		#
