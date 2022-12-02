@@ -9,59 +9,36 @@ on_actions = {
                 set_variable = { free_factory_counter = 0 }
                 set_variable = { division_limit = num_of_military_factories }
                 multiply_variable = { division_limit = 2 }
+                add_ideas = agrarian_stage
                 if = {
                     limit = {
                         num_of_factories > 8
-                        NOT = { num_of_factories > 18 }
                     }
-                    remove_ideas = agrarian_stage
-                    remove_ideas = developed_stage
-                    remove_ideas = regional_stage
-                    remove_ideas = continental_stage
-                    remove_ideas = global_stage
                     add_ideas = developing_stage
                     set_research_slots = 2
                 }
-                else_if = {
+                if = {
                     limit = {
                         num_of_factories > 18
-                        NOT = { num_of_factories > 28 }
                     }
-                    remove_ideas = agrarian_stage
-                    remove_ideas = developing_stage
-                    remove_ideas = regional_stage
-                    remove_ideas = continental_stage
-                    remove_ideas = global_stage
                     add_ideas = developed_stage
                     set_research_slots = 3
                 }
-                else_if = {
+                if = {
                     limit = {
                         num_of_factories > 28
-                        NOT = { num_of_factories > 98 }
                     }
-                    remove_ideas = agrarian_stage
-                    remove_ideas = developed_stage
-                    remove_ideas = developing_stage
-                    remove_ideas = continental_stage
-                    remove_ideas = global_stage
                     add_ideas = regional_stage
                     set_research_slots = 4
                 }
-                else_if = {
+                if = {
                     limit = {
                         num_of_factories > 98
-                        NOT = { num_of_factories > 198 }
                     }
-                    remove_ideas = agrarian_stage
-                    remove_ideas = developed_stage
-                    remove_ideas = developing_stage
-                    remove_ideas = regional_stage
-                    remove_ideas = global_stage
                     add_ideas = continental_stage
                     set_research_slots = 5
                 }
-                else_if = {
+                if = {
                     limit = {
                         num_of_factories > 198
                         NOT = {
@@ -72,21 +49,8 @@ on_actions = {
                             }
                         }
                     }
-                    remove_ideas = developed_stage
-                    remove_ideas = developing_stage
-                    remove_ideas = regional_stage
-                    remove_ideas = continental_stage
                     add_ideas = global_stage
                     set_research_slots = 6
-                }
-                else = {
-                    remove_ideas = developed_stage
-                    remove_ideas = developing_stage
-                    remove_ideas = regional_stage
-                    remove_ideas = continental_stage
-                    remove_ideas = global_stage
-                    add_ideas = agrarian_stage
-                    set_research_slots = 1
                 }
             }
         }
@@ -388,11 +352,6 @@ on_actions = {
                     num_of_factories > 8
                     NOT = { num_of_factories > 18 }
                 }
-                remove_ideas = agrarian_stage
-                remove_ideas = developed_stage
-                remove_ideas = regional_stage
-                remove_ideas = continental_stage
-                remove_ideas = global_stage
                 add_ideas = developing_stage
                 set_research_slots = 2
             }
@@ -401,11 +360,6 @@ on_actions = {
                     num_of_factories > 18
                     NOT = { num_of_factories > 28 }
                 }
-                remove_ideas = agrarian_stage
-                remove_ideas = developing_stage
-                remove_ideas = regional_stage
-                remove_ideas = continental_stage
-                remove_ideas = global_stage
                 add_ideas = developed_stage
                 set_research_slots = 3
             }
@@ -414,11 +368,6 @@ on_actions = {
                     num_of_factories > 28
                     NOT = { num_of_factories > 98 }
                 }
-                remove_ideas = agrarian_stage
-                remove_ideas = developed_stage
-                remove_ideas = developing_stage
-                remove_ideas = continental_stage
-                remove_ideas = global_stage
                 add_ideas = regional_stage
                 set_research_slots = 4
             }
@@ -427,11 +376,6 @@ on_actions = {
                     num_of_factories > 98
                     NOT = { num_of_factories > 198 }
                 }
-                remove_ideas = agrarian_stage
-                remove_ideas = developed_stage
-                remove_ideas = developing_stage
-                remove_ideas = regional_stage
-                remove_ideas = global_stage
                 add_ideas = continental_stage
                 set_research_slots = 5
             }
@@ -446,10 +390,6 @@ on_actions = {
                         }
                     }
                 }
-                remove_ideas = developed_stage
-                remove_ideas = developing_stage
-                remove_ideas = regional_stage
-                remove_ideas = continental_stage
                 add_ideas = global_stage
                 set_research_slots = 6
                 add_to_array = {
@@ -459,11 +399,6 @@ on_actions = {
                 }
             }
             else = {
-                remove_ideas = developed_stage
-                remove_ideas = developing_stage
-                remove_ideas = regional_stage
-                remove_ideas = continental_stage
-                remove_ideas = global_stage
                 add_ideas = agrarian_stage
                 set_research_slots = 1
             } 

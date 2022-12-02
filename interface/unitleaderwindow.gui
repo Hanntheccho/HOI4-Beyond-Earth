@@ -3,23 +3,26 @@ guiTypes = {
 	# ARMY LEADERS WINDOW
 	containerWindowType = {
 		name = "armyleaderwindow"
-		position = { x=-225 y=-295 }
-		size = { width=550 height=590 }
-		orientation = center
-		moveable = yes
-		fade_time = 500
-		fade_type = linear
-		click_to_front = yes
+		position = { x=-206 y=198 }	
+		show_position = { x=550 y =198 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300
+		size = { width=288 height=70%% }
 		clipping = no
+		
+		#hide_sound = menu_close_window
+		show_sound = menu_open_window
+		
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_black"
+			alwaystransparent = yes
+		}
 		
 		positionType = {
 			name = "pos_roster_overview_orientation_top_left"
 			position = { x = 540 y = 80 }
-		}
-				
-		background = {
-			name = "Background"		
-			spriteType ="GFX_leader_selection_bg"
 		}
 		
 		instantTextboxType = {
@@ -114,8 +117,8 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "leaders"
-			position = { x = 0 y = 20 }
-			size = { width = 550 height = 505 }
+			position = { x = 0 y = 15 }
+			size = { width = 285 height = 95% }
 
 			verticalScrollbar = "right_vertical_slider"
 			scroll_wheel_factor = 98
@@ -127,9 +130,9 @@ guiTypes = {
 			
 			gridBoxType = {
 				name = "leaders_grid"
-				position = { x = 13 y = 20 }
+				position = { x = 13 y = 0 }
 				size = { width = 100%% height = 100%% }
-				slotsize = { width = 510 height = 98 }
+				slotsize = { width = 249 height = 108 }
 				max_slots_horizontal = 1
 				format = "UPPER_LEFT"
 			}
@@ -137,7 +140,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "no_leader_button"
-			position = { x = -250 y = -45 }
+			position = { x = 10000 y = -45 }
 			quadTextureSprite ="GFX_button_221x34"
 			buttonFont = "Arial"
 			Orientation = "LOWER_RIGHT"
@@ -147,7 +150,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "new_leader_button"
-			position = { x = -510 y = -45 }
+			position = { x = 10000 y = -45 }
 			quadTextureSprite = "GFX_button_221x34_black"
 			buttonFont = "Focusfont"
 			Orientation = "LOWER_RIGHT"
@@ -156,7 +159,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "show_divisional_commanders_button"
-			position = { x = -515 y = -45 }
+			position = { x = 10000 y = -45 }
 			quadTextureSprite = "GFX_button_221x34"
 			buttonFont = "Arial"
 			Orientation = "LOWER_RIGHT"
@@ -165,8 +168,8 @@ guiTypes = {
 		
 		buttonType = {
 			name = "close_button"
-			position = { x = -55 y = -35 }
-			quadTextureSprite ="GFX_exit_button"
+			position = { x = -25 y = 10000 }
+			quadTextureSprite ="GFX_NV_btn_close"
 			buttonFont = "Main_14_black"
 			shortcut = "ESCAPE"
 			Orientation = "UPPER_RIGHT"
@@ -209,24 +212,35 @@ guiTypes = {
 			name = "Background"		
 			spriteType ="GFX_leader_selection_entry_bg"
 		}
+
+		instantTextboxType = {
+			name = "skill"
+			position = { x = 10000 y = 20 } #position = { x = 160 y = 20 }
+			font = "Beyond"
+			text = "skill"
+			maxWidth = 50
+			maxHeight = 18
+			format = right
+			alwaystransparent = yes
+		}
 		
 		buttonType = {
 			name = "leader_button"
-			position = {x=56 y=3}	
+			position = {x=8 y=11}	
 			quadTextureSprite ="GFX_leader_unknown"
-			scale = 0.41
+			scale = 0.5
 		}
-		
+
 		iconType = {
-			name = "clip_icon"
-			position = {x=55 y=10000}	
-			quadTextureSprite ="GFX_clip"
-			alwaystransparent = yes			
+			name = "shadow_portrait_top"
+			position = {x=4 y=7}	
+			quadTextureSprite ="GFX_shadow_portrait_top"
+			alwaystransparent = yes
 		}
 		
 		iconType = {
 			name = "skill_tooltip_icon"
-			position = {x=10 y=6}	
+			position = {x=10000 y=6}	
 			quadTextureSprite ="GFX_skill_transparent"		
 		}
 		
@@ -256,7 +270,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "promote_btn"
-			position = {x=414 y=56}	
+			position = {x=10000 y=56}	
 			quadTextureSprite ="GFX_leader_selection_button"
 			buttonText = UNIT_LEADER_PROMOTE
 			buttonFont = "Arial16"	
@@ -303,17 +317,6 @@ guiTypes = {
 			maxHeight = 18
 		}
 		
-		instantTextboxType = {
-			name = "skill"
-			position = { x = 2 y = 25 }
-			font = "Focusfont"
-			text = "skill"
-			maxWidth = 50
-			maxHeight = 18
-			format =center
-			alwaystransparent = yes
-		}
-		
 		gridBoxType = {
 			name = "traits_grid"
 			position = { x = 130 y = 60 }
@@ -329,68 +332,108 @@ guiTypes = {
 			position = { x=125 y=54 }
 		}
 
-		iconType = {
-			name = "leader_stat_attack_bg"
-			spriteType = "GFX_trait_attack"
-			position = { x=147 y=16 }
+		#iconType = {
+		#	name = "leader_stat_attack_bg"
+		#	spriteType = "GFX_trait_attack"
+		#	position = { x=87 y=16 }
+		#}
+
+		instantTextboxType = {
+			name = "leader_stat_attack"
+			position = {x=147 y=10}
+			font = "Arialsmallest"
+			maxWidth = 30
+			maxHeight = 23
+			format = right
+			text = "7"
 		}
 		
 		instantTextboxType = {
-			name = "leader_stat_attack"
-			position = {x=177 y=20}
-			font = "Focusfont"
-			maxWidth = 30
+			name = "leader_stat_attack2"
+			position = {x=97 y=10}
+			font = "Arialsmallest"
+			maxWidth = 100
 			maxHeight = 23
-			format = center
-			text = "7"
+			format = left
+			text = "Attack:"
 		}
 
-		iconType = {
-			name = "leader_stat_defense_bg"
-			spriteType = "GFX_trait_defense"
-			position = { x=227 y=16 }
-		}
+		#iconType = {
+		#	name = "leader_stat_defense_bg"
+		#	spriteType = "GFX_trait_defense"
+		#	position = { x=87 y=56 }
+		#}
 		
 		instantTextboxType = {
 			name = "leader_stat_defense"
-			position = {x=257 y=20}
-			font = "Focusfont"
+			position = {x=147 y=30}
+			font = "Arialsmallest"
 			maxWidth = 30
 			maxHeight = 23
-			format = center
+			format = right
 			text = "8"
 		}
 
-		iconType = {
-			name = "leader_stat_planning_bg"
-			spriteType = "GFX_trait_planning"
-			position = { x=307 y=16 }
+		instantTextboxType = {
+			name = "leader_stat_defense2"
+			position = {x=97 y=30}
+			font = "Arialsmallest"
+			maxWidth = 100
+			maxHeight = 23
+			format = left
+			text = "Defense:"
 		}
+
+		#iconType = {
+		#	name = "leader_stat_planning_bg"
+		#	spriteType = "GFX_trait_planning"
+		#	position = { x=157 y=16 }
+		#}
 		
 		instantTextboxType = {
 			name = "leader_stat_planning"
-			position = {x=337 y=20}
-			font = "Focusfont"
+			position = {x=147 y=50}
+			font = "Arialsmallest"
 			maxWidth = 30
 			maxHeight = 23
-			format = center
+			format = right
 			text = "9"
 		}
 
-		iconType = {
-			name = "leader_stat_logistics_bg"
-			spriteType = "GFX_trait_logistics"
-			position = { x=387 y=16 }
+		instantTextboxType = {
+			name = "leader_stat_planning2"
+			position = {x=97 y=50}
+			font = "Arialsmallest"
+			maxWidth = 100
+			maxHeight = 23
+			format = left
+			text = "Planning:"
 		}
+
+		#iconType = {
+		#	name = "leader_stat_logistics_bg"
+		#	spriteType = "GFX_trait_logistics"
+		#	position = { x=157 y=56 }
+		#}
 		
 		instantTextboxType = {
 			name = "leader_stat_logistics"
-			position = {x=417 y=20}
-			font = "Focusfont"
+			position = {x=147 y=70}
+			font = "Arialsmallest"
 			maxWidth = 30
 			maxHeight = 23
-			format = center
+			format = right
 			text = "10"
+		}
+
+		instantTextboxType = {
+			name = "leader_stat_logistics2"
+			position = {x=97 y=70}
+			font = "Arialsmallest"
+			maxWidth = 100
+			maxHeight = 23
+			format = left
+			text = "Logistics:"
 		}
 	}
 
@@ -606,6 +649,15 @@ guiTypes = {
 			name = "skill_tooltip_icon"
 			position = {x=10 y=6}	
 			quadTextureSprite ="GFX_skill_transparent"		
+		}
+
+		buttonType = {
+			name = "generate_advisor_button"
+			position = {x=10000 y=65}	
+			quadTextureSprite ="GFX_give_role_leader_strip"
+			buttonFont = "hoi_16mbs"	
+			clicksound = click_default
+			frame = 1
 		}
 
 		buttonType = {

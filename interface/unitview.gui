@@ -228,7 +228,7 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "armies_view"
-		position = {x=20 y=165}
+		position = {x=20 y=140}
 		size = { width=544 height=100%% }
 		Orientation = upper_left
 		clipping = no
@@ -309,9 +309,9 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "army_badge_view"
-		position = {x=0 y=10}
+		position = {x=0 y=0}
 		Orientation = upper_left
-		size = {width=437 height=105}
+		size = {width=437 height=0}
 		clipping = no
 
 		background = {
@@ -336,20 +336,20 @@ guiTypes = {
 		iconType = {
 			name = "army_bg"
 			spriteType = "GFX_army_bg"
-			position = { x=-1 y=-1 }
+			position = { x=-1 y=10000 } #-1
 			alwaystransparent = yes
 		}
 
 		iconType = {
 			name = "army_group_bg"
 			spriteType = "GFX_army_group_bg"
-			position = { x=-1 y=-1 }
+			position = { x=-1 y=10000 } #-1
 			alwaystransparent = yes
 		}
 
 		editBoxType = {
 			name = "group_name"
-			position = {x=19 y=19}
+			position = {x=10000 y=19} #position = {x=19 y=19}
 			size = {x=395 y=40}
 			font = "Beyond"
 			text = ""
@@ -358,20 +358,20 @@ guiTypes = {
 			#format = left
 		}
 
-		containerWindowType = {
-			name = "extra_thing"
-			size = {width=400 height=74}
-			position = {
-				x = 10
-				y = 10
-			}
-
-			background = {
-				name = "extra_thing_bg"
-				quadTextureSprite = "GFX_tiled_black"
-				alwaystransparent = yes
-			}
-		}
+		#containerWindowType = {
+		#	name = "extra_thing"
+		#	size = {width=400 height=74}
+		#	position = {
+		#		x = 10
+		#		y = 10
+		#	}
+		#
+		#	background = {
+		#		name = "extra_thing_bg"
+		#		quadTextureSprite = "GFX_tiled_black"
+		#		alwaystransparent = yes
+		#	}
+		#}
 
 		buttonType = {
 			name ="army_item_bg"
@@ -436,7 +436,14 @@ guiTypes = {
 			name = "supply_icon"
 			spriteType = "GFX_supply_strip_big"
 			frame = 1
-			position = { x=10000 y=13 }
+			position = {x=456 y=230}
+		}
+
+		iconType = {
+			name = "shadow"
+			position = {x=453 y=227}
+			spriteType = "GFX_buildings_strip_shadow"
+			alwaystransparent = yes
 		}
 
 		iconType = {
@@ -458,7 +465,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "close_button"
-			position = {x=3 y=3} #position = {x=193 y=-36}
+			position = {x=10000 y=3} #position = {x=193 y=-36}
 			spriteType = "GFX_NV_btn_close"
 			pdx_tooltip = "DESELECT_UNIT"
 			clicksound = click_close
@@ -476,7 +483,7 @@ guiTypes = {
 			position = {x=440 y=15}
 			spriteType = "GFX_leader_unknown"
 			clicksound = click_default
-			scale = 0.4
+			scale = 0.5
 		}
 
 		iconType = {
@@ -484,14 +491,21 @@ guiTypes = {
 			position = {x=440 y=15}
 			quadTextureSprite ="GFX_leader_unknown"
 			alwaystransparent = yes
-			scale = 0.4
+			scale = 0.5
 		}
 
 		buttonType = {
 			name = "army_color_button"
 			quadTextureSprite = "GFX_group_marker3"
-			size = { x = 61 y = 124 }
-			position = { x=-54 y = -14 }
+			size = { x = 430 y = 15 }
+			position = { x=10000 y = -11 } #position = { x=0 y = -11 }
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "shadow_portrait_top"
+			position = {x=436 y=11}
+			quadTextureSprite ="GFX_shadow_portrait_top"
 			alwaystransparent = yes
 		}
 
@@ -589,12 +603,12 @@ guiTypes = {
 		iconType = {
 			name = "leader_stat_attack_bg"
 			spriteType = "GFX_trait_attack"
-			position = { x=45 y=60 }
+			position = { x=10000 y=60 } #position = { x=45 y=60 }
 		}
 
 		instantTextboxType = {
 			name = "leader_stat_attack"
-			position = {x=80 y=64}
+			position = {x=10000 y=64} #position = {x=80 y=64}
 			font = "Focusfont"
 			maxWidth = 30
 			maxHeight = 23
@@ -605,12 +619,12 @@ guiTypes = {
 		iconType = {
 			name = "leader_stat_defense_bg"
 			spriteType = "GFX_trait_defense"
-			position = { x=125 y=60 }
+			position = { x=10000 y=60 } #position = { x=125 y=60 }
 		}
 
 		instantTextboxType = {
 			name = "leader_stat_defense"
-			position = {x=160 y=64}
+			position = {x=10000 y=64} #position = {x=160 y=64}
 			font = "Focusfont"
 			maxWidth = 30
 			maxHeight = 23
@@ -621,12 +635,12 @@ guiTypes = {
 		iconType = {
 			name = "leader_stat_planning_bg"
 			spriteType = "GFX_trait_planning"
-			position = { x=205 y=60 }
+			position = { x=10000 y=60 } #position = { x=205 y=60 }
 		}
 
 		instantTextboxType = {
 			name = "leader_stat_planning"
-			position = {x=240 y=64}
+			position = {x=10000 y=64} #position = {x=240 y=64}
 			font = "Focusfont"
 			maxWidth = 30
 			maxHeight = 23
@@ -637,12 +651,12 @@ guiTypes = {
 		iconType = {
 			name = "leader_stat_logistics_bg"
 			spriteType = "GFX_trait_logistics"
-			position = { x=285 y=60 }
+			position = { x=10000 y=60 } #position = { x=285 y=60 }
 		}
 
 		instantTextboxType = {
 			name = "leader_stat_logistics"
-			position = {x=320 y=64}
+			position = {x=10000 y=64} #position = {x=320 y=64}
 			font = "Focusfont"
 			maxWidth = 30
 			maxHeight = 23
@@ -728,24 +742,31 @@ guiTypes = {
 
 		buttonType = {
 			name = "army_motorization_priority_button"
-			position = {x=372 y=15}
+			position = {x=456 y=110}
 			spriteType = "GFX_motorization_level_toggle_btn"
 			clicksound = click_default
 		}
 		positionType = {
 			name = "army_motorization_priority_button_army_group_position"
-			position = {x=372 y=15}
+			position = {x=456 y=110}
 		}
 
 		iconType = {
 			name = "army_motorization_priority_button_overlay"
-			position = {x=372 y=15}
+			position = {x=456 y=110}
 			spriteType = "GFX_motorization_level_toggle_strip"
 			alwaystransparent = yes
 		}
 		positionType = {
 			name = "army_motorization_priority_button_overlay_army_group_position"
-			position = {x=372 y=15}
+			position = {x=456 y=110}
+		}
+
+		iconType = {
+			name = "shadow2"
+			position = {x=453 y=107}
+			spriteType = "GFX_buildings_strip_shadow"
+			alwaystransparent = yes
 		}
 
 		buttonType = {
@@ -763,13 +784,26 @@ guiTypes = {
 			pdx_tooltip = "TOGGLE_ARMY_GROUP_VIEW_ARMIES_DIVISIONS"
 		}
 
+		iconType = {
+			name = "shadow4"
+			position = {x=456 y=170}
+			spriteType = "GFX_air_wings_disabled"
+		}
+
 		buttonType = {
 			name = "select_all_wings_button"
-			position = {x=10000 y=84}
+			position = {x=456 y=170}
 			spriteType = "GFX_buildings_strip"
 			frame = 5
 			buttonFont = "hoi_18mbs"
 			clicksound = click_default
+		}
+
+		iconType = {
+			name = "shadow3"
+			position = {x=453 y=167}
+			spriteType = "GFX_buildings_strip_shadow"
+			alwaystransparent = yes
 		}
 	}
 
@@ -970,7 +1004,7 @@ guiTypes = {
 
 			buttonType = {
 				name = "btn_close"
-				position = {x=383 y=-29}
+				position = {x=10000 y=-29} #position = {x=383 y=-29}
 				spriteType = "GFX_exit_button"
 				pdx_tooltip = "DESELECT_UNIT"
 				scale = 0.6
