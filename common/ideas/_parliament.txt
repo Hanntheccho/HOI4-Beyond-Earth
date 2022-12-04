@@ -1,5 +1,114 @@
 ideas = {
 	hidden_ideas = {
+		idea_resolution_idea = {
+
+			on_add = {
+				#
+			}
+
+			on_remove = {
+				if = {
+					limit = {
+						check_variable = {
+							global.diplomatic_power_in_favor > global.diplomatic_power_against
+						}
+					}
+					if = {
+						limit = {
+							has_global_flag = resolution_trade1
+						}
+						every_country = {
+							limit = {
+								has_country_flag = international_member
+							}
+							add_ideas = trade_resolution_idea1
+						}
+						set_global_flag = trade_resolution_1_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_trade2
+						}
+						every_country = {
+							limit = {
+								has_country_flag = international_member
+							}
+							swap_ideas = {
+								remove_idea = trade_resolution_idea1
+								add_idea = trade_resolution_idea2
+							}
+						}
+						set_global_flag = trade_resolution_2_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_trade3
+						}
+						every_country = {
+							limit = {
+								has_country_flag = international_member
+							}
+							swap_ideas = {
+								remove_idea = trade_resolution_idea2
+								add_idea = trade_resolution_idea3
+							}
+						}
+						set_global_flag = trade_resolution_3_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_trade4
+						}
+						every_country = {
+							limit = {
+								has_country_flag = international_member
+							}
+							swap_ideas = {
+								remove_idea = trade_resolution_idea3
+								add_idea = trade_resolution_idea4
+							}
+						}
+						set_global_flag = trade_resolution_4_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_trade5
+						}
+						every_country = {
+							limit = {
+								has_country_flag = international_member
+							}
+							swap_ideas = {
+								remove_idea = trade_resolution_idea4
+								add_idea = trade_resolution_idea5
+							}
+						}
+						set_global_flag = trade_resolution_5_done
+					}
+					else = {
+						#
+					}
+				}
+				else = {
+					#
+				}
+				every_country = {
+					clr_country_flag = voted_yay
+					clr_country_flag = voted_nay
+				}
+				set_variable = {
+					global.diplomatic_power_in_favor = 0
+				}
+				set_variable = {
+					global.diplomatic_power_against = 0
+				}
+			}
+
+			modifier = {
+                #
+			}
+		}
+		#
 		trade_resolution_idea1 = {
 
 			modifier = {

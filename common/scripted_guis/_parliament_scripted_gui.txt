@@ -43,10 +43,114 @@ scripted_gui = {
                     set_country_flag = see_trade_resolutions
                 }
             }
+            ###
+            yay_icon_click = {
+                if = {
+                    limit = {
+                        has_country_flag = voted_nay
+                    }
+                    add_to_variable = {
+                        global.diplomatic_power_in_favor = ROOT.diplomatic_power
+                    }
+                    subtract_from_variable = {
+                        global.diplomatic_power_against = ROOT.diplomatic_power
+                    }
+                    clr_country_flag = voted_nay
+                    set_country_flag = voted_yay
+                }
+                else_if = {
+                    limit = {
+                        NOT = {
+                            has_country_flag = voted_yay
+                        }
+                    }
+                    add_to_variable = {
+                        global.diplomatic_power_in_favor = ROOT.diplomatic_power
+                    }
+                    set_country_flag = voted_yay
+                }
+                else = {
+                    #
+                }                
+            }
+            nay_icon_click = {
+                if = {
+                    limit = {
+                        has_country_flag = voted_yay
+                    }
+                    subtract_from_variable = {
+                        global.diplomatic_power_in_favor = ROOT.diplomatic_power
+                    }
+                    add_to_variable = {
+                        global.diplomatic_power_against = ROOT.diplomatic_power
+                    }
+                    clr_country_flag = voted_yay
+                    set_country_flag = voted_nay
+                }
+                else_if = {
+                    limit = {
+                        NOT = {
+                            has_country_flag = voted_nay
+                        }
+                    }
+                    add_to_variable = {
+                        global.diplomatic_power_against = ROOT.diplomatic_power
+                    }
+                    set_country_flag = voted_nay
+                }
+                else = {
+                    #
+                }  
+            }
 		}
+
+        triggers = {
+            yay_icon_click_enabled = {
+                has_global_flag = resolution_proposed
+            }
+            nay_icon_click_enabled = {
+                has_global_flag = resolution_proposed
+            }
+            #
+            yay_title_visible = {
+                has_global_flag = resolution_proposed
+            }
+            nay_title_visible = {
+                has_global_flag = resolution_proposed
+            }
+            #
+            economy_button_visible = {
+                OR = {
+                    has_global_flag = resolution_trade1
+                    has_global_flag = resolution_trade2
+                    has_global_flag = resolution_trade3
+                    has_global_flag = resolution_trade4
+                    has_global_flag = resolution_trade5
+                }
+            }
+        }
         
         ai_enabled = {
-            always = no
+            always = yes
+        }
+        
+        ai_test_interval = 330
+        
+        ai_check = {
+            has_global_flag = resolution_proposed
+        }
+        
+        ai_weights = {
+            yay_icon_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            nay_icon_click = {
+                ai_will_do = {
+                    factor = 0
+                }
+            }
         }
     }
     ###
@@ -78,11 +182,17 @@ scripted_gui = {
                 }
                 set_global_flag = {
                     flag = resolution_trade1
-                    days = 150
+                    days = 151
                     value = 1
                 }
                 set_variable = {
                     global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
                 }
             }
             resolution_button2_click = {
@@ -93,11 +203,17 @@ scripted_gui = {
                 }
                 set_global_flag = {
                     flag = resolution_trade2
-                    days = 150
+                    days = 151
                     value = 1
                 }
                 set_variable = {
                     global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
                 }
             }
             resolution_button3_click = {
@@ -108,11 +224,17 @@ scripted_gui = {
                 }
                 set_global_flag = {
                     flag = resolution_trade3
-                    days = 150
+                    days = 151
                     value = 1
                 }
                 set_variable = {
                     global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
                 }
             }
             resolution_button4_click = {
@@ -123,11 +245,17 @@ scripted_gui = {
                 }
                 set_global_flag = {
                     flag = resolution_trade4
-                    days = 150
+                    days = 151
                     value = 1
                 }
                 set_variable = {
                     global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
                 }
             }
             resolution_button5_click = {
@@ -138,11 +266,17 @@ scripted_gui = {
                 }
                 set_global_flag = {
                     flag = resolution_trade5
-                    days = 150
+                    days = 151
                     value = 1
                 }
                 set_variable = {
                     global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
                 }
             }
 		}
@@ -150,31 +284,31 @@ scripted_gui = {
         triggers = {
             resolution_button1_visible = {
                 NOT = {
-                    has_country_flag = trade_resolution_1_done
+                    has_global_flag = trade_resolution_1_done
                 } 
             }
             resolution_button2_visible = {
-                has_country_flag = trade_resolution_1_done
+                has_global_flag = trade_resolution_1_done
                 NOT = {
-                    has_country_flag = trade_resolution_2_done
+                    has_global_flag = trade_resolution_2_done
                 } 
             }
             resolution_button3_visible = {
-                has_country_flag = trade_resolution_2_done
+                has_global_flag = trade_resolution_2_done
                 NOT = {
-                    has_country_flag = trade_resolution_3_done
+                    has_global_flag = trade_resolution_3_done
                 } 
             }
             resolution_button4_visible = {
-                has_country_flag = trade_resolution_3_done
+                has_global_flag = trade_resolution_3_done
                 NOT = {
-                    has_country_flag = trade_resolution_4_done
+                    has_global_flag = trade_resolution_4_done
                 } 
             }
             resolution_button5_visible = {
-                has_country_flag = trade_resolution_4_done
+                has_global_flag = trade_resolution_4_done
                 NOT = {
-                    has_country_flag = trade_resolution_5_done
+                    has_global_flag = trade_resolution_5_done
                 } 
             }
             #
@@ -210,35 +344,47 @@ scripted_gui = {
             }
             #
             economy_button1_visible = {
-                has_country_flag = trade_resolution_1_done
+                has_global_flag = trade_resolution_1_done
             }
             economy_button2_visible = {
-                has_country_flag = trade_resolution_2_done
+                has_global_flag = trade_resolution_2_done
             }
             economy_button3_visible = {
-                has_country_flag = trade_resolution_3_done
+                has_global_flag = trade_resolution_3_done
             }
             economy_button4_visible = {
-                has_country_flag = trade_resolution_4_done
+                has_global_flag = trade_resolution_4_done
             }
             economy_button5_visible = {
-                has_country_flag = trade_resolution_5_done
+                has_global_flag = trade_resolution_5_done
             }
             #
             resolution_button1_remove_visible = {
-                has_country_flag = trade_resolution_1_done
+                has_global_flag = trade_resolution_1_done
+                NOT = {
+                    has_global_flag = trade_resolution_2_done
+                }
             }
             resolution_button2_remove_visible = {
-                has_country_flag = trade_resolution_2_done
+                has_global_flag = trade_resolution_2_done
+                NOT = {
+                    has_global_flag = trade_resolution_3_done
+                }
             }
             resolution_button3_remove_visible = {
-                has_country_flag = trade_resolution_3_done
+                has_global_flag = trade_resolution_3_done
+                NOT = {
+                    has_global_flag = trade_resolution_4_done
+                }
             }
             resolution_button4_remove_visible = {
-                has_country_flag = trade_resolution_4_done
+                has_global_flag = trade_resolution_4_done
+                NOT = {
+                    has_global_flag = trade_resolution_5_done
+                }
             }
             resolution_button5_remove_visible = {
-                has_country_flag = trade_resolution_5_done
+                has_global_flag = trade_resolution_5_done
             }
         }
         
@@ -246,13 +392,38 @@ scripted_gui = {
             always = no #for now
         }
         
-        #ai_test_interval = 290
-        #ai_test_variance = 0.5
+        ai_test_interval = 6969
         
         ai_check = {
+            has_political_power > 150
         }
         
         ai_weights = {
+            resolution_button1_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button2_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button3_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button4_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button5_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
         }
     }
 }
