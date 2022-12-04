@@ -5,8 +5,11 @@ ideas = {
 		ITA_padania_moment = {
 
 			cancel = {
-				NOT = {
-					country_exists = PAD
+				OR = {
+					NOT = {
+						country_exists = PAD
+					}
+					is_puppet = yes
 				}
 			}
 			
@@ -17,8 +20,11 @@ ideas = {
 		ITA_rich_exodus = {
 
 			cancel = {
-				NOT = {
-					country_exists = PAD
+				OR = {
+					NOT = {
+						country_exists = PAD
+					}
+					is_puppet = yes
 				}
 			}
 			
@@ -29,7 +35,10 @@ ideas = {
 		ITA_partito_sociale = {
 
 			cancel = {
-				has_capitulated = yes
+				OR = {
+					has_capitulated = yes
+					is_puppet = yes
+				}
 			}
 			
 			modifier = {

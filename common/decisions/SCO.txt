@@ -111,8 +111,11 @@ scotland_formable = {
 		}
 		target_trigger = {
 			FROM = {
-				is_in_faction = yes
 				is_in_faction_with = SCO
+				NOT = {
+					has_idea = SCO_nsa_aligned
+				}
+				is_nsa_tag = yes
 			}
 		}
 		days_remove = 80
@@ -147,8 +150,8 @@ scotland_formable = {
 		target_trigger = {
 			FROM = {
 				has_idea = SCO_nsa_aligned
-				is_in_faction = yes
 				is_in_faction_with = SCO
+				is_nsa_tag = yes
 			}
 		}
 		days_remove = 170

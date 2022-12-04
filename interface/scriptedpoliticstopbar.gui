@@ -62,72 +62,7 @@ guiTypes = {
 			pdx_tooltip = "CLOSE"
 			scale = 0.8
 		}
-		#
-		#instantTextBoxType = {
-		#	name = "big_guy"
-		#	position = { x = 105 y = 71 }
-		#	font = "Beyond"
-		#	text = "there_is_a_big_guy"	
-		#	maxWidth = 495
-		#	maxHeight = 80
-		#	alwaystransparent = yes
-		#	format = left
-		#	fixedsize = yes
-		#}
-		#iconType = {
-		#	name = "global_power_back"
-		#	position = { x = 10 y = 60 }
-		#	quadTextureSprite ="GFX_diplo_opinion_bg3"
-		#	pdx_tooltip = is_the_big_guy
-		#	pdx_tooltip_delayed = is_the_big_guy_delayed
-		#}
-		#instantTextBoxType = {
-		#	name = "big_guy2"
-		#	position = { x = 100 y = 110 }
-		#	font = "Beyond"
-		#	text = "there_is_a_big_guy_num"	
-		#	maxWidth = 495
-		#	maxHeight = 80
-		#	alwaystransparent = yes
-		#	format = right
-		#	fixedsize = yes
-		#}
-		#iconType = {
-		#	name = "global_power_icon"
-		#	position = { x = 15 y = 77 }
-		#	quadTextureSprite ="GFX_idea_global_stage"
-		#	alwaystransparent = yes
-		#}
-		#
-		instantTextBoxType = {
-			name = "our_diplo_power"
-			position = { x = 670 y = 71 }
-			font = "Beyond"
-			text = "OUR DIPLOMATIC POWER"	
-			maxWidth = 550
-			maxHeight = 80
-			alwaystransparent = yes
-			format = right
-			fixedsize = yes
-		}
-		iconType = {
-			name = "diplo_weight_back"
-			position = { x = 681 y = 60 }
-			quadTextureSprite ="GFX_diplo_opinion_bg2"
-			pdx_tooltip = our_diplo_power_num_tt
-		}
-		instantTextBoxType = {
-			name = "our_diplo_power_num"
-			position = { x = 710 y = 110 }
-			font = "Beyond"
-			text = "our_diplo_power"	
-			maxWidth = 300
-			maxHeight = 30
-			alwaystransparent = yes
-			format = left
-			fixedsize = yes
-		}
-		#
+		###
 		containerWindowType = {
 			name = "propositions_list"
 			position = { x=22 y=69 }	
@@ -148,46 +83,13 @@ guiTypes = {
 				position = { x=10 y=2 }
 				spriteType = "GFX_resolutions_list"
 			}
-			#
+			#TRADE-ECONOMY!
 			buttonType = {
-				name = "resolutions_list_button_economy"
+				name = "resolutions_list_button_trade"
 				position = { x=10 y=2 }
 				spriteType = "GFX_resolutions_list_button"
 			}
-				containerWindowType = {
-					name = "propositions_list"
-					position = { x=100 y=40 }	
-					size = { width = 450 height = 400 } 
-
-					background = {
-						name = "Background"		
-						quadTextureSprite ="GFX_tiled_black"
-					}
-
-					iconType = {
-						name = "header"
-						position = { x=10 y=10 }
-						spriteType = "GFX_economy_header"
-					}
-					iconType = {
-						name = "icon"
-						position = { x=10 y=10 }
-						spriteType = "GFX_resolutions_list_frames"
-					}
-					#
-					instantTextBoxType = {
-						name = "economy_resolutions"
-						position = { x = 50 y = 90 }
-						font = "Beyondsmall"
-						text = "Buzzword Standardization"	
-						maxWidth = 400
-						maxHeight = 80
-						alwaystransparent = yes
-						format = left
-						fixedsize = yes
-					}
-				}
-			#
+			#INDUSTRY-TRADE!
 			buttonType = {
 				name = "resolutions_list_button_industry"
 				position = { x=10 y=62 } #y +60
@@ -195,10 +97,33 @@ guiTypes = {
 			}
 		}
 		#
+		instantTextBoxType = {
+			name = "resolution_proposed_title"
+			position = { x = 650 y = 75 }
+			font = "Beyond"
+			text = "PROPOSED RESOLUTION IN SESSION"	
+			maxWidth = 550
+			maxHeight = 80
+			alwaystransparent = yes
+			format = left
+			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "resolution_proposed_days"
+			position = { x = 690 y = 465 }
+			font = "Beyond"
+			text = "DAYS LEFT -"	
+			maxWidth = 550
+			maxHeight = 80
+			alwaystransparent = yes
+			format = left
+			fixedsize = yes
+		}
+		#
 		containerWindowType = {
 			name = "propositions_going"
-			position = { x=634 y=170 }	
-			size = { width = 580 height = 400 } 
+			position = { x=634 y=69 }	
+			size = { width = 580 height = 500 } 
 			#verticalScrollbar = right_vertical_slider
 			#margin = {
 			#	bottom = 10
@@ -209,6 +134,247 @@ guiTypes = {
 				name = "Background"		
 				quadTextureSprite ="GFX_tiled_black"
 			}
+
+			iconType = {
+				name = "economy_icon"
+				position = { x=10 y=66 }
+				spriteType = "GFX_resolutions_list_frames"
+				frame = 1
+			}
+
+			instantTextBoxType = {
+				name = "yay_title"
+				position = { x = 15 y = 160 }
+				font = "Beyond"
+				text = "TOTAL IN FAVOR"	
+				maxWidth = 550
+				maxHeight = 80
+				alwaystransparent = yes
+				format = left
+				fixedsize = yes
+			}
+			instantTextBoxType = {
+				name = "nay_title"
+				position = { x = 15 y = 280 }
+				font = "Beyond"
+				text = "TOTAL AGAINST"	
+				maxWidth = 550
+				maxHeight = 80
+				alwaystransparent = yes
+				format = right
+				fixedsize = yes
+			}
+
+			buttonType = {
+				name = "yay_bg"
+				position = { x=-80 y=146 }
+				spriteType = "GFX_diplo_opinion_bg"
+			}
+			buttonType = {
+				name = "nay_bg"
+				position = { x=110 y=266 }
+				spriteType = "GFX_diplo_opinion_bg2"
+			}
+
+			instantTextBoxType = {
+				name = "resolution_proposed_name"
+				position = { x = 15 y = 88 }
+				font = "Beyondsmall"
+				text = "proposed_resolution_name"	
+				maxWidth = 550
+				maxHeight = 80
+				alwaystransparent = yes
+				format = right
+				fixedsize = yes
+			}
+
+			instantTextBoxType = {
+				name = "resolution_proposed_days"
+				position = { x = 350 y = 396 }
+				font = "Beyond"
+				text = "resolution_proposed_days"	
+				maxWidth = 550
+				maxHeight = 80
+				alwaystransparent = yes
+				format = left
+				fixedsize = yes
+			}
+		}
+	}
+	#
+	containerWindowType = {
+		name = "propositions_list_trade"
+		position = { x=-280 y=65 }	
+		size = { width = 450 height = 425 } 
+		orientation = CENTER
+		origo = center
+
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_black"
+		}
+
+		instantTextBoxType = {
+			name = "resolution_title"
+			position = { x = -50 y = 9 }
+			font = "Beyond"
+			text = "TRADE"	
+			maxWidth = 450
+			maxHeight = 80
+			alwaystransparent = yes
+			format = right
+			fixedsize = yes
+		}
+
+		iconType = {
+			name = "header"
+			position = { x=6 y=6 }
+			spriteType = "GFX_economy_header"
+		}
+		iconType = {
+			name = "icon"
+			position = { x=10 y=6 }
+			spriteType = "GFX_resolutions_list_frames"
+			frame = 1
+		}
+		#
+		buttonType = {
+			name = "resolution_button1"
+			position = { x=17 y=83 }
+			spriteType = "GFX_resolution_button"
+			pdx_disabled_tooltip = resolution_button_pp_tt
+		}
+		buttonType = {
+			name = "resolution_button2"
+			position = { x=17 y=153 }
+			spriteType = "GFX_resolution_button"
+			pdx_disabled_tooltip = resolution_button_pp_tt
+		}
+		buttonType = {
+			name = "resolution_button3"
+			position = { x=17 y=223 }
+			spriteType = "GFX_resolution_button"
+			pdx_disabled_tooltip = resolution_button_pp_tt
+		}
+		buttonType = {
+			name = "resolution_button4"
+			position = { x=17 y=293 }
+			spriteType = "GFX_resolution_button"
+			pdx_disabled_tooltip = resolution_button_pp_tt
+		}
+		buttonType = {
+			name = "resolution_button5"
+			position = { x=17 y=363 }
+			spriteType = "GFX_resolution_button"
+			pdx_disabled_tooltip = resolution_button_pp_tt
+		}
+		#
+		iconType = {
+			name = "economy_button1"
+			position = { x=17 y=83 }
+			spriteType = "GFX_economy_button"
+		}
+		iconType = {
+			name = "economy_button2"
+			position = { x=17 y=153 }
+			spriteType = "GFX_economy_button"
+		}
+		iconType = {
+			name = "economy_button3"
+			position = { x=17 y=223 }
+			spriteType = "GFX_economy_button"
+		}
+		iconType = {
+			name = "economy_button4"
+			position = { x=17 y=293 }
+			spriteType = "GFX_economy_button"
+		}
+		iconType = {
+			name = "economy_button5"
+			position = { x=17 y=363 }
+			spriteType = "GFX_economy_button"
+		}
+		#
+		buttonType = {
+			name = "resolution_button1_remove"
+			position = { x=17 y=83 }
+			spriteType = "GFX_dismantle_faction_button"
+		}
+		buttonType = {
+			name = "resolution_button2_remove"
+			position = { x=17 y=153 }
+			spriteType = "GFX_dismantle_faction_button"
+		}
+		buttonType = {
+			name = "resolution_button3_remove"
+			position = { x=17 y=223 }
+			spriteType = "GFX_dismantle_faction_button"
+		}
+		buttonType = {
+			name = "resolution_button4_remove"
+			position = { x=17 y=293 }
+			spriteType = "GFX_dismantle_faction_button"
+		}
+		buttonType = {
+			name = "resolution_button5_remove"
+			position = { x=17 y=363 }
+			spriteType = "GFX_dismantle_faction_button"
+		}
+		#
+		instantTextBoxType = {
+			name = "economy_resolutions1"
+			position = { x = 27 y = 100 }
+			font = "Beyondsmall"
+			text = "Export Standardization"	
+			maxWidth = 400
+			maxHeight = 80
+			alwaystransparent = yes
+			format = center
+			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "economy_resolutions2"
+			position = { x = 27 y = 170 }
+			font = "Beyondsmall"
+			text = "Holocordinated Trade"	
+			maxWidth = 400
+			maxHeight = 80
+			alwaystransparent = yes
+			format = center
+			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "economy_resolutions3"
+			position = { x = 27 y = 240 }
+			font = "Beyondsmall"
+			text = "Tax Normalization Analysis"	
+			maxWidth = 400
+			maxHeight = 80
+			alwaystransparent = yes
+			format = center
+			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "economy_resolutions4"
+			position = { x = 27 y = 310 }
+			font = "Beyondsmall"
+			text = "International Checkpoints"	
+			maxWidth = 400
+			maxHeight = 80
+			alwaystransparent = yes
+			format = center
+			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "economy_resolutions5"
+			position = { x = 27 y = 380 }
+			font = "Beyondsmall"
+			text = "Rules of Trade"	
+			maxWidth = 400
+			maxHeight = 80
+			alwaystransparent = yes
+			format = center
+			fixedsize = yes
 		}
 	}
 }

@@ -5,9 +5,11 @@ on_actions = {
                 set_variable = { diplomatic_power = 0 }
                 set_variable = { diplomatic_power_civilian = 0 }
                 set_variable = { diplomatic_power_military = 0 }
+                set_variable = { diplomatic_power_techs = 0 }
                 set_variable = { diplomatic_power_trade = 0 }
                 set_variable = { diplomatic_power_population = 0 }
                 set_variable = { diplomatic_power_other = 0 }
+                add_to_variable = { diplomatic_power_techs = num_researched_technologies }
                 add_to_variable = { diplomatic_power_population = max_manpower_k }
                 divide_variable = { diplomatic_power_population = 10000 }
                 add_to_variable = { diplomatic_power_civilian = num_owned_controlled_states }
@@ -56,15 +58,17 @@ on_actions = {
 		}
 	}
     ###
-    on_daily = {
+    on_daily_ADU = {
 		effect = {
             every_country = {
                 set_variable = { diplomatic_power = 0 }
                 set_variable = { diplomatic_power_civilian = 0 }
                 set_variable = { diplomatic_power_military = 0 }
+                set_variable = { diplomatic_power_techs = 0 }
                 set_variable = { diplomatic_power_trade = 0 }
                 set_variable = { diplomatic_power_population = 0 }
                 set_variable = { diplomatic_power_other = 0 }
+                add_to_variable = { diplomatic_power_techs = num_researched_technologies }
                 add_to_variable = { diplomatic_power_population = max_manpower_k }
                 divide_variable = { diplomatic_power_population = 10000 }
                 add_to_variable = { diplomatic_power_civilian = num_owned_controlled_states }
@@ -109,6 +113,20 @@ on_actions = {
                 }
                 #
                 round_variable = diplomatic_power
+            }
+            ###
+            if = {
+                limit = {
+                    check_variable = {
+                        global.proposed_resolution_days > 0
+                    }
+                }
+                add_to_variable = {
+                    global.proposed_resolution_days = -1
+                }
+            }
+            else = {
+                #
             }
         }
     }

@@ -31,21 +31,219 @@ scripted_gui = {
                     set_country_flag = international_moment_flag
                 }
             }
-		}
-        
-        triggers = {
-            #
-        }
-
-        properties = {
-            #
-        }
-		
-		dynamic_lists = {
+            ###
+            resolutions_list_button_trade_click = {
+                if = {
+                    limit = {
+                        has_country_flag = see_trade_resolutions
+                    }
+                    clr_country_flag = see_trade_resolutions
+                }
+                else = {
+                    set_country_flag = see_trade_resolutions
+                }
+            }
 		}
         
         ai_enabled = {
             always = no
+        }
+    }
+    ###
+    propositions_list_trade_gui = {
+        window_name = "propositions_list_trade"
+        context_type = player_context
+        parent_window_token = top_bar
+         
+        visible = {
+            if = {
+                limit = { is_ai = yes }
+                always = yes
+            }
+            else = {
+                has_country_flag = political_moment_flag
+                has_country_flag = see_trade_resolutions
+                NOT = {
+                    has_country_flag = international_moment_flag
+                }
+            }
+        }
+		
+		effects = {
+            resolution_button1_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_trade1
+                    days = 150
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+            }
+            resolution_button2_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_trade2
+                    days = 150
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+            }
+            resolution_button3_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_trade3
+                    days = 150
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+            }
+            resolution_button4_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_trade4
+                    days = 150
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+            }
+            resolution_button5_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_trade5
+                    days = 150
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+            }
+		}
+        
+        triggers = {
+            resolution_button1_visible = {
+                NOT = {
+                    has_country_flag = trade_resolution_1_done
+                } 
+            }
+            resolution_button2_visible = {
+                has_country_flag = trade_resolution_1_done
+                NOT = {
+                    has_country_flag = trade_resolution_2_done
+                } 
+            }
+            resolution_button3_visible = {
+                has_country_flag = trade_resolution_2_done
+                NOT = {
+                    has_country_flag = trade_resolution_3_done
+                } 
+            }
+            resolution_button4_visible = {
+                has_country_flag = trade_resolution_3_done
+                NOT = {
+                    has_country_flag = trade_resolution_4_done
+                } 
+            }
+            resolution_button5_visible = {
+                has_country_flag = trade_resolution_4_done
+                NOT = {
+                    has_country_flag = trade_resolution_5_done
+                } 
+            }
+            #
+            resolution_button1_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button2_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                }  
+            }
+            resolution_button3_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button4_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button5_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            #
+            economy_button1_visible = {
+                has_country_flag = trade_resolution_1_done
+            }
+            economy_button2_visible = {
+                has_country_flag = trade_resolution_2_done
+            }
+            economy_button3_visible = {
+                has_country_flag = trade_resolution_3_done
+            }
+            economy_button4_visible = {
+                has_country_flag = trade_resolution_4_done
+            }
+            economy_button5_visible = {
+                has_country_flag = trade_resolution_5_done
+            }
+            #
+            resolution_button1_remove_visible = {
+                has_country_flag = trade_resolution_1_done
+            }
+            resolution_button2_remove_visible = {
+                has_country_flag = trade_resolution_2_done
+            }
+            resolution_button3_remove_visible = {
+                has_country_flag = trade_resolution_3_done
+            }
+            resolution_button4_remove_visible = {
+                has_country_flag = trade_resolution_4_done
+            }
+            resolution_button5_remove_visible = {
+                has_country_flag = trade_resolution_5_done
+            }
+        }
+        
+        ai_enabled = {
+            always = no #for now
         }
         
         #ai_test_interval = 290

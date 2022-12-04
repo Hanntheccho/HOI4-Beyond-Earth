@@ -1,50 +1,70 @@
 formable_decisions = {
-	FRA_form_european_union = {
+	form_european_union = {
 		icon = GFX_decision_unity
 		available = {
 			GER = {
-				is_puppet_of = FRA
+				is_puppet_of = ROOT
 			}
 			SOV = {
-				is_puppet_of = FRA
+				is_puppet_of = ROOT
 			}
 			SCO = {
-				is_puppet_of = FRA
+				is_puppet_of = ROOT
 			}
 		}
 		visible = {
-			tag = FRA
+			OR = {
+				tag = FRA
+				tag = GER
+				tag = SCO
+			}
 		}
 		fire_only_once = yes
 		days_remove = 300
 		remove_effect = {
 			every_state = {
 				limit = {
-					is_owned_by = FRA
+					is_owned_by = ROOT
 					is_on_continent = europe
 				}
-				add_core_of = FRA
+				add_core_of = ROOT
 			}
 			every_country = {
 				limit = {
-					is_puppet_of = FRA
+					is_puppet_of = ROOT
 					capital_scope = {
 						is_on_continent = europe
 					}
 				}
 				every_core_state = {
-					add_core_of = FRA
+					add_core_of = ROOT
 				}
-				FRA = {
+				ROOT = {
 					annex_country = {
 						target = PREV
 						#transfer_troops = yes
 					}
 				}
 			}
-			FRA = {
+			if = {
+				limit = {
+					ROOT = {
+						tag = FRA
+					}
+				}
 				set_cosmetic_tag = FRA_eu_union
 			}
+			else_if = {
+				limit = {
+					ROOT = {
+						tag = SCO
+					}
+				}
+				set_cosmetic_tag = SCO_EU
+			}
+			else = {
+				set_cosmetic_tag = GER_green_europe
+			}			
 		}
 		ai_will_do = {
 			factor = 100
