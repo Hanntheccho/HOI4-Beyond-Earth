@@ -383,6 +383,9 @@ upgrade_trade_law = {
 	if = {
 		limit = {
 			has_idea = free_trade
+			NOT = {
+				has_global_flag = trade_resolution_5_done
+			}
 		}
 		add_ideas = export_focus
 		add_political_power = -150
@@ -390,6 +393,9 @@ upgrade_trade_law = {
 	else_if = {
 		limit = {
 			has_idea = export_focus
+			NOT = {
+				has_global_flag = trade_resolution_4_done
+			}
 		}
 		add_ideas = limited_exports
 		add_political_power = -150
@@ -397,6 +403,9 @@ upgrade_trade_law = {
 	else_if = {
 		limit = {
 			has_idea = limited_exports
+			NOT = {
+				has_global_flag = trade_resolution_3_done
+			}
 		}
 		add_ideas = closed_economy
 		add_political_power = -150

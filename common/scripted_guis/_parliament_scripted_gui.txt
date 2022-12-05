@@ -33,15 +33,67 @@ scripted_gui = {
             }
             ###
             resolutions_list_button_trade_click = {
-                if = {
-                    limit = {
-                        has_country_flag = see_trade_resolutions
-                    }
-                    clr_country_flag = see_trade_resolutions
-                }
-                else = {
-                    set_country_flag = see_trade_resolutions
-                }
+                set_country_flag = see_trade_resolutions
+                clr_country_flag = see_industry_resolutions
+                clr_country_flag = see_rights_resolutions
+                clr_country_flag = see_ecobalance_resolutions
+                clr_country_flag = see_research_resolutions
+                clr_country_flag = see_defense_resolutions
+                clr_country_flag = see_peace_resolutions
+            }
+            resolutions_list_button_industry_click = {
+                clr_country_flag = see_trade_resolutions
+                set_country_flag = see_industry_resolutions
+                clr_country_flag = see_rights_resolutions
+                clr_country_flag = see_ecobalance_resolutions
+                clr_country_flag = see_research_resolutions
+                clr_country_flag = see_defense_resolutions
+                clr_country_flag = see_peace_resolutions
+            }
+            resolutions_list_button_rights_click = {
+                clr_country_flag = see_trade_resolutions
+                clr_country_flag = see_industry_resolutions
+                set_country_flag = see_rights_resolutions
+                clr_country_flag = see_ecobalance_resolutions
+                clr_country_flag = see_research_resolutions
+                clr_country_flag = see_defense_resolutions
+                clr_country_flag = see_peace_resolutions
+            }
+            resolutions_list_button_ecobalance_click = {
+                clr_country_flag = see_trade_resolutions
+                clr_country_flag = see_industry_resolutions
+                clr_country_flag = see_rights_resolutions
+                set_country_flag = see_ecobalance_resolutions
+                clr_country_flag = see_research_resolutions
+                clr_country_flag = see_defense_resolutions
+                clr_country_flag = see_peace_resolutions
+            }
+            resolutions_list_button_research_click = {
+                clr_country_flag = see_trade_resolutions
+                clr_country_flag = see_industry_resolutions
+                clr_country_flag = see_rights_resolutions
+                clr_country_flag = see_ecobalance_resolutions
+                set_country_flag = see_research_resolutions
+                clr_country_flag = see_defense_resolutions
+                clr_country_flag = see_peace_resolutions
+            }
+            resolutions_list_button_defense_click = {
+                clr_country_flag = see_trade_resolutions
+                clr_country_flag = see_industry_resolutions
+                clr_country_flag = see_rights_resolutions
+                clr_country_flag = see_ecobalance_resolutions
+                clr_country_flag = see_research_resolutions
+                set_country_flag = see_defense_resolutions
+                clr_country_flag = see_peace_resolutions
+            }
+            resolutions_list_button_peace_click = {
+                clr_country_flag = see_trade_resolutions
+                clr_country_flag = see_industry_resolutions
+                clr_country_flag = see_rights_resolutions
+                clr_country_flag = see_ecobalance_resolutions
+                clr_country_flag = see_research_resolutions
+                clr_country_flag = see_defense_resolutions
+                set_country_flag = see_peace_resolutions
             }
             ###
             yay_icon_click = {
@@ -71,7 +123,7 @@ scripted_gui = {
                 }
                 else = {
                     #
-                }                
+                }             
             }
             nay_icon_click = {
                 if = {
@@ -105,6 +157,10 @@ scripted_gui = {
 		}
 
         triggers = {
+            resolution_proposed_time_visible = {
+                has_global_flag = resolution_proposed
+            }
+            #
             yay_icon_click_enabled = {
                 has_global_flag = resolution_proposed
             }
@@ -126,6 +182,48 @@ scripted_gui = {
                     has_global_flag = resolution_trade3
                     has_global_flag = resolution_trade4
                     has_global_flag = resolution_trade5
+                    has_global_flag = resolution_industry1
+                    has_global_flag = resolution_industry2
+                    has_global_flag = resolution_industry3
+                    has_global_flag = resolution_industry4
+                    has_global_flag = resolution_industry5
+                }
+            }
+            rights_button_visible = {
+                OR = {
+                    has_global_flag = resolution_rights1
+                    has_global_flag = resolution_rights2
+                    has_global_flag = resolution_rights3
+                    has_global_flag = resolution_rights4
+                    has_global_flag = resolution_rights5
+                }
+            }
+            tech_button_visible = {
+                OR = {
+                    has_global_flag = resolution_ecobalance1
+                    has_global_flag = resolution_ecobalance2
+                    has_global_flag = resolution_ecobalance3
+                    has_global_flag = resolution_ecobalance4
+                    has_global_flag = resolution_ecobalance5
+                    has_global_flag = resolution_research1
+                    has_global_flag = resolution_research2
+                    has_global_flag = resolution_research3
+                    has_global_flag = resolution_research4
+                    has_global_flag = resolution_research5
+                }
+            }
+            war_button_visible = {
+                OR = {
+                    has_global_flag = resolution_defense1
+                    has_global_flag = resolution_defense2
+                    has_global_flag = resolution_defense3
+                    has_global_flag = resolution_defense4
+                    has_global_flag = resolution_defense5
+                    has_global_flag = resolution_peace1
+                    has_global_flag = resolution_peace2
+                    has_global_flag = resolution_peace3
+                    has_global_flag = resolution_peace4
+                    has_global_flag = resolution_peace5
                 }
             }
         }
@@ -134,7 +232,7 @@ scripted_gui = {
             always = yes
         }
         
-        ai_test_interval = 330
+        ai_test_interval = 660
         
         ai_check = {
             has_global_flag = resolution_proposed
@@ -143,12 +241,47 @@ scripted_gui = {
         ai_weights = {
             yay_icon_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 0
+                    modifier = {
+                        OR = {
+                            has_global_flag = resolution_trade1
+                            has_global_flag = resolution_trade2
+                            has_global_flag = resolution_trade3
+                        }
+                        OR = {
+                            has_idea = corporate_libertarianism
+                            has_idea = free_trade
+                            has_idea = export_focus
+                            has_idea = limited_exports
+                        }
+                        add = 3
+                    }
+                    modifier = {
+                        OR = {
+                            has_global_flag = resolution_trade1
+                            has_global_flag = resolution_trade2
+                            has_global_flag = resolution_trade3
+                            has_global_flag = resolution_trade4
+                            has_global_flag = resolution_trade5
+                        }
+                        has_idea = free_trade
+                        add = 10
+                    }
+                    modifier = {
+                        OR = {
+                            has_global_flag = resolution_trade1
+                            has_global_flag = resolution_trade2
+                            has_global_flag = resolution_trade3
+                            has_global_flag = resolution_trade4
+                        }
+                        has_idea = export_focus
+                        add = 10
+                    }
                 }
             }
             nay_icon_click = {
                 ai_will_do = {
-                    factor = 0
+                    factor = 1
                 }
             }
         }
@@ -279,6 +412,112 @@ scripted_gui = {
                     }
                 }
             }
+            #
+            resolution_button1_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_trade1
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button2_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_trade2
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button3_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_trade3
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button4_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_trade4
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button5_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_trade5
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
 		}
         
         triggers = {
@@ -343,20 +582,51 @@ scripted_gui = {
                 } 
             }
             #
-            economy_button1_visible = {
+            resolution_button1_done_visible = {
                 has_global_flag = trade_resolution_1_done
             }
-            economy_button2_visible = {
+            resolution_button2_done_visible = {
                 has_global_flag = trade_resolution_2_done
             }
-            economy_button3_visible = {
+            resolution_button3_done_visible = {
                 has_global_flag = trade_resolution_3_done
             }
-            economy_button4_visible = {
+            resolution_button4_done_visible = {
                 has_global_flag = trade_resolution_4_done
             }
-            economy_button5_visible = {
+            resolution_button5_done_visible = {
                 has_global_flag = trade_resolution_5_done
+            }
+            #
+            resolution_button1_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button2_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button3_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button4_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button5_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
             }
             #
             resolution_button1_remove_visible = {
@@ -385,6 +655,2466 @@ scripted_gui = {
             }
             resolution_button5_remove_visible = {
                 has_global_flag = trade_resolution_5_done
+            }
+        }
+        
+        ai_enabled = {
+            always = no #for now
+        }
+        
+        ai_test_interval = 6969
+        
+        ai_check = {
+            has_political_power > 150
+        }
+        
+        ai_weights = {
+            resolution_button1_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button2_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button3_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button4_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button5_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+        }
+    }
+    #
+    propositions_list_industry_gui = {
+        window_name = "propositions_list_industry"
+        context_type = player_context
+        parent_window_token = top_bar
+         
+        visible = {
+            if = {
+                limit = { is_ai = yes }
+                always = yes
+            }
+            else = {
+                has_country_flag = political_moment_flag
+                has_country_flag = see_industry_resolutions
+                NOT = {
+                    has_country_flag = international_moment_flag
+                }
+            }
+        }
+		
+		effects = {
+            resolution_button1_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_industry1
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button2_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_industry2
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button3_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_industry3
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button4_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_industry4
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button5_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_industry5
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            #
+            resolution_button1_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_industry1
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button2_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_industry2
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button3_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_industry3
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button4_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_industry4
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button5_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_industry5
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+		}
+        
+        triggers = {
+            resolution_button1_visible = {
+                NOT = {
+                    has_global_flag = industry_resolution_1_done
+                } 
+            }
+            resolution_button2_visible = {
+                has_global_flag = industry_resolution_1_done
+                NOT = {
+                    has_global_flag = industry_resolution_2_done
+                } 
+            }
+            resolution_button3_visible = {
+                has_global_flag = industry_resolution_2_done
+                NOT = {
+                    has_global_flag = industry_resolution_3_done
+                } 
+            }
+            resolution_button4_visible = {
+                has_global_flag = industry_resolution_3_done
+                NOT = {
+                    has_global_flag = industry_resolution_4_done
+                } 
+            }
+            resolution_button5_visible = {
+                has_global_flag = industry_resolution_4_done
+                NOT = {
+                    has_global_flag = industry_resolution_5_done
+                } 
+            }
+            #
+            resolution_button1_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button2_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                }  
+            }
+            resolution_button3_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button4_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button5_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            #
+            resolution_button1_done_visible = {
+                has_global_flag = industry_resolution_1_done
+            }
+            resolution_button2_done_visible = {
+                has_global_flag = industry_resolution_2_done
+            }
+            resolution_button3_done_visible = {
+                has_global_flag = industry_resolution_3_done
+            }
+            resolution_button4_done_visible = {
+                has_global_flag = industry_resolution_4_done
+            }
+            resolution_button5_done_visible = {
+                has_global_flag = industry_resolution_5_done
+            }
+            #
+            resolution_button1_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button2_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button3_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button4_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button5_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            #
+            resolution_button1_remove_visible = {
+                has_global_flag = industry_resolution_1_done
+                NOT = {
+                    has_global_flag = industry_resolution_2_done
+                }
+            }
+            resolution_button2_remove_visible = {
+                has_global_flag = industry_resolution_2_done
+                NOT = {
+                    has_global_flag = industry_resolution_3_done
+                }
+            }
+            resolution_button3_remove_visible = {
+                has_global_flag = industry_resolution_3_done
+                NOT = {
+                    has_global_flag = industry_resolution_4_done
+                }
+            }
+            resolution_button4_remove_visible = {
+                has_global_flag = industry_resolution_4_done
+                NOT = {
+                    has_global_flag = industry_resolution_5_done
+                }
+            }
+            resolution_button5_remove_visible = {
+                has_global_flag = industry_resolution_5_done
+            }
+        }
+        
+        ai_enabled = {
+            always = no #for now
+        }
+        
+        ai_test_interval = 6969
+        
+        ai_check = {
+            has_political_power > 150
+        }
+        
+        ai_weights = {
+            resolution_button1_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button2_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button3_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button4_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button5_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+        }
+    }
+    #
+    propositions_list_rights_gui = {
+        window_name = "propositions_list_rights"
+        context_type = player_context
+        parent_window_token = top_bar
+         
+        visible = {
+            if = {
+                limit = { is_ai = yes }
+                always = yes
+            }
+            else = {
+                has_country_flag = political_moment_flag
+                has_country_flag = see_rights_resolutions
+                NOT = {
+                    has_country_flag = international_moment_flag
+                }
+            }
+        }
+		
+		effects = {
+            resolution_button1_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_rights1
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button2_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_rights2
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button3_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_rights3
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button4_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_rights4
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button5_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_rights5
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            #
+            resolution_button1_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_rights1
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button2_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_rights2
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button3_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_rights3
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button4_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_rights4
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button5_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_rights5
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+		}
+        
+        triggers = {
+            resolution_button1_visible = {
+                NOT = {
+                    has_global_flag = rights_resolution_1_done
+                } 
+            }
+            resolution_button2_visible = {
+                has_global_flag = rights_resolution_1_done
+                NOT = {
+                    has_global_flag = rights_resolution_2_done
+                } 
+            }
+            resolution_button3_visible = {
+                has_global_flag = rights_resolution_2_done
+                NOT = {
+                    has_global_flag = rights_resolution_3_done
+                } 
+            }
+            resolution_button4_visible = {
+                has_global_flag = rights_resolution_3_done
+                NOT = {
+                    has_global_flag = rights_resolution_4_done
+                } 
+            }
+            resolution_button5_visible = {
+                has_global_flag = rights_resolution_4_done
+                NOT = {
+                    has_global_flag = rights_resolution_5_done
+                } 
+            }
+            #
+            resolution_button1_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button2_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                }  
+            }
+            resolution_button3_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button4_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button5_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            #
+            resolution_button1_done_visible = {
+                has_global_flag = rights_resolution_1_done
+            }
+            resolution_button2_done_visible = {
+                has_global_flag = rights_resolution_2_done
+            }
+            resolution_button3_done_visible = {
+                has_global_flag = rights_resolution_3_done
+            }
+            resolution_button4_done_visible = {
+                has_global_flag = rights_resolution_4_done
+            }
+            resolution_button5_done_visible = {
+                has_global_flag = rights_resolution_5_done
+            }
+            #
+            resolution_button1_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button2_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button3_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button4_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button5_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            #
+            resolution_button1_remove_visible = {
+                has_global_flag = rights_resolution_1_done
+                NOT = {
+                    has_global_flag = rights_resolution_2_done
+                }
+            }
+            resolution_button2_remove_visible = {
+                has_global_flag = rights_resolution_2_done
+                NOT = {
+                    has_global_flag = rights_resolution_3_done
+                }
+            }
+            resolution_button3_remove_visible = {
+                has_global_flag = rights_resolution_3_done
+                NOT = {
+                    has_global_flag = rights_resolution_4_done
+                }
+            }
+            resolution_button4_remove_visible = {
+                has_global_flag = rights_resolution_4_done
+                NOT = {
+                    has_global_flag = rights_resolution_5_done
+                }
+            }
+            resolution_button5_remove_visible = {
+                has_global_flag = rights_resolution_5_done
+            }
+        }
+        
+        ai_enabled = {
+            always = no #for now
+        }
+        
+        ai_test_interval = 6969
+        
+        ai_check = {
+            has_political_power > 150
+        }
+        
+        ai_weights = {
+            resolution_button1_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button2_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button3_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button4_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button5_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+        }
+    }
+    #
+    propositions_list_ecobalance_gui = {
+        window_name = "propositions_list_ecobalance"
+        context_type = player_context
+        parent_window_token = top_bar
+         
+        visible = {
+            if = {
+                limit = { is_ai = yes }
+                always = yes
+            }
+            else = {
+                has_country_flag = political_moment_flag
+                has_country_flag = see_ecobalance_resolutions
+                NOT = {
+                    has_country_flag = international_moment_flag
+                }
+            }
+        }
+		
+		effects = {
+            resolution_button1_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_ecobalance1
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button2_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_ecobalance2
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button3_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_ecobalance3
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button4_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_ecobalance4
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button5_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_ecobalance5
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            #
+            resolution_button1_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_ecobalance1
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button2_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_ecobalance2
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button3_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_ecobalance3
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button4_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_ecobalance4
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button5_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_ecobalance5
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+		}
+        
+        triggers = {
+            resolution_button1_visible = {
+                NOT = {
+                    has_global_flag = ecobalance_resolution_1_done
+                } 
+            }
+            resolution_button2_visible = {
+                has_global_flag = ecobalance_resolution_1_done
+                NOT = {
+                    has_global_flag = ecobalance_resolution_2_done
+                } 
+            }
+            resolution_button3_visible = {
+                has_global_flag = ecobalance_resolution_2_done
+                NOT = {
+                    has_global_flag = ecobalance_resolution_3_done
+                } 
+            }
+            resolution_button4_visible = {
+                has_global_flag = ecobalance_resolution_3_done
+                NOT = {
+                    has_global_flag = ecobalance_resolution_4_done
+                } 
+            }
+            resolution_button5_visible = {
+                has_global_flag = ecobalance_resolution_4_done
+                NOT = {
+                    has_global_flag = ecobalance_resolution_5_done
+                } 
+            }
+            #
+            resolution_button1_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button2_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                }  
+            }
+            resolution_button3_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button4_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button5_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            #
+            resolution_button1_done_visible = {
+                has_global_flag = ecobalance_resolution_1_done
+            }
+            resolution_button2_done_visible = {
+                has_global_flag = ecobalance_resolution_2_done
+            }
+            resolution_button3_done_visible = {
+                has_global_flag = ecobalance_resolution_3_done
+            }
+            resolution_button4_done_visible = {
+                has_global_flag = ecobalance_resolution_4_done
+            }
+            resolution_button5_done_visible = {
+                has_global_flag = ecobalance_resolution_5_done
+            }
+            #
+            resolution_button1_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button2_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button3_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button4_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button5_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            #
+            resolution_button1_remove_visible = {
+                has_global_flag = ecobalance_resolution_1_done
+                NOT = {
+                    has_global_flag = ecobalance_resolution_2_done
+                }
+            }
+            resolution_button2_remove_visible = {
+                has_global_flag = ecobalance_resolution_2_done
+                NOT = {
+                    has_global_flag = ecobalance_resolution_3_done
+                }
+            }
+            resolution_button3_remove_visible = {
+                has_global_flag = ecobalance_resolution_3_done
+                NOT = {
+                    has_global_flag = ecobalance_resolution_4_done
+                }
+            }
+            resolution_button4_remove_visible = {
+                has_global_flag = ecobalance_resolution_4_done
+                NOT = {
+                    has_global_flag = ecobalance_resolution_5_done
+                }
+            }
+            resolution_button5_remove_visible = {
+                has_global_flag = ecobalance_resolution_5_done
+            }
+        }
+        
+        ai_enabled = {
+            always = no #for now
+        }
+        
+        ai_test_interval = 6969
+        
+        ai_check = {
+            has_political_power > 150
+        }
+        
+        ai_weights = {
+            resolution_button1_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button2_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button3_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button4_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button5_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+        }
+    }
+    #
+    propositions_list_research_gui = {
+        window_name = "propositions_list_research"
+        context_type = player_context
+        parent_window_token = top_bar
+         
+        visible = {
+            if = {
+                limit = { is_ai = yes }
+                always = yes
+            }
+            else = {
+                has_country_flag = political_moment_flag
+                has_country_flag = see_research_resolutions
+                NOT = {
+                    has_country_flag = international_moment_flag
+                }
+            }
+        }
+		
+		effects = {
+            resolution_button1_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_research1
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button2_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_research2
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button3_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_research3
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button4_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_research4
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button5_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_research5
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            #
+            resolution_button1_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_research1
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button2_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_research2
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button3_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_research3
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button4_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_research4
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button5_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_research5
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+		}
+        
+        triggers = {
+            resolution_button1_visible = {
+                NOT = {
+                    has_global_flag = research_resolution_1_done
+                } 
+            }
+            resolution_button2_visible = {
+                has_global_flag = research_resolution_1_done
+                NOT = {
+                    has_global_flag = research_resolution_2_done
+                } 
+            }
+            resolution_button3_visible = {
+                has_global_flag = research_resolution_2_done
+                NOT = {
+                    has_global_flag = research_resolution_3_done
+                } 
+            }
+            resolution_button4_visible = {
+                has_global_flag = research_resolution_3_done
+                NOT = {
+                    has_global_flag = research_resolution_4_done
+                } 
+            }
+            resolution_button5_visible = {
+                has_global_flag = research_resolution_4_done
+                NOT = {
+                    has_global_flag = research_resolution_5_done
+                } 
+            }
+            #
+            resolution_button1_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button2_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                }  
+            }
+            resolution_button3_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button4_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button5_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            #
+            resolution_button1_done_visible = {
+                has_global_flag = research_resolution_1_done
+            }
+            resolution_button2_done_visible = {
+                has_global_flag = research_resolution_2_done
+            }
+            resolution_button3_done_visible = {
+                has_global_flag = research_resolution_3_done
+            }
+            resolution_button4_done_visible = {
+                has_global_flag = research_resolution_4_done
+            }
+            resolution_button5_done_visible = {
+                has_global_flag = research_resolution_5_done
+            }
+            #
+            resolution_button1_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button2_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button3_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button4_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button5_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            #
+            resolution_button1_remove_visible = {
+                has_global_flag = research_resolution_1_done
+                NOT = {
+                    has_global_flag = research_resolution_2_done
+                }
+            }
+            resolution_button2_remove_visible = {
+                has_global_flag = research_resolution_2_done
+                NOT = {
+                    has_global_flag = research_resolution_3_done
+                }
+            }
+            resolution_button3_remove_visible = {
+                has_global_flag = research_resolution_3_done
+                NOT = {
+                    has_global_flag = research_resolution_4_done
+                }
+            }
+            resolution_button4_remove_visible = {
+                has_global_flag = research_resolution_4_done
+                NOT = {
+                    has_global_flag = research_resolution_5_done
+                }
+            }
+            resolution_button5_remove_visible = {
+                has_global_flag = research_resolution_5_done
+            }
+        }
+        
+        ai_enabled = {
+            always = no #for now
+        }
+        
+        ai_test_interval = 6969
+        
+        ai_check = {
+            has_political_power > 150
+        }
+        
+        ai_weights = {
+            resolution_button1_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button2_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button3_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button4_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button5_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+        }
+    }
+    #
+    propositions_list_defense_gui = {
+        window_name = "propositions_list_defense"
+        context_type = player_context
+        parent_window_token = top_bar
+         
+        visible = {
+            if = {
+                limit = { is_ai = yes }
+                always = yes
+            }
+            else = {
+                has_country_flag = political_moment_flag
+                has_country_flag = see_defense_resolutions
+                NOT = {
+                    has_country_flag = international_moment_flag
+                }
+            }
+        }
+		
+		effects = {
+            resolution_button1_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_defense1
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button2_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_defense2
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button3_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_defense3
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button4_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_defense4
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button5_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_defense5
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            #
+            resolution_button1_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_defense1
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button2_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_defense2
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button3_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_defense3
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button4_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_defense4
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button5_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_defense5
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+		}
+        
+        triggers = {
+            resolution_button1_visible = {
+                NOT = {
+                    has_global_flag = defense_resolution_1_done
+                } 
+            }
+            resolution_button2_visible = {
+                has_global_flag = defense_resolution_1_done
+                NOT = {
+                    has_global_flag = defense_resolution_2_done
+                } 
+            }
+            resolution_button3_visible = {
+                has_global_flag = defense_resolution_2_done
+                NOT = {
+                    has_global_flag = defense_resolution_3_done
+                } 
+            }
+            resolution_button4_visible = {
+                has_global_flag = defense_resolution_3_done
+                NOT = {
+                    has_global_flag = defense_resolution_4_done
+                } 
+            }
+            resolution_button5_visible = {
+                has_global_flag = defense_resolution_4_done
+                NOT = {
+                    has_global_flag = defense_resolution_5_done
+                } 
+            }
+            #
+            resolution_button1_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button2_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                }  
+            }
+            resolution_button3_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button4_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button5_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            #
+            resolution_button1_done_visible = {
+                has_global_flag = defense_resolution_1_done
+            }
+            resolution_button2_done_visible = {
+                has_global_flag = defense_resolution_2_done
+            }
+            resolution_button3_done_visible = {
+                has_global_flag = defense_resolution_3_done
+            }
+            resolution_button4_done_visible = {
+                has_global_flag = defense_resolution_4_done
+            }
+            resolution_button5_done_visible = {
+                has_global_flag = defense_resolution_5_done
+            }
+            #
+            resolution_button1_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button2_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button3_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button4_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button5_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            #
+            resolution_button1_remove_visible = {
+                has_global_flag = defense_resolution_1_done
+                NOT = {
+                    has_global_flag = defense_resolution_2_done
+                }
+            }
+            resolution_button2_remove_visible = {
+                has_global_flag = defense_resolution_2_done
+                NOT = {
+                    has_global_flag = defense_resolution_3_done
+                }
+            }
+            resolution_button3_remove_visible = {
+                has_global_flag = defense_resolution_3_done
+                NOT = {
+                    has_global_flag = defense_resolution_4_done
+                }
+            }
+            resolution_button4_remove_visible = {
+                has_global_flag = defense_resolution_4_done
+                NOT = {
+                    has_global_flag = defense_resolution_5_done
+                }
+            }
+            resolution_button5_remove_visible = {
+                has_global_flag = defense_resolution_5_done
+            }
+        }
+        
+        ai_enabled = {
+            always = no #for now
+        }
+        
+        ai_test_interval = 6969
+        
+        ai_check = {
+            has_political_power > 150
+        }
+        
+        ai_weights = {
+            resolution_button1_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button2_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button3_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button4_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+            resolution_button5_click = {
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+        }
+    }
+    #
+    propositions_list_peace_gui = {
+        window_name = "propositions_list_peace"
+        context_type = player_context
+        parent_window_token = top_bar
+         
+        visible = {
+            if = {
+                limit = { is_ai = yes }
+                always = yes
+            }
+            else = {
+                has_country_flag = political_moment_flag
+                has_country_flag = see_peace_resolutions
+                NOT = {
+                    has_country_flag = international_moment_flag
+                }
+            }
+        }
+		
+		effects = {
+            resolution_button1_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_peace1
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button2_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_peace2
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button3_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_peace3
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button4_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_peace4
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button5_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_peace5
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            #
+            resolution_button1_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_peace1
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button2_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_peace2
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button3_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_peace3
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button4_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_peace4
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+            resolution_button5_remove_click = {
+                set_global_flag = {
+                    flag = resolution_proposed
+                    days = 150
+                    value = 1
+                }
+                set_global_flag = {
+                    flag = resolution_peace5
+                    days = 151
+                    value = 1
+                }
+                set_variable = {
+                    global.proposed_resolution_days = 150
+                }
+                ADU = {
+                    add_timed_idea = {
+                        idea = idea_resolution_idea
+                        days = 150
+                    }
+                }
+            }
+		}
+        
+        triggers = {
+            resolution_button1_visible = {
+                NOT = {
+                    has_global_flag = peace_resolution_1_done
+                } 
+            }
+            resolution_button2_visible = {
+                has_global_flag = peace_resolution_1_done
+                NOT = {
+                    has_global_flag = peace_resolution_2_done
+                } 
+            }
+            resolution_button3_visible = {
+                has_global_flag = peace_resolution_2_done
+                NOT = {
+                    has_global_flag = peace_resolution_3_done
+                } 
+            }
+            resolution_button4_visible = {
+                has_global_flag = peace_resolution_3_done
+                NOT = {
+                    has_global_flag = peace_resolution_4_done
+                } 
+            }
+            resolution_button5_visible = {
+                has_global_flag = peace_resolution_4_done
+                NOT = {
+                    has_global_flag = peace_resolution_5_done
+                } 
+            }
+            #
+            resolution_button1_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button2_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                }  
+            }
+            resolution_button3_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button4_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button5_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            #
+            resolution_button1_done_visible = {
+                has_global_flag = peace_resolution_1_done
+            }
+            resolution_button2_done_visible = {
+                has_global_flag = peace_resolution_2_done
+            }
+            resolution_button3_done_visible = {
+                has_global_flag = peace_resolution_3_done
+            }
+            resolution_button4_done_visible = {
+                has_global_flag = peace_resolution_4_done
+            }
+            resolution_button5_done_visible = {
+                has_global_flag = peace_resolution_5_done
+            }
+            #
+            resolution_button1_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button2_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button3_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button4_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            resolution_button5_remove_click_enabled = {
+                has_political_power > 150
+                NOT = {
+                    has_global_flag = resolution_proposed
+                } 
+            }
+            #
+            resolution_button1_remove_visible = {
+                has_global_flag = peace_resolution_1_done
+                NOT = {
+                    has_global_flag = peace_resolution_2_done
+                }
+            }
+            resolution_button2_remove_visible = {
+                has_global_flag = peace_resolution_2_done
+                NOT = {
+                    has_global_flag = peace_resolution_3_done
+                }
+            }
+            resolution_button3_remove_visible = {
+                has_global_flag = peace_resolution_3_done
+                NOT = {
+                    has_global_flag = peace_resolution_4_done
+                }
+            }
+            resolution_button4_remove_visible = {
+                has_global_flag = peace_resolution_4_done
+                NOT = {
+                    has_global_flag = peace_resolution_5_done
+                }
+            }
+            resolution_button5_remove_visible = {
+                has_global_flag = peace_resolution_5_done
             }
         }
         

@@ -116,10 +116,17 @@ scotland_formable = {
 					has_idea = SCO_nsa_aligned
 				}
 				is_nsa_tag = yes
+				is_puppet = no
 			}
 		}
 		days_remove = 80
 		remove_effect = {
+			every_country = {
+				limit = {
+					is_puppet_of = FROM
+				}
+				add_ideas = SCO_nsa_aligned
+			}
 			FROM = {
 				add_ideas = SCO_nsa_aligned
 			}
@@ -152,19 +159,37 @@ scotland_formable = {
 				has_idea = SCO_nsa_aligned
 				is_in_faction_with = SCO
 				is_nsa_tag = yes
+				is_puppet = no
 			}
 		}
 		days_remove = 170
 		remove_effect = {
-			annex_country = {
-				target = FROM
-				#transfer_troops = yes
+			every_country = {
+				limit = {
+					is_puppet_of = FROM
+				}
+				every_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					add_core_of = SCO
+				}
+				SCO = {
+					annex_country = {
+						target = PREV
+						#transfer_troops = yes
+					}
+				}
 			}
 			every_state = {
 				limit = {
 					is_core_of = FROM
 				}
 				add_core_of = SCO
+			}
+			annex_country = {
+				target = FROM
+				#transfer_troops = yes
 			}
 			SCO = {
 				set_cosmetic_tag = SCO_NSA

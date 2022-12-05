@@ -16,6 +16,9 @@ ideas = {
 					if = {
 						limit = {
 							has_global_flag = resolution_trade1
+							NOT = {
+								has_global_flag = trade_resolution_1_done
+							}
 						}
 						every_country = {
 							limit = {
@@ -28,6 +31,9 @@ ideas = {
 					else_if = {
 						limit = {
 							has_global_flag = resolution_trade2
+							NOT = {
+								has_global_flag = trade_resolution_2_done
+							}
 						}
 						every_country = {
 							limit = {
@@ -43,45 +49,48 @@ ideas = {
 					else_if = {
 						limit = {
 							has_global_flag = resolution_trade3
+							NOT = {
+								has_global_flag = trade_resolution_3_done
+							}
 						}
 						every_country = {
 							limit = {
 								has_country_flag = international_member
+								has_idea = closed_economy
 							}
-							swap_ideas = {
-								remove_idea = trade_resolution_idea2
-								add_idea = trade_resolution_idea3
-							}
+							add_ideas = limited_exports
 						}
 						set_global_flag = trade_resolution_3_done
 					}
 					else_if = {
 						limit = {
 							has_global_flag = resolution_trade4
+							NOT = {
+								has_global_flag = trade_resolution_4_done
+							}
 						}
 						every_country = {
 							limit = {
 								has_country_flag = international_member
+								has_idea = limited_exports
 							}
-							swap_ideas = {
-								remove_idea = trade_resolution_idea3
-								add_idea = trade_resolution_idea4
-							}
+							add_ideas = export_focus
 						}
 						set_global_flag = trade_resolution_4_done
 					}
 					else_if = {
 						limit = {
 							has_global_flag = resolution_trade5
+							NOT = {
+								has_global_flag = trade_resolution_5_done
+							}
 						}
 						every_country = {
 							limit = {
 								has_country_flag = international_member
+								has_idea = export_focus
 							}
-							swap_ideas = {
-								remove_idea = trade_resolution_idea4
-								add_idea = trade_resolution_idea5
-							}
+							add_ideas = free_trade
 						}
 						set_global_flag = trade_resolution_5_done
 					}
@@ -90,7 +99,44 @@ ideas = {
 					}
 				}
 				else = {
-					#
+					if = {
+						limit = {
+							has_global_flag = resolution_trade1
+							has_global_flag = trade_resolution_1_done
+						}
+						clr_global_flag = trade_resolution_1_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_trade2
+							has_global_flag = trade_resolution_2_done
+						}
+						clr_global_flag = trade_resolution_2_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_trade3
+							has_global_flag = trade_resolution_3_done
+						}
+						clr_global_flag = trade_resolution_3_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_trade4
+							has_global_flag = trade_resolution_4_done
+						}
+						clr_global_flag = trade_resolution_4_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_trade5
+							has_global_flag = trade_resolution_5_done
+						}
+						clr_global_flag = trade_resolution_5_done
+					}
+					else = {
+						#
+					}
 				}
 				every_country = {
 					clr_country_flag = voted_yay
@@ -111,11 +157,36 @@ ideas = {
 		#
 		trade_resolution_idea1 = {
 
+			cancel = {
+				NOT = {
+					has_global_flag = trade_resolution_1_done
+				}
+			}
+
+			modifier = {
+                min_export = 0.01
+			}
+		}
+		trade_resolution_idea2 = {
+
+			cancel = {
+				NOT =  {
+					has_global_flag = trade_resolution_2_done
+				}
+			}
+
 			modifier = {
                 min_export = 0.05
 			}
 		}
-		trade_resolution_idea2 = {
+		###
+		industry_resolution_idea1 = {
+
+			modifier = {
+                min_export = 0.05
+			}
+		}
+		industry_resolution_idea2 = {
 
 			modifier = {
                 min_export = 0.1
@@ -124,7 +195,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.05
 			}
 		}
-		trade_resolution_idea3 = {
+		industry_resolution_idea3 = {
 
 			modifier = {
                 min_export = 0.15
@@ -133,7 +204,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.1
 			}
 		}
-		trade_resolution_idea4 = {
+		industry_resolution_idea4 = {
 
 			modifier = {
                 min_export = 0.2
@@ -142,7 +213,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.15
 			}
 		}
-		trade_resolution_idea5 = {
+		industry_resolution_idea5 = {
 
 			modifier = {
                 min_export = 0.25
@@ -151,7 +222,5 @@ ideas = {
 				industrial_capacity_dockyard = 0.2
 			}
 		}
-		###
-		
 	}
 }

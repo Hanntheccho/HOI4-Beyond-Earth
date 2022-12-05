@@ -458,6 +458,31 @@ on_actions = {
 			}
 		}
 	}
+	#
+	on_peaceconference_ended = { #to avoid multiple puppets?
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						is_puppet = yes
+					}
+				}
+				every_country = {
+					limit = {
+						NOT = {
+							tag = FROM
+						}
+						original_tag = FROM
+					}
+					FROM = {
+						annex_country = {
+							target = PREV
+						}
+					}
+				}
+			}
+		}
+	}
 	###
 	on_capitulation_immediate = { #ROOT is looser, FROM is winner
 		effect = {

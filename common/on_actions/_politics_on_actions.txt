@@ -2,11 +2,11 @@ on_actions = {
 	on_startup = {
 		effect = {
             every_country = {
-                limit = {
-                    NOT = {
-                        has_idea = anarchy_style
-                    }
-                }
+                #limit = {
+                #    NOT = {
+                #        has_idea = anarchy_style
+                #    }
+                #}
                 set_country_flag = international_member
             }
 			every_country = {
@@ -47,19 +47,6 @@ on_actions = {
                 add_to_variable = { diplomatic_power = diplomatic_power_trade }
                 add_to_variable = { diplomatic_power = diplomatic_power_population }
                 add_to_variable = { diplomatic_power = diplomatic_power_other }
-                #
-                if = {
-                    limit = {
-                        is_puppet = yes
-                    }
-                    multiply_variable = { diplomatic_power = 0.5 }
-                }
-                if = {
-                    limit = {
-                        is_faction_leader = yes
-                    }
-                    multiply_variable = { diplomatic_power = 1.1 }
-                }
                 #
                 round_variable = diplomatic_power
             }
@@ -106,19 +93,6 @@ on_actions = {
                 add_to_variable = { diplomatic_power = diplomatic_power_trade }
                 add_to_variable = { diplomatic_power = diplomatic_power_population }
                 add_to_variable = { diplomatic_power = diplomatic_power_other }
-                #
-                if = {
-                    limit = {
-                        is_puppet = yes
-                    }
-                    multiply_variable = { diplomatic_power = 0.5 }
-                }
-                if = {
-                    limit = {
-                        is_faction_leader = yes
-                    }
-                    multiply_variable = { diplomatic_power = 1.1 }
-                }
                 #
                 round_variable = diplomatic_power
             }
