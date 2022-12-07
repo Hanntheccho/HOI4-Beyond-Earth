@@ -14,7 +14,7 @@ eurowar_decisions = {
 		timeout_effect = {
 			ITA = {
 				declare_war_on = {
-					type = annex_everything
+					type = annex_puppet_wargoal
 					target = PAD
 				}
 			}
@@ -79,7 +79,7 @@ eurowar_decisions = {
 		timeout_effect = {
 			NOR = {
 				declare_war_on = {
-					type = puppet_wargoal_focus
+					type = annex_puppet_wargoal
 					target = SWE
 				}
 				country_event = norway_event.1
@@ -116,7 +116,7 @@ eurowar_decisions = {
 		timeout_effect = {
 			YUG = {
 				declare_war_on = {
-					type = puppet_wargoal_focus
+					type = annex_puppet_wargoal
 					target = ROM
 				}
 				country_event = balkan_event.1
@@ -330,7 +330,7 @@ eurowar_decisions = {
 					load_oob = BLR_OOB
 				}
 				every_owned_state = {
-					add_claim_by = SOV
+					add_core_of = SOV
 				}
 			}
 		}
@@ -366,7 +366,7 @@ eurowar_decisions = {
 				add_war_support = -0.1
 				add_stability = -0.1
 				#create_wargoal = {
-				#	type = annex_everything
+				#	type = annex_puppet_wargoal
 				#	target = UKR
 				#}
 			}
@@ -498,7 +498,7 @@ eurowar_decisions = {
 			factor = 1
 		}
 	}
-	
+	######################################
 	declare_war_on_nsa = {
 		icon = GFX_decision_war
 		available = {
@@ -517,15 +517,18 @@ eurowar_decisions = {
 				is_puppet_of = SCO
 			}
 		}
+		targets = { SCO }
 		fire_only_once = no
 		complete_effect = {
 			declare_war_on = {
-				type = puppet_wargoal_focus
+				type = annex_puppet_wargoal
 				target = SCO
 			}
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
-	
 	declare_war_on_franco_iberia = {
 		icon = GFX_decision_war
 		available = {
@@ -544,15 +547,18 @@ eurowar_decisions = {
 				is_puppet_of = FRA
 			}
 		}
+		targets = { FRA }
 		fire_only_once = no
 		complete_effect = {
 			declare_war_on = {
-				type = puppet_wargoal_focus
+				type = annex_puppet_wargoal
 				target = FRA
 			}
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
-	
 	declare_war_on_integr = {
 		icon = GFX_decision_war
 		available = {
@@ -571,15 +577,18 @@ eurowar_decisions = {
 				is_puppet_of = GER
 			}
 		}
+		targets = { GER }
 		fire_only_once = no
 		complete_effect = {
 			declare_war_on = {
-				type = puppet_wargoal_focus
+				type = annex_puppet_wargoal
 				target = GER
 			}
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
-	
 	declare_war_on_slavic_union = {
 		icon = GFX_decision_war
 		available = {
@@ -598,12 +607,16 @@ eurowar_decisions = {
 				is_puppet_of = SOV
 			}
 		}
+		targets = { SOV }
 		fire_only_once = no
 		complete_effect = {
 			declare_war_on = {
-				type = puppet_wargoal_focus
+				type = annex_puppet_wargoal
 				target = SOV
 			}
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 

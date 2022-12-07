@@ -17,7 +17,7 @@ SOV_manifest_destiny = {
 		targets = { BLR }
 		remove_effect = {
 			declare_war_on = {
-				type = annex_everything
+				type = annex_puppet_wargoal
 				target = BLR
 			}
 		}
@@ -30,15 +30,15 @@ SOV_manifest_destiny = {
 							is_guaranteed_by = GER
 						}
 					}
-					date > 2203.1.1
+					NOT = {
+						country_exists = SIB
+					}
 				}
-				factor = 10
+				add = 1000
 			}
 			modifier = {
-				any_neighbor_country = {
-					has_war_with = ROOT
-				}
-				factor = 0
+				has_war = yes
+				add = -1000
 			}
 		}
 	}
@@ -65,7 +65,7 @@ SOV_manifest_destiny = {
 				leave_faction = yes
 			}
 			declare_war_on = {
-				type = annex_everything
+				type = annex_puppet_wargoal
 				target = UKR
 			}
 		}
@@ -106,7 +106,7 @@ SOV_manifest_destiny = {
 		fire_only_once = yes
 		remove_effect = {
 			declare_war_on = {
-				type = puppet_wargoal_focus
+				type = annex_puppet_wargoal
 				target = LAT
 			}
 		}
@@ -131,6 +131,7 @@ SOV_manifest_destiny = {
 						exists = no
 					}
 				}
+				add = 10
 			}
 		}
 	}
@@ -161,7 +162,7 @@ SOV_manifest_destiny = {
 		war_with_on_remove = KAZ
 		remove_effect = {
 			declare_war_on = {
-				type = puppet_wargoal_focus
+				type = annex_puppet_wargoal
 				target = KAZ
 			}
 		}
@@ -205,7 +206,7 @@ SOV_manifest_destiny = {
 		war_with_on_remove = SIB
 		remove_effect = {
 			declare_war_on = {
-				type = annex_everything
+				type = annex_puppet_wargoal
 				target = SIB
 			}
 		}
@@ -270,7 +271,7 @@ SOV_manifest_destiny = {
 				SOV = {
 					declare_war_on = {
 						target = KAZ
-						type = annex_everything
+						type = annex_puppet_wargoal
 					}
 				}
 			}

@@ -1,55 +1,4 @@
 scotland_formable = {
-	#SCO_support_eng = {
-	#	icon = GFX_decision_war
-	#	available = {
-	#		ENG = {
-	#			exists = yes
-	#		}
-	#		has_global_flag = ECW_start
-	#		NOT = { has_global_flag = ECW_end }
-	#	}
-	#	visible = {
-	#		ENG = {
-	#			exists = yes
-	#		}
-	#		has_global_flag = ECW_start
-	#		NOT = { has_global_flag = ECW_end }
-	#	}
-	#	cancel_trigger = {
-	#		ENG = {
-	#			exists = no
-	#		}
-	#	}
-	#	cost = 50
-	#	fire_only_once = yes
-	#	days_remove = 20
-	#	remove_effect = {
-	#		declare_war_on = {
-	#			type = annex_everything
-	#			target = JNG
-	#		}
-	#		declare_war_on = {
-	#			type = annex_everything
-	#			target = CNG
-	#		}
-	#		declare_war_on = {
-	#			type = annex_everything
-	#			target = HNG
-	#		}
-	#		ENG = {
-	#			give_military_access = SCO
-	#		}
-	#	}
-	#	ai_will_do = {
-	#		factor = 1000
-	#		#modifier = {
-	#		#	ENG = {
-	#		#		surrender_progress > 0.2
-	#		#	}
-	#		#	factor = 100
-	#		#}
-	#	}
-	#}
 	SCO_reach_finland = {
 		icon = GFX_decision_political
 		available = {
@@ -78,20 +27,20 @@ scotland_formable = {
 		remove_effect = {
 			FIN = {	
 				declare_war_on = {
-					type = puppet_wargoal_focus
+					type = annex_puppet_wargoal
 					target = SWE
 				}
 			}
 			SCO = {
 				add_to_faction = FIN
 				declare_war_on = {
-					type = puppet_wargoal_focus
+					type = annex_puppet_wargoal
 					target = SWE
 				}
 			}
 		}
 		ai_will_do = {
-			factor = 10
+			factor = 1000
 		}
 	}
 
@@ -116,7 +65,6 @@ scotland_formable = {
 					has_idea = SCO_nsa_aligned
 				}
 				is_nsa_tag = yes
-				is_puppet = no
 			}
 		}
 		days_remove = 80
@@ -132,13 +80,7 @@ scotland_formable = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				SCO = {
-					is_faction_leader = yes
-				}
-				factor = 10
-			}
+			factor = 10
 		}
 	}
 	SCO_integrate_a_member = {
@@ -159,11 +101,15 @@ scotland_formable = {
 				has_idea = SCO_nsa_aligned
 				is_in_faction_with = SCO
 				is_nsa_tag = yes
-				is_puppet = no
 			}
 		}
 		days_remove = 170
 		remove_effect = {
+			custom_effect_tooltip = add_infamy_low
+			add_to_variable = {
+				var = global.nsainfamy_var
+				value = 1
+			}
 			every_country = {
 				limit = {
 					is_puppet_of = FROM
@@ -196,21 +142,7 @@ scotland_formable = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				SCO = {
-					is_faction_leader = yes
-					is_in_faction_with = IRE
-					is_in_faction_with = GRN
-					is_in_faction_with = ENG
-					is_in_faction_with = ICE
-					is_in_faction_with = NOR
-					is_in_faction_with = SWE
-					is_in_faction_with = LAT
-					is_in_faction_with = FIN
-				}
-				factor = 1000
-			}
+			factor = 10
 		}
 	}
 	#
