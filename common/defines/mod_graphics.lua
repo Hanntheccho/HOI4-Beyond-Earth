@@ -65,16 +65,3 @@ NDefines_Graphics.NGraphics.TRAIN_MAP_SPEED = 4.0							-- Trains will move at t
 NDefines_Graphics.NGraphics.TUNNELBANA_TIMETABLE = { 4000, 6000 }	
 
 NDefines_Graphics.NInterface.MILITARY_FACTORIES_SCALE = { 1, 1, 1}
-
-NDefines_Graphics.NGraphics.COMMANDGROUP_PRESET_COLORS_HSV = {
-    90.0/360.0, 0.95, 0.86,
-    60.0/360.0, 0.95, 0.86,
-    30.0/360.0, 0.95, 0.86,
-    00.0/360.0, 0.95, 0.86,
-    330.0/360.0, 0.95, 0.86,
-    300.0/360.0, 0.95, 0.86,
-    270.0/360.0, 0.95, 0.86,
-    240.0/360.0, 0.95, 0.86,
-    210.0/360.0, 0.95, 0.86,
-    180.0/360.0, 0.95, 0.86
-}

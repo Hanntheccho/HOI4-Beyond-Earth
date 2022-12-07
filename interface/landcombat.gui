@@ -282,9 +282,10 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "landcombatview"
-		position = {x=-512 y=-256}
+		position = {x=0 y=0}
 		orientation = center
-		size = { width=567 height=617 } # height sum of topbar and bottom bar. The rest is stretched.
+		origo = center
+		size = { width=567 height=440 } # height sum of topbar and bottom bar. The rest is stretched.
 		clipping = no
 		moveable = yes
 		click_to_front = yes		
@@ -309,7 +310,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "attacker_army_width"
-			position = { x=47 y=270 }
+			position = { x=47 y=80 }
 			font = "Beyond"
 			maxWidth = 180
 			maxHeight = 14
@@ -320,7 +321,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "defender_army_width"
-			position = { x=-232 y=270 }
+			position = { x=-232 y=80 }
 			font = "Beyond"
 			maxWidth = 180
 			maxHeight = 14
@@ -332,7 +333,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "Background_2"
-			size = { width=561 height=611 } 
+			size = { width=561 height=437 } 
 
 			background = {
 				name = "Background"
@@ -357,19 +358,19 @@ guiTypes = {
 		
 		iconType = {
 			name = "terrain_picture"
-			position = { x = 77 y= 90 }
+			position = { x = 10000 y= 90 }
 			spriteType = "GFX_terrain_default"
 		}
 		iconType = {
 			name = "terrain_picture2"
-			position = { x = 77 y= 90 }
+			position = { x = 10000 y= 90 }
 			spriteType = "GFX_terrain_mask_mod"
 		}
 
 		iconType = {
 			name = "combat_progress"
 			spriteType = "GFX_landcombat_progress"
-			position = { x = 55 y= 46 }	
+			position = { x = 55 y= 36 }	
 		}
 
 		iconType = {
@@ -380,7 +381,7 @@ guiTypes = {
 		
 		iconType = {
 			name = "attacker_leader"
-			position = { x = 9 y= 112 }
+			position = { x = 10000 y= 112 }
 			spriteType = "GFX_no_combat_leader"
 			Orientation = "UPPER_LEFT"
 			scale = 0.5
@@ -388,37 +389,23 @@ guiTypes = {
 
 		iconType = {
 			name = "defender_leader"
-			position = { x = -86 y= 112 }
+			position = { x = 10000 y= 112 }
 			spriteType = "GFX_no_combat_leader"
 			Orientation = "UPPER_RIGHT"
 			scale = 0.5
 		}
 
 		iconType = {
-			name = "land_battle_leader_frame"
-			quadTextureSprite ="GFX_land_battle_leader_frame"
-			position = { x = 5 y= 110 }
-			Orientation = "UPPER_LEFT"
-		}
-
-		iconType = {
 			name = "attacker_leader_initiative_overlay_glow"
 			quadTextureSprite ="GFX_leader_initiative_overlay_glow"
-			position = { x = 4 y= 108 }
+			position = { x = 10000 y= 108 }
 			Orientation = "UPPER_LEFT"
-		}
-		
-		iconType = {
-			name = "land_battle_leader_frame2"
-			quadTextureSprite ="GFX_land_battle_leader_frame"
-			position = { x = -89 y= 110 }
-			Orientation = "UPPER_RIGHT"
-		}		
+		}	
 
 		iconType = {
 			name = "defender_leader_initiative_overlay_glow"
 			quadTextureSprite ="GFX_leader_initiative_overlay_glow"
-			position = { x = -91 y= 108}
+			position = { x = 10000 y= 108}
 			Orientation = "UPPER_RIGHT"
 		}		
 		
@@ -489,44 +476,28 @@ guiTypes = {
 		buttonType = {
 			name = "defender_flag"
 			quadTextureSprite = "GFX_construction_flag_mod_mod_reverse"
-			position = { x= 462 y = 253 }
+			position = { x= 10000 y = 253 }
 			Orientation = "UPPER_LEFT"
 		}
 
 		buttonType = {
 			name = "attacker_flag"
 			quadTextureSprite = "GFX_construction_flag_mod_mod"
-			position = {  x= 20 y = 253 }
+			position = {  x= 10000 y = 253 }
 			Orientation = "UPPER_LEFT"			
-		}
-
-		iconType =	{
-			name ="small_flag_frame_thin"
-			spriteType = "GFX_small_flag_frame_thin"
-			position = { x= 433 y = 109 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-
-		iconType =	{
-			name ="small_flag_frame_thin2"
-			spriteType = "GFX_small_flag_frame_thin"
-			position = { x= 87 y = 109 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}		
+		}	
 		
 		iconType =	{
 			name ="attacker_tactic"
 			spriteType = "GFX_empty_tactics"
-			position = { x = 120 y = 163 }
+			position = { x = 10000 y = 163 }
 			Orientation = "UPPER_LEFT"
 		}
 
 		iconType =	{
 			name ="attacker_countered_tactic_overlay"
 			spriteType = "GFX_countered_tactic_overlay"
-			position = { x = 122 y = 165 }
+			position = { x = 10000 y = 165 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}		
@@ -540,21 +511,21 @@ guiTypes = {
 		iconType =	{
 			name ="defender_tactic"
 			spriteType = "GFX_empty_tactics"
-			position = { x = -209 y = 163 }
+			position = { x = 10000 y = 163 }
 			Orientation = "UPPER_RIGHT"
 		}
 
 		iconType =	{
 			name ="defender_countered_tactic_overlay"
 			spriteType = "GFX_countered_tactic_overlay"
-			position = { x = -207 y = 165 }
+			position = { x = 10000 y = 165 }
 			Orientation = "UPPER_RIGHT"
 			alwaystransparent = yes
 		}		
 		
 		instantTextboxType = {
 			name = "combat_width"
-			position = { x = 242 y = 270 }
+			position = { x = 242 y =80 }
 			font = "Beyond"
 			maxWidth = 85
 			maxHeight = 23
@@ -565,7 +536,7 @@ guiTypes = {
 		# flexible part containing combatants ###########
 		containerWindowType = { 
 			name = "attacker_window"
-			position = {x=-3 y=300}
+			position = {x=-3 y=115}
 			orientation = upper_left
 			size = {width=265 height=302} # height flexible
 			clipping = no
@@ -581,7 +552,7 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "modifier_icons_container"
-				position = { x = 10 y = -48 }
+				position = { x = 10000 y = -48 }
 				size = { width = 120 height = 25 }
 				
 				background = {
@@ -675,7 +646,7 @@ guiTypes = {
 
 		containerWindowType = { 
 			name = "defender_window"
-			position = {x=285 y=300}
+			position = {x=285 y=115}
 			orientation = upper_left
 			size = {width=265 height=302} # height flexible
 			clipping = no
@@ -691,7 +662,7 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "modifier_icons_container"
-				position = { x = 158 y = -48 }
+				position = { x = 10000 y = -48 }
 				size = { width = 100 height = 25 }
 				
 				background = {
@@ -1001,7 +972,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "modifier_icons_container"
-			position = { x = 69 y = 21 }
+			position = { x = 10000 y = 21 }
 			size = { width = 150 height = 19 }
 			
 			background = {
@@ -1122,7 +1093,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "modifier_icons_container"
-			position = { x = 45 y = 21 }
+			position = { x = 10000 y = 21 }
 			size = { width = 150 height = 19 }
 			
 			background = {
