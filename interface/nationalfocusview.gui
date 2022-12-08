@@ -660,23 +660,7 @@ guiTypes = {
 
 		background = {
 			name = "Background"
-			SpriteType ="GFX_technology_info_bg"
-			#SpriteType = "GFX_tiled_bg"
-			position = {
-				x = -4
-				y = -4
-			}
-		}
-
-		containerWindowType = {
-			name = "extra_bg"
-			size = { width = 100%% height = 100%% }
-
-			background = {
-				name = "extra_bg_bg"
-				SpriteType = "GFX_tiled_bg_alpha"
-				alwaystransparent = yes
-			}
+			SpriteType ="GFX_tiled_bg_black"
 		}
 
 		instantTextboxType = {
@@ -691,6 +675,20 @@ guiTypes = {
 			format = left	
 			fixedsize = yes	
 		}
+
+		containerWindowType = {
+			name = "extra_bg"
+			size = { width = 544 height = 568 }
+			position = {
+				x = 3
+				y = 3
+			}
+			background = {
+				name = "extra_bg_bg"
+				SpriteType = "GFX_tiled_bg_alpha"
+				alwaystransparent = yes
+			}
+		}
 		
 		iconType ={
 			name ="info_top_win"
@@ -704,12 +702,12 @@ guiTypes = {
 			name = "close"
 			quadTextureSprite = "GFX_exit_button"
 			buttonFont = "vic_18"
-			position = { x=-51 y=-34 }
+			position = { x=-62 y=-35 }
 			shortcut = "ESCAPE"
 			Orientation = "UPPER_RIGHT"
 			pdx_tooltip = "CLOSE"
 			clicksound = click_close
-			scale = 0.7
+			scale = 0.8
 		}
 
 		iconType = {
@@ -740,19 +738,19 @@ guiTypes = {
 		}
 		iconType = {
 			name = "prerequisites_bg"
-			position = { x = 35 y = 102 }
+			position = { x = 10000 y = 102 }
 			spriteType = "GFX_generic_bg_307x113_extra"
 			alwaystransparent = yes
 		}		
 		instantTextboxType = {
 			name = "prerequisites"
-			position = { x = 45 y = 110 }
+			position = { x = 35 y = 50 }
 			textureFile = ""
 			font = "Arial16"
 			borderSize = {x = 0 y = 0}
 			text = ""
-			maxWidth = 440
-			maxHeight = 100
+			maxWidth = 470
+			maxHeight = 160
 			scrollbarType = standardtext_slider
 		}
 
@@ -769,8 +767,8 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "statsarea"
-			position = { x=5 y=220 }
-			size = { width = 99%% height = 99%% }
+			position = { x=15 y=220 }
+			size = { width = 97%% height = 97%% }
 			horizontalScrollbar = "bottom_horizontal_slider"
 			verticalScrollbar = "right_vertical_slider"
 			margin = { top = 4 left = 5 bottom = 0 right = 5}
@@ -782,9 +780,10 @@ guiTypes = {
 			}
 			
 		}
+
 		instantTextboxType = {
 			name = "desc"
-			position = { x = 30 y = 235 }
+			position = { x = 10000 y = 235 } #position = { x = 30 y = 235 }
 			textureFile = ""
 			font = "Arial16"
 			borderSize = {x = 5 y = 0}
@@ -794,42 +793,18 @@ guiTypes = {
 			format = center
 			scrollbarType = standardtext_slider
 		}
-
-		iconType = {
-			name = "reward_bg"
-			position = { x = 84 y = 10000 }
-			spriteType = "GFX_unit_list_header"
-		}		
-		
-		instantTextboxType = {
-			name = "reward_label"
-			position = { x = 34 y = 368 }
-			textureFile = ""
-			font = "Beyondsmall"
-			borderSize = {x = 0 y = 0}
-			text = "/////// EFFECT ///////"
-			maxWidth = 485
-			maxHeight = 70
-			format = center
-		}
 		
 		instantTextboxType = {
 			name = "reward"
-			position = { x = 50 y = 400 }
+			position = { x = 50 y = 260 }
 			textureFile = ""
 			font = "Arial16"
 			borderSize = {x = 0 y = 0}
 			text = ""
 			maxWidth = 455
-			maxHeight = 125
+			maxHeight = 245
 			scrollbarType = standardtext_slider
 #			format = center
-		}
-		
-		iconType = {
-			name = "research_progressbar_frame"
-			spriteType = "GFX_production_progressbar_frame22"
-			position = { x=10000 y=57 }
 		}
 	}
 	
