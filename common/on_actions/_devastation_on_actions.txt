@@ -250,6 +250,9 @@ on_actions = {
                 limit = {
                     check_variable = { devastation_timeout = 0 }
 					threat < 0.11
+					NOT = {
+						has_global_flag = industry_resolution_2_done
+					}
                 }
 				random_list = {
 					50 = {
@@ -265,7 +268,9 @@ on_actions = {
                 limit = {
                     check_variable = { devastation_timeout = 0 }
 					threat < 0.21
-					threat > 0.10
+					NOT = {
+						has_global_flag = industry_resolution_3_done
+					}
 				}
 				random_list = {
 					55 = {
@@ -281,7 +286,9 @@ on_actions = {
                 limit = {
                     check_variable = { devastation_timeout = 0 }
 					threat < 0.31
-					threat > 0.20
+					NOT = {
+						has_global_flag = industry_resolution_3_done
+					}
 				}
 				random_list = {
 					60 = {
@@ -297,7 +304,9 @@ on_actions = {
                 limit = {
                     check_variable = { devastation_timeout = 0 }
 					threat < 0.41
-					threat > 0.30
+					NOT = {
+						has_global_flag = industry_resolution_4_done
+					}
 				}
 				random_list = {
 					65 = {
@@ -313,7 +322,9 @@ on_actions = {
                 limit = {
 					check_variable = { devastation_timeout = 0 }
 					threat < 0.51
-					threat > 0.40
+					NOT = {
+						has_global_flag = industry_resolution_4_done
+					}
 				}
 				random_list = {
 					70 = {
@@ -329,7 +340,9 @@ on_actions = {
                 limit = {
                     check_variable = { devastation_timeout = 0 }
 					threat < 0.61
-					threat > 0.50
+					NOT = {
+						has_global_flag = industry_resolution_4_done
+					}
 				}
 				random_list = {
 					75 = {
@@ -345,7 +358,9 @@ on_actions = {
                 limit = {
                     check_variable = { devastation_timeout = 0 }
 					threat < 0.71
-					threat > 0.60
+					NOT = {
+						has_global_flag = industry_resolution_5_done
+					}
 				}
 				random_list = {
 					80 = {
@@ -361,7 +376,9 @@ on_actions = {
                 limit = {
                     check_variable = { devastation_timeout = 0 }
 					threat < 0.81
-					threat > 0.70
+					NOT = {
+						has_global_flag = industry_resolution_5_done
+					}
 				}
 				random_list = {
 					85 = {
@@ -377,7 +394,9 @@ on_actions = {
                 limit = {
                     check_variable = { devastation_timeout = 0 }
 					threat < 0.91
-					threat > 0.80
+					NOT = {
+						has_global_flag = industry_resolution_5_done
+					}
 				}
 				random_list = {
 					90 = {
@@ -392,7 +411,6 @@ on_actions = {
             else_if = {
                 limit = {
                     check_variable = { devastation_timeout = 0 }
-					threat > 0.9
                 }
 				random_list = {
 					95 = {
@@ -404,6 +422,9 @@ on_actions = {
 				}
                 add_to_variable = { devastation_timeout = 20 }
             }
+			else = {
+
+			}
         }
     }
 	on_weekly = {
@@ -413,12 +434,6 @@ on_actions = {
 					has_country_flag = auto_reduce_devastation_enabled
 					check_variable = {
 						industrial_power > 200
-					}
-					NOT = {
-						OR = {
-							has_government = harmony
-							has_country_flag = has_mind_tier3
-						}
 					}
 					any_owned_state = {
 						NOT = {
@@ -435,39 +450,16 @@ on_actions = {
 							has_state_flag = devastation_reduction_timeout_flag
 						}
 					}
-					decrease_devastation = yes
-				}
-			}
-			else_if = {
-				limit = {
-					has_country_flag = auto_reduce_devastation_enabled
-					check_variable = {
-						industrial_power > 200
-					}
-					OR = {
-						has_government = harmony
-						has_country_flag = has_mind_tier3
-					}
-					any_owned_state = {
-						NOT = {
-							has_state_flag = devastation_reduction_timeout_flag
-						}
-					}
-				}
-				add_to_variable = {
-					industrial_power = -40
-				}
-				random_owned_state = {
-					limit = {
-						NOT = {
-							has_state_flag = devastation_reduction_timeout_flag
-						}
-					}
+					set_state_flag = {
+                        flag = devastation_reduction_timeout_flag
+                        value = 1
+                        days = 60
+                    }
 					decrease_devastation = yes
 				}
 			}
 			else = {
-
+				#
 			}
 			calculate_current_devastation = yes
 			clear_variable = max_devastation

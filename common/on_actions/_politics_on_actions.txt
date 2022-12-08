@@ -2,14 +2,24 @@ on_actions = {
 	on_startup = {
 		effect = {
             every_country = {
-                #limit = {
-                #    NOT = {
-                #        has_idea = anarchy_style
-                #    }
-                #}
+                limit = {
+                    NOT = {
+                        OR = {
+                            has_idea = anarchy_style
+                            tag = COL
+                            tag = COS
+                            tag = NAX
+                            tag = USA
+                            tag = SIL
+                        }
+                    }
+                }
                 set_country_flag = international_member
             }
 			every_country = {
+                limit = {
+                    has_country_flag = international_member
+                }
                 set_variable = { diplomatic_power = 0 }
                 set_variable = { diplomatic_power_civilian = 0 }
                 set_variable = { diplomatic_power_military = 0 }
@@ -48,6 +58,18 @@ on_actions = {
                 add_to_variable = { diplomatic_power = diplomatic_power_population }
                 add_to_variable = { diplomatic_power = diplomatic_power_other }
                 #
+                if = {
+                    limit = {
+                        is_subject = yes
+                    }
+                    multiply_variable = { diplomatic_power = 0.5 }
+                }
+                if = {
+                    limit = {
+                        has_war = yes
+                    }
+                    multiply_variable = { diplomatic_power = 0.5 }
+                }
                 round_variable = diplomatic_power
             }
 		}
@@ -56,6 +78,9 @@ on_actions = {
     on_daily_ADU = {
 		effect = {
             every_country = {
+                limit = {
+                    has_country_flag = international_member
+                }
                 set_variable = { diplomatic_power = 0 }
                 set_variable = { diplomatic_power_civilian = 0 }
                 set_variable = { diplomatic_power_military = 0 }
@@ -94,6 +119,39 @@ on_actions = {
                 add_to_variable = { diplomatic_power = diplomatic_power_population }
                 add_to_variable = { diplomatic_power = diplomatic_power_other }
                 #
+                if = {
+                    limit = {
+                        is_subject = yes
+                    }
+                    multiply_variable = { diplomatic_power = 0.5 }
+                }
+                if = {
+                    limit = {
+                        has_war = yes
+                    }
+                    multiply_variable = { diplomatic_power = 0.5 }
+                }
+                if = {
+                    limit = {
+                        has_idea = military_government
+                        has_global_flag = rights_resolution_3_done
+                    }
+                    multiply_variable = { diplomatic_power = 0.5 }
+                }
+                if = {
+                    limit = {
+                        has_idea = synthetic_democracy
+                        has_global_flag = rights_resolution_4_done
+                    }
+                    multiply_variable = { diplomatic_power = 0.5 }
+                }
+                if = {
+                    limit = {
+                        has_idea = corporate_libertarianism
+                        has_global_flag = rights_resolution_5_done
+                    }
+                    multiply_variable = { diplomatic_power = 0.5 }
+                }
                 round_variable = diplomatic_power
             }
             ###

@@ -94,6 +94,155 @@ ideas = {
 						}
 						set_global_flag = trade_resolution_5_done
 					}
+					#
+					else_if = {
+						limit = {
+							has_global_flag = resolution_industry1
+							NOT = {
+								has_global_flag = industry_resolution_1_done
+							}
+						}
+						every_country = {
+							limit = {
+								has_country_flag = international_member
+							}
+							add_ideas = industry_resolution_idea1
+						}
+						set_global_flag = industry_resolution_1_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_industry2
+							NOT = {
+								has_global_flag = industry_resolution_2_done
+							}
+						}
+						every_country = {
+							limit = {
+								has_country_flag = international_member
+							}
+							swap_ideas = {
+								remove_idea = industry_resolution_idea1
+								add_idea = industry_resolution_idea2
+							}
+						}
+						set_global_flag = industry_resolution_2_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_industry3
+							NOT = {
+								has_global_flag = industry_resolution_3_done
+							}
+						}
+						every_country = {
+							limit = {
+								has_country_flag = international_member
+							}
+							swap_ideas = {
+								remove_idea = industry_resolution_idea2
+								add_idea = industry_resolution_idea3
+							}
+						}
+						set_global_flag = industry_resolution_3_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_industry4
+							NOT = {
+								has_global_flag = industry_resolution_4_done
+							}
+						}
+						every_country = {
+							limit = {
+								has_country_flag = international_member
+							}
+							swap_ideas = {
+								remove_idea = industry_resolution_idea3
+								add_idea = industry_resolution_idea4
+							}
+						}
+						set_global_flag = industry_resolution_4_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_industry5
+							NOT = {
+								has_global_flag = industry_resolution_5_done
+							}
+						}
+						every_country = {
+							limit = {
+								has_country_flag = international_member
+							}
+							swap_ideas = {
+								remove_idea = industry_resolution_idea4
+								add_idea = industry_resolution_idea5
+							}
+						}
+						set_global_flag = industry_resolution_5_done
+					}
+					#
+					else_if = {
+						limit = {
+							has_global_flag = resolution_rights1
+							NOT = {
+								has_global_flag = rights_resolution_1_done
+							}
+						}
+						every_country = {
+							limit = {
+								has_country_flag = international_member
+							}
+							add_ideas = rights_resolution_idea1
+						}
+						set_global_flag = rights_resolution_1_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_rights2
+							NOT = {
+								has_global_flag = rights_resolution_2_done
+							}
+						}
+						every_country = {
+							limit = {
+								has_country_flag = international_member
+							}
+							swap_ideas = {
+								remove_idea = rights_resolution_idea1
+								add_idea = rights_resolution_idea2
+							}
+						}
+						set_global_flag = rights_resolution_2_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_rights3
+							NOT = {
+								has_global_flag = rights_resolution_3_done
+							}
+						}
+						set_global_flag = rights_resolution_3_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_rights4
+							NOT = {
+								has_global_flag = rights_resolution_4_done
+							}
+						}
+						set_global_flag = rights_resolution_4_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_rights5
+							NOT = {
+								has_global_flag = rights_resolution_5_done
+							}
+						}
+						set_global_flag = rights_resolution_5_done
+					}
 					else = {
 						#
 					}
@@ -134,6 +283,222 @@ ideas = {
 						}
 						clr_global_flag = trade_resolution_5_done
 					}
+					#
+					else_if = {
+						limit = {
+							has_global_flag = resolution_industry1
+							has_global_flag = industry_resolution_1_done
+						}
+						clr_global_flag = industry_resolution_1_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_industry2
+							has_global_flag = industry_resolution_2_done
+						}
+						clr_global_flag = industry_resolution_2_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_industry3
+							has_global_flag = industry_resolution_3_done
+						}
+						clr_global_flag = industry_resolution_3_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_industry4
+							has_global_flag = industry_resolution_4_done
+						}
+						clr_global_flag = industry_resolution_4_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_industry5
+							has_global_flag = industry_resolution_5_done
+						}
+						clr_global_flag = industry_resolution_5_done
+					}
+					#
+					else_if = {
+						limit = {
+							has_global_flag = resolution_rights1
+							has_global_flag = rights_resolution_1_done
+						}
+						clr_global_flag = rights_resolution_1_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_rights2
+							has_global_flag = rights_resolution_2_done
+						}
+						clr_global_flag = rights_resolution_2_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_rights3
+							has_global_flag = rights_resolution_3_done
+						}
+						clr_global_flag = rights_resolution_3_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_rights4
+							has_global_flag = rights_resolution_4_done
+						}
+						clr_global_flag = rights_resolution_4_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_rights5
+							has_global_flag = rights_resolution_5_done
+						}
+						clr_global_flag = rights_resolution_5_done
+					}
+					#
+					else_if = {
+						limit = {
+							has_global_flag = resolution_ecobalance1
+							has_global_flag = ecobalance_resolution_1_done
+						}
+						clr_global_flag = ecobalance_resolution_1_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_ecobalance2
+							has_global_flag = ecobalance_resolution_2_done
+						}
+						clr_global_flag = ecobalance_resolution_2_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_ecobalance3
+							has_global_flag = ecobalance_resolution_3_done
+						}
+						clr_global_flag = ecobalance_resolution_3_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_ecobalance4
+							has_global_flag = ecobalance_resolution_4_done
+						}
+						clr_global_flag = ecobalance_resolution_4_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_ecobalance5
+							has_global_flag = ecobalance_resolution_5_done
+						}
+						clr_global_flag = ecobalance_resolution_5_done
+					}
+					#
+					else_if = {
+						limit = {
+							has_global_flag = resolution_research1
+							has_global_flag = research_resolution_1_done
+						}
+						clr_global_flag = research_resolution_1_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_research2
+							has_global_flag = research_resolution_2_done
+						}
+						clr_global_flag = research_resolution_2_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_research3
+							has_global_flag = research_resolution_3_done
+						}
+						clr_global_flag = research_resolution_3_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_research4
+							has_global_flag = research_resolution_4_done
+						}
+						clr_global_flag = research_resolution_4_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_research5
+							has_global_flag = research_resolution_5_done
+						}
+						clr_global_flag = research_resolution_5_done
+					}
+					#
+					else_if = {
+						limit = {
+							has_global_flag = resolution_defense1
+							has_global_flag = defense_resolution_1_done
+						}
+						clr_global_flag = defense_resolution_1_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_defense2
+							has_global_flag = defense_resolution_2_done
+						}
+						clr_global_flag = defense_resolution_2_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_defense3
+							has_global_flag = defense_resolution_3_done
+						}
+						clr_global_flag = defense_resolution_3_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_defense4
+							has_global_flag = defense_resolution_4_done
+						}
+						clr_global_flag = defense_resolution_4_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_defense5
+							has_global_flag = defense_resolution_5_done
+						}
+						clr_global_flag = defense_resolution_5_done
+					}
+					#
+					else_if = {
+						limit = {
+							has_global_flag = resolution_peace1
+							has_global_flag = peace_resolution_1_done
+						}
+						clr_global_flag = peace_resolution_1_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_peace2
+							has_global_flag = peace_resolution_2_done
+						}
+						clr_global_flag = peace_resolution_2_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_peace3
+							has_global_flag = peace_resolution_3_done
+						}
+						clr_global_flag = peace_resolution_3_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_peace4
+							has_global_flag = peace_resolution_4_done
+						}
+						clr_global_flag = peace_resolution_4_done
+					}
+					else_if = {
+						limit = {
+							has_global_flag = resolution_peace5
+							has_global_flag = peace_resolution_5_done
+						}
+						clr_global_flag = peace_resolution_5_done
+					}
 					else = {
 						#
 					}
@@ -148,6 +513,8 @@ ideas = {
 				set_variable = {
 					global.diplomatic_power_against = 0
 				}
+				clear_array = global.voted_yay
+				clear_array = global.voted_nay
 			}
 
 			modifier = {
@@ -182,44 +549,96 @@ ideas = {
 		###
 		industry_resolution_idea1 = {
 
+			cancel = {
+				NOT =  {
+					has_global_flag = industry_resolution_1_done
+				}
+			}
+
 			modifier = {
-                min_export = 0.05
+				production_speed_buildings_factor = 0.05
 			}
 		}
 		industry_resolution_idea2 = {
 
+			cancel = {
+				NOT =  {
+					has_global_flag = industry_resolution_2_done
+				}
+			}
+
 			modifier = {
-                min_export = 0.1
-				research_speed_factor = 0.05
-				industrial_capacity_factory = 0.05
-				industrial_capacity_dockyard = 0.05
+				production_speed_buildings_factor = 0.1
+				global_building_slots_factor = 0.05
 			}
 		}
 		industry_resolution_idea3 = {
 
+			cancel = {
+				NOT =  {
+					has_global_flag = industry_resolution_3_done
+				}
+			}
+
 			modifier = {
-                min_export = 0.15
-				research_speed_factor = 0.1
-				industrial_capacity_factory = 0.1
-				industrial_capacity_dockyard = 0.1
+				production_speed_buildings_factor = 0.15
+				global_building_slots_factor = 0.1
+				local_resources_factor = 0.1
 			}
 		}
 		industry_resolution_idea4 = {
 
+			cancel = {
+				NOT =  {
+					has_global_flag = industry_resolution_4_done
+				}
+			}
+
 			modifier = {
-                min_export = 0.2
-				research_speed_factor = 0.15
-				industrial_capacity_factory = 0.15
-				industrial_capacity_dockyard = 0.15
+				production_speed_buildings_factor = 0.2
+				global_building_slots_factor = 0.15
+				local_resources_factor = 0.2
 			}
 		}
 		industry_resolution_idea5 = {
 
+			cancel = {
+				NOT =  {
+					has_global_flag = industry_resolution_5_done
+				}
+			}
+
 			modifier = {
-                min_export = 0.25
-				research_speed_factor = 0.2
-				industrial_capacity_factory = 0.2
-				industrial_capacity_dockyard = 0.2
+                production_speed_buildings_factor = 0.25
+				global_building_slots_factor = 0.2
+				local_resources_factor = 0.4
+			}
+		}
+		###
+		rights_resolution_idea1 = {
+
+			cancel = {
+				NOT =  {
+					has_global_flag = rights_resolution_1_done
+				}
+			}
+
+			modifier = {
+				political_power_gain = 0.1
+			}
+		}
+		rights_resolution_idea2 = {
+
+			cancel = {
+				NOT =  {
+					has_global_flag = rights_resolution_2_done
+				}
+			}
+
+			modifier = {
+				political_power_gain = 0.25
+				stability_factor = 0.05
+				war_support_factor = -0.05
 			}
 		}
 	}

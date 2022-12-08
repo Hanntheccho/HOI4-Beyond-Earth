@@ -12,6 +12,9 @@ on_actions = {
                     }
                 }
                 every_country = {
+                    limit = {
+                        has_country_flag = international_member
+                    }
                     add_to_variable = { global.spaceship_contribution_variable = THIS.spaceship_contribution_variable }
                 }
                 divide_variable = { global.spaceship_contribution_variable = 10000 }
@@ -28,7 +31,27 @@ on_actions = {
     on_startup = {
         effect = {
             every_country = {
+                limit = {
+                    NOT = {
+                        OR = {
+                            has_idea = anarchy_style
+                            tag = COL
+                            tag = COS
+                            tag = NAX
+                            tag = USA
+                            tag = SIL
+                        }
+                    }
+                }
+                set_country_flag = international_member
+            }
+            every_country = {
                 set_variable = { spaceship_completion_time = 365 } #180
+            }
+            every_country = {
+                limit = {
+                    has_country_flag = international_member
+                }
                 set_variable = { spaceship_contribution_variable = 0 }
                 set_variable = { spaceship_contribution_modifier = 1 }
                 set_variable = { spaceship_contribution_civilian = num_of_civilian_factories }
@@ -417,6 +440,9 @@ on_actions = {
                     }
                 }
                 every_country = {
+                    limit = {
+                        has_country_flag = international_member
+                    }
                     set_variable = { spaceship_contribution_variable = 0 }
                     set_variable = { spaceship_contribution_civilian = num_of_civilian_factories }
                     set_variable = { spaceship_contribution_military = num_of_military_factories }

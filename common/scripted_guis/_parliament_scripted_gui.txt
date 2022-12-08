@@ -123,7 +123,64 @@ scripted_gui = {
                 }
                 else = {
                     #
-                }             
+                }
+                every_country = {
+                    limit = {
+                        is_in_array = {
+                            array = global.voted_yay
+                            index = 3
+                        } 
+                    }
+                    add_to_array = {
+                        array = global.voted_yay
+                        value = THIS.id
+                        index = 4
+                    }   
+                }  
+                every_country = {
+                    limit = {
+                        is_in_array = {
+                            array = global.voted_yay
+                            index = 2
+                        } 
+                    }
+                    add_to_array = {
+                        array = global.voted_yay
+                        value = THIS.id
+                        index = 3
+                    }   
+                } 
+                every_country = {
+                    limit = {
+                        is_in_array = {
+                            array = global.voted_yay
+                            index = 1
+                        } 
+                    }
+                    add_to_array = {
+                        array = global.voted_yay
+                        value = THIS.id
+                        index = 2
+                    }   
+                }  
+                every_country = {
+                    limit = {
+                        is_in_array = {
+                            array = global.voted_yay
+                            index = 0
+                        } 
+                    }
+                    add_to_array = {
+                        array = global.voted_yay
+                        value = THIS.id
+                        index = 1
+                    }   
+                }   
+                add_to_array = {
+                    array = global.voted_yay
+                    value = THIS.id
+                    index = 0
+                }           
             }
             nay_icon_click = {
                 if = {
@@ -153,6 +210,63 @@ scripted_gui = {
                 else = {
                     #
                 }  
+                every_country = {
+                    limit = {
+                        is_in_array = {
+                            array = global.voted_nay
+                            index = 3
+                        } 
+                    }
+                    add_to_array = {
+                        array = global.voted_nay
+                        value = THIS.id
+                        index = 4
+                    }   
+                }  
+                every_country = {
+                    limit = {
+                        is_in_array = {
+                            array = global.voted_nay
+                            index = 2
+                        } 
+                    }
+                    add_to_array = {
+                        array = global.voted_nay
+                        value = THIS.id
+                        index = 3
+                    }   
+                } 
+                every_country = {
+                    limit = {
+                        is_in_array = {
+                            array = global.voted_nay
+                            index = 1
+                        } 
+                    }
+                    add_to_array = {
+                        array = global.voted_nay
+                        value = THIS.id
+                        index = 2
+                    }   
+                }  
+                every_country = {
+                    limit = {
+                        is_in_array = {
+                            array = global.voted_nay
+                            index = 0
+                        } 
+                    }
+                    add_to_array = {
+                        array = global.voted_nay
+                        value = THIS.id
+                        index = 1
+                    }   
+                }   
+                add_to_array = {
+                    array = global.voted_nay
+                    value = THIS.id
+                    index = 0
+                }   
             }
 		}
 
@@ -226,6 +340,72 @@ scripted_gui = {
                     has_global_flag = resolution_peace5
                 }
             }
+            #
+            voted_yay_0_visible = {
+                has_global_flag = resolution_proposed
+            }
+            voted_yay_1_visible = {
+                has_global_flag = resolution_proposed
+            }
+            voted_yay_2_visible = {
+                has_global_flag = resolution_proposed
+            }
+            voted_yay_3_visible = {
+                has_global_flag = resolution_proposed
+            }
+            voted_yay_4_visible = {
+                has_global_flag = resolution_proposed
+            }
+            #
+            voted_nay_0_visible = {
+                has_global_flag = resolution_proposed
+            }
+            voted_nay_1_visible = {
+                has_global_flag = resolution_proposed
+            }
+            voted_nay_2_visible = {
+                has_global_flag = resolution_proposed
+            }
+            voted_nay_3_visible = {
+                has_global_flag = resolution_proposed
+            }
+            voted_nay_4_visible = {
+                has_global_flag = resolution_proposed
+            }
+        }
+
+        properties = {
+            voted_yay_0 = {
+				image = [?global.voted_yay^0.GetFlag]
+			}
+			voted_yay_1 = {
+				image = [?global.voted_yay^1.GetFlag]
+			}
+			voted_yay_2 = {
+				image = [?global.voted_yay^2.GetFlag]
+			}
+			voted_yay_3 = {
+				image = [?global.voted_yay^3.GetFlag]
+			}
+			voted_yay_4 = {
+				image = [?global.voted_yay^4.GetFlag]
+			}
+            #
+            voted_nay_0 = {
+				image = [?global.voted_nay^0.GetFlag]
+			}
+			voted_nay_1 = {
+				image = [?global.voted_nay^1.GetFlag]
+			}
+			voted_nay_2 = {
+				image = [?global.voted_nay^2.GetFlag]
+			}
+			voted_nay_3 = {
+				image = [?global.voted_nay^3.GetFlag]
+			}
+			voted_nay_4 = {
+				image = [?global.voted_nay^4.GetFlag]
+			}
         }
         
         ai_enabled = {
@@ -254,7 +434,7 @@ scripted_gui = {
                             has_idea = export_focus
                             has_idea = limited_exports
                         }
-                        add = 3
+                        add = 5
                     }
                     modifier = {
                         OR = {
@@ -277,11 +457,76 @@ scripted_gui = {
                         has_idea = export_focus
                         add = 10
                     }
+                    modifier = {
+                        OR = {
+                            has_global_flag = resolution_industry1
+                            has_global_flag = resolution_industry2
+                            has_global_flag = resolution_industry3
+                            has_global_flag = resolution_industry4
+                            has_global_flag = resolution_industry5
+                        }
+                        NOT = {
+                            OR = {
+                                has_government = harmony
+                                is_in_faction_with = GER
+                                tag = GER
+                                has_idea = periphal_anarchy
+                                has_idea = crumbling_society
+                            }                            
+                        }
+                        add = 10
+                    }
+                    modifier = {
+                        OR = {
+                            has_global_flag = resolution_industry1
+                            has_global_flag = resolution_industry2
+                            has_global_flag = resolution_industry3
+                            has_global_flag = resolution_industry4
+                            has_global_flag = resolution_industry5
+                        }
+                        has_idea = utopian_society
+                        add = 1000
+                    }
+                    modifier = {
+                        OR = {
+                            has_global_flag = resolution_rights1
+                            has_global_flag = resolution_rights2
+                        }
+                        add = 5
+                    }
+                    modifier = {
+                        has_global_flag = resolution_rights3
+                        NOT = {
+                            has_idea = military_government
+                        }
+                        add = 100
+                    }
+                    modifier = {
+                        has_global_flag = resolution_rights4
+                        NOT = {
+                            OR = {
+                                has_idea = military_government
+                                has_idea = synthetic_democracy
+                            }
+                        }
+                        add = 100
+                    }
+                    modifier = {
+                        has_global_flag = resolution_rights5
+                        NOT = {
+                            OR = {
+                                has_idea = military_government
+                                has_idea = synthetic_democracy
+                                has_idea = corporate_libertarianism
+                            }
+                        }
+                        add = 100
+                    }
                 }
             }
             nay_icon_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 2
                 }
             }
         }
