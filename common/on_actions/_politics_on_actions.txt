@@ -58,18 +58,6 @@ on_actions = {
                 add_to_variable = { diplomatic_power = diplomatic_power_population }
                 add_to_variable = { diplomatic_power = diplomatic_power_other }
                 #
-                if = {
-                    limit = {
-                        is_subject = yes
-                    }
-                    multiply_variable = { diplomatic_power = 0.5 }
-                }
-                if = {
-                    limit = {
-                        has_war = yes
-                    }
-                    multiply_variable = { diplomatic_power = 0.5 }
-                }
                 round_variable = diplomatic_power
             }
 		}
@@ -121,18 +109,6 @@ on_actions = {
                 #
                 if = {
                     limit = {
-                        is_subject = yes
-                    }
-                    multiply_variable = { diplomatic_power = 0.5 }
-                }
-                if = {
-                    limit = {
-                        has_war = yes
-                    }
-                    multiply_variable = { diplomatic_power = 0.5 }
-                }
-                if = {
-                    limit = {
                         has_idea = military_government
                         has_global_flag = rights_resolution_3_done
                     }
@@ -152,6 +128,44 @@ on_actions = {
                     }
                     multiply_variable = { diplomatic_power = 0.5 }
                 }
+                if = {
+                    limit = {
+                        OR = {
+                            has_idea = crumbling_society
+                            has_idea = periphal_anarchy
+                        }
+                        has_global_flag = ecobalance_resolution_3_done
+                    }
+                    multiply_variable = { diplomatic_power = 0.5 }
+                }
+                if = {
+                    limit = {
+                        has_idea = flaking_society
+                        has_global_flag = ecobalance_resolution_4_done
+                    }
+                    multiply_variable = { diplomatic_power = 0.5 }
+                }
+                if = {
+                    limit = {
+                        has_idea = mobilizing_society
+                        has_global_flag = ecobalance_resolution_5_done
+                    }
+                    multiply_variable = { diplomatic_power = 0.5 }
+                }
+                if = {
+                    limit = {
+                        has_war = yes
+                        has_global_flag = defense_resolution_3_done
+                    }
+                    multiply_variable = { diplomatic_power = 0.5 }
+                }
+                if = {
+                    limit = {
+                        has_war = yes
+                        has_global_flag = defense_resolution_5_done
+                    }
+                    multiply_variable = { diplomatic_power = 0 }
+                }
                 round_variable = diplomatic_power
             }
             ###
@@ -163,6 +177,32 @@ on_actions = {
                 }
                 add_to_variable = {
                     global.proposed_resolution_days = -1
+                }
+            }
+            else = {
+                #
+            }
+        }
+    }
+    #
+    on_declare_war = {
+        effect = {
+            if = {
+                limit = {
+                    has_country_flag = international_member
+                    has_global_flag = defense_resolution_4_done
+                }
+                ROOT = {
+                    add_stability = -0.2
+                }
+            }
+            else_if = {
+                limit = {
+                    has_country_flag = international_member
+                    has_global_flag = defense_resolution_2_done
+                }
+                ROOT = {
+                    add_stability = -0.4
                 }
             }
             else = {

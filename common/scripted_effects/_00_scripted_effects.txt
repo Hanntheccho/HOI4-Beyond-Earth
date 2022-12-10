@@ -356,6 +356,9 @@ upgrade_mobilization_law = {
 	if = {
 		limit = {
 			has_idea = limited_conscription
+			NOT = {
+				has_global_flag = peace_resolution_5_done
+			}
 		}
 		add_ideas = extensive_conscription
 		add_political_power = -150
@@ -363,6 +366,9 @@ upgrade_mobilization_law = {
 	else_if = {
 		limit = {
 			has_idea = extensive_conscription
+			NOT = {
+				has_global_flag = peace_resolution_4_done
+			}
 		}
 		add_ideas = service_by_requirement
 		add_political_power = -150
@@ -370,6 +376,9 @@ upgrade_mobilization_law = {
 	else_if = {
 		limit = {
 			has_idea = service_by_requirement
+			NOT = {
+				has_global_flag = peace_resolution_3_done
+			}
 		}
 		add_ideas = all_adults_serve
 		add_political_power = -150

@@ -128,7 +128,7 @@ scripted_gui = {
                     limit = {
                         is_in_array = {
                             array = global.voted_yay
-                            index = 3
+                            value = 3
                         } 
                     }
                     add_to_array = {
@@ -141,7 +141,7 @@ scripted_gui = {
                     limit = {
                         is_in_array = {
                             array = global.voted_yay
-                            index = 2
+                            value = 2
                         } 
                     }
                     add_to_array = {
@@ -154,7 +154,7 @@ scripted_gui = {
                     limit = {
                         is_in_array = {
                             array = global.voted_yay
-                            index = 1
+                            value = 1
                         } 
                     }
                     add_to_array = {
@@ -167,7 +167,7 @@ scripted_gui = {
                     limit = {
                         is_in_array = {
                             array = global.voted_yay
-                            index = 0
+                            value = 0
                         } 
                     }
                     add_to_array = {
@@ -214,7 +214,7 @@ scripted_gui = {
                     limit = {
                         is_in_array = {
                             array = global.voted_nay
-                            index = 3
+                            value = 3
                         } 
                     }
                     add_to_array = {
@@ -227,7 +227,7 @@ scripted_gui = {
                     limit = {
                         is_in_array = {
                             array = global.voted_nay
-                            index = 2
+                            value = 2
                         } 
                     }
                     add_to_array = {
@@ -240,7 +240,7 @@ scripted_gui = {
                     limit = {
                         is_in_array = {
                             array = global.voted_nay
-                            index = 1
+                            value = 1
                         } 
                     }
                     add_to_array = {
@@ -253,7 +253,7 @@ scripted_gui = {
                     limit = {
                         is_in_array = {
                             array = global.voted_nay
-                            index = 0
+                            value = 0
                         } 
                     }
                     add_to_array = {
@@ -521,6 +521,110 @@ scripted_gui = {
                             }
                         }
                         add = 100
+                    }
+                    modifier = {
+                        has_global_flag = resolution_ecobalance1
+                        add = 100
+                    }
+                    modifier = {
+                        has_global_flag = resolution_ecobalance2
+                        add = 2
+                    }
+                    modifier = {
+                        has_global_flag = resolution_ecobalance3
+                        NOT = {
+                            OR = {
+                                has_idea = crumbling_society
+                                has_idea = periphal_anarchy
+                            }
+                        }
+                        add = 2
+                    }
+                    modifier = {
+                        has_global_flag = resolution_ecobalance4
+                        NOT = {
+                            OR = {
+                                has_idea = crumbling_society
+                                has_idea = periphal_anarchy
+                                has_idea = flaking_society
+                            }
+                        }
+                        add = 2
+                    }
+                    modifier = {
+                        has_global_flag = resolution_ecobalance5
+                        NOT = {
+                            OR = {
+                                has_idea = crumbling_society
+                                has_idea = periphal_anarchy
+                                has_idea = flaking_society
+                                has_idea = mobilizing_society
+                            }
+                        }
+                        add = 2
+                    }
+                    modifier = {
+                        OR = {
+                            has_global_flag = resolution_ecobalance2
+                            has_global_flag = resolution_ecobalance3
+                            has_global_flag = resolution_ecobalance4
+                            has_global_flag = resolution_ecobalance5
+                        }
+                        has_government = harmony
+                        add = 100
+                    }
+                    modifier = {
+                        has_global_flag = resolution_research1
+                        add = 100
+                    }
+                    modifier = {
+                        OR = {
+                            has_global_flag = resolution_research2
+                            has_global_flag = resolution_research3
+                            has_global_flag = resolution_research4
+                            has_global_flag = resolution_research5
+                        }
+                        NOT = {
+                            political_power_daily < 0.9
+                        }
+                        add = 100
+                    }
+                    modifier = {
+                        OR = {
+                            has_global_flag = resolution_defense1
+                            has_global_flag = resolution_defense2
+                            has_global_flag = resolution_defense3
+                            has_global_flag = resolution_defense4
+                            has_global_flag = resolution_defense5
+                        }
+                        NOT = {
+                            OR = {
+                                has_offensive_war = yes
+                                has_idea = military_government
+                                is_major = yes
+                            }
+                        }
+                        has_war_support < 1
+                        add = 10
+                    }
+                    modifier = {
+                        OR = {
+                            has_global_flag = resolution_peace1
+                            has_global_flag = resolution_peace2
+                            has_global_flag = resolution_peace3
+                            has_global_flag = resolution_peace4
+                            has_global_flag = resolution_peace5
+                        }
+                        NOT = {
+                            OR = {
+                                has_offensive_war = yes
+                                has_idea = military_government
+                                #is_major = yes
+                            }
+                        }
+                        has_manpower > 10000
+                        has_war_support < 1
+                        add = 10
                     }
                 }
             }
@@ -904,39 +1008,68 @@ scripted_gui = {
         }
         
         ai_enabled = {
-            always = no #for now
+            always = yes
         }
         
-        ai_test_interval = 6969
+        ai_test_interval = 100
         
         ai_check = {
             has_political_power > 150
+            NOT = {
+                has_global_flag = resolution_proposed
+            }
         }
         
         ai_weights = {
             resolution_button1_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button2_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button3_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button4_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button5_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
+                }
+            }
+            #
+            resolution_button1_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button2_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button3_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button4_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button5_remove_click = {
+                ai_will_do = {
+                    factor = 100
                 }
             }
         }
@@ -1314,39 +1447,68 @@ scripted_gui = {
         }
         
         ai_enabled = {
-            always = no #for now
+            always = yes
         }
         
-        ai_test_interval = 6969
+        ai_test_interval = 100
         
         ai_check = {
             has_political_power > 150
+            NOT = {
+                has_global_flag = resolution_proposed
+            } 
         }
         
         ai_weights = {
             resolution_button1_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button2_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button3_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button4_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button5_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
+                }
+            }
+            #
+            resolution_button1_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button2_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button3_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button4_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button5_remove_click = {
+                ai_will_do = {
+                    factor = 100
                 }
             }
         }
@@ -1724,39 +1886,68 @@ scripted_gui = {
         }
         
         ai_enabled = {
-            always = no #for now
+            always = yes
         }
         
-        ai_test_interval = 6969
+        ai_test_interval = 100
         
         ai_check = {
             has_political_power > 150
+            NOT = {
+                has_global_flag = resolution_proposed
+            } 
         }
         
         ai_weights = {
             resolution_button1_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button2_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button3_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button4_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button5_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
+                }
+            }
+            #
+            resolution_button1_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button2_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button3_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button4_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button5_remove_click = {
+                ai_will_do = {
+                    factor = 100
                 }
             }
         }
@@ -2134,39 +2325,68 @@ scripted_gui = {
         }
         
         ai_enabled = {
-            always = no #for now
+            always = yes
         }
         
-        ai_test_interval = 6969
+        ai_test_interval = 100
         
         ai_check = {
             has_political_power > 150
+            NOT = {
+                has_global_flag = resolution_proposed
+            } 
         }
         
         ai_weights = {
             resolution_button1_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button2_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button3_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button4_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button5_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
+                }
+            }
+            #
+            resolution_button1_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button2_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button3_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button4_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button5_remove_click = {
+                ai_will_do = {
+                    factor = 100
                 }
             }
         }
@@ -2544,39 +2764,68 @@ scripted_gui = {
         }
         
         ai_enabled = {
-            always = no #for now
+            always = yes
         }
         
-        ai_test_interval = 6969
+        ai_test_interval = 100
         
         ai_check = {
             has_political_power > 150
+            NOT = {
+                has_global_flag = resolution_proposed
+            } 
         }
         
         ai_weights = {
             resolution_button1_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button2_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button3_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button4_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button5_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
+                }
+            }
+            #
+            resolution_button1_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button2_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button3_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button4_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button5_remove_click = {
+                ai_will_do = {
+                    factor = 100
                 }
             }
         }
@@ -2954,39 +3203,68 @@ scripted_gui = {
         }
         
         ai_enabled = {
-            always = no #for now
+            always = yes
         }
         
-        ai_test_interval = 6969
+        ai_test_interval = 100
         
         ai_check = {
             has_political_power > 150
+            NOT = {
+                has_global_flag = resolution_proposed
+            } 
         }
         
         ai_weights = {
             resolution_button1_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button2_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button3_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button4_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button5_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
+                }
+            }
+            #
+            resolution_button1_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button2_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button3_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button4_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button5_remove_click = {
+                ai_will_do = {
+                    factor = 100
                 }
             }
         }
@@ -3364,39 +3642,68 @@ scripted_gui = {
         }
         
         ai_enabled = {
-            always = no #for now
+            always = yes
         }
         
-        ai_test_interval = 6969
+        ai_test_interval = 100
         
         ai_check = {
             has_political_power > 150
+            NOT = {
+                has_global_flag = resolution_proposed
+            } 
         }
         
         ai_weights = {
             resolution_button1_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button2_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button3_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button4_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
                 }
             }
             resolution_button5_click = {
                 ai_will_do = {
-                    factor = 1
+                    factor = 100
+                }
+            }
+            #
+            resolution_button1_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button2_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button3_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button4_remove_click = {
+                ai_will_do = {
+                    factor = 100
+                }
+            }
+            resolution_button5_remove_click = {
+                ai_will_do = {
+                    factor = 100
                 }
             }
         }
