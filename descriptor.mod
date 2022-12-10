@@ -53,7 +53,6 @@ replace_path="gfx/loadingscreens"
 
 replace_path="history/countries"
 replace_path="history/states"
-replace_path="history/general"
 
 replace_path="common/resistance_activity"
 replace_path="common/resistance_compliance_modifiers"
