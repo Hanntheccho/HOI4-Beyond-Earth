@@ -65,13 +65,12 @@ SOV_manifest_destiny = {
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				has_war = no
+				NOT = {
+					country_exists = SIB
+				}
 				BLR = {
 					OR = {
-						AND = {
-							has_capitulated = yes
-							has_war_with = SOV
-						}
+						has_capitulated = yes
 						exists = no
 					}
 				}
@@ -106,21 +105,18 @@ SOV_manifest_destiny = {
 		ai_will_do = {
 			factor = 0
 			modifier = {
+				NOT = {
+					country_exists = SIB
+				}
 				BLR = {
 					OR = {
-						AND = {
-							has_capitulated = yes
-							has_war_with = SOV
-						}
+						has_capitulated = yes
 						exists = no
 					}
 				}
 				UKR = {
 					OR = {
-						AND = {
-							has_capitulated = yes
-							has_war_with = SOV
-						}
+						has_capitulated = yes
 						exists = no
 					}
 				}

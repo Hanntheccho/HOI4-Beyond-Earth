@@ -464,6 +464,56 @@ on_actions = {
 					puppet = SPR
 				}
 			}
+			#ECW
+			else_if = {
+				limit = {
+					FROM = {
+						is_eng_tag = yes
+					}
+					ROOT = {
+						is_eng_tag = yes
+					}
+				}
+				FROM = {
+					every_core_state = {
+						remove_core_of = FROM
+						add_core_of = ROOT
+						#transfer_state_to = ROOT
+					}
+				}
+			}
+			#JNG-SCO WAR
+			else_if = {
+				limit = {
+					FROM = {
+						tag = SCO
+					}
+					ROOT = {
+						tag = JNG
+					}
+				}
+				FROM = {
+					every_core_state = {
+						remove_core_of = FROM
+						add_core_of = ROOT
+						transfer_state_to = ROOT
+					}
+					every_country = {
+						limit = {
+							is_in_faction_with = ICE #SCO is not faction leader anymore
+						}
+						ROOT = {
+							puppet = PREV
+						}
+					}
+				}
+				JNG = {
+					create_faction = "European Front"
+					country_event = england_event.22
+					set_cosmetic_tag = JNG_britain
+				}
+			}
+			#
 			else = {
 				#
 			}
@@ -497,8 +547,14 @@ on_actions = {
 	###
 	on_capitulation_immediate = { #ROOT is looser, FROM is winner
 		effect = {
-			#YUG-ROM WAR
 			if = {
+				limit = {
+					has_global_flag = final_war_flag
+				}
+				log = "A COUNTRY HAS CAPITULATED!"
+			}
+			#YUG-ROM WAR
+			else_if = {
 				limit = {
 					ROOT = {
 						tag = ROM
@@ -526,6 +582,39 @@ on_actions = {
 					white_peace = FRA
 					white_peace = ROM
 				}
+			}
+			#SWE-NOR WAR
+			else_if = {
+				limit = {
+					ROOT = {
+						tag = NOR
+					}
+					FROM = {
+						tag = SWE
+					}
+				}
+				SCO = {
+					white_peace = SWE
+					white_peace = GER
+				}
+			}
+			#NOR-SWE WAR
+			else_if = {
+				limit = {
+					ROOT = {
+						tag = SWE
+					}
+					FROM = {
+						tag = NOR
+					}
+				}
+				GER = {
+					white_peace = SCO
+					white_peace = NOR
+				}
+			}
+			else = {
+				#
 			}
 		}
 	}

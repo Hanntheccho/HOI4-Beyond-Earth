@@ -50,5 +50,34 @@ ideas = {
 				#custom_modifier_tooltip = ENG_incompetent_parliament_tooltip
 			}
 		}
+
+		ENG_civil_war_debuffs = {
+
+			cancel = {
+				OR = {
+					is_puppet = yes
+					has_war = no
+				}
+			}
+			
+			modifier = {
+				army_speed_factor = -0.2
+				max_planning_factor = 0.5
+				army_core_defence_factor = 0.2
+				army_core_attack_factor = -0.5
+			}
+		}
+
+		ENG_civil_war_recovery = {
+
+			#cancel = { #is a timed idea
+			#	is_puppet = yes
+			#}
+			
+			modifier = {
+				stability_factor = -0.2
+				conscription_factor = -0.5
+			}
+		}
 	}
 }

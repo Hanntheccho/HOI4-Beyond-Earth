@@ -35,3 +35,226 @@ country_event = { #AHTI'S BAD NEWS - WELCOME TO KAUNAS
 		}
 	}
 }
+
+country_event = { #NOR-SWE WAR
+	id = scotland_event.2
+	title = scotland_event.2.t
+	desc = scotland_event.2.d
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = scotland_event_option.2.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = scotland_event_option.2.b
+		send_equipment = {
+			equipment = gun_equipment
+			amount = 5000
+			target = NOR
+		}
+		send_equipment = {
+			equipment = infantry_eq
+			amount = 900
+			target = NOR
+		}
+		add_manpower = -5000
+		NOR = {
+			add_manpower = 5000
+		}
+		add_to_variable = {
+			var = global.nsainfamy_var
+			value = 2
+		}
+		custom_effect_tooltip = add_infamy_mid
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = scotland_event_option.2.c
+		add_to_war = {
+			targeted_alliance = NOR
+			enemy = SWE
+		}
+		add_to_variable = {
+			var = global.nsainfamy_var
+			value = 4
+		}
+		custom_effect_tooltip = add_infamy_high
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#INFAMY
+country_event = {
+	id = scotland_event.3
+	title = scotland_event.3.t
+	desc = scotland_event.3.d
+	picture = GFX_unknown_event
+	
+	trigger = {
+		tag = SCO
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 165
+	}
+	
+	option = { 
+		name = scotland_event_option.3.a
+		add_to_variable = {
+			var = global.nsainfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+	}
+}
+country_event = {
+	id = scotland_event.4
+	title = scotland_event.4.t
+	desc = scotland_event.4.d
+	picture = GFX_unknown_event
+	
+	trigger = {
+		tag = SCO
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 265
+	}
+	
+	option = { 
+		name = scotland_event_option.4.a
+		add_to_variable = {
+			var = global.nsainfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+	}
+}
+country_event = {
+	id = scotland_event.5
+	title = scotland_event.5.t
+	desc = scotland_event.5.d
+	picture = GFX_unknown_event
+	
+	trigger = {
+		tag = SCO
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 365
+	}
+	
+	option = { 
+		name = scotland_event_option.5.a
+		add_to_variable = {
+			var = global.nsainfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+	}
+}
+country_event = {
+	id = scotland_event.6
+	title = scotland_event.6.t
+	desc = scotland_event.6.d
+	picture = GFX_unknown_event
+	
+	trigger = {
+		tag = SCO
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 465
+	}
+	
+	option = { 
+		name = scotland_event_option.6.a
+		add_to_variable = {
+			var = global.nsainfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+	}
+}
+country_event = {
+	id = scotland_event.7
+	title = scotland_event.7.t
+	desc = scotland_event.7.d
+	picture = GFX_unknown_event
+	
+	trigger = {
+		tag = SOV
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 565
+	}
+	
+	option = { 
+		name = scotland_event_option.7.a
+		add_to_variable = {
+			var = global.nsainfamy_var
+			value = 1
+		}
+		custom_effect_tooltip = add_infamy_low
+	}
+}
+
+#country_event = { #ARKs
+#	id = scotland_event.8
+#	title = scotland_event.8.t
+#	desc = scotland_event.8.d
+#	
+#	is_triggered_only = yes
+#
+#	option = { 
+#		name = scotland_event_option.8.a
+#	}
+#}
+
+country_event = { #WAR JNG without FRA
+	id = scotland_event.9
+	title = scotland_event.9.t
+	desc = scotland_event.9.d
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = scotland_event_option.9.a
+		add_to_variable = {
+			var = global.nsainfamy_var
+			value = 2
+		}
+		custom_effect_tooltip = add_infamy_mid
+		declare_war_on = {
+			target = JNG
+			type = annex_puppet_wargoal
+		}
+		hidden_effect = {
+			JNG = {
+				country_event = {
+					id = england_event.21
+					days = 3
+				}
+			}
+		}
+	}
+}

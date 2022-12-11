@@ -110,10 +110,12 @@ news_event = {
 			set_global_flag = ECW_start
 			ENG = {
 				remove_ideas = ENG_stagnant_republican_army
+				add_ideas = ENG_civil_war_debuffs
                 country_lock_all_division_template = no
 				delete_unit_template_and_units = {
 					division_template = "Rover Division"
 				}
+				set_cosmetic_tag = ENG_NSA
 				#leave_faction = yes
             }
 			267 = {
@@ -127,6 +129,7 @@ news_event = {
 				add_ideas = ENG_the_sick_man_of_britannia
 				add_ideas = ENG_incompetent_parliament
 				add_ideas = EU_treaty_of_bern
+				add_ideas = ENG_civil_war_debuffs
 				inherit_technology = ENG
 				load_oob = JNG_ECW_OOB
 			}
@@ -148,6 +151,7 @@ news_event = {
 				add_ideas = ENG_the_sick_man_of_britannia
 				add_ideas = ENG_incompetent_parliament
 				add_ideas = EU_treaty_of_bern
+				add_ideas = ENG_civil_war_debuffs
 				inherit_technology = ENG
 				load_oob = HNG_ECW_OOB
 			}
@@ -173,6 +177,7 @@ news_event = {
 				add_ideas = ENG_the_sick_man_of_britannia
 				add_ideas = ENG_incompetent_parliament
 				add_ideas = EU_treaty_of_bern
+				add_ideas = ENG_civil_war_debuffs
 				inherit_technology = ENG
 				load_oob = CNG_ECW_OOB
 			}
@@ -192,6 +197,20 @@ news_event = {
 				transfer_state = 1023
 				change_tag_from = ENG
 			}
+			FRA = {
+				if = {
+					limit = {
+						has_government = purity
+					}
+					country_event = {
+						id = franco_event.7
+						days = 10
+					}
+				}
+				else = {
+					#
+				}
+			}
 		}			
 		custom_effect_tooltip = second_english_civil_war_tooltip
 	}
@@ -199,58 +218,727 @@ news_event = {
 	option = { ## If Masterist England -> ENG
 		name = england_event_option.2.a
 		trigger = {
-			THIS = {
-				tag = ENG
-			}
+			tag = ENG
 		}
 	}
 	option = { ## If Purist England -> JNG
 		name = england_event_option.2.b
 		trigger = {
-			THIS = {
-				tag = JNG
-			}
+			tag = JNG
 		}
 	}
 	option = { ## If Harmonist England -> HNG
 		name = england_event_option.2.c
 		trigger = {
-			THIS = {
-				tag = HNG
-			}
+			tag = HNG
 		}
 	}
 	option = { ## If Undecided England -> CNG
 		name = england_event_option.2.d
 		trigger = {
-			THIS = {
-				tag = CNG
-				has_government = neutral
-			}
+			tag = CNG
 		}
 	}
 	option = { ## If Scotland
 		name = england_event_option.2.e
 		trigger = {
-			THIS = {
-				tag = SCO
-			}
+			tag = SCO
 		}
 	}
 	option = { ## If anyone else
 		name = england_event_option.2.f
 		trigger = {
-			THIS = {
-				NOT = {
-					OR = {
-						tag = SCO
-						tag = ENG
-						tag = CNG
-						tag = HNG
-						tag = JNG
-					}
+			NOT = {
+				OR = {
+					tag = SCO
+					tag = ENG
+					tag = CNG
+					tag = HNG
+					tag = JNG
 				}
 			}
 		}
+	}
+}
+
+country_event = { #Mastery Victory
+	id = england_event.3
+	title = england_event.3.t
+	desc = england_event.3.d
+	
+	fire_only_once = no
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	trigger = {
+		has_global_flag = ECW_start
+		NOT = {
+			country_exists = HNG
+			country_exists = CNG
+			country_exists = JNG
+		}
+		OR = {
+			tag = ENG
+			tag = SCO
+			tag = FRA
+			tag = GER
+		}
+		NOT = {
+			has_country_flag = ECW_end
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = ECW_end
+			set_global_flag = ECW_end
+			country_event = {
+				id = england_event.4
+				days = 10
+			}
+			country_event = {
+				id = england_event.9
+				days = 34
+			}
+			#country_event = {
+			#	id = england_event.10
+			#	days = 230
+			#}
+		}
+	}
+
+	option = { 
+		name = england_event_option.3.a
+		trigger = {
+			tag = ENG
+		}
+	}
+
+	option = { 
+		name = england_event_option.3.b
+		trigger = {
+			tag = SCO
+		}
+	}
+
+	option = { 
+		name = england_event_option.3.c
+		trigger = {
+			tag = GER
+		}
+	}
+
+	option = { 
+		name = england_event_option.3.d
+		trigger = {
+			tag = FRA
+		}
+	}
+}
+country_event = { #add recovery
+	id = england_event.4
+	title = england_event.4.t
+	desc = england_event.4.d
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = england_event_option.4.a
+		add_timed_idea = {
+			idea = ENG_civil_war_recovery
+			days = 450
+		}
+		country_event = {
+			id = england_event.5
+			days = 10
+		}
+	}
+}
+country_event = { #random flavor event
+	id = england_event.5
+	title = england_event.5.t
+	desc = england_event.5.d
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = england_event_option.5.a
+		country_event = {
+			id = england_event.6
+			days = 10
+		}
+	}
+}
+country_event = { #jail for HNG
+	id = england_event.6
+	title = england_event.6.t
+	desc = england_event.6.d
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = england_event_option.6.a
+		add_stability = -0.05
+		add_popularity = {
+			ideology = harmony
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = mastery
+			popularity = 0.05
+		}
+		country_event = {
+			id = england_event.7
+			days = 10
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = england_event_option.6.b
+		add_stability = -0.02
+		add_popularity = {
+			ideology = harmony
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = mastery
+			popularity = 0.02
+		}
+		country_event = {
+			id = england_event.7
+			days = 10
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = england_event_option.6.c
+		add_political_power = 50
+		add_popularity = {
+			ideology = harmony
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = mastery
+			popularity = -0.03
+		}
+		country_event = {
+			id = england_event.7
+			days = 10
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+country_event = { #jail for JNG
+	id = england_event.7
+	title = england_event.7.t
+	desc = england_event.7.d
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = england_event_option.7.a
+		add_stability = -0.05
+		add_popularity = {
+			ideology = purity
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = mastery
+			popularity = 0.05
+		}
+		country_event = {
+			id = england_event.8
+			days = 10
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = england_event_option.7.b
+		add_stability = -0.02
+		add_popularity = {
+			ideology = purity
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = mastery
+			popularity = 0.02
+		}
+		country_event = {
+			id = england_event.8
+			days = 10
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = england_event_option.7.c
+		add_political_power = 50
+		add_popularity = {
+			ideology = purity
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = mastery
+			popularity = -0.03
+		}
+		country_event = {
+			id = england_event.8
+			days = 10
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+country_event = { #jail for CNG
+	id = england_event.8
+	title = england_event.8.t
+	desc = england_event.8.d
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = england_event_option.8.a
+		add_stability = -0.05
+		add_popularity = {
+			ideology = neutral
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = mastery
+			popularity = 0.05
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = england_event_option.8.b
+		add_stability = -0.02
+		add_popularity = {
+			ideology = neutral
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = mastery
+			popularity = 0.02
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = england_event_option.8.c
+		add_political_power = 50
+		add_popularity = {
+			ideology = neutral
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = mastery
+			popularity = -0.03
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = { #
+	id = england_event.9
+	title = england_event.9.t
+	desc = england_event.9.d
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = england_event_option.9.a
+	}
+}
+
+#country_event = { #ARKs
+#	id = england_event.10
+#	title = england_event.10.t
+#	desc = england_event.10.d
+#	
+#	is_triggered_only = yes
+#
+#	option = { 
+#		name = england_event_option.10.a
+#		SCO = {
+#			country_event = scotland_event.3
+#		}
+#	}
+#}
+
+country_event = { #Purity Victory
+	id = england_event.11
+	title = england_event.11.t
+	desc = england_event.11.d
+	
+	fire_only_once = no
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	trigger = {
+		has_global_flag = ECW_start
+		NOT = {
+			country_exists = HNG
+			country_exists = CNG
+			country_exists = ENG
+		}
+		OR = {
+			tag = JNG
+			tag = SCO
+			tag = FRA
+			tag = GER
+		}
+		NOT = {
+			has_country_flag = ECW_end
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = ECW_end
+			set_global_flag = ECW_end
+			country_event = {
+				id = england_event.12
+				days = 10
+			}
+			if = {
+				limit = {
+					FRA = {
+						has_government = purity
+					}
+				}
+				country_event = {
+					id = england_event.14
+					days = 34
+				}
+			}
+		}
+	}
+
+	option = { 
+		name = england_event_option.11.a
+		trigger = {
+			tag = JNG
+		}
+	}
+
+	option = { 
+		name = england_event_option.11.b
+		trigger = {
+			tag = SCO
+		}
+	}
+
+	option = { 
+		name = england_event_option.11.c
+		trigger = {
+			tag = GER
+		}
+	}
+
+	option = { 
+		name = england_event_option.11.d
+		trigger = {
+			tag = FRA
+		}
+	}
+}
+country_event = { #
+	id = england_event.12
+	title = england_event.12.t
+	desc = england_event.12.d
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = england_event_option.12.a
+		add_timed_idea = {
+			idea = ENG_civil_war_recovery
+			days = 450
+		}
+		country_event = {
+			id = england_event.13
+			days = 10
+		}
+	}
+}
+country_event = { #
+	id = england_event.13
+	title = england_event.13.t
+	desc = england_event.13.d
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = england_event_option.13.a
+		country_event = {
+			id = england_event.15
+			days = 22
+		}
+	}
+}
+country_event = { #
+	id = england_event.14
+	title = england_event.14.t
+	desc = england_event.14.d
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = england_event_option.14.a
+		FRA = {
+			country_event = franco_event.8
+		}
+	}
+}
+country_event = { #jail for HNG
+	id = england_event.15
+	title = england_event.15.t
+	desc = england_event.15.d
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = england_event_option.15.a
+		add_stability = -0.05
+		add_popularity = {
+			ideology = harmony
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = purity
+			popularity = 0.05
+		}
+		country_event = {
+			id = england_event.16
+			days = 10
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = england_event_option.15.b
+		add_stability = -0.02
+		add_popularity = {
+			ideology = harmony
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = purity
+			popularity = 0.02
+		}
+		country_event = {
+			id = england_event.16
+			days = 10
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = england_event_option.15.c
+		add_political_power = 50
+		add_popularity = {
+			ideology = harmony
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = purity
+			popularity = -0.03
+		}
+		country_event = {
+			id = england_event.16
+			days = 10
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+country_event = { #jail for ENG
+	id = england_event.16
+	title = england_event.16.t
+	desc = england_event.16.d
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = england_event_option.16.a
+		add_stability = -0.05
+		add_popularity = {
+			ideology = mastery
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = purity
+			popularity = 0.05
+		}
+		country_event = {
+			id = england_event.17
+			days = 10
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = england_event_option.16.b
+		add_stability = -0.02
+		add_popularity = {
+			ideology = mastery
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = purity
+			popularity = 0.02
+		}
+		country_event = {
+			id = england_event.17
+			days = 10
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = england_event_option.16.c
+		add_political_power = 50
+		add_popularity = {
+			ideology = mastery
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = purity
+			popularity = -0.03
+		}
+		country_event = {
+			id = england_event.17
+			days = 10
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+country_event = { #jail for CNG #actually dies
+	id = england_event.17
+	title = england_event.17.t
+	desc = england_event.17.d
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = england_event_option.17.a
+		hidden_effect = {
+			country_event = {
+				id = england_event.18
+				days = 35
+			}
+		}
+	}
+}
+country_event = { #
+	id = england_event.18
+	title = england_event.18.t
+	desc = england_event.18.d
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = england_event_option.18.a
+	}
+}
+country_event = { #random flavor event
+	id = england_event.19
+	title = england_event.19.t
+	desc = england_event.19.d
+
+	fire_only_once = yes
+
+	trigger = {
+		has_global_flag = ECW_end
+		tag = JNG
+	}
+	
+	mean_time_to_happen = {
+		days = 300
+	}
+
+	option = { 
+		name = england_event_option.19.a
+	}
+}
+country_event = { #JNG without FRA
+	id = england_event.20
+	title = england_event.20.t
+	desc = england_event.20.d
+
+	fire_only_once = yes
+
+	trigger = {
+		has_global_flag = ECW_end
+		tag = JNG
+		FRA = {
+			has_government = mastery
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+
+	option = { 
+		name = england_event_option.20.a
+		hidden_effect = {
+			SCO = {
+				country_event = {
+					id = scotland_event.9
+					days = 14
+				}
+			}
+		}
+	}
+}
+country_event = { #
+	id = england_event.21
+	title = england_event.21.t
+	desc = england_event.21.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = england_event_option.21.a
+		add_war_support	= 0.2
+		add_political_power = 100
+	}
+}
+country_event = { #JNG defeats SCO without FRA
+	id = england_event.22
+	title = england_event.22.t
+	desc = england_event.22.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = england_event_option.22.a
 	}
 }
