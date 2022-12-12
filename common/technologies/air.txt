@@ -46,10 +46,6 @@ technologies = {
 			cas
 		}
 
-		sub_technologies = {
-			cv_cas_1
-		}
-
 		path = {
 			leads_to_tech = cas_2
 			research_cost_coeff = 1
@@ -73,43 +69,6 @@ technologies = {
 		}
 	}
 
-	cv_cas_1 = {
-		enable_equipments = {
-			cv_cas_equipment_1
-		}
-
-		enable_subunits = {
-			cv_cas
-		}
-
-		research_cost = 1
-		start_year = 2200
-
-		ai_will_do = {
-			factor = 1.5
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = cas_1
-					is_researching_technology = cas_1
-				}
-			}
-			modifier = {
-				factor = 3
-				has_navy_size = { type = carrier size > 3 }# if nation has several carriers, more likely
-			}
-			modifier = {
-				factor = 0
-				has_navy_size = { type = carrier size < 1 }# if nation has no carriers, don't bother
-			}
-		}
-
-		categories = {
-			be_air_tech
-			be_cas_tech
-		}
-	}
-
 	fighter_1 = {
 		enable_equipments = {
 			fighter_equipment_1
@@ -124,10 +83,6 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		sub_technologies = {
-			cv_fighter_1
-		}
-
 		research_cost = 1
 		start_year = 2200
 
@@ -138,44 +93,6 @@ technologies = {
 
 		ai_will_do = {
 			factor = 1
-		}
-
-		categories = {
-			be_air_tech
-			be_fighter_tech
-		}
-	}
-
-	cv_fighter_1 = {
-		enable_equipments = {
-			cv_fighter_equipment_1
-		}
-
-		enable_subunits = {
-			cv_fighter
-		}
-
-		research_cost = 1
-		start_year = 2200
-
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = fighter_1
-					is_researching_technology = fighter_1
-				}
-			}
-			modifier = {
-				factor = 2.5
-				has_navy_size = { type = carrier size > 3 }# if nation has carriers, more likely
-			}
-			modifier = {
-				factor = 0
-				has_navy_size = { type = carrier size < 1 }# if nation has no carriers, don't bother
-			}
 		}
 
 		categories = {
@@ -221,10 +138,6 @@ technologies = {
 			cas_equipment_2
 		}
 
-		sub_technologies = {
-			cv_cas_2
-		}
-
 		path = {
 			leads_to_tech = cas_3
 			research_cost_coeff = 1
@@ -248,46 +161,9 @@ technologies = {
 		}
 	}
 
-	cv_cas_2 = {
-		enable_equipments = {
-			cv_cas_equipment_2
-		}
-
-		research_cost = 1
-		start_year = 2200
-
-		ai_will_do = {
-			factor = 1.5
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = cas_1
-					is_researching_technology = cas_1
-				}
-			}
-			modifier = {
-				factor = 3
-				has_navy_size = { type = carrier size > 3 }# if nation has several carriers, more likely
-			}
-			modifier = {
-				factor = 0
-				has_navy_size = { type = carrier size < 1 }# if nation has no carriers, don't bother
-			}
-		}
-
-		categories = {
-			be_air_tech
-			be_cas_tech
-		}
-	}
-
 	fighter_2 = {
 		enable_equipments = {
 			fighter_equipment_2
-		}
-
-		sub_technologies = {
-			cv_fighter_2
 		}
 
 		path = {
@@ -305,39 +181,6 @@ technologies = {
 
 		ai_will_do = {
 			factor = 1
-		}
-
-		categories = {
-			be_air_tech
-			be_fighter_tech
-		}
-	}
-
-	cv_fighter_2 = {
-		enable_equipments = {
-			cv_fighter_equipment_2
-		}
-
-		research_cost = 1
-		start_year = 2200
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = fighter_2
-					is_researching_technology = fighter_2
-				}
-			}
-			modifier = {
-				factor = 2.5
-				has_navy_size = { type = carrier size > 3 }# if nation has carriers, more likely
-			}
-			modifier = {
-				factor = 0
-				has_navy_size = { type = carrier size < 1 }# if nation has no carriers, don't bother
-			}
 		}
 
 		categories = {
@@ -379,10 +222,6 @@ technologies = {
 			cas_equipment_3
 		}
 
-		sub_technologies = {
-			cv_cas_3
-		}
-
 		research_cost = 1
 		start_year = 2200
 
@@ -401,46 +240,9 @@ technologies = {
 		}
 	}
 
-	cv_cas_3 = {
-		enable_equipments = {
-			cv_cas_equipment_3
-		}
-
-		research_cost = 1
-		start_year = 2200
-
-		ai_will_do = {
-			factor = 1.5
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = cas_1
-					is_researching_technology = cas_1
-				}
-			}
-			modifier = {
-				factor = 3
-				has_navy_size = { type = carrier size > 3 }# if nation has several carriers, more likely
-			}
-			modifier = {
-				factor = 0
-				has_navy_size = { type = carrier size < 1 }# if nation has no carriers, don't bother
-			}
-		}
-
-		categories = {
-			be_air_tech
-			be_cas_tech
-		}
-	}
-
 	fighter_3 = {
 		enable_equipments = {
 			fighter_equipment_3
-		}
-
-		sub_technologies = {
-			cv_fighter_3
 		}
 
 		research_cost = 1
@@ -453,44 +255,6 @@ technologies = {
 
 		ai_will_do = {
 			factor = 1
-		}
-
-		categories = {
-			be_air_tech
-			be_fighter_tech
-		}
-	}
-
-	cv_fighter_3 = {
-		enable_equipments = {
-			cv_fighter_equipment_3
-		}
-
-		path = {
-			leads_to_tech = cv_fighter_3
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-		start_year = 2200
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = fighter_3
-					is_researching_technology = fighter_3
-				}
-			}
-			modifier = {
-				factor = 2.5
-				has_navy_size = { type = carrier size > 3 }# if nation has carriers, more likely
-			}
-			modifier = {
-				factor = 0
-				has_navy_size = { type = carrier size < 1 }# if nation has no carriers, don't bother
-			}
 		}
 
 		categories = {
