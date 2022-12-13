@@ -1,18 +1,11 @@
 sub_units = {
-	### NOTE ON STAT CALCULATION
-	### For single equipment units:
-	### unit stat mod * eq_stat + eq_stat = total
-	### For multi equipment units:
-	### sum all eq_stat + sum*unit stat mod = total
-
-	# BASIC INFANTRY
 	infantry = {
 		sprite = infantry
 		map_icon_category = infantry
-		
-		priority = 1000
-		ai_priority = 200
-		active = yes
+		group = infantry
+		priority = 800
+		ai_priority = 0
+		active = no
 
 		type = {
 			infantry
@@ -24,8 +17,6 @@ sub_units = {
 			be_category_army
 		}
 		
-		group = infantry
-		
 		combat_width = 2
 		
 		#Size Definitions
@@ -36,32 +27,27 @@ sub_units = {
 
 		#Misc Abilities
 		training_time = 60
-		suppression = 1.5
+		suppression = 1
 		weight = 0.5
-		
-		transport = gun_equipment
 
-		supply_consumption = 0.07
+		supply_consumption = 0.06
 	
 		need = {
 			gun_equipment = 100
 		}
 	}
-	
-	# SHOCK TROOPS -> Better Infantry, but more expensive
+
 	shock_troops = {
 		sprite = infantry
 		map_icon_category = infantry
-		
+		group = infantry
 		priority = 1000
 		ai_priority = 200
-		active = yes
+		active = no
 
 		type = {
 			infantry
 		}
-		
-		group = infantry
 		
 		categories = {
 			be_category_front_line
@@ -79,10 +65,8 @@ sub_units = {
 
 		#Misc Abilities
 		training_time = 90
-		suppression = 1.5
+		suppression = 1
 		weight = 0.5
-		
-		transport = infantry_eq
 		
 		supply_consumption = 0.09
 	
@@ -92,12 +76,10 @@ sub_units = {
 		}
 	}
 
-	#DEBUG
-
 	fake_intel_unit = {
 		sprite = infantry
 		map_icon_category = infantry
-		
+		group = infantry
 		priority = 0
 		ai_priority = 0
 		active = no
@@ -105,8 +87,6 @@ sub_units = {
 		type = {
 			infantry
 		}
-		
-		group = infantry
 		
 		categories = {
 			be_category_front_line
