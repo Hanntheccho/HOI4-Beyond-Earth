@@ -18,17 +18,17 @@ guiTypes = {
 		name = "navalregionview"
 		
 		position = { x=-438 y=-290}
-		show_position = { x=15 y =-290 }
+		show_position = { x=15 y =-170 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
 		orientation = lower_left
-		size = { width=438 height=270 }
+		size = { width=444 height=160 }
 		clipping = no
 		
 		background = {
 			name = "Background"		
-			quadTextureSprite ="GFX_naval_region_window_bg"
+			quadTextureSprite ="GFX_tiled_bg_black"
 			position = {
 				x = -4
 				y = -4
@@ -37,7 +37,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "region_name_extra"
-			position = {x=18 y=12 }
+			position = {x=18 y=8 }
 			font = "Beyond"
 			text = "///// ///////  //////////"
 			maxWidth = 500
@@ -48,7 +48,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "Background_3"
-			size = { width=100%% height=100%% } 
+			size = { width=438 height=154 }
 
 			background = {
 				name = "Background"
@@ -60,7 +60,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "region_name"
-			position = {x=20 y=22 }
+			position = {x=20 y=18 }
 			font = "Beyondsmall"
 			text = "-------------------------------"
 			maxWidth = 390
@@ -71,7 +71,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "close_button"
-			position = { x = -51 y = -34 }
+			position = { x = -57 y = -34 }
 			quadTextureSprite ="GFX_exit_button"
 			buttonFont = "Main_14_black"
 			shortcut = "ESCAPE"
@@ -81,29 +81,9 @@ guiTypes = {
 			scale = 0.7
 		}
 
-		iconType = {
-			name = "naval_access_word"
-			spriteType = "GFX_naval_access_word"
-			position = {x=32 y=222}
-			orientation = "UPPER_LEFT"
-		}
-		iconType = {
-			name = "naval_words"
-			spriteType = "GFX_naval_words"
-			position = {x=5 y=52}
-			orientation = "UPPER_LEFT"
-		}
-		
-		iconType = {
-			name = "ship_icon"
-			spriteType = "GFX_naval_region_window_ship_icon"
-			position = {x=10000 y=65}
-			orientation = "UPPER_LEFT"
-		}
-
 		instantTextboxType = {
 			name = "ship_text"
-			position = {x=65 y=67}
+			position = {x=10000 y=67}
 			font = "Focusfont"
 			text = "123"
 			fixedsize = yes
@@ -112,17 +92,10 @@ guiTypes = {
 			format = left
 			tooltip = "NUMBER_OF_ALLY_SHIPS"
 		}
-			
-		iconType = {
-			name = "plane_icon"
-			spriteType = "GFX_naval_region_window_plane_icon"
-			position = {x=10000 y=98}
-			orientation = "UPPER_LEFT"
-		}
 		
 		instantTextboxType = {
 			name = "plane_text"
-			position = {x=163 y=105}
+			position = {x=10000 y=105}
 			font = "Focusfont"
 			text = "20%"
 			fixedsize = yes
@@ -132,14 +105,6 @@ guiTypes = {
 			tooltip = "EFFECT_OF_OUR_AIR_SUPERIORITY_ON_NAVAL_SUPREMACY"
 		}
 
-		iconType = {
-			name = "mine_icon"
-			spriteType = "GFX_naval_region_window_mine_icon"
-			position = {x=10000 y=98}
-			orientation = "UPPER_LEFT"
-		}
-
-		
 		instantTextboxType = {
 			name = "mine_text"
 			position = {x=10000 y=89}
@@ -152,17 +117,9 @@ guiTypes = {
 			tooltip = "EFFECT_OF_OUR_MINES_ON_NAVAL_SUPREMACY"
 		}
 
-		
-		iconType = {
-			name = "enemy_ship_icon"
-			spriteType = "GFX_naval_region_window_enemy_ship_icon"
-			position = {x=10000 y=65}
-			orientation = "UPPER_LEFT"
-		}
-
 		instantTextboxType = {
 			name = "enemy_ship_text"
-			position = {x=270 y=67}
+			position = {x=10000 y=67}
 			font = "Focusfont"
 			text = "24-100"
 			fixedsize = yes
@@ -171,17 +128,10 @@ guiTypes = {
 			format = right
 			tooltip = "NUMBER_OF_ENEMY_SHIPS"
 		}
-			
-		iconType = {
-			name = "enemy_plane_icon"
-			spriteType = "GFX_naval_region_window_enemy_plane_icon"
-			position = {x=10000 y=98}
-			orientation = "UPPER_LEFT"
-		}
 
 		instantTextboxType = {
 			name = "enemy_plane_text"
-			position = {x=170 y=105}
+			position = {x=10000 y=105}
 			font = "Focusfont"
 			text = "20%"
 			fixedsize = yes
@@ -189,13 +139,6 @@ guiTypes = {
 			maxHeight = 40
 			format = right
 			tooltip = "EFFECT_OF_ENEMY_AIR_SUPERIORITY_ON_NAVAL_SUPREMACY"
-		}
-
-		iconType = {
-			name = "enemy_mine_icon"
-			spriteType = "GFX_naval_region_window_enemy_mine_icon"
-			position = {x=10000 y=98}
-			orientation = "UPPER_LEFT"
 		}
 		
 		instantTextboxType = {
@@ -213,22 +156,15 @@ guiTypes = {
 		iconType = {
 			name = "progress_disabled"
 			spriteType = "GFX_strategicnavy_progress_disabled"
-			position = {x=126 y=68}
+			position = {x=10000 y=68}
 			tooltip = "NO_NAVAL_SUPREMACY_INFO"
 		}
 		
 		iconType = {
 			name = "progress"
 			spriteType = "GFX_strategicanavy_progress"
-			position = {x=126 y=68}
+			position = {x=13 y=54}
 		}
-		
-		iconType = { 
-			name = "progress_frame"
-			position = {x=122 y=64}
-			spriteType = "GFX_strategicnavy_progress_frame"
-			alwaystransparent = yes
-		}	
 		
 		containerWindowType = {
 			name = "state_extra_bg"
@@ -237,7 +173,7 @@ guiTypes = {
 			background = {
 				name = "division_name_frame_bg"
 				quadTextureSprite = "GFX_generic_background"
-				position = { x = 9 y = 135 }
+				position = { x = 9 y = 65 }
 				alwaystransparent = yes
 			}
 		}
@@ -249,7 +185,7 @@ guiTypes = {
 			background = {
 				name = "division_name_frame_bg2"
 				quadTextureSprite = "GFX_generic_background"
-				position = { x = 9 y = 135 }
+				position = { x = 9 y = 65 }
 				alwaystransparent = yes
 			}
 		}
@@ -261,7 +197,7 @@ guiTypes = {
 			background = {
 				name = "division_name_frame_bg3"
 				quadTextureSprite = "GFX_generic_background"
-				position = { x = 9 y = 135 }
+				position = { x = 9 y = 65 }
 				alwaystransparent = yes
 			}
 		}
@@ -273,14 +209,14 @@ guiTypes = {
 			background = {
 				name = "division_name_frame_bg4"
 				quadTextureSprite = "GFX_generic_background"
-				position = { x = 9 y = 135 }
+				position = { x = 9 y = 65 }
 				alwaystransparent = yes
 			}
 		}
 
 		iconType = {
 			name = "terrain_picture"
-			position = { x = 12 y = 138 }
+			position = { x = 12 y = 68 }
 			spriteType = "GFX_terrain_default"
 			Orientation = "UPPER_LEFT"
 		}
@@ -296,8 +232,8 @@ guiTypes = {
 		}
 			
 		containerWindowType = {
-			name = "naval_access"
-			position = { x=20 y=220}
+			name = "naval_access" #DLC thing
+			position = { x=10000 y=220}
 		
 			buttonType = {
 				name = "naval_access_rule_allowed"
