@@ -1,4 +1,4 @@
-﻿focus_tree = {
+﻿focus_tree = { #TO BE REWORKED!
 	id = generic_focus
 
 	country = {
@@ -8,1387 +8,1387 @@
 
 	reset_on_civilwar = no
 
-	##Political Tree
-	focus = {
-		id = generic_23rd_politics
-		icon = GFX_goal_generic_23rd_politics
-
-		available = {
-			NOT = {
-				tag = ADU
-			}
-		}
-
-		x = 17
-		y = 0
-		cost = 10 # 10
-		completion_reward = {
-			#
-		}
-		ai_will_do = {
-			factor = 1000
-		}
-	}
-
-	#IGNORE THIS ONE, COSMETIC
+#	##Political Tree
 #	focus = {
-#		id = generic_end_of_the_world
-#		icon = GFX_goal_unknown
+#		id = generic_23rd_politics
+#		icon = GFX_goal_generic_23rd_politics
 #
 #		available = {
-#			always = no
-#		}
-#
-#		prerequisite = {
-#			focus = generic_23rd_politics
+#			NOT = {
+#				tag = ADU
+#			}
 #		}
 #
 #		x = 17
-#		y = 6
+#		y = 0
 #		cost = 10 # 10
 #		completion_reward = {
 #			#
 #		}
 #		ai_will_do = {
-#			factor = 0
+#			factor = 1000
 #		}
 #	}
-
-	#FROM HERE EVERYTHING STARTS (IS A TREE DUH)
-
-	#POLITIC
-	focus = {
-		id = generic_political_scheme
-		icon = GFX_goal_generic_political_scheme
-
-
-
-		x = 2
-		y = 1
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_23rd_politics
-		}
-		completion_reward = {
-			add_political_power = 100
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = generic_stability_boost
-		icon = GFX_goal_generic_stability_boost
-
-
-
-		x = 0
-		y = 2
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_political_scheme
-		}
-		completion_reward = {
-			add_stability = 0.2
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_stability_boost_better
-		icon = GFX_goal_generic_stability_boost_better
-
-
-
-		x = 0
-		y = 3
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_stability_boost
-		}
-		completion_reward = {
-			add_stability = 0.2
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = generic_war_support
-		icon = GFX_goal_generic_war_support
-
-
-
-		x = 4
-		y = 2
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_political_scheme
-		}
-		completion_reward = {
-			add_war_support = 0.2
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_war_support_boost
-		icon = GFX_goal_generic_war_support_boost
-
-
-
-		x = 4
-		y = 3
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_war_support
-		}
-		completion_reward = {
-			add_war_support = 0.2
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = generic_cultural_revolution
-		icon = GFX_goal_generic_cultural_revolution
-
-
-
-		x = 2
-		y = 2
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_political_scheme
-		}
-		completion_reward = {
-			add_political_power = 100
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_cultural_revolution_boost
-		icon = GFX_goal_generic_cultural_revolution_boost
-
-
-
-		x = 2
-		y = 3
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_cultural_revolution
-		}
-		completion_reward = {
-			add_political_power = 100
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = generic_grand_political_scheme
-		icon = GFX_goal_generic_grand_political_scheme
-
-
-
-		x = 2
-		y = 4
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_cultural_revolution_boost
-		}
-		completion_reward = {
-			add_political_power = 200
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#INDUSTRIAL
-	focus = {
-		id = generic_industrial_effort
-		icon = GFX_goal_generic_industrial_effort
-
-
-
-		x = 8
-		y = 1
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_23rd_politics
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = industry
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = generic_resource_extraction
-		icon = GFX_goal_generic_resource_extraction
-
-
-
-		x = 6
-		y = 2
-		cost = 10 # 10
-		prerequisite = {
-			focus = generic_industrial_effort
-		}
-		completion_reward = {
-			random_owned_state = {
-				add_resource = {
-					type = oil
-					amount = 10
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_resource_extraction_boost
-		icon = GFX_goal_generic_resource_extraction_boost
-
-		x = 6
-		y = 3
-		cost = 10 # 10
-		prerequisite = {
-			focus = generic_resource_extraction
-		}
-		completion_reward = {
-			random_owned_state = {
-				add_resource = {
-					type = oil
-					amount = 10
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = generic_minor_civilian_effort
-		icon = GFX_goal_generic_minor_civilian_effort
-
-		x = 8
-		y = 2
-		cost = 10 # 6
-		prerequisite = {
-			focus = generic_industrial_effort
-		}
-		completion_reward = {
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_substantial_civilian_effort
-		icon = GFX_goal_generic_substantial_civilian_effort
-
-		x = 8
-		y = 3
-		cost = 10 # 6
-		prerequisite = {
-			focus = generic_minor_civilian_effort
-		}
-		available = {
-			NOT = { has_idea = agrarian_stage }
-		}
-		completion_reward = {
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_great_industrial_subsidy
-		icon = GFX_goal_generic_great_industrial_subsidy
-
-		x = 8
-		y = 4
-		cost = 10 # 6
-		prerequisite = {
-			focus = generic_substantial_civilian_effort
-		}
-		available = {
-			NOT = { has_idea = agrarian_stage }
-			NOT = { has_idea = developing_stage }
-		}
-		completion_reward = {
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 3
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 3
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 3
-					instant_build = yes
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_industrial_subsidies
-		icon = GFX_goal_generic_industrial_subsidies
-
-		x = 10
-		y = 2
-		cost = 10 # 10
-		prerequisite = {
-			focus = generic_industrial_effort
-		}
-		completion_reward = {
-			custom_effect_tooltip = generic_great_industrial_subsidy_tt
-			add_to_variable = {
-				industrial_power = 200
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_industrial_subsidies_boost
-		icon = GFX_goal_generic_industrial_subsidies_boost
-
-		x = 10
-		y = 3
-		cost = 10 # 10
-		prerequisite = {
-			focus = generic_industrial_subsidies
-		}
-		completion_reward = {
-			custom_effect_tooltip = generic_great_industrial_subsidy_tt
-			add_to_variable = {
-				industrial_power = 200
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#SCIENCE MR WHITE!
-	focus = {
-		id = generic_scientific_reform
-		icon = GFX_goal_generic_scientific_reform
-		
-		x = 14
-		y = 1
-		cost = 10 # 8
-		prerequisite = {
-			focus = generic_23rd_politics
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = industry
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = generic_wonders_research
-		icon = GFX_goal_generic_wonders_research
-		
-		x = 16
-		y = 2
-		cost = 10 # 8
-		prerequisite = {
-			focus = generic_scientific_reform
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = be_wonders
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_wonders_research_boost
-		icon = GFX_goal_generic_wonders_research_boost
-		
-		x = 16
-		y = 3
-		cost = 10 # 8
-		prerequisite = {
-			focus = generic_wonders_research
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = be_wonders
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = generic_labs_modernization
-		icon = GFX_goal_generic_labs_modernization
-		
-		x = 12
-		y = 2
-		cost = 10 # 8
-		available = {
-			NOT = { has_idea = agrarian_stage }
-		}
-		prerequisite = {
-			focus = generic_scientific_reform
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = industry
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_labs_expansion
-		icon = GFX_goal_generic_labs_expansion
-
-		x = 12
-		y = 3
-		cost = 10 # 8
-		available = {
-			NOT = { has_idea = agrarian_stage }
-			NOT = { has_idea = developing_stage }
-		}
-		prerequisite = {
-			focus = generic_labs_modernization
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = industry
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_breakthroughs_of_tomorrow
-		icon = GFX_goal_generic_breakthroughs_of_tomorrow
-
-		x = 14
-		y = 4
-		cost = 10 # 8
-		available = {
-			NOT = { has_idea = agrarian_stage }
-			NOT = { has_idea = developing_stage }
-		}
-		prerequisite = {
-			focus = generic_satellite_expansion_boost
-		}
-		completion_reward = {
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = spaceship_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = spaceship_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = spaceship_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_satellite_expansion
-		icon = GFX_goal_generic_satellite_expansion
-
-		x = 14
-		y = 2
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_scientific_reform
-		}
-		completion_reward = {
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = spaceship_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = spaceship_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = spaceship_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_satellite_expansion_boost
-		icon = GFX_goal_generic_satellite_expansion_boost
-
-		x = 14
-		y = 3
-		cost = 10 # 8
-		available = {
-			NOT = { has_idea = agrarian_stage }
-		}
-		prerequisite = {
-			focus = generic_satellite_expansion
-		}
-		completion_reward = {
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = spaceship_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = spaceship_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = spaceship_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#LAND
-	focus = {
-		id = generic_land_forces
-		icon = GFX_goal_generic_land_forces
-
-		x = 20
-		y = 1
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_23rd_politics
-		}
-		completion_reward = {
-			army_experience = 100
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_military_industry
-		icon = GFX_goal_generic_military_industry
-
-		x = 20
-		y = 2
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_land_forces
-		}
-		completion_reward = {
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_military_industry_boost
-		icon = GFX_goal_generic_military_industry_boost
-
-		x = 20
-		y = 3
-		cost = 10 # 5
-		available = {
-			NOT = { has_idea = agrarian_stage }
-		}
-		prerequisite = {
-			focus = generic_military_industry
-		}
-		completion_reward = {
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_grand_military_industry
-		icon = GFX_goal_generic_grand_military_industry
-
-		x = 20
-		y = 4
-		cost = 10 # 5
-		available = {
-			NOT = { has_idea = agrarian_stage }
-			NOT = { has_idea = developing_stage }
-		}
-		prerequisite = {
-			focus = generic_military_industry_boost
-		}
-		completion_reward = {
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_land_tech
-		icon = GFX_goal_generic_land_tech
-
-		x = 18
-		y = 2
-		cost = 10 # 6
-		prerequisite = {
-			focus = generic_land_forces
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = be_land_tech
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_land_tech_boost
-		icon = GFX_goal_generic_land_tech_boost
-
-		x = 18
-		y = 3
-		cost = 10 # 6
-		prerequisite = {
-			focus = generic_land_tech
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = be_land_tech
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_army_training
-		icon = GFX_goal_generic_army_training
-
-		x = 22
-		y = 2
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_land_forces
-		}
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 2
-				category = be_land_doctrine
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_army_training_boost
-		icon = GFX_goal_generic_army_training_boost
-
-		x = 22
-		y = 3
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_army_training
-		}
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 2
-				category = be_land_doctrine
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#AIR
-	focus = {
-		id = generic_air_forces
-		icon = GFX_goal_generic_air_forces
-
-		x = 26
-		y = 1
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_23rd_politics
-		}
-		completion_reward = {
-			air_experience = 100
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_fighter_models
-		icon = GFX_goal_generic_fighter_models
-
-		x = 24
-		y = 2
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_air_forces
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = be_air_tech
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_cas_models
-		icon = GFX_goal_generic_cas_models
-
-		x = 24
-		y = 3
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_fighter_models
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = be_air_tech
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_air_training
-		icon = GFX_goal_generic_air_training
-
-		x = 28
-		y = 2
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_air_forces
-		}
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 2
-				category = be_air_doctrine
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_air_training_boost
-		icon = GFX_goal_generic_air_training_boost
-
-		x = 28
-		y = 3
-		cost = 10 # 10
-		prerequisite = {
-			focus = generic_air_training
-		}
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 2
-				category = be_air_doctrine
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_air_base_foundation
-		icon = GFX_goal_generic_air_base_foundation
-
-		x = 26
-		y = 2
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_air_forces
-		}
-		completion_reward = {
-			random_owned_state = {
-				add_building_construction = {
-					type = air_base
-					level = 5
-					instant_build = yes
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_air_base_expansion
-		icon = GFX_goal_generic_air_base_expansion
-
-		x = 26
-		y = 3
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_air_base_foundation
-		}
-		completion_reward = {
-			random_owned_state = {
-				add_building_construction = {
-					type = air_base
-					level = 3
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_building_construction = {
-					type = air_base
-					level = 3
-					instant_build = yes
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_gran_air_shield
-		icon = GFX_goal_generic_gran_air_shield
-
-		x = 26
-		y = 4
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_air_base_expansion
-		}
-		completion_reward = {
-			random_owned_state = {
-				add_building_construction = {
-					type = anti_air_building
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_building_construction = {
-					type = anti_air_building
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_building_construction = {
-					type = anti_air_building
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_building_construction = {
-					type = anti_air_building
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_building_construction = {
-					type = anti_air_building
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#NAVAL  #NEED TO FIX SOMETIMES NO DOCKYARDS SPAWNING!
-	focus = {
-		id = generic_naval_forces
-		icon = GFX_goal_generic_naval_forces
-		
-		x = 32
-		y = 1
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_23rd_politics
-		}
-		available = {
-			any_owned_state = {
-				is_coastal = yes
-			}
-		}
-		completion_reward = {
-			navy_experience = 100
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_coastal_defense
-		icon = GFX_goal_generic_coastal_defense
-
-		available = {
-			any_owned_state = {
-				is_coastal = yes
-			}
-		}
-		x = 30
-		y = 2
-		cost = 10 # 8
-		prerequisite = {
-			focus = generic_naval_forces
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = be_naval_tech
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_coastal_defense_improved
-		icon = GFX_goal_generic_coastal_defense_improved
-
-		available = {
-			any_owned_state = {
-				is_coastal = yes
-			}
-		}
-		x = 30
-		y = 3
-		cost = 10 # 8
-		prerequisite = {
-			focus = generic_coastal_defense
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = be_naval_tech
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_drydocks
-		icon = GFX_goal_generic_drydocks
-
-		available = {
-			any_owned_state = {
-				is_coastal = yes
-			}
-		}
-		x = 32
-		y = 2
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_naval_forces
-		}
-		completion_reward = {
-			random_owned_state = {
-				if = {
-					limit = {
-						is_coastal = yes
-					}
-					add_building_construction = {
-						type = dockyard
-						level = 3
-						instant_build = yes
-					}
-					add_extra_state_shared_building_slots = 3
-				}
-				else = {
-					custom_effect_tooltip = no_coastal_states
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_drydocks_improved
-		icon = GFX_goal_generic_drydocks_improved
-
-		available = {
-			any_owned_state = {
-				is_coastal = yes
-			}
-		}
-		x = 32
-		y = 3
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_drydocks
-		}
-		completion_reward = {
-			random_owned_state = {
-				if = {
-					limit = {
-						is_coastal = yes
-					}
-					add_building_construction = {
-						type = dockyard
-						level = 3
-						instant_build = yes
-					}
-					add_extra_state_shared_building_slots = 3
-				}
-				else = {
-					custom_effect_tooltip = no_coastal_states
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = generic_naval_training
-		icon = GFX_goal_generic_naval_training
-		
-		available = {
-			any_owned_state = {
-				is_coastal = yes
-			}
-		}
-		x = 34
-		y = 2
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_naval_forces
-		}
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 2
-				category = be_naval_doctrine
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		id = generic_naval_training_boost
-		icon = GFX_goal_generic_naval_training_boost
-		
-		available = {
-			any_owned_state = {
-				is_coastal = yes
-			}
-		}
-		x = 34
-		y = 3
-		cost = 10 # 5
-		prerequisite = {
-			focus = generic_naval_training
-		}
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 2
-				category = be_naval_doctrine
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = generic_modular_designs
-		icon = GFX_goal_generic_modular_designs
-		
-		available = {
-			any_owned_state = {
-				is_coastal = yes
-			}
-		}
-		x = 32
-		y = 4
-		cost = 10 # 10
-		prerequisite = {
-			focus = generic_drydocks_improved
-		}
-		completion_reward = {
-			navy_experience = 100
-			random_owned_state = {
-				if = {
-					limit = {
-						is_coastal = yes
-					}
-					add_building_construction = {
-						type = dockyard
-						level = 5
-						instant_build = yes
-					}
-					add_extra_state_shared_building_slots = 5
-				}
-				else = {
-					custom_effect_tooltip = no_coastal_states
-				}
-			}
-			#ADD HERE A NAVAL DIVISION SPAWN, MAYBE SAME FOR LAND? (SPAWNING A TANK?)
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
+#
+#	#IGNORE THIS ONE, COSMETIC
+##	focus = {
+##		id = generic_end_of_the_world
+##		icon = GFX_goal_unknown
+##
+##		available = {
+##			always = no
+##		}
+##
+##		prerequisite = {
+##			focus = generic_23rd_politics
+##		}
+##
+##		x = 17
+##		y = 6
+##		cost = 10 # 10
+##		completion_reward = {
+##			#
+##		}
+##		ai_will_do = {
+##			factor = 0
+##		}
+##	}
+#
+#	#FROM HERE EVERYTHING STARTS (IS A TREE DUH)
+#
+#	#POLITIC
+#	focus = {
+#		id = generic_political_scheme
+#		icon = GFX_goal_generic_political_scheme
+#
+#
+#
+#		x = 2
+#		y = 1
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_23rd_politics
+#		}
+#		completion_reward = {
+#			add_political_power = 100
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = generic_stability_boost
+#		icon = GFX_goal_generic_stability_boost
+#
+#
+#
+#		x = 0
+#		y = 2
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_political_scheme
+#		}
+#		completion_reward = {
+#			add_stability = 0.2
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_stability_boost_better
+#		icon = GFX_goal_generic_stability_boost_better
+#
+#
+#
+#		x = 0
+#		y = 3
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_stability_boost
+#		}
+#		completion_reward = {
+#			add_stability = 0.2
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = generic_war_support
+#		icon = GFX_goal_generic_war_support
+#
+#
+#
+#		x = 4
+#		y = 2
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_political_scheme
+#		}
+#		completion_reward = {
+#			add_war_support = 0.2
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_war_support_boost
+#		icon = GFX_goal_generic_war_support_boost
+#
+#
+#
+#		x = 4
+#		y = 3
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_war_support
+#		}
+#		completion_reward = {
+#			add_war_support = 0.2
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = generic_cultural_revolution
+#		icon = GFX_goal_generic_cultural_revolution
+#
+#
+#
+#		x = 2
+#		y = 2
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_political_scheme
+#		}
+#		completion_reward = {
+#			add_political_power = 100
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_cultural_revolution_boost
+#		icon = GFX_goal_generic_cultural_revolution_boost
+#
+#
+#
+#		x = 2
+#		y = 3
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_cultural_revolution
+#		}
+#		completion_reward = {
+#			add_political_power = 100
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = generic_grand_political_scheme
+#		icon = GFX_goal_generic_grand_political_scheme
+#
+#
+#
+#		x = 2
+#		y = 4
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_cultural_revolution_boost
+#		}
+#		completion_reward = {
+#			add_political_power = 200
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	#INDUSTRIAL
+#	focus = {
+#		id = generic_industrial_effort
+#		icon = GFX_goal_generic_industrial_effort
+#
+#
+#
+#		x = 8
+#		y = 1
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_23rd_politics
+#		}
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 1
+#				uses = 2
+#				category = industry
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = generic_resource_extraction
+#		icon = GFX_goal_generic_resource_extraction
+#
+#
+#
+#		x = 6
+#		y = 2
+#		cost = 10 # 10
+#		prerequisite = {
+#			focus = generic_industrial_effort
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				add_resource = {
+#					type = oil
+#					amount = 10
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_resource_extraction_boost
+#		icon = GFX_goal_generic_resource_extraction_boost
+#
+#		x = 6
+#		y = 3
+#		cost = 10 # 10
+#		prerequisite = {
+#			focus = generic_resource_extraction
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				add_resource = {
+#					type = oil
+#					amount = 10
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = generic_minor_civilian_effort
+#		icon = GFX_goal_generic_minor_civilian_effort
+#
+#		x = 8
+#		y = 2
+#		cost = 10 # 6
+#		prerequisite = {
+#			focus = generic_industrial_effort
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = industrial_complex
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = industrial_complex
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = industrial_complex
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_substantial_civilian_effort
+#		icon = GFX_goal_generic_substantial_civilian_effort
+#
+#		x = 8
+#		y = 3
+#		cost = 10 # 6
+#		prerequisite = {
+#			focus = generic_minor_civilian_effort
+#		}
+#		available = {
+#			NOT = { has_idea = agrarian_stage }
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = industrial_complex
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = industrial_complex
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = industrial_complex
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_great_industrial_subsidy
+#		icon = GFX_goal_generic_great_industrial_subsidy
+#
+#		x = 8
+#		y = 4
+#		cost = 10 # 6
+#		prerequisite = {
+#			focus = generic_substantial_civilian_effort
+#		}
+#		available = {
+#			NOT = { has_idea = agrarian_stage }
+#			NOT = { has_idea = developing_stage }
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 2
+#				add_building_construction = {
+#					type = industrial_complex
+#					level = 2
+#					instant_build = yes
+#				}
+#				add_building_construction = {
+#					type = infrastructure
+#					level = 3
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 2
+#				add_building_construction = {
+#					type = industrial_complex
+#					level = 2
+#					instant_build = yes
+#				}
+#				add_building_construction = {
+#					type = infrastructure
+#					level = 3
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 2
+#				add_building_construction = {
+#					type = industrial_complex
+#					level = 2
+#					instant_build = yes
+#				}
+#				add_building_construction = {
+#					type = infrastructure
+#					level = 3
+#					instant_build = yes
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_industrial_subsidies
+#		icon = GFX_goal_generic_industrial_subsidies
+#
+#		x = 10
+#		y = 2
+#		cost = 10 # 10
+#		prerequisite = {
+#			focus = generic_industrial_effort
+#		}
+#		completion_reward = {
+#			custom_effect_tooltip = generic_great_industrial_subsidy_tt
+#			add_to_variable = {
+#				industrial_power = 200
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_industrial_subsidies_boost
+#		icon = GFX_goal_generic_industrial_subsidies_boost
+#
+#		x = 10
+#		y = 3
+#		cost = 10 # 10
+#		prerequisite = {
+#			focus = generic_industrial_subsidies
+#		}
+#		completion_reward = {
+#			custom_effect_tooltip = generic_great_industrial_subsidy_tt
+#			add_to_variable = {
+#				industrial_power = 200
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	#SCIENCE MR WHITE!
+#	focus = {
+#		id = generic_scientific_reform
+#		icon = GFX_goal_generic_scientific_reform
+#		
+#		x = 14
+#		y = 1
+#		cost = 10 # 8
+#		prerequisite = {
+#			focus = generic_23rd_politics
+#		}
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 1
+#				uses = 2
+#				category = industry
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = generic_wonders_research
+#		icon = GFX_goal_generic_wonders_research
+#		
+#		x = 16
+#		y = 2
+#		cost = 10 # 8
+#		prerequisite = {
+#			focus = generic_scientific_reform
+#		}
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 1
+#				uses = 2
+#				category = be_wonders
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_wonders_research_boost
+#		icon = GFX_goal_generic_wonders_research_boost
+#		
+#		x = 16
+#		y = 3
+#		cost = 10 # 8
+#		prerequisite = {
+#			focus = generic_wonders_research
+#		}
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 1
+#				uses = 2
+#				category = be_wonders
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = generic_labs_modernization
+#		icon = GFX_goal_generic_labs_modernization
+#		
+#		x = 12
+#		y = 2
+#		cost = 10 # 8
+#		available = {
+#			NOT = { has_idea = agrarian_stage }
+#		}
+#		prerequisite = {
+#			focus = generic_scientific_reform
+#		}
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 1
+#				uses = 2
+#				category = industry
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_labs_expansion
+#		icon = GFX_goal_generic_labs_expansion
+#
+#		x = 12
+#		y = 3
+#		cost = 10 # 8
+#		available = {
+#			NOT = { has_idea = agrarian_stage }
+#			NOT = { has_idea = developing_stage }
+#		}
+#		prerequisite = {
+#			focus = generic_labs_modernization
+#		}
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 1
+#				uses = 2
+#				category = industry
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_breakthroughs_of_tomorrow
+#		icon = GFX_goal_generic_breakthroughs_of_tomorrow
+#
+#		x = 14
+#		y = 4
+#		cost = 10 # 8
+#		available = {
+#			NOT = { has_idea = agrarian_stage }
+#			NOT = { has_idea = developing_stage }
+#		}
+#		prerequisite = {
+#			focus = generic_satellite_expansion_boost
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 2
+#				add_building_construction = {
+#					type = spaceship_factory
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 2
+#				add_building_construction = {
+#					type = spaceship_factory
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 2
+#				add_building_construction = {
+#					type = spaceship_factory
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_satellite_expansion
+#		icon = GFX_goal_generic_satellite_expansion
+#
+#		x = 14
+#		y = 2
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_scientific_reform
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = spaceship_factory
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = spaceship_factory
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = spaceship_factory
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_satellite_expansion_boost
+#		icon = GFX_goal_generic_satellite_expansion_boost
+#
+#		x = 14
+#		y = 3
+#		cost = 10 # 8
+#		available = {
+#			NOT = { has_idea = agrarian_stage }
+#		}
+#		prerequisite = {
+#			focus = generic_satellite_expansion
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = spaceship_factory
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = spaceship_factory
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = spaceship_factory
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	#LAND
+#	focus = {
+#		id = generic_land_forces
+#		icon = GFX_goal_generic_land_forces
+#
+#		x = 20
+#		y = 1
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_23rd_politics
+#		}
+#		completion_reward = {
+#			army_experience = 100
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_military_industry
+#		icon = GFX_goal_generic_military_industry
+#
+#		x = 20
+#		y = 2
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_land_forces
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = arms_factory
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = arms_factory
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = arms_factory
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_military_industry_boost
+#		icon = GFX_goal_generic_military_industry_boost
+#
+#		x = 20
+#		y = 3
+#		cost = 10 # 5
+#		available = {
+#			NOT = { has_idea = agrarian_stage }
+#		}
+#		prerequisite = {
+#			focus = generic_military_industry
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = arms_factory
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = arms_factory
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = arms_factory
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_grand_military_industry
+#		icon = GFX_goal_generic_grand_military_industry
+#
+#		x = 20
+#		y = 4
+#		cost = 10 # 5
+#		available = {
+#			NOT = { has_idea = agrarian_stage }
+#			NOT = { has_idea = developing_stage }
+#		}
+#		prerequisite = {
+#			focus = generic_military_industry_boost
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 2
+#				add_building_construction = {
+#					type = arms_factory
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 2
+#				add_building_construction = {
+#					type = arms_factory
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_extra_state_shared_building_slots = 2
+#				add_building_construction = {
+#					type = arms_factory
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_land_tech
+#		icon = GFX_goal_generic_land_tech
+#
+#		x = 18
+#		y = 2
+#		cost = 10 # 6
+#		prerequisite = {
+#			focus = generic_land_forces
+#		}
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 1
+#				uses = 2
+#				category = be_land_tech
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_land_tech_boost
+#		icon = GFX_goal_generic_land_tech_boost
+#
+#		x = 18
+#		y = 3
+#		cost = 10 # 6
+#		prerequisite = {
+#			focus = generic_land_tech
+#		}
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 1
+#				uses = 2
+#				category = be_land_tech
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_army_training
+#		icon = GFX_goal_generic_army_training
+#
+#		x = 22
+#		y = 2
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_land_forces
+#		}
+#		completion_reward = {
+#			add_doctrine_cost_reduction = {
+#				cost_reduction = 0.5
+#				uses = 2
+#				category = be_land_doctrine
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_army_training_boost
+#		icon = GFX_goal_generic_army_training_boost
+#
+#		x = 22
+#		y = 3
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_army_training
+#		}
+#		completion_reward = {
+#			add_doctrine_cost_reduction = {
+#				cost_reduction = 0.5
+#				uses = 2
+#				category = be_land_doctrine
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	#AIR
+#	focus = {
+#		id = generic_air_forces
+#		icon = GFX_goal_generic_air_forces
+#
+#		x = 26
+#		y = 1
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_23rd_politics
+#		}
+#		completion_reward = {
+#			air_experience = 100
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_fighter_models
+#		icon = GFX_goal_generic_fighter_models
+#
+#		x = 24
+#		y = 2
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_air_forces
+#		}
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 1
+#				uses = 2
+#				category = be_air_tech
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_cas_models
+#		icon = GFX_goal_generic_cas_models
+#
+#		x = 24
+#		y = 3
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_fighter_models
+#		}
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 1
+#				uses = 2
+#				category = be_air_tech
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_air_training
+#		icon = GFX_goal_generic_air_training
+#
+#		x = 28
+#		y = 2
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_air_forces
+#		}
+#		completion_reward = {
+#			add_doctrine_cost_reduction = {
+#				cost_reduction = 0.5
+#				uses = 2
+#				category = be_air_doctrine
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_air_training_boost
+#		icon = GFX_goal_generic_air_training_boost
+#
+#		x = 28
+#		y = 3
+#		cost = 10 # 10
+#		prerequisite = {
+#			focus = generic_air_training
+#		}
+#		completion_reward = {
+#			add_doctrine_cost_reduction = {
+#				cost_reduction = 0.5
+#				uses = 2
+#				category = be_air_doctrine
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_air_base_foundation
+#		icon = GFX_goal_generic_air_base_foundation
+#
+#		x = 26
+#		y = 2
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_air_forces
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				add_building_construction = {
+#					type = air_base
+#					level = 5
+#					instant_build = yes
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_air_base_expansion
+#		icon = GFX_goal_generic_air_base_expansion
+#
+#		x = 26
+#		y = 3
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_air_base_foundation
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				add_building_construction = {
+#					type = air_base
+#					level = 3
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_building_construction = {
+#					type = air_base
+#					level = 3
+#					instant_build = yes
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_gran_air_shield
+#		icon = GFX_goal_generic_gran_air_shield
+#
+#		x = 26
+#		y = 4
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_air_base_expansion
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				add_building_construction = {
+#					type = anti_air_building
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_building_construction = {
+#					type = anti_air_building
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_building_construction = {
+#					type = anti_air_building
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_building_construction = {
+#					type = anti_air_building
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#			random_owned_state = {
+#				add_building_construction = {
+#					type = anti_air_building
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	#NAVAL  #NEED TO FIX SOMETIMES NO DOCKYARDS SPAWNING!
+#	focus = {
+#		id = generic_naval_forces
+#		icon = GFX_goal_generic_naval_forces
+#		
+#		x = 32
+#		y = 1
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_23rd_politics
+#		}
+#		available = {
+#			any_owned_state = {
+#				is_coastal = yes
+#			}
+#		}
+#		completion_reward = {
+#			navy_experience = 100
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_coastal_defense
+#		icon = GFX_goal_generic_coastal_defense
+#
+#		available = {
+#			any_owned_state = {
+#				is_coastal = yes
+#			}
+#		}
+#		x = 30
+#		y = 2
+#		cost = 10 # 8
+#		prerequisite = {
+#			focus = generic_naval_forces
+#		}
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 1
+#				uses = 2
+#				category = be_naval_tech
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_coastal_defense_improved
+#		icon = GFX_goal_generic_coastal_defense_improved
+#
+#		available = {
+#			any_owned_state = {
+#				is_coastal = yes
+#			}
+#		}
+#		x = 30
+#		y = 3
+#		cost = 10 # 8
+#		prerequisite = {
+#			focus = generic_coastal_defense
+#		}
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 1
+#				uses = 2
+#				category = be_naval_tech
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_drydocks
+#		icon = GFX_goal_generic_drydocks
+#
+#		available = {
+#			any_owned_state = {
+#				is_coastal = yes
+#			}
+#		}
+#		x = 32
+#		y = 2
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_naval_forces
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				if = {
+#					limit = {
+#						is_coastal = yes
+#					}
+#					add_building_construction = {
+#						type = dockyard
+#						level = 3
+#						instant_build = yes
+#					}
+#					add_extra_state_shared_building_slots = 3
+#				}
+#				else = {
+#					custom_effect_tooltip = no_coastal_states
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_drydocks_improved
+#		icon = GFX_goal_generic_drydocks_improved
+#
+#		available = {
+#			any_owned_state = {
+#				is_coastal = yes
+#			}
+#		}
+#		x = 32
+#		y = 3
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_drydocks
+#		}
+#		completion_reward = {
+#			random_owned_state = {
+#				if = {
+#					limit = {
+#						is_coastal = yes
+#					}
+#					add_building_construction = {
+#						type = dockyard
+#						level = 3
+#						instant_build = yes
+#					}
+#					add_extra_state_shared_building_slots = 3
+#				}
+#				else = {
+#					custom_effect_tooltip = no_coastal_states
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = generic_naval_training
+#		icon = GFX_goal_generic_naval_training
+#		
+#		available = {
+#			any_owned_state = {
+#				is_coastal = yes
+#			}
+#		}
+#		x = 34
+#		y = 2
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_naval_forces
+#		}
+#		completion_reward = {
+#			add_doctrine_cost_reduction = {
+#				cost_reduction = 0.5
+#				uses = 2
+#				category = be_naval_doctrine
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	focus = {
+#		id = generic_naval_training_boost
+#		icon = GFX_goal_generic_naval_training_boost
+#		
+#		available = {
+#			any_owned_state = {
+#				is_coastal = yes
+#			}
+#		}
+#		x = 34
+#		y = 3
+#		cost = 10 # 5
+#		prerequisite = {
+#			focus = generic_naval_training
+#		}
+#		completion_reward = {
+#			add_doctrine_cost_reduction = {
+#				cost_reduction = 0.5
+#				uses = 2
+#				category = be_naval_doctrine
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = generic_modular_designs
+#		icon = GFX_goal_generic_modular_designs
+#		
+#		available = {
+#			any_owned_state = {
+#				is_coastal = yes
+#			}
+#		}
+#		x = 32
+#		y = 4
+#		cost = 10 # 10
+#		prerequisite = {
+#			focus = generic_drydocks_improved
+#		}
+#		completion_reward = {
+#			navy_experience = 100
+#			random_owned_state = {
+#				if = {
+#					limit = {
+#						is_coastal = yes
+#					}
+#					add_building_construction = {
+#						type = dockyard
+#						level = 5
+#						instant_build = yes
+#					}
+#					add_extra_state_shared_building_slots = 5
+#				}
+#				else = {
+#					custom_effect_tooltip = no_coastal_states
+#				}
+#			}
+#			#ADD HERE A NAVAL DIVISION SPAWN, MAYBE SAME FOR LAND? (SPAWNING A TANK?)
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
 }
