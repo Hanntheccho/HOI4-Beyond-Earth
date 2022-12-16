@@ -6,7 +6,7 @@ scripted_gui = {
 		window_name = "diplo_declare_war"
 
         visible = {
-            always = no #yes
+            is_debug = yes
         }
 
         ai_enabled = {
@@ -35,22 +35,22 @@ scripted_gui = {
                         target = PREV
                         type = annex_puppet_wargoal
                     }
-                    add_to_variable = {
-                        total_war_infamy = PREV.diplomatic_power
-                    }
-                    if = {
-                        limit = {
-                            check_variable = {
-                                total_war_infamy > 499
-                            }
-                        }
-                        every_country = {
-                            declare_war_on = {
-                                target = PREV
-                                type = annex_puppet_wargoal
-                            }
-                        }
-                    }
+                    #add_to_variable = {
+                    #    total_war_infamy = PREV.diplomatic_power
+                    #}
+                    #if = {
+                    #    limit = {
+                    #        check_variable = {
+                    #            total_war_infamy > 499
+                    #        }
+                    #    }
+                    #    every_country = {
+                    #        declare_war_on = {
+                    #            target = PREV
+                    #            type = annex_puppet_wargoal
+                    #        }
+                    #    }
+                    #}
                 }
             }
 		}

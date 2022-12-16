@@ -32,8 +32,28 @@ guiTypes = {
 		#}
 
 		containerWindowType = {
+			name = "another_bg"
+			size = { width = 550 height = 250 }
+			position = {
+				x = 0
+				y = 40
+			}
+
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_wonders_techtree_bg"
+				alwaystransparent = yes
+			}
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_wonders_techtree_bg_flip"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
 			name = "political_pie_chart"
-			position = { x= 90 y = 55 }
+			position = { x= 90 y = 54 }
 			size = { width=100 height=100 }
 			clipping = no
 
@@ -44,11 +64,18 @@ guiTypes = {
 				alwaystransparent = yes
 			}
 			iconType ={
-				name ="piechart_frame"
+				name ="leader_name"
 				spriteType = "GFX_small_pol_piechart_frame"
 				position = { x = -84 y = -4 }
 			}
 		}
+
+		iconType ={
+			name ="pol_faction_icon"
+			spriteType = "GFX_pol_factions_strip"
+			position = { x = 10000 y = 0 }
+			Orientation = "UPPER_LEFT"
+		}	
 
 		background ={
 			name ="pol_view_bg"
@@ -82,30 +109,10 @@ guiTypes = {
 		#	alwaystransparent = yes
 		#}
 
-		containerWindowType = {
-			name = "another_bg"
-			size = { width = 550 height = 250 }
-			position = {
-				x = 0
-				y = 40
-			}
-
-			background = {
-				name = "bg"
-				quadTextureSprite = "GFX_wonders_techtree_bg"
-				alwaystransparent = yes
-			}
-			background = {
-				name = "bg"
-				quadTextureSprite = "GFX_wonders_techtree_bg_flip"
-				alwaystransparent = yes
-			}
-		}
-
 		iconType ={
 			name ="pol_view_bg_2"
 			spriteType = "GFX_pol_view_bg_2"
-			position = { x= 0 y =137 }
+			position = { x= 0 y =147 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -134,15 +141,7 @@ guiTypes = {
 		#	spriteType = "GFX_approval_word_pol_view"
 		#	position = { x = 322 y = 271 }
 		#	alwaystransparent = yes
-		#}
-
-		iconType ={
-			name ="pol_faction_icon"
-			spriteType = "GFX_pol_factions_strip"
-			position = { x= 10000 y = 278 }
-			Orientation = "UPPER_LEFT"
-			frame = 1
-		}			
+		#}		
 		
 		containerWindowType = {
 			name = "chart_explanation"
@@ -170,16 +169,7 @@ guiTypes = {
 			position = { x = 0 y = 0 }
 			size = { width = 175 height = 60 }
 			clipping = no
-					
-#			instantTextboxType = {
-#				name = "party"
-#				position = { x = 9 y = 2 }
-#				font = "Arialsmallest"
-#				text = "party"
-#				maxWidth = 300
-#				maxHeight = 20
-#			}
-			
+				
 			instantTextboxType = {
 				name = "ideology"
 				position = { x = 10000 y = 69 } #position = { x = 15 y = 69 }
@@ -200,18 +190,6 @@ guiTypes = {
 				maxHeight = 20
 			}
 
-			#instantTextboxType = {
-			#	name = "faction_name_2"
-			#	position = { x = -33 y = -40 }
-			#	#position = { x = -13 y = 86 }
-			#	font = "Beyondsmall"
-			#	text = "faction"
-			#	maxWidth = 194
-			#	maxHeight = 20
-			#	format = centre	
-			#	multiline = no			
-			#}
-			
 			instantTextboxType = {
 				name = "faction_name"
 				position = { x =10000 y = 165 }
@@ -485,7 +463,7 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "national_spirit_container"
-				position = { x = 10 y = 270 }
+				position = { x = 10 y = 280 }
 				size = { width = 520 height = 100 }
 				
 				gridboxtype = {
@@ -526,23 +504,90 @@ guiTypes = {
 			position = { x = 10000 y = 44 }		
 			alwaystransparent = yes
 		}
-
-		iconType = {
-			name = "diplo_thing_bg"		
-			spriteType ="GFX_diplo_opinion_bg"
-			position = { x = 10000 y = 58 } #position = { x = -15 y = 58 }				
-		}
 		
+		containerWindowType = {
+			name = "another_bg1"
+			size = { width = 450 height = 35 }
+			position = {
+				x = 50
+				y = 63
+			}
+
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_black"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "another_bg2"
+			size = { width = 450 height = 35 }
+			position = {
+				x = 50
+				y = 138
+			}
+
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_black"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "another_bg3"
+			size = { width = 450 height = 35 }
+			position = {
+				x = 50
+				y = 223
+			}
+
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_black"
+				alwaystransparent = yes
+			}
+		}
+
+		instantTextboxType = {
+			name = "leader_name_long"
+			position = { x = 60 y = 71 }
+			font = "Arialsmallest"
+			text = "/> government_leader/>? />"
+			maxWidth = 480
+			maxHeight = 20
+			format = left	
+		}
 		instantTextboxType = {
 			name = "leader_name"
-			position = { x = 10000 y = 57 } #position = { x = 30 y = 57 }
-			font = "Beyond"
+			position = { x = 239 y = 71 } 
+			font = "Arialsmallest"
 			text = "leader_name"
+			maxWidth = 290
+			maxHeight = 20
+			format = left
+			fixedsize = yes				
+		}
+
+		instantTextboxType = {
+			name = "ideology_long"
+			position = { x = 60 y = 146 }
+			font = "Arialsmallest"
+			text = "/> government_affinity />"
 			maxWidth = 480
-			maxHeight = 90
-			format = right
-			vertical_alignment = bottom
-			fixedsize = yes
+			maxHeight = 20
+			format = left	
+		}
+
+		instantTextboxType = {
+			name = "extra_long"
+			position = { x = 60 y = 231 }
+			font = "Arialsmallest"
+			text = "/> null //>> nodata /! tokenload.bottom >>>"
+			maxWidth = 480
+			maxHeight = 20
+			format = left	
 		}
 		
 		containerWindowType = {
