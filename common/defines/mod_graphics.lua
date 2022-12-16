@@ -35,9 +35,9 @@ NDefines_Graphics.NGraphics.ENEMY_COLOR   = {1.5, 0.9, 0.6}
 NDefines_Graphics.NGraphics.NEUTRAL_COLOR = {1.1, 1.1, 0.8}
 
 NDefines_Graphics.NGraphics.COUNTER_MODE_ALLEGIANCE_OURS = { 0.7, 0.6, 1.25, 1.0 }
-NDefines_Graphics.NGraphics.COUNTER_MODE_ALLEGIANCE_ALLIED = { 0.5, 0.6, 1.2, 1.0 }
+NDefines_Graphics.NGraphics.COUNTER_MODE_ALLEGIANCE_ALLIED = { 0.2, 0.8, 1.5, 0.6 }
 NDefines_Graphics.NGraphics.COUNTER_MODE_ALLEGIANCE_ENEMY = { 1.2, 0.4, 0.3, 1.0 }
-NDefines_Graphics.NGraphics.COUNTER_MODE_ALLEGIANCE_OTHER = { 0.8, 0.8, 0.8, 1.0 }
+NDefines_Graphics.NGraphics.COUNTER_MODE_ALLEGIANCE_OTHER = { 0.8, 0.8, 0.8, 0.6 }
 
 NDefines_Graphics.NGraphics.RAILWAY_CAMERA_CUTOFF = 2000.0
 NDefines_Graphics.NGraphics.RAILWAY_CAMERA_CUTOFF_SPEED = 1.0
