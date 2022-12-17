@@ -64,20 +64,27 @@ guiTypes = {
 			clicksound = click_default
 		}
 
-		#iconType = {
-		#	name ="armyoverview_buttons_bg_2"
-		#	spriteType = "GFX_playlist_bg"
-		#	position = { x= 965 y = -7 }
-		#	Orientation = "UPPER_LEFT"
-		#	alwaystransparent = yes
-		#}
-		#iconType = {
-		#	name ="armyoverview_buttons_bg_22"
-		#	spriteType = "GFX_playlist_bg2"
-		#	position = { x= -460 y = 127 }
-		#	Orientation = "UPPER_RIGHT"
-		#	alwaystransparent = yes
-		#}
+		containerWindowType = {
+			name = "bg"
+			position = { x=-449 y=121 }	
+			size = { width = 440 height = 28 } 
+			orientation = UPPER_RIGHT	
+
+			background = {
+				name = "Background"		
+				quadTextureSprite ="GFX_tiled_black"
+			}
+
+			instantTextBoxType={
+				name = "mm_tip"
+				font = "Arialsmallest"
+				position = { x=17 y=5 }
+				text = "/> press M to open .!mapmodes /> F1?army F2?navy F3?air />>" 
+				maxWidth = 500
+				maxHeight = 16
+				alwaysTransparent = yes
+			}
+		}
 		
 		# All Map Modes button
 		buttonType = {
@@ -101,7 +108,7 @@ guiTypes = {
 			size = { width = 50 height = 153 }
 			orientation = UPPER_RIGHT
 			position = {
-				x = -910
+				x = -909
 				y = 35
 			}
 		
@@ -482,7 +489,7 @@ guiTypes = {
 			size = { width = 50 height = 153 }
 			orientation = UPPER_RIGHT
 			position = {
-				x = -910
+				x = -909
 				y = 35
 			}
 		
@@ -867,7 +874,7 @@ guiTypes = {
 			name = "day_night_toggle"
 			position = { x=10000 y=216 }
 			quadTextureSprite = "GFX_player_counters_toggle" #"GFX_day_night_toggle"
-			shortcut = "n"
+			#shortcut = "n"
 			clicksound = click_default
 			pdx_tooltip = "TOGGLE_NIGHT_ENABLED"
 			pdx_tooltip_anchor = {
@@ -910,7 +917,7 @@ guiTypes = {
 			name = "button_counters_color_mode"
 			position = { x=10000 y=190 }
 			quadTextureSprite = "GFX_player_counters_toggle" #"GFX_button_counters_color_mode"
-			shortcut = ","
+			#shortcut = ","
 			clicksound = click_default
 			pdx_tooltip = "TOGGLE_UNIT_COUNTER_MODE"
 			pdx_tooltip_anchor = {
@@ -1135,7 +1142,7 @@ guiTypes = {
 	# A window with the list of all possible map modes that is attached to the main map-modes window.
 	containerWindowType =  {
 		name = "WindowWithAllMapModes_Standalone"
-		position = { x=-650 y=200 }	
+		position = { x=-670 y=200 }	
 		size = { width=200 height=314 } 
 		Orientation = UPPER_RIGHT
 		fade_time = 500
