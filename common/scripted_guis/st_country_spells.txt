@@ -1,6 +1,9 @@
 scripted_gui = {
-	
 	st_country_powers = {
+
+		ai_enabled = {
+			always = no
+		}
 	
 		context_type = selected_country_context
 		
@@ -13,59 +16,7 @@ scripted_gui = {
 			}
 		}
 		
-		effects = {
-		
-			mark_all_states_click = {
-				set_temp_variable = { ROOT.marks = this}
-				var:marks = {
-					every_owned_state = {
-						limit = {
-							NOT = { has_state_flag = marked_for_transfer }
-						}
-						set_state_flag = marked_for_transfer
-						add_to_variable = { ROOT.marked_states = 1 }
-						#set_border_war = yes
-					}
-				}
-			}
-		
-			mark_colonial_states_click  = {
-				set_temp_variable = { ROOT.marks = this}
-				var:marks = {
-					every_owned_state = {
-						limit = {
-							NOT = { is_in_home_area = yes }
-							NOT = { is_core_of = PREV }
-							NOT = { has_state_flag = marked_for_transfer }
-						}
-						set_state_flag = marked_for_transfer
-						add_to_variable = { ROOT.marked_states = 1 }
-						#set_border_war = yes
-					}
-				}
-			}
-		
-			clear_all_markings_click = {
-				ROOT = { 
-					set_variable = { marked_states = 0 }
-				}
-				every_state = {
-					limit = {
-						has_state_flag = marked_for_transfer
-						OR = {
-							is_owned_and_controlled_by = ROOT
-							any_country = {
-								is_ai = yes
-								is_subject_of = ROOT
-								owns_state = PREV
-							}
-						}
-					}
-					clr_state_flag = marked_for_transfer
-					#set_border_war = no
-				}
-			}
-			
+		effects = {			
 			award_states_click = {
 				ROOT = { 
 					set_variable = { marked_states = 0 }
@@ -91,52 +42,7 @@ scripted_gui = {
 			}
 		}
 		
-		triggers = {
-		
-			mark_all_states_click_enabled = {
-				any_owned_state = {
-					NOT = { has_state_flag = marked_for_transfer }
-				}
-			}
-			
-			mark_all_states_visible = {
-				set_temp_variable = { ROOT.taker = this}
-				OR = {
-					ROOT = {
-						tag = var:taker
-					}
-					any_country = {
-						is_ai = yes
-						is_subject_of = ROOT
-					}
-				}
-			}
-		
-			mark_colonial_states_click_enabled = {
-				any_owned_state = {
-					NOT = { is_in_home_area = yes }
-					NOT = { has_state_flag = marked_for_transfer }
-					NOT = { is_core_of = this }
-				}
-			}
-			
-			mark_colonial_states_visible = {
-				set_temp_variable = { ROOT.taker = this}
-				OR = {
-					ROOT = {
-						tag = var:taker
-					}
-					any_country = {
-						is_ai = yes
-						is_subject_of = ROOT
-					}
-				}
-			}
-			
-			clear_all_markings_click_enabled = {
-				check_variable = { ROOT.marked_states > 0 }
-			}
-		
+		triggers = {		
 			award_states_click_enabled = {
 				check_variable = { ROOT.marked_states > 0 }
 				NOT = { 
@@ -147,9 +53,7 @@ scripted_gui = {
 					}
 				}
 			}
-		
-		}
-        
+		}  
 	}
 }
 
