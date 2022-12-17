@@ -1,4 +1,463 @@
 generic_decisions = {
+	SOV_karelia_FIN = {
+		icon = GFX_decision_unknown
+		available = {
+			557 = {
+				is_owned_by = FIN
+			}
+			549 = {
+				is_owned_by = FIN
+			}
+		}
+		activation = {
+			SOV = {
+				has_war_with = KAR
+			}
+			FIN = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+		days_mission_timeout = 65
+		timeout_effect = {
+			FIN = {
+				#add_state_core = 557 #already in state history
+				#add_state_core = 549 #already in state history
+				transfer_state = 557
+				transfer_state = 549
+			}
+			SOV = {
+				add_war_support = -0.1
+			}
+			activate_mission = SOV_karelia_FIN_end
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	SOV_karelia_FIN_end = {
+		icon = GFX_decision_unknown
+		available = {
+			KAR = {
+				NOT = {
+					has_country_leader = {
+						name = KAR_parliament
+						ruling_only = yes
+					}
+				}
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				KAR = {
+					surrender_progress > 0.4
+				}
+				SOV = {
+					surrender_progress > 0.1
+				}
+			}
+		}
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		days_mission_timeout = 575
+		timeout_effect = {
+			KAR = {
+				country_event = { 
+					id = karelia_event.4
+					days = 0
+				}
+				add_ideas = EU_treaty_of_bern
+				set_cosmetic_tag = KAR_karjala
+				retire_country_leader = yes
+				create_country_leader = {
+					name = KAR_parliament
+					desc = "KAR_parliament_desc"
+					ideology = neutral_ideology
+					#picture = GFX_portrait_KAR_parliament
+				}
+				remove_ideas = KAR_finno_slavic_tension
+				remove_ideas = KAR_keepers_of_revolution
+				if = {
+					limit = {
+						FIN = {
+							is_in_faction_with = SCO
+						}
+						SCO = {
+							is_faction_leader = yes
+						}
+					}
+					SCO = {
+						add_to_faction = KAR
+					}
+				}
+			}
+			if = {
+				limit = {
+					KAR = {
+						surrender_progress > 0.05
+					}
+				}
+				SOV = {
+					transfer_state = 565
+					transfer_state = 595
+				}
+			}
+			SOV = {
+				add_war_support = -0.2
+				country_event = { 
+					id = eurasia_event.6
+					days = 0
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	vostaslavia_rebellion_start = {
+		icon = GFX_decision_unknown
+		available = {
+			471 = {
+				is_core_of = BLR
+			}
+			500 = {
+				is_core_of = BLR
+			}
+			517 = {
+				is_core_of = BLR
+			}
+			345 = {
+				is_core_of = BLR
+			}
+			508 = {
+				is_core_of = BLR
+			}
+		}
+		fire_only_once = yes
+		days_mission_timeout = 25
+		timeout_effect = {
+			BLR = {
+				add_state_core = 471
+				add_state_core = 500
+				add_state_core = 517
+				add_state_core = 345
+				add_state_core = 508
+			}
+			SOV = {
+				country_event = {
+					id = eurasia_event.3
+					days = 2
+				}
+			}
+			activate_mission = vostaslavia_rebellion_start_2
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	vostaslavia_rebellion_start_2 = {
+		icon = GFX_decision_unknown
+		available = {
+			country_exists = BLR
+		}
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		days_mission_timeout = 25
+		timeout_effect = {
+			BLR = {
+				add_state_core = 531
+				add_state_core = 514
+				add_state_core = 526
+				add_state_core = 562
+			}
+			activate_mission = vostaslavia_rebellion_start_3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	vostaslavia_rebellion_start_3 = {
+		icon = GFX_decision_unknown
+		available = {
+			country_exists = BLR
+		}
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		days_mission_timeout = 25
+		timeout_effect = {
+			BLR = {
+				add_state_core = 574
+				add_state_core = 529
+			}
+			activate_mission = vostaslavia_rebellion_start_4
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	vostaslavia_rebellion_start_4 = {
+		icon = GFX_decision_unknown
+		available = {
+			country_exists = BLR
+		}
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		days_mission_timeout = 25
+		timeout_effect = {
+			SOV = {
+				release = BLR
+				country_event = {
+					id = eurasia_event.4
+					days = 0
+				}
+			}
+			BLR = {
+				inherit_technology = SOV
+				add_ideas = EU_treaty_of_bern
+				hidden_effect = {
+					load_oob = BLR_OOB
+				}
+				every_owned_state = {
+					add_core_of = SOV
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ENG_civil_war_part_1 = {
+		icon = GFX_decision_unknown
+		available = {
+			has_global_flag = birmingham_uproar
+		}
+		activation = {
+			country_exists = ENG
+		}
+		fire_only_once = yes
+		days_mission_timeout = 140
+		timeout_effect = {
+			ENG = {
+				country_event = england_event.1
+			}
+			activate_mission = ENG_civil_war_part_2
+			set_global_flag = birmingham_uproar
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ENG_civil_war_part_2 = {
+		icon = GFX_decision_unknown
+		available = {
+			#OR = {
+				has_global_flag = ECW_start
+				#has_global_flag = ECW_end
+			#}
+		}
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		days_mission_timeout = 25
+		timeout_effect = {
+			ENG = {
+				news_event = england_event.2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	POL_LAT_war = {
+		icon = GFX_decision_war
+		available = {
+			has_global_flag = LAT_ahti_bad_news
+		}
+		activation = {
+			#
+		}
+		fire_only_once = yes
+		days_mission_timeout = 203
+		timeout_effect = {
+			set_global_flag = LAT_ahti_bad_news
+			LAT = {
+				country_event = baltic_event.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ITA_PAD_war = {
+		icon = GFX_decision_war
+		available = {
+			ITA = {
+				has_war_with = PAD
+			}
+		}
+		activation = {
+			#
+		}
+		fire_only_once = yes
+		days_mission_timeout = 595
+		timeout_effect = {
+			ITA = {
+				declare_war_on = {
+					type = annex_puppet_wargoal
+					target = PAD
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						FRA = {
+							has_government = purity
+						}
+					}
+					FRA = {
+						country_event = {
+							id = franco_event.10
+							days = 4
+						}
+					}
+				}
+				if = {
+					limit = {
+						FRA = {
+							has_government = mastery
+						}
+					}
+					FRA = {
+						country_event = {
+							id = franco_event.11
+							days = 4
+						}
+					}
+				}
+				ITA = {
+					country_event = {
+						id = italy_event.2
+						days = 0
+					}
+				}
+				PAD = {
+					country_event = {
+						id = padania_event.2
+						days = 0
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	NOR_SWE_war = {
+		icon = GFX_decision_war
+		available = {
+			NOR = {
+				has_war_with = SWE
+			}
+		}
+		activation = {
+			#
+		}
+		fire_only_once = yes
+		days_mission_timeout = 570
+		timeout_effect = {
+			NOR = {
+				country_event = norway_event.1
+			}
+			SWE = {
+				country_event = sweden_event.1
+			}
+			hidden_effect = {
+				GER = {
+					country_event = {
+						id = german_event.3
+						days = 6
+					}
+				}
+				SCO = {
+					country_event = {
+						id = scotland_event.2
+						days = 6
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	YUG_ROM_war = {
+		icon = GFX_decision_war
+		available = {
+			YUG = {
+				has_war_with = ROM
+			}
+		}
+		activation = {
+			#
+		}
+		fire_only_once = yes
+		days_mission_timeout = 452
+		timeout_effect = {
+			YUG = {
+				declare_war_on = {
+					type = annex_puppet_wargoal
+					target = ROM
+				}
+				country_event = balkan_event.1
+				#leave_faction = yes
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						FRA = {
+							has_government = purity
+						}
+					}
+					FRA = {
+						country_event = {
+							id = franco_event.6
+							days = 7
+						}
+					}
+				}
+				SOV = {
+					country_event = {
+						id = eurasia_event.7
+						days = 9
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	TZN_COG_war = {
 		icon = GFX_decision_political
 		available = {
@@ -62,6 +521,35 @@ generic_decisions = {
 					set_cosmetic_tag = CHI_CENTRAL_GOVERNMENT
 					dismantle_faction = yes
 				}
+				#
+				1008 = {
+					transfer_state_to = AMU
+				}
+				887 = {
+					transfer_state_to = AMU
+				}
+				930 = {
+					transfer_state_to = AMU
+				}
+				961 = {
+					transfer_state_to = AMU
+				}
+				983 = {
+					transfer_state_to = AMU
+				}
+				990 = {
+					transfer_state_to = AMU
+				}
+				992 = {
+					transfer_state_to = AMU
+				}
+				997 = {
+					transfer_state_to = AMU
+				}
+				AMU = {
+					load_oob = AMU_2200
+				}
+				#
 				963 = {
 					transfer_state_to = DNG
 				}
