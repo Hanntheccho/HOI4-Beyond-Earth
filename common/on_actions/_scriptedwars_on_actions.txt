@@ -1,23 +1,71 @@
 on_actions = {
 	###
-	on_declare_war = {
+	on_monthly = { #should this be a on_monthly or something else such as on_puppet?
 		effect = {
 			every_country = {
+				limit = {
+					original_tag = ROOT
+					NOT = {
+						tag = ROOT
+					}
+				}
+				every_owned_state = {
+					transfer_state_to = ROOT
+				}
+			}
+			every_country = {
+				limit = {
+					has_war = no
+					is_puppet = yes
+				}
 				if = {
 					limit = {
-						any_guaranteed_country = {
-							tag = FROM
+						OVERLORD = {
+							NOT = {
+								tag = ROOT
+							}
+							is_in_faction_with = ROOT
+							is_ai = yes
 						}
 					}
-					declare_war_on = {
-						target = ROOT
-						type = annex_puppet_wargoal
+					every_owned_state = {
+						limit = {
+							OR = {
+								is_claimed_by = ROOT
+								is_core_of = ROOT
+							}
+							NOT = {
+								is_claimed_by = OVERLORD
+								is_core_of = OVERLORD
+							}
+						}
+						transfer_state_to = ROOT
 					}
+				}
+				else_if = {
+					limit = {
+						OVERLORD = {
+							tag = ROOT
+							is_ai = yes
+						}
+					}
+					every_owned_state = {
+						limit = {
+							OR = {
+								is_claimed_by = ROOT
+								is_core_of = ROOT
+							}
+						}
+						transfer_state_to = ROOT
+					}
+				}
+				else = {
+					#
 				}
 			}
 		}
 	}
-	#
+	###
 	on_puppet = { #ROOT is the puppet tag, FROM is OVERLORD
 		effect = {
 			ROOT = {
@@ -31,9 +79,28 @@ on_actions = {
 					transfer_state_to = FROM
 				}
 			}
+			every_country = {
+				limit = {
+					is_in_faction_with = FROM
+					#any_core_state = {
+					#	is_owned_by = ROOT
+					#}
+				}
+				ROOT = {
+					every_owned_state = {
+						limit = {
+							OR = {
+								is_claimed_by = PREV.PREV
+								is_core_of = PREV.PREV
+							}
+						}
+						transfer_state_to = PREV.PREV
+					}
+				}
+			}
 		}
 	}
-	#
+	###
 	on_peaceconference_ended = { #FROM is looser, ROOT is winner
 		effect = {
 			if = {
@@ -175,6 +242,9 @@ on_actions = {
 						}
 						remove_core_of = FROM
 					}
+					add_to_variable = {
+						arc_legitimacy = 3
+					}
 				}
 				ARC = {
 					add_to_faction = ROOT
@@ -190,17 +260,19 @@ on_actions = {
 						tag = CAS
 					}
 				}
-				ROOT = {
+				ROOT = { #should make it so it tag switches player back to DOS
 					every_owned_state = {
-						limit = {
-							is_core_of = FROM
-						}
-						remove_core_of = FROM
+						remove_core_of = ROOT
+						transfer_state_to = FROM
 					}
-					add_ideas = NAU_central_authority_low
+				}
+				FROM = {
+					add_to_variable = {
+						nau_legitimacy = 3
+					}
 				}
 				PNM = {
-					add_to_faction = ROOT
+					add_to_faction = FROM
 				}
 			}
 			#TRE-ONU WAR
@@ -223,6 +295,9 @@ on_actions = {
 						}
 						remove_core_of = FROM
 					}
+					add_to_variable = {
+						arc_legitimacy = 3
+					}
 				}
 				ARC = {
 					add_to_faction = ROOT
@@ -238,14 +313,14 @@ on_actions = {
 						tag = DOS
 					}
 				}
+				FROM = {
+					every_core_state = {
+						remove_core_of = FROM
+						transfer_state_to = ROOT
+					}
+				}
 				ROOT = {
 					remove_ideas = DOS_to_the_coast
-					every_owned_state = {
-						limit = {
-							is_core_of = FROM
-						}
-						remove_core_of = FROM
-					}
 					set_capital = { #gives error if capital set to 12 in history file ;_;
 						state = 12
 						remember_old_capital = no
@@ -271,6 +346,9 @@ on_actions = {
 							is_core_of = FROM
 						}
 						remove_core_of = FROM
+					}
+					add_to_variable = {
+						nau_legitimacy = 3
 					}
 				}
 				PNM = {
@@ -516,31 +594,6 @@ on_actions = {
 			#
 			else = {
 				#
-			}
-		}
-	}
-	#
-	on_peaceconference_ended = { #to avoid multiple puppets?
-		effect = {
-			if = {
-				limit = {
-					FROM = {
-						is_puppet = yes
-					}
-				}
-				every_country = {
-					limit = {
-						NOT = {
-							tag = FROM
-						}
-						original_tag = FROM
-					}
-					FROM = {
-						annex_country = {
-							target = PREV
-						}
-					}
-				}
 			}
 		}
 	}

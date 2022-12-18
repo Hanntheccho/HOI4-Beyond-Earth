@@ -231,4 +231,102 @@ formable_decisions = {
 			factor = 1
 		}
 	}
+	###
+	BHR_kavithan_protectorate = {
+		icon = GFX_decision_unity
+		available = {
+			NOT = {
+				any_country = {
+					is_india_tag = yes
+					NOT = {
+						is_puppet_of = BHR
+						is_puppet_of = KAV
+					}
+				}
+			}
+		}
+
+		visible = {
+			tag = BHR
+		}
+	
+		fire_only_once = yes
+	
+		complete_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						is_india_tag = yes
+						tag = KAV
+					}
+				}
+				every_core_state = {
+					add_core_of = BHR
+				}
+				every_owned_state = {
+					transfer_state_to = BHR
+				}
+			}
+			set_cosmetic_tag = INDIA_kavithan_protectorate
+			set_global_flag = india_was_reunited_flag
+			hidden_effect = {
+				SRL = {
+					every_core_state = {
+						add_core_of = BHR
+					}
+				}
+				annex_country = {
+					target = SRL
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100000
+		}
+	}
+	###
+	form_nau = {
+		icon = GFX_decision_unity
+		available = {
+			NOT = {
+				any_country = {
+					is_nau_tag = yes
+					NOT = {
+						is_puppet_of = BHR
+						is_puppet_of = KAV
+					}
+				}
+			}
+		}
+
+		visible = {
+			OR = {
+				tag = PNM
+				tag = ARC
+			}
+		}
+	
+		fire_only_once = yes
+	
+		complete_effect = {
+			every_country = {
+				limit = {
+					is_nau_tag = yes
+				}
+				every_core_state = {
+					add_core_of = ROOT
+				}
+				every_owned_state = {
+					transfer_state_to = ROOT
+				}
+			}
+			set_cosmetic_tag = NAU_united
+			set_global_flag = nau_was_reunited_flag
+		}
+		
+		ai_will_do = {
+			factor = 100000
+		}
+	}
 }

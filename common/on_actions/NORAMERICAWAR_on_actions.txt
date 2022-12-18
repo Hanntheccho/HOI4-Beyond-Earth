@@ -1,5 +1,77 @@
 on_actions = {
 	###
+	on_startup = {
+		effect = {
+			set_variable = { global.napgain_var = 0.5 }
+			ONE = {
+				set_variable = { nau_legitimacy = 4 }
+				set_variable = { arc_legitimacy = 3 }
+			}
+			DOS = {
+				set_variable = { nau_legitimacy = 4 }
+				set_variable = { arc_legitimacy = 6 }
+			}
+			TRE = {
+				set_variable = { nau_legitimacy = 1 }
+				set_variable = { arc_legitimacy = 4 }
+			}
+			CUA = {
+				set_variable = { nau_legitimacy = 4 }
+				set_variable = { arc_legitimacy = 1 }
+			}
+			CIN = {
+				set_variable = { nau_legitimacy = 5 }
+				set_variable = { arc_legitimacy = 3 }
+			}
+			SEI = {
+				set_variable = { nau_legitimacy = 3 }
+				set_variable = { arc_legitimacy = 5 }
+			}
+			SIT = {
+				set_variable = { nau_legitimacy = 4 }
+				set_variable = { arc_legitimacy = 4 }
+			}
+			OCH = {
+				set_variable = { nau_legitimacy = 3 }
+				set_variable = { arc_legitimacy = 5 }
+			}
+		}
+	}
+	on_weekly_ADU = {
+		effect = {
+			add_to_variable = {
+				var = global.noramericawarprogress_var
+				value = global.napgain_var
+			}
+			if = {
+				limit = {
+					check_variable = {
+						var = global.noramericawarprogress_var
+						value = 100
+    					compare = greater_than_or_equals
+					}
+				}
+				every_country = {
+					limit = {
+						check_variable = {
+							nau_legitimacy < arc_legitimacy
+						}
+					}
+					leave_faction = yes
+					ARC = {
+						add_to_faction = PREV
+					}
+				}
+				PNM = {
+					declare_war_on = {
+						target = ARC
+						type = annex_puppet_wargoal
+					}
+				}
+			}
+		}
+	}
+	###
 	on_puppet = {
 		effect = {
 			every_country = {
@@ -23,38 +95,4 @@ on_actions = {
 			}
 		}
 	}
-	###
-	on_startup = {
-		effect = {
-			#
-			OCH = {
-				add_ideas = NAU_central_authority_low
-			}
-			SIT = {
-				add_ideas = NAU_central_authority_low
-			}
-			SEI = {
-				add_ideas = NAU_central_authority_low
-			}
-			CIN = {
-				add_ideas = NAU_central_authority_low
-			}
-			CUA = {
-				add_ideas = NAU_central_authority_low
-			}
-			TRE = {
-				add_ideas = NAU_central_authority_low
-			}
-			DOS = {
-				add_ideas = NAU_central_authority_low
-			}
-			ONE = {
-				add_ideas = NAU_central_authority_low
-			}
-			PNM = {
-				add_ideas = NAU_central_authority_low
-			}
-		}
-	}
-	###
 }

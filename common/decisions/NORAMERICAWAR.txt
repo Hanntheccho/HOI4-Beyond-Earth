@@ -19,7 +19,6 @@ noramericawar_decisions = {
 		timeout_effect = {
 			DOS = {
 				remove_ideas = DOS_divided_leadership
-				remove_ideas = NAU_central_authority_low
 				leave_faction = yes
 			}
 			every_state = {
@@ -36,7 +35,6 @@ noramericawar_decisions = {
 					target = DOS
 					type = annex_puppet_wargoal
 				}
-				add_ideas = NAU_central_authority_low
 			}
 			#PNM = {
 			#	add_to_faction = CAS
@@ -61,7 +59,6 @@ noramericawar_decisions = {
 		timeout_effect = {
 			TRE = {
 				leave_faction = yes
-				remove_ideas = NAU_central_authority_low
 				remove_ideas = TRE_the_last_earthlings
 			}
 			every_state = {
@@ -107,7 +104,6 @@ noramericawar_decisions = {
 		timeout_effect = {
 			ONE = {
 				leave_faction = yes
-				#remove_ideas = NAU_central_authority_low
 			}
 			every_state = {
 				limit = {
@@ -148,13 +144,13 @@ noramericawar_decisions = {
 			tag = ARC
 			TRE = {
 				exists = yes
-				is_in_faction_with = ARC
 			}
 		}
 		fire_only_once = yes
 		cost = 100
 		days_remove = 100
 		remove_effect = {
+			custom_effect_tooltip = ARC_TRE_pacify_tt
 			TRE = {
 				remove_ideas = TRE_absence_of_civilization
 			}
@@ -168,7 +164,6 @@ noramericawar_decisions = {
 		available = {
 			tag = ARC
 			TRE = {
-				exists = yes
 				is_in_faction_with = ARC
 			}
 		}
@@ -176,13 +171,13 @@ noramericawar_decisions = {
 			tag = ARC
 			TRE = {
 				exists = yes
-				#is_in_faction_with = ARC
 			}
 		}
 		fire_only_once = yes
 		cost = 50
 		days_remove = 70
 		remove_effect = {
+			custom_effect_tooltip = ARC_HQ_expansion_tt
 			add_state_core = 106
 			transfer_state = 106 
 			106 = {
@@ -192,9 +187,124 @@ noramericawar_decisions = {
 				id = 1788
 				name = "Arcopolis Proxima"
 			}
+			TRE = {
+				add_to_variable = {
+					arc_legitimacy = -2
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 100
+		}
+	}
+	NAU_highways = {
+		icon = GFX_decision_industrial
+		available = {
+			tag = PNM
+		}
+		visible = {
+			tag = PNM
+		}
+		fire_only_once = yes
+		custom_cost_trigger = {
+			check_variable = { industrial_power > 199.9 }
+		}
+		custom_cost_text = decision_cost_200_ip
+		days_remove = 200
+		remove_effect = {
+			subtract_from_variable = {
+				industrial_power = 200
+			}
+			build_railway = {
+				level = 5
+				start_province = 500
+				target_province = 388
+			}
+			build_railway = {
+				level = 5
+				start_province = 500
+				target_province = 273
+			}
+			build_railway = {
+				level = 5
+				start_province = 500
+				target_province = 1264
+			}
+			build_railway = {
+				level = 5
+				start_province = 500
+				target_province = 952
+			}
+			build_railway = {
+				level = 5
+				start_province = 500
+				target_province = 1418
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	#
+	NAU_influence_districts = {
+		icon = GFX_decision_political
+		available = {
+			OR = {
+				tag = PNM
+				tag = ARC
+			}
+			has_war = no
+			NOT = {
+				has_idea = NAU_influenced_districts	
+			}
+		}
+		visible = {
+			OR = {
+				tag = PNM
+				tag = ARC
+			}
+		}
+		fire_only_once = no
+		target_trigger = {
+			FROM = {
+				is_nau_tag = yes
+			}
+		}
+		cost = 20
+		days_remove = 20
+		remove_effect = {
+			custom_effect_tooltip = NAU_influence_districts_tt
+			add_timed_idea = {
+				idea = NAU_influenced_districts
+				days = 30
+			}	
+			if = {
+				limit = {
+					ROOT = {
+						tag = PNM
+					}
+				}
+				FROM = {
+					add_to_variable = {
+						nau_legitimacy = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = ARC
+					}
+				}
+				FROM = {
+					add_to_variable = {
+						arc_legitimacy = 1
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1000
 		}
 	}
 }
