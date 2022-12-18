@@ -6,58 +6,37 @@ guiTypes = {
 		size = { width=100% height=100% }
 		show_sound = peace_conference
 
-		containerWindowType = {
-			name = "peaceconference_bottom_window"
-			size = { width=100% height =300}
-			position = { x=0 y =-300}
-			orientation = LOWER_LEFT
-
-			Background = {
-				name ="random_bg_mod"
-				spriteType = "GFX_tiled_bg_alpha_fade"
-				alwaystransparent = yes
-			}
-			Background = {
-				name ="random_bg_mod"
-				spriteType = "GFX_tiled_bg_alpha_fade"
-				alwaystransparent = yes
-			}
+		iconType ={
+			name ="frontend_upper_left_corner"
+			spriteType = "GFX_frontend_upper_left_corner"
+			position = { x = 0 y = 0 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+		iconType ={
+			name ="frontend_lower_right_corner"
+			spriteType = "GFX_frontend_lower_right_corner"
+			position = { x = -398 y = -319 }
+			Orientation = "LOWER_RIGHT"
+			alwaystransparent = yes
 		}
 
 		containerWindowType = {
-			name = "peaceconference_left_window"
-			size = { width=550 height =100%%}
-			position = { x=0 y =0}
-			orientation = UPPER_LEFT
+			name = "random_frontend_bg_mod8"
+			size = { width=100% height =100%}
+		
+			background = {
+				name = "frontend_bg"
+				quadTextureSprite ="GFX_frontend_bg_mod"
+				alwaystransparent = yes
+			}
 
-			Background = {
-				name ="random_bg_mod"
-				spriteType = "GFX_decision_view_bg_large"
+			background = {
+				name = "frontend_bg"
+				quadTextureSprite ="GFX_frontend_bg_corners"
 				alwaystransparent = yes
 			}
-			Background = {
-				name ="random_bg_mod"
-				spriteType = "GFX_decision_view_bg_large"
-				alwaystransparent = yes
-			}
-		}
-
-		containerWindowType = {
-			name = "peaceconference_right_windoww"
-			size = { width=550 height =100%%}
-			position = { x=-550 y =0}
-			orientation = UPPER_RIGHT
-
-			Background = {
-				name ="random_bg_mod"
-				spriteType = "GFX_decision_view_bg_large_flip"
-				alwaystransparent = yes
-			}
-			Background = {
-				name ="random_bg_mod"
-				spriteType = "GFX_decision_view_bg_large_flip"
-				alwaystransparent = yes
-			}
+		
 		}
 
 		containerWindowType = {
@@ -65,25 +44,15 @@ guiTypes = {
 			position = { x=-20 y=0}
 			size = { width=100%% height=300 }
 
-			background = {
-				name = "Background"
-				spriteType ="GFX_tiled_bg_alpha_fade_flip"
-				alwaystransparent = yes
-			}
-			background = {
-				name = "Background"
-				spriteType ="GFX_tiled_bg_alpha_fade_flip"
-				alwaystransparent = yes
-			}
-
 			buttonType = {
 				name = "done_button"
-				position = { x=-397 y= 24 }
+				position = { x=-60 y= 24 }
 				clicksound = click_ok
-				quadTextureSprite ="GFX_play_button"
+				quadTextureSprite ="GFX_exit_button_left"
 				buttonText = ""
 				buttonFont = "Arial"
 				orientation = "upper_right"
+				shortcut = "ESCAPE"
 				enabled = no
 			}
 
@@ -98,13 +67,13 @@ guiTypes = {
 			iconType = {
 				name = "title_bg"
 				spriteType ="GFX_national_label_bg_2"
-				position = { x = 100 y = 0 }
+				position = { x = 10000 y = 0 }
 				alwaystransparent = yes
 			}
 
 			instantTextboxType = {
 				name = "title"
-				position = { x = 50 y = 38 }
+				position = { x = 10000 y = 38 }
 				font = "Beyond"
 				text = "PEACE_PEACE_CONFERENCE"
 				maxWidth = 800
@@ -118,7 +87,8 @@ guiTypes = {
 		containerWindowType = {
 			name = "peaceconference_select_action_window"
 			position = { x = -328 y = 87 }
-			show_position = { x = -3 y = 87 }
+			#show_position = { x = -3 y = 87 }
+			show_position = { x = -1000 y = 87 }
 			show_animation_type = decelerated
 			hide_animation_type = accelerated
 			animation_time = 300
@@ -392,7 +362,8 @@ guiTypes = {
 		containerWindowType = {
 			name = "peaceconference_actions_window"
 			position = { x = -328 y = 230 }
-			show_position = { x = 20 y = 230 }
+			#show_position = { x = 20 y = 230 }
+			show_position = { x = -10000 y = 230 }
 			show_animation_type = decelerated
 			hide_animation_type = accelerated
 			animation_time = 300
@@ -434,7 +405,8 @@ guiTypes = {
 		containerWindowType = {
 			name = "reset_container"
 			position = { x = -325 y = 0 }
-			show_position = { x = -5 y = 0 }
+			#show_position = { x = -5 y = 0 }
+			show_position = { x = -1000 y = 0 }
 			show_animation_type = decelerated
 			hide_animation_type = accelerated
 			animation_time = 300
@@ -483,7 +455,8 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "peaceconference_main_window"
-			position = { x = 0 y = 0 }
+			#position = { x = 0 y = 0 }
+			position = { x = -10000 y = 0 }
 			size = { width = 100% height = 100% }
 
 			containerWindowType = {
@@ -581,12 +554,14 @@ guiTypes = {
 		containerWindowType = {
 			name = "peaceconference_right_window"
 			position = { x = 0 y = 113 }
-			show_position = { x = -335 y = 113 }
+			#show_position = { x = -335 y = 113 }
+			show_position = { x = -1000 y = 113 }
 			show_animation_type = decelerated
 			hide_animation_type = accelerated
 			animation_time = 300
 			size = { width = 340 height = 100%% }
-			orientation = UPPER_RIGHT
+			#orientation = UPPER_RIGHT
+			orientation = UPPER_LEFT
 
 			#background = {
 			#	name = "Background"

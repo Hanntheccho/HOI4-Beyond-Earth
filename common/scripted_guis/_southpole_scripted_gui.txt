@@ -907,7 +907,6 @@ scripted_gui = {
             antarctic_sectors_pic_owns_visible = {
                 ROOT = {
                     check_variable = { num_southpole_sectors > 0 }
-                    check_variable = { num_southpole_sectors < 10 }
                 } 
             }
 
@@ -1263,13 +1262,9 @@ scripted_gui = {
         ai_test_interval = 6969
 
         ai_check = {
-            NOT = {
-                any_country = {
-                    check_variable = { num_southpole_sectors = 10 }
-                }
-            }
             has_political_power > 20
             political_power_daily > 0.5
+            has_war = no
 		}
 
         ai_weights = {

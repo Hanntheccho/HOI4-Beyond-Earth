@@ -1,103 +1,25 @@
 on_actions = {
-	###
-	on_monthly = { #should this be a on_monthly or something else such as on_puppet?
-		effect = {
-			every_country = {
-				limit = {
-					original_tag = ROOT
-					NOT = {
-						tag = ROOT
-					}
-				}
-				every_owned_state = {
-					transfer_state_to = ROOT
-				}
-			}
-			every_country = {
-				limit = {
-					has_war = no
-					is_puppet = yes
-				}
-				if = {
-					limit = {
-						OVERLORD = {
-							NOT = {
-								tag = ROOT
-							}
-							is_in_faction_with = ROOT
-							is_ai = yes
-						}
-					}
-					every_owned_state = {
-						limit = {
-							OR = {
-								is_claimed_by = ROOT
-								is_core_of = ROOT
-							}
-							NOT = {
-								is_claimed_by = OVERLORD
-								is_core_of = OVERLORD
-							}
-						}
-						transfer_state_to = ROOT
-					}
-				}
-				else_if = {
-					limit = {
-						OVERLORD = {
-							tag = ROOT
-							is_ai = yes
-						}
-					}
-					every_owned_state = {
-						limit = {
-							OR = {
-								is_claimed_by = ROOT
-								is_core_of = ROOT
-							}
-						}
-						transfer_state_to = ROOT
-					}
-				}
-				else = {
-					#
-				}
-			}
-		}
-	}
-	###
-	on_puppet = { #ROOT is the puppet tag, FROM is OVERLORD
+	on_capitulation_immediate = {
 		effect = {
 			ROOT = {
 				every_owned_state = {
 					limit = {
-						OR = {
-							is_claimed_by = FROM
-							is_core_of = FROM
+						is_core_of = FROM
+						is_claimed_by = FROM
+					}
+					if = {
+						limit = {
+							root_is_minor_tag = yes
 						}
+						remove_core_of = ROOT
 					}
 					transfer_state_to = FROM
 				}
 			}
-			every_country = {
-				limit = {
-					is_in_faction_with = FROM
-					#any_core_state = {
-					#	is_owned_by = ROOT
-					#}
-				}
-				ROOT = {
-					every_owned_state = {
-						limit = {
-							OR = {
-								is_claimed_by = PREV.PREV
-								is_core_of = PREV.PREV
-							}
-						}
-						transfer_state_to = PREV.PREV
-					}
-				}
+			FROM = {
+				puppet = ROOT
 			}
+			puppet_government_too = yes
 		}
 	}
 	###
@@ -108,25 +30,6 @@ on_actions = {
 					has_global_flag = final_war_flag
 				}
 				log = "A WAR HAS ENDED!"
-			}
-			#CHINA
-			else_if = {
-				limit = {
-					FROM = {
-						is_china_tag = yes
-					}
-					ROOT = {
-						tag = CHI
-					}
-					NOT = {
-						any_country = {
-							is_china_tag = yes
-						}
-					}
-				}
-				CHI = {
-					drop_cosmetic_tag = yes
-				}
 			}
 			#POL-LAT WAR
 			else_if = {
@@ -176,11 +79,11 @@ on_actions = {
 						id = karelia_event.6
 						days = 25
 					}
-					FROM = {
+					SOV = {
 						every_owned_state = {
-							remove_core_of = FROM
-							add_core_of = ROOT
-							transfer_state_to = ROOT
+							remove_core_of = SOV
+							add_core_of = KAR
+							transfer_state_to = KAR
 						}
 					}
 					set_cosmetic_tag = KAR_russia
@@ -196,33 +99,8 @@ on_actions = {
 						tag = KAZ
 					}
 				}
-				FROM = {
-					remove_ideas = URA_no_army
+				URA = {
 					set_cosmetic_tag = URA_democratic
-				}
-			}
-			#COS-URG-BRA WAR
-			else_if = {
-				limit = {
-					FROM = {
-						tag = URG
-						is_puppet_of = COS
-						any_core_state = {
-							is_owned_by = BGV
-						}
-					}
-					ROOT = {
-						tag = COS
-					}
-				}
-				FROM = {
-					every_core_state = {
-						transfer_state_to = FROM
-					}
-				}
-				BGV = {
-					transfer_state = 176
-					transfer_state = 185
 				}
 			}
 			#DOS-CAS WAR
@@ -235,19 +113,19 @@ on_actions = {
 						tag = DOS
 					}
 				}
-				ROOT = {
+				DOS = {
 					every_owned_state = {
 						limit = {
-							is_core_of = FROM
+							is_core_of = CAS
 						}
-						remove_core_of = FROM
+						remove_core_of = CAS
 					}
 					add_to_variable = {
 						arc_legitimacy = 3
 					}
 				}
 				ARC = {
-					add_to_faction = ROOT
+					add_to_faction = DOS
 				}
 			}
 			#CAS-DOS WAR
@@ -260,19 +138,19 @@ on_actions = {
 						tag = CAS
 					}
 				}
-				ROOT = { #should make it so it tag switches player back to DOS
+				CAS = { #should make it so it tag switches player back to DOS
 					every_owned_state = {
-						remove_core_of = ROOT
-						transfer_state_to = FROM
+						remove_core_of = CAS
+						transfer_state_to = DOS
 					}
 				}
-				FROM = {
+				DOS = {
 					add_to_variable = {
 						nau_legitimacy = 3
 					}
 				}
 				PNM = {
-					add_to_faction = FROM
+					add_to_faction = DOS
 				}
 			}
 			#TRE-ONU WAR
@@ -285,22 +163,19 @@ on_actions = {
 						tag = TRE
 					}
 				}
-				ROOT = {
-					annex_country = {
-						target = FROM
-					}
+				TRE = {
 					every_owned_state = {
 						limit = {
-							is_core_of = FROM
+							is_core_of = ONU
 						}
-						remove_core_of = FROM
+						remove_core_of = ONU
 					}
 					add_to_variable = {
 						arc_legitimacy = 3
 					}
 				}
 				ARC = {
-					add_to_faction = ROOT
+					add_to_faction = TRE
 				}
 			}
 			#DOS-SIL WAR
@@ -313,14 +188,16 @@ on_actions = {
 						tag = DOS
 					}
 				}
-				FROM = {
-					every_core_state = {
-						remove_core_of = FROM
-						transfer_state_to = ROOT
+				DOS = {
+					every_owned_state = {
+						limit = {
+							is_core_of = SIL
+						}
+						remove_core_of = SIL
 					}
-				}
-				ROOT = {
-					remove_ideas = DOS_to_the_coast
+					add_to_variable = {
+						arc_legitimacy = 3
+					}
 					set_capital = { #gives error if capital set to 12 in history file ;_;
 						state = 12
 						remember_old_capital = no
@@ -337,22 +214,22 @@ on_actions = {
 						tag = ONE
 					}
 				}
-				ROOT = {
+				ONE = {
 					annex_country = {
-						target = FROM
+						target = CAL
 					}
 					every_owned_state = {
 						limit = {
-							is_core_of = FROM
+							is_core_of = CAL
 						}
-						remove_core_of = FROM
+						remove_core_of = CAL
 					}
 					add_to_variable = {
 						nau_legitimacy = 3
 					}
 				}
 				PNM = {
-					add_to_faction = ROOT
+					add_to_faction = ONE
 				}
 			}
 			#TZN-COG WAR
@@ -439,12 +316,6 @@ on_actions = {
 						tag = PAD
 					}
 				}
-				ITA = {
-					every_core_state = {
-						add_core_of = PAD
-						transfer_state_to = PAD
-					}
-				}
 				PAD = {
 					set_cosmetic_tag = PAD_italy
 					set_capital = {
@@ -522,42 +393,6 @@ on_actions = {
 				}
 				ROOT = {
 					set_cosmetic_tag = COS_CHL
-				}
-			}
-			#GER-FRA WAR
-			else_if = {
-				limit = {
-					FROM = {
-						tag = FRA
-					}
-					ROOT = {
-						tag = GER
-					}
-				}
-				FRA = {
-					release = SPR
-					set_cosmetic_tag = FRA_FRA
-				}
-				GER = {
-					puppet = SPR
-				}
-			}
-			#ECW
-			else_if = {
-				limit = {
-					FROM = {
-						is_eng_tag = yes
-					}
-					ROOT = {
-						is_eng_tag = yes
-					}
-				}
-				FROM = {
-					every_core_state = {
-						remove_core_of = FROM
-						add_core_of = ROOT
-						#transfer_state_to = ROOT
-					}
 				}
 			}
 			#JNG-SCO WAR

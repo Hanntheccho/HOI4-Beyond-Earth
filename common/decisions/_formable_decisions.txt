@@ -2,14 +2,38 @@ formable_decisions = {
 	form_eu = {
 		icon = GFX_decision_unity
 		available = {
-			GER = {
-				is_puppet_of = ROOT
+			if = {
+				limit = {
+					tag = GER
+				}
+				FRA = {
+					is_puppet_of = ROOT
+				}
+				SCO = {
+					is_puppet_of = ROOT
+				}
 			}
-			SOV = {
-				is_puppet_of = ROOT
+			if = {
+				limit = {
+					tag = FRA
+				}
+				GER = {
+					is_puppet_of = ROOT
+				}
+				SCO = {
+					is_puppet_of = ROOT
+				}
 			}
-			SCO = {
-				is_puppet_of = ROOT
+			if = {
+				limit = {
+					tag = SCO
+				}
+				FRA = {
+					is_puppet_of = ROOT
+				}
+				GER = {
+					is_puppet_of = ROOT
+				}
 			}
 		}
 		visible = {
@@ -31,7 +55,7 @@ formable_decisions = {
 			}
 			every_country = {
 				limit = {
-					is_puppet_of = ROOT
+					is_in_faction_with = ROOT
 					capital_scope = {
 						is_on_continent = europe
 					}
@@ -48,17 +72,13 @@ formable_decisions = {
 			}
 			if = {
 				limit = {
-					ROOT = {
-						tag = FRA
-					}
+					tag = FRA
 				}
 				set_cosmetic_tag = FRA_eu_union
 			}
 			else_if = {
 				limit = {
-					ROOT = {
-						tag = SCO
-					}
+					tag = SCO
 				}
 				set_cosmetic_tag = SCO_EU
 			}
@@ -179,58 +199,6 @@ formable_decisions = {
 			factor = 1
 		}
 	}
-	##
-	germany_europe = {
-		icon = GFX_decision_unity
-		available = {
-			FRA = {
-				is_puppet_of = GER
-			}
-			SOV = {
-				is_puppet_of = GER
-			}
-			SCO = {
-				is_puppet_of = GER
-			}
-		}
-		visible = {
-			tag = GER
-		}
-		fire_only_once = yes
-		days_remove = 180
-		remove_effect = {
-			every_state = {
-				limit = {
-					is_owned_by = GER
-					is_on_continent = europe
-				}
-				add_core_of = GER
-			}
-			every_country = {
-				limit = {
-					is_puppet_of = GER
-					capital_scope = {
-						is_on_continent = europe
-					}
-				}
-				every_core_state = {
-					add_core_of = GER
-				}
-				GER = {
-					annex_country = {
-						target = PREV
-						#transfer_troops = yes
-					}
-				}
-			}
-			GER = {
-				set_cosmetic_tag = GER_green_europe
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
 	###
 	BHR_kavithan_protectorate = {
 		icon = GFX_decision_unity
@@ -251,8 +219,8 @@ formable_decisions = {
 		}
 	
 		fire_only_once = yes
-	
-		complete_effect = {
+		days_remove = 270
+		remove_effect = {
 			every_country = {
 				limit = {
 					OR = {
@@ -291,10 +259,13 @@ formable_decisions = {
 		available = {
 			NOT = {
 				any_country = {
-					is_nau_tag = yes
+					OR = {
+						is_nau_tag = yes
+						tag = ARC
+						tag = PNM
+					}
 					NOT = {
-						is_puppet_of = BHR
-						is_puppet_of = KAV
+						is_in_faction_with = ROOT
 					}
 				}
 			}
@@ -308,8 +279,8 @@ formable_decisions = {
 		}
 	
 		fire_only_once = yes
-	
-		complete_effect = {
+		days_remove = 280
+		remove_effect = {
 			every_country = {
 				limit = {
 					is_nau_tag = yes
@@ -323,6 +294,76 @@ formable_decisions = {
 			}
 			set_cosmetic_tag = NAU_united
 			set_global_flag = nau_was_reunited_flag
+		}
+		
+		ai_will_do = {
+			factor = 100000
+		}
+	}
+	form_afr = {
+		icon = GFX_decision_unity
+		available = {
+			num_of_military_factories > 10
+		}
+
+		visible = {
+			tag = USA
+		}
+	
+		fire_only_once = yes
+		days_remove = 50
+		remove_effect = {
+			set_cosmetic_tag = USA_almost_united
+		}
+		
+		ai_will_do = {
+			factor = 100000
+		}
+	}
+	form_usa = {
+		icon = GFX_decision_unity
+		available = {
+			NOT = {
+				any_country = {
+					OR = {
+						is_nau_tag = yes
+						tag = ARC
+						tag = PNM
+					}
+					NOT = {
+						OR = {
+							is_puppet_of = ROOT
+							exists = no
+						}
+					}
+				}
+			}
+		}
+
+		visible = {
+			tag = USA
+		}
+	
+		fire_only_once = yes
+		days_remove = 220
+		remove_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						is_nau_tag = yes
+						tag = ARC
+						tag = PNM
+					}
+				}
+				every_core_state = {
+					add_core_of = ROOT
+				}
+				every_owned_state = {
+					transfer_state_to = ROOT
+				}
+			}
+			set_cosmetic_tag = USA_united
+			set_global_flag = usa_was_reunited_flag
 		}
 		
 		ai_will_do = {

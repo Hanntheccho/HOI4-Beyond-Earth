@@ -293,19 +293,28 @@ country_event = { #Mastery Victory
 	immediate = {
 		hidden_effect = {
 			set_country_flag = ECW_end
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = ECW_end
+					}
+				}
+				ENG = {
+					country_event = {
+						id = england_event.4
+						days = 10
+					}
+					country_event = {
+						id = england_event.9
+						days = 34
+					}
+					#country_event = {
+					#	id = england_event.10
+					#	days = 230
+					#}
+				}
+			}	
 			set_global_flag = ECW_end
-			country_event = {
-				id = england_event.4
-				days = 10
-			}
-			country_event = {
-				id = england_event.9
-				days = 34
-			}
-			#country_event = {
-			#	id = england_event.10
-			#	days = 230
-			#}
 		}
 	}
 
@@ -614,22 +623,33 @@ country_event = { #Purity Victory
 	immediate = {
 		hidden_effect = {
 			set_country_flag = ECW_end
-			set_global_flag = ECW_end
-			country_event = {
-				id = england_event.12
-				days = 10
-			}
 			if = {
 				limit = {
-					FRA = {
-						has_government = purity
+					NOT = {
+						has_global_flag = ECW_end
 					}
 				}
-				country_event = {
-					id = england_event.14
-					days = 34
+				JNG = {
+					country_event = {
+						id = england_event.12
+						days = 10
+					}
 				}
-			}
+				if = {
+					limit = {
+						FRA = {
+							has_government = purity
+						}
+					}
+					FRA = {
+						country_event = {
+							id = england_event.14
+							days = 34
+						}
+					}
+				}
+			}			
+			set_global_flag = ECW_end
 		}
 	}
 

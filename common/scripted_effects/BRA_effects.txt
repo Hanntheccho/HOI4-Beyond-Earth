@@ -9,9 +9,17 @@ BRA_set_borders = {
 		add_core_of = BGV
 		remove_core_of = BRA
 	}
-	URG = {
-		add_state_core = 185
-		transfer_state = 185
+	if = {
+		limit = {
+			URG = {
+				exists = yes
+				is_puppet = no
+			}
+		}
+		URG = {
+			add_state_core = 185
+			transfer_state = 185
+		}
 	}
 	LEG = {
 		transfer_state = 205

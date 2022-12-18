@@ -3,71 +3,152 @@ check_europe_war_progress = {
 		limit = {
 			check_variable = { global.europewarprogress_var > 99.9 }
 		}
-
 		every_country = {
 			limit = {
 				has_idea = EU_treaty_of_bern
 			}
 			remove_ideas = EU_treaty_of_bern
 		}
-		
 		FRA = {
-			declare_war_on = {
-				target = SCO
-				type = annex_puppet_wargoal
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = SCO
+					}
+				}
+				declare_war_on = {
+					target = SCO
+					type = annex_puppet_wargoal
+				}
 			}
-			declare_war_on = {
-				target = GER
-				type = annex_puppet_wargoal
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = GER
+					}
+				}
+				declare_war_on = {
+					target = GER
+					type = annex_puppet_wargoal
+				}
 			}
-			declare_war_on = {
-				target = SOV
-				type = annex_puppet_wargoal
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = SOV
+					}
+				}
+				declare_war_on = {
+					target = SOV
+					type = annex_puppet_wargoal
+				}
 			}
 		}
 		SCO = {
-			declare_war_on = {
-				target = FRA
-				type = annex_puppet_wargoal
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = FRA
+					}
+				}
+				declare_war_on = {
+					target = FRA
+					type = annex_puppet_wargoal
+				}
 			}
-			declare_war_on = {
-				target = GER
-				type = annex_puppet_wargoal
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = GER
+					}
+				}
+				declare_war_on = {
+					target = GER
+					type = annex_puppet_wargoal
+				}
 			}
-			declare_war_on = {
-				target = SOV
-				type = annex_puppet_wargoal
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = SOV
+					}
+				}
+				declare_war_on = {
+					target = SOV
+					type = annex_puppet_wargoal
+				}
 			}
 		}
 		GER = {
-			declare_war_on = {
-				target = SCO
-				type = annex_puppet_wargoal
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = SCO
+					}
+				}
+				declare_war_on = {
+					target = SCO
+					type = annex_puppet_wargoal
+				}
 			}
-			declare_war_on = {
-				target = FRA
-				type = annex_puppet_wargoal
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = FRA
+					}
+				}
+				declare_war_on = {
+					target = FRA
+					type = annex_puppet_wargoal
+				}
 			}
-			declare_war_on = {
-				target = SOV
-				type = annex_puppet_wargoal
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = SOV
+					}
+				}
+				declare_war_on = {
+					target = SOV
+					type = annex_puppet_wargoal
+				}
 			}
 		}
 		SOV = {
-			declare_war_on = {
-				target = SCO
-				type = annex_puppet_wargoal
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = SCO
+					}
+				}
+				declare_war_on = {
+					target = SCO
+					type = annex_puppet_wargoal
+				}
 			}
-			declare_war_on = {
-				target = GER
-				type = annex_puppet_wargoal
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = GER
+					}
+				}
+				declare_war_on = {
+					target = GER
+					type = annex_puppet_wargoal
+				}
 			}
-			declare_war_on = {
-				target = FRA
-				type = annex_puppet_wargoal
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = FRA
+					}
+				}
+				declare_war_on = {
+					target = FRA
+					type = annex_puppet_wargoal
+				}
 			}
 		}
-		
 		set_global_flag = euro_war_happened
 	}
 }
@@ -82,10 +163,8 @@ check_infamy = {
 				}
 			}
 		}
-		
 		set_global_flag = nsa_infamous
 		add_to_variable = { global.ewpgain_var = 0.5 }
-		
 	}
 	if = {
 		limit = {
@@ -96,7 +175,6 @@ check_infamy = {
 				}
 			}
 		}
-		
 		set_global_flag = franco_infamous
 		add_to_variable = { global.ewpgain_var = 0.5 }
 	}
@@ -109,7 +187,6 @@ check_infamy = {
 				}
 			}
 		}
-		
 		set_global_flag = integr_infamous
 		add_to_variable = { global.ewpgain_var = 0.5 }
 	}
@@ -122,7 +199,6 @@ check_infamy = {
 				}
 			}
 		}
-		
 		set_global_flag = slavic_infamous
 		add_to_variable = { global.ewpgain_var = 0.5 }
 	}
