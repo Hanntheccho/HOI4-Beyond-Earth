@@ -1,25 +1,63 @@
 on_actions = {
 	on_capitulation_immediate = {
 		effect = {
-			ROOT = {
-				every_owned_state = {
-					limit = {
-						is_core_of = FROM
-						is_claimed_by = FROM
-					}
-					if = {
-						limit = {
-							root_is_minor_tag = yes
+			FROM = {
+				add_to_array = {
+					array = ROOT.did_capitulated_this
+					value = THIS.id
+				}
+			}
+		}
+	}
+	on_peaceconference_ended = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						is_in_array = {
+							array = FROM.did_capitulated_this
+							value = THIS.id
 						}
-						remove_core_of = ROOT
 					}
-					transfer_state_to = FROM
+				}
+				ROOT = {
+					puppet = FROM
+					puppet_government_too_pc = yes
+				}
+				clear_array = FROM.did_capitulated_this
+			}
+			every_country = {
+				limit = {
+					original_tag = FROM
+					NOT = {
+						tag = FROM
+					}
+				}
+				FROM = {
+					annex_country = {
+						target = PREV
+					}
 				}
 			}
 			FROM = {
-				puppet = ROOT
+				if = {
+					limit = {
+						root_is_minor_tag = yes
+					}
+					every_core_state = {
+						remove_core_of = FROM
+					}
+				}
+				every_owned_state = {
+					limit = {
+						OR = {
+							is_core_of = ROOT
+							is_claimed_by = ROOT
+						}
+					}
+					transfer_state_to = ROOT
+				}
 			}
-			puppet_government_too = yes
 		}
 	}
 	###
@@ -189,12 +227,6 @@ on_actions = {
 					}
 				}
 				DOS = {
-					every_owned_state = {
-						limit = {
-							is_core_of = SIL
-						}
-						remove_core_of = SIL
-					}
 					add_to_variable = {
 						arc_legitimacy = 3
 					}
