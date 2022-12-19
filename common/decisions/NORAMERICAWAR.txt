@@ -19,7 +19,6 @@ noramericawar_decisions = {
 		timeout_effect = {
 			DOS = {
 				remove_ideas = DOS_divided_leadership
-				leave_faction = yes
 			}
 			every_state = {
 				limit = {
@@ -36,9 +35,6 @@ noramericawar_decisions = {
 					type = annex_puppet_wargoal
 				}
 			}
-			#PNM = {
-			#	add_to_faction = CAS
-			#}
 		}
 		ai_will_do = {
 			factor = 1
@@ -58,7 +54,6 @@ noramericawar_decisions = {
 		days_mission_timeout = 133
 		timeout_effect = {
 			TRE = {
-				leave_faction = yes
 				remove_ideas = TRE_the_last_earthlings
 			}
 			every_state = {
@@ -77,13 +72,6 @@ noramericawar_decisions = {
 				}
 				add_ideas = TRE_the_last_earthlings
 			}
-			#ARC = {
-			#	add_to_faction = TRE
-			#	add_to_war = {
-			#		targeted_alliance = TRE
-			#		enemy = ONU
-			#	}
-			#}
 		}
 		ai_will_do = {
 			factor = 1
@@ -102,9 +90,6 @@ noramericawar_decisions = {
 		fire_only_once = yes
 		days_mission_timeout = 96
 		timeout_effect = {
-			ONE = {
-				leave_faction = yes
-			}
 			every_state = {
 				limit = {
 					is_core_of = ONE
@@ -120,12 +105,6 @@ noramericawar_decisions = {
 					type = annex_puppet_wargoal
 				}
 			}
-			#PNM = {
-			#	add_to_war = {
-			#		targeted_alliance = ONE
-			#		enemy = CAL
-			#	}
-			#}
 		}
 		ai_will_do = {
 			factor = 1
@@ -135,16 +114,10 @@ noramericawar_decisions = {
 		icon = GFX_decision_political
 		available = {
 			tag = ARC
-			TRE = {
-				exists = yes
-				is_in_faction_with = ARC
-			}
 		}
 		visible = {
 			tag = ARC
-			TRE = {
-				exists = yes
-			}
+			country_exists = TRE
 		}
 		fire_only_once = yes
 		cost = 100
@@ -153,6 +126,9 @@ noramericawar_decisions = {
 			custom_effect_tooltip = ARC_TRE_pacify_tt
 			TRE = {
 				remove_ideas = TRE_absence_of_civilization
+				add_to_variable = {
+					arc_legitimacy = 3
+				}
 			}
 		}
 		ai_will_do = {
@@ -163,15 +139,10 @@ noramericawar_decisions = {
 		icon = GFX_decision_unity
 		available = {
 			tag = ARC
-			TRE = {
-				is_in_faction_with = ARC
-			}
 		}
 		visible = {
 			tag = ARC
-			TRE = {
-				exists = yes
-			}
+			country_exists = TRE
 		}
 		fire_only_once = yes
 		cost = 50

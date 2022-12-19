@@ -1,6 +1,19 @@
 on_actions = {
 	on_capitulation_immediate = {
 		effect = {
+			ROOT = {
+				if = {
+					limit = {
+						is_faction_leader = yes
+					}
+					dismantle_faction = yes
+				}
+				every_subject_country = {
+					FROM = {
+						end_puppet = PREV
+					}
+				}
+			}
 			every_country = {
 				limit = {
 					is_ai = no
@@ -8,13 +21,31 @@ on_actions = {
 				set_country_flag = country_has_been_defeated
 			}
 			FROM = {
-				puppet = ROOT
-				puppet_government_too = yes
-				add_to_array = {
-					array = global.winning_country
-					value = THIS.id
-					index = 0
+				if = {
+					limit = {
+						FROM = {
+							is_puppet = yes
+						}
+					}
+					FROM.OVERLORD = {
+						puppet = ROOT
+						puppet_government_too = yes
+						add_to_array = {
+							array = global.winning_country
+							value = THIS.id
+							index = 0
+						}
+					}
 				}
+				else = {
+					puppet = ROOT
+					puppet_government_too = yes
+					add_to_array = {
+						array = global.winning_country
+						value = THIS.id
+						index = 0
+					}
+				}				
 			}
 			ROOT = {
 				add_to_array = {
@@ -22,13 +53,8 @@ on_actions = {
 					value = THIS.id
 					index = 0
 				}
-				if = {
-					limit = {
-						root_is_minor_tag = yes
-					}
-					every_core_state = {
-						remove_core_of = ROOT
-					}
+				every_owned_state = {
+					transfer_state_to = ROOT
 				}
 				every_owned_state = {
 					limit = {

@@ -2,6 +2,16 @@ on_actions = {
 	###
 	on_startup = {
 		effect = {
+			every_country = {
+				limit = {
+					OR = {
+						is_nau_tag = yes
+						tag = PNM
+						tag = ARC
+					}
+				}
+				add_ideas = NAU_dont_join_me
+			}
 			set_variable = { global.napgain_var = 0.5 }
 			ONE = {
 				set_variable = { nau_legitimacy = 4 }
@@ -39,59 +49,63 @@ on_actions = {
 	}
 	on_weekly_ADU = {
 		effect = {
-			add_to_variable = {
-				var = global.noramericawarprogress_var
-				value = global.napgain_var
-			}
 			if = {
 				limit = {
-					check_variable = {
-						var = global.noramericawarprogress_var
-						value = 100
-    					compare = greater_than_or_equals
+					NOT = {
+						has_global_flag = noramerica_war_happened
 					}
 				}
-				every_country = {
+				add_to_variable = {
+					var = global.noramericawarprogress_var
+					value = global.napgain_var
+				}
+				if = {
 					limit = {
 						check_variable = {
-							nau_legitimacy < arc_legitimacy
+							var = global.noramericawarprogress_var
+							value = 100
+							compare = greater_than_or_equals
 						}
 					}
-					leave_faction = yes
-					ARC = {
-						add_to_faction = PREV
+					every_country = {
+						limit = {
+							is_nau_tag = yes
+							check_variable = {
+								nau_legitimacy < arc_legitimacy
+							}
+						}
+						leave_faction = yes
+						ARC = {
+							add_to_faction = PREV
+						}
 					}
-				}
-				PNM = {
-					declare_war_on = {
-						target = ARC
-						type = annex_puppet_wargoal
+					every_country = {
+						limit = {
+							OR = {
+								is_in_faction_with = ARC
+								tag = ARC
+							}
+						}
+						every_country = {
+							limit = {
+								OR = {
+									is_in_faction_with = PNM
+									tag = PNM
+								}
+							}
+							THIS = {
+								declare_war_on = {
+									target = PREV.PREV
+									type = annex_puppet_wargoal
+								}
+							}
+						}
 					}
+					set_global_flag = noramerica_war_happened
 				}
 			}
-		}
-	}
-	###
-	on_puppet = {
-		effect = {
-			every_country = {
-				limit = {
-					is_puppet_of = PNM
-					OR = {
-						tag = OCH
-						tag = SIT
-						tag = SEI
-						tag = CIN
-						tag = CUA
-						tag = TRE
-						tag = DOS
-						tag = ONE
-					}
-					NOT = {
-						has_idea = NAU_central_authority_mid
-					}
-				}
-				add_ideas = NAU_central_authority_mid
+			else = {
+				#
 			}
 		}
 	}

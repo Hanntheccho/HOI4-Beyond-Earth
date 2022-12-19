@@ -2,13 +2,12 @@ SOV_manifest_destiny = {
 	SOV_war_vostaslavia = {
 		icon = GFX_decision_war
 		available = {
-			BLR = {
-				exists = yes
-			}
+			#
 		}
 		visible = {
+			country_exists = BLR
 			BLR = {
-				exists = yes
+				is_puppet = no
 			}
 		}
 		days_remove = 20
@@ -16,6 +15,11 @@ SOV_manifest_destiny = {
 		fire_only_once = yes
 		targets = { BLR }
 		remove_effect = {
+			custom_effect_tooltip = add_infamy_high
+			add_to_variable = {
+				var = global.slavicinfamy_var
+				value = 4
+			}
 			declare_war_on = {
 				type = annex_puppet_wargoal
 				target = BLR
@@ -34,13 +38,12 @@ SOV_manifest_destiny = {
 	SOV_war_ukraine = {
 		icon = GFX_decision_war
 		available = {
-			UKR = {
-				exists = yes
-			}
+			#
 		}
 		visible = {
+			country_exists = UKR
 			UKR = {
-				exists = yes
+				is_puppet = no
 			}
 		}
 		days_remove = 35
@@ -50,8 +53,20 @@ SOV_manifest_destiny = {
 		war_with_on_remove = UKR
 		fire_only_once = yes
 		remove_effect = {
-			UKR = {
-				leave_faction = yes
+			custom_effect_tooltip = add_infamy_high
+			add_to_variable = {
+				var = global.slavicinfamy_var
+				value = 4
+			}
+			if = {
+				limit = {
+					UKR = {
+						is_in_faction_with = SOV
+					}
+				}
+				UKR = {
+					leave_faction = yes
+				}
 			}
 			declare_war_on = {
 				type = annex_puppet_wargoal
@@ -77,13 +92,12 @@ SOV_manifest_destiny = {
 	SOV_war_baltics = {
 		icon = GFX_decision_war
 		available = {
-			LAT = {
-				exists = yes
-			}
+			#
 		}
 		visible = {
+			country_exists = LAT
 			LAT = {
-				exists = yes
+				is_puppet = no
 			}
 		}
 		days_remove = 35
@@ -93,6 +107,11 @@ SOV_manifest_destiny = {
 		war_with_on_remove = LAT
 		fire_only_once = yes
 		remove_effect = {
+			custom_effect_tooltip = add_infamy_high
+			add_to_variable = {
+				var = global.slavicinfamy_var
+				value = 4
+			}
 			declare_war_on = {
 				type = annex_puppet_wargoal
 				target = LAT

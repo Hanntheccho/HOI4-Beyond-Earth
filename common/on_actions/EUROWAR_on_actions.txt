@@ -7,9 +7,19 @@ on_actions = {
 	}
 	on_weekly_ADU = {
 		effect = {
-			add_to_variable = {
-				var = global.europewarprogress_var
-				value = global.ewpgain_var
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = euro_war_happened
+					}
+				}
+				add_to_variable = {
+					var = global.europewarprogress_var
+					value = global.ewpgain_var
+				}
+			}
+			else = {
+				#
 			}
 		}
 	}
@@ -87,8 +97,18 @@ on_actions = {
 	#EU WAR STUFF
 	on_declare_war = {
 		effect = {
-			check_europe_war_progress = yes
-			check_infamy = yes
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = euro_war_happened
+					}
+				}
+				check_europe_war_progress = yes
+				check_infamy = yes
+			}
+			else = {
+				#
+			}
 		}
 	}
 	###

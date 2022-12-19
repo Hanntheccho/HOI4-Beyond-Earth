@@ -776,16 +776,28 @@ guiTypes = {
 		}
 
 		instantTextBoxType = {
+			name = "description"
+			position = { x = 20 y = -30 }
+			textureFile = ""
+			font = "Arialsmallest"
+			borderSize = {x = 0 y = 20} 
+			text = "We have finished researching..."	
+			maxWidth = 460
+			maxHeight = 300
+			format = centre
+			vertical_alignment = center
+		}	
+
+		instantTextBoxType = {
 			name = "tech_name"
-			position = { x = 43 y = 128 }
-			font = "Beyond"
+			position = { x = 20 y = 150 }
+			textureFile = ""
+			font = "Arialsmallest"
+			borderSize = {x = 0 y = 0} 
 			text = "Tech name"	
-			maxWidth = 440
-			maxHeight = 120
-			format = right
-			fixedsize = yes
-			truncate = yes
-			vertical_alignment = bottom
+			maxWidth = 460
+			maxHeight = 300
+			format = centre
 		}	
 		
 		iconType = {
@@ -938,12 +950,12 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "message"
-			position = { x = 27 y = 30 }
+			position = { x = 42 y = 30 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
 			text = "Long text here!"
-			maxWidth = 438
+			maxWidth = 420
 			maxHeight = 200
 			format = centre
 			scrollbartype = "standardtext_slider"
@@ -1109,111 +1121,83 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "surrendered_country_popup"
-		position = { x = 0 y = 0 }
-		size = { width = 584 height = 280 }
+		position = { x = -225 y = -160 }
+		size = { width = 500 height = 260 }
 		orientation= center
-		origo = center
 		moveable = yes
 		fade_time = 200
 		fade_type = linear
 		show_sound = flatline_sound #diplomatic_notification
 		hide_sound = menu_close_window
 		click_to_front = yes
-		clipping = no		
-		
-		background = {
-			name = "Background_2"	
-			quadTextureSprite ="GFX_peace_summery_back"
-			position = {
-				x = -4
-				y = -4
-			} 
-		}
+		clipping = no
 		
 		background = {
 			name = "Background"	
-			quadTextureSprite ="GFX_tiled_bg" 
+			quadTextureSprite ="GFX_tiled_bg_black"
 		}
 
-		#
 		iconType = {
-			name ="flatline_peace_line_animation"
-			spriteType = "GFX_flatline_peace_line_animation_green"
-			position = { x= 1 y = 1 }
+			name = "tech_done"
+			position = { x = 4 y = 4 }
+			spriteType = "GFX_tech_done_bg"
 			alwaystransparent = yes
+			frame = 2
 		}
-		#iconType = {
-		#	name ="flatline_peace_line"
-		#	spriteType = "GFX_flatline_peace_line_green"
-		#	position = { x= 1 y = 1 }
-		#	alwaystransparent = yes
-		#}
-		#
+		
+		instantTextBoxType = {
+			name = "title"
+			position = { x = 17 y = 10 }
+			textureFile = ""
+			font = "Beyond"
+			borderSize = {x = 0 y = 0}
+			text = "Title"	
+			format = left
+			maxWidth = 400
+			maxHeight = 24
+		}
 
 		containerWindowType = {
 			name = "Background_3"
-			size = { width=100%% height=100%% } 
+			size = { width = 494 height = 254 } 
 
 			background = {
 				name = "Background"
 				quadTextureSprite = "GFX_tiled_bg_alpha"
 				alwaystransparent = yes
+				position = {
+					x = 3
+					y = 3
+				}
 			}
-		}
-		
-		instantTextBoxType = {
-			name = "title"
-			position = { x = 10000 y = 25 }
-			textureFile = ""
-			font = "Beyondsmall"
-			borderSize = {x = 0 y = 0}
-			text = "Title"	
-			maxWidth = 400
-			maxHeight = 24
-			format = centre
-			orientation = CENTER_UP
 		}
 
 		iconType = {
 			name = "sender_flag"
 			quadTextureSprite ="GFX_shield_medium"
-			position = { x= 30 y = 100 }
+			position = { x= 10000 y = 100 }
 			Orientation = "UPPER_LEFT"
-		}	
-
-		iconType = {
-			name = "player_flag_frame_mod"
-			quadTextureSprite ="GFX_large_flag_frame_mod"
-			position = { x= 25 y = 98 }
-			alwaystransparent = yes
 		}	
 		
 		iconType = {
 			name = "receiver_flag"
 			quadTextureSprite ="GFX_shield_medium"
-			position = { x= 466 y = 100 }
+			position = { x= 10000 y = 100 }
 			Orientation = "UPPER_LEFT"
 		}
-
-		iconType = {
-			name = "player_flag_frame_mod2"
-			quadTextureSprite ="GFX_large_flag_frame_mod"
-			position = { x= 461 y = 98 }
-			alwaystransparent = yes
-		}	
 		
 		instantTextBoxType = {
 			name = "message"
-			position = { x = 137 y = 56 }
+			position = { x = 42 y = 30 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
 			text = "Long text here!"
-			maxWidth = 300
-			maxHeight = 150
-			format = center
-			vertical_alignment = center
+			maxWidth = 420
+			maxHeight = 200
+			format = centre
 			scrollbartype = "standardtext_slider"
+			vertical_alignment = center
 		}
 		
 		OverlappingElementsBoxType = {
@@ -1226,12 +1210,11 @@ guiTypes = {
 		
 		buttonType = {
 			name = "ok_button"
-			position = { x=230 y =231}
-			quadTextureSprite ="GFX_button_123x34"
-			buttonText = "BUTTON_OK"
-			buttonFont = "Arial"
+			position = { x=431 y =-40}
+			quadTextureSprite ="GFX_exit_button"
 			shortcut = "RETURN"
 			clicksound = click_ok
+			scale = 0.9
 		}
 	}
 
@@ -1769,13 +1752,6 @@ guiTypes = {
 			quadTextureSprite ="GFX_tiled_bg" 
 		}
 
-		iconType = {
-			name ="flatline_peace_line_animation"
-			spriteType = "GFX_flatline_peace_line_animation"
-			position = { x= 1 y = 1 }
-			alwaystransparent = yes
-		}
-
 		instantTextBoxType = {
 			name = "title"
 			position = { x = 15 y = 10 }
@@ -1801,7 +1777,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "description"
-			position = { x = 60 y = -15 }
+			position = { x = 60 y = -5 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0} 
