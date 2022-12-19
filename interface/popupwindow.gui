@@ -734,12 +734,13 @@ guiTypes = {
 			quadTextureSprite ="GFX_tiled_bg_black"
 		}
 		
-		#iconType = {
-		#	name = "tech_done"
-		#	position = { x = 4 y = 4 }
-		#	spriteType = "GFX_tech_done_bg"
-		#	alwaystransparent = yes
-		#}
+		iconType = {
+			name = "tech_done"
+			position = { x = 4 y = 4 }
+			spriteType = "GFX_tech_done_bg"
+			alwaystransparent = yes
+			frame = 1
+		}
 		
 		containerWindowType = {
 			name = "paper_background"
@@ -749,7 +750,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "title"
-			position = { x = 17 y = 10 } #position = { x = 20 y = 10 }
+			position = { x = 17 y = 10 }
 			textureFile = ""
 			font = "Beyond"
 			borderSize = {x = 0 y = 0}
@@ -757,7 +758,6 @@ guiTypes = {
 			format = left
 			maxWidth = 400
 			maxHeight = 24
-			#fixedsize = yes
 		}
 
 		containerWindowType = {
@@ -791,7 +791,7 @@ guiTypes = {
 		iconType = {
 			name = "tech_icon"
 			quadTextureSprite ="GFX_adjuster_forest_bg"
-			position = { x= 0 y = 0 }
+			position = { x= 10000 y = 0 }
 			centerposition = yes
 			orientation = center
 		}
@@ -830,10 +830,9 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "message_popup_window"
-		position = { x = -250 y = -160 }
-		size = { width = 500 height = 320 }
-		orientation = center
-		#origo = center
+		position = { x = -225 y = -160 }
+		size = { width = 500 height = 260 }
+		orientation= center
 		moveable = yes
 		fade_time = 200
 		fade_type = linear
@@ -847,9 +846,17 @@ guiTypes = {
 			quadTextureSprite ="GFX_tiled_bg_black"
 		}
 
+		iconType = {
+			name = "tech_done"
+			position = { x = 4 y = 4 }
+			spriteType = "GFX_tech_done_bg"
+			alwaystransparent = yes
+			frame = 3
+		}
+
 		instantTextBoxType = {
 			name = "title"
-			position = { x = 19 y = 12 } #position = { x = 20 y = 10 }
+			position = { x = 10000 y = 10 }
 			textureFile = ""
 			font = "Beyond"
 			borderSize = {x = 0 y = 0}
@@ -857,12 +864,22 @@ guiTypes = {
 			format = left
 			maxWidth = 400
 			maxHeight = 24
-			#fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "title2"
+			position = { x = 17 y = 10 }
+			textureFile = ""
+			font = "Beyond"
+			borderSize = {x = 0 y = 0}
+			text = "INCOMING TRANSMISSION!"	
+			format = left
+			maxWidth = 400
+			maxHeight = 24
 		}
 
 		containerWindowType = {
 			name = "Background_3"
-			size = { width = 494 height = 314 }
+			size = { width = 494 height = 254 } 
 
 			background = {
 				name = "Background"
@@ -894,14 +911,14 @@ guiTypes = {
 		iconType = {
 			name = "sender_flag"
 			quadTextureSprite ="GFX_shield_medium"
-			position = { x= 24 y = 245 }
+			position = { x= 21 y = 186 }
 			Orientation = "UPPER_LEFT"
 		}	
 
 		iconType = {
 			name = "player_flag_frame_mod"
 			quadTextureSprite ="GFX_large_flag_frame_mod"
-			position = { x= 19 y = 243 }
+			position = { x= 16 y = 184 }
 			alwaystransparent = yes
 		}	
 		
@@ -921,7 +938,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "message"
-			position = { x = 27 y = 40 }
+			position = { x = 27 y = 30 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
@@ -937,7 +954,7 @@ guiTypes = {
 			name = "ok_button"
 			position = { x=431 y =-40}
 			quadTextureSprite ="GFX_exit_button"
-			shortcut = "RETURN"
+			shortcut = "ESCAPE"
 			scale = 0.9
 		}
 	}

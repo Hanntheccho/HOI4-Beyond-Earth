@@ -1,61 +1,58 @@
 on_actions = {
 	on_capitulation_immediate = {
 		effect = {
-			FROM = {
-				add_to_array = {
-					array = ROOT.did_capitulated_this
-					value = THIS.id
-				}
-			}
-		}
-	}
-	on_peaceconference_ended = {
-		effect = {
-			if = {
-				limit = {
-					ROOT = {
-						is_in_array = {
-							array = FROM.did_capitulated_this
-							value = THIS.id
-						}
-					}
-				}
-				ROOT = {
-					puppet = FROM
-					puppet_government_too_pc = yes
-				}
-				clear_array = FROM.did_capitulated_this
-			}
 			every_country = {
 				limit = {
-					original_tag = FROM
-					NOT = {
-						tag = FROM
-					}
+					is_ai = no
 				}
-				FROM = {
-					annex_country = {
-						target = PREV
-					}
-				}
+				set_country_flag = country_has_been_defeated
 			}
 			FROM = {
+				puppet = ROOT
+				puppet_government_too = yes
+				add_to_array = {
+					array = global.winning_country
+					value = THIS.id
+					index = 0
+				}
+			}
+			ROOT = {
+				add_to_array = {
+					array = global.losing_country
+					value = THIS.id
+					index = 0
+				}
 				if = {
 					limit = {
 						root_is_minor_tag = yes
 					}
 					every_core_state = {
-						remove_core_of = FROM
+						remove_core_of = ROOT
 					}
 				}
 				every_owned_state = {
 					limit = {
 						OR = {
-							is_core_of = ROOT
-							is_claimed_by = ROOT
+							is_core_of = FROM
+							is_claimed_by = FROM
 						}
 					}
-					transfer_state_to = ROOT
+					set_state_owner_to = FROM
+				}
+			}
+		}
+	}
+	###
+	on_peace = {
+		effect = {
+			THIS = {
+				every_controlled_state = {
+					limit = {
+						NOT = {
+							is_owned_by = ROOT
+						}
+					}
+					transfer_state_to = OWNER
 				}
 			}
 		}
@@ -536,6 +533,18 @@ on_actions = {
 			else = {
 				#
 			}
+		}
+	}
+	###
+	on_puppet = {
+		effect = {
+			puppet_government_too = yes
+		}
+	}
+	###
+	on_release_as_puppet = {
+		effect = {
+			puppet_government_too = yes
 		}
 	}
 }

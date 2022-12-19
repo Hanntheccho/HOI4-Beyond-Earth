@@ -174,14 +174,7 @@ formable_decisions = {
 	FRA_form_sos_government = {
 		icon = GFX_decision_unity
 		available = {
-			tag = FRA
-			FRA = {
-				has_war_with = GER
-				has_war_with = PAD
-			}
-			FRA = {
-				surrender_progress > 0.3
-			}
+			surrender_progress > 0.3
 		}
 		visible = {
 			tag = FRA
@@ -196,7 +189,7 @@ formable_decisions = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 	###
@@ -294,6 +287,14 @@ formable_decisions = {
 			}
 			set_cosmetic_tag = NAU_united
 			set_global_flag = nau_was_reunited_flag
+			add_victory_points = {
+				province = 1700
+				value = 20
+			}
+			set_capital = {
+				state = 91
+				remember_old_capital = no
+			}
 		}
 		
 		ai_will_do = {

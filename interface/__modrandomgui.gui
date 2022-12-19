@@ -1,10 +1,9 @@
 guiTypes = {
 	containerWindowType = {
 		name = "surrender_window"
-		position = { x = 0 y = 0 }
-		size = { width = 584 height = 280 }
+		position = { x = -225 y = -160 }
+		size = { width = 500 height = 260 }
 		orientation= center
-		origo = center
 		moveable = yes
 		fade_time = 200
 		fade_type = linear
@@ -14,52 +13,62 @@ guiTypes = {
 		clipping = no
 
 		background = {
-			name = "Background_2"	
-			quadTextureSprite ="GFX_peace_summery_back"
-			position = {
-				x = -4
-				y = -4
-			} 
-		}
-		
-		background = {
 			name = "Background"	
-			quadTextureSprite ="GFX_tiled_bg" 
+			quadTextureSprite ="GFX_tiled_bg_black"
 		}
 
 		iconType = {
-			name ="flatline_peace_line_animation"
-			spriteType = "GFX_flatline_peace_line_animation"
-			position = { x= 1 y = 1 }
+			name = "tech_done"
+			position = { x = 4 y = 4 }
+			spriteType = "GFX_tech_done_bg"
 			alwaystransparent = yes
-		}
-
-		instantTextBoxType = {
-			name = "title"
-			position = { x = 15 y = 10 }
-			textureFile = ""
-			font = "Beyond"
-			borderSize = {x = 0 y = 0}
-			text = "A WAR HAS ENDED"	
-			maxWidth = 490
-			maxHeight = 40
-			format = left
+			frame = 2
 		}
 
 		containerWindowType = {
-			name = "Background_3"
-			size = { width=100%% height=100%% } 
+			name = "Background_4"
+			size = { width = 492 height = 254 } 
+			position = { x= 4 y = 0 }
+			clipping = yes
 
-			background = {
-				name = "Background"
-				quadTextureSprite = "GFX_tiled_bg_alpha"
+			iconType = {
+				name ="flatline_peace_line_animation"
+				spriteType = "GFX_flatline_peace_line_animation"
+				position = { x= -40 y = -7 }
 				alwaystransparent = yes
 			}
 		}
 
 		instantTextBoxType = {
+			name = "title"
+			position = { x = 17 y = 10 }
+			textureFile = ""
+			font = "Beyond"
+			borderSize = {x = 0 y = 0}
+			text = "A WAR HAS ENDED"	
+			format = left
+			maxWidth = 400
+			maxHeight = 24
+		}
+
+		containerWindowType = {
+			name = "Background_3"
+			size = { width = 494 height = 254 } 
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_bg_alpha"
+				alwaystransparent = yes
+				position = {
+					x = 3
+					y = 3
+				}
+			}
+		}
+
+		instantTextBoxType = {
 			name = "description"
-			position = { x = 60 y = -15 }
+			position = { x = 25 y = -15 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0} 
@@ -72,11 +81,11 @@ guiTypes = {
 
 		buttonType = {
 			name = "ok_button"
-			position = { x=-73 y =-49}
+			position = { x=431 y =-40}
 			quadTextureSprite ="GFX_exit_button"
-			shortcut = "ESCAPE"
+			shortcut = "RETURN"
 			clicksound = click_ok
-			orientation = UPPER_RIGHT
+			scale = 0.9
 		}
 	}
 	###
