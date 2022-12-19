@@ -40,19 +40,19 @@ on_actions = {
 					set_state_owner_to = FROM
 				}
 			}
-		}
-	}
-	###
-	on_peace = {
-		effect = {
-			THIS = {
-				every_controlled_state = {
+			FROM = {
+				if = {
 					limit = {
-						NOT = {
-							is_owned_by = ROOT
-						}
+						has_war = no
 					}
-					transfer_state_to = OWNER
+					every_controlled_state = {
+						limit = {
+							NOT = {
+								is_owned_by = ROOT
+							}
+						}
+						transfer_state_to = OWNER
+					}
 				}
 			}
 		}
