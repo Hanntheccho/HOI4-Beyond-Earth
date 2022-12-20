@@ -75,10 +75,48 @@ country_event = {
 	desc = karelia_event.5.d
 	picture = GFX_unknown_event
 
-	is_triggered_only = yes
+	trigger = {
+		OR = {
+			NOT = {
+				country_exists = SOV
+			}
+			SOV = {
+				is_puppet_of = KAR
+			}
+		}
+		tag = KAR
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	immediate = {
+		hidden_effect = {
+			SOV = {
+				every_core_state = {
+					add_core_of = KAR
+				}
+				KAR = {
+					annex_country = {
+						target = PREV
+					}
+				}
+			}
+			KAR = {
+				country_event = { 
+					id = karelia_event.6
+					days = 25
+				}
+			}
+		}
+	}
 	
 	option = { 
 		name = karelia_event_option.5.a 
+		set_cosmetic_tag = KAR_russia
 	}
 }
 

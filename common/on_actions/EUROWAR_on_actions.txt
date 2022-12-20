@@ -17,6 +17,8 @@ on_actions = {
 					var = global.europewarprogress_var
 					value = global.ewpgain_var
 				}
+				check_europe_war_progress = yes
+				check_infamy = yes
 			}
 			else = {
 				#
@@ -94,22 +96,4 @@ on_actions = {
 			}
 		}
 	}
-	#EU WAR STUFF
-	on_declare_war = {
-		effect = {
-			if = {
-				limit = {
-					NOT = {
-						has_global_flag = euro_war_happened
-					}
-				}
-				check_europe_war_progress = yes
-				check_infamy = yes
-			}
-			else = {
-				#
-			}
-		}
-	}
-	###
 }

@@ -90,6 +90,7 @@ formable_decisions = {
 			factor = 100
 		}
 	}
+	###
 	FRA_form_fed_med = {
 		icon = GFX_decision_unity
 		available = {
@@ -365,6 +366,183 @@ formable_decisions = {
 			}
 			set_cosmetic_tag = USA_united
 			set_global_flag = usa_was_reunited_flag
+		}
+		
+		ai_will_do = {
+			factor = 100000
+		}
+	}
+	###
+	UK_JNG = {
+		icon = GFX_decision_unity
+		available = {
+			SCO = {
+				all_core_state = {
+					is_owned_by = JNG
+				}
+			}
+			ENG = {
+				all_core_state = {
+					is_owned_by = JNG
+				}
+			}
+		}
+
+		visible = {
+			tag = JNG
+		}
+	
+		fire_only_once = yes
+		days_remove = 25
+		remove_effect = {
+			create_faction = "European Front"
+			country_event = england_event.22
+			set_cosmetic_tag = GRB
+		}
+		
+		ai_will_do = {
+			factor = 100000
+		}
+	}
+	###
+	ARG_united = {
+		icon = GFX_decision_unity
+		available = {
+			has_war = no
+		}
+
+		visible = {
+			OR = {
+				tag = ARG
+				tag = COS
+			}
+		}
+	
+		fire_only_once = yes
+		days_remove = 10
+		remove_effect = {
+			if = {
+				limit = {
+					tag = COS
+				}
+				every_core_state = {
+					remove_core_of = ARG
+				}
+				set_capital = {
+					state = 154
+					remember_old_capital = no
+				}
+			}
+			else = {
+				every_core_state = {
+					remove_core_of = COS
+				}
+			}
+			set_cosmetic_tag = ARG_ARG
+		}
+		
+		ai_will_do = {
+			factor = 100000
+		}
+	}
+	###
+	PAD_italia = {
+		icon = GFX_decision_unity
+		available = {
+			is_in_faction_with = ITA
+		}
+
+		visible = {
+			tag = PAD
+		}
+	
+		fire_only_once = yes
+		days_remove = 20
+		remove_effect = {
+			set_cosmetic_tag = PAD_italy
+			set_capital = {
+				state = 334
+				#remember_old_capital = no #?
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100000
+		}
+	}
+	###
+	TZN_united = {
+		icon = GFX_decision_unity
+		available = {
+			is_in_faction_with = ANG
+			is_in_faction_with = SAF
+			is_in_faction_with = COG
+			is_puppet = no
+		}
+
+		visible = {
+			tag = TZN
+		}
+	
+		fire_only_once = yes
+		days_remove = 260
+		remove_effect = {
+			set_cosmetic_tag = TZN_AFRICA
+			COG = {
+				every_core_state = {
+					add_core_of = TZN
+				}
+				TZN = {
+					annex_country = {
+						target = PREV
+					}
+				}
+			}
+			ANG = {
+				every_core_state = {
+					add_core_of = TZN
+				}
+				TZN = {
+					annex_country = {
+						target = PREV
+					}
+				}
+			}
+			SAF = {
+				every_core_state = {
+					add_core_of = TZN
+				}
+				TZN = {
+					annex_country = {
+						target = PREV
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100000
+		}
+	}
+	###
+	URA_democracy = {
+		icon = GFX_decision_unity
+		available = {
+			URA = {
+				is_puppet_of = KAZ
+			}
+		}
+
+		visible = {
+			tag = KAZ
+		}
+	
+		fire_only_once = yes
+		days_remove = 10
+		remove_effect = {
+			URA = {
+				set_cosmetic_tag = URA_democratic
+			}
 		}
 		
 		ai_will_do = {
