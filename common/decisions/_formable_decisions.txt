@@ -277,7 +277,11 @@ formable_decisions = {
 		remove_effect = {
 			every_country = {
 				limit = {
-					is_nau_tag = yes
+					OR = {
+						is_nau_tag = yes
+						tag = ARC
+						tag = PNM
+					}
 				}
 				every_core_state = {
 					add_core_of = ROOT
@@ -288,14 +292,6 @@ formable_decisions = {
 			}
 			set_cosmetic_tag = NAU_united
 			set_global_flag = nau_was_reunited_flag
-			add_victory_points = {
-				province = 1700
-				value = 20
-			}
-			set_capital = {
-				state = 91
-				remember_old_capital = no
-			}
 		}
 		
 		ai_will_do = {
@@ -363,6 +359,14 @@ formable_decisions = {
 				every_owned_state = {
 					transfer_state_to = ROOT
 				}
+			}
+			add_victory_points = {
+				province = 1700
+				value = 20
+			}
+			set_capital = {
+				state = 91
+				remember_old_capital = no
 			}
 			set_cosmetic_tag = USA_united
 			set_global_flag = usa_was_reunited_flag
