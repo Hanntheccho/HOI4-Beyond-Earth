@@ -10,16 +10,6 @@ scripted_gui = {
 		}
 		
 		effects = {
-            #auto_reduce_devastation_button_click = {
-            #    ROOT = {
-            #        clr_country_flag = auto_reduce_devastation_enabled
-            #    }
-			#}
-            #auto_reduce_devastation_button_disabled_click = {
-            #    ROOT = {
-            #        set_country_flag = auto_reduce_devastation_enabled
-            #    }
-			#}
 			reduce_devastation_button_click = {
                 THIS = {
                     decrease_devastation = yes
@@ -44,11 +34,11 @@ scripted_gui = {
                     }
                 }
                 ROOT = {
-                    subtract_from_variable = { industrial_power = 25 }
+                    subtract_from_variable = { industrial_power = 15 }
                     subtract_from_variable = { current_devastation = 1 }
                 }
             }
-            reduce_devastation_button_mastery_click = {
+            reduce_devastation_button_right_click = {
                 THIS = {
                     increase_devastation = yes
                     set_state_flag = {
@@ -147,18 +137,6 @@ scripted_gui = {
             }
 		}
         triggers = {
-            #auto_reduce_devastation_button_visible = {
-            #    ROOT = {
-            #        has_country_flag = auto_reduce_devastation_enabled
-            #    }
-			#}
-            #auto_reduce_devastation_button_disabled_visible = {
-            #    NOT = {
-            #        ROOT = {
-            #            has_country_flag = auto_reduce_devastation_enabled
-            #        }
-            #    }
-			#}
             reduce_devastation_button_visible = {
                 ROOT = {
                     NOT = {
@@ -208,7 +186,10 @@ scripted_gui = {
                     }
                 }
             }
-            reduce_devastation_button_mastery_click_enabled = {
+            reduce_devastation_button_right_click_enabled = {
+                ROOT = { 
+                    has_country_flag = has_body_tier3
+                }
                 THIS = {
                     OR = {
                         is_owned_by = ROOT
@@ -251,11 +232,6 @@ scripted_gui = {
             reduce_devastation_load_harmony_visible = {
                 ROOT = {
                     has_country_flag = has_mind_tier3
-                }
-            }
-            reduce_devastation_button_mastery_visible = {
-                ROOT = { 
-                    has_country_flag = has_body_tier3
                 }
             }
             reduce_devastation_load_harmony_click_enabled = {
@@ -329,7 +305,7 @@ scripted_gui = {
                 ROOT = { 
                     check_variable = {
                         var = industrial_power
-                        value = 40
+                        value = 15
                         compare = greater_than_or_equals
                     }
                 }
@@ -448,7 +424,7 @@ scripted_gui = {
                 ai_will_do = {
                     factor = 0
                     modifier = {
-                        OWNER = {
+                        ROOT = {
                             check_variable = {
                                 industrial_power > 200
                             }
@@ -463,11 +439,11 @@ scripted_gui = {
 			        }
                 }
             }
-            reduce_devastation_button_mastery_click = {
+            reduce_devastation_button_right_click = {
                 ai_will_do = {
                     factor = 0
                     modifier = {
-                        OWNER = {
+                        ROOT = {
                             check_variable = {
                                 industrial_power > 100
                             }

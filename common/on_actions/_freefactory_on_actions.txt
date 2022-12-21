@@ -9,35 +9,6 @@ on_actions = {
                 set_variable = { free_factory_counter = 0 }
                 set_variable = { division_limit = num_of_military_factories }
                 multiply_variable = { division_limit = 2 }
-                add_ideas = agrarian_stage
-                if = {
-                    limit = {
-                        num_of_factories > 8
-                    }
-                    add_ideas = developing_stage
-                    set_research_slots = 2
-                }
-                if = {
-                    limit = {
-                        num_of_factories > 18
-                    }
-                    add_ideas = developed_stage
-                    set_research_slots = 3
-                }
-                if = {
-                    limit = {
-                        num_of_factories > 28
-                    }
-                    add_ideas = regional_stage
-                    set_research_slots = 4
-                }
-                if = {
-                    limit = {
-                        num_of_factories > 98
-                    }
-                    add_ideas = continental_stage
-                    set_research_slots = 5
-                }
                 if = {
                     limit = {
                         num_of_factories > 198
@@ -52,6 +23,38 @@ on_actions = {
                     add_ideas = global_stage
                     set_research_slots = 6
                 }
+                else_if = {
+                    limit = {
+                        num_of_factories > 98
+                    }
+                    add_ideas = continental_stage
+                    set_research_slots = 5
+                }
+                else_if = {
+                    limit = {
+                        num_of_factories > 28
+                    }
+                    add_ideas = regional_stage
+                    set_research_slots = 4
+                }
+                else_if = {
+                    limit = {
+                        num_of_factories > 18
+                    }
+                    add_ideas = developed_stage
+                    set_research_slots = 3
+                }
+                else_if = {
+                    limit = {
+                        num_of_factories > 8
+                    }
+                    add_ideas = developing_stage
+                    set_research_slots = 2
+                }
+                else = {
+                    add_ideas = agrarian_stage
+                    set_research_slots = 1
+                }                              
             }
         }
     }
@@ -335,7 +338,6 @@ on_actions = {
             }
         }
     }
-
     on_daily = {
         effect = {
             set_variable = { division_limit = num_of_military_factories }
@@ -368,64 +370,54 @@ on_actions = {
             }
         }
     }
-
-    on_daily = {
+    on_weekly = {
         effect = {
             if = {
-                limit = {
-                    num_of_factories > 8
-                    NOT = { num_of_factories > 18 }
-                }
-                add_ideas = developing_stage
-                set_research_slots = 2
-            }
-            else_if = {
-                limit = {
-                    num_of_factories > 18
-                    NOT = { num_of_factories > 28 }
-                }
-                add_ideas = developed_stage
-                set_research_slots = 3
-            }
-            else_if = {
-                limit = {
-                    num_of_factories > 28
-                    NOT = { num_of_factories > 98 }
-                }
-                add_ideas = regional_stage
-                set_research_slots = 4
-            }
-            else_if = {
-                limit = {
-                    num_of_factories > 98
-                    NOT = { num_of_factories > 198 }
-                }
-                add_ideas = continental_stage
-                set_research_slots = 5
-            }
-            else_if = {
                 limit = {
                     num_of_factories > 198
                     NOT = {
                         any_country = {
                             check_variable = {
-                                num_of_factories > ROOT.num_of_factories
+                                THIS.num_of_factories > ROOT.num_of_factories
                             }
                         }
                     }
                 }
                 add_ideas = global_stage
                 set_research_slots = 6
-                add_to_array = {
-                    array = global.global_superpower_title_array
-                    value = THIS.id
-                    index = 0
+            }
+            else_if = {
+                limit = {
+                    num_of_factories > 98
                 }
+                add_ideas = continental_stage
+                set_research_slots = 5
+            }
+            else_if = {
+                limit = {
+                    num_of_factories > 28
+                }
+                add_ideas = regional_stage
+                set_research_slots = 4
+            }
+            else_if = {
+                limit = {
+                    num_of_factories > 18
+                }
+                add_ideas = developed_stage
+                set_research_slots = 3
+            }
+            else_if = {
+                limit = {
+                    num_of_factories > 8
+                }
+                add_ideas = developing_stage
+                set_research_slots = 2
             }
             else = {
                 add_ideas = agrarian_stage
                 set_research_slots = 1
-            } 
+            }   
         }
     }
 }
