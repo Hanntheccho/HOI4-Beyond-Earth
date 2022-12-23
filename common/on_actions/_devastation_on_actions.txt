@@ -502,14 +502,13 @@ on_actions = {
 		}
 	}
 	###
-	#MONTHLY INCREASING WORLD TENSION
 	on_monthly_ADU = {
 		effect = {
+			set_variable = { global.total_global_devastation = 0 }
 			if = {
 				limit = {
 					threat < 1
 				}
-				set_variable = { global.total_global_devastation = 0 }
 				every_state = {
 					if = {
 						limit = {
@@ -521,7 +520,7 @@ on_actions = {
 							global.total_global_devastation = 4
 						}
 					}
-					if = {
+					else_if = {
 						limit = {
 							has_dynamic_modifier = {
 								modifier = significant_devastation
@@ -531,7 +530,7 @@ on_actions = {
 							global.total_global_devastation = 3
 						}
 					}
-					if = {
+					else_if = {
 						limit = {
 							has_dynamic_modifier = {
 								modifier = major_devastation
@@ -541,7 +540,7 @@ on_actions = {
 							global.total_global_devastation = 2
 						}
 					}
-					if = {
+					else_if = {
 						limit = {
 							has_dynamic_modifier = {
 								modifier = notable_devastation
@@ -551,16 +550,35 @@ on_actions = {
 							global.total_global_devastation = 1
 						}
 					}
+					else = {
+						#
+					}
 				}
-				divide_variable = { global.total_global_devastation = 800 } #1000
-				random_country = {
+			}
+			if = {
+				limit = {
+					threat > 0
+					threat < 1
+				}
+				every_state = {
 					limit = {
-						owns_state = 333
+						has_dynamic_modifier = {
+							modifier = no_devastation
+						}
 					}
-					add_named_threat = { 
-						threat = global.total_global_devastation
-						name = total_global_devastation_added
+					add_to_variable = {
+						global.total_global_devastation = -4
 					}
+				}
+			}
+			divide_variable = { global.total_global_devastation = 800 } #1000
+			every_country = {
+				limit = {
+					owns_state = 333
+				}
+				add_named_threat = { 
+					threat = global.total_global_devastation
+					name = total_global_devastation_added
 				}
 			}
 		}

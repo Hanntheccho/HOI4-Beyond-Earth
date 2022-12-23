@@ -561,9 +561,6 @@ news_event = {
 			}
 		}
 		custom_effect_tooltip = civilization_collapses_event_tt
-		every_country = {
-			add_ideas = nothing_left_idea
-		}
 	}
 	
 	mean_time_to_happen = {
@@ -572,11 +569,6 @@ news_event = {
 
 	option = {
 		name = international_news_event.7.a
-		#hidden_effect = {
-		#	every_country = {
-        #        country_event = { id = international_spaceship_event.4 days = 0 }
-		#	}
-		#}
 	}
 }
 
@@ -593,9 +585,6 @@ news_event = {
 
 		immediate = {
 			custom_effect_tooltip = international_news_event_8_tt
-			#every_country = {
-			#	add_ideas = awaiting_return_idea
-			#}
 			hidden_effect = {
 				set_global_flag = unify_spaceship_button_disabled
 				set_global_flag = spaceship_already_internationalized
@@ -674,7 +663,6 @@ news_event = {
 		}
 		custom_effect_tooltip = the_final_war_event_tooltip
 		every_country = {
-			add_ideas = the_final_war_idea
 			declare_war_on = {
 				target = ROOT
 				type = annex_puppet_wargoal
@@ -686,8 +674,8 @@ news_event = {
 		name = international_news_event.11.a
 	}
 }
-#UNITY DESTROYED
-news_event = {
+
+news_event = { #ISS destroyed
 	id = international_news_event.12
 	title = international_news_event.12.t
 	desc = international_news_event.12.d
@@ -702,133 +690,9 @@ news_event = {
 			news_event = { id = international_news_event.11 days = 5 }
 		}
 		custom_effect_tooltip = unity_hijacked_tooltip
-		every_country = {
-			limit = {
-				has_idea = awaiting_return_idea
-			}
-			remove_ideas = awaiting_return_idea
-		}
 	}
 
 	option = {
 		name = international_news_event.12.a
 	}
 }
-###
-
-#country_event = {
-#	id = international_spaceship_event.1
-#	title = international_spaceship_event.1.t
-#	desc = international_spaceship_event.1.d
-#	picture = GFX_report_event_gathering_protest
-#    
-#    is_triggered_only = yes
-#
-#    fire_only_once = no
-#
-#	option = {
-#		name = international_spaceship_event.1.a
-#		every_country = {
-#            country_event = { id = international_spaceship_event.3 days = 0 }
-#		}
-#		set_global_flag = game_over
-#	}
-#}
-#
-#country_event = {
-#	id = international_spaceship_event.2
-#	title = international_spaceship_event.2.t
-#	desc = international_spaceship_event.2.d
-#	picture = GFX_report_event_gathering_protest
-#    
-#    is_triggered_only = yes
-#
-#    fire_only_once = no
-#
-#	option = {
-#		name = international_spaceship_event.2.a
-#	}
-#}
-#
-#country_event = {
-#	id = international_spaceship_event.3
-#	title = international_spaceship_event.3.t
-#	desc = international_spaceship_event.3.d
-#	picture = GFX_report_event_gathering_protest
-#    
-#    is_triggered_only = yes
-#
-#    fire_only_once = no
-#
-#	option = {
-#		name = international_spaceship_event.3.a
-#		custom_effect_tooltip = game_over_event_tooltip
-#		hidden_effect = {
-#			every_country = {
-#				limit = {
-#					has_war = yes
-#				}
-#				every_enemy_country = {
-#					white_peace = PREV
-#				}
-#			}
-#			set_rule = {
-#				can_not_declare_war = yes
-#			}
-#			set_rule = {
-#				can_guarantee_other_ideologies = no
-#			}
-#		}
-#	}
-#}
-#
-#country_event = {
-#	id = international_spaceship_event.4
-#	title = international_spaceship_event.4.t
-#	desc = international_spaceship_event.4.d
-#	picture = GFX_report_event_gathering_protest
-#    
-#    is_triggered_only = yes
-#
-#    fire_only_once = no
-#
-#	option = {
-#		name = international_spaceship_event.4.a
-#		custom_effect_tooltip = game_over_event_tooltip
-#		add_ideas = nothing_left_idea
-#		hidden_effect = {
-#			every_country = {
-#				limit = {
-#					has_war = yes
-#				}
-#				every_enemy_country = {
-#					white_peace = PREV
-#				}
-#			}
-#			set_rule = {
-#				can_not_declare_war = yes
-#			}
-#			set_rule = {
-#				can_guarantee_other_ideologies = no
-#			}
-#		}
-#	}
-#}
-#
-#country_event = {
-#	id = international_spaceship_event.5
-#	title = international_spaceship_event.5.t
-#	desc = international_spaceship_event.5.d
-#	picture = GFX_report_event_gathering_protest
-#    
-#    is_triggered_only = yes
-#
-#    fire_only_once = no
-#
-#	option = {
-#		name = international_spaceship_event.5.a
-#		add_ideas = the_final_war_idea
-#		#set_rule = { can_use_kamikaze_pilots = yes } #???
-#	}
-#}
-#
