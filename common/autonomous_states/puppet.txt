@@ -47,23 +47,14 @@ autonomy_state = {
 
 	#ROOT is puppet - FROM is potential OVERLORD
 	use_for_peace_conference_weight = {
-		base = 0
-		modifier = {
-			add = 10
-			FROM = {
-				OR = {
-					has_wargoal_against = { target = ROOT type = annex_puppet_wargoal }
-					has_rule = can_puppet
-				}
-			}
-		}
+		factor = 0
 	}
 
 	can_take_level = {
-		#trigger here
+		always = no
 	}
 
 	can_lose_level = {
-		#trigger here
+		always = no
 	}
 }
