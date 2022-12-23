@@ -235,7 +235,12 @@ ideas = {
 		ARC_the_anthill = {
 
 			cancel = {
-				is_puppet = yes
+				OR = {
+					is_puppet = yes
+					check_variable = {
+						num_owned_states > 5
+					}
+				}
 			}
 
 			modifier = {
