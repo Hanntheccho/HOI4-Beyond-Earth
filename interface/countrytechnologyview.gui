@@ -76,7 +76,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name ="research_slots"
-			position = { x=0 y=180 }
+			position = { x=0 y=170 }
 			size = { width=550 height=-5 }
 			verticalScrollbar = "right_vertical_slider"
 			margin = { top = 13 bottom = 13 }
@@ -104,7 +104,7 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "research_speed_value2"
-				position = { x = 20 y = 13 }
+				position = { x = 22 y = 0 }
 				textureFile = ""
 				font = "Beyond"
 				borderSize = {x = 0 y = 0}
@@ -116,15 +116,8 @@ guiTypes = {
 
 			iconType = {
 				name = "bg1"
-				position = { x = 0 y = 0 }
-				spriteType = "GFX_research_line_bg_blank"
-				alwaystransparent = yes
-			}
-
-			iconType = {
-				name = "bg2"
-				position = { x = 0 y = 0 }
-				spriteType = "GFX_research_line_bg"
+				position = { x = 11 y = -5 }
+				spriteType = "GFX_logistics_equipment_entry_bg_blank"
 				alwaystransparent = yes
 			}
 			
@@ -142,7 +135,7 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "research_speed_value"
-				position = { x = 195 y = 52 }
+				position = { x = 180 y = 40 }
 				textureFile = ""
 				font = "Beyond"
 				borderSize = {x = 0 y = 0}
@@ -208,23 +201,27 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "research_slot_entry"
-		position = { x=0 y=0 }
-		size = { width=500 height= 100 }
-		clipping = no
+		position = { x=12 y=0 }
+		size = { width=500 height= 120 }
+		clipping = yes
 		
 		background = {
 			name = "Background"
-			quadTextureSprite ="GFX_research_line_bg_blank"
+			quadTextureSprite ="GFX_logistics_equipment_entry_bg"
 			clicksound = click_default
+			position = {
+				x = -1
+				y = 0
+			}
 		}
 
 		instantTextboxType = {
 			name = "title"
-			position = { x = 20 y = 13 }
+			position = { x = 10 y = 5 }
 			textureFile = ""
 			font = "Beyond"
 			borderSize = {x = 0 y = 0}
-			maxWidth = 430
+			maxWidth = 410
 			maxHeight = 80
 			fixedsize = yes
 			format = left
@@ -232,8 +229,12 @@ guiTypes = {
 
 		iconType = {
 			name = "Background2"
-			quadTextureSprite ="GFX_research_line_bg"
+			quadTextureSprite ="GFX_logistics_equipment_entry_bg_blank_log"
 			alwaystransparent = yes
+			position = {
+				x = -20
+				y = 0
+			}
 		}
 
 		iconType = {
@@ -276,13 +277,13 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "eta"
-			position = { x = 200 y = 75 }
+			position = { x = 210 y = 65 }
 			textureFile = ""
 			font = "Focusfont"
 			borderSize = {x = 0 y = 0}
-			maxWidth = 350
+			maxWidth = 200
 			maxHeight = 20
-			format = center	
+			format = right	
 		}	
 
 		iconType = {
@@ -294,7 +295,7 @@ guiTypes = {
 		iconType = {
 			name = "research_progressbar"
 			spriteType = "GFX_research_progressbar"
-			position = { x=13 y=100 }		
+			position = { x=0 y=90 }		
 		}	
 	}
 }
