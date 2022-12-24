@@ -1,3 +1,75 @@
+USA_rebuilding_america = {
+	USA_integrate_bluehelmets = {
+		icon = GFX_decision_political
+		available = {
+			TRE = {
+				exists = no
+			}
+		}
+		visible = {
+			TRE = {
+				exists = no
+			}
+            has_war = no
+		}
+        cost = 50
+		fire_only_once = yes
+		days_remove = 30
+		remove_effect = {
+			hidden_effect = {
+                load_oob = ONU_OOB
+                load_oob = ONU_OOB
+            }
+            custom_effect_tooltip = USA_bluehelmets_tooltip
+		}
+		ai_will_do = {
+			factor = 10
+        }
+	}
+	USA_reclaim_new_york = {
+		icon = GFX_decision_political
+		available = {
+			ARC = {
+				is_puppet = yes
+			}
+		}
+		visible = {
+			ARC = {
+				is_puppet = yes
+			}
+		}
+        cost = 200
+		fire_only_once = yes
+		days_remove = 90
+        remove_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = ARC
+					}
+				}
+				every_core_state = {
+					add_core_of = ROOT
+				}
+				every_owned_state = {
+					transfer_state_to = ROOT
+				}
+			}
+            set_province_name = { id = 1833 name = "New York City" }
+            set_province_name = { id = 1825 name = "Trenton" }
+            set_province_name = { id = 1788 name = "Philadelphia" }                                      
+            113 = { set_state_name = "New York" }
+            106 = { set_state_name = "Philadelphia" }
+
+            custom_effect_tooltip = USA_arc_defeat_tooltip
+            }
+		    ai_will_do = {
+			    factor = 10
+            }
+        }        
+	}
+}
+
 #YOU HAVE TO RENABLE THE FOCUS TREES THEN RENABLE THESE DECISIONS
 #USA_debug_category = {
 #	USA_load_initial_tree = {

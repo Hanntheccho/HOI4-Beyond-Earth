@@ -295,7 +295,19 @@ formable_decisions = {
 	form_afr = {
 		icon = GFX_decision_unity
 		available = {
-			num_of_military_factories > 10
+			NOT = {
+				any_country = {
+					OR = {
+						tag = TRE
+					}
+					NOT = {
+						OR = {
+							is_puppet_of = ROOT
+							exists = no
+						}
+					}
+				}
+			}
 		}
 
 		visible = {
@@ -304,7 +316,29 @@ formable_decisions = {
 	
 		fire_only_once = yes
 		complete_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = TRE
+					}
+				}
+				every_core_state = {
+					add_core_of = ROOT
+				}
+				every_owned_state = {
+					transfer_state_to = ROOT
+				}
+			}
+			add_victory_points = {
+				province = 1700
+				value = 20
+			}
+			set_capital = {
+				state = 91
+				remember_old_capital = no
+			}
 			set_cosmetic_tag = USA_almost_united
+			91 = { set_state_name = "Maryland" }
 		}
 		
 		ai_will_do = {
@@ -351,14 +385,6 @@ formable_decisions = {
 				every_owned_state = {
 					transfer_state_to = ROOT
 				}
-			}
-			add_victory_points = {
-				province = 1700
-				value = 20
-			}
-			set_capital = {
-				state = 91
-				remember_old_capital = no
 			}
 			set_cosmetic_tag = USA_united
 			set_global_flag = usa_was_reunited_flag
