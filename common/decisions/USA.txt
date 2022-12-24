@@ -1,16 +1,51 @@
 USA_rebuilding_america = {
-	USA_integrate_bluehelmets = {
-		icon = GFX_decision_political
+	USA_integrate_districts = {
+		icon = GFX_decision_unity
 		available = {
-			TRE = {
-				exists = no
+			FROM = {
+				is_puppet_of = ROOT
 			}
 		}
 		visible = {
-			TRE = {
-				exists = no
+			#
+		}
+		fire_only_once = no
+		target_trigger = {
+			FROM = {
+				#is_puppet_of = ROOT
+				OR = {
+					is_nau_tag = yes
+					tag = PNM
+				}
 			}
-            has_war = no
+		}
+		cost = 100
+		days_remove = 100
+		remove_effect = {
+			FROM = {
+				every_core_state = {
+					add_core_of = USA
+				}
+			}
+			USA = {
+				annex_country = {
+					target = FROM
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	USA_integrate_bluehelmets = {
+		icon = GFX_decision_war
+		available = {
+			TRE = {
+				is_puppet_of = USA
+			}
+		}
+		visible = {
+			#
 		}
         cost = 50
 		fire_only_once = yes
@@ -18,10 +53,10 @@ USA_rebuilding_america = {
 		remove_effect = {
 			hidden_effect = {
                 load_oob = ONU_OOB
-                load_oob = ONU_OOB
             }
             custom_effect_tooltip = USA_bluehelmets_tooltip
 		}
+
 		ai_will_do = {
 			factor = 10
         }
@@ -30,24 +65,17 @@ USA_rebuilding_america = {
 		icon = GFX_decision_political
 		available = {
 			ARC = {
-				is_puppet = yes
+				is_puppet_of = USA
 			}
 		}
 		visible = {
-			ARC = {
-				is_puppet = yes
-			}
+			#
 		}
         cost = 200
 		fire_only_once = yes
 		days_remove = 90
         remove_effect = {
-			every_country = {
-				limit = {
-					OR = {
-						tag = ARC
-					}
-				}
+			ARC = {
 				every_core_state = {
 					add_core_of = ROOT
 				}
@@ -60,13 +88,12 @@ USA_rebuilding_america = {
             set_province_name = { id = 1788 name = "Philadelphia" }                                      
             113 = { set_state_name = "New York" }
             106 = { set_state_name = "Philadelphia" }
-
             custom_effect_tooltip = USA_arc_defeat_tooltip
-            }
-		    ai_will_do = {
-			    factor = 10
-            }
-        }        
+        }   
+		
+		ai_will_do = {
+			factor = 10
+		}
 	}
 }
 
