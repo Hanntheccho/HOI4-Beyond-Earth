@@ -120,8 +120,46 @@ scripted_gui = {
             #
         }
     } 
+
     ###
-	political_party_info_entry_gui = {
+    ideology_info_entry_diplo_gui = {
+		context_type = player_context
+		parent_window_name = "countrydiplomacyview"
+		
+		window_name = "extra_political_stuff_ideology"
+
+        ai_enabled = {
+            always = no
+        }
+		
+		effects = {
+            #
+		}
+
+		triggers = {
+            #
+		}
+	}
+    ideology_info_entry_politics_gui = {
+		context_type = player_context
+		parent_window_name = "countrypoliticsview"
+		
+		window_name = "extra_political_stuff_ideology"
+
+        ai_enabled = {
+            always = no
+        }
+		
+		effects = {
+            #
+		}
+
+		triggers = {
+            #
+		}
+	}
+    ###
+	political_info_entry_politics_gui = {
 		context_type = player_context
 		parent_window_name = "countrypoliticsview"
 		
@@ -132,42 +170,10 @@ scripted_gui = {
         }
 		
 		effects = {
-            mobilization_system_button_click = {
-                upgrade_mobilization_law = yes
-            }
-            mobilization_system_button_right_click = {
-                downgrade_mobilization_law = yes
-            }
             #
-            trade_system_button_click = {
-                upgrade_trade_law = yes
-            }
-            trade_system_button_right_click = {
-                downgrade_trade_law = yes
-            }
-            #
-            economy_system_button_click = {
-                upgrade_economy_law = yes
-            }
-            economy_system_button_right_click = {
-                downgrade_economy_law = yes
-            }
 		}
 
 		triggers = {
-            mobilization_system_button_click_enabled = {
-                has_political_power > 150
-                is_puppet = no
-            }
-            trade_system_button_click_enabled = {
-                has_political_power > 150
-                is_puppet = no
-            }
-            economy_system_button_click_enabled = {
-                has_political_power > 150
-                is_puppet = no
-            }
-            ###
             agrarian_dudes_visible = {
 				has_idea = agrarian_stage
 			}
@@ -226,8 +232,7 @@ scripted_gui = {
 			}
 		}
 	}
-    ###
-    political_party_info_entry_2_gui = {
+    political_info_entry_diplo_gui = {
 		context_type = selected_country_context
 		parent_window_token = selected_country_view_diplomacy
 		
@@ -242,16 +247,6 @@ scripted_gui = {
 		}
 
 		triggers = {
-            mobilization_system_button_click_enabled = {
-                always = no
-            }
-            trade_system_button_click_enabled = {
-                always = no
-            }
-            economy_system_button_click_enabled = {
-                always = no
-            }
-            ###
             agrarian_dudes_visible = {
 				has_idea = agrarian_stage
 			}

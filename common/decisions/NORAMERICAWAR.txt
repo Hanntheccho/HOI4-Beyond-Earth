@@ -28,12 +28,13 @@ noramericawar_decisions = {
 			}
 			CAS = {
 				transfer_state = 15
-				inherit_technology = DOS
 				load_oob = CAS_OOB
 				declare_war_on = {
 					target = DOS
 					type = annex_puppet_wargoal
 				}
+				set_variable = { nau_legitimacy = 6 }
+				set_variable = { arc_legitimacy = 3 }
 			}
 		}
 		ai_will_do = {
@@ -133,6 +134,36 @@ noramericawar_decisions = {
 		}
 		ai_will_do = {
 			factor = 10
+		}
+	}
+	PNM_CAS_pacify = {
+		icon = GFX_decision_political
+		available = {
+			tag = PNM
+		}
+		visible = {
+			tag = PNM
+			country_exists = CAS
+			CAS = {
+				has_war = no
+			}
+		}
+		fire_only_once = yes
+		cost = 10
+		days_remove = 20
+		remove_effect = {
+			CAS = {
+				every_owned_state = {
+					limit = {
+						is_core_of = DOS
+					}
+					remove_core_of = DOS
+				}
+			}
+			add_to_faction = CAS
+		}
+		ai_will_do = {
+			factor = 100000
 		}
 	}
 	ARC_HQ_expansion = {
