@@ -1,157 +1,17 @@
 germany_formable = {
-	GER_support_padania = {
-		icon = GFX_decision_political
-		available = {
-			PAD = {
-				exists = yes
-			}
-		}
-		visible = {
-			always = yes
-		}
-		cost = 10
-		fire_only_once = yes
-		days_remove = 5
-		remove_effect = {
-			PAD = {
-				add_ideas = GER_eurasian_aligned
-			}
-		}
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				ITA = {
-					has_wargoal_against = PAD
-				}
-				add = 100000
-			}
-		}
-	}
-	GER_padanian_joint_space_plan = {
-		icon = GFX_decision_industrial
-		available = {
-			PAD = {
-				exists = yes
-				has_idea = GER_eurasian_aligned
-			}
-		}
-		visible = {
-			PAD = {
-				exists = yes
-				has_idea = GER_eurasian_aligned
-			}
-		}
-		custom_cost_trigger = {
-			check_variable = { industrial_power > 199.9 }
-		}
-		custom_cost_text = decision_cost_200_ip
-		fire_only_once = yes
-		days_remove = 240
-		remove_effect = {
-			PAD = {
-				swap_ideas = {
-					remove_idea = GER_eurasian_aligned
-					add_idea = GER_german_eurasian_aligned
-				}
-				random_owned_state = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = spaceship_factory
-						level = 2
-						instant_build = yes
-					}
-				}
-				random_owned_state = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = spaceship_factory
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-			subtract_from_variable = {
-				industrial_power = 200
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	GER_padanian_political_influencing = {
-		icon = GFX_decision_political
-		available = {
-			PAD = {
-				exists = yes
-				has_idea = GER_german_eurasian_aligned
-			}
-		}
-		visible = {
-			PAD = {
-				exists = yes
-				has_idea = GER_german_eurasian_aligned
-			}
-		}
-		cost = 200
-		fire_only_once = yes
-		days_remove = 110
-		remove_effect = {
-			PAD = {
-				swap_ideas = {
-					remove_idea = GER_german_eurasian_aligned
-					add_idea = GER_german_aligned
-				}
-				add_ideas = GER_green_soil_plan
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	GER_support_ukraine = {
-		icon = GFX_decision_political
-		available = {
-			country_exists = UKR
-		}
-		visible = {
-			always = yes
-		}
-		cost = 20
-		fire_only_once = yes
-		days_remove = 10
-		remove_effect = {
-			add_to_faction = UKR
-			UKR = {
-				add_ideas = GER_eurasian_aligned
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
 	GER_ukraine_refugee_plan = {
 		icon = GFX_decision_cultural
 		available = {
-			UKR = {
-				exists = yes
-				has_idea = GER_eurasian_aligned
-			}
+			is_in_faction_with = UKR
 		}
 		visible = {
-			UKR = {
-				exists = yes
-				has_idea = GER_eurasian_aligned
-			}
+			country_exists = UKR
 		}
 		cost = 60
 		fire_only_once = yes
 		days_remove = 100
 		remove_effect = {
 			UKR = {
-				swap_ideas = {
-					remove_idea = GER_eurasian_aligned
-					add_idea = GER_german_eurasian_aligned
-				}
 				remove_ideas = UKR_all_slavs
 			}
 		}
@@ -162,16 +22,10 @@ germany_formable = {
 	GER_ukraine_industrial_plan = {
 		icon = GFX_decision_industrial
 		available = {
-			UKR = {
-				exists = yes
-				has_idea = GER_eurasian_aligned
-			}
+			is_in_faction_with = UKR
 		}
 		visible = {
-			UKR = {
-				exists = yes
-				has_idea = GER_eurasian_aligned
-			}
+			country_exists = UKR
 		}
 		custom_cost_trigger = {
 			check_variable = { industrial_power > 99.9 }
@@ -182,10 +36,6 @@ germany_formable = {
 		remove_effect = {
 			UKR = {
 				remove_ideas = UKR_country_life_support
-				swap_ideas = {
-					remove_idea = GER_eurasian_aligned
-					add_idea = GER_german_eurasian_aligned
-				}
 			}
 			subtract_from_variable = {
 				industrial_power = 100
@@ -198,30 +48,16 @@ germany_formable = {
 	GER_ukraine_political_influencing = {
 		icon = GFX_decision_political
 		available = {
-			UKR = {
-				exists = yes
-				NOT = {
-					has_idea = UKR_country_life_support
-					has_idea = UKR_all_slavs
-				}
-			}
+			is_in_faction_with = UKR
 		}
 		visible = {
-			UKR = {
-				exists = yes
-				has_idea = GER_german_eurasian_aligned
-			}			
+			country_exists = UKR
 		}
 		cost = 100
 		fire_only_once = yes
-		days_remove = 50
+		days_remove = 100
 		remove_effect = {
 			UKR = {
-				swap_ideas = {
-					remove_idea = GER_german_eurasian_aligned
-					add_idea = GER_german_aligned
-				}
-				add_ideas = GER_green_soil_plan
 				remove_ideas = UKR_eurasian_dominance
 			}
 		}
@@ -229,235 +65,78 @@ germany_formable = {
 			factor = 1
 		}
 	}
-	GER_support_vostaslavia = {
-		icon = GFX_decision_political
-		available = {
-			country_exists = BLR
+
+	GER_invite_green_soil_enjoyers = {
+		icon = GFX_decision_unity
+		fire_only_once = no
+		cost = 150
+		target_trigger = {
+			FROM = {
+				has_idea = GER_german_aligned
+				is_in_faction = no
+			}
 		}
-		visible = {
-			always = yes
-		}
-		cost = 20
-		fire_only_once = yes
-		days_remove = 10
+		days_remove = 100
 		remove_effect = {
-			BLR = {
-				add_ideas = GER_eurasian_aligned
+			add_to_faction = FROM
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	GER_influence_politics = {
+		icon = GFX_decision_political
+		fire_only_once = no
+		cost = 50
+		target_trigger = {
+			FROM = {
+				has_idea = GER_eurasian_aligned
+			}
+		}
+		days_remove = 50
+		remove_effect = {
+			FROM = {
+				swap_ideas = {
+					remove_idea = GER_eurasian_aligned
+					add_idea = GER_german_eurasian_aligned
+				}
+				add_popularity = {
+					ideology = harmony
+					popularity = 0.05
+				}
 			}
 		}
 		ai_will_do = {
 			factor = 1000
 		}
 	}
-	GER_industrial_help_BLR = {
+	GER_industrial_investment = {
 		icon = GFX_decision_industrial
-		available = {
-			BLR = {
-				exists = yes
-				has_idea = GER_eurasian_aligned
-			}
-		}
-		visible = {
-			BLR = {
-				exists = yes
-				has_idea = GER_eurasian_aligned
-			}
-		}
-		custom_cost_trigger = {
-			check_variable = { industrial_power > 19.9 }
-		}
-		custom_cost_text = decision_cost_20_ip
-		fire_only_once = yes
-		days_remove = 30
-		remove_effect = {
-			BLR = {
-				random_owned_state = {
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-				swap_ideas = {
-					remove_idea = GER_eurasian_aligned
-					add_idea = GER_german_eurasian_aligned
-				}
-			}
-			subtract_from_variable = {
-				industrial_power = 20
-			}
-			set_country_flag = GER_helped_BLR_1
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	GER_military_help_BLR = {
-		icon = GFX_decision_industrial
-		available = {
-			BLR = {
-				exists = yes
-				has_idea = GER_eurasian_aligned
-			}
-		}
-		visible = {
-			BLR = {
-				exists = yes
-				has_idea = GER_eurasian_aligned
-			}
-		}
-		custom_cost_trigger = {
-			check_variable = { industrial_power > 19.9 }
-		}
-		custom_cost_text = decision_cost_20_ip
-		fire_only_once = yes
-		days_remove = 30
-		remove_effect = {
-			BLR = {
-				add_equipment_to_stockpile = {
-					type = infantry_eq
-					amount = 1000
-					producer = GER
-				}
-				swap_ideas = {
-					remove_idea = GER_eurasian_aligned
-					add_idea = GER_german_eurasian_aligned
-				}
-			}
-			subtract_from_variable = {
-				industrial_power = 20
-			}
-			set_country_flag = GER_helped_BLR_2
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	GER_green_soil_BLR = {
-		icon = GFX_decision_political
-		available = {
-			BLR = {
-				exists = yes
-				has_idea = GER_german_eurasian_aligned
-			}
-		}
-		visible = {
-			BLR = {
-				exists = yes
-				has_idea = GER_eurasian_aligned
-			}
-			has_country_flag = GER_helped_BLR_1
-			has_country_flag = GER_helped_BLR_2
-		}
-		cost = 50
-		fire_only_once = yes
-		days_remove = 40
-		remove_effect = {
-			BLR = {
-				swap_ideas = {
-					remove_idea = GER_german_eurasian_aligned
-					add_idea = GER_german_aligned
-				}
-				add_ideas = GER_green_soil_plan
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#INVITE PEOPLE TO THE COOL CLUB
-	GER_invite_green_soil_enjoyers = {
-		icon = GFX_decision_unity
-		#target_root_trigger = {
-		#	has_completed_focus = my_focus
-		#}
-		#targets = {  }
 		fire_only_once = no
-		#targets_dynamic = yes
 		cost = 100
 		target_trigger = {
 			FROM = {
-				has_idea = GER_german_aligned
-				is_in_faction = no
-				capital_scope = {
-					is_on_continent = europe
-				}
-			}
-		}
-		days_remove = 50
-		remove_effect = {
-			add_to_faction = FROM
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	#
-
-	#GET BETTER (IN GREEN TERMS)
-	GER_improve_green_soil_plan = {
-		icon = GFX_decision_industrial
-		#target_root_trigger = {
-		#	has_completed_focus = my_focus
-		#}
-		#targets = {  }
-		fire_only_once = no
-		#targets_dynamic = yes
-		target_root_trigger = {
-			is_faction_leader = yes
-			tag = GER
-		}
-		target_trigger = {
-			FROM = {
-				OR = {
-					has_idea = GER_green_soil_plan
-					has_idea = GER_green_soil_plan_2
-					has_idea = GER_green_soil_plan_3
-				}
-				is_in_faction_with = GER
+				has_idea = GER_german_eurasian_aligned
 			}
 		}
 		custom_cost_trigger = {
 			check_variable = { industrial_power > 99.9 }
 		}
 		custom_cost_text = decision_cost_100_ip
-		days_remove = 60
+		days_remove = 100
 		remove_effect = {
 			FROM = {
-				if = {
-					limit = {
-						has_idea = GER_green_soil_plan_3
-					}
-					swap_ideas = {
-						remove_idea = GER_green_soil_plan_3
-						add_idea = GER_green_soil_plan_4
-					}
-					custom_effect_tooltip = GER_improve_green_soil_plan_tooltip
+				swap_ideas = {
+					remove_idea = GER_german_eurasian_aligned
+					add_idea = GER_german_aligned
 				}
-				else_if = {
-					limit = {
-						has_idea = GER_green_soil_plan_2
-					}
-					swap_ideas = {
-						remove_idea = GER_green_soil_plan_2
-						add_idea = GER_green_soil_plan_3
-					}
-					custom_effect_tooltip = GER_improve_green_soil_plan_tooltip
+				add_popularity = {
+					ideology = harmony
+					popularity = 0.05
 				}
-				else_if = {
-					limit = {
-						has_idea = GER_green_soil_plan
-					}
-					swap_ideas = {
-						remove_idea = GER_green_soil_plan
-						add_idea = GER_green_soil_plan_2
-					}
-					custom_effect_tooltip = GER_improve_green_soil_plan_tooltip
-				}
-				else = {
-					#
+				add_timed_idea = {
+					idea = GER_green_soil_plan
+					days = 200
 				}
 			}
 			subtract_from_variable = {
@@ -465,8 +144,7 @@ germany_formable = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 1000
 		}
 	}
-	#
 }
