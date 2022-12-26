@@ -1,0 +1,39 @@
+asiawar_decisions = {
+	CHI_war_warlord = {
+		icon = GFX_decision_war
+		fire_only_once = no
+		target_trigger = {
+			FROM = {
+				is_china_tag = yes
+				OR = {
+					is_neighbor_of = ROOT
+					if = {
+						limit = {
+							ROOT = {
+								any_state = {
+									is_coastal = yes
+								}
+							}
+						}
+						tag = TAI
+					}
+				}
+			}
+		}
+		cost = 30
+		days_remove = 30
+		remove_effect = {
+			declare_war_on = {
+				target = FROM
+				type = annex_puppet_wargoal
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				has_war = yes
+				add = -10
+			}
+		}
+	}
+}
