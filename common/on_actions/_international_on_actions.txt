@@ -412,8 +412,16 @@ on_actions = {
                         }
                         news_event = international_news_event.4
                     }
-                    else = {
+                    else_if = {
+                        limit = {
+                            NOT = {
+                                has_global_flag = module_5_completed_flag
+                            }
+                        }
                         news_event = international_news_event.5
+                    }
+                    else = {
+                        #
                     }
                     #country_event = { id = international_event.21 }
                     every_country = {
