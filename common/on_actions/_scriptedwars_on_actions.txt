@@ -27,22 +27,37 @@ on_actions = {
 					}
 				}
 			}
-			FROM = {
-				if = {
-					limit = {
-						FROM = {
-							is_puppet = yes
-						}
-					}
-					FROM.OVERLORD = {
-						puppet = ROOT
-						puppet_government_too = yes
+			if = {
+				limit = {
+					FROM = {
+						has_idea = digital_democracy
+						is_in_faction = yes
 					}
 				}
-				else = {
-					puppet = ROOT
-					puppet_government_too = yes
-				}				
+				FROM = {
+					FACTION_LEADER = {
+						add_to_faction = ROOT
+					}
+				}
+			}
+			else = {
+				FROM = {
+					if = {
+						limit = {
+							FROM = {
+								is_puppet = yes
+							}
+						}
+						FROM.OVERLORD = {
+							puppet = ROOT
+							puppet_government_too = yes
+						}
+					}
+					else = {
+						puppet = ROOT
+						puppet_government_too = yes
+					}				
+				}
 			}
 			ROOT = {
 				every_owned_state = {
