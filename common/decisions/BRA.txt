@@ -169,7 +169,7 @@ BRA_the_recovery = {
 		}
 		visible = {
 			PRU = {
-				is_puppet_of = BRA
+				is_puppet_of = BGV
 			}
 		}
 		cost = 30
@@ -177,6 +177,12 @@ BRA_the_recovery = {
 			FROM = {
 				capital_scope = {
 					is_on_continent = south_america
+				}
+				NOT = {
+					OR = {
+						is_puppet_of = ROOT
+						has_war_with = ROOT
+					}					
 				}
 			}
 		}
@@ -238,15 +244,8 @@ BRA_the_recovery = {
 			#	inherit_technology = BGV
 			#}
 			BGV = {
+				transfer_state = 1026
 				#puppet = BOL
-				transfer_state = 134
-				transfer_state = 140
-				#transfer_state = 143
-				#transfer_state = 161
-				#transfer_state = 160
-				#transfer_state = 139
-				#transfer_state = 147
-				#transfer_state = 159
 			}
 		}
 		ai_will_do = {
