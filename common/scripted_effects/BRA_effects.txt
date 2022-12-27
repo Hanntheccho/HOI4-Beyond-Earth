@@ -113,5 +113,35 @@ BRA_set_borders = {
 		transfer_state = 120
 		#add_state_core = 120
 	}
+	BGV = {
+		every_core_state = {
+			limit = {
+				NOT = {
+					is_core_of = LAM
+				}
+			}
+			add_core_of = GRP
+		}
+	}
+	GRP = {
+		transfer_state = 193
+		transfer_state = 196
+		transfer_state = 203
+		set_province_controller = 3176
+		inherit_technology = PRU
+		hidden_effect = {
+			load_oob = GRP_OOB
+		}
+		declare_war_on = {
+			target = BGV
+			type = annex_puppet_wargoal
+		}
+	}
+	BGV = {
+		set_province_controller = 2885
+		set_province_controller = 2902
+		set_province_controller = 2901
+		set_province_controller = 2925
+	}
 	BGV = { change_tag_from = BRA }
 }

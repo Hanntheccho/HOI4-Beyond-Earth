@@ -46,7 +46,6 @@ BRA_the_inevitable = {
 			custom_effect_tooltip = BRA_start_civil_war_tt
 			hidden_effect = {
 				set_global_flag = brazil_civil_war
-				##BRA_set_starting_values = yes
 				BRA_set_borders = yes
 			}
 		}
@@ -64,9 +63,7 @@ BRA_the_recovery = {
 	BRA_oriental_league_war = {
 		icon = GFX_decision_war
 		available = {
-			URG = {
-				exists = yes
-			}
+			country_exists = URG
 		}
 		visible = {
 			#
@@ -88,19 +85,19 @@ BRA_the_recovery = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
-				has_war = no
-				add = 10
+				NOT = {
+					country_exists = LAM
+				}
+				add = 100
 			}
 		}
 	}
 	BRA_lamentadores_war = {
 		icon = GFX_decision_war
 		available = {
-			LAM = {
-				exists = yes
-			}
+			country_exists = LAM
 		}
 		visible = {
 			#
@@ -116,64 +113,19 @@ BRA_the_recovery = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
-				has_war = no
-				add = 10
-			}
-		}
-	}
-	BRA_calling_a_friend = {
-		icon = GFX_decision_political
-		available = {
-			COS = {
-				exists = yes
-			}
-			ARG = {
-				exists = no
-			}
-		}
-		visible = {
-			#
-		}
-		fire_only_once = yes
-		cost = 30
-		days_remove = 30
-		remove_effect = {
-			COS = {
-				declare_war_on = {
-					target = URG
-					type = annex_puppet_wargoal
+				NOT = {
+					country_exists = LEG
 				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				has_war = yes
-				surrender_progress > 0.2
-				add = 1000
+				add = 100
 			}
 		}
 	}
 	BRA_cross_the_andes_again = {
 		icon = GFX_decision_war
 		available = {
-			PRU = {
-				exists = yes
-			}
-			LAM = {
-				exists = no
-			}
-			LEG = {
-				exists = no
-			}
-			URG = {
-				OR = {
-					is_puppet = yes
-					exists = no
-				}
-			}
+			country_exists = PRU
 		}
 		visible = {
 			#
@@ -198,1256 +150,106 @@ BRA_the_recovery = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
-				has_war = no
-				add = 10
+				NOT = {
+					country_exists = LAM
+					country_exists = URG
+					country_exists = LEG
+					country_exists = GRP
+				}
+				add = 1000
 			}
 		}
 	}
-	
+	BRA_brasilia_destiny = {
+		icon = GFX_decision_war
+		available = {
+			#
+		}
+		visible = {
+			PRU = {
+				is_puppet_of = BRA
+			}
+		}
+		cost = 30
+		target_trigger = {
+			FROM = {
+				capital_scope = {
+					is_on_continent = south_america
+				}
+			}
+		}
+		fire_only_once = no
+		days_remove = 30
+		remove_effect = {
+			declare_war_on = {
+				target = FROM
+				type = annex_puppet_wargoal
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						FROM = {
+							tag = COL
+						}
+					}
+					add_state_claim = 105
+					add_state_claim = 107
+					add_state_claim = 145
+					add_state_claim = 146
+				}
+				if = {
+					limit = {
+						FROM = {
+							tag = GYA
+						}
+					}
+					FROM = {
+						every_core_state = {
+							add_claim_by = ROOT
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	BRA_disunite_compact = {
+		icon = GFX_decision_unity
+		available = {
+			PRU = {
+				is_puppet_of = BGV
+			}
+		}
+		visible = {
+			#
+		}
+		fire_only_once = yes
+		cost = 200
+		days_remove = 20
+		remove_effect = {
+			BOL = {
+				add_state_core = 134
+				add_state_core = 140
+				transfer_state = 134
+				transfer_state = 140
+				inherit_technology = BGV
+			}
+			BGV = {
+				puppet = BOL
+				transfer_state = 143
+				transfer_state = 161
+				transfer_state = 160
+				transfer_state = 139
+				transfer_state = 147
+				transfer_state = 159
+			}
+		}
+		ai_will_do = {
+			factor = 100000
+		}
+	}
 }
-
-##BRA_civil_war_gui = {
-##	BGV_propaganda_campaign202 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 202.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_propaganda_campaign202_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = 0.005 }
-##				custom_effect_tooltip = BRA_increase_radicalization_trend
-##			}
-##			set_country_flag = BGV_propaganda_campaign202_taken
-##			clr_country_flag = BGV_deradicalization_campaign202_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_propaganda_campaign200 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 200.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_propaganda_campaign200_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = 0.005 }
-##				custom_effect_tooltip = BRA_increase_radicalization_trend
-##			}
-##			set_country_flag = BGV_propaganda_campaign200_taken
-##			clr_country_flag = BGV_deradicalization_campaign200_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_propaganda_campaign195 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 195.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_propaganda_campaign195_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = 0.005 }
-##				custom_effect_tooltip = BRA_increase_radicalization_trend
-##			}
-##			set_country_flag = BGV_propaganda_campaign195_taken
-##			clr_country_flag = BGV_deradicalization_campaign195_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_propaganda_campaign192 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 192.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_propaganda_campaign192_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = 0.005 }
-##				custom_effect_tooltip = BRA_increase_radicalization_trend
-##			}
-##			set_country_flag = BGV_propaganda_campaign192_taken
-##			clr_country_flag = BGV_deradicalization_campaign192_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_propaganda_campaign199 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 199.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_propaganda_campaign199_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = 0.005 }
-##				custom_effect_tooltip = BRA_increase_radicalization_trend
-##			}
-##			set_country_flag = BGV_propaganda_campaign199_taken
-##			clr_country_flag = BGV_deradicalization_campaign199_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_propaganda_campaign190 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 190.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_propaganda_campaign190_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = 0.005 }
-##				custom_effect_tooltip = BRA_increase_radicalization_trend
-##			}
-##			set_country_flag = BGV_propaganda_campaign190_taken
-##			clr_country_flag = BGV_deradicalization_campaign190_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_propaganda_campaign196 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 196.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_propaganda_campaign196_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = 0.005 }
-##				custom_effect_tooltip = BRA_increase_radicalization_trend
-##			}
-##			set_country_flag = BGV_propaganda_campaign196_taken
-##			clr_country_flag = BGV_deradicalization_campaign196_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_propaganda_campaign203 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 203.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_propaganda_campaign203_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = 0.005 }
-##				custom_effect_tooltip = BRA_increase_radicalization_trend
-##			}
-##			set_country_flag = BGV_propaganda_campaign203_taken
-##			clr_country_flag = BGV_deradicalization_campaign203_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_propaganda_campaign183 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 183.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_propaganda_campaign195_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = 0.005 }
-##				custom_effect_tooltip = BRA_increase_radicalization_trend
-##			}
-##			set_country_flag = BGV_propaganda_campaign183_taken
-##			clr_country_flag = BGV_deradicalization_campaign183_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_propaganda_campaign188 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 188.id }
-##				}
-##			}
-##		}
-##		available = {
-##						NOT = {
-##				has_country_flag = BGV_propaganda_campaign188_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = 0.005 }
-##				custom_effect_tooltip = BRA_increase_radicalization_trend
-##			}
-##			set_country_flag = BGV_propaganda_campaign188_taken
-##			clr_country_flag = BGV_deradicalization_campaign188_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_propaganda_campaign193 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 193.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_propaganda_campaign193_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = 0.005 }
-##				custom_effect_tooltip = BRA_increase_radicalization_trend
-##			}
-##			set_country_flag = BGV_propaganda_campaign193_taken
-##			clr_country_flag = BGV_deradicalization_campaign193_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_propaganda_campaign185 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 185.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_propaganda_campaign185_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = 0.005 }
-##				custom_effect_tooltip = BRA_increase_radicalization_trend
-##			}
-##			set_country_flag = BGV_propaganda_campaign185_taken
-##			clr_country_flag = BGV_deradicalization_campaign185_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_deradicalization_campaign202 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 202.id }
-##				}
-##			}
-##		}
-##		available ={
-##			NOT = {
-##				has_country_flag = BGV_deradicalization_campaign202_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = -0.005 }
-##				custom_effect_tooltip = BRA_decrease_radicalization_trend
-##			}
-##			set_country_flag = BGV_deradicalization_campaign202_taken
-##			clr_country_flag = BGV_propaganda_campaign202_taken
-##			log = "-----BRAZIL RADICALIZATION TREND IN CAMPAIGN 202-----"
-##			log = "[?var:BRA_civil_war_map_chosen_state:BRA_state_radicalization_trend]"
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_deradicalization_campaign200 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 200.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_deradicalization_campaign200_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = -0.00075 }
-##				custom_effect_tooltip = BRA_decrease_radicalization_trend
-##			}
-##			set_country_flag = BGV_deradicalization_campaign200_taken
-##			clr_country_flag = BGV_propaganda_campaign200_taken
-##			log = "-----BRAZIL RADICALIZATION TREND IN CAMPAIGN 200-----"
-##			log = "[?var:BRA_civil_war_map_chosen_state:BRA_state_radicalization_trend]"
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_deradicalization_campaign195 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 195.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_deradicalization_campaign195_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = -0.00075 }
-##				custom_effect_tooltip = BRA_decrease_radicalization_trend
-##			}
-##			
-##			set_country_flag = BGV_deradicalization_campaign195_taken
-##			clr_country_flag = BGV_propaganda_campaign195_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_deradicalization_campaign192 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 192.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_deradicalization_campaign192_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = -0.00075 }
-##				custom_effect_tooltip = BRA_decrease_radicalization_trend
-##			}
-##			
-##			set_country_flag = BGV_deradicalization_campaign192_taken
-##			clr_country_flag = BGV_propaganda_campaign192_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_deradicalization_campaign199 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 199.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_deradicalization_campaign199_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = -0.00075 }
-##				custom_effect_tooltip = BRA_decrease_radicalization_trend
-##			}
-##			set_country_flag = BGV_deradicalization_campaign199_taken
-##			clr_country_flag = BGV_propaganda_campaign199_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_deradicalization_campaign190 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 190.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_deradicalization_campaign190_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = -0.00075 }
-##				custom_effect_tooltip = BRA_decrease_radicalization_trend
-##			}
-##			set_country_flag = BGV_deradicalization_campaign190_taken
-##			clr_country_flag = BGV_propaganda_campaign190_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_deradicalization_campaign196 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 196.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_deradicalization_campaign196_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = -0.00075 }
-##				custom_effect_tooltip = BRA_decrease_radicalization_trend
-##			}
-##			set_country_flag = BGV_deradicalization_campaign196_taken
-##			clr_country_flag = BGV_propaganda_campaign196_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_deradicalization_campaign203 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 203.id }
-##				}
-##			}
-##		}
-##
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_deradicalization_campaign203_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = -0.00075 }
-##				custom_effect_tooltip = BRA_decrease_radicalization_trend
-##			}
-##			set_country_flag = BGV_deradicalization_campaign203_taken
-##			clr_country_flag = BGV_propaganda_campaign203_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_deradicalization_campaign183 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 183.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_deradicalization_campaign183_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = -0.00075 }
-##				custom_effect_tooltip = BRA_decrease_radicalization_trend
-##			}
-##			set_country_flag = BGV_deradicalization_campaign183_taken
-##			clr_country_flag = BGV_propaganda_campaign183_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_deradicalization_campaign188 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 188.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_deradicalization_campaign188_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = -0.00075 }
-##				custom_effect_tooltip = BRA_decrease_radicalization_trend
-##			}
-##			set_country_flag = BGV_deradicalization_campaign188_taken
-##			clr_country_flag = BGV_propaganda_campaign188_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_deradicalization_campaign193 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 193.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_deradicalization_campaign193_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = -0.00075 }
-##				custom_effect_tooltip = BRA_decrease_radicalization_trend
-##			}
-##			set_country_flag = BGV_deradicalization_campaign193_taken
-##			clr_country_flag = BGV_propaganda_campaign193_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_deradicalization_campaign185 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##			
-##		}
-##		visible = {
-##			AND = {
-##				tag = BGV
-##				BGV = {
-##					check_variable = { BRA_civil_war_map_chosen_state = 185.id }
-##				}
-##			}
-##		}
-##		available = {
-##			NOT = {
-##				has_country_flag = BGV_deradicalization_campaign185_taken
-##			}
-##		}
-##		cost = 40
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				set_variable = { BRA_state_radicalization_trend = -0.00075 }
-##				custom_effect_tooltip = BRA_decrease_radicalization_trend
-##			}
-##			BRA_clamp_radicalization = yes
-##			set_country_flag = BGV_deradicalization_campaign185_taken
-##			clr_country_flag = BGV_propaganda_campaign185_taken
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_relief_aid202 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##		}
-##		visible = {
-##			tag = BGV
-##			BGV = {
-##				check_variable = { BRA_civil_war_map_chosen_state = 202.id }
-##			}
-##		}
-##		available = {
-##			check_variable = {
-##				var = industrial_power
-##				value = 20
-##				compare = greater_than_or_equals
-##			}
-##		}
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				custom_effect_tooltip = BRA_decrease_poverty
-##				add_to_variable = { BRA_state_poverty = -0.05 }
-##			}
-##			add_to_variable = {
-##				var = industrial_power
-##				value = -20
-##			}
-##			BRA_clamp_poverty = yes
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_relief_aid203 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##		}
-##		visible = {
-##			tag = BGV
-##			BGV = {
-##				check_variable = { BRA_civil_war_map_chosen_state = 203.id }
-##			}
-##		}
-##		available = {
-##			check_variable = {
-##				var = industrial_power
-##				value = 20
-##				compare = greater_than_or_equals
-##			}
-##		}
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				custom_effect_tooltip = BRA_decrease_poverty
-##				add_to_variable = { BRA_state_poverty = -0.05 }
-##			}
-##			add_to_variable = {
-##				var = industrial_power
-##				value = -20
-##			}
-##			BRA_clamp_poverty = yes
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_relief_aid196 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##		}
-##		visible = {
-##			tag = BGV
-##			BGV = {
-##				check_variable = { BRA_civil_war_map_chosen_state = 196.id }
-##			}
-##		}
-##		available = {
-##			check_variable = {
-##				var = industrial_power
-##				value = 20
-##				compare = greater_than_or_equals
-##			}
-##		}
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				custom_effect_tooltip = BRA_decrease_poverty
-##				add_to_variable = { BRA_state_poverty = -0.05 }
-##			}
-##			add_to_variable = {
-##				var = industrial_power
-##				value = -20
-##			}
-##			BRA_clamp_poverty = yes
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_relief_aid195 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##		}
-##		visible = {
-##			tag = BGV
-##			BGV = {
-##				check_variable = { BRA_civil_war_map_chosen_state = 195.id }
-##			}
-##		}
-##		available = {
-##			check_variable = {
-##				var = industrial_power
-##				value = 20
-##				compare = greater_than_or_equals
-##			}
-##		}
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				custom_effect_tooltip = BRA_decrease_poverty
-##				add_to_variable = { BRA_state_poverty = -0.05 }
-##			}
-##			add_to_variable = {
-##				var = industrial_power
-##				value = -20
-##			}
-##			BRA_clamp_poverty = yes
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_relief_aid200 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##		}
-##		visible = {
-##			tag = BGV
-##			BGV = {
-##				check_variable = { BRA_civil_war_map_chosen_state = 200.id }
-##			}
-##		}
-##		available = {
-##			check_variable = {
-##				var = industrial_power
-##				value = 20
-##				compare = greater_than_or_equals
-##			}
-##		}
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				custom_effect_tooltip = BRA_decrease_poverty
-##				add_to_variable = { BRA_state_poverty = -0.05 }
-##			}
-##			add_to_variable = {
-##				var = industrial_power
-##				value = -20
-##			}
-##			BRA_clamp_poverty = yes
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_relief_aid193 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##		}
-##		visible = {
-##			tag = BGV
-##			BGV = {
-##				check_variable = { BRA_civil_war_map_chosen_state = 193.id }
-##			}
-##		}
-##		available = {
-##			check_variable = {
-##				var = industrial_power
-##				value = 20
-##				compare = greater_than_or_equals
-##			}
-##		}
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				custom_effect_tooltip = BRA_decrease_poverty
-##				add_to_variable = { BRA_state_poverty = -0.05 }
-##			}
-##			add_to_variable = {
-##				var = industrial_power
-##				value = -20
-##			}
-##			BRA_clamp_poverty = yes
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_relief_aid185 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##		}
-##		visible = {
-##			tag = BGV
-##			BGV = {
-##				check_variable = { BRA_civil_war_map_chosen_state = 185.id }
-##			}
-##		}
-##		available = {
-##			check_variable = {
-##				var = industrial_power
-##				value = 20
-##				compare = greater_than_or_equals
-##			}
-##		}
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				custom_effect_tooltip = BRA_decrease_poverty
-##				add_to_variable = { BRA_state_poverty = -0.05 }
-##			}
-##			add_to_variable = {
-##				var = industrial_power
-##				value = -20
-##			}
-##			BRA_clamp_poverty = yes
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_relief_aid183 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##		}
-##		visible = {
-##			tag = BGV
-##			BGV = {
-##				check_variable = { BRA_civil_war_map_chosen_state = 183.id }
-##			}
-##		}
-##		available = {
-##			check_variable = {
-##				var = industrial_power
-##				value = 20
-##				compare = greater_than_or_equals
-##			}
-##		}
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				custom_effect_tooltip = BRA_decrease_poverty
-##				add_to_variable = { BRA_state_poverty = -0.05 }
-##			}
-##			add_to_variable = {
-##				var = industrial_power
-##				value = -20
-##			}
-##			BRA_clamp_poverty = yes
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_relief_aid192 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##		}
-##		visible = {
-##			tag = BGV
-##			BGV = {
-##				check_variable = { BRA_civil_war_map_chosen_state = 192.id }
-##			}
-##		}
-##		available = {
-##			check_variable = {
-##				var = industrial_power
-##				value = 20
-##				compare = greater_than_or_equals
-##			}
-##		}
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				custom_effect_tooltip = BRA_decrease_poverty
-##				add_to_variable = { BRA_state_poverty = -0.05 }
-##			}
-##			add_to_variable = {
-##				var = industrial_power
-##				value = -20
-##			}
-##			BRA_clamp_poverty = yes
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_relief_aid188 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##		}
-##		visible = {
-##			tag = BGV
-##			BGV = {
-##				check_variable = { BRA_civil_war_map_chosen_state = 188.id }
-##			}
-##		}
-##		available = {
-##			check_variable = {
-##				var = industrial_power
-##				value = 20
-##				compare = greater_than_or_equals
-##			}
-##		}
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				custom_effect_tooltip = BRA_decrease_poverty
-##				add_to_variable = { BRA_state_poverty = -0.05 }
-##			}
-##			add_to_variable = {
-##				var = industrial_power
-##				value = -20
-##			}
-##			BRA_clamp_poverty = yes
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_relief_aid190 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##		}
-##		visible = {
-##			tag = BGV
-##			BGV = {
-##				check_variable = { BRA_civil_war_map_chosen_state = 190.id }
-##			}
-##		}
-##		available = {
-##			check_variable = {
-##				var = industrial_power
-##				value = 20
-##				compare = greater_than_or_equals
-##			}
-##		}
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				custom_effect_tooltip = BRA_decrease_poverty
-##				add_to_variable = { BRA_state_poverty = -0.05 }
-##			}
-##			add_to_variable = {
-##				var = industrial_power
-##				value = -20
-##			}
-##			BRA_clamp_poverty = yes
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##	BGV_relief_aid199 = {
-##		icon = GFX_decision_unknown
-##		allowed = {
-##			tag = BGV
-##		}
-##		visible = {
-##			tag = BGV
-##			BGV = {
-##				check_variable = { BRA_civil_war_map_chosen_state = 199.id }
-##			}
-##		}
-##		available = {
-##			check_variable = {
-##				var = industrial_power
-##				value = 20
-##				compare = greater_than_or_equals
-##			}
-##		}
-##		fire_only_once = no
-##		days_re_enable = 30
-##		complete_effect = {
-##			var:BRA_civil_war_map_chosen_state = {
-##				custom_effect_tooltip = BRA_decrease_poverty
-##				add_to_variable = { BRA_state_poverty = -0.05 }
-##			}
-##			add_to_variable = {
-##				var = industrial_power
-##				value = -20
-##			}
-##			BRA_clamp_poverty = yes
-##		}
-##		ai_will_do = {
-##			factor = 1
-##		}
-##	}
-##}

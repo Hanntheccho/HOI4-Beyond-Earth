@@ -268,6 +268,28 @@ formable_decisions = {
 		}
 	}
 	###
+	BRA_brasilia_united = {
+		icon = GFX_decision_unity
+		available = {
+			PRU = {
+				is_puppet_of = BGV
+			}
+		}
+
+		visible = {
+			tag = BGV
+		}
+	
+		fire_only_once = yes
+		complete_effect = {
+			set_cosmetic_tag = BRA_brasilia
+		}
+		
+		ai_will_do = {
+			factor = 100000
+		}
+	}
+	###
 	form_nau = {
 		icon = GFX_decision_unity
 		available = {
@@ -309,6 +331,7 @@ formable_decisions = {
 					transfer_state_to = ROOT
 				}
 			}
+			set_country_flag = is_the_NAU
 			set_cosmetic_tag = NAU_united
 			set_global_flag = nau_was_reunited_flag
 		}
