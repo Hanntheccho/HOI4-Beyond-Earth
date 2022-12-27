@@ -1,25 +1,25 @@
 on_actions = {
 	on_startup = {
 		effect = {
-            every_country = {
-                limit = {
-                    NOT = {
-                        OR = {
-                            has_idea = anarchy_style
-                            tag = COL
-                            tag = COS
-                            tag = NAX
-                            tag = USA
-                            tag = SIL
-                        }
-                    }
-                }
-                set_country_flag = international_member
-            }
+#            every_country = {
+#                limit = {
+#                    NOT = {
+#                        OR = {
+#                            has_idea = anarchy_style
+#                            tag = COL
+#                            tag = COS
+#                            tag = NAX
+#                            tag = USA
+#                            tag = SIL
+#                        }
+#                    }
+#                }
+#                set_country_flag = international_member
+#            }
 			every_country = {
-                limit = {
-                    has_country_flag = international_member
-                }
+#                limit = {
+#                    has_country_flag = international_member
+#                }
                 set_variable = { diplomatic_power = 0 }
                 set_variable = { diplomatic_power_civilian = 0 }
                 set_variable = { diplomatic_power_military = 0 }
@@ -73,12 +73,12 @@ on_actions = {
 		}
 	}
     ###
-    on_daily_ADU = {
+    on_monthly_ADU = { #should be on_daily
 		effect = {
             every_country = {
-                limit = {
-                    has_country_flag = international_member
-                }
+#                limit = {
+#                    has_country_flag = international_member
+#                }
                 set_variable = { diplomatic_power = 0 }
                 set_variable = { diplomatic_power_civilian = 0 }
                 set_variable = { diplomatic_power_military = 0 }
@@ -127,107 +127,107 @@ on_actions = {
                 add_to_variable = { diplomatic_power = diplomatic_power_population }
                 add_to_variable = { diplomatic_power = diplomatic_power_other }
                 #
-                if = {
-                    limit = {
-                        has_idea = military_government
-                        has_global_flag = rights_resolution_3_done
-                    }
-                    multiply_variable = { diplomatic_power = 0.5 }
-                }
-                if = {
-                    limit = {
-                        has_idea = synthetic_democracy
-                        has_global_flag = rights_resolution_4_done
-                    }
-                    multiply_variable = { diplomatic_power = 0.5 }
-                }
-                if = {
-                    limit = {
-                        has_idea = corporate_libertarianism
-                        has_global_flag = rights_resolution_5_done
-                    }
-                    multiply_variable = { diplomatic_power = 0.5 }
-                }
-                if = {
-                    limit = {
-                        OR = {
-                            has_idea = crumbling_society
-                            has_idea = periphal_anarchy
-                        }
-                        has_global_flag = ecobalance_resolution_3_done
-                    }
-                    multiply_variable = { diplomatic_power = 0.5 }
-                }
-                if = {
-                    limit = {
-                        has_idea = flaking_society
-                        has_global_flag = ecobalance_resolution_4_done
-                    }
-                    multiply_variable = { diplomatic_power = 0.5 }
-                }
-                if = {
-                    limit = {
-                        has_idea = mobilizing_society
-                        has_global_flag = ecobalance_resolution_5_done
-                    }
-                    multiply_variable = { diplomatic_power = 0.5 }
-                }
-                if = {
-                    limit = {
-                        has_war = yes
-                        has_global_flag = defense_resolution_3_done
-                    }
-                    multiply_variable = { diplomatic_power = 0.5 }
-                }
-                if = {
-                    limit = {
-                        has_war = yes
-                        has_global_flag = defense_resolution_5_done
-                    }
-                    multiply_variable = { diplomatic_power = 0 }
-                }
-                round_variable = diplomatic_power
-            }
-            ###
-            if = {
-                limit = {
-                    check_variable = {
-                        global.proposed_resolution_days > 0
-                    }
-                }
-                add_to_variable = {
-                    global.proposed_resolution_days = -1
-                }
-            }
-            else = {
-                #
-            }
+#                if = {
+#                    limit = {
+#                        has_idea = military_government
+#                        has_global_flag = rights_resolution_3_done
+#                    }
+#                    multiply_variable = { diplomatic_power = 0.5 }
+#                }
+#                if = {
+#                    limit = {
+#                        has_idea = synthetic_democracy
+#                        has_global_flag = rights_resolution_4_done
+#                    }
+#                    multiply_variable = { diplomatic_power = 0.5 }
+#                }
+#                if = {
+#                    limit = {
+#                        has_idea = corporate_libertarianism
+#                        has_global_flag = rights_resolution_5_done
+#                    }
+#                    multiply_variable = { diplomatic_power = 0.5 }
+#                }
+#                if = {
+#                    limit = {
+#                        OR = {
+#                            has_idea = crumbling_society
+#                            has_idea = periphal_anarchy
+#                        }
+#                        has_global_flag = ecobalance_resolution_3_done
+#                    }
+#                    multiply_variable = { diplomatic_power = 0.5 }
+#                }
+#                if = {
+#                    limit = {
+#                        has_idea = flaking_society
+#                        has_global_flag = ecobalance_resolution_4_done
+#                    }
+#                    multiply_variable = { diplomatic_power = 0.5 }
+#                }
+#                if = {
+#                    limit = {
+#                        has_idea = mobilizing_society
+#                        has_global_flag = ecobalance_resolution_5_done
+#                    }
+#                    multiply_variable = { diplomatic_power = 0.5 }
+#                }
+#                if = {
+#                    limit = {
+#                        has_war = yes
+#                        has_global_flag = defense_resolution_3_done
+#                    }
+#                    multiply_variable = { diplomatic_power = 0.5 }
+#                }
+#                if = {
+#                    limit = {
+#                        has_war = yes
+#                        has_global_flag = defense_resolution_5_done
+#                    }
+#                    multiply_variable = { diplomatic_power = 0 }
+#                }
+#                round_variable = diplomatic_power
+             }
+#            ###
+#            if = {
+#                limit = {
+#                    check_variable = {
+#                        global.proposed_resolution_days > 0
+#                    }
+#                }
+#                add_to_variable = {
+#                    global.proposed_resolution_days = -1
+#                }
+#            }
+#            else = {
+#                #
+#            }
         }
     }
     #
-    on_declare_war = {
-        effect = {
-            if = {
-                limit = {
-                    has_country_flag = international_member
-                    has_global_flag = defense_resolution_4_done
-                }
-                ROOT = {
-                    add_stability = -0.2
-                }
-            }
-            else_if = {
-                limit = {
-                    has_country_flag = international_member
-                    has_global_flag = defense_resolution_2_done
-                }
-                ROOT = {
-                    add_stability = -0.4
-                }
-            }
-            else = {
-                #
-            }
-        }
-    }
+#    on_declare_war = {
+#        effect = {
+#            if = {
+#                limit = {
+#                    has_country_flag = international_member
+#                    has_global_flag = defense_resolution_4_done
+#                }
+#                ROOT = {
+#                    add_stability = -0.2
+#                }
+#            }
+#            else_if = {
+#                limit = {
+#                    has_country_flag = international_member
+#                    has_global_flag = defense_resolution_2_done
+#                }
+#                ROOT = {
+#                    add_stability = -0.4
+#                }
+#            }
+#            else = {
+#                #
+#            }
+#        }
+#    }
 }

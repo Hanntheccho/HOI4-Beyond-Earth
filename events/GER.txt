@@ -224,51 +224,53 @@ country_event = { #Veron my beloved
 		tag = GER
 		has_war_with = SOV
 		has_war_with = FRA
-        }
         any_country = {
-		    limit = {
-				is_eng_tag = yes
-			}
+			is_eng_tag = yes
 			has_war_with = GER
 		}
-	    option = { #The Heer assumes control
-		    name = german_event_option.7.a
-            custom_effect_tooltip = GER_military_coup_tooltip
-            add_stability = -0.1
-			add_war_support = 0.05
-            hidden_effect = {
-	            set_cosmetic_tag = GER_federal_army
-	            add_ideas = military_government
-				set_politics = {
-	                ruling_party = neutral
-	                elections_allowed = no
-			    }
-			    add_popularity = {
-	                ideology = neutral
-	                popularity = 0.2
-                }
-		        ai_chance = {
-			        factor = 1
-                }
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { #The Heer assumes control
+	    name = german_event_option.7.a
+        custom_effect_tooltip = GER_military_coup_tooltip
+        add_stability = -0.1
+		add_war_support = 0.05
+        hidden_effect = {
+	        set_cosmetic_tag = GER_federal_army
+	        add_ideas = military_government
+			set_politics = {
+	            ruling_party = neutral
+	            elections_allowed = no
+		    }
+		    add_popularity = {
+	            ideology = neutral
+	            popularity = 0.2
             }
         }
-	    option = { #The Heer is beaten back
-		    name = german_event_option.7.b
-			add_popularity = {
-	            ideology = harmony
-	            popularity = -0.02
-		    }
-			add_popularity = {
-	            ideology = divinity
-	            popularity = -0.01
-		    }
-			add_popularity = {
-	            ideology = voracity
-	            popularity = -0.01
-		    }
-			ai_chance = {
-			    factor = 5
-	        }
-	    }
+		ai_chance = {
+		    factor = 1
+        }
     }
+	option = { #The Heer is beaten back
+	    name = german_event_option.7.b
+		add_popularity = {
+	        ideology = harmony
+	        popularity = -0.02
+	    }
+		add_popularity = {
+	        ideology = divinity
+	        popularity = -0.01
+	    }
+		add_popularity = {
+	        ideology = voracity
+	        popularity = -0.01
+	    }
+		ai_chance = {
+		    factor = 100
+	    }
+	}
 }
