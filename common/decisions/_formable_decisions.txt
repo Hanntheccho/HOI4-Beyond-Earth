@@ -2,39 +2,9 @@ formable_decisions = {
 	form_eu = {
 		icon = GFX_decision_unity
 		available = {
-			if = {
-				limit = {
-					tag = GER
-				}
-				FRA = {
-					is_puppet_of = ROOT
-				}
-				SCO = {
-					is_puppet_of = ROOT
-				}
-			}
-			if = {
-				limit = {
-					tag = FRA
-				}
-				GER = {
-					is_puppet_of = ROOT
-				}
-				SCO = {
-					is_puppet_of = ROOT
-				}
-			}
-			if = {
-				limit = {
-					tag = SCO
-				}
-				FRA = {
-					is_puppet_of = ROOT
-				}
-				GER = {
-					is_puppet_of = ROOT
-				}
-			}
+			has_global_flag = euro_war_happened
+			has_war = no
+			is_faction_leader = yes
 		}
 		visible = {
 			OR = {
@@ -93,13 +63,9 @@ formable_decisions = {
 	FRA_form_fed_med = {
 		icon = GFX_decision_unity
 		available = {
-			tag = FRA
-			PAD = {
-				is_puppet_of = FRA
-			}
-			TUN = {
-				is_puppet_of = FRA
-			}
+			is_faction_leader = yes
+			is_in_faction_with = PAD
+			is_in_faction_with = TUN
 			has_country_leader = {
 				character = FRA_elodie_batteux
 				ruling_only = yes
@@ -138,9 +104,8 @@ formable_decisions = {
 	FRA_form_rep_lys = {
 		icon = GFX_decision_unity
 		available = {
-			ITA = {
-				is_puppet_of = FRA
-			}
+			is_faction_leader = yes
+			is_in_faction_with = ITA
 			has_country_leader = {
 				character = FRA_al_hakim
 				ruling_only = yes
@@ -500,9 +465,7 @@ formable_decisions = {
 	PAD_italia = {
 		icon = GFX_decision_unity
 		available = {
-			ITA = {
-				is_puppet_of = PAD
-			}
+			is_in_faction_with = ITA
 		}
 
 		visible = {

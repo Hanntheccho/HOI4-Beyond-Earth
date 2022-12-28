@@ -30,8 +30,12 @@ on_actions = {
 			if = {
 				limit = {
 					FROM = {
-						has_idea = digital_democracy
-						is_in_faction = yes
+						OR = {
+							FACTION_LEADER = {
+								has_idea = digital_democracy
+							}
+							has_idea = digital_democracy
+						}
 					}
 				}
 				FROM = {

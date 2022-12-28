@@ -492,7 +492,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "count_txt"
-			position = { x=-81 y=9 }
+			position = { x=-81 y=10 }
 			font = "Focusfont"
 			maxWidth = 140
 			maxHeight = 14
@@ -511,7 +511,7 @@ guiTypes = {
 		iconType = {
 			name = "flag"
 			spriteType = "GFX_mapicon_unit_flag_stripe"
-			position = { x=51 y=32 }
+			position = { x=51 y=5 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 			scale = 1
@@ -1839,13 +1839,23 @@ guiTypes = {
 		}
 	}
 
-
 	#### RESISTANCE COMPLIANCE MAP ICON
 	containerWindowType = {
 		name = "resistance_compliance_map_icon"
-		#backGround =""
 		position = { x = 0 y = 0 }
-		size = { width = 100 height = 25 }
+		size = { width = 80 height = 33 }
+		orientation = upper_left
+		clipping = yes
+
+		background = {
+			name = "bg"
+			quadTextureSprite = "GFX_focus_tooltip"
+			position = {
+				x = 0
+				y = 0
+			}
+			alwaystransparent = yes
+		}
 
 		gridboxtype = {
 			name = "modifier_grid_list"
@@ -1857,7 +1867,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "text"
-			position = { x = 0 y = 0 }
+			position = { x = -9 y = 9 }
 			font = "Focusfont"
 			text = "100%"
 			maxWidth = 100
@@ -1870,7 +1880,8 @@ guiTypes = {
 		name = "resistance_compliance_map_icon_modifier_entry"
 		#backGround =""
 		position = { x = 0 y = 0 }
-		size = { width = 31 height = 31 }
+		size = { width = 0 height = 0 } #{ width = 31 height = 31 }
+		clipping = yes #no
 
 		iconType = {
 			name = "current_mission_bg"
