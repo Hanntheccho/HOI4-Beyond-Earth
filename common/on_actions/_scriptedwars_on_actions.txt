@@ -16,29 +16,18 @@ on_actions = {
 					leave_faction = yes
 				}
 				every_subject_country = {
-					#if = {
-					#	limit = {
-					#		FROM = {
-					#			NOT = {
-					#				has_war_with = PREV
-					#			}
-					#		}
-					#	}
-					#	FROM = {
-					#		declare_war_on = {
-					#			target = PREV
-					#			type = annex_puppet_wargoal
-					#		}
-					#	}
+					#ROOT = { #not really needed
+					#	end_puppet = PREV
 					#}
-					ROOT = {
-						end_puppet = PREV
+					FROM = {
+						puppet = PREV
+						puppet_government_too_PREV = yes
 					}
 				}
 			}
-			if = {
-				limit = {
-					FROM = {
+			FROM = {
+				if = {
+					limit = {
 						OR = {
 							FACTION_LEADER = {
 								has_idea = digital_democracy
@@ -46,23 +35,17 @@ on_actions = {
 							has_idea = digital_democracy
 						}
 					}
-				}
-				FROM = {
 					FACTION_LEADER = {
 						add_to_faction = ROOT
 						puppet_government_too = yes
 					}
 				}
-			}
-			else = {
-				FROM = {
+				else = {
 					if = {
 						limit = {
-							FROM = {
-								is_puppet = yes
-							}
+							is_puppet = yes
 						}
-						FROM.OVERLORD = {
+						OVERLORD = {
 							puppet = ROOT
 							puppet_government_too = yes
 						}
@@ -70,7 +53,7 @@ on_actions = {
 					else = {
 						puppet = ROOT
 						puppet_government_too = yes
-					}				
+					}
 				}
 			}
 			ROOT = {
