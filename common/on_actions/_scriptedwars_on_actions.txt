@@ -16,14 +16,23 @@ on_actions = {
 					leave_faction = yes
 				}
 				every_subject_country = {
+					#if = {
+					#	limit = {
+					#		FROM = {
+					#			NOT = {
+					#				has_war_with = PREV
+					#			}
+					#		}
+					#	}
+					#	FROM = {
+					#		declare_war_on = {
+					#			target = PREV
+					#			type = annex_puppet_wargoal
+					#		}
+					#	}
+					#}
 					ROOT = {
 						end_puppet = PREV
-					}
-					FROM = {
-						declare_war_on = {
-							target = PREV
-							type = annex_puppet_wargoal
-						}
 					}
 				}
 			}
