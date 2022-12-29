@@ -982,8 +982,7 @@ technologies = {
 			be_land_tech
 		}
 	}
-
-	###################MAGLEVS
+	###################MAGLEVs
 	be_prototype_maglev ={
 		enable_equipments = {
 			maglev_equipment_1
@@ -1054,6 +1053,96 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+		}
+	}
+	## Transports
+	n_hovercraft_1 = {
+		naval_invasion_capacity = 1
+
+		path = {
+			leads_to_tech = n_hovercraft_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1
+		
+		start_year = 2200
+
+		folder = {
+			name = be_infantry_folder
+			position = { x = 0 y = 0}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				num_of_naval_factories < 1
+				add = -10
+			}
+		}
+
+		categories = {
+			be_naval_tech
+			be_transport_tech
+		}
+	}
+
+	n_hovercraft_2 = {
+		invasion_preparation = -0.2
+		naval_invasion_capacity = 5
+
+		path = {
+			leads_to_tech = n_hovercraft_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1
+		
+		start_year = 2200
+
+		folder = {
+			name = be_infantry_folder
+			position = { x = 0 y = 4}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				num_of_naval_factories < 1
+				add = -10
+			}
+		}
+
+		categories = {
+			be_naval_tech
+			be_transport_tech
+		}
+	}
+
+	n_hovercraft_3 = {
+		invasion_preparation = -0.5
+		naval_invasion_capacity = 10
+
+		research_cost = 1
+		
+		start_year = 2200
+
+		folder = {
+			name = be_infantry_folder
+			position = { x = 0 y = 8}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				num_of_naval_factories < 1
+				add = -10
+			}
+		}
+
+		categories = {
+			be_naval_tech
+			be_transport_tech
 		}
 	}
 }
