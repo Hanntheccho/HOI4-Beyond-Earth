@@ -1,11 +1,45 @@
 asiawar_decisions = {
+	CHI_balkanize_china = {
+		icon = GFX_decision_political
+		available = {
+			has_global_flag = CHI_balkanization
+		}
+		visible = {
+			#
+		}
+		activation = {
+			country_exists = CHI
+		}
+		fire_only_once = yes
+		days_mission_timeout = 155
+		timeout_effect = {
+			hidden_effect = {
+				CHI_balkanization = yes
+			}
+			custom_effect_tooltip = CHI_balkanize_china_tooltip
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
 	CHI_war_warlord = {
 		icon = GFX_decision_war
 		fire_only_once = no
+		available = {
+			has_global_flag = CHI_balkanization
+		}
 		target_trigger = {
 			FROM = {
 				is_china_tag = yes
 				is_neighbor_of = ROOT
+				NOT = {
+					OR = {
+						is_puppet_of = ROOT
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+					}					
+				}
 			}
 		}
 		cost = 30
