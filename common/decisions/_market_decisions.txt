@@ -1,0 +1,101 @@
+market_decisions = {
+	market_decisions_convoys = {
+		icon = GFX_decision_industrial
+		available = {
+			#
+		}
+		visible = {
+			#
+		}
+		custom_cost_trigger = {
+			check_variable = { industrial_power > 49.9 }
+		}
+		custom_cost_text = decision_cost_50_ip
+		fire_only_once = no
+		days_remove = 20
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 100
+			}	
+			subtract_from_variable = {
+				industrial_power = 50
+			}		
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				check_variable = {
+					num_equipment@convoy < 20
+				}
+				add = 100
+			}
+		}
+	}
+	market_decisions_trains = {
+		icon = GFX_decision_industrial
+		available = {
+			#
+		}
+		visible = {
+			#
+		}
+		custom_cost_trigger = {
+			check_variable = { industrial_power > 49.9 }
+		}
+		custom_cost_text = decision_cost_50_ip
+		fire_only_once = no
+		days_remove = 20
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = maglev_equipment
+				amount = 100
+			}	
+			subtract_from_variable = {
+				industrial_power = 50
+			}		
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				check_variable = {
+					num_equipment@maglev_equipment < 20
+				}
+				add = 100
+			}
+		}
+	}
+	market_decisions_crawlers = {
+		icon = GFX_decision_industrial
+		available = {
+			#
+		}
+		visible = {
+			#
+		}
+		custom_cost_trigger = {
+			check_variable = { industrial_power > 49.9 }
+		}
+		custom_cost_text = decision_cost_50_ip
+		fire_only_once = no
+		days_remove = 20
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = crawler_equipment
+				amount = 100
+			}	
+			subtract_from_variable = {
+				industrial_power = 50
+			}		
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				check_variable = {
+					num_equipment@crawler_equipment < 20
+				}
+				add = 100
+			}
+		}
+	}
+}
