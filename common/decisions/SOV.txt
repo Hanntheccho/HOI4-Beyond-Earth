@@ -231,40 +231,28 @@ SOV_manifest_destiny = {
 		icon = GFX_decision_unknown
 		available = {
 			URA = {
-				exists = yes
-			}
-			OR = {
-				URA = {
-					AND = {
-						has_war_with = KAZ
-						surrender_progress > 0.6
-					}
+				OR = {
+				AND = {
+					has_war_with = KAZ
+					surrender_progress > 0.6
 				}
-				KAZ = {
-					exists = no
+				is_puppet = yes
 				}
 			}
 		}
 		visible = {
 			URA = {
-				exists = yes
-			}
-			OR = {
-				URA = {
+				OR = {
 					has_war_with = KAZ
-				}
-				KAZ = {
-					exists = no
+					is_puppet = yes
 				}
 			}
 		}
-		cancel_trigger = {
-			URA = {
-				is_puppet = yes
-			}
-		}
-		days_remove = 30
+		days_remove = 10
+		cost = 10
 		fire_only_once = yes
+		war_with_on_remove = KAZ
+		war_with_on_remove = URA
 		remove_effect = {
 			if = {
 				limit = {
@@ -278,37 +266,26 @@ SOV_manifest_destiny = {
 						type = annex_puppet_wargoal
 					}
 				}
+				annex_country = {
+					target = URA
+				}
 			}
-			annex_country = {
-				target = URA
-				#transfer_troops = yes
+			else = {
+				declare_war_on = {
+					target = KAZ
+					type = annex_puppet_wargoal
+				}
+				declare_war_on = {
+					target = URA
+					type = annex_puppet_wargoal
+				}
 			}
+			
 		}
 		ai_will_do = {
 			factor = 1
 		}
 	}
-    #SOV_invite_to_faction = {
-	#	icon = GFX_decision_unity
-	#	fire_only_once = no
-	#	cost = 100
-	#	target_trigger = {
-	#		FROM = {
-	#			has_idea = GER_eurasian_aligned
-	#			is_in_faction = no
-	#			capital_scope = {
-	#				is_on_continent = europe
-	#			}
-	#		}
-	#	}
-	#	days_remove = 50
-	#	remove_effect = {
-	#		add_to_faction = FROM
-	#	}
-	#	ai_will_do = {
-	#		factor = 1
-	#	}
-	#}
 }
 
 #keeper_kazan = {

@@ -1,4 +1,3 @@
-###
 is_india_tag = { #except for BHR and KAV
 	OR = {
 		original_tag = KAS
@@ -84,7 +83,86 @@ is_nsa_tag = {
 		original_tag = LAT
 	}
 }
-
+is_minor_tag = {
+	if = {
+		limit = {
+			FROM = {
+				tag = ARG
+			}
+		}
+		original_tag = COS
+	}
+	else_if = {
+		limit = {
+			FROM = {
+				is_eng_tag = yes
+			}
+		}
+		is_eng_tag = yes
+	}
+	else_if = {
+		limit = {
+			FROM = {
+				tag = COS
+			}
+		}
+		original_tag = ARG
+	}
+	else_if = {
+		limit = {
+			FROM = {
+				tag = DOS
+			}
+		}
+		OR = {
+			original_tag = CAS
+			original_tag = SIL
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = {
+				tag = CAS
+			}
+		}
+		original_tag = DOS
+	}
+	else_if = {
+		limit = {
+			FROM = {
+				tag = TRE
+			}
+		}
+		original_tag = ONU
+	}
+	else_if = {
+		limit = {
+			FROM = {
+				tag = SOV
+			}
+		}
+		original_tag = KAR
+	}
+	else_if = {
+		limit = {
+			FROM = {
+				tag = BGV
+			}
+		}
+		original_tag = LEG
+	}
+	else_if = {
+		limit = {
+			FROM = {
+				tag = ONE
+			}
+		}
+		original_tag = CAL
+	}
+	else = {
+		always = no
+	}
+}
 ####
 
 can_ROOT_get_wargoal_on_THIS = {

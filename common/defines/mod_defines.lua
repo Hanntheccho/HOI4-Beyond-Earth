@@ -45,17 +45,17 @@ NDefines.NDiplomacy.WARGOAL_JUSTIFY_TENSION_FROM_PRODUCTION = 0
 NDefines.NOperatives.AGENCY_CREATION_FACTORIES = 1000101
 
 NDefines.NAI.ENEMY_HOME_AREA_RATIO_TO_DISABLE_INVASIONS = 1.0   -- Vanilla: 0.3
-NDefines.NAI.ENEMY_NAVY_STRENGTH_DONT_BOTHER = 10.0     -- Vanilla: 1.9
-NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE = 0.01           -- Vanilla: 0.09
-NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE_DEFENSIVE = 0.01   -- Vanilla: 0.1
+NDefines.NAI.ENEMY_NAVY_STRENGTH_DONT_BOTHER = -1.0     -- Vanilla: 1.9
+NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE = 0.0           -- Vanilla: 0.09
+NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE_DEFENSIVE = 0.0   -- Vanilla: 0.1
 
 NDefines.NAI.MAX_DISTANCE_NAVAL_INVASION = 400.0                   -- Vanilla: 200.0
 NDefines.NAI.MAX_UNIT_RATIO_FOR_INVASIONS = 1.0               -- Vanilla: 0.3
-NDefines.NAI.MIN_UNIT_RATIO_FOR_INVASIONS = 1.0              -- Vanilla: 0.1
-NDefines.NAI.MIN_INVASION_PLAN_VALUE_TO_EXECUTE = 0.02          -- Vanilla: 0.2
-NDefines.NAI.MIN_INVASION_ORG_FACTOR_TO_EXECUTE = 0.25               -- Vanilla: 0.75
+NDefines.NAI.MIN_UNIT_RATIO_FOR_INVASIONS = 0.0              -- Vanilla: 0.1
+NDefines.NAI.MIN_INVASION_PLAN_VALUE_TO_EXECUTE = 0.0          -- Vanilla: 0.2
+NDefines.NAI.MIN_INVASION_ORG_FACTOR_TO_EXECUTE = 0.0               -- Vanilla: 0.75
 
-NDefines.NAI.FAILED_INVASION_AVOID_DURATION = 90           -- Vanilla: 135
+NDefines.NAI.FAILED_INVASION_AVOID_DURATION = 60           -- Vanilla: 135
 
 --NDefines.NCountry.WEEKLY_STABILITY_GAIN = 0.0
 --NDefines.NCountry.WEEKLY_WAR_SUPPORT_GAIN = 0.0

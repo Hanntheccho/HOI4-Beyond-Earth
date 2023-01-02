@@ -34,7 +34,6 @@ scotland_formable = {
 			factor = 1000
 		}
 	}
-	#NSA INTEGRATION
 	SCO_integration_NSA = {
 		icon = GFX_decision_unity
 		fire_only_once = no
@@ -86,6 +85,11 @@ scotland_formable = {
 				is_nsa_tag = yes
 			}
 		}
+		cancel_trigger = {
+			FROM = {
+				has_war = yes
+			}
+		}
 		days_remove = 170
 		remove_effect = {
 			custom_effect_tooltip = add_infamy_low
@@ -93,28 +97,21 @@ scotland_formable = {
 				var = global.nsainfamy_var
 				value = 1
 			}
-			every_country = {
-				limit = {
-					is_puppet_of = FROM
-				}
-				every_state = {
-					limit = {
-						is_core_of = PREV
+			FROM = {
+				every_subject_country = {
+					every_core_state = {
+						add_core_of = SCO
 					}
+					SCO = {
+						annex_country = {
+							target = PREV
+							#transfer_troops = yes
+						}
+					}
+				}
+				every_core_state = {
 					add_core_of = SCO
 				}
-				SCO = {
-					annex_country = {
-						target = PREV
-						#transfer_troops = yes
-					}
-				}
-			}
-			every_state = {
-				limit = {
-					is_core_of = FROM
-				}
-				add_core_of = SCO
 			}
 			annex_country = {
 				target = FROM
@@ -128,5 +125,4 @@ scotland_formable = {
 			factor = 10
 		}
 	}
-	#
 }
