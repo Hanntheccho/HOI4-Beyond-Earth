@@ -104,49 +104,10 @@ decrease_devastation = {
 	if = {
 		limit = {
 			has_dynamic_modifier = {
-				modifier = notable_devastation
-			}
-		}
-		remove_dynamic_modifier = { modifier = notable_devastation }
-		add_dynamic_modifier = { modifier = minor_devastation }
-	}
-	else_if = {
-		limit = {
-			has_dynamic_modifier = {
-				modifier = major_devastation
-			}
-		}
-		remove_dynamic_modifier = { modifier = major_devastation }
-		add_dynamic_modifier = { modifier = notable_devastation }
-	}
-	else_if = {
-		limit = {
-			has_dynamic_modifier = {
-				modifier = significant_devastation
-			}
-		}
-		remove_dynamic_modifier = { modifier = significant_devastation }
-		add_dynamic_modifier = { modifier = major_devastation }
-	}
-	else_if = {
-		limit = {
-			has_dynamic_modifier = {
-				modifier = terminal_devastation
-			}
-		}
-		remove_dynamic_modifier = { modifier = terminal_devastation }
-		add_dynamic_modifier = { modifier = significant_devastation }
-	}
-	else = {
-
-	}
-}
-
-decrease_devastation_more = {
-	if = {
-		limit = {
-			has_dynamic_modifier = {
 				modifier = minor_devastation
+			}
+			OWNER = {
+				has_country_flag = has_mind_tier3
 			}
 		}
 		remove_dynamic_modifier = { modifier = minor_devastation }
