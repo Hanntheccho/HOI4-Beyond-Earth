@@ -13,7 +13,7 @@ on_actions = {
                 if = {
                     limit = {
                         check_variable = {
-                            max_manpower > 2000000000
+                            max_manpower > 200000000000
                         }
                     }
                     set_variable = { diplomatic_power_population = 200 }
@@ -55,59 +55,57 @@ on_actions = {
 		}
 	}
     ###
-    on_weekly_ADU = { #should be on_daily
+    on_weekly = { #should be on_daily
 		effect = {
-            every_country = {
-                set_variable = { diplomatic_power = 0 }
-                set_variable = { diplomatic_power_civilian = 0 }
-                set_variable = { diplomatic_power_military = 0 }
-                set_variable = { diplomatic_power_techs = 0 }
-                set_variable = { diplomatic_power_trade = 0 }
-                set_variable = { diplomatic_power_population = 0 }
-                set_variable = { diplomatic_power_other = 0 }
-                add_to_variable = { diplomatic_power_techs = num_researched_technologies }
-                if = {
-                    limit = {
-                        check_variable = {
-                            max_manpower > 2000000000
-                        }
+            set_variable = { diplomatic_power = 0 }
+            set_variable = { diplomatic_power_civilian = 0 }
+            set_variable = { diplomatic_power_military = 0 }
+            set_variable = { diplomatic_power_techs = 0 }
+            set_variable = { diplomatic_power_trade = 0 }
+            set_variable = { diplomatic_power_population = 0 }
+            set_variable = { diplomatic_power_other = 0 }
+            add_to_variable = { diplomatic_power_techs = num_researched_technologies }
+            if = {
+                limit = {
+                    check_variable = {
+                        max_manpower > 200000000000
                     }
-                    set_variable = { diplomatic_power_population = 200 }
                 }
-                else = {
-                    add_to_variable = { diplomatic_power_population = max_manpower_k }
-                    divide_variable = { diplomatic_power_population = 10000 }
-                }
-                add_to_variable = { diplomatic_power_civilian = num_owned_controlled_states }
-                add_to_variable = { diplomatic_power_civilian = num_of_civilian_factories }
-                add_to_variable = { diplomatic_power_trade = resource_exported@steel }
-                add_to_variable = { diplomatic_power_trade = resource_exported@aluminium }
-                add_to_variable = { diplomatic_power_trade = resource_exported@rubber }
-                add_to_variable = { diplomatic_power_trade = resource_exported@tungsten }
-                add_to_variable = { diplomatic_power_trade = resource_exported@chromium }
-                add_to_variable = { diplomatic_power_trade = resource_exported@oil }
-                divide_variable = { diplomatic_power_trade = 10 }
-                add_to_variable = { diplomatic_power_military = num_subjects }
-                add_to_variable = { diplomatic_power_military = num_ships }
-                add_to_variable = { diplomatic_power_military = num_armies }
-                add_to_variable = { diplomatic_power_military = num_faction_members }
-                add_to_variable = { diplomatic_power_military = num_of_military_factories }
-                add_to_variable = { diplomatic_power_military = num_of_naval_factories }
-                #
-                round_variable = diplomatic_power_civilian
-                round_variable = diplomatic_power_military
-                round_variable = diplomatic_power_trade
-                round_variable = diplomatic_power_population
-                round_variable = diplomatic_power_other
-                #
-                add_to_variable = { diplomatic_power = diplomatic_power_civilian }
-                add_to_variable = { diplomatic_power = diplomatic_power_military }
-                add_to_variable = { diplomatic_power = diplomatic_power_trade }
-                add_to_variable = { diplomatic_power = diplomatic_power_population }
-                add_to_variable = { diplomatic_power = diplomatic_power_other }
-                #
-                round_variable = diplomatic_power
+                set_variable = { diplomatic_power_population = 200 }
             }
+            else = {
+                add_to_variable = { diplomatic_power_population = max_manpower_k }
+                divide_variable = { diplomatic_power_population = 10000 }
+            }
+            add_to_variable = { diplomatic_power_civilian = num_owned_controlled_states }
+            add_to_variable = { diplomatic_power_civilian = num_of_civilian_factories }
+            add_to_variable = { diplomatic_power_trade = resource_exported@steel }
+            add_to_variable = { diplomatic_power_trade = resource_exported@aluminium }
+            add_to_variable = { diplomatic_power_trade = resource_exported@rubber }
+            add_to_variable = { diplomatic_power_trade = resource_exported@tungsten }
+            add_to_variable = { diplomatic_power_trade = resource_exported@chromium }
+            add_to_variable = { diplomatic_power_trade = resource_exported@oil }
+            divide_variable = { diplomatic_power_trade = 10 }
+            add_to_variable = { diplomatic_power_military = num_subjects }
+            add_to_variable = { diplomatic_power_military = num_ships }
+            add_to_variable = { diplomatic_power_military = num_armies }
+            add_to_variable = { diplomatic_power_military = num_faction_members }
+            add_to_variable = { diplomatic_power_military = num_of_military_factories }
+            add_to_variable = { diplomatic_power_military = num_of_naval_factories }
+            #
+            round_variable = diplomatic_power_civilian
+            round_variable = diplomatic_power_military
+            round_variable = diplomatic_power_trade
+            round_variable = diplomatic_power_population
+            round_variable = diplomatic_power_other
+            #
+            add_to_variable = { diplomatic_power = diplomatic_power_civilian }
+            add_to_variable = { diplomatic_power = diplomatic_power_military }
+            add_to_variable = { diplomatic_power = diplomatic_power_trade }
+            add_to_variable = { diplomatic_power = diplomatic_power_population }
+            add_to_variable = { diplomatic_power = diplomatic_power_other }
+            #
+            round_variable = diplomatic_power
         }
     }
 }

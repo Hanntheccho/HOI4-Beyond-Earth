@@ -221,6 +221,22 @@ BRA_the_recovery = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				OR = {
+					country_exists = ARG
+					country_exists = COS
+				}
+				add = -10
+			}
+			modifier = {
+				FROM = {
+					OR = {
+						tag = ARG
+						tag = COS
+					}
+				}
+				add = 20
+			}
 		}
 	}
 	BRA_disunite_compact = {
