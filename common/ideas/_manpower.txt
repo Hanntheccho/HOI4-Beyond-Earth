@@ -3,21 +3,12 @@ ideas = {
 		law = yes
 		use_list_view = yes
 		limited_conscription = {
-			cost = 150
-			removal_cost = -1
 			level = 4
 
 			ai_will_do = {
 				factor = 0
-				modifier = {
-					has_war = no
-					OR = {
-						has_idea = digital_democracy
-						has_idea = corporate_libertarianism
-					}
-					add = 1000
-				}
 		 	}
+
 			modifier = {
 				conscription = 0.005
 				army_org_factor = 0.1
@@ -26,56 +17,24 @@ ideas = {
 			}
 		}
 		extensive_conscription = {
-			cost = 150
-			removal_cost = -1
 			level = 3
 			default = yes
 
 			ai_will_do = {
 				factor = 0
-				modifier = {
-					has_idea = anarchy_style
-					add = 10
-				}
-				modifier = {
-					has_war = yes
-					add = 50
-				}
-				modifier = {
-					has_idea = synthetic_democracy
-					has_war = no
-					add = 100
-				}
 		 	}
+
 			modifier = {
 				conscription = 0.01
 			}
 		}
 		service_by_requirement = {
-			cost = 150
-			removal_cost = -1
 			level = 2
 
 			ai_will_do = {
 				factor = 0
-				modifier = {
-					OR = {
-						has_idea = communal_parity
-						has_idea = military_government
-					}
-					add = 100
-				}
-				modifier = {
-					OR = {
-						has_idea = digital_democracy
-						has_idea = corporate_libertarianism
-						has_idea = synthetic_democracy
-					}
-					has_manpower < 1000
-					has_war = yes
-					add = 100
-				}
 		 	}
+
 			modifier = {
 				conscription = 0.015
 				army_org_factor = -0.1
@@ -84,25 +43,12 @@ ideas = {
 			}
 		}
 		all_adults_serve = {
-			cost = 150
-			removal_cost = -1
 			level = 1
 
 			ai_will_do = {
 				factor = 0
-				modifier = {
-					has_manpower < 1000
-					has_war = yes
-					NOT = {
-						OR = {
-							has_idea = digital_democracy
-							has_idea = corporate_libertarianism
-						}
-					}
-					has_idea = service_by_requirement
-					add = 1000
-				}
 		 	}
+
 			modifier = {
 				conscription = 0.025
 				army_org_factor = -0.3

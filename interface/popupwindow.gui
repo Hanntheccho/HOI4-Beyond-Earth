@@ -966,7 +966,7 @@ guiTypes = {
 		
 		background = {
 			name = "Background"	
-			quadTextureSprite ="GFX_pol_goal_popup_bg"
+			quadTextureSprite ="GFX_tiled_bg_black"
 		}
 		
 		iconType = {
@@ -1385,7 +1385,7 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "default_confirmation_popup"
-		size = { width = 480 height=382 }
+		size = { width = 480 height = 300 }
 		orientation= center
 		origo = center
 		moveable = yes
@@ -1395,39 +1395,50 @@ guiTypes = {
 		
 		background = {
 			name = "Background"
-			quadTextureSprite ="GFX_pol_goal_popup_bg"
+			quadTextureSprite ="GFX_tiled_bg_black"
 		}
 		
 		instantTextBoxType = {
 			name = "title"
-			position = { x = 13 y = 10 }
+			position = { x = 16 y = 10 }
 			textureFile = ""
 			font = "Beyond"
 			borderSize = {x = 0 y = 10}
 			text = "Title"
 			maxWidth = 450
-			maxHeight = 40
+			maxHeight = 180
 			fixedsize = yes
-			vertical_alignment = center
 			format = centre
+		}
+
+		containerWindowType = {
+			name = "bg"
+			position = { x=10 y=60 }	
+			size = { width = 460 height=302 }	
+
+			background = {
+				name = "Background"		
+				quadTextureSprite ="GFX_tiled_black"
+				alwaystransparent = yes
+			}
 		}
 		
 		instantTextBoxType = {
 			name = "description"
-			position = { x = 24 y = 90 }
+			position = { x = 30 y = 90 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
 			text = "Long text here!"
-			maxWidth = 430
-			maxHeight = 225
+			maxWidth = 415
+			maxHeight = 135
 			format = centre
 			scrollbartype = "standardtext_slider"
 		}
 		
 		buttonType = {
 			name = "decline_button"
-			position = { x=90 y=323}
+			position = { x=90 y=243}
 			quadTextureSprite ="GFX_button_148x34"
 			buttonText = "CANCEL"
 			buttonFont = "Arial"
@@ -1437,7 +1448,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "accept_button"
-			position = { x=260 y=323}
+			position = { x=260 y=243}
 			quadTextureSprite ="GFX_button_148x34"
 			buttonText = "OK"
 			buttonFont = "Arial"
@@ -1458,7 +1469,7 @@ guiTypes = {
 		
 		background = {
 			name = "Background"	
-			quadTextureSprite ="GFX_pol_goal_popup_bg"
+			quadTextureSprite ="GFX_tiled_bg_black"
 		}
 		
 		instantTextBoxType = {

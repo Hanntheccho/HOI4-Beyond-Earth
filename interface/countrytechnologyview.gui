@@ -76,10 +76,10 @@ guiTypes = {
 		
 		containerWindowType = {
 			name ="research_slots"
-			position = { x=0 y=160 }
+			position = { x=0 y=150 }
 			size = { width=550 height=-5 }
 			verticalScrollbar = "right_vertical_slider"
-			margin = { top = 13 bottom = 13 }
+			margin = { top = 10 bottom = 10 }
 			
 			background = {
 				name = "Background"
@@ -90,7 +90,7 @@ guiTypes = {
 				name = "research_slots_grid"
 				position = { x = 4 y= 0 }
 				size = { width = -20 height = 100%% }
-				slotsize = { width = 500 height = 135 }
+				slotsize = { width = 500 height = 185 }
 				format = "UPPER_LEFT"
 			}
 			
@@ -202,12 +202,12 @@ guiTypes = {
 	containerWindowType = {
 		name = "research_slot_entry"
 		position = { x=12 y=0 }
-		size = { width=500 height= 130 }
+		size = { width=520 height= 180 }
 		clipping = yes
 		
 		background = {
 			name = "Background"
-			quadTextureSprite ="GFX_logistics_equipment_entry_bg_other"
+			quadTextureSprite ="GFX_tiled_invisible"
 			clicksound = click_default
 			position = {
 				x = -1
@@ -228,6 +228,16 @@ guiTypes = {
 		}
 
 		iconType = {
+			name = "Background1"
+			quadTextureSprite ="GFX_logistics_equipment_entry_bg_other"
+			alwaystransparent = yes
+			position = {
+				x = -1
+				y = 0
+			}
+		}
+
+		iconType = {
 			name = "Background2"
 			quadTextureSprite ="GFX_logistics_equipment_entry_bg_blank_log_other"
 			alwaystransparent = yes
@@ -238,11 +248,25 @@ guiTypes = {
 		}
 
 		containerWindowType = {
-			name = "another_bg"
-			size = { width = 426 height = 25 }
+			name = "another_bg1"
+			size = { width = 426 height = 65 }
 			position = {
 				x = 0
 				y = 101
+			}
+
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_black"
+				alwaystransparent = yes
+			}
+		}
+		containerWindowType = {
+			name = "another_bg2"
+			size = { width = 426 height = 10 }
+			position = {
+				x = 0
+				y = 171
 			}
 
 			background = {
@@ -260,7 +284,7 @@ guiTypes = {
 	
 		iconType = {
 			name = "technology"
-			position = { x = 10000 y = 69 } #position = { x = 200 y = 69 }
+			position = { x = 200 y = 48 } #position = { x = 200 y = 69 }
 			spriteType = "GFX_research_folder_strip"
 			centerposition = yes
 			alwaystransparent = yes
@@ -292,12 +316,23 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "eta_text"
-			position = { x = 10 y = 105 }
+			position = { x = 10 y = 110 }
 			textureFile = ""
-			font = "Arial16"
-			text = "/> loading_info? />>>> info!tech.load />>>>>>..............."
+			font = "Arialsmallest"
+			text = "/> loading_info? />>>> info!eta.load />>>>>>................................."
 			borderSize = {x = 0 y = 0}
-			maxWidth = 400
+			maxWidth = 450
+			maxHeight = 20
+			format = left	
+		}
+		instantTextboxType = {
+			name = "extra_text"
+			position = { x = 10 y = 140 }
+			textureFile = ""
+			font = "Arialsmallest"
+			text = "/> extra_info_load! >>> failed! no.data | load.next />"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 450
 			maxHeight = 20
 			format = left	
 		}
