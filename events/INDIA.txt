@@ -108,12 +108,10 @@ country_event = {
         add_equipment_to_stockpile = {
             type = gun_equipment
             amount = -500
-            producer = ROOT
         }
         add_equipment_to_stockpile = {
             type = infantry_eq
             amount = -10
-            producer = ROOT
         }
         add_political_power = 20
         BHR = {
@@ -140,12 +138,10 @@ country_event = {
         add_equipment_to_stockpile = {
             type = gun_equipment
             amount = 500
-            producer = FROM
         }
         add_equipment_to_stockpile = {
             type = infantry_eq
             amount = 10
-            producer = FROM
         }
 	}
 }
@@ -175,12 +171,10 @@ country_event = {
         add_equipment_to_stockpile = {
             type = crawler_equipment_1
             amount = -40
-            producer = ROOT
         }
         add_equipment_to_stockpile = {
             type = maglev_equipment
             amount = -2
-            producer = ROOT
         }
         add_political_power = 20
         BHR = {
@@ -207,12 +201,10 @@ country_event = {
         add_equipment_to_stockpile = {
             type = crawler_equipment_1
             amount = 40
-            producer = ROOT
         }
         add_equipment_to_stockpile = {
             type = maglev_equipment
             amount = 2
-            producer = ROOT
         }
 	}
 }
@@ -423,6 +415,19 @@ country_event = {
 	desc = bharat_event.19.d
 
 	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = start_indian_civil_war
+					}
+				}
+				set_global_flag = start_indian_civil_war
+			}
+		}
+	}
 	
 	#option = { 
 	#	name = bharat_event.19.a
@@ -435,25 +440,16 @@ country_event = {
 		name = bharat_event.19.a
         add_timed_idea = { idea = BHR_indian_attack_buffs days = 180 }
         custom_effect_tooltip = BHR_indian_civil_war_starts
-        hidden_effect = {
-            start_indian_civil_war = yes
-        }
 	}
 	option = {
 		name = bharat_event.19.b
         add_timed_idea = { idea = BHR_indian_defence_buffs days = 180 }
         custom_effect_tooltip = BHR_indian_civil_war_starts
-        hidden_effect = {
-            start_indian_civil_war = yes
-        }
 	}
 	option = {
 		name = bharat_event.19.c
         add_timed_idea = { idea = BHR_indian_planning_buffs days = 180 }
         custom_effect_tooltip = BHR_indian_civil_war_starts
-        hidden_effect = {
-            start_indian_civil_war = yes
-        }
 	}
 }
 

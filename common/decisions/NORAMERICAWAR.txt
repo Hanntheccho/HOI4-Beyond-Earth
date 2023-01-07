@@ -318,6 +318,14 @@ noramericawar_expansion = {
 				capital_scope = {
 					is_on_continent = north_america
 				}
+				OR = {
+					is_neighbor_of = ROOT
+					ROOT = {
+						any_allied_country = {
+							is_neighbor_of = FROM
+						}
+					}
+				}
 				NOT = {
 					OR = {
 						is_puppet_of = ROOT

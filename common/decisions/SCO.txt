@@ -1,4 +1,49 @@
 scotland_formable = {
+	ENG_civil_war_part_1 = {
+		icon = GFX_decision_unknown
+		available = {
+			has_global_flag = birmingham_uproar
+		}
+		activation = {
+			country_exists = ENG
+		}
+		fire_only_once = yes
+		days_mission_timeout = 140
+		timeout_effect = {
+			ENG = {
+				country_event = england_event.1
+			}
+			activate_mission = ENG_civil_war_part_2
+			set_global_flag = birmingham_uproar
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ENG_civil_war_part_2 = {
+		icon = GFX_decision_unknown
+		available = {
+			#OR = {
+				has_global_flag = ECW_start
+				#has_global_flag = ECW_end
+			#}
+		}
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		days_mission_timeout = 25
+		timeout_effect = {
+			ENG = {
+				news_event = england_event.2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	SCO_reach_finland = {
 		icon = GFX_decision_political
 		available = {

@@ -1,4 +1,48 @@
 BHR_preparing_for_war = {
+	INDIA_war_warlords = {
+		icon = GFX_decision_war
+		available = {
+			#
+		}
+		visible = {
+			has_global_flag = start_indian_civil_war
+		}
+		cost = 30
+		target_trigger = {
+			FROM = {
+				is_india_tag = yes
+				OR = {
+					is_neighbor_of = ROOT
+					ROOT = {
+						any_allied_country = {
+							is_neighbor_of = FROM
+						}
+					}
+				}
+				NOT = {
+					OR = {
+						is_puppet_of = ROOT
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+					}						
+				}
+			}
+		}
+		fire_only_once = no
+		days_remove = 30
+		remove_effect = {
+			declare_war_on = {
+				target = FROM
+				type = annex_puppet_wargoal
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+##############################
+
 	BHR_initiate_remilitarization = {
 	
 		icon = GFX_decision_war
