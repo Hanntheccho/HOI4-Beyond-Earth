@@ -196,9 +196,12 @@ SOV_manifest_destiny = {
 			#
 		}
 		visible = {
-			country_exists = BLR
 			BLR = {
-				is_puppet = no
+				exists = yes
+				NOT = {
+					is_puppet_of = SOV
+					has_war_with = SOV
+				}
 			}
 		}
 		days_remove = 20
@@ -232,15 +235,16 @@ SOV_manifest_destiny = {
 			#
 		}
 		visible = {
-			country_exists = UKR
 			UKR = {
-				is_puppet = no
+				exists = yes
+				NOT = {
+					is_puppet_of = SOV
+					has_war_with = SOV
+				}
 			}
 		}
 		days_remove = 35
-		targets = {
-			UKR
-		}
+		targets = { UKR	}
 		war_with_on_remove = UKR
 		fire_only_once = yes
 		remove_effect = {
@@ -286,15 +290,16 @@ SOV_manifest_destiny = {
 			#
 		}
 		visible = {
-			country_exists = LAT
 			LAT = {
-				is_puppet = no
+				exists = yes
+				NOT = {
+					is_puppet_of = SOV
+					has_war_with = SOV
+				}
 			}
 		}
 		days_remove = 35
-		targets = {
-			LAT
-		}
+		targets = { LAT }
 		war_with_on_remove = LAT
 		fire_only_once = yes
 		remove_effect = {
@@ -333,21 +338,15 @@ SOV_manifest_destiny = {
 	SOV_war_central_asia = {
 		icon = GFX_decision_war
 		available = {
-			URA = {
-				OR = {
-					exists = no
-					is_puppet_of = KAZ
-				}
-			}
-			KAZ = {
-				exists = yes
-				is_puppet = no
-			}
+			#
 		}
 		visible = {
 			KAZ = {
 				exists = yes
-				is_puppet = no
+				NOT = {
+					is_puppet_of = SOV
+					has_war_with = SOV
+				}
 			}
 		}
 		days_remove = 20
@@ -368,30 +367,20 @@ SOV_manifest_destiny = {
 				}
 				add = 10000
 			}
-			modifier = {
-				URA = {
-					exists = no
-				}
-				SIB = {
-					exists = no
-				}
-				add = 10000
-			}
 		}
 	}
 	SOV_war_siberia = {
 		icon = GFX_decision_war
 		available = {
-			URA = {
-				exists = no
-			}
-			SIB = {
-				exists = yes
-			}
+			#
 		}
 		visible = {
 			SIB = {
 				exists = yes
+				NOT = {
+					is_puppet_of = SOV
+					has_war_with = SOV
+				}
 			}
 		}
 		days_remove = 20
@@ -410,71 +399,39 @@ SOV_manifest_destiny = {
 				SOV = {
 					is_neighbor_of = SIB
 				}
-				NOT = {
-					has_war_with = KAZ
+				URA = {
+					exists = no
 				}
 				add = 10000
 			}
 		}
 	}
-	
-	SOV_our_comrades = {
-		icon = GFX_decision_unknown
+	SOV_war_ags = {
+		icon = GFX_decision_war
 		available = {
-			URA = {
-				OR = {
-				AND = {
-					has_war_with = KAZ
-					surrender_progress > 0.6
-				}
-				is_puppet = yes
-				}
-			}
+			#
 		}
 		visible = {
 			URA = {
-				OR = {
-					has_war_with = KAZ
-					is_puppet = yes
+				exists = yes
+				NOT = {
+					is_puppet_of = SOV
+					has_war_with = SOV
 				}
 			}
 		}
-		days_remove = 10
-		cost = 10
+		days_remove = 20
 		fire_only_once = yes
-		war_with_on_remove = KAZ
+		targets = { URA }
 		war_with_on_remove = URA
 		remove_effect = {
-			if = {
-				limit = {
-					URA = {
-						has_war_with = KAZ
-					}
-				}
-				SOV = {
-					declare_war_on = {
-						target = KAZ
-						type = annex_puppet_wargoal
-					}
-				}
-				annex_country = {
-					target = URA
-				}
+			declare_war_on = {
+				target = URA
+				type = annex_puppet_wargoal
 			}
-			else = {
-				declare_war_on = {
-					target = KAZ
-					type = annex_puppet_wargoal
-				}
-				declare_war_on = {
-					target = URA
-					type = annex_puppet_wargoal
-				}
-			}
-			
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 }

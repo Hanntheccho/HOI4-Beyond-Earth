@@ -1,10 +1,62 @@
 GER_decisions = {
+	YUG_civil_war = {
+		icon = GFX_decision_war
+		available = {
+			YUG = {
+				has_war = no
+			}
+		}
+		activation = {
+			YUG = {
+				has_war_with = ROM
+			}
+		}
+		fire_only_once = yes
+		days_mission_timeout = 124
+		timeout_effect = {
+			YUG = {
+				white_peace = ROM
+				every_core_state = {
+					add_core_of = CRO
+				}
+				remove_ideas = YUG_the_communalists
+			}
+			CRO = {
+				transfer_state = 377
+				transfer_state = 375
+				transfer_state = 380
+				transfer_state = 393
+				transfer_state = 400
+				transfer_state = 417
+				transfer_state = 419
+				add_ideas = EU_treaty_of_bern
+				YUG = {
+					transfer_units_fraction= {
+						target = PREV
+						size = 0.5
+						stockpile_ratio = 0.5
+						army_ratio = 0.5
+						air_ratio = 0.5
+					}
+				}
+				declare_war_on = {
+					target = YUG
+					type = annex_puppet_wargoal
+				}
+			}
+			GER = {
+				add_to_faction = CRO
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	NOR_SWE_war = {
 		icon = GFX_decision_war
 		available = {
-			NOR = {
-				has_war_with = SWE
-			}
+			#
 		}
 		activation = {
 			#
