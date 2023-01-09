@@ -8,6 +8,20 @@ eurowar_decisions = {
 			has_global_flag = euro_war_happened
 		}
 		cost = 30
+		cancel_trigger = {
+			OR = {
+				FROM = {
+					OR = {
+						is_puppet_of = ROOT
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+					}
+				}
+				ROOT = {
+					is_puppet = yes
+				}				
+			}
+		}
 		target_trigger = {
 			FROM = {
 				capital_scope = {
