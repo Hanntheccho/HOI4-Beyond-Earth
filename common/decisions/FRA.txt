@@ -119,4 +119,30 @@ FRA_decisions = {
 			factor = 1
 		}
 	}
+
+	FRA_TUN_war = {
+		icon = GFX_decision_war
+		available = {
+			FRA = {
+				has_war_with = TUN
+			}
+		}
+		activation = {
+			#
+		}
+		fire_only_once = yes
+		days_mission_timeout = 107
+		timeout_effect = {
+			FRA = {
+				declare_war_on = {
+					type = annex_puppet_wargoal
+					target = TUN
+				}
+				country_event = franco_event.13
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

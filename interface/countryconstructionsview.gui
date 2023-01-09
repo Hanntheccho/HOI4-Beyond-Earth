@@ -156,26 +156,82 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "production_win_top"
-			position = { x = 48 y = 10000 } #30 }
+			position = { x = 48 y = 10 } #30 }
 			size = { width = 100% height = 80% }
 			verticalScrollbar = "right_vertical_slider"
+
+			containerWindowType = {
+				name = "another_bg1"
+				size = { width = 239 height = 35 }
+				position = {
+					x = -32
+					y = 141
+				}
+	
+				background = {
+					name = "bg"
+					quadTextureSprite = "GFX_tiled_black"
+					alwaystransparent = yes
+				}
+	
+				instantTextboxType = {
+					name = "speed"
+					position = { x = 10 y = 9 }
+					textureFile = ""
+					font = "Arialsmallest"
+					borderSize = {x = 0 y = 0}
+					text = "/> building_speed? ____________"
+					maxWidth = 450
+					maxHeight = 20
+					format = left	
+					alwaystransparent = yes
+				}
+			}
+
+			containerWindowType = {
+				name = "another_bg2"
+				size = { width = 174 height = 35 }
+				position = {
+					x = 232
+					y = 141
+				}
+	
+				background = {
+					name = "bg"
+					quadTextureSprite = "GFX_tiled_black"
+					alwaystransparent = yes
+				}
+	
+				instantTextboxType = {
+					name = "available_num"
+					position = { x = 10 y = 9 }
+					textureFile = ""
+					font = "Arialsmallest"
+					borderSize = {x = 0 y = 0}
+					text = "/> available? _________"
+					maxWidth = 450
+					maxHeight = 20
+					format = left	
+					alwaystransparent = yes
+				}
+			}
 			
 			instantTextboxType = {
 				name = "available_factories_value"
-				position = { x = -5 y = 67 }
+				position = { x = 325 y = 147 }
 				textureFile = ""
-				font = "Focusfont"
+				font = "Arial16"
 				borderSize = {x = 0 y = 0}
 				text = "20/37"
-				maxWidth = 90
+				maxWidth = 70
 				maxHeight = 20
-				format = center
-				multiline = no
+				format = right
+				fixedsize = yes
 			}		
 					
 			instantTextboxType = {
 				name = "traded_factories_value"
-				position = { x = 159 y = 47 }
+				position = { x = -10000 y = 47 }
 				textureFile = ""
 				font = "Focusfont"
 				borderSize = {x = 0 y = 0}
@@ -187,7 +243,7 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "local_factories_value"
-				position = { x = 159 y = 67 }
+				position = { x = -10000 y = 67 }
 				textureFile = ""
 				font = "Focusfont"
 				borderSize = {x = 0 y = 0}
@@ -196,96 +252,29 @@ guiTypes = {
 				maxHeight = 20
 				format = right
 			}
-
-			#iconType = {
-			#	name = "civilian_factory_icon2"
-			#	position = { x = 273 y = 34 }
-			#	spriteType = "GFX_non_available_factory_icon"
-			#}
-
-			iconType = {
-				name = "construction_speed_icon"
-				position = { x = 287 y = 10000 }
-				spriteType = "GFX_construction_speed_icon"
-			}
-
-			instantTextboxType = {
-				name = "construction_speed_value2"
-				position = { x = 312 y = 100 }
-				textureFile = ""
-				font = "Focusfont"
-				borderSize = {x = 0 y = 0}
-				text = ">>>"
-				maxWidth = 70
-				maxHeight = 20
-				format = right
-			}	
 			
 			instantTextboxType = {
 				name = "construction_speed_value"
-				position = { x = 370 y = 100 }
+				position = { x = 125 y = 147 }
 				textureFile = ""
-				font = "Focusfont"
+				font = "Arial16"
 				borderSize = {x = 0 y = 0}
 				text = "99"
 				maxWidth = 70
 				maxHeight = 20
 				format = right
 			}			
-			
 		}
-			
-		#instantTextboxType = {
-		#	name = "location"
-		#	position = { x = 0 y = 199 }
-		#	font = "Beyondsmall"
-		#	maxWidth = 450			
-		#	text = "/ LOADING FREE FACTORY RATE... // ..."
-		#	format = center
-		#}
-		#
-		#instantTextboxType = {
-		#	name = "task"
-		#	position = { x = 165 y = 105 }
-		#	font = "Arial"
-		#	maxWidth = 80				
-		#	text = "TASK"
-		#	format = center
-		#}
-		
-		iconType = {
-			name = "factories"
-			position = { x = 10000 y = 108 }
-			spriteType = "GFX_non_available_factory_icon"
-		}
-
-		#instantTextboxType = {
-		#	name = "factories_amount"
-		#	position = { x = 223 y = 105 }
-		#	font = "Arial"
-		#	maxWidth = 120				
-		#	text = "CONSTRUCTION_FACTORIES_LABEL"
-		#	format = center
-		#}
-		#
-		#instantTextboxType = {
-		#	name = "priority"
-		#	position = { x = 320 y = 105 }
-		#	font = "Arial"
-		#	maxWidth = 110				
-		#	text = "PRIORITY"
-		#	format = center
-		#}
 			
 		containerWindowType = {
 			name = "production_lines"
-			position = { x = 0 y = 150 }
+			position = { x = 0 y = 190 }
 			size = { width = 455 height = 100%% }
 			verticalScrollbar = "right_vertical_slider"
 			vertical_scroll_step = 50
 			scroll_wheel_factor = 40
 			smooth_scrolling = yes
-			margin = { top = 5 left = 0 bottom = 21 right = 25}
+			margin = { top = 5 left = 0 bottom = 10 }
 			
 			background = {
 				name = "Background"
