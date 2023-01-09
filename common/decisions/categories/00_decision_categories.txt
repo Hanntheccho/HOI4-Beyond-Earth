@@ -5,7 +5,7 @@ formable_decisions = {
 		is_puppet = no
 	}
 	allowed = {
-		always = yes
+		#
 	}
 	visible_when_empty = no
 }
@@ -14,7 +14,7 @@ market_decisions = {
 	icon = GFX_decision_category_generic
 	priority = 0
 	allowed = {
-		#
+		always = no #yes, disabled for testing
 	}
 	visible_when_empty = no
 }
@@ -44,7 +44,7 @@ asiawar_decisions = {
 		is_china_tag = yes
 	}
 	visible = {
-		#
+		is_puppet = no
 	}
 	visible_when_empty = no
 }
@@ -72,9 +72,6 @@ noramericawar_decisions = {
 			tag = ONE
 			tag = SIL
 		}
-		NOT = {
-			has_global_flag = noramerica_war_happened
-		}
 	}
 	visible = {
 		NOT = {
@@ -88,7 +85,10 @@ noramericawar_expansion = {
 	icon = GFX_decision_category_generic
 	priority = 200
 	allowed = {
-		has_country_flag = is_the_NAU
+		OR = {
+			tag = PNM
+			tag = ARC
+		}
 	}
 	visible = {
 		has_country_flag = is_the_NAU
@@ -129,6 +129,9 @@ eurowar_decisions = {
 			tag = PAD
 			tag = ITA
 		}
+	}
+	visible = {
+		is_puppet = no
 	}
 	visible_when_empty = no
 }

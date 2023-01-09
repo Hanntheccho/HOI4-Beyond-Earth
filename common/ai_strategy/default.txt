@@ -17,6 +17,23 @@ default_naval_invasion = {
 	}
 }
 
+default_build_armies = {
+	allowed = {
+		always = yes
+	}
+	enable = {
+		check_variable = {
+			num_divisions < division_limit
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_build_armies
+		value = 1000
+	}
+}
+
 #default_building_production_civilian = {
 #	allowed = {
 #		always = yes

@@ -8,9 +8,21 @@ INDIA_civil_war = {
 			has_global_flag = start_indian_civil_war
 		}
 		cost = 30
+		cancel_trigger = {
+			FROM = {
+				is_puppet_of = ROOT
+				has_war_with = ROOT
+				is_in_faction_with = ROOT
+			}
+		}
 		target_trigger = {
 			FROM = {
-				is_india_tag = yes
+				OR = {
+					is_india_tag = yes 
+					tag = SRL
+					tag = BHR
+					tag = KAV
+				}
 				OR = {
 					is_neighbor_of = ROOT
 					ROOT = {

@@ -29,6 +29,7 @@ GER_decisions = {
 				transfer_state = 400
 				transfer_state = 417
 				transfer_state = 419
+				add_ideas = GER_german_aligned
 				add_ideas = EU_treaty_of_bern
 				YUG = {
 					transfer_units_fraction= {
@@ -186,7 +187,21 @@ GER_decisions = {
 			FROM = {
 				has_idea = GER_german_aligned
 				is_in_faction = no
+				NOT = {
+					OR = {
+						has_war_with = ROOT
+						ROOT = {
+							any_allied_country = {
+								has_war_with = FROM
+							}
+						}
+					
+					}
+				}
 			}
+		}
+		cancel_trigger = {
+			has_war_with = FROM
 		}
 		days_remove = 100
 		remove_effect = {
