@@ -311,25 +311,17 @@ on_actions = {
                     check_variable = { num_divisions > division_limit }
                 }
                 clear_variable = too_many_divs_var
-            	set_variable = { too_many_divs_var = num_divisions }
-            	divide_variable = { too_many_divs_var = division_limit }
-                divide_variable = { too_many_divs_var = 10 }
+            	set_variable = { too_many_divs_var = division_limit }
+            	divide_variable = { too_many_divs_var = num_divisions }
+                multiply_variable = { too_many_divs_var = -1 }
+                add_to_variable = { too_many_divs_var = 1 }
                 multiply_variable = { too_many_divs_var = -1 }
                 add_dynamic_modifier = {
                     modifier = too_many_divs
                 }
             }
-            else_if = {
-                limit = {
-                    AND = {
-                        check_variable = { num_divisions < division_limit }
-                        has_dynamic_modifier = { modifier = too_many_divs }
-                    }
-                }
+            else = {
                 clear_variable = too_many_divs_var
-                remove_dynamic_modifier = {
-                    modifier = too_many_divs
-                }
             }
         }
     }
