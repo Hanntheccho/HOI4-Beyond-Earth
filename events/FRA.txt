@@ -449,10 +449,21 @@ country_event = { #FRA-TUN WAR
 	
 	option = { 
 		name = franco_event_option.13.a 
+		trigger = {
+			has_government = purity
+		}
 		add_state_claim = 240
 		declare_war_on = {
 			target = TUN
 			type = annex_puppet_wargoal
+		}
+	}
+	option = { 
+		name = franco_event_option.13.b
+		trigger = {
+			NOT = {
+				has_government = purity
+			}
 		}
 	}
 }
