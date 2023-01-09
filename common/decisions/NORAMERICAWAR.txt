@@ -344,7 +344,22 @@ noramericawar_expansion = {
 			}
 		}
 		ai_will_do = {
-			factor = 10
+			factor = 0
+			modifier = {
+				FROM = {
+					tag = QUE
+				}
+				add = 10
+			}
+			modifier = {
+				QUE = {
+					OR = {
+						is_puppet_of = ROOT
+						exists = no
+					}
+				}
+				add = 10
+			}
 		}
 	}
 }

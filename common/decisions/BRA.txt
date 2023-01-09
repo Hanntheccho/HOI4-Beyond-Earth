@@ -182,6 +182,14 @@ BRA_the_recovery = {
 					tag = CUB
 					tag = JAM
 				}
+				OR = {
+					is_neighbor_of = ROOT
+					ROOT = {
+						any_allied_country = {
+							is_neighbor_of = FROM
+						}
+					}
+				}
 				NOT = {
 					OR = {
 						is_puppet_of = ROOT
@@ -226,7 +234,22 @@ BRA_the_recovery = {
 			}
 		}
 		ai_will_do = {
-			factor = 10
+			factor = 0
+			modifier = {
+				FROM = {
+					tag = ARG
+				}
+				add = 10
+			}
+			modifier = {
+				ARG = {
+					OR = {
+						is_puppet_of = ROOT
+						exists = no
+					}
+				}
+				add = 10
+			}
 		}
 	}
 }

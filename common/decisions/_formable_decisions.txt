@@ -576,11 +576,87 @@ formable_decisions = {
 		fire_only_once = yes
 		complete_effect = {
             set_cosmetic_tag = URA_russia
+			SOV = {
+				every_core_state = {
+					add_core_of = URA
+					transfer_state_to = URA
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100000
+		}
+	}
+	###
+	al_falah_formable = {
+		icon = GFX_decision_unity
+		available = {
+			SAU = {
+				is_puppet_of = OMA
+			}
+			SYR = {
+				is_puppet_of = OMA
+			}
+			LEB = {
+				is_puppet_of = OMA
+			}
+			YEM = {
+				is_puppet_of = OMA
+			}
+			PAL = {
+				is_puppet_of = OMA
+			}
+			ISR = {
+				is_puppet_of = OMA
+			}
+		}
+		visible = {
+			tag = OMA
+		}    
+		fire_only_once = yes
+		complete_effect = {
+            set_cosmetic_tag = OMA_al_falah
 			every_state = {
 				limit = {
-					is_core_of = SOV
+					is_core_of = SAU
+					is_core_of = SYR
+					is_core_of = YEM
+					is_core_of = LEB
+					is_core_of = ISR
+					is_core_of = PAL
 				}
-				add_core_of = URA
+				add_core_of = OMA
+				transfer_state_to = OMA
+			}
+		}
+		ai_will_do = {
+			factor = 100000
+		}
+	}
+	###
+	polystralia_formable = {
+		icon = GFX_decision_unity
+		available = {
+			AST = {
+				is_puppet_of = INS
+			}
+			SHL = {
+				is_puppet_of = INS
+			}
+		}
+		visible = {
+			tag = INS
+		}    
+		fire_only_once = yes
+		complete_effect = {
+            set_cosmetic_tag = INS_polystralia
+			every_state = {
+				limit = {
+					is_core_of = AST
+					is_core_of = SHL
+				}
+				add_core_of = INS
+				transfer_state_to = INS
 			}
 		}
 		ai_will_do = {
