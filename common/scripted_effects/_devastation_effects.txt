@@ -50,14 +50,7 @@ increase_devastation = {
 }
 
 increase_devastation_random_state = {
-	random_owned_state = {
-		limit = {
-			NOT = {
-				has_dynamic_modifier = {
-					modifier = no_devastation
-				}
-			}
-		}
+	random_state = {
 		if = {
 			limit = {
 				has_dynamic_modifier = {
@@ -156,15 +149,6 @@ decrease_devastation = {
 
 calculate_current_devastation = {
 	clear_variable = ROOT.current_devastation
-	every_owned_state = {
-		limit = {
-			has_dynamic_modifier = {
-				modifier = minor_devastation
-			}
-		}
-		set_variable = { THIS.state_devastation = 0 }
-		add_to_variable = { ROOT.current_devastation = THIS.state_devastation }
-	}
 	every_owned_state = {
 		limit = {
 			has_dynamic_modifier = {
