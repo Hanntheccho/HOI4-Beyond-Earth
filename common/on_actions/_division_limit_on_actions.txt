@@ -1,0 +1,43 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            every_country = {
+                set_variable = { division_limit = num_of_military_factories }
+                multiply_variable = { division_limit = 2 }                     
+            }
+        }
+    }
+    ###
+    on_daily = {
+        effect = {
+            set_variable = { division_limit = num_of_military_factories }
+            multiply_variable = { division_limit = 2 }
+            round_variable = division_limit
+            if = {
+                limit = {
+                    check_variable = { num_divisions > division_limit }
+                }
+                clear_variable = too_many_divs_var
+            	set_variable = { too_many_divs_var = division_limit }
+            	divide_variable = { too_many_divs_var = num_divisions }
+                multiply_variable = { too_many_divs_var = -1 }
+                add_to_variable = { too_many_divs_var = 1 }
+                multiply_variable = { too_many_divs_var = -1 }
+                clamp_variable = { var = too_many_divs_var min = -0.75 max = 0 }
+                if = {
+                    limit = {
+                        NOT = {
+                            has_dynamic_modifier = { modifier = too_many_divs }
+                        }
+                    }
+                    add_dynamic_modifier = {
+                        modifier = too_many_divs
+                    }
+                }                
+            }
+            else = {
+                clear_variable = too_many_divs_var
+            }
+        }
+    }
+}
