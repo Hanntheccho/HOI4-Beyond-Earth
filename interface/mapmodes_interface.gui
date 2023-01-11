@@ -63,42 +63,23 @@ guiTypes = {
 			shortcut = "s" #f
 			clicksound = click_default
 		}
-
-		containerWindowType = {
-			name = "bg"
-			position = { x=-444 y=85 }	
-			size = { width = 435 height = 35 } 
-			orientation = UPPER_RIGHT	
-
-			background = {
-				name = "Background"		
-				quadTextureSprite ="GFX_tiled_black"
-			}
-
-			instantTextBoxType={
-				name = "mm_tip"
-				font = "Arialsmallest"
-				position = { x=17 y=9 }
-				text = "/> M to open .!mapmodes F1? land_view F2? orbital_view />>>>" 
-				maxWidth = 500
-				maxHeight = 16
-				alwaysTransparent = yes
-			}
-		}
 		
 		# All Map Modes button
+		iconType = {
+			name = "mapmode_back"
+			position = { x=661 y=43 }
+			spriteType = "GFX_mapmode_button_all"
+			alwaysTransparent = yes
+		}
 		buttonType = {
 			name = "mapmodes_all"
-			position = { x=-558 y=85 } #{ x=-549 y=85 }
-			quadTextureSprite = "GFX_mapmode_button_all"
+			position = { x=658 y=40 }
+			quadTextureSprite = "GFX_difficulty_button_civilian"
 			shortcut = "m"
 			pdx_tooltip = "MAPMODE_ALL"
-			pdx_tooltip_anchor = {
-				x = -310
-				y = 0
-				relative = yes #It is default set to yes ( to the gui object )
-			}	
-			orientation = "UPPER_RIGHT"
+			buttonFont = "Arialsmall"
+			buttontext = "MAPMODES //"	
+			orientation = "UPPER_LEFT"
 		}
 		
 		### Mapmode 3 button layout w/o LaR/DLC - selected in code
@@ -1138,9 +1119,9 @@ guiTypes = {
 	# A window with the list of all possible map modes that is attached to the main map-modes window.
 	containerWindowType =  {
 		name = "WindowWithAllMapModes_Standalone"
-		position = { x=-530 y=200 }	
+		position = { x=560 y=220 }	
 		size = { width=200 height=314 } 
-		Orientation = UPPER_RIGHT
+		Orientation = UPPER_LEFT
 		fade_time = 500
 		fade_type = linear
 

@@ -1,6 +1,9 @@
 on_actions = {
 	on_startup = {
 		effect = {
+			every_country = {
+				set_country_flag = auto_ecobalance_states
+			}
             every_state = {
 				if = {
 					limit = {
@@ -210,9 +213,6 @@ on_actions = {
 					add_ideas = periphal_anarchy
 				}
             }
-            #every_state = {
-            #    set_variable = { devastation_degree = 3 }
-            #}
         }
     }
 	on_daily_ADU = {
@@ -582,4 +582,42 @@ on_actions = {
 		}
 	}
 	###
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					is_ai = no
+					has_country_flag = auto_ecobalance_states
+					check_variable = {
+						industrial_power > 200
+					}
+					NOT = {
+						has_country_flag = has_body_tier3
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = has_mind_tier3
+					}
+					subtract_from_variable = { industrial_power = 15 }					
+				}
+				else = {
+					subtract_from_variable = { industrial_power = 25 }
+				}
+				random_owned_state = {
+					limit = {
+						NOT = {
+							has_state_flag = devastation_reduction_timeout_flag
+						}
+					}
+					decrease_devastation = yes
+                    set_state_flag = {
+                        flag = devastation_reduction_timeout_flag
+                        value = 1
+                        days = 60
+                    }
+				}
+			}
+		}
+	}
 }
