@@ -22,7 +22,7 @@ scripted_gui = {
         
         effects = {
             south_pole_hostile_takeover_click = {
-                every_country = {
+                every_possible_country = {
                     if = {
                         limit = {
                             NOT = { tag = ROOT }
@@ -45,7 +45,7 @@ scripted_gui = {
                         }
                     }
                 }
-                every_country = {
+                every_possible_country = {
                     clr_country_flag = antarctic_sector_1
                     clr_country_flag = antarctic_sector_2
                     clr_country_flag = antarctic_sector_3
@@ -112,24 +112,27 @@ scripted_gui = {
                         }
                     }
                     set_global_flag = antarctic_sector_1
-                    add_political_power = sector_1_cost_negative
-                    every_country = {
-                        if = {
-                            limit = { has_country_flag = antarctic_sector_1 }
-                            add_to_variable = {
-                                num_southpole_sectors = -1
-                            }
-                            clr_country_flag = antarctic_sector_1
+                    multiply_variable = {
+                        global.sector_1_cost = -1
+                    }
+                    add_political_power = global.sector_1_cost
+                    multiply_variable = {
+                        global.sector_1_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_1 
                         }
-                        set_variable = {
-                            sector_1_cost_daily = 0.025
+                        add_to_variable = {
+                            num_southpole_sectors = -1
                         }
-                        set_variable = {
-                            sector_1_cost = 20
-                        }
-                        set_variable = {
-                            sector_1_cost_negative = -20
-                        }
+                        clr_country_flag = antarctic_sector_1
+                    }
+                    set_variable = {
+                        global.sector_1_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_1_cost = 20
                     }
                     ROOT = {
                         set_country_flag = antarctic_sector_1
@@ -147,18 +150,19 @@ scripted_gui = {
                         }
                     }
                     ROOT = {
-                        add_political_power = sector_1_cost_negative
+                        multiply_variable = {
+                            global.sector_1_cost = -1
+                        }
+                        add_political_power = global.sector_1_cost
+                        multiply_variable = {
+                            global.sector_1_cost = -1
+                        }
                     }
-                    every_country = {
-                        add_to_variable = {
-                            sector_1_cost = 20
-                        }
-                        add_to_variable = {
-                            sector_1_cost_negative = -20
-                        }
-                        add_to_variable = {
-                            sector_1_cost_daily = 0.025
-                        }
+                    add_to_variable = {
+                        global.sector_1_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_1_cost = 20
                     }
                 }
                 else = {
@@ -173,24 +177,27 @@ scripted_gui = {
                         }
                     }
                     set_global_flag = antarctic_sector_2
-                    add_political_power = sector_2_cost_negative
-                    every_country = {
-                        if = {
-                            limit = { has_country_flag = antarctic_sector_2 }
-                            add_to_variable = {
-                                num_southpole_sectors = -1
-                            }
-                            clr_country_flag = antarctic_sector_2
+                    multiply_variable = {
+                        global.sector_2_cost = -1
+                    }
+                    add_political_power = global.sector_2_cost
+                    multiply_variable = {
+                        global.sector_2_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_2
                         }
-                        set_variable = {
-                            sector_2_cost_daily = 0.025
+                        add_to_variable = {
+                            num_southpole_sectors = -1
                         }
-                        set_variable = {
-                            sector_2_cost = 20
-                        }
-                        set_variable = {
-                            sector_2_cost_negative = -20
-                        }
+                        clr_country_flag = antarctic_sector_2
+                    }
+                    set_variable = {
+                        global.sector_2_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_2_cost = 20
                     }
                     ROOT = {
                         set_country_flag = antarctic_sector_2
@@ -208,18 +215,19 @@ scripted_gui = {
                         }
                     }
                     ROOT = {
-                        add_political_power = sector_2_cost_negative
+                        multiply_variable = {
+                            global.sector_2_cost = -1
+                        }
+                        add_political_power = global.sector_2_cost
+                        multiply_variable = {
+                            global.sector_2_cost = -1
+                        }
                     }
-                    every_country = {
-                        add_to_variable = {
-                            sector_2_cost = 20
-                        }
-                        add_to_variable = {
-                            sector_2_cost_negative = -20
-                        }
-                        add_to_variable = {
-                            sector_2_cost_daily = 0.025
-                        }
+                    add_to_variable = {
+                        global.sector_2_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_2_cost = 20
                     }
                 }
                 else = {
@@ -234,24 +242,27 @@ scripted_gui = {
                         }
                     }
                     set_global_flag = antarctic_sector_3
-                    add_political_power = sector_3_cost_negative
-                    every_country = {
-                        if = {
-                            limit = { has_country_flag = antarctic_sector_3 }
-                            add_to_variable = {
-                                num_southpole_sectors = -1
-                            }
-                            clr_country_flag = antarctic_sector_3
+                    multiply_variable = {
+                        global.sector_3_cost = -1
+                    }
+                    add_political_power = global.sector_3_cost
+                    multiply_variable = {
+                        global.sector_3_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_3
                         }
-                        set_variable = {
-                            sector_3_cost_daily = 0.025
+                        add_to_variable = {
+                            num_southpole_sectors = -1
                         }
-                        set_variable = {
-                            sector_3_cost = 20
-                        }
-                        set_variable = {
-                            sector_3_cost_negative = -20
-                        }
+                        clr_country_flag = antarctic_sector_3
+                    }
+                    set_variable = {
+                        global.sector_3_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_3_cost = 20
                     }
                     ROOT = {
                         set_country_flag = antarctic_sector_3
@@ -269,18 +280,19 @@ scripted_gui = {
                         }
                     }
                     ROOT = {
-                        add_political_power = sector_3_cost_negative
+                        multiply_variable = {
+                            global.sector_3_cost = -1
+                        }
+                        add_political_power = global.sector_3_cost
+                        multiply_variable = {
+                            global.sector_3_cost = -1
+                        }
                     }
-                    every_country = {
-                        add_to_variable = {
-                            sector_3_cost = 20
-                        }
-                        add_to_variable = {
-                            sector_3_cost_negative = -20
-                        }
-                        add_to_variable = {
-                            sector_3_cost_daily = 0.025
-                        }
+                    add_to_variable = {
+                        global.sector_3_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_3_cost = 20
                     }
                 }
                 else = {
@@ -295,24 +307,27 @@ scripted_gui = {
                         }
                     }
                     set_global_flag = antarctic_sector_4
-                    add_political_power = sector_4_cost_negative
-                    every_country = {
-                        if = {
-                            limit = { has_country_flag = antarctic_sector_4 }
-                            add_to_variable = {
-                                num_southpole_sectors = -1
-                            }
-                            clr_country_flag = antarctic_sector_4
+                    multiply_variable = {
+                        global.sector_4_cost = -1
+                    }
+                    add_political_power = global.sector_4_cost
+                    multiply_variable = {
+                        global.sector_4_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_4 
                         }
-                        set_variable = {
-                            sector_4_cost_daily = 0.025
+                        add_to_variable = {
+                            num_southpole_sectors = -1
                         }
-                        set_variable = {
-                            sector_4_cost = 20
-                        }
-                        set_variable = {
-                            sector_4_cost_negative = -20
-                        }
+                        clr_country_flag = antarctic_sector_4
+                    }
+                    set_variable = {
+                        global.sector_4_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_4_cost = 20
                     }
                     ROOT = {
                         set_country_flag = antarctic_sector_4
@@ -330,18 +345,19 @@ scripted_gui = {
                         }
                     }
                     ROOT = {
-                        add_political_power = sector_4_cost_negative
+                        multiply_variable = {
+                            global.sector_4_cost = -1
+                        }
+                        add_political_power = global.sector_4_cost
+                        multiply_variable = {
+                            global.sector_4_cost = -1
+                        }
                     }
-                    every_country = {
-                        add_to_variable = {
-                            sector_4_cost = 20
-                        }
-                        add_to_variable = {
-                            sector_4_cost_negative = -20
-                        }
-                        add_to_variable = {
-                            sector_4_cost_daily = 0.025
-                        }
+                    add_to_variable = {
+                        global.sector_4_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_4_cost = 20
                     }
                 }
                 else = {
@@ -356,24 +372,27 @@ scripted_gui = {
                         }
                     }
                     set_global_flag = antarctic_sector_5
-                    add_political_power = sector_5_cost_negative
-                    every_country = {
-                        if = {
-                            limit = { has_country_flag = antarctic_sector_5 }
-                            add_to_variable = {
-                                num_southpole_sectors = -1
-                            }
-                            clr_country_flag = antarctic_sector_5
+                    multiply_variable = {
+                        global.sector_5_cost = -1
+                    }
+                    add_political_power = global.sector_5_cost
+                    multiply_variable = {
+                        global.sector_5_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_5 
                         }
-                        set_variable = {
-                            sector_5_cost_daily = 0.025
+                        add_to_variable = {
+                            num_southpole_sectors = -1
                         }
-                        set_variable = {
-                            sector_5_cost = 20
-                        }
-                        set_variable = {
-                            sector_5_cost_negative = -20
-                        }
+                        clr_country_flag = antarctic_sector_5
+                    }
+                    set_variable = {
+                        global.sector_5_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_5_cost = 20
                     }
                     ROOT = {
                         set_country_flag = antarctic_sector_5
@@ -391,18 +410,19 @@ scripted_gui = {
                         }
                     }
                     ROOT = {
-                        add_political_power = sector_5_cost_negative
+                        multiply_variable = {
+                            global.sector_5_cost = -1
+                        }
+                        add_political_power = global.sector_5_cost
+                        multiply_variable = {
+                            global.sector_5_cost = -1
+                        }
                     }
-                    every_country = {
-                        add_to_variable = {
-                            sector_5_cost = 20
-                        }
-                        add_to_variable = {
-                            sector_5_cost_negative = -20
-                        }
-                        add_to_variable = {
-                            sector_5_cost_daily = 0.025
-                        }
+                    add_to_variable = {
+                        global.sector_5_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_5_cost = 20
                     }
                 }
                 else = {
@@ -417,24 +437,27 @@ scripted_gui = {
                         }
                     }
                     set_global_flag = antarctic_sector_6
-                    add_political_power = sector_6_cost_negative
-                    every_country = {
-                        if = {
-                            limit = { has_country_flag = antarctic_sector_6 }
-                            add_to_variable = {
-                                num_southpole_sectors = -1
-                            }
-                            clr_country_flag = antarctic_sector_6
+                    multiply_variable = {
+                        global.sector_6_cost = -1
+                    }
+                    add_political_power = global.sector_6_cost
+                    multiply_variable = {
+                        global.sector_6_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_6 
                         }
-                        set_variable = {
-                            sector_6_cost_daily = 0.025
+                        add_to_variable = {
+                            num_southpole_sectors = -1
                         }
-                        set_variable = {
-                            sector_6_cost = 20
-                        }
-                        set_variable = {
-                            sector_6_cost_negative = -20
-                        }
+                        clr_country_flag = antarctic_sector_6
+                    }
+                    set_variable = {
+                        global.sector_6_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_6_cost = 20
                     }
                     ROOT = {
                         set_country_flag = antarctic_sector_6
@@ -452,18 +475,19 @@ scripted_gui = {
                         }
                     }
                     ROOT = {
-                        add_political_power = sector_6_cost_negative
+                        multiply_variable = {
+                            global.sector_6_cost = -1
+                        }
+                        add_political_power = global.sector_6_cost
+                        multiply_variable = {
+                            global.sector_6_cost = -1
+                        }
                     }
-                    every_country = {
-                        add_to_variable = {
-                            sector_6_cost = 20
-                        }
-                        add_to_variable = {
-                            sector_6_cost_negative = -20
-                        }
-                        add_to_variable = {
-                            sector_6_cost_daily = 0.025
-                        }
+                    add_to_variable = {
+                        global.sector_6_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_6_cost = 20
                     }
                 }
                 else = {
@@ -478,24 +502,27 @@ scripted_gui = {
                         }
                     }
                     set_global_flag = antarctic_sector_7
-                    add_political_power = sector_7_cost_negative
-                    every_country = {
-                        if = {
-                            limit = { has_country_flag = antarctic_sector_7 }
-                            add_to_variable = {
-                                num_southpole_sectors = -1
-                            }
-                            clr_country_flag = antarctic_sector_7
+                    multiply_variable = {
+                        global.sector_7_cost = -1
+                    }
+                    add_political_power = global.sector_7_cost
+                    multiply_variable = {
+                        global.sector_7_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_7 
                         }
-                        set_variable = {
-                            sector_7_cost_daily = 0.025
+                        add_to_variable = {
+                            num_southpole_sectors = -1
                         }
-                        set_variable = {
-                            sector_7_cost = 20
-                        }
-                        set_variable = {
-                            sector_7_cost_negative = -20
-                        }
+                        clr_country_flag = antarctic_sector_7
+                    }
+                    set_variable = {
+                        global.sector_7_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_7_cost = 20
                     }
                     ROOT = {
                         set_country_flag = antarctic_sector_7
@@ -513,18 +540,19 @@ scripted_gui = {
                         }
                     }
                     ROOT = {
-                        add_political_power = sector_7_cost_negative
+                        multiply_variable = {
+                            global.sector_7_cost = -1
+                        }
+                        add_political_power = global.sector_7_cost
+                        multiply_variable = {
+                            global.sector_7_cost = -1
+                        }
                     }
-                    every_country = {
-                        add_to_variable = {
-                            sector_7_cost = 20
-                        }
-                        add_to_variable = {
-                            sector_7_cost_negative = -20
-                        }
-                        add_to_variable = {
-                            sector_7_cost_daily = 0.025
-                        }
+                    add_to_variable = {
+                        global.sector_7_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_7_cost = 20
                     }
                 }
                 else = {
@@ -539,24 +567,27 @@ scripted_gui = {
                         }
                     }
                     set_global_flag = antarctic_sector_8
-                    add_political_power = sector_8_cost_negative
-                    every_country = {
-                        if = {
-                            limit = { has_country_flag = antarctic_sector_8 }
-                            add_to_variable = {
-                                num_southpole_sectors = -1
-                            }
-                            clr_country_flag = antarctic_sector_8
+                    multiply_variable = {
+                        global.sector_8_cost = -1
+                    }
+                    add_political_power = global.sector_8_cost
+                    multiply_variable = {
+                        global.sector_8_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_8 
                         }
-                        set_variable = {
-                            sector_8_cost_daily = 0.025
+                        add_to_variable = {
+                            num_southpole_sectors = -1
                         }
-                        set_variable = {
-                            sector_8_cost = 20
-                        }
-                        set_variable = {
-                            sector_8_cost_negative = -20
-                        }
+                        clr_country_flag = antarctic_sector_8
+                    }
+                    set_variable = {
+                        global.sector_8_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_8_cost = 20
                     }
                     ROOT = {
                         set_country_flag = antarctic_sector_8
@@ -574,18 +605,19 @@ scripted_gui = {
                         }
                     }
                     ROOT = {
-                        add_political_power = sector_8_cost_negative
+                        multiply_variable = {
+                            global.sector_8_cost = -1
+                        }
+                        add_political_power = global.sector_8_cost
+                        multiply_variable = {
+                            global.sector_8_cost = -1
+                        }
                     }
-                    every_country = {
-                        add_to_variable = {
-                            sector_8_cost = 20
-                        }
-                        add_to_variable = {
-                            sector_8_cost_negative = -20
-                        }
-                        add_to_variable = {
-                            sector_8_cost_daily = 0.025
-                        }
+                    add_to_variable = {
+                        global.sector_8_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_8_cost = 20
                     }
                 }
                 else = {
@@ -600,24 +632,27 @@ scripted_gui = {
                         }
                     }
                     set_global_flag = antarctic_sector_9
-                    add_political_power = sector_9_cost_negative
-                    every_country = {
-                        if = {
-                            limit = { has_country_flag = antarctic_sector_9 }
-                            add_to_variable = {
-                                num_southpole_sectors = -1
-                            }
-                            clr_country_flag = antarctic_sector_9
+                    multiply_variable = {
+                        global.sector_9_cost = -1
+                    }
+                    add_political_power = global.sector_9_cost
+                    multiply_variable = {
+                        global.sector_9_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_9 
                         }
-                        set_variable = {
-                            sector_9_cost_daily = 0.025
+                        add_to_variable = {
+                            num_southpole_sectors = -1
                         }
-                        set_variable = {
-                            sector_9_cost = 20
-                        }
-                        set_variable = {
-                            sector_9_cost_negative = -20
-                        }
+                        clr_country_flag = antarctic_sector_9
+                    }
+                    set_variable = {
+                        global.sector_9_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_9_cost = 20
                     }
                     ROOT = {
                         set_country_flag = antarctic_sector_9
@@ -635,18 +670,19 @@ scripted_gui = {
                         }
                     }
                     ROOT = {
-                        add_political_power = sector_9_cost_negative
+                        multiply_variable = {
+                            global.sector_9_cost = -1
+                        }
+                        add_political_power = global.sector_9_cost
+                        multiply_variable = {
+                            global.sector_9_cost = -1
+                        }
                     }
-                    every_country = {
-                        add_to_variable = {
-                            sector_9_cost = 20
-                        }
-                        add_to_variable = {
-                            sector_9_cost_negative = -20
-                        }
-                        add_to_variable = {
-                            sector_9_cost_daily = 0.025
-                        }
+                    add_to_variable = {
+                        global.sector_9_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_9_cost = 20
                     }
                 }
                 else = {
@@ -661,24 +697,27 @@ scripted_gui = {
                         }
                     }
                     set_global_flag = antarctic_sector_10
-                    add_political_power = sector_10_cost_negative
-                    every_country = {
-                        if = {
-                            limit = { has_country_flag = antarctic_sector_10 }
-                            add_to_variable = {
-                                num_southpole_sectors = -1
-                            }
-                            clr_country_flag = antarctic_sector_10
+                    multiply_variable = {
+                        global.sector_10_cost = -1
+                    }
+                    add_political_power = global.sector_10_cost
+                    multiply_variable = {
+                        global.sector_10_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_10 
                         }
-                        set_variable = {
-                            sector_10_cost_daily = 0.025
+                        add_to_variable = {
+                            num_southpole_sectors = -1
                         }
-                        set_variable = {
-                            sector_10_cost = 20
-                        }
-                        set_variable = {
-                            sector_10_cost_negative = -20
-                        }
+                        clr_country_flag = antarctic_sector_10
+                    }
+                    set_variable = {
+                        global.sector_10_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_10_cost = 20
                     }
                     ROOT = {
                         set_country_flag = antarctic_sector_10
@@ -696,18 +735,19 @@ scripted_gui = {
                         }
                     }
                     ROOT = {
-                        add_political_power = sector_10_cost_negative
+                        multiply_variable = {
+                            global.sector_10_cost = -1
+                        }
+                        add_political_power = global.sector_10_cost
+                        multiply_variable = {
+                            global.sector_10_cost = -1
+                        }
                     }
-                    every_country = {
-                        add_to_variable = {
-                            sector_10_cost = 20
-                        }
-                        add_to_variable = {
-                            sector_10_cost_negative = -20
-                        }
-                        add_to_variable = {
-                            sector_10_cost_daily = 0.025
-                        }
+                    add_to_variable = {
+                        global.sector_10_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_10_cost = 20
                     }
                 }
                 else = {
@@ -721,16 +761,11 @@ scripted_gui = {
                     clr_country_flag = antarctic_sector_1
                     add_to_variable = { num_southpole_sectors = -1 }
                 }
-                every_country = {
-                    set_variable = {
-                        sector_1_cost = 20
-                    }
-                    set_variable = {
-                        sector_1_cost_negative = -20
-                    }
-                    set_variable = {
-                        sector_1_cost_daily = 0.025
-                    }
+                set_variable = {
+                    global.sector_1_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_1_cost = 20
                 }
             }  
             leave_sector_2_click = {
@@ -739,16 +774,11 @@ scripted_gui = {
                     clr_country_flag = antarctic_sector_2
                     add_to_variable = { num_southpole_sectors = -1 }
                 }
-                every_country = {
-                    set_variable = {
-                        sector_2_cost = 20
-                    }
-                    set_variable = {
-                        sector_2_cost_negative = -20
-                    }
-                    set_variable = {
-                        sector_2_cost_daily = 0.025
-                    }
+                set_variable = {
+                    global.sector_2_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_2_cost = 20
                 }
             }    
             leave_sector_3_click = {
@@ -757,16 +787,11 @@ scripted_gui = {
                     clr_country_flag = antarctic_sector_3
                     add_to_variable = { num_southpole_sectors = -1 }
                 }
-                every_country = {
-                    set_variable = {
-                        sector_3_cost = 20
-                    }
-                    set_variable = {
-                        sector_3_cost_negative = -20
-                    }
-                    set_variable = {
-                        sector_3_cost_daily = 0.025
-                    }
+                set_variable = {
+                    global.sector_3_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_3_cost = 20
                 }
             }    
             leave_sector_4_click = {
@@ -775,16 +800,11 @@ scripted_gui = {
                     clr_country_flag = antarctic_sector_4
                     add_to_variable = { num_southpole_sectors = -1 }
                 }
-                every_country = {
-                    set_variable = {
-                        sector_4_cost = 20
-                    }
-                    set_variable = {
-                        sector_4_cost_negative = -20
-                    }
-                    set_variable = {
-                        sector_4_cost_daily = 0.025
-                    }
+                set_variable = {
+                    global.sector_4_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_4_cost = 20
                 }
             }              
             leave_sector_5_click = {
@@ -793,16 +813,11 @@ scripted_gui = {
                     clr_country_flag = antarctic_sector_5
                     add_to_variable = { num_southpole_sectors = -1 }
                 }
-                every_country = {
-                    set_variable = {
-                        sector_5_cost = 20
-                    }
-                    set_variable = {
-                        sector_5_cost_negative = -20
-                    }
-                    set_variable = {
-                        sector_5_cost_daily = 0.025
-                    }
+                set_variable = {
+                    global.sector_5_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_5_cost = 20
                 }
             }    
             leave_sector_6_click = {
@@ -811,16 +826,11 @@ scripted_gui = {
                     clr_country_flag = antarctic_sector_6
                     add_to_variable = { num_southpole_sectors = -1 }
                 }
-                every_country = {
-                    set_variable = {
-                        sector_6_cost = 20
-                    }
-                    set_variable = {
-                        sector_6_cost_negative = -20
-                    }
-                    set_variable = {
-                        sector_6_cost_daily = 0.025
-                    }
+                set_variable = {
+                    global.sector_6_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_6_cost = 20
                 }
             }    
             leave_sector_7_click = {
@@ -829,16 +839,11 @@ scripted_gui = {
                     clr_country_flag = antarctic_sector_7
                     add_to_variable = { num_southpole_sectors = -1 }
                 }
-                every_country = {
-                    set_variable = {
-                        sector_7_cost = 20
-                    }
-                    set_variable = {
-                        sector_7_cost_negative = -20
-                    }
-                    set_variable = {
-                        sector_7_cost_daily = 0.025
-                    }
+                set_variable = {
+                    global.sector_7_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_7_cost = 20
                 }
             }    
             leave_sector_8_click = {
@@ -847,16 +852,11 @@ scripted_gui = {
                     clr_country_flag = antarctic_sector_8
                     add_to_variable = { num_southpole_sectors = -1 }
                 }
-                every_country = {
-                    set_variable = {
-                        sector_8_cost = 20
-                    }
-                    set_variable = {
-                        sector_8_cost_negative = -20
-                    }
-                    set_variable = {
-                        sector_8_cost_daily = 0.025
-                    }
+                set_variable = {
+                    global.sector_8_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_8_cost = 20
                 }
             }    
             leave_sector_9_click = {
@@ -865,16 +865,11 @@ scripted_gui = {
                     clr_country_flag = antarctic_sector_9
                     add_to_variable = { num_southpole_sectors = -1 }
                 }
-                every_country = {
-                    set_variable = {
-                        sector_9_cost = 20
-                    }
-                    set_variable = {
-                        sector_9_cost_negative = -20
-                    }
-                    set_variable = {
-                        sector_9_cost_daily = 0.025
-                    }
+                set_variable = {
+                    global.sector_9_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_9_cost = 20
                 }
             }   
             leave_sector_10_click = {
@@ -883,16 +878,11 @@ scripted_gui = {
                     clr_country_flag = antarctic_sector_10
                     add_to_variable = { num_southpole_sectors = -1 }
                 }
-                every_country = {
-                    set_variable = {
-                        sector_10_cost = 20
-                    }
-                    set_variable = {
-                        sector_10_cost_negative = -20
-                    }
-                    set_variable = {
-                        sector_10_cost_daily = 0.025
-                    }
+                set_variable = {
+                    global.sector_10_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_10_cost = 20
                 }
             }  
         }
@@ -922,61 +912,61 @@ scripted_gui = {
             #SECTORS
             antarctic_sectors_selection_1_click_enabled = {
                 ROOT = {
-                    check_variable = { political_power > sector_1_cost }
+                    check_variable = { political_power > global.sector_1_cost }
                 }
                 has_war = no
             }
             antarctic_sectors_selection_2_click_enabled = {
                 ROOT = {
-                    check_variable = { political_power > sector_2_cost }
+                    check_variable = { political_power > global.sector_2_cost }
                 }
                 has_war = no
             }
             antarctic_sectors_selection_3_click_enabled = {
                 ROOT = {
-                    check_variable = { political_power > sector_3_cost }
+                    check_variable = { political_power > global.sector_3_cost }
                 }
                 has_war = no
             }
             antarctic_sectors_selection_4_click_enabled = {
                 ROOT = {
-                    check_variable = { political_power > sector_4_cost }
+                    check_variable = { political_power > global.sector_4_cost }
                 }
                 has_war = no
             }
             antarctic_sectors_selection_5_click_enabled = {
                 ROOT = {
-                    check_variable = { political_power > sector_5_cost }
+                    check_variable = { political_power > global.sector_5_cost }
                 }
                 has_war = no
             }
             antarctic_sectors_selection_6_click_enabled = {
                 ROOT = {
-                    check_variable = { political_power > sector_6_cost }
+                    check_variable = { political_power > global.sector_6_cost }
                 }
                 has_war = no
             }
             antarctic_sectors_selection_7_click_enabled = {
                 ROOT = {
-                    check_variable = { political_power > sector_7_cost }
+                    check_variable = { political_power > global.sector_7_cost }
                 }
                 has_war = no
             }
             antarctic_sectors_selection_8_click_enabled = {
                 ROOT = {
-                    check_variable = { political_power > sector_8_cost }
+                    check_variable = { political_power > global.sector_8_cost }
                 }
                 has_war = no
             }
             antarctic_sectors_selection_9_click_enabled = {
                 ROOT = {
-                    check_variable = { political_power > sector_9_cost }
+                    check_variable = { political_power > global.sector_9_cost }
                 }
                 has_war = no
             }
             antarctic_sectors_selection_10_click_enabled = {
                 ROOT = {
-                    check_variable = { political_power > sector_10_cost }
+                    check_variable = { political_power > global.sector_10_cost }
                 }
                 has_war = no
             }
