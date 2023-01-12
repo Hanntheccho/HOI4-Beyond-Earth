@@ -31,7 +31,13 @@ egypt_expansion = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
+			modifier = {
+				SUD = {
+					is_puppet_of = ROOT
+				}
+				add = 100
+			}
 		}
 	}
 	EGY_SUD_war = {
@@ -64,122 +70,6 @@ egypt_expansion = {
 		}
 		ai_will_do = {
 			factor = 10
-		}
-	}
-	EGY_SIE_war = {
-		icon = GFX_decision_war
-		available = {
-			SIE = {
-				exists = yes
-			}
-		}
-		visible = {
-			SIE = {
-				exists = yes
-			}
-		}
-		cost = 50
-		fire_only_once = yes
-		days_remove = 20
-		targets = {
-			SIE
-		}
-		war_with_on_remove = SIE
-		remove_effect = {
-			declare_war_on = {
-				type = annex_puppet_wargoal
-				target = SIE
-			}
-		}
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				add = 10
-				SUD = {
-					is_puppet_of = EGY
-				}
-				LBA = {
-					exists = no
-				}
-			}
-		}
-	}
-	EGY_ETH_war = {
-		icon = GFX_decision_war
-		available = {
-			ETH = {
-				exists = yes
-			}
-		}
-		visible = {
-			ETH = {
-				exists = yes
-			}
-		}
-		cost = 50
-		fire_only_once = yes
-		days_remove = 20
-		targets = {
-			ETH
-		}
-		war_with_on_remove = ETH
-		war_with_on_remove = SOM
-		war_with_on_remove = QAF
-		remove_effect = {
-			hidden_effect = {
-				activate_mission = EGY_somalian_invasion
-			}
-			declare_war_on = {
-				type = annex_puppet_wargoal
-				target = ETH
-			}
-			declare_war_on = {
-				type = annex_puppet_wargoal
-				target = SOM
-			}
-			declare_war_on = {
-				type = annex_puppet_wargoal
-				target = QAF
-			}
-		}
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				add = 10
-				SUD = {
-					is_puppet_of = EGY
-				}
-				LBA = {
-					exists = no
-				}
-			}
-		}
-	}
-	EGY_somalian_invasion = {
-		icon = GFX_decision_war
-		available = {
-			ETH = {
-				OR = {
-					exists = no
-					is_puppet_of = EGY
-				}
-			}
-		}
-		activation = {
-			always = no
-		}
-		fire_only_once = yes
-		days_mission_timeout = 35
-		remove_effect = {
-			SOM = {
-				declare_war_on = {
-					type = annex_puppet_wargoal
-					target = ETH
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
 		}
 	}
 }
