@@ -1,4 +1,5 @@
-CHI_pre_balkanization = {
+CHI_balkanization = {
+	set_global_flag = CHI_balkanization
 	AMU = {
 		transfer_state = 1008
 		transfer_state = 887
@@ -10,29 +11,9 @@ CHI_pre_balkanization = {
 		transfer_state = 997
 		load_oob = AMU_2200
 	}
-	#
 	CHI = {
 		news_event = news_event.16
-		country_event = {
-			id = china_event.1
-			days = 35
-		}
-		every_owned_state = {
-			limit = {
-				NOT = {
-					state = 911
-					state = 929
-					state = 928
-					state = 937
-				}
-			}
-			set_demilitarized_zone = yes
-		}
-	}
-}
-CHI_balkanization = {
-	set_global_flag = CHI_balkanization
-	CHI = {
+		country_event = china_event.1
 		set_cosmetic_tag = CHI_CENTRAL_GOVERNMENT
 		dismantle_faction = yes
 		create_faction = "Beijing's Authority Zone"

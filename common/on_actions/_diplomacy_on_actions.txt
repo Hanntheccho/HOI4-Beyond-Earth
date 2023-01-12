@@ -3,6 +3,7 @@ on_actions = {
 		effect = {
 			every_country = {
                 set_variable = { diplomatic_power = 0 }
+                set_variable = { diplomatic_power_gain = 0 }
                 set_variable = { diplomatic_power_civilian = 0 }
                 set_variable = { diplomatic_power_military = 0 }
                 set_variable = { diplomatic_power_techs = 0 }
@@ -44,20 +45,20 @@ on_actions = {
                 round_variable = diplomatic_power_population
                 round_variable = diplomatic_power_other
                 #
-                add_to_variable = { diplomatic_power = diplomatic_power_civilian }
-                add_to_variable = { diplomatic_power = diplomatic_power_military }
-                add_to_variable = { diplomatic_power = diplomatic_power_trade }
-                add_to_variable = { diplomatic_power = diplomatic_power_population }
-                add_to_variable = { diplomatic_power = diplomatic_power_other }
+                add_to_variable = { diplomatic_power_gain = diplomatic_power_civilian }
+                add_to_variable = { diplomatic_power_gain = diplomatic_power_military }
+                add_to_variable = { diplomatic_power_gain = diplomatic_power_trade }
+                add_to_variable = { diplomatic_power_gain = diplomatic_power_population }
+                add_to_variable = { diplomatic_power_gain = diplomatic_power_other }
                 #
-                round_variable = diplomatic_power
+                round_variable = diplomatic_power_gain
             }
 		}
 	}
     ###
-    on_weekly = { #should be on_daily
+    on_daily = {
 		effect = {
-            set_variable = { diplomatic_power = 0 }
+            set_variable = { diplomatic_power_gain = 0 }
             set_variable = { diplomatic_power_civilian = 0 }
             set_variable = { diplomatic_power_military = 0 }
             set_variable = { diplomatic_power_techs = 0 }
@@ -99,13 +100,14 @@ on_actions = {
             round_variable = diplomatic_power_population
             round_variable = diplomatic_power_other
             #
-            add_to_variable = { diplomatic_power = diplomatic_power_civilian }
-            add_to_variable = { diplomatic_power = diplomatic_power_military }
-            add_to_variable = { diplomatic_power = diplomatic_power_trade }
-            add_to_variable = { diplomatic_power = diplomatic_power_population }
-            add_to_variable = { diplomatic_power = diplomatic_power_other }
+            add_to_variable = { diplomatic_power_gain = diplomatic_power_civilian }
+            add_to_variable = { diplomatic_power_gain = diplomatic_power_military }
+            add_to_variable = { diplomatic_power_gain = diplomatic_power_trade }
+            add_to_variable = { diplomatic_power_gain = diplomatic_power_population }
+            add_to_variable = { diplomatic_power_gain = diplomatic_power_other }
             #
-            round_variable = diplomatic_power
+            divide_variable = { diplomatic_power_gain = 100 }  
+            add_to_variable = { diplomatic_power = diplomatic_power_gain }            
         }
     }
 }
