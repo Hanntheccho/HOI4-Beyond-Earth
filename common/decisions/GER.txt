@@ -145,8 +145,7 @@ GER_decisions = {
 		}
 		custom_cost_text = decision_cost_100_ip
 		fire_only_once = yes
-		days_remove = 120
-		remove_effect = {
+		complete_effect = {
 			UKR = {
 				remove_ideas = UKR_country_life_support
 			}
@@ -211,6 +210,23 @@ GER_decisions = {
 				value = 1
 			}
 			add_to_faction = FROM
+			FROM = {
+				add_to_array = {
+					array = global.just_joined_integr
+					value = THIS.id
+					index = 0
+				}
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						capital_scope = {
+							is_on_continent = europe
+						}
+					}
+					country_event = german_event.8
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1000
@@ -219,14 +235,16 @@ GER_decisions = {
 	GER_influence_politics = {
 		icon = GFX_decision_political
 		fire_only_once = no
-		cost = 50
+		custom_cost_trigger = {
+			check_variable = { diplomatic_power > 99.9 }
+		}
+		custom_cost_text = decision_cost_100_cp
 		target_trigger = {
 			FROM = {
 				has_idea = GER_eurasian_aligned
 			}
 		}
-		days_remove = 50
-		remove_effect = {
+		complete_effect = {
 			FROM = {
 				swap_ideas = {
 					remove_idea = GER_eurasian_aligned
@@ -236,6 +254,9 @@ GER_decisions = {
 					ideology = harmony
 					popularity = 0.05
 				}
+			}
+			subtract_from_variable = {
+				diplomatic_power = 100
 			}
 		}
 		ai_will_do = {
@@ -255,8 +276,7 @@ GER_decisions = {
 			check_variable = { industrial_power > 99.9 }
 		}
 		custom_cost_text = decision_cost_100_ip
-		days_remove = 100
-		remove_effect = {
+		complete_effect = {
 			FROM = {
 				swap_ideas = {
 					remove_idea = GER_german_eurasian_aligned

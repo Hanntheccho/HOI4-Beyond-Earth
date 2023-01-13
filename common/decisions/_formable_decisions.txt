@@ -15,22 +15,31 @@ formable_decisions = {
 		}
 		fire_only_once = yes
 		complete_effect = {
-			every_state = {
+			every_possible_country = {
 				limit = {
-					is_owned_by = ROOT
-					is_on_continent = europe
-				}
-				add_core_of = ROOT
-			}
-			every_country = {
-				limit = {
-					is_in_faction_with = ROOT
 					capital_scope = {
 						is_on_continent = europe
+					}
+					NOT = {
+						tag = SOV
 					}
 				}
 				every_core_state = {
 					add_core_of = ROOT
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						is_in_faction_with = ROOT
+						is_puppet_of = ROOT
+					}
+					capital_scope = {
+						is_on_continent = europe
+					}
+					NOT = {
+						tag = SOV
+					}
 				}
 				ROOT = {
 					annex_country = {
@@ -38,6 +47,9 @@ formable_decisions = {
 						#transfer_troops = yes
 					}
 				}
+			}
+			501 = {
+				add_core_of = ROOT
 			}
 			if = {
 				limit = {
