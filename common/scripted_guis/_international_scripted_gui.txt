@@ -1,44 +1,4 @@
 scripted_gui = {
-	international_topbuttons_window_gui = {
-        window_name = "international_topbuttons_window"
-        context_type = player_context
-		parent_window_token = top_bar
-         
-        visible = {
-            if = {
-                limit = { is_ai = yes }
-                always = yes
-            }
-            else = {
-                has_country_flag = international_moment_flag
-            }
-        }
-		
-		effects = {
-            politics_close_click = {
-                ROOT = {
-                    clr_country_flag = political_moment_flag
-                    clr_country_flag = international_moment_flag
-                }
-            }
-		}
-
-        triggers = {
-            international_close_click_enabled = {
-                always = no
-            }
-        }
-
-        properties = {
-            #
-        }
-        
-        ai_enabled = {
-            always = no #yes
-        }
-
-    }
-###
 	international_topbartab = {
 		window_name = "international_topbartab_window"
 		context_type = player_context
@@ -1350,4 +1310,44 @@ scripted_gui = {
 			}
 		}
 	}
+###
+	international_topbuttons_window_gui = {
+        window_name = "international_topbuttons_window"
+        context_type = player_context
+		parent_window_token = top_bar
+         
+        visible = {
+            if = {
+                limit = { is_ai = yes }
+                always = yes
+            }
+            else = {
+                has_country_flag = international_moment_flag
+            }
+        }
+		
+		effects = {
+            politics_close_click = {
+                ROOT = {
+                    clr_country_flag = political_moment_flag
+                    clr_country_flag = international_moment_flag
+                }
+            }
+		}
+
+        triggers = {
+            international_close_click_enabled = {
+                always = no
+            }
+        }
+
+        properties = {
+            #
+        }
+        
+        ai_enabled = {
+            always = no #yes
+        }
+
+    }
 }
