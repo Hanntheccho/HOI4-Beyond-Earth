@@ -141,4 +141,32 @@ FRA_decisions = {
 			factor = 1
 		}
 	}
+	FRA_TUN_war_end = {
+		icon = GFX_decision_war
+		available = {
+			FRA = {
+				NOT = {
+					has_war_with = TUN
+				}
+			}
+		}
+		activation = {
+			FRA = {
+				has_war_with = TUN
+			}
+		}
+		fire_only_once = yes
+		days_mission_timeout = 231
+		timeout_effect = {
+			white_peace = TUN
+			add_war_support = -0.2
+			add_popularity = {
+				ideology = purity
+				popularity = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

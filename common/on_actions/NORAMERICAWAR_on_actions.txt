@@ -1,5 +1,4 @@
 on_actions = {
-	###
 	on_startup = {
 		effect = {
 			every_country = {
@@ -10,9 +9,16 @@ on_actions = {
 						tag = ARC
 					}
 				}
-				add_ideas = NAU_dont_join_me
+				add_ideas = NAU_is_district
 			}
-			set_variable = { global.napgain_var = 0.5 }
+			set_variable = { global.napgain_var = 0 }
+			ARC = {
+				set_variable = { arc_legitimacy = 1000 }
+			}
+			PNM = {
+				set_variable = { nau_legitimacy = 1000 }
+			}
+			#
 			ONE = {
 				set_variable = { nau_legitimacy = 4 }
 				set_variable = { arc_legitimacy = 3 }
@@ -45,8 +51,14 @@ on_actions = {
 				set_variable = { nau_legitimacy = 3 }
 				set_variable = { arc_legitimacy = 5 }
 			}
+			#
+			CAS = {
+				set_variable = { nau_legitimacy = 6 }
+				set_variable = { arc_legitimacy = 3 }
+			}
 		}
 	}
+###
 	on_weekly_PNM = {
 		effect = {
 			if = {

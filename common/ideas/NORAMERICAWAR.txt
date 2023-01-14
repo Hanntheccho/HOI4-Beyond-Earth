@@ -1,22 +1,28 @@
 ideas = {
-	hidden_ideas = {
-		NAU_dont_join_me = {
+	country = {
+		NAU_is_district = {
 
 			cancel = {
-				check_variable = {
-					var = global.noramericawarprogress_var
-					value = 100
-					compare = greater_than_or_equals
+				OR = {
+					is_puppet = yes
+					check_variable = {
+						var = global.noramericawarprogress_var
+						value = 100
+						compare = greater_than_or_equals
+					}
 				}
 			}
 
 			modifier = {
-				ai_call_ally_desire_factor = -10000
-				ai_join_ally_desire_factor = -10000
+				hidden_modifier = {
+					ai_call_ally_desire_factor = -10000
+					ai_join_ally_desire_factor = -10000
+				}
+				custom_modifier_tooltip = NAU_is_district_tt
 			}
 		}
 	}
-	###
+###
 	country = {
 		TRE_absence_of_civilization = {
 
