@@ -11,18 +11,8 @@ on_actions = {
                 set_variable = { diplomatic_power_population = 0 }
                 set_variable = { diplomatic_power_other = 0 }
                 add_to_variable = { diplomatic_power_techs = num_researched_technologies }
-                if = {
-                    limit = {
-                        check_variable = {
-                            max_manpower > 200000000000
-                        }
-                    }
-                    set_variable = { diplomatic_power_population = 200 }
-                }
-                else = {
-                    add_to_variable = { diplomatic_power_population = max_manpower_k }
-                    divide_variable = { diplomatic_power_population = 10000 }
-                }
+                add_to_variable = { diplomatic_power_population = max_manpower_k }
+                divide_variable = { diplomatic_power_population = 10000 }
                 add_to_variable = { diplomatic_power_civilian = num_owned_controlled_states }
                 add_to_variable = { diplomatic_power_civilian = num_of_civilian_factories }
                 add_to_variable = { diplomatic_power_trade = resource_exported@steel }
@@ -66,18 +56,8 @@ on_actions = {
             set_variable = { diplomatic_power_population = 0 }
             set_variable = { diplomatic_power_other = 0 }
             add_to_variable = { diplomatic_power_techs = num_researched_technologies }
-            if = {
-                limit = {
-                    check_variable = {
-                        max_manpower > 200000000000
-                    }
-                }
-                set_variable = { diplomatic_power_population = 200 }
-            }
-            else = {
-                add_to_variable = { diplomatic_power_population = max_manpower_k }
-                divide_variable = { diplomatic_power_population = 10000 }
-            }
+            add_to_variable = { diplomatic_power_population = max_manpower_k }
+            divide_variable = { diplomatic_power_population = 10000 }
             add_to_variable = { diplomatic_power_civilian = num_owned_controlled_states }
             add_to_variable = { diplomatic_power_civilian = num_of_civilian_factories }
             add_to_variable = { diplomatic_power_trade = resource_exported@steel }
