@@ -1,150 +1,98 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			every_country = {
-                set_variable = { industrial_power = 0 }
-                set_variable = { industrial_power_gain = 0 }
-                set_variable = { industrial_power_rate_agrarian = 0.2 }
-                set_variable = { industrial_power_rate_developing = 0.4 }
-                set_variable = { industrial_power_rate_developed = 0.8 }
-                set_variable = { industrial_power_rate_regional = 1 }
-                set_variable = { industrial_power_rate_continental = 1.5 }
-                set_variable = { industrial_power_rate_global = 2 }
+            set_variable = { global.industrial_power_rate_agrarian = 0.2 }
+            set_variable = { global.industrial_power_rate_developing = 1 }
+            set_variable = { global.industrial_power_rate_developed = 0.8 }
+            set_variable = { global.industrial_power_rate_regional = 0.5 }
+            set_variable = { global.industrial_power_rate_continental = 0.2 }
+            set_variable = { global.industrial_power_rate_global = 0.1 }
+            every_country = {
+                set_variable = {
+                    industrial_power_gain = num_of_civilian_factories
+                }
+                divide_variable = {
+                    industrial_power_gain = 10
+                }
+                if = {
+                    limit = { 
+                        has_idea = agrarian_stage
+                    }                
+                    multiply_variable = { industrial_power_gain = global.industrial_power_rate_agrarian }
+                }
+                else_if = {
+                    limit = { 
+                        has_idea = developing_stage
+                    }                
+                    multiply_variable = { industrial_power_gain = global.industrial_power_rate_developing }
+                }
+                else_if = {
+                    limit = { 
+                        has_idea = developed_stage
+                    }                
+                    multiply_variable = { industrial_power_gain = global.industrial_power_rate_developed }
+                }
+                else_if = {
+                    limit = { 
+                        has_idea = regional_stage
+                    }                
+                    multiply_variable = { industrial_power_gain = global.industrial_power_rate_regional }
+                }
+                else_if = {
+                    limit = { 
+                        has_idea = continental_stage
+                    }                
+                    multiply_variable = { industrial_power_gain = global.industrial_power_rate_continental }
+                }
+                else = {
+                    multiply_variable = { industrial_power_gain = global.industrial_power_rate_global }
+                } 
             }
 		}
 	}
-    ###
+###
     on_daily = {
 		effect = {
             clear_variable = industrial_power_gain
-            set_variable = { industrial_power_modifier = 1 }
+            set_variable = {
+                industrial_power_gain = num_of_civilian_factories
+            }
+            divide_variable = {
+                industrial_power_gain = 10
+            }
 			if = {
 				limit = { 
                     has_idea = agrarian_stage
-                }
-                
-                add_to_variable = { industrial_power_gain = industrial_power_rate_agrarian }
+                }                
+                multiply_variable = { industrial_power_gain = global.industrial_power_rate_agrarian }
 			}
-			if = {
+			else_if = {
 				limit = { 
                     has_idea = developing_stage
-                }
-                
-                add_to_variable = { industrial_power_gain = industrial_power_rate_developing }
+                }                
+                multiply_variable = { industrial_power_gain = global.industrial_power_rate_developing }
 			}
-			if = {
+			else_if = {
 				limit = { 
                     has_idea = developed_stage
-                }
-                
-                add_to_variable = { industrial_power_gain = industrial_power_rate_developed }
+                }                
+                multiply_variable = { industrial_power_gain = global.industrial_power_rate_developed }
 			}
-			if = {
+			else_if = {
 				limit = { 
                     has_idea = regional_stage
-                }
-                
-                add_to_variable = { industrial_power_gain = industrial_power_rate_regional }
+                }                
+                multiply_variable = { industrial_power_gain = global.industrial_power_rate_regional }
 			}
-			if = {
+			else_if = {
 				limit = { 
                     has_idea = continental_stage
-                }
-                
-                add_to_variable = { industrial_power_gain = industrial_power_rate_continental }
+                }                
+                multiply_variable = { industrial_power_gain = global.industrial_power_rate_continental }
 			}
-			if = {
-				limit = { 
-                    has_idea = global_stage
-                }
-                
-                add_to_variable = { industrial_power_gain = industrial_power_rate_global }
+			else = {
+				multiply_variable = { industrial_power_gain = global.industrial_power_rate_global }
 			}
-			if = {
-				limit = { 
-                    has_idea = PUN_earths_gaping_wound
-                }
-                subtract_from_variable = { industrial_power_modifier = 0.5 }
-			}
-			if = {
-				limit = { 
-                    has_idea = ODS_park_of_rotten_steal
-                }
-                add_to_variable = { industrial_power_modifier = 0.05 }
-			}
-			if = {
-				limit = { 
-                    has_idea = BNG_behavioral_sink
-                }
-                subtract_from_variable = { industrial_power_modifier = 0.5 }
-			}
-			if = {
-				limit = { 
-                    has_idea = BAN_precarious_supply_situation
-                }
-                subtract_from_variable = { industrial_power_modifier = 0.15 }
-			}
-			if = {
-				limit = { 
-                    has_idea = ASM_token_aid_from_north
-                }
-                add_to_variable = { industrial_power_modifier = 0.1 }
-			}
-			if = {
-				limit = { 
-                    has_idea = TAM_civanin_virarkal
-                }
-                subtract_from_variable = { industrial_power_gain = 0.3 }
-			}
-			if = {
-				limit = { 
-                    has_idea = PER_winning_minds_not_hearts
-                }
-                subtract_from_variable = { industrial_power_gain = 0.01 }
-			}
-            if = {
-				limit = { 
-                    has_idea = TZN_abtbia
-                }
-                add_to_variable = { industrial_power_gain = -0.3 }
-			}
-            if = {
-				limit = { 
-                    has_idea = CIN_last_bastion_of_american_prosperity
-                }
-                add_to_variable = { industrial_power_gain = 0.5 }
-			}
-            if = {
-                limit = {
-                    has_idea = GER_green_soil_plan
-                }
-                add_to_variable = { industrial_power_gain = -0.2}
-            }
-            if = {
-                limit = {
-                    has_idea = UKR_eurasian_dominance
-                }
-                add_to_variable = { industrial_power_gain = -0.5}
-            }
-            if = {
-				limit = { 
-                    has_idea = PRU_the_andean_century
-                }
-                add_to_variable = { industrial_power_gain = 0.1 }
-			}
-            if = {
-				limit = { 
-                    has_idea = ARG_embraced_urbanites
-                }
-                add_to_variable = { industrial_power_gain = 0.1 }
-			}
-            if = {
-                limit = {
-                    has_idea = KAZ_apple_asia
-                }
-                add_to_variable = { industrial_power_gain = 0.15}
-            }
-            multiply_variable = { industrial_power_gain = industrial_power_modifier }
             add_to_variable = { industrial_power = industrial_power_gain }
             clamp_variable = { var = industrial_power min = 0 max = 2000 }
         }
