@@ -28,8 +28,7 @@ BRA_the_inevitable = {
 		ai_will_do = {
 			factor = 1
 		}
-	}
-	
+	}	
 	BRA_conquer_the_acre_line = {
 		icon = GFX_decision_unknown
 		activation = { 
@@ -60,68 +59,37 @@ BRA_the_inevitable = {
 }
 
 BRA_the_recovery = {
-	BRA_oriental_league_war = {
+	BRA_recovering_cores = {
 		icon = GFX_decision_war
 		available = {
-			country_exists = URG
-		}
-		visible = {
 			#
 		}
-		war_with_on_remove = URG
-		targets = { URG }
-		fire_only_once = yes
+		visible = {
+			is_puppet = no
+			is_faction_leader = yes
+		}
+		cost = 30
+		target_trigger = {
+			FROM = {
+				any_owned_state = {
+					is_core_of = ROOT
+				}
+				is_neighbor_of = ROOT
+			}
+		}
+		fire_only_once = no
 		days_remove = 30
 		remove_effect = {
 			declare_war_on = {
-				target = URG
-				type = annex_puppet_wargoal
-			}
-			every_state = {
-				limit = {
-					is_core_of = URG
-				}
-				add_claim_by = BGV
-			}
-		}
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				NOT = {
-					country_exists = LAM
-				}
-				add = 100
-			}
-		}
-	}
-	BRA_lamentadores_war = {
-		icon = GFX_decision_war
-		available = {
-			country_exists = LAM
-		}
-		visible = {
-			#
-		}
-		war_with_on_remove = LAM
-		targets = { LAM }
-		fire_only_once = yes
-		days_remove = 30
-		remove_effect = {
-			declare_war_on = {
-				target = LAM
+				target = FROM
 				type = annex_puppet_wargoal
 			}
 		}
 		ai_will_do = {
 			factor = 0
-			modifier = {
-				NOT = {
-					country_exists = LEG
-				}
-				add = 100
-			}
 		}
 	}
+###
 	BRA_cross_the_andes_again = {
 		icon = GFX_decision_war
 		available = {
@@ -140,13 +108,13 @@ BRA_the_recovery = {
 				type = annex_puppet_wargoal
 			}
 			170 = {
-				add_claim_by = BGV
+				add_claim_by = BRA
 			}
 			141 = {
-				add_claim_by = BGV
+				add_claim_by = BRA
 			}
 			112 = {
-				add_claim_by = BGV
+				add_claim_by = BRA
 			}
 		}
 		ai_will_do = {
@@ -162,6 +130,7 @@ BRA_the_recovery = {
 			}
 		}
 	}
+###
 	BRA_brasilia_destiny = {
 		icon = GFX_decision_war
 		available = {
@@ -169,7 +138,7 @@ BRA_the_recovery = {
 		}
 		visible = {
 			PRU = {
-				is_puppet_of = BGV
+				is_puppet_of = BRA
 			}
 		}
 		cost = 30

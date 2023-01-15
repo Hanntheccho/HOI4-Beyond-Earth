@@ -254,12 +254,12 @@ formable_decisions = {
 		icon = GFX_decision_unity
 		available = {
 			PRU = {
-				is_puppet_of = BGV
+				is_puppet_of = BRA
 			}
 		}
 
 		visible = {
-			tag = BGV
+			tag = BRA
 		}
 	
 		fire_only_once = yes
@@ -339,6 +339,26 @@ formable_decisions = {
 			set_cosmetic_tag = NAU_united
 			set_global_flag = nau_was_reunited_flag
 			hidden_effect = {
+				every_country = {
+					limit = {
+						is_nau_tag = yes
+					}
+					if = {
+						limit = {
+							ROOT = {
+								tag = PNM
+							}
+						}
+						set_variable = {
+							nau_legitimacy = 1000
+						}
+					}
+					else = {
+						set_variable = {
+							arc_legitimacy = 1000
+						}
+					}
+				}
 				CUB = {
 					transfer_state = 149
 				}

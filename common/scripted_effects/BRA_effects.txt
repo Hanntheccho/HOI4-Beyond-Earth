@@ -1,68 +1,151 @@
 BRA_set_borders = {
 	BRA = {
 		white_peace = PRU
-	}
-	every_state = {
-		limit = {
-			is_core_of = BRA
+		set_cosmetic_tag = BGV
+		retire_country_leader = yes
+		create_country_leader = {
+			name = BRA_rejinaldo_de_alencar
+			desc = "BRA_rejinaldo_de_alencar_desc"
+			ideology = purity_ideology
+			picture = GFX_
 		}
-		add_core_of = BGV
-		remove_core_of = BRA
+		create_faction = "Brasilia Military Command"
+		remove_ideas = {
+			BRA_one_last_shot
+			BRA_its_all_crashing_down
+			BRA_lack_of_cohesion
+		}
+		add_ideas = {
+			BRA_army_of_lions_led_by_lions
+			closed_economy
+			war_economy
+		}
 	}
-	if = {
-		limit = {
-			URG = {
-				exists = yes
-				is_puppet = no
+	NCB = {
+		add_state_core = 157
+		add_state_core = 177
+		add_state_core = 169
+		add_state_core = 182
+		transfer_state = 157
+		transfer_state = 177
+		transfer_state = 169
+		transfer_state = 182
+		BRA = {
+			transfer_units_fraction= {
+				target = PREV
+				size = 0.0
+				stockpile_ratio = 0.3
+				army_ratio = 0.3
+				air_ratio = 0.3
 			}
 		}
-		URG = {
-			add_state_core = 185
-			transfer_state = 185
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Northern Command"
+			ideology = purity_ideology
+			picture = GFX_
 		}
+	}
+	ECB = {
+		add_state_core = 197
+		add_state_core = 194
+		add_state_core = 198
+		add_state_core = 204
+		add_state_core = 202
+		add_state_core = 205
+		transfer_state = 197
+		transfer_state = 194
+		transfer_state = 198
+		transfer_state = 204
+		transfer_state = 202
+		BRA = {
+			transfer_units_fraction= {
+				target = PREV
+				size = 0.0
+				stockpile_ratio = 0.3
+				army_ratio = 0.3
+				air_ratio = 0.3
+			}
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Eastern Command"
+			ideology = purity_ideology
+			picture = GFX_
+		}
+	}
+	SCB = {
+		add_state_core = 199
+		add_state_core = 190
+		add_state_core = 183
+		add_state_core = 178
+		add_state_core = 193
+		add_state_core = 196
+		add_state_core = 203
+		transfer_state = 199
+		transfer_state = 190
+		transfer_state = 183
+		transfer_state = 178
+		transfer_state = 193
+		BRA = {
+			transfer_units_fraction= {
+				target = PREV
+				size = 0.0
+				stockpile_ratio = 0.3
+				army_ratio = 0.3
+				air_ratio = 0.3
+			}
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Southern Command"
+			ideology = purity_ideology
+			picture = GFX_
+		}
+	}
+	URG = {
+		add_state_core = 185
+		transfer_state = 185
 	}
 	LEG = {
 		transfer_state = 205
 		add_state_core = 205
-		inherit_technology = BRA
 		load_oob = LEG_OOB
-	}
-	BGV = {
-		annex_country = {
-			target = BRA
-			transfer_troops = yes
-		}
-		transfer_state = 194
-		transfer_state = 183
-		transfer_state = 192
-		transfer_state = 200
-		transfer_state = 202
-		transfer_state = 188
-		transfer_state = 195
-		transfer_state = 190
-		transfer_state = 199
-		transfer_state = 178
-		transfer_state = 180
-		transfer_state = 186
-		transfer_state = 182
-		transfer_state = 177
-		transfer_state = 157
-		transfer_state = 169
-		transfer_state = 180
-		transfer_state = 169
-		transfer_state = 197
-		transfer_state = 204
-		transfer_state = 198
-		transfer_state = 162
-		inherit_technology = BRA
-		create_faction = "Brasilia Military Command"
-		add_to_faction = BGV
-	}
-	LEG = {
 		declare_war_on = {
-			target = BGV
+			target = ECB
 			type = annex_puppet_wargoal
 		}
+	}
+	ECB = {
+		set_province_controller = 3143
+		set_province_controller = 3141
+		set_province_controller = 3138
+		set_province_controller = 3162
+		set_province_controller = 3197
+		set_province_controller = 3206
+		set_province_controller = 3209
+		set_province_controller = 3216
+		set_province_controller = 3164
+		set_province_controller = 3184
+		set_province_controller = 3202
+		set_province_controller = 3214
+		set_province_controller = 3168
+		set_province_controller = 3188
+		set_province_controller = 3210
+		set_province_controller = 3219
+		set_province_controller = 3165
+		set_province_controller = 3221
+		set_province_controller = 3226
+		set_province_controller = 3233
+		set_province_controller = 3243
+		set_province_controller = 3234
+		set_province_controller = 3247
+		set_province_controller = 3236
+		set_province_controller = 3220
+		set_province_controller = 3241
+		set_province_controller = 3242
+		set_province_controller = 3249
+		set_province_controller = 3251
 	}
 	LAM = {
 		transfer_state = 167
@@ -70,40 +153,42 @@ BRA_set_borders = {
 		transfer_state = 153
 		transfer_state = 136
 		transfer_state = 122	
+		transfer_state = 162
 		add_state_core = 167
 		add_state_core = 151
 		add_state_core = 153
 		add_state_core = 136
 		add_state_core = 122
-		add_state_core = 120 #
-		inherit_technology = BRA
+		add_state_core = 120
+		add_state_core = 162
 		load_oob = LAM_OOB
 	}
 	PRU = {
 		transfer_state = 120
 	}
-	BGV = {
+	BRA = {
 		every_core_state = {
-			limit = {
-				NOT = {
-					is_core_of = LAM
-				}
-			}
 			add_core_of = GRP
 		}
 	}
 	GRP = {
-		transfer_state = 193
 		transfer_state = 196
 		transfer_state = 203
-		inherit_technology = PRU
-		hidden_effect = {
-			load_oob = GRP_OOB
-		}
+		load_oob = GRP_OOB
 		declare_war_on = {
-			target = BGV
+			target = SCB
 			type = annex_puppet_wargoal
 		}
 	}
-	BGV = { change_tag_from = BRA }
+	SCB = {
+		set_province_controller = 3049
+		set_province_controller = 3022
+		set_province_controller = 3042
+		set_province_controller = 3065
+		set_province_controller = 3131
+		set_province_controller = 3142
+		set_province_controller = 3149
+		set_province_controller = 3155
+	}
+	set_global_flag = brasil_has_been_defeated
 }
