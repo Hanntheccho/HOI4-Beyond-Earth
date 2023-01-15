@@ -193,8 +193,7 @@ GER_decisions = {
 							any_allied_country = {
 								has_war_with = FROM
 							}
-						}
-					
+						}					
 					}
 				}
 			}
@@ -243,6 +242,17 @@ GER_decisions = {
 			FROM = {
 				has_idea = GER_eurasian_aligned
 			}
+			is_in_faction = no
+			NOT = {
+				OR = {
+					has_war_with = ROOT
+					ROOT = {
+						any_allied_country = {
+							has_war_with = FROM
+						}
+					}					
+				}
+			}
 		}
 		complete_effect = {
 			FROM = {
@@ -270,6 +280,17 @@ GER_decisions = {
 		target_trigger = {
 			FROM = {
 				has_idea = GER_german_eurasian_aligned
+			}
+			is_in_faction = no
+			NOT = {
+				OR = {
+					has_war_with = ROOT
+					ROOT = {
+						any_allied_country = {
+							has_war_with = FROM
+						}
+					}					
+				}
 			}
 		}
 		custom_cost_trigger = {

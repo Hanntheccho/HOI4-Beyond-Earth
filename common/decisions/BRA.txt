@@ -1,13 +1,13 @@
 BRA_the_inevitable = {
 	BRA_cross_the_andes = {
 		icon = GFX_decision_unknown
+		activation = {
+			#
+		}
 		available = {
 			NOT = {
 				country_exists = PRU
 			}
-		}
-		visible = {
-			#
 		}
 		fire_only_once = yes
 		war_with_on_timeout = PRU
@@ -21,8 +21,6 @@ BRA_the_inevitable = {
 					target = PRU
 					type = annex_puppet_wargoal
 				}
-				activate_mission = BRA_cross_the_andes
-				activate_mission = BRA_conquer_the_acre_line
 			}
 		}
 		ai_will_do = {
@@ -32,7 +30,9 @@ BRA_the_inevitable = {
 	BRA_conquer_the_acre_line = {
 		icon = GFX_decision_unknown
 		activation = { 
-			always = no
+			BRA = {
+				has_war_with = PRU
+			}
 		}
 		available = {
 			PRU = {
