@@ -2,14 +2,15 @@ on_actions = {
 	###
 	on_startup = {
 		effect = {
-			CHI = {
-				add_ideas = CHI_strategic_cooperation_organization_member
-			}
 			every_country = {
 				limit = {
-					is_in_faction_with = CHI
+					OR = {
+						is_in_faction_with = CHI
+						tag = CHI
+					}
 				}
 				add_ideas = CHI_strategic_cooperation_organization_member
+				country_lock_all_division_template = yes
 			}
 			#CHI
 			#MON
