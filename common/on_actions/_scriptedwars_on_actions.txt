@@ -8,6 +8,17 @@ on_actions = {
 					limit = {
 						is_faction_leader = yes
 					}
+					every_country = {
+						limit = {
+							is_in_faction_with = PREV
+						}
+						FROM = {
+							declare_war_on = {
+								target = PREV
+								type = annex_puppet_wargoal
+							}
+						}
+					}
 					dismantle_faction = yes
 				}
 				if = {
