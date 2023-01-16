@@ -94,6 +94,13 @@ on_actions = {
             #
             divide_variable = { diplomatic_power_gain = 100 }  
             #
+            if = {
+                limit = {
+                    has_country_flag = doing_a_formable
+                }
+                add_to_variable = { diplomatic_power_gain = -1 }  
+            }
+            #
             add_to_variable = { diplomatic_power = diplomatic_power_gain }  
             clamp_variable = { var = diplomatic_power min = 0 max = 2000 }          
         }

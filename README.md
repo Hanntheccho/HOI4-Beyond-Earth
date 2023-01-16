@@ -1,4 +1,6 @@
-# Beyond Earth: A Hoi4 Mod
+# Beyond Earth: A HOI4 Mod
+These files cannot be redistributed, modified or edited without explicit permission, in its entirety or by its components. All these files belong to its original creator(s).
+
 ## Wiki
 The following sections are made to allow a central database of all the changes and new variables.
 

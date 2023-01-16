@@ -99,10 +99,10 @@ USA_rebuilding_america = {
 	USA_integrate_quebec = {
 		icon = GFX_decision_cultural
 		available = {
-			has_global_flag = usa_was_reunited_flag
+			#
 		}
 		visible = {
-			#
+			has_global_flag = usa_was_reunited_flag
 		}
         custom_cost_trigger = {
 			check_variable = { diplomatic_power > 199.9 }
@@ -110,14 +110,17 @@ USA_rebuilding_america = {
 		custom_cost_text = decision_cost_200_cp
 		targets = { QUE }
 		fire_only_once = yes
+		days_remove = 200
+		complete_effect = {
+			subtract_from_variable = {
+				diplomatic_power = 200
+			}
+		}
 		complete_effect = {
 			CAN = {
 				annex_country = {
 					target = QUE
 				}
-			}
-			subtract_from_variable = {
-				diplomatic_power = 200
 			}
 		}
 
@@ -128,10 +131,10 @@ USA_rebuilding_america = {
 	USA_our_southern_territories = {
 		icon = GFX_decision_war
 		available = {
-			has_global_flag = usa_was_reunited_flag
+			#
 		}
 		visible = {
-			#
+			has_global_flag = usa_was_reunited_flag
 		}
 		fire_only_once = yes
 		targets = { MEX }

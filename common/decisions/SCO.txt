@@ -2,13 +2,15 @@ scotland_formable = {
 	ENG_civil_war_part_1 = {
 		icon = GFX_decision_unknown
 		available = {
-			has_global_flag = birmingham_uproar
+			hidden_trigger = {
+				has_global_flag = birmingham_uproar
+			}			
 		}
 		activation = {
-			country_exists = ENG
+			#
 		}
 		fire_only_once = yes
-		days_mission_timeout = 140
+		days_mission_timeout = 70
 		timeout_effect = {
 			ENG = {
 				country_event = england_event.1
@@ -24,13 +26,12 @@ scotland_formable = {
 	ENG_civil_war_part_2 = {
 		icon = GFX_decision_unknown
 		available = {
-			#OR = {
+			hidden_trigger = {
 				has_global_flag = ECW_start
-				#has_global_flag = ECW_end
-			#}
+			}
 		}
 		activation = {
-			always = no
+			has_global_flag = birmingham_uproar
 		}
 		fire_only_once = yes
 		days_mission_timeout = 25
@@ -48,7 +49,6 @@ scotland_formable = {
 		icon = GFX_decision_cultural
 		available = {
 			NOR = {
-				exists = yes
 				has_war_with = SWE
 			}
 			FIN = {
@@ -66,7 +66,13 @@ scotland_formable = {
 		}
 		custom_cost_text = decision_cost_100_cp
 		fire_only_once = yes
+		days_remove = 30
 		complete_effect = {
+			subtract_from_variable = {
+				diplomatic_power = 100
+			}
+		}
+		remove_effect = {
 			FIN = {	
 				declare_war_on = {
 					type = annex_puppet_wargoal
@@ -75,10 +81,7 @@ scotland_formable = {
 			}
 			SCO = {
 				add_to_faction = FIN
-			}
-			subtract_from_variable = {
-				diplomatic_power = 100
-			}
+			}			
 		}
 		ai_will_do = {
 			factor = 1000
@@ -103,7 +106,13 @@ scotland_formable = {
 				is_nsa_tag = yes
 			}
 		}
+		days_remove = 100
 		complete_effect = {
+			subtract_from_variable = {
+				diplomatic_power = 20
+			}
+		}
+		remove_effect = {
 			every_country = {
 				limit = {
 					is_puppet_of = FROM
@@ -112,10 +121,7 @@ scotland_formable = {
 			}
 			FROM = {
 				add_ideas = SCO_nsa_aligned
-			}
-			subtract_from_variable = {
-				diplomatic_power = 20
-			}
+			}			
 		}
 		ai_will_do = {
 			factor = 10
@@ -124,9 +130,11 @@ scotland_formable = {
 	SCO_integration_phase_2 = {
 		icon = GFX_decision_unity
 		fire_only_once = no
-		available = {
-			has_global_flag = ECW_end
+		available = {			
 			is_faction_leader = yes
+		}
+		visible = {
+			#
 		}
 		custom_cost_trigger = {
 			check_variable = { diplomatic_power > 199.9 }
@@ -139,7 +147,13 @@ scotland_formable = {
 				is_nsa_tag = yes
 			}
 		}
+		days_remove = 120
 		complete_effect = {
+			subtract_from_variable = {
+				diplomatic_power = 200
+			}
+		}
+		remove_effect = {
 			custom_effect_tooltip = add_infamy_low
 			add_to_variable = {
 				var = global.nsainfamy_var
@@ -182,9 +196,6 @@ scotland_formable = {
 			}
 			SCO = {
 				set_cosmetic_tag = SCO_NSA
-			}
-			subtract_from_variable = {
-				diplomatic_power = 200
 			}
 		}
 		ai_will_do = {

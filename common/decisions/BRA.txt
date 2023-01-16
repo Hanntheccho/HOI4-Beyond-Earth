@@ -1,13 +1,16 @@
 BRA_the_inevitable = {
 	BRA_cross_the_andes = {
 		icon = GFX_decision_unknown
+		available = {
+			PRU = {
+				OR = {
+					is_puppet = yes
+					exists = no
+				}
+			}
+		}
 		activation = {
 			#
-		}
-		available = {
-			NOT = {
-				country_exists = PRU
-			}
 		}
 		fire_only_once = yes
 		war_with_on_timeout = PRU
@@ -29,14 +32,14 @@ BRA_the_inevitable = {
 	}	
 	BRA_conquer_the_acre_line = {
 		icon = GFX_decision_unknown
-		activation = { 
-			BRA = {
-				has_war_with = PRU
-			}
-		}
 		available = {
 			PRU = {
 				surrender_progress > 0.5
+			}
+		}
+		activation = { 
+			BRA = {
+				has_war_with = PRU
 			}
 		}
 		fire_only_once = yes

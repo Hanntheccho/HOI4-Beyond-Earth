@@ -57,7 +57,9 @@ GER_decisions = {
 	NOR_SWE_war = {
 		icon = GFX_decision_war
 		available = {
-			#
+			hidden_trigger = {
+				has_global_flag = scandinavian_conflict_started
+			}
 		}
 		activation = {
 			#
@@ -94,7 +96,9 @@ GER_decisions = {
 	POL_LAT_war = {
 		icon = GFX_decision_war
 		available = {
-			has_global_flag = LAT_ahti_bad_news
+			hidden_trigger = {
+				has_global_flag = LAT_ahti_bad_news
+			}
 		}
 		activation = {
 			#
@@ -145,13 +149,16 @@ GER_decisions = {
 		}
 		custom_cost_text = decision_cost_100_ip
 		fire_only_once = yes
+		days_remove = 80
 		complete_effect = {
-			UKR = {
-				remove_ideas = UKR_country_life_support
-			}
 			subtract_from_variable = {
 				industrial_power = 100
 			}
+		}
+		remove_effect = {
+			UKR = {
+				remove_ideas = UKR_country_life_support
+			}			
 		}
 		ai_will_do = {
 			factor = 1
@@ -201,7 +208,13 @@ GER_decisions = {
 				}
 			}
 		}
+		days_remove = 100
 		complete_effect = {
+			subtract_from_variable = {
+				diplomatic_power = 100
+			}
+		}
+		remove_effect = {
 			custom_effect_tooltip = add_infamy_low
 			add_to_variable = {
 				var = global.integrinfamy_var
@@ -224,10 +237,7 @@ GER_decisions = {
 					}
 					country_event = german_event.8
 				}
-			}
-			subtract_from_variable = {
-				diplomatic_power = 100
-			}
+			}			
 		}
 		ai_will_do = {
 			factor = 1000
@@ -243,20 +253,26 @@ GER_decisions = {
 		target_trigger = {
 			FROM = {
 				has_idea = GER_eurasian_aligned
-			}
-			is_in_faction = no
-			NOT = {
-				OR = {
-					has_war_with = ROOT
-					ROOT = {
-						any_allied_country = {
-							has_war_with = FROM
-						}
-					}					
+				is_in_faction = no
+				NOT = {
+					OR = {
+						has_war_with = ROOT
+						ROOT = {
+							any_allied_country = {
+								has_war_with = FROM
+							}
+						}					
+					}
 				}
 			}
 		}
+		days_remove = 80
 		complete_effect = {
+			subtract_from_variable = {
+				diplomatic_power = 100
+			}
+		}
+		remove_effect = {
 			FROM = {
 				swap_ideas = {
 					remove_idea = GER_eurasian_aligned
@@ -266,10 +282,7 @@ GER_decisions = {
 					ideology = harmony
 					popularity = 0.05
 				}
-			}
-			subtract_from_variable = {
-				diplomatic_power = 100
-			}
+			}			
 		}
 		ai_will_do = {
 			factor = 1
@@ -281,16 +294,16 @@ GER_decisions = {
 		target_trigger = {
 			FROM = {
 				has_idea = GER_german_eurasian_aligned
-			}
-			is_in_faction = no
-			NOT = {
-				OR = {
-					has_war_with = ROOT
-					ROOT = {
-						any_allied_country = {
-							has_war_with = FROM
-						}
-					}					
+				is_in_faction = no
+				NOT = {
+					OR = {
+						has_war_with = ROOT
+						ROOT = {
+							any_allied_country = {
+								has_war_with = FROM
+							}
+						}					
+					}
 				}
 			}
 		}
@@ -298,7 +311,13 @@ GER_decisions = {
 			check_variable = { industrial_power > 99.9 }
 		}
 		custom_cost_text = decision_cost_100_ip
+		days_remove = 80
 		complete_effect = {
+			subtract_from_variable = {
+				industrial_power = 100
+			}
+		}
+		remove_effect = {
 			FROM = {
 				swap_ideas = {
 					remove_idea = GER_german_eurasian_aligned
@@ -312,9 +331,6 @@ GER_decisions = {
 					idea = GER_green_soil_plan
 					days = 200
 				}
-			}
-			subtract_from_variable = {
-				industrial_power = 100
 			}
 		}
 		ai_will_do = {
