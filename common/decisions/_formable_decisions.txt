@@ -5,59 +5,87 @@ formable_decisions = {
 			has_global_flag = euro_war_happened
 			has_war = no
 			is_faction_leader = yes
+			if = {
+				limit = {
+					tag = FRA
+				}
+				SCO = {
+					is_puppet_of = ROOT
+				}
+				ENG = {
+					is_puppet_of = ROOT
+				}
+				IRE = {
+					is_puppet_of = ROOT
+				}
+			}
+			else_if = {
+				limit = {
+					tag = SCO
+				}
+				FRA = {
+					is_puppet_of = ROOT
+				}
+				SPR = {
+					is_puppet_of = ROOT
+				}
+			}
+			else = {
+				#
+			}
 		}
 		visible = {
 			OR = {
 				tag = FRA
 				tag = GER
 				tag = SCO
+				tag = SOV
 			}
 		}
 		fire_only_once = yes
 		complete_effect = {
-			every_possible_country = {
+			if = {
 				limit = {
-					is_dynamic_country = no
-					capital_scope = {
-						is_on_continent = europe
-					}
-					NOT = {
-						OR = {
-							tag = SOV
-							tag = KAR
-						}
-					}
+					tag = SOV
 				}
-				every_core_state = {
-					add_core_of = ROOT
-				}
+				set_faction_name = "Eurasian Union"
 			}
-			every_country = {
-				limit = {
-					OR = {
-						is_in_faction_with = ROOT
-						is_puppet_of = ROOT
-					}
-					capital_scope = {
-						is_on_continent = europe
-					}
-					NOT = {
-						tag = SOV
-					}
-				}
-				ROOT = {
-					annex_country = {
-						target = PREV
-						#transfer_troops = yes
-					}
-				}
-			}
-			501 = {
-				add_core_of = ROOT
+			else = {
+				set_faction_name = "European Union"
 			}
 			if = {
 				limit = {
 					tag = FRA
+				}
+				SCO = {
+					every_core_state = {
+						add_core_of = FRA
+					}
+					FRA = {
+						annex_country = {
+							target = PREV
+						}
+					}
+				}
+				ENG = {
+					every_core_state = {
+						add_core_of = FRA
+					}
+					FRA = {
+						annex_country = {
+							target = PREV
+						}
+					}
+				}
+				IRE = {
+					every_core_state = {
+						add_core_of = FRA
+					}
+					FRA = {
+						annex_country = {
+							target = PREV
+						}
+					}
 				}
 				set_cosmetic_tag = FRA_eu_union
 			}
@@ -65,10 +93,30 @@ formable_decisions = {
 				limit = {
 					tag = SCO
 				}
+				FRA = {
+					every_core_state = {
+						add_core_of = SCO
+					}
+					SCO = {
+						annex_country = {
+							target = PREV
+						}
+					}
+				}
+				SPR = {
+					every_core_state = {
+						add_core_of = SCO
+					}
+					SCO = {
+						annex_country = {
+							target = PREV
+						}
+					}
+				}
 				set_cosmetic_tag = SCO_EU
 			}
 			else = {
-				set_cosmetic_tag = GER_green_europe
+				#
 			}			
 		}
 		ai_will_do = {
@@ -80,51 +128,26 @@ formable_decisions = {
 		icon = GFX_decision_unity
 		available = {
 			is_faction_leader = yes
-			is_in_faction_with = PAD
-			is_in_faction_with = TUN
-			has_country_leader = {
-				character = FRA_elodie_batteux
-				ruling_only = yes
-			}
-		}
-		visible = {
-			tag = FRA
-		}
-		fire_only_once = yes
-		complete_effect = {
-			every_state = {
+			if = {
 				limit = {
-					OR = {
-						is_core_of = PAD
-						is_core_of = TUN
+					has_country_leader = {
+						character = FRA_elodie_batteux
+						ruling_only = yes
 					}
 				}
-				add_core_of = FRA
+				is_in_faction_with = PAD
 			}
-			annex_country = {
-				target = PAD
-				#transfer_troops = yes
+			else_if = {
+				limit = {
+					has_country_leader = {
+						character = FRA_al_hakim
+						ruling_only = yes
+					}
+				}
+				is_in_faction_with = ITA
 			}
-			annex_country = {
-				target = TUN
-				#transfer_troops = yes
-			}
-			FRA = {
-				set_cosmetic_tag = FRA_med_fed
-			}
-		}
-		ai_will_do = {
-			factor = 100
-		}
-	}
-	FRA_form_rep_lys = {
-		icon = GFX_decision_unity
-		available = {
-			is_faction_leader = yes
-			is_in_faction_with = ITA
-			has_country_leader = {
-				character = FRA_al_hakim
-				ruling_only = yes
+			else = {
+				#
 			}
 		}
 		visible = {
@@ -132,18 +155,46 @@ formable_decisions = {
 		}
 		fire_only_once = yes
 		complete_effect = {
-			every_state = {
+			if = {
 				limit = {
-					is_core_of = ITA
+					has_country_leader = {
+						character = FRA_elodie_batteux
+						ruling_only = yes
+					}
 				}
-				add_core_of = FRA
+				PAD = {
+					every_core_state = {
+						add_core_of = FRA
+					}
+					FRA = {
+						annex_country = {
+							target = PREV
+						}
+					}
+				}
+				set_cosmetic_tag = FRA_med_fed
 			}
-			annex_country = {
-				target = ITA
-				#transfer_troops = yes
-			}
-			FRA = {
+			else_if = {
+				limit = {
+					has_country_leader = {
+						character = FRA_al_hakim
+						ruling_only = yes
+					}
+				}
+				ITA = {
+					every_core_state = {
+						add_core_of = FRA
+					}
+					FRA = {
+						annex_country = {
+							target = PREV
+						}
+					}
+				}
 				set_cosmetic_tag = FRA_lys_rep
+			}
+			else = {
+				#
 			}
 		}
 		ai_will_do = {
@@ -265,6 +316,7 @@ formable_decisions = {
 		fire_only_once = yes
 		complete_effect = {
 			set_cosmetic_tag = BRA_brasilia
+			set_faction_name = "Brasilia"
 		}
 		
 		ai_will_do = {
@@ -370,6 +422,12 @@ formable_decisions = {
 					remove_ideas = PNM_rock_bottom_popularity
 				}
 			}
+			if = {
+				limit = {
+					tag = ARC
+				}
+				set_faction_name = "North American Union"
+			}
 		}
 		
 		ai_will_do = {
@@ -407,6 +465,7 @@ formable_decisions = {
 			set_cosmetic_tag = USA_almost_united
 			91 = { set_state_name = "Maryland" }
 			remove_ideas = USA_never_let_the_old_flag_fall
+			remove_ideas = USA_century_navy
 		}
 		
 		ai_will_do = {
@@ -416,21 +475,21 @@ formable_decisions = {
 	form_usa = {
 		icon = GFX_decision_unity
 		available = {
-			NOT = {
-				any_country = {
-					OR = {
-						is_nau_tag = yes
-						tag = ARC
-						tag = PNM
-					}
-					NOT = {
-						OR = {
-							is_puppet_of = ROOT
-							exists = no
-						}
-					}
-				}
-			}
+			#NOT = {
+			#	any_country = {
+			#		OR = {
+			#			is_nau_tag = yes
+			#			tag = ARC
+			#			tag = PNM
+			#		}
+			#		NOT = {
+			#			OR = {
+			#				is_puppet_of = ROOT
+			#				exists = no
+			#			}
+			#		}
+			#	}
+			#}
 		}
 
 		visible = {
@@ -446,12 +505,64 @@ formable_decisions = {
 						tag = ARC
 						tag = PNM
 					}
+					NOT = {
+						tag = OCH
+					}
 				}
 				every_core_state = {
+					limit = {
+						NOT = {
+							OR = {
+								state = 10
+								state = 25
+								state = 52
+								state = 85
+							}
+						}
+					}
 					add_core_of = ROOT
 				}
-				every_owned_state = {
-					transfer_state_to = ROOT
+				USA = {
+					annex_country = {
+						target = PREV
+					}
+					add_state_core = 22
+					add_state_core = 37
+				}
+			}
+			OCH = {
+				every_core_state = {
+					add_core_of = CAN
+				}
+				CAN = {
+					annex_country = {
+						target = PREV
+					}
+				}
+			}
+			QUE = {
+				every_core_state = {
+					add_core_of = CAN
+				}
+			}
+			CAN = {
+				add_state_core = 10
+				add_state_core = 25
+				add_state_core = 52
+				add_state_core = 85
+				transfer_state = 10
+				transfer_state = 25
+				transfer_state = 52
+				transfer_state = 85
+			}
+			USA = {
+				add_state_core = 2
+				transfer_state = 2
+			}
+			CAN = {
+				USA = {
+					puppet = PREV
+					puppet_government_too_PREV = yes
 				}
 			}
 			set_cosmetic_tag = USA_united
