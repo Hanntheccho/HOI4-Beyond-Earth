@@ -49,7 +49,6 @@ TZN_decisions = {
 		visible = {
 			has_global_flag = TZN_united_africa
 		}
-		cost = 30
 		target_trigger = {
 			FROM = {
 				capital_scope = {
@@ -73,15 +72,18 @@ TZN_decisions = {
 			}
 		}
 		fire_only_once = no
-		days_remove = 30
-		remove_effect = {
+		complete_effect = {
 			declare_war_on = {
 				target = FROM
 				type = annex_puppet_wargoal
 			}
 		}
 		ai_will_do = {
-			factor = 10
+			factor = 0
+			modifier = {
+				has_war = no
+				add = 100
+			}
 		}
 	}
 }

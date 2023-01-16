@@ -68,7 +68,6 @@ BRA_the_recovery = {
 			is_puppet = no
 			is_faction_leader = yes
 		}
-		cost = 30
 		target_trigger = {
 			FROM = {
 				any_owned_state = {
@@ -78,8 +77,7 @@ BRA_the_recovery = {
 			}
 		}
 		fire_only_once = no
-		days_remove = 30
-		remove_effect = {
+		complete_effect = {
 			declare_war_on = {
 				target = FROM
 				type = annex_puppet_wargoal
@@ -87,22 +85,70 @@ BRA_the_recovery = {
 		}
 		ai_will_do = {
 			factor = 0
+			modifier = {
+				check_variable = {
+					var = division_limit
+					value = num_divisions
+					compare = greater_than_or_equals
+				}
+				has_war = no
+				add = 100
+			}
 		}
 	}
 ###
 	BRA_cross_the_andes_again = {
 		icon = GFX_decision_war
 		available = {
-			country_exists = PRU
+			LAM = {
+				OR = {
+					exists = no
+					is_in_faction_with = BRA
+				}
+			}
+			URG = {
+				OR = {
+					exists = no
+					is_in_faction_with = BRA
+				}
+			}
+			LEG = {
+				OR = {
+					exists = no
+					is_in_faction_with = BRA
+				}
+			}
+			GRP = {
+				OR = {
+					exists = no
+					is_in_faction_with = BRA
+				}
+			}
+			NCB = {
+				OR = {
+					exists = no
+					is_in_faction_with = BRA
+				}
+			}
+			ECB = {
+				OR = {
+					exists = no
+					is_in_faction_with = BRA
+				}
+			}
+			SCB = {
+				OR = {
+					exists = no
+					is_in_faction_with = BRA
+				}
+			}
 		}
 		visible = {
 			#
 		}
-		war_with_on_remove = PRU
 		targets = { PRU }
 		fire_only_once = yes
-		days_remove = 30
-		remove_effect = {
+		complete_effect = {
 			declare_war_on = {
 				target = PRU
 				type = annex_puppet_wargoal
@@ -120,13 +166,7 @@ BRA_the_recovery = {
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				NOT = {
-					country_exists = LAM
-					country_exists = URG
-					country_exists = LEG
-					country_exists = GRP
-				}
-				add = 1000
+				add = 100
 			}
 		}
 	}
@@ -141,7 +181,6 @@ BRA_the_recovery = {
 				is_puppet_of = BRA
 			}
 		}
-		cost = 30
 		target_trigger = {
 			FROM = {
 				OR = {
@@ -169,8 +208,7 @@ BRA_the_recovery = {
 			}
 		}
 		fire_only_once = no
-		days_remove = 30
-		remove_effect = {
+		complete_effect = {
 			declare_war_on = {
 				target = FROM
 				type = annex_puppet_wargoal
@@ -205,19 +243,8 @@ BRA_the_recovery = {
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				FROM = {
-					tag = ARG
-				}
-				add = 10
-			}
-			modifier = {
-				ARG = {
-					OR = {
-						is_puppet_of = ROOT
-						exists = no
-					}
-				}
-				add = 10
+				has_war = no
+				add = 100
 			}
 		}
 	}

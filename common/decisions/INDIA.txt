@@ -7,21 +7,6 @@ INDIA_civil_war = {
 		visible = {
 			has_global_flag = start_indian_civil_war
 		}
-		cost = 30
-		cancel_trigger = {
-			OR = {
-				FROM = {
-					OR = {
-						is_puppet_of = ROOT
-						has_war_with = ROOT
-						is_in_faction_with = ROOT
-					}
-				}
-				ROOT = {
-					is_puppet = yes
-				}				
-			}
-		}
 		target_trigger = {
 			FROM = {
 				OR = {
@@ -48,15 +33,18 @@ INDIA_civil_war = {
 			}
 		}
 		fire_only_once = no
-		days_remove = 30
-		remove_effect = {
+		complete_effect = {
 			declare_war_on = {
 				target = FROM
 				type = annex_puppet_wargoal
 			}
 		}
 		ai_will_do = {
-			factor = 10
+			factor = 0
+			modifier = {
+				has_war = no
+				add = 100
+			}
 		}
 	}
 }

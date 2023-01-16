@@ -1,4 +1,4 @@
-is_india_tag = { #except for BHR and KAV
+is_india_tag = { #except for BHR and KAV and SRL
 	OR = {
 		original_tag = KAS
 		original_tag = PUN
@@ -10,11 +10,10 @@ is_india_tag = { #except for BHR and KAV
 		original_tag = KRT
 		original_tag = KRL
 		original_tag = TAM
-		#original_tag = SRL
 		original_tag = BNG
 	}
 }
-is_nau_tag = {
+is_nau_tag = { #except for PNM and ARC
 	OR = {
 		original_tag = OCH
 		original_tag = SIT
@@ -24,7 +23,6 @@ is_nau_tag = {
 		original_tag = TRE
 		original_tag = DOS
 		original_tag = ONE
-		#
 		original_tag = CAS
 	}
 }
@@ -51,7 +49,6 @@ is_china_tag = {
 		original_tag = YNN
 		original_tag = KAC
 		original_tag = WAA
-		#
 		original_tag = AMU
 	}
 }
@@ -69,24 +66,27 @@ is_nsa_tag = {
 		original_tag = NOR
 		original_tag = IRE
 		original_tag = ENG
-		#
 		original_tag = JNG
 		original_tag = CNG
 		original_tag = HNG
-		#
 		original_tag = GRN
 		original_tag = ICE
-		#
 		original_tag = SWE
 		original_tag = FIN
-		#
 		original_tag = KAR
-		#
 		original_tag = LAT
 	}
 }
 is_minor_tag = {
 	if = {
+		limit = {
+			FROM = {
+				tag = CHI
+			}
+		}
+		is_china_tag = yes
+	}
+	else_if = {
 		limit = {
 			FROM = {
 				tag = ARG
