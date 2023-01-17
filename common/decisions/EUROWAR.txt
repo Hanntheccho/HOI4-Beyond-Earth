@@ -39,7 +39,14 @@ eurowar_decisions = {
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				has_war = no
+				NOT = {
+					any_enemy_country = {
+						is_neighbor_of = ROOT
+						any_controlled_state = {
+							is_in_home_area = yes
+						}
+					}
+				}				
 				add = 100
 			}
 		}
