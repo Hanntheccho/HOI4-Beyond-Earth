@@ -1,7 +1,6 @@
 version="1.12.*"
 tags={
 	"Alternative History"
-	"National Focuses"
 	"Map"
 	"Technologies"
 	"Graphics"
