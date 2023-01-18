@@ -622,74 +622,72 @@ formable_decisions = {
 		remove_effect = {
 			clr_country_flag = doing_a_formable
 			add_ideas = digital_democracy
-			every_possible_country = {
-				limit = {
-					OR = {
-						is_nau_tag = yes
-						tag = ARC
-						tag = PNM
-					}
-					NOT = {
-						tag = OCH
-					}
-				}
-				every_core_state = {
+			hidden_effect = {
+				every_possible_country = {
 					limit = {
+						OR = {
+							is_nau_tag = yes
+							tag = ARC
+							tag = PNM
+						}
 						NOT = {
-							OR = {
-								state = 10
-								state = 25
-								state = 52
-								state = 85
-							}
+							tag = OCH
 						}
 					}
-					add_core_of = USA
-				}
-				USA = {
-					annex_country = {
-						target = PREV
+					every_core_state = {
+						limit = {
+							NOT = {
+								OR = {
+									state = 10
+									state = 25
+									state = 52
+									state = 85
+								}
+							}
+						}
+						add_core_of = USA
+					}
+					USA = {
+						annex_country = {
+							target = PREV
+						}
 					}
 				}
-			}
-			USA = {
-				add_state_core = 22
-				add_state_core = 37
-			}
-			OCH = {
-				every_core_state = {
-					add_core_of = CAN
-					transfer_state_to = CAN
+				OCH = {
+					every_core_state = {
+						add_core_of = CAN
+						transfer_state_to = CAN
+					}
+					CAN = {
+						annex_country = {
+							target = PREV
+						}
+					}
+				}
+				QUE = {
+					every_core_state = {
+						add_core_of = CAN
+					}
 				}
 				CAN = {
-					annex_country = {
-						target = PREV
+					add_state_core = 10
+					add_state_core = 25
+					add_state_core = 52
+					add_state_core = 85
+					transfer_state = 10
+					transfer_state = 25
+					transfer_state = 52
+					transfer_state = 85
+					USA = {
+						puppet = PREV
+						puppet_government_too_PREV = yes
 					}
 				}
-			}
-			QUE = {
-				every_core_state = {
-					add_core_of = CAN
-				}
-			}
-			CAN = {
-				add_state_core = 10
-				add_state_core = 25
-				add_state_core = 52
-				add_state_core = 85
-				transfer_state = 10
-				transfer_state = 25
-				transfer_state = 52
-				transfer_state = 85
-			}
-			USA = {
-				add_state_core = 2
-				transfer_state = 2
-			}
-			CAN = {
 				USA = {
-					puppet = PREV
-					puppet_government_too_PREV = yes
+					add_state_core = 2
+					transfer_state = 2
+					add_state_core = 22
+					add_state_core = 37
 				}
 			}
 			set_cosmetic_tag = USA_united
