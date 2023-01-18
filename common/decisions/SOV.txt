@@ -72,9 +72,6 @@ SOV_manifest_destiny = {
 			517 = {
 				is_core_of = BLR
 			}
-			345 = {
-				is_core_of = BLR
-			}
 			508 = {
 				is_core_of = BLR
 			}
@@ -86,7 +83,6 @@ SOV_manifest_destiny = {
 				add_state_core = 471
 				add_state_core = 500
 				add_state_core = 517
-				add_state_core = 345
 				add_state_core = 508
 			}
 			SOV = {
@@ -159,12 +155,13 @@ SOV_manifest_destiny = {
 		fire_only_once = yes
 		days_mission_timeout = 25
 		timeout_effect = {
-			SOV = {
-				release = BLR
-				country_event = {
-					id = eurasia_event.4
-					days = 0
+			BLR = {
+				every_core_state = {
+					transfer_state_to = PREV
 				}
+			}
+			SOV = {
+				country_event = eurasia_event.4
 			}
 			BLR = {
 				inherit_technology = SOV
