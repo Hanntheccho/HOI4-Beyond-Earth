@@ -6,6 +6,7 @@ BRA_the_inevitable = {
 				OR = {
 					is_puppet = yes
 					exists = no
+					has_war_with = BRA
 				}
 			}
 		}
@@ -84,6 +85,18 @@ BRA_the_recovery = {
 		}
 		fire_only_once = no
 		complete_effect = {
+			if = {
+				limit = {
+					FROM = {
+						tag = URG
+					}
+				}
+				URG = {
+					every_core_state = {
+						add_claim_by = BRA
+					}
+				}
+			}
 			declare_war_on = {
 				target = FROM
 				type = annex_puppet_wargoal
@@ -93,8 +106,8 @@ BRA_the_recovery = {
 			factor = 0
 			modifier = {
 				check_variable = {
-					var = division_limit
-					value = num_divisions
+					var = num_divisions
+					value = division_limit
 					compare = greater_than_or_equals
 				}
 				has_war = no
