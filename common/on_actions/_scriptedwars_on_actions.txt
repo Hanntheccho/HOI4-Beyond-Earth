@@ -1,241 +1,85 @@
 on_actions = {
 	on_capitulation_immediate = {
 		effect = {
-			every_country = {
-				limit = {
-					has_war_with = ROOT
-				}
-				every_controlled_state = {
-					limit = {
-						is_owned_by = ROOT
-					}
-					add_to_array = {
-						PREV.controlled_from_ROOT = THIS
-					}
-				}
-			}
 			ROOT = {
-				white_peace = FROM
-				drop_cosmetic_tag = yes
-				if = {
+				every_country = {
 					limit = {
-						is_faction_leader = yes
+						has_war_with = PREV
 					}
 					every_country = {
 						limit = {
-							is_in_faction_with = PREV
+							is_in_faction_with = ROOT
+							has_war_with = PREV
 							NOT = {
 								tag = ROOT
 							}
 						}
-						FROM = {
-							declare_war_on = {
-								target = PREV
-								type = annex_puppet_wargoal
-							}
+						declare_war_on = {
+							target = PREV
+							type = annex_puppet_wargoal
 						}
 					}
+				}	
+				if = {
+					limit = {
+						is_faction_leader = yes
+					}				
 					dismantle_faction = yes
 				}
-				else_if = {
-					limit = {
-						is_in_faction = yes
-					}
+				else = {
 					leave_faction = yes
 				}
 				every_possible_country = {
 					limit = {
-						any_core_state = {
-							is_owned_by = ROOT
-						}
 						exists = no
-						NOT = {
-							tag = ROOT #obviously
-						}
-					}
-					every_core_state = {
-						limit = {
-							is_owned_by = ROOT
-							if = {
-								limit = {
-									PREV = {
-										exists = yes
-									}
-								}
-								PREV = {
-									OR = {
-										is_in_faction_with = FROM
-										is_puppet_of = FROM
-									}
-								}								
-							}
-						}
-						transfer_state_to = PREV
-						remove_core_of = ROOT
-					}
-					drop_cosmetic_tag = yes #just in case
-					every_owned_state = {
-						limit = {
-							OR = {
-								is_core_of = FROM
-								is_claimed_by = FROM
-							}
-						}
-						transfer_state_to = FROM
-					}
-					if = {
-						limit = {
-							FROM = {
-								is_puppet = yes
-							}
-						}
-						FROM.OVERLORD = {
-							puppet = PREV
-							puppet_government_too_PREV = yes
-						}
-					}
-					else = {
-						FROM = {
-							puppet = PREV
-							puppet_government_too_PREV = yes
-						}
-					}
-				}
-				every_subject_country = {
-					every_core_state = {
-						limit = {
-							is_owned_by = ROOT
-							if = {
-								limit = {
-									PREV = {
-										exists = yes
-									}
-								}
-								PREV = {
-									OR = {
-										is_in_faction_with = FROM
-										is_puppet_of = FROM
-									}
-								}								
-							}
-						}
-						transfer_state_to = PREV
-						remove_core_of = ROOT
-					}
-					drop_cosmetic_tag = yes #just in case
-					every_owned_state = {
-						limit = {
-							OR = {
-								is_core_of = FROM
-								is_claimed_by = FROM
-							}
-						}
-						transfer_state_to = FROM
-					}
-					if = {
-						limit = {
-							FROM = {
-								is_puppet = yes
-							}
-						}
-						FROM.OVERLORD = {
-							puppet = PREV
-							puppet_government_too_PREV = yes
-						}
-					}
-					else = {
-						FROM = {
-							puppet = PREV
-							puppet_government_too_PREV = yes
-						}
-					}
-				}
-				every_occupied_country = {
-					limit = {
 						any_core_state = {
-							is_owned_by = ROOT
+							is_owned_by = PREV.PREV
 						}
 					}
 					every_core_state = {
 						limit = {
-							is_owned_by = ROOT
-							if = {
-								limit = {
-									PREV = {
-										exists = yes
-									}
-								}
-								PREV = {
-									OR = {
-										is_in_faction_with = FROM
-										is_puppet_of = FROM
-									}
-								}								
-							}
+							is_core_of = PREV
 						}
-						transfer_state_to = PREV
-						remove_core_of = ROOT
-					}
-					drop_cosmetic_tag = yes #just in case
-					every_owned_state = {
-						limit = {
-							OR = {
-								is_core_of = FROM
-								is_claimed_by = FROM
-							}
-						}
-						transfer_state_to = FROM
-					}
-					if = {
-						limit = {
-							FROM = {
-								is_puppet = yes
-							}
-						}
-						FROM.OVERLORD = {
-							puppet = PREV
-							puppet_government_too_PREV = yes
-						}
-					}
-					else = {
-						FROM = {
-							puppet = PREV
-							puppet_government_too_PREV = yes
-						}
+						remove_core_of = PREV.PREV
 					}
 				}
 			}
-			FROM = {
-				if = {
-					limit = {
-						is_puppet = yes
-					}
-					OVERLORD = {
-						puppet = ROOT
-						puppet_government_too = yes
+			if = {
+				limit = {
+					ROOT = {
+						any_country = {
+							has_war_with = PREV
+							NOT = {
+								tag = FROM
+								is_ally_with = FROM
+							}
+						}
 					}
 				}
-				else = {
-					puppet = ROOT
-					puppet_government_too = yes
+				every_country = {
+					every_controlled_state = {
+						limit = {
+							is_owned_by = ROOT
+						}
+						transfer_state_to = PREV
+					}
 				}
+				FROM = {
+					annex_country = {
+						target = ROOT
+					}
+				}
+			}
+			else = {
+
 			}
 			ROOT = {
-				every_owned_state = {
-					limit = {
-						OR = {
-							is_core_of = FROM
-							is_claimed_by = FROM
-						}
-					}
-					transfer_state_to = FROM
-				}
 				if = {
 					limit = {
 						is_minor_tag = yes
 					}
 					every_core_state = {
-						remove_core_of = ROOT
+						remove_core_of = PREV
 					}
 				}
 			}
@@ -259,54 +103,101 @@ on_actions = {
 				}
 				set_country_flag = country_has_been_defeated
 			}
-			every_country = {
-				limit = {
-					if = {
-						limit = {
-							ROOT = {
-								exists = yes #to prevent invalid scope, when all states belong to somebody
-							}
-						}
-						OR = {
-							is_ally_with = ROOT
-							has_war_with = ROOT
-						}
-					}
-					else = {
-						always = yes #?????
-					}					
-				}
-				every_state = {
-					limit = {
-						is_in_array = {
-							PREV.controlled_from_ROOT = THIS
-						}
-					}
-					set_state_controller_to = PREV
-				}
-				clear_array = THIS.controlled_from_ROOT
-			}
 		}
 	}
 	on_capitulation = {
 		effect = {
 			if = {
 				limit = {
-					ROOT = {
+					FROM = {
 						has_war = no
-						if = {
-							limit = {
-								is_puppet = yes
-							}
-							OVERLORD = {
-								has_war = no
+						NOT = {
+							any_allied_country = {
+								has_war = yes
 							}
 						}
 					}
 				}
-				ROOT = {
-					every_owned_state = {
-						transfer_state_to = PREV
+				every_country = {
+					limit = {
+						OR = {
+							tag = FROM
+							is_ally_with = FROM
+						}						
+					}
+					every_possible_country = {
+						limit = {
+							NOT = {
+								tag = PREV
+							}
+							exists = no
+							any_core_state = {
+								is_owned_by = PREV.PREV
+							}
+						}
+						every_core_state = {
+							limit = {
+								is_owned_by = PREV.PREV
+								NOT = {
+									is_core_of = PREV.PREV
+								}
+							}
+							transfer_state_to = PREV
+						}
+						drop_cosmetic_tag = yes #just in case
+						PREV = {
+							if = {
+								limit = {
+									PREV = {
+										exists = yes
+										is_puppet = no
+									}
+									is_puppet = yes
+								}
+								PREV.PREV.OVERLORD = {
+									puppet = PREV.PREV
+									puppet_government_too_PREV_PREV = yes
+								}
+							}
+							else_if = {
+								limit = {
+									PREV = {
+										exists = yes
+										is_puppet = no
+									}
+								}
+								puppet = PREV
+								puppet_government_too_PREV = yes
+							}
+							else = {
+								#
+							}							
+						}					
+					}
+					every_possible_country = {
+						limit = {
+							NOT = {
+								tag = PREV
+							}
+							exists = yes
+							any_allied_country = {
+								PREV = {
+									is_puppet_of = PREV
+								}
+							}
+							any_core_state = {
+								is_owned_by = PREV.PREV
+							}
+						}
+						every_core_state = {
+							limit = {
+								is_owned_by = PREV.PREV
+								NOT = {
+									is_core_of = PREV.PREV
+								}
+							}
+							transfer_state_to = PREV
+						}
 					}
 				}
 			}
