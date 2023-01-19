@@ -1,7 +1,11 @@
 check_europe_war_progress = {
 	if = {
 		limit = {
-			check_variable = { global.europewarprogress_var > 99.9 }
+			check_variable = {
+				var = global.europewarprogress_var
+				value = 100
+				compare = greater_than_or_equals
+			}
 		}
 		every_country = {
 			limit = {
