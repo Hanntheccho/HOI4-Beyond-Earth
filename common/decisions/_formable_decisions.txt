@@ -159,6 +159,9 @@ formable_decisions = {
 					}
 				}
 				is_in_faction_with = PAD
+				PAD = {
+					has_war = no
+				}
 			}
 			else_if = {
 				limit = {
@@ -168,6 +171,9 @@ formable_decisions = {
 					}
 				}
 				is_in_faction_with = ITA
+				ITA = {
+					has_war = no
+				}
 			}
 			else = {
 				#
@@ -198,6 +204,12 @@ formable_decisions = {
 						character = FRA_elodie_batteux
 						ruling_only = yes
 					}
+				}
+				if = {
+					limit = {
+						country_exists = ITA
+					}
+					puppet = ITA
 				}
 				PAD = {
 					every_core_state = {
@@ -578,9 +590,14 @@ formable_decisions = {
 				every_core_state = {
 					add_core_of = ROOT
 				}
-				every_owned_state = {
-					transfer_state_to = ROOT
-				}
+				if = {
+					limit = {
+						has_war = no
+					}
+					every_owned_state = {
+						transfer_state_to = ROOT
+					}
+				}				
 			}
 			add_victory_points = {
 				province = 1700
@@ -749,6 +766,11 @@ formable_decisions = {
 		}
 		remove_effect = {
 			clr_country_flag = doing_a_formable
+			SCO = {
+				every_core_state = {
+					add_core_of = JNG
+				}
+			}
 			create_faction = "European Front"
 			country_event = england_event.22
 			set_cosmetic_tag = GRB
@@ -950,11 +972,12 @@ formable_decisions = {
 				every_core_state = {
 					add_core_of = URA
 					transfer_state_to = URA
+					remove_core_of = SOV
 				}
 			}
 		}
 		ai_will_do = {
-			factor = 100000
+			factor = 1000
 		}
 	}
 	###

@@ -1,0 +1,278 @@
+balkanize_that = {
+	ROOT = {
+		if = {
+			limit = {
+				has_cosmetic_tag = FRA_UNION
+			}
+			every_state = {
+				limit = {
+					is_core_of = SPR
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = COL_bolivaria
+			}
+			every_state = {
+				limit = {
+					is_core_of = VEN
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_cosmetic_tag = CHI_SCO
+					has_cosmetic_tag = CHI_SCO_united
+					has_cosmetic_tag = CHI_CENTRAL_GOVERNMENT
+				}
+			}
+			every_possible_country = {
+				limit = {
+					is_china_tag = yes
+					NOT = {
+						tag = CHI
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					remove_core_of = ROOT
+				}						
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_cosmetic_tag = SCO_NSA
+					has_cosmetic_tag = SCO_EU
+				}						
+			}
+			every_possible_country = {
+				limit = {
+					OR = {
+						is_nsa_tag = yes
+						tag = SPR
+						tag = FRA
+					}							
+					NOT = {
+						tag = SCO
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					remove_core_of = ROOT
+				}						
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = FRA_eu_union
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = IRE
+						is_core_of = ENG
+						is_core_of = SCO
+					}
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = FRA_med_fed
+			}
+			every_state = {
+				limit = {
+					is_core_of = PAD
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = FRA_lys_rep
+			}
+			every_state = {
+				limit = {
+					is_core_of = ITA
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = INDIA_kavithan_protectorate
+			}
+			every_possible_country = {
+				limit = {
+					OR = {
+						is_india_tag = yes
+						tag = SRL
+						tag = KAV
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					remove_core_of = ROOT
+				}						
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = BRA_brasilia
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = URG
+						is_core_of = COL
+						is_core_of = BOL
+						is_core_of = PRU
+						is_core_of = VEN
+						is_core_of = GYA
+					}
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_cosmetic_tag = NAU_united
+					has_cosmetic_tag = USA_united #should remove more cores and reorg CAN, but since it is not meant for the AI...
+				}						
+			}
+			every_possible_country = {
+				limit = {
+					OR = {
+						is_nau_tag = yes
+						if = {
+							limit = {
+								ROOT = {
+									tag = PNM
+								}
+							}
+							OR = {
+								tag = ARC
+								tag = USA
+							}									
+						}
+						else_if = {
+							limit = {
+								ROOT = {
+									tag = ARC
+								}
+							}
+							OR = {
+								tag = PNM
+								tag = USA
+							}
+						}
+						else = {
+							OR = {
+								tag = PNM
+								tag = ARC
+							}
+						}
+					}
+				}
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = PREV
+							is_core_of = MEX
+							is_core_of = QUE
+						}
+					}
+					remove_core_of = ROOT
+				}						
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = GRB
+			}
+			every_state = {
+				limit = {
+					is_core_of = SCO
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = PAD_italy
+			}
+			every_state = {
+				limit = {
+					is_core_of = ITA
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = TZN_AFRICA
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = COG
+						is_core_of = ANG
+						is_core_of = SAF
+						is_core_of = ZAM
+						is_core_of = GNB
+					}							
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = OMA_al_falah
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = SAU
+						is_core_of = SYR
+						is_core_of = YEM
+						is_core_of = LEB
+						is_core_of = ISR
+						is_core_of = PAL
+					}							
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = INS_polystralia
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = AST
+						is_core_of = SHL
+					}							
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else = {
+			#
+		}
+		drop_cosmetic_tag = yes
+	}
+}
