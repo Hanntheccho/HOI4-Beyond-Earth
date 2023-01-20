@@ -14,6 +14,31 @@ on_actions = {
                 divide_variable = {
                     industrial_power_gain = 10
                 }
+                set_variable = {
+                    industrial_power_expenditure = num_of_military_factories
+                }
+                set_variable = { industrial_power_expenditure_space = 0 }
+                every_controlled_state = {
+                    add_to_variable = { PREV.industrial_power_expenditure_space = building_level@spaceship_factory }
+                }
+                add_to_variable = { industrial_power_expenditure = industrial_power_expenditure_space }
+                set_variable = { industrial_power_expenditure_generator = 0 }
+                every_controlled_state = {
+                    add_to_variable = { PREV.industrial_power_expenditure_generator = building_level@generator_building }
+                }
+                add_to_variable = { industrial_power_expenditure = industrial_power_expenditure_generator }
+                set_variable = { industrial_power_expenditure_recycler = 0 }
+                every_controlled_state = {
+                    add_to_variable = { PREV.industrial_power_expenditure_recycler = building_level@synthetic_refinery }
+                }
+                add_to_variable = { industrial_power_expenditure = industrial_power_expenditure_recycler }
+                divide_variable = {
+                    industrial_power_expenditure = 10
+                }
+                subtract_from_variable = {
+                    industrial_power_gain = industrial_power_expenditure
+                }
+                ###
                 if = {
                     limit = { 
                         has_idea = agrarian_stage
@@ -59,6 +84,30 @@ on_actions = {
             }
             divide_variable = {
                 industrial_power_gain = 10
+            }
+            set_variable = {
+                industrial_power_expenditure = num_of_military_factories
+            }
+            set_variable = { industrial_power_expenditure_space = 0 }
+            every_controlled_state = {
+                add_to_variable = { PREV.industrial_power_expenditure_space = building_level@spaceship_factory }
+            }
+            add_to_variable = { industrial_power_expenditure = industrial_power_expenditure_space }
+            set_variable = { industrial_power_expenditure_generator = 0 }
+            every_controlled_state = {
+                add_to_variable = { PREV.industrial_power_expenditure_generator = building_level@generator_building }
+            }
+            add_to_variable = { industrial_power_expenditure = industrial_power_expenditure_generator }
+            set_variable = { industrial_power_expenditure_recycler = 0 }
+            every_controlled_state = {
+                add_to_variable = { PREV.industrial_power_expenditure_recycler = building_level@synthetic_refinery }
+            }
+            add_to_variable = { industrial_power_expenditure = industrial_power_expenditure_recycler }
+            divide_variable = {
+                industrial_power_expenditure = 10
+            }
+            subtract_from_variable = {
+                industrial_power_gain = industrial_power_expenditure
             }
 			if = {
 				limit = { 
