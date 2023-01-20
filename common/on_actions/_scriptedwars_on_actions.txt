@@ -85,10 +85,19 @@ on_actions = {
 					}
 					every_country = {
 						limit = {
-							is_ally_with = PREV
+							OR = {
+								is_ally_with = PREV
+								tag = PREV
+							}
 						}
-						every_occupied_country = {
+						every_possible_country = {
 							limit = {
+								any_core_state = {
+									is_owned_by = PREV.PREV
+									NOT = {
+										is_core_of = PREV.PREV
+									}
+								}
 								if = {
 									limit = {
 										exists = yes
@@ -141,24 +150,29 @@ on_actions = {
 	on_capitulation = {
 		effect = {
 			ROOT = {
-				every_owned_state = {
-					transfer_state_to = PREV
-				}
-			}
-			FROM = {
 				if = {
 					limit = {
-						is_in_faction = yes
+						exists = yes
 					}
-					random_country = {
-						limit = {
-							is_in_faction_with = PREV
-							is_faction_leader = yes
+					every_owned_state = { #debug
+						transfer_state_to = PREV
+					}
+					FROM = {
+						if = {
+							limit = {
+								is_in_faction = yes
+							}
+							random_country = {
+								limit = {
+									is_in_faction_with = PREV
+									is_faction_leader = yes
+								}
+								add_to_faction = ROOT
+							}					
 						}
-						add_to_faction = ROOT
-					}					
+					}
 				}
-			}
+			}			
 		}
 	}
 }

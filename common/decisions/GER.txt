@@ -12,11 +12,19 @@ GER_decisions = {
 			}
 		}
 		fire_only_once = yes
-		days_mission_timeout = 124
+		days_mission_timeout = 1
 		timeout_effect = {
 			YUG = {
 				white_peace = ROM
 				every_core_state = {
+					limit = {
+						NOT = {
+							OR = {
+								is_core_of = BUL
+								is_core_of = ALB
+							}
+						}
+					}
 					add_core_of = CRO
 				}
 				remove_ideas = YUG_the_communalists
