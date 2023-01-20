@@ -2,7 +2,8 @@ on_actions = {
 	on_capitulation_immediate = {
 		effect = {
 			ROOT = {
-				every_country = {
+				drop_cosmetic_tag = yes #to balkanize formables...
+				every_country = { #this one is for making sure capitulated country allies have a wargoal on the capitulator
 					limit = {
 						has_war_with = PREV
 					}
@@ -19,8 +20,8 @@ on_actions = {
 							type = annex_puppet_wargoal
 						}
 					}
-				}	
-				if = {
+				} # 
+				if = { #if it is a faction leader, dismantle faction, else leave it
 					limit = {
 						is_faction_leader = yes
 					}				
@@ -28,52 +29,117 @@ on_actions = {
 				}
 				else = {
 					leave_faction = yes
-				}
-				every_possible_country = {
-					limit = {
-						exists = no
-						any_core_state = {
-							is_owned_by = PREV.PREV
-						}
+				} # 
+				every_subject_country = { #release every subject
+					PREV = {
+						end_puppet = PREV
 					}
-					every_core_state = {
-						limit = {
-							is_core_of = PREV
-						}
-						remove_core_of = PREV.PREV
-					}
-				}
+				} #
 			}
 			if = {
-				limit = {
+				limit = { #this firstly checks if there are other countries involved in this
 					ROOT = {
 						any_country = {
-							has_war_with = PREV
+							has_war_with = PREV #it is at war with the same capitulated country
 							NOT = {
-								tag = FROM
-								is_ally_with = FROM
+								tag = FROM #it is not the capitulator
+								is_ally_with = FROM #nor an ally of the capitulator
+							}
+							any_controlled_state = {
+								is_owned_by = PREV.PREV #and also controls at least one state from the capitulated country
 							}
 						}
 					}
+				} #
+				every_possible_country = { #do not release hidden countries yet, but do remove cores from formable
+					limit = {
+						exists = no
+						is_dynamic_country = no
+						#is_a_formable = yes #?
+					}
+					FROM = {
+						every_owned_state = {
+							limit = {
+								is_core_of = PREV.PREV
+							}
+							remove_core_of = PREV
+						}
+					}
+					drop_cosmetic_tag = yes #just in case
 				}
-				every_country = {
+				every_country = { #give controlers ownership of the controlled states from the capitulated country, end in the on_capitulation
 					every_controlled_state = {
 						limit = {
 							is_owned_by = ROOT
 						}
 						transfer_state_to = PREV
 					}
-				}
-				FROM = {
+				} #
+				FROM = { #make sure none states are left from above
 					annex_country = {
 						target = ROOT
 					}
+				} #
+			}
+			else = { #if the original if is not true...
+				ROOT = {
+					if = { #what if the capitulator is a puppet? the OVERLORD gets everything
+						limit = {
+							FROM = {
+								is_puppet = yes
+							}
+						}
+						every_owned_state = {
+							limit = {
+								is_core_of = FROM.OVERLORD
+							}
+							transfer_state_to = FROM.OVERLORD
+						}
+						FROM.OVERLORD = {
+							puppet = PREV
+							puppet_government_too_PREV = yes
+						}
+					}
+					else = {
+						every_owned_state = {
+							limit = {
+								is_core_of = FROM
+							}
+							transfer_state_to = FROM
+						}
+						FROM = {
+							puppet = PREV
+							puppet_government_too_PREV = yes
+						}
+					}
+					if = {
+						limit = {
+							is_minor_tag = yes
+						}
+						every_core_state = {
+							remove_core_of = ROOT
+						}
+					}
+				} #
+				every_possible_country = { #release hidden countries
+					limit = {
+						exists = no
+						is_dynamic_country = no
+						#is_a_formable = yes #?
+					}
+					FROM = {
+						every_owned_state = {
+							limit = {
+								is_core_of = PREV.PREV
+							}
+							transfer_state_to = PREV.PREV
+							remove_core_of = PREV
+						}
+					}
+					drop_cosmetic_tag = yes #just in case
 				}
 			}
-			else = {
-
-			}
-			ROOT = {
+			ROOT = { #if it is versus an irrelevant country, remove cores when war ends
 				if = {
 					limit = {
 						is_minor_tag = yes
@@ -83,33 +149,48 @@ on_actions = {
 					}
 				}
 			}
-			FROM = {
+			FROM = { #this is for the notification, winner side
 				add_to_array = {
 					array = global.winning_country
 					value = THIS.id
 					index = 0
 				}
 			}
-			ROOT = {
+			ROOT = { #this is for the notification, losser side
 				add_to_array = {
 					array = global.losing_country
 					value = THIS.id
 					index = 0
 				}
 			}
-			every_country = {
+			every_country = { #make the notification pop-up
 				limit = {
 					is_ai = no
 				}
 				set_country_flag = country_has_been_defeated
-			}
+			}			
 		}
 	}
 	on_capitulation = {
 		effect = {
-			if = {
+			if = { 
 				limit = {
-					FROM = {
+					ROOT = { #someone is controlling states other than us? then it must be allied
+						NOT = {
+							any_country = {
+								NOT = {
+									OR = {
+										tag = FROM
+										is_ally_with = FROM
+									}	
+								}						
+								any_controlled_state = {
+									is_core_of = PREV.PREV
+								}
+							}
+						}						
+					}
+					FROM = { # only when we and our allies stop being at war
 						has_war = no
 						NOT = {
 							any_allied_country = {
@@ -118,22 +199,22 @@ on_actions = {
 						}
 					}
 				}
-				every_country = {
+				ROOT = { #debug
+					every_owned_state = {
+						transfer_state_to = PREV
+					}
+				}
+				every_country = { #all of our allies and us
 					limit = {
 						OR = {
 							tag = FROM
 							is_ally_with = FROM
 						}						
 					}
-					every_possible_country = {
+					every_possible_country = { #release the countries on states where we don't share cores
 						limit = {
-							NOT = {
-								tag = PREV
-							}
 							exists = no
-							any_core_state = {
-								is_owned_by = PREV.PREV
-							}
+							is_dynamic_country = no
 						}
 						every_core_state = {
 							limit = {
@@ -145,7 +226,7 @@ on_actions = {
 							transfer_state_to = PREV
 						}
 						drop_cosmetic_tag = yes #just in case
-						PREV = {
+						PREV = { #puppet the released country, if puppet then OVERLORD does
 							if = {
 								limit = {
 									PREV = {
@@ -174,7 +255,7 @@ on_actions = {
 							}							
 						}					
 					}
-					every_possible_country = {
+					every_possible_country = { #make sure the releasable has all its cores not shared with allies
 						limit = {
 							NOT = {
 								tag = PREV
@@ -184,9 +265,6 @@ on_actions = {
 								PREV = {
 									is_puppet_of = PREV
 								}
-							}
-							any_core_state = {
-								is_owned_by = PREV.PREV
 							}
 						}
 						every_core_state = {
@@ -201,15 +279,22 @@ on_actions = {
 					}
 				}
 			}
+			else = { #debug
+				ROOT = {
+					every_owned_state = {
+						transfer_state_to = PREV
+					}
+				}
+			}			
 		}
 	}
-	###
-	on_puppet = {
+###
+	on_puppet = { #legacy
 		effect = {
 			puppet_government_too = yes
 		}
 	}
-	on_release_as_puppet = {
+	on_release_as_puppet = { #legacy
 		effect = {
 			puppet_government_too = yes
 		}
