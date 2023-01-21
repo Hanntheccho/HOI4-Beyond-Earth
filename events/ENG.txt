@@ -279,23 +279,23 @@ country_event = { #Mastery Victory
 
 	immediate = {
 		hidden_effect = {
-			SCO = {
-				country_event = england_event.3
-			}
-			GER = {
-				country_event = england_event.3
-			}
-			FRA = {
-				country_event = england_event.3
-			}
-			set_country_flag = ECW_end
 			if = {
 				limit = {
 					NOT = {
 						has_global_flag = ECW_end
 					}
 				}
+				SCO = {
+					country_event = england_event.3
+				}
+				GER = {
+					country_event = england_event.3
+				}
+				FRA = {
+					country_event = england_event.3
+				}
 				ENG = {
+					set_cosmetic_tag = ENG
 					country_event = {
 						id = england_event.4
 						days = 10
@@ -309,8 +309,9 @@ country_event = { #Mastery Victory
 					#	days = 230
 					#}
 				}
+				set_global_flag = ECW_end
 			}	
-			set_global_flag = ECW_end
+			set_country_flag = ECW_end
 		}
 	}
 
@@ -609,23 +610,23 @@ country_event = { #Purity Victory
 
 	immediate = {
 		hidden_effect = {
-			SCO = {
-				country_event = england_event.11
-			}
-			GER = {
-				country_event = england_event.11
-			}
-			FRA = {
-				country_event = england_event.11
-			}
-			set_country_flag = ECW_end
 			if = {
 				limit = {
 					NOT = {
 						has_global_flag = ECW_end
 					}
 				}
+				SCO = {
+					country_event = england_event.11
+				}
+				GER = {
+					country_event = england_event.11
+				}
+				FRA = {
+					country_event = england_event.11
+				}
 				JNG = {
+					set_cosmetic_tag = ENG
 					country_event = {
 						id = england_event.12
 						days = 10
@@ -644,8 +645,9 @@ country_event = { #Purity Victory
 						}
 					}
 				}
+				set_global_flag = ECW_end
 			}			
-			set_global_flag = ECW_end
+			set_country_flag = ECW_end
 		}
 	}
 
@@ -981,23 +983,23 @@ country_event = { #Harmony Victory
 
 	immediate = {
 		hidden_effect = {
-			SCO = {
-				country_event = england_event.23
-			}
-			GER = {
-				country_event = england_event.23
-			}
-			FRA = {
-				country_event = england_event.23
-			}
-			set_country_flag = ECW_end
 			if = {
 				limit = {
 					NOT = {
 						has_global_flag = ECW_end
 					}
 				}
+				SCO = {
+					country_event = england_event.23
+				}
+				GER = {
+					country_event = england_event.23
+				}
+				FRA = {
+					country_event = england_event.23
+				}
 				HNG = {
+					set_cosmetic_tag = ENG
 					country_event = {
 						id = england_event.24
 						days = 10
@@ -1015,8 +1017,9 @@ country_event = { #Harmony Victory
 						days = 199
 					}
 				}
+				set_global_flag = ECW_end
 			}			
-			set_global_flag = ECW_end
+			set_country_flag = ECW_end
 		}
 	}
 
@@ -1145,17 +1148,27 @@ country_event = { #Neutral Victory
 
 	immediate = {
 		hidden_effect = {
-			SCO = {
-				country_event = england_event.30
-			}
-			GER = {
-				country_event = england_event.30
-			}
-			FRA = {
-				country_event = england_event.30
-			}
-			set_country_flag = ECW_end			
-			set_global_flag = ECW_end
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = ECW_end
+					}
+				}
+				SCO = {
+					country_event = england_event.30
+				}
+				GER = {
+					country_event = england_event.30
+				}
+				FRA = {
+					country_event = england_event.30
+				}
+				CNG = {
+					set_cosmetic_tag = ENG
+				}
+				set_global_flag = ECW_end
+			}		
+			set_country_flag = ECW_end
 		}
 	}
 
