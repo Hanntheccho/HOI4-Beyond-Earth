@@ -78,138 +78,73 @@ is_nsa_tag = {
 	}
 }
 is_minor_tag = {
-	if = {
-		limit = {
-			FROM = {
-				tag = ARG
-			}
-		}
-		original_tag = COS
-	}
-	else_if = {
-		limit = {
-			FROM = {
-				tag = BRA
-			}
-		}
-		OR = {
-			original_tag = GRP
-			original_tag = LEG
-			original_tag = LAM
-			original_tag = NCB
-			original_tag = ECB
-			original_tag = SCB
-		}
-	}
-	else_if = {
-		limit = {
-			FROM = {
-				tag = SCB
-			}
-		}
+	OR = {
+		original_tag = USA
+		original_tag = SIL
+		original_tag = LEG
 		original_tag = GRP
-	}
-	else_if = {
-		limit = {
-			FROM = {
-				tag = ECB
-			}
-		}
-		original_tag = LEG
-	}
-	else_if = {
-		limit = {
-			FROM = {
-				tag = GRP
-			}
-		}
-		original_tag = BRA
-	}
-	else_if = {
-		limit = {
-			FROM = {
-				tag = CRO
-			}
-		}
-		original_tag = YUG
-	}
-	else_if = {
-		limit = {
-			FROM = {
-				tag = YUG
-			}
-		}
-		original_tag = CRO
-	}
-	else_if = {
-		limit = {
-			FROM = {
-				is_eng_tag = yes
-			}
-		}
-		is_eng_tag = yes
-	}
-	else_if = {
-		limit = {
-			FROM = {
-				tag = COS
-			}
-		}
-		original_tag = ARG
-	}
-	else_if = {
-		limit = {
-			FROM = {
-				tag = DOS
-			}
-		}
-		OR = {
-			original_tag = CAS
-			original_tag = SIL
-		}
-	}
-	else_if = {
-		limit = {
-			FROM = {
-				tag = CAS
-			}
-		}
-		original_tag = DOS
-	}
-	else_if = {
-		limit = {
-			FROM = {
-				tag = TRE
-			}
-		}
 		original_tag = ONU
-	}
-	else_if = {
-		limit = {
-			FROM = {
-				tag = SOV
-			}
-		}
 		original_tag = KAR
-	}
-	else_if = {
-		limit = {
-			FROM = {
-				tag = BRA
-			}
-		}
-		original_tag = LEG
-	}
-	else_if = {
-		limit = {
-			FROM = {
-				tag = ONE
-			}
-		}
 		original_tag = CAL
-	}
-	else = {
-		always = no
+		if = {
+			limit = {
+				FROM = {
+					tag = ARG
+				}
+			}
+			original_tag = COS
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					tag = COS
+				}
+			}
+			original_tag = ARG
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					tag = CRO
+				}
+			}
+			original_tag = YUG
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					tag = YUG
+				}
+			}
+			original_tag = CRO
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					is_eng_tag = yes
+				}
+			}
+			is_eng_tag = yes
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					tag = DOS
+				}
+			}
+			original_tag = CAS
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					tag = CAS
+				}
+			}
+			original_tag = DOS
+		}
+		else = {
+			always = no
+		}
 	}
 }
 ####

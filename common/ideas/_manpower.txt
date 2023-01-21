@@ -5,6 +5,10 @@ ideas = {
 		limited_conscription = {
 			level = 4
 
+			available = {
+				is_puppet = no
+			}
+
 			ai_will_do = {
 				factor = 0
 		 	}
@@ -20,8 +24,24 @@ ideas = {
 			level = 3
 			default = yes
 
+			available = {
+				is_puppet = no
+			}
+
 			ai_will_do = {
-				factor = 0
+				factor = 1
+				modifier = {
+					factor = 0.5
+					manpower_per_military_factory > 5000
+				}
+				modifier = {
+					factor = 20
+					manpower_per_military_factory < 1000
+				}
+				modifier = {
+					factor = 0
+					NOT = { has_idea = limited_conscription }
+				}
 		 	}
 
 			modifier = {
@@ -31,8 +51,24 @@ ideas = {
 		service_by_requirement = {
 			level = 2
 
+			available = {
+				is_puppet = no
+			}
+
 			ai_will_do = {
-				factor = 0
+				factor = 1
+				modifier = {
+					factor = 0.5
+					manpower_per_military_factory > 3000
+				}
+				modifier = {
+					factor = 20
+					manpower_per_military_factory <  800
+				}
+				modifier = {
+					factor = 0
+					NOT = { has_idea = extensive_conscription }
+				}				
 		 	}
 
 			modifier = {
@@ -45,8 +81,24 @@ ideas = {
 		all_adults_serve = {
 			level = 1
 
+			available = {
+				is_puppet = no
+			}
+
 			ai_will_do = {
-				factor = 0
+				factor = 1
+				modifier = {
+					factor = 20
+					manpower_per_military_factory <  700
+				}
+				modifier = {
+					factor = 0.5
+					manpower_per_military_factory >  1000
+				}
+				modifier = {
+					factor = 0
+					NOT = { has_idea = service_by_requirement }
+				}
 		 	}
 
 			modifier = {

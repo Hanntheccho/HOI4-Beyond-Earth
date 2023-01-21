@@ -2,6 +2,31 @@ balkanize_that = {
 	ROOT = {
 		if = {
 			limit = {
+				tag = YUG #not a cosmetic tag, but should be balkanized too
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = BUL
+						is_core_of = ALB
+					}					
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				tag = PRU #not a cosmetic tag, but should be balkanized too
+			}
+			every_state = {
+				limit = {
+					is_core_of = BOL					
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
 				has_cosmetic_tag = FRA_UNION
 			}
 			every_state = {
@@ -130,7 +155,11 @@ balkanize_that = {
 		}
 		else_if = {
 			limit = {
-				has_cosmetic_tag = BRA_brasilia
+				OR = {
+					has_cosmetic_tag = BRA_brasilia
+					has_cosmetic_tag = BGV
+					tag = BRA
+				}				
 			}
 			every_state = {
 				limit = {
@@ -141,6 +170,10 @@ balkanize_that = {
 						is_core_of = PRU
 						is_core_of = VEN
 						is_core_of = GYA
+						is_core_of = NCB
+						is_core_of = SCB
+						is_core_of = ECB
+						is_core_of = LAM
 					}
 				}
 				remove_core_of = ROOT
@@ -163,10 +196,7 @@ balkanize_that = {
 									tag = PNM
 								}
 							}
-							OR = {
-								tag = ARC
-								tag = USA
-							}									
+							tag = ARC								
 						}
 						else_if = {
 							limit = {
@@ -174,10 +204,7 @@ balkanize_that = {
 									tag = ARC
 								}
 							}
-							OR = {
-								tag = PNM
-								tag = USA
-							}
+							tag = PNM
 						}
 						else = {
 							OR = {
@@ -212,6 +239,20 @@ balkanize_that = {
 		}
 		else_if = {
 			limit = {
+				has_cosmetic_tag = LAT_UNION
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = LIT
+						is_core_of = POL
+					}
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
 				has_cosmetic_tag = PAD_italy
 			}
 			every_state = {
@@ -223,7 +264,10 @@ balkanize_that = {
 		}
 		else_if = {
 			limit = {
-				has_cosmetic_tag = TZN_AFRICA
+				OR = {
+					has_cosmetic_tag = TZN_AFRICA
+					tag = TZN #not a cosmetic tag, but should be balkanized too
+				}
 			}
 			every_state = {
 				limit = {
@@ -273,6 +317,13 @@ balkanize_that = {
 		else = {
 			#
 		}
-		drop_cosmetic_tag = yes
+		if = {
+			limit = {
+				NOT = {
+					has_cosmetic_tag = BGV
+				}
+			}
+			drop_cosmetic_tag = yes
+		}
 	}
 }

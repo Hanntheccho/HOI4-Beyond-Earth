@@ -63,18 +63,7 @@ SOV_manifest_destiny = {
 	vostaslavia_rebellion_start = {
 		icon = GFX_decision_unknown
 		available = {
-			471 = {
-				is_core_of = BLR
-			}
-			500 = {
-				is_core_of = BLR
-			}
-			517 = {
-				is_core_of = BLR
-			}
-			508 = {
-				is_core_of = BLR
-			}
+			country_exists = BLR
 		}
 		fire_only_once = yes
 		days_mission_timeout = 25
@@ -86,10 +75,7 @@ SOV_manifest_destiny = {
 				add_state_core = 508
 			}
 			SOV = {
-				country_event = {
-					id = eurasia_event.3
-					days = 2
-				}
+				country_event = eurasia_event.3
 			}
 			activate_mission = vostaslavia_rebellion_start_2
 		}
@@ -157,6 +143,22 @@ SOV_manifest_destiny = {
 		timeout_effect = {
 			BLR = {
 				every_core_state = {
+					limit = {
+						if = {
+							limit = {
+								has_global_flag = vostoslavian_counter
+							}
+							NOT = {
+								state = 529
+								state = 574
+								state = 526
+								state = 562
+							}
+						}
+						else = {
+							always = yes
+						}
+					}
 					transfer_state_to = PREV
 				}
 			}
@@ -164,7 +166,6 @@ SOV_manifest_destiny = {
 				country_event = eurasia_event.4
 			}
 			BLR = {
-				inherit_technology = SOV
 				add_ideas = EU_treaty_of_bern
 				hidden_effect = {
 					load_oob = BLR_OOB
