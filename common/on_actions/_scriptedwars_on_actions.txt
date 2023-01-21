@@ -1,7 +1,7 @@
 on_actions = {
 	on_capitulation_immediate = {
 		effect = {
-			balkanize_that = yes #balkanize that!
+			balkanize_that = yes #balkanize that! - this is a scripted effect that checks for cosmetic tags of formables, removes cores in occupied states and drops the cosmetic tag, have to be done manually
 			ROOT = {
 				every_country = { #this one is for making sure capitulated country allies have a wargoal on the capitulator and do not peace out
 					limit = {
@@ -25,7 +25,7 @@ on_actions = {
 					}
 				} # 
 			}
-			ROOT = { #for some scenarios where small tags exist, remove cores when war ends
+			ROOT = { #for some scenarios where small tags or rebellions fight, remove cores when war ends
 				if = {
 					limit = {
 						is_minor_tag = yes
@@ -34,33 +34,33 @@ on_actions = {
 						remove_core_of = PREV
 					}
 				}
-			}
-			FROM = { #this is for the notification, winner side
+			} #
+			FROM = { #this is for the notification, winner side, scripted gui
 				add_to_array = {
 					array = global.winning_country
 					value = THIS.id
 					index = 0
 				}
-			}
-			ROOT = { #this is for the notification, losser side
+			} #
+			ROOT = { #this is for the notification, losser side, scripted gui
 				add_to_array = {
 					array = global.losing_country
 					value = THIS.id
 					index = 0
 				}
-			}
+			} #
 			every_country = { #make the notification pop-up
 				limit = {
 					is_ai = no
 				}
 				set_country_flag = country_has_been_defeated
-			}	
-			FROM = {
+			} #
+			FROM = { #capitulator annexes it all, if an enemy controls any province or state from the capitulated country they will still keep it
 				annex_country = {
 					target = ROOT
 				}
-			}	
-			random_country = {
+			} #
+			random_country = { #checks capitulator or, if puppet, capitulator's overlord
 				limit = {
 					if = {
 						limit = {
@@ -73,9 +73,9 @@ on_actions = {
 					else = {
 						tag = FROM
 					}
-				}
-				if = {
-					limit = {
+				} #
+				if = { #here we will release all countries, included capitulated one and those occupied by it
+					limit = { #we and our allies are at peace, time to reorg territories
 						NOT = {
 							any_allied_country = {
 								has_war = yes
@@ -84,7 +84,7 @@ on_actions = {
 						has_war = no
 					}
 					every_country = {
-						limit = {
+						limit = { #we or our allies...
 							OR = {
 								is_ally_with = PREV
 								tag = PREV
@@ -92,23 +92,23 @@ on_actions = {
 						}
 						every_possible_country = {
 							limit = {
-								any_core_state = {
+								any_core_state = { #we or our allies have any core state, but it is not our core
 									is_owned_by = PREV.PREV
 									NOT = {
 										is_core_of = PREV.PREV
 									}
 								}
 								if = {
-									limit = {
+									limit = { #if the country has already been transfered states make sure it is an ally
 										exists = yes
 									}
 									is_ally_with = PREV
 								}
-								else = {
+								else = { #else it should't exist
 									exists = no
 								}
 							}
-							every_core_state = {
+							every_core_state = { #every core state, not core of us, and owned by us, transfer it to the country
 								limit = {
 									is_owned_by = PREV.PREV
 									NOT = {
@@ -117,13 +117,14 @@ on_actions = {
 								}
 								transfer_state_to = PREV
 							}
-							if = {
+							if = { #you just transfered states right? it must exist now... then puppet it
 								limit = {
-									THIS = {
-										exists = yes
+									exists = yes
+									NOT = { #it is not yet in faction with us
+										is_in_faction_with = PREV
 									}									
 								}
-								random_country = {
+								random_country = { #again, if you are puppet, your overlord does puppet
 									limit = {
 										if = {
 											limit = {
@@ -138,8 +139,28 @@ on_actions = {
 										}
 									}
 									puppet = PREV
-									puppet_government_too_PREV_THIS = yes
+									puppet_government_too_PREV_THIS = yes #scripted effect to change country laws too
 								}
+							}
+						}
+					}
+					every_country = {
+						limit = { #we or our allies that are not puppets will get their cores back from puppets
+							OR = {
+								is_ally_with = PREV
+								tag = PREV
+								is_puppet = no
+							}
+						}
+						every_country = {
+							limit = {
+								is_puppet_of = PREV
+							}
+							every_owned_state = {
+								limit = {
+									is_core_of = PREV.PREV
+								}
+								transfer_state_to = PREV.PREV
 							}
 						}
 					}
@@ -152,12 +173,12 @@ on_actions = {
 			ROOT = {
 				if = {
 					limit = {
-						exists = yes
+						exists = yes #if it doesn't exist doesn't really matter
 					}
-					every_owned_state = { #debug
+					every_owned_state = { #debug, for some reason there is a chance of the effect block making capitulator keep some states controlled
 						transfer_state_to = PREV
 					}
-					FROM = {
+					FROM = { #if capitulator is in a faction, leader add capitulated country to the faction
 						if = {
 							limit = {
 								is_in_faction = yes

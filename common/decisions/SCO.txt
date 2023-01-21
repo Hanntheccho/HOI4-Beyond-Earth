@@ -97,6 +97,13 @@ scotland_formable = {
 		available = {
 			is_faction_leader = yes
 		}
+		cancel_trigger = {
+			FROM = {
+				NOT = {
+					is_in_faction_with = SCO
+				}
+			}
+		}
 		target_trigger = {
 			FROM = {
 				is_in_faction_with = SCO
@@ -140,6 +147,18 @@ scotland_formable = {
 			check_variable = { diplomatic_power > 199.9 }
 		}
 		custom_cost_text = decision_cost_200_cp
+		cancel_trigger = {
+			FROM = {
+				NOT = {
+					OR = {
+						all_core_state = {
+							is_controlled_by = PREV
+						}
+						is_in_faction_with = SCO
+					}					
+				}
+			}
+		}
 		target_trigger = {
 			FROM = {
 				has_idea = SCO_nsa_aligned

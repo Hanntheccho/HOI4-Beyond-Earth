@@ -67,6 +67,14 @@ formable_decisions = {
 		}
 		remove_effect = {
 			clr_country_flag = doing_a_formable
+			every_country = {
+				limit = {
+					is_ally_with = ROOT
+				}
+				ROOT = {
+					puppet = PREV
+				}
+			}
 			if = {
 				limit = {
 					tag = SOV

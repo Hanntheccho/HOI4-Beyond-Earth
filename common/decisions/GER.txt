@@ -200,6 +200,19 @@ GER_decisions = {
 			check_variable = { diplomatic_power > 99.9 }
 		}
 		custom_cost_text = decision_cost_100_cp
+		cancel_trigger = {
+			FROM = {
+				OR = {
+					has_war_with = ROOT
+					ROOT = {
+						any_allied_country = {
+							has_war_with = FROM
+						}
+					}
+					is_in_faction = yes
+				}				
+			}
+		}
 		target_trigger = {
 			FROM = {
 				has_idea = GER_german_aligned
@@ -258,6 +271,19 @@ GER_decisions = {
 			check_variable = { diplomatic_power > 99.9 }
 		}
 		custom_cost_text = decision_cost_100_cp
+		cancel_trigger = {
+			FROM = {
+				OR = {
+					has_war_with = ROOT
+					ROOT = {
+						any_allied_country = {
+							has_war_with = FROM
+						}
+					}
+					is_in_faction = yes
+				}				
+			}
+		}
 		target_trigger = {
 			FROM = {
 				has_idea = GER_eurasian_aligned
@@ -299,6 +325,19 @@ GER_decisions = {
 	GER_industrial_investment = {
 		icon = GFX_decision_industrial
 		fire_only_once = no
+		cancel_trigger = {
+			FROM = {
+				OR = {
+					has_war_with = ROOT
+					ROOT = {
+						any_allied_country = {
+							has_war_with = FROM
+						}
+					}
+					is_in_faction = yes
+				}				
+			}
+		}
 		target_trigger = {
 			FROM = {
 				has_idea = GER_german_eurasian_aligned
