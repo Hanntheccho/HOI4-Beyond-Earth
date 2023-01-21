@@ -1,30 +1,3 @@
-#action_type = {
-#	available = {
-#		#trigger to check if action available
-#	}
-#	
-#	weight = {
-#		base = 1
-#		modifier = {
-#			add = 10
-#		}
-#	}
-#	
-#	max_amount = 3
-#	duration = 10
-#	
-#	effect = {
-#	
-#	}
-#
-#	state_modifier = {
-#	
-#	}
-#
-#	#if defined, the game will show up an alert text on map when resistance activity trigerred
-#	alert_text = loc
-#}
-
 sabotage_arms_factory = {
 	available = {
 		non_damaged_building_level = {
@@ -41,10 +14,6 @@ sabotage_arms_factory = {
 
 			add = 4
 		}
-		#modifier = {
-		#	occupation_law = harsh_quotas_occupation
-		#	add = -0.25
-		#}
 	}
 
 	effect = {
@@ -127,10 +96,6 @@ sabotage_industrial_complex = {
 
 			add = 4
 		}
-		#modifier = {
-		#	occupation_law = harsh_quotas_occupation
-		#	add = -0.25
-		#}
 	}
 
 	effect = {
@@ -178,28 +143,6 @@ sabotage_air_base = {
 	alert_text = building_is_sabotaged
 }
 
-#sabotage_dockyard = {
-#	available = {
-#		non_damaged_building_level = {
-#			building = dockyard
-#			level > 0
-#		}
-#	}
-#
-#	weight = {
-#		base = 1
-#	}
-#
-#	effect = {
-#		damage_building = {
-#			type = dockyard
-#			damage = 0.25
-#		}
-#	}
-#
-#	alert_text = building_is_sabotaged
-#}
-
 sabotage_anti_air_building = {
 	available = {
 		non_damaged_building_level = {
@@ -245,52 +188,6 @@ sabotage_synthetic_refinery = {
 	alert_text = building_is_sabotaged
 }
 
-
-#sabotage_fuel_silo = {
-#	available = {
-#		non_damaged_building_level = {
-#			building = fuel_silo
-#			level > 0
-#		}
-#	}
-#
-#	weight = {
-#		base = 1
-#	}
-#
-#	effect = {
-#		damage_building = {
-#			type = fuel_silo
-#			damage = 0.25
-#		}
-#	}
-#
-#	alert_text = building_is_sabotaged
-#}
-
-
-#sabotage_radar_station = {
-#	available = {
-#		non_damaged_building_level = {
-#			building = radar_station
-#			level > 0
-#		}
-#	}
-#
-#	weight = {
-#		base = 1
-#	}
-#
-#	effect = {
-#		damage_building = {
-#			type = radar_station
-#			damage = 0.25
-#		}
-#	}
-#
-#	alert_text = building_is_sabotaged
-#}
-
 sabotage_rocket_site = {
 	available = {
 		non_damaged_building_level = {
@@ -313,28 +210,6 @@ sabotage_rocket_site = {
 	alert_text = building_is_sabotaged
 }
 
-#sabotage_nuclear_reactor = {
-#	available = {
-#		non_damaged_building_level = {
-#			building = sattelite_uplink
-#			level > 0
-#		}
-#	}
-#
-#	weight = {
-#		base = 1
-#	}
-#
-#	effect = {
-#		damage_building = {
-#			type = sattelite_uplink
-#			damage = 0.15
-#		}
-#	}
-#	
-#	alert_text = building_is_sabotaged
-#}
-
 sabotage_oil = {
 	available = {
 		has_resources_amount = {
@@ -351,20 +226,12 @@ sabotage_oil = {
 			check_variable = { targeted_sabotage_resources > 0 }
 			add = 4
 		}
-		#modifier = {
-		#	occupation_law = forced_labor_occupation
-		#	add = -0.25
-		#}
 	}
 
 	effect = {
 		clear_sabotaged_resources_if_necesary = yes
 		add_to_variable = { sabotaged_oil = -12 }
 		set_temp_variable = { duration = 180 }
-		#if = {
-		#	limit = { occupation_law = forced_labor_occupation }
-		#	multiply_temp_variable = { duration = 0.75 }
-		#}
 		if = {
 			limit = {
 				has_variable = targeted_sabotage_resources
@@ -399,20 +266,12 @@ sabotage_aluminium = {
 			check_variable = { targeted_sabotage_resources > 0 }
 			add = 4
 		}
-		#modifier = {
-		#	occupation_law = forced_labor_occupation
-		#	add = -0.25
-		#}
 	}
 
 	effect = {
 		clear_sabotaged_resources_if_necesary = yes
 		add_to_variable = { sabotaged_aluminium = -12 }
 		set_temp_variable = { duration = 180 }
-		#if = {
-		#	limit = { occupation_law = forced_labor_occupation }
-		#	multiply_temp_variable = { duration = 0.75 }
-		#}
 		if = {
 			limit = {
 				has_variable = targeted_sabotage_resources
@@ -447,20 +306,12 @@ sabotage_rubber = {
 			check_variable = { targeted_sabotage_resources > 0 }
 			add = 4
 		}
-		#modifier = {
-		#	occupation_law = forced_labor_occupation
-		#	add = -0.25
-		#}
 	}
 
 	effect = {
 		clear_sabotaged_resources_if_necesary = yes
 		add_to_variable = { sabotaged_rubber = -12 }
 		set_temp_variable = { duration = 180 }
-		#if = {
-		#	limit = { occupation_law = forced_labor_occupation }
-		#	multiply_temp_variable = { duration = 0.75 }
-		#}
 		if = {
 			limit = {
 				has_variable = targeted_sabotage_resources
@@ -495,20 +346,12 @@ sabotage_tungsten = {
 			check_variable = { targeted_sabotage_resources > 0 }
 			add = 4
 		}
-		#modifier = {
-		#	occupation_law = forced_labor_occupation
-		#	add = -0.25
-		#}
 	}
 
 	effect = {
 		clear_sabotaged_resources_if_necesary = yes
 		add_to_variable = { sabotaged_tungsten = -12 }
 		set_temp_variable = { duration = 180 }
-		#if = {
-		#	limit = { occupation_law = forced_labor_occupation }
-		#	multiply_temp_variable = { duration = 0.75 }
-		#}
 		if = {
 			limit = {
 				has_variable = targeted_sabotage_resources
@@ -544,20 +387,12 @@ sabotage_steel = {
 			check_variable = { targeted_sabotage_resources > 0 }
 			add = 4
 		}
-		#modifier = {
-		#	occupation_law = forced_labor_occupation
-		#	add = -0.25
-		#}
 	}
 
 	effect = {
 		clear_sabotaged_resources_if_necesary = yes
 		add_to_variable = { sabotaged_steel = -12 }
 		set_temp_variable = { duration = 180 }
-		#if = {
-		#	limit = { occupation_law = forced_labor_occupation }
-		#	multiply_temp_variable = { duration = 0.75 }
-		#}
 		if = {
 			limit = {
 				has_variable = targeted_sabotage_resources
@@ -592,20 +427,12 @@ sabotage_chromium = {
 			check_variable = { targeted_sabotage_resources > 0 }
 			add = 4
 		}
-		#modifier = {
-		#	occupation_law = forced_labor_occupation
-		#	add = -0.25
-		#}
 	}
 
 	effect = {
 		clear_sabotaged_resources_if_necesary = yes
 		add_to_variable = { sabotaged_chromium = -12 }
 		set_temp_variable = { duration = 180 }
-		#if = {
-		#	limit = { occupation_law = forced_labor_occupation }
-		#	multiply_temp_variable = { duration = 0.75 }
-		#}
 		if = {
 			limit = {
 				has_variable = targeted_sabotage_resources
