@@ -1,63 +1,118 @@
 OMA_decisions = {
-	#OMA_al_falah_decisions = {
-	#	icon = GFX_decision_war
-	#	available = {
-	#		is_puppet = no
-	#	}
-	#	visible = {
-	#		#
-	#	}
-	#	cancel_trigger = {
-	#		FROM = {
-	#			has_war_with = ROOT				
-	#		}
-	#	}
-	#	target_trigger = {
-	#		FROM = {
-	#			capital_scope = {
-	#				is_on_continent = middle_east
-	#			}
-	#			OR = {
-	#				is_neighbor_of = ROOT
-	#				ROOT = {
-	#					any_allied_country = {
-	#						is_neighbor_of = FROM
-	#					}
-	#				}
-	#			}
-	#			NOT = {
-	#				OR = {
-	#					is_puppet_of = ROOT
-	#					has_war_with = ROOT
-	#					is_in_faction_with = ROOT
-	#				}					
-	#			}
-	#		}
-	#	}
-	#	fire_only_once = no
-	#	complete_effect = {
-	#		declare_war_on = {
-	#			target = FROM
-	#			type = annex_puppet_wargoal
-	#		}
-	#	}
-	#	ai_will_do = {
-	#		factor = 0
-	#		modifier = {
-	#			FROM = {
-	#				tag = YEM
-	#			}
-	#			add = 10
-	#		}
-	#		modifier = {
-	#			YEM = {
-	#				OR = {
-	#					is_puppet_of = ROOT
-	#					exists = no
-	#				}
-	#			}
-	#			add = 10
-	#		}
-	#	}
-	#}
+	OMA_al_falah_decisions = {
+		icon = GFX_decision_war
+		available = {
+			is_puppet = no
+		}
+		visible = {
+			#
+		}
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = YEM
+					tag = QAT
+					tag = SAU
+					tag = LEB
+					tag = SYR
+					tag = ISR
+					tag = PAL
+					tag = TUR
+					tag = EGY
+					tag = PER
+				}
+				OR = {
+					is_neighbor_of = ROOT
+					ROOT = {
+						any_allied_country = {
+							is_neighbor_of = FROM
+						}
+					}
+				}
+				NOT = {
+					OR = {
+						is_puppet_of = ROOT
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+					}					
+				}
+			}
+		}
+		fire_only_once = no
+		complete_effect = {
+			declare_war_on = {
+				target = FROM
+				type = annex_puppet_wargoal
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				FROM = {
+					tag = QAT
+				}
+				add = 100
+			}
+			modifier = {
+				FROM = {
+					tag = YEM
+				}
+				QAT = {
+					is_puppet_of = ROOT
+				}
+				add = 100
+			}
+			modifier = {
+				FROM = {
+					tag = SAU
+				}
+				YEM = {
+					is_puppet_of = ROOT
+				}
+				add = 100
+			}
+			modifier = {
+				FROM = {
+					tag = LEB
+				}
+				SAU = {
+					is_puppet_of = ROOT
+				}
+				add = 100
+			}
+			modifier = {
+				FROM = {
+					tag = SYR
+				}
+				LEB = {
+					is_puppet_of = ROOT
+				}
+				add = 100
+			}
+			modifier = {
+				FROM = {
+					OR = {
+						tag = PAL
+						tag = ISR
+					}
+				}
+				SYR = {
+					is_puppet_of = ROOT
+				}
+				add = 100
+			}
+			modifier = {
+				FROM = {
+					tag = TUR
+				}
+				ISR = {
+					is_puppet_of = ROOT
+				}
+				PAL = {
+					is_puppet_of = ROOT
+				}
+				add = 100
+			}
+		}
+	}
 }

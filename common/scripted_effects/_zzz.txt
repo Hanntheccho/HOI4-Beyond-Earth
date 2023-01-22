@@ -2,6 +2,23 @@ balkanize_that = {
 	ROOT = {
 		if = {
 			limit = {
+				tag = SOV #not a cosmetic tag, but should be balkanized too
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = SIB
+						is_core_of = KAZ
+						is_core_of = UKR
+						is_core_of = BLR
+						is_core_of = URA
+					}					
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
 				tag = YUG #not a cosmetic tag, but should be balkanized too
 			}
 			every_state = {
@@ -292,6 +309,7 @@ balkanize_that = {
 						is_core_of = SAU
 						is_core_of = SYR
 						is_core_of = YEM
+						is_core_of = QAT
 						is_core_of = LEB
 						is_core_of = ISR
 						is_core_of = PAL
