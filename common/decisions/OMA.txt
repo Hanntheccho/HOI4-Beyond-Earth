@@ -24,7 +24,8 @@ OMA_decisions = {
 				OR = {
 					is_neighbor_of = ROOT
 					ROOT = {
-						any_allied_country = {
+						any_country = {
+							is_ally_with = PREV
 							is_neighbor_of = FROM
 						}
 					}
@@ -105,11 +106,11 @@ OMA_decisions = {
 				FROM = {
 					tag = TUR
 				}
-				ISR = {
-					is_puppet_of = ROOT
-				}
-				PAL = {
-					is_puppet_of = ROOT
+				has_cosmetic_tag = OMA_al_falah
+				check_variable = {
+					var = num_divisions
+					value = division_limit
+					compare = greater_than_or_equals
 				}
 				add = 100
 			}
