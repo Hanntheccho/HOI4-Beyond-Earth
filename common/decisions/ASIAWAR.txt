@@ -40,8 +40,11 @@ asiawar_decisions = {
 				OR = {
 					is_neighbor_of = ROOT
 					ROOT = {
-						any_allied_country = { #any_country
-							#is_ally_with = PREV #gives error? why?
+						any_country = {
+							OR = {
+								is_puppet_of = PREV
+								is_in_faction_with = PREV
+							}
 							is_neighbor_of = FROM
 						}
 					}

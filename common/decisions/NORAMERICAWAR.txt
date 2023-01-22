@@ -384,7 +384,10 @@ noramericawar_decisions = {
 					is_neighbor_of = ROOT
 					ROOT = {
 						any_country = {
-							is_ally_with = PREV
+							OR = {
+								is_puppet_of = PREV
+								is_in_faction_with = PREV
+							}
 							is_neighbor_of = FROM
 						}
 					}
