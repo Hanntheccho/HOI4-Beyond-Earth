@@ -71,133 +71,12 @@ scripted_gui = {
             }
             reduce_devastation_button_mastery_click = {
                 THIS = {
-                    increase_devastation = yes
+                    engineered_devastation = yes
                     set_state_flag = {
                         flag = devastation_reduction_timeout_flag
                         value = 1
                         days = 60
-                    }
-                    if = {
-                        limit = {
-                            ROOT = {
-                                has_war = yes
-                            }
-                            free_building_slots = {
-                                building = arms_factory
-                                size > 0
-                                include_locked = no
-                            }
-                        }
-                        add_building_construction = {
-                            type = arms_factory
-                            level = 1
-                            instant_build = yes
-                        }
-                    }
-                    else_if = {
-                        limit = {
-                            free_building_slots = {
-                                building = industrial_complex
-                                size > 0
-                                include_locked = no
-                            }
-                        }
-                        add_building_construction = {
-                            type = industrial_complex
-                            level = 1
-                            instant_build = yes
-                        }
-                    }
-                    if = {
-                        limit = {
-                            infrastructure < 5
-                        }
-                        add_building_construction = {
-				        	type = infrastructure
-				        	level = 1
-				        	instant_build = yes
-				        }
-                    }
-                    if = {
-                        limit = {
-                            NOT = {
-                                has_state_flag = already_exploited_by_mastery
-                            }
-                        }
-                        if = {
-                            limit = {
-                                has_resources_amount = {
-                                    resource = oil
-                                    amount > 0
-                                }
-                            }
-                            add_resource = {
-                                type = oil
-                                amount = 10
-                            }
-                        }
-                        if = {
-                            limit = {
-                                has_resources_amount = {
-                                    resource = rubber
-                                    amount > 0
-                                }
-                            }
-                            add_resource = {
-                                type = rubber
-                                amount = 10
-                            }
-                        }
-                        if = {
-                            limit = {
-                                has_resources_amount = {
-                                    resource = tungsten
-                                    amount > 0
-                                }
-                            }
-                            add_resource = {
-                                type = tungsten
-                                amount = 10
-                            }
-                        }
-                        if = {
-                            limit = {
-                                has_resources_amount = {
-                                    resource = chromium
-                                    amount > 0
-                                }
-                            }
-                            add_resource = {
-                                type = chromium
-                                amount = 10
-                            }
-                        }
-                        if = {
-                            limit = {
-                                has_resources_amount = {
-                                    resource = steel
-                                    amount > 0
-                                }
-                            }
-                            add_resource = {
-                                type = steel
-                                amount = 10
-                            }
-                        }
-                        if = {
-                            limit = {
-                                has_resources_amount = {
-                                    resource = aluminium
-                                    amount > 0
-                                }
-                            }
-                            add_resource = {
-                                type = aluminium
-                                amount = 10
-                            }
-                        }
-                        set_state_flag = already_exploited_by_mastery
-                    }                   
+                    }               
                 }
                 ROOT = {
                     subtract_from_variable = { industrial_power = 40 }
@@ -385,23 +264,6 @@ scripted_gui = {
                         is_owned_by = ROOT
                         OWNER = { is_ally_with = ROOT }
                     }
-                    OR = {
-                        has_dynamic_modifier = {
-                            modifier = no_devastation
-                        }
-                        has_dynamic_modifier = {
-                            modifier = minor_devastation
-                        }
-                        has_dynamic_modifier = {
-                            modifier = notable_devastation
-                        }
-                        has_dynamic_modifier = {
-                            modifier = major_devastation
-                        }
-                        has_dynamic_modifier = {
-                            modifier = significant_devastation
-                        }
-                    }
                     NOT = {
                         has_state_flag = devastation_reduction_timeout_flag
                     }
@@ -420,23 +282,6 @@ scripted_gui = {
                         is_owned_by = ROOT
                         OWNER = { is_ally_with = ROOT }
                     }
-                    OR = {
-                        has_dynamic_modifier = {
-                            modifier = no_devastation
-                        }
-                        has_dynamic_modifier = {
-                            modifier = minor_devastation
-                        }
-                        has_dynamic_modifier = {
-                            modifier = notable_devastation
-                        }
-                        has_dynamic_modifier = {
-                            modifier = major_devastation
-                        }
-                        has_dynamic_modifier = {
-                            modifier = significant_devastation
-                        }
-                    }
                     NOT = {
                         has_state_flag = devastation_reduction_timeout_flag
                     }
@@ -450,6 +295,11 @@ scripted_gui = {
                 }
             }
             #
+            counter_devastation_icon_visible = {
+                has_dynamic_modifier = {
+                    modifier = counter_devastation
+                }
+            }
             no_devastation_icon_visible = {
                 has_dynamic_modifier = {
                     modifier = no_devastation

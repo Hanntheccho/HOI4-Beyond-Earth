@@ -1,3 +1,54 @@
+engineered_devastation = {
+	if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = no_devastation
+			}
+		}
+		remove_dynamic_modifier = { modifier = no_devastation }
+		add_dynamic_modifier = { modifier = counter_devastation }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = minor_devastation
+			}
+		}
+		remove_dynamic_modifier = { modifier = minor_devastation }
+		add_dynamic_modifier = { modifier = counter_devastation }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = notable_devastation
+			}
+		}
+		remove_dynamic_modifier = { modifier = notable_devastation }
+		add_dynamic_modifier = { modifier = counter_devastation }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = major_devastation
+			}
+		}
+		remove_dynamic_modifier = { modifier = major_devastation }
+		add_dynamic_modifier = { modifier = counter_devastation }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = significant_devastation
+			}
+		}
+		remove_dynamic_modifier = { modifier = significant_devastation }
+		add_dynamic_modifier = { modifier = counter_devastation }
+	}
+	else = {
+
+	}
+}
+
 increase_devastation = {
 	if = {
 		limit = {
@@ -97,9 +148,21 @@ decrease_devastation = {
 	if = {
 		limit = {
 			has_dynamic_modifier = {
+				modifier = counter_devastation
+			}
+			ROOT = {
+				has_country_flag = has_mind_tier3
+			}
+		}
+		remove_dynamic_modifier = { modifier = counter_devastation }
+		add_dynamic_modifier = { modifier = no_devastation }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
 				modifier = minor_devastation
 			}
-			OWNER = {
+			ROOT = {
 				has_country_flag = has_mind_tier3
 			}
 		}

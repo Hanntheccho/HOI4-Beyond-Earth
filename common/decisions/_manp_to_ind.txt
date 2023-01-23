@@ -1,0 +1,355 @@
+state_decisions = {
+	man_to_civ_targ = {
+		visible = {
+			#
+		}		
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				check_variable = {
+					var = industrial_power
+					value = 10
+					compare = greater_than_or_equals
+				}
+				tooltip = state_decisions_cost
+			}
+			FROM = {
+				NOT = {
+					has_state_flag = already_doing_something_here
+				}
+			}
+		}
+
+		state_target = yes
+		
+		target_root_trigger = {
+		}
+
+		target_trigger = {
+			FROM = {
+				is_fully_controlled_by = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = no
+				}
+				if = {
+					limit = {
+						ROOT = {
+							any_controlled_state = {
+								infrastructure > 4
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = no
+								}
+							}
+						}						
+					}
+					infrastructure > 4
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							any_controlled_state = {
+								infrastructure > 3
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = no
+								}
+							}
+						}						
+					}
+					infrastructure > 3
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							any_controlled_state = {
+								infrastructure > 2
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = no
+								}
+							}
+						}						
+					}
+					infrastructure > 2
+				}
+				else = {
+					always = yes
+				}
+			}
+		}
+		
+		on_map_mode = map_only
+		icon = GFX_decision_industrial
+
+		days_remove = 60
+		ai_will_do = {
+			base = 1
+			modifier = {
+				check_variable = {
+					industrial_power > 200
+				}
+				add = 10
+			}
+		}		
+		complete_effect = {
+			add_to_variable = {
+				industrial_power = -10
+			}
+			FROM = {
+				set_state_flag = already_doing_something_here
+			}
+		}			
+		remove_effect = {
+			FROM = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				clr_state_flag = already_doing_something_here
+			}
+		}
+	}
+
+	man_to_arms_targ = {
+		visible = {
+			#
+		}		
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				check_variable = {
+					var = industrial_power
+					value = 10
+					compare = greater_than_or_equals
+				}
+				tooltip = state_decisions_cost
+			}
+			FROM = {
+				NOT = {
+					has_state_flag = already_doing_something_here
+				}
+			}
+		}
+
+		state_target = yes
+		
+		target_root_trigger = {
+		}
+
+		target_trigger = {
+			FROM = {
+				is_fully_controlled_by = ROOT
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = no
+				}
+				if = {
+					limit = {
+						ROOT = {
+							any_controlled_state = {
+								infrastructure > 4
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = no
+								}
+							}
+						}						
+					}
+					infrastructure > 4
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							any_controlled_state = {
+								infrastructure > 3
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = no
+								}
+							}
+						}						
+					}
+					infrastructure > 3
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							any_controlled_state = {
+								infrastructure > 2
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = no
+								}
+							}
+						}						
+					}
+					infrastructure > 2
+				}
+				else = {
+					always = yes
+				}
+			}
+		}
+		
+		on_map_mode = map_only
+		icon = GFX_decision_industrial
+
+		days_remove = 60
+		ai_will_do = {
+			base = 1
+			modifier = {
+				check_variable = {
+					industrial_power > 200
+				}
+				add = 10
+			}
+		}		
+		complete_effect = {
+			add_to_variable = {
+				industrial_power = -10
+			}
+			FROM = {
+				set_state_flag = already_doing_something_here
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				clr_state_flag = already_doing_something_here
+			}
+		}
+	}
+
+	man_to_space_targ = {
+		visible = {
+			#
+		}		
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				check_variable = {
+					var = industrial_power
+					value = 20
+					compare = greater_than_or_equals
+				}
+				tooltip = state_decisions_cost_space
+			}
+			FROM = {
+				NOT = {
+					has_state_flag = already_doing_something_here
+				}
+			}
+		}
+
+		state_target = yes
+		
+		target_root_trigger = {
+		}
+
+		target_trigger = {
+			FROM = {
+				is_fully_controlled_by = ROOT
+				free_building_slots = {
+					building = spaceship_factory
+					size > 0
+					include_locked = no
+				}
+				if = {
+					limit = {
+						ROOT = {
+							any_controlled_state = {
+								infrastructure > 4
+								free_building_slots = {
+									building = spaceship_factory
+									size > 0
+									include_locked = no
+								}
+							}
+						}						
+					}
+					infrastructure > 4
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							any_controlled_state = {
+								infrastructure > 3
+								free_building_slots = {
+									building = spaceship_factory
+									size > 0
+									include_locked = no
+								}
+							}
+						}						
+					}
+					infrastructure > 3
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							any_controlled_state = {
+								infrastructure > 2
+								free_building_slots = {
+									building = spaceship_factory
+									size > 0
+									include_locked = no
+								}
+							}
+						}						
+					}
+					infrastructure > 2
+				}
+				else = {
+					always = yes
+				}
+			}
+		}
+		
+		on_map_mode = map_only
+		icon = GFX_decision_industrial
+
+		days_remove = 1
+		ai_will_do = {
+			base = 2
+			modifier = {
+				check_variable = {
+					industrial_power > 200
+				}
+				add = 100
+			}
+		}		
+		complete_effect = {
+			add_to_variable = {
+				industrial_power = -20
+			}
+			FROM = {
+				set_state_flag = already_doing_something_here
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_building_construction = {
+					type = spaceship_factory
+					level = 1
+					instant_build = yes
+				}
+				clr_state_flag = already_doing_something_here
+			}
+		}
+	}
+}

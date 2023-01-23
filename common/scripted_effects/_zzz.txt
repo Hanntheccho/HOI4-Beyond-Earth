@@ -44,11 +44,24 @@ balkanize_that = {
 		}
 		else_if = {
 			limit = {
-				has_cosmetic_tag = FRA_UNION
+				OR = {
+					has_cosmetic_tag = FRA_UNION
+					has_cosmetic_tag = FRA_eu_union
+					has_cosmetic_tag = FRA_med_fed
+					has_cosmetic_tag = FRA_lys_rep
+					tag = FRA
+				}				
 			}
 			every_state = {
 				limit = {
-					is_core_of = SPR
+					OR = {
+						is_core_of = IRE
+						is_core_of = ENG
+						is_core_of = SCO
+						is_core_of = SPR
+						is_core_of = PAD
+						is_core_of = ITA
+					}					
 				}
 				remove_core_of = ROOT
 			}
@@ -111,43 +124,6 @@ balkanize_that = {
 					}
 					remove_core_of = ROOT
 				}						
-			}
-		}
-		else_if = {
-			limit = {
-				has_cosmetic_tag = FRA_eu_union
-			}
-			every_state = {
-				limit = {
-					OR = {
-						is_core_of = IRE
-						is_core_of = ENG
-						is_core_of = SCO
-					}
-				}
-				remove_core_of = ROOT
-			}
-		}
-		else_if = {
-			limit = {
-				has_cosmetic_tag = FRA_med_fed
-			}
-			every_state = {
-				limit = {
-					is_core_of = PAD
-				}
-				remove_core_of = ROOT
-			}
-		}
-		else_if = {
-			limit = {
-				has_cosmetic_tag = FRA_lys_rep
-			}
-			every_state = {
-				limit = {
-					is_core_of = ITA
-				}
-				remove_core_of = ROOT
 			}
 		}
 		else_if = {
