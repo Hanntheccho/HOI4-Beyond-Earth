@@ -396,58 +396,18 @@ scripted_gui = {
                 ai_will_do = {
                     factor = 0
                     modifier = {
-                        ROOT = {
-                            check_variable = {
-                                industrial_power > 100
-                            }
-                        }
-                        OWNER = {                            
-                            NOT =  {
-                                has_idea = crumbling_society
-                            }
-                        }
-                        THIS = {
-                            OR = {
-                                free_building_slots = {
-                                    building = arms_factory
-                                    size > 0
-                                    include_locked = no
-                                }
-                                free_building_slots = {
-                                    building = industrial_complex
-                                    size > 0
-                                    include_locked = no
-                                }
-                            }
-                        }
-                        add = 1
-			        }
-                    modifier = {
-                        ROOT = {
+                        OWNER = {
                             check_variable = {
                                 industrial_power > 200
                             }
                         }
+                        add = 100
+			        }
+                    modifier = {	
                         OWNER = {
-                            NOT =  {
-                                has_idea = crumbling_society
-                            }
+                            has_idea = crumbling_society
                         }
-                        THIS = {
-                            OR = {
-                                free_building_slots = {
-                                    building = arms_factory
-                                    size > 0
-                                    include_locked = no
-                                }
-                                free_building_slots = {
-                                    building = industrial_complex
-                                    size > 0
-                                    include_locked = no
-                                }
-                            }
-                        }
-                        add = 10
+                        add = 10000
 			        }
                 }
             }
