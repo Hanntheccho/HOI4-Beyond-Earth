@@ -21,7 +21,8 @@ formable_decisions = {
 				SCO = {
 					is_puppet_of = ROOT
 				}
-				ENG = {
+				any_country = {
+					is_eng_tag = yes
 					is_puppet_of = ROOT
 				}
 				IRE = {
@@ -99,7 +100,10 @@ formable_decisions = {
 						}
 					}
 				}
-				ENG = {
+				every_country = {
+					limit = {
+						is_eng_tag = yes
+					}					
 					every_core_state = {
 						add_core_of = FRA
 					}
@@ -306,10 +310,11 @@ formable_decisions = {
 		remove_effect = {
 			clr_country_flag = doing_a_formable
 			set_cosmetic_tag = FRA_conseil_nacional
-			swap_ideas = {
-				remove_idea = digital_democracy
-				add_idea = anarchy_style
+			add_timed_idea = {
+				idea = FRA_conseil_nacional
+				days = 200
 			}
+			add_ideas = anarchy_style
 		}
 		ai_will_do = {
 			factor = 0
