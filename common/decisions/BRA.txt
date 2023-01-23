@@ -84,7 +84,17 @@ BRA_the_recovery = {
 			}
 		}
 		fire_only_once = no
+		days_remove = 30
 		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = going_to_war
+					days = 30
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
 			if = {
 				limit = {
 					FROM = {
@@ -112,6 +122,10 @@ BRA_the_recovery = {
 				}
 				has_war = no
 				add = 100
+			}
+			modifier = {
+				has_country_flag = going_to_war
+				add = -1000
 			}
 		}
 	}
@@ -166,8 +180,10 @@ BRA_the_recovery = {
 			#
 		}
 		targets = { PRU }
+		war_with_on_remove = PRU
 		fire_only_once = yes
-		complete_effect = {
+		days_remove = 30
+		remove_effect = {
 			declare_war_on = {
 				target = PRU
 				type = annex_puppet_wargoal
@@ -183,10 +199,7 @@ BRA_the_recovery = {
 			}
 		}
 		ai_will_do = {
-			factor = 0
-			modifier = {
-				add = 100
-			}
+			factor = 100
 		}
 	}
 ###
@@ -236,7 +249,17 @@ BRA_the_recovery = {
 			}
 		}
 		fire_only_once = no
+		days_remove = 30
 		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = going_to_war
+					days = 30
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
 			declare_war_on = {
 				target = FROM.OWNER
 				type = annex_puppet_wargoal
@@ -273,6 +296,10 @@ BRA_the_recovery = {
 			modifier = {
 				has_war = no
 				add = 100
+			}
+			modifier = {
+				has_country_flag = going_to_war
+				add = -1000
 			}
 		}
 	}
