@@ -1,6 +1,8 @@
 OMA_decisions = {
 	OMA_al_falah_decisions = {
 		icon = GFX_decision_war
+		state_target = yes
+		on_map_mode = map_only
 		available = {
 			is_puppet = no
 		}
@@ -9,56 +11,59 @@ OMA_decisions = {
 		}
 		target_trigger = {
 			FROM = {
-				OR = {
-					tag = YEM
-					tag = QAT
-					tag = SAU
-					tag = LEB
-					tag = SYR
-					tag = ISR
-					tag = PAL
-					tag = TUR
-					tag = EGY
-					tag = PER
-				}
-				OR = {
-					is_neighbor_of = ROOT
-					ROOT = {
-						any_country = {
-							OR = {
-								is_puppet_of = PREV
-								is_in_faction_with = PREV
+				is_capital = yes
+				OWNER = {
+					OR = {
+						tag = YEM
+						tag = QAT
+						tag = SAU
+						tag = LEB
+						tag = SYR
+						tag = ISR
+						tag = PAL
+						tag = TUR
+						tag = EGY
+						tag = PER
+					}
+					OR = {
+						is_neighbor_of = ROOT
+						ROOT = {
+							any_country = {
+								OR = {
+									is_puppet_of = PREV
+									is_in_faction_with = PREV
+								}
+								is_neighbor_of = FROM.OWNER
 							}
-							is_neighbor_of = FROM
 						}
 					}
-				}
-				NOT = {
-					OR = {
-						is_puppet_of = ROOT
-						has_war_with = ROOT
-						is_in_faction_with = ROOT
-					}					
+					NOT = {
+						OR = {
+							is_puppet_of = ROOT
+							has_war_with = ROOT
+							is_in_faction_with = ROOT
+						}					
+					}
 				}
 			}
 		}
 		fire_only_once = no
 		complete_effect = {
 			declare_war_on = {
-				target = FROM
+				target = FROM.OWNER
 				type = annex_puppet_wargoal
 			}
 		}
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				FROM = {
+				FROM.OWNER = {
 					tag = QAT
 				}
 				add = 100
 			}
 			modifier = {
-				FROM = {
+				FROM.OWNER = {
 					tag = YEM
 				}
 				QAT = {
@@ -67,7 +72,7 @@ OMA_decisions = {
 				add = 100
 			}
 			modifier = {
-				FROM = {
+				FROM.OWNER = {
 					tag = SAU
 				}
 				YEM = {
@@ -76,7 +81,7 @@ OMA_decisions = {
 				add = 100
 			}
 			modifier = {
-				FROM = {
+				FROM.OWNER = {
 					tag = LEB
 				}
 				SAU = {
@@ -85,7 +90,7 @@ OMA_decisions = {
 				add = 100
 			}
 			modifier = {
-				FROM = {
+				FROM.OWNER = {
 					tag = SYR
 				}
 				LEB = {
@@ -94,7 +99,7 @@ OMA_decisions = {
 				add = 100
 			}
 			modifier = {
-				FROM = {
+				FROM.OWNER = {
 					OR = {
 						tag = PAL
 						tag = ISR
@@ -106,7 +111,7 @@ OMA_decisions = {
 				add = 100
 			}
 			modifier = {
-				FROM = {
+				FROM.OWNER = {
 					tag = TUR
 				}
 				has_cosmetic_tag = OMA_al_falah

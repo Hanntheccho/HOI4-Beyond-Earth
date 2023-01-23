@@ -123,108 +123,52 @@ GER_decisions = {
 			factor = 1
 		}
 	}
-	
-	GER_ukraine_refugee_plan = {
-		icon = GFX_decision_cultural
-		available = {
-			is_in_faction_with = UKR
-		}
-		visible = {
-			country_exists = UKR
-		}
-		cost = 60
-		fire_only_once = yes
-		days_remove = 100
-		remove_effect = {
-			UKR = {
-				remove_ideas = UKR_all_slavs
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	GER_ukraine_industrial_plan = {
-		icon = GFX_decision_industrial
-		available = {
-			is_in_faction_with = UKR
-		}
-		visible = {
-			country_exists = UKR
-		}
-		custom_cost_trigger = {
-			check_variable = { industrial_power > 99.9 }
-		}
-		custom_cost_text = decision_cost_100_ip
-		fire_only_once = yes
-		days_remove = 80
-		complete_effect = {
-			subtract_from_variable = {
-				industrial_power = 100
-			}
-		}
-		remove_effect = {
-			UKR = {
-				remove_ideas = UKR_country_life_support
-			}			
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	GER_ukraine_political_influencing = {
-		icon = GFX_decision_political
-		available = {
-			is_in_faction_with = UKR
-		}
-		visible = {
-			country_exists = UKR
-		}
-		cost = 100
-		fire_only_once = yes
-		days_remove = 100
-		remove_effect = {
-			UKR = {
-				remove_ideas = UKR_eurasian_dominance
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
+
+#########################################
 
 	GER_invite_green_soil_enjoyers = {
-		icon = GFX_decision_unity
+		icon = GFX_decision_integr
 		fire_only_once = no
-		custom_cost_trigger = {
-			check_variable = { diplomatic_power > 99.9 }
+		state_target = yes
+		on_map_mode = map_only
+		available = {
+			custom_trigger_tooltip = {
+				check_variable = {
+					var = diplomatic_power
+					value = 100
+					compare = greater_than_or_equals
+				}
+				tooltip = state_decisions_cost_diplomatic
+			}
 		}
-		custom_cost_text = decision_cost_100_cp
 		cancel_trigger = {
-			FROM = {
+			FROM.OWNER = {
 				OR = {
 					has_war_with = ROOT
 					ROOT = {
 						any_allied_country = {
-							has_war_with = FROM
+							has_war_with = FROM.OWNER
 						}
 					}
 					is_in_faction = yes
-				}				
+				}			
 			}
 		}
 		target_trigger = {
 			FROM = {
-				has_idea = GER_german_aligned
-				is_in_faction = no
-				NOT = {
-					OR = {
-						has_war_with = ROOT
-						ROOT = {
-							any_allied_country = {
-								has_war_with = FROM
-							}
-						}					
+				is_capital = yes
+				OWNER = {
+					has_idea = GER_german_aligned
+					is_in_faction = no
+					NOT = {
+						OR = {
+							has_war_with = ROOT
+							ROOT = {
+								any_allied_country = {
+									has_war_with = FROM.OWNER
+								}
+							}					
+						}
 					}
 				}
 			}
@@ -241,8 +185,14 @@ GER_decisions = {
 				var = global.integrinfamy_var
 				value = 1
 			}
-			add_to_faction = FROM
-			FROM = {
+			add_to_faction = FROM.OWNER
+			FROM.OWNER = {
+				if = {
+					limit = {
+						tag = UKR
+					}
+					remove_ideas = UKR_all_slavs
+				}
 				add_to_array = {
 					array = global.just_joined_integr
 					value = THIS.id
@@ -265,37 +215,48 @@ GER_decisions = {
 		}
 	}
 	GER_influence_politics = {
-		icon = GFX_decision_cultural
+		icon = GFX_decision_integr
 		fire_only_once = no
-		custom_cost_trigger = {
-			check_variable = { diplomatic_power > 99.9 }
+		state_target = yes
+		on_map_mode = map_only
+		available = {
+			custom_trigger_tooltip = {
+				check_variable = {
+					var = diplomatic_power
+					value = 100
+					compare = greater_than_or_equals
+				}
+				tooltip = state_decisions_cost_diplomatic
+			}
 		}
-		custom_cost_text = decision_cost_100_cp
 		cancel_trigger = {
-			FROM = {
+			FROM.OWNER = {
 				OR = {
 					has_war_with = ROOT
 					ROOT = {
 						any_allied_country = {
-							has_war_with = FROM
+							has_war_with = FROM.OWNER
 						}
 					}
 					is_in_faction = yes
-				}				
+				}			
 			}
 		}
 		target_trigger = {
 			FROM = {
-				has_idea = GER_eurasian_aligned
-				is_in_faction = no
-				NOT = {
-					OR = {
-						has_war_with = ROOT
-						ROOT = {
-							any_allied_country = {
-								has_war_with = FROM
-							}
-						}					
+				is_capital = yes
+				OWNER = {
+					has_idea = GER_eurasian_aligned
+					is_in_faction = no
+					NOT = {
+						OR = {
+							has_war_with = ROOT
+							ROOT = {
+								any_allied_country = {
+									has_war_with = FROM.OWNER
+								}
+							}					
+						}
 					}
 				}
 			}
@@ -307,10 +268,16 @@ GER_decisions = {
 			}
 		}
 		remove_effect = {
-			FROM = {
+			FROM.OWNER = {
 				swap_ideas = {
 					remove_idea = GER_eurasian_aligned
 					add_idea = GER_german_eurasian_aligned
+				}
+				if = {
+					limit = {
+						tag = UKR
+					}
+					remove_ideas = UKR_eurasian_dominance
 				}
 				add_popularity = {
 					ideology = harmony
@@ -323,41 +290,52 @@ GER_decisions = {
 		}
 	}
 	GER_industrial_investment = {
-		icon = GFX_decision_industrial
+		icon = GFX_decision_integr
 		fire_only_once = no
+		state_target = yes
+		on_map_mode = map_only
+		available = {
+			custom_trigger_tooltip = {
+				check_variable = {
+					var = industrial_power
+					value = 100
+					compare = greater_than_or_equals
+				}
+				tooltip = state_decisions_cost_industrial
+			}
+		}
 		cancel_trigger = {
-			FROM = {
+			FROM.OWNER = {
 				OR = {
 					has_war_with = ROOT
 					ROOT = {
 						any_allied_country = {
-							has_war_with = FROM
+							has_war_with = FROM.OWNER
 						}
 					}
 					is_in_faction = yes
-				}				
+				}			
 			}
 		}
 		target_trigger = {
 			FROM = {
-				has_idea = GER_german_eurasian_aligned
-				is_in_faction = no
-				NOT = {
-					OR = {
-						has_war_with = ROOT
-						ROOT = {
-							any_allied_country = {
-								has_war_with = FROM
-							}
-						}					
+				is_capital = yes
+				OWNER = {
+					has_idea = GER_german_eurasian_aligned
+					is_in_faction = no
+					NOT = {
+						OR = {
+							has_war_with = ROOT
+							ROOT = {
+								any_allied_country = {
+									has_war_with = FROM.OWNER
+								}
+							}					
+						}
 					}
 				}
 			}
 		}
-		custom_cost_trigger = {
-			check_variable = { industrial_power > 99.9 }
-		}
-		custom_cost_text = decision_cost_100_ip
 		days_remove = 80
 		complete_effect = {
 			subtract_from_variable = {
@@ -365,10 +343,16 @@ GER_decisions = {
 			}
 		}
 		remove_effect = {
-			FROM = {
+			FROM.OWNER = {
 				swap_ideas = {
 					remove_idea = GER_german_eurasian_aligned
 					add_idea = GER_german_aligned
+				}
+				if = {
+					limit = {
+						tag = UKR
+					}
+					remove_ideas = UKR_country_life_support
 				}
 				add_popularity = {
 					ideology = harmony
@@ -381,7 +365,7 @@ GER_decisions = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 1000
 		}
 	}
 }

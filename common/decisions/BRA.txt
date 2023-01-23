@@ -192,6 +192,8 @@ BRA_the_recovery = {
 ###
 	BRA_brasilia_destiny = {
 		icon = GFX_decision_war
+		state_target = yes
+		on_map_mode = map_only
 		available = {
 			#
 		}
@@ -202,44 +204,47 @@ BRA_the_recovery = {
 		}
 		target_trigger = {
 			FROM = {
-				OR = {
-					capital_scope = {
-						is_on_continent = south_america
+				is_capital = yes
+				OWNER = {
+					OR = {
+						capital_scope = {
+							is_on_continent = south_america
+						}
+						tag = CUB
+						tag = JAM
 					}
-					tag = CUB
-					tag = JAM
-				}
-				OR = {
-					is_neighbor_of = ROOT
-					ROOT = {
-						any_country = {
-							OR = {
-								is_puppet_of = PREV
-								is_in_faction_with = PREV
+					OR = {
+						is_neighbor_of = ROOT
+						ROOT = {
+							any_country = {
+								OR = {
+									is_puppet_of = PREV
+									is_in_faction_with = PREV
+								}
+								is_neighbor_of = FROM.OWNER
 							}
-							is_neighbor_of = FROM
 						}
 					}
-				}
-				NOT = {
-					OR = {
-						is_puppet_of = ROOT
-						has_war_with = ROOT
-						is_in_faction_with = ROOT
-					}					
+					NOT = {
+						OR = {
+							is_puppet_of = ROOT
+							has_war_with = ROOT
+							is_in_faction_with = ROOT
+						}					
+					}
 				}
 			}
 		}
 		fire_only_once = no
 		complete_effect = {
 			declare_war_on = {
-				target = FROM
+				target = FROM.OWNER
 				type = annex_puppet_wargoal
 			}
 			hidden_effect = {
 				if = {
 					limit = {
-						FROM = {
+						FROM.OWNER = {
 							tag = COL
 						}
 					}
@@ -251,11 +256,11 @@ BRA_the_recovery = {
 				}
 				if = {
 					limit = {
-						FROM = {
+						FROM.OWNER = {
 							tag = GYA
 						}
 					}
-					FROM = {
+					FROM.OWNER = {
 						every_core_state = {
 							add_core_of = BRA
 						}

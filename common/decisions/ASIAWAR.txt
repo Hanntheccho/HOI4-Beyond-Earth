@@ -27,6 +27,8 @@ asiawar_decisions = {
 	}
 	CHI_war_warlord = {
 		icon = GFX_decision_war
+		state_target = yes
+		on_map_mode = map_only
 		fire_only_once = no
 		available = {
 			#
@@ -36,31 +38,34 @@ asiawar_decisions = {
 		}
 		target_trigger = {
 			FROM = {
-				is_china_tag = yes
-				OR = {
-					is_neighbor_of = ROOT
-					ROOT = {
-						any_country = {
-							OR = {
-								is_puppet_of = PREV
-								is_in_faction_with = PREV
+				is_capital = yes
+				OWNER = {
+					is_china_tag = yes
+					OR = {
+						is_neighbor_of = ROOT
+						ROOT = {
+							any_country = {
+								OR = {
+									is_puppet_of = PREV
+									is_in_faction_with = PREV
+								}
+								is_neighbor_of = FROM.OWNER
 							}
-							is_neighbor_of = FROM
 						}
 					}
-				}
-				NOT = {
-					OR = {
-						is_puppet_of = ROOT
-						has_war_with = ROOT
-						is_in_faction_with = ROOT
-					}					
+					NOT = {
+						OR = {
+							is_puppet_of = ROOT
+							has_war_with = ROOT
+							is_in_faction_with = ROOT
+						}					
+					}
 				}
 			}
 		}
 		complete_effect = {
 			declare_war_on = {
-				target = FROM
+				target = FROM.OWNER
 				type = annex_puppet_wargoal
 			}
 		}

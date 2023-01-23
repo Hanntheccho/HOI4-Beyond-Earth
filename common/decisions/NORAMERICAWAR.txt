@@ -248,7 +248,9 @@ noramericawar_decisions = {
 	}
 ###
 	NAU_influence_districts = {
-		icon = GFX_decision_cultural
+		icon = GFX_decision_arc
+		state_target = yes
+		on_map_mode = map_only
 		available = {
 			OR = {
 				tag = PNM
@@ -268,7 +270,10 @@ noramericawar_decisions = {
 		fire_only_once = no
 		target_trigger = {
 			FROM = {
-				is_nau_tag = yes
+				is_capital = yes
+				OWNER = {
+					is_nau_tag = yes
+				}
 			}
 		}
 		complete_effect = {
@@ -277,7 +282,7 @@ noramericawar_decisions = {
 				idea = NAU_influenced_districts
 				days = 30
 			}
-			FROM = {
+			FROM.OWNER = {
 				add_timed_idea = {
 					idea = NAU_district_influenced
 					days = 30
@@ -289,7 +294,7 @@ noramericawar_decisions = {
 						tag = PNM
 					}
 				}
-				FROM = {
+				FROM.OWNER = {
 					add_to_variable = {
 						nau_legitimacy = 1
 					}
@@ -301,7 +306,7 @@ noramericawar_decisions = {
 						tag = ARC
 					}
 				}
-				FROM = {
+				FROM.OWNER = {
 					add_to_variable = {
 						arc_legitimacy = 1
 					}
@@ -369,6 +374,8 @@ noramericawar_decisions = {
 ###
 	NAU_beyond_our_destiny = {
 		icon = GFX_decision_war
+		state_target = yes
+		on_map_mode = map_only
 		available = {
 			#
 		}
@@ -377,41 +384,44 @@ noramericawar_decisions = {
 		}
 		target_trigger = {
 			FROM = {
-				capital_scope = {
-					is_on_continent = north_america
-				}
-				OR = {
-					is_neighbor_of = ROOT
-					ROOT = {
-						any_country = {
-							OR = {
-								is_puppet_of = PREV
-								is_in_faction_with = PREV
+				is_capital = yes
+				OWNER = {
+					capital_scope = {
+						is_on_continent = north_america
+					}
+					OR = {
+						is_neighbor_of = ROOT
+						ROOT = {
+							any_country = {
+								OR = {
+									is_puppet_of = PREV
+									is_in_faction_with = PREV
+								}
+								is_neighbor_of = FROM.OWNER
 							}
-							is_neighbor_of = FROM
 						}
 					}
-				}
-				NOT = {
-					OR = {
-						is_puppet_of = ROOT
-						has_war_with = ROOT
-						is_in_faction_with = ROOT
-					}						
+					NOT = {
+						OR = {
+							is_puppet_of = ROOT
+							has_war_with = ROOT
+							is_in_faction_with = ROOT
+						}						
+					}
 				}
 			}
 		}
 		fire_only_once = no
 		complete_effect = {
 			declare_war_on = {
-				target = FROM
+				target = FROM.OWNER
 				type = annex_puppet_wargoal
 			}
 		}
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				FROM = {
+				FROM.OWNER = {
 					tag = QUE
 				}
 				add = 10

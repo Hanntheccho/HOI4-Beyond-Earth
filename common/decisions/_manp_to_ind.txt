@@ -28,6 +28,7 @@ state_decisions = {
 		target_trigger = {
 			FROM = {
 				is_fully_controlled_by = ROOT
+				is_core_of = ROOT
 				free_building_slots = {
 					building = industrial_complex
 					size > 0
@@ -96,13 +97,23 @@ state_decisions = {
 				}
 				add = 10
 			}
+			modifier = {
+				check_variable = {
+					industrial_power_gain < 0
+				}
+				add = 100
+			}
 		}		
 		complete_effect = {
 			add_to_variable = {
 				industrial_power = -10
 			}
 			FROM = {
-				set_state_flag = already_doing_something_here
+				set_state_flag = {
+					flag = already_doing_something_here
+					days = 60
+					value = 1
+				}
 			}
 		}			
 		remove_effect = {
@@ -112,7 +123,6 @@ state_decisions = {
 					level = 1
 					instant_build = yes
 				}
-				clr_state_flag = already_doing_something_here
 			}
 		}
 	}
@@ -146,6 +156,7 @@ state_decisions = {
 		target_trigger = {
 			FROM = {
 				is_fully_controlled_by = ROOT
+				is_core_of = ROOT
 				free_building_slots = {
 					building = arms_factory
 					size > 0
@@ -214,13 +225,21 @@ state_decisions = {
 				}
 				add = 10
 			}
+			modifier = {
+				has_war = yes
+				add = 100
+			}
 		}		
 		complete_effect = {
 			add_to_variable = {
 				industrial_power = -10
 			}
 			FROM = {
-				set_state_flag = already_doing_something_here
+				set_state_flag = {
+					flag = already_doing_something_here
+					days = 60
+					value = 1
+				}
 			}
 		}
 		remove_effect = {
@@ -230,7 +249,6 @@ state_decisions = {
 					level = 1
 					instant_build = yes
 				}
-				clr_state_flag = already_doing_something_here
 			}
 		}
 	}
@@ -264,6 +282,7 @@ state_decisions = {
 		target_trigger = {
 			FROM = {
 				is_fully_controlled_by = ROOT
+				is_core_of = ROOT
 				free_building_slots = {
 					building = spaceship_factory
 					size > 0
@@ -332,13 +351,27 @@ state_decisions = {
 				}
 				add = 100
 			}
+			modifier = {
+				has_war = yes
+				add = -100
+			}
+			modifier = {
+				check_variable = {
+					industrial_power_gain > 0
+				}
+				add = 10
+			}
 		}		
 		complete_effect = {
 			add_to_variable = {
 				industrial_power = -20
 			}
 			FROM = {
-				set_state_flag = already_doing_something_here
+				set_state_flag = {
+					flag = already_doing_something_here
+					days = 60
+					value = 1
+				}
 			}
 		}
 		remove_effect = {
@@ -348,7 +381,6 @@ state_decisions = {
 					level = 1
 					instant_build = yes
 				}
-				clr_state_flag = already_doing_something_here
 			}
 		}
 	}
