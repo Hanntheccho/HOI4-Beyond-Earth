@@ -87,18 +87,27 @@ scotland_formable = {
 			factor = 1000
 		}
 	}
+
 	SCO_integration_phase_1 = {
-		icon = GFX_decision_cultural
+		icon = GFX_decision_nsa
+		state_target = yes
+		on_map_mode = map_only
 		fire_only_once = no
-		custom_cost_trigger = {
-			check_variable = { diplomatic_power > 19.9 }
+		available = {
+			custom_trigger_tooltip = {
+				check_variable = {
+					var = diplomatic_power
+					value = 100
+					compare = greater_than_or_equals
+				}
+				tooltip = state_decisions_cost_diplomatic
+			}
 		}
-		custom_cost_text = decision_cost_20_cp
 		available = {
 			is_faction_leader = yes
 		}
 		cancel_trigger = {
-			FROM = {
+			FROM.OWNER = {
 				NOT = {
 					is_in_faction_with = SCO
 				}
@@ -106,27 +115,33 @@ scotland_formable = {
 		}
 		target_trigger = {
 			FROM = {
-				is_in_faction_with = SCO
-				NOT = {
-					has_idea = SCO_nsa_aligned
+				is_capital = yes
+				OWNER = {
+					NOT = {
+						tag = SCO
+					}
+					is_in_faction_with = SCO
+					NOT = {
+						has_idea = SCO_nsa_aligned
+					}
+					is_nsa_tag = yes
 				}
-				is_nsa_tag = yes
 			}
 		}
 		days_remove = 100
 		complete_effect = {
 			subtract_from_variable = {
-				diplomatic_power = 20
+				diplomatic_power = 100
 			}
 		}
 		remove_effect = {
 			every_country = {
 				limit = {
-					is_puppet_of = FROM
+					is_puppet_of = FROM.OWNER
 				}
 				add_ideas = SCO_nsa_aligned
 			}
-			FROM = {
+			FROM.OWNER = {
 				add_ideas = SCO_nsa_aligned
 			}			
 		}
@@ -135,20 +150,25 @@ scotland_formable = {
 		}
 	}
 	SCO_integration_phase_2 = {
-		icon = GFX_decision_unity
+		icon = GFX_decision_nsa
+		state_target = yes
+		on_map_mode = map_only
 		fire_only_once = no
 		available = {			
 			is_faction_leader = yes
 		}
-		visible = {
-			#
+		available = {
+			custom_trigger_tooltip = {
+				check_variable = {
+					var = diplomatic_power
+					value = 100
+					compare = greater_than_or_equals
+				}
+				tooltip = state_decisions_cost_diplomatic
+			}
 		}
-		custom_cost_trigger = {
-			check_variable = { diplomatic_power > 199.9 }
-		}
-		custom_cost_text = decision_cost_200_cp
 		cancel_trigger = {
-			FROM = {
+			FROM.OWNER = {
 				NOT = {
 					OR = {
 						all_core_state = {
@@ -161,15 +181,18 @@ scotland_formable = {
 		}
 		target_trigger = {
 			FROM = {
-				has_idea = SCO_nsa_aligned
-				is_in_faction_with = SCO
-				is_nsa_tag = yes
+				is_capital = yes
+				OWNER = {
+					has_idea = SCO_nsa_aligned
+					is_in_faction_with = SCO
+					is_nsa_tag = yes
+				}
 			}
 		}
 		days_remove = 120
 		complete_effect = {
 			subtract_from_variable = {
-				diplomatic_power = 200
+				diplomatic_power = 100
 			}
 		}
 		remove_effect = {
@@ -178,7 +201,7 @@ scotland_formable = {
 				var = global.nsainfamy_var
 				value = 1
 			}
-			FROM = {
+			FROM.OWNER = {
 				every_subject_country = {
 					every_core_state = {
 						add_core_of = SCO
@@ -198,6 +221,12 @@ scotland_formable = {
 					value = THIS.id
 					index = 0
 				}
+				ROOT = {
+					annex_country = {
+						target = PREV
+						#transfer_troops = yes
+					}
+				}
 			}
 			hidden_effect = {
 				every_country = {
@@ -208,10 +237,6 @@ scotland_formable = {
 					}
 					country_event = scotland_event.10
 				}
-			}
-			annex_country = {
-				target = FROM
-				#transfer_troops = yes
 			}
 			SCO = {
 				set_cosmetic_tag = SCO_NSA

@@ -1,6 +1,6 @@
 INDIA_civil_war = {
 	INDIA_war_warlords = {
-		icon = GFX_decision_war
+		icon = GFX_decision_kavitha
 		state_target = yes
 		on_map_mode = map_only
 		available = {
@@ -18,6 +18,19 @@ INDIA_civil_war = {
 						tag = SRL
 						tag = BHR
 						tag = KAV
+						if = {
+							limit = {
+								ROOT = {
+									has_cosmetic_tag = BHR_kavithan_protectorate
+								}
+							}
+							OR = {
+								tag = PAK
+								tag = BLC
+								tag = AFG
+								tag = HAZ
+							}							
+						}
 					}
 					OR = {
 						is_neighbor_of = ROOT

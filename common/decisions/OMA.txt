@@ -1,6 +1,6 @@
 OMA_decisions = {
 	OMA_al_falah_decisions = {
-		icon = GFX_decision_war
+		icon = GFX_decision_falah
 		state_target = yes
 		on_map_mode = map_only
 		available = {
@@ -121,6 +121,24 @@ OMA_decisions = {
 					value = division_limit
 					compare = greater_than_or_equals
 				}
+				add = 100
+			}
+			modifier = {
+				FROM.OWNER = {
+					tag = EGY
+				}
+				TUR = {
+					is_puppet_of = ROOT
+				}				
+				add = 100
+			}
+			modifier = {
+				FROM.OWNER = {
+					tag = PER
+				}
+				EGY = {
+					is_puppet_of = ROOT
+				}				
 				add = 100
 			}
 		}
