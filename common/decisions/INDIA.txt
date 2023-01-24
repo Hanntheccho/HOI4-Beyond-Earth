@@ -13,25 +13,27 @@ INDIA_civil_war = {
 			FROM = {
 				is_capital = yes
 				OWNER = {
-					OR = {
-						is_india_tag = yes 
-						tag = SRL
-						tag = BHR
-						tag = KAV
-						if = {
-							limit = {
-								ROOT = {
-									has_cosmetic_tag = BHR_kavithan_protectorate
-								}
+					if = {
+						limit = {
+							ROOT = {
+								has_cosmetic_tag = INDIA_kavithan_protectorate
 							}
-							OR = {
-								tag = PAK
-								tag = BLC
-								tag = AFG
-								tag = HAZ
-							}							
 						}
+						OR = {
+							tag = PAK
+							tag = BLC
+							tag = AFG
+							tag = HAZ
+						}							
 					}
+					else = {
+						OR = {
+							is_india_tag = yes 
+							tag = SRL
+							tag = BHR
+							tag = KAV
+						}
+					}					
 					OR = {
 						is_neighbor_of = ROOT
 						ROOT = {

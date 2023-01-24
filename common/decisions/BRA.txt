@@ -65,6 +65,8 @@ BRA_the_inevitable = {
 BRA_the_recovery = {
 	BRA_recovering_cores = {
 		icon = GFX_decision_brasilia
+		state_target = yes
+		on_map_mode = map_only
 		available = {
 			#
 		}
@@ -74,13 +76,16 @@ BRA_the_recovery = {
 		}
 		target_trigger = {
 			FROM = {
-				NOT = {
-					tag = PRU
+				is_capital = yes
+				OWNER = {
+					NOT = {
+						tag = PRU
+					}
+					any_owned_state = {
+						is_core_of = ROOT
+					}
+					is_neighbor_of = ROOT
 				}
-				any_owned_state = {
-					is_core_of = ROOT
-				}
-				is_neighbor_of = ROOT
 			}
 		}
 		fire_only_once = no
@@ -97,7 +102,7 @@ BRA_the_recovery = {
 		remove_effect = {
 			if = {
 				limit = {
-					FROM = {
+					FROM.OWNER = {
 						tag = URG
 					}
 				}
@@ -108,7 +113,7 @@ BRA_the_recovery = {
 				}
 			}
 			declare_war_on = {
-				target = FROM
+				target = FROM.OWNER
 				type = annex_puppet_wargoal
 			}
 		}
