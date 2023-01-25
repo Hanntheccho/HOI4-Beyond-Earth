@@ -74,6 +74,14 @@ BRA_the_recovery = {
 			is_puppet = no
 			is_faction_leader = yes
 		}
+		cancel_trigger = {
+			FROM = {
+				OR = {
+					is_puppet_of = ROOT
+					exists = no
+				}
+			}
+		}
 		target_trigger = {
 			FROM = {
 				is_capital = yes
@@ -121,9 +129,7 @@ BRA_the_recovery = {
 			factor = 0
 			modifier = {
 				check_variable = {
-					var = num_divisions
-					value = division_limit
-					compare = greater_than_or_equals
+					FROM.num_divisions < ROOT.num_divisions
 				}
 				has_war = no
 				add = 100
@@ -132,6 +138,63 @@ BRA_the_recovery = {
 				has_country_flag = going_to_war
 				add = -1000
 			}
+		}
+	}
+	BRA_invite_commands = {
+		icon = GFX_decision_brasilia2
+		state_target = yes
+		on_map_mode = map_only
+		available = {
+			#
+		}
+		visible = {
+			is_puppet = no
+			is_faction_leader = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				check_variable = {
+					var = diplomatic_power
+					value = 20
+					compare = greater_than_or_equals
+				}
+				tooltip = state_decisions_cost_diplomatic_20
+			}
+		}
+		cancel_trigger = {
+			FROM = {
+				OR = {
+					is_puppet_of = ROOT
+					exists = no
+				}
+			}
+		}
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				OWNER = {
+					OR = {
+						tag = NCB
+						tag = ECB
+						tag = SCB
+					}
+				}
+			}
+		}
+		fire_only_once = no
+		days_remove = 30
+		complete_effect = {
+			subtract_from_variable = {
+				diplomatic_power = 20
+			}
+		}
+		remove_effect = {
+			FROM.OWNER = {
+				country_event = brazil.34
+			}
+		}
+		ai_will_do = {
+			factor = 10000
 		}
 	}
 ###

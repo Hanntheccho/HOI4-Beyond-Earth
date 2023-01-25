@@ -94,17 +94,15 @@ scotland_formable = {
 		on_map_mode = map_only
 		fire_only_once = no
 		available = {
+			is_faction_leader = yes
 			custom_trigger_tooltip = {
 				check_variable = {
 					var = diplomatic_power
 					value = 100
 					compare = greater_than_or_equals
 				}
-				tooltip = state_decisions_cost_diplomatic
+				tooltip = state_decisions_cost_diplomatic_100
 			}
-		}
-		available = {
-			is_faction_leader = yes
 		}
 		cancel_trigger = {
 			FROM.OWNER = {
@@ -117,7 +115,6 @@ scotland_formable = {
 			FROM = {
 				is_capital = yes
 				OWNER = {
-					is_puppet = no
 					NOT = {
 						tag = SCO
 					}
@@ -136,12 +133,6 @@ scotland_formable = {
 			}
 		}
 		remove_effect = {
-			every_country = {
-				limit = {
-					is_puppet_of = FROM.OWNER
-				}
-				add_ideas = SCO_nsa_aligned
-			}
 			FROM.OWNER = {
 				add_ideas = SCO_nsa_aligned
 			}			
@@ -155,17 +146,15 @@ scotland_formable = {
 		state_target = yes
 		on_map_mode = map_only
 		fire_only_once = no
-		available = {			
-			is_faction_leader = yes
-		}
 		available = {
+			is_faction_leader = yes
 			custom_trigger_tooltip = {
 				check_variable = {
 					var = diplomatic_power
 					value = 100
 					compare = greater_than_or_equals
 				}
-				tooltip = state_decisions_cost_diplomatic
+				tooltip = state_decisions_cost_diplomatic_100
 			}
 		}
 		cancel_trigger = {
@@ -184,8 +173,14 @@ scotland_formable = {
 			FROM = {
 				is_capital = yes
 				OWNER = {
-					is_puppet = no
+					OR = {
+						is_puppet_of = ROOT
+						is_puppet = no
+					}
 					has_idea = SCO_nsa_aligned
+					NOT = {
+						tag = SCO
+					}
 					is_in_faction_with = SCO
 					is_nsa_tag = yes
 				}
@@ -205,14 +200,8 @@ scotland_formable = {
 			}
 			FROM.OWNER = {
 				every_subject_country = {
-					every_core_state = {
-						add_core_of = SCO
-					}
 					SCO = {
-						annex_country = {
-							target = PREV
-							#transfer_troops = yes
-						}
+						puppet = PREV
 					}
 				}
 				every_core_state = {
