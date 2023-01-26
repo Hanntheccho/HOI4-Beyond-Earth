@@ -11,14 +11,14 @@ on_actions = {
                         }
                     }
                 }
-                every_country = {
+                every_possible_country = {
                     limit = {
                         has_country_flag = international_member
                     }
                     add_to_variable = { global.spaceship_contribution_variable = THIS.spaceship_contribution_variable }
                 }
-                divide_variable = { global.spaceship_contribution_variable = 10000 }
-                every_country = {
+                divide_variable = { global.spaceship_contribution_variable = 1000 }
+                every_possible_country = {
                     subtract_from_variable = { spaceship_completion_time = global.spaceship_contribution_variable }   
                 }
             }
@@ -38,33 +38,28 @@ on_actions = {
                 }
                 set_country_flag = international_member
             }
-            every_country = {
+            every_possible_country = {
+                add_dynamic_modifier = {
+                    modifier = space_research
+                }
                 set_variable = { spaceship_completion_time = 365 } #180
             }
-            every_country = {
+            every_possible_country = {
                 limit = {
                     has_country_flag = international_member
                 }
                 set_variable = { spaceship_contribution_variable = 0 }
                 set_variable = { spaceship_contribution_modifier = 1 }
-                set_variable = { spaceship_contribution_civilian = num_of_civilian_factories }
-                set_variable = { spaceship_contribution_military = num_of_military_factories }
-
-                #SPACESHIP FACTORY
                 set_variable = { spaceship_contribution_spaceship_factory = 0 }
                 every_controlled_state = {
                     add_to_variable = { PREV.spaceship_contribution_spaceship_factory = building_level@spaceship_factory }
                 }
-                multiply_variable = { spaceship_contribution_spaceship_factory = 20 }
                 add_to_variable = { spaceship_contribution_variable = spaceship_contribution_spaceship_factory }
-                ###
-
-                multiply_variable = { spaceship_contribution_civilian = 2 }
-                multiply_variable = { spaceship_contribution_military = 1 }
-                add_to_variable = { spaceship_contribution_variable = spaceship_contribution_civilian }
-                add_to_variable = { spaceship_contribution_variable = spaceship_contribution_military }
-                add_to_variable = { spaceship_contribution_variable = spaceship_contribution_dockyard }
                 multiply_variable = { spaceship_contribution_variable = spaceship_contribution_modifier }
+                set_variable = { research_boost_contribution = spaceship_contribution_variable }
+                divide_variable = {
+                    research_boost_contribution = 100
+                }
             }
             set_global_flag = module_1_under_construction_flag
         }
@@ -108,7 +103,7 @@ on_actions = {
                             value = THIS.id
                             index = 0
                         }
-                        every_country = {
+                        every_possible_country = {
                             set_variable = { number_one_contribution_variable = ROOT.spaceship_contribution_variable }
                         }
                     }
@@ -431,7 +426,7 @@ on_actions = {
                         #
                     }
                     #country_event = { id = international_event.21 }
-                    every_country = {
+                    every_possible_country = {
                         set_variable = { spaceship_completion_time = 730 }
                     }
                 }
@@ -454,30 +449,22 @@ on_actions = {
                         }
                     }
                 }
-                every_country = {
+                every_possible_country = {
                     limit = {
                         has_country_flag = international_member
                     }
                     set_variable = { spaceship_contribution_variable = 0 }
-                    set_variable = { spaceship_contribution_civilian = num_of_civilian_factories }
-                    set_variable = { spaceship_contribution_military = num_of_military_factories }
-    
-                    #SPACESHIP BUILDING
                     set_variable = { spaceship_contribution_spaceship_factory = 0 }
                     every_controlled_state = {
                         add_to_variable = { PREV.spaceship_contribution_spaceship_factory = building_level@spaceship_factory }
                     }
-                    multiply_variable = { spaceship_contribution_spaceship_factory = 20 }
                     add_to_variable = { spaceship_contribution_variable = spaceship_contribution_spaceship_factory }
-                    ###
-                    
-                    multiply_variable = { spaceship_contribution_civilian = 2 }
-                    multiply_variable = { spaceship_contribution_military = 1 }
-                    add_to_variable = { spaceship_contribution_variable = spaceship_contribution_civilian }
-                    add_to_variable = { spaceship_contribution_variable = spaceship_contribution_military }
-                    add_to_variable = { spaceship_contribution_variable = spaceship_contribution_dockyard }
                     set_variable = { spaceship_contribution_modifier = 1 }
                     multiply_variable = { spaceship_contribution_variable = spaceship_contribution_modifier }
+                    set_variable = { research_boost_contribution = spaceship_contribution_variable }
+                    divide_variable = {
+                        research_boost_contribution = 100
+                    }
                 }
             }
             else = {
