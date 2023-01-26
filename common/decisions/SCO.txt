@@ -104,13 +104,6 @@ scotland_formable = {
 				tooltip = state_decisions_cost_diplomatic_100
 			}
 		}
-		cancel_trigger = {
-			FROM.OWNER = {
-				NOT = {
-					is_in_faction_with = SCO
-				}
-			}
-		}
 		target_trigger = {
 			FROM = {
 				is_capital = yes
@@ -157,22 +150,13 @@ scotland_formable = {
 				tooltip = state_decisions_cost_diplomatic_100
 			}
 		}
-		cancel_trigger = {
-			FROM.OWNER = {
-				NOT = {
-					OR = {
-						all_core_state = {
-							is_controlled_by = PREV
-						}
-						is_in_faction_with = SCO
-					}					
-				}
-			}
-		}
 		target_trigger = {
 			FROM = {
 				is_capital = yes
 				OWNER = {
+					all_core_state = {
+						is_controlled_by = PREV
+					}
 					OR = {
 						is_puppet_of = ROOT
 						is_puppet = no
