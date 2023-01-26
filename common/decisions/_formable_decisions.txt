@@ -354,7 +354,7 @@ formable_decisions = {
 		}
 		remove_effect = {
 			clr_country_flag = doing_a_formable
-			every_country = {
+			every_possible_country = {
 				limit = {
 					OR = {
 						is_india_tag = yes
@@ -368,18 +368,13 @@ formable_decisions = {
 					transfer_state_to = BHR
 				}
 			}
-			set_cosmetic_tag = INDIA_kavithan_protectorate
-			set_global_flag = india_was_reunited_flag
-			hidden_effect = {
-				SRL = {
-					every_core_state = {
-						add_core_of = BHR
-					}
-				}
-				annex_country = {
-					target = SRL
+			NEP = {
+				every_core_state = {
+					add_core_of = ROOT
 				}
 			}
+			set_cosmetic_tag = INDIA_kavithan_protectorate
+			set_global_flag = india_was_reunited_flag
 		}
 		
 		ai_will_do = {
@@ -404,7 +399,7 @@ formable_decisions = {
 			check_variable = { diplomatic_power_gain > 0.99 }
 		}
 		custom_cost_text = decision_cost_1_daily_cp
-		days_remove = 25	
+		days_remove = 190	
 		fire_only_once = yes
 		complete_effect = {
 			hidden_effect = {
@@ -414,10 +409,24 @@ formable_decisions = {
 				}
 			}
 		}
+		war_with_on_remove = JAP
 		remove_effect = {
 			clr_country_flag = doing_a_formable
 			set_cosmetic_tag = CHI_SCO_united
 			set_faction_name = "Pan-Asian Cooperative"
+			add_to_faction = MON
+			add_to_faction = NEP
+			add_to_faction = ASM
+			add_to_faction = BAN
+			add_to_faction = BRM
+			add_to_faction = VIN
+			add_to_faction = LAO
+			add_to_faction = SIA
+			add_to_faction = CAM
+			declare_war_on = {
+				target = JAP
+				type = annex_puppet_wargoal
+			}
 		}
 		
 		ai_will_do = {

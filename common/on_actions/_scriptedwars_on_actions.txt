@@ -119,10 +119,7 @@ on_actions = {
 							}
 							if = { #you just transfered states right? it must exist now... then puppet it
 								limit = {
-									exists = yes
-									NOT = { #it is not yet in faction with us
-										is_in_faction_with = PREV
-									}									
+									exists = yes								
 								}
 								random_country = { #again, if you are puppet, your overlord does puppet
 									limit = {
@@ -191,6 +188,18 @@ on_actions = {
 								add_to_faction = ROOT
 							}					
 						}
+						if = {
+							limit = {
+								is_puppet = yes
+							}
+							FROM.OVERLORD = {
+								puppet = ROOT
+							}
+						}
+						else = {
+							puppet = ROOT
+						}
+						puppet_government_too = yes
 					}
 				}
 			}			
