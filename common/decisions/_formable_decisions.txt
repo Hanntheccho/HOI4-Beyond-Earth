@@ -156,7 +156,7 @@ formable_decisions = {
 			}			
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 	}
 	###
@@ -266,24 +266,6 @@ formable_decisions = {
 		}
 		ai_will_do = {
 			factor = 0
-			modifier = {
-				has_country_leader = {
-					character = FRA_al_hakim
-					ruling_only = yes
-				}
-				add = 100
-			}
-			modifier = {
-				has_country_leader = {
-					character = FRA_elodie_batteux
-					ruling_only = yes
-				}
-				PAD = {
-					has_war = no
-					has_cosmetic_tag = PAD_italy
-				}
-				add = 100
-			}
 		}
 	}
 	FRA_form_sos_government = {
@@ -415,7 +397,6 @@ formable_decisions = {
 			set_cosmetic_tag = CHI_SCO_united
 			set_faction_name = "Pan-Asian Cooperative"
 			add_to_faction = MON
-			add_to_faction = NEP
 			add_to_faction = ASM
 			add_to_faction = BAN
 			add_to_faction = BRM
@@ -426,6 +407,14 @@ formable_decisions = {
 			declare_war_on = {
 				target = JAP
 				type = annex_puppet_wargoal
+			}
+			if = {
+				limit = {
+					NEP = {
+						has_war = no
+					}
+				}
+				add_to_faction = NEP
 			}
 		}
 		
