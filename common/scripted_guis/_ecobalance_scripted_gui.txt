@@ -184,7 +184,15 @@ scripted_gui = {
                         is_owned_by = ROOT
                         OWNER = { is_ally_with = ROOT }
                     }
+                    NOT = {
+                        has_dynamic_modifier = {
+                            modifier = no_devastation
+                        }
+                    }
                     OR = {
+                        has_dynamic_modifier = {
+                            modifier = counter_devastation
+                        }
                         has_dynamic_modifier = {
                             modifier = minor_devastation
                         }
@@ -219,7 +227,15 @@ scripted_gui = {
                         is_owned_by = ROOT
                         OWNER = { is_ally_with = ROOT }
                     }
+                    NOT = {
+                        has_dynamic_modifier = {
+                            modifier = no_devastation
+                        }
+                    }
                     OR = {
+                        has_dynamic_modifier = {
+                            modifier = counter_devastation
+                        }
                         has_dynamic_modifier = {
                             modifier = minor_devastation
                         }
@@ -265,6 +281,11 @@ scripted_gui = {
                         OWNER = { is_ally_with = ROOT }
                     }
                     NOT = {
+                        has_dynamic_modifier = {
+                            modifier = counter_devastation
+                        }
+                    }
+                    NOT = {
                         has_state_flag = devastation_reduction_timeout_flag
                     }
                 }
@@ -281,6 +302,11 @@ scripted_gui = {
                     OR = {
                         is_owned_by = ROOT
                         OWNER = { is_ally_with = ROOT }
+                    }
+                    NOT = {
+                        has_dynamic_modifier = {
+                            modifier = counter_devastation
+                        }
                     }
                     NOT = {
                         has_state_flag = devastation_reduction_timeout_flag
