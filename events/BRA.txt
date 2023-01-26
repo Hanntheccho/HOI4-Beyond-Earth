@@ -537,6 +537,19 @@ country_event = { #invite command
 		name = brazil.34.a
 		BRA = {
 			country_event = brazil.35
+			ROOT = {
+				every_enemy_country = {
+					PREV.PREV = {
+						declare_war_on = {
+							target = PREV
+							type = annex_puppet_wargoal
+						}
+					}
+				}
+			}
+			annex_country = {
+				target = ROOT
+			}
 		}
 		ai_chance = {
 			factor = 1
