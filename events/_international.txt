@@ -486,7 +486,7 @@ news_event = {
 						modifier = engine_location_modifier
 					}
 				}
-				#add_to_variable = { spaceship_completion_time = 365 }
+				#add_to_variable = { global.spaceship_completion_time = 365 }
 				set_country_flag = engine_uplink_flag
 				set_country_flag = spaceship_completed_flag
 				add_to_array = { global.module_five_builder_array = THIS.id }
@@ -552,30 +552,86 @@ news_event = {
 	}
 }
 
-	###GOOD ENDING
-	news_event = {
-		id = international_news_event.8
-		title = international_news_event.8.t
-		desc = international_news_event.8.d
-		picture = GFX_international_news_event.8
+###GOOD ENDING
+country_event = { #ask owners if they want to internationalize, if all agree then international_news_event.8
+	id = international_news_event.13
+	title = international_news_event.13.t
+	desc = international_news_event.13.d
+	#picture = GFX_international_news_event.13
+    
+    is_triggered_only = yes
 
-	    is_triggered_only = yes
-
-	    major = yes
-
-		immediate = {
-			custom_effect_tooltip = international_news_event_8_tt
-			hidden_effect = {
-				set_global_flag = unify_spaceship_button_disabled
-				set_global_flag = spaceship_already_internationalized
+	option = {
+		name = international_news_event.13.a #do internationalize
+		custom_effect_tooltip = international_news_event.13.a_tt
+		hidden_effect = {
+			set_country_flag = spaceship_internationalized_flag
+		}		
+		ai_chance = {
+			factor = 1000
+			modifier = {
+				OR = {
+					has_idea = military_government
+					has_idea = anarchy_style
+					has_idea = closed_economy
+					if = {
+						limit = {
+							has_idea = synthetic_democracy
+						}
+						has_war = yes
+					}
+				}
+				add = -1000
 			}
 		}
+	}
 
-		option = {
-			name = international_news_event.8.a
+	option = {
+		name = international_news_event.13.b #do NOT internationalize
+		custom_effect_tooltip = international_news_event.13.b_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = final_war_flag
+					}
+				}
+				set_global_flag = final_war_flag
+				news_event = {
+					id = international_news_event.14
+					days = 20
+				}
+			}
+			set_country_flag = not_spaceship_internationalized_flag
+		}		
+		ai_chance = {
+			factor = 10
 		}
 	}
-	###
+}
+news_event = {
+	id = international_news_event.8
+	title = international_news_event.8.t
+	desc = international_news_event.8.d
+	picture = GFX_international_news_event.8
+
+    is_triggered_only = yes
+
+    major = yes
+
+	immediate = {
+		custom_effect_tooltip = international_news_event_8_tt
+		hidden_effect = {
+			set_global_flag = unify_spaceship_button_disabled
+			set_global_flag = spaceship_already_internationalized
+		}
+	}
+
+	option = {
+		name = international_news_event.8.a
+	}
+}
+###
 
 news_event = {
 	id = international_news_event.9
@@ -596,7 +652,7 @@ news_event = {
 
 	option = {
 		name = international_news_event.9.a
-		#set_global_flag = unify_spaceship_button_disabled
+		set_global_flag = spaceship_launched_already
 	}
 }
 news_event = {
@@ -638,11 +694,16 @@ news_event = {
     major = yes
 
 	immediate = {
-		hidden_effect = {
-			set_global_flag = final_war_flag
-		}
 		custom_effect_tooltip = the_final_war_event_tooltip
+		ROOT = {
+			set_country_flag = did_launch_the_iss
+		}
 		every_country = {
+			limit = {
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
 			declare_war_on = {
 				target = ROOT
 				type = annex_puppet_wargoal
@@ -674,5 +735,20 @@ news_event = { #ISS destroyed
 
 	option = {
 		name = international_news_event.12.a
+	}
+}
+
+news_event = { #ISS not internationalized
+	id = international_news_event.14
+	title = international_news_event.14.t
+	desc = international_news_event.14.d
+	picture = GFX_international_news_event.14
+    
+    is_triggered_only = yes
+
+    major = yes
+
+	option = {
+		name = international_news_event.14.a
 	}
 }

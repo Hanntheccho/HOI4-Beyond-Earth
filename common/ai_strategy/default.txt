@@ -42,28 +42,89 @@ default_unit_production = {
 		always = yes
 	}
 
+#	ai_strategy = {
+#		type = equipment_production_factor
+#		id = infantry
+#		value = 50
+#	}
+#	ai_strategy = {
+#		type = equipment_production_factor
+#		id = armor
+#		value = 30
+#	}
+#	ai_strategy = {
+#		type = equipment_production_factor
+#		id = artillery
+#		value = 30
+#	}
+
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
 		value = 50
 	}
-
 	ai_strategy = {
 		type = role_ratio
 		id = mobile
 		value = 10
 	}
-
 	ai_strategy = {
 		type = role_ratio
 		id = armor
 		value = 20
 	}
-
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
 		value = 30
+	}	
+}
+
+extra_air_production = {
+	allowed = {
+		always = yes
+	}
+	enable = {
+		is_major = yes
+		check_variable = {
+			num_deployed_planes < 1000
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = air_factory_balance
+		value = 100
+	}		
+}
+
+default_air_production = {
+	allowed = {
+		always = yes
+	}
+	enable = {
+		always = yes
+	}
+
+#	ai_strategy = {
+#		type = air_factory_balance
+#		value = 
+#	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 30
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = 10
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = 5
 	}
 
 	ai_strategy = {
@@ -71,13 +132,11 @@ default_unit_production = {
 		id = fighter
 		value = 30
 	}
-
 	ai_strategy = {
 		type = unit_ratio
 		id = cas
 		value = 10
 	}
-
 	ai_strategy = {
 		type = unit_ratio
 		id = tactical_bomber
