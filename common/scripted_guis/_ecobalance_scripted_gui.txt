@@ -1,37 +1,4 @@
 scripted_gui = {
-    auto_ecobalance_window_gui = {
-		context_type = player_context
-		parent_window_name = "decision_grid_container"
-		
-		window_name = "auto_ecobalance_window"
-
-        visible = {
-            always = yes
-        }
-
-        ai_enabled = {
-            always = no
-        }
-
-        effects = {
-            auto_ecobalance_button_click = {
-				if = {
-					limit = {
-						has_country_flag = auto_ecobalance_states
-					}
-					clr_country_flag = auto_ecobalance_states
-				}
-				else = {
-					set_country_flag = auto_ecobalance_states
-				}
-            }
-		}
-
-		triggers = {
-            #
-        }
-    } 
-###
 	devastation_gui = {
 		context_type = selected_state_context
 		parent_window_token = selected_state_view
@@ -43,6 +10,19 @@ scripted_gui = {
 		}
 		
 		effects = {
+            auto_ecobalance_button_click = {
+                ROOT = {
+                    if = {
+                        limit = {
+                            has_country_flag = auto_ecobalance_states
+                        }
+                        clr_country_flag = auto_ecobalance_states
+                    }
+                    else = {
+                        set_country_flag = auto_ecobalance_states
+                    }
+                }
+            }
 			reduce_devastation_button_click = {
                 THIS = {
                     decrease_devastation = yes

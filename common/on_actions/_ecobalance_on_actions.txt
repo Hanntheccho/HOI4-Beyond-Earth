@@ -624,31 +624,60 @@ on_actions = {
 					check_variable = {
 						industrial_power > 200
 					}
-					NOT = {
-						has_country_flag = has_body_tier3
-					}
 				}
 				if = {
 					limit = {
 						has_country_flag = has_mind_tier3
 					}
-					subtract_from_variable = { industrial_power = 15 }					
+					subtract_from_variable = { industrial_power = 15 }	
+					random_owned_state = {
+						limit = {
+							NOT = {
+								has_state_flag = devastation_reduction_timeout_flag
+							}
+						}
+						decrease_devastation = yes
+						set_state_flag = {
+							flag = devastation_reduction_timeout_flag
+							value = 1
+							days = 60
+						}
+					}				
+				}
+				else_if = {
+					limit = {
+						has_country_flag = has_body_tier3
+					}
+					subtract_from_variable = { industrial_power = 40 }	
+					random_owned_state = {
+						limit = {
+							NOT = {
+								has_state_flag = devastation_reduction_timeout_flag
+							}
+						}
+						engineered_devastation = yes
+						set_state_flag = {
+							flag = devastation_reduction_timeout_flag
+							value = 1
+							days = 60
+						}
+					}				
 				}
 				else = {
 					subtract_from_variable = { industrial_power = 25 }
-				}
-				random_owned_state = {
-					limit = {
-						NOT = {
-							has_state_flag = devastation_reduction_timeout_flag
+					random_owned_state = {
+						limit = {
+							NOT = {
+								has_state_flag = devastation_reduction_timeout_flag
+							}
+						}
+						decrease_devastation = yes
+						set_state_flag = {
+							flag = devastation_reduction_timeout_flag
+							value = 1
+							days = 60
 						}
 					}
-					decrease_devastation = yes
-                    set_state_flag = {
-                        flag = devastation_reduction_timeout_flag
-                        value = 1
-                        days = 60
-                    }
 				}
 			}
 		}

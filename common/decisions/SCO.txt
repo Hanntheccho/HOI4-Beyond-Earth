@@ -215,7 +215,18 @@ scotland_formable = {
 				}
 			}
 			SCO = {
-				set_cosmetic_tag = SCO_NSA
+				if = {
+					limit = {
+						NOT = {
+							has_cosmetic_tag = SCO_NSA
+						}
+						NOT = {
+							has_cosmetic_tag = SCO_EU
+						}
+					}
+					set_cosmetic_tag = SCO_NSA
+					add_state_core = 326
+				}				
 			}
 		}
 		ai_will_do = {
