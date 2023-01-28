@@ -64,8 +64,18 @@ noramericawar_decisions = {
 			}
 			ONU = {
 				transfer_state = 98
-				inherit_technology = TRE
 				load_oob = ONU_OOB
+				TRE = {
+					transfer_units_fraction= {
+						target = PREV
+						size = 0.5
+						stockpile_ratio = 0.5
+						army_ratio = 0.0
+						air_ratio = 0.0
+					}
+				}
+				create_faction = "United Nations"
+				change_tag_from = TRE
 				declare_war_on = {
 					target = TRE
 					type = annex_puppet_wargoal
@@ -99,8 +109,16 @@ noramericawar_decisions = {
 			}
 			CAL = {
 				transfer_state = 16
-				inherit_technology = ONE
 				load_oob = CAL_OOB
+				ONE = {
+					transfer_units_fraction= {
+						target = PREV
+						size = 0.5
+						stockpile_ratio = 0.5
+						army_ratio = 0.0
+						air_ratio = 0.0
+					}
+				}
 				declare_war_on = {
 					target = ONE
 					type = annex_puppet_wargoal
@@ -342,7 +360,6 @@ noramericawar_decisions = {
 					transfer_state_to = PNM
 				}
 			}
-			inherit_technology = ARC
 		}
 		ai_will_do = {
 			factor = 1000
@@ -368,7 +385,6 @@ noramericawar_decisions = {
 					transfer_state_to = ARC
 				}
 			}
-			inherit_technology = PNM
 		}
 		ai_will_do = {
 			factor = 1000

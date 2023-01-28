@@ -11,8 +11,8 @@
 	}
 
 	continuous_focus_position = { 
-		x = 525
-		y = 2725
+		x = 0
+		y = 0
 	}
 
 	focus = {
@@ -27,8 +27,44 @@
 			factor = 1
 		}
 
+		available = {
+			NOT = {
+				any_country = {
+					OR = {
+						is_nau_tag = yes
+						tag = ARC
+						tag = PNM
+					}
+					NOT = {
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
+
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					OR = {
+						is_nau_tag = yes
+						tag = ARC
+						tag = PNM
+						tag = USA
+						tag = QUE
+					}
+				}
+				every_core_state = {
+					add_core_of = ROOT
+				}
+				every_owned_state = {
+					transfer_state_to = ROOT
+				}
+			}
+			set_capital = {
+				state = 27
+				remember_old_capital = no
+			}
+			set_cosmetic_tag = ONU_UNTANA
 		}
 	}
 
@@ -49,7 +85,7 @@
 		}
 
 		completion_reward = {
-			
+			add_ideas = digital_democracy
 		}
 	}
 
@@ -184,31 +220,10 @@
 	}
 
 	focus = {
-		id = ONU_end_regulation
-		icon = GFX_goal_ONU_end_regulation
-
-		x = 5
-		y = 7
-		cost = 5
-
-		prerequisite = {
-			focus = ONU_un_economic_and_social_council
-		}
-		 
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			
-		}
-	}
-
-	focus = {
 		id = ONU_integrate_world_economies
 		icon = GFX_goal_ONU_integrate_world_economies
 
-		x = 7
+		x = 5
 		y = 7
 		cost = 5
 
@@ -229,7 +244,7 @@
 		id = ONU_ecosoc_elections
 		icon = GFX_goal_ONU_ecosoc_elections
 
-		x = 7
+		x = 5
 		y = 8
 		cost = 5
 

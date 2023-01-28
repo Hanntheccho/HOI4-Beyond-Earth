@@ -1,0 +1,104 @@
+ONU_decisions = {
+	ONU_war_districts = {
+		icon = GFX_decision_onu
+		state_target = yes
+		on_map_mode = map_only
+		available = {
+			#
+		}
+		visible = {
+			#
+		}
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				OWNER = {
+					OR = {
+						is_nau_tag = yes
+						tag = PNM
+						tag = ARC
+						tag = USA
+						tag = QUE
+					}
+					OR = {
+						is_neighbor_of = ROOT
+						ROOT = {
+							any_country = {
+								OR = {
+									is_puppet_of = PREV
+									is_in_faction_with = PREV
+								}
+								is_neighbor_of = FROM.OWNER
+							}
+						}
+					}
+					NOT = {
+						OR = {
+							is_puppet_of = ROOT
+							has_war_with = ROOT
+							is_in_faction_with = ROOT
+						}					
+					}
+				}
+			}
+		}
+		fire_only_once = no
+		days_remove = 30
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = going_to_war
+					days = 30
+					value = 1
+				}
+			}
+		}
+		war_with_target_on_remove = yes
+		remove_effect = {
+			FROM.OWNER = {
+				every_core_state = {
+					add_core_of = ROOT
+				}
+			}
+			declare_war_on = {
+				target = FROM.OWNER
+				type = annex_puppet_wargoal
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						FROM.OWNER = {
+							is_nau_tag = yes
+							NOT = {
+								tag = TRE
+							}
+						}
+					}
+					every_country = {
+						limit = {
+							OR = {
+								is_nau_tag = yes
+								tag = PNM
+							}
+						}
+						declare_war_on = {
+							target = ROOT
+							type = annex_puppet_wargoal
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_war = no
+				add = 100
+			}
+			modifier = {
+				has_country_flag = going_to_war
+				add = -1000
+			}
+		}
+	}
+}

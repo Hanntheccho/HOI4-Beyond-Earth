@@ -1,39 +1,30 @@
-#add_namespace = ural_event
-#
-#country_event = {
-#	id = ural_event.1
-#	title = ural_event.1.t
-#	desc = ural_event.1.d
-#
-#	fire_only_once = yes
-#	
-#	trigger = { 
-#			
-#	}
-#	
-#	mean_time_to_happen = { days = 5 }
-#	
-#	option = { 
-#		name = ural_event_option.1.a 
-#        add_political_power = 50
-#	}
-#}
-#
-#country_event = {
-#	id = ural_event.2
-#	title = ural_event.2.t
-#	desc = ural_event.2.d
-#
-#	fire_only_once = yes
-#	
-#	trigger = { 
-#			
-#	}
-#	
-#	mean_time_to_happen = { days = 5 }
-#	
-#	option = { 
-#		name = ural_event_option.2.a 
-#        add_stability = 0.05
-#	}
-#}
+add_namespace = ural_event
+
+country_event = {
+	id = ural_event.1
+	title = ural_event.1.t
+	desc = ural_event.1.d
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = ural_event_option.1.a 
+		hidden_effect = {
+			country_event = {
+				id = ural_event.2
+				days = 34
+			}
+		}
+	}
+}
+country_event = {
+	id = ural_event.2
+	title = ural_event.2.t
+	desc = ural_event.2.d
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = ural_event_option.2.a 
+	}
+}

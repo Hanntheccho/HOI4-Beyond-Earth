@@ -66,6 +66,43 @@ on_actions = {
 					NOT = {
 						has_global_flag = noramerica_war_happened
 					}
+					OR = {
+						NOT = {
+							country_exists = ARC
+						}
+						ARC = {
+							is_puppet = yes
+						}
+					}
+					country_exists = ONU
+				}
+				every_country = {
+					limit = {
+						is_nau_tag = yes
+					}
+					add_to_variable = {
+						nau_legitimacy = 1000
+					}
+				}
+				every_country = {
+					limit = {
+						has_idea = NAU_is_district
+					}
+					remove_ideas = NAU_is_district
+				}
+				PNM = {
+					declare_war_on = {
+						target = ONU
+						type = annex_puppet_wargoal
+					}
+				}
+				set_global_flag = noramerica_war_happened
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = noramerica_war_happened
+					}
 				}
 				add_to_variable = {
 					var = global.noramericawarprogress_var
@@ -81,9 +118,9 @@ on_actions = {
 					}
 					every_country = {
 						limit = {
-							has_idea = NAU_dont_join_me
+							has_idea = NAU_is_district
 						}
-						remove_ideas = NAU_dont_join_me
+						remove_ideas = NAU_is_district
 					}
 					every_country = {
 						limit = {
@@ -116,6 +153,17 @@ on_actions = {
 									target = PREV.PREV
 									type = annex_puppet_wargoal
 								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							country_exists = ONU
+						}
+						ARC = {
+							declare_war_on = {
+								target = ONU
+								type = annex_puppet_wargoal
 							}
 						}
 					}
