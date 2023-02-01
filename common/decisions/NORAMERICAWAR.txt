@@ -65,22 +65,18 @@ noramericawar_decisions = {
 			ONU = {
 				transfer_state = 98
 				load_oob = ONU_OOB
-				TRE = {
-					transfer_units_fraction= {
-						target = PREV
-						size = 0.5
-						stockpile_ratio = 0.5
-						army_ratio = 0.0
-						air_ratio = 0.0
-					}
+				hidden_effect = {
+					change_tag_from = TRE
 				}
-				create_faction = "United Nations"
-				change_tag_from = TRE
+			}	
+			ONU	= {		
+				create_faction = "United Nations"				
 				declare_war_on = {
 					target = TRE
 					type = annex_puppet_wargoal
 				}
 				add_ideas = TRE_the_last_earthlings
+				news_event = un_event.1
 			}
 			add_to_variable = { global.napgain_var = 0.1 }
 		}

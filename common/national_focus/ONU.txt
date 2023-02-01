@@ -28,37 +28,27 @@
 		}
 
 		available = {
-			NOT = {
-				any_country = {
-					OR = {
-						is_nau_tag = yes
-						tag = ARC
-						tag = PNM
-					}
-					NOT = {
-						is_in_faction_with = ROOT
+			custom_trigger_tooltip = {
+				NOT = {
+					any_country = {
+						OR = {
+							is_nau_tag = yes
+							tag = ARC
+							tag = PNM
+						}
+						NOT = {
+							is_in_faction_with = ROOT
+						}
 					}
 				}
-			}
+				tooltip = ONU_the_untana_regime_tt
+			}		
 		}
 
 		completion_reward = {
-			every_possible_country = {
-				limit = {
-					OR = {
-						is_nau_tag = yes
-						tag = ARC
-						tag = PNM
-						tag = USA
-						tag = QUE
-					}
-				}
-				every_core_state = {
-					add_core_of = ROOT
-				}
-				every_owned_state = {
-					transfer_state_to = ROOT
-				}
+			set_province_name = {
+				id = 500
+				name = "UNCOM"
 			}
 			set_capital = {
 				state = 27
@@ -84,6 +74,10 @@
 			factor = 1
 		}
 
+		available = {
+			has_war = no
+		}
+
 		completion_reward = {
 			add_ideas = digital_democracy
 		}
@@ -106,20 +100,23 @@
 		}
 
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = TRE_the_last_earthlings
+				add_idea = ONU_a_global_society
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_rebuilding_america
-		icon = GFX_goal_ONU_rebuilding_america
+		icon = GFX_goal_ONU_unnabar
 
 		x = 7
-		y = 3
+		y = 2
 		cost = 5
 
 		prerequisite = {
-			focus = ONU_begin_assimilation_campaigns
+			focus = ONU_restore_civilian_rule
 		}
 		 
 		ai_will_do = {
@@ -127,7 +124,7 @@
 		}
 
 		completion_reward = {
-			
+			add_ideas = ONU_the_great_reconstruction
 		}
 	}
 
@@ -136,7 +133,7 @@
 		icon = GFX_goal_ONU_unnabar
 
 		x = 6
-		y = 4
+		y = 3
 		cost = 5
 
 		prerequisite = {
@@ -148,16 +145,19 @@
 		}
 
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = ONU_the_great_reconstruction
+				add_idea = ONU_the_great_reconstruction2
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_fix_the_coastal_divide
-		icon = GFX_goal_ONU_fix_the_coastal_divide
+		icon = GFX_goal_ONU_unnabar
 
 		x = 8
-		y = 4
+		y = 3
 		cost = 5
 
 		prerequisite = {
@@ -169,16 +169,45 @@
 		}
 
 		completion_reward = {
-			
+			every_core_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = ONE
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = TRE
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_rebuild_the_highways
-		icon = GFX_goal_ONU_rebuild_the_highways
+		icon = GFX_goal_ONU_unnabar
 
 		x = 8
-		y = 5
+		y = 4
 		cost = 5
 
 		prerequisite = {
@@ -190,7 +219,13 @@
 		}
 
 		completion_reward = {
-			
+			every_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -199,7 +234,7 @@
 		icon = GFX_goal_ONU_un_economic_and_social_council
 
 		x = 7
-		y = 6
+		y = 5
 		cost = 5
 
 		prerequisite = {
@@ -215,7 +250,38 @@
 		}
 
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = ONU_the_great_reconstruction2
+				add_idea = ONU_the_great_reconstruction3
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -223,8 +289,8 @@
 		id = ONU_integrate_world_economies
 		icon = GFX_goal_ONU_integrate_world_economies
 
-		x = 5
-		y = 7
+		x = 6
+		y = 6
 		cost = 5
 
 		prerequisite = {
@@ -236,20 +302,51 @@
 		}
 
 		completion_reward = {
-			
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_ecosoc_elections
-		icon = GFX_goal_ONU_ecosoc_elections
+		icon = GFX_goal_ONU_integrate_world_economies
 
-		x = 5
-		y = 8
+		x = 7
+		y = 7
 		cost = 5
 
 		prerequisite = {
 			focus = ONU_integrate_world_economies
+		}
+
+		prerequisite = {
+			focus = ONU_establish_the_oios
 		}
 		 
 		ai_will_do = {
@@ -257,16 +354,19 @@
 		}
 
 		completion_reward = {
-			
+			add_timed_idea = {
+				idea = ONU_ecosoc
+				days = 100
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_establish_the_oios
-		icon = GFX_goal_ONU_establish_the_oios
+		icon = GFX_goal_ONU_integrate_world_economies
 
-		x = 9
-		y = 7
+		x = 8
+		y = 6
 		cost = 5
 
 		prerequisite = {
@@ -278,7 +378,10 @@
 		}
 
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = ONU_the_great_reconstruction3
+				add_idea = ONU_the_great_reconstruction4
+			}
 		}
 	}
 
@@ -286,7 +389,7 @@
 		id = ONU_who_development_fund
 		icon = GFX_goal_ONU_who_development_fund
 
-		x = 9
+		x = 8
 		y = 8
 		cost = 5
 
@@ -299,7 +402,10 @@
 		}
 
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = ONU_the_great_reconstruction4
+				add_idea = ONU_the_great_reconstruction5
+			}
 		}
 	}
 
@@ -320,13 +426,27 @@
 		}
 
 		completion_reward = {
-			
+			if = {
+				limit = {
+					has_idea = ONU_a_global_society
+				}
+				swap_ideas = {
+					remove_idea = ONU_a_global_society
+					add_idea = ONU_a_global_society2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = ONU_a_global_society2
+					add_idea = ONU_a_global_society3
+				}
+			}			
 		}
 	}
 
 	focus = {
 		id = ONU_draft_specialized_agencies
-		icon = GFX_goal_ONU_draft_specialized_agencies
+		icon = GFX_goal_ONU_form_the_principal_organs
 
 		x = 12
 		y = 3
@@ -341,13 +461,27 @@
 		}
 
 		completion_reward = {
-			
+			if = {
+				limit = {
+					has_idea = ONU_a_global_society
+				}
+				swap_ideas = {
+					remove_idea = ONU_a_global_society
+					add_idea = ONU_a_global_society2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = ONU_a_global_society2
+					add_idea = ONU_a_global_society3
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_the_secretary_general_election
-		icon = GFX_goal_ONU_the_secretary_general_election
+		icon = GFX_goal_ONU_form_the_principal_organs
 
 		x = 11
 		y = 4
@@ -366,13 +500,13 @@
 		}
 
 		completion_reward = {
-			
+			country_event = un_event.2
 		}
 	}
 
 	focus = {
 		id = ONU_rebuild_the_unwto
-		icon = GFX_goal_ONU_rebuild_the_unwto
+		icon = GFX_goal_ONU_form_the_principal_organs
 
 		x = 10
 		y = 5
@@ -387,13 +521,16 @@
 		}
 
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = ONU_a_global_society3
+				add_idea = ONU_a_global_society4
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_form_the_unso
-		icon = GFX_goal_ONU_form_the_unso
+		icon = GFX_goal_ONU_form_the_principal_organs
 
 		x = 10
 		y = 6
@@ -408,7 +545,10 @@
 		}
 
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = ONU_a_global_society4
+				add_idea = ONU_a_global_society5
+			}
 		}
 	}
 
@@ -429,7 +569,7 @@
 		}
 
 		completion_reward = {
-			
+			country_event = un_event.3
 		}
 	}
 
@@ -450,13 +590,13 @@
 		}
 
 		completion_reward = {
-			
+			add_war_support = 0.2
 		}
 	}
 
 	focus = {
 		id = ONU_unseco_world_heritage_sites
-		icon = GFX_goal_ONU_unseco_world_heritage_sites
+		icon = GFX_goal_ONU_form_the_principal_organs
 
 		x = 12
 		y = 5
@@ -471,7 +611,10 @@
 		}
 
 		completion_reward = {
-			
+			add_timed_idea = {
+				idea = ONU_heritage_sites
+				days = 100
+			}
 		}
 	}
 
@@ -492,20 +635,20 @@
 		}
 
 		completion_reward = {
-			
+			add_ideas = ONU_united_nations_on_the_march
 		}
 	}
 
 	focus = {
 		id = ONU_reestablish_human_rights
-		icon = GFX_goal_ONU_reestablish_human_rights
+		icon = GFX_goal_ONU_form_the_principal_organs
 
 		x = 13
 		y = 4
 		cost = 5
 
 		prerequisite = {
-			focus = ONU_force_commander_office
+			focus = ONU_draft_specialized_agencies
 		}
 		 
 		ai_will_do = {
@@ -513,16 +656,16 @@
 		}
 
 		completion_reward = {
-			
+			add_ideas = ONU_un_international_laws
 		}
 	}
 
 	focus = {
 		id = ONU_choose_a_stance_on_augmentation
-		icon = GFX_goal_ONU_choose_a_stance_on_augmentation
+		icon = GFX_goal_ONU_form_the_principal_organs
 
-		x = 14
-		y = 5
+		x = 13
+		y = 6
 		cost = 5
 
 		prerequisite = {
@@ -534,16 +677,16 @@
 		}
 
 		completion_reward = {
-			
+			country_event = un_event.4
 		}
 	}
 
 	focus = {
 		id = ONU_ai_rights_issue
-		icon = GFX_goal_ONU_ai_rights_issue
+		icon = GFX_goal_ONU_form_the_principal_organs
 
 		x = 13
-		y = 6
+		y = 7
 		cost = 5
 
 		prerequisite = {
@@ -555,13 +698,13 @@
 		}
 
 		completion_reward = {
-			
+			country_event = un_event.5
 		}
 	}
 
 	focus = {
 		id = ONU_dpo_organization
-		icon = GFX_goal_ONU_dpo_organization
+		icon = GFX_goal_ONU_force_commander_office
 
 		x = 15
 		y = 4
@@ -576,15 +719,35 @@
 		}
 
 		completion_reward = {
-			
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_unstratcom
-		icon = GFX_goal_ONU_unstratcom
+		icon = GFX_goal_ONU_force_commander_office
 
-		x = 16
+		x = 15
 		y = 5
 		cost = 5
 
@@ -597,13 +760,13 @@
 		}
 
 		completion_reward = {
-			
+			add_ideas = war_economy
 		}
 	}
 
 	focus = {
 		id = ONU_untaccom
-		icon = GFX_goal_ONU_untaccom
+		icon = GFX_goal_ONU_force_commander_office
 
 		x = 15
 		y = 6
@@ -618,21 +781,20 @@
 		}
 
 		completion_reward = {
-			
+			add_timed_idea = {
+				idea = ONU_unstratcom
+				days = 120
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_un_space_forces
-		icon = GFX_goal_ONU_un_space_forces
+		icon = GFX_goal_ONU_force_commander_office
 
-		x = 14
+		x = 15
 		y = 7
 		cost = 5
-
-		prerequisite = {
-			focus = ONU_ai_rights_issue
-		}
 
 		prerequisite = {
 			focus = ONU_untaccom
@@ -643,13 +805,40 @@
 		}
 
 		completion_reward = {
-			
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = spaceship_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = spaceship_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_blue_helmet_deployment
-		icon = GFX_goal_ONU_blue_helmet_deployment
+		icon = GFX_goal_ONU_force_commander_office
 
 		x = 17
 		y = 4
@@ -664,13 +853,16 @@
 		}
 
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = ONU_united_nations_on_the_march
+				add_idea = ONU_united_nations_on_the_march2
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_the_peacekeeper_model
-		icon = GFX_goal_ONU_the_peacekeeper_model
+		icon = GFX_goal_ONU_force_commander_office
 
 		x = 17
 		y = 6
@@ -685,13 +877,16 @@
 		}
 
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = ONU_united_nations_on_the_march2
+				add_idea = ONU_united_nations_on_the_march3
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_integrate_global_general_staffs
-		icon = GFX_goal_ONU_integrate_global_general_staffs
+		icon = GFX_goal_ONU_force_commander_office
 
 		x = 17
 		y = 7
@@ -706,7 +901,10 @@
 		}
 
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = ONU_united_nations_on_the_march3
+				add_idea = ONU_united_nations_on_the_march4
+			}
 		}
 	}
 
@@ -714,12 +912,16 @@
 		id = ONU_found_the_pcrs
 		icon = GFX_goal_ONU_found_the_pcrs
 
-		x = 18
-		y = 5
+		x = 16
+		y = 8
 		cost = 5
 
 		prerequisite = {
-			focus = ONU_blue_helmet_deployment
+			focus = ONU_integrate_global_general_staffs
+		}
+
+		prerequisite = {
+			focus = ONU_un_space_forces
 		}
 		 
 		ai_will_do = {
@@ -727,7 +929,24 @@
 		}
 
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = ONU_united_nations_on_the_march4
+				add_idea = ONU_united_nations_on_the_march5
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -769,7 +988,15 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					is_nsa_tag = yes
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -790,7 +1017,15 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					is_eng_tag = yes
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -810,8 +1045,43 @@
 			factor = 1
 		}
 
+		available = {
+			custom_trigger_tooltip = {
+				NOT = {
+					any_country = {
+						OR = {
+							is_nsa_tag = yes
+							is_eng_tag = yes
+						}
+						exists = yes
+						NOT = {
+							is_puppet_of = ROOT
+						}
+					}
+				}
+				tooltip = ONU_won_all_wars
+			}			
+		}
+
 		completion_reward = {
-			
+			SCO = {
+				set_cosmetic_tag = ONU_UNEA
+			}
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						is_nsa_tag = yes
+						is_eng_tag = yes
+					}
+				}
+				every_core_state = {
+					add_core_of = SCO
+				}
+				every_owned_state = {
+					transfer_state_to = SCO
+				}
+			}
 		}
 	}
 
@@ -832,7 +1102,18 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = SWE
+						tag = FIN
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -853,7 +1134,30 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = GER
+						tag = POL
+						tag = CZE
+						tag = SLO
+						tag = HUN
+						tag = CRO
+						tag = ALB
+						tag = BUL
+						tag = BLR
+						tag = UKR
+						tag = LAT 
+						tag = LIT
+						tag = ROM
+						tag = GRE
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -874,7 +1178,18 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = SOV
+						tag = KAR
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -894,14 +1209,41 @@
 			factor = 1
 		}
 
+		available = {
+			custom_trigger_tooltip = {
+				NOT = {
+					any_country = {
+						capital_scope = {
+							is_on_continent = europe
+						}
+						NOT = {
+							is_puppet_of = ROOT
+						}
+					}
+				}
+				tooltip = ONU_won_all_wars
+			}						
+		}
+
 		completion_reward = {
-			
+			country_event = un_event.6
+			every_country = {
+				limit = {
+					capital_scope = {
+						is_on_continent = europe
+					}				
+				}
+				every_owned_state = {
+					add_core_of = SCO
+					transfer_state_to = SCO
+				}				
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_to_the_urals
-		icon = GFX_goal_ONU_to_the_urals
+		icon = GFX_goal_ONU_over_the_eurasian_plain
 
 		x = 2
 		y = 15
@@ -916,7 +1258,18 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = URA
+						tag = SIB
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -937,7 +1290,20 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR =  {
+						tag = FRA
+						tag = SPR
+						tag = PAD
+						tag = ITA
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -979,7 +1345,15 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					tag = MEX
+				}
+				every_core_state = {
+					add_core_of = ROOT
+				}
+			}
 		}
 	}
 
@@ -1003,8 +1377,65 @@
 			factor = 1
 		}
 
+		available = {
+			MEX = {
+				all_core_state = {
+					is_owned_by = ROOT
+				}
+			}
+		}
+
 		completion_reward = {
-			
+			random_owned_state = {
+				limit = {
+					is_core_of = MEX
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = MEX
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = MEX
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = MEX
+				}
+				add_building_construction = {
+					type = generator_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = MEX
+				}
+				add_building_construction = {
+					type = generator_building
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -1028,8 +1459,25 @@
 			factor = 1
 		}
 
+		available = {
+			MEX = {
+				all_core_state = {
+					is_owned_by = ROOT
+				}
+			}
+		}
+
 		completion_reward = {
-			
+			every_owned_state = {
+				limit = {
+					is_core_of = MEX
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -1050,7 +1498,18 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = CUB
+						tag = JAM
+					}
+				}
+				every_core_state = {
+					add_core_of = ROOT
+				}
+			}
 		}
 	}
 
@@ -1076,7 +1535,15 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					tag = GUA
+				}
+				every_core_state = {
+					add_core_of = ROOT
+				}
+			}
 		}
 	}
 
@@ -1096,8 +1563,22 @@
 			factor = 1
 		}
 
+		available = {
+			custom_trigger_tooltip = {
+				NOT = {
+					any_country = {
+						capital_scope = {
+							is_on_continent = north_america
+						}
+						exists = yes
+					}
+				}
+				tooltip = ONU_won_all_wars
+			}		
+		}
+
 		completion_reward = {
-			
+			add_war_support = 0.5
 		}
 	}
 
@@ -1139,7 +1620,18 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = PRU
+						tag = BOL
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -1155,12 +1647,65 @@
 			focus = ONU_break_through_the_andes
 		}
 
+		mutually_exclusive = {
+			focus = ONU_internationalize_lithium_deposits
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
 
+		available = {
+			PRU = {
+				is_puppet_of = ROOT
+			}
+		}
+
 		completion_reward = {
-			
+			PRU = {
+				random_core_state = {
+					add_building_construction = {
+						type = generator_building
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = generator_building
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}			
 		}
 	}
 
@@ -1176,12 +1721,51 @@
 			focus = ONU_break_through_the_andes
 		}
 
+		mutually_exclusive = {
+			focus = ONU_work_with_compact_loyalists
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
 
+		available = {
+			PRU = {
+				is_puppet_of = ROOT
+			}
+		}
+
 		completion_reward = {
-			
+			PRU = {
+				random_core_state = {
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}
 
@@ -1202,7 +1786,18 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = COL
+						tag = VEN
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -1218,12 +1813,44 @@
 			focus = ONU_land_in_bolivaria
 		}
 
+		mutually_exclusive = {
+			focus = ONU_anti_totalitarianism_campaign
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
 
+		available = {
+			COL = {
+				is_puppet_of = ROOT
+			}
+		}
+
 		completion_reward = {
-			
+			COL = {
+				random_core_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = generator_building
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}
 
@@ -1239,12 +1866,31 @@
 			focus = ONU_land_in_bolivaria
 		}
 
+		mutually_exclusive = {
+			focus = ONU_prepare_southern_infrastructure
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
 
+		available = {
+			COL = {
+				is_puppet_of = ROOT
+			}
+		}
+
 		completion_reward = {
-			
+			COL = {
+				every_core_state = {
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
+			add_war_support = 0.05
+			add_stability = 0.05
 		}
 	}
 
@@ -1257,6 +1903,7 @@
 		cost = 5
 
 		prerequisite = {
+			focus = ONU_work_with_compact_loyalists
 			focus = ONU_internationalize_lithium_deposits
 		}
 
@@ -1270,7 +1917,15 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					is_bra_tag = yes
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -1290,8 +1945,22 @@
 			factor = 1
 		}
 
+		available = {
+			BRA = {
+				is_puppet_of = ROOT
+			}
+		}
+
 		completion_reward = {
-			
+			LAM = {
+				every_core_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}
 
@@ -1307,12 +1976,30 @@
 			focus = ONU_enter_brazil
 		}
 
+		mutually_exclusive = {
+			focus = ONU_pacify_the_amazon
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
 
+		available = {
+			BRA = {
+				is_puppet_of = ROOT
+			}
+		}
+
 		completion_reward = {
-			
+			BRA = {
+				every_core_state = {
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
+			add_stability = 0.05
 		}
 	}
 
@@ -1328,12 +2015,29 @@
 			focus = ONU_enter_brazil
 		}
 
+		mutually_exclusive = {
+			focus = ONU_eradicate_militarism
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
 
+		available = {
+			BRA = {
+				is_puppet_of = ROOT
+			}
+		}
+
 		completion_reward = {
-			
+			LAM = {
+				every_core_state = {
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
 		}
 	}
 
@@ -1351,9 +2055,6 @@
 
 		prerequisite = {
 			focus = ONU_eradicate_militarism
-		}
-
-		prerequisite = {
 			focus = ONU_pacify_the_amazon
 		}
 
@@ -1362,7 +2063,20 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = ARG
+						tag = COS
+						tag = CHL
+						tag = URG
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -1378,12 +2092,30 @@
 			focus = ONU_mobilize_against_la_plata
 		}
 
+		mutually_exclusive = {
+			focus = ONU_prepare_atlantic_dockyards
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
 
+		available = {
+			ARG = {
+				is_puppet_of = ROOT
+			}
+		}
+
 		completion_reward = {
-			
+			ARG = {
+				every_core_state = {
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+				}
+			}	
+			add_stability = 0.05		
 		}
 	}
 
@@ -1399,12 +2131,37 @@
 			focus = ONU_mobilize_against_la_plata
 		}
 
+		mutually_exclusive = {
+			focus = ONU_permit_civilian_rule
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
 
+		available = {
+			ARG = {
+				is_puppet_of = ROOT
+			}
+		}
+
 		completion_reward = {
-			
+			ARG = {
+				random_core_state = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}
 
@@ -1424,8 +2181,38 @@
 			factor = 1
 		}
 
+		available = {
+			custom_trigger_tooltip = {
+				NOT = {
+					any_country = {
+						capital_scope = {
+							is_on_continent = south_america
+						}
+						NOT = {
+							is_puppet_of = ROOT
+						}
+					}
+				}
+				tooltip = ONU_won_all_wars
+			}
+		}
+
 		completion_reward = {
-			
+			country_event = un_event.7
+			BRA = {
+				set_cosmetic_tag = ONU_UNSAA
+			}
+			every_country = {
+				limit = {
+					capital_scope = {
+						is_on_continent = south_america
+					}				
+				}
+				every_owned_state = {
+					add_core_of = BRA
+					transfer_state_to = BRA
+				}				
+			}
 		}
 	}
 
@@ -1467,7 +2254,18 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = TUN
+						tag = ADU #yes this one too lol
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -1487,8 +2285,22 @@
 			factor = 1
 		}
 
+		available = {
+			TUN = {
+				is_puppet_of = ROOT
+			}
+		}
+
 		completion_reward = {
-			
+			TUN = {
+				every_core_state = {
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
+			add_stability = 0.05
 		}
 	}
 
@@ -1509,7 +2321,21 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = FRA
+						tag = SPR
+						tag = PAD
+						tag = ITA
+						tag = GRE
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -1530,7 +2356,18 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = LBA
+						tag = EGY
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -1554,8 +2391,36 @@
 			factor = 1
 		}
 
+		available = {
+			EGY = {
+				is_puppet_of = ROOT
+			}
+		}
+
 		completion_reward = {
-			
+			EGY = {
+				random_core_state = {
+					add_building_construction = {
+						type = generator_building
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = generator_building
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = generator_building
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}
 
@@ -1576,7 +2441,15 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					tag = SAF
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -1597,7 +2470,18 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = COG
+						tag = ANG
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -1611,9 +2495,6 @@
 
 		prerequisite = {
 			focus = ONU_pacify_egypt
-		}
-
-		prerequisite = {
 			focus = ONU_pacify_the_congo
 		}
 		 
@@ -1622,7 +2503,18 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = SUD
+						tag = SIE
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -1643,7 +2535,27 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = MRT
+						tag = MLI
+						tag = LIB
+						tag = IVO
+						tag = VOL
+						tag = GHA
+						tag = EQG
+						tag = NGA
+						tag = CHA
+						tag = CMR
+						tag = CAR
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -1663,8 +2575,43 @@
 			factor = 1
 		}
 
+		available = {
+			TZN = {
+				is_puppet_of = ROOT
+			}
+		}
+
 		completion_reward = {
-			
+			TZN = {
+				random_core_state = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}
 
@@ -1684,8 +2631,17 @@
 			factor = 1
 		}
 
+		available = {
+			TZN = {
+				is_puppet_of = ROOT
+			}
+		}
+
 		completion_reward = {
-			
+			add_timed_idea = {
+				idea = ONU_african_labs
+				days = 100
+			}
 		}
 	}
 
@@ -1705,8 +2661,33 @@
 			factor = 1
 		}
 
+		available = {
+			TZN = {
+				is_puppet_of = ROOT
+			}
+			COG = {
+				is_puppet_of = ROOT
+			}
+		}
+
 		completion_reward = {
-			
+			TZN = {
+				every_core_state = {
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
+			COG = {
+				every_core_state = {
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
+			add_stability = 0.1
 		}
 	}
 
@@ -1721,13 +2702,47 @@
 		prerequisite = {
 			focus = ONU_into_the_west
 		}
+
+		prerequisite = {
+			focus = ONU_somalian_intervention
+		}
 		 
 		ai_will_do = {
 			factor = 1
 		}
 
+		available = {
+			custom_trigger_tooltip = {
+				NOT = {
+					any_country = {
+						capital_scope = {
+							is_on_continent = africa
+						}
+						NOT = {
+							is_puppet_of = ROOT
+						}
+					}
+				}
+				tooltip = ONU_won_all_wars
+			}	
+		}
+
 		completion_reward = {
-			
+			country_event = un_event.8
+			TZN = {
+				set_cosmetic_tag = ONU_UNPAA
+			}
+			every_country = {
+				limit = {
+					capital_scope = {
+						is_on_continent = africa
+					}				
+				}
+				every_owned_state = {
+					add_core_of = TZN
+					transfer_state_to = TZN
+				}				
+			}
 		}
 	}
 
@@ -1748,7 +2763,20 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = TZN
+						tag = ZAM
+						tag = GNB
+						tag = MAD
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -1769,13 +2797,24 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = ETH
+						tag = QAF
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_somalian_intervention
-		icon = GFX_goal_ONU_somalian_intervention
+		icon = GFX_goal_ONU_stabilize_ethiopia
 
 		x = 16
 		y = 14
@@ -1790,13 +2829,21 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					tag = SOM
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_reconnect_the_continent
-		icon = GFX_goal_ONU_reconnect_the_continent
+		icon = GFX_goal_ONU_facilitate_international_trade
 
 		x = 18
 		y = 14
@@ -1810,29 +2857,43 @@
 			factor = 1
 		}
 
-		completion_reward = {
-			
-		}
-	}
-
-	focus = {
-		id = ONU_prepare_indian_transports
-		icon = GFX_goal_ONU_prepare_indian_transports
-
-		x = 20
-		y = 13
-		cost = 5
-
-		prerequisite = {
-			focus = ONU_appropriate_pan_africanism
-		}
-		 
-		ai_will_do = {
-			factor = 1
+		available = {
+			TZN = {
+				is_puppet_of = ROOT
+			}
 		}
 
 		completion_reward = {
-			
+			TZN = {
+				random_core_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}
 
@@ -1845,7 +2906,7 @@
 		cost = 5
 
 		prerequisite = {
-			focus = ONU_prepare_indian_transports
+			focus = ONU_stabilize_ethiopia
 		}
 		 
 		ai_will_do = {
@@ -1853,7 +2914,17 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					capital_scope = {
+						is_on_continent = middle_east
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -1873,8 +2944,40 @@
 			factor = 1
 		}
 
+		available = {
+			custom_trigger_tooltip = {
+				NOT = {
+					any_country = {
+						capital_scope = {
+							is_on_continent = middle_east
+						}
+						NOT = {
+							is_puppet_of = ROOT
+						}
+					}
+				}	
+				tooltip = ONU_won_all_wars
+			}			
+		}
+
 		completion_reward = {
-			
+			TUR = {
+				set_cosmetic_tag = ONU_UNMEA
+			}
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					capital_scope = {
+						is_on_continent = middle_east
+					}
+				}
+				every_core_state = {
+					add_core_of = TUR
+				}
+				every_owned_state = {
+					transfer_state_to = TUR
+				}
+			}
 		}
 	}
 
@@ -1895,7 +2998,15 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					tag = KAZ
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -1903,20 +3014,52 @@
 		id = ONU_unite_the_oceans
 		icon = GFX_goal_ONU_unite_the_oceans
 
-		x = 19
-		y = 17
+		x = 20
+		y = 13
 		cost = 5
 
 		prerequisite = {
-			focus = ONU_ultimatum_to_central_asia
+			focus = ONU_the_nusantaran_connection
 		}
 		 
 		ai_will_do = {
 			factor = 1
 		}
 
+		available = {
+			custom_trigger_tooltip = {
+				NOT = {
+					any_country = {
+						capital_scope = {
+							is_on_continent = australia
+						}
+						NOT = {
+							is_puppet_of = ROOT
+						}
+					}
+				}	
+				tooltip = ONU_won_all_wars
+			}			
+		}
+
 		completion_reward = {
-			
+			INS = {
+				set_cosmetic_tag = ONU_UNSAOA
+			}
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					capital_scope = {
+						is_on_continent = australia
+					}
+				}
+				every_core_state = {
+					add_core_of = INS
+				}
+				every_owned_state = {
+					transfer_state_to = INS
+				}
+			}
 		}
 	}
 
@@ -1937,13 +3080,30 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						is_india_tag = yes
+						tag = BHR
+						tag = KAV
+						tag = NEP
+						tag = AFG
+						tag = HAZ
+						tag = BLC
+						tag = PAK
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_the_religions_debate
-		icon = GFX_goal_ONU_the_religions_debate
+		icon = GFX_goal_ONU_form_the_principal_organs
 
 		x = 21
 		y = 16
@@ -1957,8 +3117,14 @@
 			factor = 1
 		}
 
+		available = {
+			BHR = {
+				is_puppet_of = ROOT
+			}
+		}
+
 		completion_reward = {
-			
+			country_event = un_event.9
 		}
 	}
 
@@ -1978,8 +3144,56 @@
 			factor = 1
 		}
 
+		available = {
+			custom_trigger_tooltip = {
+				NOT = {
+					any_country = {
+						OR = {
+							is_india_tag = yes
+							tag = BHR
+							tag = KAV
+							tag = NEP
+							tag = AFG
+							tag = HAZ
+							tag = BLC
+							tag = PAK
+						}
+						exists = yes
+						NOT = {
+							is_puppet_of = ROOT
+						}
+					}
+				}
+				tooltip = ONU_won_all_wars
+			}
+		}
+
 		completion_reward = {
-			
+			country_event = un_event.11
+			BHR = {
+				set_cosmetic_tag = ONU_UNIA
+			}
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						is_india_tag = yes
+						tag = BHR
+						tag = KAV
+						tag = NEP
+						tag = AFG
+						tag = HAZ
+						tag = BLC
+						tag = PAK
+					}
+				}
+				every_core_state = {
+					add_core_of = BHR
+				}
+				every_owned_state = {
+					transfer_state_to = BHR
+				}
+			}
 		}
 	}
 
@@ -2004,7 +3218,15 @@
 		}
 
 		completion_reward = {
-			
+			BHR = {
+				every_core_state = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}
 
@@ -2046,15 +3268,23 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no						
+					tag = NZL
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = ONU_modern_island_hopping
-		icon = GFX_goal_ONU_modern_island_hopping
+		icon = GFX_goal_ONU_force_commander_office
 
-		x = 20
+		x = 22
 		y = 10
 		cost = 5
 
@@ -2067,7 +3297,10 @@
 		}
 
 		completion_reward = {
-			
+			add_timed_idea = {
+				idea = ONU_modern_island_hopping
+				days = 100
+			}
 		}
 	}
 
@@ -2075,7 +3308,7 @@
 		id = ONU_pacify_australia
 		icon = GFX_goal_ONU_pacify_australia
 
-		x = 19
+		x = 20
 		y = 11
 		cost = 5
 
@@ -2092,7 +3325,18 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = AST
+						tag = SHL
+					}					
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -2106,6 +3350,7 @@
 
 		prerequisite = {
 			focus = ONU_pacify_australia
+			focus = ONU_the_indochina_question
 		}
 		 
 		ai_will_do = {
@@ -2113,21 +3358,25 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					tag = INS
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
 	focus = {
-		id = ONU_airbase_development
-		icon = GFX_goal_ONU_airbase_development
+		id = ONU_the_indochina_question
+		icon = GFX_goal_ONU_the_indochina_question
 
-		x = 21
+		x = 22
 		y = 11
 		cost = 5
-
-		prerequisite = {
-			focus = ONU_beachhead_in_new_zealand
-		}
 
 		prerequisite = {
 			focus = ONU_modern_island_hopping
@@ -2138,28 +3387,20 @@
 		}
 
 		completion_reward = {
-			
-		}
-	}
-
-	focus = {
-		id = ONU_the_indochina_question
-		icon = GFX_goal_ONU_the_indochina_question
-
-		x = 22
-		y = 12
-		cost = 5
-
-		prerequisite = {
-			focus = ONU_airbase_development
-		}
-		 
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = LAO
+						tag = CAM
+						tag = VIN
+						tag = SIA
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -2168,7 +3409,7 @@
 		icon = GFX_goal_ONU_resolve_the_burmese_issue
 
 		x = 22
-		y = 13
+		y = 12
 		cost = 5
 
 		prerequisite = {
@@ -2180,7 +3421,19 @@
 		}
 
 		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						tag = BRM
+						tag = BAN
+						tag = ASM
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -2189,6 +3442,35 @@
 		icon = GFX_goal_ONU_ultimatum_to_japan
 
 		x = 24
+		y = 12
+		cost = 5
+
+		prerequisite = {
+			focus = ONU_the_indochina_question
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					tag = JAP
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ONU_police_action_in_china
+		icon = GFX_goal_ONU_police_action_in_china
+
+		x = 23
 		y = 13
 		cost = 5
 
@@ -2201,28 +3483,20 @@
 		}
 
 		completion_reward = {
-			
-		}
-	}
-
-	focus = {
-		id = ONU_police_action_in_china
-		icon = GFX_goal_ONU_police_action_in_china
-
-		x = 23
-		y = 14
-		cost = 5
-
-		prerequisite = {
-			focus = ONU_the_indochina_question
-		}
-		 
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						is_china_tag = yes
+						tag = CHI
+						tag = MON
+						tag = KOR
+					}
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -2231,7 +3505,7 @@
 		icon = GFX_goal_ONU_unca
 
 		x = 23
-		y = 15
+		y = 14
 		cost = 5
 
 		prerequisite = {
@@ -2242,8 +3516,51 @@
 			factor = 1
 		}
 
+		available = {
+			custom_trigger_tooltip = {
+				NOT = {
+					any_country = {
+						capital_scope = {
+							is_on_continent = asia
+						}
+						NOT = {
+							is_puppet_of = ROOT
+						}
+					}
+				}	
+				tooltip = ONU_won_all_wars
+			}			
+		}
+
 		completion_reward = {
-			
+			country_event = un_event.10
+			CHI = {
+				set_cosmetic_tag = ONU_UNCA
+			}
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					capital_scope = {
+						is_on_continent = asia
+					}
+					NOT = {
+						is_india_tag = yes
+						tag = BHR
+						tag = KAV
+						tag = NEP
+						tag = AFG
+						tag = HAZ
+						tag = BLC
+						tag = PAK
+					}
+				}
+				every_core_state = {
+					add_core_of = CHI
+				}
+				every_owned_state = {
+					transfer_state_to = CHI
+				}
+			}
 		}
 	}
 
@@ -2252,7 +3569,7 @@
 		icon = GFX_goal_ONU_end_the_ideological_disputes
 
 		x = 25
-		y = 15
+		y = 14
 		cost = 5
 
 		prerequisite = {
@@ -2263,29 +3580,22 @@
 			factor = 1
 		}
 
-		completion_reward = {
-			
-		}
-	}
-
-	focus = {
-		id = ONU_tying_loose_ends
-		icon = GFX_goal_ONU_tying_loose_ends
-
-		x = 25
-		y = 16
-		cost = 5
-
-		prerequisite = {
-			focus = ONU_end_the_ideological_disputes
-		}
-		 
-		ai_will_do = {
-			factor = 1
+		available = {
+			CHI = {
+				is_puppet_of = ROOT
+			}
 		}
 
 		completion_reward = {
-			
+			CHI = {
+				every_core_state = {
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
+			add_stability = 0.25
 		}
 	}
 
@@ -2294,11 +3604,17 @@
 		icon = GFX_goal_ONU_asian_superhighway_developmental_funds
 
 		x = 25
-		y = 17
+		y = 15
 		cost = 5
 
 		prerequisite = {
 			focus = ONU_end_the_ideological_disputes
+		}
+
+		available = {
+			CHI = {
+				is_puppet_of = ROOT
+			}
 		}
 		 
 		ai_will_do = {
@@ -2306,7 +3622,15 @@
 		}
 
 		completion_reward = {
-			
+			CHI = {
+				every_core_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}
 }

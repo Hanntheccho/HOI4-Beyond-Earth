@@ -801,6 +801,63 @@ color_that = {
 			set_cosmetic_tag = SCO5
 		}
 	}
+	else_if = {
+		limit = {
+			THIS.OVERLORD = {
+				tag = ONU
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					global.ONUcolor = 0
+				}
+			}
+			set_variable = {
+				global.ONUcolor = 1
+			}
+			set_cosmetic_tag = ONU1
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.ONUcolor = 1
+				}
+			}
+			set_variable = {
+				global.ONUcolor = 2
+			}
+			set_cosmetic_tag = ONU2
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.ONUcolor = 2
+				}
+			}
+			set_variable = {
+				global.ONUcolor = 3
+			}
+			set_cosmetic_tag = ONU3
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.ONUcolor = 3
+				}
+			}
+			set_variable = {
+				global.ONUcolor = 4
+			}
+			set_cosmetic_tag = ONU4
+		}
+		else = {
+			set_variable = {
+				global.ONUcolor = 0
+			}
+			set_cosmetic_tag = ONU5
+		}
+	}
 	else = {
 		#
 	}

@@ -1,5 +1,5 @@
 ONU_decisions = {
-	ONU_war_districts = {
+	ONU_war_decisions = {
 		icon = GFX_decision_onu
 		state_target = yes
 		on_map_mode = map_only
@@ -14,23 +14,17 @@ ONU_decisions = {
 				is_capital = yes
 				OWNER = {
 					OR = {
+						any_owned_state = {
+							is_claimed_by = ROOT
+						}
+						any_owned_state = {
+							is_core_of = ROOT
+						}
 						is_nau_tag = yes
 						tag = PNM
 						tag = ARC
 						tag = USA
 						tag = QUE
-					}
-					OR = {
-						is_neighbor_of = ROOT
-						ROOT = {
-							any_country = {
-								OR = {
-									is_puppet_of = PREV
-									is_in_faction_with = PREV
-								}
-								is_neighbor_of = FROM.OWNER
-							}
-						}
 					}
 					NOT = {
 						OR = {
@@ -56,9 +50,22 @@ ONU_decisions = {
 		war_with_target_on_remove = yes
 		remove_effect = {
 			FROM.OWNER = {
-				every_core_state = {
-					add_core_of = ROOT
-				}
+				if = {
+					limit = {
+						OR = {
+							is_nau_tag = yes
+							tag = PNM
+							tag = ARC
+							tag = USA
+							tag = QUE
+							tag = MEX
+							tag = GUA
+						}
+					}
+					every_core_state = {
+						add_core_of = ROOT
+					}
+				}				
 			}
 			declare_war_on = {
 				target = FROM.OWNER
@@ -91,6 +98,12 @@ ONU_decisions = {
 		}
 		ai_will_do = {
 			factor = 0
+			modifier = {
+				FROM.OWNER = {
+					is_neighbor_of = ROOT
+				}
+				add = 100000
+			}
 			modifier = {
 				has_war = no
 				add = 100

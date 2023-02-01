@@ -3,6 +3,10 @@ on_actions = {
 		effect = {
 			balkanize_that = yes #balkanize that! - this is a scripted effect that checks for cosmetic tags of formables, removes cores in occupied states and drops the cosmetic tag, have to be done manually
 			ROOT = {
+				send_equipment_fraction = {
+					value = 0.5
+					target = FROM
+				}
 				every_country = { #this one is for making sure capitulated country allies have a wargoal on the capitulator and do not peace out
 					limit = {
 						has_war_with = PREV
@@ -13,9 +17,6 @@ on_actions = {
 							has_war_with = PREV
 							NOT = {
 								tag = ROOT
-								has_war_with_wargoal_against = {
-									target = PREV
-								}
 							}
 						}
 						declare_war_on = {
