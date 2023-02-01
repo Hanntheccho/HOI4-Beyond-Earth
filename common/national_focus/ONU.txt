@@ -55,6 +55,22 @@
 				remember_old_capital = no
 			}
 			set_cosmetic_tag = ONU_UNTANA
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+					OR = {
+						is_nau_tag = yes
+						tag = ARC
+						tag = PNM
+					}
+				}
+				every_core_state = {
+					add_core_of = ROOT
+				}
+				every_owned_state = {
+					transfer_state_to = ROOT
+				}
+			}
 		}
 	}
 
