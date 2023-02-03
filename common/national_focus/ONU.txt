@@ -1061,6 +1061,10 @@
 			factor = 1
 		}
 
+		bypass = {
+			has_completed_focus = ONU_spread_pan_european_ideals
+		}
+
 		available = {
 			custom_trigger_tooltip = {
 				NOT = {
@@ -1590,6 +1594,10 @@
 							is_on_continent = north_america
 						}
 						exists = yes
+						NOT = {
+							tag = ROOT
+							tag = GRN
+						}
 					}
 				}
 				tooltip = ONU_won_all_wars
@@ -1597,7 +1605,13 @@
 		}
 
 		completion_reward = {
-			add_war_support = 0.5
+			every_state = {
+				limit = {
+					is_on_continent = north_america
+				}
+				add_core_of = ROOT
+			}
+			add_war_support = 0.25
 		}
 	}
 
@@ -1811,6 +1825,7 @@
 					OR = {
 						tag = COL
 						tag = VEN
+						tag = GYA
 					}
 				}
 				every_core_state = {
@@ -1965,7 +1980,7 @@
 		}
 
 		available = {
-			BRA = {
+			LAM = {
 				is_puppet_of = ROOT
 			}
 		}
@@ -2043,7 +2058,7 @@
 		}
 
 		available = {
-			BRA = {
+			LAM = {
 				is_puppet_of = ROOT
 			}
 		}
@@ -2305,9 +2320,12 @@
 		}
 
 		available = {
-			TUN = {
-				is_puppet_of = ROOT
-			}
+			OR = {
+				has_completed_focus = ONU_combine_african_nations
+				TUN = {
+					is_puppet_of = ROOT
+				}
+			}			
 		}
 
 		completion_reward = {
@@ -2411,9 +2429,12 @@
 		}
 
 		available = {
-			EGY = {
-				is_puppet_of = ROOT
-			}
+			OR = {
+				has_completed_focus = ONU_combine_african_nations
+				EGY = {
+					is_puppet_of = ROOT
+				}
+			}	
 		}
 
 		completion_reward = {
