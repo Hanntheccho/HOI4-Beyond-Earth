@@ -19,6 +19,20 @@ balkanize_that = {
 		}
 		else_if = {
 			limit = {
+				tag = AST #not a cosmetic tag, but should be balkanized too
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = SHL
+						is_core_of = NZL
+					}					
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
 				tag = EGY #not a cosmetic tag, but should be balkanized too
 			}
 			every_state = {

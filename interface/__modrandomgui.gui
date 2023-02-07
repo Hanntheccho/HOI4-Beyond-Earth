@@ -168,7 +168,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "another_bg4"
-			size = { width = 360 height = 202 }
+			size = { width = 380 height = 202 }
 			position = {
 				x = -181
 				y = -88
@@ -183,7 +183,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "another_bg5"
-			size = { width = 370 height = 202 }
+			size = { width = 390 height = 202 }
 			position = {
 				x = -201
 				y = -98
@@ -198,7 +198,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "leader_name"
-			position = { x = -169 y = -75 }
+			position = { x = -169 y = -78 }
 			font = "Arialsmallest"
 			text = "leader_name"
 			maxWidth = 330
@@ -208,11 +208,11 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "leader_desc"
-			position = { x = -162 y = -47 }
+			position = { x = -162 y = -50 }
 			font = "Arial16"
 			text = "leader_desc"
-			maxWidth = 305
-			maxHeight = 142
+			maxWidth = 325
+			maxHeight = 144
 			scrollbartype = "standardtext_slider"
 			alwaystransparent = yes
 		}
@@ -255,14 +255,18 @@ guiTypes = {
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300	
-		size = { width=520 height=10000 }
-		#verticalScrollbar = "right_vertical_slider"
+		size = { width=520 height=100%% }
+		verticalScrollbar = "right_vertical_slider"
 		clipping = yes
+		scroll_wheel_factor = 50
+		smooth_scrolling = yes
+		margin = {
+			bottom = 5
+		}
 
 		background = {
 			name = "bgbg"
 			quadTextureSprite = "GFX_tiled_invisible"
-			alwaystransparent = yes
 		}
 		#
 		iconType ={
@@ -523,6 +527,27 @@ guiTypes = {
 			#alwaystransparent = yes
 		}
 		#
+		iconType ={
+			name ="thing_front4"
+			spriteType = "GFX_pol_view_bg_2"
+			position = { x=0 y=603 }	
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+		iconType ={
+			name ="thing_front5"
+			spriteType = "GFX_pol_view_bg_2"
+			position = { x=0 y=803 }	
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+		iconType ={
+			name ="thing_front6"
+			spriteType = "GFX_pol_view_bg_2"
+			position = { x=0 y=1003 }	
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
 
 		instantTextboxType = {
 			name = "economy_system"
@@ -643,113 +668,50 @@ guiTypes = {
 		#############################
 
 		iconType = {
-			name = "economy4"
-			spriteType = "GFX_idea_civilian_economy_icon"
-			position = { x= 7 y = 617 }
-			pdx_tooltip = civilian_economy_effects
-			#alwaystransparent = yes
-		}
-		iconType = {
-			name = "economy3"
-			spriteType = "GFX_idea_low_economic_mobilisation_icon"
+			name = "economy"
+			spriteType = "GFX_idea_low_economic_mobilisation"
 			position = { x= 7 y = 617 }
 			pdx_tooltip = low_economic_mobilisation_effects
 			#alwaystransparent = yes
 		}
-		iconType = {
-			name = "economy2"
-			spriteType = "GFX_idea_partial_economic_mobilisation_icon"
-			position = { x= 7 y = 617 }
-			pdx_tooltip = partial_economic_mobilisation_effects
-			#alwaystransparent = yes
-		}
-		iconType = {
-			name = "economy1"
-			spriteType = "GFX_idea_war_economy_icon"
-			position = { x= 7 y = 617 }
-			pdx_tooltip = war_economy_effects
-			#alwaystransparent = yes
-		}
 
 		#############################
 
 		iconType = {
-			name = "mobilization4"
-			spriteType = "GFX_idea_limited_conscription_icon"
-			position = { x= 7 y = 817 }
-			pdx_tooltip = limited_conscription_effects
-			#alwaystransparent = yes
-		}
-		iconType = {
-			name = "mobilization3"
-			spriteType = "GFX_idea_extensive_conscription_icon"
+			name = "mobilization"
+			spriteType = "GFX_idea_extensive_conscription"
 			position = { x= 7 y = 817 }
 			pdx_tooltip = extensive_conscription_effects
 			#alwaystransparent = yes
 		}
-		iconType = {
-			name = "mobilization2"
-			spriteType = "GFX_idea_service_by_requirement_icon"
-			position = { x= 7 y = 817 }
-			pdx_tooltip = service_by_requirement_effects
-			#alwaystransparent = yes
-		}
-		iconType = {
-			name = "mobilization1"
-			spriteType = "GFX_idea_all_adults_serve_icon"
-			position = { x= 7 y = 817 }
-			pdx_tooltip = all_adults_serve_effects
-			#alwaystransparent = yes
-		}
 
 		#############################
 
 		iconType = {
-			name = "trade4"
-			spriteType = "GFX_idea_free_trade_icon"
-			position = { x= 7 y = 1017 }
-			pdx_tooltip = free_trade_effects
-			#alwaystransparent = yes
-		}
-		iconType = {
-			name = "trade3"
-			spriteType = "GFX_idea_export_focus_icon"
+			name = "trade"
+			spriteType = "GFX_idea_export_focus"
 			position = { x= 7 y = 1017 }
 			pdx_tooltip = export_focus_effects
 			#alwaystransparent = yes
 		}
-		iconType = {
-			name = "trade2"
-			spriteType = "GFX_idea_limited_exports_icon"
-			position = { x= 7 y = 1017 }
-			pdx_tooltip = limited_exports_effects
-			#alwaystransparent = yes
-		}
-		iconType = {
-			name = "trade1"
-			spriteType = "GFX_idea_closed_economy_icon"
-			position = { x= 7 y = 1017 }
-			pdx_tooltip = closed_economy_effects
-			#alwaystransparent = yes
-		}
 
 		#############################
 
-		iconType = {
-			name = "cant_change_law1"
-			spriteType = "GFX_pol_view_bg_4"
-			position = { x=10 y=587 }	
-		}
-		iconType = {
-			name = "cant_change_law2"
-			spriteType = "GFX_pol_view_bg_4"
-			position = { x=10 y=787 }	
-		}
-		iconType = {
-			name = "cant_change_law3"
-			spriteType = "GFX_pol_view_bg_4"
-			position = { x=10 y=987 }	
-		}
+#		iconType = {
+#			name = "cant_change_law1"
+#			spriteType = "GFX_pol_view_bg_4"
+#			position = { x=10 y=587 }	
+#		}
+#		iconType = {
+#			name = "cant_change_law2"
+#			spriteType = "GFX_pol_view_bg_4"
+#			position = { x=10 y=787 }	
+#		}
+#		iconType = {
+#			name = "cant_change_law3"
+#			spriteType = "GFX_pol_view_bg_4"
+#			position = { x=10 y=987 }	
+#		}
 	}
 #############################
 	containerWindowType = {

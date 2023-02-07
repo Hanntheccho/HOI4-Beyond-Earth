@@ -2,8 +2,8 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "countrydecisionview"
-		position = { x=-606 y=78 }	
-		show_position = { x=-6 y =78 }
+		position = { x=-606 y=118 }	
+		show_position = { x=-6 y =118 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
@@ -34,7 +34,15 @@ guiTypes = {
 		background ={
 			name ="pol_view_bg"
 			spriteType = "GFX_decision_view_bg_large"
-			position = { x= 6 y = 41 }
+			position = { x= 6 y = 0 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		background ={
+			name ="pol_view_bg2"
+			spriteType = "GFX_pol_view_bg_large"
+			position = { x= 6 y = 0 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -42,7 +50,7 @@ guiTypes = {
 		background ={
 			name ="pol_view_bg2"
 			spriteType = "GFX_tiled_side_mod"
-			position = { x= 6 y = 41 }
+			position = { x= 6 y = 0 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -50,7 +58,7 @@ guiTypes = {
 		iconType = {
 			name ="production_header_bg"
 			spriteType = "GFX_header_bg_mod"
-			position = { x= 0 y = 40 }
+			position = { x= 0 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}	
 		
@@ -86,7 +94,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "decision_grid_container"
-			position = {x=5 y=40}
+			position = {x=5 y=0}
 			size = {width=-1 height=-10 } # Y Set in code to match the window size, but initial value is used as extra space in height
 			Orientation = upper_left
 			margin = {
@@ -277,18 +285,6 @@ guiTypes = {
 			}
 		}
 
-		instantTextboxType = {
-			name = "news_popup_text_thing"
-			position = { x = 16 y = 23 }
-			textureFile = ""
-			font = "Arialsmallest"
-			text = "/> news_popup? />     YES   NO      /> country_popup? />      YES   NO"
-			maxWidth = 450
-			maxHeight = 10
-			format = left
-			alwaystransparent = yes
-		}
-
 		#Grouped text and checkbox for easier positioning
 		containerWindowType = {
 			name = "minor_event_checkbox_window"
@@ -310,6 +306,21 @@ guiTypes = {
 			position = {x=387 y=34}
 			Orientation = upper_right
 
+			containerWindowType = {
+				name = "another_bg"
+				size = { width = 88 height = 41 }
+				position = {
+					x = -3
+					y = -22
+				}
+	
+				background = {
+					name = "bg"
+					quadTextureSprite = "GFX_tiled_black"
+					alwaystransparent = yes
+				}
+			}
+
 			checkBoxType = {
 				name = "popup_events_checkbox"
 				position = { x = 0 y = -16 }
@@ -324,12 +335,39 @@ guiTypes = {
 			position = {x=144 y=34}
 			Orientation = upper_right
 
+			containerWindowType = {
+				name = "another_bg"
+				size = { width = 88 height = 41 }
+				position = {
+					x = -3
+					y = -22
+				}
+	
+				background = {
+					name = "bg"
+					quadTextureSprite = "GFX_tiled_black"
+					alwaystransparent = yes
+				}
+			}
+
 			checkBoxType = {
 				name = "popup_news_checkbox"
 				position = { x = 0 y = -16 }
 				quadTextureSprite = "GFX_difficulty_button_regular"
 				clicksound = decisions_ui_button
 			}
+		}
+
+		instantTextboxType = {
+			name = "news_popup_text_thing"
+			position = { x = 16 y = 23 }
+			textureFile = ""
+			font = "Arialsmallest"
+			text = "/> news_popup? />     YES   NO      /> country_popup? />      YES   NO"
+			maxWidth = 450
+			maxHeight = 10
+			format = left
+			alwaystransparent = yes
 		}
 	}
 
