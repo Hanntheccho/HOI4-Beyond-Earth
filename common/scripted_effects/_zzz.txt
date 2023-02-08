@@ -100,11 +100,17 @@ balkanize_that = {
 		}
 		else_if = {
 			limit = {
-				has_cosmetic_tag = COL_bolivaria
+				OR = {
+					tag = COL
+					has_cosmetic_tag = COL_bolivaria
+				}
 			}
 			every_state = {
 				limit = {
-					is_core_of = VEN
+					OR = {
+						is_core_of = VEN
+						is_core_of = LAM
+					}									
 				}
 				remove_core_of = ROOT
 			}
