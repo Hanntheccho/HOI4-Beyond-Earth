@@ -120,7 +120,7 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "category_header"
-		position = {x=0 y=-10}
+		position = {x=0 y=0}
 		Orientation = upper_left
 		size = {width=3 height=15}
 		clipping = no
@@ -140,7 +140,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "name_text"
-			position = { x = 8 y = 20 }
+			position = { x = 8 y = 5 }
 			textureFile = ""
 			font = "Beyond"
 			#borderSize = { x = 0 y = 0 }
@@ -173,13 +173,19 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "decision_category_desc"
-		position = { x=0 y=-10 }
-		size = { width=490 height=8 }
+		position = { x=0 y=-15 }
+		size = { width=490 height=0 }
 		clipping = no
 		
 		background = {
 			name = "Background"
-			position = { x=0 y=-1 }
+			position = { x=0 y=0 }
+			quadTextureSprite="GFX_tiled_black" #GFX_focus_tooltip
+			clicksound = click_default
+		}
+		background = {
+			name = "Background2"
+			position = { x=10 y=43 }
 			quadTextureSprite="GFX_tiled_black" #GFX_focus_tooltip
 			clicksound = click_default
 		}
@@ -194,22 +200,22 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "full_text"
-			position = { x = 14 y = 36 }
+			position = { x = 24 y = 43 }
 			textureFile = ""
 			font = "Arial16"
-			borderSize = { x = 0 y = 5 }
+			borderSize = { x = 4 y = 14 }
 			text = ""
-			maxWidth = 460
+			maxWidth = 450
 		}
 		
 		instantTextboxType = {
 			name = "short_text"
-			position = { x = 125 y = 36 }
+			position = { x = 135 y = 43 }
 			textureFile = ""
 			font = "Arial16"
-			borderSize = { x = 0 y = 5 }
+			borderSize = { x = 4 y = 14 }
 			text = ""
-			maxWidth = 460
+			maxWidth = 450
 		}
 
 		OverlappingElementsBoxType = {
@@ -252,41 +258,26 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "event_header"
-		position = {x=5 y=0}
+		position = {x=-10000 y=0}
 		Orientation = upper_left
-		size = {width=3 height=65}
+		size = {width=3 height=0} #40
 		clipping = no
 
 		iconType = {
 			name = "icon_header_bg"
-			position = {x=-10000 y=5}
-			spriteType = "GFX_event_header_bg"
-		}
-
-		containerWindowType = {
-			name = "another_bg1"
-			size = { width = 490 height = 35 }
-			position = {
-				x = -5
-				y = 15
-			}
-
-			background = {
-				name = "bg"
-				quadTextureSprite = "GFX_tiled_black"
-				alwaystransparent = yes
-			}
+			position = {x=10 y=00}
+			spriteType = "GFX_news_word"
 		}
 
 		#Grouped text and checkbox for easier positioning
 		containerWindowType = {
 			name = "minor_event_checkbox_window"
-			position = {x=-10000 y=39}
+			position = {x=-10000 y=0}
 			Orientation = upper_right
 
 			checkBoxType = {
 				name = "popup_minor_events_checkbox"
-				position = { x = -7 y = -16 }
+				position = { x = 0 y = 0 }
 				quadTextureSprite = "GFX_difficulty_button_civilian"
 				clicksound = decisions_ui_button
 				pdx_tooltip = "MINOR_EVENT_POPUP_CHECKBOX_TOOLTIP"
@@ -296,71 +287,33 @@ guiTypes = {
 		#Grouped text and checkbox for easier positioning
 		containerWindowType = {
 			name = "event_checkbox_window"
-			position = {x=387 y=34}
+			position = {x=385 y=0}
 			Orientation = upper_right
-
-			containerWindowType = {
-				name = "another_bg"
-				size = { width = 88 height = 41 }
-				position = {
-					x = -3
-					y = -22
-				}
-	
-				background = {
-					name = "bg"
-					quadTextureSprite = "GFX_tiled_black"
-					alwaystransparent = yes
-				}
-			}
 
 			checkBoxType = {
 				name = "popup_events_checkbox"
-				position = { x = 0 y = -16 }
-				quadTextureSprite = "GFX_difficulty_button_regular"
+				position = { x = 0 y = 0 }
+				quadTextureSprite = "GFX_news_checkbox"
 				clicksound = decisions_ui_button
+				pdx_tooltip = COUNTRY_EVENT
+				#shortcut = "C"
 			}
 		}
 
 		#Grouped text and checkbox for easier positioning
 		containerWindowType = {
 			name = "news_checkbox_window"
-			position = {x=144 y=34}
+			position = {x=235 y=0}
 			Orientation = upper_right
-
-			containerWindowType = {
-				name = "another_bg"
-				size = { width = 88 height = 41 }
-				position = {
-					x = -3
-					y = -22
-				}
-	
-				background = {
-					name = "bg"
-					quadTextureSprite = "GFX_tiled_black"
-					alwaystransparent = yes
-				}
-			}
 
 			checkBoxType = {
 				name = "popup_news_checkbox"
-				position = { x = 0 y = -16 }
-				quadTextureSprite = "GFX_difficulty_button_regular"
+				position = { x = 0 y = 0 }
+				quadTextureSprite = "GFX_news_checkbox"
 				clicksound = decisions_ui_button
+				pdx_tooltip = NEWS_EVENTS
+				#shortcut = "N"
 			}
-		}
-
-		instantTextboxType = {
-			name = "news_popup_text_thing"
-			position = { x = 16 y = 23 }
-			textureFile = ""
-			font = "Arialsmallest"
-			text = "/> news_popup? />     YES   NO      /> country_popup? />      YES   NO"
-			maxWidth = 450
-			maxHeight = 10
-			format = left
-			alwaystransparent = yes
 		}
 	}
 
@@ -440,7 +393,7 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "decision_item"
-		position = { x=20 y=-5 }
+		position = { x=20 y=-14 }
 		size = { width=100% height=41 }
 		clipping = no
 
@@ -527,7 +480,7 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "targeted_decision_item"
-		position = { x=40 y=-5 }
+		position = { x=40 y=-14 }
 		size = { width=100% height=40 }
 		clipping = no
 
@@ -629,7 +582,7 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "timed_decision_item"
-		position = { x=0 y=-5 }
+		position = { x=0 y=-14 }
 		size = { width=100% height=41 }
 		clipping = no
 
@@ -730,7 +683,7 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "on_map_decision_locator_item"
-		position = { x=0 y=-5 }
+		position = { x=0 y=-14 }
 		size = { width=100% height=41 }
 		clipping = no
 
