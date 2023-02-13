@@ -2,8 +2,8 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "countrydeploymentview"
-		position = { x=-606 y=78 }	
-		show_position = { x=-6 y =78 }
+		position = { x=-606 y=118 }	
+		show_position = { x=-6 y =118 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
@@ -16,10 +16,6 @@ guiTypes = {
 		background = {
 			name = "Background"
 			quadTextureSprite ="GFX_tiled_window_transparent"
-			position = {
-				x = 0
-				y = 40
-			}
 			alwaystransparent = yes
 		}
 
@@ -38,7 +34,15 @@ guiTypes = {
 		background ={
 			name ="pol_view_bg"
 			spriteType = "GFX_decision_view_bg_large"
-			position = { x= 6 y = 41 }
+			position = { x= 6 y = 0 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		background ={
+			name ="pol_view_bg2"
+			spriteType = "GFX_army_view_bg_large"
+			position = { x= 6 y = 0 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -46,7 +50,7 @@ guiTypes = {
 		background ={
 			name ="pol_view_bg2"
 			spriteType = "GFX_tiled_side_mod"
-			position = { x= 6 y = 41 }
+			position = { x= 6 y = 0 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -54,7 +58,7 @@ guiTypes = {
 		iconType ={
 			name ="production_header_bg"
 			spriteType = "GFX_header_bg_mod"
-			position = { x= 0 y = 40 }
+			position = { x= 0 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}	
 		
@@ -78,7 +82,7 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "divisions"
-				position = { x=0 y=150 }
+				position = { x=0 y=110 }
 				size = { width=550 height=-2 }
 				verticalScrollbar = "right_vertical_slider"
 				scroll_wheel_factor = 40
@@ -115,17 +119,17 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "templatedeploymentwindow"
-		position = { x=-356 y=115}	
-		show_position = { x=565 y =115 }
+		position = { x=-356 y=145}	
+		show_position = { x=565 y =145 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
-		size = { width=120 height=90%% }
+		size = { width=100 height=600 }
 		clipping = no
 		
 		background = {
 			name = "Background"		
-			quadTextureSprite ="GFX_tiled_window_transparent"
+			quadTextureSprite ="GFX_tiled_black"
 		}
 
 		instantTextboxType = {
@@ -142,7 +146,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "templates"
-			position = { x=-9 y=35 }
+			position = { x=10 y=10 }
 			size = { width=102 height=600 }
 			verticalScrollbar = "right_vertical_slider"
 			scroll_wheel_factor = 40
@@ -335,7 +339,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "named_division_template_entry"
 		position = { x=0 y=2 }
-		size = { width=75 height=100 }
+		size = { width=75 height=110 }
 		clipping = no
 
 		background = {
@@ -491,7 +495,7 @@ guiTypes = {
 		iconType = {
 			name = "Background"
 			quadTextureSprite ="GFX_deploy_reinforcements_entry"
-			position = { x = -43 y = -5}
+			position = { x = -45 y = -5}
 			alwaystransparent = yes
 		}
 
@@ -588,7 +592,7 @@ guiTypes = {
 		iconType = {
 			name = "Background"
 			quadTextureSprite ="GFX_deploy_reinforcements_entry"
-			position = { x = -43 y = -5}
+			position = { x = -45 y = -5}
 			alwaystransparent = yes
 		}
 
@@ -826,6 +830,30 @@ guiTypes = {
 			}
 		}
 
+		containerWindowType = {
+			name = "back_military_deployment_mod"
+			size = { width=140 height=25 }
+
+			background = {
+				name = "background"
+				quadTextureSprite = "GFX_tiled_black"
+				position = {
+					x = 0
+					y = 3
+				}
+				alwaystransparent = yes
+			}
+			background = {
+				name = "background"
+				quadTextureSprite = "GFX_tiled_black"
+				position = {
+					x = 170
+					y = 3
+				}
+				alwaystransparent = yes
+			}
+		}
+
 		instantTextboxType = {
 			name = "eq_tag"
 			position = { x = 20 y = 5 }
@@ -958,6 +986,21 @@ guiTypes = {
 				alwaystransparent = yes
 			}
 		}
+
+		containerWindowType = {
+			name = "back_military_deployment_mod3"
+			size = { width=80 height=70 }
+
+			background = {
+				name = "background"
+				quadTextureSprite = "GFX_tiled_black"
+				position = {
+					x = 10
+					y = 60
+				}
+				alwaystransparent = yes
+			}
+		}
 		
 		iconType = {
 			name = "template_icon"
@@ -1031,7 +1074,7 @@ guiTypes = {
 				quadTextureSprite = "GFX_tiled_black"
 				position = {
 					x = 190
-					y = 7
+					y = 37
 				}
 				alwaystransparent = yes
 			}
@@ -1039,7 +1082,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "decrease_amount"
-			position = { x = 190 y = 11 }
+			position = { x = 190 y = 41 }
 			quadTextureSprite = "GFX_increase_decrease_amount_invisible"
 			pdx_tooltip = "CONVEYOR_SERIES_DECREASE_DESC"
 			font = "Arialsmallest"
@@ -1050,7 +1093,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "amount"
-			position = { x = 234 y = 15 }
+			position = { x = 234 y = 45 }
 			font = "Focusfont"
 			text = "INFINITY"
 			maxWidth = 33
@@ -1061,7 +1104,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "increase_amount"
-			position = { x = 270 y = 11 }
+			position = { x = 270 y = 41 }
 			quadTextureSprite = "GFX_increase_decrease_amount_invisible"
 			pdx_tooltip = "CONVEYOR_SERIES_INCREASE_DESC"
 			clicksound = click_default
