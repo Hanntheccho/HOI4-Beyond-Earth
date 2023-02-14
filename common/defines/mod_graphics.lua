@@ -47,7 +47,7 @@ NDefines_Graphics.NGraphics.MAP_MODE_TERRAIN_TRANSPARENCY = 0.9
 NDefines_Graphics.NGraphics.MOON_HEIGHT = 10000 -- higher means softer shadows and more intense light
 NDefines_Graphics.NGraphics.MOON_HEIGHT_WATER = 10000   -- higher means softer shadows and more intense light
 
-NDefines_Graphics.NGraphics.COUNTRY_COLOR_SATURATION_MODIFIER = 0.8
+NDefines_Graphics.NGraphics.COUNTRY_COLOR_SATURATION_MODIFIER = 0.85
 NDefines_Graphics.NGraphics.COUNTRY_COLOR_BRIGHTNESS_MODIFIER = 0.9
 
 NDefines_Graphics.NGraphics.MOON_DIFFUSE_COLOR = {0.7, 0.1, 1.0}
