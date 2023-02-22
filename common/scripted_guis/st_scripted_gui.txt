@@ -1,0 +1,188 @@
+scripted_gui = {
+	st_open = {
+
+		ai_enabled = {
+			always = no
+		}
+
+		context_type = player_context
+
+		window_name = "st_open_container"
+
+		parent_window_token = top_bar
+
+		visible = {
+			NOT = { has_country_flag = hidden_switch }
+		}
+
+		effects = {
+			open_ST_click = {
+				if = {
+					limit = { ROOT = { NOT = { has_country_flag = transfer_enabled } } }
+					ROOT = { set_country_flag = transfer_enabled }
+				}
+				else = {
+					ROOT = { clr_country_flag = transfer_enabled }
+				}
+			}
+		}
+		triggers = {
+			open_ST_click_enabled = {
+				always = yes
+			}
+		}
+	}
+	
+	st_hide = {
+
+		ai_enabled = {
+			always = no
+		}
+
+		context_type = player_context
+
+		window_name = "st_hide_container"
+
+		visible = {
+			#
+		}
+
+		effects = {
+			hide_ST_click = {
+				if = {
+					limit = { NOT = { has_country_flag = hidden_switch } }
+					set_country_flag = hidden_switch
+				}
+				else = {
+					clr_country_flag = hidden_switch
+				}
+			}
+		}
+		triggers = {
+			hide_ST_click_enabled = {
+				always = yes
+			}
+		}
+	}
+
+	st_country_powers = {
+
+		ai_enabled = {
+			always = no
+		}
+	
+		context_type = selected_country_context
+		
+		window_name = "st_subject_powers_container"
+		
+		visible = {
+			ROOT = {
+				is_ai = no
+				has_country_flag = transfer_enabled
+			}
+		}
+		
+		effects = {			
+			award_states_click = {
+				ROOT = { 
+					set_variable = { marked_states = 0 }
+				}
+				set_temp_variable = { ROOT.taker = this}
+				
+				every_state = {
+					limit = {
+						has_state_flag = marked_for_transfer
+						OR = {
+							is_owned_and_controlled_by = ROOT
+							any_country = {
+								is_ai = yes
+								is_subject_of = ROOT
+								owns_state = PREV
+							}
+						}
+					}
+					var:taker = { transfer_state = PREV }
+					clr_state_flag = marked_for_transfer
+					#set_border_war = no
+				}
+			}
+		}
+		
+		triggers = {		
+			award_states_click_enabled = {
+				check_variable = { ROOT.marked_states > 0 }
+				NOT = { 
+					ROOT = { 
+						all_owned_state = {
+							has_state_flag = marked_for_transfer
+						} 
+					}
+				}
+			}
+		}  
+	}
+
+	st_state_manager_powers = {
+
+		ai_enabled = {
+			always = no
+		}
+	
+		context_type = selected_state_context
+		
+		window_name = "st_state_manager_powers_container"
+		
+		visible = {
+			ROOT = {
+				is_ai = no
+				has_country_flag = transfer_enabled
+			}
+			OR = {
+				is_owned_and_controlled_by = ROOT
+				any_country = {
+					is_ai = yes
+					is_subject_of = ROOT
+					owns_state = FROM
+				}
+			}
+		}
+		
+		effects = {
+			
+			st_state_manager_power_mark_for_transfer_click = {
+				FROM.FROM = { 
+					set_state_flag = marked_for_transfer
+					#set_border_war = yes
+				}
+				add_to_variable = { ROOT.marked_states = 1 }
+			}
+			
+			st_state_manager_power_unmark_for_transfer_click = {
+				FROM.FROM = { 
+					clr_state_flag = marked_for_transfer 
+					#set_border_war = no
+				}
+				subtract_from_variable = { ROOT.marked_states = 1 }
+			}
+		}
+		
+		triggers = {
+		
+			st_state_manager_power_mark_for_transfer_click_enabled = {
+				FROM.FROM = {
+					NOT = { has_state_flag = marked_for_transfer }
+				}
+			}
+			st_state_manager_power_mark_for_transfer_visible = {
+				FROM.FROM = {
+					NOT = { has_state_flag = marked_for_transfer }
+				}
+			}
+			st_state_manager_power_unmark_for_transfer_visible = {
+				FROM.FROM = {
+					has_state_flag = marked_for_transfer
+				}
+			}
+		}	
+	}
+}
