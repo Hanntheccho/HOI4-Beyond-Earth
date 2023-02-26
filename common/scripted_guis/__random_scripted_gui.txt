@@ -1,4 +1,86 @@
 scripted_gui = {
+	diplo_options_gui = {
+		context_type = selected_country_context
+		parent_window_token = selected_country_view_diplomacy
+		
+		window_name = "diplo_options"
+
+        visible = {
+			always = yes
+        }
+
+		effects = {
+            war_button_click = {
+				if = {
+					limit = {
+						THIS = {
+							is_in_faction_with = ROOT
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								is_faction_leader = yes
+							}
+							
+						}
+						THIS = {
+							leave_faction = yes
+						}
+					}
+					else = {
+						ROOT = {
+							leave_faction = yes
+						}
+					}
+				}
+				ROOT = {
+					declare_war_on = {
+						target = PREV
+						type = annex_puppet_wargoal
+					}
+				}				
+			}
+			annex_button_click = {
+				ROOT = {
+					annex_country = {
+						target = PREV
+					}
+				}
+			}
+			depuppet_button_click = {
+				ROOT = {
+					end_puppet = PREV
+				}
+			}
+		}
+
+		triggers = {
+            war_button_click_enabled = {
+				THIS = {
+					NOT = {
+						is_puppet_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			annex_button_click_enabled = {
+				THIS = {
+					is_puppet_of = ROOT
+				}
+			}
+			depuppet_button_click_enabled = {
+				THIS = {
+					is_puppet_of = ROOT
+				}
+			}
+        }
+
+        ai_enabled = {
+            always = no
+        }
+    } 
+#######################
 	focus_tooltip_gui = {
 		context_type = player_context
 		parent_window_name = "zoom_slider_container"

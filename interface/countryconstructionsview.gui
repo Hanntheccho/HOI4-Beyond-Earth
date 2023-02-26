@@ -2,8 +2,8 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "countryconstructionsview"
-		position = { x=-606 y=78}	
-		show_position = { x=-6 y =78 }
+		position = { x=-606 y=118}	
+		show_position = { x=-6 y =118 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300	
@@ -34,7 +34,15 @@ guiTypes = {
 		background ={
 			name ="pol_view_bg"
 			spriteType = "GFX_decision_view_bg_large"
-			position = { x= 6 y = 41 }
+			position = { x= 6 y = 0 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		background ={
+			name ="pol_view_bg2"
+			spriteType = "GFX_trade_view_bg_large"
+			position = { x= 6 y = 0 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -42,7 +50,7 @@ guiTypes = {
 		background ={
 			name ="pol_view_bg2"
 			spriteType = "GFX_tiled_side_mod"
-			position = { x= 6 y = 41 }
+			position = { x= 6 y = 0 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -50,12 +58,16 @@ guiTypes = {
 		iconType ={
 			name ="production_header_bg"
 			spriteType = "GFX_header_bg_mod"
-			position = { x= 0 y = 40 }
+			position = { x= 0 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}	
 
 		containerWindowType = {
 			name = "building_icons_shadow"
+			position = {
+				x = 0
+				y = -40
+			}
 			#
 			iconType = {
 				name = "shadow1"
@@ -87,7 +99,7 @@ guiTypes = {
 			name = "building_icons_shadow2"
 			position = {
 				x = 0
-				y = 274
+				y = 234
 			}
 			#
 			iconType = {
@@ -110,7 +122,7 @@ guiTypes = {
 			name = "building_icons_shadow3"
 			position = {
 				x = 0
-				y = 471
+				y = 431
 			}
 			#
 			iconType = {
@@ -149,69 +161,13 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "production_win_top"
-			position = { x = 48 y = 10 } #30 }
+			position = { x = 48 y = -30 } #30 }
 			size = { width = 100% height = 80% }
 			verticalScrollbar = "right_vertical_slider"
-
-			containerWindowType = {
-				name = "another_bg1"
-				size = { width = 239 height = 35 }
-				position = {
-					x = -32
-					y = 141
-				}
-	
-				background = {
-					name = "bg"
-					quadTextureSprite = "GFX_tiled_black"
-					alwaystransparent = yes
-				}
-	
-				instantTextboxType = {
-					name = "speed"
-					position = { x = 10 y = 9 }
-					textureFile = ""
-					font = "Arialsmallest"
-					borderSize = {x = 0 y = 0}
-					text = "/> building_speed? ____________"
-					maxWidth = 450
-					maxHeight = 20
-					format = left	
-					alwaystransparent = yes
-				}
-			}
-
-			containerWindowType = {
-				name = "another_bg2"
-				size = { width = 174 height = 35 }
-				position = {
-					x = 217
-					y = 141
-				}
-	
-				background = {
-					name = "bg"
-					quadTextureSprite = "GFX_tiled_black"
-					alwaystransparent = yes
-				}
-	
-				instantTextboxType = {
-					name = "available_num"
-					position = { x = 10 y = 9 }
-					textureFile = ""
-					font = "Arialsmallest"
-					borderSize = {x = 0 y = 0}
-					text = "/> available? _________"
-					maxWidth = 450
-					maxHeight = 20
-					format = left	
-					alwaystransparent = yes
-				}
-			}
 			
 			instantTextboxType = {
 				name = "available_factories_value"
-				position = { x = 310 y = 147 }
+				position = { x = -10000 y = 147 }
 				textureFile = ""
 				font = "Arial16"
 				borderSize = {x = 0 y = 0}
@@ -248,7 +204,7 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "construction_speed_value"
-				position = { x = 125 y = 147 }
+				position = { x = -10000 y = 147 }
 				textureFile = ""
 				font = "Arial16"
 				borderSize = {x = 0 y = 0}
@@ -261,7 +217,7 @@ guiTypes = {
 			
 		containerWindowType = {
 			name = "production_lines"
-			position = { x = 0 y = 190 }
+			position = { x = 0 y = 110 }
 			size = { width = 455 height = 100%% }
 			verticalScrollbar = "right_vertical_slider"
 			vertical_scroll_step = 50
@@ -291,7 +247,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "possible_constructions"
-			position = { x = 442 y = 50 }
+			position = { x = 442 y = 10 }
 			size = { width = 104 height = 585 }
 			
 			gridBoxType = {
@@ -324,13 +280,13 @@ guiTypes = {
 
 		iconType = {
 			name = "shadow_thing"
-			position = { x = 474 y = 817 }
+			position = { x = 474 y = 777 }
 			spriteType = "GFX_buildings_strip_shadow"
 		}
 
 		buttonType = {
 			name = "convert_ic_button"
-			position = { x = -67 y = 820 }
+			position = { x = -67 y = 780 }
 			quadTextureSprite ="GFX_convert_ic_button"
 			buttonFont = "Main_14_black"
 			Orientation = "UPPER_RIGHT"
@@ -443,7 +399,7 @@ guiTypes = {
 		iconType = {
 			name = "progress"
 			spriteType = "GFX_construction_progressbar"
-			position = { x= 16 y = 53 }
+			position = { x= 14 y = 53 }
 		}
 
 		iconType = {
