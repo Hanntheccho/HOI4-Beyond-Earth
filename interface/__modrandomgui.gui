@@ -233,7 +233,7 @@ guiTypes = {
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300	
-		size = { width=520 height=600 }
+		size = { width=520 height=610 }
 		#verticalScrollbar = "right_vertical_slider"
 		clipping = yes
 		scroll_wheel_factor = 50
@@ -334,7 +334,7 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = "cultural_system_win"
-			position = { x = 80 y = 140 }
+			position = { x = 80 y = 128 }
 
 			instantTextboxType = {
 				name = "cultural_system"
@@ -419,7 +419,7 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = "government_system_win"
-			position = { x = 45 y = 280 }
+			position = { x = 45 y = 256 }
 
 			instantTextboxType = {
 				name = "government_system"
@@ -504,7 +504,7 @@ guiTypes = {
 		}	
 		containerWindowType = {
 			name = "ideas_law_sum_win"
-			position = { x = 25 y = 420 }
+			position = { x = 25 y = 384 }
 
 			instantTextboxType = {
 				name = "ideas_law_sum_title"
@@ -513,6 +513,7 @@ guiTypes = {
 				text = "CIVLIAN MILITARY"
 				maxWidth = 350
 				maxHeight = 20
+				alwaystransparent = yes
 			}
 			containerWindowType = {
 				name = "another_bg41"
@@ -528,9 +529,18 @@ guiTypes = {
 					alwaystransparent = yes
 				}
 			}
+			#instantTextboxType = {
+			#	name = "ideas_law_sum"
+			#	position = { x =120 y =25 }
+			#	font = "Arial16"
+			#	text = "ideas_law_sum"
+			#	maxWidth = 250
+			#	maxHeight = 135
+			#	scrollbartype = "standardtext_slider"
+			#}
 			containerWindowType = {
 				name = "another_bg42"
-				size = { width = 300 height = 160 }
+				size = { width = 290 height = 198 }
 				position = {
 					x = 100
 					y = 10
@@ -543,19 +553,61 @@ guiTypes = {
 				}
 			}
 			instantTextboxType = {
-				name = "ideas_law_sum"
+				name = "economy_law"
 				position = { x =120 y =25 }
 				font = "Arial16"
-				text = "ideas_law_sum"
-				maxWidth = 250
-				maxHeight = 135
+				text = "ideas_law_economy"
+				maxWidth = 240
+				maxHeight = 55
 				scrollbartype = "standardtext_slider"
+				alwaystransparent = yes
+			}
+			instantTextboxType = {
+				name = "mobilization_law"
+				position = { x =120 y =83 }
+				font = "Arial16"
+				text = "ideas_law_mobilization"
+				maxWidth = 240
+				maxHeight = 55
+				scrollbartype = "standardtext_slider"
+				alwaystransparent = yes
+			}
+			instantTextboxType = {
+				name = "trade_law"
+				position = { x =120 y =141 }
+				font = "Arial16"
+				text = "ideas_law_trade"
+				maxWidth = 240
+				maxHeight = 55
+				scrollbartype = "standardtext_slider"
+				alwaystransparent = yes
 			}
 			iconType = {	
 				name = "extra_icon"
 				spriteType = "GFX_idea_FRA_mediterranean_business"
 				position = { x= -15 y = 15 }
 				pdx_tooltip = ideas_law_sum_name
+			}
+			buttonType = {	
+				name = "change_economic"
+				spriteType = "GFX_st_button_261x50"
+				position = { x= 115 y = 25 }
+				pdx_tooltip = change_this_law_tt
+				pdx_disabled_tooltip_delayed = change_this_law_tt_disabled
+			}
+			buttonType = {	
+				name = "change_mobilization"
+				spriteType = "GFX_st_button_261x50"
+				position = { x= 115 y = 83 }
+				pdx_tooltip = change_this_law_tt
+				pdx_disabled_tooltip_delayed = change_this_law_tt_disabled
+			}
+			buttonType = {	
+				name = "change_trade"
+				spriteType = "GFX_st_button_261x50"
+				position = { x= 115 y = 141 }
+				pdx_tooltip = change_this_law_tt
+				pdx_disabled_tooltip_delayed = change_this_law_tt_disabled
 			}
 		}				
 	}
