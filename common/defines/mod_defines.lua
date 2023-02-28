@@ -117,3 +117,5 @@ NDefines.NCountry.NUCLEAR_BOMB_DROP_WAR_SUPPORT_EFFECT_MAX_INFRA = 0.05
 
 NDefines.NResistance.RESISTANCE_GROWTH_BASE = 0.1       --Vanilla: 0.2
 NDefines.NResistance.COMPLIANCE_DECAY_AT_MAX_COMPLIANCE = 0.0
+
+NDefines.NCountry.BASE_RESEARCH_SLOTS = 1       --Vanilla: 2
