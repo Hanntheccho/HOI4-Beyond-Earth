@@ -81,13 +81,28 @@ guiTypes = {
 				
 		containerWindowType = {
 			name = "military_tab"
-			position = { x = 0 y = 30 }
+			position = { x = 0 y = 0 }
 			size = { width = 100%% height = 100%% }
+
+			containerWindowType = {
+				name = "another_bg11"
+				size = { width = 520 height = 100%% }
+				position = {
+					x = 15
+					y = 115
+				}
+	
+				background = {
+					name = "bg"
+					quadTextureSprite = "GFX_tiled_black"
+					alwaystransparent = yes
+				}
+			}
 		
 			containerWindowType = {
 				name = "production_lines"
-				position = { x = 0 y = 145 }
-				size = { width = 545 height = 100%% }
+				position = { x = 5 y = 175 }
+				size = { width = 544 height = 100%% }
 				scroll_wheel_factor = 40
 				verticalScrollbar = "right_vertical_slider"
 				smooth_scrolling = yes
@@ -110,8 +125,8 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "production_win_top"
-				position = { x = 0 y = -29 }
-				size = { width = 100% height = 80% }
+				position = { x = 0 y = 0 }
+				size = { width = 100% height = 100% }
 				#verticalScrollbar = "right_vertical_slider"
 				clipping = no
 
@@ -290,7 +305,7 @@ guiTypes = {
 		
 				containerWindowType = {
 					name = "another_bg11"
-					size = { width = 520 height = 150 }
+					size = { width = 520 height = 100 }
 					position = {
 						x = 15
 						y = 15
@@ -305,9 +320,9 @@ guiTypes = {
 
 				containerWindowType = {
 					name = "another_bg12"
-					size = { width = 430 height = 100 }
+					size = { width = 480 height = 120 }
 					position = {
-						x = 25
+						x = 20
 						y = 45
 					}
 		
@@ -320,9 +335,9 @@ guiTypes = {
 
 				containerWindowType = {
 					name = "another_bg13"
-					size = { width = 230 height = 75 }
+					size = { width = 230 height = 79 }
 					position = {
-						x = 290
+						x = 250
 						y = 60
 					}
 		
@@ -335,9 +350,9 @@ guiTypes = {
 
 				containerWindowType = {
 					name = "another_bg14"
-					size = { width = 220 height = 50 }
+					size = { width = 210 height = 50 }
 					position = {
-						x = 40
+						x = 35
 						y = 105
 					}
 		
@@ -347,6 +362,25 @@ guiTypes = {
 						alwaystransparent = yes
 					}
 				}
+
+				iconType = {
+					name ="progressbar"
+					spriteType = "GFX_prod_progress_bar2"
+					position = { x= 26 y = 158 }
+					rotation = 1.5708
+				}
+				iconType = {
+					name ="progressbar2"
+					spriteType = "GFX_prod_progress_bar2"
+					position = { x= 33 y = 158 }
+					rotation = 1.5708
+				}
+				buttonType = {
+					name = "close_production_line"
+					position = { x=485 y=45 }
+					quadTextureSprite = "GFX_dismantle_faction_button"
+					clicksound = click_close
+				}	
 
 				#################################
 
@@ -408,7 +442,7 @@ guiTypes = {
 
 				buttonType = {
 					name = "infantry_button"
-					position = { x=36 y=60 }
+					position = { x=46 y=60 }
 					quadTextureSprite ="GFX_st_button_mid"
 					#pdx_tooltip = "PRODUCTION_INFANTRY_BUTTON"
 					clicksound = click_checkbox
@@ -416,7 +450,7 @@ guiTypes = {
 
 				instantTextboxType = {
 					name = "inf_production_text"
-					position = { x=40 y=58 }
+					position = { x=50 y=58 }
 					textureFile = ""
 					font = "Arialsmallest"
 					borderSize = {x = 0 y = 0}
@@ -436,7 +470,7 @@ guiTypes = {
 				
 				buttonType = {
 					name = "tank_button"
-					position = { x=295 y=72 }
+					position = { x=255 y=72 }
 					quadTextureSprite ="GFX_st_button_mid"
 					#pdx_tooltip = "PRODUCTION_VEHICLES_BUTTON"
 					clicksound = click_checkbox
@@ -444,7 +478,7 @@ guiTypes = {
 
 				instantTextboxType = {
 					name = "armored_production_text"
-					position = { x=305 y=70 }
+					position = { x=265 y=70 }
 					textureFile = ""
 					font = "Arialsmallest"
 					borderSize = {x = 0 y = 0}
@@ -464,7 +498,7 @@ guiTypes = {
 				
 				buttonType = {
 					name = "aircraft_button"
-					position = { x=50 y=113 }
+					position = { x=45 y=113 }
 					quadTextureSprite ="GFX_st_button_mid"
 					#pdx_tooltip = "PRODUCTION_AIRCRAFT_BUTTON"
 					clicksound = click_checkbox
@@ -472,7 +506,7 @@ guiTypes = {
 
 				instantTextboxType = {
 					name = "air_production_text"
-					position = { x=56 y=120 }
+					position = { x=51 y=120 }
 					textureFile = ""
 					font = "Arialsmallest"
 					borderSize = {x = 0 y = 0}
@@ -1528,7 +1562,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "production_military_line_entry"
 		position = { x=0 y=12 }
-		size = { width=500 height=120 }
+		size = { width=500 height=130 }
 		clipping = no
 
 		background = {
@@ -1553,14 +1587,15 @@ guiTypes = {
 		iconType = {
 			name ="equipment_icon"
 			spriteType = "GFX_technology_medium"
-			position = { x=140 y=55 }
+			position = { x=140 y=75 }
 			centerposition = yes
 			alwaystransparent = yes
+			scale = 1
 		}
 
 		containerWindowType = {
 			name = "bg1"
-			size = { width=480 height=98 }
+			size = { width=480 height=120 }
 			position = {
 				x = 0
 				y = 0
@@ -1575,10 +1610,10 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "bg2"
-			size = { width=140 height=84 }
+			size = { width=140 height=58 }
 			position = {
 				x = 320
-				y = 7
+				y = 50
 			}
 
 			background = {
@@ -1591,12 +1626,12 @@ guiTypes = {
 		iconType = {
 			name ="factory_icon"
 			spriteType = "GFX_factory_item"
-			position = { x= 325 y = 66 }
+			position = { x= 325 y = 83 }
 		}
 
 		instantTextboxType = {
 			name = "factories_used_txt"
-			position = { x=322 y=68 }
+			position = { x=322 y=85 }
 			font = "Focusfont"
 			borderSize = {x = 0 y = 0}
 			text = ""
@@ -1604,6 +1639,42 @@ guiTypes = {
 			maxHeight = 25
 			fixedsize = yes
 			format = center
+		}
+
+		instantTextboxType = {
+			name = "speed_text"
+			position = { x = 32 y = 90 }
+			textureFile = ""
+			font = "Arialsmallest"
+			text = "/> total_prod_speed>..."
+			maxWidth = 400
+			maxHeight = 20
+			format = left
+		}
+
+		instantTextboxType = {
+			name = "speed"
+			position = { x = 180 y = 90 }
+			textureFile = ""
+			font = "Arialsmallest"
+			text = "--"
+			maxWidth = 400
+			maxHeight = 20
+			format = left
+		}
+
+		instantTextboxType = {
+			name = "total_need"
+			position = { x = -10000 y = 64 }
+			textureFile = ""
+			font = "Arialsmallest"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 100
+			maxHeight = 20
+			text = "Total need: 200"
+			format = left
+			#alwaystransparent = yes
+			fixedsize = yes
 		}
 
 		iconType = {
@@ -1662,9 +1733,9 @@ guiTypes = {
 		
 		gridBoxType = {
 			name = "resources_grid"
-			position = { x = 50 y = -11 }
+			position = { x = 50 y = 53 }
 			size = { width = 40 height = 50 }
-			slotsize = { width = 70 height = 24 }
+			slotsize = { width = 80 height = 24 }
 			max_slots_vertical = 1
 			max_slots_horizontal = 3			
 			format = "UPPER_LEFT"
@@ -1685,10 +1756,10 @@ guiTypes = {
 		
 		gridBoxType = {
 			name = "factories_grid"
-			position = { x = 322 y = 12 }	
+			position = { x = 322 y = 55 }	
 			size = { width = 135  height = 78 }
 			slotsize = { width = 27 height = 26 }
-			max_slots = { x = 5 y = 2 }
+			max_slots = { x = 5 y = 1 }
 			format = "UPPER_LEFT"
 		}
 
@@ -1737,19 +1808,19 @@ guiTypes = {
 		iconType = {
 			name ="efficiency_progressbar_to_max"
 			spriteType = "GFX_efficiency_progressbar_to_max"
-			position = { x= 6 y = 91 }
+			position = { x= 6 y = 113 }
 			rotation = 1.5708
 		}
 		iconType = {
 			name ="efficiency_progressbar"
 			spriteType = "GFX_efficiency_progressbar"
-			position = { x= 6 y = 91 }
+			position = { x= 6 y = 113 }
 			rotation = 1.5708
 		}
 		iconType = {
 			name ="progressbar"
 			spriteType = "GFX_prod_progress_bar2"
-			position = { x= 14 y = 91 }
+			position = { x= 14 y = 113 }
 			hide = yes
 			rotation = 1.5708
 		}
@@ -1764,44 +1835,6 @@ guiTypes = {
 			name = "need_state_icon"
 			position = { x=10000 y=78 }
 			quadTextureSprite = "GFX_prod_line_target_strip"
-		}
-
-		instantTextboxType = {
-			name = "speed_total_need"
-			position = { x = 27 y = 45 }
-			textureFile = ""
-			font = "Arialsmallest"
-			borderSize = {x = 0 y = 0}
-			maxWidth = 130
-			maxHeight = 20
-			text = "/> prod_speed />...  /> total_need />..."
-			format = left
-			#alwaystransparent = yes
-		}
-
-		instantTextboxType = {
-			name = "speed"
-			position = { x = 150 y = 45 }
-			textureFile = ""
-			font = "Arialsmallest"
-			text = "--"
-			maxWidth = 120
-			maxHeight = 20
-			format = left
-		}
-		
-		instantTextboxType = {
-			name = "total_need"
-			position = { x = 140 y = 64 }
-			textureFile = ""
-			font = "Arialsmallest"
-			borderSize = {x = 0 y = 0}
-			maxWidth = 100
-			maxHeight = 20
-			text = "Total need: 200"
-			format = left
-			#alwaystransparent = yes
-			fixedsize = yes
 		}
 
 		buttonType = {
@@ -1821,7 +1854,7 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "factories_sub_1x"
-			position = { x=290 y=64 }
+			position = { x=290 y=81 }
 			quadTextureSprite = "GFX_increase_decrease_amount_invisible"
 			font = "Focusfont"
 			buttonText = "<<<"
@@ -1829,7 +1862,7 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "factories_sub_5x"
-			position = { x=290 y=64 }
+			position = { x=290 y=81 }
 			quadTextureSprite = "GFX_increase_decrease_amount_invisible"
 			font = "Focusfont"
 			buttonText = "<<<"
@@ -1837,7 +1870,7 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "factories_sub_10x"
-			position = { x=290 y=64 }
+			position = { x=290 y=81 }
 			quadTextureSprite = "GFX_increase_decrease_amount_invisible"
 			font = "Focusfont"
 			buttonText = "<<<"
@@ -1845,7 +1878,7 @@ guiTypes = {
 		}	
 		buttonType = {
 			name = "factories_add_1x"
-			position = { x=435 y=64 }
+			position = { x=435 y=81 }
 			quadTextureSprite = "GFX_increase_decrease_amount_invisible"
 			font = "Focusfont"
 			buttonText = ">>>"
@@ -1853,7 +1886,7 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "factories_add_5x"
-			position = { x=435 y=64 }
+			position = { x=435 y=81 }
 			quadTextureSprite = "GFX_increase_decrease_amount_invisible"
 			font = "Focusfont"
 			buttonText = ">>>"
@@ -1861,7 +1894,7 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "factories_add_10x"
-			position = { x=435 y=64 }
+			position = { x=435 y=81 }
 			quadTextureSprite = "GFX_increase_decrease_amount_invisible"
 			font = "Focusfont"
 			buttonText = ">>>"
@@ -3682,7 +3715,7 @@ guiTypes = {
 		
 		gridBoxType = {
 			name = "resources_grid"
-			position = { x = 278 y = 12 }
+			position = { x = 10000 y = 12 }
 			size = { width = 48 height = 150 }
 			slotsize = { width = 45 height = 25 }
 			max_slots_vertical = 3
@@ -3707,7 +3740,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "production_cost"
-			position = { x = 10 y = 70 }
+			position = { x = 10000 y = 70 }
 			font = "Focusfont"
 			text = "cost 9001"
 			maxWidth = 160
