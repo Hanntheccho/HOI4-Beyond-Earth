@@ -1,0 +1,227 @@
+add_namespace = tzn
+
+country_event = { #Kubwa Mjomba
+	id = tzn.1
+	title = tzn.1.t
+	desc = tzn.1.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = tzn.1.a
+		add_political_power = 50
+	}
+}
+
+country_event = { #The Election Looms
+	id = tzn.2
+	title = tzn.2.t
+	desc = tzn.2.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = tzn.2.a
+	}
+}
+
+country_event = { #The Congo Crisis
+	id = tzn.3
+	title = tzn.3.t
+	desc = tzn.3.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = tzn.3.a
+	}
+}
+
+news_event = { #Conflict Erupts on Mwitanzige Rift
+	id = tzn.4
+	title = tzn.4.t
+	desc = tzn.4.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = tzn.4.a
+		trigger = {
+			tag = TZN
+		}
+	}
+
+	option = {
+		name = tzn.4.b
+		trigger = {
+			tag = COG
+		}
+	}
+
+	option = {
+		name = tzn.4.c
+		trigger = {
+			NOT = {
+				tag = COG
+				tag = TZN
+			}
+		}
+	}
+}
+
+news_event = { #East African Federation Unites Africa
+	id = tzn.5
+	title = tzn.5.t
+	desc = {
+		text = tzn.5.d.a
+		trigger = {
+			TZN = {
+				has_government = purity
+			}
+		}
+	}
+	desc = {
+		text = tzn.5.d.b
+		trigger = {
+			TZN = {
+				has_government = neutral
+			}
+		}
+	}
+	desc = {
+		text = tzn.5.d.c
+		trigger = {
+			TZN = {
+				has_government = mastery
+			}
+		}
+	}
+	desc = {
+		text = tzn.5.d.a
+		trigger = {
+			TZN = {
+				has_government = supremacy
+			}
+		}
+	}
+
+	is_triggered_only = yes
+	
+	option = {
+		name = tzn.5.a.a
+		trigger = {
+			tag = TZN
+			has_government = purity
+		}
+	}
+	option = {
+		name = tzn.5.a.b
+		trigger = {
+			tag = TZN
+			has_government = neutral
+		}
+	}
+	option = {
+		name = tzn.5.a.c
+		trigger = {
+			tag = TZN
+			has_government = mastery
+		}
+	}
+	option = {
+		name = tzn.5.a.d
+		trigger = {
+			tag = TZN
+			has_government = supremacy
+		}
+	}
+	option = {
+		name = tzn.5.b
+		trigger = {
+			NOT = {
+				tag = TZN
+			}
+		}
+	}
+}
+
+country_event = { #Sauti ya Watu
+	id = tzn.6
+	title = tzn.6.t
+	desc = tzn.6.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = tzn.6.a
+		TZN = {
+			unlock_national_focus = TZN_respect_maketh_man
+		}
+	}
+	option = {
+		name = tzn.6.b
+		TZN = {
+			unlock_national_focus = TZN_land_of_liberty
+		}
+	}
+	option = {
+		name = tzn.6.c
+		TZN = {
+			unlock_national_focus = TZN_road_to_plenty
+		}
+	}
+	option = {
+		name = tzn.6.d
+		TZN = {
+			unlock_national_focus = TZN_full_yellow_sun
+		}
+	}
+}
+
+country_event = { #Along the Shore
+	id = tzn.7
+	title = tzn.7.t
+	desc = tzn.7.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = tzn.7.a
+	}
+}
+
+country_event = { #Thicker Than Water
+	id = tzn.8
+	title = tzn.8.t
+	desc = tzn.8.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = tzn.8.a
+	}
+}
+
+country_event = { #Hambalyo
+	id = tzn.9
+	title = tzn.9.t
+	desc = tzn.9.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = tzn.9.a
+	}
+}
+
+country_event = { #A Tale of Two Brothers
+	id = tzn.10
+	title = tzn.10.t
+	desc = tzn.10.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = tzn.10.a
+	}
+}
