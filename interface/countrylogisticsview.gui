@@ -73,6 +73,57 @@ guiTypes = {
 		#	format = left	
 		#}
 
+		instantTextboxType = {
+			name = "load_text1"
+			position = { x = 26 y = 23 }
+			textureFile = ""
+			font = "Arialsmallest"
+			borderSize = {x = 0 y = 0}
+			text = "/> load.logistics /> load.equipment_name> load.equipment_stockpile > load.equipment_balance >..."
+			maxWidth = 530
+			maxHeight = 40
+			format = left
+		}
+
+		instantTextboxType = {
+			name = "load_text2"
+			position = { x = 26 y = 320 }
+			textureFile = ""
+			font = "Arialsmallest"
+			borderSize = {x = 0 y = 0}
+			text = "/> load.logistics.extra > all.interface:land.naval.air>..."
+			maxWidth = 530
+			maxHeight = 40
+			format = left
+		}
+
+		instantTextboxType = {
+			name = "load_text3"
+			position = { x = 26 y = 520 }
+			textureFile = ""
+			font = "Arialsmallest"
+			borderSize = {x = 0 y = 0}
+			text = "/> load.logistics.extra > no.naval.load_convoy..."
+			maxWidth = 530
+			maxHeight = 40
+			format = left
+		}
+
+		containerWindowType = {
+			name = "another_bg"
+			size = { width = 520 height = 100%% }
+			position = {
+				x = 15
+				y = 15
+			}
+
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_black"
+				alwaystransparent = yes
+			}
+		}
+
 		iconType = {
 			name = "viewing_flag"
 			quadTextureSprite ="GFX_construction_flag_mod"
@@ -89,9 +140,9 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "materiel"
-			position = { x = 0 y = -5 }
-			size = { width = 550 height = 100%% }
-			margin = { top = 15 bottom = 10}
+			position = { x = 40 y = 48 }
+			size = { width = 509 height = 100%% }
+			margin = { top = 25 bottom = 10}
 			verticalScrollbar = "right_vertical_slider"
 			scroll_wheel_factor = 70
 			smooth_scrolling = no
@@ -103,9 +154,9 @@ guiTypes = {
 			
 			gridboxtype = {
 				name = "materiel_grid"
-				position = { x = 15 y = 0 }
+				position = { x = 0 y = 0 }
 				size = { width = 565 height = 100%% }
-				slotsize = { width = 100% height = 90 }
+				slotsize = { width = 100% height = 95 }
 				max_slots_horizontal = 1
 				format = "UPPER_LEFT"
 
@@ -949,18 +1000,14 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "logistics_overview_land_equipment_entry"
-		position = { x=0 y=5 }
-		size = { width = 565 height = 85 }
+		position = { x=0 y=0 }
+		size = { width = 475 height = 85 }
 		clipping = yes
 
 		background = {
 			name = "Background"
-			spriteType ="GFX_logistics_equipment_entry_bg"
+			spriteType ="GFX_tiled_black_half"
 			clicksound = click_default
-			position = {
-				x = 0
-				y = 0
-			}
 		}
 
 		instantTextboxType = {
@@ -984,18 +1031,19 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 
-		iconType = {
-			name = "fake_background"
-			spriteType ="GFX_logistics_equipment_entry_bg_blank_log"
-			alwaystransparent = yes
-			position = {
-				x = -15
-				y = 0
+		containerWindowType = {
+			name = "another_bg1"
+			size = { width = 100%% height = 100%%  }
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_tiled_black_half"
+				alwaystransparent = yes
 			}
 		}
 
 		containerWindowType = {
-			name = "another_bg"
+			name = "another_bg2"
 			size = { width = 300 height = 31 }
 			position = {
 				x = 110
@@ -1080,17 +1128,14 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "logistics_overview_naval_equipment_entry"
-		position = { x=0 y=5 }
-		size = { width = 565 height = 85 }
+		position = { x=0 y=0 }
+		size = { width = 475 height = 85 }
 		clipping = yes
 
 		background = {
 			name = "Background"
-			spriteType ="GFX_logistics_equipment_entry_bg"
-			position = {
-				x = 0
-				y = 0
-			}
+			spriteType ="GFX_tiled_black_half"
+			clicksound = click_default
 		}
 
 		iconType = {
@@ -1111,28 +1156,19 @@ guiTypes = {
 			format = left
 		}
 
-		iconType = {
-			name = "equipment_icon"
-			spriteType = "GFX_equipment_item"
-			position = { x= 145 y = 65 }
-			Orientation = "UPPER_LEFT"
-			scale = 0.0 #1
-			centerposition = yes
-			alwaystransparent = yes
-		}
+		containerWindowType = {
+			name = "another_bg1"
+			size = { width = 100%% height = 100%%  }
 
-		iconType = {
-			name = "fake_background"
-			spriteType ="GFX_logistics_equipment_entry_bg_blank_log"
-			alwaystransparent = yes
-			position = {
-				x = -15
-				y = 0
+			background = {
+				name = "Background"
+				spriteType ="GFX_tiled_black_half"
+				alwaystransparent = yes
 			}
 		}
 
 		containerWindowType = {
-			name = "another_bg"
+			name = "another_bg2"
 			size = { width = 300 height = 31 }
 			position = {
 				x = 110
@@ -1144,6 +1180,16 @@ guiTypes = {
 				quadTextureSprite = "GFX_tiled_black"
 				alwaystransparent = yes
 			}
+		}
+
+		iconType = {
+			name = "equipment_icon"
+			spriteType = "GFX_equipment_item"
+			position = { x= 145 y = 65 }
+			Orientation = "UPPER_LEFT"
+			scale = 0.0 #1
+			centerposition = yes
+			alwaystransparent = yes
 		}
 
 		iconType = {
@@ -1210,17 +1256,14 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "logistics_overview_air_equipment_entry"
-		position = { x=0 y=5 }
-		size = { width = 565 height = 85 }
+		position = { x=0 y=0 }
+		size = { width = 475 height = 85 }
 		clipping = yes
 
 		background = {
 			name = "Background"
-			spriteType ="GFX_logistics_equipment_entry_bg"
-			position = {
-				x = 0
-				y = 0
-			}
+			spriteType ="GFX_tiled_black_half"
+			clicksound = click_default
 		}
 
 		iconType = {
@@ -1241,6 +1284,17 @@ guiTypes = {
 			format = left
 		}
 
+		containerWindowType = {
+			name = "another_bg1"
+			size = { width = 100%% height = 100%%  }
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_tiled_black_half"
+				alwaystransparent = yes
+			}
+		}
+
 		iconType = {
 			name = "equipment_icon"
 			spriteType = "GFX_equipment_item"
@@ -1249,16 +1303,6 @@ guiTypes = {
 			scale = 0.0 #1
 			centerposition = yes
 			alwaystransparent = yes
-		}
-
-		iconType = {
-			name = "fake_background"
-			spriteType ="GFX_logistics_equipment_entry_bg_blank_log"
-			alwaystransparent = yes
-			position = {
-				x = -15
-				y = 0
-			}
 		}
 
 		containerWindowType = {
