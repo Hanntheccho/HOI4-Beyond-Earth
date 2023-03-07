@@ -11,6 +11,17 @@ on_actions = {
     on_daily = {
         effect = {
             set_variable = { division_limit = num_of_military_factories }
+            set_variable = { 
+                division_limit_heavy_arms_factories = 0 
+            }
+            every_controlled_state = {
+                add_to_variable = { 
+                    PREV.division_limit_heavy_arms_factories = building_level@heavy_arms_factory 
+                }
+            }
+            add_to_variable = {
+                division_limit = division_limit_heavy_arms_factories
+            }
             multiply_variable = { division_limit = 2 }
             round_variable = division_limit
             clamp_variable = { var = division_limit min = 0 max = 250 }

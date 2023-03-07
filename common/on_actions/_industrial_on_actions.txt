@@ -37,6 +37,20 @@ on_actions = {
                 multiply_variable = {
                     industrial_power_spaceship_factories = -1
                 }
+                set_variable = { 
+                    industrial_power_heavy_arms_factories = 0 
+                }
+                every_controlled_state = {
+                    add_to_variable = { 
+                        PREV.industrial_power_heavy_arms_factories = building_level@heavy_arms_factory 
+                    }
+                }
+                divide_variable = {
+                    industrial_power_heavy_arms_factories = 10
+                }
+                multiply_variable = {
+                    industrial_power_heavy_arms_factories = -1
+                }
                 set_variable = {
                     industrial_power_gain = industrial_power_civilian_factories
                 }
@@ -45,6 +59,9 @@ on_actions = {
                 }
                 add_to_variable = {
                     industrial_power_gain = industrial_power_spaceship_factories
+                }
+                add_to_variable = {
+                    industrial_power_gain = industrial_power_heavy_arms_factories
                 }
                 ###
                 if = {
@@ -119,6 +136,20 @@ on_actions = {
             multiply_variable = {
                 industrial_power_spaceship_factories = -1
             }
+            set_variable = { 
+                industrial_power_heavy_arms_factories = 0 
+            }
+            every_controlled_state = {
+                add_to_variable = { 
+                    PREV.industrial_power_heavy_arms_factories = building_level@heavy_arms_factory 
+                }
+            }
+            divide_variable = {
+                industrial_power_heavy_arms_factories = 10
+            }
+            multiply_variable = {
+                industrial_power_heavy_arms_factories = -1
+            }
             set_variable = {
                 industrial_power_gain = industrial_power_civilian_factories
             }
@@ -127,6 +158,9 @@ on_actions = {
             }
             add_to_variable = {
                 industrial_power_gain = industrial_power_spaceship_factories
+            }
+            add_to_variable = {
+                industrial_power_gain = industrial_power_heavy_arms_factories
             }
             ###
 			if = {
