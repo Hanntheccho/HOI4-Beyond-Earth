@@ -1,3 +1,188 @@
+default_build_war = {
+	allowed = {
+		always = yes
+	}
+	enable = {
+		OR = {
+			has_war = yes
+			any_neighbor_country = {
+				has_war = yes
+			}
+			any_allied_country = {
+				has_war = yes
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = -100
+	}
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 40
+	}
+	ai_strategy = {
+		type = building_target
+		id = heavy_arms_factory
+		value = 5
+	}
+}
+
+default_build_peace = {
+	allowed = {
+		always = yes
+	}
+	enable = {
+		OR = {
+			has_war = no
+			any_neighbor_country = {
+				has_war = no
+			}
+			any_allied_country = {
+				has_war = no
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 40
+	}
+	ai_strategy = {
+		type = building_target
+		id = spaceship_factory
+		value = 5
+	}
+}
+
+default_build_synthetic_refinery = {
+	allowed = {
+		always = yes
+	}
+	enable = {
+		check_variable = {
+			resource@rubber < 0
+		}
+		has_tech = nonlinear_recycling
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = synthetic_refinery
+		value = 10
+	}
+}
+
+default_build_generator_building = {
+	allowed = {
+		always = yes
+	}
+	enable = {
+		check_variable = {
+			resource@oil < 0
+		}
+		has_tech = quantum_generation
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = generator_building
+		value = 10
+	}
+}
+
+dont_build_arms_factory = {
+	allowed = {
+		always = yes
+	}
+	enable = {
+		OR = {
+			check_variable = {
+				resource@rubber < 0
+			}
+			check_variable = {
+				resource@tungsten < 0
+			}
+			check_variable = {
+				resource@steel < 0
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = -1000
+	}
+}
+
+dont_build_heavy_arms_factory = {
+	allowed = {
+		always = yes
+	}
+	enable = {
+		OR = {
+			check_variable = {
+				resource@rubber < 0
+			}
+			check_variable = {
+				resource@tungsten < 0
+			}
+			check_variable = {
+				resource@steel < 0
+			}
+			check_variable = {
+				resource@chromium < 0
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = heavy_arms_factory
+		value = -1000
+	}
+}
+
+dont_build_spaceship_factory = {
+	allowed = {
+		always = yes
+	}
+	enable = {
+		OR = {
+			check_variable = {
+				resource@aluminium < 0
+			}
+			check_variable = {
+				resource@tungsten < 0
+			}
+			check_variable = {
+				resource@steel < 0
+			}
+			check_variable = {
+				resource@chromium < 0
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = spaceship_factory
+		value = -1000
+	}
+}
+
 ########################
 ### DIVISION LIMITER ###
 ########################
