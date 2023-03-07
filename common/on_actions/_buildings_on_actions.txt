@@ -277,6 +277,62 @@ on_actions = {
                     PREV.num_heavy_arms_factory = building_level@heavy_arms_factory 
                 }
             }
+            #
+            if = {
+                limit = {
+                    has_idea = free_trade
+                }
+                multiply_variable = { num_arms_factory = 1.15 }
+            }
+            else_if = {
+                limit = {
+                    has_idea = export_focus
+                }
+                multiply_variable = { num_arms_factory = 1.1 }
+            }
+            else_if = {
+                limit = {
+                    has_idea = limited_exports
+                }
+                multiply_variable = { num_arms_factory = 1.05 }
+            }
+            if = {
+                limit = {
+                    has_idea = limited_conscription
+                }
+                multiply_variable = { num_arms_factory = 1.1 }
+            }
+            else_if = {
+                limit = {
+                    has_idea = service_by_requirement
+                }
+                multiply_variable = { num_arms_factory = 0.9 }
+            }
+            else_if = {
+                limit = {
+                    has_idea = all_adults_serve
+                }
+                multiply_variable = { num_arms_factory = 0.8 }
+            }
+            if = {
+                limit = {
+                    has_idea = military_government
+                }
+                multiply_variable = { num_arms_factory = 1.15 }
+            }
+            if = {
+                limit = {
+                    has_idea = PRU_military_decentralization_extensive
+                }
+                multiply_variable = { num_arms_factory = 0.9 }
+            }
+            if = {
+                limit = {
+                    has_idea = TRE_absence_of_civilization
+                }
+                multiply_variable = { num_arms_factory = 0.5 }
+            }
+            #
             if = {
                 limit = {
                     has_tech = light_weapons
