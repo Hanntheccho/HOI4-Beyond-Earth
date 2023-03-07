@@ -119,3 +119,5 @@ NDefines.NResistance.RESISTANCE_GROWTH_BASE = 0.1       --Vanilla: 0.2
 NDefines.NResistance.COMPLIANCE_DECAY_AT_MAX_COMPLIANCE = 0.0
 
 NDefines.NCountry.BASE_RESEARCH_SLOTS = 1       --Vanilla: 2
+
+NDefines.NProduction.MAX_EQUIPMENT_RESOURCES_NEED = 5       --Vanilla: 3

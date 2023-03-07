@@ -2,6 +2,64 @@ on_actions = {
     on_startup = {
         effect = {
             every_country = {
+                if = {
+                    limit = {
+                        num_of_factories > 198
+                    }
+                    add_equipment_to_stockpile = {
+                        type = crawler_equipment_1
+                        amount = 350
+                    }
+                }
+                else_if = {
+                    limit = {
+                        num_of_factories > 98
+                    }
+                    add_equipment_to_stockpile = {
+                        type = crawler_equipment_1
+                        amount = 300
+                    }
+                }
+                else_if = {
+                    limit = {
+                        num_of_factories > 28
+                    }
+                    add_equipment_to_stockpile = {
+                        type = crawler_equipment_1
+                        amount = 200
+                    }
+                }
+                else_if = {
+                    limit = {
+                        num_of_factories > 18
+                    }
+                    add_equipment_to_stockpile = {
+                        type = crawler_equipment_1
+                        amount = 100
+                    }
+                }
+                else_if = {
+                    limit = {
+                        num_of_factories > 8
+                    }
+                    add_equipment_to_stockpile = {
+                        type = crawler_equipment_1
+                        amount = 50
+                    }
+                }
+                else = {
+                    add_equipment_to_stockpile = {
+                        type = crawler_equipment_1
+                        amount = 20
+                    }
+                } 
+            }
+        }
+    }
+####
+    on_startup = {
+        effect = {
+            every_country = {
                 set_variable = { free_factory_progress = 0 }
                 set_variable = { free_factory_gain = 0 }
                 set_variable = { free_factory_base_gain = 1 }

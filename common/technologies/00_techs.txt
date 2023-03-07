@@ -4,7 +4,7 @@ technologies = {
 		research_speed_factor = 0.01
 		
 		path = {
-			leads_to_tech = gun_equipment_1
+			leads_to_tech = light_weapons
 			research_cost_coeff = 1
 		}
 
@@ -54,9 +54,14 @@ technologies = {
 		}
 	}
 
-	gun_equipment_1 = {
+	light_weapons = {
 		enable_equipments = {
 			light_equipment_1
+		}
+
+		enable_building = {
+			building = arms_factory
+			level = 25
 		}
 
 		enable_subunits = {
@@ -208,11 +213,6 @@ technologies = {
 		be_category_all_infantry = {
 			hard_attack = 0.25
 			ap_attack = 1
-		}
-
-		path = {
-			leads_to_tech = infantry_anti_tank_2
-			research_cost_coeff = 1
 		}
 
 		research_cost = 2.1
@@ -424,17 +424,17 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = mbt_1
+			leads_to_tech = heavy_weapons
 			research_cost_coeff = 1
 		}
 
 		path = {
-			leads_to_tech = apc_1
+			leads_to_tech = apc_tech
 			research_cost_coeff = 1
 		}
 
 		path = {
-			leads_to_tech = rover_1
+			leads_to_tech = rover_tech
 			research_cost_coeff = 1
 		}
 	
@@ -457,11 +457,6 @@ technologies = {
 	
 		
 		research_cost = 1.1
-
-		path = {
-			leads_to_tech = crawler_upgrade_2
-			research_cost_coeff = 1
-		}
 	
 		folder = {
 			name = be_tech_folder
@@ -515,11 +510,6 @@ technologies = {
 		folder = {
 			name = be_tech_folder
 			position = {x = -2 y = -8}
-		}
-
-		path = {
-			leads_to_tech = maglev_upgrade_2
-			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -624,29 +614,27 @@ technologies = {
 		}
 		
 		path = {
-			leads_to_tech = be_engineers_tech_1
+			leads_to_tech = be_engineers_tech
+			research_cost_coeff = 1
+		}			
+		path = {
+			leads_to_tech = be_recon_tech
 			research_cost_coeff = 1
 		}	
-		
 		path = {
-			leads_to_tech = be_recon_tech_1
-			research_cost_coeff = 1
-		}	
-		path = {
-			leads_to_tech = be_field_hospital_1
-			research_cost_coeff = 1
-		}					
-
-		path = {
-			leads_to_tech = be_logistics_tech_1
+			leads_to_tech = be_field_hospital_tech
 			research_cost_coeff = 1
 		}
 		path = {
-			leads_to_tech = be_signal_company_1
+			leads_to_tech = be_logistics_tech
 			research_cost_coeff = 1
 		}
 		path = {
-			leads_to_tech = be_maintenance_company_1
+			leads_to_tech = be_signal_company_tech
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = be_maintenance_company_tech
 			research_cost_coeff = 1
 		}
 
@@ -667,7 +655,7 @@ technologies = {
 		}
 	}
 	
-	be_engineers_tech_1 = {
+	be_engineers_tech = {
 
 		engineer = {
 			entrenchment  = 2
@@ -691,7 +679,7 @@ technologies = {
 		}
 	}	
 	
-	be_recon_tech_1 = {
+	be_recon_tech = {
 
 		recon = {
 			recon  = 2
@@ -715,7 +703,7 @@ technologies = {
 		}
 	}
 
-	be_maintenance_company_1 = {
+	be_maintenance_company_tech = {
 
 		maintenance_company = {
 			reliability_factor = 0.05
@@ -740,7 +728,7 @@ technologies = {
 		}
 	}
 
-	be_field_hospital_1 = {
+	be_field_hospital_tech = {
 
 		field_hospital = {
 			casualty_trickleback = 0.10
@@ -766,7 +754,7 @@ technologies = {
 		}
 	}
 
-	be_logistics_tech_1 = {
+	be_logistics_tech = {
 
 		logistics_company = {
 			supply_consumption_factor = -0.1
@@ -791,7 +779,7 @@ technologies = {
 		}
 	}
 
-	be_signal_company_1 = {
+	be_signal_company_tech = {
 
 		signal_company = {
 			initiative = 0.12
@@ -816,6 +804,11 @@ technologies = {
 	}
 
 	airframe = {
+		enable_building = {
+			building = air_base
+			level = 10
+		}
+
 		enable_equipments = {
 			fighter_equipment_1
 		}
@@ -825,17 +818,17 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = cas_1
+			leads_to_tech = cas_tech
 			research_cost_coeff = 1
 		}
 
 		path = {
-			leads_to_tech = tac_1
+			leads_to_tech = tac_tech
 			research_cost_coeff = 1
 		}
 
 		path = {
-			leads_to_tech = fighter_upgrade_1
+			leads_to_tech = fighter_upgrade_tech
 			research_cost_coeff = 1
 		}
 
@@ -843,6 +836,12 @@ technologies = {
 			leads_to_tech = drone_swarms
 			research_cost_coeff = 1
 		}
+
+		path = {
+			leads_to_tech = air_defense_complex
+			research_cost_coeff = 1
+		}
+
 
 		research_cost = 1
 		
@@ -862,7 +861,30 @@ technologies = {
 		}
 	}
 
-	cas_1 = {
+	air_defense_complex = {
+		enable_building = {
+			building = anti_air_building
+			level = 5
+		}
+
+		research_cost = 1		
+
+		folder = {
+			name = be_tech_folder
+			position = {x=-8 y=4}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_air_tech
+			be_fighter_tech
+		}
+	}
+
+	cas_tech = {
 		enable_equipments = {
 			cas_equipment_1
 		}
@@ -872,7 +894,7 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = cas_upgrade_1
+			leads_to_tech = cas_upgrade_tech
 			research_cost_coeff = 1
 		}
 
@@ -894,16 +916,11 @@ technologies = {
 		}
 	}
 
-	cas_upgrade_1 = {
+	cas_upgrade_tech = {
 		air_cas_efficiency = 0.2
 		air_cas_present_factor = 0.2
 		air_close_air_support_org_damage_factor = 0.2
 		ground_attack_factor = 0.1
-
-		path = {
-			leads_to_tech = cas_upgrade_2
-			research_cost_coeff = 1
-		}
 
 		research_cost = 1.1
 		
@@ -923,7 +940,7 @@ technologies = {
 		}
 	}
 
-	fighter_upgrade_1 = {
+	fighter_upgrade_tech = {
 		air_intercept_efficiency = 0.2
 		air_range_factor = 0.1
 		air_superiority_efficiency = 0.2
@@ -947,7 +964,7 @@ technologies = {
 		}
 	}
 
-	tac_1 = {
+	tac_tech = {
 		enable_equipments = {
 			tac_equipment_1
 		}
@@ -957,7 +974,7 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = tac_upgrade_1
+			leads_to_tech = tac_upgrade_tech
 			research_cost_coeff = 1
 		}
 
@@ -979,7 +996,7 @@ technologies = {
 		}
 	}
 
-	tac_upgrade_1 = {
+	tac_upgrade_tech = {
 		strategic_bomb_visibility = -0.1
 		air_strategic_bomber_bombing_factor = 0.2
 		air_bombing_targetting = 0.1
@@ -1032,7 +1049,7 @@ technologies = {
 	}
 
 	## Anti Air Arti Techs
-	anti_air_artillery_1 = {
+	anti_air_artillery_tech = {
 
 		enable_subunits = {
 			anti_air
@@ -1043,7 +1060,7 @@ technologies = {
 		research_cost = 2
 
 		path = {
-			leads_to_tech = anti_air_upgrade_1
+			leads_to_tech = anti_air_upgrade_tech
 			research_cost_coeff = 1
 		}
 
@@ -1063,7 +1080,7 @@ technologies = {
 		}
 	}
 
-	anti_air_upgrade_1 = {
+	anti_air_upgrade_tech = {
 
 		anti_air = {
 			anti_air_attack = 0.2
@@ -1092,7 +1109,7 @@ technologies = {
 	}
 
 	## Anti Tank Arti Techs
-	anti_tank_artillery_1 = {
+	anti_tank_artillery_tech = {
 
 		enable_subunits = {
 			anti_tank
@@ -1103,7 +1120,7 @@ technologies = {
 		research_cost = 2
 
 		path = {
-			leads_to_tech = anti_tank_upgrade_1
+			leads_to_tech = anti_tank_upgrade_tech
 			research_cost_coeff = 1
 		}
 
@@ -1123,7 +1140,7 @@ technologies = {
 		}
 	}
 
-	anti_tank_upgrade_1 = {
+	anti_tank_upgrade_tech = {
 
 		anti_tank = {
 			hg_armor_piercing = 0.2
@@ -1154,7 +1171,7 @@ technologies = {
 	}
 
 	## Rocket Arti Techs
-	rocket_artillery_1 = {
+	rocket_artillery_tech = {
 
 		enable_subunits = {
 			rocket_artillery
@@ -1165,7 +1182,7 @@ technologies = {
 		research_cost = 2
 
 		path = {
-			leads_to_tech = rocket_artillery_upgrade_1
+			leads_to_tech = rocket_artillery_upgrade_tech
 			research_cost_coeff = 1
 		}
 
@@ -1185,7 +1202,7 @@ technologies = {
 		}
 	}
 
-	rocket_artillery_upgrade_1 = {
+	rocket_artillery_upgrade_tech = {
 
 		rocket_artillery = {
 			soft_attack = 0.2
@@ -1214,7 +1231,7 @@ technologies = {
 	}
 
 	## Arti Techs
-	artillery_1 = {
+	artillery_tech = {
 
 		enable_subunits = {
 			artillery
@@ -1225,7 +1242,7 @@ technologies = {
 		research_cost = 2
 
 		path = {
-			leads_to_tech = artillery_upgrade_1
+			leads_to_tech = artillery_upgrade_tech
 			research_cost_coeff = 1
 		}
 
@@ -1244,7 +1261,7 @@ technologies = {
 		}
 	}
 
-	artillery_upgrade_1 = {
+	artillery_upgrade_tech = {
 
 		artillery = {
 			soft_attack = 0.1
@@ -1274,14 +1291,14 @@ technologies = {
 	}
 
 	## APC Tech ##
-	apc_1 = {
+	apc_tech = {
 
 		enable_subunits = {
 			apc
 		}
 
 		path = {
-			leads_to_tech = apc_upgrade_1
+			leads_to_tech = apc_upgrade_tech
 			research_cost_coeff = 1
 		}
 
@@ -1303,7 +1320,7 @@ technologies = {
 		}
 	}
 
-	apc_upgrade_1 = {
+	apc_upgrade_tech = {
 
 		apc = {
 			maximum_speed = 0.2
@@ -1330,9 +1347,14 @@ technologies = {
 	}
 
 	## MBT ##
-	mbt_1 = {
+	heavy_weapons = {
 		enable_equipments = {
 			heavy_equipment_1
+		}
+
+		enable_building = {
+			building = heavy_arms_factory
+			level = 25
 		}
 
 		enable_subunits = {
@@ -1340,32 +1362,32 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = walker_1
+			leads_to_tech = walker_tech
 			research_cost_coeff = 1
 		}
 
 		path = {
-			leads_to_tech = artillery_1
+			leads_to_tech = artillery_tech
 			research_cost_coeff = 1
 		}
 
 		path = {
-			leads_to_tech = rocket_artillery_1
+			leads_to_tech = rocket_artillery_tech
 			research_cost_coeff = 1
 		}
 
 		path = {
-			leads_to_tech = anti_air_artillery_1
+			leads_to_tech = anti_air_artillery_tech
 			research_cost_coeff = 1
 		}
 
 		path = {
-			leads_to_tech = anti_tank_artillery_1
+			leads_to_tech = anti_tank_artillery_tech
 			research_cost_coeff = 1
 		}
 
 		path = {
-			leads_to_tech = mbt_upgrade_1
+			leads_to_tech = mbt_upgrade_tech
 			research_cost_coeff = 1
 		}
 
@@ -1388,7 +1410,7 @@ technologies = {
 		}
 	}
 
-	mbt_upgrade_1 = {
+	mbt_upgrade_tech = {
 
 		MBT = {
 			breakthrough = 0.1
@@ -1415,14 +1437,14 @@ technologies = {
 	}
 
 	## Walkers ##
-	walker_1 = {
+	walker_tech = {
 
 		enable_subunits = {
 			walker
 		}
 
 		path = {
-			leads_to_tech = walker_upgrade_1
+			leads_to_tech = walker_upgrade_tech
 			research_cost_coeff = 1
 		}
 
@@ -1445,7 +1467,7 @@ technologies = {
 		}
 	}
 
-	walker_upgrade_1 = {
+	walker_upgrade_tech = {
 
 		walker = {
 			forest = {
@@ -1481,7 +1503,7 @@ technologies = {
 	}
 
 	## Rover ##
-	rover_1 = {
+	rover_tech = {
 
 		enable_subunits = {
 			rover
@@ -1508,6 +1530,10 @@ technologies = {
 
 	# Industry ############
 	automation = {
+		enable_building = {
+			building = industrial_complex
+			level = 25
+		}
 	
 		production_factory_max_efficiency_factor = 0.1
 		production_factory_efficiency_gain_factor = 0.1
@@ -1550,6 +1576,10 @@ technologies = {
 	}
 
 	qresearch_lines = {
+		enable_building = {
+			building = spaceship_factory
+			level = 25
+		}
 
 		research_speed_factor = 0.04
 			
@@ -1629,13 +1659,10 @@ technologies = {
 	}
 	
 	simple_generation = {
-		
-		on_research_complete = {
-			modify_building_resources = {
-				building = generator_building
-				resource = oil
-				amount = 2
-			}
+
+		enable_building = {
+			building = generator_building
+			level = 25
 		}
 
 		path = {
@@ -1780,13 +1807,9 @@ technologies = {
 	}
 
 	recycling_lines = {
-
-		on_research_complete = {
-			modify_building_resources = {
-				building = synthetic_refinery
-				resource = rubber
-				amount = 2
-			}
+		enable_building = {
+			building = synthetic_refinery
+			level = 25
 		}
 					
 		path = {

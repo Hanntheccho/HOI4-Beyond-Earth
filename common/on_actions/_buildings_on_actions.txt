@@ -1,0 +1,300 @@
+on_actions = {
+    on_weekly_ADU = {
+        effect = {
+            every_country = {
+                limit = {
+                    is_ai = yes
+                }
+                add_equipment_production = {
+                    equipment = {
+                        type = dummy_eq_1
+                    }
+                    requested_factories = 1
+                }
+            }
+        }
+    }
+	on_startup = {
+		effect = {
+            every_country = {
+                limit = {
+                    is_ai = yes
+                }
+                add_equipment_production = {
+                    equipment = {
+                        type = dummy_eq_1
+                    }
+                    requested_factories = 1
+                }
+            }
+            ###
+            ADU = {
+                every_state = {
+                    add_dynamic_modifier = {
+                        modifier = building_resources_used
+                    }
+                    set_variable = { building_resources_used_oil = 0 }
+                    set_variable = { building_resources_used_aluminium = 0 }
+                    set_variable = { building_resources_used_rubber = 0 }
+                    set_variable = { building_resources_used_tungsten = 0 }
+                    set_variable = { building_resources_used_steel = 0 }
+                    set_variable = { building_resources_used_chromium = 0 }
+                    #
+                    set_variable = { 
+                        spaceship_factory_used_aluminium = 3 
+                    }
+                    multiply_variable = {
+                        spaceship_factory_used_aluminium = building_level@spaceship_factory
+                    }
+                    add_to_variable = {
+                        building_resources_used_aluminium = spaceship_factory_used_aluminium
+                    }
+                    #
+                    set_variable = { 
+                        arms_factory_used_rubber = 4 
+                    }
+                    multiply_variable = {
+                        arms_factory_used_rubber = building_level@arms_factory
+                    }
+                    add_to_variable = {
+                        building_resources_used_rubber = arms_factory_used_rubber
+                    }
+                    set_variable = { 
+                        heavy_arms_factory_used_rubber = 6
+                    }
+                    multiply_variable = {
+                        heavy_arms_factory_used_rubber = building_level@heavy_arms_factory
+                    }
+                    add_to_variable = {
+                        building_resources_used_rubber = heavy_arms_factory_used_rubber
+                    }
+                    #
+                    set_variable = { 
+                        arms_factory_used_tungsten = 2
+                    }
+                    multiply_variable = {
+                        arms_factory_used_tungsten = building_level@arms_factory
+                    }
+                    add_to_variable = {
+                        building_resources_used_tungsten = arms_factory_used_tungsten
+                    }
+                    set_variable = { 
+                        heavy_arms_factory_used_tungsten = 4
+                    }
+                    multiply_variable = {
+                        heavy_arms_factory_used_tungsten = building_level@heavy_arms_factory
+                    }
+                    add_to_variable = {
+                        building_resources_used_tungsten = heavy_arms_factory_used_tungsten
+                    }
+                    set_variable = { 
+                        spaceship_factory_used_tungsten = 5 
+                    }
+                    multiply_variable = {
+                        spaceship_factory_used_tungsten = building_level@spaceship_factory
+                    }
+                    add_to_variable = {
+                        building_resources_used_tungsten = spaceship_factory_used_tungsten
+                    }
+                    #
+                    set_variable = { 
+                        arms_factory_used_steel = 2
+                    }
+                    multiply_variable = {
+                        arms_factory_used_steel = building_level@arms_factory
+                    }
+                    add_to_variable = {
+                        building_resources_used_steel = arms_factory_used_steel
+                    }
+                    set_variable = { 
+                        heavy_arms_factory_used_steel = 4
+                    }
+                    multiply_variable = {
+                        heavy_arms_factory_used_steel = building_level@heavy_arms_factory
+                    }
+                    add_to_variable = {
+                        building_resources_used_steel = heavy_arms_factory_used_steel
+                    }
+                    set_variable = { 
+                        spaceship_factory_used_steel = 2
+                    }
+                    multiply_variable = {
+                        spaceship_factory_used_steel = building_level@spaceship_factory
+                    }
+                    add_to_variable = {
+                        building_resources_used_steel = spaceship_factory_used_steel
+                    }
+                    #
+                    set_variable = { 
+                        heavy_arms_factory_used_chromium = 2
+                    }
+                    multiply_variable = {
+                        heavy_arms_factory_used_chromium = building_level@heavy_arms_factory
+                    }
+                    add_to_variable = {
+                        building_resources_used_chromium = heavy_arms_factory_used_chromium
+                    }
+                    set_variable = { 
+                        spaceship_factory_used_chromium = 2
+                    }
+                    multiply_variable = {
+                        spaceship_factory_used_chromium = building_level@spaceship_factory
+                    }
+                    add_to_variable = {
+                        building_resources_used_chromium = spaceship_factory_used_chromium
+                    }
+                }
+            }     
+		}
+	}
+###
+    on_daily_ADU = {
+		effect = {
+            every_state = {
+                set_variable = { building_resources_used_oil = 0 }
+                set_variable = { building_resources_used_aluminium = 0 }
+                set_variable = { building_resources_used_rubber = 0 }
+                set_variable = { building_resources_used_tungsten = 0 }
+                set_variable = { building_resources_used_steel = 0 }
+                set_variable = { building_resources_used_chromium = 0 }
+                #
+                set_variable = { 
+                    spaceship_factory_used_aluminium = 3 
+                }
+                multiply_variable = {
+                    spaceship_factory_used_aluminium = building_level@spaceship_factory
+                }
+                add_to_variable = {
+                    building_resources_used_aluminium = spaceship_factory_used_aluminium
+                }
+                #
+                set_variable = { 
+                    arms_factory_used_rubber = 4 
+                }
+                multiply_variable = {
+                    arms_factory_used_rubber = building_level@arms_factory
+                }
+                add_to_variable = {
+                    building_resources_used_rubber = arms_factory_used_rubber
+                }
+                set_variable = { 
+                    heavy_arms_factory_used_rubber = 6 
+                }
+                multiply_variable = {
+                    heavy_arms_factory_used_rubber = building_level@heavy_arms_factory
+                }
+                add_to_variable = {
+                    building_resources_used_rubber = heavy_arms_factory_used_rubber
+                }
+                #
+                set_variable = { 
+                    arms_factory_used_tungsten = 2
+                }
+                multiply_variable = {
+                    arms_factory_used_tungsten = building_level@arms_factory
+                }
+                add_to_variable = {
+                    building_resources_used_tungsten = arms_factory_used_tungsten
+                }
+                set_variable = { 
+                    heavy_arms_factory_used_tungsten = 4 
+                }
+                multiply_variable = {
+                    heavy_arms_factory_used_tungsten = building_level@heavy_arms_factory
+                }
+                add_to_variable = {
+                    building_resources_used_tungsten = heavy_arms_factory_used_tungsten
+                }
+                set_variable = { 
+                    spaceship_factory_used_tungsten = 5 
+                }
+                multiply_variable = {
+                    spaceship_factory_used_tungsten = building_level@spaceship_factory
+                }
+                add_to_variable = {
+                    building_resources_used_tungsten = spaceship_factory_used_tungsten
+                }
+                #
+                set_variable = { 
+                    arms_factory_used_steel = 2
+                }
+                multiply_variable = {
+                    arms_factory_used_steel = building_level@arms_factory
+                }
+                add_to_variable = {
+                    building_resources_used_steel = arms_factory_used_steel
+                }
+                set_variable = { 
+                    heavy_arms_factory_used_steel = 4
+                }
+                multiply_variable = {
+                    heavy_arms_factory_used_steel = building_level@heavy_arms_factory
+                }
+                add_to_variable = {
+                    building_resources_used_steel = heavy_arms_factory_used_steel
+                }
+                set_variable = { 
+                    spaceship_factory_used_steel = 2
+                }
+                multiply_variable = {
+                    spaceship_factory_used_steel = building_level@spaceship_factory
+                }
+                add_to_variable = {
+                    building_resources_used_steel = spaceship_factory_used_steel
+                }
+                #
+                set_variable = { 
+                    heavy_arms_factory_used_chromium = 2
+                }
+                multiply_variable = {
+                    heavy_arms_factory_used_chromium = building_level@heavy_arms_factory
+                }
+                add_to_variable = {
+                    building_resources_used_chromium = heavy_arms_factory_used_chromium
+                }
+                set_variable = { 
+                    spaceship_factory_used_chromium = 2
+                }
+                multiply_variable = {
+                    spaceship_factory_used_chromium = building_level@spaceship_factory
+                }
+                add_to_variable = {
+                    building_resources_used_chromium = spaceship_factory_used_chromium
+                }
+            }      
+        }
+    }
+    ###
+    on_daily = {
+        effect = {
+            set_variable = { num_arms_factory = 0 }
+            set_variable = { num_heavy_arms_factory = 0 }
+            every_controlled_state = {
+                add_to_variable = { 
+                    PREV.num_arms_factory = building_level@arms_factory 
+                }
+                add_to_variable = { 
+                    PREV.num_heavy_arms_factory = building_level@heavy_arms_factory 
+                }
+            }
+            if = {
+                limit = {
+                    has_tech = light_weapons
+                }
+                add_equipment_to_stockpile = {
+                    type = light_equipment_1
+                    amount = num_arms_factory
+                }
+            }
+            if = {
+                limit = {
+                    has_tech = heavy_weapons
+                }
+                add_equipment_to_stockpile = {
+                    type = heavy_equipment_1
+                    amount = num_heavy_arms_factory
+                }
+            }
+        }
+    }
+}

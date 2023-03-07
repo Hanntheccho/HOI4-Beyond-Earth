@@ -1,0 +1,573 @@
+equipments = {
+	
+############################
+########## LIGHT ###########
+############################
+
+	light_equipment_0 = {
+		is_archetype = yes
+		type = {
+			infantry
+		}
+		group_by = archetype
+		interface_category = interface_category_land
+
+		can_be_produced = {
+			always = no
+		}
+		active = yes
+
+		#Misc Abilities
+		reliability = 0.9
+		maximum_speed = 4
+
+		#Defensive Abilities
+		defense = 20
+		breakthrough = 2
+		hardness = 0
+		armor_value = 0
+
+		#Offensive Abilities
+		soft_attack = 3
+		hard_attack = 0.5
+		ap_attack = 1
+		air_attack = 0.5
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+
+		build_cost_ic = 1
+		resources = {
+			steel = 2
+		}
+	}
+
+	light_equipment_1 = {
+		archetype = light_equipment_0
+		priority = 900
+		visual_level = 0
+	}
+
+############################
+######### HEAVY ############
+############################
+
+	heavy_equipment_0 = {
+		is_archetype = yes	
+		type = armor
+		group_by = archetype
+
+		interface_category = interface_category_armor
+
+		can_be_produced = {
+			always = no
+		}
+		active = yes
+
+		#Misc Abilities
+		maximum_speed = 5
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 6
+		breakthrough = 36
+		hardness = 0.95
+		armor_value = 70
+
+		#Offensive Abilities
+		soft_attack = 15
+		hard_attack = 12
+		ap_attack = 35
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 14
+
+		build_cost_ic = 1
+		resources = {
+			steel = 2
+			chromium = 1
+			tungsten = 1
+		}
+
+		fuel_consumption = 4
+	}
+
+	heavy_equipment_1 = {
+		archetype = heavy_equipment_0
+		priority = 800
+		visual_level = 1
+	}
+
+############################
+######### FIGHTER ##########
+############################
+
+	fighter_equipment_0 = {
+        is_archetype = yes
+		is_convertable = yes
+		is_buildable = no
+		type = { fighter interceptor }
+		group_by = archetype
+		sprite = be_light_plane
+		air_map_icon_frame = 1
+		carrier_capable = yes
+		default_carrier_composition_weight = 1
+		#allowed_types = {
+		#	fighter
+		#}
+		allow_mission_type = {
+			air_superiority
+			interception
+			training
+		}
+		
+		interface_category = interface_category_air
+
+		can_be_produced = {
+			always = no
+		}
+		active = yes
+		
+		# Fighter
+		interface_overview_category_index = 1
+
+		#upgrades = {
+		#	plane_gun_upgrade
+		#	plane_range_upgrade
+		#	plane_engine_upgrade
+		#	plane_reliability_upgrade
+		#}
+
+		air_superiority = 1
+		reliability = 0.8
+
+		air_superiority = 1
+		reliability = 0.8
+
+		#Stats
+		air_superiority = 1
+		air_attack = 9
+		air_defence = 8
+		air_agility = 45
+		naval_strike_attack = 1
+		naval_strike_targetting = 10 
+
+		#Speed and Range
+		maximum_speed = 330
+		fuel_consumption = 0.21
+		air_range = 1000
+
+		#Space taken in convoy
+		lend_lease_cost = 8
+		
+		build_cost_ic = 1
+		resources = {
+			#oil = 1
+			aluminium = 2
+			rubber = 1
+		}
+
+		manpower = 20
+		
+    }
+
+    fighter_equipment_1 = {
+		year = 2190
+
+		archetype = fighter_equipment_0
+		priority = 5
+
+	}
+
+############################
+############ CAS ###########
+############################
+
+    cas_equipment_0 = {
+		is_archetype = yes
+		is_convertable = yes
+		is_buildable = no
+		type = { cas }
+		group_by = archetype
+		sprite = be_medium_plane
+		air_map_icon_frame = 2
+		carrier_capable = yes
+		default_carrier_composition_weight = 1
+		#allowed_types = {
+		#	cas
+		#}
+		allow_mission_type = {
+			cas
+			training
+		}
+		
+		interface_category = interface_category_air
+
+		can_be_produced = {
+			always = no
+		}
+		active = yes
+		
+		# cas
+		interface_overview_category_index = 0
+
+		#upgrades = {
+		#	plane_cas_upgrade
+		#	plane_range_upgrade
+		#	plane_engine_upgrade
+		#	plane_reliability_upgrade
+		#}
+
+		reliability = 0.8
+		manpower = 20
+		
+		#Stats
+		air_superiority = 1
+		air_ground_attack = 8
+		air_attack = 6
+		air_defence = 14
+		air_agility = 35.0
+		naval_strike_attack = 3
+		naval_strike_targetting = 10 
+
+		#Speed and Range
+		maximum_speed = 390
+		fuel_consumption = 0.26
+		air_range = 1400
+		
+		build_cost_ic = 1
+		resources = {
+			#oil = 1
+			aluminium = 2
+			rubber = 1
+		}
+		
+	}
+
+    cas_equipment_1 = {
+		year = 2200
+
+		archetype = cas_equipment_0
+		priority = 40		
+	}
+
+############################
+########## BOMBER ##########
+############################
+
+	tac_equipment_0 = {
+		is_archetype = yes
+		is_convertable = yes
+		is_buildable = no
+		type = { tactical_bomber }
+		group_by = archetype
+		sprite = be_medium_plane
+		air_map_icon_frame = 6
+		#allowed_types = {
+		#	tactical_bomber
+		#}
+		allow_mission_type = {
+			strategic_bomber
+			training
+		}
+		
+		manpower = 40
+		
+		interface_category = interface_category_air
+
+		can_be_produced = {
+			always = no
+		}
+		active = yes
+		
+		# Tactical bomber
+		interface_overview_category_index = 4
+		
+		#upgrades = {
+		#	plane_tac_bomb_upgrade
+		#	plane_range_upgrade
+		#	plane_engine_upgrade
+		#	plane_reliability_upgrade
+		#}
+
+		air_superiority = 1
+		reliability = 0.8
+
+		#Stats
+		air_superiority = 1
+		air_ground_attack = 3
+		air_attack = 5
+		air_bombing = 10
+		air_defence = 15
+		air_agility = 16
+		naval_strike_attack = 4
+		naval_strike_targetting = 6 
+
+		#Speed and Range
+		maximum_speed = 250
+		fuel_consumption = 0.36
+		air_range = 2800
+
+		#Space taken in convoy
+		lend_lease_cost = 10
+		
+		build_cost_ic = 1
+		resources = {
+			#oil = 1
+			aluminium = 2
+			rubber = 1
+		}
+	}
+
+    tac_equipment_1 = {
+		year = 2190
+
+		archetype = tac_equipment_0
+		priority = 105
+	
+	}
+
+############################
+########## DRONE ###########
+############################
+
+	drone_equipment_0 = {
+		is_archetype = yes
+		is_convertable = yes
+		is_buildable = no
+		type = { cas }
+		group_by = archetype
+		sprite = be_light_plane
+		air_map_icon_frame = 2
+		#allowed_types = {
+		#	cas
+		#}
+		allow_mission_type = {
+			cas
+			training
+		}
+
+		#upgrades = {
+		#	plane_cas_upgrade
+		#	plane_range_upgrade
+		#	plane_engine_upgrade
+		#	plane_reliability_upgrade
+		#}
+		
+		interface_category = interface_category_air
+
+		can_be_produced = {
+			always = no
+		}
+		active = yes
+		
+		# cas
+		interface_overview_category_index = 0
+
+		air_superiority = 1
+		reliability = 0.8
+		
+		# Air vs Ground
+		air_ground_attack = 1.0
+
+		# Air vs Navy - medium damage / high hit chance / medium to hurt
+		naval_strike_attack = 3
+		naval_strike_targetting = 10
+		
+		build_cost_ic = 1
+		resources = {
+			#oil = 1
+			aluminium = 2
+			rubber = 1
+		}
+		
+		manpower = 20
+		fuel_consumption = 0.26
+	}
+
+	drone_equipment_1 = {
+		year = 2200
+
+		archetype = drone_equipment_0
+		priority = 40
+
+		air_range = 350
+		maximum_speed = 195 
+		air_agility = 35
+		air_attack = 6
+		air_defence = 14
+		air_ground_attack = 25
+
+		naval_strike_attack = 3
+		naval_strike_targetting = 10
+	}
+
+############################
+############################
+############################
+
+	convoy_0 = {
+		is_archetype = yes
+		type = convoy	
+		group_by = archetype
+		sprite = convoy
+
+		interface_category = interface_category_other_ships
+
+		can_be_produced = {
+			always = no
+		}
+		active = yes
+
+		# Unused by convoys
+		surface_detection = 10
+		sub_detection = 0
+
+		fuel_consumption = 0
+
+		# Combat abilities
+		lg_armor_piercing = 1
+		armor_value = 0
+		reliability = 0.8
+		surface_visibility = 14
+
+		torpedo_attack = 0
+		lg_attack = 0.25
+		naval_speed = 12
+		max_strength = 60
+		max_organisation = 30
+		anti_air_attack = 0.1
+
+
+		#Space taken in convoy
+		lend_lease_cost = 0
+
+		# (Describes combat behaviour - hidden stat)
+		offensive_weapons = no
+
+		build_cost_ic = 1
+		resources = {
+			#oil = 1
+			steel = 1
+		}
+	}
+
+	convoy_1 = {
+		year = 2200
+
+		archetype = convoy_0
+		active = yes
+		priority = 10
+	}
+
+	crawler_equipment_0 = {
+		is_archetype = yes	
+		is_buildable = no
+		type = {
+			motorized
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+
+		can_be_produced = {
+			always = no
+		}
+		active = yes
+		
+		maximum_speed = 12
+		reliability = 0.8
+		hardness = 0.2
+
+		breakthrough = 10
+
+		#Space taken in convoy
+		lend_lease_cost = 5
+
+		build_cost_ic = 1
+		resources = {
+			#oil = 1
+			rubber = 1
+			steel = 1
+		}
+		
+		fuel_consumption = 1.2
+		supply_truck = yes
+	}
+
+	crawler_equipment_1 = {
+		year = 2200
+
+		archetype = crawler_equipment_0
+		priority = 30			
+	}
+
+	maglev_equipment_0 = {
+        is_archetype = yes
+        is_buildable = no
+        active = no
+        type = train
+	    group_by = archetype
+	    sprite = train
+
+	    interface_category = interface_category_land
+
+		can_be_produced = {
+			always = no
+		}
+		active = yes
+
+	    armor_value = 0 # HP = BASE_TRAIN_HP + armor_value
+
+	    build_cost_ic = 1
+	    resources = {
+	        steel = 1
+	    }
+    }
+
+    maglev_equipment_1 = {
+        archetype = maglev_equipment_0
+		priority = 0
+    }
+}
+
+############################
+############################
+############################
+
+equipments = {
+	
+############################
+###### FAKE / DEBUG ########
+############################
+	
+	dummy_eq_0 = {
+		is_archetype = yes
+		type = {
+			infantry
+		}
+		group_by = archetype
+		interface_category = interface_category_land
+		active = yes
+		build_cost_ic = 100000
+		resources = {
+			 aluminium = 1
+			 rubber = 1
+			 tungsten = 1
+			 steel = 1
+			 chromium = 1
+		}
+	}
+
+	dummy_eq_1 = {
+		archetype = dummy_eq_0
+		priority = 10000
+		visual_level = 0
+		active = yes
+	}
+}
+	
+############################
+############################
+############################
