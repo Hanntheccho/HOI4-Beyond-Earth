@@ -205,34 +205,29 @@ country_event = { #Veron my beloved
 		tag = GER
 		has_war_with = SOV
 		has_war_with = FRA
-        any_country = {
-			is_eng_tag = yes
-			has_war_with = GER
-		}
+		has_war_with = SCO
 	}
 
 	option = { #The Heer assumes control
 	    name = german_event_option.7.a
-        custom_effect_tooltip = GER_military_coup_tooltip
         add_stability = -0.1
 		add_war_support = 0.05
-        hidden_effect = {
-			create_country_leader = {
-				name = "Leopold Geißler" 
-				ideology = neutral_ideology
-				picture = GFX_
-				traits = { has_emergency_powers }
-			}
-	        set_cosmetic_tag = GER_federal_army
-	        add_ideas = military_government
-			set_politics = {
-	            ruling_party = neutral
-	            elections_allowed = no
-		    }
-		    add_popularity = {
-	            ideology = neutral
-	            popularity = 0.2
-            }
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Leopold Geißler" 
+			ideology = neutral_ideology
+			picture = GFX_
+			traits = { has_emergency_powers }
+		}
+	    set_cosmetic_tag = GER_federal_army
+	    add_ideas = military_government
+		set_politics = {
+	        ruling_party = neutral
+	        elections_allowed = no
+		}
+		add_popularity = {
+	        ideology = neutral
+	        popularity = 0.2
         }
 		ai_chance = {
 		    factor = 1
@@ -266,5 +261,47 @@ country_event = { #invite to faction
 	
 	option = { 
 		name = german_event_option.8.a
+	}
+}
+country_event = { #this one for MrKrabs!
+	id = german_event.9
+	title = german_event.9.t
+	desc = german_event.9.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = GER
+		has_cosmetic_tag = GER_federal_army #you did let the federal army take power right?
+		surrender_progress > 0.5
+	}
+
+	option = { #
+	    name = german_event_option.9.a
+        add_stability = -1
+		add_war_support = 1
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Self-Defense Command" 
+			ideology = neutral_ideology
+			picture = GFX_
+		}
+	    set_cosmetic_tag = GER_self_defense_forces
+		add_ideas = all_adults_serve
+		add_ideas = closed_economy
+		add_ideas = war_economy
+		add_popularity = {
+	        ideology = neutral
+	        popularity = 1
+        }
+		ai_chance = {
+		    factor = 1
+        }
+    }
+	option = { #
+	    name = german_event_option.9.b
+		ai_chance = {
+		    factor = 100
+	    }
 	}
 }
