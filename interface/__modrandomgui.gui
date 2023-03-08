@@ -622,27 +622,6 @@ guiTypes = {
 				position = { x= -15 y = 15 }
 				pdx_tooltip = ideas_law_sum_name
 			}
-			buttonType = {	
-				name = "change_economic"
-				spriteType = "GFX_st_button_261x50"
-				position = { x= 115 y = 25 }
-				pdx_tooltip = change_this_law_tt
-				pdx_disabled_tooltip_delayed = change_this_law_tt_disabled
-			}
-			buttonType = {	
-				name = "change_mobilization"
-				spriteType = "GFX_st_button_261x50"
-				position = { x= 115 y = 83 }
-				pdx_tooltip = change_this_law_tt
-				pdx_disabled_tooltip_delayed = change_this_law_tt_disabled
-			}
-			buttonType = {	
-				name = "change_trade"
-				spriteType = "GFX_st_button_261x50"
-				position = { x= 115 y = 141 }
-				pdx_tooltip = change_this_law_tt
-				pdx_disabled_tooltip_delayed = change_this_law_tt_disabled
-			}
 		}				
 	}
 #############################
@@ -727,42 +706,41 @@ guiTypes = {
 #################
 	containerWindowType = {
 		name = "division_limit_window"
-		position = { x = 0 y = 0 }
-		size = { width = 170 height = 220 }
-		fade_time = 100
+		size = { width = 755 height = 413 }
 		moveable = yes
+		fade_time = 500
 		fade_type = linear
-		click_to_front = no
+		orientation = CENTER
+		origo = center
+		show_sound = pop_up
 		clipping = no
+		click_to_front = yes
 
 		instantTextboxType = {
 			name = "template_title1"
-			position = { x = 26 y = 23 }
+			position = { x = 256 y = 13 }
 			textureFile = ""
-			font = "Arialsmallest"
+			font = "Beyond"
 			borderSize = {x = 0 y = 0}
-			text = "division_limit_tt1"
+			text = "division_limit_tt_text"
 			maxWidth = 470
 			maxHeight = 60
-			format = left	
+			format = right	
 			pdx_tooltip = "division_limit_tt"
 			pdx_tooltip_delayed = division_limit_tt_delayed	
 			fixedsize = yes
 		}
-
-		containerWindowType = {
-			name = "another_bg11"
-			size = { width = 520 height = 75 }
-			position = {
-				x = 15
-				y = 15
-			}
-
-			background = {
-				name = "bg"
-				quadTextureSprite = "GFX_tiled_black"
-				alwaystransparent = yes
-			}
+		instantTextboxType = {
+			name = "template_title2"
+			position = { x = 256 y = 43 }
+			textureFile = ""
+			font = "Focusfont"
+			borderSize = {x = 0 y = 0}
+			text = "division_limit_tt_text_prod"
+			maxWidth = 470
+			maxHeight = 60
+			format = left	
+			fixedsize = yes
 		}
 	}
 }

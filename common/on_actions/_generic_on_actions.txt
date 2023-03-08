@@ -1,0 +1,69 @@
+on_actions = {
+    on_weekly = {
+        effect = {
+            if = {
+                limit = {
+                    NOT = {
+                        has_country_flag = generic_event.1
+                    }
+                    is_puppet = no
+                }
+                random_list = {
+                    5 = {
+                        country_event = generic_event.1
+                        set_country_flag = {
+                            flag = generic_event.1
+                            days = 200
+                            value = 1
+                        }
+                    }
+                    95 = {
+                        #
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        has_country_flag = generic_event.2
+                    }
+                    is_puppet = no
+                }
+                random_list = {
+                    5 = {
+                        country_event = generic_event.2
+                        set_country_flag = {
+                            flag = generic_event.2
+                            days = 200
+                            value = 1
+                        }
+                    }
+                    95 = {
+                        #
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        has_country_flag = generic_event.3
+                    }
+                    is_puppet = no
+                }
+                random_list = {
+                    5 = {
+                        country_event = generic_event.3
+                        set_country_flag = {
+                            flag = generic_event.3
+                            days = 200
+                            value = 1
+                        }
+                    }
+                    95 = {
+                        #
+                    }
+                }
+            }
+        }
+    }
+}
