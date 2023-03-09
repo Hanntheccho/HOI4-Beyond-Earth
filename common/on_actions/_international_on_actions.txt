@@ -148,11 +148,11 @@ on_actions = {
                 }
                 set_variable = { spaceship_contribution_variable = 0 }
                 set_variable = { spaceship_contribution_modifier = 1 }
-                set_variable = { spaceship_contribution_spaceship_factory = 0 }
+                set_variable = { spaceship_contribution_spaceship_complex = 0 }
                 every_controlled_state = {
-                    add_to_variable = { PREV.spaceship_contribution_spaceship_factory = building_level@spaceship_factory }
+                    add_to_variable = { PREV.spaceship_contribution_spaceship_complex = building_level@spaceship_complex }
                 }
-                add_to_variable = { spaceship_contribution_variable = spaceship_contribution_spaceship_factory }
+                add_to_variable = { spaceship_contribution_variable = spaceship_contribution_spaceship_complex }
                 multiply_variable = { spaceship_contribution_variable = spaceship_contribution_modifier }
                 set_variable = { research_boost_contribution = spaceship_contribution_variable }
                 divide_variable = {
@@ -402,11 +402,11 @@ on_actions = {
                         has_country_flag = international_member
                     }
                     set_variable = { spaceship_contribution_variable = 0 }
-                    set_variable = { spaceship_contribution_spaceship_factory = 0 }
+                    set_variable = { spaceship_contribution_spaceship_complex = 0 }
                     every_controlled_state = {
-                        add_to_variable = { PREV.spaceship_contribution_spaceship_factory = building_level@spaceship_factory }
+                        add_to_variable = { PREV.spaceship_contribution_spaceship_complex = building_level@spaceship_complex }
                     }
-                    add_to_variable = { spaceship_contribution_variable = spaceship_contribution_spaceship_factory }
+                    add_to_variable = { spaceship_contribution_variable = spaceship_contribution_spaceship_complex }
                     set_variable = { spaceship_contribution_modifier = 1 }
                     multiply_variable = { spaceship_contribution_variable = spaceship_contribution_modifier }
                     set_variable = { research_boost_contribution = spaceship_contribution_variable }

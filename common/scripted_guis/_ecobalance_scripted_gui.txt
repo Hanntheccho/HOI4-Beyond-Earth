@@ -1,5 +1,5 @@
 scripted_gui = {
-	devastation_gui = {
+	ecobalance_gui = {
 		context_type = selected_state_context
 		parent_window_token = selected_state_view
 		
@@ -23,11 +23,11 @@ scripted_gui = {
                     }
                 }
             }
-			reduce_devastation_button_click = {
+			reduce_ecobalance_button_click = {
                 THIS = {
-                    decrease_devastation = yes
+                    decrease_ecobalance = yes
                     set_state_flag = {
-                        flag = devastation_reduction_timeout_flag
+                        flag = ecobalance_reduction_timeout_flag
                         value = 1
                         days = 60
                     }
@@ -36,11 +36,11 @@ scripted_gui = {
                     subtract_from_variable = { industrial_power = 25 }
                 }
 			}
-            reduce_devastation_button_harmony_click = {
+            reduce_ecobalance_button_harmony_click = {
                 THIS = {
-                    decrease_devastation = yes
+                    decrease_ecobalance = yes
                     set_state_flag = {
-                        flag = devastation_reduction_timeout_flag
+                        flag = ecobalance_reduction_timeout_flag
                         value = 1
                         days = 60
                     }
@@ -49,11 +49,11 @@ scripted_gui = {
                     subtract_from_variable = { industrial_power = 15 }
                 }
             }
-            reduce_devastation_button_mastery_click = {
+            reduce_ecobalance_button_mastery_click = {
                 THIS = {
-                    engineered_devastation = yes
+                    engineered_ecobalance = yes
                     set_state_flag = {
-                        flag = devastation_reduction_timeout_flag
+                        flag = ecobalance_reduction_timeout_flag
                         value = 1
                         days = 60
                     }               
@@ -64,7 +64,7 @@ scripted_gui = {
             }
 		}
         triggers = {
-            reduce_devastation_button_visible = {
+            reduce_ecobalance_button_visible = {
                 ROOT = {
                     NOT = {
                         OR = {
@@ -74,7 +74,7 @@ scripted_gui = {
                     }
                 }
             }
-            reduce_devastation_load_visible = {
+            reduce_ecobalance_load_visible = {
                 ROOT = {
                     NOT = {
                         OR = {
@@ -84,7 +84,7 @@ scripted_gui = {
                     }
                 }
             }
-            reduce_devastation_load_click_enabled = {
+            reduce_ecobalance_load_click_enabled = {
                 THIS = {
                     OR = {
                         is_owned_by = ROOT
@@ -92,20 +92,20 @@ scripted_gui = {
                     }
                     OR = {
                         has_dynamic_modifier = {
-                            modifier = notable_devastation
+                            modifier = notable_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = major_devastation
+                            modifier = major_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = significant_devastation
+                            modifier = significant_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = terminal_devastation
+                            modifier = terminal_ecobalance
                         }
                     }
                     NOT = {
-                        has_state_flag = devastation_reduction_timeout_flag
+                        has_state_flag = ecobalance_reduction_timeout_flag
                     }
                 }
                 ROOT = {
@@ -116,7 +116,7 @@ scripted_gui = {
                     }
                 }
             }
-            reduce_devastation_button_click_enabled = {
+            reduce_ecobalance_button_click_enabled = {
                 THIS = {
                     OR = {
                         is_owned_by = ROOT
@@ -124,20 +124,20 @@ scripted_gui = {
                     }
                     OR = {
                         has_dynamic_modifier = {
-                            modifier = notable_devastation
+                            modifier = notable_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = major_devastation
+                            modifier = major_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = significant_devastation
+                            modifier = significant_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = terminal_devastation
+                            modifier = terminal_ecobalance
                         }
                     }
                     NOT = {
-                        has_state_flag = devastation_reduction_timeout_flag
+                        has_state_flag = ecobalance_reduction_timeout_flag
                     }
                 }
                 ROOT = {
@@ -148,17 +148,17 @@ scripted_gui = {
                     }
                 }
             }
-            reduce_devastation_button_harmony_visible = {
+            reduce_ecobalance_button_harmony_visible = {
                 ROOT = {
                     has_country_flag = has_mind_tier3
                 }
             }
-            reduce_devastation_load_harmony_visible = {
+            reduce_ecobalance_load_harmony_visible = {
                 ROOT = {
                     has_country_flag = has_mind_tier3
                 }
             }
-            reduce_devastation_load_harmony_click_enabled = {
+            reduce_ecobalance_load_harmony_click_enabled = {
                 THIS = {
                     OR = {
                         is_owned_by = ROOT
@@ -166,31 +166,31 @@ scripted_gui = {
                     }
                     NOT = {
                         has_dynamic_modifier = {
-                            modifier = no_devastation
+                            modifier = no_ecobalance
                         }
                     }
                     OR = {
                         has_dynamic_modifier = {
-                            modifier = counter_devastation
+                            modifier = counter_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = minor_devastation
+                            modifier = minor_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = notable_devastation
+                            modifier = notable_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = major_devastation
+                            modifier = major_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = significant_devastation
+                            modifier = significant_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = terminal_devastation
+                            modifier = terminal_ecobalance
                         }
                     }
                     NOT = {
-                        has_state_flag = devastation_reduction_timeout_flag
+                        has_state_flag = ecobalance_reduction_timeout_flag
                     }
                 }
                 ROOT = { 
@@ -201,7 +201,7 @@ scripted_gui = {
                     }
                 }
             }
-            reduce_devastation_button_harmony_click_enabled = {
+            reduce_ecobalance_button_harmony_click_enabled = {
                 THIS = {
                     OR = {
                         is_owned_by = ROOT
@@ -209,31 +209,31 @@ scripted_gui = {
                     }
                     NOT = {
                         has_dynamic_modifier = {
-                            modifier = no_devastation
+                            modifier = no_ecobalance
                         }
                     }
                     OR = {
                         has_dynamic_modifier = {
-                            modifier = counter_devastation
+                            modifier = counter_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = minor_devastation
+                            modifier = minor_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = notable_devastation
+                            modifier = notable_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = major_devastation
+                            modifier = major_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = significant_devastation
+                            modifier = significant_ecobalance
                         }
                         has_dynamic_modifier = {
-                            modifier = terminal_devastation
+                            modifier = terminal_ecobalance
                         }
                     }
                     NOT = {
-                        has_state_flag = devastation_reduction_timeout_flag
+                        has_state_flag = ecobalance_reduction_timeout_flag
                     }
                 }
                 ROOT = { 
@@ -244,17 +244,17 @@ scripted_gui = {
                     }
                 }
             }
-            reduce_devastation_button_mastery_visible = {
+            reduce_ecobalance_button_mastery_visible = {
                 ROOT = { 
                     has_country_flag = has_body_tier3
                 }
             }
-            reduce_devastation_load_mastery_visible = {
+            reduce_ecobalance_load_mastery_visible = {
                 ROOT = { 
                     has_country_flag = has_body_tier3
                 }
             }
-            reduce_devastation_load_mastery_click_enabled = {
+            reduce_ecobalance_load_mastery_click_enabled = {
                 THIS = {
                     OR = {
                         is_owned_by = ROOT
@@ -262,11 +262,11 @@ scripted_gui = {
                     }
                     NOT = {
                         has_dynamic_modifier = {
-                            modifier = counter_devastation
+                            modifier = counter_ecobalance
                         }
                     }
                     NOT = {
-                        has_state_flag = devastation_reduction_timeout_flag
+                        has_state_flag = ecobalance_reduction_timeout_flag
                     }
                 }
                 ROOT = {
@@ -277,7 +277,7 @@ scripted_gui = {
                     }
                 }
             }
-            reduce_devastation_button_mastery_click_enabled = {
+            reduce_ecobalance_button_mastery_click_enabled = {
                 THIS = {
                     OR = {
                         is_owned_by = ROOT
@@ -285,11 +285,11 @@ scripted_gui = {
                     }
                     NOT = {
                         has_dynamic_modifier = {
-                            modifier = counter_devastation
+                            modifier = counter_ecobalance
                         }
                     }
                     NOT = {
-                        has_state_flag = devastation_reduction_timeout_flag
+                        has_state_flag = ecobalance_reduction_timeout_flag
                     }
                 }
                 ROOT = {
@@ -301,39 +301,39 @@ scripted_gui = {
                 }
             }
             #
-            counter_devastation_icon_visible = {
+            counter_ecobalance_icon_visible = {
                 has_dynamic_modifier = {
-                    modifier = counter_devastation
+                    modifier = counter_ecobalance
                 }
             }
-            no_devastation_icon_visible = {
+            no_ecobalance_icon_visible = {
                 has_dynamic_modifier = {
-                    modifier = no_devastation
+                    modifier = no_ecobalance
                 }
             }
-            minor_devastation_icon_visible = {
+            minor_ecobalance_icon_visible = {
                 has_dynamic_modifier = {
-                    modifier = minor_devastation
+                    modifier = minor_ecobalance
                 }
             }
-            notable_devastation_icon_visible = {
+            notable_ecobalance_icon_visible = {
                 has_dynamic_modifier = {
-                    modifier = notable_devastation
+                    modifier = notable_ecobalance
                 }
             }
-            major_devastation_icon_visible = {
+            major_ecobalance_icon_visible = {
                 has_dynamic_modifier = {
-                    modifier = major_devastation
+                    modifier = major_ecobalance
                 }
             }
-            significant_devastation_icon_visible = {
+            significant_ecobalance_icon_visible = {
                 has_dynamic_modifier = {
-                    modifier = significant_devastation
+                    modifier = significant_ecobalance
                 }
             }
-            terminal_devastation_icon_visible = {
+            terminal_ecobalance_icon_visible = {
                 has_dynamic_modifier = {
-                    modifier = terminal_devastation
+                    modifier = terminal_ecobalance
                 }
             }
         }
@@ -351,7 +351,7 @@ scripted_gui = {
 		}
 
         ai_weights = {
-            reduce_devastation_button_click = {
+            reduce_ecobalance_button_click = {
                 ai_will_do = {
                     factor = 0
                     modifier = {
@@ -379,7 +379,7 @@ scripted_gui = {
 			        }
                 }
             }
-            reduce_devastation_button_harmony_click = {
+            reduce_ecobalance_button_harmony_click = {
                 ai_will_do = {
                     factor = 1
                     modifier = {
@@ -398,7 +398,7 @@ scripted_gui = {
 			        }
                 }
             }
-            reduce_devastation_button_mastery_click = {
+            reduce_ecobalance_button_mastery_click = {
                 ai_will_do = {
                     factor = 0
                     modifier = {
