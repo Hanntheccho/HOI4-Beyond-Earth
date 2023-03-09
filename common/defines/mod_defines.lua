@@ -8,6 +8,8 @@ NDefines.NGame.HANDS_OFF_START_TAG = "GRN"
 
 NDefines.NGame.FUEL_RESOURCE = "energy"
 
+NDefines.NAI.BUILDING_TARGETS_BUILDING_PRIORITIES = { 'civilian_complex', 'military_complex' }      -- ?
+
 NDefines.NPolitics.BASE_POLITICAL_POWER_INCREASE = 0  -- VANILLA: 2
 
 NDefines.NDiplomacy.TENSION_STATE_VALUE = 0                            -- Vanilla: 2
