@@ -6,6 +6,8 @@ NDefines.NGraphics.COUNTRY_FLAG_STRIPE_TEX_MAX_HEIGHT = 8196        -- VANILLA: 
 NDefines.NGraphics.COUNTRY_FLAG_TEX_MAX_SIZE = 2048                   -- VANILLA: 256
 NDefines.NGame.HANDS_OFF_START_TAG = "GRN"
 
+NDefines.NGame.FUEL_RESOURCE = "energy"
+
 NDefines.NPolitics.BASE_POLITICAL_POWER_INCREASE = 0  -- VANILLA: 2
 
 NDefines.NDiplomacy.TENSION_STATE_VALUE = 0                            -- Vanilla: 2

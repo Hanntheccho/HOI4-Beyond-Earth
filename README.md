@@ -63,14 +63,14 @@ Beyong Earth does not add any new resources but rather reskins and re-names the 
 <details>
 <summary>List of resources</summary>
 
-| Vanilla Resource | Reskinned Resource    | Localization Key               |
-|------------------|-----------------------|--------------------------------|
-| Oil              | Energy                | PRODUCTION_MATERIALS_OIL       |
-| Aluminium        | Polymers              | PRODUCTION_MATERIALS_ALUMINIUM |
-| Rubber           | Battery Materials     | PRODUCTION_MATERIALS_RUBBER    |
-| Chromium         | Superconductors       | PRODUCTION_MATERIALS_CHROMIUM  |
-| Steel            | Superalloys           | PRODUCTION_MATERIALS_STEEL     |
-| Tungsten         | Electronic Components | PRODUCTION_MATERIALS_TUNGSTEN  |
+| Vanilla Resource | Reskinned Resource    | Localization Key                     |
+|------------------|-----------------------|--------------------------------------|
+| Oil              | Energy                | PRODUCTION_MATERIALS_ENERGY          |
+| Aluminium        | Polymers              | PRODUCTION_MATERIALS_POLYMERS        |
+| Rubber           | Battery Materials     | PRODUCTION_MATERIALS_LITHIUM         |
+| Chromium         | Superconductors       | PRODUCTION_MATERIALS_SUPERCONDUCTORS |
+| Steel            | Superalloys           | PRODUCTION_MATERIALS_SUPERALLOYS     |
+| Tungsten         | Electronic Components | PRODUCTION_MATERIALS_ELECTRONICS     |
 </details>
 
 ## Technologies
