@@ -53,9 +53,9 @@ NDefines.NOperatives.AGENCY_CREATION_FACTORIES = 1000101
 --NDefines.NCountry.WEEKLY_STABILITY_GAIN = 0.0
 --NDefines.NCountry.WEEKLY_WAR_SUPPORT_GAIN = 0.0
 
-NDefines.NProduction.BASE_FACTORY_SPEED = 2.5		
-NDefines.NProduction.BASE_FACTORY_SPEED_MIL = 2.5 				
-NDefines.NProduction.BASE_FACTORY_SPEED_NAV = 2.5 
+NDefines.NProduction.BASE_FACTORY_SPEED = 1		
+NDefines.NProduction.BASE_FACTORY_SPEED_MIL = 1				
+NDefines.NProduction.BASE_FACTORY_SPEED_NAV = 1
 
 NDefines.NMilitary.BASE_NIGHT_ATTACK_PENALTY = 0.0
 
