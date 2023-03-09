@@ -1,4 +1,53 @@
 on_actions = {
+    on_startup = {
+        effect = {
+            every_country = {
+                if = {
+                    limit = {
+                        check_variable = {
+                            num_of_military_factories > 5
+                        }
+                        has_tech = heavy_weapons
+                    }
+                    capital_scope = {
+                        add_building_construction = {
+                            type = heavy_military_complex
+                            level = 2
+                            instant_build = yes
+                        }
+                    }
+                    every_owned_state = {
+                        limit = {
+                            air_complex > 0
+                        }
+                        add_building_construction = {
+                            type = heavy_military_complex
+                            level = 1
+                            instant_build = yes
+                        }
+                    }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = {
+                            num_of_military_factories > 0
+                        }
+                        has_tech = heavy_weapons
+                    }
+                    capital_scope = {
+                        add_building_construction = {
+                            type = heavy_military_complex
+                            level = 2
+                            instant_build = yes
+                        }
+                    }
+                }
+                else = {
+                    #
+                }
+            }
+        }
+    }
     on_weekly_ADU = {
         effect = {
             every_country = {
@@ -400,24 +449,6 @@ on_actions = {
             }
             if = {
                 limit = {
-                    has_idea = limited_conscription
-                }
-                multiply_variable = { num_military_complex = 1.1 }
-            }
-            else_if = {
-                limit = {
-                    has_idea = service_by_requirement
-                }
-                multiply_variable = { num_military_complex = 0.9 }
-            }
-            else_if = {
-                limit = {
-                    has_idea = all_adults_serve
-                }
-                multiply_variable = { num_military_complex = 0.8 }
-            }
-            if = {
-                limit = {
                     has_idea = autocratic_authority
                 }
                 multiply_variable = { num_military_complex = 1.15 }
@@ -451,6 +482,86 @@ on_actions = {
                 add_equipment_to_stockpile = {
                     type = heavy_equipment_1
                     amount = num_heavy_military_complex
+                }
+            }
+        }
+    }
+    on_weekly = {
+        effect = {
+            set_variable = {
+                amount_of_air_equipment = 0
+            }
+            add_to_variable = {
+                amount_of_air_equipment = num_equipment@drone_equipment_1
+            }
+            add_to_variable = {
+                amount_of_air_equipment = num_equipment@tac_equipment_1
+            }
+            add_to_variable = {
+                amount_of_air_equipment = num_equipment@fighter_equipment_01
+            }
+            add_to_variable = {
+                amount_of_air_equipment = num_equipment@cas_equipment_1
+            }
+            set_variable = { num_air_complex = 0 }
+            every_controlled_state = {
+                limit = {
+                    air_complex > 0
+                }
+                add_to_variable = { 
+                    PREV.num_air_complex = 1
+                }
+            }
+            set_variable = {
+                air_complex_capability = 0
+            }
+            add_to_variable = {
+                air_complex_capability = num_air_complex
+            }
+            multiply_variable = {
+                air_complex_capability = 200
+            }
+            if = {
+                limit = {
+                    check_variable = {
+                        air_complex_capability > amount_of_air_equipment
+                    }                        
+                }
+                set_variable = { num_air_complex_with_military_complex = 0 }
+                every_controlled_state = {
+                    limit = {
+                        military_complex > 0
+                        air_complex > 0
+                    }
+                    add_to_variable = { 
+                        PREV.num_air_complex_with_military_complex = 1
+                    }
+                }
+                set_variable = { num_air_complex_with_heavy_military_complex = 0 }
+                every_controlled_state = {
+                    limit = {
+                        heavy_military_complex > 0
+                        air_complex > 0
+                    }
+                    add_to_variable = { 
+                        PREV.num_air_complex_with_heavy_military_complex = 1
+                    }
+                }
+                add_equipment_to_stockpile = {
+                    type = drone_equipment_1
+                    amount = num_air_complex
+                }
+                add_equipment_to_stockpile = {
+                    type = fighter_equipment_01
+                    amount = num_air_complex_with_military_complex
+                }
+                add_equipment_to_stockpile = {
+                    type = cas_equipment_1
+                    amount = num_air_complex_with_military_complex
+                }
+                add_equipment_to_stockpile = {
+                    type = tac_equipment_1
+                    amount = num_air_complex_with_heavy_military_complex
                 }
             }
         }
