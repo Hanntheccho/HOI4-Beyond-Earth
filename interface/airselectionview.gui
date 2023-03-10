@@ -282,7 +282,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "new_btn"
-			position = {x=409 y=8}
+			position = {x=409 y=7}
 			spriteType = "GFX_change_template_button"
 			clicksound = click_default
 			shortcut = "n"
@@ -338,13 +338,14 @@ guiTypes = {
 			name = "unitinfo_button"
 			spriteType = "GFX_unitlist_unitinfo_button"
 			position = { x=66 y=1 }
+			alwaystransparent = yes #no
 		}
 
 		iconType = {
 			name ="equipment_icon"
 			spriteType = "GFX_technology_medium"
-			position = { x=67 y=1 }
-			scale = 0.3
+			position = { x=66 y=-6 }
+			scale = 1
 			alwaystransparent = yes
 		}
 
@@ -532,7 +533,7 @@ guiTypes = {
 
 		background = {
 			name = "Background"
-			quadTextureSprite ="GFX_focus_tooltip"
+			quadTextureSprite ="GFX_focus_tooltip_deluxe"
 			position = {
 				x = 50
 				y = 0
@@ -568,8 +569,8 @@ guiTypes = {
 
 		smoothListBoxType = {
 			name = "air_wings_list"
-			position = { x = 6 y = 6 }
-			size = { x = 550 y = 428 } # Only max size before we start scrolling, will scale to lower if needed
+			position = { x = 6 y = 10 }
+			size = { x = 451 y = 528 } # Only max size before we start scrolling, will scale to lower if needed
 			scrollbartype = "standardlistbox_slider"
 		}
 
@@ -1022,19 +1023,13 @@ guiTypes = {
 		containerWindowType = {
 			name = "air_wing_toolbar"
 			position = {x=52 y=84}
-			size = { width=435 height=42 }
+			size = { width=435 height=0 }
 			Orientation = upper_left
 			clipping = no
 
-			background = {
-				name = "Background"
-				quadTextureSprite ="GFX_focus_tooltip"
-				position = {x=0 y=-6}
-			}
-
 			buttonType = {
 				name = "btn_delete"
-				position = { x=20 y=4 }
+				position = { x=440 y=4 }
 				spriteType = "GFX_UV_btn_unassign"
 				clicksound = disband
 			}
@@ -1058,7 +1053,7 @@ guiTypes = {
 
 			buttonType = {
 				name = "split_wing_btn"
-				position = { x=195 y=4 }
+				position = { x=440 y=84 }
 				spriteType = "GFX_select_half"
 				clicksound = click_default
 				shortcut = "d"
@@ -1066,7 +1061,7 @@ guiTypes = {
 
 			buttonType = {
 				name = "merge_wings_btn"
-				position = { x=225 y=4 }
+				position = { x=440 y=44 }
 				spriteType = "GFX_consolidate"
 				clicksound = click_default
 				shortcut = "g"
@@ -1119,14 +1114,14 @@ guiTypes = {
 
 			buttonType = {
 				name = "btn_select_half"
-				position = { x=355 y=4 }
+				position = { x=-10000 y=4 }
 				spriteType = "GFX_select_half"
 				shortcut = "s"
 			}
 
 			buttonType = {
 				name = "btn_hold"
-				position = { x=385 y=4 }
+				position = { x=440 y=124 }
 				spriteType = "GFX_hold"
 				shortcut = "h"
 			}	
@@ -1149,8 +1144,8 @@ guiTypes = {
 
 		smoothListBoxType = {
 			name = "air_selection"
-			position = { x = 2 y = 120 }
-			size = { x = 600 y = 0 } #Height set in code
+			position = { x = 2 y = 80 }
+			size = { x = 495 y = 0 } #Height set in code
 		}
 	}
 }
