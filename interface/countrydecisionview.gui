@@ -7,7 +7,7 @@ guiTypes = {
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
-		size = { width=544 height=100%% }
+		size = { width=550 height=100%% }
 		clipping = no
 		
 		#hide_sound = menu_close_window
@@ -34,14 +34,14 @@ guiTypes = {
 		background ={
 			name ="pol_view_bg"
 			spriteType = "GFX_decision_view_bg_large"
-			position = { x= 6 y = 0 }
+			position = { x= 0 y = 0 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
 
 		background ={
 			name ="pol_view_bg2"
-			spriteType = "GFX_research_view_bg_large"
+			spriteType = "GFX_pol_view_bg_large"
 			position = { x= 6 y = 0 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
@@ -50,7 +50,7 @@ guiTypes = {
 		background ={
 			name ="pol_view_bg2"
 			spriteType = "GFX_tiled_side_mod"
-			position = { x= 6 y = 0 }
+			position = { x= 0 y = 0 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -86,8 +86,23 @@ guiTypes = {
 		}
 
 		containerWindowType = {
+			name = "another_bg11"
+			size = { width = 520 height = 100%% }
+			position = {
+				x = 15
+				y = 15
+			}
+
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_black"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
 			name = "decision_grid_container"
-			position = {x=6 y=0}
+			position = {x=15 y=15}
 			size = {width=-1 height=-10 } # Y Set in code to match the window size, but initial value is used as extra space in height
 			Orientation = upper_left
 			margin = {
@@ -140,7 +155,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "name_text"
-			position = { x = 8 y = 5 }
+			position = { x = 12 y = 3 }
 			textureFile = ""
 			font = "Beyond"
 			#borderSize = { x = 0 y = 0 }
@@ -173,19 +188,13 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "decision_category_desc"
-		position = { x=0 y=-15 }
+		position = { x=0 y=-20 }
 		size = { width=490 height=0 }
 		clipping = no
 		
 		background = {
 			name = "Background"
 			position = { x=0 y=0 }
-			quadTextureSprite="GFX_tiled_black" #GFX_focus_tooltip
-			clicksound = click_default
-		}
-		background = {
-			name = "Background2"
-			position = { x=10 y=43 }
 			quadTextureSprite="GFX_tiled_black" #GFX_focus_tooltip
 			clicksound = click_default
 		}
@@ -200,20 +209,20 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "full_text"
-			position = { x = 24 y = 43 }
+			position = { x = 24 y = 30 }
 			textureFile = ""
 			font = "Arial16"
-			borderSize = { x = 4 y = 14 }
+			borderSize = { x = 4 y = 18 }
 			text = ""
 			maxWidth = 450
 		}
 		
 		instantTextboxType = {
 			name = "short_text"
-			position = { x = 135 y = 43 }
+			position = { x = 135 y = 30 }
 			textureFile = ""
 			font = "Arial16"
-			borderSize = { x = 4 y = 14 }
+			borderSize = { x = 4 y = 18 }
 			text = ""
 			maxWidth = 450
 		}

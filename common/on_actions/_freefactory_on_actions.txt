@@ -205,6 +205,15 @@ on_actions = {
                 multiply_variable = { free_factory_adjustment = 1.15 }
             }
             ###
+            if = {
+                limit = {
+                    has_dynamic_modifier = {
+                        modifier = too_many_building_resources_used
+                    }
+                }
+                multiply_variable = { free_factory_adjustment = 0 }
+            }
+            ###
             add_to_variable = { free_factory_gain = free_factory_base_gain }
             multiply_variable = { free_factory_gain = free_factory_adjustment }
             add_to_variable = { free_factory_progress = free_factory_gain }

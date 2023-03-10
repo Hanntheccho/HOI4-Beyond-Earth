@@ -8,7 +8,7 @@ guiTypes = {
 		}
 		clipping = yes
 		instantTextboxType = {
-			name = "load_text"
+			name = "load_text1"
 			position = { x = 11 y = 8 }
 			textureFile = ""
 			font = "Arialsmallest"
@@ -30,6 +30,18 @@ guiTypes = {
 				quadTextureSprite = "GFX_tiled_black"
 				alwaystransparent = yes
 			}
+		}
+		instantTextboxType = {
+			name = "load_text2"
+			position = { x = 119 y = 27 }
+			textureFile = ""
+			font = "Arialsmallest"
+			borderSize = {x = 0 y = 0}
+			text = "free_factory_progress_text_small"
+			maxWidth = 530
+			maxHeight = 40
+			format = left
+			alwaystransparent = yes
 		}
 	}
 ################
@@ -210,7 +222,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "another_bg1"
-			size = { width = 380 height = 202 }
+			size = { width = 370 height = 202 }
 			position = {
 				x = -185
 				y = -89
@@ -225,7 +237,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "another_bg2"
-			size = { width = 385 height = 202 }
+			size = { width = 395 height = 220 }
 			position = {
 				x = -200
 				y = -98
@@ -706,41 +718,49 @@ guiTypes = {
 #################
 	containerWindowType = {
 		name = "division_limit_window"
-		size = { width = 755 height = 413 }
-		moveable = yes
-		fade_time = 500
-		fade_type = linear
-		orientation = CENTER
-		origo = center
-		show_sound = pop_up
-		clipping = no
-		click_to_front = yes
-
+		position = { x=15 y=15 }
+		size = {
+			width = 520
+			height = 50
+		}
+		clipping = yes
 		instantTextboxType = {
 			name = "template_title1"
-			position = { x = 256 y = 13 }
+			position = { x = 11 y = 8 }
 			textureFile = ""
-			font = "Beyond"
+			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
 			text = "division_limit_tt_text"
-			maxWidth = 470
-			maxHeight = 60
-			format = right	
+			maxWidth = 520
+			maxHeight = 40
+			format = left
 			pdx_tooltip = "division_limit_tt"
 			pdx_tooltip_delayed = division_limit_tt_delayed	
-			fixedsize = yes
+		}
+		containerWindowType = {
+			name = "bg"
+			size = {
+				width = 100%%
+				height = 100%%
+			}
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_black"
+				alwaystransparent = yes
+			}
 		}
 		instantTextboxType = {
 			name = "template_title2"
-			position = { x = 256 y = 43 }
+			position = { x = 119 y = 27 }
 			textureFile = ""
-			font = "Focusfont"
+			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
-			text = "division_limit_tt_text_prod"
+			text = "division_limit_tt_text_small"
 			maxWidth = 470
 			maxHeight = 60
 			format = left	
 			fixedsize = yes
+			alwaystransparent = yes
 		}
 	}
 }
