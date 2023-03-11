@@ -68,4 +68,368 @@ TZN_decisions = {
 			}
 		}
 	}
+
+	TZN_declare_war_buketi = {
+		allowed = {
+			tag = TZN
+		}
+
+		visible = {
+			has_completed_focus = TZN_reign_in_the_warlords
+			GNA = {
+				exists = yes
+			}
+		}
+
+		complete_effect = {
+			declare_war_on = {
+				target = GNA
+			}
+		}
+	}
+
+	TZN_declare_war_kwama = {
+		allowed = {
+			tag = TZN
+		}
+
+		visible = {
+			has_completed_focus = TZN_reign_in_the_warlords
+			TOG = {
+				exists = yes
+			}
+		}
+
+		complete_effect = {
+			declare_war_on = {
+				target = TOG
+			}
+		}
+	}
+
+	TZN_declare_war_east_kivu = {
+		allowed = {
+			tag = TZN
+		}
+
+		visible = {
+			has_completed_focus = TZN_reign_in_the_warlords
+			RWA = {
+				exists = yes
+			}
+		}
+
+		complete_effect = {
+			declare_war_on = {
+				target = RWA
+			}
+		}
+	}
+
+	TZN_declare_war_warega = {
+		allowed = {
+			tag = TZN
+		}
+
+		visible = {
+			has_completed_focus = TZN_reign_in_the_warlords
+			BRD = {
+				exists = yes
+			}
+		}
+
+		complete_effect = {
+			declare_war_on = {
+				target = BRD
+			}
+		}
+	}
+
+	TZN_declare_war_msaga = {
+		allowed = {
+			tag = TZN
+		}
+
+		visible = {
+			has_completed_focus = TZN_reign_in_the_warlords
+			MLW = {
+				exists = yes
+			}
+		}
+
+		complete_effect = {
+			declare_war_on = {
+				target = MLW
+			}
+		}
+	}
+
+	TZN_declare_war_south_sudan = {
+		allowed = {
+			tag = TZN
+		}
+
+		visible = {
+			has_completed_focus = TZN_aid_the_rebels
+			SIE = {
+				exists = yes
+			}
+		}
+
+		complete_effect = {
+			declare_war_on = {
+				target = SIE
+			}
+		}
+	}
+
+	TZN_integrate_sudan = {
+		allowed = {
+			tag = TZN
+		}
+
+		visible = {
+			has_completed_focus = TZN_recognize_uar_legitimacy_in_sudan
+			SUD = {
+				exists = yes
+			}
+		}
+
+		available = {
+			NOT = {
+				has_idea = tzn_integrate_sudan_cooldown
+			}
+		}
+
+		complete_effect = {
+			SUD = {
+				country_event = sud.1
+			}
+			add_timed_idea = {
+				idea = tzn_integrate_sudan_cooldown
+				days = 160
+			}
+		}
+	}
+
+	TZN_integrate_egypt = {
+		allowed = {
+			tag = TZN
+		}
+
+		visible = {
+			has_completed_focus = TZN_an_anti_imperialist_alliance
+			has_completed_focus = TZN_back_ethiopian_reunification
+			EGY = {
+				exists = yes
+			}
+		}
+
+		available = {
+			NOT = {
+				has_idea = tzn_integrate_egypt_cooldown
+			}
+		}
+
+		complete_effect = {
+			EGY = {
+				country_event = egy.1
+			}
+			add_timed_idea = {
+				idea = tzn_integrate_egypt_cooldown
+				days = 160
+			}
+		}
+	}
+
+	TZN_declare_war_somalia = {
+		allowed = {
+			tag = TZN
+		}
+
+		visible = {
+			has_completed_focus = TZN_undermine_somali_power
+			SOM = {
+				exists = yes
+			}
+		}
+
+		complete_effect = {
+			declare_war_on = {
+				target = SOM
+				type = annex_everything
+			}
+		}
+	}
+
+	TZN_declare_war_nuer = {
+		allowed = {
+			tag = TZN
+
+		}
+
+		visible = {
+			has_completed_focus = TZN_stability_in_south_sudan
+			NUE = {
+				exists = yes
+			}
+		}
+
+		complete_effect = {
+			declare_war_on = {
+				target = NUE
+				type = annex_everything
+			}
+		}
+	}
+
+	TZN_integrate_somalia = {
+		allowed = {
+			tag = TZN
+		}
+
+		visible = {
+			has_completed_focus = TZN_seek_somali_cooperation
+			SOM = {
+				exists = yes
+			}
+		}
+
+		available = {
+			NOT = {
+				has_idea = tzn_integrate_somalia_cooldown
+			}
+		}
+
+		complete_effect = {
+			SOM = {
+				country_event = som.1
+			}
+			add_timed_idea = {
+				idea = tzn_integrate_somalia_cooldown
+				days = 160
+			}
+		}
+	}
+
+	TZN_integrate_ethiopia = {
+		allowed = {
+			tag = TZN
+		}
+
+		visible = {
+			has_completed_focus = TZN_cease_oromia
+			ETH = {
+				exists = yes
+			}
+		}
+
+		available = {
+			NOT = {
+				has_idea = tzn_integrate_ethiopia_cooldown
+			}
+		}
+
+		complete_effect = {
+			ETH = {
+				country_event = eth.1
+			}
+			add_timed_idea = {
+				idea = tzn_integrate_ethiopia_cooldown
+				days = 160
+			}
+		}
+	}
+
+	TZN_declare_war_oromia = {
+		allowed = {
+			tag = TZN
+
+		}
+
+		visible = {
+			has_completed_focus = TZN_cease_oromia
+			ORO = {
+				exists = yes
+			}
+		}
+
+		complete_effect = {
+			declare_war_on = {
+				target = ORO
+				type = annex_everything
+			}
+		}
+	}
+
+	TZN_declare_war_egypt = {
+		allowed = {
+			tag = TZN
+
+		}
+
+		visible = {
+			has_completed_focus = TZN_aid_the_sudanese_revolution
+			EGY = {
+				exists = yes
+			}
+		}
+
+		complete_effect = {
+			declare_war_on = {
+				target = EGY
+				type = annex_everything
+			}
+		}
+	}
+
+	TZN_declare_war_sudan = {
+		allowed = {
+			tag = TZN
+
+		}
+
+		visible = {
+			has_completed_focus = TZN_cease_oromia
+			SUD = {
+				exists = yes
+			}
+		}
+
+		complete_effect = {
+			declare_war_on = {
+				target = SUD
+				type = annex_everything
+			}
+		}
+	}
+
+	TZN_integrate_south_sudan = {
+		allowed = {
+			tag = TZN
+		}
+
+		visible = {
+			has_completed_focus = TZN_cease_oromia
+			SIE = {
+				exists = yes
+			}
+		}
+
+		available = {
+			NOT = {
+				has_idea = tzn_integrate_south_sudan_cooldown
+			}
+		}
+
+		complete_effect = {
+			SIE = {
+				country_event = sie.1
+			}
+			add_timed_idea = {
+				idea = tzn_integrate_south_sudan_cooldown
+				days = 160
+			}
+		}
+	}
 }

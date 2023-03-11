@@ -12,6 +12,107 @@ ideas = {
 			}
 		}
 
+		TZN_children_of_africa_2 = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			modifier = {
+				stability_weekly_factor = 0.01
+			}
+		}
+
+		TZN_children_of_africa_3 = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				add_to_variable = {
+					var = diplomatic_power_gain
+					value = 0.1
+				}
+			}
+
+			on_remove = {
+				add_to_variable = {
+					var = diplomatic_power_gain
+					value = -0.1
+				}
+			}
+		}
+
+		TZN_africas_army = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			modifier = {
+				army_org_factor = 0.1
+			}
+		}
+
+		TZN_africas_army_anti_capitalist = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			modifier = {
+				army_org_factor = 0.1
+				recruitable_population_factor = 0.01
+			}
+		}
+
+		TZN_expanded_autonomism = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				add_to_variable = {
+					var = diplomatic_power_gain
+					value = 0.01
+				}
+			}
+
+			on_remove = {
+				add_to_variable = {
+					var = diplomatic_power_gain
+					value = -0.01
+				}
+			}
+
+			modifier = {
+				political_power_gain = -0.5
+				stability_factor = 0.05
+			}
+		}
+
+		TZN_unitary_state = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				add_to_variable = {
+					var = industrial_power_gain
+					value = 0.01
+				}
+			}
+
+			on_remove = {
+				add_to_variable = {
+					var = industrial_power_gain
+					value = -0.01
+				}
+			}
+
+			modifier = {
+				political_power_gain = 0.5
+				stability_factor = -0.05
+			}
+		}
+
 		TZN_abtbia = {
 
 			cancel = {
@@ -21,6 +122,510 @@ ideas = {
 			modifier = {
 				production_speed_buildings_factor = 0.1
 				consumer_goods_factor = -0.05
+			}
+		}
+
+		TZN_abtbia_2 = {
+			cancel = {
+				is_puppet = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = -0.05
+				production_speed_civilian_complex_factor = 0.1
+			}
+		}
+
+		TZN_abtbia_3 = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = -0.05
+				production_speed_civilian_complex_factor = 0.1
+				local_resources_factor = 0.15
+			}
+		}
+
+		TZN_abtbia_4 = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = -0.05
+				custom_modifier_tooltip = military_complex_boost_020
+				production_speed_civilian_complex_factor = 0.2
+				local_resources_factor = 0.15
+				production_speed_military_complex_factor = 0.1
+			}
+		}
+
+		TZN_abtbia_5 = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				add_to_variable = {
+					var = industrial_power_gain
+					value = 0.1
+				}
+			}
+
+			on_remove = {
+				add_to_variable = {
+					var = industrial_power_gain
+					value = -0.1
+				}
+			}
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = -0.05
+				production_speed_civilian_complex_factor = 0.2
+				local_resources_factor = 0.15
+				production_speed_military_complex_factor = 0.1
+				custom_modifier_tooltip = add_01_ip_gain
+			}
+		}
+
+		eaf_support = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			targeted_modifier = {
+				tag = COG
+				attack_bonus_against = 0.25
+			}
+
+			modifier = {
+				surrender_limit = 0.3
+			}
+		}
+
+
+		###ROAD TO PLENTY IDEAS
+		tzn_road_to_plenty_base = {
+			cancel = {
+				is_puppet = yes
+			}
+			modifier = {
+				consumer_goods_factor = -0.1
+			}
+		}
+
+		##Left subtree
+		tzn_road_to_plenty_machine_service = {
+			cancel = {
+				is_puppet = yes
+			}
+			modifier = {
+				consumer_goods_factor = -0.1 ##BASE
+				stability_factor = 0.1 ##MACHINE
+				production_speed_buildings_factor = 0.1 ##MACHINE
+			}
+		}
+
+		tzn_road_to_plenty_sea_to_machine = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				add_to_variable = { ##SEA OF GREEN + MOLD NATURE
+					var = ecobalance_chance
+					value = -0.5
+				}
+			}
+
+			on_remove = { ##SEA OF GREEN + MOLD NATURE
+				add_to_variable = {
+					var = ecobalance_chance
+					value = 0.5
+				}
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1 ##BASE
+				production_speed_buildings_factor = 0.1 ##MACHINE
+				stability_factor = 0.1 #MACHINE
+				monthly_population = 0.05 ##SEA OF GREEN
+				production_speed_buildings_factor = 0.1 ##MOLD NATURE
+			}
+		}
+
+		tzn_road_to_plenty_dive_to_machine = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				#starship contribution ##FLY TO THE STARS
+			}
+
+			on_remove = {
+				#starship contribution ##FLY TO THE STARS
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1 ##BASE
+				stability_factor = 0.1 ##MACHINE
+				production_speed_buildings_factor = 0.1 ##MACHINE
+				research_speed_factor = 0.1 ##FLY TO THE STARS
+				monthly_population = 0.05 ##DIVE INTO THE OCEANS
+				stability_factor = 0.05 ##DIVE INTO THE OCEANS
+			}
+		}
+
+		tzn_road_to_plenty_sea_dive_to_machine = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				#starship contribution
+				add_to_variable = { ##SEA OF GREEN + MOLD NATURE
+					var = ecobalance_chance
+					value = -0.5
+				}
+			}
+
+			on_remove = {
+				#starship contribution
+				add_to_variable = { ##SEA OF GREEN + MOLD NATURE
+					var = ecobalance_chance
+					value = 0.5
+				}
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1 ##BASE
+				monthly_population = 0.05 ##DIVE INTO THE OCEANS
+				stability_factor = 0.05 ##DIVE INTO THE OCEANS
+				monthly_population = 0.05 ##SEA OF GREEN
+			}
+		}
+		
+		tzn_road_to_plenty_agrarian_life = { ##Only if you just started the machine branch
+			cancel = {
+				is_puppet = yes
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1 ##BASE
+				stability_factor = 0.1 ##MACHINE
+				production_speed_buildings_factor = 0.1 ##MACHINE
+				monthly_population = 0.1 ##AGRARIAN
+			}
+		}
+
+		tzn_road_to_plenty_sea_machine_to_agrarian = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				add_to_variable = { ##SEA OF GREEN + MOLD NATURE
+					var = ecobalance_chance
+					value = -0.5
+				}
+			}
+
+			on_remove = { ##SEA OF GREEN + MOLD NATURE
+				add_to_variable = {
+					var = ecobalance_chance
+					value = 0.5
+				}
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1 ##BASE
+				stability_factor = 0.1 ##MACHINE
+				production_speed_buildings_factor = 0.1 ##MACHINE
+				monthly_population = 0.1 ##AGRARIAN
+				monthly_population = 0.05 ##SEA OF GREEN
+				production_speed_buildings_factor = 0.1 ##MOLD NATURE
+			}
+		}
+
+		tzn_road_to_plenty_dive_machine_to_agrarian = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				#starship contribution ##FLY TO THE STARS
+			}
+
+			on_remove = {
+				#starship contribution ##FLY TO THE STARS
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1 ##BASE
+				stability_factor = 0.1 ##MACHINE
+				production_speed_buildings_factor = 0.1 ##MACHINE
+				monthly_population = 0.1 ##AGRARIAN
+				research_speed_factor = 0.1 ##FLY TO THE STARS
+				monthly_population = 0.05 ##DIVE INTO THE OCEANS
+				stability_factor = 0.05 ##DIVE INTO THE OCEANS
+			}
+		}
+
+		tzn_road_to_plenty_sea_dive_machine_to_agrarian = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				#starship contribution ##FLY TO THE STARS
+				add_to_variable = { ##SEA OF GREEN + MOLD NATURE
+					var = ecobalance_chance
+					value = -0.5
+				}
+			}
+
+			on_remove = {
+				#starship contribution ##FLY TO THE STARS
+				add_to_variable = { ##SEA OF GREEN + MOLD NATURE
+					var = ecobalance_chance
+					value = 0.5
+				}
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1 ##BASE
+				stability_factor = 0.1 ##MACHINE
+				production_speed_buildings_factor = 0.1 ##MACHINE
+				monthly_population = 0.1 ##AGRARIAN
+				research_speed_factor = 0.1 ##FLY TO THE STARS
+				monthly_population = 0.05 ##DIVE INTO THE OCEANS
+				stability_factor = 0.05 ##DIVE INTO THE OCEANS
+				monthly_population = 0.05 ##SEA OF GREEN
+				production_speed_buildings_factor = 0.1 ##MOLD NATURE
+			}
+		}
+
+
+		##Center Subtree
+		tzn_road_to_plenty_fly_to_the_stars = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				#starship contribution ##FLY TO THE STARS
+
+			}
+
+			on_remove = {
+				#starship contribution ##FLY TO THE STARS
+
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1 ##BASE
+				research_speed_factor = 0.1 ##FLY TO THE STARS
+			}
+		}
+
+		tzn_road_to_plenty_agririan_to_stars = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				#starship contribution ##FLY TO THE STARS
+			}
+
+			on_remove = {
+				#starship contribution ##FLY TO THE STARS
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1 ##BASE
+				research_speed_factor = 0.1 ##FLY TO THE STARS
+				stability_factor = 0.1 ##MACHINE
+				production_speed_buildings_factor = 0.1 ##MACHINE
+				monthly_population = 0.1 ##AGRARIAN
+			}
+		}
+
+		tzn_road_to_plenty_sea_to_stars = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				#starship contribution ##FLY TO THE STARS
+				add_to_variable = { ##SEA OF GREEN + MOLD NATURE
+					var = ecobalance_chance
+					value = -0.5
+				}
+			}
+
+			on_remove = {
+				#starship contribution ##FLY TO THE STARS
+				add_to_variable = { ##SEA OF GREEN + MOLD NATURE
+					var = ecobalance_chance
+					value =0.5
+				}
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1 ##BASE
+				research_speed_factor = 0.1 ##FLY TO THE STARS
+				monthly_population = 0.05 ##SEA OF GREEN
+				production_speed_buildings_factor = 0.1 ##MOLD NATURE
+			}
+		}
+
+		tzn_road_to_plenty_agrarian_sea_to_stars = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				#starship contribution ##FLY TO THE STARS
+				add_to_variable = { ##SEA OF GREEN + MOLD NATURE
+					var = ecobalance_chance
+					value = -0.5
+				}
+			}
+
+			on_remove = {
+				#starship contribution ##FLY TO THE STARS
+				add_to_variable = { ##SEA OF GREEN + MOLD NATURE
+					var = ecobalance_chance
+					value = 0.5
+				}
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1 ##BASE
+				stability_factor = 0.1 ##MACHINE
+				production_speed_buildings_factor = 0.1 ##MACHINE
+				monthly_population = 0.1 ##AGRARIAN
+				research_speed_factor = 0.1 ##FLY TO THE STARS
+				monthly_population = 0.05 ##SEA OF GREEN
+				production_speed_buildings_factor = 0.1 ##MOLD NATURE
+			}
+		}
+
+		tzn_road_to_plenty_dive_into_the_ocean = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				#starship contribution ##FLY TO THE STARS
+
+			}
+
+			on_remove = {
+				#starship contribution ##FLY TO THE STARS
+
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1 ##BASE
+				research_speed_factor = 0.1 ##FLY TO THE STARS
+				monthly_population = 0.05 ##DIVE INTO THE OCEANS
+				stability_factor = 0.05 ##DIVE INTO THE OCEANS
+			}
+		}
+		##Right subtree
+		tzn_road_to_plenty_mold_nature = {
+			cancel = {
+				is_puppet = yes
+			}
+		}
+
+		tzn_road_to_plenty_sea_of_green = {
+			cancel = {
+				is_puppet = yes
+			}
+		}
+
+		tzn_road_to_plenty_final = {
+			cancel = {
+				is_puppet = yes
+			}
+		}
+
+
+		###
+		TZN_orbital_superstation_project = {
+			cancel = {
+				is_puppet = yes
+			}
+
+			on_add = {
+				TZN = {
+					add_to_variable = {
+						var = spaceship_contribution_modifier
+						value = 0.2
+					}
+					add_to_variable = {
+						var = industrial_power_gain
+						value = 0.1
+					}
+				}
+			}
+
+			on_remove = {
+				TZN = {
+					add_to_variable = {
+						var = spaceship_contribution_modifier
+						value = -0.2
+					}
+					add_to_variable = {
+						var = industrial_power_gain
+						value = -0.1
+					}
+				}
+			}
+
+			modifier = {
+				research_speed_factor = 0.05
+				###Factory Output
+			}
+		}
+	}
+
+	hidden_ideas = {
+		tzn_integrate_sudan_cooldown = {
+			cancel = {
+				is_puppet = yes
+			}
+		}
+
+		tzn_integrate_egypt_cooldown = {
+			cancel = {
+				is_puppet = yes
+			}
+		}
+
+		tzn_integrate_somalia_cooldown = {
+			cancel = {
+				is_puppet = yes
+			}
+		}
+
+		tzn_integrate_ethiopia_cooldown = {
+			cancel = {
+				is_puppet = yes
+			}
+		}
+
+		tzn_integrate_south_sudan_cooldown = {
+			cancel = {
+				is_puppet = yes
 			}
 		}
 	}
