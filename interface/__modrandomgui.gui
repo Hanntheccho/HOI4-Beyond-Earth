@@ -2,7 +2,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "frontend_window"
 		size = {
-			width = 100%%
+			width = 554
 			height = 100%
 		}
 		background = {
@@ -14,47 +14,69 @@ guiTypes = {
 ################
 	containerWindowType = {
 		name = "free_factory_window"
-		position = { x=15 y=15 }
+		position = { x=0 y=0 }
 		size = {
-			width = 420
-			height = 50
+			width = 100%%
+			height = 100%%
 		}
-		clipping = yes
-		instantTextboxType = {
-			name = "load_text1"
-			position = { x = 11 y = 8 }
-			textureFile = ""
-			font = "Arialsmallest"
-			borderSize = {x = 0 y = 0}
-			text = "free_factory_progress_text"
-			maxWidth = 530
-			maxHeight = 40
-			format = left
-			pdx_tooltip = free_factory_time
-		}
+		clipping = no
 		containerWindowType = {
-			name = "bg"
+			name = "free_factory_actual_window"
+			position = { x=15 y=15 }
 			size = {
-				width = 100%%
-				height = 100%%
+				width = 420
+				height = 50
 			}
-			background = {
+
+			instantTextboxType = {
+				name = "load_text1"
+				position = { x = 11 y = 8 }
+				textureFile = ""
+				font = "Arialsmallest"
+				borderSize = {x = 0 y = 0}
+				text = "free_factory_progress_text"
+				maxWidth = 530
+				maxHeight = 40
+				format = left
+				pdx_tooltip = free_factory_time
+			}
+			containerWindowType = {
 				name = "bg"
-				quadTextureSprite = "GFX_tiled_black"
+				size = {
+					width = 100%%
+					height = 100%%
+				}
+				background = {
+					name = "bg"
+					quadTextureSprite = "GFX_tiled_black"
+					alwaystransparent = yes
+				}
+			}
+			instantTextboxType = {
+				name = "load_text2"
+				position = { x = 119 y = 27 }
+				textureFile = ""
+				font = "Arialsmallest"
+				borderSize = {x = 0 y = 0}
+				text = "free_factory_progress_text_small"
+				maxWidth = 530
+				maxHeight = 40
+				format = left
 				alwaystransparent = yes
 			}
 		}
-		instantTextboxType = {
-			name = "load_text2"
-			position = { x = 119 y = 27 }
-			textureFile = ""
-			font = "Arialsmallest"
-			borderSize = {x = 0 y = 0}
-			text = "free_factory_progress_text_small"
-			maxWidth = 530
-			maxHeight = 40
-			format = left
-			alwaystransparent = yes
+
+		containerWindowType = {
+			name = "frontend_window"
+			size = {
+				width = 554
+				height = 100%
+			}
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_frontend_frontend_bg_mod"
+				alwaystransparent = yes
+			}
 		}
 	}
 ################
@@ -287,19 +309,12 @@ guiTypes = {
 	###
 	containerWindowType = {
 		name = "extra_political_stuff"
-		position = { x = -300 y = 343 }
-		show_position = { x = 25 y = 343 }
-		show_animation_type = decelerated
-		hide_animation_type = accelerated
-		animation_time = 300	
-		size = { width=520 height=610 }
+		position = { x = 0 y = 0 }
+		size = { width=100%% height=100%%  }
 		#verticalScrollbar = "right_vertical_slider"
 		clipping = yes
 		scroll_wheel_factor = 50
 		smooth_scrolling = yes
-		margin = {
-			bottom = 5
-		}
 
 		background = {
 			name = "bgbg"
@@ -307,347 +322,369 @@ guiTypes = {
 		}
 
 		containerWindowType = {
-			name = "development_system_win"
-			position = { x = 30 y = 0 }
+			name = "actual_window"
+			position = { x = -300 y = 344 }
+			show_position = { x = 25 y = 344 }
+			show_animation_type = decelerated
+			hide_animation_type = accelerated
+			animation_time = 300	
 
-			instantTextboxType = {
-				name = "development_system"
-				position = { x = 80 y =10 }
-				font = "Beyond"
-				text = "current_development_system"
-				maxWidth = 380
-				maxHeight = 20
+			containerWindowType = {
+				name = "development_system_win"
+				position = { x = 30 y = 0 }
+
+				instantTextboxType = {
+					name = "development_system"
+					position = { x = 80 y =10 }
+					font = "Beyond"
+					text = "current_development_system"
+					maxWidth = 380
+					maxHeight = 20
+				}
+				containerWindowType = {
+					name = "another_bg11"
+					size = { width = 350 height = 100 }
+					position = {
+						x = 65
+						y = 0
+					}
+				
+					background = {
+						name = "bg"
+						quadTextureSprite = "GFX_tiled_black"
+						alwaystransparent = yes
+					}
+				}
+				containerWindowType = {
+					name = "another_bg12"
+					size = { width = 250 height = 100 }
+					position = {
+						x = 100
+						y = 10
+					}
+				
+					background = {
+						name = "bg"
+						quadTextureSprite = "GFX_tiled_black"
+						alwaystransparent = yes
+					}
+				}
+				instantTextboxType = {
+					name = "development_system_effects"
+					position = { x =120 y =25 }
+					font = "Arial16"
+					text = "[GETdevelopment_system_effects]"
+					maxWidth = 380
+					maxHeight = 20
+				}
+				iconType = {
+					name = "agrarian_dudes"
+					spriteType = "GFX_idea_agrarian_stage"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_development_system
+				}
+				iconType = {
+					name = "developing_dudes"
+					spriteType = "GFX_idea_developing_stage"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_development_system
+				}
+				iconType = {
+					name = "developed_dudes"
+					spriteType = "GFX_idea_developed_stage"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_development_system
+				}
+				iconType = {
+					name = "regional_powerhouse_dudes"
+					spriteType = "GFX_idea_regional_stage"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_development_system
+				}
+				iconType = {
+					name = "continental_powerhouse_dudes"
+					spriteType = "GFX_idea_continental_stage"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_development_system
+				}
+				iconType = {
+					name = "global_powerhouse_dudes"
+					spriteType = "GFX_idea_global_stage"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_development_system
+				}
 			}
 			containerWindowType = {
-				name = "another_bg11"
-				size = { width = 350 height = 100 }
-				position = {
-					x = 65
-					y = 0
+				name = "cultural_system_win"
+				position = { x = 80 y = 128 }
+
+				instantTextboxType = {
+					name = "cultural_system"
+					position = { x = 80 y =10 }
+					font = "Beyond"
+					text = "current_cultural_system"
+					maxWidth = 380
+					maxHeight = 20
 				}
-	
-				background = {
-					name = "bg"
-					quadTextureSprite = "GFX_tiled_black"
-					alwaystransparent = yes
+				containerWindowType = {
+					name = "another_bg21"
+					size = { width = 345 height = 100 }
+					position = {
+						x = 65
+						y = 0
+					}
+				
+					background = {
+						name = "bg"
+						quadTextureSprite = "GFX_tiled_black"
+						alwaystransparent = yes
+					}
+				}
+				containerWindowType = {
+					name = "another_bg22"
+					size = { width = 250 height = 100 }
+					position = {
+						x = 100
+						y = 10
+					}
+				
+					background = {
+						name = "bg"
+						quadTextureSprite = "GFX_tiled_black"
+						alwaystransparent = yes
+					}
+				}
+				instantTextboxType = {
+					name = "cultural_system_effects"
+					position = { x =120 y =25 }
+					font = "Arial16"
+					text = "[GETcultural_system_effects]"
+					maxWidth = 380
+					maxHeight = 20
+				}
+				iconType = {
+					name = "optimum_ecobalance_dudes"
+					spriteType = "GFX_idea_optimum_ecobalance"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_cultural_system
+				}
+				iconType = {
+					name = "favorable_ecobalance_dudes"
+					spriteType = "GFX_idea_favorable_ecobalance"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_cultural_system
+				}
+				iconType = {
+					name = "neutral_ecobalance_dudes"
+					spriteType = "GFX_idea_neutral_ecobalance"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_cultural_system
+				}
+				iconType = {
+					name = "precarious_ecobalance_dudes"
+					spriteType = "GFX_idea_precarious_ecobalance"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_cultural_system
+				}
+				iconType = {
+					name = "dangerous_ecobalance_dudes"
+					spriteType = "GFX_idea_dangerous_ecobalance"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_cultural_system
+				}
+				iconType = {
+					name = "disastrous_ecobalance_dudes"
+					spriteType = "GFX_idea_disastrous_ecobalance"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_cultural_system
 				}
 			}
 			containerWindowType = {
-				name = "another_bg12"
-				size = { width = 250 height = 100 }
-				position = {
-					x = 100
-					y = 10
+				name = "government_system_win"
+				position = { x = 45 y = 256 }
+
+				instantTextboxType = {
+					name = "government_system"
+					position = { x = 80 y =10 }
+					font = "Beyond"
+					text = "current_political_system"
+					maxWidth = 380
+					maxHeight = 20
 				}
-	
-				background = {
-					name = "bg"
-					quadTextureSprite = "GFX_tiled_black"
+				containerWindowType = {
+					name = "another_bg31"
+					size = { width = 365 height = 100 }
+					position = {
+						x = 65
+						y = 0
+					}
+				
+					background = {
+						name = "bg"
+						quadTextureSprite = "GFX_tiled_black"
+						alwaystransparent = yes
+					}
+				}
+				containerWindowType = {
+					name = "another_bg32"
+					size = { width = 310 height = 100 }
+					position = {
+						x = 100
+						y = 10
+					}
+				
+					background = {
+						name = "bg"
+						quadTextureSprite = "GFX_tiled_black"
+						alwaystransparent = yes
+					}
+				}
+				instantTextboxType = {
+					name = "government_system_effects"
+					position = { x =120 y =25 }
+					font = "Arial16"
+					text = "[GETpolitical_system_effects]"
+					maxWidth = 380
+					maxHeight = 20
+				}
+				iconType = {
+					name = "digital_democracy_dudes"
+					spriteType = "GFX_idea_digital_democracy"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_political_system
+				}
+				iconType = {
+					name = "oligarchic_dudes"
+					spriteType = "GFX_idea_oligarchic_government"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_political_system
+				}
+				iconType = {
+					name = "minarchist_dudes"
+					spriteType = "GFX_idea_minarchist_state"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_political_system
+				}
+				iconType = {
+					name = "communal_dudes"
+					spriteType = "GFX_idea_communal_parity"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_political_system
+				}
+				iconType = {
+					name = "autocratic_dudes"
+					spriteType = "GFX_idea_autocratic_authority"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_political_system
+				}
+				iconType = {
+					name = "anarchy_dudes"
+					spriteType = "GFX_idea_unstable_leadership"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = current_political_system
+				}
+			}	
+			containerWindowType = {
+				name = "ideas_law_sum_win"
+				position = { x = 25 y = 384 }
+
+				instantTextboxType = {
+					name = "ideas_law_sum_title"
+					position = { x = 80 y =10 }
+					font = "Beyond"
+					text = "CIVLIAN MILITARY"
+					maxWidth = 350
+					maxHeight = 20
 					alwaystransparent = yes
 				}
+				containerWindowType = {
+					name = "another_bg41"
+					size = { width = 355 height = 100 }
+					position = {
+						x = 65
+						y = 0
+					}
+				
+					background = {
+						name = "bg"
+						quadTextureSprite = "GFX_tiled_black"
+						alwaystransparent = yes
+					}
+				}
+				#instantTextboxType = {
+				#	name = "ideas_law_sum"
+				#	position = { x =120 y =25 }
+				#	font = "Arial16"
+				#	text = "ideas_law_sum"
+				#	maxWidth = 250
+				#	maxHeight = 135
+				#	scrollbartype = "standardtext_slider"
+				#}
+				containerWindowType = {
+					name = "another_bg42"
+					size = { width = 290 height = 198 }
+					position = {
+						x = 100
+						y = 10
+					}
+				
+					background = {
+						name = "bg"
+						quadTextureSprite = "GFX_tiled_black"
+						alwaystransparent = yes
+					}
+				}
+				instantTextboxType = {
+					name = "economy_law"
+					position = { x =120 y =25 }
+					font = "Arial16"
+					text = "ideas_law_economy"
+					maxWidth = 240
+					maxHeight = 55
+					scrollbartype = "standardtext_slider"
+					alwaystransparent = yes
+				}
+				instantTextboxType = {
+					name = "mobilization_law"
+					position = { x =120 y =83 }
+					font = "Arial16"
+					text = "ideas_law_mobilization"
+					maxWidth = 240
+					maxHeight = 55
+					scrollbartype = "standardtext_slider"
+					alwaystransparent = yes
+				}
+				instantTextboxType = {
+					name = "trade_law"
+					position = { x =120 y =141 }
+					font = "Arial16"
+					text = "ideas_law_trade"
+					maxWidth = 240
+					maxHeight = 55
+					scrollbartype = "standardtext_slider"
+					alwaystransparent = yes
+				}
+				iconType = {	
+					name = "extra_icon"
+					spriteType = "GFX_idea_FRA_mediterranean_business"
+					position = { x= -15 y = 15 }
+					pdx_tooltip = ideas_law_sum_name
+				}
+			}	
+		}
+		
+		containerWindowType = {
+			name = "frontend_window"
+			size = {
+				width = 554
+				height = 100%
 			}
-			instantTextboxType = {
-				name = "development_system_effects"
-				position = { x =120 y =25 }
-				font = "Arial16"
-				text = "[GETdevelopment_system_effects]"
-				maxWidth = 380
-				maxHeight = 20
-			}
-			iconType = {
-				name = "agrarian_dudes"
-				spriteType = "GFX_idea_agrarian_stage"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_development_system
-			}
-			iconType = {
-				name = "developing_dudes"
-				spriteType = "GFX_idea_developing_stage"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_development_system
-			}
-			iconType = {
-				name = "developed_dudes"
-				spriteType = "GFX_idea_developed_stage"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_development_system
-			}
-			iconType = {
-				name = "regional_powerhouse_dudes"
-				spriteType = "GFX_idea_regional_stage"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_development_system
-			}
-			iconType = {
-				name = "continental_powerhouse_dudes"
-				spriteType = "GFX_idea_continental_stage"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_development_system
-			}
-			iconType = {
-				name = "global_powerhouse_dudes"
-				spriteType = "GFX_idea_global_stage"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_development_system
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_frontend_frontend_bg_mod"
+				alwaystransparent = yes
 			}
 		}
-		containerWindowType = {
-			name = "cultural_system_win"
-			position = { x = 80 y = 128 }
-
-			instantTextboxType = {
-				name = "cultural_system"
-				position = { x = 80 y =10 }
-				font = "Beyond"
-				text = "current_cultural_system"
-				maxWidth = 380
-				maxHeight = 20
-			}
-			containerWindowType = {
-				name = "another_bg21"
-				size = { width = 345 height = 100 }
-				position = {
-					x = 65
-					y = 0
-				}
-	
-				background = {
-					name = "bg"
-					quadTextureSprite = "GFX_tiled_black"
-					alwaystransparent = yes
-				}
-			}
-			containerWindowType = {
-				name = "another_bg22"
-				size = { width = 250 height = 100 }
-				position = {
-					x = 100
-					y = 10
-				}
-	
-				background = {
-					name = "bg"
-					quadTextureSprite = "GFX_tiled_black"
-					alwaystransparent = yes
-				}
-			}
-			instantTextboxType = {
-				name = "cultural_system_effects"
-				position = { x =120 y =25 }
-				font = "Arial16"
-				text = "[GETcultural_system_effects]"
-				maxWidth = 380
-				maxHeight = 20
-			}
-			iconType = {
-				name = "optimum_ecobalance_dudes"
-				spriteType = "GFX_idea_optimum_ecobalance"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_cultural_system
-			}
-			iconType = {
-				name = "favorable_ecobalance_dudes"
-				spriteType = "GFX_idea_favorable_ecobalance"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_cultural_system
-			}
-			iconType = {
-				name = "neutral_ecobalance_dudes"
-				spriteType = "GFX_idea_neutral_ecobalance"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_cultural_system
-			}
-			iconType = {
-				name = "precarious_ecobalance_dudes"
-				spriteType = "GFX_idea_precarious_ecobalance"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_cultural_system
-			}
-			iconType = {
-				name = "dangerous_ecobalance_dudes"
-				spriteType = "GFX_idea_dangerous_ecobalance"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_cultural_system
-			}
-			iconType = {
-				name = "disastrous_ecobalance_dudes"
-				spriteType = "GFX_idea_disastrous_ecobalance"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_cultural_system
-			}
-		}
-		containerWindowType = {
-			name = "government_system_win"
-			position = { x = 45 y = 256 }
-
-			instantTextboxType = {
-				name = "government_system"
-				position = { x = 80 y =10 }
-				font = "Beyond"
-				text = "current_political_system"
-				maxWidth = 380
-				maxHeight = 20
-			}
-			containerWindowType = {
-				name = "another_bg31"
-				size = { width = 365 height = 100 }
-				position = {
-					x = 65
-					y = 0
-				}
-	
-				background = {
-					name = "bg"
-					quadTextureSprite = "GFX_tiled_black"
-					alwaystransparent = yes
-				}
-			}
-			containerWindowType = {
-				name = "another_bg32"
-				size = { width = 310 height = 100 }
-				position = {
-					x = 100
-					y = 10
-				}
-	
-				background = {
-					name = "bg"
-					quadTextureSprite = "GFX_tiled_black"
-					alwaystransparent = yes
-				}
-			}
-			instantTextboxType = {
-				name = "government_system_effects"
-				position = { x =120 y =25 }
-				font = "Arial16"
-				text = "[GETpolitical_system_effects]"
-				maxWidth = 380
-				maxHeight = 20
-			}
-			iconType = {
-				name = "digital_democracy_dudes"
-				spriteType = "GFX_idea_digital_democracy"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_political_system
-			}
-			iconType = {
-				name = "oligarchic_dudes"
-				spriteType = "GFX_idea_oligarchic_government"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_political_system
-			}
-			iconType = {
-				name = "minarchist_dudes"
-				spriteType = "GFX_idea_minarchist_state"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_political_system
-			}
-			iconType = {
-				name = "communal_dudes"
-				spriteType = "GFX_idea_communal_parity"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_political_system
-			}
-			iconType = {
-				name = "autocratic_dudes"
-				spriteType = "GFX_idea_autocratic_authority"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_political_system
-			}
-			iconType = {
-				name = "anarchy_dudes"
-				spriteType = "GFX_idea_unstable_leadership"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = current_political_system
-			}
-		}	
-		containerWindowType = {
-			name = "ideas_law_sum_win"
-			position = { x = 25 y = 384 }
-
-			instantTextboxType = {
-				name = "ideas_law_sum_title"
-				position = { x = 80 y =10 }
-				font = "Beyond"
-				text = "CIVLIAN MILITARY"
-				maxWidth = 350
-				maxHeight = 20
-				alwaystransparent = yes
-			}
-			containerWindowType = {
-				name = "another_bg41"
-				size = { width = 355 height = 100 }
-				position = {
-					x = 65
-					y = 0
-				}
-	
-				background = {
-					name = "bg"
-					quadTextureSprite = "GFX_tiled_black"
-					alwaystransparent = yes
-				}
-			}
-			#instantTextboxType = {
-			#	name = "ideas_law_sum"
-			#	position = { x =120 y =25 }
-			#	font = "Arial16"
-			#	text = "ideas_law_sum"
-			#	maxWidth = 250
-			#	maxHeight = 135
-			#	scrollbartype = "standardtext_slider"
-			#}
-			containerWindowType = {
-				name = "another_bg42"
-				size = { width = 290 height = 198 }
-				position = {
-					x = 100
-					y = 10
-				}
-	
-				background = {
-					name = "bg"
-					quadTextureSprite = "GFX_tiled_black"
-					alwaystransparent = yes
-				}
-			}
-			instantTextboxType = {
-				name = "economy_law"
-				position = { x =120 y =25 }
-				font = "Arial16"
-				text = "ideas_law_economy"
-				maxWidth = 240
-				maxHeight = 55
-				scrollbartype = "standardtext_slider"
-				alwaystransparent = yes
-			}
-			instantTextboxType = {
-				name = "mobilization_law"
-				position = { x =120 y =83 }
-				font = "Arial16"
-				text = "ideas_law_mobilization"
-				maxWidth = 240
-				maxHeight = 55
-				scrollbartype = "standardtext_slider"
-				alwaystransparent = yes
-			}
-			instantTextboxType = {
-				name = "trade_law"
-				position = { x =120 y =141 }
-				font = "Arial16"
-				text = "ideas_law_trade"
-				maxWidth = 240
-				maxHeight = 55
-				scrollbartype = "standardtext_slider"
-				alwaystransparent = yes
-			}
-			iconType = {	
-				name = "extra_icon"
-				spriteType = "GFX_idea_FRA_mediterranean_business"
-				position = { x= -15 y = 15 }
-				pdx_tooltip = ideas_law_sum_name
-			}
-		}				
 	}
 #############################
 	containerWindowType = {
@@ -731,49 +768,70 @@ guiTypes = {
 #################
 	containerWindowType = {
 		name = "division_limit_window"
-		position = { x=15 y=15 }
+		position = { x=0 y=0 }
 		size = {
-			width = 520
-			height = 50
+			width = 100%%
+			height = 100%%
 		}
-		clipping = yes
-		instantTextboxType = {
-			name = "template_title1"
-			position = { x = 11 y = 8 }
-			textureFile = ""
-			font = "Arialsmallest"
-			borderSize = {x = 0 y = 0}
-			text = "division_limit_tt_text"
-			maxWidth = 520
-			maxHeight = 40
-			format = left
-			pdx_tooltip = "division_limit_tt"
-			pdx_tooltip_delayed = division_limit_tt_delayed	
-		}
+		clipping = no
 		containerWindowType = {
-			name = "bg"
+			name = "division_limit_actual_window"
+			position = { x=15 y=15 }
 			size = {
-				width = 100%%
-				height = 100%%
+				width = 520
+				height = 50
 			}
-			background = {
+			instantTextboxType = {
+				name = "template_title1"
+				position = { x = 11 y = 8 }
+				textureFile = ""
+				font = "Arialsmallest"
+				borderSize = {x = 0 y = 0}
+				text = "division_limit_tt_text"
+				maxWidth = 520
+				maxHeight = 40
+				format = left
+				pdx_tooltip = "division_limit_tt"
+				pdx_tooltip_delayed = division_limit_tt_delayed	
+			}
+			containerWindowType = {
 				name = "bg"
-				quadTextureSprite = "GFX_tiled_black"
+				size = {
+					width = 100%%
+					height = 100%%
+				}
+				background = {
+					name = "bg"
+					quadTextureSprite = "GFX_tiled_black"
+					alwaystransparent = yes
+				}
+			}
+			instantTextboxType = {
+				name = "template_title2"
+				position = { x = 119 y = 27 }
+				textureFile = ""
+				font = "Arialsmallest"
+				borderSize = {x = 0 y = 0}
+				text = "division_limit_tt_text_small"
+				maxWidth = 470
+				maxHeight = 60
+				format = left	
+				fixedsize = yes
 				alwaystransparent = yes
 			}
 		}
-		instantTextboxType = {
-			name = "template_title2"
-			position = { x = 119 y = 27 }
-			textureFile = ""
-			font = "Arialsmallest"
-			borderSize = {x = 0 y = 0}
-			text = "division_limit_tt_text_small"
-			maxWidth = 470
-			maxHeight = 60
-			format = left	
-			fixedsize = yes
-			alwaystransparent = yes
+
+		containerWindowType = {
+			name = "frontend_window"
+			size = {
+				width = 554
+				height = 100%
+			}
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_frontend_frontend_bg_mod"
+				alwaystransparent = yes
+			}
 		}
 	}
 }

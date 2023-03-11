@@ -2,8 +2,8 @@ guiTypes = {
 
     containerWindowType = {
     	name = "south_pole_stuff"
-		position = { x=-606 y=78}	
-		show_position = { x=-6 y =78 }
+		position = { x=-606 y=119} #+1
+		show_position = { x=-6 y =119 } #+1
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
@@ -35,7 +35,7 @@ guiTypes = {
 		background ={
 			name ="pol_view_bg"
 			spriteType = "GFX_decision_view_bg_large"
-			position = { x= 6 y = 41 }
+			position = { x= 6 y = 0 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -43,7 +43,7 @@ guiTypes = {
 		background = {
 			name ="antarctic_sectors_bg"
 			spriteType = "GFX_antarctic_sectors_bg"
-			position = { x= 10 y = 41 }
+			position = { x= 10 y = 0 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -51,7 +51,7 @@ guiTypes = {
 		background ={
 			name ="pol_view_bg2"
 			spriteType = "GFX_tiled_side_mod"
-			position = { x= 6 y = 41 }
+			position = { x= 6 y = 0 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -75,7 +75,7 @@ guiTypes = {
 		iconType = {
 			name ="southpole_header"
 			spriteType = "GFX_header_bg_mod"
-			position = { x= 4 y = 41 }
+			position = { x= 4 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}
 		
@@ -103,112 +103,117 @@ guiTypes = {
 		#	format = left
 		#}
 
-		iconType = {
-			name ="antarctic_sectors_bg_over"
-			spriteType = "GFX_antarctic_sectors_bg_over"
-			position = { x= 6 y = 420 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
+		containerWindowType = {
+			name = "south_pole_graphics"
+			position = { x=0 y=-38 }	
 
-		buttonType = {
-			name = "south_pole_close"
-			position = { x = 10000 y = 5 }
-			quadTextureSprite ="GFX_closebutton"
-			Orientation = "UPPER_RIGHT"
-			clicksound = click_close
-			oversound = ui_menu_over
-			shortcut = "ESCAPE"
-			pdx_tooltip = "CLOSE"
-		}
+			iconType = {
+				name ="antarctic_sectors_bg_over"
+				spriteType = "GFX_antarctic_sectors_bg_over"
+				position = { x= 6 y = 420 }
+				Orientation = "UPPER_LEFT"
+				alwaystransparent = yes
+			}
 
-		iconType = {
-			name ="antarctic_sectors_pic_back"
-			spriteType = "GFX_antarctic_sectors_back"
-			position = { x= -10 y = 70 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
+			buttonType = {
+				name = "south_pole_close"
+				position = { x = 10000 y = 5 }
+				quadTextureSprite ="GFX_closebutton"
+				Orientation = "UPPER_RIGHT"
+				clicksound = click_close
+				oversound = ui_menu_over
+				shortcut = "ESCAPE"
+				pdx_tooltip = "CLOSE"
+			}
 
-		iconType = {
-			name ="antarctic_sectors_pic"
-			spriteType = "GFX_antarctic_sectors"
-			position = { x= -10 y = 30 }
-			Orientation = "UPPER_LEFT"
-			pdx_tooltip = help_southpole_sector_price
-		}
+			iconType = {
+				name ="antarctic_sectors_pic_back"
+				spriteType = "GFX_antarctic_sectors_back"
+				position = { x= -10 y = 70 }
+				Orientation = "UPPER_LEFT"
+				alwaystransparent = yes
+			}
 
-		iconType = {
-			name ="antarctic_sectors_pic_owns"
-			spriteType = "GFX_antarctic_sectors_owns"
-			position = { x= -10 y = 30 }
-			Orientation = "UPPER_LEFT"
-			pdx_tooltip = help_southpole_sector_price
-		}
+			iconType = {
+				name ="antarctic_sectors_pic"
+				spriteType = "GFX_antarctic_sectors"
+				position = { x= -10 y = 30 }
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = help_southpole_sector_price
+			}
 
-		iconType = {
-			name = "southpole_cost_word"
-			position = { x = 15 y = 442 }
-			quadTextureSprite = "GFX_southpole_cost_word"
-		}
-		instantTextBoxType = {
-			name = "southpole_sector_cost_pp"
-			position = { x = 25 y = 465 }
-			textureFile = ""
-			font = "Focusfont"
-			borderSize = {x = 0 y = 0}
-			text = "SOUTHPOLE_SECTORS_COST_PP"	
-			maxWidth = 200
-			maxHeight = 60
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = left
-		}
-		instantTextBoxType = {
-			name = "southpole_sector_cost_maintain"
-			position = { x = 110 y = 465 }
-			textureFile = ""
-			font = "Focusfont"
-			borderSize = {x = 0 y = 0}
-			text = "SOUTHPOLE_SECTORS_COST_MAINTAIN"	
-			maxWidth = 200
-			maxHeight = 60
-			fixedsize = yes
-	
-			Orientation = "UPPER_LEFT"
-			format = left
-		}
+			iconType = {
+				name ="antarctic_sectors_pic_owns"
+				spriteType = "GFX_antarctic_sectors_owns"
+				position = { x= -10 y = 30 }
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = help_southpole_sector_price
+			}
 
-		iconType = {
-			name = "player_flag_southpole"
-			quadTextureSprite ="GFX_shield_medium"
-			position = { x= 267 y = 202 }
-			Orientation = "UPPER_LEFT"
-		}
+			iconType = {
+				name = "southpole_cost_word"
+				position = { x = 15 y = 442 }
+				quadTextureSprite = "GFX_southpole_cost_word"
+			}
+			instantTextBoxType = {
+				name = "southpole_sector_cost_pp"
+				position = { x = 25 y = 465 }
+				textureFile = ""
+				font = "Focusfont"
+				borderSize = {x = 0 y = 0}
+				text = "SOUTHPOLE_SECTORS_COST_PP"	
+				maxWidth = 200
+				maxHeight = 60
+				fixedsize = yes
+			
+				Orientation = "UPPER_LEFT"
+				format = left
+			}
+			instantTextBoxType = {
+				name = "southpole_sector_cost_maintain"
+				position = { x = 110 y = 465 }
+				textureFile = ""
+				font = "Focusfont"
+				borderSize = {x = 0 y = 0}
+				text = "SOUTHPOLE_SECTORS_COST_MAINTAIN"	
+				maxWidth = 200
+				maxHeight = 60
+				fixedsize = yes
+			
+				Orientation = "UPPER_LEFT"
+				format = left
+			}
 
-		iconType = {
-			name = "player_flag_frame_mod"
-			quadTextureSprite ="GFX_large_flag_frame_mod"
-			position = { x= 262 y = 200 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
+			iconType = {
+				name = "player_flag_southpole"
+				quadTextureSprite ="GFX_shield_medium"
+				position = { x= 267 y = 202 }
+				Orientation = "UPPER_LEFT"
+			}
 
-		buttonType = {
-			name = "south_pole_hostile_takeover"
-			position = { x = 65 y = 50 }
-			quadTextureSprite ="GFX_south_pole_hostile_takeover"
-			Orientation = "UPPER_LEFT"
-			clicksound = click_close
-			oversound = ui_menu_over
-			pdx_tooltip = "hostile_takeover_tooltip"
+			iconType = {
+				name = "player_flag_frame_mod"
+				quadTextureSprite ="GFX_large_flag_frame_mod"
+				position = { x= 262 y = 200 }
+				Orientation = "UPPER_LEFT"
+				alwaystransparent = yes
+			}
+
+			buttonType = {
+				name = "south_pole_hostile_takeover"
+				position = { x = 65 y = 50 }
+				quadTextureSprite ="GFX_south_pole_hostile_takeover"
+				Orientation = "UPPER_LEFT"
+				clicksound = click_close
+				oversound = ui_menu_over
+				pdx_tooltip = "hostile_takeover_tooltip"
+			}
 		}
 
 		containerWindowType = {
 			name = "south_pole_sectors_list"
-			position = { x=-602 y=530 }	
-			show_position = { x=15 y =530 }
+			position = { x=-602 y=489 }	
+			show_position = { x=15 y =489 }
 			show_animation_type = decelerated
 			hide_animation_type = accelerated
 			animation_time = 300
@@ -919,6 +924,19 @@ guiTypes = {
 				Orientation = "UPPER_LEFT"
 				pdx_tooltip = sector_add_civs
 			}			
+		}
+
+		containerWindowType = {
+			name = "frontend_window"
+			size = {
+				width = 554
+				height = 100%
+			}
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_frontend_frontend_bg_mod"
+				alwaystransparent = yes
+			}
 		}
     }
 }
