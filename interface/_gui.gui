@@ -1,4 +1,9 @@
 guiTypes = {
+
+###############################
+######## TAB TV FILTER ########
+###############################
+
 	containerWindowType = {
 		name = "frontend_window"
 		size = {
@@ -11,7 +16,11 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 	}
-################
+
+###############################
+### FREE FACTORIES WINDOW #####
+###############################
+
 	containerWindowType = {
 		name = "free_factory_window"
 		position = { x=0 y=0 }
@@ -79,7 +88,11 @@ guiTypes = {
 			}
 		}
 	}
-################
+
+###############################
+##### DEBUG DIPLO OPTIONS #####
+###############################
+
 	containerWindowType = {
 		name ="diplo_options"
 		position = { x=50 y =80}			
@@ -108,7 +121,11 @@ guiTypes = {
 			pdx_tooltip = "depuppet_button_tt"
 		}
 	}
-###############
+
+###############################
+#### FOCUS TOOLTIP AND BG #####
+###############################
+
 	containerWindowType = {
 		name ="focus_tooltip"
 		position = { x=0 y =0}			
@@ -135,7 +152,8 @@ guiTypes = {
 			maxHeight = 100
 		}
 	}
-	###
+
+	#ONU
 	containerWindowType = {
 		name = "ONU_focus_details"
 		position = { x = 0 y = 0 }
@@ -156,6 +174,8 @@ guiTypes = {
 			centerposition = yes
 		}
 	}
+
+	#TZN
 	containerWindowType = {
 		name = "TZN_focus_details"
 		position = { x = 0 y = 0 }
@@ -176,7 +196,12 @@ guiTypes = {
 			centerposition = yes
 		}
 	}
-	###
+
+###############################
+####### SURRENDER WINDOW ######
+###############################
+
+	#for when a country capitulates
 	containerWindowType = {
 		name = "surrender_window"
 		position = { x = 25 y = 145 }
@@ -249,7 +274,12 @@ guiTypes = {
 			scale = 0.9
 		}
 	}
-	###
+
+###############################
+#### POLITICAL-DIPLO TAB ######
+###############################
+
+	#leader name and desc goes here
 	containerWindowType = {
 		name = "extra_political_stuff_ideology"
 		position = { x = 335 y = 111 }
@@ -306,7 +336,8 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 	}
-	###
+	
+	#laws and their effects goes here
 	containerWindowType = {
 		name = "extra_political_stuff"
 		position = { x = 0 y = 0 }
@@ -686,7 +717,11 @@ guiTypes = {
 			}
 		}
 	}
-#############################
+
+###############################
+####### DIPLO_POWER INFO ######
+###############################
+
 	containerWindowType = {
 		name = "diplo_power_view"
 		position = { x = 426 y = 4 }
@@ -719,7 +754,11 @@ guiTypes = {
 			pdx_tooltip_delayed = "industrial_power_tt_delayed"
 		}
 	}
-##########################
+
+###############################
+######## TOPBAR BUTTONS #######
+###############################
+
 	containerWindowType = {
 		name = "extra_buttons"
 		position = { x=0 y=0 }
@@ -765,7 +804,11 @@ guiTypes = {
 			pdx_disabled_tooltip = "south_pole_button_disabled"
 		}
 	}
-#################
+
+###############################
+### DIVISION LIMIT WINDOW #####
+###############################
+
 	containerWindowType = {
 		name = "division_limit_window"
 		position = { x=0 y=0 }
@@ -832,6 +875,138 @@ guiTypes = {
 				quadTextureSprite = "GFX_frontend_frontend_bg_mod"
 				alwaystransparent = yes
 			}
+		}
+	}
+}
+
+guiTypes = {
+
+###############################
+########## ECOBALANCE #########
+###############################
+
+	containerWindowType = {
+		name = "ecobalance_gui_window"
+		position = { x = 3 y = 0 }
+		size = { width = 170 height = 260 }
+		orientation = center
+		origo = center
+		fade_time = 100
+		fade_type = linear
+		click_to_front = no
+		clipping = no
+		
+		#background = {
+		#	name = "Background"		
+		#	quadTextureSprite ="GFX_scripted_gui_window_background"
+		#}
+
+		checkboxType ={
+			name ="auto_ecobalance_button"
+			spriteType = "GFX_auto_ecobalance"
+			position = { x= -90 y = -141 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = auto_decrease_ecobalance_tt
+		}
+
+		iconType ={
+			name ="reduce_ecobalance_load"
+			spriteType = "GFX_ecobalance_state_load"
+			position = { x= -17 y = -141 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType ={
+			name ="reduce_ecobalance_load_harmony"
+			spriteType = "GFX_ecobalance_state_load_harmony"
+			position = { x= -17 y = -141 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType ={
+			name ="reduce_ecobalance_load_mastery"
+			spriteType = "GFX_ecobalance_state_load_mastery"
+			position = { x= -17 y = -141 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType ={
+			name ="counter_ecobalance_icon"
+			spriteType = "GFX_ecobalance_state_level_7"
+			position = { x= -17 y = -136 }
+			Orientation = "UPPER_LEFT"
+
+			pdx_tooltip = "counter_ecobalance"
+		}
+		iconType ={
+			name ="no_ecobalance_icon"
+			spriteType = "GFX_ecobalance_state_level_6"
+			position = { x= -17 y = -136 }
+			Orientation = "UPPER_LEFT"
+
+			pdx_tooltip = "no_ecobalance"
+		}
+		iconType ={
+			name ="minor_ecobalance_icon"
+			spriteType = "GFX_ecobalance_state_level_5"
+			position = { x= -17 y = -136 }
+			Orientation = "UPPER_LEFT"
+
+			pdx_tooltip = "minor_ecobalance"
+		}
+		iconType ={
+			name ="notable_ecobalance_icon"
+			spriteType = "GFX_ecobalance_state_level_4"
+			position = { x= -17 y = -136 }
+			Orientation = "UPPER_LEFT"
+
+			pdx_tooltip = "notable_ecobalance"
+		}
+		iconType ={
+			name ="major_ecobalance_icon"
+			spriteType = "GFX_ecobalance_state_level_3"
+			position = { x= -17 y = -136 }
+			Orientation = "UPPER_LEFT"
+
+			pdx_tooltip = "major_ecobalance"
+		}
+		iconType ={
+			name ="significant_ecobalance_icon"
+			spriteType = "GFX_ecobalance_state_level_2"
+			position = { x= -17 y = -136 }
+			Orientation = "UPPER_LEFT"
+
+			pdx_tooltip = "significant_ecobalance"
+		}
+		iconType ={
+			name ="terminal_ecobalance_icon"
+			spriteType = "GFX_ecobalance_state_level_1"
+			position = { x= -17 y = -136 }
+			Orientation = "UPPER_LEFT"
+
+			pdx_tooltip = "terminal_ecobalance"
+		}
+
+		buttonType ={
+			name ="reduce_ecobalance_button"
+			spriteType = "GFX_ecobalance_state"
+			position = { x= 237 y = -162 }
+			Orientation = "UPPER_LEFT"
+
+			pdx_tooltip = "decrease_ecobalance_tt"
+		}
+		buttonType ={
+			name ="reduce_ecobalance_button_harmony"
+			spriteType = "GFX_ecobalance_state_harmony"
+			position = { x= 237 y = -162 }
+			Orientation = "UPPER_LEFT"
+
+			pdx_tooltip = "decrease_ecobalance_tt_harmony"
+		}
+		buttonType ={
+			name ="reduce_ecobalance_button_mastery"
+			spriteType = "GFX_ecobalance_state_mastery"
+			position = { x= 237 y = -162 }
+			Orientation = "UPPER_LEFT"
+
+			pdx_tooltip = "decrease_ecobalance_tt_mastery"
 		}
 	}
 }
