@@ -7,7 +7,8 @@ TZN_decisions = {
 			is_puppet = no
 		}
 		visible = {
-			has_global_flag = TZN_united_africa
+			#has_global_flag = TZN_united_africa
+			has_completed_focus = TZN_war_of_national_unification
 		}
 		target_trigger = {
 			FROM = {
@@ -70,8 +71,18 @@ TZN_decisions = {
 	}
 
 	TZN_declare_war_buketi = {
-		allowed = {
-			tag = TZN
+		icon = GFX_decision_eaf
+		state_target = yes
+		on_map_mode = map_only
+		fire_only_once = yes
+
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				OWNER = {
+					tag = GNA
+				}
+			}
 		}
 
 		visible = {
@@ -86,11 +97,25 @@ TZN_decisions = {
 				target = GNA
 			}
 		}
+
+		ai_will_do = {
+			factor = 1
+		}
 	}
 
 	TZN_declare_war_kwama = {
-		allowed = {
-			tag = TZN
+		icon = GFX_decision_eaf
+		state_target = yes
+		on_map_mode = map_only
+		fire_only_once = yes
+
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				OWNER = {
+					tag = TOG
+				}
+			}
 		}
 
 		visible = {
@@ -105,11 +130,25 @@ TZN_decisions = {
 				target = TOG
 			}
 		}
+
+		ai_will_do = {
+			factor = 1
+		}
 	}
 
 	TZN_declare_war_east_kivu = {
-		allowed = {
-			tag = TZN
+		icon = GFX_decision_eaf
+		state_target = yes
+		on_map_mode = map_only
+		fire_only_once = yes
+
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				OWNER = {
+					tag = RWA
+				}
+			}
 		}
 
 		visible = {
@@ -124,11 +163,25 @@ TZN_decisions = {
 				target = RWA
 			}
 		}
+
+		ai_will_do = {
+			factor = 1
+		}
 	}
 
 	TZN_declare_war_warega = {
-		allowed = {
-			tag = TZN
+		icon = GFX_decision_eaf
+		state_target = yes
+		on_map_mode = map_only
+		fire_only_once = yes
+
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				OWNER = {
+					tag = BRD
+				}
+			}
 		}
 
 		visible = {
@@ -143,11 +196,25 @@ TZN_decisions = {
 				target = BRD
 			}
 		}
+
+		ai_will_do = {
+			factor = 1
+		}
 	}
 
 	TZN_declare_war_msaga = {
-		allowed = {
-			tag = TZN
+		icon = GFX_decision_eaf
+		state_target = yes
+		on_map_mode = map_only
+		fire_only_once = yes
+
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				OWNER = {
+					tag = MLW
+				}
+			}
 		}
 
 		visible = {
@@ -162,11 +229,25 @@ TZN_decisions = {
 				target = MLW
 			}
 		}
+
+		ai_will_do = {
+			factor = 1
+		}
 	}
 
 	TZN_declare_war_south_sudan = {
-		allowed = {
-			tag = TZN
+		icon = GFX_decision_eaf
+		state_target = yes
+		on_map_mode = map_only
+		fire_only_once = yes
+
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				OWNER = {
+					tag = SIE
+				}
+			}
 		}
 
 		visible = {
@@ -180,6 +261,10 @@ TZN_decisions = {
 			declare_war_on = {
 				target = SIE
 			}
+		}
+
+		ai_will_do = {
+			factor = 1
 		}
 	}
 
@@ -257,7 +342,7 @@ TZN_decisions = {
 		complete_effect = {
 			declare_war_on = {
 				target = SOM
-				type = annex_everything
+				type = annex_puppet_wargoal
 			}
 		}
 	}
@@ -278,7 +363,7 @@ TZN_decisions = {
 		complete_effect = {
 			declare_war_on = {
 				target = NUE
-				type = annex_everything
+				type = annex_puppet_wargoal
 			}
 		}
 	}
@@ -357,7 +442,7 @@ TZN_decisions = {
 		complete_effect = {
 			declare_war_on = {
 				target = ORO
-				type = annex_everything
+				type = annex_puppet_wargoal
 			}
 		}
 	}
@@ -378,7 +463,7 @@ TZN_decisions = {
 		complete_effect = {
 			declare_war_on = {
 				target = EGY
-				type = annex_everything
+				type = annex_puppet_wargoal
 			}
 		}
 	}
@@ -399,7 +484,7 @@ TZN_decisions = {
 		complete_effect = {
 			declare_war_on = {
 				target = SUD
-				type = annex_everything
+				type = annex_puppet_wargoal
 			}
 		}
 	}
