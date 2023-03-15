@@ -173,16 +173,7 @@ BRA_the_recovery = {
 			is_puppet = no
 			is_faction_leader = yes
 		}
-		available = {
-			custom_trigger_tooltip = {
-				check_variable = {
-					var = diplomatic_power
-					value = 20
-					compare = greater_than_or_equals
-				}
-				tooltip = state_decisions_cost_diplomatic_20
-			}
-		}
+		cost = 20
 		target_trigger = {
 			FROM = {
 				is_capital = yes
@@ -197,11 +188,6 @@ BRA_the_recovery = {
 		}
 		fire_only_once = no
 		days_remove = 30
-		complete_effect = {
-			subtract_from_variable = {
-				diplomatic_power = 20
-			}
-		}
 		remove_effect = {
 			FROM.OWNER = {
 				country_event = brazil.34

@@ -61,17 +61,9 @@ scotland_formable = {
 				has_war_with = SWE
 			}
 		}
-		custom_cost_trigger = {
-			check_variable = { diplomatic_power > 99.9 }
-		}
-		custom_cost_text = decision_cost_100_cp
+		cost = 100
 		fire_only_once = yes
 		days_remove = 30
-		complete_effect = {
-			subtract_from_variable = {
-				diplomatic_power = 100
-			}
-		}
 		remove_effect = {
 			FIN = {	
 				declare_war_on = {
@@ -95,15 +87,8 @@ scotland_formable = {
 		fire_only_once = no
 		available = {
 			is_faction_leader = yes
-			custom_trigger_tooltip = {
-				check_variable = {
-					var = diplomatic_power
-					value = 100
-					compare = greater_than_or_equals
-				}
-				tooltip = state_decisions_cost_diplomatic_100
-			}
 		}
+		cost = 100
 		target_trigger = {
 			FROM = {
 				is_capital = yes
@@ -120,11 +105,6 @@ scotland_formable = {
 			}
 		}
 		days_remove = 100
-		complete_effect = {
-			subtract_from_variable = {
-				diplomatic_power = 100
-			}
-		}
 		remove_effect = {
 			FROM.OWNER = {
 				add_ideas = SCO_nsa_aligned
@@ -141,15 +121,8 @@ scotland_formable = {
 		fire_only_once = no
 		available = {
 			is_faction_leader = yes
-			custom_trigger_tooltip = {
-				check_variable = {
-					var = diplomatic_power
-					value = 100
-					compare = greater_than_or_equals
-				}
-				tooltip = state_decisions_cost_diplomatic_100
-			}
 		}
+		cost = 100
 		target_trigger = {
 			FROM = {
 				is_capital = yes
@@ -171,11 +144,6 @@ scotland_formable = {
 			}
 		}
 		days_remove = 120
-		complete_effect = {
-			subtract_from_variable = {
-				diplomatic_power = 100
-			}
-		}
 		remove_effect = {
 			custom_effect_tooltip = add_infamy_low
 			add_to_variable = {

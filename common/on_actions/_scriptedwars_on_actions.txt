@@ -1,4 +1,29 @@
 on_actions = {
+	on_war_relation_added = {
+		effect = {
+			FROM = { #this is for the notification, defender side, scripted gui
+				add_to_array = {
+					array = global.defender_country
+					value = THIS.id
+					index = 0
+				}
+			} #
+			ROOT = { #this is for the notification, attacker side, scripted gui
+				add_to_array = {
+					array = global.attacker_country
+					value = THIS.id
+					index = 0
+				}
+			} #
+			every_country = { #make the notification pop-up
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = war_has_been_declared
+			} #
+		}
+	}
+####
 	on_capitulation_immediate = {
 		effect = {
 			balkanize_that = yes #balkanize that! - this is a scripted effect that checks for cosmetic tags of formables, removes cores in occupied states and drops the cosmetic tag, have to be done manually

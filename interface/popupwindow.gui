@@ -724,8 +724,8 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "research_finished_popup_window"
-		position = { x = 25 y = 145 }
-		size = { width = 460 height = 130 }
+		position = { x = 10000 y = 100 } # x = -475
+		size = { width = 460 height = 95 }
 		moveable = yes
 		fade_time = 200
 		fade_type = linear
@@ -733,14 +733,11 @@ guiTypes = {
 		hide_sound = menu_close_window
 		click_to_front = yes
 		clipping = no
+		orientation = UPPER_RIGHT
 
 		background = {
 			name = "Background"	
-			quadTextureSprite ="GFX_tiled_tooltip"
-			position = {
-				x = -15
-				y = -15
-			}
+			quadTextureSprite ="GFX_tiled_black"
 		}
 		
 		containerWindowType = {
@@ -763,41 +760,40 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "title2"
-			position = { x = 17 y = 10 }
+			position = { x = 27 y = 20 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
-			text = "/> research_finished! >>>"	
+			text = "/> research_finished!_load:gui true >..."
 			format = left
 			maxWidth = 400
 			maxHeight = 24
 		}
 
-		#containerWindowType = {
-		#	name = "Background_3"
-		#	size = { width = 494 height = 254 } 
-		#
-		#	background = {
-		#		name = "Background"
-		#		quadTextureSprite = "GFX_tiled_bg_alpha"
-		#		alwaystransparent = yes
-		#		position = {
-		#			x = 3
-		#			y = 3
-		#		}
-		#	}
-		#}
+		containerWindowType = {
+			name = "bg"
+			size = { width = 430 height = 75 }
+			position = {
+				x = 10
+				y = 10
+			}
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_black"
+				alwaystransparent = yes
+			}
+		}
 
 		instantTextBoxType = {
 			name = "tech_name"
-			position = { x = 42 y = 49 }
+			position = { x = 42 y = 47 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
 			text = "Tech name"	
-			maxWidth = 350
-			maxHeight = 20
-			format = centre
+			maxWidth = 380
+			maxHeight = 15
+			format = left
 			fixedsize = yes
 		}	
 		
@@ -833,7 +829,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "ok_button"
-			position = { x=200 y =5}
+			position = { x=10000 y =5}
 			quadTextureSprite ="GFX_st_button"
 			shortcut = "RETURN"
 			buttonText = "click_here_to_close"
@@ -844,8 +840,8 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "message_popup_window"
-		position = { x = 25 y = 145 }
-		size = { width = 460 height = 130 }
+		position = { x = 10000 y = 100 } # x = -475
+		size = { width = 460 height = 95 }
 		moveable = yes
 		fade_time = 200
 		fade_type = linear
@@ -853,14 +849,11 @@ guiTypes = {
 		hide_sound = menu_close_window
 		click_to_front = yes
 		clipping = no
+		orientation = UPPER_RIGHT
 		
 		background = {
 			name = "Background"	
-			quadTextureSprite ="GFX_tiled_tooltip"
-			position = {
-				x = -15
-				y = -15
-			}
+			quadTextureSprite ="GFX_tiled_black"
 		}
 
 		instantTextBoxType = {
@@ -874,32 +867,32 @@ guiTypes = {
 			maxWidth = 400
 			maxHeight = 24
 		}
+
 		instantTextBoxType = {
 			name = "title2"
-			position = { x = 17 y = 10 }
+			position = { x = 27 y = 20 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
-			text = "/> incoming_transmission! >>>"	
+			text = "/> incoming_transmission!_load:gui true >..."	
 			format = left
 			maxWidth = 400
 			maxHeight = 24
 		}
 
-		#containerWindowType = {
-		#	name = "Background_3"
-		#	size = { width = 494 height = 254 } 
-		#
-		#	background = {
-		#		name = "Background"
-		#		quadTextureSprite = "GFX_tiled_bg_alpha"
-		#		alwaystransparent = yes
-		#		position = {
-		#			x = 3
-		#			y = 3
-		#		}
-		#	}
-		#}
+		containerWindowType = {
+			name = "bg"
+			size = { width = 430 height = 75 }
+			position = {
+				x = 10
+				y = 10
+			}
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_black"
+				alwaystransparent = yes
+			}
+		}
 
 		iconType = {
 			name = "diplo_war_large_icon"
@@ -920,7 +913,7 @@ guiTypes = {
 		iconType = {
 			name = "sender_flag"
 			quadTextureSprite ="GFX_flag_small"
-			position = { x= 217 y = 8 }
+			position = { x= -10000 y = 8 }
 			Orientation = "UPPER_LEFT"
 		}	
 
@@ -933,7 +926,7 @@ guiTypes = {
 		iconType = {
 			name = "receiver_flag"
 			quadTextureSprite ="GFX_flag_small"
-			position = { x= 248 y = 8 }
+			position = { x= -10000 y = 8 }
 			Orientation = "UPPER_LEFT"
 		}
 
@@ -945,21 +938,20 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "message"
-			position = { x = 42 y = 37 }
+			position = { x = 42 y = 47 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
 			text = "Long text here!"
-			maxWidth = 350
-			maxHeight = 45
-			format = centre
-			vertical_alignment = center
+			maxWidth = 380
+			maxHeight = 15
+			format = left
 			fixedsize = yes
 		}
 		
 		buttonType = {
 			name = "ok_button"
-			position = { x=200 y =5}
+			position = { x=10000 y =5}
 			quadTextureSprite ="GFX_st_button"
 			shortcut = "RETURN"
 			buttonText = "click_here_to_close"

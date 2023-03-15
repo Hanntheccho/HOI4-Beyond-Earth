@@ -152,6 +152,31 @@ scripted_gui = {
         }
     } 
 	###
+    declare_war_window_gui = {
+		context_type = player_context
+		
+		window_name = "declare_war_window"
+
+        visible = {
+            has_country_flag = war_has_been_declared
+            is_ai = no
+        }
+
+        ai_enabled = {
+            always = no
+        }
+
+        effects = {
+            ok_button_click = {
+                clr_country_flag = war_has_been_declared
+            }
+		}
+
+		triggers = {
+            #
+        }
+    }
+	###
     surrender_window_gui = {
 		context_type = player_context
 		
@@ -170,25 +195,6 @@ scripted_gui = {
             ok_button_click = {
                 clr_country_flag = country_has_been_defeated
             }
-		}
-
-		triggers = {
-            #
-        }
-    } 
-    ###
-    diplo_power_view_gui = {
-		context_type = player_context
-		parent_window_name = topbar
-		
-		window_name = "diplo_power_view"
-
-        ai_enabled = {
-            always = no
-        }
-
-        effects = {
-            #
 		}
 
 		triggers = {

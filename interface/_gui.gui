@@ -34,7 +34,7 @@ guiTypes = {
 			position = { x=15 y=15 }
 			size = {
 				width = 420
-				height = 50
+				height = 70
 			}
 
 			instantTextboxType = {
@@ -198,14 +198,14 @@ guiTypes = {
 	}
 
 ###############################
-####### SURRENDER WINDOW ######
+##### DECLARE WAR WINDOW ######
 ###############################
 
-	#for when a country capitulates
+	#for when a country declare wars
 	containerWindowType = {
-		name = "surrender_window"
-		position = { x = 25 y = 145 }
-		size = { width = 460 height = 130 }
+		name = "declare_war_window"
+		position = { x = -475 y = 210 }
+		size = { width = 460 height = 95 }
 		moveable = yes
 		fade_time = 200
 		fade_type = linear
@@ -213,60 +213,128 @@ guiTypes = {
 		hide_sound = menu_close_window
 		click_to_front = yes
 		clipping = no
+		orientation = UPPER_RIGHT
 
 		background = {
 			name = "Background"	
-			quadTextureSprite ="GFX_tiled_tooltip"
-			position = {
-				x = -15
-				y = -15
-			}
+			quadTextureSprite ="GFX_tiled_black"
 		}
-		
+
 		instantTextBoxType = {
-			name = "title2"
-			position = { x = 17 y = 10 }
+			name = "title"
+			position = { x = 27 y = 20 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
-			text = "/> war_has_ended! >>>"	
+			text = "/> war_declared!_load:gui true >..."	
 			format = left
 			maxWidth = 400
 			maxHeight = 24
 		}
 
-		#containerWindowType = {
-		#	name = "Background_3"
-		#	size = { width = 494 height = 254 } 
-		#
-		#	background = {
-		#		name = "Background"
-		#		quadTextureSprite = "GFX_tiled_bg_alpha"
-		#		alwaystransparent = yes
-		#		position = {
-		#			x = 3
-		#			y = 3
-		#		}
-		#	}
-		#}
+		containerWindowType = {
+			name = "bg"
+			size = { width = 430 height = 75 }
+			position = {
+				x = 10
+				y = 10
+			}
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_black"
+				alwaystransparent = yes
+			}
+		}
 
 		instantTextBoxType = {
 			name = "description"
-			position = { x = 42 y = 37 }
+			position = { x = 42 y = 47 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
-			text = "PEACE_EVENT_TITLE"
-			maxWidth = 350
-			maxHeight = 45
-			format = centre
-			vertical_alignment = center
+			text = "WAR_EVENT_TITLE"
+			maxWidth = 380
+			maxHeight = 15
+			format = left
 			fixedsize = yes
 		}	
 
 		buttonType = {
 			name = "ok_button"
-			position = { x=200 y =5}
+			position = { x=10000 y =5}
+			quadTextureSprite ="GFX_st_button"
+			shortcut = "RETURN"
+			buttonText = "click_here_to_close"
+			buttonFont = "Arialsmallest"
+			scale = 0.9
+		}
+	}
+
+###############################
+####### SURRENDER WINDOW ######
+###############################
+
+	#for when a country capitulates
+	containerWindowType = {
+		name = "surrender_window"
+		position = { x = -475 y = 100 }
+		size = { width = 460 height = 95 }
+		moveable = yes
+		fade_time = 200
+		fade_type = linear
+		show_sound = diplomatic_notification #peace_summary_message
+		hide_sound = menu_close_window
+		click_to_front = yes
+		clipping = no
+		orientation = UPPER_RIGHT
+
+		background = {
+			name = "Background"	
+			quadTextureSprite ="GFX_tiled_black"
+		}
+
+		instantTextBoxType = {
+			name = "title"
+			position = { x = 27 y = 20 }
+			textureFile = ""
+			font = "Arialsmallest"
+			borderSize = {x = 0 y = 0}
+			text = "/> war_has_ended!_load:gui true >..."	
+			format = left
+			maxWidth = 400
+			maxHeight = 24
+		}
+
+		containerWindowType = {
+			name = "bg"
+			size = { width = 430 height = 75 }
+			position = {
+				x = 10
+				y = 10
+			}
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_black"
+				alwaystransparent = yes
+			}
+		}
+
+		instantTextBoxType = {
+			name = "description"
+			position = { x = 42 y = 47 }
+			textureFile = ""
+			font = "Arialsmallest"
+			borderSize = {x = 0 y = 0}
+			text = "PEACE_EVENT_TITLE"
+			maxWidth = 380
+			maxHeight = 15
+			format = left
+			fixedsize = yes
+		}	
+
+		buttonType = {
+			name = "ok_button"
+			position = { x=10000 y =5}
 			quadTextureSprite ="GFX_st_button"
 			shortcut = "RETURN"
 			buttonText = "click_here_to_close"
@@ -720,28 +788,12 @@ guiTypes = {
 	}
 
 ###############################
-####### DIPLO_POWER INFO ######
+#### INDUSTRIAL POWER INFO ####
 ###############################
 
 	containerWindowType = {
-		name = "diplo_power_view"
-		position = { x = 426 y = 4 }
-
-		instantTextBoxType = {
-			name = "our_diplo_power_num"
-			position = { x= 8 y = 6 }
-			font = "Focusfont"
-			text = "our_diplo_power"
-			format = right
-			maxWidth = 90
-			maxHeight = 24
-			pdx_tooltip = "our_diplo_power_num_tt"
-			pdx_tooltip_delayed = "our_diplo_power_num_tt_delayed"
-		}
-	}
-	containerWindowType = {
 		name = "industrial_power_container"
-		position = { x = 536 y = 4 }
+		position = { x = 426 y = 4 }
 	
 		instantTextBoxType = {
 			name ="industrial_power_text"
