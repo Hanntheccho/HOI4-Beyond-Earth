@@ -547,7 +547,7 @@
 
 	focus = {
 		id = TZN_unshackle_the_hand
-		icon = GFX_goal_TZN_the_panafrican_line
+		icon = GFX_goal_TZN_kigali_railhub
 
 		x = 7
 		y = 6
@@ -950,7 +950,7 @@
 
 	focus = {
 		id = TZN_bail_out_iniko_bank
-		icon = GFX_goal_TZN_bail_out_iniko_bank
+		icon = GFX_goal_TZN_kigali_railhub
 
 		x = 15
 		y = 5
@@ -2011,24 +2011,6 @@
 			focus = TZN_reign_in_the_warlords
 			focus = TZN_restart_the_proxy_war
 		}
-
-		available = {
-			GNA = {
-				has_war = no
-			}
-			TOG = {
-				has_war = no
-			}
-			RWA = {
-				has_war = no
-			}
-			BRD = {
-				has_war = no
-			}
-			MLW = {
-				has_war = no
-			}
-		}
 		
 		completion_reward = {
 			add_to_faction = GNA
@@ -2054,21 +2036,12 @@
 		relative_position_id = TZN_the_congolese_legacy
 		 
 		prerequisite = { 
-			focus = TZN_expand_the_union
 			focus = TZN_pan_african_alliance_building
 		}
 		
 		completion_reward = {
 			declare_war_on = {
 				target = COG
-				type = annex_puppet_wargoal
-			}
-			declare_war_on = {
-				target = ANG
-				type = annex_puppet_wargoal
-			}
-			declare_war_on = {
-				target = SAF
 				type = annex_puppet_wargoal
 			}
 		}
@@ -2093,7 +2066,7 @@
 		}
 
 		completion_reward = {
-			####
+			add_war_support = 0.1
 		}
 		
 		ai_will_do = {
@@ -2119,6 +2092,7 @@
 		
 		completion_reward = {
 			####
+			custom_effect_tooltip = TZN_in_the_land_of_endless_cities_tt
 		}
 
 		ai_will_do = {
@@ -2140,8 +2114,29 @@
 			focus = TZN_in_the_land_of_endless_cities
 		}
 
+		#add influence here? how?
 		completion_reward = {
-			####
+			every_country = {
+				limit = {
+					OR = {
+						tag = MRT
+						tag = LIB
+						tag = IVO
+						tag = GHA
+						tag = VOL
+						tag = DAH
+						tag = NGA
+						tag = GAB
+						tag = CMR
+						tag = CAR
+						tag = CHA
+					}
+				}
+				add_timed_idea = {
+					idea = TZN_limited_recognition
+					days = 100
+				}
+			}
 		}
 		
 		ai_will_do = {
@@ -2163,8 +2158,29 @@
 			focus = TZN_in_the_land_of_endless_cities
 		}
 
+		#add influence here? how?
 		completion_reward = {
-			####
+			every_country = {
+				limit = {
+					OR = {
+						tag = MRT
+						tag = LIB
+						tag = IVO
+						tag = GHA
+						tag = VOL
+						tag = DAH
+						tag = NGA
+						tag = GAB
+						tag = CMR
+						tag = CAR
+						tag = CHA
+					}
+				}
+				add_timed_idea = {
+					idea = TZN_african_trade_union
+					days = 100
+				}
+			}
 		}
 		
 		ai_will_do = {
@@ -2190,7 +2206,18 @@
 		}
 
 		completion_reward = {
-			####
+			every_country = {
+				limit = {
+					is_in_faction_with = TZN
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = civilian_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
 		
 		ai_will_do = {
@@ -2215,7 +2242,10 @@
 		}
 
 		completion_reward = {
-			####
+			add_timed_idea = {
+				idea = TZN_break_the_yaounde_compromise
+				days = 200
+			}
 		}
 		
 		ai_will_do = {
@@ -2238,7 +2268,10 @@
 		}
 		
 		completion_reward = {
-			####
+			add_timed_idea = {
+				idea = TZN_nb_line
+				days = 200
+			}
 		}
 
 		ai_will_do = {
@@ -2261,7 +2294,10 @@
 		}
 		
 		completion_reward = {
-			####
+			add_timed_idea = {
+				idea = TZN_monopolize_pan_africanism
+				days = 200
+			}
 		}
 
 		ai_will_do = {
@@ -2287,8 +2323,19 @@
 			focus = TZN_monopolize_pan_africanism
 		}
 
-		complete_tooltip = {
-			custom_effect_tooltip = TZN_the_sword_tt
+		completion_reward = {
+			every_country = {
+				limit = {
+					is_in_faction_with = TZN
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = military_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
 		
 		ai_will_do = {
@@ -2298,9 +2345,9 @@
 	
 	focus = {
 		id = TZN_west_african_interventionism
-		icon = GFX_goal_TZN_west_african_interventionism
+		icon = GFX_goal_TZN_we_have_the_skill
 
-		x = 0
+		x = 2
 		y = 4
 		cost = 5
 		
@@ -2322,9 +2369,9 @@
 	
 	focus = {
 		id = TZN_a_warpath
-		icon = GFX_goal_TZN_we_have_the_skill
+		icon = GFX_goal_TZN_west_african_interventionism
 
-		x = 0
+		x = -2
 		y = 1
 		cost = 5
 		
@@ -2385,7 +2432,7 @@
 		}
 
 		completion_reward = {
-			####
+			add_war_support = 0.1
 		}
 		
 		ai_will_do = {
@@ -2410,23 +2457,12 @@
 		}
 
 		completion_reward = {
-			send_equipment = {
-				equipment = light_equipment_1
-				amount = 500
-				target = NUE
+			NUE = {
+				country_event = tzn.11
 			}
-			custom_effect_tooltip = TZN_aid_the_rebels_tt
-			add_opinion_modifier = {
-				target = EGY
-				modifier = small_increase
-			}
-			add_opinion_modifier = {
-				target = SUD
-				modifier = small_increase
-			}
-			add_opinion_modifier = {
-				target = NUE
-				modifier = medium_increase
+			declare_war_on = {
+				target = SIE
+				type = annex_puppet_wargoal
 			}
 		}
 		
@@ -2451,8 +2487,14 @@
 			focus = TZN_northern_advisor_office
 		}
 		
-		complete_tooltip = {
-			custom_effect_tooltip = TZN_stability_south_sudan_tt
+		completion_reward = {
+			SIE = {
+				country_event = tzn.11
+			}
+			declare_war_on = {
+				target = NUE
+				type = annex_puppet_wargoal
+			}
 		}
 
 		ai_will_do = {
@@ -2475,15 +2517,9 @@
 		}
 
 		completion_reward = {
-			add_opinion_modifier = {
-				target = SUD
-				modifier = small_increase
+			SUD = {
+				country_event = tzn.11
 			}
-			add_opinion_modifier = {
-				target = EGY
-				modifier = small_increase
-			}
-			custom_effect_tooltip = TZN_legitimacy_tt
 		}
 		
 		ai_will_do = {
@@ -2506,8 +2542,9 @@
 		}
 		
 		completion_reward = {
-			add_political_power = 100
-			custom_effect_tooltip = TZN_anti_imperialist_alliance_tt
+			EGY = {
+				country_event = tzn.11
+			}
 		}
 
 		ai_will_do = {
@@ -2524,16 +2561,16 @@
 		cost = 5
 		
 		relative_position_id = TZN_aid_the_rebels
-		
-		mutually_exclusive = { focus = TZN_seek_somali_cooperation }
 		 
 		prerequisite = { 
 			focus = TZN_aid_the_rebels
 		}
 
 		completion_reward = {
-			####
-			custom_effect_tooltip = TZN_undermine_somali_power_tt
+			declare_war_on = {
+				target = SOM
+				type = annex_puppet_wargoal
+			}
 		}
 		
 		ai_will_do = {
@@ -2556,14 +2593,9 @@
 		}
 
 		completion_reward = {
-			custom_effect_tooltip = TZN_back_ethiopian_reunification_tt
-			add_opinion_modifier = {
-				target = EGY
-				modifier = small_increase
-			}
-			add_opinion_modifier = {
-				target = ORO
-				modifier = small_increase
+			declare_war_on = {
+				target = ETH
+				type = annex_puppet_wargoal
 			}
 		}
 		
@@ -2581,18 +2613,14 @@
 		cost = 5
 		
 		relative_position_id = TZN_stability_in_south_sudan
-		
-		mutually_exclusive = { focus = TZN_undermine_somali_power }
 		 
 		prerequisite = { 
 			focus = TZN_stability_in_south_sudan
 		}
 
 		completion_reward = {
-			custom_effect_tooltip = TZN_seek_somali_cooperation_tt
-			add_opinion_modifier = {
-				target = SOM
-				modifier = small_increase
+			SOM = {
+				country_event = tzn.11
 			}
 		}
 		
@@ -2616,10 +2644,12 @@
 		}
 		
 		completion_reward = {
-			custom_effect_tooltip = TZN_cease_oromia_tt
-			add_opinion_modifier = {
-				target = ETH
-				modifier = small_increase
+			ETH = {
+				country_event = tzn.11
+			}
+			declare_war_on = {
+				target = ORO
+				type = annex_puppet_wargoal
 			}
 		}
 
@@ -2643,8 +2673,10 @@
 		}
 		
 		completion_reward = {
-			custom_effect_tooltip = TZN_sudanese_integration
-			####
+			declare_war_on = {
+				target = EGY
+				type = annex_puppet_wargoal
+			}
 		}
 
 		ai_will_do = {
@@ -2665,22 +2697,47 @@
 		prerequisite = { 
 			focus = TZN_aid_the_sudanese_revolution
 		}
+
+		available = {
+			EGY = {
+				is_puppet_of = TZN
+			}
+		}
 		
 		completion_reward = {
-			####
-			every_country = {
+			if = {
 				limit = {
-					any_core_state = {
-						is_on_continent = europe
+					ITA = {
+						is_in_faction = no
 					}
 				}
-				TZN = {
-					add_opinion_modifier = {
-						target = THIS
-						modifier = medium_increase
+				ITA = {
+					country_event = tzn.11
+				}
+			}	
+			if = {
+				limit = {
+					TUR = {
+						is_in_faction = no
 					}
+				}
+				TUR = {
+					country_event = tzn.11
 				}
 			}
+			if = {
+				limit = {
+					GRE = {
+						is_in_faction = no
+					}
+				}
+				GRE = {
+					country_event = tzn.11
+				}
+			}
+			else = {
+				add_political_power = 25
+			}			
 		}
 		
 		ai_will_do = {
@@ -2711,7 +2768,7 @@
 			####
 			news_event = tzn.5
 			####PAU
-			every_core_state = {
+			every_state = {
 				limit = {
 					is_on_continent = africa
 				}
@@ -2739,17 +2796,8 @@
 		}
 		
 		completion_reward = {
-			every_country = {
-				limit = {
-					any_core_state = {
-						is_on_continent = south_america
-					}
-				}
-				add_opinion_modifier = {
-					target = ROOT
-					modifier = large_increase
-				}
-			}
+			####
+			custom_effect_tooltip = TZN_over_the_atlantic_tt
 		}
 
 		ai_will_do = {
@@ -2772,17 +2820,8 @@
 		}
 		
 		completion_reward = {
-			every_country = {
-				limit = {
-					any_core_state = {
-						is_on_continent = europe
-					}
-				}
-				add_opinion_modifier = {
-					target = ROOT
-					modifier = large_increase
-				}
-			}
+			####
+			custom_effect_tooltip = TZN_compete_with_europe_tt
 		}
 
 		ai_will_do = {
@@ -2805,62 +2844,8 @@
 		}
 
 		completion_reward = {
-			add_opinion_modifier = {
-				target = PUN
-				modifier = large_increase
-			}
-			add_opinion_modifier = {
-				target = SIN
-				modifier = large_increase
-			}
-			add_opinion_modifier = {
-				target = KAV
-				modifier = large_increase
-			}
-			add_opinion_modifier = {
-				target = RAJ
-				modifier = large_increase
-			}
-			add_opinion_modifier = {
-				target = NEP
-				modifier = large_increase
-			}
-			add_opinion_modifier = {
-				target = BHR
-				modifier = large_increase
-			}
-			add_opinion_modifier = {
-				target = MAH
-				modifier = large_increase
-			}
-			add_opinion_modifier = {
-				target = BNG
-				modifier = large_increase
-			}
-			add_opinion_modifier = {
-				target = NAX
-				modifier = large_increase
-			}
-			add_opinion_modifier = {
-				target = ODS
-				modifier = large_increase
-			}
-			add_opinion_modifier = {
-				target = KRT
-				modifier = large_increase
-			}
-			add_opinion_modifier = {
-				target = TAM
-				modifier = large_increase
-			}
-			add_opinion_modifier = {
-				target = KRL
-				modifier = large_increase
-			}
-			add_opinion_modifier = {
-				target = SRL
-				modifier = large_increase
-			}
+			####
+			custom_effect_tooltip = TZN_assign_indian_priorities_tt
 		}
 		
 		ai_will_do = {
@@ -2900,24 +2885,21 @@
 		cost = 5
 	
 		relative_position_id = TZN_umoja
+
+		mutually_exclusive = { focus = TZN_respect_maketh_man }
+		mutually_exclusive = { focus = TZN_the_full_yellow_sun }
+		mutually_exclusive = { focus = TZN_land_of_liberty }
 		 
 		prerequisite = { 
 			focus = TZN_umoja
 		}
 
+		available = {
+			has_government = mastery
+		}
+
 		completion_reward = {
-			add_ideas = tzn_road_to_plenty_base
-			hidden_effect = {
-				set_popularities = {
-					harmony = 12
-					supremacy = 13
-					purity = 21
-					neutral = 16
-					divinity = 9
-					synergy = 5
-					mastery = 24
-				}
-			}
+			country_event = tzn.7
 		}
 
 		ai_will_do = {
@@ -2939,67 +2921,10 @@
 			focus = TZN_the_road_of_plenty
 		}
 
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = tzn_not_undergoing_other_branch
-				NOT = {
-					OR = {
-						has_country_flag = fly_to_the_stars_branch
-						has_country_flag = mold_nature_branch
-					}
-				}
-			}
-		}
-
 		completion_reward = {
-			set_country_flag = machine_service_branch
-			if = {
-				limit = {
-					has_idea = tzn_road_to_plenty_base
-				}
-				swap_ideas = {
-					remove_idea = tzn_road_to_plenty_base
-					add_idea = tzn_road_to_plenty_machine_service
-				}
+			add_ideas = {
+				TZN_machine_service
 			}
-			##If completed only one other branch
-			if = {
-				limit = {
-					has_idea = tzn_road_to_plenty_sea_of_green
-				}
-				swap_ideas = {
-					remove_idea = tzn_road_to_plenty_sea_of_green
-					add_idea = tzn_road_to_plenty_sea_to_machine
-				}
-			}
-			if = {
-				limit = {
-					has_idea = tzn_road_to_plenty_dive_into_the_ocean
-				}
-				swap_ideas = {
-					remove_idea = tzn_road_to_plenty_dive_into_the_ocean
-					add_idea = tzn_road_to_plenty_dive_to_machine
-				}
-			}
-			##If completed both branches
-			if = {
-				limit = {
-					has_idea = tzn_road_to_plenty_sea_to_dive
-				}
-				swap_ideas = {
-					remove_idea = tzn_road_to_plenty_sea_to_dive
-					add_idea = tzn_road_to_plenty_sea_dive_to_machine
-				}
-			}
-			if = {
-				limit = {
-					has_idea = tzn_road_to_plenty_dive_to_sea
-				}
-				swap_ideas = {
-					remove_idea = tzn_road_to_plenty_dive_to_sea
-					add_idea = tzn_road_to_plenty_sea_dive_to_machine
-				}
-			} 
 		}
 
 		ai_will_do = {
@@ -3022,42 +2947,8 @@
 		}
 
 		completion_reward = {
-			clr_country_flag = machine_service_branch
-			if = {
-				limit = {
-					has_idea = tzn_road_to_plenty_machine_service
-				}
-				swap_ideas = {
-					remove_idea = tzn_road_to_plenty_machine_servicex
-					add_idea = tzn_road_to_plenty_agrarian_life
-				}
-			}
-			if = {
-				limit = {
-					has_idea = tzn_road_to_plenty_sea_to_machine
-				}
-				swap_ideas = {
-					remove_idea = tzn_road_to_plenty_sea_to_machine
-					add_idea = tzn_road_to_plenty_sea_machine_to_agrarian
-				}
-			}
-			if = {
-				limit = {
-					has_idea = tzn_road_to_plenty_dive_to_machine
-				}
-				swap_ideas = {
-					remove_idea = tzn_road_to_plenty_dive_to_machine
-					add_idea = tzn_road_to_plenty_dive_machine_to_agrarian
-				}
-			}
-			if = {
-				limit = {
-					has_idea = tzn_road_to_plenty_sea_dive_to_machine
-				}
-				swap_ideas = {
-					remove_idea = tzn_road_to_plenty_sea_dive_to_machine
-					add_idea = tzn_road_to_plenty_sea_dive_machine_to_agrarian
-				}
+			add_ideas = {
+				TZN_an_agrarian_life
 			}
 		}
 
@@ -3080,67 +2971,10 @@
 			focus = TZN_the_road_of_plenty
 		}
 
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = tzn_not_undergoing_other_branch
-				NOT = {
-					OR = {
-						has_country_flag = machine_service_branch
-						has_country_flag = mold_nature_branch
-					}
-				}
-			}
-		}
-
 		completion_reward = {
-			set_country_flag = fly_to_the_stars_branch
-			if = {
-				limit = {
-					has_idea = tzn_road_to_plenty_base
-				}
-				swap_ideas = {
-					remove_idea = tzn_road_to_plenty_base
-					add_idea = tzn_road_to_plenty_fly_to_the_stars
-				}
+			add_ideas = {
+				TZN_fly_to_the_stars
 			}
-			##If completed only one other branch
-			if = {
-				limit = {
-					has_idea = tzn_road_to_plenty_sea_of_green
-				}
-				swap_ideas = {
-					remove_idea = tzn_road_to_plenty_sea_of_green
-					add_idea = tzn_road_to_plenty_sea_to_stars
-				}
-			}
-			if = {
-				limit = {
-					has_idea = tzn_road_to_plenty_agrarian_life
-				}
-				swap_ideas = {
-					remove_idea = tzn_road_to_plenty_agrarian_life
-					add_idea = tzn_road_to_plenty_agririan_to_stars
-				}
-			}
-			##If completed both branches
-			if = {
-				limit = {
-					has_idea = tzn_road_to_plenty_agririan_sea
-				}
-				swap_ideas = {
-					remove_idea = tzn_road_to_plenty_sea_to_machine
-					add_idea = tzn_road_to_plenty_agrarian_sea_to_stars
-				}
-			}
-			if = {
-				limit = {
-					has_idea = tzn_road_to_plenty_machine_to_sea
-				}
-				swap_ideas = {
-					remove_idea = tzn_road_to_plenty_machine_to_sea
-					add_idea = tzn_road_to_plenty_agrarian_sea_to_stars
-				}
-			} 
 		}
 
 		ai_will_do = {
@@ -3161,6 +2995,13 @@
 		prerequisite = { 
 			focus = TZN_fly_to_the_stars
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_dive_into_the_ocean
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3179,6 +3020,19 @@
 		prerequisite = { 
 			focus = TZN_the_road_of_plenty
 		}
+
+		completion_reward = {
+			custom_effect_tooltip = TZN_mold_nature_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_coastal = no
+					}
+					decrease_ecobalance = yes
+				}
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3197,6 +3051,19 @@
 		prerequisite = { 
 			focus = TZN_mold_nature
 		}
+
+		completion_reward = {
+			custom_effect_tooltip = TZN_a_sea_of_green_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_coastal = yes
+					}
+					decrease_ecobalance = yes
+				}
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3223,6 +3090,18 @@
 		prerequisite = { 
 			focus = TZN_a_sea_of_green
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_beneath_an_open_sky
+			}
+			remove_ideas = {
+				TZN_dive_into_the_ocean
+				TZN_machine_service
+				TZN_an_agrarian_life
+				TZN_fly_to_the_stars
+			}
+		}
 		
 		ai_will_do = {
 			factor = 1
@@ -3238,10 +3117,23 @@
 		cost = 5
 	
 		relative_position_id = TZN_umoja
+
+		mutually_exclusive = { focus = TZN_the_road_of_plenty }
+		mutually_exclusive = { focus = TZN_the_full_yellow_sun }
+		mutually_exclusive = { focus = TZN_land_of_liberty }
+
+		available = {
+			has_government = purity
+		}
 		 
 		prerequisite = { 
 			focus = TZN_umoja
 		}
+
+		completion_reward = {
+			country_event = tzn.8
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3260,6 +3152,13 @@
 		prerequisite = { 
 			focus = TZN_respect_maketh_man
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_infinite_prosperity
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3278,6 +3177,13 @@
 		prerequisite = { 
 			focus = TZN_infinite_prosperity
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_the_golden_continent
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3296,6 +3202,13 @@
 		prerequisite = { 
 			focus = TZN_respect_maketh_man
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_an_honor_to_serve
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3314,6 +3227,13 @@
 		prerequisite = { 
 			focus = TZN_an_honor_to_serve
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_deep_memory
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3332,6 +3252,18 @@
 		prerequisite = { 
 			focus = TZN_respect_maketh_man
 		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+			add_ideas = {
+				TZN_till_the_earth
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3350,6 +3282,13 @@
 		prerequisite = { 
 			focus = TZN_till_the_earth
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_eradicate_starvation
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3376,6 +3315,20 @@
 		prerequisite = { 
 			focus = TZN_eradicate_starvation
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_things_come_together
+			}
+			remove_ideas = {
+				TZN_eradicate_starvation
+				TZN_till_the_earth
+				TZN_deep_memory
+				TZN_an_honor_to_serve
+				TZN_the_golden_continent
+				TZN_infinite_prosperity
+			}
+		}
 		
 		ai_will_do = {
 			factor = 1
@@ -3391,10 +3344,23 @@
 		cost = 5
 	
 		relative_position_id = TZN_umoja
+
+		mutually_exclusive = { focus = TZN_respect_maketh_man }
+		mutually_exclusive = { focus = TZN_the_road_of_plenty }
+		mutually_exclusive = { focus = TZN_land_of_liberty }
+
+		available = {
+			has_government = supremacy
+		}
 		 
 		prerequisite = { 
 			focus = TZN_umoja
 		}
+
+		completion_reward = {
+			country_event = tzn.9
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3413,6 +3379,13 @@
 		prerequisite = { 
 			focus = TZN_the_full_yellow_sun
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_where_we_began
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3431,6 +3404,13 @@
 		prerequisite = { 
 			focus = TZN_where_we_began
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_fund_holotheaters
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3449,6 +3429,13 @@
 		prerequisite = { 
 			focus = TZN_the_full_yellow_sun
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_who_we_are_now
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3467,6 +3454,13 @@
 		prerequisite = { 
 			focus = TZN_who_we_are_now
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_legalize_ai_in_the_workplace
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3485,6 +3479,13 @@
 		prerequisite = { 
 			focus = TZN_the_full_yellow_sun
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_what_we_shall_become
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3503,6 +3504,13 @@
 		prerequisite = { 
 			focus = TZN_what_we_shall_become
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_the_congo_cosmodrome
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3531,7 +3539,17 @@
 		}
 
 		completion_reward = {
-			add_ideas = TZN_orbital_superstation_project
+			add_ideas = {
+				TZN_orbital_superstation
+			}
+			remove_ideas = {
+				TZN_the_congo_cosmodrome
+				TZN_what_we_shall_become
+				TZN_legalize_ai_in_the_workplace
+				TZN_where_we_began
+				TZN_fund_holotheaters
+				TZN_who_we_are_now
+			}
 		}
 		
 		ai_will_do = {
@@ -3548,10 +3566,23 @@
 		cost = 5
 	
 		relative_position_id = TZN_umoja
+
+		mutually_exclusive = { focus = TZN_the_road_of_plenty }
+		mutually_exclusive = { focus = TZN_the_full_yellow_sun }
+		mutually_exclusive = { focus = TZN_respect_maketh_man }
+
+		available = {
+			has_government = neutral
+		}
 		 
 		prerequisite = { 
 			focus = TZN_umoja
 		}
+
+		completion_reward = {
+			country_event = tzn.10
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3570,6 +3601,13 @@
 		prerequisite = { 
 			focus = TZN_land_of_liberty
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_observe_tradition
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3588,6 +3626,13 @@
 		prerequisite = { 
 			focus = TZN_observe_tradition
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_establish_the_subdivisions
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3606,6 +3651,13 @@
 		prerequisite = { 
 			focus = TZN_land_of_liberty
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_all_the_nations
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3624,6 +3676,13 @@
 		prerequisite = { 
 			focus = TZN_all_the_nations
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_merit_in_freedom
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3642,6 +3701,13 @@
 		prerequisite = { 
 			focus = TZN_land_of_liberty
 		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_follow_progress
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3660,6 +3726,16 @@
 		prerequisite = { 
 			focus = TZN_follow_progress
 		}
+
+		completion_reward = {
+			custom_effect_tooltip = TZN_a_familiar_home_tt
+			hidden_effect = {
+				every_owned_state = {
+					decrease_ecobalance = yes
+				}
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -3685,6 +3761,19 @@
 		
 		prerequisite = { 
 			focus = TZN_a_familiar_home
+		}
+
+		completion_reward = {
+			add_ideas = {
+				TZN_destiny_of_eons
+			}
+			remove_ideas = {
+				TZN_follow_progress
+				TZN_merit_in_freedom
+				TZN_all_the_nations
+				TZN_observe_tradition
+				TZN_establish_the_subdivisions
+			}
 		}
 		
 		ai_will_do = {

@@ -756,15 +756,7 @@ formable_decisions = {
 	TZN_united = {
 		icon = GFX_decision_unity
 		available = {
-			ANG = {
-				is_puppet_of = TZN
-			}
-			SAF = {
-				is_puppet_of = TZN
-			}
-			COG = {
-				is_puppet_of = TZN
-			}
+			has_completed_focus = TZN_war_of_national_unification
 		}
 		visible = {
 			tag = TZN
@@ -775,37 +767,8 @@ formable_decisions = {
 		
 		remove_effect = {
 			set_cosmetic_tag = TZN_AFRICA
-			COG = {
-				every_core_state = {
-					add_core_of = TZN
-				}
-				TZN = {
-					annex_country = {
-						target = PREV
-					}
-				}
-			}
-			ANG = {
-				every_core_state = {
-					add_core_of = TZN
-				}
-				TZN = {
-					annex_country = {
-						target = PREV
-					}
-				}
-			}
-			SAF = {
-				every_core_state = {
-					add_core_of = TZN
-				}
-				TZN = {
-					annex_country = {
-						target = PREV
-					}
-				}
-			}
 			set_global_flag = TZN_united_africa
+			custom_effect_tooltip = TZN_africa_destiny_tt
 		}
 		
 		ai_will_do = {

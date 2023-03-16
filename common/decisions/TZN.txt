@@ -7,8 +7,7 @@ TZN_decisions = {
 			is_puppet = no
 		}
 		visible = {
-			#has_global_flag = TZN_united_africa
-			has_completed_focus = TZN_war_of_national_unification
+			has_global_flag = TZN_united_africa
 		}
 		target_trigger = {
 			FROM = {
@@ -33,7 +32,7 @@ TZN_decisions = {
 						OR = {
 							is_puppet_of = ROOT
 							has_war_with = ROOT
-							is_in_faction_with = ROOT
+							#is_in_faction_with = ROOT
 						}					
 					}
 				}
@@ -42,6 +41,16 @@ TZN_decisions = {
 		fire_only_once = no
 		days_remove = 30
 		complete_effect = {
+			if = {
+				limit = {
+					FROM.OWNER = {
+						is_in_faction_with = ROOT
+					}
+				}
+				ROOT = {
+					remove_from_faction = FROM.OWNER
+				}
+			}
 			hidden_effect = {
 				set_country_flag = {
 					flag = going_to_war
@@ -67,6 +76,104 @@ TZN_decisions = {
 				has_country_flag = going_to_war
 				add = -1000
 			}
+			modifier = {
+				FROM.OWNER = {
+					is_in_faction_with = ROOT
+				}
+				add = -1000
+			}
+		}
+	}
+
+	TZN_invite_nation = {
+		icon = GFX_decision_eaf
+		state_target = yes
+		on_map_mode = map_only
+		available = {
+			is_puppet = no
+		}
+		visible = {
+			#
+		}
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				OWNER = {
+					if = {
+						limit = {
+							ROOT = {
+								has_completed_focus = TZN_over_the_atlantic
+							}
+						}
+						is_in_faction = no
+						capital_scope = {
+							is_on_continent = south_america
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								has_completed_focus = TZN_compete_with_europe
+							}
+						}
+						is_in_faction = no
+						capital_scope = {
+							is_on_continent = europe
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								has_completed_focus = TZN_assign_indian_priorities
+							}
+						}
+						is_in_faction = no
+						OR = {
+							is_india_tag = yes
+							tag = BHR
+							tag = KAV
+						}
+					}					
+					if = {
+						limit = {
+							ROOT = {
+								has_completed_focus = TZN_in_the_land_of_endless_cities
+							}
+						}
+						OR = {
+							tag = MRT
+							tag = LIB
+							tag = IVO
+							tag = GHA
+							tag = VOL
+							tag = DAH
+							tag = NGA
+							tag = GAB
+							tag = CMR
+							tag = CAR
+							tag = CHA
+						}
+					}
+					NOT = {
+						OR = {
+							is_puppet_of = ROOT
+							has_war_with = ROOT
+							is_in_faction_with = ROOT
+						}					
+					}
+				}
+			}
+		}
+		fire_only_once = no
+		days_remove = 30
+		cost = 50
+		remove_effect = {
+			FROM.OWNER = {
+				country_event = tzn.11
+			}
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 
@@ -87,8 +194,8 @@ TZN_decisions = {
 
 		visible = {
 			has_completed_focus = TZN_reign_in_the_warlords
-			GNA = {
-				exists = yes
+			NOT = {
+				has_global_flag = TZN_united_africa
 			}
 		}
 
@@ -120,8 +227,8 @@ TZN_decisions = {
 
 		visible = {
 			has_completed_focus = TZN_reign_in_the_warlords
-			TOG = {
-				exists = yes
+			NOT = {
+				has_global_flag = TZN_united_africa
 			}
 		}
 
@@ -153,8 +260,8 @@ TZN_decisions = {
 
 		visible = {
 			has_completed_focus = TZN_reign_in_the_warlords
-			RWA = {
-				exists = yes
+			NOT = {
+				has_global_flag = TZN_united_africa
 			}
 		}
 
@@ -186,8 +293,8 @@ TZN_decisions = {
 
 		visible = {
 			has_completed_focus = TZN_reign_in_the_warlords
-			BRD = {
-				exists = yes
+			NOT = {
+				has_global_flag = TZN_united_africa
 			}
 		}
 
@@ -219,8 +326,8 @@ TZN_decisions = {
 
 		visible = {
 			has_completed_focus = TZN_reign_in_the_warlords
-			MLW = {
-				exists = yes
+			NOT = {
+				has_global_flag = TZN_united_africa
 			}
 		}
 
@@ -235,7 +342,7 @@ TZN_decisions = {
 		}
 	}
 
-	TZN_declare_war_south_sudan = {
+	TZN_declare_war_mali = {
 		icon = GFX_decision_eaf
 		state_target = yes
 		on_map_mode = map_only
@@ -245,21 +352,21 @@ TZN_decisions = {
 			FROM = {
 				is_capital = yes
 				OWNER = {
-					tag = SIE
+					tag = MLI
 				}
 			}
 		}
 
 		visible = {
-			has_completed_focus = TZN_aid_the_rebels
-			SIE = {
-				exists = yes
+			has_completed_focus = TZN_a_warpath
+			NOT = {
+				has_global_flag = TZN_united_africa
 			}
 		}
 
 		complete_effect = {
 			declare_war_on = {
-				target = SIE
+				target = MLI
 			}
 		}
 
@@ -268,253 +375,115 @@ TZN_decisions = {
 		}
 	}
 
-	TZN_integrate_sudan = {
-		allowed = {
-			tag = TZN
-		}
+	TZN_declare_war_maghreb = {
+		icon = GFX_decision_eaf
+		state_target = yes
+		on_map_mode = map_only
+		fire_only_once = yes
 
-		visible = {
-			has_completed_focus = TZN_recognize_uar_legitimacy_in_sudan
-			SUD = {
-				exists = yes
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				OWNER = {
+					tag = TUN
+				}
 			}
 		}
 
-		available = {
+		visible = {
+			has_completed_focus = TZN_a_warpath
 			NOT = {
-				has_idea = tzn_integrate_sudan_cooldown
-			}
-		}
-
-		complete_effect = {
-			SUD = {
-				country_event = sud.1
-			}
-			add_timed_idea = {
-				idea = tzn_integrate_sudan_cooldown
-				days = 160
-			}
-		}
-	}
-
-	TZN_integrate_egypt = {
-		allowed = {
-			tag = TZN
-		}
-
-		visible = {
-			has_completed_focus = TZN_an_anti_imperialist_alliance
-			has_completed_focus = TZN_back_ethiopian_reunification
-			EGY = {
-				exists = yes
-			}
-		}
-
-		available = {
-			NOT = {
-				has_idea = tzn_integrate_egypt_cooldown
-			}
-		}
-
-		complete_effect = {
-			EGY = {
-				country_event = egy.1
-			}
-			add_timed_idea = {
-				idea = tzn_integrate_egypt_cooldown
-				days = 160
-			}
-		}
-	}
-
-	TZN_declare_war_somalia = {
-		allowed = {
-			tag = TZN
-		}
-
-		visible = {
-			has_completed_focus = TZN_undermine_somali_power
-			SOM = {
-				exists = yes
+				has_global_flag = TZN_united_africa
 			}
 		}
 
 		complete_effect = {
 			declare_war_on = {
-				target = SOM
-				type = annex_puppet_wargoal
+				target = TUN
 			}
+		}
+
+		ai_will_do = {
+			factor = 1
 		}
 	}
 
-	TZN_declare_war_nuer = {
-		allowed = {
-			tag = TZN
+	TZN_declare_war_biafra = {
+		icon = GFX_decision_eaf
+		state_target = yes
+		on_map_mode = map_only
+		fire_only_once = yes
 
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				OWNER = {
+					tag = EQG
+				}
+			}
 		}
 
 		visible = {
-			has_completed_focus = TZN_stability_in_south_sudan
-			NUE = {
-				exists = yes
-			}
-		}
-
-		complete_effect = {
-			declare_war_on = {
-				target = NUE
-				type = annex_puppet_wargoal
-			}
-		}
-	}
-
-	TZN_integrate_somalia = {
-		allowed = {
-			tag = TZN
-		}
-
-		visible = {
-			has_completed_focus = TZN_seek_somali_cooperation
-			SOM = {
-				exists = yes
-			}
-		}
-
-		available = {
+			has_completed_focus = TZN_a_warpath
 			NOT = {
-				has_idea = tzn_integrate_somalia_cooldown
+				has_global_flag = TZN_united_africa
 			}
 		}
 
 		complete_effect = {
-			SOM = {
-				country_event = som.1
+			declare_war_on = {
+				target = EQG
 			}
-			add_timed_idea = {
-				idea = tzn_integrate_somalia_cooldown
-				days = 160
-			}
+		}
+
+		ai_will_do = {
+			factor = 1
 		}
 	}
 
-	TZN_integrate_ethiopia = {
-		allowed = {
-			tag = TZN
-		}
+	TZN_declare_war_minor_west = {
+		icon = GFX_decision_eaf
+		state_target = yes
+		on_map_mode = map_only
+		fire_only_once = yes
 
-		visible = {
-			has_completed_focus = TZN_cease_oromia
-			ETH = {
-				exists = yes
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				OWNER = {
+					OR = {
+						tag = MRT
+						tag = LIB
+						tag = IVO
+						tag = GHA
+						tag = VOL
+						tag = DAH
+						tag = NGA
+						tag = GAB
+						tag = CMR
+						tag = CAR
+						tag = CHA
+					}
+				}
 			}
 		}
 
-		available = {
+		visible = {
+			has_completed_focus = TZN_west_african_interventionism
 			NOT = {
-				has_idea = tzn_integrate_ethiopia_cooldown
-			}
-		}
-
-		complete_effect = {
-			ETH = {
-				country_event = eth.1
-			}
-			add_timed_idea = {
-				idea = tzn_integrate_ethiopia_cooldown
-				days = 160
-			}
-		}
-	}
-
-	TZN_declare_war_oromia = {
-		allowed = {
-			tag = TZN
-
-		}
-
-		visible = {
-			has_completed_focus = TZN_cease_oromia
-			ORO = {
-				exists = yes
+				has_global_flag = TZN_united_africa
 			}
 		}
 
 		complete_effect = {
 			declare_war_on = {
-				target = ORO
+				target = FROM.OWNER
 				type = annex_puppet_wargoal
 			}
 		}
-	}
 
-	TZN_declare_war_egypt = {
-		allowed = {
-			tag = TZN
-
-		}
-
-		visible = {
-			has_completed_focus = TZN_aid_the_sudanese_revolution
-			EGY = {
-				exists = yes
-			}
-		}
-
-		complete_effect = {
-			declare_war_on = {
-				target = EGY
-				type = annex_puppet_wargoal
-			}
-		}
-	}
-
-	TZN_declare_war_sudan = {
-		allowed = {
-			tag = TZN
-
-		}
-
-		visible = {
-			has_completed_focus = TZN_cease_oromia
-			SUD = {
-				exists = yes
-			}
-		}
-
-		complete_effect = {
-			declare_war_on = {
-				target = SUD
-				type = annex_puppet_wargoal
-			}
-		}
-	}
-
-	TZN_integrate_south_sudan = {
-		allowed = {
-			tag = TZN
-		}
-
-		visible = {
-			has_completed_focus = TZN_cease_oromia
-			SIE = {
-				exists = yes
-			}
-		}
-
-		available = {
-			NOT = {
-				has_idea = tzn_integrate_south_sudan_cooldown
-			}
-		}
-
-		complete_effect = {
-			SIE = {
-				country_event = sie.1
-			}
-			add_timed_idea = {
-				idea = tzn_integrate_south_sudan_cooldown
-				days = 160
-			}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 }
