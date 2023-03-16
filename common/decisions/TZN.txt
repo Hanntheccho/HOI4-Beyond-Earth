@@ -85,7 +85,7 @@ TZN_decisions = {
 		}
 	}
 
-	TZN_invite_nation = {
+	TZN_invite_nation_america = {
 		icon = GFX_decision_eaf
 		state_target = yes
 		on_map_mode = map_only
@@ -93,66 +93,150 @@ TZN_decisions = {
 			is_puppet = no
 		}
 		visible = {
-			#
+			has_completed_focus = TZN_over_the_atlantic
 		}
 		target_trigger = {
 			FROM = {
 				is_capital = yes
 				OWNER = {
-					if = {
-						limit = {
-							ROOT = {
-								has_completed_focus = TZN_over_the_atlantic
-							}
-						}
-						is_in_faction = no
-						capital_scope = {
-							is_on_continent = south_america
-						}
+					is_in_faction = no
+					capital_scope = {
+						is_on_continent = south_america
 					}
-					if = {
-						limit = {
-							ROOT = {
-								has_completed_focus = TZN_compete_with_europe
-							}
-						}
-						is_in_faction = no
-						capital_scope = {
-							is_on_continent = europe
-						}
-					}
-					if = {
-						limit = {
-							ROOT = {
-								has_completed_focus = TZN_assign_indian_priorities
-							}
-						}
-						is_in_faction = no
+					NOT = {
 						OR = {
-							is_india_tag = yes
-							tag = BHR
-							tag = KAV
-						}
+							is_puppet_of = ROOT
+							has_war_with = ROOT
+							is_in_faction_with = ROOT
+						}					
+					}
+				}
+			}
+		}
+		fire_only_once = no
+		days_remove = 30
+		cost = 50
+		remove_effect = {
+			FROM.OWNER = {
+				country_event = tzn.11
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	TZN_invite_nation_europe = {
+		icon = GFX_decision_eaf
+		state_target = yes
+		on_map_mode = map_only
+		available = {
+			is_puppet = no
+		}
+		visible = {
+			has_completed_focus = TZN_compete_with_europe
+		}
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				OWNER = {
+					is_in_faction = no
+					capital_scope = {
+						is_on_continent = europe
+					}
+					NOT = {
+						OR = {
+							is_puppet_of = ROOT
+							has_war_with = ROOT
+							is_in_faction_with = ROOT
+						}					
+					}
+				}
+			}
+		}
+		fire_only_once = no
+		days_remove = 30
+		cost = 50
+		remove_effect = {
+			FROM.OWNER = {
+				country_event = tzn.11
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	TZN_invite_nation_india = {
+		icon = GFX_decision_eaf
+		state_target = yes
+		on_map_mode = map_only
+		available = {
+			is_puppet = no
+		}
+		visible = {
+			has_completed_focus = TZN_assign_indian_priorities
+		}
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				OWNER = {
+					is_in_faction = no
+					OR = {
+						is_india_tag = yes
+						tag = BHR
+						tag = KAV
 					}					
-					if = {
-						limit = {
-							ROOT = {
-								has_completed_focus = TZN_in_the_land_of_endless_cities
-							}
-						}
+					NOT = {
 						OR = {
-							tag = MRT
-							tag = LIB
-							tag = IVO
-							tag = GHA
-							tag = VOL
-							tag = DAH
-							tag = NGA
-							tag = GAB
-							tag = CMR
-							tag = CAR
-							tag = CHA
-						}
+							is_puppet_of = ROOT
+							has_war_with = ROOT
+							is_in_faction_with = ROOT
+						}					
+					}
+				}
+			}
+		}
+		fire_only_once = no
+		days_remove = 30
+		cost = 50
+		remove_effect = {
+			FROM.OWNER = {
+				country_event = tzn.11
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	TZN_invite_nation_west = {
+		icon = GFX_decision_eaf
+		state_target = yes
+		on_map_mode = map_only
+		available = {
+			is_puppet = no
+		}
+		visible = {
+			has_completed_focus = TZN_in_the_land_of_endless_cities
+		}
+		target_trigger = {
+			FROM = {
+				is_capital = yes
+				OWNER = {
+					#is_in_faction = no
+					OR = {
+						tag = MRT
+						tag = LIB
+						tag = IVO
+						tag = GHA
+						tag = VOL
+						tag = DAH
+						tag = NGA
+						tag = GAB
+						tag = CMR
+						tag = CAR
+						tag = CHA
 					}
 					NOT = {
 						OR = {
@@ -202,11 +286,16 @@ TZN_decisions = {
 		complete_effect = {
 			declare_war_on = {
 				target = GNA
+				type = annex_puppet_wargoal
 			}
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				has_war = yes
+				add = -100
+			}
 		}
 	}
 
@@ -235,11 +324,16 @@ TZN_decisions = {
 		complete_effect = {
 			declare_war_on = {
 				target = TOG
+				type = annex_puppet_wargoal
 			}
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				has_war = yes
+				add = -100
+			}
 		}
 	}
 
@@ -268,11 +362,16 @@ TZN_decisions = {
 		complete_effect = {
 			declare_war_on = {
 				target = RWA
+				type = annex_puppet_wargoal
 			}
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				has_war = yes
+				add = -100
+			}
 		}
 	}
 
@@ -301,11 +400,16 @@ TZN_decisions = {
 		complete_effect = {
 			declare_war_on = {
 				target = BRD
+				type = annex_puppet_wargoal
 			}
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				has_war = yes
+				add = -100
+			}
 		}
 	}
 
@@ -334,11 +438,16 @@ TZN_decisions = {
 		complete_effect = {
 			declare_war_on = {
 				target = MLW
+				type = annex_puppet_wargoal
 			}
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				has_war = yes
+				add = -100
+			}
 		}
 	}
 
@@ -367,11 +476,16 @@ TZN_decisions = {
 		complete_effect = {
 			declare_war_on = {
 				target = MLI
+				type = annex_puppet_wargoal
 			}
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				has_war = yes
+				add = -100
+			}
 		}
 	}
 
@@ -400,11 +514,16 @@ TZN_decisions = {
 		complete_effect = {
 			declare_war_on = {
 				target = TUN
+				type = annex_puppet_wargoal
 			}
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				has_war = yes
+				add = -100
+			}
 		}
 	}
 
@@ -433,11 +552,16 @@ TZN_decisions = {
 		complete_effect = {
 			declare_war_on = {
 				target = EQG
+				type = annex_puppet_wargoal
 			}
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				has_war = yes
+				add = -100
+			}
 		}
 	}
 
@@ -484,6 +608,10 @@ TZN_decisions = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				has_war = yes
+				add = -100
+			}
 		}
 	}
 }
