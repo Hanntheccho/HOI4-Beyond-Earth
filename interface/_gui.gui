@@ -98,8 +98,30 @@ guiTypes = {
 ###############################
 
 	containerWindowType = {
+		name ="diplo_options_pol"
+		position = { x=45 y =85}			
+		size = { width=90 height=200}
+		clipping = no
+
+		buttonType = {
+			name = "end_puppet_button"
+			position = { x=0 y =50}
+			quadTextureSprite ="GFX_global_alert_icons"
+			frame = 31
+			pdx_tooltip = "end_puppet_button_tt"
+		}
+		buttonType = {
+			name = "_button"
+			position = { x=0 y =100}
+			quadTextureSprite ="GFX_global_alert_icons"
+			frame = 36
+			#pdx_tooltip = 
+		}
+	}
+
+	containerWindowType = {
 		name ="diplo_options"
-		position = { x=140 y =80}			
+		position = { x=45 y =85}			
 		size = { width=90 height=200}
 		clipping = no
 
@@ -127,35 +149,8 @@ guiTypes = {
 	}
 
 ###############################
-#### FOCUS TOOLTIP AND BG #####
+########### FOCUS BG ##########
 ###############################
-
-	containerWindowType = {
-		name ="focus_tooltip"
-		position = { x=0 y =0}			
-		size = { width=450 height=40}
-		clipping = no
-
-		background = {
-			name = "background"
-			quadTextureSprite = "GFX_tiled_black"
-			position = {
-				x = 31
-				y = 31
-			}
-		}
-
-		instantTextBoxType = {
-			name = "open_focus_title"
-			position = { x = 45 y = 42 }
-			textureFile = ""
-			font = "Arialsmallest"
-			borderSize = {x = 0 y = 0}
-			text = "/> press F to_open FOCUS_TREE in the POLITICAL_TAB .data/>>."
-			maxWidth = 470
-			maxHeight = 100
-		}
-	}
 
 	#ONU
 	containerWindowType = {
@@ -359,9 +354,9 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "another_bg1"
-			size = { width = 330 height = 202 }
+			size = { width = 390 height = 202 }
 			position = {
-				x = -140
+				x = -200
 				y = -89
 			}
 
@@ -372,9 +367,61 @@ guiTypes = {
 			}
 		}
 
+		iconType ={
+			name ="icon_list"
+			spriteType = "GFX_party_icons_list"
+			position = { x= -228 y = -88 }
+			alwaystransparent = yes
+		}
+
+		#
+		iconType = {
+			name = "leading_pol_party_bg_harmony"
+			position = { x= -228 y = -88 }
+			spriteType = "GFX_leading_pol_party_bg"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "leading_pol_party_bg_supremacy"
+			position = { x= -228 y = -58 }
+			spriteType = "GFX_leading_pol_party_bg"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "leading_pol_party_bg_purity"
+			position = { x= -228 y = -28 }
+			spriteType = "GFX_leading_pol_party_bg"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "leading_pol_party_bg_neutral"
+			position = { x= -228 y = 2 }
+			spriteType = "GFX_leading_pol_party_bg"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "leading_pol_party_bg_divinity"
+			position = { x= -228 y = 32 }
+			spriteType = "GFX_leading_pol_party_bg"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "leading_pol_party_bg_synergy"
+			position = { x= -228 y = 62 }
+			spriteType = "GFX_leading_pol_party_bg"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "leading_pol_party_bg_mastery"
+			position = { x= -228 y = 92 }
+			spriteType = "GFX_leading_pol_party_bg"
+			alwaystransparent = yes
+		}
+		#
+
 		instantTextboxType = {
 			name = "leader_name"
-			position = { x = -128 y = -77 }
+			position = { x = -185 y = -76 }
 			font = "Arialsmallest"
 			text = "leader_name"
 			maxWidth = 305
@@ -384,13 +431,14 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "leader_desc"
-			position = { x = -121 y = -48 }
+			position = { x = -181 y = -53 }
 			font = "Arial16"
 			text = "leader_desc"
-			maxWidth = 285
-			maxHeight = 149
+			maxWidth = 345
+			maxHeight = 159
 			scrollbartype = "standardtext_slider"
 			alwaystransparent = yes
+			borderSize = { x = 0 y = 5 }
 		}
 	}
 	
@@ -399,7 +447,6 @@ guiTypes = {
 		name = "extra_political_stuff"
 		position = { x = 0 y = 0 }
 		size = { width=100%% height=100%%  }
-		#verticalScrollbar = "right_vertical_slider"
 		clipping = yes
 		scroll_wheel_factor = 50
 		smooth_scrolling = yes
@@ -414,9 +461,23 @@ guiTypes = {
 			name = "actual_window"
 			position = { x = -300 y = 344 }
 			show_position = { x = 25 y = 344 }
+			size = { width=100%% height=610 }
 			show_animation_type = decelerated
 			hide_animation_type = accelerated
 			animation_time = 300	
+			verticalScrollbar = "right_vertical_slider"
+
+			background = {
+				name = "bgbg"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+			}
+
+			iconType ={
+				name ="dummy"
+				spriteType = "GFX_st_button"
+				position = { x= 0 y = 580 }
+				alwaystransparent = yes
+			}
 
 			containerWindowType = {
 				name = "development_system_win"
@@ -777,12 +838,33 @@ guiTypes = {
 	}
 
 ###############################
+######## LOGISTICS INFO #######
+###############################
+
+	containerWindowType = {
+		name = "logistics_container"
+		position = { x = 426 y = 4 }
+	
+		instantTextBoxType = {
+			name ="logistics_text"
+			position = { x= 8 y = 6 }
+			font = "Focusfont"
+			text = "logistics_amount"
+			format = right
+			maxWidth = 90
+			maxHeight = 24
+			pdx_tooltip = "logistics_amount_tt"
+			pdx_tooltip_delayed = "logistics_amount_tt_delayed"
+		}
+	}
+
+###############################
 #### INDUSTRIAL POWER INFO ####
 ###############################
 
 	containerWindowType = {
 		name = "industrial_power_container"
-		position = { x = 426 y = 4 }
+		position = { x = 536 y = 4 }
 	
 		instantTextBoxType = {
 			name ="industrial_power_text"

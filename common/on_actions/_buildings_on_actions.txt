@@ -421,12 +421,15 @@ on_actions = {
             set_variable = { num_military_complex = 0 }
             set_variable = { num_heavy_military_complex = 0 }
             every_controlled_state = {
-                add_to_variable = { 
-                    PREV.num_military_complex = building_level@military_complex 
-                }
+                #add_to_variable = { 
+                #    PREV.num_military_complex = building_level@military_complex 
+                #}
                 add_to_variable = { 
                     PREV.num_heavy_military_complex = building_level@heavy_military_complex 
                 }
+            }
+            add_to_variable = { 
+                PREV.num_military_complex = num_of_military_factories
             }
             #
             if = {
@@ -496,6 +499,15 @@ on_actions = {
                     type = heavy_equipment_1
                     amount = num_heavy_military_complex
                 }
+            }
+            set_variable = {
+                total_stockpile = 0
+            }
+            add_to_variable = {
+                total_stockpile = num_equipment@light_equipment_1
+            }
+            add_to_variable = {
+                total_stockpile = num_equipment@heavy_equipment_1
             }
         }
     }

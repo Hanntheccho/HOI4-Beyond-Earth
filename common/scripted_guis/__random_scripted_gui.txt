@@ -26,6 +26,42 @@ scripted_gui = {
         }
     }
 ####
+	diplo_options_pol_gui = {
+		context_type = player_context
+		parent_window_token = politics_tab
+
+		window_name = "diplo_options_pol"
+
+		visible = {
+			always = yes
+		}
+
+		effects = {
+			end_puppet_button_click = {
+				ROOT = {
+					declare_war_on = {
+						target = OVERLORD
+						type = annex_puppet_wargoal
+					}
+				}				
+			}
+		}
+
+		triggers = {
+			end_puppet_button_click_enabled = {
+				ROOT = {
+					is_puppet = yes
+				}
+			}
+			_button_click_enabled = {
+				always = no
+			}
+		}
+
+		ai_enabled = {
+			always = no
+		}
+	} 
 	diplo_options_gui = {
 		context_type = selected_country_context
 		parent_window_token = selected_country_view_diplomacy
@@ -113,21 +149,6 @@ scripted_gui = {
         }
     } 
 #######################
-	focus_tooltip_gui = {
-		context_type = player_context
-		parent_window_name = "zoom_slider_container"
-		
-		window_name = "focus_tooltip"
-
-        visible = {
-			always = yes
-        }
-
-        ai_enabled = {
-            always = no
-        }
-    } 
-	###
 	ONU_focus_details_gui = {
 		context_type = player_context
 		parent_window_name = "zoom_slider_container"
@@ -222,7 +243,32 @@ scripted_gui = {
 		}
 
 		triggers = {
-            #
+			icon_list_visible = {
+				always = no
+			}
+			#
+			leading_pol_party_bg_harmony_visible = {
+				always = no
+			}
+			leading_pol_party_bg_supremacy_visible = {
+				always = no
+			}
+			leading_pol_party_bg_purity_visible = {
+				always = no
+			}
+			leading_pol_party_bg_neutral_visible = {
+				always = no
+			}
+			leading_pol_party_bg_divinity_visible = {
+				always = no
+			}
+			leading_pol_party_bg_synergy_visible = {
+				always = no
+			}
+			leading_pol_party_bg_mastery_visible = {
+				always = no
+			}
+			#
 		}
 	}
 	ideology_info_entry_diplo_gui = {
@@ -241,6 +287,28 @@ scripted_gui = {
 
 		triggers = {
             #
+			leading_pol_party_bg_harmony_visible = {
+				has_government = harmony
+			}
+			leading_pol_party_bg_supremacy_visible = {
+				has_government = supremacy
+			}
+			leading_pol_party_bg_purity_visible = {
+				has_government = purity
+			}
+			leading_pol_party_bg_neutral_visible = {
+				has_government = neutral
+			}
+			leading_pol_party_bg_divinity_visible = {
+				has_government = divinity
+			}
+			leading_pol_party_bg_synergy_visible = {
+				has_government = synergy
+			}
+			leading_pol_party_bg_mastery_visible = {
+				has_government = mastery
+			}
+			#
 		}
 	}
     ###
@@ -478,6 +546,25 @@ scripted_gui = {
 			trade1_visible = {
 				has_idea = closed_economy
 			}
+		}
+	}
+
+	industrial_power_gui = {
+		context_type = player_context
+		parent_window_name = topbar
+		
+		window_name = "logistics_container"
+		
+		visible = {
+            always = yes
+		}
+
+        ai_enabled = {
+            always = no
+        }
+		
+		effects = {
+			#
 		}
 	}
 
