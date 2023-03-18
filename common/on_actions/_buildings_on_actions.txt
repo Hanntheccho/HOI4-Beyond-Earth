@@ -572,22 +572,42 @@ on_actions = {
                         PREV.num_air_complex_with_heavy_military_complex = 1
                     }
                 }
-                add_equipment_to_stockpile = {
-                    type = drone_equipment_1
-                    amount = num_air_complex
+                if = {
+                    limit = {
+                        has_tech = drone_swarms
+                    }
+                    add_equipment_to_stockpile = {
+                        type = drone_equipment_1
+                        amount = num_air_complex
+                    }
                 }
-                add_equipment_to_stockpile = {
-                    type = fighter_equipment_01
-                    amount = num_air_complex_with_military_complex
+                if = {
+                    limit = {
+                        has_tech = airframe
+                    }
+                    add_equipment_to_stockpile = {
+                        type = fighter_equipment_01
+                        amount = num_air_complex_with_military_complex
+                    }
                 }
-                add_equipment_to_stockpile = {
-                    type = cas_equipment_1
-                    amount = num_air_complex_with_military_complex
+                if = {
+                    limit = {
+                        has_tech = cas_tech
+                    }
+                    add_equipment_to_stockpile = {
+                        type = cas_equipment_1
+                        amount = num_air_complex_with_military_complex
+                    }
                 }
-                add_equipment_to_stockpile = {
-                    type = tac_equipment_1
-                    amount = num_air_complex_with_heavy_military_complex
-                }
+                if = {
+                    limit = {
+                        has_tech = tac_tech
+                    }
+                    add_equipment_to_stockpile = {
+                        type = tac_equipment_1
+                        amount = num_air_complex_with_heavy_military_complex
+                    }
+                }              
             }
         }
     }
