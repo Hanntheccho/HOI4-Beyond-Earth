@@ -14,15 +14,15 @@
 ###############################
 
  logistics_amount: "[?total_stockpile|0]"
- logistics_amount_tt: "§HMateriel§!\nYou have §O[?total_stockpile]§! total materiel in stockpile.\n\nLight Military Equipment £light_equipment_icon  §Y[?num_equipment@light_equipment_1]§! - §Y[?num_military_complex]§! u./day\nHeavy Military Equipment £heavy_equipment_icon  §Y[?num_equipment@heavy_equipment_1]§! - §Y[?num_heavy_military_complex]§! u./day"
- logistics_amount_tt_delayed: "Military materiel is provided by Military Complexes and Advanced Military Complexes."
+ logistics_amount_tt: "§HMateriel§!\nYou have £light_equipment_icon  §Y[?num_equipment@light_equipment_1]§! §HLight Military Equipment§! and £heavy_equipment_icon  §Y[?num_equipment@heavy_equipment_1]§! §HHeavy Military Equipment§!\nYour current daily gain is £light_equipment_icon  §Y[?num_military_complex|2=+]§! and £heavy_equipment_icon  §Y[?num_heavy_military_complex|2=+]§! per day."
+ logistics_amount_tt_delayed: "Military equipment - or materiel - is provided by Military Complexes and Advanced Military Complexes."
 
 ###############################
 ####### INDUSTRIAL POWER ######
 ###############################
 
  industrial_power: "[?industrial_power|0]"
- industrial_power_tt: "§HIndustrial Power§!\nYou have £industrial_power  §O[?industrial_power]§! §HIndustrial Power§!\nYour current daily gain is [?industrial_power_gain|2=+] per day.\n\nFrom Civilian Complexes: §Y[?industrial_power_civilian_factories]§!\nFrom Military Complexes: §Y[?industrial_power_military_factories]§!\nFrom Spaceship Complexes: §Y[?industrial_power_spaceship_factories]§!"
+ industrial_power_tt: "§HIndustrial Power§!\nYou have £industrial_power  §O[?industrial_power]§! §HIndustrial Power§!\nYour current daily gain is [?industrial_power_gain|2=+] per day.\n--------------\nFrom Civilian Complexes: §Y[?industrial_power_civilian_factories]§!\nFrom Military Complexes: §Y[?industrial_power_military_factories]§!\nFrom Spaceship Complexes: §Y[?industrial_power_spaceship_factories]§!"
  industrial_power_tt_delayed: "Industrial Power represents the country's leaders' ability to command the development of the state."
 
  add_100_industrial_power: "Industrial Power: §G+100§!"
@@ -71,6 +71,12 @@
  free_factory_progress: "§G[?free_factory_progress|0]%§!"
  free_factory_progress_text: "/> load.build! /> load>load.free:factory_tooltip_here> .shared.no\n/> no.check.next\n/> load.resource:stockpile | low:default_risk! />..."
  free_factory_progress_text_small: "/> free_factory_progress?...§G[?free_factory_progress|0]%§!..."
+ available_energy: "£resources_strip|1  [?resource@energy]"
+ available_polymers: "£resources_strip|2  [?resource@polymers]"
+ available_lithium: "£resources_strip|3  [?resource@lithium]"
+ available_electronics: "£resources_strip|4  [?resource@electronics]"
+ available_superalloys: "£resources_strip|5  [?resource@superalloys]"
+ available_superconductors: "£resources_strip|6  [?resource@superconductors]"
 
  free_factory_time: "§HFree Factory Progress§!\n§LAll nations can benefit from their inheret, natural growth, as long as they let their members to make appropiate investments.§!\n\n/>...§G[?free_factory_progress]%§!\n/> base_gain...§O[?free_factory_base_gain]%§!\n/> daily_gain...§O[?free_factory_gain]%§!\n/> total_adjustment...§O[?free_factory_adjustment|%]§!\n/> buildings_total...§O[?free_factory_counter]§!\n\n§H[GETeconomic_system]§!\n[GETeconomic_system_effects].\n\n§RResource deficit will cause §OHigh Default Risk§!, reducing general building speed and preventing other investments.§!"
 
@@ -289,7 +295,7 @@
 
  #GLOBAL STAGE
  global_stage: "Global Powerhouse"
- global_stage_effects: "Research Speed: §G+25.00%§!\nBase Stability: §G+20.00%§!\n§Y10%§! §HIndustrial Power§! Daily Gain\n§Y0.2§! Free Factory Base Rate"
+ global_stage_effects: "Research Speed: §G+30.00%§!\nBase Stability: §G+20.00%§!\n§Y10%§! §HIndustrial Power§! Daily Gain\n§Y0.2§! Free Factory Base Rate"
 
  05_free_factory_base_rate: "§Y0.4§! Free Factory Base Rate"
  08_free_factory_base_rate: "§Y0.8§! Free Factory Base Rate"

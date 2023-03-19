@@ -48,6 +48,21 @@ on_actions = {
             }
         }
     }
+    on_startup = { #this is just to avoid the available mil factories alert
+        effect = {
+            every_country = {
+                limit = {
+                    is_ai = no
+                }
+                add_equipment_production = {
+                    equipment = {
+                        type = dummy_eq_2
+                    }
+                    requested_factories = 200 #?
+                }
+            }
+        }
+    }
     on_weekly_ADU = {
         effect = {
             every_country = {
