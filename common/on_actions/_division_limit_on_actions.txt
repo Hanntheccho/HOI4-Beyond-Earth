@@ -58,12 +58,26 @@ on_actions = {
             #
             if = {
                 limit = {
-                    has_dynamic_modifier = {
-                        modifier = benevolence_tier3_modifier
-                    }
+                    has_idea = all_adults_serve
                 }
                 multiply_variable = { division_limit = 1.2 }
             }
+            else_if = {
+                limit = {
+                    has_idea = service_by_requirement
+                }
+                multiply_variable = { division_limit = 1.1 }
+            }
+            else_if = {
+                limit = {
+                    has_idea = limited_conscription
+                }
+                multiply_variable = { division_limit = 0.9 }
+            }
+            else = {
+                #
+            }
+            #
             if = {
                 limit = {
                     has_dynamic_modifier = {
