@@ -2,6 +2,27 @@ on_actions = {
     on_startup = {
         effect = {
             every_country = {
+                add_manpower = 1000000
+            }
+        }
+    }
+    on_weekly = {
+        effect = { # manpower is irrelevant, division limit is now the ruling variable
+            if = {
+                limit = {
+                    has_manpower < 1000000
+                }
+                add_manpower = 1000000 # is capped at 1 million
+            }
+            else = {
+                #
+            }           
+        }
+    }
+    ###
+    on_startup = {
+        effect = {
+            every_country = {
                 set_variable = { division_limit = num_of_military_factories }
                 set_variable = { 
                     division_limit_heavy_arms_factories = 0 
@@ -34,6 +55,48 @@ on_actions = {
                 division_limit = division_limit_heavy_arms_factories
             }
             multiply_variable = { division_limit = 2 }
+            #
+            if = {
+                limit = {
+                    has_dynamic_modifier = {
+                        modifier = benevolence_tier3_modifier
+                    }
+                }
+                multiply_variable = { division_limit = 1.2 }
+            }
+            if = {
+                limit = {
+                    has_dynamic_modifier = {
+                        modifier = benevolence_tier3_modifier
+                    }
+                }
+                multiply_variable = { division_limit = 1.2 }
+            }
+            if = {
+                limit = {
+                    has_idea = autocratic_authority
+                }
+                multiply_variable = { division_limit = 1.1 }
+            }
+            if = {
+                limit = {
+                    has_idea = ENG_civil_war_recovery
+                }
+                multiply_variable = { division_limit = 0.5 }
+            }
+            if = {
+                limit = {
+                    has_idea = SOV_centralized_military
+                }
+                multiply_variable = { division_limit = 1.05 }
+            }
+            if = {
+                limit = {
+                    has_idea = TZN_army_of_the_people
+                }
+                multiply_variable = { division_limit = 1.25 }
+            }
+            #
             round_variable = division_limit
             clamp_variable = { var = division_limit min = 0 max = 250 }
             if = {
