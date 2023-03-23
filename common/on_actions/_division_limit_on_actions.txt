@@ -2,27 +2,6 @@ on_actions = {
     on_startup = {
         effect = {
             every_country = {
-                add_manpower = 1000000
-            }
-        }
-    }
-    on_weekly = {
-        effect = { # manpower is irrelevant, division limit is now the ruling variable
-            if = {
-                limit = {
-                    has_manpower < 1000000
-                }
-                add_manpower = 1000000 # is capped at 1 million
-            }
-            else = {
-                #
-            }           
-        }
-    }
-    ###
-    on_startup = {
-        effect = {
-            every_country = {
                 set_variable = { division_limit = num_of_military_factories }
                 set_variable = { 
                     division_limit_heavy_arms_factories = 0 
