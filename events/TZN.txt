@@ -293,6 +293,57 @@ country_event = { ##Send faction invite
 		TZN = {
 			add_to_faction = ROOT
 		}
+		if = {
+			limit = {
+				tag = ORO
+				TZN = {
+					has_war_with = ETH
+				}
+			}
+			declare_war_on = {
+				target = ETH
+				type = annex_puppet_wargoal
+			}
+		}
+		else_if = {
+			limit = {
+				tag = ETH
+				TZN = {
+					has_war_with = ORO
+				}
+			}
+			declare_war_on = {
+				target = ORO
+				type = annex_puppet_wargoal
+			}
+		}
+		else_if = {
+			limit = {
+				tag = SIE
+				TZN = {
+					has_war_with = NUE
+				}
+			}
+			declare_war_on = {
+				target = NUE
+				type = annex_puppet_wargoal
+			}
+		}
+		else_if = {
+			limit = {
+				tag = NUE
+				TZN = {
+					has_war_with = SIE
+				}
+			}
+			declare_war_on = {
+				target = SIE
+				type = annex_puppet_wargoal
+			}
+		}
+		else = {
+			#
+		}
 		ai_chance = {
 			factor = 1
 			modifier = {

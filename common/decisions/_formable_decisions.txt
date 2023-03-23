@@ -757,6 +757,17 @@ formable_decisions = {
 		icon = GFX_decision_unity
 		available = {
 			has_completed_focus = TZN_war_of_national_unification
+			NOT = {
+				any_country = {
+					NOT = {
+						tag = TZN
+					}
+					capital_scope = {
+						is_on_continent = africa
+					}					
+					is_faction_leader = yes
+				}
+			}
 		}
 		visible = {
 			tag = TZN

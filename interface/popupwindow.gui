@@ -724,12 +724,12 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "research_finished_popup_window"
-		position = { x = 10000 y = 100 } # x = -475
+		position = { x = -475 y = 320 }
 		size = { width = 460 height = 95 }
 		moveable = yes
 		fade_time = 200
 		fade_type = linear
-		#show_sound = diplomatic_notification
+		#show_sound = diplomatic_notification #peace_summary_message
 		hide_sound = menu_close_window
 		click_to_front = yes
 		clipping = no
@@ -764,7 +764,7 @@ guiTypes = {
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
-			text = "/> research_finished!_load:gui true >..."
+			text = "▀▀▀  {RESEARCH_COMPLETED}  ▀▀ ▀▀▀▀  {LOAD.GUI}  ▀▀ ▀"
 			format = left
 			maxWidth = 400
 			maxHeight = 24
@@ -785,8 +785,21 @@ guiTypes = {
 		}
 
 		instantTextBoxType = {
-			name = "tech_name"
+			name = "tech_name_ok"
 			position = { x = 42 y = 47 }
+			textureFile = ""
+			font = "Arialsmallest"
+			borderSize = {x = 0 y = 0}
+			text = "We finished researching "	
+			maxWidth = 380
+			maxHeight = 15
+			format = left
+			fixedsize = yes
+		}	
+
+		instantTextBoxType = {
+			name = "tech_name"
+			position = { x = 202 y = 47 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
@@ -1633,9 +1646,8 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "focus_finished_popup_window"
-		position = { x = -225 y = -160 }
-		size = { width = 500 height = 260 }
-		orientation= center
+		position = { x = -475 y = 430 }
+		size = { width = 460 height = 95 }
 		moveable = yes
 		fade_time = 200
 		fade_type = linear
@@ -1643,32 +1655,16 @@ guiTypes = {
 		hide_sound = menu_close_window
 		click_to_front = yes
 		clipping = no
-
-		background = {
-			name = "Background"
-			quadTextureSprite ="GFX_tiled_tooltip"
-			position = {
-				x = -30
-				y = -20
-			}
-		}
-		background = {
-			name = "Background"
-			quadTextureSprite ="GFX_tiled_tooltip"
-			position = {
-				x = 10
-				y = 10
-			}
-		}
+		orientation = UPPER_RIGHT
 
 		background = {
 			name = "Background"	
-			quadTextureSprite ="GFX_tiled_bg_black"
+			quadTextureSprite ="GFX_tiled_black"
 		}
 		
 		instantTextBoxType = {
 			name = "title"
-			position = { x = 17 y = 10 } #position = { x = 20 y = 10 }
+			position = { x = 10000 y = 10 }
 			textureFile = ""
 			font = "Beyond"
 			borderSize = {x = 0 y = 0}
@@ -1679,37 +1675,62 @@ guiTypes = {
 			#fixedsize = yes
 		}
 
-		containerWindowType = {
-			name = "Background_3"
-			size = { width = 494 height = 254 }
+		instantTextBoxType = {
+			name = "title_extra"
+			position = { x = 27 y = 20 }
+			textureFile = ""
+			font = "Arialsmallest"
+			borderSize = {x = 0 y = 0}
+			text = "▀▀▀  {FOCUS_COMPLETED}  ▀▀ ▀▀▀▀▀▀▀  {LOAD.GUI}  ▀ ▀"	
+			format = left
+			maxWidth = 400
+			maxHeight = 24
+		}
 
+		containerWindowType = {
+			name = "bg"
+			size = { width = 430 height = 75 }
+			position = {
+				x = 10
+				y = 10
+			}
 			background = {
-				name = "Background"
-				quadTextureSprite = "GFX_tiled_bg_alpha"
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_black"
 				alwaystransparent = yes
-				position = {
-					x = 3
-					y = 3
-				}
 			}
 		}
 
 		instantTextBoxType = {
+			name = "focus_name_ok"
+			position = { x = 42 y = 47 }
+			textureFile = ""
+			font = "Arialsmallest"
+			borderSize = {x = 0 y = 0}
+			text = "We finished the focus"	
+			maxWidth = 380
+			maxHeight = 15
+			format = left
+			fixedsize = yes
+		}	
+
+		instantTextBoxType = {
 			name = "focus_name"
-			position = { x = 70 y = 125 }
-			font = "Beyond"
+			position = { x = 184 y = 47 }
+			textureFile = ""
+			font = "Arialsmallest"
+			borderSize = {x = 0 y = 0}
 			text = "Focus name"	
-			maxWidth = 410
-			maxHeight = 120
-			format = right
-			vertical_alignment = bottom
+			maxWidth = 380
+			maxHeight = 15
+			format = left
 			fixedsize = yes
 		}
 		
 		iconType = {
 			name = "symbol"
 			quadTextureSprite ="GFX_goal_unknown"
-			position = { x= 250 y = 130 } #130
+			position = { x= 10000 y = 130 }
 			centerposition = yes
 		}		
 		
@@ -1724,7 +1745,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "ok_button"
-			position = { x=438 y =-36}
+			position = { x=10000 y =-36}
 			quadTextureSprite ="GFX_exit_button"
 			shortcut = "RETURN"
 			clicksound = click_ok
