@@ -290,8 +290,21 @@ guiTypes = {
 		name = "event_header"
 		position = {x=10 y=0}
 		Orientation = upper_left
-		size = {width=3 height=25} #40
+		size = {width=486 height=65} #40
 		clipping = no
+
+		containerWindowType = {
+			name = "bg"
+			size = {
+				width = 100%%
+				height = 100%%
+			}
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_black"
+				alwaystransparent = yes
+			}
+		}
 
 		buttonType = {
 			name = "icon_header_bg"
@@ -302,9 +315,18 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "title"
-			position = { x = -4 y = 6 }
+			position = { x = 15 y = 10 }
 			font = "Arialsmallest"
-			text = "Do you want to enable popups?            News Events           Country Events"
+			text = "▀ ▀  [POPUPS?]  ▀▀▀          [NEWS_EVENT]          [COUNTRY_EVENT]"
+			maxWidth = 490
+			maxHeight = 20
+		}
+
+		instantTextboxType = {
+			name = "title_tip"
+			position = { x = 15 y = 37 }
+			font = "Arialsmallest"
+			text = "decisions_title_tip"
 			maxWidth = 490
 			maxHeight = 20
 		}
@@ -327,8 +349,7 @@ guiTypes = {
 		#Grouped text and checkbox for easier positioning
 		containerWindowType = {
 			name = "event_checkbox_window"
-			position = {x=330 y=0}
-			Orientation = upper_right
+			position = {x=304 y=5}
 
 			checkBoxType = {
 				name = "popup_events_checkbox"
@@ -343,8 +364,7 @@ guiTypes = {
 		#Grouped text and checkbox for easier positioning
 		containerWindowType = {
 			name = "news_checkbox_window"
-			position = {x=204 y=0}
-			Orientation = upper_right
+			position = {x=161 y=5}
 
 			checkBoxType = {
 				name = "popup_news_checkbox"

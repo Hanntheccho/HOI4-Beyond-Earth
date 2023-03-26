@@ -14,7 +14,7 @@ on_actions = {
                 add_to_variable = {
                     division_limit = division_limit_heavy_arms_factories
                 }
-                multiply_variable = { division_limit = 2 }                     
+                multiply_variable = { division_limit = 20 }                     
             }
         }
     }
@@ -33,7 +33,7 @@ on_actions = {
             add_to_variable = {
                 division_limit = division_limit_heavy_arms_factories
             }
-            multiply_variable = { division_limit = 2 }
+            multiply_variable = { division_limit = 20 }
             #
             if = {
                 limit = {
@@ -89,14 +89,14 @@ on_actions = {
             }
             #
             round_variable = division_limit
-            clamp_variable = { var = division_limit min = 0 max = 250 }
+            clamp_variable = { var = division_limit min = 0 max = 2500 }
             if = {
                 limit = {
-                    check_variable = { num_divisions > division_limit }
+                    check_variable = { num_battalions > division_limit }
                 }
                 clear_variable = too_many_divs_var
             	set_variable = { too_many_divs_var = division_limit }
-            	divide_variable = { too_many_divs_var = num_divisions }
+            	divide_variable = { too_many_divs_var = num_battalions }
                 multiply_variable = { too_many_divs_var = -1 }
                 add_to_variable = { too_many_divs_var = 1 }
                 multiply_variable = { too_many_divs_var = -1 }
