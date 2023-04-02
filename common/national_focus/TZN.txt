@@ -1965,7 +1965,10 @@
 		 
 		prerequisite = { 
 			focus = TZN_reign_in_the_warlords
-			focus = TZN_restart_the_proxy_war
+		}
+
+		available = {
+			has_war = no
 		}
 
 		completion_reward = {
@@ -1994,7 +1997,66 @@
 					add_core_of = TZN
 				}
 			}
-
+			if = {
+				limit = {
+					GNA = {
+						is_puppet_of = TZN
+					}
+				}
+				TZN = {
+					annex_country = {
+						target = GNA
+					}
+				}
+			}
+			if = {
+				limit = {
+					TOG = {
+						is_puppet_of = TZN
+					}
+				}
+				TZN = {
+					annex_country = {
+						target = TOG
+					}
+				}
+			}
+			if = {
+				limit = {
+					RWA = {
+						is_puppet_of = TZN
+					}
+				}
+				TZN = {
+					annex_country = {
+						target = RWA
+					}
+				}
+			}
+			if = {
+				limit = {
+					BRD = {
+						is_puppet_of = TZN
+					}
+				}
+				TZN = {
+					annex_country = {
+						target = BRD
+					}
+				}
+			}
+			if = {
+				limit = {
+					MLW = {
+						is_puppet_of = TZN
+					}
+				}
+				TZN = {
+					annex_country = {
+						target = MLW
+					}
+				}
+			}
 		}
 		
 		ai_will_do = {
@@ -2013,7 +2075,6 @@
 		relative_position_id = TZN_the_congolese_legacy
 		 
 		prerequisite = { 
-			focus = TZN_reign_in_the_warlords
 			focus = TZN_restart_the_proxy_war
 		}
 		
@@ -2041,6 +2102,7 @@
 		relative_position_id = TZN_the_congolese_legacy
 		 
 		prerequisite = { 
+			focus = TZN_expand_the_union
 			focus = TZN_pan_african_alliance_building
 		}
 		

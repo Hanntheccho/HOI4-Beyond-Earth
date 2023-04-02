@@ -3,12 +3,13 @@ guiTypes = {
 	containerWindowType = {
 		name = "ingamemenu"
 		position = { x = 0 y = 0 }	
-		size = { width = 320 height = 360}
+		size = { width = 320 height = 315}
 		Orientation = center
 		Origo = center		
 		fade_time = 500
 		fade_type = linear
 		show_sound = click_expand
+		clipping = no
 
 		background = {
 			name = "Background"
@@ -22,8 +23,8 @@ guiTypes = {
 			name = "Background"
 			quadTextureSprite ="GFX_tiled_tooltip"
 			position = {
-				x = 30
-				y = 20
+				x = 10
+				y = 10
 			}
 		}
 		
@@ -76,16 +77,27 @@ guiTypes = {
 			name = "menu_wiki_button"
 			position = { x = 16 y = 138}
 			quadTextureSprite ="GFX_main_lobby_button"	
-			buttonText = "MENU_BAR_GAME_WIKI"
+			buttonText = "DISCORD!"
 			buttonFont = "Arial"
 			clicksound = click_default
 			oversound = ui_menu_over
 			web_link = "https://discord.gg/BZsdsKrvFK"
 		}
+
+		buttonType = {
+			name = "menu_survey_button"
+			position = { x = 16 y = 178}
+			quadTextureSprite ="GFX_main_lobby_button"	
+			buttonText = "PLAYTEST SURVEY"
+			buttonFont = "Arial"
+			clicksound = click_default
+			oversound = ui_menu_over
+			web_link = "https://forms.gle/e1NGkChHfQ9eS6rdA"
+		}
 		
 		buttonType = {
 			name = "menu_resign_button"
-			position = { x = 16 y = 178}
+			position = { x = 16 y = 218}
 			quadTextureSprite ="GFX_main_lobby_button"	
 			buttonText = "MENU_BAR_GAME_RESIGN"
 			buttonFont = "Arial"
@@ -95,7 +107,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "menu_quit_button"
-			position = {  x = 16 y = 218 }
+			position = {  x = 16 y = 258 }
 			quadTextureSprite ="GFX_main_lobby_button"	
 			buttonText = "MENU_BAR_QUIT"
 			buttonFont = "Arial"
@@ -105,10 +117,8 @@ guiTypes = {
 				
 		buttonType = {
 			name = "menu_close_button"
-			position = { x = 16 y = 300 }
-			quadTextureSprite ="GFX_main_lobby_button"	
-			buttonFont = "Arial"
-			buttonText = "CLOSE"
+			position = { x = 245 y = -46 }
+			quadTextureSprite ="GFX_exit_button"	
 			shortcut = "ESCAPE"
 			clicksound = click_default
 			oversound = ui_menu_over
@@ -116,7 +126,7 @@ guiTypes = {
 
 		positionType = {
 			name = "playthrough_stats_offset"
-			position = { x = 0 y = 40 }
+			position = { x = 0 y = 0 }
 		}
 		
 		## facebook etc.

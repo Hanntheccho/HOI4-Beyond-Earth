@@ -1,40 +1,4 @@
 scripted_gui = {
-	diplo_options_pol_gui = {
-		context_type = player_context
-		parent_window_token = politics_tab
-
-		window_name = "diplo_options_pol"
-
-		visible = {
-			always = yes
-		}
-
-		effects = {
-			end_puppet_button_click = {
-				ROOT = {
-					declare_war_on = {
-						target = OVERLORD
-						type = annex_puppet_wargoal
-					}
-				}				
-			}
-		}
-
-		triggers = {
-			end_puppet_button_click_enabled = {
-				ROOT = {
-					is_puppet = yes
-				}
-			}
-			_button_click_enabled = {
-				always = no
-			}
-		}
-
-		ai_enabled = {
-			always = no
-		}
-	} 
 	diplo_options_gui = {
 		context_type = selected_country_context
 		parent_window_token = selected_country_view_diplomacy
@@ -522,25 +486,6 @@ scripted_gui = {
 		}
 	}
 
-	logistics_gui = {
-		context_type = player_context
-		parent_window_name = topbar
-		
-		window_name = "logistics_container"
-		
-		visible = {
-            always = yes
-		}
-
-        ai_enabled = {
-            always = no
-        }
-		
-		effects = {
-			#
-		}
-	}
-
 	industrial_power_gui = {
 		context_type = player_context
 		parent_window_name = topbar
@@ -617,12 +562,28 @@ scripted_gui = {
                     set_country_flag = south_pole_moment_flag
                 }
             }
+			help_button_click = {
+				if = {
+					limit = {
+						has_country_flag = scan_mode_on
+					}
+					clr_country_flag = scan_mode_on
+				}
+				else = {
+					set_country_flag = scan_mode_on
+				}
+				clr_country_flag = scan_mode_on_glow
+			}
         }
         
         triggers = {
-#            politics_alert_visible = {
-#                has_global_flag = resolution_proposed
-#            }
+			help_button_glow_visible = {
+				has_country_flag = scan_mode_on_glow
+			}
+			#
+#           politics_alert_visible = {
+#               has_global_flag = resolution_proposed
+#           }
             south_pole_button_click_enabled = {
                 NOT = { has_idea = agrarian_stage }
                 NOT = { has_idea = developing_stage }

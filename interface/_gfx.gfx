@@ -15,6 +15,115 @@ spriteTypes = {
 ###############################
 
 	spriteType = {
+		name = "GFX_help_button_glow"
+		texturefile = "gfx/interface/topbar/button_help.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/topbar/button_help.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 2			# in seconds
+			animationdelay = 1			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}	
+
+	corneredTileSpriteType = {
+		name = "GFX_tiled_scan_mode"
+		size= { x=100 y=100 }
+		textureFile = "gfx/interface/tiles/scan_mode.dds"
+		borderSize = { x=12 y=12 }
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+		alwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_date_pause_button_mod"
+		texturefile = "gfx/interface/date_pause_button_mod.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/date_pause_button_mod.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 2 			# in seconds
+			animationdelay = 3			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+        name = "GFX_topbar_top_right"
+        texturefile = "gfx/interface/topbar_top_right.dds"
+        effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/topbar_top_right.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 5 			# in seconds
+			animationdelay = 6			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/topbar_top_right.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 5  			# in seconds
+			animationdelay = 3			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+        legacy_lazy_load = no
+    }
+
+	spriteType = {
+        name = "GFX_energy_bar_top"
+        texturefile = "gfx/interface/energy_bar.dds"
+        effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/energy_bar.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -80.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 3 			# in seconds
+			animationdelay = 3			# in seconds
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+        legacy_lazy_load = no
+    }
+
+	progressbartype = {
+		name = "GFX_energy_bar"
+		color = { 0.0 0.5 0.0 }
+		colortwo = { 1.0 0.0 0.0 }
+		textureFile1 = "gfx/interface/energy_bar.dds"
+		textureFile2 = "gfx/interface/energy_bar_bg.dds"
+		size = { x = 173 y = 41 }
+		effectFile = "gfx/FX/progress.lua"
+	}
+
+	spriteType = {
 		name = "GFX_world_tension_war_entry_detail"
 		texturefile = "gfx/interface/world_tension_war_entry_detail.dds"
 	}
@@ -710,6 +819,24 @@ bitmapfonts = {
 			#
 		}
 	}
+	bitmapfont = {
+		name = "Beyondtop"
+		path = "gfx/fonts/Beyondtop"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	bitmapfont = {
+		name = "Beyondtopdate"
+		path = "gfx/fonts/Beyondtopdate"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
 }
 
 spriteTypes = {
@@ -911,13 +1038,6 @@ spriteTypes = {
 		name = "GFX_ecobalance_state"
 		texturefile = "gfx/interface/ecobalance_state.dds"
 		transparencecheck = yes
-		noOfFrames = 2
-		#animation_rate_fps = 0.5
-		#looping = yes
-		#play_on_show = yes
-		#pause_on_loop = 0.0
-		#alwaystransparent = no
-		#effectFile = "gfx/FX/buttonstate_blendframes.lua"
 	}
 	# FOR RESEARCH!
 	spriteType = {
@@ -949,13 +1069,11 @@ spriteTypes = {
 		name = "GFX_ecobalance_state_harmony"
 		texturefile = "gfx/interface/ecobalance_state_harmony.dds"
 		transparencecheck = yes
-		noOfFrames = 2
 	}
 	spriteType = {
 		name = "GFX_ecobalance_state_mastery"
 		texturefile = "gfx/interface/ecobalance_state_mastery.dds"
 		transparencecheck = yes
-		noOfFrames = 2
 	}
 
 	spriteType = {

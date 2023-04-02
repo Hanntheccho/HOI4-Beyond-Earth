@@ -5,6 +5,15 @@ guiTypes = {
 		size = { width=100%% height=100%% }
 
 		iconType = {
+			name ="topbar_top_right"
+			spriteType = "GFX_topbar_top_right"
+			position = { x= -524 y = 0 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+			orientation = UPPER_RIGHT
+		}
+
+		iconType = {
 			name ="background"
 			spriteType = "GFX_topbar_background_extended"
 			position = { x= 0 y = 0 }
@@ -15,7 +24,7 @@ guiTypes = {
 		iconType = {
 			name ="background_icons"
 			spriteType = "GFX_topbar_background_icons"
-			position = { x= 10 y = 0 }
+			position = { x= 35 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}
 		
@@ -82,7 +91,7 @@ guiTypes = {
 		buttonType = {
 			name = "player_flag"
 			quadTextureSprite ="GFX_shield_medium"
-			position = { x= 9 y = 20 }
+			position = { x= 45 y = 20 }
 			Orientation = "UPPER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
@@ -92,7 +101,7 @@ guiTypes = {
 		iconType = {
 			name = "player_flag_frame_mod"
 			quadTextureSprite ="GFX_large_flag_frame_mod"
-			position = { x= 4 y = 18 }
+			position = { x= 40 y = 18 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -107,46 +116,43 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name ="pol_power"
-			position = { x= 160 y = 10 }
-			font = "Focusfont"
+			position = { x= 230 y = 0 }
+			font = "Beyondtop"
 			text = "999"
-			format = right
-			maxWidth = 52
+			format = left
+			maxWidth = 120
 			maxHeight = 24
-			fixedsize = yes
 		}
 
 		instantTextBoxType = {
 			name ="manpower"
-			position = { x= 1003 y = 10 }
-			font = "Focusfont"
+			position = { x= 894 y = 0 }
+			font = "Beyondtop"
 			text = "9999"
-			format = right
-			maxWidth = 90
+			format = left
+			maxWidth = 200
 			maxHeight = 24
 			fixedsize = yes
 		}
 
 		instantTextBoxType = {
 			name ="stability"
-			position = { x= 260 y = 10 }
-			font = "Focusfont"
+			position = { x= 407 y = 0 }
+			font = "Beyondtop"
 			text = "100%"
-			format = center
-			maxWidth = 57
-			maxHeight = 24
-			fixedsize = yes
+			format = left
+			maxWidth = 80
+			maxHeight = 50
 		}
 
 		instantTextBoxType = {
 			name ="war_support"
-			position = { x= 369 y = 10 }
-			font = "Focusfont"
+			position = { x= 557 y = 0 }
+			font = "Beyondtop"
 			text = "100%"
-			format = center
-			maxWidth = 57
-			maxHeight = 24
-			fixedsize = yes
+			format = left
+			maxWidth = 80
+			maxHeight = 50
 		}
 
 		containerWindowType = {
@@ -262,7 +268,7 @@ guiTypes = {
 	
 		instantTextBoxType = {
 			name ="industrial_capacity"
-			position = { x= 679 y = 10 } 
+			position = { x= -10000 y = 10 } 
 			font = "Focusfont"
 			text = "12/12/12"
 			format = right
@@ -289,24 +295,29 @@ guiTypes = {
 			frame = 50
 			alwaystransparent = yes
 		}
-		
-		instantTextBoxType = {
-			name ="fuel_value"
-			position = { x= 805 y = 10 }
-			font = "Focusfont"
-			text = "999"
-			format = right
-			maxWidth = 59
-			maxHeight = 24
-			fixedsize = yes
+
+		iconType = {
+			name ="fuel_ratio_bar_top"
+			spriteType = "GFX_energy_bar_top"
+			position = { x= 851 y = 34 }
 		}
 		
 		iconType = {
 			name ="fuel_ratio_bar"
-			spriteType = "GFX_topbar_fuel_bar"
-			position = { x= 10000 y = 83 }
+			spriteType = "GFX_energy_bar"
+			position = { x= 851 y = 34 }
 			frame = 50
-			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name ="fuel_value"
+			position = { x= -10000 y = 45 }
+			font = "Focusfont"
+			text = "999"
+			format = left
+			maxWidth = 290
+			maxHeight = 24
+			fixedsize = yes
 		}
 
 		iconType = {
@@ -318,7 +329,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name ="supply_value"
-			position = { x= 925 y = 10 }
+			position = { x= -10000 y = 10 }
 			font = "Focusfont"
 			text = "999d"
 			format = center
@@ -346,12 +357,9 @@ guiTypes = {
 		buttonType ={
 			name ="threat_value_button"
 			spriteType = "GFX_world_tension_icon_big_strip"
-			position = { x=-98 y=75 }
-			Orientation = "UPPER_RIGHT"
+			position = { x=-10000 y=75 }
 			clicksound = click_default
 			size = { x=50 y=20 }
-			quadTextureSprite ="GFX_tiled_window_transparent"
-			alwaystransparent = yes #instead of moving it away y = 10000
 		}
 		
 		instantTextBoxType = {
@@ -393,14 +401,20 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "time_control_window"
-			position = { x=-468 y=-34 }
+			position = { x=-468 y=-70 }
 			size = { width=253 height=30 }
 			Orientation = UPPER_RIGHT
 
 			iconType = {
+				name = "load_back_time_steps"
+				spriteType = "GFX_ecobalance_state_load_flip"
+				position = { x = 118 y = 62} #28
+			}
+
+			iconType = {
 				name ="armyoverview_buttons_bg"
 				spriteType = "GFX_armyoverview_buttons_bg"
-				position = { x= -440 y = 54 }
+				position = { x= -315 y = 88 }
 				Orientation = "UPPER_RIGHT"
 				alwaystransparent = yes
 			}
@@ -408,7 +422,7 @@ guiTypes = {
 			buttonType = {
 				name = "pause_button_date"
 				quadTextureSprite ="GFX_date_pause_button_bg"
-				position = { x = -360 y = 62 }
+				position = { x = -232 y = 96 }
 				Orientation = "UPPER_RIGHT"
 				shortcut = "SPACE" #Will be disabled in MP from code
 				clicksound = pause_button
@@ -416,17 +430,11 @@ guiTypes = {
 			
 			buttonType = {
 				name = "pause_button_date_paused"
-				quadTextureSprite ="GFX_date_pause_button"
-				position = { x = -360 y = 62 }
+				quadTextureSprite ="GFX_date_pause_button_mod"
+				position = { x = -232 y = 96 }
 				Orientation = "UPPER_RIGHT"
 				shortcut = "SPACE" #Will be disabled in MP from code
 				clicksound = pause_button
-			}
-
-			iconType = {
-				name = "load_back_time_steps"
-				spriteType = "GFX_ecobalance_state_load_flip"
-				position = { x = 118 y = 28}
 			}
 			
 			buttonType = {
@@ -442,35 +450,35 @@ guiTypes = {
 			buttonType = {
 				name = "button_speedstep1"
 				quadTextureSprite ="GFX_speed_step1"
-				position = { x=136 y =32 }
+				position = { x=136 y =66 }
 				clicksound = click_default
 			}
 			
 			buttonType = {
 				name = "button_speedstep2"
 				quadTextureSprite ="GFX_speed_step2"
-				position = { x=184 y =32 }
+				position = { x=184 y =66 }
 				clicksound = click_default
 			}
 			
 			buttonType = {
 				name = "button_speedstep3"
 				quadTextureSprite ="GFX_speed_step3"
-				position = { x=232 y =32 }
+				position = { x=232 y =66 }
 				clicksound = click_default
 			}
 			
 			buttonType = {
 				name = "button_speedstep4"
 				quadTextureSprite ="GFX_speed_step4"
-				position = { x=280 y =32 }
+				position = { x=280 y =66 }
 				clicksound = click_default
 			}
 			
 			buttonType = {
 				name = "button_speedstep5"
 				quadTextureSprite ="GFX_speed_step5"
-				position = { x=328 y =32 }
+				position = { x=328 y =66 }
 				clicksound = click_default
 			}
 		
@@ -486,14 +494,13 @@ guiTypes = {
 			
 			instantTextBoxType = {
 				name = "DateText"
-				position = { x = -470 y = 64 }
+				position = { x = -10000 y = 64 }
 				textureFile = ""
 				font = "Beyond"
 				text = "7:00 29, September 1939"
 				maxWidth = 600
 				maxHeight = 32
 				format = right
-				Orientation = "UPPER_RIGHT"	
 				alwaystransparent = yes
 			}
 		}
@@ -501,14 +508,14 @@ guiTypes = {
 		buttonType ={
 			name ="threat_button"
 			spriteType = "GFX_world_tension_icon_big_strip"
-			position = { x=-93 y=-40 }
+			position = { x=-95 y=-42 }
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_default
 		}	
 
 		buttonType = {
 			name = "menu_button"
-			position = { x = 10000 y = 1 }
+			position = { x = 11 y = 20 }
 			quadTextureSprite ="GFX_menu_button"
 			buttonText = ""
 			buttonFont = "Beyond"
@@ -520,26 +527,24 @@ guiTypes = {
 		
 		buttonType = {
 			name = "help_button"
-			position = { x = 10000 y = 34 }
+			position = { x = -10000 y = 49 }
 			quadTextureSprite ="GFX_help_button"
 			buttonText = ""
 			buttonFont = "Beyond"
 			clicksound = click_ok
 			oversound = ui_menu_over
-			Orientation = "UPPER_RIGHT"
 			pdx_tooltip = "HELP_MENU"
 			web_link = ""
 		}
 
 		buttonType = {
 			name = "achievements_button"
-			position = { x = 10000 y = 62 }
+			position = { x = -10000 y = 62 }
 			quadTextureSprite ="GFX_achievements_button"
 			buttonText = ""
 			buttonFont = "Beyond"
 			clicksound = click_ok
 			oversound = ui_menu_over
-			Orientation = "UPPER_RIGHT"
 		}
 		
 		buttonType = {
@@ -556,7 +561,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "dismissed_alerts_button"
-			position = { x = 10000 y = 1 } #position = { x = 1080 y = 1 }
+			position = { x = -10000 y = 54 }
 			quadTextureSprite ="GFX_show_dismissed_alerts_icon"
 			buttonText = ""
 			buttonFont = "Beyond"
@@ -580,13 +585,13 @@ guiTypes = {
 			buttonType = {
 				name = "decisionview_button"
 				quadTextureSprite ="GFX_difficulty_button_civilian" #"GFX_topbar_decisionview_button"
-				position = { x= -93 y = 3 }
+				position = { x= -57 y = 3 }
 				Orientation = "UPPER_LEFT"
 				clicksound = click_close
 				oversound = ui_menu_over
 				shortcut = "shift+q"
 				buttonFont = "Arialsmall"
-				buttonText = "DECISIONS //"
+				buttonText = "{DECISIONS}"
 			}
 
 			iconType = {
@@ -684,13 +689,13 @@ guiTypes = {
 					name = "technology_button"
 					quadTextureSprite ="GFX_difficulty_button_civilian" #"GFX_topbar_technology"
 	#				position = { x= -104 y = 0 }
-					position = { x= 21 y = 3 }
+					position = { x= 57 y = 3 }
 					Orientation = "UPPER_LEFT"
 					shortcut = "w"
 					clicksound = click_close
 					oversound = ui_menu_over
 					buttonFont = "Arialsmall"
-					buttonText = "RESEARCH //"
+					buttonText = "{RESEARCH}"
 				}
 				
 				buttonType = {
@@ -702,7 +707,7 @@ guiTypes = {
 					clicksound = click_close
 					oversound = ui_menu_over
 					buttonFont = "Arialsmall"
-					buttonText = "DIPLOMACY //"
+					buttonText = "{DIPLOMACY}"
 				}
 				
 				buttonType = {
@@ -714,19 +719,19 @@ guiTypes = {
 					clicksound = click_close
 					oversound = ui_menu_over
 					buttonFont = "Arialsmall"
-					buttonText = "TRADE ///"
+					buttonText = "{TRADE}"
 				}	
 
 				buttonType = {
 					name = "construction_button"
-					position = { x = 135 y = 3 }
+					position = { x = 171 y = 3 }
 					quadTextureSprite ="GFX_difficulty_button_civilian" #"GFX_construction_button"
 					Orientation = "UPPER_LEFT"
 					shortcut = "t"
 					clicksound = click_close
 					oversound = ui_menu_over
 					buttonFont = "Arialsmall"
-					buttonText = "BUILDINGS ///"
+					buttonText = "{BUILDINGS}"
 				}
 				
 				buttonType = {
@@ -750,27 +755,26 @@ guiTypes = {
 				
 				buttonType = {
 					name = "deployment_button"
-					position = { x = 249 y = 3 }
+					position = { x = 285 y = 3 }
 					quadTextureSprite ="GFX_difficulty_button_civilian" #"GFX_deployment_button"
 					Orientation = "UPPER_LEFT"
 					shortcut = "u"
 					clicksound = click_close
 					oversound = ui_menu_over
 					buttonFont = "Arialsmall"
-					buttonText = "DIVISIONS ////"
+					buttonText = "{DIVISIONS} ▀"
 				}		
 				
-				buttonType = { #hiden, use "i" for now
+				buttonType = {
 					name = "logistics_button"
 					position = { x = -180 y = 43 }
 					quadTextureSprite ="GFX_difficulty_button_civilian" #"GFX_ledger_button"
 					Orientation = "UPPER_LEFT"
-					#shortcut = "i"
+					shortcut = "i"
 					clicksound = click_close
 					oversound = ui_menu_over
 					buttonFont = "Arialsmall"
-					buttonText = "////////////////////////" #"LOGISTICS ////"
-					alwaystransparent = yes #no
+					buttonText = "[LOGISTICS]"
 				}
 
 				buttonType = {

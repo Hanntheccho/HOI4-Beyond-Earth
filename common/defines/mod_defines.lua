@@ -42,6 +42,9 @@ NDefines.NDiplomacy.AUTONOMY_LEVEL_CHANGE_PP_FREE = 6969
 NDefines.NCountry.POPULATION_YEARLY_GROWTH_BASE = 0.005           -- Vanilla: 0.015
 NDefines.NCountry.SUPPLY_BASE_MULT = 10                          -- Vanilla: 1
 
+NDefines.NCountry.POLITICAL_POWER_UPPER_CAP = 1000.0
+NDefines.NCountry.POLITICAL_POWER_LOWER_CAP = -999.0
+
 NDefines.NCountry.SCORCHED_EARTH_STATE_COST = 6969
 
 NDefines.NCountry.WAR_SUPPORT_TENSION_IMPACT = 0.0
