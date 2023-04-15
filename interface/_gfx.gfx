@@ -5,6 +5,11 @@ spriteTypes = {
 ###############################
 
 	spriteType = {
+		name = "GFX_world_tension_icon_big_strip_blank"
+		texturefile = "gfx/interface/world_tension_icon_big_strip_blank.dds"
+	}
+
+	spriteType = {
 		name = "GFX_add_national_goal_button_mod"
 		texturefile = "gfx/interface/add_national_goal_button.dds"
 		noOfFrames = 3
@@ -149,7 +154,33 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_country_selection_bg_top"
 		texturefile = "gfx/interface/country_selection_bg_top.dds"
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"				
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/country_selection_bg_top.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 5 			# in seconds
+			animationdelay = 6			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/country_selection_bg_top.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 5  			# in seconds
+			animationdelay = 3			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+        legacy_lazy_load = no		
 	}
 	frameAnimatedSpriteType = {
 		name = "GFX_endgame_animation"
