@@ -11,6 +11,33 @@ scripted_gui = {
 
 		effects = {
             war_button_click = {
+				hidden_effect = {
+					if = {
+						limit = {
+							ROOT = {
+								has_idea = digital_democracy
+							}
+						}
+						ROOT = {
+							add_political_power = -200
+						}						
+					}
+					else_if = {
+						limit = {
+							ROOT = {
+								has_idea = autocratic_authority
+							}
+						}
+						ROOT = {
+							add_political_power = -100
+						}
+					}
+					else = {
+						ROOT = {
+							add_political_power = -150
+						}						
+					}
+				}
 				if = {
 					limit = {
 						THIS = {
@@ -45,9 +72,9 @@ scripted_gui = {
 					}
 				}
 				ROOT = {
-					declare_war_on = {
-						target = PREV
+					create_wargoal = {
 						type = annex_puppet_wargoal
+						target = PREV
 					}
 				}				
 			}
@@ -61,10 +88,30 @@ scripted_gui = {
 						tag = ROOT
 					}
 				}
-			}
-			war_button_visible = {
-				ROOT = {
-					has_focus_tree = generic_focus
+				if = {
+					limit = {
+						ROOT = {
+							has_idea = digital_democracy
+						}
+					}
+					ROOT = {
+						has_political_power > 199
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_idea = autocratic_authority
+						}
+					}
+					ROOT = {
+						has_political_power > 99
+					}
+				}
+				else = {
+					ROOT = {
+						has_political_power > 149
+					}
 				}
 			}
         }
