@@ -1,4 +1,9 @@
 on_actions = {
+
+##################################
+#### HEAVY MILITARY COMPLEXES ####
+##################################
+
     on_startup = {
         effect = {
             every_country = {
@@ -16,16 +21,16 @@ on_actions = {
                             instant_build = yes
                         }
                     }
-                    every_owned_state = {
-                        limit = {
-                            air_complex > 0
-                        }
-                        add_building_construction = {
-                            type = heavy_military_complex
-                            level = 1
-                            instant_build = yes
-                        }
-                    }
+                    #every_owned_state = {
+                    #    limit = {
+                    #        air_complex > 0
+                    #    }
+                    #    add_building_construction = {
+                    #        type = heavy_military_complex
+                    #        level = 1
+                    #        instant_build = yes
+                    #    }
+                    #}
                 }
                 else_if = {
                     limit = {
@@ -48,6 +53,11 @@ on_actions = {
             }
         }
     }
+
+##################################
+######## DEBUG PRODUCTION ########
+##################################
+
     on_startup = { #this is just to avoid the available mil factories alert
         effect = {
             every_country = {
@@ -91,7 +101,15 @@ on_actions = {
                     requested_factories = 1
                 }
             }
-            ###
+        }
+    }
+
+##################################
+####### BUILDING RESOURCE ########
+##################################
+
+    on_startup = {
+        effect = {
             ADU = {
                 every_state = {
                     add_dynamic_modifier = {
@@ -211,7 +229,6 @@ on_actions = {
             }     
 		}
 	}
-###
     on_daily_ADU = {
 		effect = {
             every_state = {
@@ -430,7 +447,11 @@ on_actions = {
             }    
         }
     }
-    ###
+
+##################################
+###### EQUIPMENT PRODUCTION ######
+##################################
+
     on_daily = {
         effect = {
             set_variable = { num_military_complex = 0 }
@@ -526,104 +547,114 @@ on_actions = {
             }
         }
     }
-    on_weekly = {
-        effect = {
-            set_variable = {
-                amount_of_air_equipment = 0
-            }
-            add_to_variable = {
-                amount_of_air_equipment = num_equipment@drone_equipment_1
-            }
-            add_to_variable = {
-                amount_of_air_equipment = num_equipment@tac_equipment_1
-            }
-            add_to_variable = {
-                amount_of_air_equipment = num_equipment@fighter_equipment_01
-            }
-            add_to_variable = {
-                amount_of_air_equipment = num_equipment@cas_equipment_1
-            }
-            set_variable = { num_air_complex = 0 }
-            every_controlled_state = {
-                limit = {
-                    air_complex > 0
-                }
-                add_to_variable = { 
-                    PREV.num_air_complex = 1
-                }
-            }
-            set_variable = {
-                air_complex_capability = 0
-            }
-            add_to_variable = {
-                air_complex_capability = num_air_complex
-            }
-            multiply_variable = {
-                air_complex_capability = 200
-            }
-            if = {
-                limit = {
-                    check_variable = {
-                        air_complex_capability > amount_of_air_equipment
-                    }                        
-                }
-                set_variable = { num_air_complex_with_military_complex = 0 }
-                every_controlled_state = {
-                    limit = {
-                        military_complex > 0
-                        air_complex > 0
-                    }
-                    add_to_variable = { 
-                        PREV.num_air_complex_with_military_complex = 1
-                    }
-                }
-                set_variable = { num_air_complex_with_heavy_military_complex = 0 }
-                every_controlled_state = {
-                    limit = {
-                        heavy_military_complex > 0
-                        air_complex > 0
-                    }
-                    add_to_variable = { 
-                        PREV.num_air_complex_with_heavy_military_complex = 1
-                    }
-                }
-                if = {
-                    limit = {
-                        has_tech = drone_swarms
-                    }
-                    add_equipment_to_stockpile = {
-                        type = drone_equipment_1
-                        amount = num_air_complex
-                    }
-                }
-                if = {
-                    limit = {
-                        has_tech = airframe
-                    }
-                    add_equipment_to_stockpile = {
-                        type = fighter_equipment_01
-                        amount = num_air_complex_with_military_complex
-                    }
-                }
-                if = {
-                    limit = {
-                        has_tech = cas_tech
-                    }
-                    add_equipment_to_stockpile = {
-                        type = cas_equipment_1
-                        amount = num_air_complex_with_military_complex
-                    }
-                }
-                if = {
-                    limit = {
-                        has_tech = tac_tech
-                    }
-                    add_equipment_to_stockpile = {
-                        type = tac_equipment_1
-                        amount = num_air_complex_with_heavy_military_complex
-                    }
-                }              
-            }
-        }
-    }
+
+##################################
+######## AIR PRODUCTION ##########
+##################################
+
+#    on_weekly = {
+#        effect = {
+#            set_variable = {
+#                amount_of_air_equipment = 0
+#            }
+#            add_to_variable = {
+#                amount_of_air_equipment = num_equipment@drone_equipment_1
+#            }
+#            add_to_variable = {
+#                amount_of_air_equipment = num_equipment@tac_equipment_1
+#            }
+#            add_to_variable = {
+#                amount_of_air_equipment = num_equipment@fighter_equipment_01
+#            }
+#            add_to_variable = {
+#                amount_of_air_equipment = num_equipment@cas_equipment_1
+#            }
+#            set_variable = { num_air_complex = 0 }
+#            every_controlled_state = {
+#                limit = {
+#                    air_complex > 0
+#                }
+#                add_to_variable = { 
+#                    PREV.num_air_complex = 1
+#                }
+#            }
+#            set_variable = {
+#                air_complex_capability = 0
+#            }
+#            add_to_variable = {
+#                air_complex_capability = num_air_complex
+#            }
+#            multiply_variable = {
+#                air_complex_capability = 200
+#            }
+#            if = {
+#                limit = {
+#                    check_variable = {
+#                        air_complex_capability > amount_of_air_equipment
+#                    }                        
+#                }
+#                set_variable = { num_air_complex_with_military_complex = 0 }
+#                every_controlled_state = {
+#                    limit = {
+#                        military_complex > 0
+#                        air_complex > 0
+#                    }
+#                    add_to_variable = { 
+#                        PREV.num_air_complex_with_military_complex = 1
+#                    }
+#                }
+#                set_variable = { num_air_complex_with_heavy_military_complex = 0 }
+#                every_controlled_state = {
+#                    limit = {
+#                        heavy_military_complex > 0
+#                        air_complex > 0
+#                    }
+#                    add_to_variable = { 
+#                        PREV.num_air_complex_with_heavy_military_complex = 1
+#                    }
+#                }
+#                if = {
+#                    limit = {
+#                        has_tech = drone_swarms
+#                    }
+#                    add_equipment_to_stockpile = {
+#                        type = drone_equipment_1
+#                        amount = num_air_complex
+#                    }
+#                }
+#                if = {
+#                    limit = {
+#                        has_tech = airframe
+#                    }
+#                    add_equipment_to_stockpile = {
+#                        type = fighter_equipment_01
+#                        amount = num_air_complex_with_military_complex
+#                    }
+#                }
+#                if = {
+#                    limit = {
+#                        has_tech = cas_tech
+#                    }
+#                    add_equipment_to_stockpile = {
+#                        type = cas_equipment_1
+#                        amount = num_air_complex_with_military_complex
+#                    }
+#                }
+#                if = {
+#                    limit = {
+#                        has_tech = tac_tech
+#                    }
+#                    add_equipment_to_stockpile = {
+#                        type = tac_equipment_1
+#                        amount = num_air_complex_with_heavy_military_complex
+#                    }
+#                }              
+#            }
+#        }
+#    }
+
+##################################
+##################################
+##################################
+
 }
