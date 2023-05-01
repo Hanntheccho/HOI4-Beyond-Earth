@@ -4,7 +4,7 @@ war_decisions = {
 		state_target = yes
 		on_map_mode = map_only
 		available = {
-			#
+			has_political_power > get_political_power_cost_to_declare_war			
 		}
 		fire_only_once = no
 		target_trigger = {
@@ -13,24 +13,73 @@ war_decisions = {
 				OWNER = {
 					NOT = {
 						OR = {
-							is_puppet_of = ROOT
+							tag = ROOT
+							#is_puppet_of = ROOT
 							has_war_with = ROOT
-							is_in_faction_with = ROOT
+							#is_in_faction_with = ROOT
 						}						
 					}
 				}
 			}
 		}
-		days_remove = 30
+		days_remove = get_political_power_cost_to_declare_war
+		cost = get_political_power_cost_to_declare_war
 		war_with_target_on_remove = yes
 		remove_effect = {
+			if = {
+				limit = {
+					FROM.OWNER = {
+						is_puppet_of = ROOT
+					}
+				}
+				ROOT = {
+					end_puppet = FROM.OWNER
+				}
+			}
+			if = {
+				limit = {
+					FROM.OWNER = {
+						is_in_faction_with = ROOT
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							is_faction_leader = yes
+						}
+						
+					}
+					FROM.OWNER = {
+						leave_faction = yes
+					}
+				}
+				else = {
+					ROOT = {
+						leave_faction = yes
+					}
+				}
+			}
 			declare_war_on = {
 				target = FROM.OWNER
 				type = annex_puppet_wargoal
 			}			
 		}
 		ai_will_do = {
-			factor = 0
+			factor = 1
+			modifier = {
+				OR = {
+					FROM.OWNER = {
+						OR = {
+							is_puppet_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+					NOT = {
+						has_global_flag = final_war_flag
+					}
+				}
+				add = -10000
+			}
 			modifier = {
 				FROM.OWNER = {
 					OR = {

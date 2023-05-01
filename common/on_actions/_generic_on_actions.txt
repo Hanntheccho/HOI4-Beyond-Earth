@@ -10,6 +10,42 @@ on_actions = {
         }
     }
 ###
+    on_startup = {
+        effect = {
+            every_country = {
+                if = {
+                    limit = {
+                        has_idea = digital_democracy
+                    }
+                    set_variable = {
+                        get_political_power_cost_to_declare_war = 200
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_idea = autocratic_authority
+                    }
+                    set_variable = {
+                        get_political_power_cost_to_declare_war = 100
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_idea = unstable_leadership
+                    }
+                    set_variable = {
+                        get_political_power_cost_to_declare_war = 300
+                    }
+                }
+                else = {
+                    set_variable = {
+                        get_political_power_cost_to_declare_war = 150
+                    }
+                }
+            }
+        }
+    }
+###
     on_ruling_party_change = {
         effect = {
             reset_virtues_effect = yes
