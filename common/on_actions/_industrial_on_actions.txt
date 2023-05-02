@@ -106,6 +106,15 @@ on_actions = {
                 multiply_variable = {
                     industrial_power_gain = industrial_power_gain_modifier
                 }
+                if = {
+                    limit = {
+                        OR = {
+                            has_dynamic_modifier = { modifier = EQG_morgan_industries_modifier }
+                            has_dynamic_modifier = { modifier = EQG_morgan_industries_modifier1 }
+                        }
+                    }
+                    add_to_variable = { industrial_power_gain = morgan_industries_modifier_industrial_power_gain_var }
+                }
                 add_to_variable = { industrial_power = industrial_power_gain }
                 clamp_variable = { var = industrial_power min = -999 max = 1000 }
             }

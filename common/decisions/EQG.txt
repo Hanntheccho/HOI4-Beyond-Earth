@@ -1,0 +1,238 @@
+EQG_morgan_category = {
+	EQG_morgan_takeover = {
+		icon = GFX_decision_war
+		available = {
+			always = yes
+		}
+		visible = {
+			always = yes
+		}
+		fire_only_once = no
+		complete_effect = {
+			set_politics = {
+				ruling_party = neutral
+				elections_allowed = no
+				long_name = EQG_neutral_party_long
+				name = EQG_neutral_party
+			}
+			set_popularities = {
+				harmony = 5
+				supremacy = 3
+				purity = 12
+				neutral = 43
+				divinity = 29
+				synergy = 3
+				mastery = 5
+			}
+			swap_ideas = {
+				remove_idea = export_focus
+				add_idea = free_trade
+			}
+			swap_ideas = {
+				remove_idea = low_economic_mobilisation
+				add_idea = civilian_economy
+			}
+			add_ideas = EQG_a_corporation_with_a_country
+			add_ideas = EQG_the_adamawa_portfolio
+			set_variable = { morgan_industries_modifier_industrial_capacity_factory_var = 0.1 }
+			set_variable = { morgan_industries_modifier_industrial_capacity_dockyard_var = 0.1 }
+			set_variable = { morgan_industries_modifier_factory_max_efficiency_var = 0 }
+			set_variable = { morgan_industries_modifier_construction_speed_var = 0 }
+			set_variable = { morgan_industries_modifier_construction_speed_infrastructure_var = 0 }
+			set_variable = { morgan_industries_modifier_local_resources_var = 0.1 }
+			set_variable = { morgan_industries_political_power_gain_var = 0 }
+			set_variable = { morgan_industries_political_power_factor_var = 0 }
+			set_variable = { morgan_industries_modifier_stability_var = 0.1 }
+			set_variable = { morgan_industries_modifier_consumer_goods_var = -0.05 }
+			set_variable = { morgan_industries_modifier_monthly_population_var = 0 }
+			set_variable = { morgan_industries_modifier_research_speed_var = 0 }
+			set_variable = { morgan_industries_modifier_cultural_power_gain_var = 0 }
+			set_variable = { morgan_industries_modifier_industrial_power_gain_var = 1 }
+			set_variable = { morgan_industries_army_attack_factor_var = 0 }
+			set_variable = { morgan_industries_army_defence_factor_var = 0 }
+			add_dynamic_modifier = { modifier = EQG_morgan_industries_modifier }
+			set_variable = { morgan_security_conscription_var = 0.025 }
+			set_variable = { morgan_security_army_attack_factor_var = 0.05 }
+			set_variable = { morgan_security_army_defence_factor_var = 0 }
+			set_variable = { morgan_security_supply_consumption_factor_var = 0.1 }
+			set_variable = { morgan_security_army_org_factor_var = -0.15 }
+			set_variable = { morgan_security_attrition_var = 0 }
+			set_variable = { morgan_security_war_support_factor_var = 0 }
+			set_variable = { morgan_security_modifier_industrial_capacity_factory_var = 0 }
+			set_variable = { morgan_security_modifier_industrial_capacity_dockyard_var = 0 }
+			add_dynamic_modifier = { modifier = EQG_morgan_security_modifier }
+			load_focus_tree = morganindustriesfocus
+		}
+	}
+}
+EQG_african_security_category = {
+	EQG_declare_war_north_africa = {
+		targets_dynamic = yes
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = TUN
+					tag = LBA
+					tag = SUD
+					tag = SIE
+					tag = ORO
+					tag = ETH
+					tag = QAF
+					tag = NUE
+					tag = EGY
+				}
+			}
+		}
+    	icon = GFX_decision_war
+		available = {
+			always = yes
+		}
+		visible = {
+			has_country_flag = EQG_north_african_security_flag
+		}
+        fire_only_once = yes
+        days_remove = 15
+    	remove_effect = {
+			declare_war_on = {
+				target = FROM
+				type = annex_puppet_wargoal
+			}
+    	}
+	}
+	EQG_declare_war_west_africa = {
+		targets_dynamic = yes
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = MRT
+					tag = MLI
+					tag = LIB
+					tag = IVO
+					tag = VOL
+					tag = GHA
+					tag = DAH
+					tag = NGA
+					tag = CHA
+					tag = CMR
+					tag = GAB
+				}
+			}
+		}
+    	icon = GFX_decision_war
+		available = {
+			always = yes
+		}
+		visible = {
+			has_country_flag = EQG_west_african_security_flag
+		}
+        fire_only_once = yes
+        days_remove = 15
+    	remove_effect = {
+			declare_war_on = {
+				target = FROM
+				type = annex_puppet_wargoal
+			}
+    	}
+	}
+	EQG_declare_war_south_africa = {
+		targets_dynamic = yes
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = ORO
+					tag = SOM
+					tag = CAR
+					tag = COG
+					tag = GNA
+					tag = TOG
+					tag = RWA
+					tag = BRD
+					tag = MLW
+					tag = TZN
+					tag = ANG
+					tag = SAF
+				}
+			}
+		}
+    	icon = GFX_decision_war
+		available = {
+			always = yes
+		}
+		visible = {
+			has_country_flag = EQG_south_african_security_flag
+		}
+        fire_only_once = yes
+        days_remove = 15
+    	remove_effect = {
+			declare_war_on = {
+				target = FROM
+				type = annex_puppet_wargoal
+			}
+    	}
+	}
+}
+EQG_african_integration_category = {
+	EQG_integrate_north_africa = {
+		targets_dynamic = yes
+		target_trigger = {
+			FROM = {
+				AND = {
+					OR = {
+						tag = LBA
+						tag = ORO
+						tag = QAF
+						tag = NUE
+					}
+					is_in_faction = no
+				}
+			}
+		}
+    	icon = GFX_decision_war
+		available = {
+			always = yes
+		}
+		visible = {
+			has_country_flag = EQG_north_african_integration_flag
+		}
+        fire_only_once = yes
+        days_remove = 15
+    	remove_effect = {
+			FROM = {
+				country_event = { id = morganindustries.8 days = 1 }
+			}
+    	}
+	}
+	EQG_integrate_west_africa = {
+		targets_dynamic = yes
+		target_trigger = {
+			FROM = {
+				AND = {
+					OR = {
+						tag = MRT
+						tag = LIB
+						tag = VOL
+						tag = GHA
+						tag = DAH
+						tag = CMR
+						tag = GAB
+					}
+					is_in_faction = no
+				}
+			}
+		}
+    	icon = GFX_decision_war
+		available = {
+			always = yes
+		}
+		visible = {
+			has_country_flag = EQG_west_african_integration_flag
+		}
+        fire_only_once = yes
+        days_remove = 15
+    	remove_effect = {
+			FROM = {
+				country_event = { id = morganindustries.8 days = 1 }
+			}
+    	}
+	}
+}

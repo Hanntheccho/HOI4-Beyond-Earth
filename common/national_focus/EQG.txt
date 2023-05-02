@@ -1,0 +1,2700 @@
+﻿focus_tree = {
+	id = biafrastartup
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			tag = EQG
+		}
+	}
+	default = no
+
+	continuous_focus_position = { 
+		x = 0
+		y = 0
+	}
+}
+
+focus_tree = {
+	id = morganindustriesfocus
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			tag = EQG
+		}
+	}
+	default = no
+
+	continuous_focus_position = { 
+		x = 0
+		y = 0
+	}
+
+	focus = {
+		id = EQG_biafra_a_morgan_industries_company
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 0
+		cost = 5
+
+		prerequisite = {
+		}
+
+		completion_reward = {
+			country_event = { id = morganindustries.1 days = 0 }
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_the_benin_project
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 1
+		relative_position_id = EQG_biafra_a_morgan_industries_company
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_biafra_a_morgan_industries_company
+		}
+
+		completion_reward = {
+			country_event = { id = morganindustries.2 days = 0 }
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_morgans_proposal
+		icon = GFX_focus_unknown
+
+		x = -1
+		y = 2
+		relative_position_id = EQG_biafra_a_morgan_industries_company
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_the_benin_project
+		}
+
+		mutually_exclusive = {
+			focus = EQG_morgan_reillys_proposal
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = EQG_a_corporation_with_a_country
+				add_idea = EQG_a_corporation_with_a_country1
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_cut_out_the_middlemen
+		icon = GFX_focus_unknown
+
+		x = -1
+		y = 3
+		relative_position_id = EQG_biafra_a_morgan_industries_company
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_morgans_proposal
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = EQG_a_corporation_with_a_country1
+				add_idea = EQG_a_corporation_with_a_country2
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_morgan_reillys_proposal
+		icon = GFX_focus_unknown
+
+		x = 1
+		y = 2
+		relative_position_id = EQG_biafra_a_morgan_industries_company
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_the_benin_project
+		}
+
+		mutually_exclusive = {
+			focus = EQG_morgans_proposal
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_stability_var = 0.05 }
+			subtract_from_variable = { morgan_industries_modifier_industrial_capacity_factory_var = 0.05 }
+			subtract_from_variable = { morgan_industries_modifier_industrial_capacity_dockyard_var = 0.05 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_005_stability_minus_005_output_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_assure_the_people
+		icon = GFX_focus_unknown
+
+		x = 1
+		y = 3
+		relative_position_id = EQG_biafra_a_morgan_industries_company
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_morgan_reillys_proposal
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_stability_var = 0.05 }
+			add_to_variable = { morgan_industries_modifier_consumer_goods_var = 0.025 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_005_stability_0025_consumer_goods_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_sealing_accounts
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 4
+		relative_position_id = EQG_biafra_a_morgan_industries_company
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_cut_out_the_middlemen
+			focus = EQG_assure_the_people
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = EQG_morgans_proposal
+				}
+				swap_ideas = {
+					remove_idea = EQG_a_corporation_with_a_country2
+					add_idea = EQG_a_corporation_with_a_country4
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = EQG_a_corporation_with_a_country
+					add_idea = EQG_a_corporation_with_a_country3
+				}
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_a_rebranding
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 5
+		relative_position_id = EQG_biafra_a_morgan_industries_company
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_sealing_accounts
+		}
+
+		completion_reward = {
+			if ={
+				limit = {
+					has_completed_focus = EQG_morgans_proposal
+				}
+				country_event = { id = morganindustries.4 days = 0 }
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = EQG_morgan_reillys_proposal
+				}
+				country_event = { id = morganindustries.6 days = 0 }
+			}
+			else = {
+				custom_effect_tooltip = EQG_needs_to_take_proposal_tt
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+#Development Branches
+	focus = {
+		id = EQG_morgan_consutruction
+		icon = GFX_focus_unknown
+
+		x = -13
+		y = 1
+		relative_position_id = EQG_a_rebranding
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_a_rebranding
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_construction_speed_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_01_construction_speed_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_new_prefab_designs
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 1
+		relative_position_id = EQG_morgan_consutruction
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_morgan_consutruction
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_construction_speed_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_01_construction_speed_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_hire_flood_barrier_specialists
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 2
+		relative_position_id = EQG_morgan_consutruction
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_new_prefab_designs
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_construction_speed_var = 0.05 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_005_construction_speed_01_coastal_forts_construction_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_morgan_safehaven_hotel_fortresses
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 3
+		relative_position_id = EQG_morgan_consutruction
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_hire_flood_barrier_specialists
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_construction_speed_var = 0.05 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_005_construction_speed_01_land_forts_construction_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_morgan_civil
+		icon = GFX_focus_unknown
+
+		x = -11
+		y = 1
+		relative_position_id = EQG_a_rebranding
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_a_rebranding
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_construction_speed_infrastructure_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_01_construction_speed_infrastructure_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_improve_insurance_coverage
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 1
+		relative_position_id = EQG_morgan_civil
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_morgan_civil
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_monthly_population_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_01_monthly_population_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_expand_scholarship_programs
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 2
+		relative_position_id = EQG_morgan_civil
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_improve_insurance_coverage
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_research_speed_var = 0.05 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_005_research_speed_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_invest_in_infrastructure
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 3
+		relative_position_id = EQG_morgan_civil
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_expand_scholarship_programs
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_construction_speed_infrastructure_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_01_construction_speed_infrastructure_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_morgan_heavy_industries
+		icon = GFX_focus_unknown
+
+		x = -9
+		y = 1
+		relative_position_id = EQG_a_rebranding
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_a_rebranding
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_local_resources_var = 0.05 }
+			add_to_variable = { morgan_industries_modifier_industrial_capacity_factory_var = 0.05 }
+			add_to_variable = { morgan_industries_modifier_industrial_capacity_dockyard_var = 0.05 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_005_local_resources_005_industrial_capacity_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_survey_deposits
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 1
+		relative_position_id = EQG_morgan_heavy_industries
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_morgan_heavy_industries
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_local_resources_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_01_local_resources_tt
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = generator_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = generator_building
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_overhaul_factories
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 2
+		relative_position_id = EQG_morgan_heavy_industries
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_survey_deposits
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_industrial_capacity_factory_var = 0.1 }
+			add_to_variable = { morgan_industries_modifier_industrial_capacity_dockyard_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_01_industrial_capacity_tt
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = civilian_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = civilian_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_waste_reclamation_subsidies
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 3
+		relative_position_id = EQG_morgan_heavy_industries
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_overhaul_factories
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_local_resources_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_01_local_resources_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_morgan_rnd
+		icon = GFX_focus_unknown
+
+		x = 9
+		y = 1
+		relative_position_id = EQG_a_rebranding
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_a_rebranding
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_research_speed_var = 0.05 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_005_research_speed_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_test_subjects_wanted_apply_now
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 1
+		relative_position_id = EQG_morgan_rnd
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_morgan_rnd
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_research_speed_var = 0.05 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_005_research_speed_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_research_grants
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 2
+		relative_position_id = EQG_morgan_rnd
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_test_subjects_wanted_apply_now
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_research_speed_var = 0.05 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_005_research_speed_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_lab_to_market_pipeline
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 3
+		relative_position_id = EQG_morgan_rnd
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_research_grants
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_research_speed_var = 0.05 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_005_research_speed_tt
+			add_research_slot = 1
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_morgan_media
+		icon = GFX_focus_unknown
+
+		x = 11
+		y = 1
+		relative_position_id = EQG_a_rebranding
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_a_rebranding
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_political_power_gain_var = 0.25 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_025_political_power_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_morgan_tv_presents_morgan_link
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 1
+		relative_position_id = EQG_morgan_media
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_morgan_media
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_political_power_gain_var = 0.25 }
+			add_to_variable = { morgan_industries_modifier_cultural_power_gain_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_025_political_power_01_cultural_power_tt
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier = EQG_morgan_industries_modifier }
+				}
+				hidden_effect = {
+					remove_dynamic_modifier = { modifier = EQG_morgan_industries_modifier }
+					add_dynamic_modifier = { modifier = EQG_morgan_industries_modifier1 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_dynamic_modifier = { modifier = EQG_morgan_industries_modifier2 }
+				}
+				hidden_effect = {
+					remove_dynamic_modifier = { modifier = EQG_morgan_industries_modifier2 }
+					add_dynamic_modifier = { modifier = EQG_morgan_industries_modifier3 }
+				}
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_network_node_subsidies
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 2
+		relative_position_id = EQG_morgan_media
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_morgan_tv_presents_morgan_link
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_political_power_gain_var = 0.25 }
+			add_to_variable = { morgan_industries_modifier_cultural_power_gain_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_025_political_power_01_cultural_power_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_elevate_new_talent
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 3
+		relative_position_id = EQG_morgan_media
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_network_node_subsidies
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_political_power_gain_var = 0.25 }
+			add_to_variable = { morgan_industries_modifier_cultural_power_gain_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_025_political_power_01_cultural_power_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_morgan_agriculture
+		icon = GFX_focus_unknown
+
+		x = 13
+		y = 1
+		relative_position_id = EQG_a_rebranding
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_a_rebranding
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_stability_var = 0.025 }
+			add_to_variable = { morgan_industries_modifier_monthly_population_var = 0.025 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_0025_stability_0025_monthly_population_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_buy_out_farms
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 1
+		relative_position_id = EQG_morgan_agriculture
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_morgan_agriculture
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_stability_var = 0.025 }
+			add_to_variable = { morgan_industries_modifier_monthly_population_var = 0.025 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_0025_stability_0025_monthly_population_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_drought_resistant_crop_patents
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 2
+		relative_position_id = EQG_morgan_agriculture
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_buy_out_farms
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_stability_var = 0.025 }
+			add_to_variable = { morgan_industries_modifier_monthly_population_var = 0.025 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_0025_stability_0025_monthly_population_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_market_insect_protein
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 3
+		relative_position_id = EQG_morgan_agriculture
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_drought_resistant_crop_patents
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_stability_var = 0.025 }
+			add_to_variable = { morgan_industries_modifier_monthly_population_var = 0.025 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_0025_stability_0025_monthly_population_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+#Expansion Branches
+	focus = {
+		id = EQG_opportunities_abroad
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 1
+		relative_position_id = EQG_a_rebranding
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_a_rebranding
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_political_power_gain_var = 0.5 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_05_political_power_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_morgan_security
+		icon = GFX_focus_unknown
+
+		x = -5
+		y = 1
+		relative_position_id = EQG_opportunities_abroad
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_opportunities_abroad
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_security_army_org_factor_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_security_01_army_org_factor_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_north_african_security
+		icon = GFX_focus_unknown
+
+		x = -2
+		y = 1
+		relative_position_id = EQG_morgan_security
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_morgan_security
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_security_war_support_factor_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_01_war_support_factor_tt
+			set_country_flag = EQG_north_african_security_flag
+			custom_effect_tooltip = EQG_unlock_north_african_security_decisions
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_tender_aerospace_contractors
+		icon = GFX_focus_unknown
+
+		x = -2
+		y = 2
+		relative_position_id = EQG_morgan_security
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_north_african_security
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_security_modifier_industrial_capacity_factory_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_security_01_industrial_capacity_tt
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_hire_uniform_stylists
+		icon = GFX_focus_unknown
+
+		x = -2
+		y = 3
+		relative_position_id = EQG_morgan_security
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_tender_aerospace_contractors
+		}
+
+		completion_reward = {
+			subtract_from_variable = { morgan_security_attrition_var = 0.1 }
+			add_to_variable = { morgan_security_army_org_factor_var = 0.05 }
+			custom_effect_tooltip = EQG_modify_morgan_security_minus_01_attrition_005_army_org_factor_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_north_african_reconstruction_fonds
+		icon = GFX_focus_unknown
+
+		x = -2
+		y = 4
+		relative_position_id = EQG_morgan_security
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_hire_uniform_stylists
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = EQG_controls_all_north_african_states
+				AND = {
+					controls_state = 215
+					controls_state = 222
+					controls_state = 223
+					controls_state = 231
+					controls_state = 238
+					controls_state = 240
+					controls_state = 247
+					controls_state = 261
+					controls_state = 265
+					controls_state = 274
+					controls_state = 282
+					controls_state = 283
+					controls_state = 289
+					controls_state = 298
+					controls_state = 308
+					controls_state = 310
+					controls_state = 319
+					controls_state = 322
+					controls_state = 331
+					controls_state = 343
+					controls_state = 378
+					controls_state = 397
+					controls_state = 443
+					controls_state = 480
+					controls_state = 507
+					controls_state = 566
+					controls_state = 458
+					controls_state = 473
+					controls_state = 490
+					controls_state = 510
+					controls_state = 551
+					controls_state = 611
+					controls_state = 633
+					controls_state = 597
+					controls_state = 602
+					controls_state = 623
+					controls_state = 629
+					controls_state = 650
+					controls_state = 653
+					controls_state = 544
+					controls_state = 572
+					controls_state = 414
+					controls_state = 421
+					controls_state = 436
+					controls_state = 451
+					controls_state = 457
+					controls_state = 486
+					controls_state = 491
+					controls_state = 497
+					controls_state = 498
+					controls_state = 523
+					controls_state = 533
+					controls_state = 534
+					controls_state = 543
+					controls_state = 555
+					controls_state = 563
+					controls_state = 573
+					controls_state = 575
+					controls_state = 576
+					controls_state = 587
+					controls_state = 589
+					controls_state = 592
+					controls_state = 594
+					controls_state = 596
+					controls_state = 630
+				}
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = EQG_gain_cores_on_all_north_african_states_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							state = 215
+							state = 222
+							state = 223
+							state = 231
+							state = 238
+							state = 240
+							state = 247
+							state = 261
+							state = 265
+							state = 274
+							state = 282
+							state = 283
+							state = 289
+							state = 298
+							state = 308
+							state = 310
+							state = 319
+							state = 322
+							state = 331
+							state = 343
+							state = 378
+							state = 397
+							state = 443
+							state = 480
+							state = 507
+							state = 566
+							state = 458
+							state = 473
+							state = 490
+							state = 510
+							state = 551
+							state = 611
+							state = 633
+							state = 597
+							state = 602
+							state = 623
+							state = 629
+							state = 650
+							state = 653
+							state = 544
+							state = 572
+							state = 414
+							state = 421
+							state = 436
+							state = 451
+							state = 457
+							state = 486
+							state = 491
+							state = 497
+							state = 498
+							state = 523
+							state = 533
+							state = 534
+							state = 543
+							state = 555
+							state = 563
+							state = 573
+							state = 575
+							state = 576
+							state = 587
+							state = 589
+							state = 592
+							state = 594
+							state = 596
+							state = 630
+						}
+					}
+					add_core_of = ROOT
+				}
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_west_african_security
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 1
+		relative_position_id = EQG_morgan_security
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_morgan_security
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_security_war_support_factor_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_01_war_support_factor_tt
+			set_country_flag = EQG_west_african_security_flag
+			custom_effect_tooltip = EQG_unlock_west_african_security_decisions
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_threat_profile_sokoto
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 2
+		relative_position_id = EQG_morgan_security
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_west_african_security
+		}
+		bypass = {
+			AND = {
+				NOT = {
+					country_exists = VOL
+					country_exists = NGA
+					country_exists = CHA
+				}
+			}
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_security_conscription_var = 0.01 }
+			custom_effect_tooltip = EQG_modify_morgan_security_001_conscription_tt
+			add_ideas = EQG_sokoto_attack_bonus
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_threat_profile_bamako
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 3
+		relative_position_id = EQG_morgan_security
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_threat_profile_sokoto
+		}
+		bypass = {
+			AND = {
+				NOT = {
+					country_exists = MRT
+					country_exists = MLI
+					country_exists = LIB
+				}
+			}
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_security_conscription_var = 0.01 }
+			custom_effect_tooltip = EQG_modify_morgan_security_001_conscription_tt
+			add_ideas = EQG_bamako_attack_bonus
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_west_african_reconstruction_fonds
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 4
+		relative_position_id = EQG_morgan_security
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_threat_profile_bamako
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = EQG_controls_all_west_african_states
+				AND = {
+					controls_state = 216
+					controls_state = 220
+					controls_state = 226
+					controls_state = 210
+					controls_state = 214
+					controls_state = 218
+					controls_state = 221
+					controls_state = 224
+					controls_state = 225
+					controls_state = 227
+					controls_state = 228
+					controls_state = 230
+					controls_state = 235
+					controls_state = 250
+					controls_state = 259
+					controls_state = 232
+					controls_state = 233
+					controls_state = 237
+					controls_state = 241
+					controls_state = 243
+					controls_state = 248
+					controls_state = 255
+					controls_state = 257
+					controls_state = 264
+					controls_state = 269
+					controls_state = 281
+					controls_state = 268
+					controls_state = 272
+					controls_state = 280
+					controls_state = 285
+					controls_state = 287
+					controls_state = 293
+					controls_state = 301
+					controls_state = 284
+					controls_state = 295
+					controls_state = 296
+					controls_state = 306
+					controls_state = 316
+					controls_state = 335
+					controls_state = 339
+					controls_state = 353
+					controls_state = 364
+					controls_state = 381
+					controls_state = 387
+					controls_state = 390
+					controls_state = 418
+					controls_state = 432
+					controls_state = 360
+					controls_state = 367
+					controls_state = 396
+					controls_state = 311
+					controls_state = 327
+					controls_state = 340
+					controls_state = 342
+				}
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = EQG_gain_cores_on_all_west_african_states_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							state = 216
+							state = 220
+							state = 226
+							state = 210
+							state = 214
+							state = 218
+							state = 221
+							state = 224
+							state = 225
+							state = 227
+							state = 228
+							state = 230
+							state = 235
+							state = 250
+							state = 259
+							state = 232
+							state = 233
+							state = 237
+							state = 241
+							state = 243
+							state = 248
+							state = 255
+							state = 257
+							state = 264
+							state = 269
+							state = 281
+							state = 268
+							state = 272
+							state = 280
+							state = 285
+							state = 287
+							state = 293
+							state = 301
+							state = 284
+							state = 295
+							state = 296
+							state = 306
+							state = 316
+							state = 335
+							state = 339
+							state = 353
+							state = 364
+							state = 381
+							state = 387
+							state = 390
+							state = 418
+							state = 432
+							state = 360
+							state = 367
+							state = 396
+							state = 311
+							state = 327
+							state = 340
+							state = 342
+						}
+					}
+					add_core_of = ROOT
+				}
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_south_african_security
+		icon = GFX_focus_unknown
+
+		x = 2
+		y = 1
+		relative_position_id = EQG_morgan_security
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_morgan_security
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_security_war_support_factor_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_01_war_support_factor_tt
+			set_country_flag = EQG_south_african_security_flag
+			custom_effect_tooltip = EQG_unlock_south_african_security_decisions
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_tender_naval_contractors
+		icon = GFX_focus_unknown
+
+		x = 2
+		y = 2
+		relative_position_id = EQG_morgan_security
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_south_african_security
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_security_modifier_industrial_capacity_dockyard_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_01_dockyard_output_tt
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_augments_buy_now_pay_later
+		icon = GFX_focus_unknown
+
+		x = 2
+		y = 3
+		relative_position_id = EQG_morgan_security
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_tender_naval_contractors
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_security_army_attack_factor_var = 0.05 }
+			add_to_variable = { morgan_security_army_defence_factor_var = 0.05 }
+			add_to_variable = { morgan_security_supply_consumption_factor_var = 0.05 }
+			custom_effect_tooltip = EQG_modify_morgan_security_005_army_attack_and_defence_005_supply_consumption_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_south_african_reconstruction_fonds
+		icon = GFX_focus_unknown
+
+		x = 2
+		y = 4
+		relative_position_id = EQG_morgan_security
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_augments_buy_now_pay_later
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = EQG_controls_all_south_african_states
+				AND = {
+					controls_state = 611
+					controls_state = 633
+					controls_state = 638
+					controls_state = 641
+					controls_state = 646
+					controls_state = 654
+					controls_state = 663
+					controls_state = 665
+					controls_state = 675
+					controls_state = 686
+					controls_state = 410
+					controls_state = 420
+					controls_state = 430
+					controls_state = 459
+					controls_state = 513
+					controls_state = 337
+					controls_state = 341
+					controls_state = 350
+					controls_state = 354
+					controls_state = 357
+					controls_state = 365
+					controls_state = 366
+					controls_state = 374
+					controls_state = 376
+					controls_state = 384
+					controls_state = 388
+					controls_state = 398
+					controls_state = 399
+					controls_state = 401
+					controls_state = 411
+					controls_state = 416
+					controls_state = 441
+					controls_state = 442
+					controls_state = 448
+					controls_state = 452
+					controls_state = 465
+					controls_state = 467
+					controls_state = 477
+					controls_state = 478
+					controls_state = 483
+					controls_state = 504
+					controls_state = 516
+					controls_state = 449
+					controls_state = 463
+					controls_state = 475
+					controls_state = 502
+					controls_state = 492
+					controls_state = 499
+					controls_state = 522
+					controls_state = 527
+					controls_state = 546
+					controls_state = 548
+					controls_state = 503
+					controls_state = 511
+					controls_state = 528
+					controls_state = 530
+					controls_state = 535
+					controls_state = 460
+					controls_state = 462
+					controls_state = 464
+					controls_state = 469
+					controls_state = 482
+					controls_state = 484
+					controls_state = 487
+					controls_state = 494
+					controls_state = 495
+					controls_state = 505
+					controls_state = 506
+					controls_state = 519
+					controls_state = 521
+					controls_state = 524
+					controls_state = 532
+					controls_state = 536
+					controls_state = 538
+					controls_state = 539
+					controls_state = 547
+					controls_state = 550
+					controls_state = 552
+					controls_state = 553
+					controls_state = 556
+					controls_state = 558
+					controls_state = 561
+					controls_state = 564
+					controls_state = 568
+					controls_state = 570
+					controls_state = 577
+					controls_state = 578
+					controls_state = 579
+					controls_state = 583
+					controls_state = 584
+					controls_state = 585
+					controls_state = 588
+					controls_state = 593
+					controls_state = 598
+					controls_state = 599
+					controls_state = 600
+					controls_state = 607
+					controls_state = 609
+					controls_state = 612
+					controls_state = 615
+					controls_state = 618
+					controls_state = 621
+					controls_state = 622
+					controls_state = 624
+					controls_state = 627
+					controls_state = 643
+					controls_state = 644
+					controls_state = 669
+					controls_state = 671
+					controls_state = 674
+					controls_state = 683
+					controls_state = 689
+					controls_state = 713
+					controls_state = 715
+					controls_state = 778
+					controls_state = 355
+					controls_state = 362
+					controls_state = 372
+					controls_state = 405
+					controls_state = 406
+					controls_state = 408
+					controls_state = 424
+					controls_state = 444
+					controls_state = 217
+					controls_state = 219
+					controls_state = 254
+					controls_state = 356
+					controls_state = 373
+					controls_state = 382
+					controls_state = 385
+					controls_state = 391
+					controls_state = 404
+					controls_state = 412
+					controls_state = 413
+					controls_state = 428
+					controls_state = 431
+					controls_state = 435
+					controls_state = 439
+					controls_state = 445
+				}
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = EQG_gain_cores_on_all_south_african_states_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							state = 611
+							state = 633
+							state = 638
+							state = 641
+							state = 646
+							state = 654
+							state = 663
+							state = 665
+							state = 675
+							state = 686
+							state = 410
+							state = 420
+							state = 430
+							state = 459
+							state = 513
+							state = 337
+							state = 341
+							state = 350
+							state = 354
+							state = 357
+							state = 365
+							state = 366
+							state = 374
+							state = 376
+							state = 384
+							state = 388
+							state = 398
+							state = 399
+							state = 401
+							state = 411
+							state = 416
+							state = 441
+							state = 442
+							state = 448
+							state = 452
+							state = 465
+							state = 467
+							state = 477
+							state = 478
+							state = 483
+							state = 504
+							state = 516
+							state = 449
+							state = 463
+							state = 475
+							state = 502
+							state = 492
+							state = 499
+							state = 522
+							state = 527
+							state = 546
+							state = 548
+							state = 503
+							state = 511
+							state = 528
+							state = 530
+							state = 535
+							state = 460
+							state = 462
+							state = 464
+							state = 469
+							state = 482
+							state = 484
+							state = 487
+							state = 494
+							state = 495
+							state = 505
+							state = 506
+							state = 519
+							state = 521
+							state = 524
+							state = 532
+							state = 536
+							state = 538
+							state = 539
+							state = 547
+							state = 550
+							state = 552
+							state = 553
+							state = 556
+							state = 558
+							state = 561
+							state = 564
+							state = 568
+							state = 570
+							state = 577
+							state = 578
+							state = 579
+							state = 583
+							state = 584
+							state = 585
+							state = 588
+							state = 593
+							state = 598
+							state = 599
+							state = 600
+							state = 607
+							state = 609
+							state = 612
+							state = 615
+							state = 618
+							state = 621
+							state = 622
+							state = 624
+							state = 627
+							state = 643
+							state = 644
+							state = 669
+							state = 671
+							state = 674
+							state = 683
+							state = 689
+							state = 713
+							state = 715
+							state = 778
+							state = 355
+							state = 362
+							state = 372
+							state = 405
+							state = 406
+							state = 408
+							state = 424
+							state = 444
+							state = 217
+							state = 219
+							state = 254
+							state = 356
+							state = 373
+							state = 382
+							state = 385
+							state = 391
+							state = 404
+							state = 412
+							state = 413
+							state = 428
+							state = 431
+							state = 435
+							state = 439
+							state = 445
+						}
+					}
+					add_core_of = ROOT
+				}
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_blow_away_the_competition
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 5
+		relative_position_id = EQG_morgan_security
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_north_african_reconstruction_fonds
+		}
+		prerequisite = {
+			focus = EQG_west_african_reconstruction_fonds
+		}
+		prerequisite = {
+			focus = EQG_south_african_reconstruction_fonds
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_security_army_org_factor_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_security_01_army_org_factor_tt
+			army_experience = 25
+			navy_experience = 25
+			air_experience = 25
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_morgan_marketing
+		icon = GFX_focus_unknown
+
+		x = 5
+		y = 1
+		relative_position_id = EQG_opportunities_abroad
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_opportunities_abroad
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_political_power_gain_var = 0.5 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_05_political_power_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_north_african_opportunities
+		icon = GFX_focus_unknown
+
+		x = -2
+		y = 1
+		relative_position_id = EQG_morgan_marketing
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_morgan_marketing
+		}
+
+		completion_reward = {
+			set_country_flag = EQG_north_african_integration_flag
+			custom_effect_tooltip = EQG_integrate_north_african_countries_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_discount_flood_gates
+		icon = GFX_focus_unknown
+
+		x = -2
+		y = 2
+		relative_position_id = EQG_morgan_marketing
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_north_african_opportunities
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_political_power_gain_var = 0.25 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_025_political_power_tt
+			set_variable = { EQG_north_african_integration_likeliness_var = 2 }
+			custom_effect_tooltip = EQG_gain_1_influence_in_north_africa
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_token_gestures
+		icon = GFX_focus_unknown
+
+		x = -2
+		y = 3
+		relative_position_id = EQG_morgan_marketing
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_discount_flood_gates
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_political_power_gain_var = 0.25 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_025_political_power_tt
+			add_to_variable = { EQG_north_african_integration_likeliness_var = 2 }
+			custom_effect_tooltip = EQG_gain_1_influence_in_north_africa
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_harness_the_nile
+		icon = GFX_focus_unknown
+
+		x = -2
+		y = 4
+		relative_position_id = EQG_morgan_marketing
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_token_gestures
+		}
+		available = {
+			NOT = {
+				country_exists = EGY
+			}
+			all_state = {
+				OR = {
+					NOT = { is_core_of = EGY }
+					AND = {
+						is_core_of = EGY
+						is_owned_by = ROOT
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					AND = {
+						is_core_of = EGY
+						is_on_continent = africa
+					}
+				}
+				add_building_construction = {
+					type = generator_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					AND = {
+						is_core_of = EGY
+						is_on_continent = africa
+					}
+				}
+				add_building_construction = {
+					type = generator_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					AND = {
+						is_core_of = EGY
+						is_on_continent = africa
+					}
+				}
+				add_building_construction = {
+					type = generator_building
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_west_african_opportunities
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 1
+		relative_position_id = EQG_morgan_marketing
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_morgan_marketing
+		}
+
+		completion_reward = {
+			set_country_flag = EQG_west_african_integration_flag
+			custom_effect_tooltip = EQG_integrate_west_african_countries_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_filling_the_vacuum
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 2
+		relative_position_id = EQG_morgan_marketing
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_west_african_opportunities
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_industrial_capacity_dockyard_var = 0.05 }
+			add_to_variable = { morgan_industries_modifier_industrial_capacity_factory_var = 0.05 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_005_output_tt
+			set_variable = { EQG_west_african_integration_likeliness_var = 2 }
+			custom_effect_tooltip = EQG_gain_1_influence_in_north_africa
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_expand_ecological_engineering_division
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 3
+		relative_position_id = EQG_morgan_marketing
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_filling_the_vacuum
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_construction_speed_var = 0.05 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_005_construction_speed_minus_005_ecobalance_threat_tt
+			add_to_variable = { EQG_west_african_integration_likeliness_var = 2 }
+			custom_effect_tooltip = EQG_gain_1_influence_in_north_africa
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_european_connections
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 4
+		relative_position_id = EQG_morgan_marketing
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_expand_ecological_engineering_division
+		}
+		available = {
+			NOT = {
+				country_exists = TUN
+			}
+			all_state = {
+				OR = {
+					NOT = { is_core_of = TUN }
+					AND = {
+						is_core_of = TUN
+						is_owned_by = ROOT
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			every_country = {
+				limit = {
+					capital_scope = {
+						is_on_continent = europe
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = EQG_european_connections_modifier
+				}
+			}
+			add_opinion_modifier = {
+				target = FROM
+				modifier = EQG_european_connections_modifier
+			}
+			add_to_variable = { morgan_industries_modifier_factory_max_efficiency_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_01_max_factory_efficiency_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_south_african_opportunities
+		icon = GFX_focus_unknown
+
+		x = 2
+		y = 1
+		relative_position_id = EQG_morgan_marketing
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_morgan_marketing
+		}
+		bypass = {
+			NOT = {
+				AND = {
+					country_exists = TZN
+					country_exists = COG
+				}
+			}
+		}
+
+		completion_reward = {
+			add_ideas = EQG_south_african_attack_bonus
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_compete_with_the_EAF
+		icon = GFX_focus_unknown
+
+		x = 2
+		y = 2
+		relative_position_id = EQG_morgan_marketing
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_south_african_opportunities
+		}
+		bypass = {
+			NOT = {
+				AND = {
+					country_exists = TZN
+				}
+			}
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = EQG_south_african_attack_bonus
+				add_idea = EQG_south_african_attack_bonus1
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_co_opt_kimpwanza
+		icon = GFX_focus_unknown
+
+		x = 2
+		y = 3
+		relative_position_id = EQG_morgan_marketing
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_compete_with_the_EAF
+		}
+		bypass = {
+			NOT = {
+				AND = {
+					country_exists = COG
+					country_exists = SAF
+					country_exists = CAR
+					country_exists = ANG
+				}
+			}
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = EQG_south_african_attack_bonus1
+				add_idea = EQG_south_african_attack_bonus2
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_integrate_ABTBIA
+		icon = GFX_focus_unknown
+
+		x = 2
+		y = 4
+		relative_position_id = EQG_morgan_marketing
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_co_opt_kimpwanza
+		}
+		available = {
+			NOT = {
+				country_exists = TZN
+			}
+			all_state = {
+				OR = {
+					NOT = { is_core_of = TZN }
+					AND = {
+						is_core_of = TZN
+						is_owned_by = ROOT
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_industrial_power_gain_var = 1.5 }
+			add_to_variable = { morgan_industries_modifier_industrial_capacity_factory_var = 0.05 }
+			add_to_variable = { morgan_industries_modifier_industrial_capacity_dockyard_var = 0.05 }
+			add_to_variable = { morgan_industries_modifier_factory_max_efficiency_var = 0.05 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_15_industrial_power_gain_005_industrial_and_dockyard_capacity_005_max_efficiency_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_corner_the_market
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 5
+		relative_position_id = EQG_morgan_marketing
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_harness_the_nile
+		}
+		prerequisite = {
+			focus = EQG_european_connections
+		}
+		prerequisite = {
+			focus = EQG_integrate_ABTBIA
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = civilian_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = civilian_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = civilian_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+#Adamawa Subtree
+	focus = {
+		id = EQG_the_adamawa_portfolio
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 1
+		relative_position_id = EQG_opportunities_abroad
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_opportunities_abroad
+		}
+
+		completion_reward = {
+			country_event = { id = morganindustries.11 days = 0 }
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_offer_platitudes
+		icon = GFX_focus_unknown
+
+		x = -1
+		y = 1
+		relative_position_id = EQG_the_adamawa_portfolio
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_the_adamawa_portfolio
+		}
+		mutually_exclusive = {
+			focus = EQG_meet_with_local_leaders
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = EQG_the_adamawa_portfolio
+				add_idea = EQG_the_adamawa_portfolio_left_branch
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_increase_security_presence
+		icon = GFX_focus_unknown
+
+		x = -1
+		y = 2
+		relative_position_id = EQG_the_adamawa_portfolio
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_offer_platitudes
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = EQG_the_adamawa_portfolio_left_branch
+				add_idea = EQG_the_adamawa_portfolio_left_branch1
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_issue_bounties_on_rebel_leaders
+		icon = GFX_focus_unknown
+
+		x = -1
+		y = 3
+		relative_position_id = EQG_the_adamawa_portfolio
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_increase_security_presence
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = EQG_the_adamawa_portfolio_left_branch1
+				add_idea = EQG_the_adamawa_portfolio_left_branch2
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_adamawa_a_valued_asset
+		icon = GFX_focus_unknown
+
+		x = -1
+		y = 4
+		relative_position_id = EQG_the_adamawa_portfolio
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_issue_bounties_on_rebel_leaders
+		}
+
+		completion_reward = {
+			annex_country = {
+				target = CMR
+				transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = CMR
+				}
+				add_core_of = ROOT
+			}
+			swap_ideas = {
+				remove_idea = EQG_the_adamawa_portfolio_left_branch2
+				add_idea = EQG_the_adamawa_portfolio_left_branch3
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_meet_with_local_leaders
+		icon = GFX_focus_unknown
+
+		x = 1
+		y = 1
+		relative_position_id = EQG_the_adamawa_portfolio
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_the_adamawa_portfolio
+		}
+		mutually_exclusive = {
+			focus = EQG_offer_platitudes
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = EQG_the_adamawa_portfolio
+				add_idea = EQG_the_adamawa_portfolio_right_branch
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_mutual_compromise
+		icon = GFX_focus_unknown
+
+		x = 1
+		y = 2
+		relative_position_id = EQG_the_adamawa_portfolio
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_meet_with_local_leaders
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = EQG_the_adamawa_portfolio_right_branch
+				add_idea = EQG_the_adamawa_portfolio_right_branch1
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_placate_the_landowners
+		icon = GFX_focus_unknown
+
+		x = 1
+		y = 3
+		relative_position_id = EQG_the_adamawa_portfolio
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_mutual_compromise
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = EQG_the_adamawa_portfolio_right_branch1
+				add_idea = EQG_the_adamawa_portfolio_right_branch2
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_adamawa_land_of_opportunity
+		icon = GFX_focus_unknown
+
+		x = 1
+		y = 4
+		relative_position_id = EQG_the_adamawa_portfolio
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_placate_the_landowners
+		}
+
+		completion_reward = {
+			annex_country = {
+				target = CMR
+				transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = CMR
+				}
+				add_core_of = ROOT
+			}
+			swap_ideas = {
+				remove_idea = EQG_the_adamawa_portfolio_right_branch2
+				add_idea = EQG_adamawa_land_of_opportunity_idea
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+#Final Branch
+	focus = {
+		id = EQG_a_few_loose_ends
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 7
+		relative_position_id = EQG_opportunities_abroad
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_blow_away_the_competition
+		}
+		prerequisite = {
+			focus = EQG_corner_the_market
+		}
+		available = {
+			all_state = {
+				OR = {
+					NOT = { is_on_continent = africa }
+					is_owned_by = ROOT
+				}
+			}
+			OR = {
+				has_completed_focus = EQG_adamawa_a_valued_asset
+				has_completed_focus = EQG_adamawa_land_of_opportunity
+			}
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_stability_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_01_stability_tt
+			if = {
+				limit = {
+					has_completed_focus = EQG_morgans_proposal
+				}
+				country_event = { id = morganindustries.12 days = 0 }
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = EQG_morgan_reillys_proposal
+				}
+				country_event = { id = morganindustries.13 days = 0 }
+			}
+			else = {
+				custom_effect_tooltip = EQG_final_branch_events_coming
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_the_big_question
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 1
+		relative_position_id = EQG_a_few_loose_ends
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_a_few_loose_ends
+		}
+
+		completion_reward = {
+			add_to_variable = { political_power_factor = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_01_political_power_factor_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_africa_a_morgan_industries_company
+		icon = GFX_focus_unknown
+
+		x = -1
+		y = 2
+		relative_position_id = EQG_a_few_loose_ends
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_the_big_question
+		}
+		available = {
+			has_completed_focus = EQG_morgans_proposal
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = EQG_offer_platitudes
+				}
+				country_event = { id = morganindustries.14 days = 0 }
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = EQG_meet_with_local_leaders
+				}
+				country_event = { id = morganindustries.15 days = 0 }
+			}
+			else = {
+				custom_effect_tooltip = EQG_final_branch_events_coming
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_a_community_for_all_of_africa
+		icon = GFX_focus_unknown
+
+		x = 1
+		y = 2
+		relative_position_id = EQG_a_few_loose_ends
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_the_big_question
+		}
+		available = {
+			has_completed_focus = EQG_morgan_reillys_proposal
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = EQG_offer_platitudes
+				}
+				country_event = { id = morganindustries.16 days = 0 }
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = EQG_meet_with_local_leaders
+				}
+				country_event = { id = morganindustries.17 days = 0 }
+			}
+			else = {
+				custom_effect_tooltip = EQG_final_branch_events_coming
+			}
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_morgan_augmentation
+		icon = GFX_focus_unknown
+
+		x = -2
+		y = 3
+		relative_position_id = EQG_a_few_loose_ends
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_africa_a_morgan_industries_company
+			focus = EQG_a_community_for_all_of_africa
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_army_attack_factor_var = 0.05 }
+			add_to_variable = { morgan_industries_army_defence_factor_var = 0.05 }
+			add_to_variable = { morgan_industries_modifier_construction_speed_var = 0.1 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_005_army_attack_and_defence_01_construction_speed_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_morgan_space
+		icon = GFX_focus_unknown
+
+		x = 0
+		y = 3
+		relative_position_id = EQG_a_few_loose_ends
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_africa_a_morgan_industries_company
+			focus = EQG_a_community_for_all_of_africa
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier = EQG_morgan_industries_modifier }
+				}
+				hidden_effect = {
+					remove_dynamic_modifier = { modifier = EQG_morgan_industries_modifier }
+					add_dynamic_modifier = { modifier = EQG_morgan_industries_modifier2 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_dynamic_modifier = { modifier = EQG_morgan_industries_modifier1 }
+				}
+				hidden_effect = {
+					remove_dynamic_modifier = { modifier = EQG_morgan_industries_modifier1 }
+					add_dynamic_modifier = { modifier = EQG_morgan_industries_modifier3 }
+				}
+			}
+			custom_effect_tooltip = EQG_modify_morgan_industries_02_spaceship_contribution_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = EQG_morgan_longevity
+		icon = GFX_focus_unknown
+
+		x = 2
+		y = 3
+		relative_position_id = EQG_a_few_loose_ends
+		cost = 5
+
+		prerequisite = {
+			focus = EQG_africa_a_morgan_industries_company
+			focus = EQG_a_community_for_all_of_africa
+		}
+
+		completion_reward = {
+			add_to_variable = { morgan_industries_modifier_monthly_population_var = 0.2 }
+			custom_effect_tooltip = EQG_modify_morgan_industries_02_monthly_population_tt
+		}
+
+		ai_will_do = {
+		}
+	}
+}
