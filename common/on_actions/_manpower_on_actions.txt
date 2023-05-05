@@ -9,14 +9,14 @@ on_actions = {
                     limit = {
                         tag = ADU
                     }
-                    add_ideas = limited_conscription
+                    add_ideas = volunteer_only
                 }
                 else_if = {
                     limit = {
                         exists = yes #all non-existing countries have 0 manpower
                         has_manpower < 1000
                     }
-                    add_ideas = all_adults_serve
+                    add_ideas = service_by_requirement
                 } 
                 else_if = {
                     limit = {
@@ -25,7 +25,7 @@ on_actions = {
                             has_idea = autocratic_authority
                         }
                     }
-                    add_ideas = service_by_requirement
+                    add_ideas = extensive_conscription
                 }
                 else_if = {
                     limit = {
@@ -34,10 +34,10 @@ on_actions = {
                             has_idea = minarchist_state
                         }
                     }
-                    add_ideas = limited_conscription
+                    add_ideas = volunteer_only
                 }
                 else = {
-                    add_ideas = extensive_conscription
+                    add_ideas = limited_conscription
                 }
             }
         }

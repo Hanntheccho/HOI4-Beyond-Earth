@@ -23,8 +23,8 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "countrystateview"
-		position = { x=-400 y =-415 }
-		show_position = { x=10 y =-415 }
+		position = { x=-400 y =-385 }
+		show_position = { x=30 y =-385 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
@@ -35,8 +35,25 @@ guiTypes = {
 		containerWindowType = {
 			name = "state_info_window"
 			position = { x = 2 y = 0 }
-			size = { width=446 height=400 }
+			size = { width=446 height=360 }
 			clipping = no
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_tooltip"
+				position = {
+					x = -20
+					y = -15
+				}
+			}
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_tooltip"
+				position = {
+					x = 10
+					y = 10
+				}
+			}
 
 			background = {
 				name = "Background"
@@ -46,20 +63,41 @@ guiTypes = {
 			}
 
 			instantTextboxType = {
-				name = "state_name_extra"
+				name = "state_name"
 				position = { x = 20 y = 14 }
 				textureFile = ""
 				font = "Beyond"
-				text = "//// /////// ///////"
-				maxWidth = 370
-				maxHeight = 80
+				text = "STATE_NAME_TEST"
+				maxWidth = 345
+				maxHeight = 200
 				format = left
 				fixedsize = yes
 			}
 
 			containerWindowType = {
+				name = "Background_8"
+				size = { width=440 height=254 }
+
+				background = {
+					name = "Background"
+					quadTextureSprite = "GFX_tiled_black"
+					position = { x = 4 y = 50 }
+					alwaystransparent = yes
+				}
+			} 
+
+			instantTextBoxType = {
+				name = "more_more_details"
+				position = { x = 23 y = 60 }
+				font = "Arialsmallest"
+				text = "▀▀▀▀▀▀▀ ▀▀▀▀▀   ▀ ▀▀  ▀▀     ▀  ▀    ▀       ▀       ▀       ▀"	
+				maxWidth = 45
+				maxHeight = 200
+			}
+
+			containerWindowType = {
 				name = "Background_2"
-				size = { width=440 height=394 }
+				size = { width=440 height=354 }
 
 				background = {
 					name = "Background"
@@ -68,22 +106,10 @@ guiTypes = {
 					alwaystransparent = yes
 				}
 			} 
-
-			instantTextboxType = {
-				name = "state_name"
-				position = { x = 24 y = 24 }
-				textureFile = ""
-				font = "Beyondsmall"
-				text = "STATE_NAME_TEST"
-				maxWidth = 345
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-			}
 			
 			gridBoxType = {
 				name = "state_building_entries"
-				position = { x = 10 y =61 }
+				position = { x = -10000 y =61 }
 				size = { width = 480 height = 105 }
 				format = "UPPER_LEFT"
 				slotsize = { width = 155 height = 63 }
@@ -103,11 +129,11 @@ guiTypes = {
 			
 			gridBoxType = {
 				name = "state_shared_slot_building_entries"
-				position = { x = 150 y = 61 }
+				position = { x = 70 y = 60 }
 				size = { width = 480 height = 90%% }
 				format = "UPPER_LEFT"
-				slotsize = { width = 57 height = 48 }
-				max_slots_horizontal = 5
+				slotsize = { width = 60 height = 50 }
+				max_slots_horizontal = 6
 			}
 
 			iconType ={
@@ -141,7 +167,7 @@ guiTypes = {
 			
 			OverlappingElementsBoxType = {
 				name = "state_claims"
-				position = { x = -110 y = -41 }
+				position = { x = -105 y = -41 }
 				size = { x = 500 y = 140 }
 				format = right
 				spacing = 1.0
@@ -289,7 +315,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "province_info_window"
-			position = { x = 8 y = 342 }
+			position = { x = 8 y = 302 }
 			size = { width=480 height=29%% }
 
 			containerWindowType = {
@@ -416,10 +442,10 @@ guiTypes = {
 				max_slots_horizontal = 3
 			}
 			
-			buttonType = { #drop the cat-bomb
+			buttonType = {
 				name = "nuke_province"
 				quadTextureSprite ="GFX_nuke_button"
-				position = { x = -14 y = -38 }
+				position = { x = -10000 y = -38 }
 			}
 			
 			iconType = {

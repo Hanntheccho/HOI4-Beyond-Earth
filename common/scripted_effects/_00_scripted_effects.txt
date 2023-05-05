@@ -347,19 +347,19 @@ upgrade_economy_law = {
 		limit = {
 			has_idea = civilian_economy
 		}
-		add_ideas = low_economic_mobilisation
+		add_ideas = deregulated_economy
 		add_political_power = -150
 	}
 	else_if = {
 		limit = {
-			has_idea = low_economic_mobilisation
+			has_idea = deregulated_economy
 		}
-		add_ideas = partial_economic_mobilisation
+		add_ideas = mixed_economy
 		add_political_power = -150
 	}
 	else_if = {
 		limit = {
-			has_idea = partial_economic_mobilisation
+			has_idea = mixed_economy
 		}
 		add_ideas = war_economy
 		add_political_power = -150
@@ -372,9 +372,19 @@ upgrade_economy_law = {
 upgrade_mobilization_law = {
 	if = {
 		limit = {
-			has_idea = limited_conscription
+			has_idea = volunteer_only
 			NOT = {
 				has_global_flag = peace_resolution_5_done
+			}
+		}
+		add_ideas = limited_conscription
+		add_political_power = -150
+	}
+	else_if = {
+		limit = {
+			has_idea = limited_conscription
+			NOT = {
+				has_global_flag = peace_resolution_4_done
 			}
 		}
 		add_ideas = extensive_conscription
@@ -384,20 +394,10 @@ upgrade_mobilization_law = {
 		limit = {
 			has_idea = extensive_conscription
 			NOT = {
-				has_global_flag = peace_resolution_4_done
-			}
-		}
-		add_ideas = service_by_requirement
-		add_political_power = -150
-	}
-	else_if = {
-		limit = {
-			has_idea = service_by_requirement
-			NOT = {
 				has_global_flag = peace_resolution_3_done
 			}
 		}
-		add_ideas = all_adults_serve
+		add_ideas = service_by_requirement
 		add_political_power = -150
 	}
 	else = {
@@ -446,19 +446,19 @@ downgrade_economy_law = {
 		limit = {
 			has_idea = war_economy
 		}
-		add_ideas = partial_economic_mobilisation
+		add_ideas = mixed_economy
 		add_political_power = -150
 	}
 	else_if = {
 		limit = {
-			has_idea = partial_economic_mobilisation
+			has_idea = mixed_economy
 		}
-		add_ideas = low_economic_mobilisation
+		add_ideas = deregulated_economy
 		add_political_power = -150
 	}
 	else_if = {
 		limit = {
-			has_idea = low_economic_mobilisation
+			has_idea = deregulated_economy
 		}
 		add_ideas = civilian_economy
 		add_political_power = -150
@@ -471,13 +471,6 @@ downgrade_economy_law = {
 downgrade_mobilization_law = {
 	if = {
 		limit = {
-			has_idea = all_adults_serve
-		}
-		add_ideas = service_by_requirement
-		add_political_power = -150
-	}
-	else_if = {
-		limit = {
 			has_idea = service_by_requirement
 		}
 		add_ideas = extensive_conscription
@@ -488,6 +481,13 @@ downgrade_mobilization_law = {
 			has_idea = extensive_conscription
 		}
 		add_ideas = limited_conscription
+		add_political_power = -150
+	}
+	else_if = {
+		limit = {
+			has_idea = limited_conscription
+		}
+		add_ideas = volunteer_only
 		add_political_power = -150
 	}
 	else = {
@@ -538,7 +538,7 @@ puppet_government_too = {
 			retire_ideology_leader = synergy
 			retire_ideology_leader = mastery
 			retire_ideology_leader = supremacy
-			add_ideas = limited_conscription
+			add_ideas = volunteer_only
 			if = {
 				limit = {
 					THIS.OVERLORD = {
@@ -594,18 +594,18 @@ puppet_government_too = {
 			else_if = {
 				limit = {
 					THIS.OVERLORD = {
-						has_idea = low_economic_mobilisation
+						has_idea = deregulated_economy
 					}
 				}
-				add_ideas = low_economic_mobilisation
+				add_ideas = deregulated_economy
 			}
 			else_if = {
 				limit = {
 					THIS.OVERLORD = {
-						has_idea = partial_economic_mobilisation
+						has_idea = mixed_economy
 					}
 				}
-				add_ideas = partial_economic_mobilisation
+				add_ideas = mixed_economy
 			}
 			else_if = {
 				limit = {

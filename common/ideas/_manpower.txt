@@ -2,7 +2,7 @@ ideas = {
 	mobilization_laws = {
 		law = yes
 		use_list_view = yes
-		limited_conscription = {
+		volunteer_only = {
 			level = 4
 
 			#available = {
@@ -21,7 +21,7 @@ ideas = {
 				production_speed_civilian_complex_factor = 0.1
 			}
 		}
-		extensive_conscription = {
+		limited_conscription = {
 			level = 3
 			default = yes
 
@@ -41,7 +41,7 @@ ideas = {
 				}
 				modifier = {
 					factor = 0
-					NOT = { has_idea = limited_conscription }
+					NOT = { has_idea = volunteer_only }
 				}
 				modifier = {
 					is_puppet = yes #player can't interact with the interface but AI do can
@@ -53,7 +53,7 @@ ideas = {
 				conscription = 0.01					
 			}
 		}
-		service_by_requirement = {
+		extensive_conscription = {
 			level = 2
 
 			#available = {
@@ -72,7 +72,7 @@ ideas = {
 				}
 				modifier = {
 					factor = 0
-					NOT = { has_idea = extensive_conscription }
+					NOT = { has_idea = limited_conscription }
 				}
 				modifier = {
 					is_puppet = yes #player can't interact with the interface but AI do can
@@ -88,7 +88,7 @@ ideas = {
 				production_speed_civilian_complex_factor = -0.05
 			}
 		}
-		all_adults_serve = {
+		service_by_requirement = {
 			level = 1
 
 			#available = {
@@ -107,7 +107,7 @@ ideas = {
 				}
 				modifier = {
 					factor = 0
-					NOT = { has_idea = service_by_requirement }
+					NOT = { has_idea = extensive_conscription }
 				}
 				modifier = {
 					is_puppet = yes #player can't interact with the interface but AI do can
