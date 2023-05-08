@@ -1,315 +1,726 @@
-#focus_tree = {
-#	id = precivil_war_eng_tree
-#	
-#	country = {
-#		factor = 0
-#		
-#		modifier = {
-#			add = 10
-#			tag = ENG
-#		}
-#	}
-#
-#	continuous_focus_position = { x = 1000 y = 100 }
-#
-#	focus = {
-#		id = ENG_scattered_england
-#		icon = GFX_goal_ENG_scattered_england
-#	
-#		x = 4
-#		y = 0
-#
-#		cost = 4
-#		
-#		completion_reward = {
-#
-#		}
-#	
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	focus = {
-#		id = ENG_the_birmingham_uproar
-#		icon = GFX_goal_ENG_the_birmingham_uproar
-#	
-#		x = 4
-#		y = 1
-#
-#		cost = 4
-#
-#		prerequisite = {
-#			focus = ENG_scattered_england
-#		}
-#		
-#		completion_reward = {
-#
-#		}
-#	
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	focus = {
-#		id = ENG_the_sinking_ship
-#		icon = GFX_goal_ENG_the_sinking_ship
-#	
-#		x = 4
-#		y = 2
-#
-#		cost = 4
-#
-#		prerequisite = {
-#			focus = ENG_the_birmingham_uproar
-#		}
-#		
-#		completion_reward = {
-#
-#		}
-#	
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	focus = {
-#		id = ENG_the_damned_mps
-#		icon = GFX_goal_ENG_the_damned_mps
-#	
-#		x = 2
-#		y = 3
-#
-#		cost = 4
-#
-#		prerequisite = {
-#			focus = ENG_the_sinking_ship
-#		}
-#
-#		mutually_exclusive = {
-#			focus = ENG_the_bloody_economy
-#		}
-#		
-#		completion_reward = {
-#
-#		}
-#	
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	focus = {
-#		id = ENG_the_bloody_economy
-#		icon = GFX_goal_ENG_the_bloody_economy
-#	
-#		x = 6
-#		y = 3
-#
-#		cost = 4
-#
-#		prerequisite = {
-#			focus = ENG_the_sinking_ship
-#		}
-#
-#		mutually_exclusive = {
-#			focus = ENG_the_damned_mps
-#		}
-#		
-#		completion_reward = {
-#
-#		}
-#	
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	focus = {
-#		id = ENG_decapitate_the_embezzlement
-#		icon = GFX_goal_ENG_decapitate_the_embezzlement
-#	
-#		x = 2
-#		y = 4
-#
-#		cost = 4
-#
-#		prerequisite = {
-#			focus = ENG_the_damned_mps
-#		}
-#		
-#		completion_reward = {
-#
-#		}
-#	
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	focus = {
-#		id = ENG_sack_the_useless_ministers
-#		icon = GFX_goal_ENG_sack_the_useless_ministers
-#	
-#		x = 2
-#		y = 5
-#
-#		cost = 4
-#
-#		prerequisite = {
-#			focus = ENG_decapitate_the_embezzlement
-#		}
-#		
-#		completion_reward = {
-#
-#		}
-#	
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	focus = {
-#		id = ENG_sack_the_other_ministers
-#		icon = GFX_goal_ENG_sack_the_other_ministers
-#	
-#		x = 2
-#		y = 6
-#
-#		cost = 4
-#
-#		prerequisite = {
-#			focus = ENG_sack_the_useless_ministers
-#		}
-#		
-#		completion_reward = {
-#
-#		}
-#	
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	focus = {
-#		id = ENG_anti_corruption_legislation
-#		icon = GFX_goal_ENG_anti_corruption_legislation
-#	
-#		x = 2
-#		y = 7
-#
-#		cost = 4
-#
-#		prerequisite = {
-#			focus = ENG_sack_the_other_ministers
-#		}
-#		
-#		completion_reward = {
-#
-#		}
-#	
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	focus = {
-#		id = ENG_what_comes_next
-#		icon = GFX_goal_ENG_what_comes_next
-#	
-#		x = 4
-#		y = 8
-#
-#		cost = 4
-#
-#		prerequisite = {
-#			focus = ENG_anti_corruption_legislation
-#			focus = ENG_jumpstart_the_industrial_heart
-#		}
-#		
-#		completion_reward = {
-#
-#		}
-#	
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	focus = {
-#		id = ENG_cut_redundant_relief_aid
-#		icon = GFX_goal_ENG_cut_redundant_relief_aid
-#	
-#		x = 6
-#		y = 4
-#
-#		cost = 4
-#
-#		prerequisite = {
-#			focus = ENG_the_bloody_economy
-#		}
-#		
-#		completion_reward = {
-#
-#		}
-#	
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	focus = {
-#		id = ENG_closer_ties_to_scotland
-#		icon = GFX_goal_ENG_closer_ties_to_scotland
-#	
-#		x = 6
-#		y = 5
-#
-#		cost = 4
-#
-#		prerequisite = {
-#			focus = ENG_cut_redundant_relief_aid
-#		}
-#		
-#		completion_reward = {
-#
-#		}
-#	
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	focus = {
-#		id = ENG_industrialize_the_farmlands
-#		icon = GFX_goal_ENG_industrialize_the_farmlands
-#	
-#		x = 6
-#		y = 6
-#
-#		cost = 4
-#
-#		prerequisite = {
-#			focus = ENG_closer_ties_to_scotland
-#		}
-#		
-#		completion_reward = {
-#
-#		}
-#	
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	focus = {
-#		id = ENG_jumpstart_the_industrial_heart
-#		icon = GFX_goal_ENG_jumpstart_the_industrial_heart
-#	
-#		x = 6
-#		y = 7
-#
-#		cost = 4
-#
-#		prerequisite = {
-#			focus = ENG_industrialize_the_farmlands
-#		}
-#		
-#		completion_reward = {
-#
-#		}
-#	
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#}
-	
+
+focus_tree = {
+    id = eng
+            
+	country = {
+		factor = 0
+		modifier = {
+		    add = 10
+			tag = ENG
+		}
+	}
+            
+	continuous_focus_position = { 
+		x = 0
+		y = 0
+    }
+
+    focus = {
+	    id = ENG_Jolly_Old_England
+	    #icon = GFX_goal_ENG_Jolly_Old_England
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Jolly_Old_England"
+	    }
+        relative_position_id = ENG_Unto_The_Breach
+		prerequisite = { focus = ENG_Unto_The_Breach }
+
+    }
+
+    focus = {
+	    id = ENG_Muster_The_Nation
+	    #icon = GFX_goal_ENG_Muster_The_Nation
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Muster_The_Nation"
+	    }
+        relative_position_id = ENG_Jolly_Old_England
+		prerequisite = { focus = ENG_Jolly_Old_England }
+
+    }
+
+    focus = {
+	    id = ENG_Against_The_North
+	    #icon = GFX_goal_ENG_Against_The_North
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Against_The_North"
+	    }
+        relative_position_id = ENG_Muster_The_Nation
+		prerequisite = { focus = ENG_Muster_The_Nation }
+
+    }
+
+    focus = {
+	    id = ENG_England_Alone_amp_Triumphant
+	    #icon = GFX_goal_ENG_England_Alone_amp_Triumphant
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_England_Alone_amp_Triumphant"
+	    }
+        relative_position_id = ENG_Against_The_North
+		prerequisite = { focus = ENG_Against_The_North }
+
+    }
+
+    focus = {
+	    id = ENG_I_Shall_Not_Cease_From_Mental_Fight
+	    #icon = GFX_goal_ENG_I_Shall_Not_Cease_From_Mental_Fight
+	    cost = 5
+	    x = -8
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_I_Shall_Not_Cease_From_Mental_Fight"
+	    }
+        relative_position_id = ENG_England_Alone_amp_Triumphant
+		prerequisite = { focus = ENG_England_Alone_amp_Triumphant }
+
+    }
+
+    focus = {
+	    id = ENG_Nor_Shall_My_Sword_Sleep_In_My_Hand
+	    #icon = GFX_goal_ENG_Nor_Shall_My_Sword_Sleep_In_My_Hand
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Nor_Shall_My_Sword_Sleep_In_My_Hand"
+	    }
+        relative_position_id = ENG_England_Alone_amp_Triumphant
+		prerequisite = { focus = ENG_England_Alone_amp_Triumphant }
+
+    }
+
+    focus = {
+	    id = ENG_Til_We_Have_Built_Jerusalem
+	    #icon = GFX_goal_ENG_Til_We_Have_Built_Jerusalem
+	    cost = 5
+	    x = 9
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Til_We_Have_Built_Jerusalem"
+	    }
+        relative_position_id = ENG_England_Alone_amp_Triumphant
+		prerequisite = { focus = ENG_England_Alone_amp_Triumphant }
+
+    }
+
+    focus = {
+	    id = ENG_A_Revised_Army
+	    #icon = GFX_goal_ENG_A_Revised_Army
+	    cost = 5
+	    x = -2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_A_Revised_Army"
+	    }
+        relative_position_id = ENG_Nor_Shall_My_Sword_Sleep_In_My_Hand
+		prerequisite = { focus = ENG_Nor_Shall_My_Sword_Sleep_In_My_Hand }
+
+    }
+
+    focus = {
+	    id = ENG_Global_Development_Contracts
+	    #icon = GFX_goal_ENG_Global_Development_Contracts
+	    cost = 5
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Global_Development_Contracts"
+	    }
+        relative_position_id = ENG_Nor_Shall_My_Sword_Sleep_In_My_Hand
+		prerequisite = { focus = ENG_Nor_Shall_My_Sword_Sleep_In_My_Hand }
+
+    }
+
+    focus = {
+	    id = ENG_Officer_Culture
+	    #icon = GFX_goal_ENG_Officer_Culture
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Officer_Culture"
+	    }
+        relative_position_id = ENG_A_Revised_Army
+		prerequisite = { focus = ENG_A_Revised_Army }
+
+    }
+
+    focus = {
+	    id = ENG_Oxford_Institute_of_Technology
+	    #icon = GFX_goal_ENG_Oxford_Institute_of_Technology
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Oxford_Institute_of_Technology"
+	    }
+        relative_position_id = ENG_Global_Development_Contracts
+		prerequisite = { focus = ENG_Global_Development_Contracts }
+
+    }
+
+    focus = {
+	    id = ENG_Military_Infrastructure
+	    #icon = GFX_goal_ENG_Military_Infrastructure
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Military_Infrastructure"
+	    }
+        relative_position_id = ENG_Officer_Culture
+		prerequisite = { focus = ENG_Officer_Culture }
+
+    }
+
+    focus = {
+	    id = ENG_ReEstablish_the_Air_Force
+	    #icon = GFX_goal_ENG_ReEstablish_the_Air_Force
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_ReEstablish_the_Air_Force"
+	    }
+        relative_position_id = ENG_Oxford_Institute_of_Technology
+		prerequisite = { focus = ENG_Oxford_Institute_of_Technology }
+
+    }
+
+    focus = {
+	    id = ENG_A_Cavalier_Constitution
+	    #icon = GFX_goal_ENG_A_Cavalier_Constitution
+	    cost = 5
+	    x = -2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_A_Cavalier_Constitution"
+	    }
+        relative_position_id = ENG_I_Shall_Not_Cease_From_Mental_Fight
+		prerequisite = { focus = ENG_I_Shall_Not_Cease_From_Mental_Fight }
+
+    }
+
+    focus = {
+	    id = ENG_The_Charlotte_Program
+	    #icon = GFX_goal_ENG_The_Charlotte_Program
+	    cost = 5
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_The_Charlotte_Program"
+	    }
+        relative_position_id = ENG_I_Shall_Not_Cease_From_Mental_Fight
+		prerequisite = { focus = ENG_I_Shall_Not_Cease_From_Mental_Fight }
+
+    }
+
+    focus = {
+	    id = ENG_Reinstate_MPs
+	    #icon = GFX_goal_ENG_Reinstate_MPs
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Reinstate_MPs"
+	    }
+        relative_position_id = ENG_A_Cavalier_Constitution
+		prerequisite = { focus = ENG_A_Cavalier_Constitution }
+
+    }
+
+    focus = {
+	    id = ENG_Right_To_Disagree
+	    #icon = GFX_goal_ENG_Right_To_Disagree
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Right_To_Disagree"
+	    }
+        relative_position_id = ENG_The_Charlotte_Program
+		prerequisite = { focus = ENG_The_Charlotte_Program }
+
+    }
+
+    focus = {
+	    id = ENG_Civil_Liberties_Motion
+	    #icon = GFX_goal_ENG_Civil_Liberties_Motion
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Civil_Liberties_Motion"
+	    }
+        relative_position_id = ENG_Reinstate_MPs
+		prerequisite = { focus = ENG_Reinstate_MPs }
+
+    }
+
+    focus = {
+	    id = ENG_Watching_The_Watchers
+	    #icon = GFX_goal_ENG_Watching_The_Watchers
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Watching_The_Watchers"
+	    }
+        relative_position_id = ENG_Right_To_Disagree
+		prerequisite = { focus = ENG_Right_To_Disagree }
+
+    }
+
+    focus = {
+	    id = ENG_Englands_Green_and_Pleasant_Land
+	    #icon = GFX_goal_ENG_Englands_Green_and_Pleasant_Land
+	    cost = 5
+	    x = 4
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Englands_Green_and_Pleasant_Land"
+	    }
+        relative_position_id = ENG_Raise_Up_Defectors
+		prerequisite = { focus = ENG_Raise_Up_Defectors }
+		prerequisite = { focus = ENG_Imperfect_Balance }
+		prerequisite = { focus = ENG_A_Steady_Heartbeat }
+		prerequisite = { focus = ENG_Military_Employment }
+		prerequisite = { focus = ENG_The_Doves_Claws }
+
+    }
+
+    focus = {
+	    id = ENG_Raise_Up_Defectors
+	    #icon = GFX_goal_ENG_Raise_Up_Defectors
+	    cost = 5
+	    x = -2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Raise_Up_Defectors"
+	    }
+        relative_position_id = ENG_Military_Infrastructure
+		prerequisite = { focus = ENG_Military_Infrastructure }
+		prerequisite = { focus = ENG_Watching_The_Watchers }
+
+    }
+
+    focus = {
+	    id = ENG_Imperfect_Balance
+	    #icon = GFX_goal_ENG_Imperfect_Balance
+	    cost = 5
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Imperfect_Balance"
+	    }
+        relative_position_id = ENG_Civil_Liberties_Motion
+		prerequisite = { focus = ENG_Civil_Liberties_Motion }
+		prerequisite = { focus = ENG_Watching_The_Watchers }
+
+    }
+
+    focus = {
+	    id = ENG_Rebuilding_Homes
+	    #icon = GFX_goal_ENG_Rebuilding_Homes
+	    cost = 5
+	    x = -2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Rebuilding_Homes"
+	    }
+        relative_position_id = ENG_Til_We_Have_Built_Jerusalem
+		prerequisite = { focus = ENG_Til_We_Have_Built_Jerusalem }
+
+    }
+
+    focus = {
+	    id = ENG_Heavy_Industry_Program
+	    #icon = GFX_goal_ENG_Heavy_Industry_Program
+	    cost = 5
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Heavy_Industry_Program"
+	    }
+        relative_position_id = ENG_Til_We_Have_Built_Jerusalem
+		prerequisite = { focus = ENG_Til_We_Have_Built_Jerusalem }
+
+    }
+
+    focus = {
+	    id = ENG_HighDensity_Housing
+	    #icon = GFX_goal_ENG_HighDensity_Housing
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_HighDensity_Housing"
+	    }
+        relative_position_id = ENG_Rebuilding_Homes
+		prerequisite = { focus = ENG_Rebuilding_Homes }
+
+    }
+
+    focus = {
+	    id = ENG_Repurpose_European_Designs
+	    #icon = GFX_goal_ENG_Repurpose_European_Designs
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Repurpose_European_Designs"
+	    }
+        relative_position_id = ENG_Heavy_Industry_Program
+		prerequisite = { focus = ENG_Heavy_Industry_Program }
+
+    }
+
+    focus = {
+	    id = ENG_Employment_Incentives
+	    #icon = GFX_goal_ENG_Employment_Incentives
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Employment_Incentives"
+	    }
+        relative_position_id = ENG_HighDensity_Housing
+		prerequisite = { focus = ENG_HighDensity_Housing }
+
+    }
+
+    focus = {
+	    id = ENG_Restart_Trade_Agreements
+	    #icon = GFX_goal_ENG_Restart_Trade_Agreements
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Restart_Trade_Agreements"
+	    }
+        relative_position_id = ENG_Repurpose_European_Designs
+		prerequisite = { focus = ENG_Repurpose_European_Designs }
+
+    }
+
+    focus = {
+	    id = ENG_A_Steady_Heartbeat
+	    #icon = GFX_goal_ENG_A_Steady_Heartbeat
+	    cost = 5
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_A_Steady_Heartbeat"
+	    }
+        relative_position_id = ENG_Employment_Incentives
+		prerequisite = { focus = ENG_Employment_Incentives }
+		prerequisite = { focus = ENG_Restart_Trade_Agreements }
+
+    }
+
+    focus = {
+	    id = ENG_Military_Employment
+	    #icon = GFX_goal_ENG_Military_Employment
+	    cost = 5
+	    x = 3
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Military_Employment"
+	    }
+        relative_position_id = ENG_ReEstablish_the_Air_Force
+		prerequisite = { focus = ENG_ReEstablish_the_Air_Force }
+		prerequisite = { focus = ENG_Employment_Incentives }
+
+    }
+
+    focus = {
+	    id = ENG_The_Doves_Claws
+	    #icon = GFX_goal_ENG_The_Doves_Claws
+	    cost = 5
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_The_Doves_Claws"
+	    }
+        relative_position_id = ENG_Military_Infrastructure
+		prerequisite = { focus = ENG_Military_Infrastructure }
+		prerequisite = { focus = ENG_ReEstablish_the_Air_Force }
+
+    }
+
+    focus = {
+	    id = ENG_A_Strange_Proposal
+	    #icon = GFX_goal_ENG_A_Strange_Proposal
+	    cost = 5
+	    x = -1
+	    y = 2
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_A_Strange_Proposal"
+	    }
+        relative_position_id = ENG_Imperfect_Balance
+		prerequisite = { focus = ENG_Imperfect_Balance }
+
+    }
+
+    focus = {
+	    id = ENG_Assure_The_Voters
+	    #icon = GFX_goal_ENG_Assure_The_Voters
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Assure_The_Voters"
+	    }
+        relative_position_id = ENG_A_Strange_Proposal
+		prerequisite = { focus = ENG_A_Strange_Proposal }
+
+    }
+
+    focus = {
+	    id = ENG_The_Referendum
+	    #icon = GFX_goal_ENG_The_Referendum
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_The_Referendum"
+	    }
+        relative_position_id = ENG_Assure_The_Voters
+		prerequisite = { focus = ENG_Assure_The_Voters }
+
+    }
+
+    focus = {
+	    id = ENG_I_Will_Not_Cease
+	    #icon = GFX_goal_ENG_I_Will_Not_Cease
+	    cost = 5
+	    x = 10
+	    y = 0
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_I_Will_Not_Cease"
+	    }
+        
+    }
+
+    focus = {
+	    id = ENG_Against_The_Front
+	    #icon = GFX_goal_ENG_Against_The_Front
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Against_The_Front"
+	    }
+        relative_position_id = ENG_I_Will_Not_Cease
+		prerequisite = { focus = ENG_I_Will_Not_Cease }
+
+    }
+
+    focus = {
+	    id = ENG_The_Few_Who_Dare
+	    #icon = GFX_goal_ENG_The_Few_Who_Dare
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_The_Few_Who_Dare"
+	    }
+        relative_position_id = ENG_Against_The_Front
+		prerequisite = { focus = ENG_Against_The_Front }
+
+    }
+
+    focus = {
+	    id = ENG_Hope_Glances
+	    #icon = GFX_goal_ENG_Hope_Glances
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Hope_Glances"
+	    }
+        relative_position_id = ENG_The_Few_Who_Dare
+		prerequisite = { focus = ENG_The_Few_Who_Dare }
+
+    }
+
+    focus = {
+	    id = ENG_Towards_Birmingham
+	    #icon = GFX_goal_ENG_Towards_Birmingham
+	    cost = 5
+	    x = -1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Towards_Birmingham"
+	    }
+        relative_position_id = ENG_Hope_Glances
+		prerequisite = { focus = ENG_Hope_Glances }
+		mutually_exclusive = { focus = ENG_Against_The_Spring }
+
+    }
+
+    focus = {
+	    id = ENG_Against_The_Spring
+	    #icon = GFX_goal_ENG_Against_The_Spring
+	    cost = 5
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Against_The_Spring"
+	    }
+        relative_position_id = ENG_Hope_Glances
+		prerequisite = { focus = ENG_Hope_Glances }
+		mutually_exclusive = { focus = ENG_Towards_Birmingham }
+
+    }
+
+    focus = {
+	    id = ENG_Unto_The_Breach
+	    #icon = GFX_goal_ENG_Unto_The_Breach
+	    cost = 5
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Unto_The_Breach"
+	    }
+        relative_position_id = ENG_Towards_Birmingham
+		prerequisite = {
+		focus = ENG_Towards_Birmingham
+		focus = ENG_Against_The_Spring
+	}
+
+    }
+}
