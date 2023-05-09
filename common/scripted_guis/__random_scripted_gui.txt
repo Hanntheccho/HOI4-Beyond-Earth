@@ -4,6 +4,65 @@ scripted_gui = {
 ######## SCRIPTED GUIS ########
 ###############################
 
+	nuke_gui = {
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+
+		window_name = "nuke_gui_window"
+
+		visible = {
+			always = yes
+		}
+
+		effects = {
+			nuke_state_click = {
+				ROOT = {
+					launch_nuke = {
+						state = PREV
+						use_nuke = yes
+					}
+				}
+			}
+		}
+
+		triggers = {
+            nuke_state_click_enabled = {
+                ROOT = {
+                    has_tech = kinetic_theory
+                    num_of_nukes > 0
+                }
+                THIS = {
+                    OWNER = { has_war_with = ROOT }
+                }
+            }
+		}
+
+		ai_enabled = {
+            always = yes
+        }
+
+        ai_test_interval = 300
+
+        ai_check = {
+            num_of_nukes > 0
+			has_war = yes
+		}
+
+        ai_weights = {
+            nuke_state_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+                        CONTROLLER = {
+							has_war_with = ROOT
+                        }
+                        add = 100
+			        }
+                }
+            }
+		}
+	}
+
 	ONU_focus_details_gui = {
 		context_type = player_context
 		parent_window_name = "zoom_slider_container"

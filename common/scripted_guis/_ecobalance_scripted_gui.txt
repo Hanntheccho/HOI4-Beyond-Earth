@@ -10,15 +10,6 @@ scripted_gui = {
 		}
 		
 		effects = {
-            nuke_state_click = {
-                ROOT = {
-                    launch_nuke = {
-                        state = PREV
-                        use_nuke = yes
-                    }
-                }
-            }
-            #
             auto_ecobalance_button_click = {
                 ROOT = {
                     if = {
@@ -73,16 +64,6 @@ scripted_gui = {
             }
 		}
         triggers = {
-            nuke_state_click_enabled = {
-                ROOT = {
-                    has_tech = kinetic_theory
-                    num_of_nukes > 0
-                }
-                THIS = {
-                    OWNER = { has_war_with = ROOT }
-                }
-            }
-            #
             reduce_ecobalance_button_visible = {
                 ROOT = {
                     NOT = {
