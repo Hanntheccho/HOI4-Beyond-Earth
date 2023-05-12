@@ -463,6 +463,31 @@ scripted_gui = {
 		}
 	}
 
+	ecobalance_window_gui = {
+		context_type = player_context
+		#parent_window_name = topbar
+		
+		window_name = "ecobalance_window"
+		
+		visible = {
+            has_country_flag = ecobalance_window_on
+		}
+
+        ai_enabled = {
+            always = no
+        }
+		
+		effects = {
+			close_button_click = {
+				clr_country_flag = ecobalance_window_on
+			}
+		}
+
+		triggers = {
+			#
+		}
+	}
+
 	industrial_power_gui = {
 		context_type = player_context
 		parent_window_name = topbar
@@ -478,6 +503,20 @@ scripted_gui = {
         }
 		
 		effects = {
+			threat_icon_click = {
+				if = {
+					limit = {
+						has_country_flag = ecobalance_window_on
+					}
+					clr_country_flag = ecobalance_window_on
+				}
+				else = {
+					set_country_flag = ecobalance_window_on
+				}
+			}
+		}
+
+		triggers = {
 			#
 		}
 	}

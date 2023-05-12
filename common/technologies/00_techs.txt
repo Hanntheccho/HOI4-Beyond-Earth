@@ -1106,6 +1106,11 @@ technologies = {
 			armor_value = 0.1
 		}
 
+		path = {
+			leads_to_tech = armor_upgrade_tech
+			research_cost_coeff = 1
+		}
+
 		research_cost = 1.1
 
 
@@ -1174,13 +1179,42 @@ technologies = {
 			}
 		}
 
-		research_cost = 1.1
-		
+		path = {
+			leads_to_tech = armor_upgrade_tech
+			research_cost_coeff = 1
+		}
 
+		research_cost = 1.1
 
 		folder = {
 			name = be_tech_folder
 			position = {x=6 y=-17}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_armor_tech
+			be_walker_tech
+			be_land_tech
+		}
+	}
+
+	armor_upgrade_tech = {
+
+		be_category_all_armor = {
+			breakthrough = 0.05
+			armor_value = 0.05
+			maximum_speed = 0.15
+		}
+
+		research_cost = 1.5
+
+		folder = {
+			name = be_tech_folder
+			position = {x=4 y=-21}
 		}
 
 		ai_will_do = {
