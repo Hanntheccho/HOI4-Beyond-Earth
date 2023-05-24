@@ -1059,6 +1059,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
+		path = {
+			leads_to_tech = quantum_theory	
+			research_cost_coeff = 1
+		}
+
 		research_cost = 1
 		
 
@@ -1074,7 +1079,35 @@ technologies = {
 		categories = {
 			be_land_tech
 			be_armor_tech
-			be_mbt_bonus_tech
+		}
+	}
+
+	quantum_theory = {
+		be_category_all_armor = {
+			maximum_speed = 0.2
+			fuel_consumption_factor = -0.1
+		}
+
+		dependencies = {
+			quantum_generation = 1
+			ngen_batteries = 1
+			qresearch_lines = 1
+		}
+
+		research_cost = 1.5		
+
+		folder = {
+			name = be_tech_folder
+			position = {x=4 y=23}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_land_tech
+			be_armor_tech
 		}
 	}
 
@@ -1088,7 +1121,7 @@ technologies = {
 
 		folder = {
 			name = be_tech_folder
-			position = {x=4 y=23}
+			position = {x=-6 y=23}
 		}
 
 		ai_will_do = {
@@ -1110,6 +1143,11 @@ technologies = {
 
 		enable_subunits = {
 			MBT
+		}
+
+		path = {
+			leads_to_tech = mbt_upgrade
+			research_cost_coeff = 1
 		}
 
 		path = {
@@ -1148,6 +1186,29 @@ technologies = {
 			be_land_tech
 			be_armor_tech
 			be_mbt_bonus_tech
+		}
+	}
+
+	mbt_upgrade = {
+		MBT = {
+			armor_value = 0.1
+			breakthrough = 0.1
+		}
+		
+		research_cost = 2
+
+		folder = {
+			name = be_tech_folder
+			position = {x=10 y=27}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			be_armor_tech
+			be_land_tech
 		}
 	}
 
@@ -1469,6 +1530,11 @@ technologies = {
 		}
 
 		path = {
+			leads_to_tech = integral_model 
+			research_cost_coeff = 1
+		}
+
+		path = {
 			leads_to_tech = corporate_model 
 			research_cost_coeff = 1
 		}
@@ -1492,6 +1558,8 @@ technologies = {
 		
 		production_speed_buildings_factor = 0.10
 		industry_repair_factor = 0.10
+
+		#XOR = { corporate_model }
 		
 		research_cost = 2
 		
@@ -1502,7 +1570,7 @@ technologies = {
 		
 		folder = {
 			name = be_tech_folder
-			position = { x = -12 y = 12 }
+			position = { x = -10 y = 12 }
 		}
 		
 		ai_will_do = {
@@ -1539,6 +1607,8 @@ technologies = {
 		}
 
 		industry_free_repair_factor = 0.1
+
+		#XOR = { adv_construction }
 		
 		research_cost = 2
 		
@@ -1549,7 +1619,28 @@ technologies = {
 		
 		folder = {
 			name = be_tech_folder
-			position = { x = -10 y = 12 }
+			position = { x = -12 y = 12 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	integral_model = {
+		
+		global_building_slots_factor = 0.2
+		
+		research_cost = 2
+		
+		categories = {
+			be_industry
+			construction_tech
+		}
+		
+		folder = {
+			name = be_tech_folder
+			position = { x = -11 y = 16 }
 		}
 		
 		ai_will_do = {
