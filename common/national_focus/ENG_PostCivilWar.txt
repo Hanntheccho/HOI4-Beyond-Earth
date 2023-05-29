@@ -6,7 +6,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 		    add = 10
-			tag = ENG
+			tag = ENG_2
 		}
 	}
             
@@ -15,6 +15,20 @@ focus_tree = {
 		y = 0
     }
 
+    focus = {
+	    id = ENG_Jolly_Old_England
+	    icon = GFX_goal_ENG_Jolly_Old_England
+	    cost = 5
+	    x = 10
+	    y = 0
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Jolly_Old_England"
+	    }
+        
+    }
 
     focus = {
 	    id = ENG_Muster_The_Nation
@@ -322,25 +336,6 @@ focus_tree = {
 
     }
 
-	
-    focus = {
-	    id = ENG_Raise_Up_Defectors
-	    icon = GFX_goal_ENG_Raise_Up_Defectors
-	    cost = 5
-	    x = -2
-	    y = 1
-	    ai_will_do = {
-		    factor = 1
-	    }
-	    completion_reward = {
-		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Raise_Up_Defectors"
-	    }
-        relative_position_id = ENG_Military_Infrastructure
-		prerequisite = { focus = ENG_Military_Infrastructure }
-		prerequisite = { focus = ENG_Watching_The_Watchers }
-
-    }
-
     focus = {
 	    id = ENG_Englands_Green_and_Pleasant_Land
 	    icon = GFX_goal_ENG_Englands_Green_and_Pleasant_Land
@@ -359,6 +354,24 @@ focus_tree = {
 		prerequisite = { focus = ENG_A_Steady_Heartbeat }
 		prerequisite = { focus = ENG_Military_Employment }
 		prerequisite = { focus = ENG_The_Doves_Claws }
+
+    }
+
+    focus = {
+	    id = ENG_Raise_Up_Defectors
+	    icon = GFX_goal_ENG_Raise_Up_Defectors
+	    cost = 5
+	    x = -2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Raise_Up_Defectors"
+	    }
+        relative_position_id = ENG_Military_Infrastructure
+		prerequisite = { focus = ENG_Military_Infrastructure }
+		prerequisite = { focus = ENG_Watching_The_Watchers }
 
     }
 
@@ -588,144 +601,6 @@ focus_tree = {
     }
 
     focus = {
-	    id = ENG_I_Will_Not_Cease
-	    icon = GFX_goal_ENG_I_Will_Not_Cease
-	    cost = 5
-	    x = 10
-	    y = 1
-	    ai_will_do = {
-		    factor = 1
-	    }
-	    completion_reward = {
-		    log = "[GetDateText]: [Root.GetName]: Focus ENG_I_Will_Not_Cease"
-	    }
-        
-    }
-
-    focus = {
-	    id = ENG_Against_The_Front
-	    icon = GFX_goal_ENG_Against_The_Front
-	    cost = 5
-	    x = 0
-	    y = 1
-	    ai_will_do = {
-		    factor = 1
-	    }
-	    completion_reward = {
-		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Against_The_Front"
-	    }
-        relative_position_id = ENG_I_Will_Not_Cease
-		prerequisite = { focus = ENG_I_Will_Not_Cease }
-
-    }
-
-    focus = {
-	    id = ENG_The_Few_Who_Dare
-	    icon = GFX_goal_ENG_The_Few_Who_Dare
-	    cost = 5
-	    x = 0
-	    y = 1
-	    ai_will_do = {
-		    factor = 1
-	    }
-	    completion_reward = {
-		    log = "[GetDateText]: [Root.GetName]: Focus ENG_The_Few_Who_Dare"
-	    }
-        relative_position_id = ENG_Against_The_Front
-		prerequisite = { focus = ENG_Against_The_Front }
-
-    }
-
-    focus = {
-	    id = ENG_Hope_Glances
-	    icon = GFX_goal_ENG_Hope_Glances
-	    cost = 5
-	    x = 0
-	    y = 1
-	    ai_will_do = {
-		    factor = 1
-	    }
-	    completion_reward = {
-		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Hope_Glances"
-	    }
-        relative_position_id = ENG_The_Few_Who_Dare
-		prerequisite = { focus = ENG_The_Few_Who_Dare }
-
-	}
-
-	focus = {
-	    id = ENG_Towards_Birmingham
-	    icon = GFX_goal_ENG_Towards_Birmingham
-	    cost = 5
-	    x = -1
-	    y = 1
-	    ai_will_do = {
-		    factor = 1
-	    }
-	    completion_reward = {
-		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Towards_Birmingham"
-	    }
-        relative_position_id = ENG_Hope_Glances
-		prerequisite = { focus = ENG_Hope_Glances }
-		mutually_exclusive = { focus = ENG_Against_The_Spring }
-
-    }
-    focus = {
-	    id = ENG_Unto_The_Breach
-	    icon = GFX_goal_ENG_Unto_The_Breach
-	    cost = 5
-	    x = 1
-	    y = 1
-	    ai_will_do = {
-		    factor = 1
-	    }
-	    completion_reward = {
-		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Unto_The_Breach"
-	    }
-        relative_position_id = ENG_Towards_Birmingham
-		prerequisite = {
-		focus = ENG_Towards_Birmingham
-		focus = ENG_Against_The_Spring
-	}
-
-    }
-
-    focus = {
-	    id = ENG_Jolly_Old_England
-	    icon = GFX_goal_ENG_Jolly_Old_England
-	    cost = 5
-	    x = 0
-	    y = 1
-	    ai_will_do = {
-		    factor = 1
-	    }
-	    completion_reward = {
-		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Jolly_Old_England"
-	    }
-        relative_position_id = ENG_Unto_The_Breach
-		prerequisite = { focus = ENG_Unto_The_Breach }
-
-    }
-
-    focus = {
-	    id = ENG_Against_The_Spring
-	    icon = GFX_goal_ENG_Against_The_Spring
-	    cost = 5
-	    x = 1
-	    y = 1
-	    ai_will_do = {
-		    factor = 1
-	    }
-	    completion_reward = {
-		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Against_The_Spring"
-	    }
-        relative_position_id = ENG_Hope_Glances
-		prerequisite = { focus = ENG_Hope_Glances }
-		mutually_exclusive = { focus = ENG_Towards_Birmingham }
-
-    }
-
-    focus = {
 	    id = ENG_Our_Place_In_A_New_World
 	    icon = GFX_goal_ENG_Our_Place_In_A_New_World
 	    cost = 5
@@ -844,27 +719,6 @@ focus_tree = {
 
     }
 
-	
-    focus = {
-	    id = ENG_The_Birmingham_Summit
-	    icon = GFX_goal_ENG_The_Birmingham_Summit
-	    cost = 5
-	    x = 4
-	    y = 1
-	    ai_will_do = {
-		    factor = 1
-	    }
-	    completion_reward = {
-		    log = "[GetDateText]: [Root.GetName]: Focus ENG_The_Birmingham_Summit"
-	    }
-        relative_position_id = ENG_Contact_The_Americas
-		prerequisite = { focus = ENG_Contact_The_Americas }
-		prerequisite = { focus = ENG_Reach_Out_To_Asia }
-		prerequisite = { focus = ENG_Allies_In_Africa }
-		prerequisite = { focus = ENG_European_Prospects }
-
-    }
-
     focus = {
 	    id = ENG_The_GDO_Deterrence_Program
 	    icon = GFX_goal_ENG_The_GDO_Deterrence_Program
@@ -966,6 +820,26 @@ focus_tree = {
 	    }
         relative_position_id = ENG_From_Many_One
 		prerequisite = { focus = ENG_From_Many_One }
+
+    }
+
+    focus = {
+	    id = ENG_The_Birmingham_Summit
+	    icon = GFX_goal_ENG_The_Birmingham_Summit
+	    cost = 5
+	    x = 4
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_The_Birmingham_Summit"
+	    }
+        relative_position_id = ENG_Contact_The_Americas
+		prerequisite = { focus = ENG_Contact_The_Americas }
+		prerequisite = { focus = ENG_Reach_Out_To_Asia }
+		prerequisite = { focus = ENG_Allies_In_Africa }
+		prerequisite = { focus = ENG_European_Prospects }
 
     }
 }

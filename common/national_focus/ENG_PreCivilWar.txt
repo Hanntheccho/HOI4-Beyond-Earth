@@ -1,0 +1,307 @@
+
+focus_tree = {
+    id = pre_cw_england
+            
+	country = {
+		factor = 0
+		modifier = {
+		    add = 10
+			tag = ENG
+		}
+	}
+            
+	continuous_focus_position = { 
+		x = 0
+		y = 0
+    }
+
+    focus = {
+	    id = ENG_PRECW_Scattered_England
+	    icon = GFX_goal_ENG_PRECW_Scattered_England
+	    cost = 4.3
+	    x = 8
+	    y = 0
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			country_event = england_event.1
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_Scattered_England"
+	    }
+        
+    }
+
+    focus = {
+	    id = ENG_PRECW_The_Birmingham_Uproar
+	    icon = GFX_goal_ENG_PRECW_The_Birmingham_Uproar
+	    cost = 0
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		bypass = {
+			has_country_flag = birmingham_uproar_event
+		}
+		available = {
+			has_country_flag = birmingham_uproar_event
+		}
+	    completion_reward = {
+			country_event = {
+				id = pre_cw_england_event.2
+			}
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_The_Birmingham_Uproar"
+	    }
+        relative_position_id = ENG_PRECW_Scattered_England
+		prerequisite = { focus = ENG_PRECW_Scattered_England }
+
+    }
+
+    focus = {
+	    id = ENG_PRECW_The_Sinking_Ship
+	    icon = GFX_goal_ENG_PRECW_The_Sinking_Ship
+	    cost = 1.8 #12
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			country_event = {
+				id = pre_cw_england_event.5
+			}
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_The_Sinking_Ship"
+	    }
+        relative_position_id = ENG_PRECW_The_Birmingham_Uproar
+		prerequisite = { focus = ENG_PRECW_The_Birmingham_Uproar }
+
+    }
+
+    focus = {
+	    id = ENG_PRECW_The_Damned_MPs
+	    icon = GFX_goal_ENG_PRECW_The_Damned_MPs
+	    cost = 2.9 #20
+	    x = -2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		available = {
+			has_idea = PRECW_ENG_unlock_damned_mps
+		}
+	    completion_reward = {
+			country_event = pre_cw_england_event.7 #Out, Out, Out!
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_The_Damned_MPs"
+	    }
+        relative_position_id = ENG_PRECW_The_Sinking_Ship
+		prerequisite = { focus = ENG_PRECW_The_Sinking_Ship }
+		mutually_exclusive = { focus = ENG_PRECW_The_Bloody_Economy }
+
+    }
+
+    focus = {
+	    id = ENG_PRECW_The_Bloody_Economy
+	    icon = GFX_goal_ENG_PRECW_The_Bloody_Economy
+	    cost = 2.9 #20
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		available = {
+			has_idea = PRECW_ENG_unlock_bloody_economy
+		}
+	    completion_reward = {
+			country_event = pre_cw_england_event.6 #Begin the Renewal
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_The_Bloody_Economy"
+	    }
+        relative_position_id = ENG_PRECW_The_Sinking_Ship
+		prerequisite = { focus = ENG_PRECW_The_Sinking_Ship }
+		mutually_exclusive = { focus = ENG_PRECW_The_Damned_MPs }
+
+    }
+
+    focus = {
+	    id = ENG_PRECW_Decapitate_the_Embezzlement
+	    icon = GFX_goal_ENG_PRECW_Decapitate_the_Embezzlement
+	    cost = 2.9 #20
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			swap_ideas = {
+				remove_idea = ENG_incompetent_parliament
+				add_idea = PRECW_ENG_incompetent_parliament
+			}
+			country_event = pre_cw_england_event.8 #Emergency Powers
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_Decapitate_the_Embezzlement"
+	    }
+        relative_position_id = ENG_PRECW_The_Damned_MPs
+		prerequisite = { focus = ENG_PRECW_The_Damned_MPs }
+
+    }
+
+    focus = {
+	    id = ENG_PRECW_Sack_The_Useless_Ministers
+	    icon = GFX_goal_ENG_PRECW_Sack_The_Useless_Ministers
+	    cost = 4.3 #30
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			country_event = pre_cw_england_event.9 #The Chopping Block
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_Sack_The_Useless_Ministers"
+	    }
+        relative_position_id = ENG_PRECW_Decapitate_the_Embezzlement
+		prerequisite = { focus = ENG_PRECW_Decapitate_the_Embezzlement }
+
+    }
+
+    focus = {
+	    id = ENG_PRECW_Sack_The_Other_Ministers
+	    icon = GFX_goal_ENG_PRECW_Sack_The_Other_Ministers
+	    cost = 4.3 #30
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			country_event = pre_cw_england_event.13 #Motion of No Confidence
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_Sack_The_Other_Ministers"
+	    }
+        relative_position_id = ENG_PRECW_Sack_The_Useless_Ministers
+		prerequisite = { focus = ENG_PRECW_Sack_The_Useless_Ministers }
+
+    }
+
+    focus = {
+	    id = ENG_PRECW_AntiCorruption_Legislation
+	    icon = GFX_goal_ENG_PRECW_AntiCorruption_Legislation
+	    cost = 4.3 #30
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			add_to_variable = {
+				var = industrial_power
+				value = 300
+			}
+			add_political_power = 300
+			remove_ideas = PRECW_ENG_incompetent_parliament
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_AntiCorruption_Legislation"
+	    }
+        relative_position_id = ENG_PRECW_Sack_The_Other_Ministers
+		prerequisite = { focus = ENG_PRECW_Sack_The_Other_Ministers }
+
+    }
+
+    focus = {
+	    id = ENG_PRECW_Cut_Redundant_Relief_Aid
+	    icon = GFX_goal_ENG_PRECW_Cut_Redundant_Relief_Aid
+	    cost = 2.9 #20
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			add_to_variable = {
+				var = industrial_power
+				value = 200
+			}
+			swap_ideas = {
+				remove_idea = ENG_the_sick_man_of_britannia
+				add_idea = PRECW_ENG_sick_man_britannia
+			}
+			country_event = pre_cw_england_event.14 #Dissolution of NHS
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_Cut_Redundant_Relief_Aid"
+	    }
+        relative_position_id = ENG_PRECW_The_Bloody_Economy
+		prerequisite = { focus = ENG_PRECW_The_Bloody_Economy }
+
+    }
+
+    focus = {
+	    id = ENG_PRECW_Closer_Ties_To_Scotland
+	    icon = GFX_goal_ENG_PRECW_Closer_Ties_To_Scotland
+	    cost = 4.3 #30
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			country_event = pre_cw_england_event.15 #A packed schedule
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_Closer_Ties_To_Scotland"
+	    }
+        relative_position_id = ENG_PRECW_Cut_Redundant_Relief_Aid
+		prerequisite = { focus = ENG_PRECW_Cut_Redundant_Relief_Aid }
+
+    }
+
+    focus = {
+	    id = ENG_PRECW_Industrialize_The_Farmlands
+	    icon = GFX_goal_ENG_PRECW_Industrialize_The_Farmlands
+	    cost = 4.3 #30
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			swap_ideas = {
+				remove_idea = PRECW_ENG_sick_man_britannia
+				add_idea = PRECW_ENG_sick_man_britannia_2
+			}
+			country_event = pre_cw_england_event.16 #The Dog
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_Industrialize_The_Farmlands"
+	    }
+        relative_position_id = ENG_PRECW_Closer_Ties_To_Scotland
+		prerequisite = { focus = ENG_PRECW_Closer_Ties_To_Scotland }
+
+    }
+
+    focus = {
+	    id = ENG_PRECW_Jumpstart_The_Industrial_Hear
+	    icon = GFX_goal_ENG_PRECW_Jumpstart_The_Industrial_Hear
+	    cost = 4.3 #30
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			country_event = pre_cw_england_event.17 #Roaring Back to Life
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_Jumpstart_The_Industrial_Hear"
+	    }
+        relative_position_id = ENG_PRECW_Industrialize_The_Farmlands
+		prerequisite = { focus = ENG_PRECW_Industrialize_The_Farmlands }
+
+    }
+
+    focus = {
+	    id = ENG_PRECW_What_Comes_Next
+	    icon = GFX_goal_ENG_PRECW_What_Comes_Next
+	    cost = 1
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			country_event = england_event.2
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_What_Comes_Next"
+	    }
+        relative_position_id = ENG_PRECW_AntiCorruption_Legislation
+		prerequisite = { focus = ENG_PRECW_AntiCorruption_Legislation }
+		prerequisite = { focus = ENG_PRECW_Jumpstart_The_Industrial_Hear }
+
+    }
+}
