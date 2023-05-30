@@ -87,10 +87,13 @@ focus_tree = {
 		    factor = 1
 	    }
 		available = {
-			has_idea = PRECW_ENG_unlock_damned_mps
+			hidden_trigger = {
+				has_idea = PRECW_ENG_unlock_damned_mps
+			}
 		}
 	    completion_reward = {
 			country_event = pre_cw_england_event.7 #Out, Out, Out!
+			
 		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_The_Damned_MPs"
 	    }
         relative_position_id = ENG_PRECW_The_Sinking_Ship
@@ -109,7 +112,9 @@ focus_tree = {
 		    factor = 1
 	    }
 		available = {
-			has_idea = PRECW_ENG_unlock_bloody_economy
+			hidden_trigger = {
+				has_idea = PRECW_ENG_unlock_bloody_economy
+			}
 		}
 	    completion_reward = {
 			country_event = pre_cw_england_event.6 #Begin the Renewal
@@ -300,8 +305,7 @@ focus_tree = {
 		    log = "[GetDateText]: [Root.GetName]: Focus ENG_PRECW_What_Comes_Next"
 	    }
         relative_position_id = ENG_PRECW_AntiCorruption_Legislation
-		prerequisite = { focus = ENG_PRECW_AntiCorruption_Legislation }
-		prerequisite = { focus = ENG_PRECW_Jumpstart_The_Industrial_Hear }
+		prerequisite = { focus = ENG_PRECW_AntiCorruption_Legislation focus = ENG_PRECW_Jumpstart_The_Industrial_Hear}
 
     }
 }
