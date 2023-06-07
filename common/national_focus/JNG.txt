@@ -1,0 +1,322 @@
+
+focus_tree = {
+    id = jng
+            
+	country = {
+		factor = 0
+		modifier = {
+		    add = 10
+			tag = JNG
+		}
+	}
+            
+	continuous_focus_position = { 
+		x = 0
+		y = 0
+    }
+
+    focus = {
+	    id = JNG_A_New_State
+	    icon = GFX_goal_JNG_A_New_State
+	    cost = 2.9
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		available = {
+			AND = {
+				CNG = {
+					exists = no
+				}
+				ENG = {
+					exists = no
+				}
+				HNG = {
+					exists = no
+				}
+			}
+		}
+	    completion_reward = {
+			remove_ideas = JNG_final_blow
+			add_stability = 0.2
+		    log = "[GetDateText]: [Root.GetName]: Focus JNG_A_New_State"
+	    }
+        relative_position_id = JNG_The_Final_Blow
+		prerequisite = { focus = JNG_The_Final_Blow }
+
+    }
+
+    focus = {
+	    id = JNG_Reorganizing_The_Nation
+	    icon = GFX_goal_JNG_Reorganizing_The_Nation
+	    cost = 2.9
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			add_state_core = 249
+			add_state_core = 277
+			add_state_core = 267
+			add_state_core = 1024
+			add_state_core = 1023
+			add_state_core = 260
+		    log = "[GetDateText]: [Root.GetName]: Focus JNG_Reorganizing_The_Nation"
+	    }
+        relative_position_id = JNG_A_New_State
+		prerequisite = { focus = JNG_A_New_State }
+
+    }
+
+    focus = {
+	    id = JNG_Dispose_Of_The_Old
+	    icon = GFX_goal_JNG_Dispose_Of_The_Old
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus JNG_Dispose_Of_The_Old"
+	    }
+        relative_position_id = JNG_Reorganizing_The_Nation
+		prerequisite = { focus = JNG_Reorganizing_The_Nation }
+
+    }
+
+    focus = {
+	    id = JNG_The_Marshal_Leads_Us_On
+	    icon = GFX_goal_JNG_The_Marshal_Leads_Us_On
+	    cost = 1
+	    x = 1
+	    y = 0
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			add_war_support = 0.1
+		    log = "[GetDateText]: [Root.GetName]: Focus JNG_The_Marshal_Leads_Us_On"
+	    }
+        
+    }
+
+    focus = {
+	    id = JNG_Dispose_Of_The_Democrats
+	    icon = GFX_goal_JNG_Dispose_Of_The_Democrats
+	    cost = 1
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		bypass = {
+			CNG = {
+				exists = no
+			}
+		}
+	    completion_reward = {
+			add_ideas = JNG_dispose_democrats
+		    log = "[GetDateText]: [Root.GetName]: Focus JNG_Dispose_Of_The_Democrats"
+	    }
+        relative_position_id = JNG_The_Marshal_Leads_Us_On
+		prerequisite = { focus = JNG_The_Marshal_Leads_Us_On }
+
+    }
+
+    focus = {
+	    id = JNG_Pride_In_Rank
+	    icon = GFX_goal_JNG_Pride_In_Rank
+	    cost = 1
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			add_manpower = 10000
+		    log = "[GetDateText]: [Root.GetName]: Focus JNG_Pride_In_Rank"
+	    }
+        relative_position_id = JNG_Dispose_Of_The_Democrats
+		prerequisite = { focus = JNG_Dispose_Of_The_Democrats }
+
+    }
+
+    focus = {
+	    id = JNG_The_March_North
+	    icon = GFX_goal_JNG_The_March_North
+	    cost = 2.9
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		available = {
+			CNG = {
+				exists = no
+			}
+		}
+		bypass = {
+			AND = {
+				CNG = {
+					exists = no
+				}
+				ENG = {
+					exists = no
+				}
+				HNG = {
+					exists = no
+				}
+			}
+		}
+	    completion_reward = {
+			remove_ideas = JNG_dispose_democrats
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_manpower = 2000
+		    log = "[GetDateText]: [Root.GetName]: Focus JNG_The_March_North"
+	    }
+        relative_position_id = JNG_Pride_In_Rank
+		prerequisite = { focus = JNG_Pride_In_Rank }
+
+    }
+
+    focus = {
+	    id = JNG_Burn_The_Buildings
+	    icon = GFX_goal_JNG_Burn_The_Buildings
+	    cost = 2.9
+	    x = -1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		bypass = {
+			OR = {
+				ENG = {
+					exists = no
+				}
+				AND = {
+					CNG = {
+						exists = no
+					}
+					HNG = {
+						exists = no
+					}
+					ENG = {
+						exists = no
+					}
+				}
+			}
+		}
+	    completion_reward = {
+			add_ideas = JNG_burn_buildings
+		    log = "[GetDateText]: [Root.GetName]: Focus JNG_Burn_The_Buildings"
+	    }
+        relative_position_id = JNG_The_March_North
+		prerequisite = { focus = JNG_The_March_North }
+		mutually_exclusive = { focus = JNG_Fell_The_Trees }
+
+    }
+
+    focus = {
+	    id = JNG_Fell_The_Trees
+	    icon = GFX_goal_JNG_Fell_The_Trees
+	    cost = 2.9
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		bypass = {
+			OR = {
+				HNG = {
+					exists = no
+				}
+				AND = {
+					CNG = {
+						exists = no
+					}
+					ENG = {
+						exists = no
+					}
+					HNG = {
+						exists = no
+					}
+				}
+			}
+		}
+	    completion_reward = {
+			add_ideas = JNG_fell_trees
+		    log = "[GetDateText]: [Root.GetName]: Focus JNG_Fell_The_Trees"
+	    }
+        relative_position_id = JNG_The_March_North
+		prerequisite = { focus = JNG_The_March_North }
+		mutually_exclusive = { focus = JNG_Burn_The_Buildings }
+
+    }
+
+    focus = {
+	    id = JNG_The_Final_Blow
+	    icon = GFX_goal_JNG_The_Final_Blow
+	    cost = 2.9
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		available = {
+			AND = {
+				CNG = {
+					exists = no
+				}
+				OR = {
+					ENG = {
+						exists = no
+					}
+					HNG = {
+						exists = no
+					}
+				}
+			}
+		}
+		bypass = {
+			AND = {
+				CNG = {
+					exists = no
+				}
+				ENG = {
+					exists = no
+				}
+				HNG = {
+					exists = no
+				}
+			}
+		}
+	    completion_reward = {
+			if = {
+				limit = {
+					has_idea = JNG_burn_buildings
+				}
+				remove_ideas = JNG_burn_buildings
+			}
+			if = {
+				limit = {
+					has_idea = JNG_fell_trees
+				}
+				remove_ideas = JNG_fell_trees
+			}
+			add_ideas = JNG_final_blow
+		    log = "[GetDateText]: [Root.GetName]: Focus JNG_The_Final_Blow"
+	    }
+        relative_position_id = JNG_Burn_The_Buildings
+		prerequisite = {
+		focus = JNG_Burn_The_Buildings
+		}
+		prerequisite = {
+			focus = JNG_Fell_The_Trees
+		}
+
+    }
+}

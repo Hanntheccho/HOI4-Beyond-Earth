@@ -1,0 +1,93 @@
+add_namespace = eng_mid_cw
+
+country_event = {
+	id = eng_mid_cw.1
+	title = eng_mid_cw.1.t
+	desc = eng_mid_cw.1.d
+
+	is_triggered_only = yes
+
+	option = { #No price is worth sovereignty
+		name = eng_mid_cw.1.a
+		ai_chance = { factor = 1 }
+	}
+
+	option = { #some concessions
+		name = eng_mid_cw.1.b
+		custom_effect_tooltip = eng_mid_cw.1.b.tt
+		hidden_effect = {
+			set_global_flag = england_concessions
+		}
+		252 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = military_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_manpower = 10000
+		ai_chance = { factor = 1 }
+	}
+
+	option = {# Selling our soul
+		name = eng_mid_cw.1.c
+		custom_effect_tooltip = eng_mid_cw.1.c.tt
+		hidden_effect = {
+			set_global_flag = england_sold_soul
+		}
+		252 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = military_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_manpower = 10000
+		division_template = {
+			name = "Scottish Volunteer Infantry"			
+			is_locked = yes
+			division_cap = 3
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 0 y = 3 }
+				infantry = { x = 1 y = 0 }
+				shock_troops = { x = 1 y = 1 }
+				shock_troops = { x = 1 y = 2 }
+				shock_troops = { x = 1 y = 3 }
+			}
+			support = {
+				recon = { x = 0 y = 0}
+			}
+		}
+		252 = {
+			create_unit = {
+				division = "
+				name = \"Scottish Volunteer Infantry\", 
+				division_template = \"Scottish Volunteer Infantry\",
+				start_experience_factor = 0.5
+				"
+				owner = ENG
+			}
+			create_unit = {
+				division = "
+				name = \"Scottish Volunteer Infantry\",
+				division_template = \"Scottish Volunteer Infantry\",
+				start_experience_factor = 0.5
+				"
+				owner = ENG
+			}
+			create_unit = {
+				division = "
+				name = \"Scottish Volunteer Infantry\",
+				division_template = \"Scottish Volunteer Infantry\",
+				start_experience_factor = 0.5
+				"
+				owner = ENG
+			}
+		}
+	}
+}

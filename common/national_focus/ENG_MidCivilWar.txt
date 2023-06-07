@@ -1,0 +1,347 @@
+
+focus_tree = {
+    id = eng
+            
+	country = {
+		factor = 0
+		modifier = {
+		    add = 10
+			tag = ENG
+		}
+	}
+            
+	continuous_focus_position = { 
+		x = 0
+		y = 0
+    }
+
+    focus = {
+	    id = ENG_The_Republic_Endures
+	    icon = GFX_goal_ENG_The_Republic_Endures
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_The_Republic_Endures"
+	    }
+        relative_position_id = ENG_Taking_England_Back
+		prerequisite = { focus = ENG_Taking_England_Back }
+
+    }
+
+    focus = {
+	    id = ENG_Emergency_Powers
+	    icon = GFX_goal_ENG_Emergency_Powers
+	    cost = 2.9
+	    x = 0
+	    y = 1
+		bypass = {
+			AND = {
+				CNG = {
+					exists = no
+				}
+				JNG = {
+					exists = no
+				}
+				HNG = {
+					exists = no
+				}
+			}
+		}
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			add_ideas = ENG_mid_cw_emergency_government
+			add_manpower = 5000
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Emergency_Powers"
+	    }
+        relative_position_id = ENG_Appeal_To_Scotland
+		prerequisite = { focus = ENG_Appeal_To_Scotland }
+
+    }
+
+    focus = {
+	    id = ENG_Hold_Against_The_Traitors
+	    icon = GFX_goal_ENG_Hold_Against_The_Traitors
+	    cost = 2.9
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		bypass = {
+			AND = {
+				CNG = {
+					exists = no
+				}
+				JNG = {
+					exists = no
+				}
+				HNG = {
+					exists = no
+				}
+			}
+		}
+	    completion_reward = {
+			swap_ideas = {
+				remove_idea = ENG_mid_cw_emergency_government
+				add_idea = ENG_mid_cw_emergency_government_2
+			}
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Hold_Against_The_Traitors"
+	    }
+        relative_position_id = ENG_Emergency_Powers
+		prerequisite = { focus = ENG_Emergency_Powers }
+
+    }
+
+    focus = {
+	    id = ENG_Reclaim_The_Nation
+	    icon = GFX_goal_ENG_Reclaim_The_Nation
+	    cost = 2.9
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		bypass = {
+			AND = {
+				CNG = {
+					exists = no
+				}
+				JNG = {
+					exists = no
+				}
+				HNG = {
+					exists = no
+				}
+			}
+		}
+	    completion_reward = {
+			remove_ideas = ENG_mid_cw_emergency_government_2
+			add_ideas = ENG_mid_cw_battle_of_england
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Reclaim_The_Nation"
+	    }
+        relative_position_id = ENG_Hold_Against_The_Traitors
+		prerequisite = { focus = ENG_Hold_Against_The_Traitors }
+
+    }
+
+    focus = {
+	    id = ENG_The_WouldBe_Dictator
+	    icon = GFX_goal_ENG_The_WouldBe_Dictator
+	    cost = 2.9
+	    x = -3
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		bypass = {
+			JNG = {
+				exists = no
+			}
+		}
+	    completion_reward = {
+			add_ideas = ENG_mid_cw_would_be_dict
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_The_WouldBe_Dictator"
+	    }
+        relative_position_id = ENG_Reclaim_The_Nation
+		prerequisite = { focus = ENG_Reclaim_The_Nation }
+
+    }
+
+    focus = {
+	    id = ENG_The_EcoPuppet
+	    icon = GFX_goal_ENG_The_EcoPuppet
+	    cost = 2.9
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		bypass = {
+			HNG = {
+				exists = no
+			}
+		}
+	    completion_reward = {
+			add_ideas = ENG_mid_cw_eco_puppet
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_The_EcoPuppet"
+	    }
+        relative_position_id = ENG_Reclaim_The_Nation
+		prerequisite = { focus = ENG_Reclaim_The_Nation }
+
+    }
+
+	focus = {
+	    id = ENG_The_Loose_Dove
+	    icon = GFX_goal_ENG_The_Loose_Dove
+	    cost = 2.9
+	    x = 3
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		bypass = {
+			CNG = {
+				exists = no
+			}
+		}
+	    completion_reward = {
+			add_ideas = ENG_mid_cw_loose_dove
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_The_Loose_Dove"
+	    }
+        relative_position_id = ENG_Reclaim_The_Nation
+		prerequisite = { focus = ENG_Reclaim_The_Nation }
+
+    }
+
+    focus = {
+	    id = ENG_Taking_England_Back
+	    icon = GFX_goal_ENG_Taking_England_Back
+	    cost = 5
+	    x = 3
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		bypass = {
+			AND = {
+				CNG = {
+					exists = no
+				}
+				JNG = {
+					exists = no
+				}
+				HNG = {
+					exists = no
+				}
+			}
+		}
+	    completion_reward = {
+			swap_ideas = {
+				remove_idea = ENG_mid_cw_battle_of_england
+				add_idea = ENG_mid_cw_battle_of_england_2
+			}
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Taking_England_Back"
+	    }
+        relative_position_id = ENG_The_WouldBe_Dictator
+		prerequisite = { focus = ENG_The_WouldBe_Dictator }
+		prerequisite = { focus = ENG_The_EcoPuppet }
+		prerequisite = { focus = ENG_The_Loose_Dove }
+
+    }
+
+    focus = {
+	    id = ENG_It_All_Came_Tumbling_Down
+	    icon = GFX_goal_ENG_It_All_Came_Tumbling_Down
+	    cost = 0.5
+	    x = 3
+	    y = 0
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+			# change_cosmetic_flag = {
+			# 	flag = ENG_It_All_Came_Tumbling_Down
+			# 	value = 1
+			# }
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_It_All_Came_Tumbling_Down"
+	    }
+        
+    }
+
+    focus = {
+	    id = ENG_Muster_What_Remains
+	    icon = GFX_goal_ENG_Muster_What_Remains
+	    cost = 1
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		bypass = {
+			AND = {
+				CNG = {
+					exists = no
+				}
+				JNG = {
+					exists = no
+				}
+				HNG = {
+					exists = no
+				}
+			}
+		}
+	    completion_reward = {
+			division_template = {
+				name = "Reserve Infantry"
+				is_locked = yes
+				regiments = {
+					infantry = {x=0 y=0}
+					infantry = {x=0 y=1}
+					infantry = {x=0 y=2}
+					infantry = {x=0 y=3}
+					infantry = {x=0 y=4}
+				}
+			}
+			1023 = {
+				create_unit = {
+					division = "
+					name = \"Reserve Infantry\",
+					division_template = \"Reserve Infantry\",
+					start_experience_factor = 0.5
+					"
+					owner = ENG
+				}
+				create_unit = {
+					division = "
+					name = \"Reserve Infantry\",
+					division_template = \"Reserve Infantry\",
+					start_experience_factor = 0.5
+					"
+					owner = ENG
+				}
+			}
+			add_manpower = 5000
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Muster_What_Remains"
+	    }
+        relative_position_id = ENG_It_All_Came_Tumbling_Down
+		prerequisite = { focus = ENG_It_All_Came_Tumbling_Down }
+
+    }
+
+    focus = {
+	    id = ENG_Appeal_To_Scotland
+	    icon = GFX_goal_ENG_Appeal_To_Scotland
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+		bypass = {
+			AND = {
+				CNG = {
+					exists = no
+				}
+				JNG = {
+					exists = no
+				}
+				HNG = {
+					exists = no
+				}
+			}
+		}
+	    completion_reward = {
+			country_event = eng_mid_cw.1
+		    log = "[GetDateText]: [Root.GetName]: Focus ENG_Appeal_To_Scotland"
+	    }
+        relative_position_id = ENG_Muster_What_Remains
+		prerequisite = { focus = ENG_Muster_What_Remains }
+
+    }
+}
