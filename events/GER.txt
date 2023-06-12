@@ -202,12 +202,20 @@ country_event = { #Veron my beloved
 	fire_only_once = yes
 
 	trigger = {
-		tag = GER
-		has_war_with = SOV
-		has_war_with = FRA
-		has_war_with = SCO
-	}
-
+        AND = {
+            tag = GER
+            has_war_with = SOV
+            has_war_with = FRA
+            OR = {
+                has_war_with = SCO
+                has_war_with = JNG
+                has_war_with = CNG
+                has_war_with = HNG
+               has_war_with = ENG
+            }
+        }
+    }
+	
 	option = { #The Heer assumes control
 	    name = german_event_option.7.a
         add_stability = -0.1
