@@ -1,0 +1,62 @@
+
+###############################
+########## EQUIPMENT ##########
+###############################
+
+defined_text = {
+	name = GET_logistics_amount_tt_light
+	text = {
+		trigger = {
+			check_variable = {
+				var = num_target_equipment_in_armies@light_equipment_0
+				value = num_equipment_in_armies@light_equipment_0
+				compare = greater_than
+			}
+		}
+		localization_key = logistics_amount_tt_no_light
+	}
+	text = {
+		localization_key = logistics_amount_tt_ye_light
+	}
+}
+defined_text = {
+	name = GET_logistics_amount_tt_heavy
+	text = {
+		trigger = {
+			check_variable = {
+				var = num_target_equipment_in_armies@heavy_equipment_0
+				value = num_equipment_in_armies@heavy_equipment_0
+				compare = greater_than
+			}
+		}
+		localization_key = logistics_amount_tt_no_heavy
+	}
+	text = {
+		localization_key = logistics_amount_tt_ye_heavy
+	}
+}
+
+###############################
+####### DIVISION LIMIT ########
+###############################
+
+defined_text = {
+	name = GETdivision_limit_tooltip
+	text = {
+		trigger = {
+			check_variable = {
+				var = num_battalions
+				value = division_limit
+				compare = greater_than
+			}
+		}
+		localization_key = division_limit_tt2bad
+	}
+	text = {
+		localization_key = division_limit_tt2good
+	}
+}
+
+###############################
+###############################
+###############################

@@ -6,16 +6,6 @@ technologies = {
 		}
 
 		research_speed_factor = 0.01
-		
-		path = {
-			leads_to_tech = light_weapons
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = automation
-			research_cost_coeff = 1
-		}
 
 		path = {
 			leads_to_tech = crawler
@@ -28,12 +18,22 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = hovercraft_tech
+			leads_to_tech = automation
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = light_weapons
 			research_cost_coeff = 1
 		}
 
 		path = {
 			leads_to_tech = heavy_weapons
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = hovercraft_tech
 			research_cost_coeff = 1
 		}
 		
@@ -83,13 +83,17 @@ technologies = {
 			leads_to_tech = be_tech_support
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = augment_equipment_tech
+			research_cost_coeff = 1
+		}
 
 		research_cost = 1
 		
 
 		folder = {
 			name = be_tech_folder
-			position = {x = 2 y = 4}
+			position = {x = 6 y = 4}
 		}
 
 		ai_will_do = {
@@ -139,10 +143,6 @@ technologies = {
 		}
 		path = {
 			leads_to_tech = integral_defense_upgrade
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = augment_equipment_tech
 			research_cost_coeff = 1
 		}
 
@@ -267,7 +267,7 @@ technologies = {
 
 		folder = {
 			name = be_tech_folder
-			position = {x=6 y=12}
+			position = {x=8 y=8}
 		}
 
 		ai_will_do = {
@@ -297,7 +297,7 @@ technologies = {
 
 		folder = {
 			name = be_tech_folder
-			position = {x=6 y=16}
+			position = {x=8 y=12}
 		}
 
 		ai_will_do = {
@@ -327,7 +327,7 @@ technologies = {
 
 		folder = {
 			name = be_tech_folder
-			position = {x=8 y=16}
+			position = {x=10 y=12}
 		}
 
 		ai_will_do = {
@@ -352,7 +352,7 @@ technologies = {
 
 		folder = {
 			name = be_tech_folder
-			position = {x=10 y=16}
+			position = {x=12 y=12}
 		}
 
 		ai_will_do = {
@@ -377,7 +377,7 @@ technologies = {
 
 		folder = {
 			name = be_tech_folder
-			position = {x=7 y=20}
+			position = {x=9 y=16}
 		}
 
 		ai_will_do = {
@@ -560,7 +560,9 @@ technologies = {
 
 		research_cost = 3
 		
-		
+		dependencies = {
+			qresearch_lines = 1
+		}
 
 		folder = {
 			name = be_tech_folder
@@ -622,7 +624,7 @@ technologies = {
 		
 		folder = {
 			name = be_tech_folder
-			position = {x=13 y=5}
+			position = {x=6 y=18}
 		}
 		
 		categories = {
@@ -645,7 +647,7 @@ technologies = {
 		
 		folder = {
 			name = be_tech_folder
-			position = {x=8 y=9}
+			position = {x=4 y=22}
 		}
 		
 		categories = {
@@ -669,7 +671,7 @@ technologies = {
 		
 		folder = {
 			name = be_tech_folder
-			position = {x=10 y=9}
+			position = {x=6 y=22}
 		}
 		
 		categories = {
@@ -694,7 +696,7 @@ technologies = {
 		
 		folder = {
 			name = be_tech_folder
-			position = {x=12 y=9}
+			position = {x=8 y=22}
 		}
 		
 		categories = {
@@ -719,7 +721,7 @@ technologies = {
 		
 		folder = {
 			name = be_tech_folder
-			position = {x=14 y=9}
+			position = {x=10 y=22}
 		}
 		
 		categories = {
@@ -745,7 +747,7 @@ technologies = {
 		
 		folder = {
 			name = be_tech_folder
-			position = {x=16 y=9}
+			position = {x=12 y=22}
 		}
 		
 		categories = {
@@ -769,7 +771,7 @@ technologies = {
 		
 		folder = {
 			name = be_tech_folder
-			position = {x=18 y=9}
+			position = {x=14 y=22}
 		}
 		
 		categories = {
@@ -1040,11 +1042,6 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = military_industrial_plan
-			research_cost_coeff = 1
-		}
-
-		path = {
 			leads_to_tech = apc_tech
 			research_cost_coeff = 1
 		}
@@ -1056,11 +1053,6 @@ technologies = {
 
 		path = {
 			leads_to_tech = mbt_tech	
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = quantum_theory	
 			research_cost_coeff = 1
 		}
 
@@ -1089,16 +1081,14 @@ technologies = {
 		}
 
 		dependencies = {
-			quantum_generation = 1
-			ngen_batteries = 1
-			qresearch_lines = 1
+			heavy_weapons = 1
 		}
 
 		research_cost = 1.5		
 
 		folder = {
 			name = be_tech_folder
-			position = {x=4 y=23}
+			position = {x=-4 y=20}
 		}
 
 		ai_will_do = {
@@ -1114,14 +1104,19 @@ technologies = {
 	military_industrial_plan = {
 
 		custom_modifier_tooltip = heavy_military_complex_boost_010
+		custom_modifier_tooltip = military_complex_boost_010
 		production_speed_heavy_military_complex_factor = 0.1
+		production_speed_military_complex_factor = 0.1
 
 		research_cost = 1.5
 		
+		dependencies = {
+			heavy_weapons = 1
+		}
 
 		folder = {
 			name = be_tech_folder
-			position = {x=-6 y=23}
+			position = {x=-8 y=20}
 		}
 
 		ai_will_do = {
@@ -1199,7 +1194,7 @@ technologies = {
 
 		folder = {
 			name = be_tech_folder
-			position = {x=10 y=27}
+			position = {x=8 y=30}
 		}
 
 		ai_will_do = {
@@ -1265,7 +1260,7 @@ technologies = {
 
 		folder = {
 			name = be_tech_folder
-			position = {x=8 y=30}
+			position = {x=6 y=34}
 		}
 
 		ai_will_do = {
@@ -1327,6 +1322,11 @@ technologies = {
 		}
 
 		path = {
+			leads_to_tech = adv_excavation 
+			research_cost_coeff = 1
+		}
+
+		path = {
 			leads_to_tech = research_matrix 
 			research_cost_coeff = 1
 		}
@@ -1337,18 +1337,13 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = adv_excavation 
-			research_cost_coeff = 1
-		}
-
-		path = {
 			leads_to_tech = recycling_lines 
 			research_cost_coeff = 1
 		}
 		
 		folder = {
 			name = be_tech_folder
-			position = { x = -2 y = 4 }
+			position = { x = -6 y = 4 }
 		}
 		
 		ai_will_do = {
@@ -1421,7 +1416,12 @@ technologies = {
 		
 		folder = {
 			name = be_tech_folder
-			position = { x = -2 y = 16 }
+			position = { x = -3 y = 16 }
+		}
+
+		path = {
+			leads_to_tech = quantum_theory 
+			research_cost_coeff = 1
 		}
 		
 		ai_will_do = {
@@ -1445,17 +1445,12 @@ technologies = {
 			leads_to_tech = quantum_generation 
 			research_cost_coeff = 1
 		}
-
-		path = {
-			leads_to_tech = ngen_batteries 
-			research_cost_coeff = 1
-		}
 		
 		research_cost = 2
 		
 		folder = {
 			name = be_tech_folder
-			position = { x = -5 y = 8 }
+			position = { x = -4 y = 8 }
 		}
 		
 		categories = {
@@ -1477,12 +1472,22 @@ technologies = {
 				amount = 2
 			}
 		}
+
+		path = {
+			leads_to_tech = kinetic_theory 
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = ngen_batteries 
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 2
 		
 		folder = {
 			name = be_tech_folder
-			position = { x = -6 y = 12 }
+			position = { x = -4 y = 12 }
 		}
 		
 		categories = {
@@ -1502,10 +1507,15 @@ technologies = {
 		
 		research_cost = 2
 		start_year = 2200
+
+		path = {
+			leads_to_tech = quantum_theory 
+			research_cost_coeff = 1
+		}
 		
 		folder = {
 			name = be_tech_folder
-			position = { x = -4 y = 12 }
+			position = { x = -5 y = 16 }
 		}
 		
 		categories = {
@@ -1530,11 +1540,6 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = integral_model 
-			research_cost_coeff = 1
-		}
-
-		path = {
 			leads_to_tech = corporate_model 
 			research_cost_coeff = 1
 		}
@@ -1546,7 +1551,7 @@ technologies = {
 		
 		folder = {
 			name = be_tech_folder
-			position = { x = -11 y = 8 }
+			position = { x = -9 y = 8 }
 		}
 		
 		ai_will_do = {
@@ -1562,6 +1567,16 @@ technologies = {
 		#XOR = { corporate_model }
 		
 		research_cost = 2
+
+		path = {
+			leads_to_tech = integral_model 
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = military_industrial_plan
+			research_cost_coeff = 1
+		}
 		
 		categories = {
 			be_industry
@@ -1570,7 +1585,7 @@ technologies = {
 		
 		folder = {
 			name = be_tech_folder
-			position = { x = -10 y = 12 }
+			position = { x = -8 y = 12 }
 		}
 		
 		ai_will_do = {
@@ -1592,7 +1607,7 @@ technologies = {
 		
 		folder = {
 			name = be_tech_folder
-			position = { x = -13 y = 5 }
+			position = { x = -7 y = 16 }
 		}
 		
 		ai_will_do = {
@@ -1609,6 +1624,11 @@ technologies = {
 		industry_free_repair_factor = 0.1
 
 		#XOR = { adv_construction }
+
+		path = {
+			leads_to_tech = integral_model 
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 2
 		
@@ -1619,7 +1639,7 @@ technologies = {
 		
 		folder = {
 			name = be_tech_folder
-			position = { x = -12 y = 12 }
+			position = { x = -10 y = 12 }
 		}
 		
 		ai_will_do = {
@@ -1640,7 +1660,7 @@ technologies = {
 		
 		folder = {
 			name = be_tech_folder
-			position = { x = -11 y = 16 }
+			position = { x = -9 y = 16 }
 		}
 		
 		ai_will_do = {
@@ -1663,7 +1683,7 @@ technologies = {
 		start_year = 2200
 		folder = {
 			name = be_tech_folder
-			position = { x = -8 y = 8 }
+			position = { x = -6 y = 8 }
 		}
 		
 		categories = {
@@ -1685,12 +1705,17 @@ technologies = {
 				amount = 2
 			}
 		}
+
+		path = {
+			leads_to_tech = ngen_batteries 
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 2
 		start_year = 2200
 		folder = {
 			name = be_tech_folder
-			position = { x = -8 y = 12 }
+			position = { x = -6 y = 12 }
 		}
 		
 		categories = {

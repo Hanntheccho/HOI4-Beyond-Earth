@@ -9,6 +9,10 @@
 
  get_threat: "[?global.threat|1%]"
 
+ state_level_stuff: "[?THIS.building_level@infrastructure]"
+
+ UNLOCKED_SLOTS: "$NUM$"
+
  TOPBAR_TECHNOLOGY: "Research and Innovation"
  TOPBAR_TECHNOLOGY_DESC: "--------------\n§GDouble-Click§! to open the tech tree\n--------------\n§LScientific research is a structured and systematic process of investigating phenomena, events, or problems to generate new knowledge and understanding in various fields. Nations and governments can benefit from scientific research in several ways, including the advancement of knowledge, fostering innovation, improving public health, enhancing national security, and supporting evidence-based policymaking.\n\nThese benefits can ultimately lead to improved quality of life for citizens, economic growth, and societal progress.§!"
 
@@ -25,8 +29,6 @@
  leader_desc_unknown: "/> datalink.search | this.leader.desc />.....\n/> nothing_found! no.error.null />\n/> skip.next...\n..."
  leader_name_yes: "[THIS.GetLeader]"
  leader_name_no: "§O[THIS.OVERLORD.GetName]§!"
- social_engineering: "§RUNKNOWN§!"
- international_header: "ISS-UNITY"
 
 ###############################
 ############# NUKE ############
@@ -83,7 +85,7 @@
 
  space_research: "§OSpaceship Complexes§! Research"
 
- help_ss_current_contribution: "Every day, every country will be assigned a §CContribution§! based on the number of §OSpaceship Complexes§! owned.\n\nAs countries contribute, the world will finalize one of five modules of the §OISS Unity§!. The more countries contribute the sooner the modules will get built. The country with the highest contribution score at that time will be awarded an §OUplink§! corresponding to the lastest ISS' module in its capital state."
+ help_ss_current_contribution: "§HThe ISS-Unity§!\n§LThe Earth is the cradle of humanity, but mankind cannot stay in the cradle forever.\n-Konstantin Tsiolkovsky§!\n\nEvery day, every country will be assigned a §CContribution§! based on the number of §OSpaceship Complexes§! owned.\n\nAs countries contribute, the world will finalize one of five modules of the §OISS Unity§!. The more countries contribute the sooner the modules will get built. The country with the highest contribution score at that time will be awarded an §OUplink§! corresponding to the lastest ISS' module in its capital state."
 
 ###############################
 ########### PEACE GUI #########
@@ -131,13 +133,13 @@
 ########## SOUTH POLE #########
 ###############################
 
- antarctic_sectors_selection_disabled: "§R£trigger_no  We need more §OPolitical Power§!, be §OAt Peace§! and not be a §OPuppet§! country!§!"
+ antarctic_sectors_selection_disabled: "§R£trigger_no  We need more §OPolitical Power§!, be §OAt Peace§!, not be a §OPuppet§!, nor being an §OUnstable Leadership§!, and be a §ODeveloped Powerhouse§!!§!"
  #SOUTHPOLE_SECTORS_OWNED_BY_US: "§G[?num_southpole_sectors]§!/10"
  SOUTHPOLE_SECTORS_COST_PP: "£pol_power  20"
  SOUTHPOLE_SECTORS_COST_MAINTAIN: "£pol_power  0.025/day"
  hostile_takeover_tooltip: "§RIf we manage to own more than half of the sectors for enough time and the Final War has already begun, we can elevate the benefits to a higher level by doing a hostile takeover.\n\nThis decision costs us nothing, but former sector owners may sanction us!\n\nWe can play the long game and regularly invest toward a final hostile takeover, but it will cost us dearly to get there. We are not without rivals and challengers.§!"
 
- help_southpole_sector_price: "§HThe Antarctica§!\nA sector's base price is £pol_power  §C20§! §OPolitical Power§! to claim. It costs £pol_power  §C0.025§! §OPolitical Power§! daily to maintain an owned sector.\n\nWhenever you or your competitors pay the current sector price to add influence, the price of that sector will increase by £pol_power  §C20§! §OPolitical Power§!, and its daily maintenance cost increases by £pol_power  §C0.025§! §OPolitical Power§!.\n\nIf the daily cost becomes too much, your only options are to abandon it or let your competitors take it. However, if you stand your ground, you may yet win it all in a §RHostile Takeover§! of the Southern Continent!\n\nThe benefits of owning a sector are:\n  If £stability_texticon  , §G+3 Civilian Complexes§!\n  If £national_unity_texticon  , §G+3 Military Complexes§!\n\nOwning multiple sectors stacks the benefits!"
+ help_southpole_sector_price: "§HThe Antarctica§!\n§LIn the depths of winter, I finally learned that within me there lay an invincible summer.\n-Albert Camus§!\n\nA sector's base price is £pol_power  §C20§! §OPolitical Power§! to claim. It costs £pol_power  §C0.025§! §OPolitical Power§! daily to maintain an owned sector.\n\nWhenever you or your competitors pay the current sector price to add influence, the price of that sector will increase by £pol_power  §C20§! §OPolitical Power§!, and its daily maintenance cost increases by £pol_power  §C0.025§! §OPolitical Power§!.\n\nIf the daily cost becomes too much, your only options are to abandon it or let your competitors take it. However, if you stand your ground, you may yet win it all in a §RHostile Takeover§! of the Southern Continent!\n\nThe benefits of owning a sector are:\n  If £stability_texticon  , §G+3 Civilian Complexes§!\n  If £national_unity_texticon  , §G+3 Military Complexes§!\n\nOwning multiple sectors stacks the benefits!"
 
  sector_add_mils: "§G+3 Military Complexes§!"
  sector_add_civs: "§G+3 Civilian Complexes§!"
@@ -303,7 +305,7 @@
  mind_button_delayed: "§HHarmony§!\n§LThis world is a gift-garment that we wear upon ourselves and within ourselves, in gratitude to the giver.\n-From the Annunciation Rite of Polymorphalists\n\nAn environmentalist ideology, believing that humanity should live in harmony with nature through any means with the aim of sustainability.\n\nThey blame over industrialisation and the unsustainable nature of society for the Great Mistake.§!"
  #mind_tier3_modifier: "Mind Tier 3"
  
- help_virtues: "§HVirtues and Affinities§!\n§LA nation is defined by its people, and the people are defined by their culture, beliefs, and way of life.§!\n\nHere, a country can spend its £pol_power  §OPolitical Power§! to purchase §CVirtues§!.\n\nEvery §CVirtue§! is divided into §C3§! §OTiers§!, which must be purchased consecutively. §CVirtues§! are §Rmutually exclusive§! with their opposites.\n\nPurchasing §CVirtues§! costs £pol_power  §C150§! §OPolitical Power§! for the 1st tier, £pol_power  §C200§! §OPolitical Power§! for the 2nd, and §C300§! £pol_power  §OPolitical Power§! for the 3rd."
+ help_virtues: "§HVirtues and Affinities§!\n§LCulture is the fabric that weaves humanity together, transcending borders and connecting hearts.\n-Unknown§!\n\nHere, a country can spend its £pol_power  §OPolitical Power§! to purchase §CVirtues§!.\n\nEvery §CVirtue§! is divided into §C3§! §OTiers§!, which must be purchased consecutively. §CVirtues§! are §Rmutually exclusive§! with their opposites.\n\nPurchasing §CVirtues§! costs £pol_power  §C150§! §OPolitical Power§! for the 1st tier, £pol_power  §C200§! §OPolitical Power§! for the 2nd, and §C300§! £pol_power  §OPolitical Power§! for the 3rd."
 
 ###############################
 ############ WONDERS ##########
@@ -353,7 +355,7 @@
  crawler_shield_effects: "Supply Truck Attrition: §G-20%§!"
  heavy_equipment_effects: "Enables §OHeavy Equipment§!\nEnables §OAdvanced Military Complex§!"
  mbt_tech_effects: "Enables §OMBT§!"
- military_industrial_plan_effects: "§OAdvanced Military Complex§! Output: §G+10.00%§!\n§OAdvanced Military Complex§! Construction Speed: §G+10.00%§!"
+ military_industrial_plan_effects: "§OAdvanced Military Complex§! Output: §G+10.00%§!\n§OAdvanced Military Complex§! Construction Speed: §G+10.00%§!\n§OMilitary Complex§! Output: §G+10.00%§!\n§OMilitary Complex§! Construction Speed: §G+10.00%§!"
  rover_tech_effects: "Enables §ORover§!"
  apc_tech_effects: "Enables §OAPC§!"
  apc_upgrade_tech_effects: "APC Soft Attack: §G+10%§!\nAPC Hard Attack: §G+10%§!\nAPC Max Speed: §G+20%§!"
@@ -557,7 +559,14 @@
 ###############################
 
  logistics_amount: "[?total_stockpile|0]"
- logistics_amount_tt: "§HMateriel§!\nYou have £light_equipment_icon  §Y[?num_equipment@light_equipment_1]§! §HLight Military Equipment§! and £heavy_equipment_icon  §Y[?num_equipment@heavy_equipment_1]§! §HHeavy Military Equipment§!\nYour current daily gain is £light_equipment_icon  §Y[?num_military_complex|2=+]§! and £heavy_equipment_icon  §Y[?num_heavy_military_complex|2=+]§! per day."
+ logistics_amount_tt: "§HMateriel§!\nYou have £light_equipment_icon  §Y[?num_equipment@light_equipment_0|0]§! §HLight Military Equipment§! and £heavy_equipment_icon  §Y[?num_equipment@heavy_equipment_0|0]§! §HHeavy Military Equipment§!\nYour current daily gain is £light_equipment_icon  §Y[?num_military_complex|2=+]§! and £heavy_equipment_icon  §Y[?num_heavy_military_complex|2=+]§! per day.\n--------------\nThe army's materiel status is £light_equipment_icon  [GET_logistics_amount_tt_light]/§Y[?num_target_equipment_in_armies@light_equipment_0]§! and £heavy_equipment_icon  [GET_logistics_amount_tt_heavy]/§Y[?num_target_equipment_in_armies@heavy_equipment_0]§!"
+ logistics_amount_tt_ye_light: "§G[?num_equipment_in_armies@light_equipment_0|0]§!"
+ logistics_amount_tt_no_light: "§R[?num_equipment_in_armies@light_equipment_0|0]§!"
+ logistics_amount_tt_ye_heavy: "§G[?num_equipment_in_armies@heavy_equipment_0|0]§!"
+ logistics_amount_tt_no_heavy: "§R[?num_equipment_in_armies@heavy_equipment_0|0]§!"
+ logistics_amount_tt_delayed: ""
+ logistics_amount_tt_text_lw: "§G[?num_equipment@light_equipment_1|0]§!"
+ logistics_amount_tt_text_hw: "§P[?num_equipment@heavy_equipment_1|0]§!"
  logistics_amount_tt_delayed: "Military equipment - or materiel - is provided by Military Complexes and Advanced Military Complexes."
 
 ###############################
@@ -611,15 +620,18 @@
 ######### FREE FACTORY ########
 ###############################
 
- free_factory_progress: "§G[?free_factory_progress|0]%§!"
+ free_factory_progress: "[?free_factory_progress|3]"
+ free_factory_progress_daily: "+[?free_factory_gain|2]%"
  free_factory_progress_text: "▀▀ ▀  {{BUILDINGS}  ▀  {{LOAD.GFX}  ▀▀  {{TOOLTIP}  ▀▀▀▀▀\n▀  {{LOAD.FFR}  ▀▀\n▀▀▀  {{DEFAULT.RISK.LOAD}  ▀▀  ▀▀ ▀ ▀▀ ▀▀ ▀▀▀▀▀"
  free_factory_progress_text_small: "▀  {{FREE.FACTORY_PROGRESS} §G[?free_factory_progress|0]%§!"
- available_energy: "£resources_strip|1  [?resource@energy]"
- available_polymers: "£resources_strip|2  [?resource@polymers]"
- available_lithium: "£resources_strip|3  [?resource@lithium]"
- available_electronics: "£resources_strip|4  [?resource@electronics]"
- available_superalloys: "£resources_strip|5  [?resource@superalloys]"
- available_superconductors: "£resources_strip|6  [?resource@superconductors]"
+ light_eq_production: "£light_equipment_icon  [?num_military_complex|2=+]"
+ heavy_eq_production: "£heavy_equipment_icon  [?num_heavy_military_complex|2=+]"
+ available_energy: "      [?resource@energy|0=+]"
+ available_polymers: "      [?resource@polymers|0=+]"
+ available_lithium: "      [?resource@lithium|0=+]"
+ available_electronics: "      [?resource@electronics|0=+]"
+ available_superalloys: "      [?resource@superalloys|0=+]"
+ available_superconductors: "      [?resource@superconductors|0=+]"
 
  free_factory_time: "§HFree Factory Progress§!\n§LAll nations can benefit from their inheret, natural growth, as long as they let their members to make appropiate investments.§!\n\nOur progress is §G[?free_factory_progress]%§!, with a daily base gain of §O[?free_factory_base_gain]%§! and an extra daily gain of §O[?free_factory_gain]%§!, with a total adjustment of §O[?free_factory_adjustment|%]§!. The total amount of buildings gained from the free market is §O[?free_factory_counter]§!.\n\n§H[GETeconomic_system]§!\n[GETeconomic_system_effects].\n\n§RResource deficit will cause §OHigh Default Risk§!, reducing general building speed and preventing other investments.§!"
 
@@ -965,6 +977,8 @@
 ##################################
 ########### RESOURCES ############
 ##################################
+
+ click_to_trade: "§GLeft-Click§! to open the trade view"
 
  PRODUCTION_MATERIALS_ENERGY: "Energy Resources"
  PRODUCTION_MATERIALS_POLYMERS: "Polymers"

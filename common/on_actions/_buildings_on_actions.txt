@@ -63,9 +63,9 @@ on_actions = {
             }
         }
     }
-    on_weekly_ADU = {
+    on_weekly = {
         effect = {
-            every_country = {
+            if = {
                 limit = {
                     is_ai = yes
                 }
@@ -75,6 +75,20 @@ on_actions = {
                     }
                     requested_factories = 1
                 }
+            }
+        }
+    }
+    on_monthly = {
+        effect = {
+            set_variable = {
+                dummy_to_remove = num_equipment@dummy_eq_1
+            }
+            multiply_variable = {
+                dummy_to_remove = -1
+            }
+            add_equipment_to_stockpile = {
+                type = dummy_eq_1
+                amount = dummy_to_remove
             }
         }
     }
@@ -442,6 +456,37 @@ on_actions = {
 ###### EQUIPMENT PRODUCTION ######
 ##################################
 
+    on_startup = {
+        effect = {
+            every_country = {
+                set_variable = { THIS.light_equipment_in_army = THIS.num_equipment_in_armies@light_equipment_0 }
+                set_variable = { THIS.heavy_equipment_in_army = THIS.num_equipment_in_armies@heavy_equipment_0 }
+                divide_variable = {
+                    THIS.light_equipment_in_army = THIS.num_target_equipment_in_armies@light_equipment_0
+                }
+                divide_variable = {
+                    THIS.heavy_equipment_in_army = THIS.num_target_equipment_in_armies@heavy_equipment_0
+                }
+                multiply_variable = { THIS.light_equipment_in_army = 100 }
+                multiply_variable = { THIS.heavy_equipment_in_army = 100 }
+            }
+        }
+    }
+    on_daily = {
+        effect = {
+            set_variable = { ROOT.light_equipment_in_army = ROOT.num_equipment_in_armies@light_equipment_0 }
+            set_variable = { ROOT.heavy_equipment_in_army = ROOT.num_equipment_in_armies@heavy_equipment_0 }
+            divide_variable = {
+                ROOT.light_equipment_in_army = ROOT.num_target_equipment_in_armies@light_equipment_0
+            }
+            divide_variable = {
+                ROOT.heavy_equipment_in_army = ROOT.num_target_equipment_in_armies@heavy_equipment_0
+            }
+            multiply_variable = { ROOT.light_equipment_in_army = 100 }
+            multiply_variable = { ROOT.heavy_equipment_in_army = 100 }
+        }
+    }
+
     on_daily = {
         effect = {
             set_variable = { num_military_complex = 0 }
@@ -519,6 +564,7 @@ on_actions = {
                     has_tech = military_industrial_plan
                 }
                 multiply_variable = { num_heavy_military_complex = 1.1 }
+                multiply_variable = { num_military_complex = 1.1 }
             }
             #
             if = {

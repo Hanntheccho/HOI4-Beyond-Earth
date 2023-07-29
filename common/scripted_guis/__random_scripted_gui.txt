@@ -4,6 +4,30 @@ scripted_gui = {
 ######## SCRIPTED GUIS ########
 ###############################
 
+	logistics_info_gui = {
+		context_type = player_context
+		parent_window_token = top_bar
+		
+		window_name = "logistics_info"
+
+        visible = {
+			always = yes
+        }
+
+		properties = {
+			light_weapons_bar = {
+				frame = ROOT.light_equipment_in_army
+			}
+			heavy_weapons_bar = {
+				frame = ROOT.heavy_equipment_in_army
+			}
+		}
+
+        ai_enabled = {
+            always = no
+        }
+    } 
+
 	tech_gui_window_gui = {
 		context_type = player_context
 		parent_window_name = "be_tech_folder"
@@ -561,16 +585,16 @@ scripted_gui = {
 		}
 	}
 
-	extra_buttons_gui = {
-		window_name = "extra_buttons"
+	spaceship_button_gui = {
+		window_name = "spaceship_button_window"
 		context_type = player_context
-		parent_window_name = topbar
-		
+		parent_window_name = "be_tech_folder"
+
 		visible = {
     	    always = yes
 		}
-        effects = {
-            politics_button_click = {
+		effects = {
+            spaceship_button_click = {
                 if = {
                     limit = {
                         has_country_flag = international_moment_flag
@@ -582,25 +606,23 @@ scripted_gui = {
                     set_country_flag = international_moment_flag
                 }
             }
-            economic_button_click = {
-                if = {
-                    limit = {
-                        has_country_flag = south_pole_moment_flag
-                    }
-                    clr_country_flag = south_pole_moment_flag
-                    set_country_flag = virtues_and_culture_moment_flag
-                }
-                else_if = {
-                    limit = {
-                        has_country_flag = virtues_and_culture_moment_flag
-                    }
-                    clr_country_flag = virtues_and_culture_moment_flag
-                }
-                else = {
-                    set_country_flag = virtues_and_culture_moment_flag
-                }
-            }
-            south_pole_button_click = {
+        }
+
+        ai_enabled = {
+            always = no
+        }
+	}
+
+	sectors_button_gui = {
+		window_name = "sectors_button_window"
+		context_type = player_context
+		parent_window_name = "be_tech_folder"
+
+		visible = {
+    	    always = yes
+		}
+		effects = {
+            sectors_button_click = {
                 if = {
                     limit = {
                         has_country_flag = virtues_and_culture_moment_flag
@@ -618,6 +640,56 @@ scripted_gui = {
                     set_country_flag = south_pole_moment_flag
                 }
             }
+        }
+
+        ai_enabled = {
+            always = no
+        }
+	}
+
+	virtues_button_gui = {
+		window_name = "virtues_button_window"
+		context_type = player_context
+		parent_window_name = "be_tech_folder"
+
+		visible = {
+    	    always = yes
+		}
+		effects = {
+            virtues_button_click = {
+                if = {
+                    limit = {
+                        has_country_flag = south_pole_moment_flag
+                    }
+                    clr_country_flag = south_pole_moment_flag
+                    set_country_flag = virtues_and_culture_moment_flag
+                }
+                else_if = {
+                    limit = {
+                        has_country_flag = virtues_and_culture_moment_flag
+                    }
+                    clr_country_flag = virtues_and_culture_moment_flag
+                }
+                else = {
+                    set_country_flag = virtues_and_culture_moment_flag
+                }
+            }
+        }
+
+        ai_enabled = {
+            always = no
+        }
+	}
+
+	extra_buttons_gui = {
+		window_name = "help_button"
+		context_type = player_context
+		parent_window_name = topbar
+		
+		visible = {
+    	    always = yes
+		}
+        effects = {
 			help_button_click = {
 				if = {
 					limit = {
@@ -636,32 +708,17 @@ scripted_gui = {
 			help_button_glow_visible = {
 				has_country_flag = scan_mode_on_glow
 			}
-			#
-#           politics_alert_visible = {
-#               has_global_flag = resolution_proposed
-#           }
-            south_pole_button_click_enabled = {
-                NOT = { has_idea = agrarian_stage }
-                NOT = { has_idea = developing_stage }
-                NOT = { has_idea = unstable_leadership }
-                NOT = { tag = ADU }
-            }
-			#
-			politics_button_hold_visible = {
-                has_country_flag = international_moment_flag
-            }
-			economic_button_hold_visible = {
-                has_country_flag = virtues_and_culture_moment_flag
-            }
-			south_pole_button_hold_visible = {
-                has_country_flag = south_pole_moment_flag
-            }
         }
+
+		properties = {
+			ff_bar = {
+				frame = ROOT.free_factory_progress
+			}
+		}
 
         ai_enabled = {
             always = no
-        }
-        
+        }        
 	}
 
 	division_limit_window_gui = {
@@ -681,6 +738,20 @@ scripted_gui = {
 	}
 
 	free_factory_window_stuff = {
+        window_name = "free_factory_window_top"
+        context_type = player_context
+		parent_window_token = top_bar
+         
+        visible = {
+            always = yes
+        }
+        
+        ai_enabled = {
+            always = no
+        }
+    }
+
+	free_factory_window_stuff = {
         window_name = "free_factory_window"
         context_type = player_context
 		parent_window_token = construction_tab
@@ -688,18 +759,6 @@ scripted_gui = {
         visible = {
             always = yes
         }
-		
-		effects = {
-            #
-		}
-        
-        triggers = {
-           #
-        }
-
-		properties = {
-			#
-		}
         
         ai_enabled = {
             always = no

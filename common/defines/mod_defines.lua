@@ -41,7 +41,7 @@ NDefines.NDiplomacy.TENSION_CAPITULATE = 0                           -- Vanilla:
 NDefines.NDiplomacy.AUTONOMY_LEVEL_CHANGE_PP_ANNEX = 6969
 NDefines.NDiplomacy.AUTONOMY_LEVEL_CHANGE_PP_FREE = 6969
 
-NDefines.NCountry.POPULATION_YEARLY_GROWTH_BASE = 0.005           -- Vanilla: 0.015
+NDefines.NCountry.POPULATION_YEARLY_GROWTH_BASE = 0.0005           -- Vanilla: 0.015
 NDefines.NCountry.SUPPLY_BASE_MULT = 10                          -- Vanilla: 1
 
 NDefines.NCountry.POLITICAL_POWER_UPPER_CAP = 1000.0
