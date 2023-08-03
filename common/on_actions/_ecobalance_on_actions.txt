@@ -16,6 +16,7 @@ on_actions = {
 				if = {
 					limit = {
 						OR = {
+							is_owned_by = ADU
 							state = 16
 							state = 14
 						}
@@ -247,247 +248,245 @@ on_actions = {
             }
         }
     }
-	on_daily = {
+	on_daily_ADU = {
 		effect = {
-			random_country = {
-            	subtract_from_variable = { ecobalance_timeout = 1 }
-				if = {
-					limit = {
-						check_variable = { ecobalance_timeout = 0 }
-					}
-					set_variable = { anti_threat = threat }
-					set_variable = { ecobalance_chance = threat }
-					add_to_variable = { anti_threat = -1 }
-					multiply_variable = { anti_threat = -1 }
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					random_list = {
-						var:ecobalance_chance = {
-							increase_ecobalance_random_state = yes
-						}
-						var:anti_threat = {
-							#
-						}
-					}
-					add_to_variable = { ecobalance_timeout = 60 }
+            subtract_from_variable = { ecobalance_timeout = 1 }
+			if = {
+				limit = {
+					check_variable = { ecobalance_timeout = 0 }
 				}
-				else = {
-					#
+				set_variable = { anti_threat = threat }
+				set_variable = { ecobalance_chance = threat }
+				add_to_variable = { anti_threat = -1 }
+				multiply_variable = { anti_threat = -1 }
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
 				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				random_list = {
+					var:ecobalance_chance = {
+						increase_ecobalance_random_state = yes
+					}
+					var:anti_threat = {
+						#
+					}
+				}
+				add_to_variable = { ecobalance_timeout = 60 }
+			}
+			else = {
+				#
 			}
         }
     }
@@ -534,85 +533,83 @@ on_actions = {
 		}
 	}
 	###
-	on_monthly = {
+	on_monthly_ADU = {
 		effect = {
-			random_country = {
-				set_variable = { global.total_global_ecobalance = 0 }
-				if = {
-					limit = {
-						threat < 1
-					}
-					every_state = {
-						if = {
-							limit = {
-								has_dynamic_modifier = {
-									modifier = terminal_ecobalance
-								}
-							}
-							add_to_variable = {
-								global.total_global_ecobalance = 4
-							}
-						}
-						else_if = {
-							limit = {
-								has_dynamic_modifier = {
-									modifier = significant_ecobalance
-								}
-							}
-							add_to_variable = {
-								global.total_global_ecobalance = 3
-							}
-						}
-						else_if = {
-							limit = {
-								has_dynamic_modifier = {
-									modifier = major_ecobalance
-								}
-							}
-							add_to_variable = {
-								global.total_global_ecobalance = 2
-							}
-						}
-						else_if = {
-							limit = {
-								has_dynamic_modifier = {
-									modifier = notable_ecobalance
-								}
-							}
-							add_to_variable = {
-								global.total_global_ecobalance = 1
-							}
-						}
-						else = {
-							#
-						}
-					}
+			set_variable = { global.total_global_ecobalance = 0 }
+			if = {
+				limit = {
+					threat < 1
 				}
-				if = {
-					limit = {
-						threat > 0
-						threat < 1
-					}
-					every_state = {
+				every_state = {
+					if = {
 						limit = {
 							has_dynamic_modifier = {
-								modifier = no_ecobalance
+								modifier = terminal_ecobalance
 							}
 						}
 						add_to_variable = {
-							global.total_global_ecobalance = -4
+							global.total_global_ecobalance = 4
 						}
 					}
+					else_if = {
+						limit = {
+							has_dynamic_modifier = {
+								modifier = significant_ecobalance
+							}
+						}
+						add_to_variable = {
+							global.total_global_ecobalance = 3
+						}
+					}
+					else_if = {
+						limit = {
+							has_dynamic_modifier = {
+								modifier = major_ecobalance
+							}
+						}
+						add_to_variable = {
+							global.total_global_ecobalance = 2
+						}
+					}
+					else_if = {
+						limit = {
+							has_dynamic_modifier = {
+								modifier = notable_ecobalance
+							}
+						}
+						add_to_variable = {
+							global.total_global_ecobalance = 1
+						}
+					}
+					else = {
+						#
+					}
 				}
-				divide_variable = { global.total_global_ecobalance = 1000 }
-				every_country = {
+			}
+			if = {
+				limit = {
+					threat > 0
+					threat < 1
+				}
+				every_state = {
 					limit = {
-						owns_state = 333
+						has_dynamic_modifier = {
+							modifier = no_ecobalance
+						}
 					}
-					add_named_threat = { 
-						threat = global.total_global_ecobalance
-						name = total_global_ecobalance_added
+					add_to_variable = {
+						global.total_global_ecobalance = -4
 					}
+				}
+			}
+			divide_variable = { global.total_global_ecobalance = 1000 }
+			every_country = {
+				limit = {
+					owns_state = 333
+				}
+				add_named_threat = { 
+					threat = global.total_global_ecobalance
+					name = total_global_ecobalance_added
 				}
 			}
 		}
