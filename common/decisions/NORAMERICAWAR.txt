@@ -1,4 +1,89 @@
 noramericawar_decisions = {
+	CIN_rebellion = {
+		icon = GFX_decision_unknown
+		available = {
+			RSA = {
+				exists = yes
+			}
+		}
+		visible = {
+			#
+		}
+		fire_only_once = yes
+		days_mission_timeout = 2
+		timeout_effect = {
+			every_country = {
+				limit = {
+					capital_scope = {
+						is_on_continent = north_america
+					}
+				}
+				country_event = cin_event.1
+			}
+			every_country = {
+				limit = {
+					capital_scope = {
+						is_on_continent = north_america
+					}
+					check_variable = {
+						arc_legitimacy > nau_legitimacy
+					}
+				}
+				country_event = {
+					id = cin_event.4
+					days = 8
+				}
+			}
+			every_country = {
+				limit = {
+					capital_scope = {
+						is_on_continent = north_america
+					}
+					NOT = {
+						check_variable = {
+							arc_legitimacy > nau_legitimacy
+						}
+					}
+				}
+				country_event = {
+					id = cin_event.3
+					days = 8
+				}
+			}
+			news_event = cin_event.2
+			every_state = {
+				limit = {
+					is_core_of = CIN
+				}
+				add_core_of = RSA
+			}
+			RSA = {
+				transfer_state = 78
+				transfer_state = 83
+				transfer_state = 76
+				CIN = {
+					transfer_units_fraction= {
+						target = PREV
+						size = 0.5
+						stockpile_ratio = 0.5
+						army_ratio = 0.5
+						air_ratio = 0.0
+					}
+				}
+				declare_war_on = {
+					target = CIN
+					type = annex_puppet_wargoal
+				}
+				ARC = {
+					add_to_faction = PREV
+				}
+			}
+			add_to_variable = { global.napgain_var = 0.1 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	DOS_rebellion = {
 		icon = GFX_decision_unknown
 		available = {
