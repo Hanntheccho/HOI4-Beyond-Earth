@@ -1,0 +1,2032 @@
+
+focus_tree = {
+    id = pnm
+            
+	country = {
+		factor = 0
+		modifier = {
+		    add = 10
+			tag = PNM
+		}
+	}
+            
+	continuous_focus_position = { 
+		x = 0
+		y = 0
+    }
+
+    focus = {
+	    id = PNM_Home_of_the_Braves
+	    icon = GFX_goal_PNM_Home_of_the_Braves
+	    cost = 5
+	    x = -5
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Home_of_the_Braves"
+	    }
+        relative_position_id = PNM_The_Reyes_Candidacy
+		prerequisite = {
+		focus = PNM_The_Reyes_Candidacy
+		focus = PNM_The_Forrest_Candidacy
+	}
+
+    }
+
+    focus = {
+	    id = PNM_Intimidate_the_Tribes
+	    icon = GFX_goal_PNM_Intimidate_the_Tribes
+	    cost = 5
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Intimidate_the_Tribes"
+	    }
+        relative_position_id = PNM_Home_of_the_Braves
+		prerequisite = { focus = PNM_Home_of_the_Braves }
+		mutually_exclusive = { focus = PNM_Approach_the_Tribes }
+
+    }
+
+    focus = {
+	    id = PNM_Approach_the_Tribes
+	    icon = GFX_goal_PNM_Approach_the_Tribes
+	    cost = 5
+	    x = -1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Approach_the_Tribes"
+	    }
+        relative_position_id = PNM_Home_of_the_Braves
+		prerequisite = { focus = PNM_Home_of_the_Braves }
+		mutually_exclusive = { focus = PNM_Intimidate_the_Tribes }
+
+    }
+
+    focus = {
+	    id = PNM_Concessions_of_Autonomy
+	    icon = GFX_goal_PNM_Concessions_of_Autonomy
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Concessions_of_Autonomy"
+	    }
+        relative_position_id = PNM_Approach_the_Tribes
+		prerequisite = { focus = PNM_Approach_the_Tribes }
+
+    }
+
+    focus = {
+	    id = PNM_Bribe_The_Militias
+	    icon = GFX_goal_PNM_Bribe_The_Militias
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Bribe_The_Militias"
+	    }
+		relative_position_id = PNM_Concessions_of_Autonomy
+		prerequisite = {
+			focus = PNM_Concessions_of_Autonomy
+			focus = PNM_Assimilate_or_Disintegrate
+		}
+    	mutually_exclusive = { focus = PNM_Crush_the_Militias }
+
+    }
+
+    focus = {
+	    id = PNM_Assimilate_or_Disintegrate
+	    icon = GFX_goal_PNM_Assimilate_or_Disintegrate
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Assimilate_or_Disintegrate"
+	    }
+        relative_position_id = PNM_Intimidate_the_Tribes
+		prerequisite = { focus = PNM_Intimidate_the_Tribes }
+
+    }
+
+    focus = {
+	    id = PNM_Crush_the_Militias
+	    icon = GFX_goal_PNM_Crush_the_Militias
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Crush_the_Militias"
+	    }
+		relative_position_id = PNM_Assimilate_or_Disintegrate
+		prerequisite = {
+			focus = PNM_Concessions_of_Autonomy
+			focus = PNM_Assimilate_or_Disintegrate
+		}
+        mutually_exclusive = { focus = PNM_Bribe_The_Militias }
+
+    }
+
+    focus = {
+	    id = PNM_Poach_Their_Best
+	    icon = GFX_goal_PNM_Poach_Their_Best
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Poach_Their_Best"
+	    }
+        relative_position_id = PNM_Bribe_The_Militias
+		prerequisite = { focus = PNM_Bribe_The_Militias }
+
+    }
+
+    focus = {
+	    id = PNM_Bring_War_to_the_Warlords
+	    icon = GFX_goal_PNM_Bring_War_to_the_Warlords
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Bring_War_to_the_Warlords"
+	    }
+        relative_position_id = PNM_Crush_the_Militias
+		prerequisite = { focus = PNM_Crush_the_Militias }
+
+    }
+
+    focus = {
+	    id = PNM_Rebuilding_America
+	    icon = GFX_goal_PNM_Rebuilding_America
+	    cost = 5
+	    x = 16
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Rebuilding_America"
+	    }
+        relative_position_id = PNM_The_Reyes_Candidacy
+		prerequisite = {
+		focus = PNM_The_Reyes_Candidacy
+		focus = PNM_The_Forrest_Candidacy
+	}
+
+    }
+
+    focus = {
+	    id = PNM_Secure_Food_Supply
+	    icon = GFX_goal_PNM_Secure_Food_Supply
+	    cost = 5
+	    x = -2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Secure_Food_Supply"
+	    }
+		relative_position_id = PNM_Rebuilding_America
+		prerequisite = { focus = PNM_Rebuilding_America	}
+        
+    }
+
+    focus = {
+	    id = PNM_Infrastructure_Year
+	    icon = GFX_goal_PNM_Infrastructure_Year
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Infrastructure_Year"
+	    }
+        relative_position_id = PNM_Rebuilding_America
+		prerequisite = { focus = PNM_Rebuilding_America }
+
+    }
+
+    focus = {
+	    id = PNM_Sustainable_Forestry
+	    icon = GFX_goal_PNM_Sustainable_Forestry
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Sustainable_Forestry"
+	    }
+        relative_position_id = PNM_Secure_Food_Supply
+		prerequisite = { focus = PNM_Secure_Food_Supply }
+
+    }
+
+    focus = {
+	    id = PNM_Restore_the_Interstates
+	    icon = GFX_goal_PNM_Restore_the_Interstates
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Restore_the_Interstates"
+	    }
+        relative_position_id = PNM_Infrastructure_Year
+		prerequisite = { focus = PNM_Infrastructure_Year }
+
+    }
+
+    focus = {
+	    id = PNM_MilitaryIndustrial_Complexities
+	    icon = GFX_goal_PNM_MilitaryIndustrial_Complexities
+	    cost = 5
+	    x = -10
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_MilitaryIndustrial_Complexities"
+	    }
+        relative_position_id = PNM_The_Reyes_Candidacy
+		prerequisite = {
+		focus = PNM_The_Reyes_Candidacy
+		focus = PNM_The_Forrest_Candidacy
+	}
+
+    }
+
+    focus = {
+	    id = PNM_Flight_Of_Eagles
+	    icon = GFX_goal_PNM_Flight_Of_Eagles
+	    cost = 5
+	    x = -2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Flight_Of_Eagles"
+	    }
+        relative_position_id = PNM_MilitaryIndustrial_Complexities
+		prerequisite = { focus = PNM_MilitaryIndustrial_Complexities }
+
+    }
+
+    focus = {
+	    id = PNM_March_Of_The_Legion
+	    icon = GFX_goal_PNM_March_Of_The_Legion
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_March_Of_The_Legion"
+	    }
+        relative_position_id = PNM_MilitaryIndustrial_Complexities
+		prerequisite = { focus = PNM_MilitaryIndustrial_Complexities }
+
+    }
+
+    focus = {
+	    id = PNM_From_Coast_To_Shining_Coast
+	    icon = GFX_goal_PNM_From_Coast_To_Shining_Coast
+	    cost = 5
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_From_Coast_To_Shining_Coast"
+	    }
+        relative_position_id = PNM_MilitaryIndustrial_Complexities
+		prerequisite = { focus = PNM_MilitaryIndustrial_Complexities }
+
+    }
+
+    focus = {
+	    id = PNM_Restore_Abandoned_Airfields
+	    icon = GFX_goal_PNM_Restore_Abandoned_Airfields
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Restore_Abandoned_Airfields"
+	    }
+        relative_position_id = PNM_Flight_Of_Eagles
+		prerequisite = { focus = PNM_Flight_Of_Eagles }
+
+    }
+
+    focus = {
+	    id = PNM_Rope_In_Gunsmiths
+	    icon = GFX_goal_PNM_Rope_In_Gunsmiths
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Rope_In_Gunsmiths"
+	    }
+        relative_position_id = PNM_March_Of_The_Legion
+		prerequisite = { focus = PNM_March_Of_The_Legion }
+
+    }
+
+    focus = {
+	    id = PNM_Reclaim_Shipyards
+	    icon = GFX_goal_PNM_Reclaim_Shipyards
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Reclaim_Shipyards"
+	    }
+        relative_position_id = PNM_From_Coast_To_Shining_Coast
+		prerequisite = { focus = PNM_From_Coast_To_Shining_Coast }
+
+    }
+
+    focus = {
+	    id = PNM_New_Production_Models
+	    icon = GFX_goal_PNM_New_Production_Models
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_New_Production_Models"
+	    }
+        relative_position_id = PNM_Restore_Abandoned_Airfields
+		prerequisite = { focus = PNM_Restore_Abandoned_Airfields }
+
+    }
+
+    focus = {
+	    id = PNM_Armor_Superiority
+	    icon = GFX_goal_PNM_Armor_Superiority
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Armor_Superiority"
+	    }
+        relative_position_id = PNM_Rope_In_Gunsmiths
+		prerequisite = { focus = PNM_Rope_In_Gunsmiths }
+
+    }
+
+    focus = {
+	    id = PNM_Ships_Of_The_Future
+	    icon = GFX_goal_PNM_Ships_Of_The_Future
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Ships_Of_The_Future"
+	    }
+        relative_position_id = PNM_Reclaim_Shipyards
+		prerequisite = { focus = PNM_Reclaim_Shipyards }
+
+    }
+
+    focus = {
+	    id = PNM_Aeronautical_Reasearch
+	    icon = GFX_goal_PNM_Aeronautical_Reasearch
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Aeronautical_Reasearch"
+	    }
+        relative_position_id = PNM_New_Production_Models
+		prerequisite = { focus = PNM_New_Production_Models }
+
+    }
+
+    focus = {
+	    id = PNM_Future_Soldiers
+	    icon = GFX_goal_PNM_Future_Soldiers
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Future_Soldiers"
+	    }
+        relative_position_id = PNM_Armor_Superiority
+		prerequisite = { focus = PNM_Armor_Superiority }
+
+    }
+
+    focus = {
+	    id = PNM_Semper_Fi
+	    icon = GFX_goal_PNM_Semper_Fi
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Semper_Fi"
+	    }
+        relative_position_id = PNM_Ships_Of_The_Future
+		prerequisite = { focus = PNM_Ships_Of_The_Future }
+
+    }
+
+    focus = {
+	    id = PNM_Augmentation_Research
+	    icon = GFX_goal_PNM_Augmentation_Research
+	    cost = 5
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Augmentation_Research"
+	    }
+        relative_position_id = PNM_Aeronautical_Reasearch
+		prerequisite = {
+			focus = PNM_Aeronautical_Reasearch
+			focus = PNM_Future_Soldiers
+		}
+		mutually_exclusive = { focus = PNM_Heavy_Machinery }
+
+    }
+
+    focus = {
+	    id = PNM_Heavy_Machinery
+	    icon = GFX_goal_PNM_Heavy_Machinery
+	    cost = 5
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Heavy_Machinery"
+	    }
+        relative_position_id = PNM_Future_Soldiers
+		prerequisite = {
+			focus = PNM_Future_Soldiers
+			focus = PNM_Semper_Fi
+		}
+		mutually_exclusive = { focus = PNM_Augmentation_Research }
+
+    }
+
+    focus = {
+	    id = PNM_Research_Funding
+	    icon = GFX_goal_PNM_Research_Funding
+	    cost = 5
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Research_Funding"
+	    }
+		relative_position_id = PNM_Augmentation_Research
+		prerequisite = {
+			focus = PNM_Augmentation_Research
+			focus = PNM_Heavy_Machinery
+		}
+        
+    }
+
+    focus = {
+	    id = PNM_Jumpstarting_The_Economy
+	    icon = GFX_goal_PNM_Jumpstarting_The_Economy
+	    cost = 5
+	    x = 5
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Jumpstarting_The_Economy"
+	    }
+        relative_position_id = PNM_The_Forrest_Candidacy
+		prerequisite = {
+		focus = PNM_The_Forrest_Candidacy
+		focus = PNM_The_Reyes_Candidacy
+	}
+
+    }
+
+    focus = {
+	    id = PNM_The_New_America
+	    icon = GFX_goal_PNM_The_New_America
+	    cost = 5
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_The_New_America"
+	    }
+        relative_position_id = PNM_Jumpstarting_The_Economy
+		prerequisite = { focus = PNM_Jumpstarting_The_Economy }
+		mutually_exclusive = { focus = PNM_Look_To_Our_Forefathers }
+
+    }
+
+    focus = {
+	    id = PNM_Look_To_Our_Forefathers
+	    icon = GFX_goal_PNM_Look_To_Our_Forefathers
+	    cost = 5
+	    x = -1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Look_To_Our_Forefathers"
+	    }
+        relative_position_id = PNM_Jumpstarting_The_Economy
+		prerequisite = { focus = PNM_Jumpstarting_The_Economy }
+		mutually_exclusive = { focus = PNM_The_New_America }
+
+    }
+
+    focus = {
+	    id = PNM_From_The_Bottom_Up
+	    icon = GFX_goal_PNM_From_The_Bottom_Up
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_From_The_Bottom_Up"
+	    }
+        relative_position_id = PNM_Look_To_Our_Forefathers
+		prerequisite = { focus = PNM_Look_To_Our_Forefathers }
+
+    }
+
+    focus = {
+	    id = PNM_From_The_Top_Down
+	    icon = GFX_goal_PNM_From_The_Top_Down
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_From_The_Top_Down"
+	    }
+        relative_position_id = PNM_The_New_America
+		prerequisite = { focus = PNM_The_New_America }
+
+    }
+
+    focus = {
+	    id = PNM_Consumerism_Supreme
+	    icon = GFX_goal_PNM_Consumerism_Supreme
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Consumerism_Supreme"
+	    }
+        mutually_exclusive = { focus = PNM_Militarism_Supreme }
+		relative_position_id = PNM_From_The_Bottom_Up
+		prerequisite = {
+			focus = PNM_From_The_Bottom_Up
+			focus = PNM_From_The_Top_Down
+		}
+
+    }
+
+    focus = {
+	    id = PNM_Militarism_Supreme
+	    icon = GFX_goal_PNM_Militarism_Supreme
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Militarism_Supreme"
+	    }
+        mutually_exclusive = { focus = PNM_Consumerism_Supreme }
+		relative_position_id = PNM_From_The_Top_Down
+		prerequisite = { 
+			focus = PNM_From_The_Top_Down 
+			focus = PNM_From_The_Bottom_Up
+		}
+
+    }
+
+    focus = {
+	    id = PNM_Automated_Industry
+	    icon = GFX_goal_PNM_Automated_Industry
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Automated_Industry"
+	    }
+        relative_position_id = PNM_Consumerism_Supreme
+		prerequisite = { focus = PNM_Consumerism_Supreme }
+
+    }
+
+    focus = {
+	    id = PNM_Specialist_Factories
+	    icon = GFX_goal_PNM_Specialist_Factories
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Specialist_Factories"
+	    }
+        relative_position_id = PNM_Militarism_Supreme
+		prerequisite = { focus = PNM_Militarism_Supreme }
+
+    }
+
+    focus = {
+	    id = PNM_American_Revival
+	    icon = GFX_goal_PNM_American_Revival
+	    cost = 5
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_American_Revival"
+	    }
+		relative_position_id = PNM_Automated_Industry
+		prerequisite = {
+			focus = PNM_Automated_Industry
+			focus = PNM_Specialist_Factories
+		}
+        
+    }
+
+    focus = {
+	    id = PNM_A_Frontier_Tamed
+	    icon = GFX_goal_PNM_A_Frontier_Tamed
+	    cost = 5
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_A_Frontier_Tamed"
+	    }
+		relative_position_id = PNM_Poach_Their_Best
+		prerequisite = {
+			focus = PNM_Poach_Their_Best
+			focus = PNM_Bring_War_to_the_Warlords
+		}
+        
+    }
+
+    focus = {
+	    id = PNM_Resume_Mining_Operations
+	    icon = GFX_goal_PNM_Resume_Mining_Operations
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Resume_Mining_Operations"
+	    }
+        relative_position_id = PNM_Sustainable_Forestry
+		prerequisite = { focus = PNM_Sustainable_Forestry }
+
+    }
+
+    focus = {
+	    id = PNM_Rebuild_the_Railroads
+	    icon = GFX_goal_PNM_Rebuild_the_Railroads
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Rebuild_the_Railroads"
+	    }
+        relative_position_id = PNM_Restore_the_Interstates
+		prerequisite = { focus = PNM_Restore_the_Interstates }
+
+    }
+
+    focus = {
+	    id = PNM_Locate_New_Deposits
+	    icon = GFX_goal_PNM_Locate_New_Deposits
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Locate_New_Deposits"
+	    }
+        relative_position_id = PNM_Resume_Mining_Operations
+		prerequisite = { focus = PNM_Resume_Mining_Operations }
+
+    }
+
+    focus = {
+	    id = PNM_Power_to_the_People
+	    icon = GFX_goal_PNM_Power_to_the_People
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Power_to_the_People"
+	    }
+        relative_position_id = PNM_Reopen_Factories
+		prerequisite = { focus = PNM_Reopen_Factories }
+
+    }
+
+    focus = {
+	    id = PNM_Materials_Drive
+	    icon = GFX_goal_PNM_Materials_Drive
+	    cost = 5
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Materials_Drive"
+	    }
+        relative_position_id = PNM_Rebuilding_America
+		prerequisite = { focus = PNM_Rebuilding_America }
+
+    }
+
+    focus = {
+	    id = PNM_Coordinate_Workshops
+	    icon = GFX_goal_PNM_Coordinate_Workshops
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Coordinate_Workshops"
+	    }
+        relative_position_id = PNM_Materials_Drive
+		prerequisite = { focus = PNM_Materials_Drive }
+
+    }
+
+    focus = {
+	    id = PNM_Reopen_Factories
+	    icon = GFX_goal_PNM_Reopen_Factories
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Reopen_Factories"
+	    }
+        relative_position_id = PNM_Coordinate_Workshops
+		prerequisite = { focus = PNM_Coordinate_Workshops }
+
+    }
+
+    focus = {
+	    id = PNM_Never_Another_Mistake
+	    icon = GFX_goal_PNM_Never_Another_Mistake
+	    cost = 5
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Never_Another_Mistake"
+	    }
+        relative_position_id = PNM_Locate_New_Deposits
+		prerequisite = {
+		focus = PNM_Locate_New_Deposits
+		focus = PNM_Maglev_Networks
+	}
+		mutually_exclusive = { focus = PNM_Push_the_Limits }
+
+    }
+
+    focus = {
+	    id = PNM_Push_the_Limits
+	    icon = GFX_goal_PNM_Push_the_Limits
+	    cost = 5
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Push_the_Limits"
+	    }
+        relative_position_id = PNM_Maglev_Networks
+		prerequisite = {
+		focus = PNM_Maglev_Networks
+		focus = PNM_Power_to_the_People
+	}
+		mutually_exclusive = { focus = PNM_Never_Another_Mistake }
+
+    }
+
+    focus = {
+	    id = PNM_An_Innovative_Economy
+	    icon = GFX_goal_PNM_An_Innovative_Economy
+	    cost = 5
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_An_Innovative_Economy"
+	    }
+		relative_position_id = PNM_Never_Another_Mistake
+		prerequisite = {
+			focus = PNM_Never_Another_Mistake
+			focus = PNM_Push_the_Limits
+		}
+        
+    }
+
+    focus = {
+	    id = PNM_Farewell_to_Cygan
+	    icon = GFX_goal_PNM_Farewell_to_Cygan
+	    cost = 5
+	    x = 16
+	    y = 0
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Farewell_to_Cygan"
+	    }
+        
+    }
+
+    focus = {
+	    id = PNM_One_Last_Hope
+	    icon = GFX_goal_PNM_One_Last_Hope
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_One_Last_Hope"
+	    }
+        relative_position_id = PNM_The_Ongoing_Crisis
+		prerequisite = { focus = PNM_The_Ongoing_Crisis }
+		prerequisite = { focus = PNM_The_State_of_the_Union }
+		prerequisite = { focus = PNM_The_State_of_Central }
+
+    }
+
+    focus = {
+	    id = PNM_The_Ongoing_Crisis
+	    icon = GFX_goal_PNM_The_Ongoing_Crisis
+	    cost = 5
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_The_Ongoing_Crisis"
+	    }
+        relative_position_id = PNM_The_Expected_Successor
+		prerequisite = { focus = PNM_The_Expected_Successor }
+		prerequisite = { focus = PNM_The_Unexpected_Contender }
+
+    }
+
+    focus = {
+	    id = PNM_A_New_Kind_of_Election
+	    icon = GFX_goal_PNM_A_New_Kind_of_Election
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_A_New_Kind_of_Election"
+	    }
+        relative_position_id = PNM_One_Last_Hope
+		prerequisite = { focus = PNM_One_Last_Hope }
+
+    }
+
+    focus = {
+	    id = PNM_The_Expected_Successor
+	    icon = GFX_goal_PNM_The_Expected_Successor
+	    cost = 5
+	    x = -1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_The_Expected_Successor"
+	    }
+        relative_position_id = PNM_Farewell_to_Cygan
+		prerequisite = { focus = PNM_Farewell_to_Cygan }
+
+    }
+
+    focus = {
+	    id = PNM_The_Reyes_Candidacy
+	    icon = GFX_goal_PNM_The_Reyes_Candidacy
+	    cost = 5
+	    x = -3
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_The_Reyes_Candidacy"
+	    }
+        relative_position_id = PNM_A_New_Kind_of_Election
+		prerequisite = { focus = PNM_A_New_Kind_of_Election }
+		mutually_exclusive = { focus = PNM_The_Forrest_Candidacy }
+
+    }
+
+    focus = {
+	    id = PNM_The_Forrest_Candidacy
+	    icon = GFX_goal_PNM_The_Forrest_Candidacy
+	    cost = 5
+	    x = 3
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_The_Forrest_Candidacy"
+	    }
+        relative_position_id = PNM_A_New_Kind_of_Election
+		prerequisite = { focus = PNM_A_New_Kind_of_Election }
+		mutually_exclusive = { focus = PNM_The_Reyes_Candidacy }
+
+    }
+
+    focus = {
+	    id = PNM_The_State_of_the_Union
+	    icon = GFX_goal_PNM_The_State_of_the_Union
+	    cost = 5
+	    x = -1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_The_State_of_the_Union"
+	    }
+        relative_position_id = PNM_The_Expected_Successor
+		prerequisite = { focus = PNM_The_Expected_Successor }
+
+    }
+
+    focus = {
+	    id = PNM_The_State_of_Central
+	    icon = GFX_goal_PNM_The_State_of_Central
+	    cost = 5
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_The_State_of_Central"
+	    }
+        relative_position_id = PNM_The_Unexpected_Contender
+		prerequisite = { focus = PNM_The_Unexpected_Contender }
+
+    }
+
+    focus = {
+	    id = PNM_Instill_National_Pride
+	    icon = GFX_goal_PNM_Instill_National_Pride
+	    cost = 5
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Instill_National_Pride"
+	    }
+        relative_position_id = PNM_The_Reyes_Candidacy
+		prerequisite = { focus = PNM_The_Reyes_Candidacy }
+
+    }
+
+    focus = {
+	    id = PNM_National_Revitalisation
+	    icon = GFX_goal_PNM_National_Revitalisation
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_National_Revitalisation"
+	    }
+        relative_position_id = PNM_Instill_National_Pride
+		prerequisite = { focus = PNM_Instill_National_Pride }
+
+    }
+
+    focus = {
+	    id = PNM_Strengthen_Private_Sector_Ties
+	    icon = GFX_goal_PNM_Strengthen_Private_Sector_Ties
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Strengthen_Private_Sector_Ties"
+	    }
+        relative_position_id = PNM_National_Revitalisation
+		prerequisite = { focus = PNM_National_Revitalisation }
+
+    }
+
+    focus = {
+	    id = PNM_Bandit_Crackdowns
+	    icon = GFX_goal_PNM_Bandit_Crackdowns
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Bandit_Crackdowns"
+	    }
+        relative_position_id = PNM_Troop_Assessments
+		prerequisite = { focus = PNM_Troop_Assessments }
+
+    }
+
+    focus = {
+	    id = PNM_Challenge_ARC_Monopoly
+	    icon = GFX_goal_PNM_Challenge_ARC_Monopoly
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Challenge_ARC_Monopoly"
+	    }
+        relative_position_id = PNM_Strengthen_Private_Sector_Ties
+		prerequisite = { focus = PNM_Strengthen_Private_Sector_Ties }
+
+    }
+
+    focus = {
+	    id = PNM_The_War_of_ARC_Aggression
+	    icon = GFX_goal_PNM_The_War_of_ARC_Aggression
+	    cost = 5
+	    x = 0
+	    y = 4
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_The_War_of_ARC_Aggression"
+	    }
+        relative_position_id = PNM_The_Reyes_Candidacy
+		prerequisite = { focus = PNM_The_Reyes_Candidacy }
+
+    }
+
+    focus = {
+	    id = PNM_The_War_Machine_Springs_to_Life
+	    icon = GFX_goal_PNM_The_War_Machine_Springs_to_Life
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_The_War_Machine_Springs_to_Life"
+	    }
+        relative_position_id = PNM_The_War_of_ARC_Aggression
+		prerequisite = { focus = PNM_The_War_of_ARC_Aggression }
+
+    }
+
+    focus = {
+	    id = PNM_Open_the_Armories
+	    icon = GFX_goal_PNM_Open_the_Armories
+	    cost = 5
+	    x = 4
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Open_the_Armories"
+	    }
+        relative_position_id = PNM_The_War_of_ARC_Aggression
+		prerequisite = { 
+			focus = PNM_The_War_of_ARC_Aggression 
+			focus = PNM_Which_Side_Are_You_On
+		}
+
+    }
+
+    focus = {
+	    id = PNM_50Point_Plan
+	    icon = GFX_goal_PNM_50Point_Plan
+	    cost = 5
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_50Point_Plan"
+	    }
+        relative_position_id = PNM_Down_With_the_Traitors
+		prerequisite = { focus = PNM_Down_With_the_Traitors }
+
+    }
+
+    focus = {
+	    id = PNM_Never_Again
+	    icon = GFX_goal_PNM_Never_Again
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Never_Again"
+	    }
+        relative_position_id = PNM_Down_With_the_Traitors
+		prerequisite = { focus = PNM_Down_With_the_Traitors }
+
+    }
+
+    focus = {
+	    id = PNM_Nationalize_Key_Industries
+	    icon = GFX_goal_PNM_Nationalize_Key_Industries
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Nationalize_Key_Industries"
+	    }
+        relative_position_id = PNM_50Point_Plan
+		prerequisite = { focus = PNM_50Point_Plan }
+
+    }
+
+    focus = {
+	    id = PNM_The_Expected_Concessions
+	    icon = GFX_goal_PNM_The_Expected_Concessions
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_The_Expected_Concessions"
+	    }
+        relative_position_id = PNM_Nationalize_Key_Industries
+		prerequisite = { focus = PNM_Nationalize_Key_Industries }
+
+    }
+
+    focus = {
+	    id = PNM_Rally_Against_Subversives
+	    icon = GFX_goal_PNM_Rally_Against_Subversives
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Rally_Against_Subversives"
+	    }
+        relative_position_id = PNM_Never_Again
+		prerequisite = { focus = PNM_Never_Again }
+
+    }
+
+    focus = {
+	    id = PNM_Extend_Police_Powers
+	    icon = GFX_goal_PNM_Extend_Police_Powers
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Extend_Police_Powers"
+	    }
+        relative_position_id = PNM_Rally_Against_Subversives
+		prerequisite = { focus = PNM_Rally_Against_Subversives }
+
+    }
+
+    focus = {
+	    id = PNM_Recomission_the_Mothballed
+	    icon = GFX_goal_PNM_Recomission_the_Mothballed
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Recomission_the_Mothballed"
+	    }
+        relative_position_id = PNM_Open_the_Armories
+		prerequisite = { focus = PNM_Open_the_Armories }
+
+    }
+
+    focus = {
+	    id = PNM_Coordinate_InterDistrict_Operations
+	    icon = GFX_goal_PNM_Coordinate_InterDistrict_Operations
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Coordinate_InterDistrict_Operations"
+	    }
+        relative_position_id = PNM_Recomission_the_Mothballed
+		prerequisite = { focus = PNM_Recomission_the_Mothballed }
+
+    }
+
+    focus = {
+	    id = PNM_Relax_Rules_of_Engagement
+	    icon = GFX_goal_PNM_Relax_Rules_of_Engagement
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Relax_Rules_of_Engagement"
+	    }
+        relative_position_id = PNM_The_War_Machine_Springs_to_Life
+		prerequisite = { focus = PNM_The_War_Machine_Springs_to_Life }
+
+    }
+
+    focus = {
+	    id = PNM_Interrogate_Captives
+	    icon = GFX_goal_PNM_Interrogate_Captives
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Interrogate_Captives"
+	    }
+        relative_position_id = PNM_Relax_Rules_of_Engagement
+		prerequisite = { focus = PNM_Relax_Rules_of_Engagement }
+
+    }
+
+    focus = {
+	    id = PNM_Rally_Centrals_Forces
+	    icon = GFX_goal_PNM_Rally_Centrals_Forces
+	    cost = 5
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Rally_Centrals_Forces"
+	    }
+        relative_position_id = PNM_The_War_of_ARC_Aggression
+		prerequisite = { 
+			focus = PNM_The_War_of_ARC_Aggression 
+			focus = PNM_Which_Side_Are_You_On
+		}
+
+    }
+
+    focus = {
+	    id = PNM_InterDistrict_Unity
+	    icon = GFX_goal_PNM_InterDistrict_Unity
+	    cost = 5
+	    x = -2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_InterDistrict_Unity"
+	    }
+        relative_position_id = PNM_Down_With_the_Traitors
+		prerequisite = { focus = PNM_Down_With_the_Traitors }
+
+    }
+
+    focus = {
+	    id = PNM_Around_the_Deadlock
+	    icon = GFX_goal_PNM_Around_the_Deadlock
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Around_the_Deadlock"
+	    }
+        relative_position_id = PNM_InterDistrict_Unity
+		prerequisite = { focus = PNM_InterDistrict_Unity }
+
+    }
+
+    focus = {
+	    id = PNM_A_Figure_of_Hope
+	    icon = GFX_goal_PNM_A_Figure_of_Hope
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_A_Figure_of_Hope"
+	    }
+        relative_position_id = PNM_Around_the_Deadlock
+		prerequisite = { focus = PNM_Around_the_Deadlock }
+
+    }
+
+    focus = {
+	    id = PNM_Deal_With_Chiefs_of_Staff
+	    icon = GFX_goal_PNM_Deal_With_Chiefs_of_Staff
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Deal_With_Chiefs_of_Staff"
+	    }
+        relative_position_id = PNM_Rally_Centrals_Forces
+		prerequisite = { focus = PNM_Rally_Centrals_Forces }
+
+    }
+
+    focus = {
+	    id = PNM_National_Service
+	    icon = GFX_goal_PNM_National_Service
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_National_Service"
+	    }
+        relative_position_id = PNM_Deal_With_Chiefs_of_Staff
+		prerequisite = { focus = PNM_Deal_With_Chiefs_of_Staff }
+
+    }
+
+    focus = {
+	    id = PNM_Which_Side_Are_You_On
+	    icon = GFX_goal_PNM_Which_Side_Are_You_On
+	    cost = 5
+	    x = 0
+	    y = 4
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Which_Side_Are_You_On"
+	    }
+        relative_position_id = PNM_The_Forrest_Candidacy
+		prerequisite = { focus = PNM_The_Forrest_Candidacy }
+
+    }
+
+    focus = {
+	    id = PNM_Defang_the_Council
+	    icon = GFX_goal_PNM_Defang_the_Council
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Defang_the_Council"
+	    }
+        relative_position_id = PNM_The_Union_Forever
+		prerequisite = { focus = PNM_The_Union_Forever }
+
+    }
+
+    focus = {
+	    id = PNM_The_Terraforming_Corps
+	    icon = GFX_goal_PNM_The_Terraforming_Corps
+	    cost = 5
+	    x = -2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_The_Terraforming_Corps"
+	    }
+        relative_position_id = PNM_The_Union_Forever
+		prerequisite = { focus = PNM_The_Union_Forever }
+
+    }
+
+    focus = {
+	    id = PNM_Address_the_People
+	    icon = GFX_goal_PNM_Address_the_People
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Address_the_People"
+	    }
+        relative_position_id = PNM_Which_Side_Are_You_On
+		prerequisite = { focus = PNM_Which_Side_Are_You_On }
+
+    }
+
+    focus = {
+	    id = PNM_Humanitarian_Corridors
+	    icon = GFX_goal_PNM_Humanitarian_Corridors
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Humanitarian_Corridors"
+	    }
+        relative_position_id = PNM_Address_the_People
+		prerequisite = { focus = PNM_Address_the_People }
+
+    }
+
+    focus = {
+	    id = PNM_Surrender_Leaflet_Drops
+	    icon = GFX_goal_PNM_Surrender_Leaflet_Drops
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Surrender_Leaflet_Drops"
+	    }
+        relative_position_id = PNM_Humanitarian_Corridors
+		prerequisite = { focus = PNM_Humanitarian_Corridors }
+
+    }
+
+    focus = {
+	    id = PNM_National_Permaculture_Fund
+	    icon = GFX_goal_PNM_National_Permaculture_Fund
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_National_Permaculture_Fund"
+	    }
+        relative_position_id = PNM_The_Terraforming_Corps
+		prerequisite = { focus = PNM_The_Terraforming_Corps }
+
+    }
+
+    focus = {
+	    id = PNM_The_Green_Cities_Act
+	    icon = GFX_goal_PNM_The_Green_Cities_Act
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_The_Green_Cities_Act"
+	    }
+        relative_position_id = PNM_National_Permaculture_Fund
+		prerequisite = { focus = PNM_National_Permaculture_Fund }
+
+    }
+
+    focus = {
+	    id = PNM_Every_Trick_in_the_Book
+	    icon = GFX_goal_PNM_Every_Trick_in_the_Book
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Every_Trick_in_the_Book"
+	    }
+        relative_position_id = PNM_Defang_the_Council
+		prerequisite = { focus = PNM_Defang_the_Council }
+
+    }
+
+    focus = {
+	    id = PNM_End_Emergency_Powers
+	    icon = GFX_goal_PNM_End_Emergency_Powers
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_End_Emergency_Powers"
+	    }
+        relative_position_id = PNM_Every_Trick_in_the_Book
+		prerequisite = { focus = PNM_Every_Trick_in_the_Book }
+
+    }
+
+    focus = {
+	    id = PNM_Community_Restoration
+	    icon = GFX_goal_PNM_Community_Restoration
+	    cost = 5
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Community_Restoration"
+	    }
+        relative_position_id = PNM_The_Union_Forever
+		prerequisite = { focus = PNM_The_Union_Forever }
+
+    }
+
+    focus = {
+	    id = PNM_Every_Voice_Heard
+	    icon = GFX_goal_PNM_Every_Voice_Heard
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Every_Voice_Heard"
+	    }
+        relative_position_id = PNM_Community_Restoration
+		prerequisite = { focus = PNM_Community_Restoration }
+
+    }
+
+    focus = {
+	    id = PNM_Roadmap_to_Democracy
+	    icon = GFX_goal_PNM_Roadmap_to_Democracy
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Roadmap_to_Democracy"
+	    }
+        relative_position_id = PNM_Every_Voice_Heard
+		prerequisite = { focus = PNM_Every_Voice_Heard }
+
+    }
+
+    focus = {
+	    id = PNM_Light_in_the_Dark
+	    icon = GFX_goal_PNM_Light_in_the_Dark
+	    cost = 5
+	    x = -2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Light_in_the_Dark"
+	    }
+        relative_position_id = PNM_The_Expected_Concessions
+		prerequisite = { focus = PNM_The_Expected_Concessions }
+		prerequisite = { focus = PNM_Extend_Police_Powers }
+		prerequisite = { focus = PNM_A_Figure_of_Hope }
+
+    }
+
+    focus = {
+	    id = PNM_Down_With_the_Traitors
+	    icon = GFX_goal_PNM_Down_With_the_Traitors
+	    cost = 5
+	    x = -4
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Down_With_the_Traitors"
+	    }
+        relative_position_id = PNM_Coordinate_InterDistrict_Operations
+		prerequisite = { focus = PNM_Coordinate_InterDistrict_Operations }
+		prerequisite = { focus = PNM_Interrogate_Captives }
+		prerequisite = { focus = PNM_National_Service }
+
+    }
+
+    focus = {
+	    id = PNM_The_Union_Forever
+	    icon = GFX_goal_PNM_The_Union_Forever
+	    cost = 5
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_The_Union_Forever"
+	    }
+        relative_position_id = PNM_Coordinate_InterDistrict_Operations
+		prerequisite = { focus = PNM_Coordinate_InterDistrict_Operations }
+		prerequisite = { focus = PNM_Surrender_Leaflet_Drops }
+		prerequisite = { focus = PNM_National_Service }
+
+    }
+
+    focus = {
+	    id = PNM_Old_Dreams_New_America
+	    icon = GFX_goal_PNM_Old_Dreams_New_America
+	    cost = 5
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Old_Dreams_New_America"
+	    }
+        relative_position_id = PNM_The_Green_Cities_Act
+		prerequisite = { focus = PNM_The_Green_Cities_Act }
+		prerequisite = { focus = PNM_End_Emergency_Powers }
+		prerequisite = { focus = PNM_Roadmap_to_Democracy }
+
+    }
+
+    focus = {
+	    id = PNM_Salute_the_Troops
+	    icon = GFX_goal_PNM_Salute_the_Troops
+	    cost = 5
+	    x = -2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Salute_the_Troops"
+	    }
+        relative_position_id = PNM_The_Reyes_Candidacy
+		prerequisite = { focus = PNM_The_Reyes_Candidacy }
+
+    }
+
+    focus = {
+	    id = PNM_Form_Ranks
+	    icon = GFX_goal_PNM_Form_Ranks
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Form_Ranks"
+	    }
+        relative_position_id = PNM_Salute_the_Troops
+		prerequisite = { focus = PNM_Salute_the_Troops }
+
+    }
+
+    focus = {
+	    id = PNM_Troop_Assessments
+	    icon = GFX_goal_PNM_Troop_Assessments
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Troop_Assessments"
+	    }
+        relative_position_id = PNM_Form_Ranks
+		prerequisite = { focus = PNM_Form_Ranks }
+
+    }
+
+    focus = {
+	    id = PNM_Increase_Conservation_Funding
+	    icon = GFX_goal_PNM_Increase_Conservation_Funding
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Increase_Conservation_Funding"
+	    }
+        relative_position_id = PNM_Reconnect_with_the_Districts
+		prerequisite = { focus = PNM_Reconnect_with_the_Districts }
+
+    }
+
+    focus = {
+	    id = PNM_The_Political_Battlefront
+	    icon = GFX_goal_PNM_The_Political_Battlefront
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_The_Political_Battlefront"
+	    }
+		relative_position_id = PNM_Increase_Oversight
+		prerequisite = { focus = PNM_Increase_Oversight }
+        
+    }
+
+    focus = {
+	    id = PNM_Draft_Rewilding_Plan
+	    icon = GFX_goal_PNM_Draft_Rewilding_Plan
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Draft_Rewilding_Plan"
+	    }
+        relative_position_id = PNM_Increase_Conservation_Funding
+		prerequisite = { focus = PNM_Increase_Conservation_Funding }
+
+    }
+
+    focus = {
+	    id = PNM_Break_Through_Obstruction
+	    icon = GFX_goal_PNM_Break_Through_Obstruction
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Break_Through_Obstruction"
+	    }
+        relative_position_id = PNM_The_Political_Battlefront
+		prerequisite = { focus = PNM_The_Political_Battlefront }
+
+    }
+
+    focus = {
+	    id = PNM_Right_to_Nature
+	    icon = GFX_goal_PNM_Right_to_Nature
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Right_to_Nature"
+	    }
+        relative_position_id = PNM_Draft_Rewilding_Plan
+		prerequisite = { focus = PNM_Draft_Rewilding_Plan }
+
+    }
+
+    focus = {
+	    id = PNM_Reconnect_with_the_Districts
+	    icon = GFX_goal_PNM_Reconnect_with_the_Districts
+	    cost = 5
+	    x = -2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Reconnect_with_the_Districts"
+	    }
+        relative_position_id = PNM_The_Forrest_Candidacy
+		prerequisite = { focus = PNM_The_Forrest_Candidacy }
+
+    }
+
+    focus = {
+	    id = PNM_Replace_Security_Staff
+	    icon = GFX_goal_PNM_Replace_Security_Staff
+	    cost = 5
+	    x = 2
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Replace_Security_Staff"
+	    }
+        relative_position_id = PNM_The_Forrest_Candidacy
+		prerequisite = { focus = PNM_The_Forrest_Candidacy }
+
+    }
+
+    focus = {
+	    id = PNM_Increase_Oversight
+	    icon = GFX_goal_PNM_Increase_Oversight
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Increase_Oversight"
+	    }
+        relative_position_id = PNM_Replace_Security_Staff
+		prerequisite = { focus = PNM_Replace_Security_Staff }
+
+    }
+
+    focus = {
+	    id = PNM_The_Unexpected_Contender
+	    icon = GFX_goal_PNM_The_Unexpected_Contender
+	    cost = 5
+	    x = 1
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_The_Unexpected_Contender"
+	    }
+        relative_position_id = PNM_Farewell_to_Cygan
+		prerequisite = { focus = PNM_Farewell_to_Cygan }
+
+    }
+
+    focus = {
+	    id = PNM_Maglev_Networks
+	    icon = GFX_goal_PNM_Maglev_Networks
+	    cost = 5
+	    x = 0
+	    y = 1
+	    ai_will_do = {
+		    factor = 1
+	    }
+	    completion_reward = {
+		    log = "[GetDateText]: [Root.GetName]: Focus PNM_Maglev_Networks"
+	    }
+        relative_position_id = PNM_Rebuild_the_Railroads
+		prerequisite = { focus = PNM_Rebuild_the_Railroads }
+
+    }
+}

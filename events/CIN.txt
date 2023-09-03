@@ -11,22 +11,16 @@ country_event = { #
 		name = cin_event_option.1.a
 	}
 }
-news_event = { #
+country_event = { #
 	id = cin_event.2
 	title = cin_event.2.t
 	desc = cin_event.2.d
-	picture = GFX_unknown_event_picture
 
 	is_triggered_only = yes
-
-	major = yes
 	
 	option = { 
 		name = cin_event_option.2.a
 		trigger = {
-			capital_scope = {
-				is_on_continent = north_america
-			}
 			check_variable = {
 				arc_legitimacy > nau_legitimacy
 			}
@@ -35,9 +29,6 @@ news_event = { #
 	option = { 
 		name = cin_event_option.2.b
 		trigger = {
-			capital_scope = {
-				is_on_continent = north_america
-			}
 			NOT = {
 				check_variable = {
 					arc_legitimacy > nau_legitimacy
@@ -45,16 +36,16 @@ news_event = { #
 			}
 		}
 	}
-	option = { 
-		name = cin_event_option.2.c
-		trigger = {
-			NOT = {
-				capital_scope = {
-					is_on_continent = north_america
-				}
-			}
-		}		
-	}
+	#option = { 
+	#	name = cin_event_option.2.c
+	#	trigger = {
+	#		NOT = {
+	#			capital_scope = {
+	#				is_on_continent = north_america
+	#			}
+	#		}
+	#	}		
+	#}
 }
 country_event = { #
 	id = cin_event.3
@@ -126,5 +117,57 @@ country_event = { #
 			type = annex_puppet_wargoal
 		}
 		add_to_variable = { global.napgain_var = 0.1 }
+	}
+}
+country_event = { #
+	id = cin_event.5
+	title = cin_event.5.t
+	desc = cin_event.5.d
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = cin_event_option.2.a
+		trigger = {
+			check_variable = {
+				arc_legitimacy > nau_legitimacy
+			}
+		}
+	}
+	option = { 
+		name = cin_event_option.2.b
+		trigger = {
+			NOT = {
+				check_variable = {
+					arc_legitimacy > nau_legitimacy
+				}
+			}
+		}
+	}
+}
+country_event = { #
+	id = cin_event.6
+	title = cin_event.6.t
+	desc = cin_event.6.d
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = cin_event_option.6.a
+		trigger = {
+			check_variable = {
+				arc_legitimacy > nau_legitimacy
+			}
+		}
+	}
+	option = { 
+		name = cin_event_option.6.b
+		trigger = {
+			NOT = {
+				check_variable = {
+					arc_legitimacy > nau_legitimacy
+				}
+			}
+		}
 	}
 }

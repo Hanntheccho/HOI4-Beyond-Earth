@@ -728,6 +728,63 @@ color_that = {
 	else_if = {
 		limit = {
 			THIS.OVERLORD = {
+				tag = FRA
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					global.FRAcolor = 0
+				}
+			}
+			set_variable = {
+				global.FRAcolor = 1
+			}
+			set_cosmetic_tag = FRA1
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.FRAcolor = 1
+				}
+			}
+			set_variable = {
+				global.FRAcolor = 2
+			}
+			set_cosmetic_tag = FRA2
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.FRAcolor = 2
+				}
+			}
+			set_variable = {
+				global.FRAcolor = 3
+			}
+			set_cosmetic_tag = FRA3
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.FRAcolor = 3
+				}
+			}
+			set_variable = {
+				global.FRAcolor = 4
+			}
+			set_cosmetic_tag = FRA4
+		}
+		else = {
+			set_variable = {
+				global.FRAcolor = 0
+			}
+			set_cosmetic_tag = FRA5
+		}
+	}
+	else_if = {
+		limit = {
+			THIS.OVERLORD = {
 				tag = OMA
 			}
 			NOT = { #they already use the color scheme

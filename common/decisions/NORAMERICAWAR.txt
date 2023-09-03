@@ -10,8 +10,9 @@ noramericawar_decisions = {
 			#
 		}
 		fire_only_once = yes
-		days_mission_timeout = 2
+		days_mission_timeout = 105
 		timeout_effect = {
+			set_global_flag = district_5_crisis
 			every_country = {
 				limit = {
 					capital_scope = {
@@ -50,7 +51,12 @@ noramericawar_decisions = {
 					days = 8
 				}
 			}
-			news_event = cin_event.2
+			every_country = {
+				limit = {
+					is_nau_tag = yes
+				}
+				country_event = cin_event.2
+			}
 			every_state = {
 				limit = {
 					is_core_of = CIN

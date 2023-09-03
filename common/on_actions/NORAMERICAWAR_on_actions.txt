@@ -1,4 +1,41 @@
 on_actions = {
+	on_peace = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = district_5_crisis
+					THIS = {
+						tag = CIN
+						exists = yes #just in case huh
+					}
+				}
+				every_country = {
+					limit = {
+						is_nau_tag = yes
+					}
+					country_event = cin_event.5
+				}
+			}
+			else_if = {
+				limit = {
+					has_global_flag = district_5_crisis
+					THIS = {
+						tag = RSA
+						exists = yes #just in case huh
+					}
+				}
+				every_country = {
+					limit = {
+						is_nau_tag = yes
+					}
+					country_event = cin_event.6
+				}
+			}
+			else = {
+				#
+			}
+		}
+	}
 	on_startup = {
 		effect = {
 			TRE = {
