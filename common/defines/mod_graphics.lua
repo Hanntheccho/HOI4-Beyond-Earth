@@ -3,6 +3,8 @@ NDefines_Graphics.NFrontend.CAMERA_MAX_HEIGHT = 2800.0
 
 NDefines_Graphics.NGraphics.TOOLTIP_DELAYED_DELAY = 0.4
 
+NDefines_Graphics.NGraphics.CAPITAL_ICON_CUTOFF = 500
+
 NDefines_Graphics.NSound.HEIGHT_SOUND_MIN_ALTITUDE = 30.0
 NDefines_Graphics.NSound.HEIGHT_SOUND_MAX_ALTITUDE = 300.0
 NDefines_Graphics.NSound.HEIGHT_SOUND_MIN_VOLUME = 0.7
