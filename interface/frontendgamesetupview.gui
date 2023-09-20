@@ -627,14 +627,13 @@ guiTypes = {
 		size = { width=1225 height=717 }
 		Orientation = center
 		origo = center
-		clipping = no
+		clipping = yes
 		moveable = yes
 
-		#background = {
-		#	name = "bg"
-		#	quadTextureSprite = "GFX_country_selection_bg"
-		#	alwaystransparent = yes
-		#}
+		background = {
+			name = "bg"
+			quadTextureSprite = "GFX_country_selection_bg"
+		}
 		
 		instantTextBoxType = {
 			name = "title"
@@ -650,7 +649,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "detail1"
-			position = { x = 465 y = 384 }
+			position = { x = 365 y = 344 }
 			font = "Arialsmallest"
 			borderSize = {x = 2 y = 2 }
 			maxWidth = 265
@@ -660,7 +659,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "detail2"
-			position = { x = 465 y = 422 }
+			position = { x = 365 y = 382 }
 			font = "Arialsmallest"
 			borderSize = {x = 2 y = 2 }
 			maxWidth = 65
@@ -669,35 +668,14 @@ guiTypes = {
 			format = left
 		}
 
-		iconType = {
-			name = "mit_icon"
-			spriteType = "GFX_mit_icon"
-			position = { x = -20 y = 60 }
-			alwaystransparent = yes
-			orientation = CENTER
-		}
-		
-		containerWindowType = {
-			name = "bg"
-			size = {
-				width = 100%%
-				height = 100%%
-			}
-			background = {
-				name = "bg"
-				quadTextureSprite = "GFX_tiled_black"
-				alwaystransparent = yes
-			}
-		}
-
 		containerWindowType = {
 			name = "bg1"
 			size = {
-				width = 1220
+				width = 1216
 				height = 289
 			}
 			position = {
-				x = 0
+				x = 4
 				y = 15
 			}
 			background = {
@@ -710,7 +688,7 @@ guiTypes = {
 		containerWindowType = {
 			name = "bg2"
 			size = {
-				width = 410
+				width = 610
 				height = 370
 			}
 			position = {
@@ -722,6 +700,14 @@ guiTypes = {
 				quadTextureSprite = "GFX_tiled_black"
 				alwaystransparent = yes
 			}
+		}
+
+		iconType = {
+			name = "mit_icon"
+			spriteType = "GFX_mit_icon"
+			position = { x = -220 y =20 }
+			alwaystransparent = yes
+			orientation = CENTER
 		}
 
 		instantTextBoxType = {
@@ -738,7 +724,7 @@ guiTypes = {
 		containerWindowType = {
 			name = "bg22"
 			size = {
-				width = 430
+				width = 630
 				height = 390
 			}
 			position = {
@@ -755,11 +741,11 @@ guiTypes = {
 		containerWindowType = {
 			name = "bg3"
 			size = {
-				width = 410
+				width = 500
 				height = 370
 			}
 			position = {
-				x = 790
+				x = 700
 				y = 325
 			}
 			background = {
@@ -771,7 +757,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "resumen_historia_detail"
-			position = { x = 805 y = 334 }
+			position = { x = 715 y = 334 }
 			font = "Arialsmallest"
 			borderSize = {x = 2 y = 2 }
 			maxWidth = 395
@@ -783,11 +769,11 @@ guiTypes = {
 		containerWindowType = {
 			name = "bg32"
 			size = {
-				width = 430
+				width = 520
 				height = 390
 			}
 			position = {
-				x = 780
+				x = 690
 				y = 315
 			}
 			background = {
@@ -832,7 +818,7 @@ guiTypes = {
 		
 		ButtonType = {
 			name = "select_button"
-			position = { x = -74 y = -52 }
+			position = { x = 10000 y = -52 }
 			quadTextureSprite ="GFX_button_148x34"
 			buttonText = "SELECT"
 			buttonFont = "Arial"
@@ -918,16 +904,6 @@ guiTypes = {
 				Orientation = "center"
 				alwaystransparent = yes
 			}	
-
-			instantTextBoxType = {
-				name = "leader_label"
-				position = { x = 10000 y = -35 }
-				font = "Beyondsmall"
-				borderSize = {x = 0 y = 0}
-				text = ""
-				maxWidth = 340
-				format = left
-			}
 			
 			instantTextBoxType = {
 				name = "leader"
@@ -942,17 +918,6 @@ guiTypes = {
 			}
 			
 			instantTextBoxType = {
-				name = "ideology_label"
-				position = { x = 10000 y = 15 }
-				textureFile = ""
-				font = "Beyondsmall"
-				borderSize = {x = 0 y = 0}
-				text = ""
-				maxWidth = 340
-				format = left
-			}
-			
-			instantTextBoxType = {
 				name = "ideology"
 				position = { x = 10000 y = 40 }
 				font = "Beyondsmall"
@@ -960,16 +925,6 @@ guiTypes = {
 				maxWidth = 340
 				format = left
 				multiline = no
-			}
-			
-			instantTextBoxType = {
-				name = "government_label"
-				position = { x = 0 y = 10000 }
-				font = "Beyondsmall"
-				borderSize = {x = 0 y = 0}
-				text = ""
-				maxWidth = 340
-				format = left
 			}
 			
 			instantTextBoxType = {
@@ -984,16 +939,6 @@ guiTypes = {
 			}
 			
 			instantTextBoxType = {
-				name = "elections_label"
-				position = { x = 0 y = 10000 }
-				font = "Beyondsmall"
-				borderSize = {x = 0 y = 0}
-				text = "ELECTIONS"
-				maxWidth = 340
-				format = left
-			}
-			
-			instantTextBoxType = {
 				name = "elections"
 				position = { x = 10000 y = 10000 }
 				font = "Beyondsmall"
@@ -1001,16 +946,6 @@ guiTypes = {
 				maxWidth = 340
 				format = left
 				multiline = no
-			}
-			
-			instantTextBoxType = {
-				name = "party_label"
-				position = { x = 10000 y = 65 }
-				font = "Beyondsmall"
-				borderSize = {x = 0 y = 0}
-				text = "//////"
-				maxWidth = 340
-				format = left
 			}
 
 			instantTextBoxType = {
@@ -1053,17 +988,17 @@ guiTypes = {
 			position = { x = 40 y = 335 }
 			font = "Beyond"
 			borderSize = {x = 0 y = 0}
-			maxWidth = 340
+			maxWidth = 490
 			maxHeight = 30	
 			format = left
 		}
 
 		instantTextBoxType = {
 			name = "resumen_historia"
-			position = { x = 805 y = 363 }
+			position = { x = 720 y = 363 }
 			font = "Arial16"
 			borderSize = {x = 2 y = 2 }
-			maxWidth = 365
+			maxWidth = 450
 			maxHeight = 317
 			text = "BE_BOOKMARK_DESC"
 			format = left
@@ -1115,23 +1050,12 @@ guiTypes = {
 		}
 		
 		instantTextBoxType = {
-			name = "history_title"
-			position = { x = 945 y = 10000 }
-			font = "Beyondsmall"
-			borderSize = {x = 0 y = 0}
-			text = "FE_COUNTRY_HISTORY_TITLE"
-			maxWidth = 340
-			maxHeight = 30	
-			format = centre
-		}
-		
-		instantTextBoxType = {
 			name = "history"
-			position = { x = 57 y = 455 }
+			position = { x = 57 y = 425 }
 			font = "Arial16"
 			borderSize = {x = 2 y = 2 }
-			maxWidth = 358
-			maxHeight = 225
+			maxWidth = 545
+			maxHeight = 255
 			format = left
 			scrollbarType = standardtext_slider			
 		}
@@ -2290,14 +2214,11 @@ guiTypes = {
 			
 			ButtonType = {
 				name = "interesting_countries_button"
-				position = { x =10000 y = 38 }
-				quadTextureSprite ="GFX_button_261x34"
+				position = { x =30 y = 30 }
+				quadTextureSprite ="GFX_button_custom_settings_btn"
 				clicksound = click_default
 				oversound = ui_menu_over
 				shortcut = "i"
-				buttonFont = "Arial"
-				buttonText = "SPONSOR" 
-				orientation = LOWER_LEFT
 			}
 
 			ButtonType = {
