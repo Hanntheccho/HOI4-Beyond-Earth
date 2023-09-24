@@ -726,7 +726,15 @@ formable_decisions = {
 		icon = GFX_decision_unity
 		available = {
 			ITA = {
-			    is_puppet_of = PAD
+				OR = {
+			    	is_puppet_of = PAD
+					AND = {
+						PAD = {
+							is_in_faction_with = FRA
+						}
+						is_puppet_of = FRA
+					}
+				}
             }
 		}
 		visible = {
@@ -740,6 +748,7 @@ formable_decisions = {
 			ITA = {
 				every_core_state = {
 					add_core_of = PAD
+					remove_core_of = ITA
 				}
 			}
 			annex_country = {
