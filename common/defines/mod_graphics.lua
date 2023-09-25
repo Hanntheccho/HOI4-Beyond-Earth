@@ -3,7 +3,11 @@ NDefines_Graphics.NFrontend.CAMERA_MAX_HEIGHT = 2800.0
 
 NDefines_Graphics.NGraphics.TOOLTIP_DELAYED_DELAY = 0.4
 
-NDefines_Graphics.NGraphics.CAPITAL_ICON_CUTOFF = 500
+NDefines_Graphics.NGraphics.AIRBASE_ICON_DISTANCE_CUTOFF = 600
+NDefines_Graphics.NGraphics.NAVALBASE_ICON_DISTANCE_CUTOFF = 600
+NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_TEXT_CUTOFF = {200, 400, 600}
+NDefines_Graphics.NGraphics.VICTORY_POINTS_DISTANCE_CUTOFF = {200, 400, 600}
+NDefines_Graphics.NGraphics.CAPITAL_ICON_CUTOFF = 600
 
 NDefines_Graphics.NSound.HEIGHT_SOUND_MIN_ALTITUDE = 30.0
 NDefines_Graphics.NSound.HEIGHT_SOUND_MAX_ALTITUDE = 300.0
@@ -43,8 +47,6 @@ NDefines_Graphics.NGraphics.COUNTER_MODE_ALLEGIANCE_OTHER = { 0.8, 0.8, 0.8, 0.6
 
 NDefines_Graphics.NGraphics.RAILWAY_CAMERA_CUTOFF = 2000.0
 NDefines_Graphics.NGraphics.RAILWAY_CAMERA_CUTOFF_SPEED = 1.0
-
-NDefines_Graphics.NGraphics.MAP_MODE_TERRAIN_TRANSPARENCY = 0.9
 
 NDefines_Graphics.NGraphics.MOON_HEIGHT = 10000 -- higher means softer shadows and more intense light
 NDefines_Graphics.NGraphics.MOON_HEIGHT_WATER = 10000   -- higher means softer shadows and more intense light
