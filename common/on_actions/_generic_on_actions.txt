@@ -2,6 +2,169 @@ on_actions = {
     on_startup = {
         effect = {
             every_country = {
+                if = {
+                    limit = {
+                        has_idea = free_trade
+                    }
+                    add_to_variable = { 
+                        THIS.total_tech_power = 15
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_idea = export_focus
+                    }
+                    add_to_variable = { 
+                        THIS.total_tech_power = 10
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_idea = limited_exports
+                    }
+                    add_to_variable = { 
+                        THIS.total_tech_power = 5
+                    }
+                }
+                if = {
+                    limit = {
+                        has_idea = agrarian_stage
+                    }
+                    add_to_variable = { 
+                        THIS.total_tech_power = -10
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_idea = developed_stage
+                    }
+                    add_to_variable = { 
+                        THIS.total_tech_power = 10
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_idea = regional_stage
+                    }
+                    add_to_variable = { 
+                        THIS.total_tech_power = 20
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_idea = continental_stage
+                    }
+                    add_to_variable = { 
+                        THIS.total_tech_power = 25
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_idea = global_stage
+                    }
+                    add_to_variable = { 
+                        THIS.total_tech_power = 30
+                    }
+                }
+                if = {
+                    limit = {
+                        has_idea = digital_democracy
+                    }
+                    add_to_variable = { 
+                        THIS.total_tech_power = 5
+                    }
+                }
+            }
+        }
+    }
+    on_weekly = {
+        effect = {
+            set_variable = {
+                ROOT.total_tech_power = 0
+            }
+            if = {
+                limit = {
+                    has_idea = free_trade
+                }
+                add_to_variable = { 
+                    ROOT.total_tech_power = 15
+                }
+            }
+            else_if = {
+                limit = {
+                    has_idea = export_focus
+                }
+                add_to_variable = { 
+                    ROOT.total_tech_power = 10
+                }
+            }
+            else_if = {
+                limit = {
+                    has_idea = limited_exports
+                }
+                add_to_variable = { 
+                    ROOT.total_tech_power = 5
+                }
+            }
+            if = {
+                limit = {
+                    has_idea = agrarian_stage
+                }
+                add_to_variable = { 
+                    ROOT.total_tech_power = -10
+                }
+            }
+            else_if = {
+                limit = {
+                    has_idea = developed_stage
+                }
+                add_to_variable = { 
+                    ROOT.total_tech_power = 10
+                }
+            }
+            else_if = {
+                limit = {
+                    has_idea = regional_stage
+                }
+                add_to_variable = { 
+                    ROOT.total_tech_power = 20
+                }
+            }
+            else_if = {
+                limit = {
+                    has_idea = continental_stage
+                }
+                add_to_variable = { 
+                    ROOT.total_tech_power = 25
+                }
+            }
+            else_if = {
+                limit = {
+                    has_idea = global_stage
+                }
+                add_to_variable = { 
+                    ROOT.total_tech_power = 30
+                }
+            }
+            if = {
+                limit = {
+                    has_idea = digital_democracy
+                }
+                add_to_variable = { 
+                    ROOT.total_tech_power = 5
+                }
+            }
+            every_controlled_state = {
+                add_to_variable = { 
+                    ROOT.total_tech_power = building_level@spaceship_complex 
+                }
+            }
+        }
+    }
+###
+    on_startup = {
+        effect = {
+            every_country = {
                 limit = {
                     is_ai = no
                 }

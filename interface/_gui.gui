@@ -1,7 +1,7 @@
 guiTypes = {
 
 ###############################
-########### LOGISTICS #########
+########## LOGISTICS ##########
 ###############################
 
 	containerWindowType = {
@@ -9,24 +9,34 @@ guiTypes = {
 		position = { x=-5 y=79 }
 		#
 		iconType = {
+			name ="tech_power_bar"
+			spriteType = "GFX_tech_power_bar"
+			position = { x= 890 y = -80 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name ="industrial_power_bar"
+			spriteType = "GFX_industrial_power_bar"
+			position = { x= 359 y = -80 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name ="pol_power_bar"
+			spriteType = "GFX_pol_power_bar"
+			position = { x= 130 y = -80 }
+			alwaystransparent = yes
+		}
+		iconType = {
 			name ="light_weapons_bar"
 			spriteType = "GFX_light_weapons_bar"
 			position = { x= 47 y = -2 }
-			pdx_tooltip = logistics_amount_tt
 			alwaystransparent = yes
 		}
 		iconType = {
 			name ="heavy_weapons_bar"
 			spriteType = "GFX_heavy_weapons_bar"
 			position = { x= 299 y = -2 }
-			pdx_tooltip = logistics_amount_tt
 			alwaystransparent = yes
-		}
-		iconType = {
-			name ="logistics_detail"
-			spriteType = "GFX_logistics_detail"
-			position = { x= 177 y = 1 }
-			pdx_tooltip = logistics_amount_tt
 		}
 		instantTextBoxType = {
 			name = "logistics_amount_tt"
@@ -2166,23 +2176,46 @@ guiTypes = {
 			width = 100%
 			height = 100%
 		}
+
+		instantTextBoxType = {
+			name ="pol_power_text"
+			position = { x= 153 y = 3 }
+			font = "Beyondtop"
+			text = "pol_power"
+			format = center
+			maxWidth = 120
+			maxHeight = 24
+			alwaystransparent = yes
+		}
 	
 		instantTextBoxType = {
 			name ="industrial_power_text"
-			position = { x= 710 y = 0 }
-			font = "Beyondtop"
+			position = { x= 383 y = 3 }
+			font = "Beyondtoppurplish"
 			text = "industrial_power"
-			format = left
+			format = center
 			maxWidth = 120
 			maxHeight = 24
 			pdx_tooltip = "industrial_power_tt"
 			pdx_tooltip_delayed = "industrial_power_tt_delayed"
 		}
 
+		instantTextBoxType = {
+			name ="tech_power_text"
+			position = { x= 900 y = 3 }
+			font = "Beyondtopbluish"
+			text = "num_techs_topbar"
+			format = center
+			maxWidth = 120
+			maxHeight = 24
+			pdx_tooltip = num_techs_tt
+			pdx_tooltip_delayed = num_techs_tt_delayed
+		}
+
 		buttonType ={
 			name ="threat_icon"
 			spriteType = "GFX_world_tension_icon_big_strip_blank"
-			position = { x=-95 y=-42 }
+			position = { x=-95 y=-38 }
 			Orientation = "UPPER_RIGHT"
 			pdx_tooltip = THREAT_TOOLTIP_MOD
 			pdx_tooltip_delayed = THREAT_TIME_SCALE_TOOLTIP_MOD
@@ -2191,7 +2224,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name ="date"
-			position = { x= -390 y = 29 }
+			position = { x= -390 y = 31 }
 			font = "Beyondtopdate"
 			text = "[GetDate]"
 			format = right
@@ -2221,7 +2254,7 @@ guiTypes = {
 			name = "scan_mode_decisions"
 			position = { x = 138 y = 0 }
 			size = {
-				width = 90
+				width = 220
 				height = 37
 			}
 			background = {
@@ -2231,9 +2264,9 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = "scan_mode_buildings"
-			position = { x = 621 y = 0 }
+			position = { x = 368 y = 0 }
 			size = {
-				width = 90
+				width = 220
 				height = 37
 			}
 			background = {
@@ -2243,9 +2276,9 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = "scan_mode_divisions"
-			position = { x = 805 y = 0 }
+			position = { x = 599 y = 0 }
 			size = {
-				width = 90
+				width = 290
 				height = 37
 			}
 			background = {
@@ -2268,11 +2301,10 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = "scan_mode_research"
-			position = { x = -130 y = -130 }
-			orientation = LOWER_RIGHT
+			position = { x = 898 y = 0 }
 			size = {
-				width = 130
-				height = 130
+				width = 193
+				height = 37
 			}
 			background = {
 				name = "bg"

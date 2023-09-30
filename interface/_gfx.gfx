@@ -5,6 +5,11 @@ spriteTypes = {
 ###############################
 
 	spriteType = {
+		name = "GFX_tech_bar_bg"
+		texturefile = "gfx/interface/tech_bar_bg.dds"
+	}
+
+	spriteType = {
 		name = "GFX_nations_with_focus_tree"
 		texturefile = "gfx/interface/nations_with_focus_tree.dds"
 	}
@@ -75,10 +80,47 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 
-	spriteType = {
-		name = "GFX_logistics_detail"
-		texturefile = "gfx/interface/logistics_detail.dds"
-		alwaystransparent = yes
+	progressbartype = {
+		name = "GFX_tech_progress_bar"
+		color = { 1.0 1.0 1.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/tech_progress_bar.dds"
+		textureFile2 = "gfx/interface/tech_progress_bar_bg.dds"
+		size = { x = 224 y = 46 }
+		effectFile = "gfx/FX/progress.lua"
+	}
+
+	progressbartype = {
+		name = "GFX_tech_power_bar"
+		color = { 1.0 1.0 1.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/tech_power_bar.dds"
+		textureFile2 = "gfx/interface/tech_power_bar_bg.dds"
+		size = { x = 236 y = 33 }
+		effectFile = "gfx/FX/progress.lua"
+		steps = 100
+	}
+
+	progressbartype = {
+		name = "GFX_industrial_power_bar"
+		color = { 1.0 1.0 1.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/industrial_power_bar.dds"
+		textureFile2 = "gfx/interface/industrial_power_bar_bg.dds"
+		size = { x = 262 y = 33 }
+		effectFile = "gfx/FX/progress.lua"
+		steps = 1000
+	}
+
+	progressbartype = {
+		name = "GFX_pol_power_bar"
+		color = { 1.0 1.0 1.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/pol_power_bar.dds"
+		textureFile2 = "gfx/interface/pol_power_bar_bg.dds"
+		size = { x = 262 y = 33 }
+		effectFile = "gfx/FX/progress.lua"
+		steps = 1000
 	}
 
 	progressbartype = {
@@ -131,6 +173,12 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_top_button_construction"
+		texturefile = "gfx/interface/top_button_construction.dds"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	spriteType = {
 		name = "GFX_top_button_large"
 		texturefile = "gfx/interface/top_button_large.dds"
 		noOfFrames = 2
@@ -144,12 +192,6 @@ spriteTypes = {
 		name = "GFX_top_button"
 		texturefile = "gfx/interface/top_button.dds"
 		noOfFrames = 2
-	}
-	spriteType = {
-		name = "GFX_top_button_construction"
-		texturefile = "gfx/interface/top_button_construction.dds"
-		noOfFrames = 2
-		transparencecheck = yes
 	}
 
 	spriteType = {
@@ -381,43 +423,10 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_topbar_top_bottom_right"
-		texturefile = "gfx/interface/topbar_top_bottom_right.dds"
-		alwaystransparent = yes
-	}
-
-	spriteType = {
 		name = "GFX_research_button"
-		transparencecheck = yes
 		noOfFrames = 2
 		texturefile = "gfx/interface/research_button.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/research_button.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = yes			# yes or no ;)
-			animationtime = 5 			# in seconds
-			animationdelay = 6			# in seconds
-			animationblendmode = "add"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-
-		animation = {
-			animationmaskfile = "gfx/interface/research_button.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = yes			# yes or no ;)
-			animationtime = 5  			# in seconds
-			animationdelay = 3			# in seconds
-			animationblendmode = "add"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-		legacy_lazy_load = no
 	}
 
 	spriteType = {
@@ -1748,8 +1757,44 @@ bitmapfonts = {
 		}
 	}
 	bitmapfont = {
+		name = "Beyondtopmiss"
+		path = "gfx/fonts/Beyondtopmiss"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	bitmapfont = {
 		name = "Beyondtop"
 		path = "gfx/fonts/Beyondtop"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	bitmapfont = {
+		name = "Beyondtoppurplish"
+		path = "gfx/fonts/Beyondtoppurplish"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	bitmapfont = {
+		name = "Beyondtoprosish"
+		path = "gfx/fonts/Beyondtoprosish"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	bitmapfont = {
+		name = "Beyondtopbluish"
+		path = "gfx/fonts/Beyondtopbluish"
 		color = 0xffffffff
 		
 		textcolors = {
