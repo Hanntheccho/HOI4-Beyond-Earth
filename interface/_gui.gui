@@ -1245,7 +1245,7 @@ guiTypes = {
 	#for when a country declare wars
 	containerWindowType = {
 		name = "declare_war_window"
-		position = { x = -475 y = 210 }
+		position = { x = -110 y = -200 }
 		size = { width = 460 height = 95 }
 		moveable = yes
 		fade_time = 200
@@ -1254,60 +1254,27 @@ guiTypes = {
 		hide_sound = menu_close_window
 		click_to_front = yes
 		clipping = no
-		orientation = UPPER_RIGHT
+		orientation = CENTER_RIGHT
 
 		background = {
 			name = "Background"	
-			quadTextureSprite ="GFX_tiled_black"
+			quadTextureSprite ="GFX_tiled_window_transparent"
 		}
-
-		instantTextBoxType = {
-			name = "title"
-			position = { x = 27 y = 20 }
-			textureFile = ""
-			font = "Arialsmallest"
-			borderSize = {x = 0 y = 0}
-			text = "▀▀▀  {WAR_DECLARED}  ▀▀ ▀▀▀▀▀▀▀  {LOAD.GUI}  ▀▀ ▀▀ ▀"	
-			format = left
-			maxWidth = 400
-			maxHeight = 24
-		}
-
-		containerWindowType = {
-			name = "bg"
-			size = { width = 430 height = 75 }
-			position = {
-				x = 10
-				y = 10
-			}
-			background = {
-				name = "bg"
-				quadTextureSprite = "GFX_tiled_black"
-				alwaystransparent = yes
-			}
-		}
-
-		instantTextBoxType = {
-			name = "description"
-			position = { x = 42 y = 47 }
-			textureFile = ""
-			font = "Arialsmallest"
-			borderSize = {x = 0 y = 0}
-			text = "WAR_EVENT_TITLE"
-			maxWidth = 380
-			maxHeight = 15
-			format = left
-			fixedsize = yes
-		}	
 
 		buttonType = {
 			name = "ok_button"
-			position = { x=10000 y =5}
-			quadTextureSprite ="GFX_st_button"
+			spriteType = "GFX_generic_checkbox_ironman"
+			pdx_tooltip = WAR_EVENT_TITLE
+			pdx_tooltip_delayed = click_here_to_close
+			frame = 2
 			shortcut = "RETURN"
-			buttonText = "click_here_to_close"
-			buttonFont = "Arialsmallest"
-			scale = 0.9
+		}
+
+		iconType = {
+			name = "warning"
+			position = { x= 37 y = 18 }
+			spriteType = "GFX_warning_icon"
+			alwaystransparent = yes
 		}
 	}
 
@@ -1318,8 +1285,8 @@ guiTypes = {
 	#for when a country capitulates
 	containerWindowType = {
 		name = "surrender_window"
-		position = { x = -475 y = 100 }
-		size = { width = 460 height = 95 }
+		position = { x = -110 y = -100 }
+		size = { width = 100 height = 92 }
 		moveable = yes
 		fade_time = 200
 		fade_type = linear
@@ -1327,60 +1294,27 @@ guiTypes = {
 		hide_sound = menu_close_window
 		click_to_front = yes
 		clipping = no
-		orientation = UPPER_RIGHT
+		orientation = CENTER_RIGHT
 
 		background = {
 			name = "Background"	
-			quadTextureSprite ="GFX_tiled_black"
+			quadTextureSprite ="GFX_tiled_window_transparent"
 		}
-
-		instantTextBoxType = {
-			name = "title"
-			position = { x = 27 y = 20 }
-			textureFile = ""
-			font = "Arialsmallest"
-			borderSize = {x = 0 y = 0}
-			text = "▀▀▀  {WAR_ENDED}  ▀▀ ▀▀▀▀▀▀▀  {LOAD.GUI}  ▀▀ ▀▀ ▀▀ ▀"	
-			format = left
-			maxWidth = 400
-			maxHeight = 24
-		}
-
-		containerWindowType = {
-			name = "bg"
-			size = { width = 430 height = 75 }
-			position = {
-				x = 10
-				y = 10
-			}
-			background = {
-				name = "bg"
-				quadTextureSprite = "GFX_tiled_black"
-				alwaystransparent = yes
-			}
-		}
-
-		instantTextBoxType = {
-			name = "description"
-			position = { x = 42 y = 47 }
-			textureFile = ""
-			font = "Arialsmallest"
-			borderSize = {x = 0 y = 0}
-			text = "PEACE_EVENT_TITLE"
-			maxWidth = 380
-			maxHeight = 15
-			format = left
-			fixedsize = yes
-		}	
 
 		buttonType = {
 			name = "ok_button"
-			position = { x=10000 y =5}
-			quadTextureSprite ="GFX_st_button"
+			spriteType = "GFX_generic_checkbox_ironman"
+			pdx_tooltip = PEACE_EVENT_TITLE
+			pdx_tooltip_delayed = click_here_to_close
+			frame = 1
 			shortcut = "RETURN"
-			buttonText = "click_here_to_close"
-			buttonFont = "Arialsmallest"
-			scale = 0.9
+		}
+
+		iconType = {
+			name = "warning"
+			position = { x= 37 y = 18 }
+			spriteType = "GFX_warning_icon"
+			alwaystransparent = yes
 		}
 	}
 
@@ -2510,6 +2444,79 @@ guiTypes = {
 				width = 500
 				height = 100
 			}
+			iconType = {
+				name ="energy_topbar"
+				spriteType = "GFX_topbar_resources"
+				position = { x= -108 y = 70 }
+				frame = 1
+			}
+			iconType = {
+				name ="polymers_topbar"
+				spriteType = "GFX_topbar_resources"
+				position = { x= 27 y = 70 }
+				frame = 2
+			}
+			iconType = {
+				name ="lithium_topbar"
+				spriteType = "GFX_topbar_resources"
+				position = { x= 134 y = 70 }
+				frame = 3
+			}
+			iconType = {
+				name ="electronics_topbar"
+				spriteType = "GFX_topbar_resources"
+				position = { x= 241 y = 70 }
+				frame = 4
+			}
+			iconType = {
+				name ="superalloys_topbar"
+				spriteType = "GFX_topbar_resources"
+				position = { x= 348 y = 70 }
+				frame = 5
+			}
+			iconType = {
+				name ="superconductors_topbar"
+				spriteType = "GFX_topbar_resources"
+				position = { x= 455 y = 70 }
+				frame = 6
+			}
+			#
+			iconType = {
+				name ="energy_topbar_missing"
+				spriteType = "GFX_topbar_resources_missing"
+				position = { x= -108 y = 70 }
+				frame = 1
+			}
+			iconType = {
+				name ="polymers_topbar_missing"
+				spriteType = "GFX_topbar_resources_missing"
+				position = { x= 27 y = 70 }
+				frame = 2
+			}
+			iconType = {
+				name ="lithium_topbar_missing"
+				spriteType = "GFX_topbar_resources_missing"
+				position = { x= 134 y = 70 }
+				frame = 3
+			}
+			iconType = {
+				name ="electronics_topbar_missing"
+				spriteType = "GFX_topbar_resources_missing"
+				position = { x= 241 y = 70 }
+				frame = 4
+			}
+			iconType = {
+				name ="superalloys_topbar_missing"
+				spriteType = "GFX_topbar_resources_missing"
+				position = { x= 348 y = 70 }
+				frame = 5
+			}
+			iconType = {
+				name ="superconductors_topbar_missing"
+				spriteType = "GFX_topbar_resources_missing"
+				position = { x= 455 y = 70 }
+				frame = 6
+			}
 			#
 			instantTextboxType = {
 				name = "energy"
@@ -2527,7 +2534,7 @@ guiTypes = {
 			}
 			instantTextboxType = {
 				name = "polymers"
-				position = { x = 30 y = 81 }
+				position = { x = 32 y = 81 }
 				textureFile = ""
 				font = "Focusfont"
 				borderSize = {x = 0 y = 0}
@@ -2541,7 +2548,7 @@ guiTypes = {
 			}
 			instantTextboxType = {
 				name = "lithium"
-				position = { x = 135 y = 81 }
+				position = { x = 139 y = 81 }
 				textureFile = ""
 				font = "Focusfont"
 				borderSize = {x = 0 y = 0}
@@ -2555,7 +2562,7 @@ guiTypes = {
 			}
 			instantTextboxType = {
 				name = "electronics"
-				position = { x = 240 y = 81 }
+				position = { x = 246 y = 81 }
 				textureFile = ""
 				font = "Focusfont"
 				borderSize = {x = 0 y = 0}
@@ -2569,7 +2576,7 @@ guiTypes = {
 			}
 			instantTextboxType = {
 				name = "superalloys"
-				position = { x = 345 y = 81 }
+				position = { x = 353 y = 81 }
 				textureFile = ""
 				font = "Focusfont"
 				borderSize = {x = 0 y = 0}
@@ -2583,7 +2590,7 @@ guiTypes = {
 			}
 			instantTextboxType = {
 				name = "superconductors"
-				position = { x = 450 y = 81 }
+				position = { x = 460 y = 81 }
 				textureFile = ""
 				font = "Focusfont"
 				borderSize = {x = 0 y = 0}

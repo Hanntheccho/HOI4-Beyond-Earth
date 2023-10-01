@@ -724,8 +724,8 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "research_finished_popup_window"
-		position = { x = -475 y = 320 }
-		size = { width = 460 height = 95 }
+		position = { x = 890 y = 0 }
+		size = { width = 200 height = 33 }
 		moveable = yes
 		fade_time = 200
 		fade_type = linear
@@ -733,11 +733,10 @@ guiTypes = {
 		hide_sound = menu_close_window
 		click_to_front = yes
 		clipping = no
-		orientation = UPPER_RIGHT
 
 		background = {
 			name = "Background"	
-			quadTextureSprite ="GFX_tiled_black"
+			quadTextureSprite ="GFX_tiled_window_transparent"
 		}
 		
 		containerWindowType = {
@@ -759,47 +758,8 @@ guiTypes = {
 		}
 
 		instantTextBoxType = {
-			name = "title2"
-			position = { x = 27 y = 20 }
-			textureFile = ""
-			font = "Arialsmallest"
-			borderSize = {x = 0 y = 0}
-			text = "▀▀▀  {RESEARCH_COMPLETED}  ▀▀ ▀▀▀▀  {LOAD.GUI}  ▀▀ ▀"
-			format = left
-			maxWidth = 400
-			maxHeight = 24
-		}
-
-		containerWindowType = {
-			name = "bg"
-			size = { width = 430 height = 75 }
-			position = {
-				x = 10
-				y = 10
-			}
-			background = {
-				name = "bg"
-				quadTextureSprite = "GFX_tiled_black"
-				alwaystransparent = yes
-			}
-		}
-
-		instantTextBoxType = {
-			name = "tech_name_ok"
-			position = { x = 42 y = 47 }
-			textureFile = ""
-			font = "Arialsmallest"
-			borderSize = {x = 0 y = 0}
-			text = "We finished researching "	
-			maxWidth = 380
-			maxHeight = 15
-			format = left
-			fixedsize = yes
-		}	
-
-		instantTextBoxType = {
 			name = "tech_name"
-			position = { x = 202 y = 47 }
+			position = { x = 10000 y = 47 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
@@ -834,10 +794,8 @@ guiTypes = {
 		
 		buttonType = {
 			name = "details_button"
-			position = { x=10000 y = 203}
-			quadTextureSprite ="GFX_button_123x34"
-			buttonText = "BUTTON_DETAILS"
-			buttonFont = "Arial"
+			position = { x=0 y = 0}
+			quadTextureSprite ="GFX_top_button"
 		}
 		
 		buttonType = {
@@ -847,6 +805,14 @@ guiTypes = {
 			shortcut = "RETURN"
 			buttonText = "click_here_to_close"
 			buttonFont = "Arialsmallest"
+			scale = 0.9
+		}
+
+		iconType = {
+			name = "warning"
+			position = { x= 165 y = 3 }
+			spriteType = "GFX_warning_icon"
+			alwaystransparent = yes
 			scale = 0.9
 		}
 	}
