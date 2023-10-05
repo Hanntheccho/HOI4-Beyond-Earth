@@ -5,6 +5,12 @@ spriteTypes = {
 ###############################
 
 	spriteType = {
+		name = "GFX_background_background"
+		texturefile = "gfx/interface/topbar/background_background.dds"
+		alwaystransparent = yes
+	}
+
+	spriteType = {
 		name = "GFX_tech_bar_bg"
 		texturefile = "gfx/interface/tech_bar_bg.dds"
 	}
@@ -35,6 +41,38 @@ spriteTypes = {
 		animation = {
 			animationmaskfile = "gfx/interface/mit_icon.dds"
 			animationtexturefile = "gfx/interface/mit_icon.dds" 	# <- the animated file
+			animationrotation = 0.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 26.0				# in seconds
+			animationdelay = 2.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}	
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_mit_icon_big"
+		texturefile = "gfx/interface/mit_icon_big.dds"
+		alwaystransparent = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/mit_icon_big.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 5 			# in seconds
+			animationdelay = 6			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/mit_icon_big.dds"
+			animationtexturefile = "gfx/interface/mit_icon_big.dds" 	# <- the animated file
 			animationrotation = 0.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = yes			# yes or no ;)
 			animationtime = 26.0				# in seconds
@@ -593,6 +631,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_topbar_background_icons"
 		texturefile = "gfx//interface//topbar//background_icons.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_topbar_background_icons_back"
+		texturefile = "gfx//interface//topbar//background_icons_back.dds"
 		alwaystransparent = yes
 	}
 
@@ -1525,6 +1568,47 @@ spriteTypes = {
 		borderSize = { x=0 y=0 }
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}
+
+	#PNM
+	spriteType = {
+		name = "GFX_PNM_focus_detail"
+		texturefile = "gfx/interface/PNM_focus_detail.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/PNM_focus_detail.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 4			# in seconds
+			animationdelay = 4			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/PNM_focus_detail.dds"
+			animationtexturefile = "gfx/interface/PNM_focus_detail.dds" 	# <- the animated file
+			animationrotation = 0.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 26.0				# in seconds
+			animationdelay = 2.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}	
+        legacy_lazy_load = no
+	}
+	corneredTileSpriteType = {
+		name = "GFX_PNM_focus_bg"
+		size= { x=1920 y=1276 }
+		textureFile = "gfx/interface/PNM_focus_bg.dds"
+		borderSize = { x=0 y=0 }
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+
 
 ###############################
 ########### BUTTONS ###########
