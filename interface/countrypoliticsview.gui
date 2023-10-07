@@ -21,28 +21,17 @@ guiTypes = {
 			quadTextureSprite ="GFX_tiled_window_transparent"
 		}
 
-		#containerWindowType = {
-		#	name = "Background_2"
-		#	size = { width=8 height=100%% }
-		#
-		#	background = {
-		#		name = "Background"
-		#		quadTextureSprite = "GFX_tiled_black_border_vertical"
-		#		position = { x = 550 y = 0 }
-		#		alwaystransparent = yes
-		#	}
-		#}
-
-		#iconType ={
-		#	name ="dummy"
-		#	spriteType = "GFX_st_button"
-		#	position = { x= 0 y = 920 }
-		#	alwaystransparent = yes
-		#}
+		background ={
+			name ="pol_view_bg"
+			spriteType = "GFX_decision_view_bg_large"
+			position = { x= 0 y = 0 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
 
 		instantTextboxType = {
 			name = "load_text1"
-			position = { x = 29 y = 23 }
+			position = { x = 15 y = 8 }
 			textureFile = ""
 			font = "Arialsmallest"
 			borderSize = {x = 0 y = 0}
@@ -53,7 +42,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "more_details"
-			position = { x = 29 y = 61 }
+			position = { x = 15 y = 46 }
 			font = "Arialsmallest"
 			text = "▀▀▀▀▀▀▀▀▀▀   ▀ ▀▀  ▀▀▀▀▀▀  ▀▀ ▀ ▀ ▀ ▀ ▀ ▀▀ ▀▀    ▀     ▀     ▀     ▀     ▀     ▀     ▀     ▀     ▀     ▀▀    ▀     ▀     ▀     ▀     ▀     ▀     ▀     ▀     "	
 			maxWidth = 40
@@ -61,18 +50,51 @@ guiTypes = {
 		}
 
 		containerWindowType = {
-			name = "another_bg11"
-			size = { width = 517 height = 100%% }
-			position = {
-				x = 18
-				y = 15
-			}
-
-			background = {
-				name = "bg"
-				quadTextureSprite = "GFX_tiled_black"
+			name = "bgbgbg"
+			size = { width=550 height=100%% }
+	
+			background ={
+				name ="pol_view_bg2"
+				spriteType = "GFX_pol_view_bg_large"
+				position = { x= 6 y = 0 }
+				Orientation = "UPPER_LEFT"
+				alwaystransparent = yes
+			} # x2
+			background ={
+				name ="pol_view_bg2"
+				spriteType = "GFX_pol_view_bg_large"
+				position = { x= 6 y = 0 }
+				Orientation = "UPPER_LEFT"
 				alwaystransparent = yes
 			}
+	
+			background ={
+				name ="pol_view_bg2"
+				spriteType = "GFX_tiled_side_mod"
+				position = { x= 0 y = 0 }
+				Orientation = "UPPER_LEFT"
+				alwaystransparent = yes
+			}
+	
+			background ={
+				name ="production_header_bg"
+				spriteType = "GFX_header_bg_mod"
+				position = { x= 0 y = 0 }
+				Orientation = "UPPER_LEFT"
+			}	
+		}
+
+		#iconType ={
+		#	name ="dummy"
+		#	spriteType = "GFX_st_button"
+		#	position = { x= 0 y = 920 }
+		#	alwaystransparent = yes
+		#}
+
+		iconType = {
+			name = "leader"
+			position = { x = -200 y = -70 }
+			spriteType = "GFX_leader_unknown"
 		}
 
 		containerWindowType = {
@@ -100,61 +122,6 @@ guiTypes = {
 			position = { x = 10000 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}	
-
-		background ={
-			name ="pol_view_bg"
-			spriteType = "GFX_decision_view_bg_large"
-			position = { x= 0 y = 0 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-
-		background ={
-			name ="pol_view_bg2"
-			spriteType = "GFX_pol_view_bg_large"
-			position = { x= 6 y = 0 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		} # x2
-		background ={
-			name ="pol_view_bg2"
-			spriteType = "GFX_pol_view_bg_large"
-			position = { x= 6 y = 0 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-
-		background ={
-			name ="pol_view_bg2"
-			spriteType = "GFX_tiled_side_mod"
-			position = { x= 0 y = 0 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-
-		background ={
-			name ="production_header_bg"
-			spriteType = "GFX_header_bg_mod"
-			position = { x= 0 y = 0 }
-			Orientation = "UPPER_LEFT"
-		}	
-
-		containerWindowType = {
-			name = "bg_parties"
-			size = {
-				width = 480
-				height = 226
-			}
-			position = {
-				x = 45
-				y = 65
-			}
-			background = {
-				name = "bg"
-				quadTextureSprite = "GFX_tiled_black"
-				alwaystransparent = yes
-			}
-		}
 		
 		containerWindowType = {
 			name = "ruling_party_info"
@@ -387,22 +354,10 @@ guiTypes = {
 				}
 			}
 		}
-		iconType = {
-			name = "leader"
-			position = { x = 53 y = 73 }
-			spriteType = "GFX_leader_unknown"
-		}
-
-		iconType = {
-			name = "leader_frame"
-			spriteType = "GFX_leader_overlay"
-			position = { x = 48 y = 68 }		
-			alwaystransparent = yes
-		}
 
 		containerWindowType = {
 			name = "active_goal"
-			position = { x = 162 y = 241 }
+			position = { x = 162 y = 231 }
 			size = { width=90 height=200}
 			clipping = no
 			
