@@ -219,6 +219,10 @@ scripted_gui = {
 		}
 
 		triggers = {
+			war_visible = {
+				always = no	
+			}
+			#
 			TZN_pol_detail_visible = {
 				tag = TZN
 			}
@@ -340,10 +344,27 @@ scripted_gui = {
         }
 		
 		effects = {
-            #
+            war_click = {
+				FROM = {
+					ROOT = {
+						declare_war_on = {
+							target = PREV
+							type = annex_puppet_wargoal
+						}
+					}
+				}
+			}
 		}
 
 		triggers = {
+			war_visible = {
+				always = yes	
+			}
+			war_click_enabled = {
+				always = no	#todo
+			}
+			#
+			#
 			TZN_pol_detail_visible = {
 				tag = TZN
 			}

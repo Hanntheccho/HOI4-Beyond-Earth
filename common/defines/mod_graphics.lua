@@ -33,7 +33,7 @@ NDefines_Graphics.NGraphics.CAMERA_ZOOM_SPEED = 70
 NDefines_Graphics.NGraphics.CAMERA_ZOOM_KEY_SCALE = 0.02
 NDefines_Graphics.NGraphics.CAMERA_ZOOM_SPEED_DISTANCE_MULT = 10.0
 
-NDefines_Graphics.NGraphics.POLITICAL_GRID_SMALL_BOX_LIMIT = 7
+NDefines_Graphics.NGraphics.POLITICAL_GRID_SMALL_BOX_LIMIT = 4
 NDefines_Graphics.NGraphics.SETUP_SPIRIT_GRID_BOX_LIMIT = 0
 
 NDefines_Graphics.NGraphics.FRIEND_COLOR  = {1.0, 1.0, 1.0}

@@ -2,6 +2,54 @@ on_actions = {
     on_startup = {
         effect = {
             every_country = {
+                limit = {
+                    has_country_leader = {
+                        name = "Unknown"
+                        ruling_only = yes
+                    }
+                }
+                create_country_leader = {
+                    name = "Goverment"
+                    picture = GFX_government_portrait
+                    ideology = purity_ideology
+                }
+                create_country_leader = {
+                    name = "Goverment"
+                    picture = GFX_government_portrait
+                    ideology = harmony_ideology
+                }
+                create_country_leader = {
+                    name = "Goverment"
+                    picture = GFX_government_portrait
+                    ideology = supremacy_ideology
+                }
+                create_country_leader = {
+                    name = "Goverment"
+                    picture = GFX_government_portrait
+                    ideology = neutral_ideology
+                }
+                create_country_leader = {
+                    name = "Goverment"
+                    picture = GFX_government_portrait
+                    ideology = synergy_ideology
+                }
+                create_country_leader = {
+                    name = "Goverment"
+                    picture = GFX_government_portrait
+                    ideology = mastery_ideology
+                }
+                create_country_leader = {
+                    name = "Goverment"
+                    picture = GFX_government_portrait
+                    ideology = divinity_ideology
+                }
+            }
+        }
+    }
+###
+    on_startup = {
+        effect = {
+            every_country = {
                 if = {
                     limit = {
                         has_idea = free_trade
@@ -212,6 +260,20 @@ on_actions = {
     on_ruling_party_change = {
         effect = {
             reset_virtues_effect = yes
+            if = {
+                limit = {
+                    has_country_leader = {
+                        name = "Unknown"
+                        ruling_only = yes
+                    }
+                }
+                set_country_leader_name = {
+                    name = "Government"
+                }
+                set_country_leader_portrait = {
+                    portrait = GFX_government_portrait
+                }
+            }
         }
     }
 ###
