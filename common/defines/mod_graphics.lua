@@ -5,9 +5,15 @@ NDefines_Graphics.NGraphics.TOOLTIP_DELAYED_DELAY = 0.4
 
 NDefines_Graphics.NGraphics.AIRBASE_ICON_DISTANCE_CUTOFF = 600
 NDefines_Graphics.NGraphics.NAVALBASE_ICON_DISTANCE_CUTOFF = 600
-NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_TEXT_CUTOFF = {200, 400, 600}
-NDefines_Graphics.NGraphics.VICTORY_POINTS_DISTANCE_CUTOFF = {200, 400, 600}
-NDefines_Graphics.NGraphics.CAPITAL_ICON_CUTOFF = 600
+
+NDefines_Graphics.NGraphics.CAPITAL_ICON_CUTOFF = 700
+NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_CAPITAL_CUTOFF_MAX = 700.0	--Capitals are special snowflakes, they need their own number
+NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_TEXT_CUTOFF = {150, 350, 600}  -- At what camera distance the VP name text disappears.
+NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_TEXT_CUTOFF_MIN = 150.0 -- Min range for victory point text
+NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_TEXT_CUTOFF_MAX = 500.0 -- Max range for victory point text
+NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_DOT_CUTOFF_MIN = 150.0 -- Min range for victory point dot
+NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_DOT_CUTOFF_MAX = 500.0 -- Max range for victory point text
+NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_MAX_VICTORY_POINTS_FOR_PERCENT = 20 -- Default max value for point on the above range. It doesn't matter much if the VP value exceeds this, it'll be treated as max.
 
 NDefines_Graphics.NSound.HEIGHT_SOUND_MIN_ALTITUDE = 30.0
 NDefines_Graphics.NSound.HEIGHT_SOUND_MAX_ALTITUDE = 300.0

@@ -158,6 +158,19 @@ guiTypes = {
 				maxHeight = 20
 				format = right
 			}
+
+			instantTextboxType = {
+				name = "cic_bank_value"
+				position = { x = -10000 y = 24 }
+				textureFile = ""
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "0"
+				maxWidth = 70
+				maxHeight = 20
+				format = right
+				hide = yes # Remove this line to show CIC bank info in the Constructions view.
+			}
 			
 			instantTextboxType = {
 				name = "construction_speed_value"
@@ -551,11 +564,7 @@ guiTypes = {
 
 		background = {
 			name = "Background"
-			quadTextureSprite ="GFX_construction_special_entry_bg"
-			position = {
-				x = -6
-				y = 0
-			}
+			quadTextureSprite ="GFX_tiled_window_transparent"
 		}
 		
 		instantTextboxType = {
@@ -570,5 +579,39 @@ guiTypes = {
 			
 			alwaystransparent = yes
 		}		
+	}
+
+	containerWindowType = {
+		name = "static_contract_payment_entry"
+		position = { x=0 y=0 }
+		size = { width = 400 height = 52 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_transparent"
+		}
+
+		instantTextboxType = {
+			name = "factories"
+			position = { x = 254 y = 17 }
+			textureFile = ""
+			font = "hoi_18b"
+			text = "-"
+			maxWidth = 50
+			maxHeight = 20
+			format = center
+
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "open_market_view_btn"
+			position = { x = 305 y = 12 }
+			quadTextureSprite ="GFX_button_94x31"
+			buttonFont = "hoi_16mbs"
+			Orientation = "UPPER_LEFT"
+			buttonText = "CONSTRUCTION_GO_TO_MARKET_BUTTON"
+		}
 	}
 }
