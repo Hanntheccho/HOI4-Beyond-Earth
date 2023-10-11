@@ -1,3 +1,25 @@
+bitmapfonts = {
+	bitmapfont = {
+		name = "Beyondsmall"
+		path = "gfx/fonts/Beyondsmall"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	
+	bitmapfont = {
+		name = "Arialsmallestload"
+		path = "gfx/fonts/Arialsmallest"
+		color = 0xffffffff
+		
+		textcolors = {
+			g = { 180 180 180 }
+		}
+	}
+}
+
 spriteTypes = {
 	spriteType = {
 	 	name = "GFX_nullobject"
@@ -35,9 +57,48 @@ spriteTypes = {
 		colortwo = { 1.0 0.0 0.0 }
 		textureFile1 = "gfx//interface//LoadingScreen_Progress_2.dds"
 		textureFile2 = "gfx//interface//LoadingScreen_Progress_1.dds"
-		size = { x = 810 y = 139 }
+		size = { x = 821 y = 149 }
 		effectFile = "gfx//FX//progress.lua"
 		horizontal = yes
 		steps = 1000000
+	}
+
+	spriteType = {
+		name = "GFX_detail_1"
+		texturefile = "gfx/interface/detail_1.dds"
+		alwaystransparent = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/detail_1.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 30.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 200 			# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_detail_2"
+		texturefile = "gfx/interface/detail_2.dds"
+		alwaystransparent = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/detail_2.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation =30.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 200 			# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
 	}
 }
