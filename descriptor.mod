@@ -1,4 +1,4 @@
-version="1.12.*"
+version="1.13.*"
 tags={
 	"Alternative History"
 	"Map"
@@ -82,5 +82,5 @@ replace_path="common/military_industrial_organization/ai_bonus_weights"
 replace_path="common/military_industrial_organization/organizations"
 replace_path="common/military_industrial_organization/policies"
 replace_path="common/scorers/country"
-supported_version="1.12.*"
+supported_version="1.13.*"
 remote_file_id="2900337374"
