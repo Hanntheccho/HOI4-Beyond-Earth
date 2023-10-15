@@ -2068,6 +2068,32 @@ guiTypes = {
 		}
 
 		containerWindowType = {
+			name ="disclaimer_bg"
+			position = { x=200 y =-130}			
+			size = { width=480 height=347}
+			clipping = no
+			orientation = CENTER_LEFT
+			moveable = yes
+
+			background = {
+				name = "background"
+				quadTextureSprite = "GFX_tiled_black"
+			}
+
+			instantTextBoxType = {
+				name = "disclaimer"
+				position = { x = 20 y = 10 }
+				textureFile = ""
+				font = "Arialsmallest"
+				borderSize = {x = 0 y = 0}
+				text = scan_mode_text
+				maxWidth = 435
+				maxHeight = 100
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
 			name = "scan_mode_decisions"
 			position = { x = 138 y = 0 }
 			size = {
@@ -2128,49 +2154,61 @@ guiTypes = {
 				quadTextureSprite = "GFX_tiled_scan_mode"
 			}
 		}
-	}
-	
-	containerWindowType = {
-		name = "scan_mode_political"
-		position = { x = 5 y = 0 }
-
 		containerWindowType = {
-			name = "scan_mode_win1"
-			position = { x = 32 y = 348 }
+			name = "scan_mode_equipment"
+			position = { x = 38 y = 76 }
 			size = {
-				width = 90
-				height = 90
+				width = 523
+				height = 37
 			}
 			background = {
 				name = "bg"
-				quadTextureSprite = "GFX_tiled_scan_mode"
-			}
-			background = {
-				name = "bg"
-				position = {
-					x = 48
-					y = 129
-				}
-				quadTextureSprite = "GFX_tiled_scan_mode"
-			}
-			background = {
-				name = "bg"
-				position = {
-					x = 14
-					y = 257
-				}
-				quadTextureSprite = "GFX_tiled_scan_mode"
-			}
-			background = {
-				name = "bg"
-				position = {
-					x = -5
-					y = 384
-				}
 				quadTextureSprite = "GFX_tiled_scan_mode"
 			}
 		}
 	}
+	
+#	containerWindowType = {
+#		name = "scan_mode_political"
+#		position = { x = 5 y = 0 }
+#
+#		containerWindowType = {
+#			name = "scan_mode_win1"
+#			position = { x = 32 y = 348 }
+#			size = {
+#				width = 90
+#				height = 90
+#			}
+#			background = {
+#				name = "bg"
+#				quadTextureSprite = "GFX_tiled_scan_mode"
+#			}
+#			background = {
+#				name = "bg"
+#				position = {
+#					x = 48
+#					y = 129
+#				}
+#				quadTextureSprite = "GFX_tiled_scan_mode"
+#			}
+#			background = {
+#				name = "bg"
+#				position = {
+#					x = 14
+#					y = 257
+#				}
+#				quadTextureSprite = "GFX_tiled_scan_mode"
+#			}
+#			background = {
+#				name = "bg"
+#				position = {
+#					x = -5
+#					y = 384
+#				}
+#				quadTextureSprite = "GFX_tiled_scan_mode"
+#			}
+#		}
+#	}
 
 	containerWindowType = {
 		name = "scan_mode_building"
@@ -2250,45 +2288,6 @@ guiTypes = {
 		}
 	}
 
-	containerWindowType = {
-		name = "scan_mode_international"
-		position = { x=0 y=40 }
-		size = { width = 1234 height = 590 }
-		orientation = CENTER
-		origo = center
-
-		containerWindowType = {
-			name = "scan_mode_win1"
-			position = { x = 820 y = 425 }
-			size = {
-				width = 390
-				height = 104
-			}
-			background = {
-				name = "bg"
-				quadTextureSprite = "GFX_tiled_scan_mode"
-			}
-		}
-	}
-
-	containerWindowType = {
-		name = "scan_mode_south_pole"
-		position = { x=0 y=0 }
-
-		containerWindowType = {
-			name = "scan_mode_win1"
-			position = { x = 5 y = 130 }
-			size = {
-				width = 480
-				height = 405
-			}
-			background = {
-				name = "bg"
-				quadTextureSprite = "GFX_tiled_scan_mode"
-			}
-		}
-	}
-
 ###############################
 ######## TOPBAR BUTTONS #######
 ###############################
@@ -2309,6 +2308,13 @@ guiTypes = {
 			oversound = ui_menu_over
 			pdx_tooltip = "help_button_tt"
 			pdx_tooltip_delayed = help_button_tt_delayed
+		}
+
+		buttonType = {
+			name = "help_button_red"
+			position = { x = 6 y = 44 }
+			quadTextureSprite ="GFX_help_button_red"
+			alwaystransparent = yes
 		}
 
 		buttonType = {
