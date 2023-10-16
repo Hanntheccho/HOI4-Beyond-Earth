@@ -5,6 +5,40 @@ spriteTypes = {
 ###############################
 
 	spriteType = {
+		name = "GFX_war_button"
+		texturefile = "gfx/interface/war_button.dds"
+		noOfFrames = 2
+		transparencecheck = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/war_button.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 5 			# in seconds
+			animationdelay = 6			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/war_button.dds"
+			animationtexturefile = "gfx/interface/war_button.dds" 	# <- the animated file
+			animationrotation = 0.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 26.0				# in seconds
+			animationdelay = 2.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}	
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
 		name = "GFX_original_focus"
 		texturefile = "gfx/interface/original_focus.dds"
 		alwaystransparent = yes
@@ -56,68 +90,15 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_war_button"
-		texturefile = "gfx/interface/war_button.dds"
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/war_button.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = yes			# yes or no ;)
-			animationtime = 5 			# in seconds
-			animationdelay = 6			# in seconds
-			animationblendmode = "add"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-
-		animation = {
-			animationmaskfile = "gfx/interface/war_button.dds"
-			animationtexturefile = "gfx/interface/war_button.dds" 	# <- the animated file
-			animationrotation = 0.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = yes			# yes or no ;)
-			animationtime = 26.0				# in seconds
-			animationdelay = 2.0			# in seconds
-			animationblendmode = "add"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}	
-		legacy_lazy_load = no
+		name = "GFX_hostile_title"
+		texturefile = "gfx/interface/hostile_title.dds"
+		alwaystransparent = yes
 	}
 
 	spriteType = {
 		name = "GFX_hostile_back"
 		texturefile = "gfx/interface/hostile_back.dds"
 		alwaystransparent = yes
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/hostile_back.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = yes			# yes or no ;)
-			animationtime = 5 			# in seconds
-			animationdelay = 6			# in seconds
-			animationblendmode = "add"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-
-		animation = {
-			animationmaskfile = "gfx/interface/hostile_back.dds"
-			animationtexturefile = "gfx/interface/hostile_back.dds" 	# <- the animated file
-			animationrotation = 0.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = yes			# yes or no ;)
-			animationtime = 26.0				# in seconds
-			animationdelay = 2.0			# in seconds
-			animationblendmode = "add"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}	
-		legacy_lazy_load = no
 	}
 
 	spriteType = {
@@ -624,39 +605,6 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
 
-	spriteType = {
-		name = "GFX_declare_war_button"
-		texturefile = "gfx/interface/declare_war_button.dds"
-		effectFile = "gfx/FX/buttonstate.lua"
-		transparencecheck = yes
-		animation = {
-			animationmaskfile = "gfx/interface/declare_war_button.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = yes			# yes or no ;)
-			animationtime = 5 			# in seconds
-			animationdelay = 6			# in seconds
-			animationblendmode = "add"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-
-		animation = {
-			animationmaskfile = "gfx/interface/declare_war_button.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = yes			# yes or no ;)
-			animationtime = 5  			# in seconds
-			animationdelay = 3			# in seconds
-			animationblendmode = "add"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-        legacy_lazy_load = no
-	}
-
 	progressbartype = {
 		name = "GFX_warscore_progressbar_mod"
 		color = { 1.0 1.0 1.0 }
@@ -683,11 +631,6 @@ spriteTypes = {
 		name = "GFX_casuality_icon2"
 		texturefile = "gfx/interface/casuality_icon2.dds"
 		noOfFrames = 4
-	}
-
-	spriteType = {
-		name = "GFX_world_tension_icon_big_strip_blank"
-		texturefile = "gfx/interface/world_tension_icon_big_strip_blank.dds"
 	}
 
 	spriteType = {
