@@ -525,7 +525,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "EventWindow_News"
 		position = { x=-282 y=-360 }	
-		size = { width = 535 height = 701 }
+		size = { width = 535 height = 702 }
 		moveable = yes
 		Orientation = CENTER
 		show_sound = world_news_effect
@@ -573,21 +573,11 @@ guiTypes = {
 			size = { width = 581 height =121 }
 			Orientation = UPPER_LEFT
 
-			instantTextboxType = {
-				name = "more_details"
-				position = { x = 15 y = 251 }
-				textureFile = ""
-				font = "Arialsmallest"
-				text = "▀ ▀▀ ▀▀▀▀▀  ▀    ▀▀▀▀▀  ▀"
-				maxWidth = 130
-				maxHeight = 80
-				format = left
-			}
 			instantTextBoxType = {
 				name = "detail"
-				position = { x = 15 y = 270 }
+				position = { x = 16 y = 240 }
 				font = "Arialsmallest"
-				text = "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
+				text = "▀▀▀  ▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀"
 				maxWidth = 5
 				maxHeight = 400
 				format = left	
@@ -619,10 +609,18 @@ guiTypes = {
 				Orientation = "UPPER_LEFT"
 				alwaystransparent = yes
 			}
+
+			iconType = {
+				name ="event_title_bg"
+				spriteType = "GFX_event_title_bg"
+				position = { x = 100 y = 168 }
+				Orientation = "UPPER_LEFT"
+				alwaystransparent = yes
+			}
 		
 			instantTextboxType = {
 				name = "Title"
-				position = { x = 138 y = 232 }
+				position = { x = 139 y = 152 }
 				textureFile = ""
 				font = "Arialcap"
 				text = "STATE_NAME_TEST"
@@ -630,7 +628,7 @@ guiTypes = {
 				maxHeight = 80
 				format = right
 				fixedsize = yes
-				vertical_alignment = center
+				vertical_alignment = bottom
 			}
 
 			buttonType = {
@@ -648,23 +646,22 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "midsection"
-			position = { x=-20 y=100 }	
+			position = { x=-20 y=0 }	
 			size = { width = 500 height = 385 }
 			Orientation = UPPER_LEFT
 		
 			instantTextBoxType = {
 				name = "Description"
-				position = { x = 59 y = 192 }
+				position = { x = 58 y = 239 }
 				font = "Arial16"
 				borderSize = {x = 5 y = 0}
 				text = "Long text here!"	
-				maxWidth = 468
-				maxHeight = 343
+				maxWidth = 467
+				maxHeight = 395
 				format = left
 				scrollbarType = standardtext_slider
 			}
-		}			
-
+		}		
 
 		containerWindowType = {
 			name = "bottom_Window"
@@ -681,6 +678,20 @@ guiTypes = {
 				max_slots_horizontal = 1
 				format = "UPPER_LEFT"
 			}
+		}
+
+		containerWindowType = {
+			name = "random_frontend_bg_mod8"
+			size = { width=528 height =702}
+			position = {
+				x = 7
+				y = 6
+			}
+			background = {
+				name = "frontend_bg"
+				quadTextureSprite ="GFX_frontend_bg_tv"
+				alwaystransparent = yes
+			}	
 		}
 	}
 	
