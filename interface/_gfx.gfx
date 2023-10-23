@@ -5,6 +5,12 @@ spriteTypes = {
 ###############################
 
 	spriteType = {
+		name = "GFX_resources_topbar"
+		texturefile = "gfx/interface/resources_topbar.dds"
+		alwaystransparent = yes
+	}
+
+	spriteType = {
 		name = "GFX_mit_texticon"
 		texturefile = "gfx/interface/mit_texticon.dds"
 	    legacy_lazy_load = no
@@ -66,43 +72,14 @@ spriteTypes = {
 		alwaystransparent = yes
 	}
 
-	spriteType = {
-		name = "GFX_detail_1_alpha"
-		texturefile = "gfx/interface/detail_1_alpha.dds"
+	corneredTileSpriteType = {
+		name = "GFX_tiled_detail_bg"
+		texturefile = "gfx/interface/tiled_detail_bg.dds"
+		borderSize = { x=300 y=0 }
+		size = { x=1920 y=1080 }
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate.shader"
 		alwaystransparent = yes
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/detail_1_alpha.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = 30.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = yes			# yes or no ;)
-			animationtime = 200 			# in seconds
-			animationdelay = 0			# in seconds
-			animationblendmode = "add"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-		legacy_lazy_load = no
-	}
-	spriteType = {
-		name = "GFX_detail_2_alpha"
-		texturefile = "gfx/interface/detail_2_alpha.dds"
-		alwaystransparent = yes
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/detail_2_alpha.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation =30.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = yes			# yes or no ;)
-			animationtime = 200 			# in seconds
-			animationdelay = 0			# in seconds
-			animationblendmode = "add"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-		legacy_lazy_load = no
 	}
 
 	spriteType = {
@@ -1129,14 +1106,14 @@ spriteTypes = {
 
 	corneredTileSpriteType = {
 		name = "GFX_wonders_techtree_bg"
-		size= { x=1920 y=1276 }
+		size= { x=1920 y=1080 }
 		textureFile = "gfx/interface/techtree/wonders_techtree_bg.dds"
 		borderSize = { x=0 y=0 }
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}
 	corneredTileSpriteType = {
 		name = "GFX_ecobalance_techtree_bg"
-		size= { x=1920 y=1276 }
+		size= { x=1920 y=1080 }
 		textureFile = "gfx/interface/techtree/ecobalance_techtree_bg.dds"
 		borderSize = { x=0 y=0 }
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
@@ -1736,7 +1713,7 @@ spriteTypes = {
 	}
 	corneredTileSpriteType = {
 		name = "GFX_ONU_focus_bg"
-		size= { x=1920 y=1276 }
+		size= { x=1920 y=1080 }
 		textureFile = "gfx/interface/ONU_focus_bg.dds"
 		borderSize = { x=0 y=0 }
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
@@ -1777,7 +1754,7 @@ spriteTypes = {
 	}
 	corneredTileSpriteType = {
 		name = "GFX_TZN_focus_bg"
-		size= { x=1920 y=1276 }
+		size= { x=1920 y=1080 }
 		textureFile = "gfx/interface/TZN_focus_bg.dds"
 		borderSize = { x=0 y=0 }
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
@@ -1818,7 +1795,7 @@ spriteTypes = {
 	}
 	corneredTileSpriteType = {
 		name = "GFX_PNM_focus_bg"
-		size= { x=1920 y=1276 }
+		size= { x=1920 y=1080 }
 		textureFile = "gfx/interface/PNM_focus_bg.dds"
 		borderSize = { x=0 y=0 }
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
@@ -2040,6 +2017,60 @@ bitmapfonts = {
 	bitmapfont = {
 		name = "Arialsmallestcap"
 		path = "gfx/fonts/Arialsmallestcap"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	bitmapfont = {
+		name = "Beyondresources"
+		path = "gfx/fonts/Beyondresources"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	bitmapfont = {
+		name = "Beyondpolymers"
+		path = "gfx/fonts/Beyondpolymers"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	bitmapfont = {
+		name = "Beyondlithium"
+		path = "gfx/fonts/Beyondlithium"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	bitmapfont = {
+		name = "Beyondelectronics"
+		path = "gfx/fonts/Beyondelectronics"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	bitmapfont = {
+		name = "Beyondsuperalloys"
+		path = "gfx/fonts/Beyondsuperalloys"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	bitmapfont = {
+		name = "Beyondsuperconductors"
+		path = "gfx/fonts/Beyondsuperconductors"
 		color = 0xffffffff
 		
 		textcolors = {

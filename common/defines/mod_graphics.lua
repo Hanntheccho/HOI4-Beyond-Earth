@@ -6,6 +6,16 @@ NDefines_Graphics.NGraphics.TOOLTIP_DELAYED_DELAY = 0.4
 NDefines_Graphics.NGraphics.AIRBASE_ICON_DISTANCE_CUTOFF = 600
 NDefines_Graphics.NGraphics.NAVALBASE_ICON_DISTANCE_CUTOFF = 600
 
+NDefines_Graphics.NGraphics.COMMANDGROUP_PRESET_COLORS_HSV = {
+	--
+}
+
+NDefines_Graphics.NFrontend.NEW_GAME_BUTTON_DISABLE_DELAY_ON_INVALID_MAP_DATA = 0
+
+NDefines_Graphics.NInterface.ARMY_GROUP_PORTRAIT_SPACING = 10			-- Extra space added between portraits of different army groups
+NDefines_Graphics.NInterface.ARMY_GROUP_FIRST_MEMBER_SPACING = 0		-- Extra spacing between the army group portrait and the first member of the army group
+--NDefines_Graphics.NInterface.ARMY_GROUP_COLLAPSE_EXTRA_SPACING = 10
+
 NDefines_Graphics.NGraphics.CAPITAL_ICON_CUTOFF = 700
 NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_CAPITAL_CUTOFF_MAX = 700.0	--Capitals are special snowflakes, they need their own number
 NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_TEXT_CUTOFF = {150, 350, 600}  -- At what camera distance the VP name text disappears.

@@ -12,7 +12,7 @@ NDefines.NBuildings.MAX_SHARED_SLOTS = 24
 
 NDefines.NAI.BUILDING_TARGETS_BUILDING_PRIORITIES = { 'civilian_complex', 'military_complex' }      -- ?
 
-NDefines.NPolitics.BASE_POLITICAL_POWER_INCREASE = 1  -- VANILLA: 2
+NDefines.NPolitics.BASE_POLITICAL_POWER_INCREASE = 1  -- Vanilla: 2
 
 NDefines.NDiplomacy.TENSION_STATE_VALUE = 0                            -- Vanilla: 2
 NDefines.NDiplomacy.TENSION_NO_CB_WAR = 0                            -- Vanilla: 15
