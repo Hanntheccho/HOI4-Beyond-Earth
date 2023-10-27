@@ -75,6 +75,15 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate.shader"
 		alwaystransparent = yes
 	}
+	corneredTileSpriteType = {
+		name = "GFX_tiled_detail_bg_end"
+		texturefile = "gfx/interface/tiled_detail_bg_end.dds"
+		borderSize = { x=300 y=0 }
+		size = { x=1920 y=1080 }
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate.shader"
+		alwaystransparent = yes
+	}
 
 	spriteType = {
 		name = "GFX_leader_overlay"
@@ -824,16 +833,25 @@ spriteTypes = {
 		}
         legacy_lazy_load = no		
 	}
-	frameAnimatedSpriteType = {
-		name = "GFX_endgame_animation"
-		texturefile = "gfx/interface/endgame_animation.dds"
-		noOfFrames = 2
-		animation_rate_fps = 0.7
-		looping = yes
-		play_on_show = yes
-		pause_on_loop = 0.0
+
+	spriteType = {
+		name = "GFX_endgame_icon"
+		texturefile = "gfx/interface/endgame_icon.dds"
 		alwaystransparent = yes
-		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/endgame_icon.dds"
+			animationtexturefile = "gfx/interface/endgame_icon.dds" 	# <- the animated file
+			animationrotation = 0.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 26.0				# in seconds
+			animationdelay = 2.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}	
+		legacy_lazy_load = no
 	}
 
 	spriteType = {
