@@ -2,13 +2,19 @@ scripted_gui = {
     virtues_and_culture_stuff = {
         window_name = "virtues_and_culture_stuff"
         context_type = player_context
-		parent_window_name = "countrypoliticsview"
+		parent_window_token = top_bar
 
 		#context_type = selected_country_context
 		#parent_window_token = selected_country_view_diplomacy
          
         visible = {
-            always = yes
+            if = {
+                limit = { is_ai = yes }
+                always = yes
+            }
+            else = {
+                has_country_flag = virtues_and_culture_moment_flag
+            }
         }
         
         effects = {
@@ -640,7 +646,7 @@ scripted_gui = {
         }
 
         ai_enabled = {
-            always = yes
+            always = no #yes
         }
 
         ai_test_interval = 300

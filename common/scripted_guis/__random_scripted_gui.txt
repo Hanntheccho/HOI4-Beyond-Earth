@@ -15,9 +15,6 @@ scripted_gui = {
         }
 
 		properties = {
-			tech_power_bar = {
-				frame = ROOT.total_tech_power
-			}
 			pol_power_bar = {
 				frame = ROOT.political_power
 			}
@@ -487,7 +484,7 @@ scripted_gui = {
 	spaceship_button_gui = {
 		window_name = "spaceship_button_window"
 		context_type = player_context
-		parent_window_name = "be_tech_folder"
+		parent_window_token = top_bar
 
 		visible = {
     	    always = yes
@@ -498,9 +495,22 @@ scripted_gui = {
                     limit = {
                         has_country_flag = international_moment_flag
                     }
-                    #clr_country_flag = political_moment_flag
                     clr_country_flag = international_moment_flag
                 }
+				else_if = {
+					limit = {
+						has_country_flag = virtues_and_culture_moment_flag
+					}
+					clr_country_flag = virtues_and_culture_moment_flag
+					set_country_flag = international_moment_flag
+				}
+				else_if = {
+					limit = {
+						has_country_flag = south_pole_moment_flag
+					}
+					clr_country_flag = south_pole_moment_flag
+					set_country_flag = international_moment_flag
+				}
                 else = {
                     set_country_flag = international_moment_flag
                 }
@@ -515,7 +525,7 @@ scripted_gui = {
 	sectors_button_gui = {
 		window_name = "sectors_button_window"
 		context_type = player_context
-		parent_window_name = "be_tech_folder"
+		parent_window_token = top_bar
 
 		visible = {
     	    always = yes
@@ -524,19 +534,67 @@ scripted_gui = {
             sectors_button_click = {
                 if = {
                     limit = {
-                        has_country_flag = virtues_and_culture_moment_flag
-                    }
-                    clr_country_flag = virtues_and_culture_moment_flag
-                    set_country_flag = south_pole_moment_flag
-                }
-                else_if = {
-                    limit = {
                         has_country_flag = south_pole_moment_flag
                     }
                     clr_country_flag = south_pole_moment_flag
                 }
+				else_if = {
+					limit = {
+						has_country_flag = virtues_and_culture_moment_flag
+					}
+					clr_country_flag = virtues_and_culture_moment_flag
+					set_country_flag = south_pole_moment_flag
+				}
+				else_if = {
+					limit = {
+						has_country_flag = international_moment_flag
+					}
+					clr_country_flag = international_moment_flag
+					set_country_flag = south_pole_moment_flag
+				}
                 else = {
                     set_country_flag = south_pole_moment_flag
+                }
+            }
+        }
+
+        ai_enabled = {
+            always = no
+        }
+	}
+
+	virtues_button_gui = {
+		window_name = "virtues_button_window"
+		context_type = player_context
+		parent_window_token = top_bar
+
+		visible = {
+    	    always = yes
+		}
+		effects = {
+            virtues_button_click = {
+                if = {
+                    limit = {
+                        has_country_flag = south_pole_moment_flagvirtues_and_culture_moment_flag
+                    }
+                    clr_country_flag = south_pole_moment_flagvirtues_and_culture_moment_flag
+                }
+				else_if = {
+					limit = {
+						has_country_flag = south_pole_moment_flag
+					}
+					clr_country_flag = south_pole_moment_flag
+					set_country_flag = virtues_and_culture_moment_flag
+				}
+				else_if = {
+					limit = {
+						has_country_flag = international_moment_flag
+					}
+					clr_country_flag = international_moment_flag
+					set_country_flag = virtues_and_culture_moment_flag
+				}
+                else = {
+                    set_country_flag = virtues_and_culture_moment_flag
                 }
             }
         }

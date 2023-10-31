@@ -2,64 +2,82 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "countrypoliticsview"
-		position = { x=0 y=0 }
-		size = { width = 100%% height = 100%% }
-		fade_time = 400
-		fade_type = linear
-		clipping = no
+		position = { x=-606 y=112 }	
+		show_position = { x=-6 y =112 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300
+		size = { width=550 height=100%% }
+		clipping = yes
 		
 		#hide_sound = menu_close_window
 		show_sound = menu_open_window
-
-		containerWindowType = {
-			name = "bgs"
-			size = { width = 100%% height = 100%% }
-			background = {
-				name = "Background"
-				quadTextureSprite ="GFX_tiled_bg_alpha_fade"
-				alwaystransparent = yes
-			}
-			background = {
-				name = "Background3"
-				quadTextureSprite ="GFX_tiled_bg_alpha_fade_flip"
-				alwaystransparent = yes
-			}
-			background = {
-				name = "Background2"
-				quadTextureSprite ="GFX_wonders_techtree_bg"
-				alwaystransparent = yes
-			}
+		
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_window_transparent"
 		}
 
-		iconType ={
+		background ={
 			name ="pol_view_bg"
-			spriteType = "GFX_virtues_window_bg"
-			position = { x= -998 y = -841 }
-			Orientation = "LOWER_RIGHT"
+			spriteType = "GFX_decision_view_bg_large"
+			position = { x= 0 y = 0 }
+			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
+		}
+
+		containerWindowType = {
+			name = "bgbgbg"
+			size = { width=550 height=100%% }
+	
+			background ={
+				name ="pol_view_bg2"
+				spriteType = "GFX_pol_view_bg_large"
+				position = { x= 6 y = 0 }
+				Orientation = "UPPER_LEFT"
+				alwaystransparent = yes
+			}
+	
+			background ={
+				name ="pol_view_bg2"
+				spriteType = "GFX_tiled_side_mod"
+				position = { x= 0 y = 0 }
+				Orientation = "UPPER_LEFT"
+				alwaystransparent = yes
+			}
+	
+			background ={
+				name ="production_header_bg"
+				spriteType = "GFX_header_bg_mod"
+				position = { x= 0 y = 0 }
+				Orientation = "UPPER_LEFT"
+			}	
+		}			
+			
+		buttonType = {
+			name = "close_button"
+			position = { x = 10000 y = 5 }
+			quadTextureSprite ="GFX_closebutton"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
 		}
 
 		iconType ={
 			name ="frontend_upper_left_corner"
 			spriteType = "GFX_frontend_upper_left_corner"
-			position = { x = 0 y = 0 }
+			position = { x = 6 y = -112 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
-		iconType ={
-			name ="frontend_lower_right_corner"
-			spriteType = "GFX_frontend_lower_right_corner"
-			position = { x = -398 y = -319 }
-			Orientation = "LOWER_RIGHT"
-			alwaystransparent = yes
-		}
 
-		iconType ={
-			name ="diplo_bg"
-			spriteType = "GFX_diplo_tree_bg"
-			position = { x= 0 y = 0 }
-			alwaystransparent = yes
-		}
+		#iconType ={
+		#	name ="diplo_bg"
+		#	spriteType = "GFX_diplo_tree_bg"
+		#	position = { x= 0 y = 0 }
+		#	alwaystransparent = yes
+		#}
 
 		#iconType = {
 		#	name = "back"
@@ -74,7 +92,7 @@ guiTypes = {
 
 		iconType = {
 			name = "leader"
-			position = { x = 180 y = 200 }
+			position = { x = 105 y = 130 }
 			spriteType = "GFX_leader_unknown"
 			centerposition = yes
 		}
@@ -82,7 +100,7 @@ guiTypes = {
 		iconType = {
 			name = "leader_frame"
 			spriteType = "GFX_leader_overlay"
-			position = { x = 96 y = 90 }		
+			position = { x = 22 y = 20 }		
 			alwaystransparent = yes
 		}
 
@@ -474,19 +492,6 @@ guiTypes = {
 				max_slots_horizontal = 2
 				format = "UPPER_LEFT"
 			}
-		}
-		
-		buttonType = {
-			name = "close_button"
-			position = { x = -58 y = 3 }
-			quadTextureSprite ="GFX_exit_button_left"
-			buttonFont = "Main_14_black"
-			shortcut = "ESCAPE"
-			Orientation = "UPPER_RIGHT"
-			clicksound = click_close
-			pdx_tooltip = "CLOSE"
-			#scale = 0.9
-			shortcut = "ESCAPE"
 		}
 		
 		iconType = {

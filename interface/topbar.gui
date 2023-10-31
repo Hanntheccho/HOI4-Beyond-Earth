@@ -1,13 +1,19 @@
 guiTypes = {
 	containerWindowType = {
 		name = "topbar"
-		position = { x=-4 y=-1 }	
 		size = { width=100%% height=100%% }
+
+#		iconType = {
+#			name ="topbar_left"
+#			spriteType = "GFX_topbar_left"
+#			position = { x= 0 y = 0 }
+#			alwaystransparent = yes
+#		}
 		
 		iconType = {
 			name ="topbar_top_right"
 			spriteType = "GFX_topbar_top_right"
-			position = { x= -574 y = 0 }
+			position = { x= -574 y = -1 }
 			alwaystransparent = yes
 			orientation = UPPER_RIGHT
 		}
@@ -15,7 +21,7 @@ guiTypes = {
 		iconType = {
 			name ="background_background"
 			spriteType = "GFX_background_background"
-			position = { x= 0 y = 0 }
+			position = { x= -4 y = -1 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -23,7 +29,7 @@ guiTypes = {
 		iconType = {
 			name ="background"
 			spriteType = "GFX_topbar_background_extended"
-			position = { x= 0 y = 0 }
+			position = { x= -4 y = -1 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -31,19 +37,19 @@ guiTypes = {
 		iconType = {
 			name ="background_icons_back"
 			spriteType = "GFX_topbar_background_icons_back"
-			position = { x= 34 y = 1 }
+			position = { x= 30 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name ="background_icons_back2"
 			spriteType = "GFX_topbar_background_icons_back"
-			position = { x= -26 y = 1 }
+			position = { x= -30 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name ="background_icons"
 			spriteType = "GFX_topbar_background_icons"
-			position = { x= 4 y = 1 }
+			position = { x= 0 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}
 		
@@ -70,19 +76,13 @@ guiTypes = {
 		iconType = {
 			name ="fuel_ratio_bar"
 			spriteType = "GFX_energy_bar_logistics"
-			position = { x= 682 y = 32 }
+			position = { x= 678 y = 31 }
 			frame = 50
 		}
 
 		containerWindowType = {
 			name = "toggle_music_commands_win"
-			position = { x= 149 y = 105 }
-			show_position = { x= -150 y = 105 }
-			show_animation_type = decelerated
-			hide_animation_type = accelerated
-			animation_time = 450
-			Orientation = upper_right	
-			clipping = no
+			position = { x= -10000 y = 105 }
 			size = { width=228 height=42 }
 	
 			background = {
@@ -116,13 +116,13 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "country_menu_window"
-			position = { x=185 y=38 }
+			position = { x=181 y=37 }
 			size = { width=100%% height=100%% }
 
 			iconType = {
 				name ="decision_view_alert_glow"
 				spriteType = "GFX_decisions_glow"	
-				position = { x = 10000 y = -6 }
+				position = { x = -10000 y = -6 }
 				alwaystransparent = yes
 			}
 			
@@ -139,7 +139,7 @@ guiTypes = {
 			iconType = {
 				name = "decisionview_amount_timeout_bg"
 				spriteType = "GFX_topbar_alert_bg"
-				position = { x = 10000 y = -6}
+				position = { x = -10000 y = -6}
 				alwaystransparent = yes
 				frame = 2
 			}
@@ -147,14 +147,14 @@ guiTypes = {
 			iconType = {
 				name = "decisionview_amount_to_take_bg"
 				spriteType = "GFX_decisions_glow"
-				position = { x = 10000 y = 6}
+				position = { x = -10000 y = 6}
 				alwaystransparent = yes
 				frame = 1
 			}
 
 			instantTextBoxType = {
 				name ="decisionview_amount_timeout_items"
-				position = { x= 10000 y = -2 }
+				position = { x= -10000 y = -2 }
 				font = "Focusfont"
 				text = "999"
 				format = center
@@ -165,7 +165,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name ="decisionview_amount_to_take_items"
-				position = { x= 10000 y = -2 }
+				position = { x= -10000 y = -2 }
 				font = "Focusfont"
 				text = "999"
 				format = right
@@ -177,7 +177,7 @@ guiTypes = {
 			buttonType = {
 				name = "intel_agency_button"
 				quadTextureSprite ="GFX_topbar_intelligence" 
-				position = { x= 10000 y = -3 }
+				position = { x= -10000 y = -3 }
 				Orientation = "UPPER_LEFT"
 				clicksound = click_close
 				oversound = ui_menu_over
@@ -187,14 +187,14 @@ guiTypes = {
 			iconType = {
 				name = "intelview_ops_prepared_or_completed_bg"
 				spriteType = "GFX_topbar_alert_bg"
-				position = { x = -49 y = 4}
+				position = { x = -10000 y = 4}
 				alwaystransparent = yes
 				frame = 4
 			}
 	
 			instantTextBoxType = {
 				name ="intelview_ops_prepared_or_completed_items"
-				position = { x= -51 y = 4 }
+				position = { x= -10000 y = 4 }
 				font = "Arialsmall"
 				text = "9"
 				format = center
@@ -206,14 +206,14 @@ guiTypes = {
 			iconType = {
 				name = "intelview_ops_available_bg"
 				spriteType = "GFX_topbar_alert_bg"
-				position = { x = -49 y = 20}
+				position = { x = -10000 y = 20}
 				alwaystransparent = yes
 				frame = 1
 			}
 
 			instantTextBoxType = {
 				name ="intelview_ops_available_items"
-				position = { x= -51 y = 20 }
+				position = { x= -10000 y = 20 }
 				font = "Arialsmall"
 				text = "9"
 				format = center
@@ -226,17 +226,45 @@ guiTypes = {
 			containerWindowType = {
 				name = "after_intel_agency_button"
 				position = { x=0 y=0 }	
-				size = { width=100%% height=100%% }		
+				size = { width=100%% height=100%% }	
+				
+				buttonType = {
+					name = "trade_button"
+					position = { x= 30 y = -3 }
+					quadTextureSprite ="GFX_top_button_large" #"GFX_topbar_trade_button"
+					Orientation = "UPPER_LEFT"
+					shortcut = "r"
+					clicksound = click_close
+					oversound = ui_menu_over
+				}	
+
+				buttonType = {
+					name = "construction_button"
+					position = { x=-185 y=-38 }
+					quadTextureSprite ="GFX_top_button_construction" #"GFX_construction_button"
+					Orientation = "UPPER_LEFT"
+					shortcut = "t"
+					clicksound = click_close
+					oversound = ui_menu_over
+				}
 				
 				buttonType = {
 					name = "technology_button"
-					quadTextureSprite ="GFX_research_button"
-					position = { x= 720 y = -37 }
+					quadTextureSprite ="GFX_topbar_technology"
+					position = { x= -10000 y = 320 }
 					shortcut = "w"
 					clicksound = click_close
 					oversound = ui_menu_over
-					#buttonFont = "Arialsmall"
-					#buttonText = "{RESEARCH}"
+				}
+
+				buttonType = {
+					name = "deployment_button"
+					position = { x = 420 y = -37 }
+					quadTextureSprite ="GFX_top_button_mid" #"GFX_deployment_button"
+					Orientation = "UPPER_LEFT"
+					shortcut = "u"
+					clicksound = click_close
+					oversound = ui_menu_over
 				}
 				
 				buttonType = {
@@ -247,8 +275,6 @@ guiTypes = {
 					#shortcut = "e"
 					clicksound = click_close
 					oversound = ui_menu_over
-					buttonFont = "Arialsmall"
-					buttonText = "{DIPLO-INTEL}"
 				}
 
 				containerWindowType = {
@@ -300,26 +326,6 @@ guiTypes = {
 				}
 				
 				buttonType = {
-					name = "trade_button"
-					position = { x= 30 y = -3 }
-					quadTextureSprite ="GFX_top_button_large" #"GFX_topbar_trade_button"
-					Orientation = "UPPER_LEFT"
-					shortcut = "r"
-					clicksound = click_close
-					oversound = ui_menu_over
-				}	
-
-				buttonType = {
-					name = "construction_button"
-					position = { x=-185 y=-38 }
-					quadTextureSprite ="GFX_top_button_construction" #"GFX_construction_button"
-					Orientation = "UPPER_LEFT"
-					shortcut = "t"
-					clicksound = click_close
-					oversound = ui_menu_over
-				}
-				
-				buttonType = {
 					name = "production_button"
 					position = { x = -10000 y = 3 }
 					quadTextureSprite ="GFX_difficulty_button_civilian" #"GFX_topbar_production"
@@ -327,37 +333,23 @@ guiTypes = {
 					#shortcut = "y"
 					clicksound = click_close
 					oversound = ui_menu_over
-					buttonFont = "Arialsmall"
-					buttonText = "EQUIPMENT /"
 				}
 
 				iconType = {
 					name = "production_button_glow"
-					position = { x = 10000 y = -6 }
+					position = { x = -10000 y = -6 }
 					spriteType = "GFX_decisions_glow"
 					alwaystransparent = yes
-				}
-				
-				buttonType = {
-					name = "deployment_button"
-					position = { x = 420 y = -37 }
-					quadTextureSprite ="GFX_top_button_mid" #"GFX_deployment_button"
-					Orientation = "UPPER_LEFT"
-					shortcut = "u"
-					clicksound = click_close
-					oversound = ui_menu_over
 				}
 
 				buttonType = {
 					name = "logistics_button"
 					position = { x = -10000 y = 43 }
-					quadTextureSprite ="GFX_difficulty_button_civilian" #"GFX_ledger_button"
+					quadTextureSprite ="GFX_difficulty_button_civilian"
 					Orientation = "UPPER_LEFT"
 					#shortcut = "i"
 					clicksound = click_close
 					oversound = ui_menu_over
-					buttonFont = "Arialsmall"
-					buttonText = "[LOGISTICS]"
 				}
 
 				buttonType = {
@@ -368,8 +360,6 @@ guiTypes = {
 					#shortcut = "shift+e"
 					clicksound = click_close
 					oversound = ui_menu_over
-					buttonFont = "Arialsmall"
-					buttonText = "DOCTRINES //"
 				}
 
 			}
@@ -408,7 +398,7 @@ guiTypes = {
 		buttonType = {
 			name = "player_flag"
 			quadTextureSprite ="GFX_shield_medium"
-			position = { x= 45 y = 20 }
+			position = { x= 41 y = 19 }
 			Orientation = "UPPER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
@@ -418,7 +408,7 @@ guiTypes = {
 		iconType = {
 			name = "player_flag_frame_mod"
 			quadTextureSprite ="GFX_large_flag_frame_mod"
-			position = { x= 40 y = 18 }
+			position = { x= 36 y = 17 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -433,7 +423,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name ="pol_power"
-			position = { x= 151 y = 3 }
+			position = { x= 147 y = 2 }
 			font = "Beyondtopmiss"
 			text = "999"
 			format = center
@@ -443,7 +433,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name ="manpower"
-			position = { x= 612 y = 3 }
+			position = { x= 608 y = 2 }
 			font = "Beyondtoprosish"
 			text = "9999"
 			format = center
@@ -474,10 +464,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "land"
-			position = { x= 10000 y = 36} #position = { x= 723 y = 36}
-			clipping = no
-			# size = { width=50 height=24 }
-			Orientation = UPPER_LEFT
+			position = { x= -10000 y = 36}
 
 			#background = {
 			#	name = "bg"
@@ -505,10 +492,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "navy"
-			position = { x= 10000 y = 36} #position = { x= 790 y = 36}
-			clipping = no
-			# size = { width=50 height=24 }
-			Orientation = UPPER_LEFT
+			position = { x= -10000 y = 36}
 				
 			#background = {
 			#	name = "bg"
@@ -536,10 +520,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "air"
-			position = { x= 10000 y = 36} #position = { x= 857 y = 36}
-			clipping = no
-			# size = { width=50 height=24 }
-			Orientation = UPPER_LEFT
+			position = { x= -10000 y = 36}
 			
 			#background = {
 			#	name = "bg"
@@ -568,13 +549,13 @@ guiTypes = {
 		iconType = {
 			name ="command_power_icon"
 			spriteType = "GFX_command_power"
-			position = { x= 10000 y = 42 } #position = { x= 715 y = 42 }
+			position = { x= -10000 y = 42 } #position = { x= 715 y = 42 }
 			Orientation = "UPPER_LEFT"
 		}		
 		
 		instantTextBoxType = {
 			name ="command_power_value"
-			position = { x= 10000 y = 42 } #position = { x= 730 y = 42 }
+			position = { x= -10000 y = 42 } #position = { x= 730 y = 42 }
 			font = "Focusfont"
 			text = "999"
 			format = center
@@ -596,19 +577,18 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name ="convoys_count"
-			position = { x= 563 y = 10000 }
+			position = { x= 563 y = -10000 }
 			font = "Focusfont"
 			text = "0"
 			format = right
 			maxWidth = 44
 			maxHeight = 24
-#			fixedsize = yes
 		}
 
 		iconType = {
 			name ="convoys_ratio_bar"
 			spriteType = "GFX_topbar_fuel_bar"
-			position = { x= 10000 y = 83 }
+			position = { x= -10000 y = 83 }
 			frame = 50
 			alwaystransparent = yes
 		}
@@ -627,7 +607,7 @@ guiTypes = {
 		iconType = {
 			name ="fuel_icon"
 			spriteType = "GFX_fuel_state"
-			position = { x= 10000 y = 5 }
+			position = { x= -10000 y = 5 }
 			Orientation = "UPPER_LEFT"
 		}
 		
@@ -645,15 +625,14 @@ guiTypes = {
 		iconType = {
 			name ="supply_ratio_bar"
 			spriteType = "GFX_logistics_bar"
-			position = { x= 547 y = 77 }
+			position = { x= 543 y = 76 }
 			frame = 50
 		}
 
 		iconType ={
 			name ="threat_icon_glow"
 			spriteType = "GFX_WT_anim_strip"
-			position = { x=-111 y=10000 }
-			Orientation = "UPPER_RIGHT"
+			position = { x=-111 y=-10000 }
 			alwaystransparent = yes
 		}
 		
@@ -662,20 +641,16 @@ guiTypes = {
 			spriteType = "GFX_world_tension_icon_big_strip"
 			position = { x=-10000 y=75 }
 			clicksound = click_default
-			size = { x=50 y=20 }
 		}
 		
 		instantTextBoxType = {
 			name ="threat_value"
-			position = { x=10000 y=98 }
+			position = { x=-10000 y=98 }
 			font = "Focusfont"
 			text = "50%"
 			format = left
 			maxWidth = 55
 			maxHeight = 24
-			fixedsize = yes
-			Orientation = "UPPER_RIGHT"
-			alwaystransparent = yes
 		}	
 		
 		iconType ={
@@ -699,12 +674,11 @@ guiTypes = {
 			format = center
 			maxWidth = 44
 			maxHeight = 24
-			fixedsize = yes
 		}
 		
 		containerWindowType = {
 			name = "time_control_window"
-			position = { x=-468 y=-70 }
+			position = { x=-472 y=-71 }
 			size = { width=253 height=30 }
 			Orientation = UPPER_RIGHT
 
@@ -811,7 +785,7 @@ guiTypes = {
 		buttonType ={
 			name ="threat_button"
 			spriteType = "GFX_world_tension_icon_big_strip"
-			position = { x=-112 y=-38 }
+			position = { x=-110 y=-39 }
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_default
 			alwaystransparent = yes
@@ -819,7 +793,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "menu_button"
-			position = { x = 11 y = 20 }
+			position = { x = 7 y = 19 }
 			quadTextureSprite ="GFX_menu_button"
 			buttonText = ""
 			buttonFont = "Beyond"
@@ -853,13 +827,10 @@ guiTypes = {
 		
 		buttonType = {
 			name = "playlist_button"
-			position = { x = 100 y = -180 }
+			position = { x = 100 y = -10000 }
 			quadTextureSprite ="GFX_playlist_button"
-			buttonText = ""
-			buttonFont = "Beyond"
 			clicksound = click_ok
 			oversound = ui_menu_over
-			Orientation = "LOWER_RIGHT"
 			pdx_tooltip = "MUSICPLAYER_TOGGLE_CONTROLLER"
 		}		
 		
@@ -867,39 +838,8 @@ guiTypes = {
 			name = "dismissed_alerts_button"
 			position = { x = -10000 y = 54 }
 			quadTextureSprite ="GFX_show_dismissed_alerts_icon"
-			buttonText = ""
-			buttonFont = "Beyond"
 			clicksound = click_ok
 			oversound = ui_menu_over
-			Orientation = "UPPER_LEFT"
 		}
-		
-		#windowType = {
-		#	name = "pause_window"
-		#	backGround=""
-		#	position = { x=-203 y= 100 }
-		#	size = { x=406 y=70 }
-		#	dontRender = ""
-		#	horizontalBorder= ""
-		#	verticalBorder= ""
-		#	fullScreen = no
-		#	moveable = 0
-		#	Orientation = "CENTER_UP"
-		#	
-
-		#	
-		#	#Needs localisation change
-		#	instantTextBoxType = {
-		#		name = "pause_banner_text"
-		#		position = { x = 140 y = 9 }
-		#		textureFile = ""
-		#		font = "vic_22"
-		#		borderSize = {x = 4 y = 4}
-		#		text = "CORE_PAUSED"
-		#		maxWidth = 120
-		#		maxHeight = 27
-		#		format = center
-		#	}
-		#}
 	}
 }
