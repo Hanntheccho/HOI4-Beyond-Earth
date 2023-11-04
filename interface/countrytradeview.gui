@@ -3,46 +3,34 @@ guiTypes = {
 	containerWindowType = {
 		name = "countrytradeview"
 		position = { x=-606 y=112}	
-		show_position = { x=-6 y =112 }
+		show_position = { x=0 y =112 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300	
 		size = { width=544 height=100%% }
-		clipping = no
+		clipping = yes
 		
 		#hide_sound = menu_close_window
 		show_sound = menu_open_window
 		
 		background = {
-			name = "Background"
+			name = "Background"		
 			quadTextureSprite ="GFX_tiled_window_transparent"
-			alwaystransparent = yes
-		}
-
-		#containerWindowType = {
-		#	name = "Background_2"
-		#	size = { width=8 height=100%% } 
-		#	
-		#	background = {
-		#		name = "Background"
-		#		quadTextureSprite = "GFX_tiled_black_border_vertical"
-		#		position = { x = 550 y = 0 }
-		#		alwaystransparent = yes
-		#	}
-		#}
-
-		background ={
-			name ="pol_view_bg2"
-			spriteType = "GFX_trade_view_bg_large"
-			position = { x= 6 y = 0 }
-			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
 
 		background ={
 			name ="pol_view_bg"
 			spriteType = "GFX_decision_view_bg_large"
-			position = { x= 6 y = 0 }
+			position = { x= 0 y = 0 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		background ={
+			name ="pol_view_bg2"
+			spriteType = "GFX_trade_view_bg_large"
+			position = { x= 0 y = 0 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -50,15 +38,15 @@ guiTypes = {
 		background ={
 			name ="pol_view_bg2"
 			spriteType = "GFX_tiled_side_mod"
-			position = { x= 6 y = 0 }
+			position = { x= 0 y = 0 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
-
+		
 		iconType ={
 			name ="production_header_bg"
 			spriteType = "GFX_header_bg_mod"
-			position = { x= 0 y = 0 }
+			position = { x= -6 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}
 		
@@ -67,25 +55,6 @@ guiTypes = {
 			position = { x = -10000 y = 43 }
 			quadTextureSprite = "GFX_trade_header"
 		}	
-
-		iconType = {
-			name = "civilian_factory_icon"
-			position = { x = 182 y = 10000 }
-			spriteType = "GFX_non_available_factory_icon"
-			alwaystransparent = yes
-		}
-		
-		instantTextboxType = {
-			name = "civ_factories"
-			position = { x = 10000 y = 49 } #position = { x = 10 y = 49 }
-			font = "Arialsmall"
-			text = "//// CIVILIAN FACTORIES:"
-			maxWidth = 200
-			maxHeight = 18
-			fixedsize = yes
-			format = right
-			alwaystransparent = yes
-		}
 		
 		instantTextboxType = {
 			name = "factories_total"
@@ -119,7 +88,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "resources"
-			position = { x = 16 y = 34 }	
+			position = { x = 10 y = 34 }	
 			size = { width = 518 height = 156 }
 			verticalScrollbar = "right_vertical_slider"
 
@@ -193,20 +162,6 @@ guiTypes = {
 				format = "UPPER_LEFT"
 			}
 		}
-
-		iconType ={
-			name ="trade_divider"
-			spriteType = "GFX_divider"
-			position = { x= 10000 y = 267 }
-			Orientation = "UPPER_LEFT"
-		}
-		
-		iconType ={
-			name ="trade_filter_bg"
-			spriteType = "GFX_trade_filter_bg"
-			position = { x= 10000 y = 270 } #position = { x= 15 y = 270 }
-			Orientation = "UPPER_LEFT"
-		}
 		
 		buttonType = {
 			name = "sort_country"
@@ -214,34 +169,12 @@ guiTypes = {
 			quadTextureSprite ="GFX_trade_filter_btn_country"
 			clicksound = click_scroll
 		}
-
-		instantTextboxType = {
-			name = "name"
-			position = { x = 10000 y = 402 } #position = { x = 23 y = 402 }
-			font = "Arial"
-			text = "COUNTRY"
-			maxWidth = 160
-			maxHeight = 18
-			format = center		
-			fixedsize = yes
-		}
 		
 		buttonType = {
 			name = "sort_export"
 			position = {x=10000 y=400} #position = {x=185 y=400}
 			quadTextureSprite ="GFX_trade_filter_btn_export"
 			clicksound = click_scroll
-		}
-
-		instantTextboxType = {
-			name = "export_label"
-			position = { x = 10000 y = 402 } #position = { x = 191 y = 402 }
-			font = "Arial"
-			text = "EXPORT"
-			maxWidth = 90
-			maxHeight = 18
-			format = center	
-			fixedsize = yes
 		}
 		
 		buttonType = {
@@ -251,38 +184,16 @@ guiTypes = {
 			clicksound = click_scroll
 		}
 
-		instantTextboxType = {
-			name = "request_label"
-			position = { x = 10000 y = 402 } #position = { x = 287 y = 402 }
-			font = "Arial"
-			text = "DELIVER"
-			maxWidth = 100
-			maxHeight = 18
-			format = center		
-			fixedsize = yes
-		}
-
 		buttonType = {
 			name = "sort_convoys"
 			position = {x=10000 y=400} #position = {x=390 y=400}
 			quadTextureSprite ="GFX_trade_filter_btn_convoy"
 			clicksound = click_scroll
 		}
-
-		instantTextboxType = {
-			name = "convoys_label"
-			position = { x=10000 y=402 } #position = { x=356 y=402 }
-			font = "Arial"
-			text = "CONVOY"
-			maxWidth = 200
-			maxHeight = 18
-			format = center	
-			fixedsize = yes	
-		}
 		
 		containerWindowType = {
 			name = "filters"
-			position = { x = 17 y = 187 }	
+			position = { x = 11 y = 187 }	
 			size = { width = 450 height = 50 }
 			verticalScrollbar = "right_vertical_slider"
 			
@@ -315,7 +226,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "trade"
-			position = { x = 20 y = 230 }	
+			position = { x = 14 y = 230 }	
 			size = { width = 500 height = 100%% }
 			verticalScrollbar = "right_vertical_slider"
 			margin = {top = 8 bottom = 10 }			
