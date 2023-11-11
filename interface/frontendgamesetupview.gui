@@ -750,7 +750,7 @@ guiTypes = {
 			name = "select_a_country"
 			position = { x = -200 y = -75 }
 			font = "Arialsmallcap"
-			text = "[SELECT_COUNTRY.START.DOUBLE_CLICK.SELECT]"
+			text = selected_nation_label_title
 			maxWidth = 400
 			multiline = no
 			orientation = CENTER
@@ -1699,30 +1699,86 @@ guiTypes = {
 		}
 
 		containerWindowType = {
-			name = "upper_black"
-			size = { width = 100%% height = 100 }
+			name = "upper_black1"
+			size = { width = 100%% height = 200 }
+			position = {
+				x = 0
+				y = -50
+			}
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_frontend_bg_mod_end"
+				quadTextureSprite ="GFX_wonders_techtree_bg_flip_dark"
+			}
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_wonders_techtree_bg_flip_dark"
+			}
+		}
+		iconType ={
+			name ="sponsor_frontend_up"
+			spriteType = "GFX_sponsor_frontend"
+			position = {
+				x = -350
+				y = 11
+			}
+			alwaystransparent = yes
+		}
+		containerWindowType = {
+			name = "upper_black2"
+			size = { width = 100%% height = 200 }
+			position = {
+				x = 0
+				y = -50
+			}
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_wonders_techtree_bg_flip_dark"
 			}
 		}
 		containerWindowType = {
-			name = "lower_black"
-			size = { width = 100%% height = 100 }
+			name = "lower_black1"
+			size = { width = 100%% height = 200 }
+			position = {
+				x = 0
+				y = -150
+			}
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_frontend_bg_mod_end"
-				position = {
-					x = 0
-					y = -100
-				}
+				quadTextureSprite ="GFX_wonders_techtree_bg_dark"
+			}
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_wonders_techtree_bg_dark"
 			}
 			orientation = LOWER_LEFT
 		}
-		
+		iconType ={
+			name ="sponsor_frontend_down"
+			spriteType = "GFX_sponsor_frontend"
+			orientation = LOWER_LEFT
+			position = {
+				x = -2540
+				y = -89
+			}
+			alwaystransparent = yes
+		}
+		containerWindowType = {
+			name = "lower_black2"
+			size = { width = 100%% height = 200 }
+			position = {
+				x = 0
+				y = -150
+			}
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_wonders_techtree_bg_dark"
+			}
+			orientation = LOWER_LEFT
+		}
+
 		buttonType = {
 			name = "custom_settings_btn"
-			position = { x = -255 y = -160 }
+			position = { x = -269 y = -159 }
 			quadTextureSprite ="GFX_cheats_button"	
 			pdx_tooltip = FE_CUSTOM_DIFFUCULTY
 			shortcut = "k"
@@ -1776,10 +1832,11 @@ guiTypes = {
 		
 		checkboxType = {
 			name = "ironman_cb"
-			position = { x = -135 y = -160 }
+			position = { x = -149 y = -159 }
 			quadTextureSprite ="GFX_generic_checkbox_ironman"
 			clicksound = click_checkbox
-			pdx_tooltip = "FE_IRONMAN_TOOLTIP"
+			pdx_tooltip = "FE_IRONMAN"
+			pdx_tooltip_delayed = "FE_IRONMAN_TOOLTIP"
 			orientation = LOWER_RIGHT
 		}
 		
@@ -1799,7 +1856,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name ="pane"
-			position = { x=15 y =10}	
+			position = { x=10 y =5}	
 			size = { width=500 height =100 }
 			clipping = no
 		
@@ -1914,12 +1971,13 @@ guiTypes = {
 			
 			ButtonType = {
 				name = "interesting_countries_button"
-				position = { x = -195 y = -160 }
+				position = { x = -209 y = -159 }
 				quadTextureSprite ="GFX_interesting_countries_button"
 				clicksound = click_default
 				oversound = ui_menu_over
 				shortcut = "i"
 				orientation = LOWER_RIGHT
+				pdx_tooltip = FE_INTERESTING_COUNTRIES
 			}
 
 			ButtonType = {
@@ -1954,7 +2012,7 @@ guiTypes = {
 			}
 
 			ButtonType = {
-				position = { x = 224 y = 111 }
+				position = { x = 250 y = 134 }
 				name = "player_shield"	
 				quadTextureSprite ="GFX_flag_small"
 				Orientation = "UPPER_LEFT"
@@ -1962,7 +2020,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "selected_nation_label_title"
-				position = { x = 84 y = 113 }
+				position = { x = 110 y = 136 }
 				textureFile = ""
 				font = "Arialsmallest"
 				borderSize = {x = 0 y = 0}
@@ -1972,8 +2030,19 @@ guiTypes = {
 			}
 
 			instantTextBoxType = {
+				name = "selected_nation_label_title_2"
+				position = { x = 94 y = 105 }
+				textureFile = ""
+				font = "Arialcap"
+				borderSize = {x = 0 y = 0}
+				text = selected_nation_label_title
+				maxWidth = 700
+				maxHeight = 100
+			}
+
+			instantTextBoxType = {
 				name = "selected_nation_label"
-				position = { x = 255 y = 113 }
+				position = { x = 281 y = 136 }
 				textureFile = ""
 				font = "Arialsmallest"
 				text = "FE_NO_COUNTRY_SELECTED"
