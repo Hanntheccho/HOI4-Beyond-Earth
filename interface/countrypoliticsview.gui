@@ -105,7 +105,7 @@ guiTypes = {
 
 		iconType = {
 			name = "leader"
-			position = { x = 105 y = 130 }
+			position = { x = 105 y = 129 }
 			spriteType = "GFX_leader_unknown"
 			centerposition = yes
 		}
@@ -113,8 +113,26 @@ guiTypes = {
 		iconType = {
 			name = "leader_frame"
 			spriteType = "GFX_leader_overlay"
-			position = { x = 22 y = 20 }		
+			position = { x = 22 y = 19 }		
 			alwaystransparent = yes
+		}
+		iconType = {
+			name = "leader_title"
+			spriteType = "GFX_leader_title"
+			position = { x = 10 y = 230 }		
+			alwaystransparent = yes
+		}
+
+		
+		instantTextboxType = {
+			name = "leader_name"
+			position = { x = 19 y = 243 } 
+			font = "Arialsmallest"
+			text = "leader_name"
+			maxWidth = 170
+			maxHeight = 20
+			format = center
+			fixedsize = yes				
 		}
 
 		containerWindowType = {
@@ -173,14 +191,25 @@ guiTypes = {
 			}
 
 			instantTextboxType = {
-				name = "faction_name"
-				position = { x =10000 y = 165 }
+				name = "faction_name_title"
+				position = { x =205 y = 241 }
 				#position = { x = -13 y = 86 }
-				font = "Focusfont"
-				text = "faction"
-				maxWidth = 400
+				font = "Arialsmall"
+				text = "[FACTION]"
+				maxWidth = 300
 				maxHeight = 20
-				format = right	
+				format = left	
+				multiline = no			
+			}
+			instantTextboxType = {
+				name = "faction_name"
+				position = { x =285 y = 241 }
+				#position = { x = -13 y = 86 }
+				font = "Arialsmall"
+				text = "faction"
+				maxWidth = 300
+				maxHeight = 20
+				format = left	
 				multiline = no			
 			}
 			
@@ -355,7 +384,7 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "national_spirit_container"
-				position = { x = 10 y = 256 }
+				position = { x = 195 y = 135 }
 				size = { width = 520 height = 100 }
 				
 				gridboxtype = {
@@ -379,13 +408,13 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "active_goal"
-			position = { x = 25 y = 68 }
+			position = { x = 0 y = 0 }
 			size = { width=90 height=200}
 			clipping = no
 			
 			buttonType = {
 				name = "add_national_goal_button"
-				position = { x = 120 y = 122 }
+				position = { x = 205 y = 40 }
 				spriteType = "GFX_add_national_goal_button_mod"
 				clicksound = click_default
 				shortcut = "f"
@@ -430,7 +459,7 @@ guiTypes = {
 			
 			iconType = {
 				name = "goal_icon"
-				position = { x = 200 y = 204 }
+				position = { x = -10000 y = 204 }
 				centerposition = yes			
 				spriteType = "GFX_goal_unknown"
 				alwaystransparent = yes
@@ -454,7 +483,7 @@ guiTypes = {
 			
 			buttonType = {
 				name = "drop_focus_button"
-				position = { x = -10000 y = 0 } #position = { x = 340 y = 0 }
+				position = { x = 214 y = 47 } #position = { x = 340 y = 0 }
 				spriteType = "GFX_dismantle_faction_button"
 				#scale = 0.9
 				clicksound = click_default
@@ -462,13 +491,14 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "title"
-				position = { x = -10000 y = 11 } #position = { x = 54 y = 38 }
-				font = "Beyond"
+				position = { x = 228 y = 31 } #position = { x = 54 y = 38 }
+				font = "Arialcap"
 				text = "POLITICS_ACTIVE_GOAL"
-				maxWidth = 490
+				maxWidth = 290
 				maxHeight = 80
-				format = left	
-				fixedsize = yes	
+				format = right	
+				fixedsize = yes
+				vertical_alignment = bottom	
 			}
 			
 			iconType = {
@@ -477,17 +507,6 @@ guiTypes = {
 				spriteType = "GFX_pol_goal_progress_frame"
 				alwaystransparent = yes
 			}		
-		}
-
-		instantTextboxType = {
-			name = "leader_name"
-			position = { x = -10000 y = 31 } 
-			font = "Arialsmallest"
-			text = "leader_name"
-			maxWidth = 290
-			maxHeight = 20
-			format = left
-			fixedsize = yes				
 		}
 		
 		containerWindowType = {

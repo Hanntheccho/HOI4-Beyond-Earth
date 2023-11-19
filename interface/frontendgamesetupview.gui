@@ -207,8 +207,8 @@ guiTypes = {
 	### LOAD GAME
 	containerWindowType = {
 		name ="gamesetup_load"
-		position = { x = 520 y = -150 }
-		show_position = { x = -20 y = -150 }
+		position = { x = 520 y = -200 }
+		show_position = { x = -40 y = -200 }
 		animation_type = decelerated
 		animation_time = 1000	
 		size = { width = 420 height = 500}
@@ -746,23 +746,16 @@ guiTypes = {
 			}
 		}
 
-		instantTextBoxType = {
-			name = "select_a_country"
-			position = { x = -200 y = -75 }
-			font = "Arialsmallcap"
-			text = selected_nation_label_title
-			maxWidth = 400
-			multiline = no
-			orientation = CENTER
-			format = center
-		}
-
 		iconType = {
-			name = "single_player_country_bg_top"
-			quadTextureSprite ="GFX_country_selection_bg_top"
+			name = "bookmark_bg"
+			quadTextureSprite ="GFX_bookmark_bg"
 			alwaystransparent = yes
 			orientation = CENTER
 			centerposition = yes
+			position = {
+				x = -8
+				y = 0
+			}
 		}
 
 		containerWindowType = {
@@ -794,12 +787,31 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "history"
-			position = { x = -220 y = -340 }
+			position = { x = -220 y = -376 }
 			font = "Arial16"
 			maxWidth = 440
 			maxHeight = 100
 			format = center
 			orientation = CENTER		
+		}
+
+		instantTextBoxType = {
+			name = "select_a_country"
+			position = { x = -200 y = -75 }
+			font = "Arialsmallcap"
+			text = selected_nation_label_title
+			maxWidth = 400
+			multiline = no
+			orientation = CENTER
+			format = center
+		}
+
+		iconType = {
+			name = "single_player_country_bg_top"
+			quadTextureSprite ="GFX_country_selection_bg_top"
+			alwaystransparent = yes
+			orientation = CENTER
+			centerposition = yes
 		}
 
 		containerWindowType = {
@@ -1718,8 +1730,17 @@ guiTypes = {
 			name ="sponsor_frontend_up"
 			spriteType = "GFX_sponsor_frontend"
 			position = {
-				x = -350
+				x = -455
 				y = 11
+			}
+			alwaystransparent = yes
+		}
+		iconType ={
+			name ="flags_frontend_up"
+			spriteType = "GFX_flags_frontend"
+			position = {
+				x = -490
+				y = 55
 			}
 			alwaystransparent = yes
 		}
@@ -1757,8 +1778,18 @@ guiTypes = {
 			spriteType = "GFX_sponsor_frontend"
 			orientation = LOWER_LEFT
 			position = {
-				x = -2540
+				x = -2630
 				y = -89
+			}
+			alwaystransparent = yes
+		}
+		iconType ={
+			name ="flags_frontend_down"
+			spriteType = "GFX_flags_frontend"
+			orientation = LOWER_RIGHT
+			position = {
+				x = -1154
+				y = -110
 			}
 			alwaystransparent = yes
 		}
@@ -1778,7 +1809,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "custom_settings_btn"
-			position = { x = -269 y = -159 }
+			position = { x = -269 y = -179 }
 			quadTextureSprite ="GFX_cheats_button"	
 			pdx_tooltip = FE_CUSTOM_DIFFUCULTY
 			shortcut = "k"
@@ -1832,7 +1863,7 @@ guiTypes = {
 		
 		checkboxType = {
 			name = "ironman_cb"
-			position = { x = -149 y = -159 }
+			position = { x = -149 y = -179 }
 			quadTextureSprite ="GFX_generic_checkbox_ironman"
 			clicksound = click_checkbox
 			pdx_tooltip = "FE_IRONMAN"
@@ -1971,7 +2002,7 @@ guiTypes = {
 			
 			ButtonType = {
 				name = "interesting_countries_button"
-				position = { x = -209 y = -159 }
+				position = { x = -209 y = -179 }
 				quadTextureSprite ="GFX_interesting_countries_button"
 				clicksound = click_default
 				oversound = ui_menu_over
@@ -2012,7 +2043,7 @@ guiTypes = {
 			}
 
 			ButtonType = {
-				position = { x = 250 y = 134 }
+				position = { x = 250 y = 154 }
 				name = "player_shield"	
 				quadTextureSprite ="GFX_flag_small"
 				Orientation = "UPPER_LEFT"
@@ -2020,7 +2051,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "selected_nation_label_title"
-				position = { x = 110 y = 136 }
+				position = { x = 110 y = 156 }
 				textureFile = ""
 				font = "Arialsmallest"
 				borderSize = {x = 0 y = 0}
@@ -2031,7 +2062,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "selected_nation_label_title_2"
-				position = { x = 94 y = 105 }
+				position = { x = 94 y = 125 }
 				textureFile = ""
 				font = "Arialcap"
 				borderSize = {x = 0 y = 0}
@@ -2042,7 +2073,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "selected_nation_label"
-				position = { x = 281 y = 136 }
+				position = { x = 281 y = 156 }
 				textureFile = ""
 				font = "Arialsmallest"
 				text = "FE_NO_COUNTRY_SELECTED"
