@@ -485,11 +485,19 @@ scripted_gui = {
 				}
 			}
 			default_risk_warning_visible = {
-				check_variable = {
-					var = too_many_building_resources_used_var
-					value = 0
-					compare = less_than
+				has_dynamic_modifier = {
+					modifier = too_many_building_resources_used
 				}
+			}
+			default_risk_warning_disabled_visible = {
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = too_many_building_resources_used
+					}
+				}
+			}
+			default_risk_warning_disabled_click_enabled = {
+				always = no
 			}
 		}
 

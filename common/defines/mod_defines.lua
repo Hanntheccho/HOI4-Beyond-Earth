@@ -1,4 +1,4 @@
-NDefines.NGame.START_DATE = "2200.1.1.12"
+NDefines.NGame.START_DATE = "2199.1.1.1"
 NDefines.NGame.END_DATE = "2250.1.1.1"
 NDefines.NGraphics.COUNTRY_FLAG_LARGE_STRIPE_MAX_HEIGHT = 24000        -- VANILLA: 8192
 NDefines.NGraphics.COUNTRY_FLAG_SMALL_TEX_MAX_SIZE = 512            -- VANILLA: 64

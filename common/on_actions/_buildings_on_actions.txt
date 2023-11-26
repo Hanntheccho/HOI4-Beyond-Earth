@@ -114,241 +114,179 @@ on_actions = {
 
     on_startup = {
         effect = {
-            ADU = {
-                every_state = {
-                    add_dynamic_modifier = {
-                        modifier = building_resources_used
+            every_country = {
+                add_dynamic_modifier = {
+                    modifier = building_resources_used
+                }
+                set_variable = { building_resources_used_energy = 0 }
+                set_variable = { building_resources_used_polymers = 0 }
+                set_variable = { building_resources_used_lithium = 0 }
+                set_variable = { building_resources_used_electronics = 0 }
+                set_variable = { building_resources_used_superalloys = 0 }
+                set_variable = { building_resources_used_superconductors = 0 }
+                every_controlled_state = {
+                    add_to_variable = { 
+                        PREV.building_resources_used_polymers = building_level@spaceship_complex 
                     }
-                    set_variable = { building_resources_used_energy = 0 }
-                    set_variable = { building_resources_used_polymers = 0 }
-                    set_variable = { building_resources_used_lithium = 0 }
-                    set_variable = { building_resources_used_electronics = 0 }
-                    set_variable = { building_resources_used_superalloys = 0 }
-                    set_variable = { building_resources_used_superconductors = 0 }
-                    #
-                    set_variable = { 
-                        spaceship_complex_used_polymers = 3 
+                    add_to_variable = { 
+                        PREV.building_resources_used_polymers = building_level@spaceship_complex 
                     }
-                    multiply_variable = {
-                        spaceship_complex_used_polymers = building_level@spaceship_complex
+                    add_to_variable = { 
+                        PREV.building_resources_used_polymers = building_level@spaceship_complex 
                     }
-                    add_to_variable = {
-                        building_resources_used_polymers = spaceship_complex_used_polymers
+                    add_to_variable = { 
+                        PREV.building_resources_used_lithium = building_level@military_complex 
                     }
-                    #
-                    set_variable = { 
-                        military_complex_used_lithium = 2
+                    add_to_variable = { 
+                        PREV.building_resources_used_lithium = building_level@military_complex 
                     }
-                    multiply_variable = {
-                        military_complex_used_lithium = building_level@military_complex
+                    add_to_variable = { 
+                        PREV.building_resources_used_lithium = building_level@heavy_military_complex 
                     }
-                    add_to_variable = {
-                        building_resources_used_lithium = military_complex_used_lithium
+                    add_to_variable = { 
+                        PREV.building_resources_used_lithium = building_level@heavy_military_complex 
                     }
-                    set_variable = { 
-                        heavy_military_complex_used_lithium = 4
+                    add_to_variable = { 
+                        PREV.building_resources_used_lithium = building_level@heavy_military_complex 
                     }
-                    multiply_variable = {
-                        heavy_military_complex_used_lithium = building_level@heavy_military_complex
+                    add_to_variable = { 
+                        PREV.building_resources_used_lithium = building_level@heavy_military_complex 
                     }
-                    add_to_variable = {
-                        building_resources_used_lithium = heavy_military_complex_used_lithium
+                    add_to_variable = { 
+                        PREV.building_resources_used_electronics = building_level@military_complex 
                     }
-                    #
-                    set_variable = { 
-                        military_complex_used_electronics = 1
+                    add_to_variable = { 
+                        PREV.building_resources_used_electronics = building_level@heavy_military_complex 
                     }
-                    multiply_variable = {
-                        military_complex_used_electronics = building_level@military_complex
+                    add_to_variable = { 
+                        PREV.building_resources_used_electronics = building_level@heavy_military_complex 
                     }
-                    add_to_variable = {
-                        building_resources_used_electronics = military_complex_used_electronics
+                    add_to_variable = { 
+                        PREV.building_resources_used_electronics = building_level@heavy_military_complex 
                     }
-                    set_variable = { 
-                        heavy_military_complex_used_electronics = 3
+                    add_to_variable = { 
+                        PREV.building_resources_used_electronics = building_level@spaceship_complex 
                     }
-                    multiply_variable = {
-                        heavy_military_complex_used_electronics = building_level@heavy_military_complex
+                    add_to_variable = { 
+                        PREV.building_resources_used_electronics = building_level@spaceship_complex 
                     }
-                    add_to_variable = {
-                        building_resources_used_electronics = heavy_military_complex_used_electronics
+                    add_to_variable = { 
+                        PREV.building_resources_used_electronics = building_level@spaceship_complex 
                     }
-                    set_variable = { 
-                        spaceship_complex_used_electronics = 4 
+                    add_to_variable = { 
+                        PREV.building_resources_used_electronics = building_level@spaceship_complex 
                     }
-                    multiply_variable = {
-                        spaceship_complex_used_electronics = building_level@spaceship_complex
+                    add_to_variable = { 
+                        PREV.building_resources_used_superalloys = building_level@military_complex 
                     }
-                    add_to_variable = {
-                        building_resources_used_electronics = spaceship_complex_used_electronics
+                    add_to_variable = { 
+                        PREV.building_resources_used_superalloys = building_level@heavy_military_complex 
                     }
-                    #
-                    set_variable = { 
-                        military_complex_used_superalloys = 1
+                    add_to_variable = { 
+                        PREV.building_resources_used_superalloys = building_level@heavy_military_complex 
                     }
-                    multiply_variable = {
-                        military_complex_used_superalloys = building_level@military_complex
+                    add_to_variable = { 
+                        PREV.building_resources_used_superalloys = building_level@heavy_military_complex 
                     }
-                    add_to_variable = {
-                        building_resources_used_superalloys = military_complex_used_superalloys
+                    add_to_variable = { 
+                        PREV.building_resources_used_superalloys = building_level@spaceship_complex 
                     }
-                    set_variable = { 
-                        heavy_military_complex_used_superalloys = 3
+                    add_to_variable = { 
+                        PREV.building_resources_used_superconductors = building_level@heavy_military_complex 
                     }
-                    multiply_variable = {
-                        heavy_military_complex_used_superalloys = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        building_resources_used_superalloys = heavy_military_complex_used_superalloys
-                    }
-                    set_variable = { 
-                        spaceship_complex_used_superalloys = 1
-                    }
-                    multiply_variable = {
-                        spaceship_complex_used_superalloys = building_level@spaceship_complex
-                    }
-                    add_to_variable = {
-                        building_resources_used_superalloys = spaceship_complex_used_superalloys
-                    }
-                    #
-                    set_variable = { 
-                        heavy_military_complex_used_superconductors = 1
-                    }
-                    multiply_variable = {
-                        heavy_military_complex_used_superconductors = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        building_resources_used_superconductors = heavy_military_complex_used_superconductors
-                    }
-                    set_variable = { 
-                        spaceship_complex_used_superconductors = 1
-                    }
-                    multiply_variable = {
-                        spaceship_complex_used_superconductors = building_level@spaceship_complex
-                    }
-                    add_to_variable = {
-                        building_resources_used_superconductors = spaceship_complex_used_superconductors
+                    add_to_variable = { 
+                        PREV.building_resources_used_superconductors = building_level@spaceship_complex 
                     }
                 }
             }     
 		}
 	}
-    on_daily = {
+    on_weekly = {
 		effect = {
-            random_country = {
-                every_state = {
-                    set_variable = { building_resources_used_energy = 0 }
-                    set_variable = { building_resources_used_polymers = 0 }
-                    set_variable = { building_resources_used_lithium = 0 }
-                    set_variable = { building_resources_used_electronics = 0 }
-                    set_variable = { building_resources_used_superalloys = 0 }
-                    set_variable = { building_resources_used_superconductors = 0 }
-                    #
-                    set_variable = { 
-                        spaceship_complex_used_polymers = 3 
-                    }
-                    multiply_variable = {
-                        spaceship_complex_used_polymers = building_level@spaceship_complex
-                    }
-                    add_to_variable = {
-                        building_resources_used_polymers = spaceship_complex_used_polymers
-                    }
-                    #
-                    set_variable = { 
-                        military_complex_used_lithium = 2
-                    }
-                    multiply_variable = {
-                        military_complex_used_lithium = building_level@military_complex
-                    }
-                    add_to_variable = {
-                        building_resources_used_lithium = military_complex_used_lithium
-                    }
-                    set_variable = { 
-                        heavy_military_complex_used_lithium = 4
-                    }
-                    multiply_variable = {
-                        heavy_military_complex_used_lithium = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        building_resources_used_lithium = heavy_military_complex_used_lithium
-                    }
-                    #
-                    set_variable = { 
-                        military_complex_used_electronics = 1
-                    }
-                    multiply_variable = {
-                        military_complex_used_electronics = building_level@military_complex
-                    }
-                    add_to_variable = {
-                        building_resources_used_electronics = military_complex_used_electronics
-                    }
-                    set_variable = { 
-                        heavy_military_complex_used_electronics = 3
-                    }
-                    multiply_variable = {
-                        heavy_military_complex_used_electronics = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        building_resources_used_electronics = heavy_military_complex_used_electronics
-                    }
-                    set_variable = { 
-                        spaceship_complex_used_electronics = 4 
-                    }
-                    multiply_variable = {
-                        spaceship_complex_used_electronics = building_level@spaceship_complex
-                    }
-                    add_to_variable = {
-                        building_resources_used_electronics = spaceship_complex_used_electronics
-                    }
-                    #
-                    set_variable = { 
-                        military_complex_used_superalloys = 1
-                    }
-                    multiply_variable = {
-                        military_complex_used_superalloys = building_level@military_complex
-                    }
-                    add_to_variable = {
-                        building_resources_used_superalloys = military_complex_used_superalloys
-                    }
-                    set_variable = { 
-                        heavy_military_complex_used_superalloys = 3
-                    }
-                    multiply_variable = {
-                        heavy_military_complex_used_superalloys = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        building_resources_used_superalloys = heavy_military_complex_used_superalloys
-                    }
-                    set_variable = { 
-                        spaceship_complex_used_superalloys = 1
-                    }
-                    multiply_variable = {
-                        spaceship_complex_used_superalloys = building_level@spaceship_complex
-                    }
-                    add_to_variable = {
-                        building_resources_used_superalloys = spaceship_complex_used_superalloys
-                    }
-                    #
-                    set_variable = { 
-                        heavy_military_complex_used_superconductors = 1
-                    }
-                    multiply_variable = {
-                        heavy_military_complex_used_superconductors = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        building_resources_used_superconductors = heavy_military_complex_used_superconductors
-                    }
-                    set_variable = { 
-                        spaceship_complex_used_superconductors = 1
-                    }
-                    multiply_variable = {
-                        spaceship_complex_used_superconductors = building_level@spaceship_complex
-                    }
-                    add_to_variable = {
-                        building_resources_used_superconductors = spaceship_complex_used_superconductors
-                    }
-                }  
+            set_variable = { building_resources_used_energy = 0 }
+            set_variable = { building_resources_used_polymers = 0 }
+            set_variable = { building_resources_used_lithium = 0 }
+            set_variable = { building_resources_used_electronics = 0 }
+            set_variable = { building_resources_used_superalloys = 0 }
+            set_variable = { building_resources_used_superconductors = 0 }
+            every_controlled_state = {
+                add_to_variable = { 
+                    PREV.building_resources_used_polymers = building_level@spaceship_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_polymers = building_level@spaceship_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_polymers = building_level@spaceship_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_lithium = building_level@military_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_lithium = building_level@military_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_lithium = building_level@heavy_military_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_lithium = building_level@heavy_military_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_lithium = building_level@heavy_military_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_lithium = building_level@heavy_military_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_electronics = building_level@military_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_electronics = building_level@heavy_military_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_electronics = building_level@heavy_military_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_electronics = building_level@heavy_military_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_electronics = building_level@spaceship_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_electronics = building_level@spaceship_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_electronics = building_level@spaceship_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_electronics = building_level@spaceship_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_superalloys = building_level@military_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_superalloys = building_level@heavy_military_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_superalloys = building_level@heavy_military_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_superalloys = building_level@heavy_military_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_superalloys = building_level@spaceship_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_superconductors = building_level@heavy_military_complex 
+                }
+                add_to_variable = { 
+                    PREV.building_resources_used_superconductors = building_level@spaceship_complex 
+                }
             }
+        }
+    }
+    on_weekly = {
+        effect = {
             every_country = {
                 limit = {
                     OR = {
