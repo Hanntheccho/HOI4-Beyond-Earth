@@ -263,8 +263,8 @@ on_actions = {
 					limit = {
 						check_variable = { ecobalance_timeout = 0 }
 					}
-					set_variable = { anti_threat = threat }
-					set_variable = { ecobalance_chance = threat }
+					set_variable = { anti_threat = global.threat_debug }
+					set_variable = { ecobalance_chance = global.threat_debug }
 					add_to_variable = { anti_threat = -1 }
 					multiply_variable = { anti_threat = -1 }
 					random_list = {
@@ -547,7 +547,9 @@ on_actions = {
 			set_variable = { global.total_global_ecobalance = 0 }
 			if = {
 				limit = {
-					threat < 1
+					check_variable = {
+						global.threat_debug < 100
+					}
 				}
 				every_state = {
 					if = {
@@ -597,8 +599,12 @@ on_actions = {
 			}
 			if = {
 				limit = {
-					threat > 0
-					threat < 1
+					check_variable = {
+						global.threat_debug > 0
+					}
+					check_variable = {
+						global.threat_debug < 100
+					}
 				}
 				every_state = {
 					limit = {
@@ -617,9 +623,12 @@ on_actions = {
 					owns_state = 333
 				}
 				#add_threat = global.total_global_ecobalance
-				add_named_threat = { 
-					threat = global.total_global_ecobalance
-					name = total_global_ecobalance_added
+				#add_named_threat = { 
+				#	threat = global.total_global_ecobalance
+				#	name = total_global_ecobalance_added
+				#}
+				add_to_variable = {
+					global.threat_debug = global.total_global_ecobalance
 				}
 			}
 		}

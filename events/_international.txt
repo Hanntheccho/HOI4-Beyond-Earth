@@ -529,7 +529,11 @@ news_event = {
 	major = yes
 	
     trigger = {
-		threat > 0.99
+		check_variable = {
+			var = global.threat_debug
+			value = 100
+			compare = greater_than_or_equals
+		}
 		NOT = { has_global_flag = civilization_collapses_flag }
 	}
 	
