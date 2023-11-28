@@ -1,28 +1,28 @@
 on_actions = {
-	on_war_relation_added = {
-		effect = {
-			FROM = { #this is for the notification, defender side, scripted gui
-				add_to_array = {
-					array = global.defender_country
-					value = THIS.id
-					index = 0
-				}
-			} #
-			ROOT = { #this is for the notification, attacker side, scripted gui
-				add_to_array = {
-					array = global.attacker_country
-					value = THIS.id
-					index = 0
-				}
-			} #
-			every_country = { #make the notification pop-up
-				limit = {
-					is_ai = no
-				}
-				set_country_flag = war_has_been_declared
-			} #
-		}
-	}
+	#on_war_relation_added = {
+	#	effect = {
+	#		FROM = { #this is for the notification, defender side, scripted gui
+	#			add_to_array = {
+	#				array = global.defender_country
+	#				value = THIS.id
+	#				index = 0
+	#			}
+	#		} #
+	#		ROOT = { #this is for the notification, attacker side, scripted gui
+	#			add_to_array = {
+	#				array = global.attacker_country
+	#				value = THIS.id
+	#				index = 0
+	#			}
+	#		} #
+	#		every_country = { #make the notification pop-up
+	#			limit = {
+	#				is_ai = no
+	#			}
+	#			set_country_flag = war_has_been_declared
+	#		} #
+	#	}
+	#}
 ####
 	on_capitulation_immediate = {
 		effect = {
@@ -75,12 +75,12 @@ on_actions = {
 					index = 0
 				}
 			} #
-			every_country = { #make the notification pop-up
-				limit = {
-					is_ai = no
-				}
-				set_country_flag = country_has_been_defeated
-			} #
+			#every_country = { #make the notification pop-up
+			#	limit = {
+			#		is_ai = no
+			#	}
+			#	set_country_flag = country_has_been_defeated
+			#} #
 			FROM = { #capitulator annexes it all, if an enemy controls any province or state from the capitulated country they will still keep it
 				annex_country = {
 					target = ROOT

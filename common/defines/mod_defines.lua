@@ -8,7 +8,7 @@ NDefines.NGame.HANDS_OFF_START_TAG = "GRN"
 
 NDefines.NGame.FUEL_RESOURCE = "energy"
 
-NDefines.NBuildings.MAX_SHARED_SLOTS = 24
+NDefines.NBuildings.MAX_SHARED_SLOTS = 20
 
 NDefines.NAI.BUILDING_TARGETS_BUILDING_PRIORITIES = { 'civilian_complex', 'military_complex' }      -- ?
 
