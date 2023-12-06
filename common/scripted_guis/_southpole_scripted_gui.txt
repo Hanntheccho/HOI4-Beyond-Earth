@@ -1,1433 +1,1432 @@
-#scripted_gui = {    
-#    south_pole_stuff_gui = {
-#        window_name = "south_pole_stuff"
-#        context_type = player_context
-#         
-#        visible = {
-#            if = {
-#                limit = { is_ai = yes }
-#                always = yes
-#            }
-#            else = {
-#                has_country_flag = south_pole_moment_flag
-#            }
-#            NOT = { tag = ADU }
-#            exists = yes
-#            NOT = { has_idea = agrarian_stage }
-#            NOT = { has_idea = developing_stage }
-#            NOT = { has_idea = unstable_leadership }
-#        }
-#        
-#        effects = {
-#            south_pole_hostile_takeover_click = {
-#                every_possible_country = {
-#                    if = {
-#                        limit = {
-#                            NOT = { tag = ROOT }
-#                            OR = {
-#                                has_country_flag = antarctic_sector_1
-#                                has_country_flag = antarctic_sector_2
-#                                has_country_flag = antarctic_sector_3
-#                                has_country_flag = antarctic_sector_4
-#                                has_country_flag = antarctic_sector_5
-#                                has_country_flag = antarctic_sector_6
-#                                has_country_flag = antarctic_sector_7
-#                                has_country_flag = antarctic_sector_8
-#                                has_country_flag = antarctic_sector_9
-#                                has_country_flag = antarctic_sector_10
-#                            }
-#                        }
-#                        create_wargoal = {
-#                            type = annex_puppet_wargoal
-#                            target = ROOT
-#                        }
-#                    }
-#                }
-#                every_possible_country = {
-#                    clr_country_flag = antarctic_sector_1
-#                    clr_country_flag = antarctic_sector_2
-#                    clr_country_flag = antarctic_sector_3
-#                    clr_country_flag = antarctic_sector_4
-#                    clr_country_flag = antarctic_sector_5
-#                    clr_country_flag = antarctic_sector_6
-#                    clr_country_flag = antarctic_sector_7
-#                    clr_country_flag = antarctic_sector_8
-#                    clr_country_flag = antarctic_sector_9
-#                    clr_country_flag = antarctic_sector_10
-#                    set_variable = {
-#                        num_southpole_sectors = 0
-#                    }
-#                }
-#                ROOT = {
-#                    set_country_flag = antarctic_sector_1
-#                    set_country_flag = antarctic_sector_2
-#                    set_country_flag = antarctic_sector_3
-#                    set_country_flag = antarctic_sector_4
-#                    set_country_flag = antarctic_sector_5
-#                    set_country_flag = antarctic_sector_6
-#                    set_country_flag = antarctic_sector_7
-#                    set_country_flag = antarctic_sector_8
-#                    set_country_flag = antarctic_sector_9
-#                    set_country_flag = antarctic_sector_10
-#                    set_global_flag = antarctic_sector_1
-#                    set_global_flag = antarctic_sector_2
-#                    set_global_flag = antarctic_sector_3
-#                    set_global_flag = antarctic_sector_4
-#                    set_global_flag = antarctic_sector_5
-#                    set_global_flag = antarctic_sector_6
-#                    set_global_flag = antarctic_sector_7
-#                    set_global_flag = antarctic_sector_8
-#                    set_global_flag = antarctic_sector_9
-#                    set_global_flag = antarctic_sector_10
-#                    set_variable = {
-#                        num_southpole_sectors = 10
-#                    }
-#                }
-#                save_global_event_target_as = antarctic_sector_1_var
-#                save_global_event_target_as = antarctic_sector_2_var
-#                save_global_event_target_as = antarctic_sector_3_var
-#                save_global_event_target_as = antarctic_sector_4_var
-#                save_global_event_target_as = antarctic_sector_5_var
-#                save_global_event_target_as = antarctic_sector_6_var
-#                save_global_event_target_as = antarctic_sector_7_var
-#                save_global_event_target_as = antarctic_sector_8_var
-#                save_global_event_target_as = antarctic_sector_9_var
-#                save_global_event_target_as = antarctic_sector_10_var
-#            }
-#            #ACTIONS
-#            south_pole_close_click = {
-#                ROOT = {
-#                    clr_country_flag = south_pole_moment_flag
-#                }
-#            }
-#
-#            #SECTORS
-#            antarctic_sectors_selection_1_click = {
-#                if = {
-#                    limit = {
-#                        ROOT = {
-#                            NOT = { has_country_flag = antarctic_sector_1 }
-#                        }
-#                    }
-#                    set_global_flag = antarctic_sector_1
-#                    multiply_variable = {
-#                        global.sector_1_cost = -1
-#                    }
-#                    add_political_power = global.sector_1_cost
-#                    multiply_variable = {
-#                        global.sector_1_cost = -1
-#                    }
-#                    every_possible_country = {
-#                        limit = { 
-#                            has_country_flag = antarctic_sector_1 
-#                        }
-#                        add_to_variable = {
-#                            num_southpole_sectors = -1
-#                        }
-#                        clr_country_flag = antarctic_sector_1
-#                    }
-#                    set_variable = {
-#                        global.sector_1_cost_daily = 0.025
-#                    }
-#                    set_variable = {
-#                        global.sector_1_cost = 20
-#                    }
-#                    ROOT = {
-#                        set_country_flag = antarctic_sector_1
-#                        add_dynamic_modifier = {
-#                            modifier = sector_maintain_cost_pp_1
-#                        }
-#                        add_to_variable = { num_southpole_sectors = 1 }
-#                    }
-#                    save_global_event_target_as = antarctic_sector_1_var
-#                }
-#                else_if = {
-#                    limit = { 
-#                        ROOT = {
-#                            has_country_flag = antarctic_sector_1
-#                        }
-#                    }
-#                    ROOT = {
-#                        multiply_variable = {
-#                            global.sector_1_cost = -1
-#                        }
-#                        add_political_power = global.sector_1_cost
-#                        multiply_variable = {
-#                            global.sector_1_cost = -1
-#                        }
-#                    }
-#                    add_to_variable = {
-#                        global.sector_1_cost_daily = 0.025
-#                    }
-#                    add_to_variable = {
-#                        global.sector_1_cost = 20
-#                    }
-#                }
-#                else = {
-#
-#                }
-#            }
-#            antarctic_sectors_selection_2_click = {
-#                if = {
-#                    limit = {
-#                        ROOT = {
-#                            NOT = { has_country_flag = antarctic_sector_2 }
-#                        }
-#                    }
-#                    set_global_flag = antarctic_sector_2
-#                    multiply_variable = {
-#                        global.sector_2_cost = -1
-#                    }
-#                    add_political_power = global.sector_2_cost
-#                    multiply_variable = {
-#                        global.sector_2_cost = -1
-#                    }
-#                    every_possible_country = {
-#                        limit = { 
-#                            has_country_flag = antarctic_sector_2
-#                        }
-#                        add_to_variable = {
-#                            num_southpole_sectors = -1
-#                        }
-#                        clr_country_flag = antarctic_sector_2
-#                    }
-#                    set_variable = {
-#                        global.sector_2_cost_daily = 0.025
-#                    }
-#                    set_variable = {
-#                        global.sector_2_cost = 20
-#                    }
-#                    ROOT = {
-#                        set_country_flag = antarctic_sector_2
-#                        add_dynamic_modifier = {
-#                            modifier = sector_maintain_cost_pp_2
-#                        }
-#                        add_to_variable = { num_southpole_sectors = 1 }
-#                    }
-#                    save_global_event_target_as = antarctic_sector_2_var
-#                }
-#                else_if = {
-#                    limit = { 
-#                        ROOT = {
-#                            has_country_flag = antarctic_sector_2
-#                        }
-#                    }
-#                    ROOT = {
-#                        multiply_variable = {
-#                            global.sector_2_cost = -1
-#                        }
-#                        add_political_power = global.sector_2_cost
-#                        multiply_variable = {
-#                            global.sector_2_cost = -1
-#                        }
-#                    }
-#                    add_to_variable = {
-#                        global.sector_2_cost_daily = 0.025
-#                    }
-#                    add_to_variable = {
-#                        global.sector_2_cost = 20
-#                    }
-#                }
-#                else = {
-#
-#                }
-#            }
-#            antarctic_sectors_selection_3_click = {
-#                if = {
-#                    limit = {
-#                        ROOT = {
-#                            NOT = { has_country_flag = antarctic_sector_3 }
-#                        }
-#                    }
-#                    set_global_flag = antarctic_sector_3
-#                    multiply_variable = {
-#                        global.sector_3_cost = -1
-#                    }
-#                    add_political_power = global.sector_3_cost
-#                    multiply_variable = {
-#                        global.sector_3_cost = -1
-#                    }
-#                    every_possible_country = {
-#                        limit = { 
-#                            has_country_flag = antarctic_sector_3
-#                        }
-#                        add_to_variable = {
-#                            num_southpole_sectors = -1
-#                        }
-#                        clr_country_flag = antarctic_sector_3
-#                    }
-#                    set_variable = {
-#                        global.sector_3_cost_daily = 0.025
-#                    }
-#                    set_variable = {
-#                        global.sector_3_cost = 20
-#                    }
-#                    ROOT = {
-#                        set_country_flag = antarctic_sector_3
-#                        add_dynamic_modifier = {
-#                            modifier = sector_maintain_cost_pp_3
-#                        }
-#                        add_to_variable = { num_southpole_sectors = 1 }
-#                    }
-#                    save_global_event_target_as = antarctic_sector_3_var
-#                }
-#                else_if = {
-#                    limit = { 
-#                        ROOT = {
-#                            has_country_flag = antarctic_sector_3
-#                        }
-#                    }
-#                    ROOT = {
-#                        multiply_variable = {
-#                            global.sector_3_cost = -1
-#                        }
-#                        add_political_power = global.sector_3_cost
-#                        multiply_variable = {
-#                            global.sector_3_cost = -1
-#                        }
-#                    }
-#                    add_to_variable = {
-#                        global.sector_3_cost_daily = 0.025
-#                    }
-#                    add_to_variable = {
-#                        global.sector_3_cost = 20
-#                    }
-#                }
-#                else = {
-#
-#                }
-#            }
-#            antarctic_sectors_selection_4_click = {
-#                if = {
-#                    limit = {
-#                        ROOT = {
-#                            NOT = { has_country_flag = antarctic_sector_4 }
-#                        }
-#                    }
-#                    set_global_flag = antarctic_sector_4
-#                    multiply_variable = {
-#                        global.sector_4_cost = -1
-#                    }
-#                    add_political_power = global.sector_4_cost
-#                    multiply_variable = {
-#                        global.sector_4_cost = -1
-#                    }
-#                    every_possible_country = {
-#                        limit = { 
-#                            has_country_flag = antarctic_sector_4 
-#                        }
-#                        add_to_variable = {
-#                            num_southpole_sectors = -1
-#                        }
-#                        clr_country_flag = antarctic_sector_4
-#                    }
-#                    set_variable = {
-#                        global.sector_4_cost_daily = 0.025
-#                    }
-#                    set_variable = {
-#                        global.sector_4_cost = 20
-#                    }
-#                    ROOT = {
-#                        set_country_flag = antarctic_sector_4
-#                        add_dynamic_modifier = {
-#                            modifier = sector_maintain_cost_pp_4
-#                        }
-#                        add_to_variable = { num_southpole_sectors = 1 }
-#                    }
-#                    save_global_event_target_as = antarctic_sector_4_var
-#                }
-#                else_if = {
-#                    limit = { 
-#                        ROOT = {
-#                            has_country_flag = antarctic_sector_4
-#                        }
-#                    }
-#                    ROOT = {
-#                        multiply_variable = {
-#                            global.sector_4_cost = -1
-#                        }
-#                        add_political_power = global.sector_4_cost
-#                        multiply_variable = {
-#                            global.sector_4_cost = -1
-#                        }
-#                    }
-#                    add_to_variable = {
-#                        global.sector_4_cost_daily = 0.025
-#                    }
-#                    add_to_variable = {
-#                        global.sector_4_cost = 20
-#                    }
-#                }
-#                else = {
-#
-#                }
-#            }
-#            antarctic_sectors_selection_5_click = {
-#                if = {
-#                    limit = {
-#                        ROOT = {
-#                            NOT = { has_country_flag = antarctic_sector_5 }
-#                        }
-#                    }
-#                    set_global_flag = antarctic_sector_5
-#                    multiply_variable = {
-#                        global.sector_5_cost = -1
-#                    }
-#                    add_political_power = global.sector_5_cost
-#                    multiply_variable = {
-#                        global.sector_5_cost = -1
-#                    }
-#                    every_possible_country = {
-#                        limit = { 
-#                            has_country_flag = antarctic_sector_5 
-#                        }
-#                        add_to_variable = {
-#                            num_southpole_sectors = -1
-#                        }
-#                        clr_country_flag = antarctic_sector_5
-#                    }
-#                    set_variable = {
-#                        global.sector_5_cost_daily = 0.025
-#                    }
-#                    set_variable = {
-#                        global.sector_5_cost = 20
-#                    }
-#                    ROOT = {
-#                        set_country_flag = antarctic_sector_5
-#                        add_dynamic_modifier = {
-#                            modifier = sector_maintain_cost_pp_5
-#                        }
-#                        add_to_variable = { num_southpole_sectors = 1 }
-#                    }
-#                    save_global_event_target_as = antarctic_sector_5_var
-#                }
-#                else_if = {
-#                    limit = { 
-#                        ROOT = {
-#                            has_country_flag = antarctic_sector_5
-#                        }
-#                    }
-#                    ROOT = {
-#                        multiply_variable = {
-#                            global.sector_5_cost = -1
-#                        }
-#                        add_political_power = global.sector_5_cost
-#                        multiply_variable = {
-#                            global.sector_5_cost = -1
-#                        }
-#                    }
-#                    add_to_variable = {
-#                        global.sector_5_cost_daily = 0.025
-#                    }
-#                    add_to_variable = {
-#                        global.sector_5_cost = 20
-#                    }
-#                }
-#                else = {
-#
-#                }
-#            }
-#            antarctic_sectors_selection_6_click = {
-#                if = {
-#                    limit = {
-#                        ROOT = {
-#                            NOT = { has_country_flag = antarctic_sector_6 }
-#                        }
-#                    }
-#                    set_global_flag = antarctic_sector_6
-#                    multiply_variable = {
-#                        global.sector_6_cost = -1
-#                    }
-#                    add_political_power = global.sector_6_cost
-#                    multiply_variable = {
-#                        global.sector_6_cost = -1
-#                    }
-#                    every_possible_country = {
-#                        limit = { 
-#                            has_country_flag = antarctic_sector_6 
-#                        }
-#                        add_to_variable = {
-#                            num_southpole_sectors = -1
-#                        }
-#                        clr_country_flag = antarctic_sector_6
-#                    }
-#                    set_variable = {
-#                        global.sector_6_cost_daily = 0.025
-#                    }
-#                    set_variable = {
-#                        global.sector_6_cost = 20
-#                    }
-#                    ROOT = {
-#                        set_country_flag = antarctic_sector_6
-#                        add_dynamic_modifier = {
-#                            modifier = sector_maintain_cost_pp_6
-#                        }
-#                        add_to_variable = { num_southpole_sectors = 1 }
-#                    }
-#                    save_global_event_target_as = antarctic_sector_6_var
-#                }
-#                else_if = {
-#                    limit = { 
-#                        ROOT = {
-#                            has_country_flag = antarctic_sector_6
-#                        }
-#                    }
-#                    ROOT = {
-#                        multiply_variable = {
-#                            global.sector_6_cost = -1
-#                        }
-#                        add_political_power = global.sector_6_cost
-#                        multiply_variable = {
-#                            global.sector_6_cost = -1
-#                        }
-#                    }
-#                    add_to_variable = {
-#                        global.sector_6_cost_daily = 0.025
-#                    }
-#                    add_to_variable = {
-#                        global.sector_6_cost = 20
-#                    }
-#                }
-#                else = {
-#
-#                }
-#            }
-#            antarctic_sectors_selection_7_click = {
-#                if = {
-#                    limit = {
-#                        ROOT = {
-#                            NOT = { has_country_flag = antarctic_sector_7 }
-#                        }
-#                    }
-#                    set_global_flag = antarctic_sector_7
-#                    multiply_variable = {
-#                        global.sector_7_cost = -1
-#                    }
-#                    add_political_power = global.sector_7_cost
-#                    multiply_variable = {
-#                        global.sector_7_cost = -1
-#                    }
-#                    every_possible_country = {
-#                        limit = { 
-#                            has_country_flag = antarctic_sector_7 
-#                        }
-#                        add_to_variable = {
-#                            num_southpole_sectors = -1
-#                        }
-#                        clr_country_flag = antarctic_sector_7
-#                    }
-#                    set_variable = {
-#                        global.sector_7_cost_daily = 0.025
-#                    }
-#                    set_variable = {
-#                        global.sector_7_cost = 20
-#                    }
-#                    ROOT = {
-#                        set_country_flag = antarctic_sector_7
-#                        add_dynamic_modifier = {
-#                            modifier = sector_maintain_cost_pp_7
-#                        }
-#                        add_to_variable = { num_southpole_sectors = 1 }
-#                    }
-#                    save_global_event_target_as = antarctic_sector_7_var
-#                }
-#                else_if = {
-#                    limit = { 
-#                        ROOT = {
-#                            has_country_flag = antarctic_sector_7
-#                        }
-#                    }
-#                    ROOT = {
-#                        multiply_variable = {
-#                            global.sector_7_cost = -1
-#                        }
-#                        add_political_power = global.sector_7_cost
-#                        multiply_variable = {
-#                            global.sector_7_cost = -1
-#                        }
-#                    }
-#                    add_to_variable = {
-#                        global.sector_7_cost_daily = 0.025
-#                    }
-#                    add_to_variable = {
-#                        global.sector_7_cost = 20
-#                    }
-#                }
-#                else = {
-#
-#                }
-#            }
-#            antarctic_sectors_selection_8_click = {
-#                if = {
-#                    limit = {
-#                        ROOT = {
-#                            NOT = { has_country_flag = antarctic_sector_8 }
-#                        }
-#                    }
-#                    set_global_flag = antarctic_sector_8
-#                    multiply_variable = {
-#                        global.sector_8_cost = -1
-#                    }
-#                    add_political_power = global.sector_8_cost
-#                    multiply_variable = {
-#                        global.sector_8_cost = -1
-#                    }
-#                    every_possible_country = {
-#                        limit = { 
-#                            has_country_flag = antarctic_sector_8 
-#                        }
-#                        add_to_variable = {
-#                            num_southpole_sectors = -1
-#                        }
-#                        clr_country_flag = antarctic_sector_8
-#                    }
-#                    set_variable = {
-#                        global.sector_8_cost_daily = 0.025
-#                    }
-#                    set_variable = {
-#                        global.sector_8_cost = 20
-#                    }
-#                    ROOT = {
-#                        set_country_flag = antarctic_sector_8
-#                        add_dynamic_modifier = {
-#                            modifier = sector_maintain_cost_pp_8
-#                        }
-#                        add_to_variable = { num_southpole_sectors = 1 }
-#                    }
-#                    save_global_event_target_as = antarctic_sector_8_var
-#                }
-#                else_if = {
-#                    limit = { 
-#                        ROOT = {
-#                            has_country_flag = antarctic_sector_8
-#                        }
-#                    }
-#                    ROOT = {
-#                        multiply_variable = {
-#                            global.sector_8_cost = -1
-#                        }
-#                        add_political_power = global.sector_8_cost
-#                        multiply_variable = {
-#                            global.sector_8_cost = -1
-#                        }
-#                    }
-#                    add_to_variable = {
-#                        global.sector_8_cost_daily = 0.025
-#                    }
-#                    add_to_variable = {
-#                        global.sector_8_cost = 20
-#                    }
-#                }
-#                else = {
-#
-#                }
-#            }
-#            antarctic_sectors_selection_9_click = {
-#                if = {
-#                    limit = {
-#                        ROOT = {
-#                            NOT = { has_country_flag = antarctic_sector_9 }
-#                        }
-#                    }
-#                    set_global_flag = antarctic_sector_9
-#                    multiply_variable = {
-#                        global.sector_9_cost = -1
-#                    }
-#                    add_political_power = global.sector_9_cost
-#                    multiply_variable = {
-#                        global.sector_9_cost = -1
-#                    }
-#                    every_possible_country = {
-#                        limit = { 
-#                            has_country_flag = antarctic_sector_9 
-#                        }
-#                        add_to_variable = {
-#                            num_southpole_sectors = -1
-#                        }
-#                        clr_country_flag = antarctic_sector_9
-#                    }
-#                    set_variable = {
-#                        global.sector_9_cost_daily = 0.025
-#                    }
-#                    set_variable = {
-#                        global.sector_9_cost = 20
-#                    }
-#                    ROOT = {
-#                        set_country_flag = antarctic_sector_9
-#                        add_dynamic_modifier = {
-#                            modifier = sector_maintain_cost_pp_9
-#                        }
-#                        add_to_variable = { num_southpole_sectors = 1 }
-#                    }
-#                    save_global_event_target_as = antarctic_sector_9_var
-#                }
-#                else_if = {
-#                    limit = { 
-#                        ROOT = {
-#                            has_country_flag = antarctic_sector_9
-#                        }
-#                    }
-#                    ROOT = {
-#                        multiply_variable = {
-#                            global.sector_9_cost = -1
-#                        }
-#                        add_political_power = global.sector_9_cost
-#                        multiply_variable = {
-#                            global.sector_9_cost = -1
-#                        }
-#                    }
-#                    add_to_variable = {
-#                        global.sector_9_cost_daily = 0.025
-#                    }
-#                    add_to_variable = {
-#                        global.sector_9_cost = 20
-#                    }
-#                }
-#                else = {
-#
-#                }
-#            }
-#            antarctic_sectors_selection_10_click = {
-#                if = {
-#                    limit = {
-#                        ROOT = {
-#                            NOT = { has_country_flag = antarctic_sector_10 }
-#                        }
-#                    }
-#                    set_global_flag = antarctic_sector_10
-#                    multiply_variable = {
-#                        global.sector_10_cost = -1
-#                    }
-#                    add_political_power = global.sector_10_cost
-#                    multiply_variable = {
-#                        global.sector_10_cost = -1
-#                    }
-#                    every_possible_country = {
-#                        limit = { 
-#                            has_country_flag = antarctic_sector_10 
-#                        }
-#                        add_to_variable = {
-#                            num_southpole_sectors = -1
-#                        }
-#                        clr_country_flag = antarctic_sector_10
-#                    }
-#                    set_variable = {
-#                        global.sector_10_cost_daily = 0.025
-#                    }
-#                    set_variable = {
-#                        global.sector_10_cost = 20
-#                    }
-#                    ROOT = {
-#                        set_country_flag = antarctic_sector_10
-#                        add_dynamic_modifier = {
-#                            modifier = sector_maintain_cost_pp_10
-#                        }
-#                        add_to_variable = { num_southpole_sectors = 1 }
-#                    }
-#                    save_global_event_target_as = antarctic_sector_10_var
-#                }
-#                else_if = {
-#                    limit = { 
-#                        ROOT = {
-#                            has_country_flag = antarctic_sector_10
-#                        }
-#                    }
-#                    ROOT = {
-#                        multiply_variable = {
-#                            global.sector_10_cost = -1
-#                        }
-#                        add_political_power = global.sector_10_cost
-#                        multiply_variable = {
-#                            global.sector_10_cost = -1
-#                        }
-#                    }
-#                    add_to_variable = {
-#                        global.sector_10_cost_daily = 0.025
-#                    }
-#                    add_to_variable = {
-#                        global.sector_10_cost = 20
-#                    }
-#                }
-#                else = {
-#
-#                }
-#            }
-#
-#            leave_sector_1_click = {
-#                clr_global_flag = antarctic_sector_1
-#                ROOT = {
-#                    clr_country_flag = antarctic_sector_1
-#                    add_to_variable = { num_southpole_sectors = -1 }
-#                }
-#                set_variable = {
-#                    global.sector_1_cost_daily = 0.025
-#                }
-#                set_variable = {
-#                    global.sector_1_cost = 20
-#                }
-#            }  
-#            leave_sector_2_click = {
-#                clr_global_flag = antarctic_sector_2
-#                ROOT = {
-#                    clr_country_flag = antarctic_sector_2
-#                    add_to_variable = { num_southpole_sectors = -1 }
-#                }
-#                set_variable = {
-#                    global.sector_2_cost_daily = 0.025
-#                }
-#                set_variable = {
-#                    global.sector_2_cost = 20
-#                }
-#            }    
-#            leave_sector_3_click = {
-#                clr_global_flag = antarctic_sector_3
-#                ROOT = {
-#                    clr_country_flag = antarctic_sector_3
-#                    add_to_variable = { num_southpole_sectors = -1 }
-#                }
-#                set_variable = {
-#                    global.sector_3_cost_daily = 0.025
-#                }
-#                set_variable = {
-#                    global.sector_3_cost = 20
-#                }
-#            }    
-#            leave_sector_4_click = {
-#                clr_global_flag = antarctic_sector_4
-#                ROOT = {
-#                    clr_country_flag = antarctic_sector_4
-#                    add_to_variable = { num_southpole_sectors = -1 }
-#                }
-#                set_variable = {
-#                    global.sector_4_cost_daily = 0.025
-#                }
-#                set_variable = {
-#                    global.sector_4_cost = 20
-#                }
-#            }              
-#            leave_sector_5_click = {
-#                clr_global_flag = antarctic_sector_5
-#                ROOT = {
-#                    clr_country_flag = antarctic_sector_5
-#                    add_to_variable = { num_southpole_sectors = -1 }
-#                }
-#                set_variable = {
-#                    global.sector_5_cost_daily = 0.025
-#                }
-#                set_variable = {
-#                    global.sector_5_cost = 20
-#                }
-#            }    
-#            leave_sector_6_click = {
-#                clr_global_flag = antarctic_sector_6
-#                ROOT = {
-#                    clr_country_flag = antarctic_sector_6
-#                    add_to_variable = { num_southpole_sectors = -1 }
-#                }
-#                set_variable = {
-#                    global.sector_6_cost_daily = 0.025
-#                }
-#                set_variable = {
-#                    global.sector_6_cost = 20
-#                }
-#            }    
-#            leave_sector_7_click = {
-#                clr_global_flag = antarctic_sector_7
-#                ROOT = {
-#                    clr_country_flag = antarctic_sector_7
-#                    add_to_variable = { num_southpole_sectors = -1 }
-#                }
-#                set_variable = {
-#                    global.sector_7_cost_daily = 0.025
-#                }
-#                set_variable = {
-#                    global.sector_7_cost = 20
-#                }
-#            }    
-#            leave_sector_8_click = {
-#                clr_global_flag = antarctic_sector_8
-#                ROOT = {
-#                    clr_country_flag = antarctic_sector_8
-#                    add_to_variable = { num_southpole_sectors = -1 }
-#                }
-#                set_variable = {
-#                    global.sector_8_cost_daily = 0.025
-#                }
-#                set_variable = {
-#                    global.sector_8_cost = 20
-#                }
-#            }    
-#            leave_sector_9_click = {
-#                clr_global_flag = antarctic_sector_9
-#                ROOT = {
-#                    clr_country_flag = antarctic_sector_9
-#                    add_to_variable = { num_southpole_sectors = -1 }
-#                }
-#                set_variable = {
-#                    global.sector_9_cost_daily = 0.025
-#                }
-#                set_variable = {
-#                    global.sector_9_cost = 20
-#                }
-#            }   
-#            leave_sector_10_click = {
-#                clr_global_flag = antarctic_sector_10
-#                ROOT = {
-#                    clr_country_flag = antarctic_sector_10
-#                    add_to_variable = { num_southpole_sectors = -1 }
-#                }
-#                set_variable = {
-#                    global.sector_10_cost_daily = 0.025
-#                }
-#                set_variable = {
-#                    global.sector_10_cost = 20
-#                }
-#            }  
-#        }
-#        
-#        triggers = {
-#            #INTERFACE
-#            antarctic_sectors_pic_visible = {
-#                ROOT = {
-#                    check_variable = { num_southpole_sectors < 1 }
-#                } 
-#            }
-#            antarctic_sectors_pic_owns_visible = {
-#                ROOT = {
-#                    check_variable = { num_southpole_sectors > 0 }
-#                } 
-#            }
-#
-#            #BUTTONS
-#            south_pole_hostile_takeover_click_enabled = {
-#                ROOT = {
-#                    check_variable = { num_southpole_sectors > 5 }
-#                    check_variable = { num_southpole_sectors < 10 }
-#                }
-#                has_global_flag = final_war_flag
-#            }
-#
-#            #SECTORS
-#            antarctic_sectors_selection_1_click_enabled = {
-#                NOT = { has_idea = agrarian_stage }
-#                NOT = { has_idea = developing_stage }
-#                NOT = { has_idea = unstable_leadership }
-#                NOT = { tag = ADU }
-#                ROOT = {
-#                    check_variable = { political_power > global.sector_1_cost }
-#                }
-#                has_war = no
-#                is_puppet = no
-#            }
-#            antarctic_sectors_selection_2_click_enabled = {
-#                NOT = { has_idea = agrarian_stage }
-#                NOT = { has_idea = developing_stage }
-#                NOT = { has_idea = unstable_leadership }
-#                NOT = { tag = ADU }
-#                ROOT = {
-#                    check_variable = { political_power > global.sector_2_cost }
-#                }
-#                has_war = no
-#                is_puppet = no
-#            }
-#            antarctic_sectors_selection_3_click_enabled = {
-#                NOT = { has_idea = agrarian_stage }
-#                NOT = { has_idea = developing_stage }
-#                NOT = { has_idea = unstable_leadership }
-#                NOT = { tag = ADU }
-#                ROOT = {
-#                    check_variable = { political_power > global.sector_3_cost }
-#                }
-#                has_war = no
-#                is_puppet = no
-#            }
-#            antarctic_sectors_selection_4_click_enabled = {
-#                NOT = { has_idea = agrarian_stage }
-#                NOT = { has_idea = developing_stage }
-#                NOT = { has_idea = unstable_leadership }
-#                NOT = { tag = ADU }
-#                ROOT = {
-#                    check_variable = { political_power > global.sector_4_cost }
-#                }
-#                has_war = no
-#                is_puppet = no
-#            }
-#            antarctic_sectors_selection_5_click_enabled = {
-#                NOT = { has_idea = agrarian_stage }
-#                NOT = { has_idea = developing_stage }
-#                NOT = { has_idea = unstable_leadership }
-#                NOT = { tag = ADU }
-#                ROOT = {
-#                    check_variable = { political_power > global.sector_5_cost }
-#                }
-#                has_war = no
-#                is_puppet = no
-#            }
-#            antarctic_sectors_selection_6_click_enabled = {
-#                NOT = { has_idea = agrarian_stage }
-#                NOT = { has_idea = developing_stage }
-#                NOT = { has_idea = unstable_leadership }
-#                NOT = { tag = ADU }
-#                ROOT = {
-#                    check_variable = { political_power > global.sector_6_cost }
-#                }
-#                has_war = no
-#                is_puppet = no
-#            }
-#            antarctic_sectors_selection_7_click_enabled = {
-#                NOT = { has_idea = agrarian_stage }
-#                NOT = { has_idea = developing_stage }
-#                NOT = { has_idea = unstable_leadership }
-#                NOT = { tag = ADU }
-#                ROOT = {
-#                    check_variable = { political_power > global.sector_7_cost }
-#                }
-#                has_war = no
-#                is_puppet = no
-#            }
-#            antarctic_sectors_selection_8_click_enabled = {
-#                NOT = { has_idea = agrarian_stage }
-#                NOT = { has_idea = developing_stage }
-#                NOT = { has_idea = unstable_leadership }
-#                NOT = { tag = ADU }
-#                ROOT = {
-#                    check_variable = { political_power > global.sector_8_cost }
-#                }
-#                has_war = no
-#                is_puppet = no
-#            }
-#            antarctic_sectors_selection_9_click_enabled = {
-#                NOT = { has_idea = agrarian_stage }
-#                NOT = { has_idea = developing_stage }
-#                NOT = { has_idea = unstable_leadership }
-#                NOT = { tag = ADU }
-#                ROOT = {
-#                    check_variable = { political_power > global.sector_9_cost }
-#                }
-#                has_war = no
-#                is_puppet = no
-#            }
-#            antarctic_sectors_selection_10_click_enabled = {
-#                NOT = { has_idea = agrarian_stage }
-#                NOT = { has_idea = developing_stage }
-#                NOT = { has_idea = unstable_leadership }
-#                NOT = { tag = ADU }
-#                ROOT = {
-#                    check_variable = { political_power > global.sector_10_cost }
-#                }
-#                has_war = no
-#                is_puppet = no
-#            }
-#
-#            leave_sector_1_click_enabled = {
-#                ROOT = {
-#                    has_country_flag = antarctic_sector_1
-#                }
-#            }
-#            leave_sector_2_click_enabled = {
-#                ROOT = {
-#                    has_country_flag = antarctic_sector_2
-#                }
-#            }
-#            leave_sector_3_click_enabled = {
-#                ROOT = {
-#                    has_country_flag = antarctic_sector_3
-#                }
-#            }
-#            leave_sector_4_click_enabled = {
-#                ROOT = {
-#                    has_country_flag = antarctic_sector_4
-#                }
-#            }
-#            leave_sector_5_click_enabled = {
-#                ROOT = {
-#                    has_country_flag = antarctic_sector_5
-#                }
-#            }
-#            leave_sector_6_click_enabled = {
-#                ROOT = {
-#                    has_country_flag = antarctic_sector_6
-#                }
-#            }
-#            leave_sector_7_click_enabled = {
-#                ROOT = {
-#                    has_country_flag = antarctic_sector_7
-#                }
-#            }
-#            leave_sector_8_click_enabled = {
-#                ROOT = {
-#                    has_country_flag = antarctic_sector_8
-#                }
-#            }
-#            leave_sector_9_click_enabled = {
-#                ROOT = {
-#                    has_country_flag = antarctic_sector_9
-#                }
-#            }
-#            leave_sector_10_click_enabled = {
-#                ROOT = {
-#                    has_country_flag = antarctic_sector_10
-#                }
-#            }
-#
-#            antarctic_sectors_selection_1_flag_visible = {
-#                has_global_flag = antarctic_sector_1
-#            }
-#            antarctic_sectors_selection_2_flag_visible = {
-#                has_global_flag = antarctic_sector_2
-#            }
-#            antarctic_sectors_selection_3_flag_visible = {
-#                has_global_flag = antarctic_sector_3
-#            }
-#            antarctic_sectors_selection_4_flag_visible = {
-#                has_global_flag = antarctic_sector_4
-#            }
-#            antarctic_sectors_selection_5_flag_visible = {
-#                has_global_flag = antarctic_sector_5
-#            }
-#            antarctic_sectors_selection_6_flag_visible = {
-#                has_global_flag = antarctic_sector_6
-#            }
-#            antarctic_sectors_selection_7_flag_visible = {
-#                has_global_flag = antarctic_sector_7
-#            }
-#            antarctic_sectors_selection_8_flag_visible = {
-#                has_global_flag = antarctic_sector_8
-#            }
-#            antarctic_sectors_selection_9_flag_visible = {
-#                has_global_flag = antarctic_sector_9
-#            }
-#            antarctic_sectors_selection_10_flag_visible = {
-#                has_global_flag = antarctic_sector_10
-#            }
-#
-#            sector_1_name_visible = {
-#                NOT = { has_global_flag = antarctic_sector_1 }
-#            }
-#            sector_2_name_visible = {
-#                NOT = { has_global_flag = antarctic_sector_2 }
-#            }
-#            sector_3_name_visible = {
-#                NOT = { has_global_flag = antarctic_sector_3 }
-#            }
-#            sector_4_name_visible = {
-#                NOT = { has_global_flag = antarctic_sector_4 }
-#            }
-#            sector_5_name_visible = {
-#                NOT = { has_global_flag = antarctic_sector_5 }
-#            }
-#            sector_6_name_visible = {
-#                NOT = { has_global_flag = antarctic_sector_6 }
-#            }
-#            sector_7_name_visible = {
-#                NOT = { has_global_flag = antarctic_sector_7 }
-#            }
-#            sector_8_name_visible = {
-#                NOT = { has_global_flag = antarctic_sector_8 }
-#            }
-#            sector_9_name_visible = {
-#                NOT = { has_global_flag = antarctic_sector_9 }
-#            }
-#            sector_10_name_visible = {
-#                NOT = { has_global_flag = antarctic_sector_10 }
-#            }
-#
-#            sector_1_cost_text_visible = {
-#                has_global_flag = antarctic_sector_1
-#            }
-#            sector_2_cost_text_visible = {
-#                has_global_flag = antarctic_sector_2
-#            }
-#            sector_3_cost_text_visible = {
-#                has_global_flag = antarctic_sector_3
-#            }
-#            sector_4_cost_text_visible = {
-#                has_global_flag = antarctic_sector_4
-#            }
-#            sector_5_cost_text_visible = {
-#                has_global_flag = antarctic_sector_5
-#            }
-#            sector_6_cost_text_visible = {
-#                has_global_flag = antarctic_sector_6
-#            }
-#            sector_7_cost_text_visible = {
-#                has_global_flag = antarctic_sector_7
-#            }
-#            sector_8_cost_text_visible = {
-#                has_global_flag = antarctic_sector_8
-#            }
-#            sector_9_cost_text_visible = {
-#                has_global_flag = antarctic_sector_9
-#            }
-#            sector_10_cost_text_visible = {
-#                has_global_flag = antarctic_sector_10
-#            }
-#
-#            sector_1_cost_text_daily_visible = {
-#                has_country_flag = antarctic_sector_1
-#            }
-#            sector_2_cost_text_daily_visible = {
-#                has_country_flag = antarctic_sector_2
-#            }
-#            sector_3_cost_text_daily_visible = {
-#                has_country_flag = antarctic_sector_3
-#            }
-#            sector_4_cost_text_daily_visible = {
-#                has_country_flag = antarctic_sector_4
-#            }
-#            sector_5_cost_text_daily_visible = {
-#                has_country_flag = antarctic_sector_5
-#            }
-#            sector_6_cost_text_daily_visible = {
-#                has_country_flag = antarctic_sector_6
-#            }
-#            sector_7_cost_text_daily_visible = {
-#                has_country_flag = antarctic_sector_7
-#            }
-#            sector_8_cost_text_daily_visible = {
-#                has_country_flag = antarctic_sector_8
-#            }
-#            sector_9_cost_text_daily_visible = {
-#                has_country_flag = antarctic_sector_9
-#            }
-#            sector_10_cost_text_daily_visible = {
-#                has_country_flag = antarctic_sector_10
-#            }
-#        }
-#
-#        properties = {
-#            player_flag_southpole = {
-#                image = "[ROOT.GetFlag]"
-#            }
-#            antarctic_sectors_selection_1_flag = {
-#                image = "[antarctic_sector_1_var.GetFlag]"
-#            }
-#            antarctic_sectors_selection_2_flag = {
-#                image = "[antarctic_sector_2_var.GetFlag]"
-#            }
-#            antarctic_sectors_selection_3_flag = {
-#                image = "[antarctic_sector_3_var.GetFlag]"
-#            }
-#            antarctic_sectors_selection_4_flag = {
-#                image = "[antarctic_sector_4_var.GetFlag]"
-#            }
-#            antarctic_sectors_selection_5_flag = {
-#                image = "[antarctic_sector_5_var.GetFlag]"
-#            }
-#            antarctic_sectors_selection_6_flag = {
-#                image = "[antarctic_sector_6_var.GetFlag]"
-#            }
-#            antarctic_sectors_selection_7_flag = {
-#                image = "[antarctic_sector_7_var.GetFlag]"
-#            }
-#            antarctic_sectors_selection_8_flag = {
-#                image = "[antarctic_sector_8_var.GetFlag]"
-#            }
-#            antarctic_sectors_selection_9_flag = {
-#                image = "[antarctic_sector_9_var.GetFlag]"
-#            }
-#            antarctic_sectors_selection_10_flag = {
-#                image = "[antarctic_sector_10_var.GetFlag]"
-#            }
-#        }
-#
-#        ai_enabled = {
-#            always = no #yes
-#        }
-#
-#        ai_test_interval = 6969
-#
-#        ai_check = {
-#            has_political_power > 20
-#            political_power_daily > 0
-#            has_war = no
-#                is_puppet = no
-#		}
-#
-#        ai_weights = {
-#            antarctic_sectors_selection_1_click = {
-#                ai_will_do = {
-#                    factor = 1
-#                    modifier = {
-#                        has_country_flag = antarctic_sector_1 
-#                        add = 100
-#                    }
-#                }
-#            }
-#            antarctic_sectors_selection_2_click = {
-#                ai_will_do = {
-#                    factor = 1
-#                    modifier = {
-#                        has_country_flag = antarctic_sector_2
-#                        add = 100
-#                    }
-#                }
-#            }
-#            antarctic_sectors_selection_3_click = {
-#                ai_will_do = {
-#                    factor = 1
-#                    modifier = {
-#                        has_country_flag = antarctic_sector_3
-#                        add = 100
-#                    }
-#                }
-#            }
-#            antarctic_sectors_selection_4_click = {
-#                ai_will_do = {
-#                    factor = 1
-#                    modifier = {
-#                        has_country_flag = antarctic_sector_4
-#                        add = 100
-#                    }
-#                }
-#            }
-#            antarctic_sectors_selection_5_click = {
-#                ai_will_do = {
-#                    factor = 1
-#                    modifier = {
-#                        has_country_flag = antarctic_sector_5 
-#                        add = 100
-#                    }
-#                }
-#            }
-#            antarctic_sectors_selection_6_click = {
-#                ai_will_do = {
-#                    factor = 1
-#                    modifier = {
-#                        has_country_flag = antarctic_sector_6 
-#                        add = 100
-#                    }
-#                }
-#            }
-#            antarctic_sectors_selection_7_click = {
-#                ai_will_do = {
-#                    factor = 1
-#                    modifier = {
-#                        has_country_flag = antarctic_sector_7
-#                        add = 100
-#                    }
-#                }
-#            }
-#            antarctic_sectors_selection_8_click = {
-#                ai_will_do = {
-#                    factor = 1
-#                    modifier = {
-#                        has_country_flag = antarctic_sector_8
-#                        add = 100
-#                    }
-#                }
-#            }
-#            antarctic_sectors_selection_9_click = {
-#                ai_will_do = {
-#                    factor = 1
-#                    modifier = {
-#                        has_country_flag = antarctic_sector_9 
-#                        add = 100
-#                    }
-#                }
-#            }
-#            antarctic_sectors_selection_10_click = {
-#                ai_will_do = {
-#                    factor = 1
-#                    modifier = {
-#                        has_country_flag = antarctic_sector_10 
-#                        add = 100
-#                    }
-#                }
-#            }
-#
-#            leave_sector_1_click = {
-#                ai_will_do = {
-#                    factor = 0
-#                    modifier = {
-#			        	add = 999
-#			        	political_power_daily < 0.2
-#			        }
-#                }
-#            }
-#            leave_sector_2_click = {
-#                ai_will_do = {
-#                    factor = 0
-#                    modifier = {
-#			        	add = 999
-#			        	political_power_daily < 0.2
-#			        }
-#                }
-#            }
-#            leave_sector_3_click = {
-#                ai_will_do = {
-#                    factor = 0
-#                    modifier = {
-#			        	add = 999
-#			        	political_power_daily < 0.2
-#			        }
-#                }
-#            }
-#            leave_sector_4_click = {
-#                ai_will_do = {
-#                    factor = 0
-#                    modifier = {
-#			        	add = 999
-#			        	political_power_daily < 0.2
-#			        }
-#                }
-#            }
-#            leave_sector_5_click = {
-#                ai_will_do = {
-#                    factor = 0
-#                    modifier = {
-#			        	add = 999
-#			        	political_power_daily < 0.2
-#			        }
-#                }
-#            }
-#            leave_sector_6_click = {
-#                ai_will_do = {
-#                    factor = 0
-#                    modifier = {
-#			        	add = 999
-#			        	political_power_daily < 0.2
-#			        }
-#                }
-#            }
-#            leave_sector_7_click = {
-#                ai_will_do = {
-#                    factor = 0
-#                    modifier = {
-#			        	add = 999
-#			        	political_power_daily < 0.2
-#			        }
-#                }
-#            }
-#            leave_sector_8_click = {
-#                ai_will_do = {
-#                    factor = 0
-#                    modifier = {
-#			        	add = 999
-#			        	political_power_daily < 0.2
-#			        }
-#                }
-#            }
-#            leave_sector_9_click = {
-#                ai_will_do = {
-#                    factor = 0
-#                    modifier = {
-#			        	add = 999
-#			        	political_power_daily < 0.2
-#			        }
-#                }
-#            }
-#            leave_sector_10_click = {
-#                ai_will_do = {
-#                    factor = 0
-#                    modifier = {
-#			        	add = 999
-#			        	political_power_daily < 0.2
-#			        }
-#                }
-#            }
-#
-#        }
-#    }
-#}
-#
+scripted_gui = {    
+    south_pole_stuff_gui = {
+        window_name = "south_pole_stuff"
+        context_type = player_context
+         
+        visible = {
+            if = {
+                limit = { is_ai = yes }
+                always = yes
+            }
+            else = {
+                has_country_flag = south_pole_moment_flag
+            }
+            NOT = { tag = ADU }
+            exists = yes
+            NOT = { has_idea = agrarian_stage }
+            NOT = { has_idea = developing_stage }
+            NOT = { has_idea = unstable_leadership }
+        }
+        
+        effects = {
+            south_pole_hostile_takeover_click = {
+                every_possible_country = {
+                    if = {
+                        limit = {
+                            NOT = { tag = ROOT }
+                            OR = {
+                                has_country_flag = antarctic_sector_1
+                                has_country_flag = antarctic_sector_2
+                                has_country_flag = antarctic_sector_3
+                                has_country_flag = antarctic_sector_4
+                                has_country_flag = antarctic_sector_5
+                                has_country_flag = antarctic_sector_6
+                                has_country_flag = antarctic_sector_7
+                                has_country_flag = antarctic_sector_8
+                                has_country_flag = antarctic_sector_9
+                                has_country_flag = antarctic_sector_10
+                            }
+                        }
+                        create_wargoal = {
+                            type = annex_puppet_wargoal
+                            target = ROOT
+                        }
+                    }
+                }
+                every_possible_country = {
+                    clr_country_flag = antarctic_sector_1
+                    clr_country_flag = antarctic_sector_2
+                    clr_country_flag = antarctic_sector_3
+                    clr_country_flag = antarctic_sector_4
+                    clr_country_flag = antarctic_sector_5
+                    clr_country_flag = antarctic_sector_6
+                    clr_country_flag = antarctic_sector_7
+                    clr_country_flag = antarctic_sector_8
+                    clr_country_flag = antarctic_sector_9
+                    clr_country_flag = antarctic_sector_10
+                    set_variable = {
+                        num_southpole_sectors = 0
+                    }
+                }
+                ROOT = {
+                    set_country_flag = antarctic_sector_1
+                    set_country_flag = antarctic_sector_2
+                    set_country_flag = antarctic_sector_3
+                    set_country_flag = antarctic_sector_4
+                    set_country_flag = antarctic_sector_5
+                    set_country_flag = antarctic_sector_6
+                    set_country_flag = antarctic_sector_7
+                    set_country_flag = antarctic_sector_8
+                    set_country_flag = antarctic_sector_9
+                    set_country_flag = antarctic_sector_10
+                    set_global_flag = antarctic_sector_1
+                    set_global_flag = antarctic_sector_2
+                    set_global_flag = antarctic_sector_3
+                    set_global_flag = antarctic_sector_4
+                    set_global_flag = antarctic_sector_5
+                    set_global_flag = antarctic_sector_6
+                    set_global_flag = antarctic_sector_7
+                    set_global_flag = antarctic_sector_8
+                    set_global_flag = antarctic_sector_9
+                    set_global_flag = antarctic_sector_10
+                    set_variable = {
+                        num_southpole_sectors = 10
+                    }
+                }
+                save_global_event_target_as = antarctic_sector_1_var
+                save_global_event_target_as = antarctic_sector_2_var
+                save_global_event_target_as = antarctic_sector_3_var
+                save_global_event_target_as = antarctic_sector_4_var
+                save_global_event_target_as = antarctic_sector_5_var
+                save_global_event_target_as = antarctic_sector_6_var
+                save_global_event_target_as = antarctic_sector_7_var
+                save_global_event_target_as = antarctic_sector_8_var
+                save_global_event_target_as = antarctic_sector_9_var
+                save_global_event_target_as = antarctic_sector_10_var
+            }
+            #ACTIONS
+            south_pole_close_click = {
+                ROOT = {
+                    clr_country_flag = south_pole_moment_flag
+                }
+            }
+
+            #SECTORS
+            antarctic_sectors_selection_1_click = {
+                if = {
+                    limit = {
+                        ROOT = {
+                            NOT = { has_country_flag = antarctic_sector_1 }
+                        }
+                    }
+                    set_global_flag = antarctic_sector_1
+                    multiply_variable = {
+                        global.sector_1_cost = -1
+                    }
+                    add_political_power = global.sector_1_cost
+                    multiply_variable = {
+                        global.sector_1_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_1 
+                        }
+                        add_to_variable = {
+                            num_southpole_sectors = -1
+                        }
+                        clr_country_flag = antarctic_sector_1
+                    }
+                    set_variable = {
+                        global.sector_1_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_1_cost = 20
+                    }
+                    ROOT = {
+                        set_country_flag = antarctic_sector_1
+                        add_dynamic_modifier = {
+                            modifier = sector_maintain_cost_pp_1
+                        }
+                        add_to_variable = { num_southpole_sectors = 1 }
+                    }
+                    save_global_event_target_as = antarctic_sector_1_var
+                }
+                else_if = {
+                    limit = { 
+                        ROOT = {
+                            has_country_flag = antarctic_sector_1
+                        }
+                    }
+                    ROOT = {
+                        multiply_variable = {
+                            global.sector_1_cost = -1
+                        }
+                        add_political_power = global.sector_1_cost
+                        multiply_variable = {
+                            global.sector_1_cost = -1
+                        }
+                    }
+                    add_to_variable = {
+                        global.sector_1_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_1_cost = 20
+                    }
+                }
+                else = {
+
+                }
+            }
+            antarctic_sectors_selection_2_click = {
+                if = {
+                    limit = {
+                        ROOT = {
+                            NOT = { has_country_flag = antarctic_sector_2 }
+                        }
+                    }
+                    set_global_flag = antarctic_sector_2
+                    multiply_variable = {
+                        global.sector_2_cost = -1
+                    }
+                    add_political_power = global.sector_2_cost
+                    multiply_variable = {
+                        global.sector_2_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_2
+                        }
+                        add_to_variable = {
+                            num_southpole_sectors = -1
+                        }
+                        clr_country_flag = antarctic_sector_2
+                    }
+                    set_variable = {
+                        global.sector_2_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_2_cost = 20
+                    }
+                    ROOT = {
+                        set_country_flag = antarctic_sector_2
+                        add_dynamic_modifier = {
+                            modifier = sector_maintain_cost_pp_2
+                        }
+                        add_to_variable = { num_southpole_sectors = 1 }
+                    }
+                    save_global_event_target_as = antarctic_sector_2_var
+                }
+                else_if = {
+                    limit = { 
+                        ROOT = {
+                            has_country_flag = antarctic_sector_2
+                        }
+                    }
+                    ROOT = {
+                        multiply_variable = {
+                            global.sector_2_cost = -1
+                        }
+                        add_political_power = global.sector_2_cost
+                        multiply_variable = {
+                            global.sector_2_cost = -1
+                        }
+                    }
+                    add_to_variable = {
+                        global.sector_2_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_2_cost = 20
+                    }
+                }
+                else = {
+
+                }
+            }
+            antarctic_sectors_selection_3_click = {
+                if = {
+                    limit = {
+                        ROOT = {
+                            NOT = { has_country_flag = antarctic_sector_3 }
+                        }
+                    }
+                    set_global_flag = antarctic_sector_3
+                    multiply_variable = {
+                        global.sector_3_cost = -1
+                    }
+                    add_political_power = global.sector_3_cost
+                    multiply_variable = {
+                        global.sector_3_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_3
+                        }
+                        add_to_variable = {
+                            num_southpole_sectors = -1
+                        }
+                        clr_country_flag = antarctic_sector_3
+                    }
+                    set_variable = {
+                        global.sector_3_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_3_cost = 20
+                    }
+                    ROOT = {
+                        set_country_flag = antarctic_sector_3
+                        add_dynamic_modifier = {
+                            modifier = sector_maintain_cost_pp_3
+                        }
+                        add_to_variable = { num_southpole_sectors = 1 }
+                    }
+                    save_global_event_target_as = antarctic_sector_3_var
+                }
+                else_if = {
+                    limit = { 
+                        ROOT = {
+                            has_country_flag = antarctic_sector_3
+                        }
+                    }
+                    ROOT = {
+                        multiply_variable = {
+                            global.sector_3_cost = -1
+                        }
+                        add_political_power = global.sector_3_cost
+                        multiply_variable = {
+                            global.sector_3_cost = -1
+                        }
+                    }
+                    add_to_variable = {
+                        global.sector_3_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_3_cost = 20
+                    }
+                }
+                else = {
+
+                }
+            }
+            antarctic_sectors_selection_4_click = {
+                if = {
+                    limit = {
+                        ROOT = {
+                            NOT = { has_country_flag = antarctic_sector_4 }
+                        }
+                    }
+                    set_global_flag = antarctic_sector_4
+                    multiply_variable = {
+                        global.sector_4_cost = -1
+                    }
+                    add_political_power = global.sector_4_cost
+                    multiply_variable = {
+                        global.sector_4_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_4 
+                        }
+                        add_to_variable = {
+                            num_southpole_sectors = -1
+                        }
+                        clr_country_flag = antarctic_sector_4
+                    }
+                    set_variable = {
+                        global.sector_4_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_4_cost = 20
+                    }
+                    ROOT = {
+                        set_country_flag = antarctic_sector_4
+                        add_dynamic_modifier = {
+                            modifier = sector_maintain_cost_pp_4
+                        }
+                        add_to_variable = { num_southpole_sectors = 1 }
+                    }
+                    save_global_event_target_as = antarctic_sector_4_var
+                }
+                else_if = {
+                    limit = { 
+                        ROOT = {
+                            has_country_flag = antarctic_sector_4
+                        }
+                    }
+                    ROOT = {
+                        multiply_variable = {
+                            global.sector_4_cost = -1
+                        }
+                        add_political_power = global.sector_4_cost
+                        multiply_variable = {
+                            global.sector_4_cost = -1
+                        }
+                    }
+                    add_to_variable = {
+                        global.sector_4_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_4_cost = 20
+                    }
+                }
+                else = {
+
+                }
+            }
+            antarctic_sectors_selection_5_click = {
+                if = {
+                    limit = {
+                        ROOT = {
+                            NOT = { has_country_flag = antarctic_sector_5 }
+                        }
+                    }
+                    set_global_flag = antarctic_sector_5
+                    multiply_variable = {
+                        global.sector_5_cost = -1
+                    }
+                    add_political_power = global.sector_5_cost
+                    multiply_variable = {
+                        global.sector_5_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_5 
+                        }
+                        add_to_variable = {
+                            num_southpole_sectors = -1
+                        }
+                        clr_country_flag = antarctic_sector_5
+                    }
+                    set_variable = {
+                        global.sector_5_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_5_cost = 20
+                    }
+                    ROOT = {
+                        set_country_flag = antarctic_sector_5
+                        add_dynamic_modifier = {
+                            modifier = sector_maintain_cost_pp_5
+                        }
+                        add_to_variable = { num_southpole_sectors = 1 }
+                    }
+                    save_global_event_target_as = antarctic_sector_5_var
+                }
+                else_if = {
+                    limit = { 
+                        ROOT = {
+                            has_country_flag = antarctic_sector_5
+                        }
+                    }
+                    ROOT = {
+                        multiply_variable = {
+                            global.sector_5_cost = -1
+                        }
+                        add_political_power = global.sector_5_cost
+                        multiply_variable = {
+                            global.sector_5_cost = -1
+                        }
+                    }
+                    add_to_variable = {
+                        global.sector_5_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_5_cost = 20
+                    }
+                }
+                else = {
+
+                }
+            }
+            antarctic_sectors_selection_6_click = {
+                if = {
+                    limit = {
+                        ROOT = {
+                            NOT = { has_country_flag = antarctic_sector_6 }
+                        }
+                    }
+                    set_global_flag = antarctic_sector_6
+                    multiply_variable = {
+                        global.sector_6_cost = -1
+                    }
+                    add_political_power = global.sector_6_cost
+                    multiply_variable = {
+                        global.sector_6_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_6 
+                        }
+                        add_to_variable = {
+                            num_southpole_sectors = -1
+                        }
+                        clr_country_flag = antarctic_sector_6
+                    }
+                    set_variable = {
+                        global.sector_6_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_6_cost = 20
+                    }
+                    ROOT = {
+                        set_country_flag = antarctic_sector_6
+                        add_dynamic_modifier = {
+                            modifier = sector_maintain_cost_pp_6
+                        }
+                        add_to_variable = { num_southpole_sectors = 1 }
+                    }
+                    save_global_event_target_as = antarctic_sector_6_var
+                }
+                else_if = {
+                    limit = { 
+                        ROOT = {
+                            has_country_flag = antarctic_sector_6
+                        }
+                    }
+                    ROOT = {
+                        multiply_variable = {
+                            global.sector_6_cost = -1
+                        }
+                        add_political_power = global.sector_6_cost
+                        multiply_variable = {
+                            global.sector_6_cost = -1
+                        }
+                    }
+                    add_to_variable = {
+                        global.sector_6_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_6_cost = 20
+                    }
+                }
+                else = {
+
+                }
+            }
+            antarctic_sectors_selection_7_click = {
+                if = {
+                    limit = {
+                        ROOT = {
+                            NOT = { has_country_flag = antarctic_sector_7 }
+                        }
+                    }
+                    set_global_flag = antarctic_sector_7
+                    multiply_variable = {
+                        global.sector_7_cost = -1
+                    }
+                    add_political_power = global.sector_7_cost
+                    multiply_variable = {
+                        global.sector_7_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_7 
+                        }
+                        add_to_variable = {
+                            num_southpole_sectors = -1
+                        }
+                        clr_country_flag = antarctic_sector_7
+                    }
+                    set_variable = {
+                        global.sector_7_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_7_cost = 20
+                    }
+                    ROOT = {
+                        set_country_flag = antarctic_sector_7
+                        add_dynamic_modifier = {
+                            modifier = sector_maintain_cost_pp_7
+                        }
+                        add_to_variable = { num_southpole_sectors = 1 }
+                    }
+                    save_global_event_target_as = antarctic_sector_7_var
+                }
+                else_if = {
+                    limit = { 
+                        ROOT = {
+                            has_country_flag = antarctic_sector_7
+                        }
+                    }
+                    ROOT = {
+                        multiply_variable = {
+                            global.sector_7_cost = -1
+                        }
+                        add_political_power = global.sector_7_cost
+                        multiply_variable = {
+                            global.sector_7_cost = -1
+                        }
+                    }
+                    add_to_variable = {
+                        global.sector_7_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_7_cost = 20
+                    }
+                }
+                else = {
+
+                }
+            }
+            antarctic_sectors_selection_8_click = {
+                if = {
+                    limit = {
+                        ROOT = {
+                            NOT = { has_country_flag = antarctic_sector_8 }
+                        }
+                    }
+                    set_global_flag = antarctic_sector_8
+                    multiply_variable = {
+                        global.sector_8_cost = -1
+                    }
+                    add_political_power = global.sector_8_cost
+                    multiply_variable = {
+                        global.sector_8_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_8 
+                        }
+                        add_to_variable = {
+                            num_southpole_sectors = -1
+                        }
+                        clr_country_flag = antarctic_sector_8
+                    }
+                    set_variable = {
+                        global.sector_8_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_8_cost = 20
+                    }
+                    ROOT = {
+                        set_country_flag = antarctic_sector_8
+                        add_dynamic_modifier = {
+                            modifier = sector_maintain_cost_pp_8
+                        }
+                        add_to_variable = { num_southpole_sectors = 1 }
+                    }
+                    save_global_event_target_as = antarctic_sector_8_var
+                }
+                else_if = {
+                    limit = { 
+                        ROOT = {
+                            has_country_flag = antarctic_sector_8
+                        }
+                    }
+                    ROOT = {
+                        multiply_variable = {
+                            global.sector_8_cost = -1
+                        }
+                        add_political_power = global.sector_8_cost
+                        multiply_variable = {
+                            global.sector_8_cost = -1
+                        }
+                    }
+                    add_to_variable = {
+                        global.sector_8_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_8_cost = 20
+                    }
+                }
+                else = {
+
+                }
+            }
+            antarctic_sectors_selection_9_click = {
+                if = {
+                    limit = {
+                        ROOT = {
+                            NOT = { has_country_flag = antarctic_sector_9 }
+                        }
+                    }
+                    set_global_flag = antarctic_sector_9
+                    multiply_variable = {
+                        global.sector_9_cost = -1
+                    }
+                    add_political_power = global.sector_9_cost
+                    multiply_variable = {
+                        global.sector_9_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_9 
+                        }
+                        add_to_variable = {
+                            num_southpole_sectors = -1
+                        }
+                        clr_country_flag = antarctic_sector_9
+                    }
+                    set_variable = {
+                        global.sector_9_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_9_cost = 20
+                    }
+                    ROOT = {
+                        set_country_flag = antarctic_sector_9
+                        add_dynamic_modifier = {
+                            modifier = sector_maintain_cost_pp_9
+                        }
+                        add_to_variable = { num_southpole_sectors = 1 }
+                    }
+                    save_global_event_target_as = antarctic_sector_9_var
+                }
+                else_if = {
+                    limit = { 
+                        ROOT = {
+                            has_country_flag = antarctic_sector_9
+                        }
+                    }
+                    ROOT = {
+                        multiply_variable = {
+                            global.sector_9_cost = -1
+                        }
+                        add_political_power = global.sector_9_cost
+                        multiply_variable = {
+                            global.sector_9_cost = -1
+                        }
+                    }
+                    add_to_variable = {
+                        global.sector_9_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_9_cost = 20
+                    }
+                }
+                else = {
+
+                }
+            }
+            antarctic_sectors_selection_10_click = {
+                if = {
+                    limit = {
+                        ROOT = {
+                            NOT = { has_country_flag = antarctic_sector_10 }
+                        }
+                    }
+                    set_global_flag = antarctic_sector_10
+                    multiply_variable = {
+                        global.sector_10_cost = -1
+                    }
+                    add_political_power = global.sector_10_cost
+                    multiply_variable = {
+                        global.sector_10_cost = -1
+                    }
+                    every_possible_country = {
+                        limit = { 
+                            has_country_flag = antarctic_sector_10 
+                        }
+                        add_to_variable = {
+                            num_southpole_sectors = -1
+                        }
+                        clr_country_flag = antarctic_sector_10
+                    }
+                    set_variable = {
+                        global.sector_10_cost_daily = 0.025
+                    }
+                    set_variable = {
+                        global.sector_10_cost = 20
+                    }
+                    ROOT = {
+                        set_country_flag = antarctic_sector_10
+                        add_dynamic_modifier = {
+                            modifier = sector_maintain_cost_pp_10
+                        }
+                        add_to_variable = { num_southpole_sectors = 1 }
+                    }
+                    save_global_event_target_as = antarctic_sector_10_var
+                }
+                else_if = {
+                    limit = { 
+                        ROOT = {
+                            has_country_flag = antarctic_sector_10
+                        }
+                    }
+                    ROOT = {
+                        multiply_variable = {
+                            global.sector_10_cost = -1
+                        }
+                        add_political_power = global.sector_10_cost
+                        multiply_variable = {
+                            global.sector_10_cost = -1
+                        }
+                    }
+                    add_to_variable = {
+                        global.sector_10_cost_daily = 0.025
+                    }
+                    add_to_variable = {
+                        global.sector_10_cost = 20
+                    }
+                }
+                else = {
+
+                }
+            }
+
+            leave_sector_1_click = {
+                clr_global_flag = antarctic_sector_1
+                ROOT = {
+                    clr_country_flag = antarctic_sector_1
+                    add_to_variable = { num_southpole_sectors = -1 }
+                }
+                set_variable = {
+                    global.sector_1_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_1_cost = 20
+                }
+            }  
+            leave_sector_2_click = {
+                clr_global_flag = antarctic_sector_2
+                ROOT = {
+                    clr_country_flag = antarctic_sector_2
+                    add_to_variable = { num_southpole_sectors = -1 }
+                }
+                set_variable = {
+                    global.sector_2_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_2_cost = 20
+                }
+            }    
+            leave_sector_3_click = {
+                clr_global_flag = antarctic_sector_3
+                ROOT = {
+                    clr_country_flag = antarctic_sector_3
+                    add_to_variable = { num_southpole_sectors = -1 }
+                }
+                set_variable = {
+                    global.sector_3_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_3_cost = 20
+                }
+            }    
+            leave_sector_4_click = {
+                clr_global_flag = antarctic_sector_4
+                ROOT = {
+                    clr_country_flag = antarctic_sector_4
+                    add_to_variable = { num_southpole_sectors = -1 }
+                }
+                set_variable = {
+                    global.sector_4_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_4_cost = 20
+                }
+            }              
+            leave_sector_5_click = {
+                clr_global_flag = antarctic_sector_5
+                ROOT = {
+                    clr_country_flag = antarctic_sector_5
+                    add_to_variable = { num_southpole_sectors = -1 }
+                }
+                set_variable = {
+                    global.sector_5_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_5_cost = 20
+                }
+            }    
+            leave_sector_6_click = {
+                clr_global_flag = antarctic_sector_6
+                ROOT = {
+                    clr_country_flag = antarctic_sector_6
+                    add_to_variable = { num_southpole_sectors = -1 }
+                }
+                set_variable = {
+                    global.sector_6_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_6_cost = 20
+                }
+            }    
+            leave_sector_7_click = {
+                clr_global_flag = antarctic_sector_7
+                ROOT = {
+                    clr_country_flag = antarctic_sector_7
+                    add_to_variable = { num_southpole_sectors = -1 }
+                }
+                set_variable = {
+                    global.sector_7_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_7_cost = 20
+                }
+            }    
+            leave_sector_8_click = {
+                clr_global_flag = antarctic_sector_8
+                ROOT = {
+                    clr_country_flag = antarctic_sector_8
+                    add_to_variable = { num_southpole_sectors = -1 }
+                }
+                set_variable = {
+                    global.sector_8_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_8_cost = 20
+                }
+            }    
+            leave_sector_9_click = {
+                clr_global_flag = antarctic_sector_9
+                ROOT = {
+                    clr_country_flag = antarctic_sector_9
+                    add_to_variable = { num_southpole_sectors = -1 }
+                }
+                set_variable = {
+                    global.sector_9_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_9_cost = 20
+                }
+            }   
+            leave_sector_10_click = {
+                clr_global_flag = antarctic_sector_10
+                ROOT = {
+                    clr_country_flag = antarctic_sector_10
+                    add_to_variable = { num_southpole_sectors = -1 }
+                }
+                set_variable = {
+                    global.sector_10_cost_daily = 0.025
+                }
+                set_variable = {
+                    global.sector_10_cost = 20
+                }
+            }  
+        }
+        
+        triggers = {
+            #INTERFACE
+            antarctic_sectors_pic_visible = {
+                ROOT = {
+                    check_variable = { num_southpole_sectors < 1 }
+                } 
+            }
+            antarctic_sectors_pic_owns_visible = {
+                ROOT = {
+                    check_variable = { num_southpole_sectors > 0 }
+                } 
+            }
+
+            #BUTTONS
+            south_pole_hostile_takeover_click_enabled = {
+                ROOT = {
+                    check_variable = { num_southpole_sectors > 5 }
+                    check_variable = { num_southpole_sectors < 10 }
+                }
+                has_global_flag = final_war_flag
+            }
+
+            #SECTORS
+            antarctic_sectors_selection_1_click_enabled = {
+                NOT = { has_idea = agrarian_stage }
+                NOT = { has_idea = developing_stage }
+                NOT = { has_idea = unstable_leadership }
+                NOT = { tag = ADU }
+                ROOT = {
+                    check_variable = { political_power > global.sector_1_cost }
+                }
+                has_war = no
+                is_puppet = no
+            }
+            antarctic_sectors_selection_2_click_enabled = {
+                NOT = { has_idea = agrarian_stage }
+                NOT = { has_idea = developing_stage }
+                NOT = { has_idea = unstable_leadership }
+                NOT = { tag = ADU }
+                ROOT = {
+                    check_variable = { political_power > global.sector_2_cost }
+                }
+                has_war = no
+                is_puppet = no
+            }
+            antarctic_sectors_selection_3_click_enabled = {
+                NOT = { has_idea = agrarian_stage }
+                NOT = { has_idea = developing_stage }
+                NOT = { has_idea = unstable_leadership }
+                NOT = { tag = ADU }
+                ROOT = {
+                    check_variable = { political_power > global.sector_3_cost }
+                }
+                has_war = no
+                is_puppet = no
+            }
+            antarctic_sectors_selection_4_click_enabled = {
+                NOT = { has_idea = agrarian_stage }
+                NOT = { has_idea = developing_stage }
+                NOT = { has_idea = unstable_leadership }
+                NOT = { tag = ADU }
+                ROOT = {
+                    check_variable = { political_power > global.sector_4_cost }
+                }
+                has_war = no
+                is_puppet = no
+            }
+            antarctic_sectors_selection_5_click_enabled = {
+                NOT = { has_idea = agrarian_stage }
+                NOT = { has_idea = developing_stage }
+                NOT = { has_idea = unstable_leadership }
+                NOT = { tag = ADU }
+                ROOT = {
+                    check_variable = { political_power > global.sector_5_cost }
+                }
+                has_war = no
+                is_puppet = no
+            }
+            antarctic_sectors_selection_6_click_enabled = {
+                NOT = { has_idea = agrarian_stage }
+                NOT = { has_idea = developing_stage }
+                NOT = { has_idea = unstable_leadership }
+                NOT = { tag = ADU }
+                ROOT = {
+                    check_variable = { political_power > global.sector_6_cost }
+                }
+                has_war = no
+                is_puppet = no
+            }
+            antarctic_sectors_selection_7_click_enabled = {
+                NOT = { has_idea = agrarian_stage }
+                NOT = { has_idea = developing_stage }
+                NOT = { has_idea = unstable_leadership }
+                NOT = { tag = ADU }
+                ROOT = {
+                    check_variable = { political_power > global.sector_7_cost }
+                }
+                has_war = no
+                is_puppet = no
+            }
+            antarctic_sectors_selection_8_click_enabled = {
+                NOT = { has_idea = agrarian_stage }
+                NOT = { has_idea = developing_stage }
+                NOT = { has_idea = unstable_leadership }
+                NOT = { tag = ADU }
+                ROOT = {
+                    check_variable = { political_power > global.sector_8_cost }
+                }
+                has_war = no
+                is_puppet = no
+            }
+            antarctic_sectors_selection_9_click_enabled = {
+                NOT = { has_idea = agrarian_stage }
+                NOT = { has_idea = developing_stage }
+                NOT = { has_idea = unstable_leadership }
+                NOT = { tag = ADU }
+                ROOT = {
+                    check_variable = { political_power > global.sector_9_cost }
+                }
+                has_war = no
+                is_puppet = no
+            }
+            antarctic_sectors_selection_10_click_enabled = {
+                NOT = { has_idea = agrarian_stage }
+                NOT = { has_idea = developing_stage }
+                NOT = { has_idea = unstable_leadership }
+                NOT = { tag = ADU }
+                ROOT = {
+                    check_variable = { political_power > global.sector_10_cost }
+                }
+                has_war = no
+                is_puppet = no
+            }
+
+            leave_sector_1_click_enabled = {
+                ROOT = {
+                    has_country_flag = antarctic_sector_1
+                }
+            }
+            leave_sector_2_click_enabled = {
+                ROOT = {
+                    has_country_flag = antarctic_sector_2
+                }
+            }
+            leave_sector_3_click_enabled = {
+                ROOT = {
+                    has_country_flag = antarctic_sector_3
+                }
+            }
+            leave_sector_4_click_enabled = {
+                ROOT = {
+                    has_country_flag = antarctic_sector_4
+                }
+            }
+            leave_sector_5_click_enabled = {
+                ROOT = {
+                    has_country_flag = antarctic_sector_5
+                }
+            }
+            leave_sector_6_click_enabled = {
+                ROOT = {
+                    has_country_flag = antarctic_sector_6
+                }
+            }
+            leave_sector_7_click_enabled = {
+                ROOT = {
+                    has_country_flag = antarctic_sector_7
+                }
+            }
+            leave_sector_8_click_enabled = {
+                ROOT = {
+                    has_country_flag = antarctic_sector_8
+                }
+            }
+            leave_sector_9_click_enabled = {
+                ROOT = {
+                    has_country_flag = antarctic_sector_9
+                }
+            }
+            leave_sector_10_click_enabled = {
+                ROOT = {
+                    has_country_flag = antarctic_sector_10
+                }
+            }
+
+            antarctic_sectors_selection_1_flag_visible = {
+                has_global_flag = antarctic_sector_1
+            }
+            antarctic_sectors_selection_2_flag_visible = {
+                has_global_flag = antarctic_sector_2
+            }
+            antarctic_sectors_selection_3_flag_visible = {
+                has_global_flag = antarctic_sector_3
+            }
+            antarctic_sectors_selection_4_flag_visible = {
+                has_global_flag = antarctic_sector_4
+            }
+            antarctic_sectors_selection_5_flag_visible = {
+                has_global_flag = antarctic_sector_5
+            }
+            antarctic_sectors_selection_6_flag_visible = {
+                has_global_flag = antarctic_sector_6
+            }
+            antarctic_sectors_selection_7_flag_visible = {
+                has_global_flag = antarctic_sector_7
+            }
+            antarctic_sectors_selection_8_flag_visible = {
+                has_global_flag = antarctic_sector_8
+            }
+            antarctic_sectors_selection_9_flag_visible = {
+                has_global_flag = antarctic_sector_9
+            }
+            antarctic_sectors_selection_10_flag_visible = {
+                has_global_flag = antarctic_sector_10
+            }
+
+            sector_1_name_visible = {
+                NOT = { has_global_flag = antarctic_sector_1 }
+            }
+            sector_2_name_visible = {
+                NOT = { has_global_flag = antarctic_sector_2 }
+            }
+            sector_3_name_visible = {
+                NOT = { has_global_flag = antarctic_sector_3 }
+            }
+            sector_4_name_visible = {
+                NOT = { has_global_flag = antarctic_sector_4 }
+            }
+            sector_5_name_visible = {
+                NOT = { has_global_flag = antarctic_sector_5 }
+            }
+            sector_6_name_visible = {
+                NOT = { has_global_flag = antarctic_sector_6 }
+            }
+            sector_7_name_visible = {
+                NOT = { has_global_flag = antarctic_sector_7 }
+            }
+            sector_8_name_visible = {
+                NOT = { has_global_flag = antarctic_sector_8 }
+            }
+            sector_9_name_visible = {
+                NOT = { has_global_flag = antarctic_sector_9 }
+            }
+            sector_10_name_visible = {
+                NOT = { has_global_flag = antarctic_sector_10 }
+            }
+
+            sector_1_cost_text_visible = {
+                has_global_flag = antarctic_sector_1
+            }
+            sector_2_cost_text_visible = {
+                has_global_flag = antarctic_sector_2
+            }
+            sector_3_cost_text_visible = {
+                has_global_flag = antarctic_sector_3
+            }
+            sector_4_cost_text_visible = {
+                has_global_flag = antarctic_sector_4
+            }
+            sector_5_cost_text_visible = {
+                has_global_flag = antarctic_sector_5
+            }
+            sector_6_cost_text_visible = {
+                has_global_flag = antarctic_sector_6
+            }
+            sector_7_cost_text_visible = {
+                has_global_flag = antarctic_sector_7
+            }
+            sector_8_cost_text_visible = {
+                has_global_flag = antarctic_sector_8
+            }
+            sector_9_cost_text_visible = {
+                has_global_flag = antarctic_sector_9
+            }
+            sector_10_cost_text_visible = {
+                has_global_flag = antarctic_sector_10
+            }
+
+            sector_1_cost_text_daily_visible = {
+                has_country_flag = antarctic_sector_1
+            }
+            sector_2_cost_text_daily_visible = {
+                has_country_flag = antarctic_sector_2
+            }
+            sector_3_cost_text_daily_visible = {
+                has_country_flag = antarctic_sector_3
+            }
+            sector_4_cost_text_daily_visible = {
+                has_country_flag = antarctic_sector_4
+            }
+            sector_5_cost_text_daily_visible = {
+                has_country_flag = antarctic_sector_5
+            }
+            sector_6_cost_text_daily_visible = {
+                has_country_flag = antarctic_sector_6
+            }
+            sector_7_cost_text_daily_visible = {
+                has_country_flag = antarctic_sector_7
+            }
+            sector_8_cost_text_daily_visible = {
+                has_country_flag = antarctic_sector_8
+            }
+            sector_9_cost_text_daily_visible = {
+                has_country_flag = antarctic_sector_9
+            }
+            sector_10_cost_text_daily_visible = {
+                has_country_flag = antarctic_sector_10
+            }
+        }
+
+        properties = {
+            player_flag_southpole = {
+                image = "[ROOT.GetFlag]"
+            }
+            antarctic_sectors_selection_1_flag = {
+                image = "[antarctic_sector_1_var.GetFlag]"
+            }
+            antarctic_sectors_selection_2_flag = {
+                image = "[antarctic_sector_2_var.GetFlag]"
+            }
+            antarctic_sectors_selection_3_flag = {
+                image = "[antarctic_sector_3_var.GetFlag]"
+            }
+            antarctic_sectors_selection_4_flag = {
+                image = "[antarctic_sector_4_var.GetFlag]"
+            }
+            antarctic_sectors_selection_5_flag = {
+                image = "[antarctic_sector_5_var.GetFlag]"
+            }
+            antarctic_sectors_selection_6_flag = {
+                image = "[antarctic_sector_6_var.GetFlag]"
+            }
+            antarctic_sectors_selection_7_flag = {
+                image = "[antarctic_sector_7_var.GetFlag]"
+            }
+            antarctic_sectors_selection_8_flag = {
+                image = "[antarctic_sector_8_var.GetFlag]"
+            }
+            antarctic_sectors_selection_9_flag = {
+                image = "[antarctic_sector_9_var.GetFlag]"
+            }
+            antarctic_sectors_selection_10_flag = {
+                image = "[antarctic_sector_10_var.GetFlag]"
+            }
+        }
+
+        ai_enabled = {
+            always = yes
+        }
+
+        ai_test_interval = 6969
+
+        ai_check = {
+            has_political_power > 20
+            political_power_daily > 0
+            has_war = no
+                is_puppet = no
+		}
+
+        ai_weights = {
+            antarctic_sectors_selection_1_click = {
+                ai_will_do = {
+                    factor = 1
+                    modifier = {
+                        has_country_flag = antarctic_sector_1 
+                        add = 100
+                    }
+                }
+            }
+            antarctic_sectors_selection_2_click = {
+                ai_will_do = {
+                    factor = 1
+                    modifier = {
+                        has_country_flag = antarctic_sector_2
+                        add = 100
+                    }
+                }
+            }
+            antarctic_sectors_selection_3_click = {
+                ai_will_do = {
+                    factor = 1
+                    modifier = {
+                        has_country_flag = antarctic_sector_3
+                        add = 100
+                    }
+                }
+            }
+            antarctic_sectors_selection_4_click = {
+                ai_will_do = {
+                    factor = 1
+                    modifier = {
+                        has_country_flag = antarctic_sector_4
+                        add = 100
+                    }
+                }
+            }
+            antarctic_sectors_selection_5_click = {
+                ai_will_do = {
+                    factor = 1
+                    modifier = {
+                        has_country_flag = antarctic_sector_5 
+                        add = 100
+                    }
+                }
+            }
+            antarctic_sectors_selection_6_click = {
+                ai_will_do = {
+                    factor = 1
+                    modifier = {
+                        has_country_flag = antarctic_sector_6 
+                        add = 100
+                    }
+                }
+            }
+            antarctic_sectors_selection_7_click = {
+                ai_will_do = {
+                    factor = 1
+                    modifier = {
+                        has_country_flag = antarctic_sector_7
+                        add = 100
+                    }
+                }
+            }
+            antarctic_sectors_selection_8_click = {
+                ai_will_do = {
+                    factor = 1
+                    modifier = {
+                        has_country_flag = antarctic_sector_8
+                        add = 100
+                    }
+                }
+            }
+            antarctic_sectors_selection_9_click = {
+                ai_will_do = {
+                    factor = 1
+                    modifier = {
+                        has_country_flag = antarctic_sector_9 
+                        add = 100
+                    }
+                }
+            }
+            antarctic_sectors_selection_10_click = {
+                ai_will_do = {
+                    factor = 1
+                    modifier = {
+                        has_country_flag = antarctic_sector_10 
+                        add = 100
+                    }
+                }
+            }
+
+            leave_sector_1_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_2_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_3_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_4_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_5_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_6_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_7_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_8_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_9_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+            leave_sector_10_click = {
+                ai_will_do = {
+                    factor = 0
+                    modifier = {
+			        	add = 999
+			        	political_power_daily < 0.2
+			        }
+                }
+            }
+
+        }
+    }
+}

@@ -1,405 +1,404 @@
-#guiTypes = {
-#	containerWindowType = {
-#		name = "spaceship_button_window"
-#		position = { x=181 y=37 }
-#		clipping = no
-#		buttonType = {
-#			name = "spaceship_button"
-#			position = { x = -180 y = 393 }
-#			quadTextureSprite ="GFX_spaceship_button"
-#			clicksound = click_close
-#			oversound = ui_menu_over
-#			pdx_tooltip = help_ss_current_contribution
-#		}
-#	}
-#
-#	containerWindowType = {
-#		name = "international_topbartab_window"
-#		position = { x=0 y=0 }
-#		size = { width = 100%% height = 100%% }
-#		fade_time = 400
-#		fade_type = linear
-#		clipping = no
-#		
-#		iconType ={
-#			name ="spaceship_bg"
-#			spriteType = "GFX_international_bg"
-#			position = { x= 0 y = 0 }
-#		}
-#
-#		instantTextBoxType = {
-#			name = "spaceship_contribution_detail"
-#			position = { x = 0 y = -40 }
-#			font = "Arialsmallest"
-#			text = "▀  {LOAD.ISS_GFX:ON}  ▀▀ ▀ ▀▀ ▀▀ ▀▀ {LOAD.MODULES_GFX:ON} ▀▀ ▀▀  ▀▀"	
-#			maxWidth = 300
-#			maxHeight = 120
-#			orientation = CENTER
-#		}
-#		instantTextBoxType = {
-#			name = "spaceship_contribution_detail2"
-#			position = { x = 220 y = 300 }
-#			font = "Arialsmallest"
-#			text = "▀ ▀▀▀  {LOAD.MEGAPROJECTS.ISS_UNITY}  ▀▀▀▀ ▀▀▀▀ ▀▀  ▀▀▀  {LOAD.ON.D}  ▀▀ ▀▀ ▀▀                           ▀▀  {DATALINK.LOADING}  ▀  ▀  ▀"	
-#			maxWidth = 380
-#			maxHeight = 120
-#		}
-#		instantTextBoxType = {
-#			name = "spaceship_contribution_detail3"
-#			position = { x = 220 y = 360 }
-#			font = "Arialsmallest"
-#			text = "▀▀▀▀   ▀ ▀▀  ▀▀▀▀▀  ▀▀ ▀ ▀ ▀ ▀ ▀     ▀     ▀     ▀     ▀     ▀     ▀     ▀     ▀     ▀     ▀     ▀"	
-#			maxWidth = 40
-#			maxHeight = 200
-#		}
-#
-#		containerWindowType = {
-#			name = "bgs"
-#			size = { width = 100%% height = 100%% }
-#			background = {
-#				name = "Background"
-#				quadTextureSprite ="GFX_tiled_bg_alpha_fade"
-#			}
-#			background = {
-#				name = "Background3"
-#				quadTextureSprite ="GFX_tiled_bg_alpha_fade_flip"
-#			}
-#			background = {
-#				name = "Background2"
-#				quadTextureSprite ="GFX_wonders_techtree_bg"
-#			}
-#		}
-#
-#		containerWindowType = {
-#			name = "international_topbartab_window_iss"
-#			position = { x=0 y=0 }
-#			size = { width = 100%% height = 100%% }
-#			margin = { top = 10 left = 10 bottom = 10 right = 10 }
-#			drag_scroll = { left middle }
-#			verticalScrollbar = "right_vertical_slider"
-#			horizontalScrollbar = "bottom_horizontal_slider"
-#
-#			background = {
-#				name = "Background"
-#				quadTextureSprite ="GFX_tiled_window_transparent"
-#			}
-#
-#			iconType = {
-#				name = "dummy"
-#				position = { x = 1600 y = 1030 }
-#				quadTextureSprite ="GFX_st_button"
-#				Orientation = "UPPER_LEFT"
-#			}
-#
-#			containerWindowType = {
-#				name = "international_topbartab_window_iss_gfx"
-#				position = { x=-610 y=-230 }
-#				orientation = CENTER			
-#				iconType = {
-#					name = "international_module_1"
-#					position = { x = 0 y = 10 }
-#					quadTextureSprite ="GFX_international_spaceship_1"
-#					Orientation = "UPPER_LEFT"
-#				}
-#				iconType = {
-#					name = "international_module_1_green"
-#					position = { x = 0 y = 10 }
-#					quadTextureSprite ="GFX_international_spaceship_1_green"
-#					Orientation = "UPPER_LEFT"
-#				}
-#				iconType = {
-#					name = "international_module_1_purple"
-#					position = { x = 0 y = 10 }
-#					quadTextureSprite ="GFX_international_spaceship_1_purple"
-#					Orientation = "UPPER_LEFT"
-#				}
-#				iconType = {
-#					name = "international_module_2"
-#					position = { x = 245 y = 10 }
-#					quadTextureSprite ="GFX_international_spaceship_2"
-#					Orientation = "UPPER_LEFT"
-#				}
-#				iconType = {
-#					name = "international_module_2_green"
-#					position = { x = 245 y = 10 }
-#					quadTextureSprite ="GFX_international_spaceship_2_green"
-#					Orientation = "UPPER_LEFT"
-#				}
-#				iconType = {
-#					name = "international_module_2_purple"
-#					position = { x = 245 y = 10 }
-#					quadTextureSprite ="GFX_international_spaceship_2_purple"
-#					Orientation = "UPPER_LEFT"
-#				}
-#				iconType = {
-#					name = "international_module_3"
-#					position = { x = 490 y = 10 }
-#					quadTextureSprite ="GFX_international_spaceship_3"
-#					Orientation = "UPPER_LEFT"
-#				}
-#				iconType = {
-#					name = "international_module_3_green"
-#					position = { x = 490 y = 10 }
-#					quadTextureSprite ="GFX_international_spaceship_3_green"
-#					Orientation = "UPPER_LEFT"
-#				}
-#				iconType = {
-#					name = "international_module_3_purple"
-#					position = { x = 490 y = 10 }
-#					quadTextureSprite ="GFX_international_spaceship_3_purple"
-#					Orientation = "UPPER_LEFT"
-#				}
-#				iconType = {
-#					name = "international_module_4"
-#					position = { x = 735 y = 10 }
-#					quadTextureSprite ="GFX_international_spaceship_4"
-#					Orientation = "UPPER_LEFT"
-#				}
-#				iconType = {
-#					name = "international_module_4_green"
-#					position = { x = 735 y = 10 }
-#					quadTextureSprite ="GFX_international_spaceship_4_green"
-#					Orientation = "UPPER_LEFT"
-#				}
-#				iconType = {
-#					name = "international_module_4_purple"
-#					position = { x = 735 y = 10 }
-#					quadTextureSprite ="GFX_international_spaceship_4_purple"
-#					Orientation = "UPPER_LEFT"
-#				}
-#				iconType = {
-#					name = "international_module_5"
-#					position = { x = 980 y = 10 }
-#					quadTextureSprite ="GFX_international_spaceship_5"
-#					Orientation = "UPPER_LEFT"
-#				}
-#				iconType = {
-#					name = "international_module_5_green"
-#					position = { x = 980 y = 10 }
-#					quadTextureSprite ="GFX_international_spaceship_5_green"
-#					Orientation = "UPPER_LEFT"
-#				}
-#				iconType = {
-#					name = "international_module_5_purple"
-#					position = { x = 980 y = 10 }
-#					quadTextureSprite ="GFX_international_spaceship_5_purple"
-#					Orientation = "UPPER_LEFT"
-#				}
-#			
-#				instantTextBoxType = {
-#					name = "spaceship_contribution_text"
-#					position = { x = 835 y = 357 }
-#					font = "Arialsmallest"
-#					text = "spaceship_contribution_text_2"	
-#					maxWidth = 355
-#					maxHeight = 80
-#					format = left
-#					fixedsize = yes
-#					pdx_tooltip = "help_ss_current_contribution"
-#					pdx_tooltip_delayed = "spaceship_contribution_text_tt"
-#				}
-#			
-#				buttonType = {
-#					name = "international_module_1_button"
-#					position = { x = 140 y = 90 }
-#					quadTextureSprite ="GFX_button_spaceship_parts"
-#					buttonText = "module_1_text"
-#					buttonFont = "Arialcap"
-#					clicksound = click_close
-#					oversound = ui_menu_over
-#					pdx_tooltip = "module_one_tooltip"
-#				}
-#				buttonType = {
-#					name = "international_module_1_button_green"
-#					position = { x = 140 y = 90 }
-#					quadTextureSprite ="GFX_button_spaceship_parts_green"
-#					buttonText = "module_1_text"
-#					buttonFont = "Arialcap"
-#					clicksound = click_close
-#					oversound = ui_menu_over
-#					pdx_tooltip = "module_one_tooltip"
-#				}
-#				buttonType = {
-#					name = "international_module_1_button_purple"
-#					position = { x = 140 y = 90 }
-#					quadTextureSprite ="GFX_button_spaceship_parts_purple"
-#					buttonText = "module_1_text"
-#					buttonFont = "Arialcap"
-#					clicksound = click_close
-#					oversound = ui_menu_over
-#					pdx_tooltip = "module_one_tooltip"
-#				}
-#				buttonType = {
-#					name = "international_module_2_button"
-#					position = { x = 180 y = 300 }
-#					quadTextureSprite ="GFX_button_spaceship_parts"
-#					buttonText = "module_2_text"
-#					buttonFont = "Arialcap"
-#					clicksound = click_close
-#					oversound = ui_menu_over
-#					pdx_tooltip = "module_two_tooltip"
-#				}
-#				buttonType = {
-#					name = "international_module_2_button_green"
-#					position = { x = 180 y = 300 }
-#					quadTextureSprite ="GFX_button_spaceship_parts_green"
-#					buttonText = "module_2_text"
-#					buttonFont = "Arialcap"
-#					clicksound = click_close
-#					oversound = ui_menu_over
-#					pdx_tooltip = "module_two_tooltip"
-#				}
-#				buttonType = {
-#					name = "international_module_2_button_purple"
-#					position = { x = 180 y = 300 }
-#					quadTextureSprite ="GFX_button_spaceship_parts_purple"
-#					buttonText = "module_2_text"
-#					buttonFont = "Arialcap"
-#					clicksound = click_close
-#					oversound = ui_menu_over
-#					pdx_tooltip = "module_two_tooltip"
-#				}
-#				buttonType = {
-#					name = "international_module_3_button"
-#					position = { x = 430 y = 375 }
-#					quadTextureSprite ="GFX_button_spaceship_parts"
-#					buttonText = "module_3_text"
-#					buttonFont = "Arialcap"
-#					clicksound = click_close
-#					oversound = ui_menu_over
-#					pdx_tooltip = "module_three_tooltip"
-#				}
-#				buttonType = {
-#					name = "international_module_3_button_green"
-#					position = { x = 430 y = 375 }
-#					quadTextureSprite ="GFX_button_spaceship_parts_green"
-#					buttonText = "module_3_text"
-#					buttonFont = "Arialcap"
-#					clicksound = click_close
-#					oversound = ui_menu_over
-#					pdx_tooltip = "module_three_tooltip"
-#				}
-#				buttonType = {
-#					name = "international_module_3_button_purple"
-#					position = { x = 430 y = 375 }
-#					quadTextureSprite ="GFX_button_spaceship_parts_purple"
-#					buttonText = "module_3_text"
-#					buttonFont = "Arialcap"
-#					clicksound = click_close
-#					oversound = ui_menu_over
-#					pdx_tooltip = "module_three_tooltip"
-#				}
-#				buttonType = {
-#					name = "international_module_4_button"
-#					position = { x = 420 y = 40 }
-#					quadTextureSprite ="GFX_button_spaceship_parts"
-#					buttonText = "module_4_text"
-#					buttonFont = "Arialcap"
-#					clicksound = click_close
-#					oversound = ui_menu_over
-#					pdx_tooltip = "module_four_tooltip"
-#				}
-#				buttonType = {
-#					name = "international_module_4_button_green"
-#					position = { x = 420 y = 40 }
-#					quadTextureSprite ="GFX_button_spaceship_parts_green"
-#					buttonText = "module_4_text"
-#					buttonFont = "Arialcap"
-#					clicksound = click_close
-#					oversound = ui_menu_over
-#					pdx_tooltip = "module_four_tooltip"
-#				}
-#				buttonType = {
-#					name = "international_module_4_button_purple"
-#					position = { x = 420 y = 40 }
-#					quadTextureSprite ="GFX_button_spaceship_parts_purple"
-#					buttonText = "module_4_text"
-#					buttonFont = "Arialcap"
-#					clicksound = click_close
-#					oversound = ui_menu_over
-#					pdx_tooltip = "module_four_tooltip"
-#				}
-#				buttonType = {
-#					name = "international_module_5_button"
-#					position = { x = 940 y = 70 }
-#					quadTextureSprite ="GFX_button_spaceship_parts"
-#					buttonText = "module_5_text"
-#					buttonFont = "Arialcap"
-#					clicksound = click_close
-#					oversound = ui_menu_over
-#					pdx_tooltip = "module_five_tooltip"
-#				}
-#				buttonType = {
-#					name = "international_module_5_button_green"
-#					position = { x = 940 y = 70 }
-#					quadTextureSprite ="GFX_button_spaceship_parts_green"
-#					buttonText = "module_5_text"
-#					buttonFont = "Arialcap"
-#					clicksound = click_close
-#					oversound = ui_menu_over
-#					pdx_tooltip = "module_five_tooltip"
-#				}
-#				buttonType = {
-#					name = "international_module_5_button_purple"
-#					position = { x = 940 y = 70 }
-#					quadTextureSprite ="GFX_button_spaceship_parts_purple"
-#					buttonText = "module_5_text"
-#					buttonFont = "Arialcap"
-#					clicksound = click_close
-#					oversound = ui_menu_over
-#					pdx_tooltip = "module_five_tooltip"
-#				}			
-#				###
-#				iconType = {
-#					name = "bridge_flag"
-#					quadTextureSprite ="GFX_construction_flag_mod_mod_mod_mod"
-#					position = { x= 150 y = 89 }
-#					Orientation = "UPPER_LEFT"
-#					alwaystransparent = yes
-#				}
-#				iconType = {
-#					name = "quarters_flag"
-#					quadTextureSprite ="GFX_construction_flag_mod_mod_mod_mod"
-#					position = { x= 190 y = 299 }
-#					Orientation = "UPPER_LEFT"
-#					alwaystransparent = yes
-#				}
-#				iconType = {
-#					name = "support_flag"
-#					quadTextureSprite ="GFX_construction_flag_mod_mod_mod_mod"
-#					position = { x = 440 y = 374 }
-#					Orientation = "UPPER_LEFT"
-#					alwaystransparent = yes
-#				}
-#				iconType = {
-#					name = "storage_flag"
-#					quadTextureSprite ="GFX_construction_flag_mod_mod_mod_mod"
-#					position = { x = 430 y = 39 }
-#					Orientation = "UPPER_LEFT"
-#					alwaystransparent = yes
-#				}
-#				iconType = {
-#					name = "engine_flag"
-#					quadTextureSprite ="GFX_construction_flag_mod_mod_mod_mod"
-#					position = { x = 950 y = 69 }
-#					Orientation = "UPPER_LEFT"
-#					alwaystransparent = yes
-#				}
-#			}
-#		}
-#
-#		buttonType = {
-#			name = "close_button"
-#			position = { x = -58 y = 3 }
-#			quadTextureSprite ="GFX_exit_button_left"
-#			buttonFont = "Main_14_black"
-#			shortcut = "ESCAPE"
-#			Orientation = "UPPER_RIGHT"
-#			clicksound = click_close
-#			pdx_tooltip = "CLOSE"
-#			#scale = 0.9
-#			shortcut = "ESCAPE"
-#		}
-#    }
-#}
-#
+guiTypes = {
+	containerWindowType = {
+		name = "spaceship_button_window"
+		position = { x=181 y=37 }
+		clipping = no
+		buttonType = {
+			name = "spaceship_button"
+			position = { x = -180 y = 393 }
+			quadTextureSprite ="GFX_spaceship_button"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = help_ss_current_contribution
+		}
+	}
+
+	containerWindowType = {
+		name = "international_topbartab_window"
+		position = { x=0 y=0 }
+		size = { width = 100%% height = 100%% }
+		fade_time = 400
+		fade_type = linear
+		clipping = no
+		
+		iconType ={
+			name ="spaceship_bg"
+			spriteType = "GFX_international_bg"
+			position = { x= 0 y = 0 }
+		}
+
+		instantTextBoxType = {
+			name = "spaceship_contribution_detail"
+			position = { x = 0 y = -40 }
+			font = "Arialsmallest"
+			text = "▀  {LOAD.ISS_GFX:ON}  ▀▀ ▀ ▀▀ ▀▀ ▀▀ {LOAD.MODULES_GFX:ON} ▀▀ ▀▀  ▀▀"	
+			maxWidth = 300
+			maxHeight = 120
+			orientation = CENTER
+		}
+		instantTextBoxType = {
+			name = "spaceship_contribution_detail2"
+			position = { x = 220 y = 300 }
+			font = "Arialsmallest"
+			text = "▀ ▀▀▀  {LOAD.MEGAPROJECTS.ISS_UNITY}  ▀▀▀▀ ▀▀▀▀ ▀▀  ▀▀▀  {LOAD.ON.D}  ▀▀ ▀▀ ▀▀                           ▀▀  {DATALINK.LOADING}  ▀  ▀  ▀"	
+			maxWidth = 380
+			maxHeight = 120
+		}
+		instantTextBoxType = {
+			name = "spaceship_contribution_detail3"
+			position = { x = 220 y = 360 }
+			font = "Arialsmallest"
+			text = "▀▀▀▀   ▀ ▀▀  ▀▀▀▀▀  ▀▀ ▀ ▀ ▀ ▀ ▀     ▀     ▀     ▀     ▀     ▀     ▀     ▀     ▀     ▀     ▀     ▀"	
+			maxWidth = 40
+			maxHeight = 200
+		}
+
+		containerWindowType = {
+			name = "bgs"
+			size = { width = 100%% height = 100%% }
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_bg_alpha_fade"
+			}
+			background = {
+				name = "Background3"
+				quadTextureSprite ="GFX_tiled_bg_alpha_fade_flip"
+			}
+			background = {
+				name = "Background2"
+				quadTextureSprite ="GFX_wonders_techtree_bg"
+			}
+		}
+
+		containerWindowType = {
+			name = "international_topbartab_window_iss"
+			position = { x=0 y=0 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 10 left = 10 bottom = 10 right = 10 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_transparent"
+			}
+
+			iconType = {
+				name = "dummy"
+				position = { x = 1600 y = 1030 }
+				quadTextureSprite ="GFX_st_button"
+				Orientation = "UPPER_LEFT"
+			}
+
+			containerWindowType = {
+				name = "international_topbartab_window_iss_gfx"
+				position = { x=-610 y=-230 }
+				orientation = CENTER			
+				iconType = {
+					name = "international_module_1"
+					position = { x = 0 y = 10 }
+					quadTextureSprite ="GFX_international_spaceship_1"
+					Orientation = "UPPER_LEFT"
+				}
+				iconType = {
+					name = "international_module_1_green"
+					position = { x = 0 y = 10 }
+					quadTextureSprite ="GFX_international_spaceship_1_green"
+					Orientation = "UPPER_LEFT"
+				}
+				iconType = {
+					name = "international_module_1_purple"
+					position = { x = 0 y = 10 }
+					quadTextureSprite ="GFX_international_spaceship_1_purple"
+					Orientation = "UPPER_LEFT"
+				}
+				iconType = {
+					name = "international_module_2"
+					position = { x = 245 y = 10 }
+					quadTextureSprite ="GFX_international_spaceship_2"
+					Orientation = "UPPER_LEFT"
+				}
+				iconType = {
+					name = "international_module_2_green"
+					position = { x = 245 y = 10 }
+					quadTextureSprite ="GFX_international_spaceship_2_green"
+					Orientation = "UPPER_LEFT"
+				}
+				iconType = {
+					name = "international_module_2_purple"
+					position = { x = 245 y = 10 }
+					quadTextureSprite ="GFX_international_spaceship_2_purple"
+					Orientation = "UPPER_LEFT"
+				}
+				iconType = {
+					name = "international_module_3"
+					position = { x = 490 y = 10 }
+					quadTextureSprite ="GFX_international_spaceship_3"
+					Orientation = "UPPER_LEFT"
+				}
+				iconType = {
+					name = "international_module_3_green"
+					position = { x = 490 y = 10 }
+					quadTextureSprite ="GFX_international_spaceship_3_green"
+					Orientation = "UPPER_LEFT"
+				}
+				iconType = {
+					name = "international_module_3_purple"
+					position = { x = 490 y = 10 }
+					quadTextureSprite ="GFX_international_spaceship_3_purple"
+					Orientation = "UPPER_LEFT"
+				}
+				iconType = {
+					name = "international_module_4"
+					position = { x = 735 y = 10 }
+					quadTextureSprite ="GFX_international_spaceship_4"
+					Orientation = "UPPER_LEFT"
+				}
+				iconType = {
+					name = "international_module_4_green"
+					position = { x = 735 y = 10 }
+					quadTextureSprite ="GFX_international_spaceship_4_green"
+					Orientation = "UPPER_LEFT"
+				}
+				iconType = {
+					name = "international_module_4_purple"
+					position = { x = 735 y = 10 }
+					quadTextureSprite ="GFX_international_spaceship_4_purple"
+					Orientation = "UPPER_LEFT"
+				}
+				iconType = {
+					name = "international_module_5"
+					position = { x = 980 y = 10 }
+					quadTextureSprite ="GFX_international_spaceship_5"
+					Orientation = "UPPER_LEFT"
+				}
+				iconType = {
+					name = "international_module_5_green"
+					position = { x = 980 y = 10 }
+					quadTextureSprite ="GFX_international_spaceship_5_green"
+					Orientation = "UPPER_LEFT"
+				}
+				iconType = {
+					name = "international_module_5_purple"
+					position = { x = 980 y = 10 }
+					quadTextureSprite ="GFX_international_spaceship_5_purple"
+					Orientation = "UPPER_LEFT"
+				}
+			
+				instantTextBoxType = {
+					name = "spaceship_contribution_text"
+					position = { x = 835 y = 357 }
+					font = "Arialsmallest"
+					text = "spaceship_contribution_text_2"	
+					maxWidth = 355
+					maxHeight = 80
+					format = left
+					fixedsize = yes
+					pdx_tooltip = "help_ss_current_contribution"
+					pdx_tooltip_delayed = "spaceship_contribution_text_tt"
+				}
+			
+				buttonType = {
+					name = "international_module_1_button"
+					position = { x = 140 y = 90 }
+					quadTextureSprite ="GFX_button_spaceship_parts"
+					buttonText = "module_1_text"
+					buttonFont = "Arialcap"
+					clicksound = click_close
+					oversound = ui_menu_over
+					pdx_tooltip = "module_one_tooltip"
+				}
+				buttonType = {
+					name = "international_module_1_button_green"
+					position = { x = 140 y = 90 }
+					quadTextureSprite ="GFX_button_spaceship_parts_green"
+					buttonText = "module_1_text"
+					buttonFont = "Arialcap"
+					clicksound = click_close
+					oversound = ui_menu_over
+					pdx_tooltip = "module_one_tooltip"
+				}
+				buttonType = {
+					name = "international_module_1_button_purple"
+					position = { x = 140 y = 90 }
+					quadTextureSprite ="GFX_button_spaceship_parts_purple"
+					buttonText = "module_1_text"
+					buttonFont = "Arialcap"
+					clicksound = click_close
+					oversound = ui_menu_over
+					pdx_tooltip = "module_one_tooltip"
+				}
+				buttonType = {
+					name = "international_module_2_button"
+					position = { x = 180 y = 300 }
+					quadTextureSprite ="GFX_button_spaceship_parts"
+					buttonText = "module_2_text"
+					buttonFont = "Arialcap"
+					clicksound = click_close
+					oversound = ui_menu_over
+					pdx_tooltip = "module_two_tooltip"
+				}
+				buttonType = {
+					name = "international_module_2_button_green"
+					position = { x = 180 y = 300 }
+					quadTextureSprite ="GFX_button_spaceship_parts_green"
+					buttonText = "module_2_text"
+					buttonFont = "Arialcap"
+					clicksound = click_close
+					oversound = ui_menu_over
+					pdx_tooltip = "module_two_tooltip"
+				}
+				buttonType = {
+					name = "international_module_2_button_purple"
+					position = { x = 180 y = 300 }
+					quadTextureSprite ="GFX_button_spaceship_parts_purple"
+					buttonText = "module_2_text"
+					buttonFont = "Arialcap"
+					clicksound = click_close
+					oversound = ui_menu_over
+					pdx_tooltip = "module_two_tooltip"
+				}
+				buttonType = {
+					name = "international_module_3_button"
+					position = { x = 430 y = 375 }
+					quadTextureSprite ="GFX_button_spaceship_parts"
+					buttonText = "module_3_text"
+					buttonFont = "Arialcap"
+					clicksound = click_close
+					oversound = ui_menu_over
+					pdx_tooltip = "module_three_tooltip"
+				}
+				buttonType = {
+					name = "international_module_3_button_green"
+					position = { x = 430 y = 375 }
+					quadTextureSprite ="GFX_button_spaceship_parts_green"
+					buttonText = "module_3_text"
+					buttonFont = "Arialcap"
+					clicksound = click_close
+					oversound = ui_menu_over
+					pdx_tooltip = "module_three_tooltip"
+				}
+				buttonType = {
+					name = "international_module_3_button_purple"
+					position = { x = 430 y = 375 }
+					quadTextureSprite ="GFX_button_spaceship_parts_purple"
+					buttonText = "module_3_text"
+					buttonFont = "Arialcap"
+					clicksound = click_close
+					oversound = ui_menu_over
+					pdx_tooltip = "module_three_tooltip"
+				}
+				buttonType = {
+					name = "international_module_4_button"
+					position = { x = 420 y = 40 }
+					quadTextureSprite ="GFX_button_spaceship_parts"
+					buttonText = "module_4_text"
+					buttonFont = "Arialcap"
+					clicksound = click_close
+					oversound = ui_menu_over
+					pdx_tooltip = "module_four_tooltip"
+				}
+				buttonType = {
+					name = "international_module_4_button_green"
+					position = { x = 420 y = 40 }
+					quadTextureSprite ="GFX_button_spaceship_parts_green"
+					buttonText = "module_4_text"
+					buttonFont = "Arialcap"
+					clicksound = click_close
+					oversound = ui_menu_over
+					pdx_tooltip = "module_four_tooltip"
+				}
+				buttonType = {
+					name = "international_module_4_button_purple"
+					position = { x = 420 y = 40 }
+					quadTextureSprite ="GFX_button_spaceship_parts_purple"
+					buttonText = "module_4_text"
+					buttonFont = "Arialcap"
+					clicksound = click_close
+					oversound = ui_menu_over
+					pdx_tooltip = "module_four_tooltip"
+				}
+				buttonType = {
+					name = "international_module_5_button"
+					position = { x = 940 y = 70 }
+					quadTextureSprite ="GFX_button_spaceship_parts"
+					buttonText = "module_5_text"
+					buttonFont = "Arialcap"
+					clicksound = click_close
+					oversound = ui_menu_over
+					pdx_tooltip = "module_five_tooltip"
+				}
+				buttonType = {
+					name = "international_module_5_button_green"
+					position = { x = 940 y = 70 }
+					quadTextureSprite ="GFX_button_spaceship_parts_green"
+					buttonText = "module_5_text"
+					buttonFont = "Arialcap"
+					clicksound = click_close
+					oversound = ui_menu_over
+					pdx_tooltip = "module_five_tooltip"
+				}
+				buttonType = {
+					name = "international_module_5_button_purple"
+					position = { x = 940 y = 70 }
+					quadTextureSprite ="GFX_button_spaceship_parts_purple"
+					buttonText = "module_5_text"
+					buttonFont = "Arialcap"
+					clicksound = click_close
+					oversound = ui_menu_over
+					pdx_tooltip = "module_five_tooltip"
+				}			
+				###
+				iconType = {
+					name = "bridge_flag"
+					quadTextureSprite ="GFX_construction_flag_mod_mod_mod_mod"
+					position = { x= 150 y = 89 }
+					Orientation = "UPPER_LEFT"
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "quarters_flag"
+					quadTextureSprite ="GFX_construction_flag_mod_mod_mod_mod"
+					position = { x= 190 y = 299 }
+					Orientation = "UPPER_LEFT"
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "support_flag"
+					quadTextureSprite ="GFX_construction_flag_mod_mod_mod_mod"
+					position = { x = 440 y = 374 }
+					Orientation = "UPPER_LEFT"
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "storage_flag"
+					quadTextureSprite ="GFX_construction_flag_mod_mod_mod_mod"
+					position = { x = 430 y = 39 }
+					Orientation = "UPPER_LEFT"
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "engine_flag"
+					quadTextureSprite ="GFX_construction_flag_mod_mod_mod_mod"
+					position = { x = 950 y = 69 }
+					Orientation = "UPPER_LEFT"
+					alwaystransparent = yes
+				}
+			}
+		}
+
+		buttonType = {
+			name = "close_button"
+			position = { x = -58 y = 3 }
+			quadTextureSprite ="GFX_exit_button_left"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+			#scale = 0.9
+			shortcut = "ESCAPE"
+		}
+    }
+}
