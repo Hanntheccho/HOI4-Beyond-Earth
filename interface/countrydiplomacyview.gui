@@ -2,54 +2,80 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "countrydiplomacyview"
-		position = { x=0 y=0 }
-		size = { width = 100%% height = 100%% }
-		fade_time = 400
-		fade_type = linear
-		clipping = no
+		position = { x=-606 y=112 }	
+		show_position = { x=-6 y =112 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300
+		size = { width=550 height=100%% }
+		clipping = yes
 		
 		#hide_sound = menu_close_window
 		show_sound = menu_open_window
+		
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_window_transparent"
+		}
+
+		background ={
+			name ="pol_view_bg"
+			spriteType = "GFX_decision_view_bg_large"
+			position = { x= 0 y = 0 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
 
 		containerWindowType = {
-			name = "bgs"
-			size = { width = 100%% height = 100%% }
-			background = {
-				name = "Background"
-				quadTextureSprite ="GFX_tiled_bg_alpha_fade"
+			name = "bgbgbg"
+			size = { width=550 height=100%% }
+	
+			background ={
+				name ="pol_view_bg2"
+				spriteType = "GFX_pol_view_bg_large"
+				position = { x= 6 y = 0 }
+				Orientation = "UPPER_LEFT"
 				alwaystransparent = yes
 			}
-			background = {
-				name = "Background3"
-				quadTextureSprite ="GFX_tiled_bg_alpha_fade_flip"
+	
+			background ={
+				name ="pol_view_bg2"
+				spriteType = "GFX_tiled_side_mod"
+				position = { x= 0 y = 0 }
+				Orientation = "UPPER_LEFT"
 				alwaystransparent = yes
 			}
-			background = {
-				name = "Background2"
-				quadTextureSprite ="GFX_wonders_techtree_bg"
-				alwaystransparent = yes
-			}
+	
+			background ={
+				name ="production_header_bg"
+				spriteType = "GFX_header_bg_mod"
+				position = { x= 0 y = 0 }
+				Orientation = "UPPER_LEFT"
+			}	
+		}			
+			
+		buttonType = {
+			name = "close_button"
+			position = { x = 10000 y = 5 }
+			quadTextureSprite ="GFX_closebutton"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
 		}
 
 		iconType ={
 			name ="frontend_upper_left_corner"
-			spriteType = "GFX_frontend_upper_left_corner"
-			position = { x = 0 y = 0 }
+			spriteType = "GFX_pol_bg"
+			position = { x = 6 y = 0 }
 			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-		iconType ={
-			name ="frontend_lower_right_corner"
-			spriteType = "GFX_frontend_lower_right_corner"
-			position = { x = -398 y = -319 }
-			Orientation = "LOWER_RIGHT"
 			alwaystransparent = yes
 		}
 
 		iconType ={
-			name ="diplo_bg"
-			spriteType = "GFX_diplo_tree_bg"
-			position = { x= 0 y = 0 }
+			name ="pol_national_spirit"
+			spriteType = "GFX_pol_national_spirit"
+			position = { x= 0 y = 279 }
 			alwaystransparent = yes
 		}
 		
@@ -96,19 +122,27 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "faction"
-				position = { x = 10000 y = 25} #position = { x = 101 y = 25}	
+				position = { x = 0 y = 0 }	
 				size = { width = 175 height = 20 }
 				clipping = no
 			
+				iconType ={
+					name ="pol_faction_icon"
+					spriteType = "GFX_faction_bg"
+					position = { x = 220 y = 231 }
+					Orientation = "UPPER_LEFT"
+				}	
+	
 				instantTextboxType = {
 					name = "faction_name"
-					position = { x = 0 y = 0 }
-					font = "Focusfont"
+					position = { x =216 y = 240 }
+					#position = { x = -13 y = 86 }
+					font = "Arialsmall"
 					text = "faction"
-					maxWidth = 260
+					maxWidth = 300
 					maxHeight = 20
-					fixedsize = yes		
-					format = left
+					format = center	
+					multiline = no			
 				}
 			}
 
@@ -231,28 +265,21 @@ guiTypes = {
 
 				iconType = {
 					name = "leader_portrait"
-					position = { x = 180 y = 200 }
+					position = { x = 105 y = 128 }
 					spriteType = "GFX_leader_unknown"
 					centerposition = yes
-				}
-		
+				}		
 				iconType = {
 					name = "leader_frame"
 					spriteType = "GFX_leader_overlay"
-					position = { x = 96 y = 90 }		
+					position = { x = 8 y = 4 }		
 					alwaystransparent = yes
 				}
-
-				containerWindowType = {
-					name = "header_mod"
-					size = { width=550 height=100%% }
-		
-					background ={
-						name ="production_header_bg"
-						spriteType = "GFX_header_bg_mod"
-						position = { x= 0 y = 0 }
-						Orientation = "UPPER_LEFT"
-					}	
+				iconType = {
+					name = "leader_title"
+					spriteType = "GFX_leader_title"
+					position = { x = 11 y = 230 }		
+					alwaystransparent = yes
 				}
 				
 				containerWindowType = {
@@ -294,13 +321,13 @@ guiTypes = {
 
 				containerWindowType = {
 					name = "active_national_focus_info"
-					position = { x = -10000 y = -35 }
+					position = { x = 0 y = -22 }
 					size = { width=90 height=200}
 					clipping = no
 
 					buttonType = {
 						name = "show_national_goal_button"
-						position = { x = 120 y = 122 }
+						position = { x = 205 y = 40 }
 						spriteType = "GFX_add_national_goal_button_mod"
 						clicksound = click_default
 						shortcut = "f"
@@ -316,13 +343,14 @@ guiTypes = {
 					
 					instantTextboxType = {
 						name = "national_focus_label"
-						position = { x = -10000 y = 11 } #position = { x = 54 y = 38 }
-						font = "Beyond"
+						position = { x = 227 y = 31 }
+						font = "Arialcap"
 						text = "POLITICS_ACTIVE_GOAL"
-						maxWidth = 490
+						maxWidth = 290
 						maxHeight = 80
-						format = left	
-						fixedsize = yes	
+						format = right	
+						fixedsize = yes
+						vertical_alignment = bottom	
 					}
 					
 					iconType = {
@@ -343,12 +371,12 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "leader_name"
-				position = { x = -10000 y = 31 } 
+				position = { x = 19 y = 242 } 
 				font = "Arialsmallest"
 				text = "leader_name"
-				maxWidth = 290
+				maxWidth = 170
 				maxHeight = 20
-				format = left
+				format = center
 				fixedsize = yes				
 			}
 			
@@ -378,8 +406,8 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "diplomatic_actions"
-				position = { x = 280 y = 10000 } #415 }
-				size = { width = 265 height = 500 }
+				position = { x = -10000 y = 395 }
+				size = { width = 265 height = 185 }
 				verticalScrollbar = "right_vertical_slider"
 				margin = {
 					top = 5
@@ -404,19 +432,31 @@ guiTypes = {
 			containerWindowType = {
 				name = "national_spirit_info"
 				position = { x = 0 y = 0 }
-				size = { width = 360 height = 50 }			
+				size = { width = 360 height = 50 }	
+				clipping = no
 				
 				containerWindowType = {
 					name = "national_spirit_container"
-					position = { x = 15 y = 256 }
+					position = { x = 12 y = 295 }
 					size = { width = 520 height = 100 }
+					
+					instantTextboxType = {
+						name = "national_spirit_title"
+						position = { x = 10 y =-10 }
+						font = "Arialsmallest"
+						text = "National Spirits"
+						maxWidth = 200
+						maxHeight = 20
+						format = left			
+						alwaystransparent = yes
+					}
 
 					gridboxtype = {
 						name = "national_spirit_ideas_grid"
 						position = { x = 14 y = 11 }
 						size = { width = 100%% height = 100%% }
 						slotsize = { width = 61 height = 64 }
-						max_slots = { x = 7 y = 1 }
+						max_slots = { x = 8 y = 1 }
 						format = "UPPER_LEFT"
 					}
 					gridboxtype = {

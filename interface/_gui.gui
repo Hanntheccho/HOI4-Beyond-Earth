@@ -1318,24 +1318,38 @@ guiTypes = {
 		#}
 
 		containerWindowType = {
+			name = "ideas_law_sum_win"
+			position = { x = 220 y = 110 }
+			instantTextboxType = {
+				name = "all_laws"
+				position = { x =0 y =0 }
+				font = "Arial16"
+				text = "ideas_law_sum_name"
+				maxWidth = 280
+				maxHeight = 105
+				scrollbartype = "standardtext_slider"
+				#alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
 			name = "actual_window"
-			position = { x = 0 y = 100 }
-			show_position = { x = 0 y = 100 }
-			size = { width=100%% height=100%% }
+			position = { x = 0 y = 590 }
+			show_position = { x = 0 y = 590 }
+			size = { width=545 height=98%% }
 			show_animation_type = decelerated
 			hide_animation_type = accelerated
 			animation_time = 300	
-			#verticalScrollbar = "right_vertical_slider"
+			verticalScrollbar = "right_vertical_slider"
 
 			background = {
 				name = "bgbg"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				alwaystransparent = yes
 			}
 
 			containerWindowType = {
 				name = "development_system_win"
-				position = { x = 60 y = 360 }
+				position = { x = 60 y = 0 }
 				size = {
 					width = 420
 					height = 140
@@ -1417,7 +1431,7 @@ guiTypes = {
 			}
 			containerWindowType = {
 				name = "cultural_system_win"
-				position = { x = 100 y = 520 }
+				position = { x = 100 y = 150 }
 				size = {
 					width = 420
 					height = 140
@@ -1499,7 +1513,7 @@ guiTypes = {
 			}
 			containerWindowType = {
 				name = "government_system_win"
-				position = { x = 80 y = 680 }
+				position = { x = 80 y = 300 }
 				size = {
 					width = 420
 					height = 140
@@ -1579,20 +1593,6 @@ guiTypes = {
 					}
 				}
 			}	
-			containerWindowType = {
-				name = "ideas_law_sum_win"
-				position = { x = 220 y = 0 }
-				instantTextboxType = {
-					name = "all_laws"
-					position = { x =0 y =0 }
-					font = "Arial16"
-					text = "ideas_law_sum_name"
-					maxWidth = 280
-					maxHeight = 100
-					scrollbartype = "standardtext_slider"
-					#alwaystransparent = yes
-				}
-			}	
 		}
 	}
 
@@ -1631,6 +1631,18 @@ guiTypes = {
 			pdx_tooltip_delayed = "industrial_power_tt_delayed"
 		}
 
+		instantTextBoxType = {
+			name ="division_limit"
+			position = { x= 952 y = 12 }
+			font = "Arialsmallest"
+			text = "division_limit_tt2"
+			format = left
+			maxWidth = 120
+			maxHeight = 24
+			pdx_tooltip = division_limit_tt
+			pdx_tooltip_delayed = division_limit_tt_delayed
+		}
+
 		iconType = {
 			name = "division_limit_warning"
 			position = { x= 875 y = 4 }
@@ -1644,6 +1656,7 @@ guiTypes = {
 			position = { x= 576 y = 4 }
 			spriteType = "GFX_warning_icon"
 			pdx_tooltip = default_risk_ongoing
+			pdx_tooltip_delayed = default_risk_ongoing_delayed	
 		}
 
 		instantTextBoxType = {
@@ -1871,7 +1884,7 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = "scan_mode_win2"
-			position = { x = -20 y = 250 }
+			position = { x = -20 y = 255 }
 			size = {
 				width = 130
 				height = 120
@@ -2429,10 +2442,24 @@ guiTypes = {
 				alwaystransparent = yes
 			}
 			iconType = {
+				name = "build_slot1"
+				position = { x=13 y=3 }	
+				spriteType = "GFX_no_building"
+				alwaystransparent = yes
+				frame = 2
+			}
+			iconType = {
 				name = "build_slot_bg2"
 				position = { x=0 y=50 }	
 				spriteType = "GFX_build_slot_bg_build"
 				alwaystransparent = yes
+			}
+			iconType = {
+				name = "build_slot2"
+				position = { x=13 y=53 }	
+				spriteType = "GFX_no_building"
+				alwaystransparent = yes
+				frame = 2
 			}
 			iconType = {
 				name = "build_slot_bg3"
@@ -2441,51 +2468,24 @@ guiTypes = {
 				alwaystransparent = yes
 			}
 			iconType = {
+				name = "build_slot3"
+				position = { x=13 y=103 }	
+				spriteType = "GFX_no_building"
+				alwaystransparent = yes
+				frame = 2
+			}
+			iconType = {
 				name = "build_slot_bg4"
 				position = { x=0 y=150 }	
 				spriteType = "GFX_build_slot_bg_build"
 				alwaystransparent = yes
 			}
-
-			buttonType ={
-				name ="build_civilian_complex"
-				spriteType = "GFX_buildings_strip"
-				position = { x=13 y=3 }
-				pdx_tooltip = "decrease_ecobalance_tt_mastery"
-				pdx_tooltip_delayed = "ecobalance_tt_delayed"
-				frame = 1
-				pdx_tooltip = click_to_build
-				pdx_tooltip_delayed = civilian_complex_desc
-			}
-			buttonType ={
-				name ="build_military_complex"
-				spriteType = "GFX_buildings_strip"
-				position = { x=13 y=53 }
-				pdx_tooltip = "decrease_ecobalance_tt_mastery"
-				pdx_tooltip_delayed = "ecobalance_tt_delayed"
+			iconType = {
+				name = "build_slot4"
+				position = { x=13 y=153 }	
+				spriteType = "GFX_no_building"
+				alwaystransparent = yes
 				frame = 2
-				pdx_tooltip = click_to_build
-				pdx_tooltip_delayed = military_complex_desc
-			}
-			buttonType ={
-				name ="build_heavy_military_complex"
-				spriteType = "GFX_buildings_strip"
-				position = { x=13 y=103 }
-				pdx_tooltip = "decrease_ecobalance_tt_mastery"
-				pdx_tooltip_delayed = "ecobalance_tt_delayed"
-				frame = 12
-				pdx_tooltip = click_to_build
-				pdx_tooltip_delayed = heavy_military_complex_desc
-			}
-			buttonType ={
-				name ="build_spaceship_complex"
-				spriteType = "GFX_buildings_strip"
-				position = { x=13 y=153 }
-				pdx_tooltip = "decrease_ecobalance_tt_mastery"
-				pdx_tooltip_delayed = "ecobalance_tt_delayed"
-				frame = 13
-				pdx_tooltip = click_to_build
-				pdx_tooltip_delayed = spaceship_complex_desc
 			}
 		}
 	}
