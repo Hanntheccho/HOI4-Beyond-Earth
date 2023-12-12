@@ -63,6 +63,19 @@ guiTypes = {
 			clicksound = click_close
 			pdx_tooltip = "CLOSE"
 		}	
+
+		containerWindowType = {
+			name = "political_pie_chart"
+			position = { x= 270 y = 260 }
+			size = { width=100 height=80 }
+			clipping = no
+
+			iconType = {
+				name = "chart"
+				spriteType = "GFX_political_chart_pol"
+				position = { x = 0 y = -12 }
+			}
+		}
 		
 		iconType ={
 			name ="pol_view_bg"
@@ -72,18 +85,34 @@ guiTypes = {
 			alwaystransparent = yes
 		}	
 
+		containerWindowType = {
+			name = "bgbgbgbggbggbg"
+			size = { width=550 height=100%% }
+	
+			background ={
+				name ="pol_view_bg2"
+				position = {
+					x = 0
+					y = 344
+				}
+				spriteType = "GFX_tiled_pol_bg"
+				Orientation = "UPPER_LEFT"
+				alwaystransparent = yes
+			}
+		}
+
 		iconType ={
 			name ="pol_faction_icon"
 			spriteType = "GFX_pol_factions_strip"
-			position = { x= 19 y = 261 }
+			position = { x= 19 y = 266 }
 			Orientation = "UPPER_LEFT"
 			frame = 1
 		}
 
 		containerWindowType = {
 			name = "chart_explanation"
-			position = { x = 278 y = 256 }
-			size = { width = 264 height = 78 }
+			position = { x = 278 y = 262 }
+			size = { width = 260 height = 74 }
 			clipping = yes
 			verticalScrollbar = "right_vertical_slider"
 			
@@ -98,26 +127,6 @@ guiTypes = {
 				size = { width = 100%% height = 100%% }
 				slotsize = { width = 230 height = 16 }
 				format = "UPPER_LEFT"
-			}
-		}
-
-		
-		containerWindowType = {
-			name = "political_pie_chart"
-			position = { x= 270 y = 260 }
-			size = { width=100 height=100 }
-			clipping = no
-
-			iconType = {
-				name = "chart"
-				spriteType = "GFX_political_chart"
-				position = { x = 28 y = 5 }
-			}
-			
-			iconType ={
-				name ="pol_view_bg"
-				spriteType = "GFX_pol_piechart_overlay_63x63"
-				position = { x= -1 y = 4 }
 			}
 		}
 		
@@ -138,7 +147,7 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "ideology"
-				position = { x = 9 y = -36 }
+				position = { x = 9 y = -31 }
 				font = "Arialsmallcap"
 				text = "ideology"
 				maxWidth = 155
@@ -147,7 +156,7 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "elections"
-				position = { x = 9 y = -15 }
+				position = { x = 9 y = -10 }
 				font = "Arialsmallestcap"
 				text = "elections"
 				maxWidth = 155
@@ -385,7 +394,7 @@ guiTypes = {
 			
 			iconType = {
 				name = "goal_icon"
-				position = { x = 47 y = 48 }
+				position = { x = 51 y = 48 }
 				centerposition = yes			
 				spriteType = "GFX_goal_unknown"
 				scale = 0.7
@@ -447,7 +456,7 @@ guiTypes = {
 						
 			instantTextboxType = {
 				name = "title"
-				position = { x = 110 y = -49 }
+				position = { x = 110 y = -48 }
 				font = "Arial16"
 				text = "POLITICS_NATIONAL_SPIRIT"
 				maxWidth = 200
@@ -487,7 +496,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "ideas"
-			position = { x = 0 y = 340 }
+			position = { x = 10 y = 340 }
 			size = { width=100%% height=100%% }
 			verticalScrollbar = "right_vertical_slider"
 			scroll_wheel_factor = 40
@@ -616,7 +625,7 @@ guiTypes = {
 		iconType ={
 			name ="category_header"
 			spriteType = "GFX_category_header"
-			position = { x=-5 y=2 }
+			position = { x=-5 y=3 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType ={
@@ -637,7 +646,7 @@ guiTypes = {
 		
 		gridboxtype = {
 			name = "ideas_grid"
-			position = { x = 17 y = 46 }
+			position = { x = 17 y = 52 }
 			size = { width = 100%% height = 100%% }
 			slotsize = { width = 80 height = 64 }
 			max_slots = { x = 7 y = 1 }
@@ -999,13 +1008,13 @@ guiTypes = {
 
 		iconType = {
 			name = "leading_pol_party_bg"
-			position = { x = 63 y = 5 }
+			position = { x = 63 y = 1 }
 			spriteType = "GFX_leading_pol_party_bg"
 		}		
 		
 		iconType = {
 			name = "color_block"
-			position = { x = 64 y = 6 }
+			position = { x = 64 y = 2 }
 			spriteType = "GFX_pol_party_colour"
 		}
 		
@@ -1020,11 +1029,11 @@ guiTypes = {
 			
 		instantTextboxType = {
 			name = "name"
-			position = { x = 82 y = 4 }
+			position = { x = 82 y = 0 }
 			font = "Arial16"
 			text = "party name"
 			fixedsize = yes
-			maxWidth = 152
+			maxWidth = 148
 			maxHeight = 18
 		}
 	}

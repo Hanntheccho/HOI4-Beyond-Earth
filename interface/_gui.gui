@@ -1318,24 +1318,9 @@ guiTypes = {
 		#}
 
 		containerWindowType = {
-			name = "ideas_law_sum_win"
-			position = { x = 220 y = 110 }
-			instantTextboxType = {
-				name = "all_laws"
-				position = { x =0 y =0 }
-				font = "Arial16"
-				text = "ideas_law_sum_name"
-				maxWidth = 280
-				maxHeight = 105
-				scrollbartype = "standardtext_slider"
-				#alwaystransparent = yes
-			}
-		}
-
-		containerWindowType = {
 			name = "actual_window"
-			position = { x = 0 y = 590 }
-			show_position = { x = 0 y = 590 }
+			position = { x = 0 y = 360 }
+			show_position = { x = 0 y = 360 }
 			size = { width=545 height=99%% }
 			show_animation_type = decelerated
 			hide_animation_type = accelerated
@@ -1591,6 +1576,70 @@ guiTypes = {
 						pdx_tooltip = political_law_tt
 						pdx_tooltip_delayed = political_law_tt_delayed
 					}
+				}
+			}	
+			containerWindowType = {
+				name = "ideas_law_sum_win"
+				position = { x = 60 y = 450 }
+				size = {
+					width = 420
+					height = 140
+				}
+				clipping = no
+				moveable = yes
+				click_to_front = yes
+				background = {
+					name = "bg"
+					quadTextureSprite = "GFX_tiled_window_transparent"
+				}
+				containerWindowType = {
+					name = "another_bg"
+					size = { width = 350 height = 220 }
+					position = {
+						x = 65
+						y = 0
+					}				
+					background = {
+						name = "bg"
+						quadTextureSprite = "GFX_tiled_tooltip"
+						alwaystransparent = yes
+					}
+					instantTextboxType = {
+						name = "economy_law"
+						position = { x =28 y =25 }
+						font = "Arial16"
+						text = "ideas_law_economy"
+						maxWidth = 280
+						maxHeight = 55
+						scrollbartype = "standardtext_slider"
+						#alwaystransparent = yes
+					}
+					instantTextboxType = {
+						name = "mobilization_law"
+						position = { x =28 y =83 }
+						font = "Arial16"
+						text = "ideas_law_mobilization"
+						maxWidth = 280
+						maxHeight = 55
+						scrollbartype = "standardtext_slider"
+						#alwaystransparent = yes
+					}
+					instantTextboxType = {
+						name = "trade_law"
+						position = { x =28 y =141 }
+						font = "Arial16"
+						text = "ideas_law_trade"
+						maxWidth = 280
+						maxHeight = 55
+						scrollbartype = "standardtext_slider"
+						#alwaystransparent = yes
+					}
+				}	
+				iconType = {	
+					name = "extra_icon"
+					spriteType = "GFX_idea_FRA_mediterranean_business"
+					position = { x= -15 y = 75 }
+					pdx_tooltip = ideas_law_sum_name
 				}
 			}	
 		}
