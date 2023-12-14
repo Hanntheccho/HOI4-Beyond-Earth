@@ -1,281 +1,281 @@
-add_namespace = pre_cw_england_event
-
-country_event = { #A right honourable panic
-	id = pre_cw_england_event.2
-	title = pre_cw_england_event.2.t
-	desc = pre_cw_england_event.2.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.2.a
-		add_timed_idea = {
-			idea = PRECW_ENG_internal_turmoil
-			days = 120
-		}
-		country_event = {
-			id = pre_cw_england_event.3 #Green England
-			days = 7
-		}
-		country_event = {
-			id = pre_cw_england_event.4 #Albion's Last Hope
-			days = 20
-		}
-	}
-}
-
-country_event = { #Green England
-	id = pre_cw_england_event.3
-	title = pre_cw_england_event.3.t
-	desc = pre_cw_england_event.3.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.3.a
-	}
-}
-
-country_event = { #Albion's Last Hope
-	id = pre_cw_england_event.4
-	title = pre_cw_england_event.4.t
-	desc = pre_cw_england_event.4.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.4.a
-	}
-}
-
-country_event = { #Priorities
-	id = pre_cw_england_event.5
-	title = pre_cw_england_event.5.t
-	desc = pre_cw_england_event.5.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.5.a #pack your things
-		custom_effect_tooltip = PRECW_ENG_rid_corruption_tt
-		hidden_effect = {
-			add_ideas = PRECW_ENG_unlock_damned_mps
-		}
-	}
-
-	option = {
-		name = pre_cw_england_event.5.b #construction minister
-		custom_effect_tooltip = PRECW_ENG_economy_focus_tt
-		hidden_effect = {
-			add_ideas = PRECW_ENG_unlock_bloody_economy
-		}
-	}
-}
-
-
-country_event = { #Beginning the Renewal
-	id = pre_cw_england_event.6
-	title = pre_cw_england_event.6.t
-	desc = pre_cw_england_event.6.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.6.a #England Breathes Again
-		unlock_decision_category_tooltip = east_yorkshire_industrial_revival
-		unlock_decision_category_tooltip = lancshire_midlands_industrial_revival
-		unlock_decision_category_tooltip = wales_industrial_revival
-		unlock_decision_category_tooltip = birmingham_industrial_revival
-		unlock_decision_category_tooltip = nussex_industrial_revival
-		unlock_decision_category_tooltip = wessex_industrial_revival
-		unlock_decision_category_tooltip = cornwall_industrial_revival
-		unlock_decision_category_tooltip = sussex_industrial_revival
-		1023 = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = military_complex
-				level = 1
-				instant_build = yes
-			}
-		}
-	}
-}
-
-country_event = { #Political Renewal
-	id = pre_cw_england_event.7
-	title = pre_cw_england_event.7.t
-	desc = pre_cw_england_event.7.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.7.a #Fk the MPs
-		unlock_decision_category_tooltip = political_reshuffling
-		1023 = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = military_complex
-				level = 1
-				instant_build = yes
-			}
-		}
-	}
-}
-
-country_event = { #Emergency Powers
-	id = pre_cw_england_event.8
-	title = pre_cw_england_event.8.t
-	desc = pre_cw_england_event.8.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.8.a #Only good thing from Birmingham
-	}
-}
-
-country_event = { #The Chopping Block
-	id = pre_cw_england_event.9
-	title = pre_cw_england_event.9.t
-	desc = pre_cw_england_event.9.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.9.a #Drastic Times
-		country_event = {
-			id = pre_cw_england_event.10 #English Spring
-			days = 7
-		}
-		country_event = {
-			id = pre_cw_england_event.11 #Distinguished Service
-			days = 20
-		}
-		country_event = {
-			id = pre_cw_england_event.12 #Artur Burr, MP
-			days = 20
-		}
-	}
-}
-
-country_event = { #English Spring
-	id = pre_cw_england_event.10
-	title = pre_cw_england_event.10.t
-	desc = pre_cw_england_event.10.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.10.a #Start Digging
-		add_popularity = {
-			ideology = harmony
-			popularity = 0.03
-		}
-	}
-}
-
-country_event = { #Distinguished Service
-	id = pre_cw_england_event.11
-	title = pre_cw_england_event.11.t
-	desc = pre_cw_england_event.11.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.11.a #Serve England
-		add_popularity = {
-			ideology = purity
-			popularity = 0.03
-		}
-	}
-}
-
-country_event = { #Artur Burr, MP
-	id = pre_cw_england_event.12
-	title = pre_cw_england_event.12.t
-	desc = pre_cw_england_event.12.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.12.a #Stiff Upper Lip
-		add_popularity = {
-			ideology = neutral
-			popularity = 0.03
-		}
-	}
-}
-
-country_event = { #Motion of No Confidence
-	id = pre_cw_england_event.13
-	title = pre_cw_england_event.13.t
-	desc = pre_cw_england_event.13.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.13.a #Past the Point of No Return
-	}
-}
-
-country_event = { #Dissolution of NHS
-	id = pre_cw_england_event.14
-	title = pre_cw_england_event.14.t
-	desc = pre_cw_england_event.14.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.14.a #Welcome to American Healthcare
-	}
-}
-
-country_event = { #English Spring
-	id = pre_cw_england_event.15
-	title = pre_cw_england_event.15.t
-	desc = pre_cw_england_event.15.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.15.a #A Packed Schedule
-		add_to_variable = {
-			var = industrial_power
-			value = 200
-		}
-	}
-
-	option = {
-		name = pre_cw_england_event.15.b #Situation in Birmingham is still dire
-		add_equipment_to_stockpile = {
-			type = light_equipment_0
-			amount = 1500
-			producer = SCO
-		}
-		add_stability = -0.05
-	}
-}
-
-country_event = { #The Dog
-	id = pre_cw_england_event.16
-	title = pre_cw_england_event.16.t
-	desc = pre_cw_england_event.16.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.16.a #Even the kindest of traditions must fade
-	}
-}
-
-country_event = { #Roaring back to life
-	id = pre_cw_england_event.17
-	title = pre_cw_england_event.17.t
-	desc = pre_cw_england_event.17.d
-
-	is_triggered_only = yes
-
-	option = {
-		name = pre_cw_england_event.17.a #Roaring Back to Life
-	}
-}
+#add_namespace = pre_cw_england_event
+#
+#country_event = { #A right honourable panic
+#	id = pre_cw_england_event.2
+#	title = pre_cw_england_event.2.t
+#	desc = pre_cw_england_event.2.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.2.a
+#		add_timed_idea = {
+#			idea = PRECW_ENG_internal_turmoil
+#			days = 120
+#		}
+#		country_event = {
+#			id = pre_cw_england_event.3 #Green England
+#			days = 7
+#		}
+#		country_event = {
+#			id = pre_cw_england_event.4 #Albion's Last Hope
+#			days = 20
+#		}
+#	}
+#}
+#
+#country_event = { #Green England
+#	id = pre_cw_england_event.3
+#	title = pre_cw_england_event.3.t
+#	desc = pre_cw_england_event.3.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.3.a
+#	}
+#}
+#
+#country_event = { #Albion's Last Hope
+#	id = pre_cw_england_event.4
+#	title = pre_cw_england_event.4.t
+#	desc = pre_cw_england_event.4.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.4.a
+#	}
+#}
+#
+#country_event = { #Priorities
+#	id = pre_cw_england_event.5
+#	title = pre_cw_england_event.5.t
+#	desc = pre_cw_england_event.5.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.5.a #pack your things
+#		custom_effect_tooltip = PRECW_ENG_rid_corruption_tt
+#		hidden_effect = {
+#			add_ideas = PRECW_ENG_unlock_damned_mps
+#		}
+#	}
+#
+#	option = {
+#		name = pre_cw_england_event.5.b #construction minister
+#		custom_effect_tooltip = PRECW_ENG_economy_focus_tt
+#		hidden_effect = {
+#			add_ideas = PRECW_ENG_unlock_bloody_economy
+#		}
+#	}
+#}
+#
+#
+#country_event = { #Beginning the Renewal
+#	id = pre_cw_england_event.6
+#	title = pre_cw_england_event.6.t
+#	desc = pre_cw_england_event.6.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.6.a #England Breathes Again
+#		unlock_decision_category_tooltip = east_yorkshire_industrial_revival
+#		unlock_decision_category_tooltip = lancshire_midlands_industrial_revival
+#		unlock_decision_category_tooltip = wales_industrial_revival
+#		unlock_decision_category_tooltip = birmingham_industrial_revival
+#		unlock_decision_category_tooltip = nussex_industrial_revival
+#		unlock_decision_category_tooltip = wessex_industrial_revival
+#		unlock_decision_category_tooltip = cornwall_industrial_revival
+#		unlock_decision_category_tooltip = sussex_industrial_revival
+#		1023 = {
+#			add_extra_state_shared_building_slots = 1
+#			add_building_construction = {
+#				type = military_complex
+#				level = 1
+#				instant_build = yes
+#			}
+#		}
+#	}
+#}
+#
+#country_event = { #Political Renewal
+#	id = pre_cw_england_event.7
+#	title = pre_cw_england_event.7.t
+#	desc = pre_cw_england_event.7.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.7.a #Fk the MPs
+#		unlock_decision_category_tooltip = political_reshuffling
+#		1023 = {
+#			add_extra_state_shared_building_slots = 1
+#			add_building_construction = {
+#				type = military_complex
+#				level = 1
+#				instant_build = yes
+#			}
+#		}
+#	}
+#}
+#
+#country_event = { #Emergency Powers
+#	id = pre_cw_england_event.8
+#	title = pre_cw_england_event.8.t
+#	desc = pre_cw_england_event.8.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.8.a #Only good thing from Birmingham
+#	}
+#}
+#
+#country_event = { #The Chopping Block
+#	id = pre_cw_england_event.9
+#	title = pre_cw_england_event.9.t
+#	desc = pre_cw_england_event.9.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.9.a #Drastic Times
+#		country_event = {
+#			id = pre_cw_england_event.10 #English Spring
+#			days = 7
+#		}
+#		country_event = {
+#			id = pre_cw_england_event.11 #Distinguished Service
+#			days = 20
+#		}
+#		country_event = {
+#			id = pre_cw_england_event.12 #Artur Burr, MP
+#			days = 20
+#		}
+#	}
+#}
+#
+#country_event = { #English Spring
+#	id = pre_cw_england_event.10
+#	title = pre_cw_england_event.10.t
+#	desc = pre_cw_england_event.10.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.10.a #Start Digging
+#		add_popularity = {
+#			ideology = harmony
+#			popularity = 0.03
+#		}
+#	}
+#}
+#
+#country_event = { #Distinguished Service
+#	id = pre_cw_england_event.11
+#	title = pre_cw_england_event.11.t
+#	desc = pre_cw_england_event.11.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.11.a #Serve England
+#		add_popularity = {
+#			ideology = purity
+#			popularity = 0.03
+#		}
+#	}
+#}
+#
+#country_event = { #Artur Burr, MP
+#	id = pre_cw_england_event.12
+#	title = pre_cw_england_event.12.t
+#	desc = pre_cw_england_event.12.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.12.a #Stiff Upper Lip
+#		add_popularity = {
+#			ideology = neutral
+#			popularity = 0.03
+#		}
+#	}
+#}
+#
+#country_event = { #Motion of No Confidence
+#	id = pre_cw_england_event.13
+#	title = pre_cw_england_event.13.t
+#	desc = pre_cw_england_event.13.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.13.a #Past the Point of No Return
+#	}
+#}
+#
+#country_event = { #Dissolution of NHS
+#	id = pre_cw_england_event.14
+#	title = pre_cw_england_event.14.t
+#	desc = pre_cw_england_event.14.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.14.a #Welcome to American Healthcare
+#	}
+#}
+#
+#country_event = { #English Spring
+#	id = pre_cw_england_event.15
+#	title = pre_cw_england_event.15.t
+#	desc = pre_cw_england_event.15.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.15.a #A Packed Schedule
+#		add_to_variable = {
+#			var = industrial_power
+#			value = 200
+#		}
+#	}
+#
+#	option = {
+#		name = pre_cw_england_event.15.b #Situation in Birmingham is still dire
+#		add_equipment_to_stockpile = {
+#			type = light_equipment_0
+#			amount = 1500
+#			producer = SCO
+#		}
+#		add_stability = -0.05
+#	}
+#}
+#
+#country_event = { #The Dog
+#	id = pre_cw_england_event.16
+#	title = pre_cw_england_event.16.t
+#	desc = pre_cw_england_event.16.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.16.a #Even the kindest of traditions must fade
+#	}
+#}
+#
+#country_event = { #Roaring back to life
+#	id = pre_cw_england_event.17
+#	title = pre_cw_england_event.17.t
+#	desc = pre_cw_england_event.17.d
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = pre_cw_england_event.17.a #Roaring Back to Life
+#	}
+#}
