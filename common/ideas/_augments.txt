@@ -1,0 +1,1780 @@
+#ideas = {
+##### ALL VALUES PLACEHOLDERS SUBJECT TO CHANGE ####
+###PRIME AUGMENTS##
+#body_augment = {
+#    body_info = {
+#        ledger = army
+#
+#        available = {
+#            hidden_modifier = {
+#                if = {
+#                    AND = {
+#                        NOT = {
+#                            has_tech = augment_equipment
+#                        }
+#                        check_variable = {industrial_power > 100000}
+#                    }
+#                    
+#                }
+#            }
+#        }
+#
+#        visible = {
+#            if = {
+#                NOT = {
+#                    has_tech = augment_equipment
+#                }
+#            }
+#        }
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_research_info_tooltip
+#        }
+#    }
+#
+#    plated_vests = {
+#        ledger = army
+#
+#        available = {
+#            if = {
+#                has_tech = augment_equipment
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        visible = {
+#            if = {
+#                has_tech = augment_equipment
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                armor_value = 1
+#                hardness = 0.5
+#                build_cost_ic = 0.5
+#            }
+#        }
+#    }
+#
+#    intergrid = {
+#        ledger = army
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_1
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_1
+#            }
+#        }
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                max_strength = 1
+#                defense = 0.5
+#                build_cost_ic = 0.8
+#            }
+#        } 
+#    }
+#
+#    plenfor = {
+#        ledger = army
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_1
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_1
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                armor_value = 3
+#                hardness = 0.8
+#                build_cost_ic = 1
+#            }
+#        }
+#    }
+#
+#    intergrid_plat = {
+#        ledger = army
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_2
+#            }
+#        }
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_2
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                max_strength = 2
+#                defense = 0.8
+#                build_cost_ic = 1.2
+#            }
+#        } 
+#    }
+#
+#    plenfor_max = {
+#        ledger = army
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_2
+#            }
+#        }
+#
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_2
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                armor_value = 4
+#                hardness = 0.9
+#                build_cost_ic = 1.5
+#            }
+#        }
+#    }
+#
+#    dragonware = {
+#        ledger = army
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_3
+#            }
+#        }
+#
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_3
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                armor_value = 6
+#                hardness = 0.95
+#                build_cost_ic = 2.5
+#            }
+#        }
+#    }
+#}
+#
+#weapon_augment = {
+#    weapon_info = {
+#        ledger = army
+#
+#        available = {
+#            hidden_modifier = {
+#                if = {
+#                    AND = {
+#                        NOT = {
+#                            has_tech = augment_equipment
+#                        }
+#                        check_variable = {industrial_power > 100000}
+#                    }
+#                }
+#            }
+#        }
+#
+#        visible = {
+#            if = {
+#                NOT = {
+#                    has_tech = augment_equipment
+#                }
+#            }
+#        }
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_research_info_tooltip
+#        }
+#    }
+#
+#    meck_power_arm = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = augment_equipment
+#            }
+#        }
+#        available = {
+#            if = {
+#                has_tech = augment_equipment
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                soft_attack = 0.1
+#                build_cost_ic = 0.25
+#            }
+#        }
+#    }
+#
+#    frag_rifle = {
+#        ledger = army
+#
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_1
+#            }
+#        }
+#
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_1
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                soft_attack = 0.1
+#                build_cost_ic = 0.25
+#            }
+#        }
+#    }
+#
+#    utility_hand = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_1
+#            }
+#        }
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_1
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                defense = 0.15
+#                build_cost_ic = 0.25
+#            }
+#        }
+#    }
+#
+#    high_velocity_rifle = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_1
+#            }
+#        }
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_1
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                hard_attack = 0.3
+#                ap_attack = 0.5
+#                build_cost_ic = 0.25
+#            }
+#        }
+#    }
+#
+#    chain_rifle = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_2
+#            }
+#        }
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_2
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                soft_attack = 0.3
+#                build_cost_ic = 0.6
+#            }
+#        }
+#    }
+#
+#    skn_utility_hand = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_2
+#            }
+#        }
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_2
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                defense = 0.3
+#                build_cost_ic = 0.6
+#            }
+#        }
+#    }
+#
+#    rail_gun_mount = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_2
+#            }
+#        }
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_2
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                hard_attack = 0.6
+#                ap_attack = 1
+#                build_cost_ic = 0.75
+#            }
+#        }
+#    }
+#
+#    rotating_handgun = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_3
+#            }
+#        }
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_3
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                soft_attack = 0.6
+#                defense = 0.6
+#                build_cost_ic = 1
+#            }
+#        }
+#    }
+#}
+#
+#leg_augment = {
+#    leg_info = {
+#        ledger = army
+#
+#        available = {
+#            hidden_modifier = {
+#                if = {
+#                    AND = {
+#                        check_variable = {industrial_power > 10000}
+#                        NOT = {
+#                            has_tech = prime_augment_1
+#                        }
+#                    }
+#                }
+#            }
+#        }
+#
+#        visible = {
+#            if = {
+#                NOT = {
+#                    has_tech = prime_augment_1
+#                }
+#            }
+#        }
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_research_info_tooltip_leg
+#        }
+#    }
+#
+#    meck_power_leg = {
+#        ledger = army
+#
+#        available = {
+#            if = {
+#                has_tech = prime_augment_1
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_1
+#            }
+#        }
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                maximum_speed = 0.2
+#                build_cost_ic = 0.25
+#            }
+#        }
+#    }  
+#
+#    lictor_limb_replacement = {
+#        ledger = army
+#
+#        available = {
+#            if = {
+#                has_tech = prime_augment_1
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_1
+#            }
+#        }
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                breakthrough = 3
+#                build_cost_ic = 0.3
+#            }
+#        }
+#    }
+#
+#    meck_power_leg_prem = {
+#        ledger = army
+#
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_2
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_2
+#            }
+#        }
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                maximum_speed = 0.4
+#                build_cost_ic = 0.4
+#            }
+#        }
+#    }
+#
+#    lictor_limb_deluxe = {
+#        ledger = army
+#
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_2
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_2
+#            }
+#        }
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                breakthrough = 6
+#                build_cost_ic = 0.8
+#            }
+#        }
+#    }
+#
+#    muscle_vats = {
+#        ledger = army
+#
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_3
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_3
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                breakthrough = 9
+#                build_cost_ic = 1.2
+#            }
+#        }
+#    }
+#
+#    roundabout_femur = {
+#        ledger = army
+#
+#        available = {
+#            if = {
+#                AND = {
+#                    has_tech = prime_augment_3
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#        visible = {
+#            if = {
+#                has_tech = prime_augment_3
+#            }
+#        }
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                maximum_speed = 0.8
+#                build_cost_ic = 0.8
+#            }
+#        }
+#    }
+#}
+#
+###SUPPORT AUGMENTS##
+#matrix_augment = {
+#    matrix_info = {
+#        ledger = army
+#
+#        available = {
+#            hidden_trigger = {
+#                if = {
+#                    AND = {
+#                        NOT = {
+#                            has_tech = augment_equipment
+#                        }
+#                        check_variable = {industrial_power > 100000}
+#                    }
+#                }
+#            }
+#        }
+#
+#        visible = {
+#            if = {
+#                NOT = {
+#                    has_tech = augment_equipment
+#                }
+#            }
+#        }
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_research_info_tooltip
+#        }
+#    }
+#
+#    squad_vision = {
+#        ledger = army
+#
+#        visible = {
+#            if = {
+#                has_tech = augment_equipment
+#            }
+#        }
+#
+#        available = {
+#            if = {
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                max_organisation = 0.2
+#                build_cost_ic = 0.2
+#            }
+#        }
+#    }
+#
+#    inktr_deck = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = augment_equipment
+#            }
+#        }
+#         available = {
+#            if = {
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                build_cost_ic = -1
+#            }
+#        }
+#    }
+#
+#    stategic_command_uplink = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_1
+#            }
+#        }
+#         available = {
+#            if = {
+#                has_tech = support_augment_1
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                max_organisation = 0.3
+#                build_cost_ic = 0.8
+#            }
+#        }
+#    }
+#
+#    headphone = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_1
+#            }
+#        }
+#         available = {
+#            if = {
+#                has_tech = support_augment_1
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                default_morale = 0.05
+#                build_cost_ic = 0.2
+#            }
+#        }
+#    }
+#
+#    comm_implant = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_2
+#            }
+#        }
+#         available = {
+#            if = {
+#                has_tech = support_augment_2
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                default_morale = 0.1
+#                build_cost_ic = 0.3
+#            }
+#        }
+#    }
+#
+#    navbar_microchip = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_2
+#            }
+#        }
+#         available = {
+#            if = {
+#                has_tech = support_augment_2
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                max_organisation = 0.4
+#                build_cost_ic = 1.4
+#            }
+#        }
+#    }
+#
+#    painkillers = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_2
+#            }
+#        }
+#         available = {
+#            if = {
+#                has_tech = support_augment_2
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                casualty_trickleback = 0.1
+#                experience_loss_factor = 0.2
+#                defense = 0.05
+#                breakthrough = 0.05
+#                max_organisation = 0.1
+#                default_morale = 0.05
+#                build_cost_ic = 0.5
+#            }
+#        }
+#    }
+#
+#    evolved_comm_cell = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_3
+#            }
+#        }
+#         available = {
+#            if = {
+#                has_tech = support_augment_3
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                default_morale = 0.2
+#                build_cost_ic = 0.6
+#            }
+#        }
+#    }
+#
+#    refurbished_hippocampus = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_3
+#            }
+#        }
+#         available = {
+#            if = {
+#                has_tech = support_augment_3
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                max_organisation = 0.5
+#                build_cost_ic = 2
+#            }
+#        }
+#    }
+#
+#    fused_stem = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_3
+#            }
+#        }
+#         available = {
+#            if = {
+#                has_tech = support_augment_3
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        allowed = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                soft_attack = 0.2
+#                hard_attack = 0.2
+#                defense = 0.1
+#                build_cost_ic = 1.5
+#            }
+#        }
+#    }
+#}
+#
+#auxilary_augment = {
+#    auxilary_info = {
+#        ledger = army
+#
+#        available = {
+#            hidden_trigger = {
+#                if = {
+#                    AND = {
+#                        NOT = {
+#                            has_tech = augment_equipment
+#                        }
+#                        check_variable = {industrial_power > 100000}
+#                    }
+#                }
+#            }
+#        }
+#
+#        visible = {
+#            if = {
+#                NOT = {
+#                    has_tech = augment_equipment
+#                }
+#            }
+#        }
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_research_info_tooltip
+#        }
+#    }
+#
+#    remolder = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = augment_equipment
+#            }
+#        }
+#         available = {
+#            if = {
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                reliability_factor = 0.2
+#                max_organisation = -0.05
+#                build_cost_ic = 0.6
+#            }
+#        }
+#    }
+#
+#    scavenger_kit = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = augment_equipment
+#            }
+#        }
+#         available = {
+#            if = {
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                equipment_capture_factor = 0.6
+#                build_cost_ic = 0.25
+#            }
+#        }
+#    }
+#
+#    portable_turrets = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = augment_equipment
+#            }
+#        }
+#         available = {
+#            if = {
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                soft_attack = 0.05
+#                hard_attack = 0.05
+#                build_cost_ic = 0.1
+#            }
+#        }
+#    }
+#
+#    trench_kit = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_1
+#            }
+#        }
+#        available = {
+#            if = {
+#                has_tech = support_augment_1
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                entrenchment = 1
+#                build_cost_ic = 0.5
+#            }
+#        }
+#    }
+#
+#    scout_drone = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_1
+#            }
+#        }
+#        available = {
+#            if = {
+#                has_tech = support_augment_1
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                recon = 0.3
+#                build_cost_ic = 0.5
+#            }
+#        }
+#    }
+#
+#    holo_drone = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_1
+#            }
+#        }
+#        available = {
+#            if = {
+#                has_tech = support_augment_1
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                initiative = 0.3
+#                build_cost_ic = 0.5
+#            }
+#        }
+#    }
+#
+#    shoulder_manpads = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_2
+#            }
+#        }
+#        available = {
+#            if = {
+#                has_tech = support_augment_2
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                anti_air_attack = 0.6
+#                build_cost_ic = 0.6
+#            }
+#        }
+#    }
+#
+#    stimpacks = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_2
+#            }
+#        }
+#        available = {
+#            if = {
+#                has_tech = support_augment_2
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                casualty_trickleback = 0.4
+#                experience_loss_factor = 0.5
+#                build_cost_ic = 0.4
+#            }
+#        }
+#    }
+#
+#    trench_drone = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_2
+#            }
+#        }
+#        available = {
+#            if = {
+#                has_tech = support_augment_2
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                entrenchment = 2
+#                build_cost_ic = 1
+#            }
+#        }
+#    }
+#
+#    aa_targeting_system = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_3
+#            }
+#        }
+#        available = {
+#            if = {
+#                has_tech = support_augment_3
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                anti_air_attack = 10
+#                build_cost_ic = 1
+#            }
+#        }
+#    }
+#
+#    drone_uplink = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_3
+#            }
+#        }
+#        available = {
+#            if = {
+#                has_tech = support_augment_3
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                suppression_factor = 10
+#                build_cost_ic = 0.35
+#            }
+#        }
+#    }
+#}
+#
+#type_augment = {
+#    human = {
+#        ledger = army
+#
+#        available = {
+#            always = yes
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = human_type_augment_tooltip
+#        }
+#    }
+#
+#    augmented = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_1
+#            }
+#        }        
+#        available = {
+#            if = {
+#                has_tech = support_augment_1
+#                check_variable = {industrial_power > 74}
+#            }
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                soft_attack = 0.05
+#                hard_attack = 0.05
+#                casualty_trickleback = -0.01
+#            }
+#        }
+#    }
+#
+#    computer_support = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_2
+#            }
+#        }        
+#        available = {
+#            if = {
+#                AND = {
+#                    NOT = {
+#                        OR = {
+#                            has_government = harmony
+#                            has_government = purity
+#                            has_government = divinity
+#                        }
+#                    }
+#                    has_tech = support_augment_2
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                soft_attack = 0.1
+#                hard_attack = 0.1
+#                casualty_trickleback = -0.02
+#            }
+#        }
+#    }
+#
+#    artificial_intelligence = {
+#        ledger = army
+#        visible = {
+#            if = {
+#                has_tech = support_augment_3
+#            }
+#        }        
+#        available = {
+#            if = {
+#                AND = {
+#                    NOT = {
+#                        OR = {
+#                            has_government = harmony
+#                            has_government = purity
+#                            has_government = divinity
+#                            has_government = mastery
+#                        }
+#                    }
+#                    has_tech = support_augment_3
+#                    check_variable = {industrial_power > 74}
+#                }
+#            }
+#        }
+#
+#        cost = 0
+#
+#        modifier = {
+#            custom_modifier_tooltip = augment_cost_tooltip
+#        }
+#
+#        on_add = {
+#            add_to_variable = {industrial_power = -75}
+#        }
+#
+#        equipment_bonus = {
+#            augment_equipment = {
+#                soft_attack = 0.15
+#                hard_attack = 0.15
+#                casualty_trickleback = -0.4
+#            }
+#        }
+#    }
+#}
+#}
+#
