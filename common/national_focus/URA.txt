@@ -1,0 +1,872 @@
+#This is only the ural path
+
+focus_tree = {
+  id = army_group_south
+
+  country = {
+    factor = 0
+
+    modifier = {
+      add = 10
+      tag = URA
+    }
+  }
+
+  initial_show_position = {
+    x = 0
+  }
+
+
+  default = no
+  focus = {
+    id = URA_flatlined
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 10
+    y = 1
+
+    prerequisite = {}
+    mutually_exclusive = { }
+    cost = 2
+      ai_will_do = {
+      factor = 1
+    }
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+    cancel_if_invalid = yes
+    continue_if_invalid = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      URA = {
+        country_event = { id = ural_event.3 }
+      }
+    }
+  }
+  focus = {
+    id = URA_swallowing_dust
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 0
+    y = 1
+
+    prerequisite = { focus = URA_flatlined }
+    mutually_exclusive = { }
+    relative_position_id = URA_flatlined
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      URA = {
+        country_event = { id = ural_event.4 }
+      }
+    }
+  }
+  focus = {
+    id = URA_virtues_of_cohesion
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 3
+    y = 1
+
+    prerequisite = { focus = URA_swallowing_dust }
+    mutually_exclusive = { }
+    relative_position_id = URA_swallowing_dust
+    cost = 3
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      add_to_variable = {
+        var = ura_nostate_org
+        value = 0.15
+        tooltip = add_0.15_to_ura_nostate_org_tt
+      }
+      add_to_variable = {
+        var = ura_nostate_warsupport
+        value = 0.1
+        tooltip = add_0.1_to_ura_nostate_warsupport_tt
+      }
+    }
+  }
+  focus = {
+    id = URA_bribes
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 0
+    y = 1
+
+    prerequisite = { focus = URA_virtues_of_cohesion }
+    mutually_exclusive = { }
+    relative_position_id = URA_virtues_of_cohesion
+    cost = 3
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      add_to_variable = {
+        var = ura_nostate_recruitablepop
+        value = 0.2
+        tooltip = add_0.2_to_ura_nostate_recruitablepop_tt
+      }
+    }
+  }
+  focus = {
+    id = URA_stabs
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 0
+    y = 1
+
+    prerequisite = { focus = URA_bribes }
+    mutually_exclusive = { }
+    relative_position_id = URA_bribes
+    cost = 3
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      add_to_variable = {
+        var = ura_nostate_stab
+        value = 0.1
+        tooltip = add_0.1_to_ura_nostate_stab_tt
+      }
+      add_manpower = 100000
+    }
+  }
+  focus = {
+    id = URA_marching
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 0
+    y = 1
+
+    prerequisite = { focus = URA_stabs }
+    mutually_exclusive = { }
+    relative_position_id = URA_stabs
+    cost = 3
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      add_to_variable = {
+        var = ura_nostate_org
+        value = 0.15
+        tooltip = add_0.1_to_ura_nostate_org_tt
+      }
+    }
+  }
+  focus = {
+    id = URA_meeting_in_vuktyl
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 0
+    y = 5
+
+    prerequisite = { focus = URA_swallowing_dust }
+    mutually_exclusive = { }
+    relative_position_id = URA_swallowing_dust
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+    date > 2200.4.01
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      URA = {
+        country_event = { id = ural_event.7 }
+      }
+    }
+  }
+  focus = {
+    id = URA_finding_a_purpose
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 0
+    y = 1
+
+    prerequisite = { focus = URA_meeting_in_vuktyl }
+    mutually_exclusive = { }
+    relative_position_id = URA_meeting_in_vuktyl
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      URA = {
+        country_event = { id = ural_event.5 }
+      }
+    }
+  }
+  focus = {
+    id = URA_room_enough
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 2
+    y = 1
+
+    prerequisite = { focus = URA_finding_a_purpose }
+    mutually_exclusive = { focus = URA_coup_dgrace }
+    relative_position_id = URA_finding_a_purpose
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      add_political_power = 75
+    }
+  }
+  focus = {
+    id = URA_old_contacts
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 0
+    y = 1
+
+    prerequisite = { focus = URA_room_enough }
+    mutually_exclusive = { }
+    relative_position_id = URA_room_enough
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      add_equipment_to_stockpile = {
+      type = light_equipment_0
+      amount = 5000
+      producer = URA
+      }
+    }
+  }
+  focus = {
+    id = URA_coup_dgrace
+    icon = GFX_goal_generic_construct_infrastructure
+    x = -2
+    y = 1
+
+    prerequisite = { focus = URA_finding_a_purpose }
+    mutually_exclusive = { focus = URA_room_enough }
+    relative_position_id = URA_finding_a_purpose
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      add_political_power = -60
+      add_command_power = 25
+    }
+  }
+  focus = {
+    id = URA_new_officers
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 0
+    y = 1
+
+    prerequisite = { focus = URA_coup_dgrace }
+    mutually_exclusive = { }
+    relative_position_id = URA_coup_dgrace
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      add_to_variable = {
+        var = ura_nostate_cp
+        value = 0.25
+        tooltip = add_0.1_to_ura_nostate_cp_tt
+      }
+    }
+  }
+  focus = {
+    id = URA_sky_turn_blue
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 2
+    y = 1
+
+    prerequisite = { focus = URA_new_officers focus = URA_old_contacts }
+    mutually_exclusive = { }
+    relative_position_id = URA_new_officers
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      URA = {
+        country_event = { id = ural_event.6 }
+      }
+    }
+  }
+  focus = {
+    id = URA_paint_the_ground_red
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 0
+    y = 1
+
+    prerequisite = { focus = URA_sky_turn_blue }
+    mutually_exclusive = { }
+    relative_position_id = URA_sky_turn_blue
+    cost = 1
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+    }
+  }
+  focus = {
+    id = URA_pillage_the_east
+    icon = GFX_goal_generic_construct_infrastructure
+    x = -3
+    y = 1
+
+    prerequisite = { focus = URA_swallowing_dust }
+    mutually_exclusive = { }
+    relative_position_id = URA_swallowing_dust
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      add_equipment_to_stockpile = {
+      type = heavy_equipment_0
+      amount = 200
+      producer = URA
+      }   
+    
+    }
+  }
+  focus = {
+    id = URA_pillage_the_west
+    icon = GFX_goal_generic_construct_infrastructure
+    x = -7
+    y = 1
+
+    prerequisite = { focus = URA_swallowing_dust }
+    mutually_exclusive = { }
+    relative_position_id = URA_swallowing_dust
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+    
+      add_equipment_to_stockpile = {
+      type = light_equipment_0
+      amount = 1000
+      producer = URA
+      }   
+      
+    }
+  }
+  focus = {
+    id = URA_body_for_every_gun
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 2
+    y = 1
+
+    prerequisite = { focus = URA_pillage_the_east focus = URA_pillage_the_west }
+    mutually_exclusive = { }
+    relative_position_id = URA_pillage_the_west
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+
+    add_manpower = 100000
+    
+    }
+  }
+  focus = {
+    id = URA_slap_scrap_together
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 0
+    y = 1
+
+    prerequisite = { focus = URA_body_for_every_gun }
+    mutually_exclusive = { }
+    relative_position_id = URA_body_for_every_gun
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      subtract_from_variable = {
+        var = ura_nostate_consumergoods
+        value = 0.2
+        tooltip = add_0.1_to_ura_nostate_consumergoods_tt
+      }
+    }
+  }
+  focus = {
+    id = URA_scavenge_for_guns
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 2
+    y = 1
+
+    prerequisite = { focus = URA_slap_scrap_together }
+    mutually_exclusive = { }
+    relative_position_id = URA_slap_scrap_together
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+
+      add_equipment_to_stockpile = {
+      type = light_equipment_0
+      amount = 1500
+      producer = URA
+      }  
+
+      add_equipment_to_stockpile = {
+      type = heavy_equipment_0
+      amount = 200
+      producer = URA
+      }
+    }
+  }
+  focus = {
+    id = URA_ural_arsenals
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 0
+    y = 1
+
+    prerequisite = { focus = URA_scavenge_for_guns }
+    mutually_exclusive = { }
+    relative_position_id = URA_scavenge_for_guns
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+    
+    }
+
+    complete_tooltip = {
+      add_extra_state_shared_building_slots = 1
+      add_building_construction = {
+        type = military_complex
+        level = 1
+        instant_build = yes
+      }
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = military_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = military_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+    }
+  }
+  focus = {
+    id = URA_bootstrap_the_industry
+    icon = GFX_goal_generic_construct_infrastructure
+    x = -2
+    y = 1
+
+    prerequisite = { focus = URA_slap_scrap_together }
+    mutually_exclusive = { }
+    relative_position_id = URA_slap_scrap_together
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      add_to_variable = {
+        var = ura_nostate_efficiencycap
+        value = 0.5
+        tooltip = add_0.1_to_ura_nostate_efficiencycap_tt
+      }
+    }
+  }
+  focus = {
+    id = URA_pool_the_loot
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 0
+    y = 1
+
+    prerequisite = { focus = URA_bootstrap_the_industry }
+    mutually_exclusive = { }
+    relative_position_id = URA_bootstrap_the_industry
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+
+      add_equipment_to_stockpile = {
+      type = light_equipment_0
+      amount = 1500
+      producer = URA
+      }  
+    
+    }
+  }
+  focus = {
+    id = URA_reengineer_armor_designs
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 2
+    y = 1
+
+    prerequisite = { focus = URA_pool_the_loot }
+    prerequisite = { focus = URA_ural_arsenals }]
+    mutually_exclusive = { }
+    relative_position_id = URA_pool_the_loot
+    cost = 2
+
+    ai_will_do = {
+      factor = 1
+    }
+
+    available = {
+
+    }
+
+    bypass = {
+
+    }
+
+    cancel_if_invalid = yes
+    continue_if_invalid  = no
+    available_if_capitulated = no
+    search_filters = { }
+    completion_reward = {
+      custom_effect_tooltip = URA_reengineer_armor_designs_tt
+      hidden_effect = {
+        division_template = {
+          name = "URA_reengineer_armor_designs_name"
+
+          regiments = {
+            MBT = { x = 0 y = 0 }
+            MBT = { x = 0 y = 1 }
+            MBT = { x = 1 y = 0 }
+            MBT = { x = 1 y = 1 }
+            apc = { x = 2 y = 0 }
+          }
+          support = {
+            engineer = { x = 0 y = 0 }
+            artillery = { x = 0 y = 1 }
+          }
+        }
+
+        capital_scope = {
+          #ain't no support companies in this mod
+          create_unit = {
+            division = "name = \"Tank Division\" division_template = \"URA_reengineer_armor_designs_name\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = ROOT
+          }
+        }
+      }
+    }
+  }
+}
+
