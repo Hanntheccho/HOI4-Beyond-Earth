@@ -7,4 +7,4033 @@
 	default = yes
 
 	reset_on_civilwar = no
+	
+	continuous_focus_position = { 
+		x = 0
+		y = 0
+	}
+	
+#	focus = {
+#		id = TZN_an_undefeated_dream
+#		icon = GFX_goal_TZN_an_undefeated_dream
+#
+#		x = 22
+#		y = 0
+#		cost = 5
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_ideas = TZN_children_of_africa
+#				add_ideas = TZN_children_of_africa_2
+#			}
+#			add_ideas = {
+#				TZN_africas_army
+#			}
+#			country_event = tzn.1
+#		}
+#	}
+	
+	focus = {
+		id = GEN_23rd_century_dawn
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 22
+		y = 0
+		cost = 5
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_political_power = 25
+			add_stability = 0.1
+		}
+	}
+	
+# # # # # CULTURAL SUBTREE # # # # #
+	
+	focus = {
+		id = GEN_a_question_of_influence
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -15
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_23rd_century_dawn
+		 
+		prerequisite = { 
+			focus = GEN_23rd_century_dawn
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_political_effort
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_political_reform
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -2
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_a_question_of_influence
+		 
+		prerequisite = { 
+			focus = GEN_a_question_of_influence
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_political_effort
+			}
+			add_ideas = {
+				GEN_political_effort_2
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = GEN_justice_and_law
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_political_reform
+		 
+		prerequisite = { 
+			focus = GEN_political_reform
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_political_effort_2
+			}
+			add_ideas = {
+				GEN_political_effort_3
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = GEN_cultural_investment
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_a_question_of_influence
+		 
+		prerequisite = { 
+			focus = GEN_a_question_of_influence
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_cultural_effort
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = GEN_cultural_reform
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_cultural_investment
+		 
+		prerequisite = { 
+			focus = GEN_cultural_investment
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_cultural_effort
+			}
+			add_ideas = {
+				GEN_cultural_effort_2
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_cultural_revolution
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_cultural_reform
+		 
+		prerequisite = { 
+			focus = GEN_cultural_reform
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_cultural_effort_2
+			}
+			add_ideas = {
+				GEN_cultural_effort_3
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_national_sovereignty
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 2
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_a_question_of_influence
+		 
+		prerequisite = { 
+			focus = GEN_a_question_of_influence
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_war_effort
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_if_you_want_peace
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_national_sovereignty
+		 
+		prerequisite = { 
+			focus = GEN_national_sovereignty
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_war_effort
+			}
+			add_ideas = {
+				GEN_war_effort_2
+			}
+		}
+	}
+
+# # # # # INDUSTRIAL SUBTREE # # # # #
+	
+	focus = {
+		id = GEN_a_quinquennial_project
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -9
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_23rd_century_dawn
+		 
+		prerequisite = { 
+			focus = GEN_23rd_century_dawn
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_industrial_effort
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_improved_terrain_probes
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -2
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_a_quinquennial_project
+		 
+		prerequisite = { 
+			focus = GEN_a_quinquennial_project
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_resource_effort
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = lithium
+					amount = 10
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = superalloys
+					amount = 10
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = polymers
+					amount = 10
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = electronics
+					amount = 10
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = superconductors
+					amount = 10
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_new_terrain_analysis
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_improved_terrain_probes
+		 
+		prerequisite = { 
+			focus = GEN_improved_terrain_probes
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = generator_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = generator_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = generator_building
+					level = 1
+					instant_build = yes
+				}
+			}			
+		}
+	}
+	
+	focus = {
+		id = GEN_first_phase
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_a_quinquennial_project
+		 
+		prerequisite = { 
+			focus = GEN_a_quinquennial_project
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_industrial_effort
+			}
+			add_ideas = {
+				GEN_industrial_effort_2
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = civilian_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_second_phase
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_first_phase
+		 
+		prerequisite = { 
+			focus = GEN_first_phase
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_industrial_effort_2
+			}
+			add_ideas = {
+				GEN_industrial_effort_3
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = civilian_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = civilian_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_third_phase
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_second_phase
+		 
+		prerequisite = { 
+			focus = GEN_second_phase
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_industrial_effort_3
+			}
+			add_ideas = {
+				GEN_industrial_effort_4
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = civilian_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = civilian_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = civilian_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_infrastructure_subsidies
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 2
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_a_quinquennial_project
+		 
+		prerequisite = { 
+			focus = GEN_a_quinquennial_project
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_infrastructure_effort
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_infrastructure_revitalization
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_infrastructure_subsidies
+		 
+		prerequisite = { 
+			focus = GEN_infrastructure_subsidies
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_infrastructure_effort
+			}
+			add_ideas = {
+				GEN_infrastructure_effort_2
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+# # # # # RESEARCH SUBTREE # # # # #
+	
+	focus = {
+		id = GEN_academia_of_tomorrow
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -3
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_23rd_century_dawn
+		 
+		prerequisite = { 
+			focus = GEN_23rd_century_dawn
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_research_effort
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_research_center_modernization
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -2
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_academia_of_tomorrow
+		 
+		prerequisite = { 
+			focus = GEN_academia_of_tomorrow
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_research_effort
+			}
+			add_ideas = {
+				GEN_research_effort_2
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = GEN_research_center_expansion
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_research_center_modernization
+		 
+		prerequisite = { 
+			focus = GEN_research_center_modernization
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_research_effort_2
+			}
+			add_ideas = {
+				GEN_research_effort_3
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = GEN_orbital_studies
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_academia_of_tomorrow
+		 
+		prerequisite = { 
+			focus = GEN_academia_of_tomorrow
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_space_effort
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = GEN_joint_space_research
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_orbital_studies
+		 
+		prerequisite = { 
+			focus = GEN_orbital_studies
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_space_effort
+			}
+			add_ideas = {
+				GEN_space_effort_2
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_horizon_program
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_joint_space_research
+		 
+		prerequisite = { 
+			focus = GEN_joint_space_research
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_space_effort_2
+			}
+			add_ideas = {
+				GEN_space_effort_3
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_innovative_breakthroughs
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 2
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_academia_of_tomorrow
+		 
+		prerequisite = { 
+			focus = GEN_academia_of_tomorrow
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = be_industry
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_investing_in_the_future
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_innovative_breakthroughs
+		 
+		prerequisite = { 
+			focus = GEN_innovative_breakthroughs
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = be_industry
+			}
+		}
+	}
+
+# # # # # LAND SUBTREE # # # # #
+	
+	focus = {
+		id = GEN_land_forces
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 3
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_23rd_century_dawn
+		 
+		prerequisite = { 
+			focus = GEN_23rd_century_dawn
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_land_effort
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_land_research
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -2
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_land_forces
+		 
+		prerequisite = { 
+			focus = GEN_land_forces
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = be_infantry_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_land_breakthroughs
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_land_research
+		 
+		prerequisite = { 
+			focus = GEN_land_research
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = be_armor_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_materiel_industry
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_land_forces
+		 
+		prerequisite = { 
+			focus = GEN_land_forces
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_army_industry_expansion
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_materiel_industry
+		 
+		prerequisite = { 
+			focus = GEN_materiel_industry
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = heavy_military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_military_industrial_complex
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_army_industry_expansion
+		 
+		prerequisite = { 
+			focus = GEN_army_industry_expansion
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = heavy_military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = heavy_military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_land_training
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 2
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_land_forces
+		 
+		prerequisite = { 
+			focus = GEN_land_forces
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_land_effort
+			}
+			add_ideas = {
+				GEN_land_effort_2
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_land_adaptation
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_land_training
+		 
+		prerequisite = { 
+			focus = GEN_land_training
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_land_effort_2
+			}
+			add_ideas = {
+				GEN_land_effort_3
+			}
+		}
+	}
+
+# # # # # AIR SUBTREE # # # # #
+	
+	focus = {
+		id = GEN_air_forces
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 9
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_23rd_century_dawn
+		 
+		prerequisite = { 
+			focus = GEN_23rd_century_dawn
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_air_effort
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_air_research
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -2
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_air_forces
+		 
+		prerequisite = { 
+			focus = GEN_air_forces
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = be_infantry_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_air_breakthroughs
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_air_research
+		 
+		prerequisite = { 
+			focus = GEN_air_research
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = be_armor_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_air_base_foundation
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_air_forces
+		 
+		prerequisite = { 
+			focus = GEN_air_forces
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_air_base_expansion
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_air_base_foundation
+		 
+		prerequisite = { 
+			focus = GEN_air_base_foundation
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = heavy_military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_grand_air_shield
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_air_base_expansion
+		 
+		prerequisite = { 
+			focus = GEN_air_base_expansion
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = heavy_military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = heavy_military_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_air_training
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 2
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_air_forces
+		 
+		prerequisite = { 
+			focus = GEN_air_forces
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_air_effort
+			}
+			add_ideas = {
+				GEN_air_effort_2
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_air_adaptation
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_air_training
+		 
+		prerequisite = { 
+			focus = GEN_air_training
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_air_effort_2
+			}
+			add_ideas = {
+				GEN_air_effort_3
+			}
+		}
+	}
+
+# # # # # NAVAL SUBTREE # # # # #
+	
+	focus = {
+		id = GEN_naval_forces
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 15
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_23rd_century_dawn
+		 
+		prerequisite = { 
+			focus = GEN_23rd_century_dawn
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_naval_effort
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_naval_research
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -2
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_naval_forces
+		 
+		prerequisite = { 
+			focus = GEN_naval_forces
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = be_naval_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_naval_breakthroughs
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_naval_research
+		 
+		prerequisite = { 
+			focus = GEN_naval_research
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = be_naval_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_new_drydocks
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_naval_forces
+		 
+		prerequisite = { 
+			focus = GEN_naval_forces
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_drydocks_expansion
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_new_drydocks
+		 
+		prerequisite = { 
+			focus = GEN_new_drydocks
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_rising_tide_project
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_drydocks_expansion
+		 
+		prerequisite = { 
+			focus = GEN_drydocks_expansion
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_naval_training
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 2
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_naval_forces
+		 
+		prerequisite = { 
+			focus = GEN_naval_forces
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_naval_effort
+			}
+			add_ideas = {
+				GEN_naval_effort_2
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_naval_adaptation
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_naval_training
+		 
+		prerequisite = { 
+			focus = GEN_naval_training
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_naval_effort_2
+			}
+			add_ideas = {
+				GEN_naval_effort_3
+			}
+		}
+	}
+	
+# # # # # POLITICAL SUBTREE # # # # #
+	
+	focus = {
+		id = GEN_23rd_century_politics
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 5
+		cost = 5
+		
+		relative_position_id = GEN_23rd_century_dawn
+		 
+		prerequisite = { 
+			focus = GEN_23rd_century_dawn
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	
+# # # # # SYNERGY BRANCH # # # # #
+	
+	focus = {
+		id = GEN_synergy
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -12
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_23rd_century_politics
+		 
+		prerequisite = { 
+			focus = GEN_23rd_century_politics
+		}
+		
+		available = {
+			has_government = synergy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_synergist_governance
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_national_institute_of_science
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_synergy
+		 
+		prerequisite = { 
+			focus = GEN_synergy
+		}
+		
+		available = {
+			has_government = synergy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_national_institute_of_science
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_networked_datalinks
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_national_institute_of_science
+		 
+		prerequisite = { 
+			focus = GEN_national_institute_of_science
+		}
+		
+		available = {
+			has_government = synergy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_networked_datalinks
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_specialization
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_networked_datalinks
+		 
+		prerequisite = { 
+			focus = GEN_networked_datalinks
+		}
+		
+		available = {
+			has_government = synergy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_specialization
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_stealth_actions
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_specialization
+		 
+		prerequisite = { 
+			focus = GEN_specialization
+		}
+		
+		available = {
+			has_government = synergy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_stealth_actions
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_adaptive_sciences
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_synergy
+		 
+		prerequisite = { 
+			focus = GEN_synergy
+		}
+		
+		available = {
+			has_government = synergy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_adaptive_sciences
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_survival_doctrines
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_adaptive_sciences
+		 
+		prerequisite = { 
+			focus = GEN_adaptive_sciences
+		}
+		
+		available = {
+			has_government = synergy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_survival_doctrines
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_extensive_augmentation
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_survival_doctrines
+		 
+		prerequisite = { 
+			focus = GEN_survival_doctrines
+		}
+		
+		available = {
+			has_government = synergy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_extensive_augmentation
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_transhumanism
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_extensive_augmentation
+		 
+		prerequisite = { 
+			focus = GEN_extensive_augmentation
+		}
+		
+		available = {
+			has_government = synergy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_transhumanism
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_unabashed_future
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_stealth_actions
+		 
+		prerequisite = { 
+			focus = GEN_stealth_actions
+		}
+		
+		prerequisite = { 
+			focus = GEN_transhumanism
+		}
+		
+		available = {
+			has_government = synergy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+#				GEN_unabashed_future
+				GEN_synergist_governance_2
+			}
+			remove_ideas = {
+				GEN_synergist_governance
+				GEN_national_institute_of_science
+				GEN_networked_datalinks
+				GEN_specialization
+				GEN_stealth_actions
+				GEN_adaptive_sciences
+				GEN_survival_doctrines
+				GEN_extensive_augmentation
+				GEN_transhumanism
+			}
+		}
+	}
+
+# # # # # DIVINITY BRANCH # # # # #
+	
+	focus = {
+		id = GEN_divinity
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -8
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_23rd_century_politics
+		 
+		prerequisite = { 
+			focus = GEN_23rd_century_politics
+		}
+		
+		available = {
+			has_government = divinity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_divinist_governance
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_individualized_collectivism
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_divinity
+		 
+		prerequisite = { 
+			focus = GEN_divinity
+		}
+		
+		available = {
+			has_government = divinity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_individualized_collectivism
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_power_of_the_will
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_individualized_collectivism
+		 
+		prerequisite = { 
+			focus = GEN_individualized_collectivism
+		}
+		
+		available = {
+			has_government = divinity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_power_of_the_will
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_brain_studies
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_power_of_the_will
+		 
+		prerequisite = { 
+			focus = GEN_power_of_the_will
+		}
+		
+		available = {
+			has_government = divinity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_brain_studies
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_manual_calculations
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_brain_studies
+		 
+		prerequisite = { 
+			focus = GEN_brain_studies
+		}
+		
+		available = {
+			has_government = divinity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_manual_calculations
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_monumentalism
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_divinity
+		 
+		prerequisite = { 
+			focus = GEN_divinity
+		}
+		
+		available = {
+			has_government = divinity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_monumentalism
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_superior_work_ethic
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_monumentalism
+		 
+		prerequisite = { 
+			focus = GEN_monumentalism
+		}
+		
+		available = {
+			has_government = divinity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_superior_work_ethic
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_dogmatic_morals
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_superior_work_ethic
+		 
+		prerequisite = { 
+			focus = GEN_superior_work_ethic
+		}
+		
+		available = {
+			has_government = divinity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_dogmatic_morals
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_euthenics
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_dogmatic_morals
+		 
+		prerequisite = { 
+			focus = GEN_dogmatic_morals
+		}
+		
+		available = {
+			has_government = divinity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_euthenics
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_mind_over_matter
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_manual_calculations
+		 
+		prerequisite = { 
+			focus = GEN_manual_calculations
+		}
+		
+		prerequisite = { 
+			focus = GEN_euthenics
+		}
+		
+		available = {
+			has_government = divinity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+#				GEN_mind_over_matter
+				GEN_divinist_governance_2
+			}
+			remove_ideas = {
+				GEN_divinist_governance
+				GEN_individualized_collectivism
+				GEN_power_of_the_will
+				GEN_brain_studies
+				GEN_manual_calculations
+				GEN_monumentalism
+				GEN_superior_work_ethic
+				GEN_dogmatic_morals
+				GEN_euthenics
+			}
+		}
+		
+	}
+
+# # # # # MASTERY BRANCH # # # # #	
+	
+	focus = {
+		id = GEN_mastery
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -4
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_23rd_century_politics
+		 
+		prerequisite = { 
+			focus = GEN_23rd_century_politics
+		}
+		
+		available = {
+			has_government = mastery
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_masterist_governance
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_adaptive_designs
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_mastery
+		 
+		prerequisite = { 
+			focus = GEN_mastery
+		}
+		
+		available = {
+			has_government = mastery
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_adaptive_designs
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_eminent_domain
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_adaptive_designs
+		 
+		prerequisite = { 
+			focus = GEN_adaptive_designs
+		}
+		
+		available = {
+			has_government = mastery
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_eminent_domain
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_fortress_doctrine
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_eminent_domain
+		 
+		prerequisite = { 
+			focus = GEN_eminent_domain
+		}
+		
+		available = {
+			has_government = mastery
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_fortress_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_terraforming
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_fortress_doctrine
+		 
+		prerequisite = { 
+			focus = GEN_fortress_doctrine
+		}
+		
+		available = {
+			has_government = mastery
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_terraforming
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_automated_labor
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_mastery
+		 
+		prerequisite = { 
+			focus = GEN_mastery
+		}
+		
+		available = {
+			has_government = mastery
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_automated_labor
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_industrial_automation
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_automated_labor
+		 
+		prerequisite = { 
+			focus = GEN_automated_labor
+		}
+		
+		available = {
+			has_government = mastery
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_industrial_automation
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_drone_hives
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_industrial_automation
+		 
+		prerequisite = { 
+			focus = GEN_industrial_automation
+		}
+		
+		available = {
+			has_government = mastery
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_drone_hives
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_auxiliary_combat_ais
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_drone_hives
+		 
+		prerequisite = { 
+			focus = GEN_drone_hives
+		}
+		
+		available = {
+			has_government = mastery
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_auxiliary_combat_ais
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_mastery_of_nature
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_terraforming
+		 
+		prerequisite = { 
+			focus = GEN_terraforming
+		}
+		
+		prerequisite = { 
+			focus = GEN_auxiliary_combat_ais
+		}
+		
+		available = {
+			has_government = mastery
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+#				GEN_mastery_of_nature
+				GEN_masterist_governance_2
+			}
+			remove_ideas = {
+				GEN_masterist_governance
+				GEN_adaptive_designs
+				GEN_eminent_domain
+				GEN_fortress_doctrine
+				GEN_terraforming
+				GEN_automated_labor
+				GEN_industrial_automation
+				GEN_drone_hives
+				GEN_auxiliary_combat_ais
+			}
+		}
+	}
+
+# # # # # NEUTRALITY BRANCH # # # # #	
+	
+	focus = {
+		id = GEN_neutrality
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_23rd_century_politics
+		 
+		prerequisite = { 
+			focus = GEN_23rd_century_politics
+		}
+		
+		available = {
+			has_government = neutral
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_neutral_governance
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_social_cohesion
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_neutrality
+		 
+		prerequisite = { 
+			focus = GEN_neutrality
+		}
+		
+		available = {
+			has_government = neutral
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_social_cohesion
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_global_neutrality
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_social_cohesion
+		 
+		prerequisite = { 
+			focus = GEN_social_cohesion
+		}
+		
+		available = {
+			has_government = neutral
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_global_neutrality
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_vertical_sustenance
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_global_neutrality
+		 
+		prerequisite = { 
+			focus = GEN_global_neutrality
+		}
+		
+		available = {
+			has_government = neutral
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_vertical_sustenance
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_united_front
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_vertical_sustenance
+		 
+		prerequisite = { 
+			focus = GEN_vertical_sustenance
+		}
+		
+		available = {
+			has_government = neutral
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_united_front
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_evolved_party_system
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_neutrality
+		 
+		prerequisite = { 
+			focus = GEN_neutrality
+		}
+		
+		available = {
+			has_government = neutral
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_evolved_party_system
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_ethical_calculus
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_evolved_party_system
+		 
+		prerequisite = { 
+			focus = GEN_evolved_party_system
+		}
+		
+		available = {
+			has_government = neutral
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_ethical_calculus
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_divergent_evolution
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_ethical_calculus
+		 
+		prerequisite = { 
+			focus = GEN_ethical_calculus
+		}
+		
+		available = {
+			has_government = neutral
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_divergent_evolution
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_radical_suppression
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_divergent_evolution
+		 
+		prerequisite = { 
+			focus = GEN_divergent_evolution
+		}
+		
+		available = {
+			has_government = neutral
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_radical_suppression
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_utiliarianism
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_united_front
+		 
+		prerequisite = { 
+			focus = GEN_united_front
+		}
+		
+		prerequisite = { 
+			focus = GEN_radical_suppression
+		}
+		
+		available = {
+			has_government = neutral
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+#				GEN_utiliarianism
+				GEN_neutral_governance_2
+			}
+			remove_ideas = {
+				GEN_neutral_governance
+				GEN_social_cohesion
+				GEN_global_neutrality
+				GEN_vertical_sustenance
+				GEN_united_front
+				GEN_evolved_party_system
+				GEN_ethical_calculus
+				GEN_divergent_evolution
+				GEN_radical_suppression
+			}
+		}
+	}
+
+# # # # # PURITY BRANCH # # # # #	
+	
+	focus = {
+		id = GEN_purity
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 4
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_23rd_century_politics
+		 
+		prerequisite = { 
+			focus = GEN_23rd_century_politics
+		}
+		
+		available = {
+			has_government = purity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_purist_governance
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_social_mores
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_purity
+		 
+		prerequisite = { 
+			focus = GEN_purity
+		}
+		
+		available = {
+			has_government = purity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_social_mores
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_conservative_humanism
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_social_mores
+		 
+		prerequisite = { 
+			focus = GEN_social_mores
+		}
+		
+		available = {
+			has_government = purity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_conservative_humanism
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_limited_augmentation
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_conservative_humanism
+		 
+		prerequisite = { 
+			focus = GEN_conservative_humanism
+		}
+		
+		available = {
+			has_government = purity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_limited_augmentation
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_united_struggle
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_limited_augmentation
+		 
+		prerequisite = { 
+			focus = GEN_limited_augmentation
+		}
+		
+		available = {
+			has_government = purity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_united_struggle
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_recolonization_corps
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_purity
+		 
+		prerequisite = { 
+			focus = GEN_purity
+		}
+		
+		available = {
+			has_government = purity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_recolonization_corps
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_reassimilation
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_recolonization_corps
+		 
+		prerequisite = { 
+			focus = GEN_recolonization_corps
+		}
+		
+		available = {
+			has_government = purity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_reassimilation
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_channeled_wrath
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_reassimilation
+		 
+		prerequisite = { 
+			focus = GEN_reassimilation
+		}
+		
+		available = {
+			has_government = purity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_channeled_wrath
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_ubuntu
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_channeled_wrath
+		 
+		prerequisite = { 
+			focus = GEN_channeled_wrath
+		}
+		
+		available = {
+			has_government = purity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_ubuntu
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_historic_doctrine
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_united_struggle
+		 
+		prerequisite = { 
+			focus = GEN_united_struggle
+		}
+		
+		prerequisite = { 
+			focus = GEN_ubuntu
+		}
+		
+		available = {
+			has_government = purity
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+#				GEN_historic_doctrine
+				GEN_purist_governance_2
+			}
+			remove_ideas = {
+				GEN_purist_governance
+				GEN_social_mores
+				GEN_conservative_humanism
+				GEN_limited_augmentation
+				GEN_united_struggle
+				GEN_recolonization_corps
+				GEN_reassimilation
+				GEN_channeled_wrath
+				GEN_ubuntu
+			}
+		}
+	}
+
+# # # # # SUPREMACY BRANCH # # # # #	
+	
+	focus = {
+		id = GEN_supremacy
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 8
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_23rd_century_politics
+		 
+		prerequisite = { 
+			focus = GEN_23rd_century_politics
+		}
+		
+		available = {
+			has_government = supremacy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_supremacist_governance
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_monorail_initiative
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_supremacy
+		 
+		prerequisite = { 
+			focus = GEN_supremacy
+		}
+		
+		available = {
+			has_government = supremacy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_monorail_initiative
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_synthetic_thought
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_monorail_initiative
+		 
+		prerequisite = { 
+			focus = GEN_monorail_initiative
+		}
+		
+		available = {
+			has_government = supremacy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_synthetic_thought
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_energy_maximization
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_synthetic_thought
+		 
+		prerequisite = { 
+			focus = GEN_synthetic_thought
+		}
+		
+		available = {
+			has_government = supremacy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_energy_maximization
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_combat_pragmatism
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_energy_maximization
+		 
+		prerequisite = { 
+			focus = GEN_energy_maximization
+		}
+		
+		available = {
+			has_government = supremacy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_combat_pragmatism
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_memeweb
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_supremacy
+		 
+		prerequisite = { 
+			focus = GEN_supremacy
+		}
+		
+		available = {
+			has_government = supremacy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_memeweb
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_datalink_consolidation
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_memeweb
+		 
+		prerequisite = { 
+			focus = GEN_memeweb
+		}
+		
+		available = {
+			has_government = supremacy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_datalink_consolidation
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_monomyth
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_datalink_consolidation
+		 
+		prerequisite = { 
+			focus = GEN_datalink_consolidation
+		}
+		
+		available = {
+			has_government = supremacy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_monomyth
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_orbital_interoperability
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_monomyth
+		 
+		prerequisite = { 
+			focus = GEN_monomyth
+		}
+		
+		available = {
+			has_government = supremacy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_orbital_interoperability
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_perfectionism
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_combat_pragmatism
+		 
+		prerequisite = { 
+			focus = GEN_combat_pragmatism
+		}
+		
+		prerequisite = { 
+			focus = GEN_orbital_interoperability
+		}
+		
+		available = {
+			has_government = supremacy
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+#				GEN_perfectionism
+				GEN_supremacist_governance_2
+			}
+			remove_ideas = {
+				GEN_supremacist_governance
+				GEN_monorail_initiative
+				GEN_synthetic_thought
+				GEN_energy_maximization
+				GEN_combat_pragmatism
+				GEN_memeweb
+				GEN_datalink_consolidation
+				GEN_monomyth
+				GEN_orbital_interoperability
+			}
+		}
+	}
+	
+# # # # # HARMONY BRANCH # # # # #
+	
+	focus = {
+		id = GEN_harmony
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 12
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_23rd_century_politics
+		 
+		prerequisite = { 
+			focus = GEN_23rd_century_politics
+		}
+		
+		available = {
+			has_government = harmony
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_harmonist_governance
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_democratized_burdens
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_harmony
+		 
+		prerequisite = { 
+			focus = GEN_harmony
+		}
+		
+		available = {
+			has_government = harmony
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_democratized_burdens
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_frugality
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_democratized_burdens
+		 
+		prerequisite = { 
+			focus = GEN_democratized_burdens
+		}
+		
+		available = {
+			has_government = harmony
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_frugality
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_natural_preserves
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_frugality
+		 
+		prerequisite = { 
+			focus = GEN_frugality
+		}
+		
+		available = {
+			has_government = harmony
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_natural_preserves
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_ecoscaping
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_natural_preserves
+		 
+		prerequisite = { 
+			focus = GEN_natural_preserves
+		}
+		
+		available = {
+			has_government = harmony
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_ecoscaping
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_genetic_modifications
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_harmony
+		 
+		prerequisite = { 
+			focus = GEN_harmony
+		}
+		
+		available = {
+			has_government = harmony
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_genetic_modifications
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_tissue_growing
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_genetic_modifications
+		 
+		prerequisite = { 
+			focus = GEN_genetic_modifications
+		}
+		
+		available = {
+			has_government = harmony
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_tissue_growing
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_sustainable_industry
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_tissue_growing
+		 
+		prerequisite = { 
+			focus = GEN_tissue_growing
+		}
+		
+		available = {
+			has_government = harmony
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_sustainable_industry
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_responsible_mindset
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_sustainable_industry
+		 
+		prerequisite = { 
+			focus = GEN_sustainable_industry
+		}
+		
+		available = {
+			has_government = harmony
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_responsible_mindset
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_eudaimonia
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_ecoscaping
+		 
+		prerequisite = { 
+			focus = GEN_ecoscaping
+		}
+		
+		prerequisite = { 
+			focus = GEN_responsible_mindset
+		}
+		
+		available = {
+			has_government = harmony
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+#				GEN_eudaimonia
+				GEN_harmonist_governance_2
+			}
+			remove_ideas = {
+				GEN_harmonist_governance
+				GEN_democratized_burdens
+				GEN_frugality
+				GEN_natural_preserves
+				GEN_ecoscaping
+				GEN_genetic_modifications
+				GEN_tissue_growing
+				GEN_sustainable_industry
+				GEN_responsible_mindset
+			}
+		}
+	}
+	
+# # # # # FINAL WAR SUBTREE # # # # #
+	
+	focus = {
+		id = GEN_the_final_war
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_utiliarianism
+		 
+#		prerequisite = { 
+#			focus = GEN_23rd_century_dawn
+#		}
+
+		available = {
+			has_global_flag = final_war_flag
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_the_final_war
+			}
+		}
+	}	
+	
+	focus = {
+		id = GEN_total_war
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = -1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_the_final_war
+		 
+		prerequisite = { 
+			focus = GEN_the_final_war
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_the_final_war
+			}
+			add_ideas = {
+				GEN_the_final_war_2
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_allied_support
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_total_war
+		 
+		prerequisite = { 
+			focus = GEN_total_war
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_the_final_war_2
+			}
+			add_ideas = {
+				GEN_the_final_war_3
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_global_campaigns
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_allied_support
+		 
+		prerequisite = { 
+			focus = GEN_allied_support
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_the_final_war_3
+			}
+			add_ideas = {
+				GEN_the_final_war_4
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_war_of_survival
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_global_campaigns
+		 
+		prerequisite = { 
+			focus = GEN_global_campaigns
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_the_final_war_4
+			}
+			add_ideas = {
+				GEN_the_final_war_5
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_space_race
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 1
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_the_final_war
+		 
+		prerequisite = { 
+			focus = GEN_the_final_war
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				GEN_the_space_race
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_social_readiness
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_space_race
+		 
+		prerequisite = { 
+			focus = GEN_space_race
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_the_space_race
+			}
+			add_ideas = {
+				GEN_the_space_race_2
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_food_stockpiles
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_social_readiness
+		 
+		prerequisite = { 
+			focus = GEN_social_readiness
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_the_space_race_2
+			}
+			add_ideas = {
+				GEN_the_space_race_3
+			}
+		}
+	}
+	
+	focus = {
+		id = GEN_colonial_lotteries
+		icon = GFX_goal_GEN_PLACEHOLDER
+
+		x = 0
+		y = 1
+		cost = 5
+		
+		relative_position_id = GEN_food_stockpiles
+		 
+		prerequisite = { 
+			focus = GEN_food_stockpiles
+		}
+		 
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				GEN_the_space_race_3
+			}
+			add_ideas = {
+				GEN_the_space_race_4
+			}
+		}
+	}
+	
 }
