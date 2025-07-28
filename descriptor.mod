@@ -100,6 +100,5 @@ replace_path="music"
 replace_path="music/hoi2"
 replace_path="music/hoi3"
 replace_path="portraits"
-
 supported_version="1.16.9"
 remote_file_id="3106762916"
