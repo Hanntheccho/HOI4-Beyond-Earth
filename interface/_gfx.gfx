@@ -5,6 +5,49 @@ spriteTypes = {
 ###############################
 
 	spriteType = {
+		name = "GFX_frontend_mod_logo"
+		texturefile = "gfx/interface/logo_game.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/logo_game.dds"
+			animationtexturefile = "gfx/interface/logo_game.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 5.0			# in seconds
+			animationdelay = 2.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}	
+		legacy_lazy_load = no
+	}
+
+	corneredTileSpriteType = {
+		name = "GFX_tiling_button"
+		size= { x=148 y=36 }
+		textureFile = "gfx/interface/buttons/tiling_button.dds"
+		borderSize = { x=17 y=17 }
+		tilingCenter = yes
+	}
+	corneredTileSpriteType = {
+		name = "GFX_tiling_button_2frames"
+		size= { x=148 y=36 }
+		textureFile = "gfx/interface/buttons/tiling_button_2frames.dds"
+		borderSize = { x=10 y=10 }
+		tilingCenter = yes
+		noofframes = 2
+	}
+	corneredTileSpriteType = {
+		name = "GFX_tiling_button_3frames"
+		size= { x=148 y=36 }
+		textureFile = "gfx/interface/buttons/tiling_button_3frames.dds"
+		borderSize = { x=10 y=10 }
+		tilingCenter = yes
+		noofframes = 3
+	}
+
+	spriteType = {
 		name = "GFX_main_menu_bg"
 		texturefile = "gfx/interface/main_menu_bg.dds"
     }
@@ -64,12 +107,6 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 	
-	spriteType = {
-		name = "GFX_pol_national_spirit"
-		texturefile = "gfx/interface/pol_national_spirit.dds"
-		alwaystransparent = yes
-	}
-
 	spriteType = {
 		name = "GFX_background_right"
 		texturefile = "gfx/interface/background_right.dds"
@@ -245,39 +282,6 @@ spriteTypes = {
 		animation = {
 			animationmaskfile = "gfx/interface/mit_icon_big.dds"
 			animationtexturefile = "gfx/interface/mit_icon_big.dds" 	# <- the animated file
-			animationrotation = 0.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = yes			# yes or no ;)
-			animationtime = 26.0				# in seconds
-			animationdelay = 2.0			# in seconds
-			animationblendmode = "add"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}	
-		legacy_lazy_load = no
-	}
-
-	spriteType = {
-		name = "GFX_main_menu_icon"
-		texturefile = "gfx/interface/main_menu_icon.dds"
-		alwaystransparent = yes
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/main_menu_icon.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = 120.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = yes			# yes or no ;)
-			animationtime = 5 			# in seconds
-			animationdelay = 6			# in seconds
-			animationblendmode = "add"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-
-		animation = {
-			animationmaskfile = "gfx/interface/main_menu_icon.dds"
-			animationtexturefile = "gfx/interface/main_menu_icon.dds" 	# <- the animated file
 			animationrotation = 0.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = yes			# yes or no ;)
 			animationtime = 26.0				# in seconds
@@ -762,12 +766,9 @@ spriteTypes = {
 		name = "GFX_paypal_mod"
 		texturefile = "gfx/interface/paypal_mod.dds"
 	}
-
-	textSpriteType = {
-		name = "GFX_main_lobby_button_new"
-		textureFile = "gfx/interface/main_lobby_button_new.dds"
-		noOfFrames = 3
-		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+	spriteType = {
+		name = "GFX_tvtropes_mod"
+		texturefile = "gfx/interface/tvtropes_mod.dds"
 	}
 
 	spriteType = {
@@ -1093,7 +1094,21 @@ spriteTypes = {
 		name = "GFX_tiled_black"
 		size= { x=192 y=192 }
 		textureFile = "gfx/interface/tiles/tiled_black.dds"
-		borderSize = { x=3 y=3 }
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	corneredTileSpriteType = {
+		name = "GFX_tiled_black_corner"
+		size= { x=72 y=72 }
+		textureFile = "gfx/interface/tiles/tiled_black_corner.dds"
+		borderSize = { x=23 y=23 }
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	corneredTileSpriteType = {
+		name = "GFX_tiled_black_corner_darker"
+		size= { x=72 y=72 }
+		textureFile = "gfx/interface/tiles/tiled_black_corner_darker.dds"
+		borderSize = { x=23 y=23 }
 		tilingCenter = yes
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}
@@ -1166,11 +1181,6 @@ spriteTypes = {
 		tilingCenter = yes
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 		alwaystransparent = yes
-	}
-
-	pieChartType = {
-		name = "GFX_political_chart_pol"
-		size = 50
 	}
 
 	spriteType = {
@@ -1576,59 +1586,6 @@ spriteTypes = {
 	}
 
 ###############################
-############ FLAGS ############
-###############################
-	
-	maskedShieldType = {
-		name = "GFX_construction_flag_mod"
-		textureFile1 = "gfx/interface/construction_flag_overlay_mod.dds"
-		textureFile2 = "gfx/interface/shield_construction_medium_mask_mod.tga"
-		effectFile = "gfx/FX/maskedflag.lua"
-	}
-	maskedShieldType = {
-		name = "GFX_construction_flag_mod_corner"
-		textureFile1 = "gfx/interface/construction_flag_overlay_mod_corner.dds"
-		textureFile2 = "gfx/interface/shield_construction_medium_mask_mod_corner.tga"
-		effectFile = "gfx/FX/maskedflag.lua"
-	}
-	maskedShieldType = {
-		name = "GFX_construction_flag_mod_mod"
-		textureFile1 = "gfx/interface/construction_flag_overlay_mod_mod.dds"
-		textureFile2 = "gfx/interface/shield_construction_medium_mask_mod_mod.tga"
-		effectFile = "gfx/FX/maskedflag.lua"
-	}
-	maskedShieldType = {
-		name = "GFX_construction_flag_mod_mod_reverse"
-		textureFile1 = "gfx/interface/construction_flag_overlay_mod_mod_reverse.dds"
-		textureFile2 = "gfx/interface/shield_construction_medium_mask_mod_mod_reverse.tga"
-		effectFile = "gfx/FX/maskedflag.lua"
-	}
-	maskedShieldType = {
-		name = "GFX_construction_flag_mod_mod_mod"
-		textureFile1 = "gfx/interface/construction_flag_overlay_mod_mod_mod.dds"
-		textureFile2 = "gfx/interface/shield_construction_medium_mask_mod_mod_mod.tga"
-		effectFile = "gfx/FX/maskedflag.lua"
-	}
-	maskedShieldType = {
-		name = "GFX_construction_flag_mod_mod_mod_mod"
-		textureFile1 = "gfx/interface/construction_flag_overlay_mod_mod_mod_mod.dds"
-		textureFile2 = "gfx/interface/shield_construction_medium_mask_mod_mod_mod_mod.tga"
-		effectFile = "gfx/FX/maskedflag.lua"
-	}
-	maskedShieldType = {
-		name = "GFX_shield_medium_mod"
-		textureFile1 = "gfx/interface/flag_overlay_mod.dds"
-		textureFile2 = "gfx/interface/shield_medium_mask_mod.tga"
-		effectFile = "gfx/FX/maskedflag.lua"
-	}
-	maskedShieldType = {
-		name = "GFX_shield_medium_mod_reverse"
-		textureFile1 = "gfx/interface/flag_overlay_mod_reverse.dds"
-		textureFile2 = "gfx/interface/shield_medium_mask_mod_reverse.tga"
-		effectFile = "gfx/FX/maskedflag.lua"
-	}
-
-###############################
 ######### EXIT BUTTONS ########
 ###############################
 	
@@ -1845,13 +1802,6 @@ spriteTypes = {
 		name = "GFX_st_button_111x30"
 		texturefile = "gfx/interface/st_button_111x30.dds"
 	}
-
-	textSpriteType = {
-		name = "GFX_button_221x34_black"
-		texturefile = "gfx/interface/button_221x34_black.dds"
-		noOfFrames = 1
-		#effectFile = "gfx/FX/buttonstate.lua"
-	}	
 
 ###############################
 ####### TILED TEXTURES ########

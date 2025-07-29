@@ -1,3894 +1,3895 @@
-﻿focus_tree = {
-	id = eastafricanfederation
-
-	country = {
-		factor = 0
-		modifier = {
-			add = 10
-			tag = TZN
-		}
-	}
-
-	continuous_focus_position = { 
-		x = 0
-		y = 0
-	}
-
-	focus = {
-		id = TZN_circle_lake_nalubaale
-		icon = GFX_goal_TZN_circle_lake_nalubaale
-
-		x = 10
-		y = 2
-		cost = 5
-		 
-		prerequisite = { 
-			focus = TZN_two_years_to_superpower
-		}
-
-		completion_reward = {
-			578 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			598 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			568 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_addis_ababa_railhub
-		icon = GFX_goal_TZN_circle_lake_nalubaale
-
-		x = 12
-		y = 2
-		cost = 5
-		 
-		prerequisite = { 
-			focus = TZN_two_years_to_superpower
-		}
-
-		#add influence here? how?
-		completion_reward = {
-			every_state = {
-				limit = {
-					OR = {
-						is_owned_by = ETH
-						is_owned_by = ORO
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_tanzaniasudan_connection
-		icon = GFX_goal_TZN_circle_lake_nalubaale
-
-		x = 14
-		y = 2
-		cost = 5
-		 
-		prerequisite = { 
-			focus = TZN_two_years_to_superpower
-		}
-
-		#add influence here? how?
-		completion_reward = {
-			every_state = {
-				limit = {
-					OR = {
-						is_owned_by = SUD
-						is_owned_by = SIE
-						is_owned_by = NUE
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_two_years_to_superpower
-		icon = GFX_goal_TZN_two_years_to_superpower
-
-		x = 12
-		y = 1
-		cost = 5
-		 
-		prerequisite = { 
-			focus = TZN_an_undefeated_dream
-		}
-
-		completion_reward = {
-			add_political_power = 50
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_the_bluest_sky
-		icon = GFX_goal_TZN_the_bluest_sky
-
-		x = 6
-		y = 1
-		cost = 5
-		 
-		prerequisite = { 
-			focus = TZN_an_undefeated_dream
-		}
-
-		completion_reward = {
-			add_political_power = 50
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_ilats_fury
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 5
-		y = 2
-		cost = 5
-		 
-		prerequisite = { focus = TZN_the_bluest_sky }
-
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 2
-				category = be_air_tech
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_kampala_international_airport
-		icon = GFX_goal_TZN_kampala_international_airport
-
-		x = 6
-		y = 5
-		cost = 5
-		 
-		prerequisite = { 
-			focus = TZN_the_bluest_sky 
-		}
-		prerequisite = { 
-			focus = TZN_kigali_railhub 
-		}
-
-		completion_reward = {
-			#578 = {
-			#	add_building_construction = {
-			#		type = air_complex
-			#		level = 5
-			#		instant_build = yes
-			#	}
-			#}
-			578 = {
-				add_building_construction = {
-					type = military_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_a_pity_you_cannot_see_from_here
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 5
-		y = 6
-		cost = 5
-		 
-		prerequisite = { 
-			focus = TZN_ilats_fury 
-		}
-		prerequisite = { 
-			focus = TZN_kampala_international_airport 
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_a_pity_you_cannot_see_from_here
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_supersonic_aircraft
-		icon = GFX_goal_TZN_supersonic_aircraft
-
-		x = 5
-		y = 7
-		cost = 5
-		 
-		prerequisite = { focus = TZN_a_pity_you_cannot_see_from_here }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_a_pity_you_cannot_see_from_here
-				add_idea = TZN_a_pity_you_cannot_see_from_here_2
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_we_will_ground_them
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 4
-		y = 8
-		cost = 5
-		 
-		prerequisite = { focus = TZN_supersonic_aircraft }
-		mutually_exclusive = { focus = TZN_we_will_drive_them_into_the_ground }
-
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 2
-				category = be_air_tech
-			}
-		}		
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_we_will_drive_them_into_the_ground
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 6
-		y = 8
-		cost = 5
-		 
-		prerequisite = { focus = TZN_supersonic_aircraft }
-		mutually_exclusive = { focus = TZN_we_will_ground_them }
-
-		completion_reward = {
-			add_timed_idea = {
-				idea = TZN_we_will_drive_them_into_the_ground
-				days = 150
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_reap_the_air
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 4
-		y = 9
-		cost = 5
-		 
-		prerequisite = { 
-			focus = TZN_we_will_ground_them 
-			focus = TZN_we_will_drive_them_into_the_ground 
-		}
-		mutually_exclusive = { focus = TZN_cover_the_sky }
-
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 2
-				category = be_air_tech
-			}
-		}	
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_cover_the_sky
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 6
-		y = 9
-		cost = 5
-		 
-		prerequisite = { 
-			focus = TZN_we_will_ground_them 
-			focus = TZN_we_will_drive_them_into_the_ground 
-		}
-		mutually_exclusive = { focus = TZN_reap_the_air }
-
-		completion_reward = {
-			add_timed_idea = {
-				idea = TZN_cover_the_sky
-				days = 150
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_total_annihilation
-		icon = GFX_goal_TZN_total_annihilation
-
-		x = 5
-		y = 11
-		cost = 5
-		 
-		prerequisite = { 
-			focus = TZN_reap_the_air 
-			focus = TZN_cover_the_sky 
-		}
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_a_pity_you_cannot_see_from_here_2
-				add_idea = TZN_a_pity_you_cannot_see_from_here_3
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_kigali_railhub
-		icon = GFX_goal_TZN_the_panafrican_line
-
-		x = 8
-		y = 4
-		cost = 5
-		 
-		prerequisite = { focus = TZN_modernize_tanzania }
-
-		#add influence here? how?
-		completion_reward = {
-			every_owned_state = {
-				limit = {
-					OR = {
-						num_owned_neighbour_states = {
-							owner = COG
-							count > 0
-						}
-						num_owned_neighbour_states = {
-							owner = ANG
-							count > 0
-						}
-						num_owned_neighbour_states = {
-							owner = SAF
-							count > 0
-						}
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_the_panafrican_line
-		icon = GFX_goal_TZN_the_panafrican_line
-
-		x = 8
-		y = 5
-		cost = 5
-		 
-		prerequisite = { focus = TZN_kigali_railhub }
-		prerequisite = { focus = TZN_sustainable_growth }
-
-		completion_reward = {
-			add_timed_idea = {
-				idea = TZN_the_panafrican_line
-				days = 120
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_modernize_tanzania
-		icon = GFX_goal_TZN_modernize_tanzania
-
-		x = 12
-		y = 3
-		cost = 5
-		 
-		prerequisite = { 
-			focus = TZN_circle_lake_nalubaale 
-			focus = TZN_addis_ababa_railhub 
-			focus = TZN_tanzaniasudan_connection 
-		}
-
-		completion_reward = {
-			609 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			627 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			593 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_sustainable_growth
-		icon = GFX_goal_TZN_kigali_railhub
-
-		x = 10
-		y = 4
-		cost = 5
-		 
-		prerequisite = { focus = TZN_modernize_tanzania }
-		mutually_exclusive = { focus = TZN_unrelenting_industry }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_abtbia
-				add_idea = TZN_abtbia_civilian
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_expand_the_abtbia
-		icon = GFX_goal_TZN_kigali_railhub
-
-		x = 10
-		y = 5
-		cost = 5
-		 
-		prerequisite = { focus = TZN_sustainable_growth }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_abtbia_civilian
-				add_idea = TZN_abtbia_civilian_2
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_unshackle_the_hand
-		icon = GFX_goal_TZN_kigali_railhub
-
-		x = 7
-		y = 6
-		cost = 5
-		 
-		prerequisite = { focus = TZN_expand_the_abtbia }
-
-		completion_reward = {
-			add_timed_idea = {
-				idea = TZN_unshackle_the_hand
-				days = 120
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_northern_heavy_industry
-		icon = GFX_goal_TZN_the_panafrican_line
-
-		x = 9
-		y = 6
-		cost = 5
-		 
-		prerequisite = { focus = TZN_expand_the_abtbia }
-
-		completion_reward = {
-			578 = {
-				add_building_construction = {
-					type = civilian_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			622 = {
-				add_building_construction = {
-					type = civilian_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			627 = {
-				add_building_construction = {
-					type = civilian_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_southern_hydro_plants
-		icon = GFX_goal_TZN_the_panafrican_line
-
-		x = 9
-		y = 7
-		cost = 5
-		 
-		prerequisite = { focus = TZN_tie_eco_to_energy }
-
-		completion_reward = {
-			484 = {
-				add_building_construction = {
-					type = generator_building
-					level = 3
-					instant_build = yes
-				}
-			}
-			506 = {
-				add_building_construction = {
-					type = generator_building
-					level = 2
-					instant_build = yes
-				}
-			}
-		}		
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_unrelenting_industry
-		icon = GFX_goal_TZN_kigali_railhub
-
-		x = 14
-		y = 4
-		cost = 5
-		 
-		prerequisite = { focus = TZN_modernize_tanzania }
-		mutually_exclusive = { focus = TZN_sustainable_growth }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_abtbia
-				add_idea = TZN_abtbia_military
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_focus_on_the_mbt
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 17
-		y = 6
-		cost = 5
-		 
-		prerequisite = { focus = TZN_bail_out_iniko_bank }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_abtbia_military_2
-				add_idea = TZN_abtbia_military_3
-			}
-		}		
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_legitimize_ai_planning
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 15
-		y = 6
-		cost = 5
-		 
-		prerequisite = { focus = TZN_bail_out_iniko_bank }
-
-		completion_reward = {
-			add_ideas = {
-				TZN_legitimize_ai_planning
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_network_node_expansion
-		icon = GFX_goal_TZN_kigali_railhub
-
-		x = 15
-		y = 7
-		cost = 5
-		 
-		prerequisite = { focus = TZN_set_new_goals }
-
-		completion_reward = {
-			add_ideas = {
-				TZN_network_node_expansion
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_legitimize_recycling_tanks
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 17
-		y = 7
-		cost = 5
-		 
-		prerequisite = { focus = TZN_focus_on_the_mbt }
-
-		completion_reward = {
-			add_timed_idea = {
-				idea = TZN_legitimize_recycling_tanks
-				days = 80
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_import_asian_mining_specialists
-		icon = GFX_goal_TZN_kigali_railhub
-
-		x = 12
-		y = 5
-		cost = 5
-		 
-		prerequisite = { 
-			focus = TZN_unrelenting_industry 
-			focus = TZN_sustainable_growth 
-		}
-
-		completion_reward = {
-			add_resource = {
-				type = lithium
-				amount = 29
-				state = 618
-			}
-			add_resource = {
-				type = superalloys
-				amount = 14
-				state = 674
-			}
-			add_resource = {
-				type = lithium
-				amount = 11
-				state = 671
-			}
-			add_resource = {
-				type = electronics
-				amount = 27
-				state = 494
-			}
-			add_stability = -0.35
-			add_political_power = -100
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_tie_eco_to_energy
-		icon = GFX_goal_TZN_kigali_railhub
-
-		x = 11
-		y = 6
-		cost = 5
-		 
-		prerequisite = { focus = TZN_import_asian_mining_specialists }
-
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 2
-				category = generation
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_set_new_goals
-		icon = GFX_goal_TZN_kigali_railhub
-
-		x = 13
-		y = 6
-		cost = 5
-		 
-		prerequisite = { focus = TZN_import_asian_mining_specialists }
-
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 2
-				category = be_industry
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_orbital_academy_of_sciences
-		icon = GFX_goal_TZN_orbital_academy_of_sciences
-
-		x = 12
-		y = 7
-		cost = 5
-		 
-		prerequisite = { 
-			focus = TZN_tie_eco_to_energy 
-		}
-		prerequisite = { 
-			focus = TZN_set_new_goals 
-		}
-
-		completion_reward = {
-			capital_scope = {
-				add_building_construction = {
-					type = spaceship_complex
-					level = 5
-					instant_build = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_enforce_parcel_tracking
-		icon = GFX_goal_TZN_kigali_railhub
-
-		x = 10
-		y = 8
-		cost = 5
-		 
-		prerequisite = { 
-			focus = TZN_expand_the_abtbia 
-		}
-		prerequisite = { 
-			focus = TZN_tie_eco_to_energy 
-		}
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_abtbia_civilian_2
-				add_idea = TZN_abtbia_civilian_3
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_expand_the_workday
-		icon = GFX_goal_TZN_kigali_railhub
-
-		x = 14
-		y = 8
-		cost = 5
-		 
-		prerequisite = { 
-			focus = TZN_set_new_goals 
-		}
-		prerequisite = { 
-			focus = TZN_unrelenting_industry 
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_expand_the_workday
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_develop_somalia
-		icon = GFX_goal_TZN_develop_somalia
-
-		x = 16
-		y = 4
-		cost = 5
-		 
-		prerequisite = { focus = TZN_modernize_tanzania }
-
-		#add influence here? how?
-		completion_reward = {
-			every_state = {
-				limit = {
-					is_owned_by = SOM
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_bail_out_iniko_bank
-		icon = GFX_goal_TZN_kigali_railhub
-
-		x = 15
-		y = 5
-		cost = 5
-		 
-		prerequisite = { focus = TZN_unrelenting_industry }
-		prerequisite = { focus = TZN_develop_somalia }
-
-		#add influence here? how?
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_abtbia_military
-				add_idea = TZN_abtbia_military_2
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_locked_and_loaded
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 2
-		y = 2
-		cost = 5
-		 
-		prerequisite = { focus = TZN_the_bluest_sky }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_africas_army
-				add_idea = TZN_africas_army_2
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_we_have_the_skill
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 1
-		y = 3
-		cost = 5
-		 
-		prerequisite = { focus = TZN_locked_and_loaded }
-		mutually_exclusive = { focus = TZN_we_have_the_time }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_africas_army_2
-				add_idea = TZN_africas_army_skill
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_tier_iv_training_sequence
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 1
-		y = 4
-		cost = 5
-		 
-		prerequisite = { focus = TZN_we_have_the_skill }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_africas_army_skill
-				add_idea = TZN_africas_army_skill_2
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_orbital_military_institute
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 0
-		y = 5
-		cost = 5
-		 
-		prerequisite = { focus = TZN_tier_iv_training_sequence }
-
-		completion_reward = {
-			add_timed_idea = {
-				idea = TZN_orbital_military_institute
-				days = 80
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_lightspeed_warfare
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 1
-		y = 6
-		cost = 5
-		 
-		prerequisite = { focus = TZN_tier_iv_training_sequence }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_africas_army_skill_2
-				add_idea = TZN_africas_army_skill_3
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_the_os_line
-		icon = GFX_goal_TZN_the_os_line
-
-		x = 2
-		y = 5
-		cost = 5
-		 
-		prerequisite = { focus = TZN_locked_and_loaded }
-
-		completion_reward = {
-			build_railway = {
-				level = 5
-				build_only_on_allied = yes
-				fallback = yes
-				path = { 7898 7540 7378 6416 6462 6605 6577 }
-				start_state = 622
-				target_state = 487
-			}
-			build_railway = {
-				level = 5
-				build_only_on_allied = yes
-				fallback = yes
-				path = { 7898 7478 7221 7260 7172 7298 }
-				start_state = 622
-				target_state = 550
-			}
-			552 = {
-				add_building_construction = {
-					type = supply_node
-					level = 1
-					province = 7221
-					instant_build = yes
-				}
-			}
-			568 = {
-				add_building_construction = {
-					type = supply_node
-					level = 1
-					province = 7540
-					instant_build = yes
-				}
-			}	
-			558 = {
-				add_building_construction = {
-					type = supply_node
-					level = 1
-					province = 7447
-					instant_build = yes
-				}
-			}	
-			462 = {
-				add_building_construction = {
-					type = supply_node
-					level = 1
-					province = 6416
-					instant_build = yes
-				}
-			}	
-			460 = {
-				add_building_construction = {
-					type = supply_node
-					level = 1
-					province = 6524
-					instant_build = yes
-				}
-			}	
-			469 = {
-				add_building_construction = {
-					type = supply_node
-					level = 1
-					province = 6547
-					instant_build = yes
-				}
-			}			
-			487 = {
-				add_building_construction = {
-					type = naval_base
-					level = 6
-					province = 6577
-					instant_build = yes
-				}
-			}			
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_we_have_the_time
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 3
-		y = 3
-		cost = 5
-		 
-		prerequisite = { focus = TZN_locked_and_loaded }
-		mutually_exclusive = { focus = TZN_we_have_the_skill }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_africas_army_2
-				add_idea = TZN_africas_army_time
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_prepare_fortifications
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 3
-		y = 4
-		cost = 5
-		 
-		prerequisite = { focus = TZN_we_have_the_time }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_africas_army_time
-				add_idea = TZN_africas_army_time_2
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_emergency_rotation
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 3
-		y = 6
-		cost = 5
-		 
-		prerequisite = { focus = TZN_prepare_fortifications }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_africas_army_time_2
-				add_idea = TZN_africas_army_time_3
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_army_of_the_people
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 4
-		y = 5
-		cost = 5
-		 
-		prerequisite = { focus = TZN_prepare_fortifications }
-
-		completion_reward = {
-			add_timed_idea = {
-				idea = TZN_army_of_the_people
-				days = 80
-			}
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_an_undefeated_dream
-		icon = GFX_goal_TZN_an_undefeated_dream
-
-		x = 22
-		y = 0
-		cost = 5
-		 
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_children_of_africa
-				add_idea = TZN_children_of_africa_2
-			}
-			add_ideas = {
-				TZN_africas_army
-			}
-			country_event = tzn.1
-		}
-	}
-	
-	focus = {
-		id = TZN_internal_reform
-		icon = GFX_goal_TZN_internal_reform
-
-		x = -3
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_an_undefeated_dream
-		 
-		prerequisite = { focus = TZN_an_undefeated_dream }
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			add_political_power = 50
-		}
-	}
-
-	focus = {
-		id = TZN_the_interparty_line
-		icon = GFX_goal_TZN_placeholder
-
-		x = 2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_internal_reform
-		 
-		prerequisite = { focus = TZN_internal_reform }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_children_of_africa_2
-				add_idea = TZN_children_of_africa_3
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_acalan_expansion
-		icon = GFX_goal_TZN_expand_regional_autonomism
-
-		x = -3
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_internal_reform
-		 
-		prerequisite = { focus = TZN_internal_reform }
-
-		completion_reward = {
-			add_timed_idea = {
-				idea = TZN_acalan_expansion
-				days = 100
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_anti_nativism
-		icon = GFX_goal_TZN_expand_regional_autonomism
-
-		x = -1
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_internal_reform
-		 
-		prerequisite = { focus = TZN_internal_reform }
-
-		completion_reward = {
-			add_political_power = 25
-			add_stability = 0.05
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_abolish_household_registration
-		icon = GFX_goal_TZN_expand_regional_autonomism
-
-		x = 0
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_anti_nativism
-		 
-		prerequisite = { focus = TZN_anti_nativism }
-
-		completion_reward = {
-			add_political_power = 50
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_address_intertribal_conflicts
-		icon = GFX_goal_TZN_expand_regional_autonomism
-
-		x = 0
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_abolish_household_registration
-		 
-		prerequisite = { focus = TZN_abolish_household_registration }
-
-		completion_reward = {
-			add_stability = 0.1
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_expand_regional_autonomism
-		icon = GFX_goal_TZN_expand_regional_autonomism
-
-		x = -1
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_abolish_household_registration
-		
-		mutually_exclusive = { focus = TZN_a_united_state }
-		 
-		prerequisite = { focus = TZN_address_intertribal_conflicts }
-
-		completion_reward = {
-			add_ideas = TZN_expand_regional_autonomism
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_the_radicals
-		icon = GFX_goal_TZN_placeholder
-
-		x = 0
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_the_interparty_line
-		 
-		prerequisite = { focus = TZN_the_interparty_line }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_children_of_africa_3
-				add_idea = TZN_children_of_africa_4
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_party_unity
-		icon = GFX_goal_TZN_placeholder
-
-		x = 0
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_the_interparty_line
-		 
-		prerequisite = { focus = TZN_the_radicals }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_children_of_africa_4
-				add_idea = TZN_children_of_africa_5
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_a_united_state
-		icon = GFX_goal_TZN_expand_regional_autonomism
-
-		x = 1
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_abolish_household_registration
-		
-		mutually_exclusive = { focus = TZN_expand_regional_autonomism }
-		 
-		prerequisite = { focus = TZN_address_intertribal_conflicts }
-
-		completion_reward = {
-			add_ideas = TZN_a_united_state
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_consider_dissidents
-		icon = GFX_goal_TZN_placeholder
-
-		x = 0
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_party_unity
-		 
-		prerequisite = { focus = TZN_party_unity }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_children_of_africa_5
-				add_idea = TZN_children_of_africa_6
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_meritocratic_rule
-		icon = GFX_goal_TZN_placeholder
-
-		x = -1
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_party_unity
-		
-		mutually_exclusive = { focus = TZN_dominant_party_democracy }
-		 
-		prerequisite = { focus = TZN_consider_dissidents }
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = oligarchic_government
-				add_idea = digital_democracy
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_dominant_party_democracy
-		icon = GFX_goal_TZN_placeholder
-
-		x = 1
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_party_unity
-
-		mutually_exclusive = { focus = TZN_meritocratic_rule }
-		 
-		prerequisite = { focus = TZN_consider_dissidents }
-
-		completion_reward = {
-			add_political_power = 25
-			add_popularity= {
-				ideology = purity
-				popularity = 0.1
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_new_elections
-		icon = GFX_goal_TZN_placeholder
-
-		x = 0
-		y = 3
-		cost = 5
-		
-		relative_position_id = TZN_party_unity
-		 
-		prerequisite = { 
-			focus = TZN_meritocratic_rule
-			focus = TZN_dominant_party_democracy
-		}
-
-		completion_reward = {
-			country_event = tzn.2
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_panafricanism
-		icon = GFX_goal_TZN_panafricanism
-
-		x = 7
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_an_undefeated_dream
-		 
-		prerequisite = { 
-			focus = TZN_an_undefeated_dream
-		}
-
-		completion_reward = {
-			add_political_power = 50
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_anti_corporate_policy
-		icon = GFX_goal_TZN_anti_corporate_policy
-
-		x = -5
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_panafricanism
-		 
-		prerequisite = { 
-			focus = TZN_panafricanism
-			focus = TZN_internal_reform
-		}
-		
-		completion_reward = {
-			add_stability = -0.05
-			add_ideas = {
-				TZN_anti_corporate_policy
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_expand_regulations
-		icon = GFX_goal_TZN_expand_regulations
-
-		x = -1
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_anti_corporate_policy
-		 
-		prerequisite = { 
-			focus = TZN_anti_corporate_policy
-		}
-		
-		completion_reward = {
-			add_stability = -0.05
-			swap_ideas = {
-				remove_idea = TZN_anti_corporate_policy
-				add_idea = TZN_anti_corporate_policy_2
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_consider_unions
-		icon = GFX_goal_TZN_expand_regulations
-
-		x = -1
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_anti_corporate_policy
-		 
-		prerequisite = { 
-			focus = TZN_expand_regulations
-		}
-		
-		prerequisite = { 
-			focus = TZN_the_radicals
-		}
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TZN_anti_corporate_policy_2
-				add_idea = TZN_anti_corporate_policy_3
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_idealism_and_pragmatism
-		icon = GFX_goal_TZN_expand_regulations
-		x = -1
-		y = 3
-		cost = 5
-		
-		relative_position_id = TZN_anti_corporate_policy
-		 
-		prerequisite = { 
-			focus = TZN_consider_unions
-		}
-		
-		completion_reward = {
-			add_political_power = -25
-			swap_ideas = {
-				remove_idea = TZN_anti_corporate_policy_3
-				add_idea = TZN_anti_corporate_policy_4
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_anti_capitalist_rhetoric
-		icon = GFX_goal_TZN_expand_regulations
-
-		x = 0
-		y = 4
-		cost = 5
-		
-		relative_position_id = TZN_anti_corporate_policy
-		 
-		prerequisite = { 
-			focus = TZN_idealism_and_pragmatism
-		}
-
-		completion_reward = {
-			add_stability = 0.05
-			####
-			swap_ideas = {
-				remove_idea = TZN_anti_corporate_policy_4
-				add_idea = TZN_anti_corporate_policy_5
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_aid_for_the_mpla
-		icon = GFX_goal_TZN_expand_regulations
-
-		x = 1
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_anti_corporate_policy
-		 
-		prerequisite = { 
-			focus = TZN_anti_corporate_policy
-		}
-
-		completion_reward = {
-			ANG = {
-				add_timed_idea = {
-					idea = ANG_mpla_resurgent
-					days = 420
-				}
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_the_congolese_legacy
-		icon = GFX_goal_TZN_the_congolese_legacy
-
-		x = -2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_panafricanism
-		 
-		prerequisite = { 
-			focus = TZN_panafricanism
-		}
-		
-		completion_reward = {
-			####
-			country_event = tzn.3
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_stabilize_the_mwitanzige_rift
-		icon = GFX_goal_TZN_stabilize_the_mwitanzige_rift
-
-		x = 0
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_the_congolese_legacy
-		 
-		prerequisite = { 
-			focus = TZN_the_congolese_legacy
-		}
-
-		completion_reward = {
-			add_timed_idea = {
-				idea = TZN_stabilize_the_mwitanzige_rift
-				days = 360
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_reign_in_the_warlords
-		icon = GFX_goal_TZN_reign_in_the_warlords
-
-		x = -1
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_the_congolese_legacy
-		
-		mutually_exclusive = { focus = TZN_restart_the_proxy_war }
-		 
-		prerequisite = { 
-			focus = TZN_stabilize_the_mwitanzige_rift
-		}
-		
-		completion_reward = {
-			####
-			custom_effect_tooltip = TZN_reign_in_warlords_tt
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_restart_the_proxy_war
-		icon = GFX_goal_TZN_reign_in_the_warlords
-
-		x = 1
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_the_congolese_legacy
-		
-		mutually_exclusive = { focus =  TZN_reign_in_the_warlords }
-		 
-		prerequisite = { 
-			focus = TZN_stabilize_the_mwitanzige_rift
-		}
-
-		completion_reward = {
-			GNA = {
-				declare_war_on = {
-					target = COG
-					type = annex_puppet_wargoal
-				}
-				add_manpower = 5000
-				add_ideas = eaf_support
-			} 
-			TOG = {
-				declare_war_on = {
-					target = COG
-					type = annex_puppet_wargoal
-				}
-				add_manpower = 5000
-				add_ideas = eaf_support
-			}
-			RWA ={ 
-				declare_war_on = {
-					target = COG
-					type = annex_puppet_wargoal
-				}
-				add_manpower = 5000
-				add_ideas = eaf_support
-			} 
-			BRD = {
-				declare_war_on = {
-					target = COG
-					type = annex_puppet_wargoal
-				}
-				add_manpower = 5000
-				add_ideas = eaf_support
-			}
-			MLW = {
-				declare_war_on = {
-					target = COG
-					type = annex_puppet_wargoal
-				}
-				add_manpower = 5000
-				add_ideas = eaf_support
-			}
-			COG = {
-				add_timed_idea = {
-					idea = COG_mwitanzige_crisis
-					days = 420
-				}
-			}
-			news_event = tzn.4
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_expand_the_union
-		icon = GFX_goal_TZN_expand_the_union
-
-		x = -1
-		y = 3
-		cost = 5
-		
-		relative_position_id = TZN_the_congolese_legacy
-		 
-		prerequisite = { 
-			focus = TZN_reign_in_the_warlords
-		}
-
-		available = {
-			has_war = no
-		}
-
-		completion_reward = {
-			GNA = {
-				every_core_state = {
-					add_core_of = TZN
-				}
-			}
-			TOG = {
-				every_core_state = {
-					add_core_of = TZN
-				}
-			}
-			RWA = {
-				every_core_state = {
-					add_core_of = TZN
-				}
-			}
-			BRD = {
-				every_core_state = {
-					add_core_of = TZN
-				}
-			}
-			MLW = {
-				every_core_state = {
-					add_core_of = TZN
-				}
-			}
-			if = {
-				limit = {
-					GNA = {
-						is_puppet_of = TZN
-					}
-				}
-				TZN = {
-					annex_country = {
-						target = GNA
-					}
-				}
-			}
-			if = {
-				limit = {
-					TOG = {
-						is_puppet_of = TZN
-					}
-				}
-				TZN = {
-					annex_country = {
-						target = TOG
-					}
-				}
-			}
-			if = {
-				limit = {
-					RWA = {
-						is_puppet_of = TZN
-					}
-				}
-				TZN = {
-					annex_country = {
-						target = RWA
-					}
-				}
-			}
-			if = {
-				limit = {
-					BRD = {
-						is_puppet_of = TZN
-					}
-				}
-				TZN = {
-					annex_country = {
-						target = BRD
-					}
-				}
-			}
-			if = {
-				limit = {
-					MLW = {
-						is_puppet_of = TZN
-					}
-				}
-				TZN = {
-					annex_country = {
-						target = MLW
-					}
-				}
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_pan_african_alliance_building
-		icon = GFX_goal_TZN_expand_the_union
-
-		x = 1
-		y = 3
-		cost = 5
-		
-		relative_position_id = TZN_the_congolese_legacy
-		 
-		prerequisite = { 
-			focus = TZN_restart_the_proxy_war
-		}
-		
-		completion_reward = {
-			add_to_faction = GNA
-			add_to_faction = TOG
-			add_to_faction = RWA
-			add_to_faction = BRD
-			add_to_faction = MLW
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_initiate_expansion
-		icon = GFX_goal_TZN_initiate_expansion
-
-		x = 0
-		y = 4
-		cost = 5
-		
-		relative_position_id = TZN_the_congolese_legacy
-		 
-		prerequisite = { 
-			focus = TZN_expand_the_union
-			focus = TZN_pan_african_alliance_building
-		}
-		
-		completion_reward = {
-			declare_war_on = {
-				target = COG
-				type = annex_puppet_wargoal
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				has_war = yes
-				add = -100
-			}
-		}
-	}
-	
-	focus = {
-		id = TZN_westbound
-		icon = GFX_goal_TZN_westbound
-
-		x = 4
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_panafricanism
-		 
-		prerequisite = { 
-			focus = TZN_panafricanism
-		}
-
-		completion_reward = {
-			add_war_support = 0.1
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_in_the_land_of_endless_cities
-		icon = GFX_goal_TZN_the_olive_branch
-
-		x = -2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_westbound
-		
-		mutually_exclusive = { focus = TZN_break_the_yaounde_compromise }
-		 
-		prerequisite = { 
-			focus = TZN_westbound
-		}
-		
-		completion_reward = {
-			####
-			custom_effect_tooltip = TZN_in_the_land_of_endless_cities_tt
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_limited_recognition
-		icon = GFX_goal_TZN_the_olive_branch
-
-		x = -3
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_westbound
-		 
-		prerequisite = { 
-			focus = TZN_in_the_land_of_endless_cities
-		}
-
-		#add influence here? how?
-		completion_reward = {
-			every_country = {
-				limit = {
-					OR = {
-						tag = MRT
-						tag = LIB
-						tag = IVO
-						tag = GHA
-						tag = VOL
-						tag = DAH
-						tag = NGA
-						tag = GAB
-						tag = CMR
-						tag = CAR
-						tag = CHA
-					}
-				}
-				add_timed_idea = {
-					idea = TZN_limited_recognition
-					days = 100
-				}
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_african_trade_union
-		icon = GFX_goal_TZN_the_olive_branch
-
-		x = -1
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_westbound
-		 
-		prerequisite = { 
-			focus = TZN_in_the_land_of_endless_cities
-		}
-
-		#add influence here? how?
-		completion_reward = {
-			every_country = {
-				limit = {
-					OR = {
-						tag = MRT
-						tag = LIB
-						tag = IVO
-						tag = GHA
-						tag = VOL
-						tag = DAH
-						tag = NGA
-						tag = GAB
-						tag = CMR
-						tag = CAR
-						tag = CHA
-					}
-				}
-				add_timed_idea = {
-					idea = TZN_african_trade_union
-					days = 100
-				}
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_the_olive_branch
-		icon = GFX_goal_TZN_alliance
-
-		x = -2
-		y = 3
-		cost = 5
-		
-		relative_position_id = TZN_westbound
-		 
-		prerequisite = { 
-			focus = TZN_limited_recognition
-		}
-		prerequisite = { 
-			focus = TZN_african_trade_union
-		}
-
-		completion_reward = {
-			every_country = {
-				limit = {
-					is_in_faction_with = TZN
-				}
-				capital_scope = {
-					add_building_construction = {
-						type = civilian_complex
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_break_the_yaounde_compromise
-		icon = GFX_goal_TZN_break_the_yaounde_compromise
-
-		x = 2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_westbound
-		
-		mutually_exclusive = { focus = TZN_in_the_land_of_endless_cities }
-		 
-		prerequisite = { 
-			focus = TZN_westbound
-		}
-
-		completion_reward = {
-			add_timed_idea = {
-				idea = TZN_break_the_yaounde_compromise
-				days = 200
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_nb_line
-		icon = GFX_goal_TZN_break_the_yaounde_compromise
-
-		x = 1
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_westbound
-		 
-		prerequisite = { 
-			focus = TZN_break_the_yaounde_compromise
-		}
-		
-		completion_reward = {
-			add_timed_idea = {
-				idea = TZN_nb_line
-				days = 200
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_monopolize_pan_africanism
-		icon = GFX_goal_TZN_break_the_yaounde_compromise
-
-		x = 3
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_westbound
-		 
-		prerequisite = { 
-			focus = TZN_break_the_yaounde_compromise
-		}
-		
-		completion_reward = {
-			add_timed_idea = {
-				idea = TZN_monopolize_pan_africanism
-				days = 200
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_the_sword
-		icon = GFX_goal_TZN_nonalliance
-
-		x = 2
-		y = 3
-		cost = 5
-		
-		relative_position_id = TZN_westbound
-		 
-		prerequisite = { 
-			focus = TZN_nb_line
-		}
-		
-		prerequisite = { 
-			focus = TZN_monopolize_pan_africanism
-		}
-
-		completion_reward = {
-			every_country = {
-				limit = {
-					is_in_faction_with = TZN
-				}
-				capital_scope = {
-					add_building_construction = {
-						type = military_complex
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_west_african_interventionism
-		icon = GFX_goal_TZN_we_have_the_skill
-
-		x = 2
-		y = 4
-		cost = 5
-		
-		relative_position_id = TZN_westbound
-		 
-		prerequisite = { 
-			focus = TZN_the_olive_branch
-			focus = TZN_the_sword
-		}
-
-		completion_reward = {
-			custom_effect_tooltip = TZN_west_african_interventionism_tt
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_a_warpath
-		icon = GFX_goal_TZN_west_african_interventionism
-
-		x = -2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_the_sword
-		 
-		prerequisite = { 
-			focus = TZN_the_sword
-			focus = TZN_the_olive_branch
-		}
-
-		completion_reward = {
-			custom_effect_tooltip = TZN_a_warpath_tt
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_war_of_national_unification
-		icon = GFX_goal_TZN_war_of_national_unification
-
-		x = 0
-		y = 6
-		cost = 5
-		
-		relative_position_id = TZN_the_congolese_legacy
-		 
-		prerequisite = { 
-			focus = TZN_anti_capitalist_rhetoric
-			focus = TZN_initiate_expansion
-			focus = TZN_a_warpath
-		}
-
-		completion_reward = {
-			####
-			custom_effect_tooltip = TZN_war_of_national_unification_tt
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_northern_advisor_office
-		icon = GFX_goal_TZN_northern_advisor_office
-
-		x = 12
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_panafricanism
-		 
-		prerequisite = { 
-			focus = TZN_panafricanism
-		}
-
-		completion_reward = {
-			add_war_support = 0.1
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_aid_the_rebels
-		icon = GFX_goal_TZN_aid_the_rebels
-
-		x = -1
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_northern_advisor_office
-		
-		mutually_exclusive = { focus = TZN_stability_in_south_sudan }
-		 
-		prerequisite = { 
-			focus = TZN_northern_advisor_office
-		}
-
-		completion_reward = {
-			declare_war_on = {
-				target = SIE
-				type = annex_puppet_wargoal
-			}
-			NUE = {
-				country_event = tzn.11
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				has_war = yes
-				add = -100
-			}
-		}
-	}
-	
-	focus = {
-		id = TZN_stability_in_south_sudan
-		icon = GFX_goal_TZN_develop_somalia
-
-		x = 1
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_northern_advisor_office
-		
-		mutually_exclusive = { focus = TZN_aid_the_rebels }
-		 
-		prerequisite = { 
-			focus = TZN_northern_advisor_office
-		}
-		
-		completion_reward = {
-			declare_war_on = {
-				target = NUE
-				type = annex_puppet_wargoal
-			}
-			SIE = {
-				country_event = tzn.11
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				has_war = yes
-				add = -100
-			}
-		}
-	}
-	
-	focus = {
-		id = TZN_recognize_uar_legitimacy_in_sudan
-		icon = GFX_goal_TZN_an_anti_imperialist_alliance
-
-		x = -3
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_northern_advisor_office
-		 
-		prerequisite = { 
-			focus = TZN_aid_the_rebels
-		}
-
-		bypass = {
-			SUD = {
-				is_in_faction_with = EGY
-			}
-		}
-
-		completion_reward = {
-			SUD = {
-				country_event = tzn.11
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_an_anti_imperialist_alliance
-		icon = GFX_goal_TZN_an_anti_imperialist_alliance
-
-		x = -3
-		y = 3
-		cost = 5
-		
-		relative_position_id = TZN_northern_advisor_office
-		 
-		prerequisite = { 
-			focus = TZN_recognize_uar_legitimacy_in_sudan
-		}
-		
-		completion_reward = {
-			EGY = {
-				country_event = tzn.11
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_undermine_somali_power
-		icon = GFX_goal_TZN_undermine_somali_power
-
-		x = 0
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_aid_the_rebels
-		 
-		prerequisite = { 
-			focus = TZN_aid_the_rebels
-		}
-
-		completion_reward = {
-			declare_war_on = {
-				target = SOM
-				type = annex_puppet_wargoal
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				has_war = yes
-				add = -100
-			}
-		}
-	}
-	
-	focus = {
-		id = TZN_back_ethiopian_reunification
-		icon = GFX_goal_TZN_undermine_somali_power
-
-		x = 0
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_aid_the_rebels
-		 
-		prerequisite = { 
-			focus = TZN_undermine_somali_power
-		}
-
-		completion_reward = {
-			declare_war_on = {
-				target = ETH
-				type = annex_puppet_wargoal
-			}
-			ORO = {
-				country_event = tzn.11
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				has_war = yes
-				add = -100
-			}
-		}
-	}
-	
-	focus = {
-		id = TZN_seek_somali_cooperation
-		icon = GFX_goal_TZN_seek_somali_cooperation
-
-		x = 0
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_stability_in_south_sudan
-		 
-		prerequisite = { 
-			focus = TZN_stability_in_south_sudan
-		}
-
-		completion_reward = {
-			SOM = {
-				country_event = tzn.11
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_cease_oromia
-		icon = GFX_goal_TZN_seek_somali_cooperation
-
-		x = 0
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_stability_in_south_sudan
-		 
-		prerequisite = { 
-			focus = TZN_seek_somali_cooperation
-		}
-		
-		completion_reward = {
-			declare_war_on = {
-				target = ORO
-				type = annex_puppet_wargoal
-			}
-			ETH = {
-				country_event = tzn.11
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				has_war = yes
-				add = -100
-			}
-		}
-	}
-	
-	focus = {
-		id = TZN_aid_the_sudanese_revolution
-		icon = GFX_goal_TZN_aid_the_sudanese_revolution
-
-		x = 2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_stability_in_south_sudan
-		 
-		prerequisite = { 
-			focus = TZN_stability_in_south_sudan
-		}
-		
-		completion_reward = {
-			declare_war_on = {
-				target = EGY
-				type = annex_puppet_wargoal
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				has_war = yes
-				add = -100
-			}
-		}
-	}
-	
-	focus = {
-		id = TZN_european_cooperation
-		icon = GFX_goal_TZN_aid_the_sudanese_revolution
-
-		x = 2
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_stability_in_south_sudan
-		 
-		prerequisite = { 
-			focus = TZN_aid_the_sudanese_revolution
-		}
-
-		available = {
-			EGY = {
-				is_puppet_of = TZN
-			}
-		}
-		
-		completion_reward = {
-			if = {
-				limit = {
-					ITA = {
-						is_in_faction = no
-					}
-				}
-				ITA = {
-					country_event = tzn.11
-				}
-			}	
-			if = {
-				limit = {
-					TUR = {
-						is_in_faction = no
-					}
-				}
-				TUR = {
-					country_event = tzn.11
-				}
-			}
-			if = {
-				limit = {
-					GRE = {
-						is_in_faction = no
-					}
-				}
-				GRE = {
-					country_event = tzn.11
-				}
-			}
-			else = {
-				add_political_power = 25
-			}			
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_beyond_the_homeland
-		icon = GFX_goal_TZN_beyond_the_homeland
-
-		x = 6
-		y = 3
-		cost = 5
-		
-		relative_position_id = TZN_a_warpath
-		 
-		prerequisite = { 
-			focus = TZN_war_of_national_unification
-		}
-		
-		prerequisite = { 
-			focus = TZN_an_anti_imperialist_alliance
-			focus = TZN_european_cooperation
-		}
-
-		available = {
-			custom_trigger_tooltip = {
-				has_cosmetic_tag = TZN_AFRICA
-				tooltip = TZN_beyond_the_homeland_tt
-			}
-		}
-
-		completion_reward = {
-			####
-			news_event = tzn.5
-			####PAU
-			every_state = {
-				limit = {
-					is_on_continent = africa
-				}
-				add_core_of = TZN
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_over_the_atlantic
-		icon = GFX_goal_TZN_over_the_atlantic
-
-		x = 0
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_beyond_the_homeland
-		 
-		prerequisite = { 
-			focus = TZN_beyond_the_homeland
-		}
-		
-		completion_reward = {
-			####
-			custom_effect_tooltip = TZN_over_the_atlantic_tt
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_compete_with_europe
-		icon = GFX_goal_TZN_compete_with_europe
-
-		x = -2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_beyond_the_homeland
-		 
-		prerequisite = { 
-			focus = TZN_beyond_the_homeland
-		}
-		
-		completion_reward = {
-			####
-			custom_effect_tooltip = TZN_compete_with_europe_tt
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_assign_indian_priorities
-		icon = GFX_goal_TZN_assign_indian_priorities
-
-		x = 2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_beyond_the_homeland
-		 
-		prerequisite = { 
-			focus = TZN_beyond_the_homeland
-		}
-
-		completion_reward = {
-			####
-			custom_effect_tooltip = TZN_assign_indian_priorities_tt
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = TZN_umoja
-		icon = GFX_goal_TZN_umoja
-
-		x = 0
-		y = 2
-		cost = 5
-	
-		relative_position_id = TZN_new_elections
-		 
-		prerequisite = {
-			focus = TZN_new_elections
-		}
-
-		completion_reward = {
-			country_event = tzn.6
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_the_road_of_plenty
-		icon = GFX_goal_TZN_the_road_of_plenty
-
-		x = -9
-		y = 1
-		cost = 5
-	
-		relative_position_id = TZN_umoja
-
-		mutually_exclusive = { focus = TZN_respect_maketh_man }
-		mutually_exclusive = { focus = TZN_the_full_yellow_sun }
-		mutually_exclusive = { focus = TZN_land_of_liberty }
-		 
-		prerequisite = { 
-			focus = TZN_umoja
-		}
-
-		available = {
-			has_government = mastery
-		}
-
-		completion_reward = {
-			country_event = tzn.7
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_machine_service
-		icon = GFX_goal_TZN_placeholder
-
-		x = -2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_the_road_of_plenty
-		 
-		prerequisite = { 
-			focus = TZN_the_road_of_plenty
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_machine_service
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_an_agrarian_life
-		icon = GFX_goal_TZN_placeholder
-
-		x = -2
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_the_road_of_plenty
-		 
-		prerequisite = { 
-			focus = TZN_machine_service
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_an_agrarian_life
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_fly_to_the_stars
-		icon = GFX_goal_TZN_placeholder
-
-		x = 0
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_the_road_of_plenty
-		 
-		prerequisite = { 
-			focus = TZN_the_road_of_plenty
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_fly_to_the_stars
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_dive_into_the_ocean
-		icon = GFX_goal_TZN_placeholder
-
-		x = 0
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_the_road_of_plenty
-		 
-		prerequisite = { 
-			focus = TZN_fly_to_the_stars
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_dive_into_the_ocean
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_mold_nature
-		icon = GFX_goal_TZN_placeholder
-
-		x = 2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_the_road_of_plenty
-		 
-		prerequisite = { 
-			focus = TZN_the_road_of_plenty
-		}
-
-		completion_reward = {
-			custom_effect_tooltip = TZN_mold_nature_tt
-			hidden_effect = {
-				every_owned_state = {
-					limit = {
-						is_coastal = no
-					}
-					decrease_ecobalance = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_a_sea_of_green
-		icon = GFX_goal_TZN_placeholder
-
-		x = 2
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_the_road_of_plenty
-		 
-		prerequisite = { 
-			focus = TZN_mold_nature
-		}
-
-		completion_reward = {
-			custom_effect_tooltip = TZN_a_sea_of_green_tt
-			hidden_effect = {
-				every_owned_state = {
-					limit = {
-						is_coastal = yes
-					}
-					decrease_ecobalance = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_beneath_an_open_sky
-		icon = GFX_goal_TZN_beneath_an_open_sky
-
-		x = 0
-		y = 3
-		cost = 5
-		
-		relative_position_id = TZN_the_road_of_plenty
-		 
-		prerequisite = { 
-			focus = TZN_an_agrarian_life
-		}
-		
-		prerequisite = { 
-			focus = TZN_dive_into_the_ocean
-		}
-		
-		prerequisite = { 
-			focus = TZN_a_sea_of_green
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_beneath_an_open_sky
-			}
-			remove_ideas = {
-				TZN_dive_into_the_ocean
-				TZN_machine_service
-				TZN_an_agrarian_life
-				TZN_fly_to_the_stars
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_respect_maketh_man
-		icon = GFX_goal_TZN_respect_maketh_man
-
-		x = -3
-		y = 1
-		cost = 5
-	
-		relative_position_id = TZN_umoja
-
-		mutually_exclusive = { focus = TZN_the_road_of_plenty }
-		mutually_exclusive = { focus = TZN_the_full_yellow_sun }
-		mutually_exclusive = { focus = TZN_land_of_liberty }
-
-		available = {
-			has_government = purity
-		}
-		 
-		prerequisite = { 
-			focus = TZN_umoja
-		}
-
-		completion_reward = {
-			country_event = tzn.8
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_infinite_prosperity
-		icon = GFX_goal_TZN_placeholder
-
-		x = -2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_respect_maketh_man
-		 
-		prerequisite = { 
-			focus = TZN_respect_maketh_man
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_infinite_prosperity
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_the_golden_continent
-		icon = GFX_goal_TZN_placeholder
-
-		x = -2
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_respect_maketh_man
-		 
-		prerequisite = { 
-			focus = TZN_infinite_prosperity
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_the_golden_continent
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_an_honor_to_serve
-		icon = GFX_goal_TZN_placeholder
-
-		x = 0
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_respect_maketh_man
-		 
-		prerequisite = { 
-			focus = TZN_respect_maketh_man
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_an_honor_to_serve
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_deep_memory
-		icon = GFX_goal_TZN_placeholder
-
-		x = 0
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_respect_maketh_man
-		 
-		prerequisite = { 
-			focus = TZN_an_honor_to_serve
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_deep_memory
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_till_the_earth
-		icon = GFX_goal_TZN_placeholder
-
-		x = 2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_respect_maketh_man
-		 
-		prerequisite = { 
-			focus = TZN_respect_maketh_man
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 2
-				category = industry
-			}
-			add_ideas = {
-				TZN_till_the_earth
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_eradicate_starvation
-		icon = GFX_goal_TZN_placeholder
-
-		x = 2
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_respect_maketh_man
-		 
-		prerequisite = { 
-			focus = TZN_till_the_earth
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_eradicate_starvation
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_things_come_together
-		icon = GFX_goal_TZN_things_come_together
-
-		x = 0
-		y = 3
-		cost = 5
-		
-		relative_position_id = TZN_respect_maketh_man
-		 
-		prerequisite = { 
-			focus = TZN_the_golden_continent
-		}
-		
-		prerequisite = { 
-			focus = TZN_deep_memory
-		}
-		
-		prerequisite = { 
-			focus = TZN_eradicate_starvation
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_things_come_together
-			}
-			remove_ideas = {
-				TZN_eradicate_starvation
-				TZN_till_the_earth
-				TZN_deep_memory
-				TZN_an_honor_to_serve
-				TZN_the_golden_continent
-				TZN_infinite_prosperity
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_the_full_yellow_sun
-		icon = GFX_goal_TZN_the_full_yellow_sun
-
-		x = 3
-		y = 1
-		cost = 5
-	
-		relative_position_id = TZN_umoja
-
-		mutually_exclusive = { focus = TZN_respect_maketh_man }
-		mutually_exclusive = { focus = TZN_the_road_of_plenty }
-		mutually_exclusive = { focus = TZN_land_of_liberty }
-
-		available = {
-			has_government = supremacy
-		}
-		 
-		prerequisite = { 
-			focus = TZN_umoja
-		}
-
-		completion_reward = {
-			country_event = tzn.9
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_where_we_began
-		icon = GFX_goal_TZN_placeholder
-
-		x = -2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_the_full_yellow_sun
-		 
-		prerequisite = { 
-			focus = TZN_the_full_yellow_sun
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_where_we_began
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_fund_holotheaters
-		icon = GFX_goal_TZN_placeholder
-
-		x = -2
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_the_full_yellow_sun
-		 
-		prerequisite = { 
-			focus = TZN_where_we_began
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_fund_holotheaters
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_who_we_are_now
-		icon = GFX_goal_TZN_placeholder
-
-		x = 0
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_the_full_yellow_sun
-		 
-		prerequisite = { 
-			focus = TZN_the_full_yellow_sun
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_who_we_are_now
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_legalize_ai_in_the_workplace
-		icon = GFX_goal_TZN_placeholder
-
-		x = 0
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_the_full_yellow_sun
-		 
-		prerequisite = { 
-			focus = TZN_who_we_are_now
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_legalize_ai_in_the_workplace
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_what_we_shall_become
-		icon = GFX_goal_TZN_placeholder
-
-		x = 2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_the_full_yellow_sun
-		 
-		prerequisite = { 
-			focus = TZN_the_full_yellow_sun
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_what_we_shall_become
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_the_congo_cosmodrome
-		icon = GFX_goal_TZN_placeholder
-
-		x = 2
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_the_full_yellow_sun
-		 
-		prerequisite = { 
-			focus = TZN_what_we_shall_become
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_the_congo_cosmodrome
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_orbital_superstation
-		icon = GFX_goal_TZN_orbital_superstation
-
-		x = 0
-		y = 3
-		cost = 5
-		
-		relative_position_id = TZN_the_full_yellow_sun
-		 
-		prerequisite = { 
-			focus = TZN_fund_holotheaters
-		}
-		
-		prerequisite = { 
-			focus = TZN_legalize_ai_in_the_workplace
-		}
-		
-		prerequisite = { 
-			focus = TZN_the_congo_cosmodrome
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_orbital_superstation
-			}
-			remove_ideas = {
-				TZN_the_congo_cosmodrome
-				TZN_what_we_shall_become
-				TZN_legalize_ai_in_the_workplace
-				TZN_where_we_began
-				TZN_fund_holotheaters
-				TZN_who_we_are_now
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_land_of_liberty
-		icon = GFX_goal_TZN_land_of_liberty
-
-		x = 9
-		y = 1
-		cost = 5
-	
-		relative_position_id = TZN_umoja
-
-		mutually_exclusive = { focus = TZN_the_road_of_plenty }
-		mutually_exclusive = { focus = TZN_the_full_yellow_sun }
-		mutually_exclusive = { focus = TZN_respect_maketh_man }
-
-		available = {
-			has_government = neutral
-		}
-		 
-		prerequisite = { 
-			focus = TZN_umoja
-		}
-
-		completion_reward = {
-			country_event = tzn.10
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_observe_tradition
-		icon = GFX_goal_TZN_placeholder
-
-		x = -2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_land_of_liberty
-		 
-		prerequisite = { 
-			focus = TZN_land_of_liberty
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_observe_tradition
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_establish_the_subdivisions
-		icon = GFX_goal_TZN_placeholder
-
-		x = -2
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_land_of_liberty
-		 
-		prerequisite = { 
-			focus = TZN_observe_tradition
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_establish_the_subdivisions
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_all_the_nations
-		icon = GFX_goal_TZN_placeholder
-
-		x = 0
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_land_of_liberty
-		 
-		prerequisite = { 
-			focus = TZN_land_of_liberty
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_all_the_nations
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_merit_in_freedom
-		icon = GFX_goal_TZN_placeholder
-
-		x = 0
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_land_of_liberty
-		 
-		prerequisite = { 
-			focus = TZN_all_the_nations
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_merit_in_freedom
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_follow_progress
-		icon = GFX_goal_TZN_placeholder
-
-		x = 2
-		y = 1
-		cost = 5
-		
-		relative_position_id = TZN_land_of_liberty
-		 
-		prerequisite = { 
-			focus = TZN_land_of_liberty
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_follow_progress
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_a_familiar_home
-		icon = GFX_goal_TZN_placeholder
-
-		x = 2
-		y = 2
-		cost = 5
-		
-		relative_position_id = TZN_land_of_liberty
-		 
-		prerequisite = { 
-			focus = TZN_follow_progress
-		}
-
-		completion_reward = {
-			custom_effect_tooltip = TZN_a_familiar_home_tt
-			hidden_effect = {
-				every_owned_state = {
-					decrease_ecobalance = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = TZN_destiny_of_eons
-		icon = GFX_goal_TZN_destiny_of_eons
-
-		x = 0
-		y = 3
-		cost = 5
-		
-		relative_position_id = TZN_land_of_liberty
-		 
-		prerequisite = { 
-			focus = TZN_establish_the_subdivisions
-		}
-		
-		prerequisite = { 
-			focus = TZN_merit_in_freedom
-		}
-		
-		prerequisite = { 
-			focus = TZN_a_familiar_home
-		}
-
-		completion_reward = {
-			add_ideas = {
-				TZN_destiny_of_eons
-			}
-			remove_ideas = {
-				TZN_follow_progress
-				TZN_merit_in_freedom
-				TZN_all_the_nations
-				TZN_observe_tradition
-				TZN_establish_the_subdivisions
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-}
+﻿#focus_tree = {
+#	id = eastafricanfederation
+#
+#	country = {
+#		factor = 0
+#		modifier = {
+#			add = 10
+#			tag = TZN
+#		}
+#	}
+#
+#	continuous_focus_position = { 
+#		x = 0
+#		y = 0
+#	}
+#
+#	focus = {
+#		id = TZN_circle_lake_nalubaale
+#		icon = GFX_goal_TZN_circle_lake_nalubaale
+#
+#		x = 10
+#		y = 2
+#		cost = 5
+#		 
+#		prerequisite = { 
+#			focus = TZN_two_years_to_superpower
+#		}
+#
+#		completion_reward = {
+#			578 = {
+#				add_building_construction = {
+#					type = infrastructure
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#			598 = {
+#				add_building_construction = {
+#					type = infrastructure
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#			568 = {
+#				add_building_construction = {
+#					type = infrastructure
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_addis_ababa_railhub
+#		icon = GFX_goal_TZN_circle_lake_nalubaale
+#
+#		x = 12
+#		y = 2
+#		cost = 5
+#		 
+#		prerequisite = { 
+#			focus = TZN_two_years_to_superpower
+#		}
+#
+#		#add influence here? how?
+#		completion_reward = {
+#			every_state = {
+#				limit = {
+#					OR = {
+#						is_owned_by = ETH
+#						is_owned_by = ORO
+#					}
+#				}
+#				add_building_construction = {
+#					type = infrastructure
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_tanzaniasudan_connection
+#		icon = GFX_goal_TZN_circle_lake_nalubaale
+#
+#		x = 14
+#		y = 2
+#		cost = 5
+#		 
+#		prerequisite = { 
+#			focus = TZN_two_years_to_superpower
+#		}
+#
+#		#add influence here? how?
+#		completion_reward = {
+#			every_state = {
+#				limit = {
+#					OR = {
+#						is_owned_by = SUD
+#						is_owned_by = SIE
+#						is_owned_by = NUE
+#					}
+#				}
+#				add_building_construction = {
+#					type = infrastructure
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_two_years_to_superpower
+#		icon = GFX_goal_TZN_two_years_to_superpower
+#
+#		x = 12
+#		y = 1
+#		cost = 5
+#		 
+#		prerequisite = { 
+#			focus = TZN_an_undefeated_dream
+#		}
+#
+#		completion_reward = {
+#			add_political_power = 50
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_the_bluest_sky
+#		icon = GFX_goal_TZN_the_bluest_sky
+#
+#		x = 6
+#		y = 1
+#		cost = 5
+#		 
+#		prerequisite = { 
+#			focus = TZN_an_undefeated_dream
+#		}
+#
+#		completion_reward = {
+#			add_political_power = 50
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_ilats_fury
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 5
+#		y = 2
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_the_bluest_sky }
+#
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 0.5
+#				uses = 2
+#				category = be_air_tech
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_kampala_international_airport
+#		icon = GFX_goal_TZN_kampala_international_airport
+#
+#		x = 6
+#		y = 5
+#		cost = 5
+#		 
+#		prerequisite = { 
+#			focus = TZN_the_bluest_sky 
+#		}
+#		prerequisite = { 
+#			focus = TZN_kigali_railhub 
+#		}
+#
+#		completion_reward = {
+#			#578 = {
+#			#	add_building_construction = {
+#			#		type = air_complex
+#			#		level = 5
+#			#		instant_build = yes
+#			#	}
+#			#}
+#			578 = {
+#				add_building_construction = {
+#					type = military_complex
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_a_pity_you_cannot_see_from_here
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 5
+#		y = 6
+#		cost = 5
+#		 
+#		prerequisite = { 
+#			focus = TZN_ilats_fury 
+#		}
+#		prerequisite = { 
+#			focus = TZN_kampala_international_airport 
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_a_pity_you_cannot_see_from_here
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_supersonic_aircraft
+#		icon = GFX_goal_TZN_supersonic_aircraft
+#
+#		x = 5
+#		y = 7
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_a_pity_you_cannot_see_from_here }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_a_pity_you_cannot_see_from_here
+#				add_idea = TZN_a_pity_you_cannot_see_from_here_2
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_we_will_ground_them
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 4
+#		y = 8
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_supersonic_aircraft }
+#		mutually_exclusive = { focus = TZN_we_will_drive_them_into_the_ground }
+#
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 0.5
+#				uses = 2
+#				category = be_air_tech
+#			}
+#		}		
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_we_will_drive_them_into_the_ground
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 6
+#		y = 8
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_supersonic_aircraft }
+#		mutually_exclusive = { focus = TZN_we_will_ground_them }
+#
+#		completion_reward = {
+#			add_timed_idea = {
+#				idea = TZN_we_will_drive_them_into_the_ground
+#				days = 150
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_reap_the_air
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 4
+#		y = 9
+#		cost = 5
+#		 
+#		prerequisite = { 
+#			focus = TZN_we_will_ground_them 
+#			focus = TZN_we_will_drive_them_into_the_ground 
+#		}
+#		mutually_exclusive = { focus = TZN_cover_the_sky }
+#
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 0.5
+#				uses = 2
+#				category = be_air_tech
+#			}
+#		}	
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_cover_the_sky
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 6
+#		y = 9
+#		cost = 5
+#		 
+#		prerequisite = { 
+#			focus = TZN_we_will_ground_them 
+#			focus = TZN_we_will_drive_them_into_the_ground 
+#		}
+#		mutually_exclusive = { focus = TZN_reap_the_air }
+#
+#		completion_reward = {
+#			add_timed_idea = {
+#				idea = TZN_cover_the_sky
+#				days = 150
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_total_annihilation
+#		icon = GFX_goal_TZN_total_annihilation
+#
+#		x = 5
+#		y = 11
+#		cost = 5
+#		 
+#		prerequisite = { 
+#			focus = TZN_reap_the_air 
+#			focus = TZN_cover_the_sky 
+#		}
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_a_pity_you_cannot_see_from_here_2
+#				add_idea = TZN_a_pity_you_cannot_see_from_here_3
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_kigali_railhub
+#		icon = GFX_goal_TZN_the_panafrican_line
+#
+#		x = 8
+#		y = 4
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_modernize_tanzania }
+#
+#		#add influence here? how?
+#		completion_reward = {
+#			every_owned_state = {
+#				limit = {
+#					OR = {
+#						num_owned_neighbour_states = {
+#							owner = COG
+#							count > 0
+#						}
+#						num_owned_neighbour_states = {
+#							owner = ANG
+#							count > 0
+#						}
+#						num_owned_neighbour_states = {
+#							owner = SAF
+#							count > 0
+#						}
+#					}
+#				}
+#				add_building_construction = {
+#					type = infrastructure
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_the_panafrican_line
+#		icon = GFX_goal_TZN_the_panafrican_line
+#
+#		x = 8
+#		y = 5
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_kigali_railhub }
+#		prerequisite = { focus = TZN_sustainable_growth }
+#
+#		completion_reward = {
+#			add_timed_idea = {
+#				idea = TZN_the_panafrican_line
+#				days = 120
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_modernize_tanzania
+#		icon = GFX_goal_TZN_modernize_tanzania
+#
+#		x = 12
+#		y = 3
+#		cost = 5
+#		 
+#		prerequisite = { 
+#			focus = TZN_circle_lake_nalubaale 
+#			focus = TZN_addis_ababa_railhub 
+#			focus = TZN_tanzaniasudan_connection 
+#		}
+#
+#		completion_reward = {
+#			609 = {
+#				add_building_construction = {
+#					type = infrastructure
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#			627 = {
+#				add_building_construction = {
+#					type = infrastructure
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#			593 = {
+#				add_building_construction = {
+#					type = infrastructure
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_sustainable_growth
+#		icon = GFX_goal_TZN_kigali_railhub
+#
+#		x = 10
+#		y = 4
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_modernize_tanzania }
+#		mutually_exclusive = { focus = TZN_unrelenting_industry }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_abtbia
+#				add_idea = TZN_abtbia_civilian
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_expand_the_abtbia
+#		icon = GFX_goal_TZN_kigali_railhub
+#
+#		x = 10
+#		y = 5
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_sustainable_growth }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_abtbia_civilian
+#				add_idea = TZN_abtbia_civilian_2
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_unshackle_the_hand
+#		icon = GFX_goal_TZN_kigali_railhub
+#
+#		x = 7
+#		y = 6
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_expand_the_abtbia }
+#
+#		completion_reward = {
+#			add_timed_idea = {
+#				idea = TZN_unshackle_the_hand
+#				days = 120
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_northern_heavy_industry
+#		icon = GFX_goal_TZN_the_panafrican_line
+#
+#		x = 9
+#		y = 6
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_expand_the_abtbia }
+#
+#		completion_reward = {
+#			578 = {
+#				add_building_construction = {
+#					type = civilian_complex
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#			622 = {
+#				add_building_construction = {
+#					type = civilian_complex
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#			627 = {
+#				add_building_construction = {
+#					type = civilian_complex
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_southern_hydro_plants
+#		icon = GFX_goal_TZN_the_panafrican_line
+#
+#		x = 9
+#		y = 7
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_tie_eco_to_energy }
+#
+#		completion_reward = {
+#			484 = {
+#				add_building_construction = {
+#					type = generator_building
+#					level = 3
+#					instant_build = yes
+#				}
+#			}
+#			506 = {
+#				add_building_construction = {
+#					type = generator_building
+#					level = 2
+#					instant_build = yes
+#				}
+#			}
+#		}		
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_unrelenting_industry
+#		icon = GFX_goal_TZN_kigali_railhub
+#
+#		x = 14
+#		y = 4
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_modernize_tanzania }
+#		mutually_exclusive = { focus = TZN_sustainable_growth }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_abtbia
+#				add_idea = TZN_abtbia_military
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_focus_on_the_mbt
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 17
+#		y = 6
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_bail_out_iniko_bank }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_abtbia_military_2
+#				add_idea = TZN_abtbia_military_3
+#			}
+#		}		
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_legitimize_ai_planning
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 15
+#		y = 6
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_bail_out_iniko_bank }
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_legitimize_ai_planning
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_network_node_expansion
+#		icon = GFX_goal_TZN_kigali_railhub
+#
+#		x = 15
+#		y = 7
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_set_new_goals }
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_network_node_expansion
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_legitimize_recycling_tanks
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 17
+#		y = 7
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_focus_on_the_mbt }
+#
+#		completion_reward = {
+#			add_timed_idea = {
+#				idea = TZN_legitimize_recycling_tanks
+#				days = 80
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_import_asian_mining_specialists
+#		icon = GFX_goal_TZN_kigali_railhub
+#
+#		x = 12
+#		y = 5
+#		cost = 5
+#		 
+#		prerequisite = { 
+#			focus = TZN_unrelenting_industry 
+#			focus = TZN_sustainable_growth 
+#		}
+#
+#		completion_reward = {
+#			add_resource = {
+#				type = lithium
+#				amount = 29
+#				state = 618
+#			}
+#			add_resource = {
+#				type = superalloys
+#				amount = 14
+#				state = 674
+#			}
+#			add_resource = {
+#				type = lithium
+#				amount = 11
+#				state = 671
+#			}
+#			add_resource = {
+#				type = electronics
+#				amount = 27
+#				state = 494
+#			}
+#			add_stability = -0.35
+#			add_political_power = -100
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_tie_eco_to_energy
+#		icon = GFX_goal_TZN_kigali_railhub
+#
+#		x = 11
+#		y = 6
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_import_asian_mining_specialists }
+#
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 0.5
+#				uses = 2
+#				category = generation
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_set_new_goals
+#		icon = GFX_goal_TZN_kigali_railhub
+#
+#		x = 13
+#		y = 6
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_import_asian_mining_specialists }
+#
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 0.5
+#				uses = 2
+#				category = be_industry
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_orbital_academy_of_sciences
+#		icon = GFX_goal_TZN_orbital_academy_of_sciences
+#
+#		x = 12
+#		y = 7
+#		cost = 5
+#		 
+#		prerequisite = { 
+#			focus = TZN_tie_eco_to_energy 
+#		}
+#		prerequisite = { 
+#			focus = TZN_set_new_goals 
+#		}
+#
+#		completion_reward = {
+#			capital_scope = {
+#				add_building_construction = {
+#					type = spaceship_complex
+#					level = 5
+#					instant_build = yes
+#				}
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_enforce_parcel_tracking
+#		icon = GFX_goal_TZN_kigali_railhub
+#
+#		x = 10
+#		y = 8
+#		cost = 5
+#		 
+#		prerequisite = { 
+#			focus = TZN_expand_the_abtbia 
+#		}
+#		prerequisite = { 
+#			focus = TZN_tie_eco_to_energy 
+#		}
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_abtbia_civilian_2
+#				add_idea = TZN_abtbia_civilian_3
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_expand_the_workday
+#		icon = GFX_goal_TZN_kigali_railhub
+#
+#		x = 14
+#		y = 8
+#		cost = 5
+#		 
+#		prerequisite = { 
+#			focus = TZN_set_new_goals 
+#		}
+#		prerequisite = { 
+#			focus = TZN_unrelenting_industry 
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_expand_the_workday
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_develop_somalia
+#		icon = GFX_goal_TZN_develop_somalia
+#
+#		x = 16
+#		y = 4
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_modernize_tanzania }
+#
+#		#add influence here? how?
+#		completion_reward = {
+#			every_state = {
+#				limit = {
+#					is_owned_by = SOM
+#				}
+#				add_building_construction = {
+#					type = infrastructure
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_bail_out_iniko_bank
+#		icon = GFX_goal_TZN_kigali_railhub
+#
+#		x = 15
+#		y = 5
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_unrelenting_industry }
+#		prerequisite = { focus = TZN_develop_somalia }
+#
+#		#add influence here? how?
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_abtbia_military
+#				add_idea = TZN_abtbia_military_2
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_locked_and_loaded
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 2
+#		y = 2
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_the_bluest_sky }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_africas_army
+#				add_idea = TZN_africas_army_2
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_we_have_the_skill
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 1
+#		y = 3
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_locked_and_loaded }
+#		mutually_exclusive = { focus = TZN_we_have_the_time }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_africas_army_2
+#				add_idea = TZN_africas_army_skill
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_tier_iv_training_sequence
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 1
+#		y = 4
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_we_have_the_skill }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_africas_army_skill
+#				add_idea = TZN_africas_army_skill_2
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_orbital_military_institute
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 0
+#		y = 5
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_tier_iv_training_sequence }
+#
+#		completion_reward = {
+#			add_timed_idea = {
+#				idea = TZN_orbital_military_institute
+#				days = 80
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_lightspeed_warfare
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 1
+#		y = 6
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_tier_iv_training_sequence }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_africas_army_skill_2
+#				add_idea = TZN_africas_army_skill_3
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_the_os_line
+#		icon = GFX_goal_TZN_the_os_line
+#
+#		x = 2
+#		y = 5
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_locked_and_loaded }
+#
+#		completion_reward = {
+#			build_railway = {
+#				level = 5
+#				build_only_on_allied = yes
+#				fallback = yes
+#				path = { 7898 7540 7378 6416 6462 6605 6577 }
+#				start_state = 622
+#				target_state = 487
+#			}
+#			build_railway = {
+#				level = 5
+#				build_only_on_allied = yes
+#				fallback = yes
+#				path = { 7898 7478 7221 7260 7172 7298 }
+#				start_state = 622
+#				target_state = 550
+#			}
+#			552 = {
+#				add_building_construction = {
+#					type = supply_node
+#					level = 1
+#					province = 7221
+#					instant_build = yes
+#				}
+#			}
+#			568 = {
+#				add_building_construction = {
+#					type = supply_node
+#					level = 1
+#					province = 7540
+#					instant_build = yes
+#				}
+#			}	
+#			558 = {
+#				add_building_construction = {
+#					type = supply_node
+#					level = 1
+#					province = 7447
+#					instant_build = yes
+#				}
+#			}	
+#			462 = {
+#				add_building_construction = {
+#					type = supply_node
+#					level = 1
+#					province = 6416
+#					instant_build = yes
+#				}
+#			}	
+#			460 = {
+#				add_building_construction = {
+#					type = supply_node
+#					level = 1
+#					province = 6524
+#					instant_build = yes
+#				}
+#			}	
+#			469 = {
+#				add_building_construction = {
+#					type = supply_node
+#					level = 1
+#					province = 6547
+#					instant_build = yes
+#				}
+#			}			
+#			487 = {
+#				add_building_construction = {
+#					type = naval_base
+#					level = 6
+#					province = 6577
+#					instant_build = yes
+#				}
+#			}			
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_we_have_the_time
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 3
+#		y = 3
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_locked_and_loaded }
+#		mutually_exclusive = { focus = TZN_we_have_the_skill }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_africas_army_2
+#				add_idea = TZN_africas_army_time
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_prepare_fortifications
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 3
+#		y = 4
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_we_have_the_time }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_africas_army_time
+#				add_idea = TZN_africas_army_time_2
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_emergency_rotation
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 3
+#		y = 6
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_prepare_fortifications }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_africas_army_time_2
+#				add_idea = TZN_africas_army_time_3
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_army_of_the_people
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 4
+#		y = 5
+#		cost = 5
+#		 
+#		prerequisite = { focus = TZN_prepare_fortifications }
+#
+#		completion_reward = {
+#			add_timed_idea = {
+#				idea = TZN_army_of_the_people
+#				days = 80
+#			}
+#		}
+#	
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_an_undefeated_dream
+#		icon = GFX_goal_TZN_an_undefeated_dream
+#
+#		x = 22
+#		y = 0
+#		cost = 5
+#		 
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_children_of_africa
+#				add_idea = TZN_children_of_africa_2
+#			}
+#			add_ideas = {
+#				TZN_africas_army
+#			}
+#			country_event = tzn.1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_internal_reform
+#		icon = GFX_goal_TZN_internal_reform
+#
+#		x = -3
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_an_undefeated_dream
+#		 
+#		prerequisite = { focus = TZN_an_undefeated_dream }
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		completion_reward = {
+#			add_political_power = 50
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_the_interparty_line
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_internal_reform
+#		 
+#		prerequisite = { focus = TZN_internal_reform }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_children_of_africa_2
+#				add_idea = TZN_children_of_africa_3
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_acalan_expansion
+#		icon = GFX_goal_TZN_expand_regional_autonomism
+#
+#		x = -3
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_internal_reform
+#		 
+#		prerequisite = { focus = TZN_internal_reform }
+#
+#		completion_reward = {
+#			add_timed_idea = {
+#				idea = TZN_acalan_expansion
+#				days = 100
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_anti_nativism
+#		icon = GFX_goal_TZN_expand_regional_autonomism
+#
+#		x = -1
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_internal_reform
+#		 
+#		prerequisite = { focus = TZN_internal_reform }
+#
+#		completion_reward = {
+#			add_political_power = 25
+#			add_stability = 0.05
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_abolish_household_registration
+#		icon = GFX_goal_TZN_expand_regional_autonomism
+#
+#		x = 0
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_anti_nativism
+#		 
+#		prerequisite = { focus = TZN_anti_nativism }
+#
+#		completion_reward = {
+#			add_political_power = 50
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_address_intertribal_conflicts
+#		icon = GFX_goal_TZN_expand_regional_autonomism
+#
+#		x = 0
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_abolish_household_registration
+#		 
+#		prerequisite = { focus = TZN_abolish_household_registration }
+#
+#		completion_reward = {
+#			add_stability = 0.1
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_expand_regional_autonomism
+#		icon = GFX_goal_TZN_expand_regional_autonomism
+#
+#		x = -1
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_abolish_household_registration
+#		
+#		mutually_exclusive = { focus = TZN_a_united_state }
+#		 
+#		prerequisite = { focus = TZN_address_intertribal_conflicts }
+#
+#		completion_reward = {
+#			add_ideas = TZN_expand_regional_autonomism
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_the_radicals
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 0
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_interparty_line
+#		 
+#		prerequisite = { focus = TZN_the_interparty_line }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_children_of_africa_3
+#				add_idea = TZN_children_of_africa_4
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_party_unity
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 0
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_interparty_line
+#		 
+#		prerequisite = { focus = TZN_the_radicals }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_children_of_africa_4
+#				add_idea = TZN_children_of_africa_5
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_a_united_state
+#		icon = GFX_goal_TZN_expand_regional_autonomism
+#
+#		x = 1
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_abolish_household_registration
+#		
+#		mutually_exclusive = { focus = TZN_expand_regional_autonomism }
+#		 
+#		prerequisite = { focus = TZN_address_intertribal_conflicts }
+#
+#		completion_reward = {
+#			add_ideas = TZN_a_united_state
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_consider_dissidents
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 0
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_party_unity
+#		 
+#		prerequisite = { focus = TZN_party_unity }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_children_of_africa_5
+#				add_idea = TZN_children_of_africa_6
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_meritocratic_rule
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = -1
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_party_unity
+#		
+#		mutually_exclusive = { focus = TZN_dominant_party_democracy }
+#		 
+#		prerequisite = { focus = TZN_consider_dissidents }
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = oligarchic_government
+#				add_idea = digital_democracy
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_dominant_party_democracy
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 1
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_party_unity
+#
+#		mutually_exclusive = { focus = TZN_meritocratic_rule }
+#		 
+#		prerequisite = { focus = TZN_consider_dissidents }
+#
+#		completion_reward = {
+#			add_political_power = 25
+#			add_popularity= {
+#				ideology = purity
+#				popularity = 0.1
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_new_elections
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 0
+#		y = 3
+#		cost = 5
+#		
+#		relative_position_id = TZN_party_unity
+#		 
+#		prerequisite = { 
+#			focus = TZN_meritocratic_rule
+#			focus = TZN_dominant_party_democracy
+#		}
+#
+#		completion_reward = {
+#			country_event = tzn.2
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_panafricanism
+#		icon = GFX_goal_TZN_panafricanism
+#
+#		x = 7
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_an_undefeated_dream
+#		 
+#		prerequisite = { 
+#			focus = TZN_an_undefeated_dream
+#		}
+#
+#		completion_reward = {
+#			add_political_power = 50
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_anti_corporate_policy
+#		icon = GFX_goal_TZN_anti_corporate_policy
+#
+#		x = -5
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_panafricanism
+#		 
+#		prerequisite = { 
+#			focus = TZN_panafricanism
+#			focus = TZN_internal_reform
+#		}
+#		
+#		completion_reward = {
+#			add_stability = -0.05
+#			add_ideas = {
+#				TZN_anti_corporate_policy
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_expand_regulations
+#		icon = GFX_goal_TZN_expand_regulations
+#
+#		x = -1
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_anti_corporate_policy
+#		 
+#		prerequisite = { 
+#			focus = TZN_anti_corporate_policy
+#		}
+#		
+#		completion_reward = {
+#			add_stability = -0.05
+#			swap_ideas = {
+#				remove_idea = TZN_anti_corporate_policy
+#				add_idea = TZN_anti_corporate_policy_2
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_consider_unions
+#		icon = GFX_goal_TZN_expand_regulations
+#
+#		x = -1
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_anti_corporate_policy
+#		 
+#		prerequisite = { 
+#			focus = TZN_expand_regulations
+#		}
+#		
+#		prerequisite = { 
+#			focus = TZN_the_radicals
+#		}
+#
+#		completion_reward = {
+#			swap_ideas = {
+#				remove_idea = TZN_anti_corporate_policy_2
+#				add_idea = TZN_anti_corporate_policy_3
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_idealism_and_pragmatism
+#		icon = GFX_goal_TZN_expand_regulations
+#		x = -1
+#		y = 3
+#		cost = 5
+#		
+#		relative_position_id = TZN_anti_corporate_policy
+#		 
+#		prerequisite = { 
+#			focus = TZN_consider_unions
+#		}
+#		
+#		completion_reward = {
+#			add_political_power = -25
+#			swap_ideas = {
+#				remove_idea = TZN_anti_corporate_policy_3
+#				add_idea = TZN_anti_corporate_policy_4
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_anti_capitalist_rhetoric
+#		icon = GFX_goal_TZN_expand_regulations
+#
+#		x = 0
+#		y = 4
+#		cost = 5
+#		
+#		relative_position_id = TZN_anti_corporate_policy
+#		 
+#		prerequisite = { 
+#			focus = TZN_idealism_and_pragmatism
+#		}
+#
+#		completion_reward = {
+#			add_stability = 0.05
+#			####
+#			swap_ideas = {
+#				remove_idea = TZN_anti_corporate_policy_4
+#				add_idea = TZN_anti_corporate_policy_5
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_aid_for_the_mpla
+#		icon = GFX_goal_TZN_expand_regulations
+#
+#		x = 1
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_anti_corporate_policy
+#		 
+#		prerequisite = { 
+#			focus = TZN_anti_corporate_policy
+#		}
+#
+#		completion_reward = {
+#			ANG = {
+#				add_timed_idea = {
+#					idea = ANG_mpla_resurgent
+#					days = 420
+#				}
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_the_congolese_legacy
+#		icon = GFX_goal_TZN_the_congolese_legacy
+#
+#		x = -2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_panafricanism
+#		 
+#		prerequisite = { 
+#			focus = TZN_panafricanism
+#		}
+#		
+#		completion_reward = {
+#			####
+#			country_event = tzn.3
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_stabilize_the_mwitanzige_rift
+#		icon = GFX_goal_TZN_stabilize_the_mwitanzige_rift
+#
+#		x = 0
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_congolese_legacy
+#		 
+#		prerequisite = { 
+#			focus = TZN_the_congolese_legacy
+#		}
+#
+#		completion_reward = {
+#			add_timed_idea = {
+#				idea = TZN_stabilize_the_mwitanzige_rift
+#				days = 360
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_reign_in_the_warlords
+#		icon = GFX_goal_TZN_reign_in_the_warlords
+#
+#		x = -1
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_congolese_legacy
+#		
+#		mutually_exclusive = { focus = TZN_restart_the_proxy_war }
+#		 
+#		prerequisite = { 
+#			focus = TZN_stabilize_the_mwitanzige_rift
+#		}
+#		
+#		completion_reward = {
+#			####
+#			custom_effect_tooltip = TZN_reign_in_warlords_tt
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_restart_the_proxy_war
+#		icon = GFX_goal_TZN_reign_in_the_warlords
+#
+#		x = 1
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_congolese_legacy
+#		
+#		mutually_exclusive = { focus =  TZN_reign_in_the_warlords }
+#		 
+#		prerequisite = { 
+#			focus = TZN_stabilize_the_mwitanzige_rift
+#		}
+#
+#		completion_reward = {
+#			GNA = {
+#				declare_war_on = {
+#					target = COG
+#					type = annex_puppet_wargoal
+#				}
+#				add_manpower = 5000
+#				add_ideas = eaf_support
+#			} 
+#			TOG = {
+#				declare_war_on = {
+#					target = COG
+#					type = annex_puppet_wargoal
+#				}
+#				add_manpower = 5000
+#				add_ideas = eaf_support
+#			}
+#			RWA ={ 
+#				declare_war_on = {
+#					target = COG
+#					type = annex_puppet_wargoal
+#				}
+#				add_manpower = 5000
+#				add_ideas = eaf_support
+#			} 
+#			BRD = {
+#				declare_war_on = {
+#					target = COG
+#					type = annex_puppet_wargoal
+#				}
+#				add_manpower = 5000
+#				add_ideas = eaf_support
+#			}
+#			MLW = {
+#				declare_war_on = {
+#					target = COG
+#					type = annex_puppet_wargoal
+#				}
+#				add_manpower = 5000
+#				add_ideas = eaf_support
+#			}
+#			COG = {
+#				add_timed_idea = {
+#					idea = COG_mwitanzige_crisis
+#					days = 420
+#				}
+#			}
+#			news_event = tzn.4
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_expand_the_union
+#		icon = GFX_goal_TZN_expand_the_union
+#
+#		x = -1
+#		y = 3
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_congolese_legacy
+#		 
+#		prerequisite = { 
+#			focus = TZN_reign_in_the_warlords
+#		}
+#
+#		available = {
+#			has_war = no
+#		}
+#
+#		completion_reward = {
+#			GNA = {
+#				every_core_state = {
+#					add_core_of = TZN
+#				}
+#			}
+#			TOG = {
+#				every_core_state = {
+#					add_core_of = TZN
+#				}
+#			}
+#			RWA = {
+#				every_core_state = {
+#					add_core_of = TZN
+#				}
+#			}
+#			BRD = {
+#				every_core_state = {
+#					add_core_of = TZN
+#				}
+#			}
+#			MLW = {
+#				every_core_state = {
+#					add_core_of = TZN
+#				}
+#			}
+#			if = {
+#				limit = {
+#					GNA = {
+#						is_puppet_of = TZN
+#					}
+#				}
+#				TZN = {
+#					annex_country = {
+#						target = GNA
+#					}
+#				}
+#			}
+#			if = {
+#				limit = {
+#					TOG = {
+#						is_puppet_of = TZN
+#					}
+#				}
+#				TZN = {
+#					annex_country = {
+#						target = TOG
+#					}
+#				}
+#			}
+#			if = {
+#				limit = {
+#					RWA = {
+#						is_puppet_of = TZN
+#					}
+#				}
+#				TZN = {
+#					annex_country = {
+#						target = RWA
+#					}
+#				}
+#			}
+#			if = {
+#				limit = {
+#					BRD = {
+#						is_puppet_of = TZN
+#					}
+#				}
+#				TZN = {
+#					annex_country = {
+#						target = BRD
+#					}
+#				}
+#			}
+#			if = {
+#				limit = {
+#					MLW = {
+#						is_puppet_of = TZN
+#					}
+#				}
+#				TZN = {
+#					annex_country = {
+#						target = MLW
+#					}
+#				}
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_pan_african_alliance_building
+#		icon = GFX_goal_TZN_expand_the_union
+#
+#		x = 1
+#		y = 3
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_congolese_legacy
+#		 
+#		prerequisite = { 
+#			focus = TZN_restart_the_proxy_war
+#		}
+#		
+#		completion_reward = {
+#			add_to_faction = GNA
+#			add_to_faction = TOG
+#			add_to_faction = RWA
+#			add_to_faction = BRD
+#			add_to_faction = MLW
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_initiate_expansion
+#		icon = GFX_goal_TZN_initiate_expansion
+#
+#		x = 0
+#		y = 4
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_congolese_legacy
+#		 
+#		prerequisite = { 
+#			focus = TZN_expand_the_union
+#			focus = TZN_pan_african_alliance_building
+#		}
+#		
+#		completion_reward = {
+#			declare_war_on = {
+#				target = COG
+#				type = annex_puppet_wargoal
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#			modifier = {
+#				has_war = yes
+#				add = -100
+#			}
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_westbound
+#		icon = GFX_goal_TZN_westbound
+#
+#		x = 4
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_panafricanism
+#		 
+#		prerequisite = { 
+#			focus = TZN_panafricanism
+#		}
+#
+#		completion_reward = {
+#			add_war_support = 0.1
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_in_the_land_of_endless_cities
+#		icon = GFX_goal_TZN_the_olive_branch
+#
+#		x = -2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_westbound
+#		
+#		mutually_exclusive = { focus = TZN_break_the_yaounde_compromise }
+#		 
+#		prerequisite = { 
+#			focus = TZN_westbound
+#		}
+#		
+#		completion_reward = {
+#			####
+#			custom_effect_tooltip = TZN_in_the_land_of_endless_cities_tt
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_limited_recognition
+#		icon = GFX_goal_TZN_the_olive_branch
+#
+#		x = -3
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_westbound
+#		 
+#		prerequisite = { 
+#			focus = TZN_in_the_land_of_endless_cities
+#		}
+#
+#		#add influence here? how?
+#		completion_reward = {
+#			every_country = {
+#				limit = {
+#					OR = {
+#						tag = MRT
+#						tag = LIB
+#						tag = IVO
+#						tag = GHA
+#						tag = VOL
+#						tag = DAH
+#						tag = NGA
+#						tag = GAB
+#						tag = CMR
+#						tag = CAR
+#						tag = CHA
+#					}
+#				}
+#				add_timed_idea = {
+#					idea = TZN_limited_recognition
+#					days = 100
+#				}
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_african_trade_union
+#		icon = GFX_goal_TZN_the_olive_branch
+#
+#		x = -1
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_westbound
+#		 
+#		prerequisite = { 
+#			focus = TZN_in_the_land_of_endless_cities
+#		}
+#
+#		#add influence here? how?
+#		completion_reward = {
+#			every_country = {
+#				limit = {
+#					OR = {
+#						tag = MRT
+#						tag = LIB
+#						tag = IVO
+#						tag = GHA
+#						tag = VOL
+#						tag = DAH
+#						tag = NGA
+#						tag = GAB
+#						tag = CMR
+#						tag = CAR
+#						tag = CHA
+#					}
+#				}
+#				add_timed_idea = {
+#					idea = TZN_african_trade_union
+#					days = 100
+#				}
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_the_olive_branch
+#		icon = GFX_goal_TZN_alliance
+#
+#		x = -2
+#		y = 3
+#		cost = 5
+#		
+#		relative_position_id = TZN_westbound
+#		 
+#		prerequisite = { 
+#			focus = TZN_limited_recognition
+#		}
+#		prerequisite = { 
+#			focus = TZN_african_trade_union
+#		}
+#
+#		completion_reward = {
+#			every_country = {
+#				limit = {
+#					is_in_faction_with = TZN
+#				}
+#				capital_scope = {
+#					add_building_construction = {
+#						type = civilian_complex
+#						level = 1
+#						instant_build = yes
+#					}
+#				}
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_break_the_yaounde_compromise
+#		icon = GFX_goal_TZN_break_the_yaounde_compromise
+#
+#		x = 2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_westbound
+#		
+#		mutually_exclusive = { focus = TZN_in_the_land_of_endless_cities }
+#		 
+#		prerequisite = { 
+#			focus = TZN_westbound
+#		}
+#
+#		completion_reward = {
+#			add_timed_idea = {
+#				idea = TZN_break_the_yaounde_compromise
+#				days = 200
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_nb_line
+#		icon = GFX_goal_TZN_break_the_yaounde_compromise
+#
+#		x = 1
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_westbound
+#		 
+#		prerequisite = { 
+#			focus = TZN_break_the_yaounde_compromise
+#		}
+#		
+#		completion_reward = {
+#			add_timed_idea = {
+#				idea = TZN_nb_line
+#				days = 200
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_monopolize_pan_africanism
+#		icon = GFX_goal_TZN_break_the_yaounde_compromise
+#
+#		x = 3
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_westbound
+#		 
+#		prerequisite = { 
+#			focus = TZN_break_the_yaounde_compromise
+#		}
+#		
+#		completion_reward = {
+#			add_timed_idea = {
+#				idea = TZN_monopolize_pan_africanism
+#				days = 200
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_the_sword
+#		icon = GFX_goal_TZN_nonalliance
+#
+#		x = 2
+#		y = 3
+#		cost = 5
+#		
+#		relative_position_id = TZN_westbound
+#		 
+#		prerequisite = { 
+#			focus = TZN_nb_line
+#		}
+#		
+#		prerequisite = { 
+#			focus = TZN_monopolize_pan_africanism
+#		}
+#
+#		completion_reward = {
+#			every_country = {
+#				limit = {
+#					is_in_faction_with = TZN
+#				}
+#				capital_scope = {
+#					add_building_construction = {
+#						type = military_complex
+#						level = 1
+#						instant_build = yes
+#					}
+#				}
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_west_african_interventionism
+#		icon = GFX_goal_TZN_we_have_the_skill
+#
+#		x = 2
+#		y = 4
+#		cost = 5
+#		
+#		relative_position_id = TZN_westbound
+#		 
+#		prerequisite = { 
+#			focus = TZN_the_olive_branch
+#			focus = TZN_the_sword
+#		}
+#
+#		completion_reward = {
+#			custom_effect_tooltip = TZN_west_african_interventionism_tt
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_a_warpath
+#		icon = GFX_goal_TZN_west_african_interventionism
+#
+#		x = -2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_sword
+#		 
+#		prerequisite = { 
+#			focus = TZN_the_sword
+#			focus = TZN_the_olive_branch
+#		}
+#
+#		completion_reward = {
+#			custom_effect_tooltip = TZN_a_warpath_tt
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_war_of_national_unification
+#		icon = GFX_goal_TZN_war_of_national_unification
+#
+#		x = 0
+#		y = 6
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_congolese_legacy
+#		 
+#		prerequisite = { 
+#			focus = TZN_anti_capitalist_rhetoric
+#			focus = TZN_initiate_expansion
+#			focus = TZN_a_warpath
+#		}
+#
+#		completion_reward = {
+#			####
+#			custom_effect_tooltip = TZN_war_of_national_unification_tt
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_northern_advisor_office
+#		icon = GFX_goal_TZN_northern_advisor_office
+#
+#		x = 12
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_panafricanism
+#		 
+#		prerequisite = { 
+#			focus = TZN_panafricanism
+#		}
+#
+#		completion_reward = {
+#			add_war_support = 0.1
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_aid_the_rebels
+#		icon = GFX_goal_TZN_aid_the_rebels
+#
+#		x = -1
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_northern_advisor_office
+#		
+#		mutually_exclusive = { focus = TZN_stability_in_south_sudan }
+#		 
+#		prerequisite = { 
+#			focus = TZN_northern_advisor_office
+#		}
+#
+#		completion_reward = {
+#			declare_war_on = {
+#				target = SIE
+#				type = annex_puppet_wargoal
+#			}
+#			NUE = {
+#				country_event = tzn.11
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#			modifier = {
+#				has_war = yes
+#				add = -100
+#			}
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_stability_in_south_sudan
+#		icon = GFX_goal_TZN_develop_somalia
+#
+#		x = 1
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_northern_advisor_office
+#		
+#		mutually_exclusive = { focus = TZN_aid_the_rebels }
+#		 
+#		prerequisite = { 
+#			focus = TZN_northern_advisor_office
+#		}
+#		
+#		completion_reward = {
+#			declare_war_on = {
+#				target = NUE
+#				type = annex_puppet_wargoal
+#			}
+#			SIE = {
+#				country_event = tzn.11
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#			modifier = {
+#				has_war = yes
+#				add = -100
+#			}
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_recognize_uar_legitimacy_in_sudan
+#		icon = GFX_goal_TZN_an_anti_imperialist_alliance
+#
+#		x = -3
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_northern_advisor_office
+#		 
+#		prerequisite = { 
+#			focus = TZN_aid_the_rebels
+#		}
+#
+#		bypass = {
+#			SUD = {
+#				is_in_faction_with = EGY
+#			}
+#		}
+#
+#		completion_reward = {
+#			SUD = {
+#				country_event = tzn.11
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_an_anti_imperialist_alliance
+#		icon = GFX_goal_TZN_an_anti_imperialist_alliance
+#
+#		x = -3
+#		y = 3
+#		cost = 5
+#		
+#		relative_position_id = TZN_northern_advisor_office
+#		 
+#		prerequisite = { 
+#			focus = TZN_recognize_uar_legitimacy_in_sudan
+#		}
+#		
+#		completion_reward = {
+#			EGY = {
+#				country_event = tzn.11
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_undermine_somali_power
+#		icon = GFX_goal_TZN_undermine_somali_power
+#
+#		x = 0
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_aid_the_rebels
+#		 
+#		prerequisite = { 
+#			focus = TZN_aid_the_rebels
+#		}
+#
+#		completion_reward = {
+#			declare_war_on = {
+#				target = SOM
+#				type = annex_puppet_wargoal
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#			modifier = {
+#				has_war = yes
+#				add = -100
+#			}
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_back_ethiopian_reunification
+#		icon = GFX_goal_TZN_undermine_somali_power
+#
+#		x = 0
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_aid_the_rebels
+#		 
+#		prerequisite = { 
+#			focus = TZN_undermine_somali_power
+#		}
+#
+#		completion_reward = {
+#			declare_war_on = {
+#				target = ETH
+#				type = annex_puppet_wargoal
+#			}
+#			ORO = {
+#				country_event = tzn.11
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#			modifier = {
+#				has_war = yes
+#				add = -100
+#			}
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_seek_somali_cooperation
+#		icon = GFX_goal_TZN_seek_somali_cooperation
+#
+#		x = 0
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_stability_in_south_sudan
+#		 
+#		prerequisite = { 
+#			focus = TZN_stability_in_south_sudan
+#		}
+#
+#		completion_reward = {
+#			SOM = {
+#				country_event = tzn.11
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_cease_oromia
+#		icon = GFX_goal_TZN_seek_somali_cooperation
+#
+#		x = 0
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_stability_in_south_sudan
+#		 
+#		prerequisite = { 
+#			focus = TZN_seek_somali_cooperation
+#		}
+#		
+#		completion_reward = {
+#			declare_war_on = {
+#				target = ORO
+#				type = annex_puppet_wargoal
+#			}
+#			ETH = {
+#				country_event = tzn.11
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#			modifier = {
+#				has_war = yes
+#				add = -100
+#			}
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_aid_the_sudanese_revolution
+#		icon = GFX_goal_TZN_aid_the_sudanese_revolution
+#
+#		x = 2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_stability_in_south_sudan
+#		 
+#		prerequisite = { 
+#			focus = TZN_stability_in_south_sudan
+#		}
+#		
+#		completion_reward = {
+#			declare_war_on = {
+#				target = EGY
+#				type = annex_puppet_wargoal
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#			modifier = {
+#				has_war = yes
+#				add = -100
+#			}
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_european_cooperation
+#		icon = GFX_goal_TZN_aid_the_sudanese_revolution
+#
+#		x = 2
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_stability_in_south_sudan
+#		 
+#		prerequisite = { 
+#			focus = TZN_aid_the_sudanese_revolution
+#		}
+#
+#		available = {
+#			EGY = {
+#				is_puppet_of = TZN
+#			}
+#		}
+#		
+#		completion_reward = {
+#			if = {
+#				limit = {
+#					ITA = {
+#						is_in_faction = no
+#					}
+#				}
+#				ITA = {
+#					country_event = tzn.11
+#				}
+#			}	
+#			if = {
+#				limit = {
+#					TUR = {
+#						is_in_faction = no
+#					}
+#				}
+#				TUR = {
+#					country_event = tzn.11
+#				}
+#			}
+#			if = {
+#				limit = {
+#					GRE = {
+#						is_in_faction = no
+#					}
+#				}
+#				GRE = {
+#					country_event = tzn.11
+#				}
+#			}
+#			else = {
+#				add_political_power = 25
+#			}			
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_beyond_the_homeland
+#		icon = GFX_goal_TZN_beyond_the_homeland
+#
+#		x = 6
+#		y = 3
+#		cost = 5
+#		
+#		relative_position_id = TZN_a_warpath
+#		 
+#		prerequisite = { 
+#			focus = TZN_war_of_national_unification
+#		}
+#		
+#		prerequisite = { 
+#			focus = TZN_an_anti_imperialist_alliance
+#			focus = TZN_european_cooperation
+#		}
+#
+#		available = {
+#			custom_trigger_tooltip = {
+#				has_cosmetic_tag = TZN_AFRICA
+#				tooltip = TZN_beyond_the_homeland_tt
+#			}
+#		}
+#
+#		completion_reward = {
+#			####
+#			news_event = tzn.5
+#			####PAU
+#			every_state = {
+#				limit = {
+#					is_on_continent = africa
+#				}
+#				add_core_of = TZN
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_over_the_atlantic
+#		icon = GFX_goal_TZN_over_the_atlantic
+#
+#		x = 0
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_beyond_the_homeland
+#		 
+#		prerequisite = { 
+#			focus = TZN_beyond_the_homeland
+#		}
+#		
+#		completion_reward = {
+#			####
+#			custom_effect_tooltip = TZN_over_the_atlantic_tt
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_compete_with_europe
+#		icon = GFX_goal_TZN_compete_with_europe
+#
+#		x = -2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_beyond_the_homeland
+#		 
+#		prerequisite = { 
+#			focus = TZN_beyond_the_homeland
+#		}
+#		
+#		completion_reward = {
+#			####
+#			custom_effect_tooltip = TZN_compete_with_europe_tt
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_assign_indian_priorities
+#		icon = GFX_goal_TZN_assign_indian_priorities
+#
+#		x = 2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_beyond_the_homeland
+#		 
+#		prerequisite = { 
+#			focus = TZN_beyond_the_homeland
+#		}
+#
+#		completion_reward = {
+#			####
+#			custom_effect_tooltip = TZN_assign_indian_priorities_tt
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#
+#	focus = {
+#		id = TZN_umoja
+#		icon = GFX_goal_TZN_umoja
+#
+#		x = 0
+#		y = 2
+#		cost = 5
+#	
+#		relative_position_id = TZN_new_elections
+#		 
+#		prerequisite = {
+#			focus = TZN_new_elections
+#		}
+#
+#		completion_reward = {
+#			country_event = tzn.6
+#		}
+#	
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_the_road_of_plenty
+#		icon = GFX_goal_TZN_the_road_of_plenty
+#
+#		x = -9
+#		y = 1
+#		cost = 5
+#	
+#		relative_position_id = TZN_umoja
+#
+#		mutually_exclusive = { focus = TZN_respect_maketh_man }
+#		mutually_exclusive = { focus = TZN_the_full_yellow_sun }
+#		mutually_exclusive = { focus = TZN_land_of_liberty }
+#		 
+#		prerequisite = { 
+#			focus = TZN_umoja
+#		}
+#
+#		available = {
+#			has_government = mastery
+#		}
+#
+#		completion_reward = {
+#			country_event = tzn.7
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_machine_service
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = -2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_road_of_plenty
+#		 
+#		prerequisite = { 
+#			focus = TZN_the_road_of_plenty
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_machine_service
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_an_agrarian_life
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = -2
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_road_of_plenty
+#		 
+#		prerequisite = { 
+#			focus = TZN_machine_service
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_an_agrarian_life
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_fly_to_the_stars
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 0
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_road_of_plenty
+#		 
+#		prerequisite = { 
+#			focus = TZN_the_road_of_plenty
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_fly_to_the_stars
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_dive_into_the_ocean
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 0
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_road_of_plenty
+#		 
+#		prerequisite = { 
+#			focus = TZN_fly_to_the_stars
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_dive_into_the_ocean
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_mold_nature
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_road_of_plenty
+#		 
+#		prerequisite = { 
+#			focus = TZN_the_road_of_plenty
+#		}
+#
+#		completion_reward = {
+#			custom_effect_tooltip = TZN_mold_nature_tt
+#			hidden_effect = {
+#				every_owned_state = {
+#					limit = {
+#						is_coastal = no
+#					}
+#					decrease_ecobalance = yes
+#				}
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_a_sea_of_green
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 2
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_road_of_plenty
+#		 
+#		prerequisite = { 
+#			focus = TZN_mold_nature
+#		}
+#
+#		completion_reward = {
+#			custom_effect_tooltip = TZN_a_sea_of_green_tt
+#			hidden_effect = {
+#				every_owned_state = {
+#					limit = {
+#						is_coastal = yes
+#					}
+#					decrease_ecobalance = yes
+#				}
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_beneath_an_open_sky
+#		icon = GFX_goal_TZN_beneath_an_open_sky
+#
+#		x = 0
+#		y = 3
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_road_of_plenty
+#		 
+#		prerequisite = { 
+#			focus = TZN_an_agrarian_life
+#		}
+#		
+#		prerequisite = { 
+#			focus = TZN_dive_into_the_ocean
+#		}
+#		
+#		prerequisite = { 
+#			focus = TZN_a_sea_of_green
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_beneath_an_open_sky
+#			}
+#			remove_ideas = {
+#				TZN_dive_into_the_ocean
+#				TZN_machine_service
+#				TZN_an_agrarian_life
+#				TZN_fly_to_the_stars
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_respect_maketh_man
+#		icon = GFX_goal_TZN_respect_maketh_man
+#
+#		x = -3
+#		y = 1
+#		cost = 5
+#	
+#		relative_position_id = TZN_umoja
+#
+#		mutually_exclusive = { focus = TZN_the_road_of_plenty }
+#		mutually_exclusive = { focus = TZN_the_full_yellow_sun }
+#		mutually_exclusive = { focus = TZN_land_of_liberty }
+#
+#		available = {
+#			has_government = purity
+#		}
+#		 
+#		prerequisite = { 
+#			focus = TZN_umoja
+#		}
+#
+#		completion_reward = {
+#			country_event = tzn.8
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_infinite_prosperity
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = -2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_respect_maketh_man
+#		 
+#		prerequisite = { 
+#			focus = TZN_respect_maketh_man
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_infinite_prosperity
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_the_golden_continent
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = -2
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_respect_maketh_man
+#		 
+#		prerequisite = { 
+#			focus = TZN_infinite_prosperity
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_the_golden_continent
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_an_honor_to_serve
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 0
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_respect_maketh_man
+#		 
+#		prerequisite = { 
+#			focus = TZN_respect_maketh_man
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_an_honor_to_serve
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_deep_memory
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 0
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_respect_maketh_man
+#		 
+#		prerequisite = { 
+#			focus = TZN_an_honor_to_serve
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_deep_memory
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_till_the_earth
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_respect_maketh_man
+#		 
+#		prerequisite = { 
+#			focus = TZN_respect_maketh_man
+#		}
+#
+#		completion_reward = {
+#			add_tech_bonus = {
+#				bonus = 0.5
+#				uses = 2
+#				category = industry
+#			}
+#			add_ideas = {
+#				TZN_till_the_earth
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_eradicate_starvation
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 2
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_respect_maketh_man
+#		 
+#		prerequisite = { 
+#			focus = TZN_till_the_earth
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_eradicate_starvation
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_things_come_together
+#		icon = GFX_goal_TZN_things_come_together
+#
+#		x = 0
+#		y = 3
+#		cost = 5
+#		
+#		relative_position_id = TZN_respect_maketh_man
+#		 
+#		prerequisite = { 
+#			focus = TZN_the_golden_continent
+#		}
+#		
+#		prerequisite = { 
+#			focus = TZN_deep_memory
+#		}
+#		
+#		prerequisite = { 
+#			focus = TZN_eradicate_starvation
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_things_come_together
+#			}
+#			remove_ideas = {
+#				TZN_eradicate_starvation
+#				TZN_till_the_earth
+#				TZN_deep_memory
+#				TZN_an_honor_to_serve
+#				TZN_the_golden_continent
+#				TZN_infinite_prosperity
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_the_full_yellow_sun
+#		icon = GFX_goal_TZN_the_full_yellow_sun
+#
+#		x = 3
+#		y = 1
+#		cost = 5
+#	
+#		relative_position_id = TZN_umoja
+#
+#		mutually_exclusive = { focus = TZN_respect_maketh_man }
+#		mutually_exclusive = { focus = TZN_the_road_of_plenty }
+#		mutually_exclusive = { focus = TZN_land_of_liberty }
+#
+#		available = {
+#			has_government = supremacy
+#		}
+#		 
+#		prerequisite = { 
+#			focus = TZN_umoja
+#		}
+#
+#		completion_reward = {
+#			country_event = tzn.9
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_where_we_began
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = -2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_full_yellow_sun
+#		 
+#		prerequisite = { 
+#			focus = TZN_the_full_yellow_sun
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_where_we_began
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_fund_holotheaters
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = -2
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_full_yellow_sun
+#		 
+#		prerequisite = { 
+#			focus = TZN_where_we_began
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_fund_holotheaters
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_who_we_are_now
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 0
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_full_yellow_sun
+#		 
+#		prerequisite = { 
+#			focus = TZN_the_full_yellow_sun
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_who_we_are_now
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_legalize_ai_in_the_workplace
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 0
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_full_yellow_sun
+#		 
+#		prerequisite = { 
+#			focus = TZN_who_we_are_now
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_legalize_ai_in_the_workplace
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_what_we_shall_become
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_full_yellow_sun
+#		 
+#		prerequisite = { 
+#			focus = TZN_the_full_yellow_sun
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_what_we_shall_become
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_the_congo_cosmodrome
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 2
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_full_yellow_sun
+#		 
+#		prerequisite = { 
+#			focus = TZN_what_we_shall_become
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_the_congo_cosmodrome
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_orbital_superstation
+#		icon = GFX_goal_TZN_orbital_superstation
+#
+#		x = 0
+#		y = 3
+#		cost = 5
+#		
+#		relative_position_id = TZN_the_full_yellow_sun
+#		 
+#		prerequisite = { 
+#			focus = TZN_fund_holotheaters
+#		}
+#		
+#		prerequisite = { 
+#			focus = TZN_legalize_ai_in_the_workplace
+#		}
+#		
+#		prerequisite = { 
+#			focus = TZN_the_congo_cosmodrome
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_orbital_superstation
+#			}
+#			remove_ideas = {
+#				TZN_the_congo_cosmodrome
+#				TZN_what_we_shall_become
+#				TZN_legalize_ai_in_the_workplace
+#				TZN_where_we_began
+#				TZN_fund_holotheaters
+#				TZN_who_we_are_now
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_land_of_liberty
+#		icon = GFX_goal_TZN_land_of_liberty
+#
+#		x = 9
+#		y = 1
+#		cost = 5
+#	
+#		relative_position_id = TZN_umoja
+#
+#		mutually_exclusive = { focus = TZN_the_road_of_plenty }
+#		mutually_exclusive = { focus = TZN_the_full_yellow_sun }
+#		mutually_exclusive = { focus = TZN_respect_maketh_man }
+#
+#		available = {
+#			has_government = neutral
+#		}
+#		 
+#		prerequisite = { 
+#			focus = TZN_umoja
+#		}
+#
+#		completion_reward = {
+#			country_event = tzn.10
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_observe_tradition
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = -2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_land_of_liberty
+#		 
+#		prerequisite = { 
+#			focus = TZN_land_of_liberty
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_observe_tradition
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_establish_the_subdivisions
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = -2
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_land_of_liberty
+#		 
+#		prerequisite = { 
+#			focus = TZN_observe_tradition
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_establish_the_subdivisions
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_all_the_nations
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 0
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_land_of_liberty
+#		 
+#		prerequisite = { 
+#			focus = TZN_land_of_liberty
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_all_the_nations
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_merit_in_freedom
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 0
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_land_of_liberty
+#		 
+#		prerequisite = { 
+#			focus = TZN_all_the_nations
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_merit_in_freedom
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_follow_progress
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 2
+#		y = 1
+#		cost = 5
+#		
+#		relative_position_id = TZN_land_of_liberty
+#		 
+#		prerequisite = { 
+#			focus = TZN_land_of_liberty
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_follow_progress
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_a_familiar_home
+#		icon = GFX_goal_TZN_placeholder
+#
+#		x = 2
+#		y = 2
+#		cost = 5
+#		
+#		relative_position_id = TZN_land_of_liberty
+#		 
+#		prerequisite = { 
+#			focus = TZN_follow_progress
+#		}
+#
+#		completion_reward = {
+#			custom_effect_tooltip = TZN_a_familiar_home_tt
+#			hidden_effect = {
+#				every_owned_state = {
+#					decrease_ecobalance = yes
+#				}
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	focus = {
+#		id = TZN_destiny_of_eons
+#		icon = GFX_goal_TZN_destiny_of_eons
+#
+#		x = 0
+#		y = 3
+#		cost = 5
+#		
+#		relative_position_id = TZN_land_of_liberty
+#		 
+#		prerequisite = { 
+#			focus = TZN_establish_the_subdivisions
+#		}
+#		
+#		prerequisite = { 
+#			focus = TZN_merit_in_freedom
+#		}
+#		
+#		prerequisite = { 
+#			focus = TZN_a_familiar_home
+#		}
+#
+#		completion_reward = {
+#			add_ideas = {
+#				TZN_destiny_of_eons
+#			}
+#			remove_ideas = {
+#				TZN_follow_progress
+#				TZN_merit_in_freedom
+#				TZN_all_the_nations
+#				TZN_observe_tradition
+#				TZN_establish_the_subdivisions
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#}
+#

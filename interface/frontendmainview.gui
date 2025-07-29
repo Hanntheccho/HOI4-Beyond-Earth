@@ -1,7 +1,6 @@
 guiTypes = {
 	containerWindowType = {
 		name ="frontend_background"
-		position = { x=0 y =0 }	
 		size = { 
 			width = 100%
 			height = 100%
@@ -49,48 +48,161 @@ guiTypes = {
 				alwaystransparent = yes
 			}		
 		}
-
-		iconType = {
-			name = "main_menu_icon"
-			position = { x = 16 y = 10 }
-			spriteType ="GFX_main_menu_icon"
-			orientation = CENTER
-			centerposition = yes
-		}
-
-		instantTextBoxType = {
-			name = "disclaimer"
-			position = { x = 10 y = -208 }
-			textureFile = ""
-			font = "Arial16"
-			text = beta_disclaimer_text
-			maxWidth = 410
-			maxHeight = 100
-			alwaystransparent = yes
-			orientation = LOWER_LEFT
-		}
 	}
 
-	### MAIN MENU PANEL (upperleft)
 	containerWindowType = {
-		name  ="mainmenu_panel_upperleft"
-		position = { x=0 y =0 }
-		show_position = { x=0 y = 0 }
-		#animation_type = decelerated
-		#animation_time = 1000
-		size = { width = 256 height = 768}
-		Orientation = CENTER
-		Origo = center
+		name = "owned_dlc_item"
+		size = { width = 50 height = 50 }
+		
+		buttonType =
+		{
+			position = { x = -230 y = 0 }
+			name ="dlc_button"
+			spriteType = "GFX_frontend_banner_dlc018"
+		}
 		
 		iconType = {
-			name ="frontend_game_logo"
-			spriteType = "GFX_frontend_game_logo"
-			position = { x= 120 y = 120}
-			centerposition = yes
-		}		
+			name = "glowup"
+			position = { x = -50 y = -21 }
+			spriteType = "GFX_spirit_glow"
+			scale = 0.8
+			#hide = yes
+		}
+		
+		buttonType = {
+			name = "owned_tick"
+			spriteType = "GFX_BPT_area_defense_setting_tick"
+			position = { x = -6 y = 1 }
+			Orientation = center_left
+			scale = 0.56
+			alwaysTransparent = yes
+			#hide = yes
+		}
+		
+		buttonType = {
+			name = "enabled_tick"
+			spriteType = "GFX_general_check"
+			position = { x = 28 y = 24 }
+			Orientation = center_left
+			alwaysTransparent = yes
+		}
+		
 	}
 	
-	### MAIN MENU PANEL (upperright)
+	containerWindowType = {
+		name = "unowned_dlc_item"
+		size = { width = 50 height = 50 }
+		
+		buttonType =
+		{
+			position = { x = -230 y = 0 }
+			name ="dlc_button"
+			spriteType = "GFX_frontend_banner_dlc018"
+		}
+		
+		buttonType = {
+			name = "owned_tick"
+			spriteType = "GFX_BPT_area_defense_setting_tick"
+			position = { x = -6 y = 1 }
+			Orientation = center_left
+			scale = 0.56
+			alwaysTransparent = yes
+			#enabled = no
+		}
+		
+		buttonType = {
+			name = "enabled_tick"
+			spriteType = "GFX_general_check"
+			position = { x = 28 y = 24 }
+			Orientation = center_left
+			alwaysTransparent = yes
+		}
+		
+	}
+
+	### MAIN MENU PANEL (DLC Ownership) 
+	containerWindowType = {
+		name  ="mainmenu_dlc_ownership"
+		position = { x=-1000 y =0 }
+		size = { width = 370 height = 582}
+		Orientation = lower_left
+		origo = lower_left
+		
+		gridBoxType = {
+			name = "potential_dlc_list"
+			position = { x = 0 y = 0}
+			size = { width = 50 height = 300 }
+			#Orientation = upper_left
+			slotsize = {width=50 height=51 }
+			max_slots_vertical = 1
+			format = "RIGHT"
+		}
+		
+	}
+
+	containerWindowType = {
+		name  ="mainmenu_panel_upperleft"
+		Orientation = CENTER
+		Origo = center
+		iconType = {
+			name ="frontend_game_logo"
+			spriteType = "GFX_frontend_mod_logo"
+			position = { x=0 y=-260 }
+			centerposition = yes
+		}	
+		containerWindowType = {
+			name ="mod_social_buttons"
+			Orientation = CENTER
+			clipping = no
+			position = { x = 0 y = 240 }
+			ButtonType = {
+				name = "discord_button"
+				position = { x = -225 y = 0 }
+				quadTextureSprite ="GFX_discord_mod"
+				clicksound = click_default
+				oversound = ui_menu_over
+				orientation = CENTER
+				web_link = "https://discord.gg/BZsdsKrvFK"
+			}
+			ButtonType = {
+				name = "reddit_button"
+				position = { x = -125 y = 0 }
+				quadTextureSprite ="GFX_reddit_mod"
+				clicksound = click_default
+				oversound = ui_menu_over
+				orientation = CENTER
+				web_link = "https://www.reddit.com/r/HOI4BeyondEarth/"
+			}
+			ButtonType = {
+				name = "patreon_button"
+				position = { x = 75 y = 0 }
+				quadTextureSprite ="GFX_patreon_mod"
+				clicksound = click_default
+				oversound = ui_menu_over
+				orientation = CENTER
+				web_link = "https://www.patreon.com/HOI4BeyondEarth"
+			}
+			ButtonType = {
+				name = "paypal_button"
+				position = { x = 175 y = 0 }
+				quadTextureSprite ="GFX_paypal_mod"	
+				clicksound = click_default
+				oversound = ui_menu_over
+				orientation = CENTER
+				web_link = "https://www.paypal.com/donate/?hosted_button_id=AEVSNNM7G35VE"
+			}
+			ButtonType = {
+				name = "tvtropes_button"
+				position = { x = -25 y = 0 }
+				quadTextureSprite ="GFX_tvtropes_mod"
+				clicksound = click_default
+				oversound = ui_menu_over
+				orientation = CENTER
+				web_link = "https://tvtropes.org/pmwiki/pmwiki.php/VideoGame/BeyondEarth"
+			}
+		}	
+	}
+	
 	containerWindowType = {
 		name ="mainmenu_panel_upperright"
 		position = { x=0 y =14 }
@@ -106,320 +218,205 @@ guiTypes = {
 			quadTextureSprite ="achievements"
 			pdx_tooltip = "MENU_ACHIEVEMENTS"
 		}		
-		
 	}		
 
-	### SINGLE PLAYER MENU
 	containerWindowType = {
 		name = "mainmenu_single_player"
-		position = { x=39 y = 135}
-		size = { width = 400 height = 395}
+		size = { width = 260 height = 350}
 		Orientation = CENTER
-		Origo = center	
+		Origo = center
 		clipping = no
-		
+		background = {
+			quadTextureSprite = "GFX_tiled_black_corner"
+		}
 		ButtonType = {
 			name = "sp_continue_button"
-			position = { x = 16 y = 18 }
-			quadTextureSprite ="GFX_main_lobby_button_new"	
-			buttonText = "FE_CONTINUE"
+			position = { x = -100 y = 30 }
+			orientation = CENTER_UP
+			size = { x = 200 y = 40 }
+			quadTextureSprite ="GFX_tiling_button"	
+			buttonText = "CONTINUE"
 			buttonFont = "Arialcap"
 			clicksound = click_default
 			oversound = ui_menu_over
-		}
-		
+		}		
 		iconType = {
 			name = "sp_continue_flag_left"
 			quadTextureSprite ="GFX_flag_small2_not_masked"
 			position = { x= 35 y = 10000 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
-		}
-		
+		}		
 		iconType = {
 			name = "sp_continue_flag_left_overlay"
 			quadTextureSprite ="GFX_flag_small2_not_masked"
 			position = { x= 35 y = 10000 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
-		}
-		
+		}		
 		iconType = {
 			name = "sp_continue_flag_right"
 			quadTextureSprite ="GFX_flag_small2_not_masked"
 			position = { x= 245 y = 10000 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
-		}
-		
+		}		
 		iconType = {
 			name = "sp_continue_flag_right_overlay"
 			quadTextureSprite ="GFX_flag_small2_not_masked"
 			position = { x= 245 y = 10000 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
-		}
-		
+		}		
 		ButtonType = {
 			name = "sp_new_button"
-			position = { x = 16 y = 58 }
-			quadTextureSprite ="GFX_main_lobby_button_new"	
-			buttonText = "FE_NEW"
+			position = { x = -100 y = 80 }
+			orientation = CENTER_UP
+			size = { x = 200 y = 40 }
+			quadTextureSprite ="GFX_tiling_button"	
+			buttonText = "NEW GAME"
 			buttonFont = "Arialcap"
 			clicksound = click_default
 			oversound = ui_menu_over
-		}
-		
+		}		
 		ButtonType = {
 			name = "sp_load_button"
-			position = {  x = 16 y = 98 }
-			quadTextureSprite ="GFX_main_lobby_button_new"	
-			buttonText = "MENU_BAR_LOAD"
+			position = { x = -100 y = 130 }
+			orientation = CENTER_UP
+			size = { x = 200 y = 40 }
+			quadTextureSprite ="GFX_tiling_button"	
+			buttonText = "LOAD GAME"
 			buttonFont = "Arialcap"
 			clicksound = click_default
 			oversound = ui_menu_over
-		}
-		
+		}		
 		ButtonType = {
 			name = "sp_tutorial_button"
-			position = { x = 16 y = 10000}
-			quadTextureSprite ="GFX_main_lobby_button_new"	
-			buttonText = "FE_TUTORIAL"
+			position = { x = 10000 y = 180 }
+			orientation = CENTER_UP
+			size = { x = 200 y = 40 }
+			quadTextureSprite ="GFX_tiling_button"	
+			buttonText = "TUTORIAL"
 			buttonFont = "Arialcap"
 			clicksound = click_default
 			oversound = ui_menu_over
-		}
-		
+		}		
 		ButtonType = {
 			name = "sp_back_button"
-			position = { x = 16 y = 218 }
-			quadTextureSprite ="GFX_main_lobby_button_new"	
+			position = { x = -100 y = 280 }
+			orientation = CENTER_UP
+			size = { x = 200 y = 40 }
+			quadTextureSprite ="GFX_tiling_button"	
 			buttonText = "BACK"
 			buttonFont = "Arialcap"
 			clicksound = click_close
 			oversound = ui_menu_over
 			shortcut = "ESCAPE"
 		}
-
-		ButtonType = {
-			name = "discord_button2"
-			position = { x = -243 y = 100 }
-			quadTextureSprite ="GFX_discord_mod"	
-			buttonText = ""
-			buttonFont = ""
-			clicksound = click_default
-			oversound = ui_menu_over
-			orientation = CENTER
-			web_link = "https://discord.gg/BZsdsKrvFK"
-		}
-		ButtonType = {
-			name = "reddit_button2"
-			position = { x = -143 y = 100 }
-			quadTextureSprite ="GFX_reddit_mod"	
-			buttonText = ""
-			buttonFont = ""
-			clicksound = click_default
-			oversound = ui_menu_over
-			orientation = CENTER
-			web_link = "https://www.reddit.com/r/HOI4BeyondEarth/"
-		}
-		ButtonType = {
-			name = "patreon_button2"
-			position = { x = 57 y = 100 }
-			quadTextureSprite ="GFX_patreon_mod"
-			buttonText = ""
-			buttonFont = ""
-			clicksound = click_default
-			oversound = ui_menu_over
-			orientation = CENTER
-			web_link = "https://www.patreon.com/HOI4BeyondEarth"
-		}
-		ButtonType = {
-			name = "paypal_button2"
-			position = { x = -43 y = 100 }
-			quadTextureSprite ="GFX_paypal_mod"	
-			buttonText = ""
-			buttonFont = ""
-			clicksound = click_default
-			oversound = ui_menu_over
-			orientation = CENTER
-			web_link = "https://www.paypal.com/donate/?hosted_button_id=AEVSNNM7G35VE"
-		}
 	}
 
-	### MAIN MENU PANEL (bottom)
 	containerWindowType = {
 		name ="mainmenu_panel_bottom"
-		position = { x= 39 y = 135 }
-		size = { width = 400 height = 395}
+		size = { width = 260 height = 350}
 		Orientation = CENTER
 		Origo = center
 		clipping = no
-
+		background = {
+			quadTextureSprite = "GFX_tiled_black_corner"
+		}		
 		positionType = {
 			name = "subscription_size"
-			position = { x = 400 y = 395 }
-		}
-
-		containerWindowType = {
-			name = "black_bg"
-			size = { width = 320 height = 80 }
-			position = {
-				x = 0
-				y = -93
-			}
-			background = {
-				name = "Background"
-				quadTextureSprite ="GFX_tiled_black"
-			}
-		}
-
-		instantTextBoxType = {
-			name ="nation_focus_tree"
-			position = { x = -190 y = -278 }
-			textureFile = ""
-			font = "Arialsmallest"
-			text = nations_with_focus_tree
-			format = centre
-			maxWidth = 300
-			maxHeight = 20	
-			orientation = CENTER
-		}
-			
+			position = { x = 260 y = 350 }
+		}			
 		ButtonType = {
 			name = "single_player_button"
-			position = { x = 16 y = 18 } #18
-			quadTextureSprite ="GFX_main_lobby_button_new"
+			position = { x = -100 y = 30 }
+			orientation = CENTER_UP
+			size = { x = 200 y = 40 }
+			quadTextureSprite ="GFX_tiling_button"
 			font = "Arialcap"			
-			text = "FE_SINGLE_PLAYER"				
+			text = "SINGLEPLAYER"				
 			clicksound = click_default			
 			oversound = ui_menu_over
 		}
-
 		ButtonType = {
 			name = "multi_player_button"
-			position = { x = 16 y = 58}
-			quadTextureSprite ="GFX_main_lobby_button_new"
+			position = { x = 10000 y = 80 }
+			orientation = CENTER_UP
+			size = { x = 200 y = 40 }
+			quadTextureSprite ="GFX_tiling_button"
 			font = "Arialcap"			
-			text = "FE_MULTI_PLAYER"			
+			text = "MULTIPLAYER"			
 			clicksound = click_default
 			oversound = ui_menu_over
 		}
-
-		@warn_icon_x = 280
 		iconType = {
 			name = "single_player_button_warn"
-			position = { x = @warn_icon_x y = 22 }
+			position = { x = 1000 y = 22 }
 			spriteType = "GFX_missing_dlc_warning_sign"
 		}
-
 		iconType = {
 			name = "main_menu_div_line"
-			position = { x = -326 y = 71 }
+			position = { x = -286 y = 199 }
 			spriteType ="GFX_main_lobby_divider"
 			orientation = CENTER
 		}
-
 		instantTextBoxType = {
 			name ="version_label"
-			position = { x = 13 y = 265 }
+			position = { x = -150 y = 195 }
 			textureFile = ""
 			font = "Arialsmallest"
 			text = "ALPHA"	
+			orientation = CENTER
 			format = centre
 			maxWidth = 300
 			maxHeight = 20	
 		}
-
 		positionType = {
 			name = "version_label_subscription_position"
-			position = { x = 13 y = 265 }
-		}
-		
+			position = { x = -150 y = 195 }
+		}		
 		ButtonType = {
 			name = "settings_button"
-			position = { x = 16 y = 98 }
-			quadTextureSprite ="GFX_main_lobby_button_new"	
+			position = { x = -100 y = 130 }
+			orientation = CENTER_UP
+			size = { x = 200 y = 40 }
+			quadTextureSprite ="GFX_tiling_button"	
 			buttonText = "OPTIONS"
 			buttonFont = "Arialcap"
 			clicksound = click_default
 			oversound = ui_menu_over
-		}
-		
-
+		}		
 		ButtonType = {
 			name = "credits_button"
-			position = {  x = 10000 y = 138 }
-			quadTextureSprite ="GFX_main_lobby_button_new"	
-			buttonText = "FE_CREDITS"
+			position = { x = -100 y = 180 }
+			orientation = CENTER_UP
+			size = { x = 200 y = 40 }
+			quadTextureSprite ="GFX_tiling_button"	
+			buttonText = "CREDITS"
 			buttonFont = "Arialcap"
 			clicksound = click_default
 			oversound = ui_menu_over
-		}
-		
+		}		
 		ButtonType = {
 			name = "nudge_button"
-			position = { x = 16 y = 178 }
-			quadTextureSprite ="GFX_main_lobby_button_new"	
-			buttonText = "[NUDGE]"
+			position = { x = -100 y = 230 }
+			orientation = CENTER_UP
+			size = { x = 200 y = 40 }
+			quadTextureSprite ="GFX_tiling_button"	
+			buttonText = "NUDGE"
 			buttonFont = "Arialcap"
 		}
-		
-
 		ButtonType = {
 			name = "exit_button"
-			position = { x = 16 y = 218 }
-			quadTextureSprite ="GFX_main_lobby_button_new"
+			position = { x = -100 y = 280 }
+			orientation = CENTER_UP
+			size = { x = 200 y = 40 }
+			quadTextureSprite ="GFX_tiling_button"
 			font = "Arialcap"			
 			text = "FE_EXIT"			
 			clicksound = click_default
 			oversound = ui_menu_over
-			
-		}
-
-		ButtonType = {
-			name = "discord_button"
-			position = { x = -243 y = 100 }
-			quadTextureSprite ="GFX_discord_mod"	
-			buttonText = ""
-			buttonFont = ""
-			clicksound = click_default
-			oversound = ui_menu_over
-			orientation = CENTER
-			web_link = "https://discord.gg/BZsdsKrvFK"
-		}
-		ButtonType = {
-			name = "reddit_button"
-			position = { x = -143 y = 100 }
-			quadTextureSprite ="GFX_reddit_mod"	
-			buttonText = ""
-			buttonFont = ""
-			clicksound = click_default
-			oversound = ui_menu_over
-			orientation = CENTER
-			web_link = "https://www.reddit.com/r/HOI4BeyondEarth/"
-		}
-		ButtonType = {
-			name = "patreon_button"
-			position = { x = 57 y = 100 }
-			quadTextureSprite ="GFX_patreon_mod"
-			buttonText = ""
-			buttonFont = ""
-			clicksound = click_default
-			oversound = ui_menu_over
-			orientation = CENTER
-			web_link = "https://www.patreon.com/HOI4BeyondEarth"
-		}
-		ButtonType = {
-			name = "paypal_button"
-			position = { x = -43 y = 100 }
-			quadTextureSprite ="GFX_paypal_mod"	
-			buttonText = ""
-			buttonFont = ""
-			clicksound = click_default
-			oversound = ui_menu_over
-			orientation = CENTER
-			web_link = "https://www.paypal.com/donate/?hosted_button_id=AEVSNNM7G35VE"
 		}
 	}
 
