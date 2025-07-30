@@ -1,61 +1,67 @@
 spriteTypes = {	
 
 ###############################
-########## VANILLA ############
+########## BUTTONS ############
 ###############################
 
 	spriteType = {
 		name = "GFX_close"
-		texturefile = "gfx/interface/close.dds"
+		texturefile = "gfx/interface/buttons/close.dds"
     }
+	spriteType = {
+		name = "GFX_checkbox"
+		texturefile = "gfx/interface/buttons/checkbox.dds"
+		noOfFrames = 2
+    }
+	corneredTileSpriteType = {
+		name = "GFX_tiling_button"
+		size= { x=46 y=23 }
+		textureFile = "gfx/interface/buttons/tiling_button.dds"
+		borderSize = { x=8 y=8 }
+		tilingCenter = yes
+	}
+
+###############################
+######## BACKGROUNDS ##########
+###############################
+
+	corneredTileSpriteType = {
+		name = "GFX_tiled_null"
+		size= { x=1 y=1 }
+		textureFile = "gfx/interface/tiles/tiled_null.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	corneredTileSpriteType = {
+		name = "GFX_tiled_black"
+		size= { x=1 y=1 }
+		textureFile = "gfx/interface/tiles/tiled_black.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	corneredTileSpriteType = {
+		name = "GFX_tiled_black_corner"
+		size= { x=72 y=72 }
+		textureFile = "gfx/interface/tiles/tiled_black_corner.dds"
+		borderSize = { x=26 y=26 }
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	corneredTileSpriteType = {
+		name = "GFX_tiled_black_corner_darker"
+		size= { x=72 y=72 }
+		textureFile = "gfx/interface/tiles/tiled_black_corner_darker.dds"
+		borderSize = { x=26 y=26 }
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+
+###############################
+########## VANILLA ############
+###############################
 
 	spriteType = {
 		name = "GFX_thumbnail_bg"
 		texturefile = "gfx/interface/thumbnail.dds"
     }
-
-	spriteType = {
-		name = "GFX_frontend_mod_logo"
-		texturefile = "gfx/interface/logo_game.dds"
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/logo_game.dds"
-			animationtexturefile = "gfx/interface/logo_game.dds" 	# <- the animated file
-			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = yes			# yes or no ;)
-			animationtime = 5.0			# in seconds
-			animationdelay = 2.0			# in seconds
-			animationblendmode = "add"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}	
-		legacy_lazy_load = no
-	}
-
-	corneredTileSpriteType = {
-		name = "GFX_tiling_button"
-		size= { x=148 y=36 }
-		textureFile = "gfx/interface/buttons/tiling_button.dds"
-		borderSize = { x=17 y=17 }
-		tilingCenter = yes
-	}
-	corneredTileSpriteType = {
-		name = "GFX_tiling_button_2frames"
-		size= { x=148 y=36 }
-		textureFile = "gfx/interface/buttons/tiling_button_2frames.dds"
-		borderSize = { x=10 y=10 }
-		tilingCenter = yes
-		noofframes = 2
-	}
-	corneredTileSpriteType = {
-		name = "GFX_tiling_button_3frames"
-		size= { x=148 y=36 }
-		textureFile = "gfx/interface/buttons/tiling_button_3frames.dds"
-		borderSize = { x=10 y=10 }
-		tilingCenter = yes
-		noofframes = 3
-	}
 
 	spriteType = {
 		name = "GFX_main_menu_bg"
@@ -80,31 +86,6 @@ spriteTypes = {
 		animation = {
 			animationmaskfile = "gfx/interface/flags_frontend.dds"
 			animationtexturefile = "gfx/interface/flags_frontend.dds" 	# <- the animated file
-			animationrotation = 0.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = yes			# yes or no ;)
-			animationtime = 300.0				# in seconds
-			animationdelay = 0			# in seconds
-			animationblendmode = "add"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}	
-		legacy_lazy_load = no
-	}
-
-	spriteType = {
-		name = "GFX_bookmark_bg"
-		texturefile = "gfx/interface/bookmark_bg.dds"
-	}
-
-	spriteType = {
-		name = "GFX_sponsor_frontend"
-		texturefile = "gfx/interface/sponsor_frontend.dds"
-		alwaystransparent = yes
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/sponsor_frontend.dds"
-			animationtexturefile = "gfx/interface/sponsor_frontend.dds" 	# <- the animated file
 			animationrotation = 0.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = yes			# yes or no ;)
 			animationtime = 300.0				# in seconds
@@ -206,24 +187,6 @@ spriteTypes = {
 		name = "GFX_tiled_pol_bg"
 		texturefile = "gfx/interface/tiled_pol_bg.dds"
 		size = { x=1 y=1 }
-		effectFile = "gfx/FX/buttonstate.shader"
-		alwaystransparent = yes
-	}
-	corneredTileSpriteType = {
-		name = "GFX_tiled_detail_bg"
-		texturefile = "gfx/interface/tiled_detail_bg.dds"
-		borderSize = { x=300 y=0 }
-		size = { x=1920 y=1080 }
-		tilingCenter = yes
-		effectFile = "gfx/FX/buttonstate.shader"
-		alwaystransparent = yes
-	}
-	corneredTileSpriteType = {
-		name = "GFX_tiled_detail_bg_end"
-		texturefile = "gfx/interface/tiled_detail_bg_end.dds"
-		borderSize = { x=300 y=0 }
-		size = { x=1920 y=1080 }
-		tilingCenter = yes
 		effectFile = "gfx/FX/buttonstate.shader"
 		alwaystransparent = yes
 	}
@@ -736,15 +699,6 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_armyoverview_buttons_bg_over"
-		texturefile = "gfx/interface/topbar/armyoverview_buttons_bg_over.dds"
-	}
-	spriteType = {
-		name = "GFX_armyoverview_buttons_bg_bottom"
-		texturefile = "gfx/interface/topbar/armyoverview_buttons_bg_bottom.dds"
-	}
-
-	spriteType = {
 		name = "GFX_mm_topbar_buttons"
 		texturefile = "gfx/interface/mm_topbar_buttons.dds"
 		noOfFrames = 2
@@ -763,6 +717,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_discord_mod"
 		texturefile = "gfx/interface/discord_mod.dds"
+	}
+	spriteType = {
+		name = "GFX_steam_mod"
+		texturefile = "gfx/interface/steam_mod.dds"
 	}
 	spriteType = {
 		name = "GFX_reddit_mod"
@@ -857,56 +815,6 @@ spriteTypes = {
 		pause_on_loop = 0.0
 		alwaystransparent = no
 		#effectFile = "gfx/FX/buttonstate_blendframes.lua"
-	}
-
-	corneredTileSpriteType = {
-		name = "GFX_frontend_bg_tv"
-		texturefile = "gfx/interface/frontend_screen_tv.dds"
-		borderSize = { x=0 y=0 }
-		size = { x=96 y=96 }
-		tilingCenter = yes
-		effectFile = "gfx/FX/buttonstate.shader"
-	}
-	corneredTileSpriteType = {
-		name = "GFX_frontend_bg_mod"
-		texturefile = "gfx/interface/frontend_screen.dds"
-		borderSize = { x=0 y=0 }
-		size = { x=1920 y=1080 }
-		tilingCenter = no
-		effectFile = "gfx/FX/buttonstate.shader"
-	}
-	corneredTileSpriteType = {
-		name = "GFX_frontend_bg_mod_red"
-		texturefile = "gfx/interface/frontend_screen_red.dds"
-		borderSize = { x=0 y=0 }
-		size = { x=96 y=96 }
-		tilingCenter = yes
-		effectFile = "gfx/FX/buttonstate.shader"
-	}
-	corneredTileSpriteType = {
-		name = "GFX_frontend_bg_mod_end"
-		texturefile = "gfx/interface/frontend_screen_end.dds"
-		borderSize = { x=0 y=0 }
-		size = { x=1 y=1 }
-		tilingCenter = no
-		effectFile = "gfx/FX/buttonstate.shader"
-	}
-	corneredTileSpriteType = {
-		name = "GFX_frontend_bg_corners"
-		texturefile = "gfx/interface/frontend_screen_corners.dds"
-		borderSize = { x=0 y=0 }
-		size = { x=1 y=1 }
-		tilingCenter = no
-		effectFile = "gfx/FX/buttonstate.shader"
-	}
-
-	spriteType = {
-		name = "GFX_frontend_upper_left_corner"
-		texturefile = "gfx/interface/frontend_upper_left_corner.dds"
-	}
-	spriteType = {
-		name = "GFX_frontend_lower_right_corner"
-		texturefile = "gfx/interface/frontend_lower_right_corner.dds"
 	}
 
 	spriteType = {
@@ -1010,10 +918,6 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_interesting_countries_button"
-		texturefile = "gfx/interface/interesting_countries_button.dds"
-	}
-	spriteType = {
 		name = "GFX_cheats_button"
 		texturefile = "gfx/interface/cheats_button.dds"
 	}
@@ -1038,12 +942,6 @@ spriteTypes = {
 		name = "GFX_header_bg_mod"
 		texturefile = "gfx/interface/header_bg_mod.dds"
 		alwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_war_diplo_icon"
-		texturefile = "gfx/interface/war_diplo_icon.dds"
-		noOfFrames = 2
 	}
 
 	spriteType = {
@@ -1100,34 +998,7 @@ spriteTypes = {
 		borderSize = { x=0 y=0 }
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}
-	corneredTileSpriteType = {
-		name = "GFX_tiled_null"
-		size= { x=1 y=1 }
-		textureFile = "gfx/interface/tiles/tiled_null.dds"
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
-	corneredTileSpriteType = {
-		name = "GFX_tiled_black"
-		size= { x=1 y=1 }
-		textureFile = "gfx/interface/tiles/tiled_black.dds"
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
-	corneredTileSpriteType = {
-		name = "GFX_tiled_black_corner"
-		size= { x=72 y=72 }
-		textureFile = "gfx/interface/tiles/tiled_black_corner.dds"
-		borderSize = { x=23 y=23 }
-		tilingCenter = yes
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
-	corneredTileSpriteType = {
-		name = "GFX_tiled_black_corner_darker"
-		size= { x=72 y=72 }
-		textureFile = "gfx/interface/tiles/tiled_black_corner_darker.dds"
-		borderSize = { x=23 y=23 }
-		tilingCenter = yes
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
+
 	corneredTileSpriteType = {
 		name = "GFX_tiled_side_mod"
 		size= { x=544 y=946 }

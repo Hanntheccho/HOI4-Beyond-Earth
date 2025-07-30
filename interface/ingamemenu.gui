@@ -5,7 +5,6 @@ guiTypes = {
 	######### MENU  ###################################
 	containerWindowType = {
 		name = "ingamemenu"
-		position = { x = 0 y = 0 }	
 		size = { width = 320 height = 350 }
 		Orientation = center
 		Origo = center		
@@ -15,7 +14,24 @@ guiTypes = {
 		clipping = no
 		background = {
 			quadTextureSprite ="GFX_tiled_black_corner"
-		}		
+		}	
+		instantTextBoxType = {
+			name ="detail"
+			position = { x = -160 y = 10 }
+			textureFile = ""
+			font = "Arialsmallest"
+			text = "GAME.START.OFFLINE_LOBBY"
+			maxWidth = 320
+			orientation = CENTER_UP
+			format = center
+		}
+		containerWindowType = {
+			name ="bg"
+			size = { width=100%% height=100%% }
+			background = {
+				quadTextureSprite = "GFX_tiled_black_corner"
+			}
+		}	
 		buttonType = {
 			name = "menu_close_button"
 			position = { x = @button_x_pos y = 30 }
@@ -63,33 +79,19 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "menu_playthrough_stats_button"
-			position = { x = 10000 y = 0}
-			quadTextureSprite ="GFX_main_lobby_button"	
-			buttonText = "MENU_BAR_PLAYTHROUGH_STATS"
-			buttonFont = "hoi_24header"
-			clicksound = click_default
-			oversound = ui_menu_over
+			quadTextureSprite ="GFX_main_lobby_button"
+			hide = yes
 		}		
 		buttonType = {
 			name = "menu_wiki_button"
-			position = { x = 10000 y = 20 }
-			orientation = CENTER_DOWN
 			quadTextureSprite ="GFX_discord_mod"
-			clicksound = click_default
-			oversound = ui_menu_over
-			web_link = "https://discord.gg/BZsdsKrvFK"
-		}
-		iconType = {
-			name = "main_menu_div_line"
-			position = { x = -286 y = 199 }
-			spriteType ="GFX_main_lobby_divider"
-			orientation = CENTER
+			hide = yes
 		}
 		instantTextBoxType = {
 			name ="version_label"
 			position = { x = -150 y = 195 }
 			textureFile = ""
-			font = "Arialsmallest"
+			font = "Arialsmallestcap"
 			text = "Beyond Earth v0.2.0 (HOI4 v1.16.9)"	
 			orientation = CENTER
 			format = centre
@@ -103,7 +105,7 @@ guiTypes = {
 			position = { x = 0 y = 240 }
 			ButtonType = {
 				name = "discord_button"
-				position = { x = -225 y = 0 }
+				position = { x = -275 y = 0 }
 				quadTextureSprite ="GFX_discord_mod"
 				clicksound = click_default
 				oversound = ui_menu_over
@@ -111,8 +113,17 @@ guiTypes = {
 				web_link = "https://discord.gg/BZsdsKrvFK"
 			}
 			ButtonType = {
+				name = "steam_button"
+				position = { x = -175 y = 0 }
+				quadTextureSprite ="GFX_steam_mod"
+				clicksound = click_default
+				oversound = ui_menu_over
+				orientation = CENTER
+				web_link = "https://steamcommunity.com/sharedfiles/filedetails/?id=3106762916"
+			}
+			ButtonType = {
 				name = "reddit_button"
-				position = { x = -125 y = 0 }
+				position = { x = -75 y = 0 }
 				quadTextureSprite ="GFX_reddit_mod"
 				clicksound = click_default
 				oversound = ui_menu_over
@@ -120,8 +131,17 @@ guiTypes = {
 				web_link = "https://www.reddit.com/r/HOI4BeyondEarth/"
 			}
 			ButtonType = {
+				name = "tvtropes_button"
+				position = { x = 25 y = 0 }
+				quadTextureSprite ="GFX_tvtropes_mod"
+				clicksound = click_default
+				oversound = ui_menu_over
+				orientation = CENTER
+				web_link = "https://tvtropes.org/pmwiki/pmwiki.php/VideoGame/BeyondEarth"
+			}
+			ButtonType = {
 				name = "patreon_button"
-				position = { x = 75 y = 0 }
+				position = { x = 125 y = 0 }
 				quadTextureSprite ="GFX_patreon_mod"
 				clicksound = click_default
 				oversound = ui_menu_over
@@ -130,27 +150,18 @@ guiTypes = {
 			}
 			ButtonType = {
 				name = "paypal_button"
-				position = { x = 175 y = 0 }
+				position = { x = 225 y = 0 }
 				quadTextureSprite ="GFX_paypal_mod"	
 				clicksound = click_default
 				oversound = ui_menu_over
 				orientation = CENTER
 				web_link = "https://www.paypal.com/donate/?hosted_button_id=AEVSNNM7G35VE"
 			}
-			ButtonType = {
-				name = "tvtropes_button"
-				position = { x = -25 y = 0 }
-				quadTextureSprite ="GFX_tvtropes_mod"
-				clicksound = click_default
-				oversound = ui_menu_over
-				orientation = CENTER
-				web_link = "https://tvtropes.org/pmwiki/pmwiki.php/VideoGame/BeyondEarth"
-			}
 		}			
 		buttonType = {
 			name = "menu_resign_button"
-			position = { x = @button_x_pos y = -70 }
-			orientation = CENTER_DOWN
+			position = { x = @button_x_pos y = 230 }
+			orientation = CENTER_UP
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"
 			buttonText = "EXIT TO MENU"
@@ -160,11 +171,11 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "menu_quit_button"
-			position = { x = @button_x_pos y = -120 }
-			orientation = CENTER_DOWN
+			position = { x = @button_x_pos y = 280 }
+			orientation = CENTER_UP
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"
-			buttonText = "EXIT"
+			buttonText = "EXIT GAME"
 			buttonFont = "Arial"
 			clicksound = click_default
 			oversound = ui_menu_over

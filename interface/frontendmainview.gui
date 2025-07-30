@@ -1,6 +1,7 @@
 @button_width = 260
 @button_height = 40
 @button_x_pos = -130
+@button_font = "Arialcap"
 guiTypes = {
 	containerWindowType = {
 		name ="frontend_background"
@@ -18,33 +19,11 @@ guiTypes = {
 			orientation = CENTER
 			centerposition = yes
 		}
-		iconType = {
-			name ="mod_logo"
-			spriteType = "GFX_frontend_mod_logo"
-			position = { x=0 y=-260 }
-			centerposition = yes
-			orientation = CENTER
-		}
 		containerWindowType = {
-			name = "tiled_detail"
-			size = { width = 100%% height = 100%% }
+			name ="bg"
+			size = { width=100%% height=100%% }
 			background = {
-				quadTextureSprite ="GFX_tiled_detail_bg"
-			}
-		}		
-		containerWindowType = {
-			name = "random_frontend_bg_mod8"
-			size = { width=100% height =100%}
-			background = {
-				quadTextureSprite ="GFX_frontend_bg_tv"
-				alwaystransparent = yes
-			}		
-			background = {
-				quadTextureSprite ="GFX_frontend_bg_mod"
-				alwaystransparent = yes
-			}
-			background = {
-				quadTextureSprite ="GFX_frontend_bg_corners"
+				quadTextureSprite = "GFX_tiled_black"
 				alwaystransparent = yes
 			}
 		}
@@ -142,8 +121,12 @@ guiTypes = {
 
 	containerWindowType = {
 		name  ="mainmenu_panel_upperleft"
+		size = {
+			width = 100%%
+			height = 100%%
+		}
 		Orientation = CENTER
-		Origo = center	
+		Origo = center
 		containerWindowType = {
 			name ="mod_social_buttons"
 			Orientation = CENTER
@@ -151,7 +134,7 @@ guiTypes = {
 			position = { x = 0 y = 240 }
 			ButtonType = {
 				name = "discord_button"
-				position = { x = -225 y = 0 }
+				position = { x = -275 y = 0 }
 				quadTextureSprite ="GFX_discord_mod"
 				clicksound = click_default
 				oversound = ui_menu_over
@@ -159,8 +142,17 @@ guiTypes = {
 				web_link = "https://discord.gg/BZsdsKrvFK"
 			}
 			ButtonType = {
+				name = "steam_button"
+				position = { x = -175 y = 0 }
+				quadTextureSprite ="GFX_steam_mod"
+				clicksound = click_default
+				oversound = ui_menu_over
+				orientation = CENTER
+				web_link = "https://steamcommunity.com/sharedfiles/filedetails/?id=3106762916"
+			}
+			ButtonType = {
 				name = "reddit_button"
-				position = { x = -125 y = 0 }
+				position = { x = -75 y = 0 }
 				quadTextureSprite ="GFX_reddit_mod"
 				clicksound = click_default
 				oversound = ui_menu_over
@@ -168,8 +160,17 @@ guiTypes = {
 				web_link = "https://www.reddit.com/r/HOI4BeyondEarth/"
 			}
 			ButtonType = {
+				name = "tvtropes_button"
+				position = { x = 25 y = 0 }
+				quadTextureSprite ="GFX_tvtropes_mod"
+				clicksound = click_default
+				oversound = ui_menu_over
+				orientation = CENTER
+				web_link = "https://tvtropes.org/pmwiki/pmwiki.php/VideoGame/BeyondEarth"
+			}
+			ButtonType = {
 				name = "patreon_button"
-				position = { x = 75 y = 0 }
+				position = { x = 125 y = 0 }
 				quadTextureSprite ="GFX_patreon_mod"
 				clicksound = click_default
 				oversound = ui_menu_over
@@ -178,21 +179,12 @@ guiTypes = {
 			}
 			ButtonType = {
 				name = "paypal_button"
-				position = { x = 175 y = 0 }
+				position = { x = 225 y = 0 }
 				quadTextureSprite ="GFX_paypal_mod"	
 				clicksound = click_default
 				oversound = ui_menu_over
 				orientation = CENTER
 				web_link = "https://www.paypal.com/donate/?hosted_button_id=AEVSNNM7G35VE"
-			}
-			ButtonType = {
-				name = "tvtropes_button"
-				position = { x = -25 y = 0 }
-				quadTextureSprite ="GFX_tvtropes_mod"
-				clicksound = click_default
-				oversound = ui_menu_over
-				orientation = CENTER
-				web_link = "https://tvtropes.org/pmwiki/pmwiki.php/VideoGame/BeyondEarth"
 			}
 		}	
 	}
@@ -223,13 +215,46 @@ guiTypes = {
 		background = {
 			quadTextureSprite = "GFX_tiled_null"
 		}
+		iconType = {
+			name = "background2"
+			position = { x = 0 y = 0 }
+			spriteType ="GFX_thumbnail_bg"
+			orientation = CENTER
+			centerposition = yes
+		}
+		instantTextBoxType = {
+			name ="detail2"
+			position = { x = -270 y = -276 }
+			textureFile = ""
+			font = "Arialcap"
+			text = "GAME.BEYOND_EARTH.LOADING.LOBBY"
+			maxWidth = 400
+			orientation = CENTER
+			format = center
+		}
+		containerWindowType = {
+			name ="bg2"
+			size = { width=500 height=500 }
+			position = {
+				x = 0
+				y = 0
+			}
+			orientation = center
+			origo = center
+			background = {
+				quadTextureSprite = "GFX_tiled_black_corner"
+				alwaystransparent = yes
+			}
+		}
 		instantTextBoxType = {
 			name ="detail"
-			position = { x = 14 y = 10 }
+			position = { x = -160 y = 10 }
 			textureFile = ""
 			font = "Arialsmallest"
 			text = "GAME.START.OFFLINE_LOBBY"
 			maxWidth = 320
+			orientation = CENTER_UP
+			format = center
 		}
 		containerWindowType = {
 			name ="bg"
@@ -244,8 +269,8 @@ guiTypes = {
 			orientation = CENTER_UP
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"
-			buttonText = "CONTINUE"
-			buttonFont = "Arialcap"
+			text = "CONTINUE"
+			font = @button_font
 			clicksound = click_default
 			oversound = ui_menu_over
 		}		
@@ -283,8 +308,8 @@ guiTypes = {
 			orientation = CENTER_UP
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"	
-			buttonText = "NEW GAME"
-			buttonFont = "Arialcap"
+			text = "NEW GAME"
+			font = @button_font	
 			clicksound = click_default
 			oversound = ui_menu_over
 		}		
@@ -294,8 +319,8 @@ guiTypes = {
 			orientation = CENTER_UP
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"	
-			buttonText = "LOAD GAME"
-			buttonFont = "Arialcap"
+			text = "LOAD GAME"
+			font = @button_font	
 			clicksound = click_default
 			oversound = ui_menu_over
 		}		
@@ -305,8 +330,8 @@ guiTypes = {
 			orientation = CENTER_UP
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"	
-			buttonText = "TUTORIAL"
-			buttonFont = "Arialcap"
+			text = "TUTORIAL"
+			font = @button_font	
 			clicksound = click_default
 			oversound = ui_menu_over
 		}		
@@ -316,23 +341,17 @@ guiTypes = {
 			orientation = CENTER_UP
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"	
-			buttonText = "BACK"
-			buttonFont = "Arialcap"
+			text = "BACK"
+			font = @button_font	
 			clicksound = click_close
 			oversound = ui_menu_over
 			shortcut = "ESCAPE"
-		}
-		iconType = {
-			name = "main_menu_div_line"
-			position = { x = -286 y = 199 }
-			spriteType ="GFX_main_lobby_divider"
-			orientation = CENTER
 		}
 		instantTextBoxType = {
 			name ="version_label"
 			position = { x = -150 y = 195 }
 			textureFile = ""
-			font = "Arialsmallest"
+			font = "Arialsmallestcap"
 			text = "Beyond Earth v0.2.0 (HOI4 v1.16.9)"	
 			orientation = CENTER
 			format = centre
@@ -350,13 +369,46 @@ guiTypes = {
 		background = {
 			quadTextureSprite = "GFX_tiled_null"
 		}
+		iconType = {
+			name = "background2"
+			position = { x = 0 y = 0 }
+			spriteType ="GFX_thumbnail_bg"
+			orientation = CENTER
+			centerposition = yes
+		}
+		instantTextBoxType = {
+			name ="detail2"
+			position = { x = -270 y = -276 }
+			textureFile = ""
+			font = "Arialcap"
+			text = "GAME.BEYOND_EARTH.LOADING.LOBBY"
+			maxWidth = 400
+			orientation = CENTER
+			format = center
+		}
+		containerWindowType = {
+			name ="bg2"
+			size = { width=500 height=500 }
+			position = {
+				x = 0
+				y = 0
+			}
+			orientation = center
+			origo = center
+			background = {
+				quadTextureSprite = "GFX_tiled_black_corner"
+				alwaystransparent = yes
+			}
+		}
 		instantTextBoxType = {
 			name ="detail"
-			position = { x = 14 y = 10 }
+			position = { x = -160 y = 10 }
 			textureFile = ""
 			font = "Arialsmallest"
 			text = "GAME.START.OFFLINE_LOBBY"
 			maxWidth = 320
+			orientation = CENTER_UP
+			format = center
 		}
 		containerWindowType = {
 			name ="bg"
@@ -375,7 +427,7 @@ guiTypes = {
 			orientation = CENTER_UP
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"
-			font = "Arialcap"			
+			font = @button_font		
 			text = "SINGLEPLAYER"				
 			clicksound = click_default			
 			oversound = ui_menu_over
@@ -386,7 +438,7 @@ guiTypes = {
 			orientation = CENTER_UP
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"
-			font = "Arialcap"			
+			font = @button_font			
 			text = "MULTIPLAYER"			
 			clicksound = click_default
 			oversound = ui_menu_over
@@ -403,8 +455,8 @@ guiTypes = {
 			orientation = CENTER_UP
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"	
-			buttonText = "OPTIONS"
-			buttonFont = "Arialcap"
+			text = "OPTIONS"
+			font = @button_font	
 			clicksound = click_default
 			oversound = ui_menu_over
 		}		
@@ -414,8 +466,8 @@ guiTypes = {
 			orientation = CENTER_UP
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"	
-			buttonText = "CREDITS"
-			buttonFont = "Arialcap"
+			text = "CREDITS"
+			font = @button_font	
 			clicksound = click_default
 			oversound = ui_menu_over
 		}		
@@ -425,8 +477,10 @@ guiTypes = {
 			orientation = CENTER_UP
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"	
-			buttonText = "NUDGE"
-			buttonFont = "Arialcap"
+			text = "NUDGE"
+			font = @button_font	
+			clicksound = click_default
+			oversound = ui_menu_over
 		}
 		ButtonType = {
 			name = "exit_button"
@@ -434,31 +488,25 @@ guiTypes = {
 			orientation = CENTER_UP
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"
-			font = "Arialcap"			
+			font = @button_font				
 			text = "FE_EXIT"			
 			clicksound = click_default
 			oversound = ui_menu_over
 		}
-		iconType = {
-			name = "main_menu_div_line"
-			position = { x = -286 y = 199 }
-			spriteType ="GFX_main_lobby_divider"
-			orientation = CENTER
-		}
 		instantTextBoxType = {
 			name ="version_label"
-			position = { x = -150 y = 195 }
+			position = { x = -170 y = 195 }
 			textureFile = ""
-			font = "Arialsmallest"
+			font = "Arialsmallestcap"
 			text = "ALPHA"	
 			orientation = CENTER
 			format = centre
-			maxWidth = 300
-			maxHeight = 20	
+			maxWidth = 340
+			maxHeight = 20
 		}
 		positionType = {
 			name = "version_label_subscription_position"
-			position = { x = -150 y = 195 }
+			position = { x = -170 y = 195 }
 		}
 	}
 
@@ -493,7 +541,7 @@ guiTypes = {
 				name = "toggle_button"
 				quadTextureSprite = "GFX_sort_button_83x29" ## Orig: 60x29
 				position = { x=0 y=0  }
-				buttonFont = "hoi_16mbs"
+				font = "hoi_16mbs"
 			}
 				
 			iconType = {
