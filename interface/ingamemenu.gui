@@ -1,11 +1,12 @@
-@button_width = 260
+@button_width = 290
 @button_height = 40
-@button_x_pos = -130
+@button_x_pos = -145
+@button_font = "Arialcap"
 guiTypes = {
 	######### MENU  ###################################
 	containerWindowType = {
 		name = "ingamemenu"
-		size = { width = 320 height = 350 }
+		size = { width = 100%% height = 100%% }
 		Orientation = center
 		Origo = center		
 		fade_time = 500
@@ -13,67 +14,102 @@ guiTypes = {
 		show_sound = click_expand
 		clipping = no
 		background = {
-			quadTextureSprite ="GFX_tiled_black_corner"
-		}	
+			quadTextureSprite = "GFX_tiled_null"
+		}
+		iconType = {
+			name = "background2"
+			spriteType ="GFX_thumbnail_bg"
+			orientation = CENTER
+			centerposition = yes
+		}
 		instantTextBoxType = {
 			name ="detail"
-			position = { x = -160 y = 10 }
+			position = { x = -240 y = -276 }
 			textureFile = ""
-			font = "Arialsmallest"
-			text = "GAME.START.OFFLINE_LOBBY"
-			maxWidth = 320
-			orientation = CENTER_UP
-			format = center
+			font = "Arialcap"
+			text = "GAME.BEYOND_EARTH.LOADING.LOBBY"
+			maxWidth = 400
+			maxHeight = 30
+			orientation = CENTER
 		}
 		containerWindowType = {
-			name ="bg"
-			size = { width=100%% height=100%% }
+			name ="bg2"
+			size = { width=500 height=500 }
+			orientation = center
+			origo = center
 			background = {
 				quadTextureSprite = "GFX_tiled_black_corner"
+				alwaystransparent = yes
 			}
-		}	
+			background = {
+				quadTextureSprite = "GFX_tiled_black_corner"
+				alwaystransparent = yes
+			}
+		}
 		buttonType = {
 			name = "menu_close_button"
-			position = { x = @button_x_pos y = 30 }
-			orientation = CENTER_UP
+			position = { x = @button_x_pos y = -145 }
+			orientation = CENTER
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"
-			buttonText = "RESUME"
-			buttonFont = "Arial"
+			text = "RESUME"
+			font = @button_font
 			shortcut = "ESCAPE"
 			clicksound = click_default
 			oversound = ui_menu_over
 		}	
 		buttonType = {
 			name = "menu_load_button"
-			position = { x = @button_x_pos y = 80 }
-			orientation = CENTER_UP
+			position = { x = @button_x_pos y = -95 }
+			orientation = CENTER
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"
-			buttonText = "LOAD GAME"
-			buttonFont = "Arial"
+			text = "LOAD GAME"
+			font = @button_font
 			clicksound = click_default
 			oversound = ui_menu_over
 		}		
 		buttonType = {
 			name = "menu_save_button"
-			position = { x = @button_x_pos y = 130 }
-			orientation = CENTER_UP
+			position = { x = @button_x_pos y = -45 }
+			orientation = CENTER
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"
-			buttonText = "SAVE GAME"
-			buttonFont = "Arial"
+			text = "SAVE GAME"
+			font = @button_font
 			clicksound = click_default
 			oversound = ui_menu_over
 		}		
 		buttonType = {
 			name = "menu_gamesettings_button"
-			position = { x = @button_x_pos y = 180 }
-			orientation = CENTER_UP
+			position = { x = @button_x_pos y = 5 }
+			orientation = CENTER
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"
-			buttonText = "OPTIONS"
-			buttonFont = "Arial"
+			text = "OPTIONS"
+			font = @button_font
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "menu_resign_button"
+			position = { x = @button_x_pos y = 55 }
+			orientation = CENTER
+			size = { x = @button_width y = @button_height }
+			quadTextureSprite ="GFX_tiling_button"
+			text = "EXIT TO MENU"
+			font = "Arial"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "menu_quit_button"
+			position = { x = @button_x_pos y = 105 }
+			orientation = CENTER
+			size = { x = @button_width y = @button_height }
+			quadTextureSprite ="GFX_tiling_button"
+			text = "EXIT GAME"
+			font = "Arial"
 			clicksound = click_default
 			oversound = ui_menu_over
 		}
@@ -100,9 +136,9 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name ="mod_social_buttons"
-			Orientation = CENTER
+			Orientation = LOWER_LEFT
 			clipping = no
-			position = { x = 0 y = 240 }
+			position = { x = 300 y = -70 }
 			ButtonType = {
 				name = "discord_button"
 				position = { x = -275 y = 0 }
@@ -157,28 +193,6 @@ guiTypes = {
 				orientation = CENTER
 				web_link = "https://www.paypal.com/donate/?hosted_button_id=AEVSNNM7G35VE"
 			}
-		}			
-		buttonType = {
-			name = "menu_resign_button"
-			position = { x = @button_x_pos y = 230 }
-			orientation = CENTER_UP
-			size = { x = @button_width y = @button_height }
-			quadTextureSprite ="GFX_tiling_button"
-			buttonText = "EXIT TO MENU"
-			buttonFont = "Arial"
-			clicksound = click_default
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "menu_quit_button"
-			position = { x = @button_x_pos y = 280 }
-			orientation = CENTER_UP
-			size = { x = @button_width y = @button_height }
-			quadTextureSprite ="GFX_tiling_button"
-			buttonText = "EXIT GAME"
-			buttonFont = "Arial"
-			clicksound = click_default
-			oversound = ui_menu_over
 		}
 
 		positionType = {
@@ -270,21 +284,6 @@ guiTypes = {
 				format = "UPPER_LEFT"
 				max_slots_horizontal = 1
 			}
-		}		
-		
-		iconType = {
-			name ="menu"
-			spriteType = "GFX_load_save_top_screen"
-			position = { x= 10000 y = 68 }
-			Orientation = "UPPER_LEFT"
-		}
-
-		
-		iconType = {
-			name ="menu_bottom"
-			spriteType = "GFX_load_save_bottom"
-			position = { x= 87 y = 505 }
-			Orientation = "UPPER_LEFT"
 		}
 		
 		instantTextBoxType = {
@@ -346,8 +345,8 @@ guiTypes = {
 			name = "load"
 			position = { x = 253 y = 503 }
 			quadTextureSprite ="GFX_button_148x34"	
-			buttonText = "MENU_BAR_LOAD"
-			buttonFont = "Arial"
+			text = "MENU_BAR_LOAD"
+			font = "Arial"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
@@ -358,8 +357,8 @@ guiTypes = {
 			name = "cancel"
 			position = { x = 100 y = 503 }
 			quadTextureSprite ="GFX_button_148x34"	
-			buttonText = "BACK"
-			buttonFont = "Arial"
+			text = "BACK"
+			font = "Arial"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
@@ -382,20 +381,6 @@ guiTypes = {
 				x = 73
 				y = 70
 			}
-		}
-		
-		iconType = {
-			name ="menu"
-			spriteType = "GFX_load_save_top_screen"
-			position = { x= 10000 y = 68 }
-			Orientation = "UPPER_LEFT"
-		}
-		
-		iconType = {
-			name ="menu_bottom"
-			spriteType = "GFX_load_save_bottom"
-			position = { x= 87 y = 505 }
-			Orientation = "UPPER_LEFT"
 		}
 			
 		instantTextBoxType = {
@@ -512,8 +497,8 @@ guiTypes = {
 			name = "cancel"
 			position = { x = 100 y = 503 }
 			quadTextureSprite ="GFX_button_148x34"	
-			buttonText = "BACK"
-			buttonFont = "Arial"
+			text = "BACK"
+			font = "Arial"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
@@ -524,8 +509,8 @@ guiTypes = {
 			name = "save"
 			position = { x = 253 y = 503 }
 			quadTextureSprite ="GFX_button_148x34"
-			buttonText = "MENU_BAR_SAVE"
-			buttonFont = "Arial"
+			text = "MENU_BAR_SAVE"
+			font = "Arial"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_close		
 			oversound = ui_menu_over
