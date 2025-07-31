@@ -40,25 +40,7 @@ guiTypes = {
 
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_tiled_tooltip"
-				position = {
-					x = -20
-					y = -15
-				}
-			}
-			background = {
-				name = "Background"
-				quadTextureSprite ="GFX_tiled_tooltip"
-				position = {
-					x = 10
-					y = 10
-				}
-			}
-
-			background = {
-				name = "Background"
 				quadTextureSprite = "GFX_tiled_bg_black"
-				position = { x = 1 y = 2 }
 				alwaystransparent = yes
 			}
 
@@ -223,11 +205,22 @@ guiTypes = {
 				format = left
 			}
 			
-			buttonType = {
-				name = "owner_flag"
-				quadTextureSprite ="GFX_construction_flag_mod_corner"
-				position = { x= -88 y = 1 }
-				orientation = "UPPER_RIGHT"
+			OverlappingElementsBoxType = {
+				name = "state_owners"
+				position = { x = 35 y = 63 }
+				size = { x = 60 y = 40 }
+				format = left
+				spacing = 1.0
+			}
+
+			positionType = {
+				name = "state_owners_size_when_owner_is_controller"
+				position = { x = 110 y = 40 }
+			}
+
+			positionType = {
+				name = "state_owners_size_when_owner_is_not_controller"
+				position = { x = 60 y = 40 }
 			}
 			
 			buttonType = {
@@ -395,6 +388,16 @@ guiTypes = {
 				spriteType = "GFX_required_rule"
 				Orientation = "UPPER_LEFT"
 			}	
+
+			iconType = {
+				name = "building_modifiers_icon"
+				position = { x = 342 y= -76 }
+				spriteType = "GFX_buildings_strip"
+				Orientation = "UPPER_LEFT"
+				frame = 21
+				scale = 0.8
+				hide = yes
+			}
 			
 			### Positioning of these are controlled by the positionType "countrystateview_weathericons_position" and "countrystateview_weathericons_offset" above
 			iconType = {
@@ -525,15 +528,38 @@ guiTypes = {
 	}
 	
 	windowType = {
-		name = "state_core_entry"
+		name = "state_stakeholder_entry"
 		position = { x = 0 y = 0}	
-		size = { x = 30 y = 26 }
+		size = { x = 40 y = 26 }
 
 		guibuttonType = {
-			name = "core_country_flag"
-			quadTextureSprite ="GFX_flag_small"
-			position = { x= 0 y = 0 }
+			name = "stakeholder_country_flag"
+			quadTextureSprite ="GFX_flag_small2"
+			position = { x= 0 y = 1 }
 			#Orientation = "UPPER_LEFT"
+		}
+		
+		iconType = {
+			name = "flag_border_thin"
+			quadTextureSprite = "GFX_small_flag_frame_thin"
+			position = { x= -3 y = -1 }
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "flag_border_thick"
+			quadTextureSprite = "GFX_diplo_countrylist_flag_frame"
+			position = { x= -5 y = -4 }
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "flag_exclamation_mark"
+			spriteType = "GFX_alerts_category"
+			position = {x = 0 y = 0}
+			frame = 2
+			alwaystransparent = yes
+			scale = 0.8
 		}
 	}
 	
