@@ -160,43 +160,171 @@ guiTypes = {
 			name = "possible_constructions"
 			position = { x = 436 y = 0 }
 			size = { width = 104 height = 585 }
-			
-			gridBoxType = {
-				name = "non_shared_item_grid"
-				position = { x = 35 y = 20 }
-				size = { width = 100% height = 100% }
-				slotsize = { width = 49 height = 49 }
-				max_slots_horizontal = 1
-				format = "UPPER_LEFT"
-			}
-			
-			gridBoxType = {
-				name = "shared_item_grid"
-				position = { x = 35 y = 108 }
-				size = { width = 100% height = 100% }
-				slotsize = { width = 49 height = 49 }
-				max_slots_horizontal = 1
-				format = "UPPER_LEFT"
-			}
-			
-			gridBoxType = { #SHOULD NOT accesible by player
-				name = "province_item_grid"
-				position = { x = 35 y = 441 } #position = { x = 35 y = 441 }
-				size = { width = 100% height = 100% }
-				slotsize = { width = 49 height = 49 }
-				max_slots_horizontal = 1
-				format = "UPPER_LEFT"
-			}
-		}
 
-		buttonType = {
-			name = "convert_ic_button"
-			position = { x = -10000 y = 556 }
-			quadTextureSprite ="GFX_convert_ic_button"
-			font = "Main_14_black"
-			Orientation = "UPPER_RIGHT"
-			pdx_tooltip = "CONSTRUCTION_CONVERT_IC_TOOLTIP"
-			pdx_tooltip_delayed = "CONSTRUCTION_CONVERT_IC_TOOLTIP_DELAYED"
+			positionType = {
+				name = "minimized_offset"
+				position = { x = 420 y = 0 }
+			}
+			
+			containerWindowType = {
+				name = "possible_state_constructions"
+				position = { x = 0 y = 0 }
+				size = { width = 267 height = 100% }
+				
+				background = {
+					name = "state_buildings_background"
+					position = { x = 5 y = 9 }
+					quadTextureSprite = "GFX_diplo_details_header"
+					pdx_tooltip = "STATE_BUILDINGS_BACKGROUND_TOOLTIP"
+				}
+
+				iconType = {
+					name = "state_constructions"
+					position = { x = 5 y = 9 }
+					quadTextureSprite = "GFX_state_constructions"
+				}
+				
+				instantTextboxType = {
+					name = "state_constructions_text"
+					position = { x = 60 y = 20 }
+					font = "hoi_16mbs"
+					text = "STATE_BUILDINGS"
+					maxWidth = 160
+					maxHeight = 10
+					format = left
+					alwaystransparent = yes
+				}
+				
+				gridBoxType = {
+					name = "non_shared_item_grid"
+					position = { x = 28 y = 52 }
+					size = { width = 100% height = 100% }
+					slotsize = { width = 46 height = 44 }
+					max_slots_horizontal = 4
+					format = "UPPER_LEFT"
+				}
+			}
+			
+			
+			containerWindowType = {
+				name = "possible_shared_constructions"
+				position = { x = 0 y = 50 }
+				size = { width = 267 height = 100% }
+			
+				background = {
+					name = "shared_buildings_background"
+					position = { x = 5 y = 9 }
+					quadTextureSprite = "GFX_diplo_details_header"
+					pdx_tooltip = "SHARED_BUILDINGS_BACKGROUND_TOOLTIP"
+				}
+
+				iconType = {
+					name = "shared_constructions"
+					position = { x = 5 y = 9 }
+					quadTextureSprite = "GFX_shared_constructions"
+				}
+				
+				instantTextboxType = {
+					name = "shared_constructions_text"
+					position = { x = 60 y = 20 }
+					font = "hoi_16mbs"
+					text = "SHARED_BUILDINGS"
+					maxWidth = 160
+					maxHeight = 10
+					format = left
+					alwaystransparent = yes
+				}
+				
+				
+				gridBoxType = {
+					name = "shared_item_grid"
+					position = { x = 28 y = 52 }
+					size = { width = 100% height = 100% }
+					slotsize = { width = 46 height = 44 }
+					max_slots_horizontal = 4
+					format = "UPPER_LEFT"
+				}
+			}
+			
+			
+			containerWindowType = {
+				name = "possible_province_constructions"
+				position = { x = 0 y = 100 }
+				size = { width = 267 height = 100% }
+
+				background = {
+					name = "province_buildings_background"
+					position = { x = 5 y = 9 }
+					quadTextureSprite = "GFX_diplo_details_header"
+					pdx_tooltip = "PROVINCE_BUILDINGS_BACKGROUND_TOOLTIP"
+				}
+
+				iconType = {
+					name = "province_constructions"
+					position = { x = 5 y = 9 }
+					quadTextureSprite = "GFX_province_constructions"
+				}
+				
+				instantTextboxType = {
+					name = "province_constructions_text"
+					position = { x = 60 y = 20 }
+					font = "hoi_16mbs"
+					text = "PROVINCE_BUILDINGS"
+					maxWidth = 160
+					maxHeight = 10
+					format = left
+					alwaystransparent = yes
+				}
+				
+				gridBoxType = {
+					name = "province_item_grid"
+					position = { x = 28 y = 52 }
+					size = { width = 100% height = 100% }
+					slotsize = { width = 46 height = 44 }
+					max_slots_horizontal = 4
+					format = "UPPER_LEFT"
+				}
+			}
+			
+			
+			containerWindowType = {
+				name = "possible_facility_constructions"
+				position = { x = 0 y = 150 }
+				size = { width = 267 height = 100% }
+			
+				background = {
+					name = "facility_buildings_background"
+					position = { x = 5 y = 9 }
+					quadTextureSprite = "GFX_diplo_details_header"
+					pdx_tooltip = "FACILITY_BUILDINGS_BACKGROUND_TOOLTIP"
+				}
+
+				iconType = {
+					name = "facility_constructions"
+					position = { x = 5 y = 9 }
+					quadTextureSprite = "GFX_facility_constructions"
+				}
+				
+				instantTextboxType = {
+					name = "facility_constructions_text"
+					position = { x = 60 y = 20 }
+					font = "hoi_16mbs"
+					text = "FACILITY_BUILDINGS"
+					maxWidth = 160
+					maxHeight = 10
+					format = left
+					alwaystransparent = yes
+				}
+				
+				gridBoxType = {
+					name = "facility_item_grid"
+					position = { x = 28 y = 52 }
+					size = { width = 100% height = 100% }
+					slotsize = { width = 46 height = 44 }
+					max_slots_horizontal = 4
+					format = "UPPER_LEFT"
+				}
+			}
 		}
 				
 		buttonType = {
@@ -235,6 +363,12 @@ guiTypes = {
 			font = "Main_14_black"
 			Orientation = "UPPER_LEFT"
 		}
+
+		iconType ={
+			name = "tutorial_glow"
+			spriteType = "GFX_tutorial_building_icon_glow"
+			hide = yes
+		}
 	}	
 	
 	containerWindowType = {
@@ -259,6 +393,30 @@ guiTypes = {
 		iconType = {
 			name = "start_construction_overlay"
 			position = { x = -10000 y = 0 }
+			quadTextureSprite = "GFX_construction_glow_overlay"
+		}
+	}
+
+	containerWindowType = {
+		name = "convert_ic_entry"
+		position = { x=0 y= 4 }
+		size = { width = 45 height = 45 }
+		clipping = no
+		
+		buttonType = {
+			name = "convert_ic_button"
+			position = { x = 0 y = 0 }
+			quadTextureSprite ="GFX_convert_ic_button"
+			clicksound = click_default
+			buttonFont = "Main_14_black"
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "CONSTRUCTION_CONVERT_IC_TOOLTIP"
+			pdx_tooltip_delayed = "CONSTRUCTION_CONVERT_IC_TOOLTIP_DELAYED"
+		}
+		
+		iconType = {
+			name = "convert_ic_overlay"
+			position = { x = -1 y = 0 }
 			quadTextureSprite = "GFX_construction_glow_overlay"
 		}
 	}
