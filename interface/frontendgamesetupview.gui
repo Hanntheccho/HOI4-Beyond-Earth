@@ -446,7 +446,7 @@ guiTypes = {
 			position = { x = 100 y = 503 }
 			quadTextureSprite ="GFX_button_148x34"
 			text = "BACK"
-			font = "Arial"
+			font = "Arialcap"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
@@ -458,7 +458,7 @@ guiTypes = {
 			position = { x = 253 y = 503 }
 			quadTextureSprite ="GFX_button_148x34"
 			text = "MENU_BAR_SAVE_PLAY"
-			font = "Arial"
+			font = "Arialcap"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_default
 			oversound = ui_menu_over
@@ -529,7 +529,7 @@ guiTypes = {
 			position = { x = 30 y = 15 }
 			quadTextureSprite ="GFX_button_221x34"	
 			text = "BACK"
-			font = "Arialsmall"
+			font = "Arialsmallcap"
 			Orientation = "LOWER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
@@ -594,7 +594,7 @@ guiTypes = {
 			size = { x = 200 y = 40 }
 			quadTextureSprite ="GFX_tiling_button"
 			text = "BACK"
-			font = "Arial"
+			font = "Arialcap"
 			clicksound = click_close
 			oversound = ui_menu_over
 			shortcut = "ESCAPE"
@@ -1491,8 +1491,8 @@ guiTypes = {
 	#gameplay settings window
 	containerWindowType = {
 		name ="gamesetup_gameplay_settings_window"
-		position = { x=90 y =130}			
-		size = { width=506 height=132}
+		position = { x=90 y =175}			
+		size = { width=506 height=222}
 		clipping = no
 		orientation = CENTER_LEFT
 		origo = center_left
@@ -1505,7 +1505,6 @@ guiTypes = {
 			position = { x = -200 y = 12 }
 			textureFile = ""
 			font = "Arialsmallalpha"
-			borderSize = {x = 0 y = 0}
 			text = "LOAD.CUSTOM_RULES.SETTINGS"
 			maxWidth = 400
 			maxHeight = 30
@@ -1516,7 +1515,7 @@ guiTypes = {
 			name = "custom_settings_btn"
 			quadTextureSprite ="GFX_tiling_button"	
 			size = { x = 270 y = 36 }
-			position = { x = -230 y = -52 }
+			position = { x = -135 y = -56 }
 			orientation = CENTER_DOWN
 			font = "Arialsmallcap"
 			text = "CUSTOM SETTINGS"
@@ -1526,50 +1525,180 @@ guiTypes = {
 		}		
 		checkboxType = {
 			name = "very_easy_cb"
-			quadTextureSprite ="GFX_tiling_button"	
-			text = ""
-			font = "Arialsmall"
+			position = { x = -48 y = 40 }
+			quadTextureSprite ="GFX_checkbox"
 			clicksound = click_checkbox
+			orientation = CENTER_UP
 		}
 		checkboxType = {
 			name = "easy_cb"
-			quadTextureSprite ="GFX_tiling_button"	
-			text = ""
-			font = "Arial"
+			position = { x = 182 y = 40 }
+			quadTextureSprite ="GFX_checkbox"
 			clicksound = click_checkbox
+			orientation = CENTER_UP
 		}		
 		checkboxType = {
 			name = "normal_cb"
-			quadTextureSprite ="GFX_tiling_button"	
+			position = { x = -48 y = 120 }
+			quadTextureSprite ="GFX_checkbox"
 			clicksound = click_checkbox
-			text = ""
-			font = "Arial"
+			orientation = CENTER_UP
 		}		
 		checkboxType = {
 			name = "hard_cb"
-			quadTextureSprite ="GFX_tiling_button"
-			text = ""
-			font = "Arial"
+			position = { x = -48 y = 80 }
+			quadTextureSprite ="GFX_checkbox"
 			clicksound = click_checkbox
+			orientation = CENTER_UP
 		}		
 		checkboxType = {
 			name = "very_hard_cb"
-			quadTextureSprite ="GFX_tiling_button"
-			text = ""
-			font = "Arial"
+			position = { x = 182 y = 80 }
+			quadTextureSprite ="GFX_checkbox"
 			clicksound = click_checkbox
+			orientation = CENTER_UP
 		}		
+		instantTextBoxType = {
+			name = "very_easy_label"
+			position = { x = -212 y = 45 }
+			textureFile = ""
+			font = "Arialsmall"
+			text = "UTOPIAN ECOALERT"
+			maxWidth = 200
+			maxHeight = 30
+			format = left
+			orientation = CENTER_UP
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "very_easy_bg"
+			position = { x = -115 y = 54 }
+			quadTextureSprite ="GFX_tiling_text_bg"
+			size = {x=210 y=29}
+			Orientation = CENTER_UP
+			alwaystransparent = yes
+			centerposition = yes
+		}
+		instantTextBoxType = {
+			name = "easy_label"
+			position = { x = 18 y = 45 }
+			textureFile = ""
+			font = "Arialsmall"
+			text = "SIMPLE ECOALERT"
+			maxWidth = 200
+			maxHeight = 30
+			format = left
+			orientation = CENTER_UP
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "easy_bg"
+			position = { x = 115 y = 54 }
+			quadTextureSprite ="GFX_tiling_text_bg"
+			size = {x=210 y=29}
+			Orientation = CENTER_UP
+			alwaystransparent = yes
+			centerposition = yes
+		}
+		instantTextBoxType = {
+			name = "hard_label"
+			position = { x = -212 y = 85 }
+			textureFile = ""
+			font = "Arialsmall"
+			text = "CRITICAL ECOALERT"
+			maxWidth = 200
+			maxHeight = 30
+			format = left
+			orientation = CENTER_UP
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "hard_bg"
+			position = { x = -115 y = 94 }
+			quadTextureSprite ="GFX_tiling_text_bg"
+			size = {x=210 y=29}
+			Orientation = CENTER_UP
+			alwaystransparent = yes
+			centerposition = yes
+		}
+		instantTextBoxType = {
+			name = "very_hard_label"
+			position = { x = 18 y = 85 }
+			textureFile = ""
+			font = "Arialsmall"
+			text = "TERMINAL ECOALERT"
+			maxWidth = 200
+			maxHeight = 30
+			format = left
+			orientation = CENTER_UP
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "very_hard_bg"
+			position = { x = 115 y = 94 }
+			quadTextureSprite ="GFX_tiling_text_bg"
+			size = {x=210 y=29}
+			Orientation = CENTER_UP
+			alwaystransparent = yes
+			centerposition = yes
+		}
+		instantTextBoxType = {
+			name = "normal_label"
+			position = { x = -212 y = 125 }
+			textureFile = ""
+			font = "Arialsmall"
+			text = "DEFAULT ECOALERT"
+			maxWidth = 200
+			maxHeight = 30
+			format = left
+			orientation = CENTER_UP
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "normal_bg"
+			position = { x = -115 y = 134 }
+			quadTextureSprite ="GFX_tiling_text_bg"
+			size = {x=210 y=29}
+			Orientation = CENTER_UP
+			alwaystransparent = yes
+			centerposition = yes
+		}
 		checkboxType = {
 			name = "ironman_cb"
+			position = { x = 182 y = 120 }
 			quadTextureSprite ="GFX_checkbox"
 			clicksound = click_checkbox
 			pdx_tooltip = "FE_IRONMAN"
 			pdx_tooltip_delayed = "FE_IRONMAN_TOOLTIP"
-		}		
+			orientation = CENTER_UP
+		}	
+		instantTextBoxType = {
+			name = "ironman_label"
+			position = { x = 18 y = 125 }
+			textureFile = ""
+			font = "Arialsmall"
+			text = "NIGHTMARE!"
+			maxWidth = 200
+			maxHeight = 30
+			format = left
+			orientation = CENTER_UP
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "ironman_bg"
+			position = { x = 115 y = 134 }
+			quadTextureSprite ="GFX_tiling_text_bg"
+			size = {x=210 y=29}
+			Orientation = CENTER_UP
+			alwaystransparent = yes
+			centerposition = yes
+		}	
+		#todo
 		checkboxType = {
 			name = "historical_cb"
 			quadTextureSprite ="GFX_checkbox"
 			clicksound = click_checkbox
+			hide = yes
 		}
 	}
 	
@@ -1641,7 +1770,6 @@ guiTypes = {
 				position = { x = -200 y = 12 }
 				textureFile = ""
 				font = "Arialsmallalpha"
-				borderSize = {x = 0 y = 0}
 				text = "LOAD.SELECTED_COUNTRY.INFO"
 				maxWidth = 400
 				maxHeight = 30
