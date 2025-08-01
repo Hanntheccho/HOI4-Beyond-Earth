@@ -183,13 +183,10 @@ guiTypes = {
 
 	containerWindowType = {
 		name ="gamesetup_load"
-		position = { x = 520 y = -200 }
-		show_position = { x = -40 y = -200 }
-		animation_type = decelerated
-		animation_time = 500	
 		size = { width = 360 height = 400}
-		Orientation = lower_right
-		origo = lower_right
+		Orientation = CENTER
+		origo = center
+		moveable = yes
 		background = {
 			quadTextureSprite = "GFX_tiled_black_bg"
 		}			
@@ -207,54 +204,65 @@ guiTypes = {
 		}		
 		checkboxType = {
 			name = "localgames_tab"
-			position = { x = -120  y = 20 }
+			position = { x = -50  y = 15 }
 			quadTextureSprite ="GFX_checkbox_3frames"
-			size = { x = 40 y = 30}
 			Orientation = CENTER_UP
 			clicksound = click_checkbox	
 		}
 		checkboxType = {
 			name = "remotegames_tab"
-			position = { x = 67 y = 20 }
+			position = { x = 110 y = 15 }
 			quadTextureSprite ="GFX_checkbox_3frames"
-			size = { x = 40 y = 30}
 			orientation = CENTER_UP
 			clicksound = click_checkbox
+		}	
+		buttonType = {
+			name = "local_bg"
+			position = { x = -80 y = 31 }
+			quadTextureSprite ="GFX_tiling_text_bg"
+			size = {x=140 y=29}
+			Orientation = CENTER_UP
+			alwaystransparent = yes
+			centerposition = yes
 		}		
+		buttonType = {
+			name = "cloud_bg"
+			position = { x = 80 y = 31 }
+			quadTextureSprite ="GFX_tiling_text_bg"
+			size = {x=140 y=29}
+			Orientation = CENTER_UP
+			alwaystransparent = yes
+			centerposition = yes
+		}	
 		instantTextBoxType = {
 			name = "localgames_label"
-			position = { x = 47 y = 88 }
+			position = { x = -140 y = 18 }
 			font = "Arialcap"
 			text = "LOCAL"	
 			maxWidth = 100
 			maxHeight = 20
 			fixedsize = yes
-
-			Orientation = "UPPER_LEFT"
-			format = centre
+			orientation = CENTER_UP
+			format = left
 		}
 		instantTextBoxType = {
 			name = "cloudgames_label"
-			position = { x = 197 y = 88 }
-			font = "Arial"
+			position = { x = 20 y = 18 }
+			font = "Arialcap"
 			text = "CLOUD"	
 			maxWidth = 100
 			maxHeight = 20	
 			fixedsize = yes
-
-			Orientation = "UPPER_LEFT"
-			format = centre
+			orientation = CENTER_UP
+			format = left
 		}
 		
 		containerWindowType = {
 			name ="games"
-			position = { x = -1 y = 126 }	
-			size = { width = 350 height = 415}
+			position = { x = 0 y = 60 }	
+			size = { width = 350 height = 320}
 			verticalScrollbar = "right_vertical_slider"
 			vertical_scroll_step = 5
-			margin = {
-				top = 5
-			}
 			
 			background = {
 				name = "Background"		
@@ -263,7 +271,7 @@ guiTypes = {
 			
 			gridBoxType = {
 				name = "games_grid"
-				position = { x=14 y =10}
+				position = { x=14 y =0}
 				size = { width =280 height = 100%% }
 				slotsize = { width = 280 height = 55 }
 				format = "UPPER_LEFT"
