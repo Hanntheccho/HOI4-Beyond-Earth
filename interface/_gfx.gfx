@@ -20,6 +20,13 @@ spriteTypes = {
 		borderSize = { x=8 y=8 }
 		tilingCenter = yes
 	}
+	corneredTileSpriteType = {
+		name = "GFX_tiling_text_bg"
+		size= { x=72 y=29 }
+		textureFile = "gfx/interface/buttons/tiling_text_bg.dds"
+		borderSize = { x=20 y=0 }
+		tilingCenter = yes
+	}
 
 ###############################
 ######## BACKGROUNDS ##########
@@ -44,17 +51,9 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}
 	corneredTileSpriteType = {
-		name = "GFX_tiled_black_corner"
+		name = "GFX_tiled_black_bg"
 		size= { x=72 y=72 }
-		textureFile = "gfx/interface/tiles/tiled_black_corner.dds"
-		borderSize = { x=26 y=26 }
-		tilingCenter = yes
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
-	corneredTileSpriteType = {
-		name = "GFX_tiled_black_corner_darker"
-		size= { x=72 y=72 }
-		textureFile = "gfx/interface/tiles/tiled_black_corner_darker.dds"
+		textureFile = "gfx/interface/tiles/tiled_black_bg.dds"
 		borderSize = { x=26 y=26 }
 		tilingCenter = yes
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
@@ -986,14 +985,6 @@ spriteTypes = {
 	}
 
 	corneredTileSpriteType = {
-		name = "GFX_tiled_bg_black"
-		size= { x=192 y=192 }
-		textureFile = "gfx/interface/tiles/tiled_bg_black.dds"
-		borderSize = { x=64 y=64 }
-		tilingCenter = yes
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
-	corneredTileSpriteType = {
 		name = "GFX_tiled_bg_alpha"
 		size= { x=192 y=192 }
 		textureFile = "gfx/interface/tiles/tiled_bg_alpha.dds"
@@ -1001,30 +992,6 @@ spriteTypes = {
 		tilingCenter = yes
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}
-	corneredTileSpriteType = {
-		name = "GFX_tiled_bg_alpha_fade"
-		size= { x=300 y=300 }
-		textureFile = "gfx/interface/tiles/tiled_bg_alpha_fade.dds"
-		borderSize = { x=0 y=0 }
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
-	corneredTileSpriteType = {
-		name = "GFX_tiled_bg_alpha_fade_flip"
-		size= { x=300 y=300 }
-		textureFile = "gfx/interface/tiles/tiled_bg_alpha_fade_flip.dds"
-		borderSize = { x=0 y=0 }
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
-
-	corneredTileSpriteType = {
-		name = "GFX_tiled_side_mod"
-		size= { x=544 y=946 }
-		textureFile = "gfx/interface/tiles/tiled_side_mod.dds"
-		borderSize = { x=272 y=463 }
-		tilingCenter = yes
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
-
 	corneredTileSpriteType = {
 		name = "GFX_wonders_techtree_bg"
 		size= { x=1920 y=1080 }
@@ -1687,49 +1654,6 @@ spriteTypes = {
 		name = "GFX_st_button_111x30"
 		texturefile = "gfx/interface/st_button_111x30.dds"
 	}
-
-###############################
-####### TILED TEXTURES ########
-###############################
-
-	corneredTileSpriteType = {
-		name = "GFX_tiled_bg_black"
-		size= { x=192 y=192 }
-		textureFile = "gfx/interface/tiles/tiled_bg_black.dds"
-		borderSize = { x=64 y=64 }
-		tilingCenter = yes
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
-	corneredTileSpriteType = {
-		name = "GFX_tiled_bg_alpha"
-		size= { x=192 y=192 }
-		textureFile = "gfx/interface/tiles/tiled_bg_alpha.dds"
-		borderSize = { x=64 y=64 }
-		tilingCenter = yes
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
-	corneredTileSpriteType = {
-		name = "GFX_tiled_bg_alpha_fade"
-		size= { x=300 y=300 }
-		textureFile = "gfx/interface/tiles/tiled_bg_alpha_fade.dds"
-		borderSize = { x=0 y=0 }
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
-	corneredTileSpriteType = {
-		name = "GFX_tiled_bg_alpha_fade_flip"
-		size= { x=300 y=300 }
-		textureFile = "gfx/interface/tiles/tiled_bg_alpha_fade_flip.dds"
-		borderSize = { x=0 y=0 }
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
-	corneredTileSpriteType = {
-		name = "GFX_tiled_side_mod"
-		size= { x=544 y=946 }
-		textureFile = "gfx/interface/tiles/tiled_side_mod.dds"
-		borderSize = { x=272 y=463 }
-		tilingCenter = yes
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
 }
 
 bitmapfonts = {
@@ -1738,12 +1662,14 @@ bitmapfonts = {
 ######## MOD FONTS ^^ #########
 ###############################
 
+	#fallback
 	bitmapfont = {
 		name = "center"
 		path = "gfx/fonts/Arial16"
 		color = 0xffffffff
 	}
-	#
+
+	#remove this bs
 	bitmapfont = {
 		name = "Focusfont"
 		path = "gfx/fonts/focusfont"
@@ -1760,36 +1686,30 @@ bitmapfonts = {
 			W = { 255 255 255 }
 		}
 	}
-	bitmapfont = {
-		name = "cg_16b"
-		path = "gfx/fonts/cg_16b"
-		color = 0xffffffff
-		
-		textcolors = {
-			#
-		}
-	}
-	bitmapfont = {
-		name = "Beyond"
-		path = "gfx/fonts/Beyond"
-		color = 0xffffffff
-		
-		textcolors = {
-			#
-		}
-	}
-	bitmapfont = {
-		name = "Arialbigcap"
-		path = "gfx/fonts/Arialbigcap"
-		color = 0xffffffff
-		
-		textcolors = {
-			#
-		}
-	}
+	
+#ARIAL FONTS
+
 	bitmapfont = {
 		name = "Arialbig"
 		path = "gfx/fonts/Arialbig"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	bitmapfont = {
+		name = "Arial"
+		path = "gfx/fonts/Arial"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	bitmapfont = {
+		name = "Arialsmall"
+		path = "gfx/fonts/Arialsmall"
 		color = 0xffffffff
 		
 		textcolors = {
@@ -1814,18 +1734,11 @@ bitmapfonts = {
 			#
 		}
 	}
+	
+	#capsonly
 	bitmapfont = {
-		name = "Arialsmall"
-		path = "gfx/fonts/Arialsmall"
-		color = 0xffffffff
-		
-		textcolors = {
-			#
-		}
-	}
-	bitmapfont = {
-		name = "Arial"
-		path = "gfx/fonts/Arial"
+		name = "Arialbigcap"
+		path = "gfx/fonts/Arialbigcap"
 		color = 0xffffffff
 		
 		textcolors = {
@@ -1853,6 +1766,47 @@ bitmapfonts = {
 	bitmapfont = {
 		name = "Arialsmallestcap"
 		path = "gfx/fonts/Arialsmallestcap"
+		color = 0xffffffff
+		
+		textcolors = {
+			#
+		}
+	}
+
+	#lowalpha
+	bitmapfont = {
+		name = "Arialalpha"
+		path = "gfx/fonts/Arialcap"
+		color = 0x4dffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	bitmapfont = {
+		name = "Arialsmallalpha"
+		path = "gfx/fonts/Arialsmallcap"
+		color = 0x4dffffff
+		
+		textcolors = {
+			#
+		}
+	}
+	bitmapfont = {
+		name = "Arialsmallestalpha"
+		path = "gfx/fonts/Arialsmallestcap"
+		color = 0x4dffffff
+		
+		textcolors = {
+			#
+		}
+	}
+
+#BEYOND FONTS
+
+	bitmapfont = {
+		name = "Beyond"
+		path = "gfx/fonts/Beyond"
 		color = 0xffffffff
 		
 		textcolors = {

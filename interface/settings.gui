@@ -1,4 +1,6 @@
 @option_label_x_pos = 60
+@tiling_text_bg_width = 418
+@tiling_text_bg_height = 29
 @settings_font = Arialsmall
 guiTypes = {		
 		containerWindowType = {
@@ -1030,28 +1032,19 @@ guiTypes = {
 			Orientation = center
 			origo = center
 			moveable = yes
-			fade_time = 500
-			fade_type = linear
 			clipping = no
 			background = {
-				quadTextureSprite = "GFX_tiled_black_corner_darker"
+				quadTextureSprite = "GFX_tiled_black_bg"
 			}		
 			instantTextBoxType={
 				position = {x = -220 y = 18 }
 				name = "settings_label"
-				position = { x = -240 y = -276 }
-				font = "Arialcap"
+				position = { x = -240 y = -273 }
+				font = "Arialalpha"
 				text = "PAUSE.OPEN.GAME_OPTIONS.DEFAULT"
 				maxWidth = 400
 				maxHeight = 30
 				orientation = CENTER
-			}	
-			containerWindowType = {
-				name ="bg"
-				size = { width=100%% height=100%% }
-				background = {
-					quadTextureSprite = "GFX_tiled_black_corner"
-				}
 			}
 			buttonType = {
 				name = "settings_tab_1"
@@ -1105,9 +1098,10 @@ guiTypes = {
 				orientation = CENTER
 				origo = center
 
-				iconType = {
+				buttonType = {
 					name = "mastervolume_bg"
-					quadTextureSprite ="GFX_generic_bg_417"
+					quadTextureSprite ="GFX_tiling_text_bg"
+					size = {x=@tiling_text_bg_width y=@tiling_text_bg_height}
 					Orientation = CENTER_UP
 					alwaystransparent = yes
 					centerposition = yes
@@ -1162,9 +1156,10 @@ guiTypes = {
 						clicksound = click_scroll
 					}					
 				}
-				iconType = {
+				buttonType = {
 					name = "effectvolume_bg"
-					quadTextureSprite ="GFX_generic_bg_417"
+					quadTextureSprite ="GFX_tiling_text_bg"
+					size = {x=@tiling_text_bg_width y=@tiling_text_bg_height}
 					position = { x = 0 y = 40 }
 					Orientation = CENTER_UP
 					alwaystransparent = yes
@@ -1221,9 +1216,10 @@ guiTypes = {
 					}					
 				}
 
-				iconType = {
+				buttonType = {
 					name = "musicvolume_bg"
-					quadTextureSprite ="GFX_generic_bg_417"
+					quadTextureSprite ="GFX_tiling_text_bg"
+					size = {x=@tiling_text_bg_width y=@tiling_text_bg_height}
 					position = { x = 0 y = 80 }
 					Orientation = CENTER_UP
 					alwaystransparent = yes
@@ -1279,9 +1275,10 @@ guiTypes = {
 					}
 				}	
 
-				iconType = {
+				buttonType = {
 					name = "ambient_bg"
-					quadTextureSprite ="GFX_generic_bg_417"
+					quadTextureSprite ="GFX_tiling_text_bg"
+					size = {x=@tiling_text_bg_width y=@tiling_text_bg_height}
 					position = { x = 0 y = 120 }
 					Orientation = CENTER_UP
 					alwaystransparent = yes
@@ -1338,9 +1335,10 @@ guiTypes = {
 					}					
 				}			
 
-				iconType = {
+				buttonType = {
 					name = "voicevolume_bg"
-					quadTextureSprite ="GFX_generic_bg_417"
+					quadTextureSprite ="GFX_tiling_text_bg"
+					size = {x=@tiling_text_bg_width y=@tiling_text_bg_height}
 					position = { x = 0 y = 160 }
 					Orientation = CENTER_UP
 					alwaystransparent = yes
@@ -1416,9 +1414,10 @@ guiTypes = {
 				orientation = CENTER
 				origo = center
 
-				iconType = {
+				buttonType = {
 					name = "scrollspeed_bg"
-					quadTextureSprite ="GFX_generic_bg_417"
+					quadTextureSprite ="GFX_tiling_text_bg"
+					size = {x=@tiling_text_bg_width y=@tiling_text_bg_height}
 					Orientation = CENTER_UP
 					alwaystransparent = yes
 					centerposition = yes
@@ -1473,9 +1472,10 @@ guiTypes = {
 					}
 				}
 
-				iconType = {
+				buttonType = {
 					name = "zoomspeed_bg"
-					quadTextureSprite ="GFX_generic_bg_417"
+					quadTextureSprite ="GFX_tiling_text_bg"
+					size = {x=@tiling_text_bg_width y=@tiling_text_bg_height}
 					position = { x = 0 y = 40 }
 					Orientation = CENTER_UP
 					alwaystransparent = yes
@@ -1689,9 +1689,10 @@ guiTypes = {
 				orientation = CENTER
 				origo = center
 
-				iconType = {
+				buttonType = {
 					name = "mode_bg"
-					quadTextureSprite ="GFX_generic_bg_417"
+					quadTextureSprite ="GFX_tiling_text_bg"
+					size = {x=@tiling_text_bg_width y=@tiling_text_bg_height}
 					Orientation = CENTER_UP
 					alwaystransparent = yes
 					centerposition = yes
@@ -1730,9 +1731,10 @@ guiTypes = {
 					quadTextureSprite ="button_right"	
 					clicksound = click_checkbox
 				}
-				iconType = {
+				buttonType = {
 					name = "resolution_bg"
-					quadTextureSprite ="GFX_generic_bg_417"
+					quadTextureSprite ="GFX_tiling_text_bg"
+					size = {x=@tiling_text_bg_width y=@tiling_text_bg_height}
 					position = { x = 0 y = 35 }
 					Orientation = CENTER_UP
 					alwaystransparent = yes
@@ -1771,9 +1773,10 @@ guiTypes = {
 					quadTextureSprite ="button_right"
 					clicksound = click_checkbox
 				}
-				iconType = {
+				buttonType = {
 					name = "refreshrate_bg"
-					quadTextureSprite ="GFX_generic_bg_417"
+					quadTextureSprite ="GFX_tiling_text_bg"
+					size = {x=@tiling_text_bg_width y=@tiling_text_bg_height}
 					position = { x = 0 y = 70 }
 					Orientation = CENTER_UP
 					alwaystransparent = yes
@@ -1812,9 +1815,10 @@ guiTypes = {
 					quadTextureSprite ="button_right"
 					clicksound = click_checkbox
 				}
-				iconType = {
+				buttonType = {
 					name = "multisample_bg"
-					quadTextureSprite ="GFX_generic_bg_417"
+					quadTextureSprite ="GFX_tiling_text_bg"
+					size = {x=@tiling_text_bg_width y=@tiling_text_bg_height}
 					position = { x = 0 y = 105 }
 					Orientation = CENTER_UP
 					alwaystransparent = yes
@@ -1853,9 +1857,10 @@ guiTypes = {
 					quadTextureSprite ="button_right"
 					clicksound = click_checkbox
 				}
-				iconType = {
+				buttonType = {
 					name = "gamma_bg"
-					quadTextureSprite ="GFX_generic_bg_417"
+					quadTextureSprite ="GFX_tiling_text_bg"
+					size = {x=@tiling_text_bg_width y=@tiling_text_bg_height}
 					position = { x = 0 y = 140 }
 					Orientation = CENTER_UP
 					alwaystransparent = yes
@@ -1912,9 +1917,10 @@ guiTypes = {
 						clicksound = click_scroll						
 					}
 				}
-				iconType = {
+				buttonType = {
 					name = "tex_quality_bg"
-					quadTextureSprite ="GFX_generic_bg_417"
+					quadTextureSprite ="GFX_tiling_text_bg"
+					size = {x=@tiling_text_bg_width y=@tiling_text_bg_height}
 					position = { x = 0 y = 175 }
 					Orientation = CENTER_UP
 					alwaystransparent = yes
@@ -1953,9 +1959,10 @@ guiTypes = {
 					quadTextureSprite ="button_right"
 					clicksound = click_checkbox
 				}
-				iconType = {
+				buttonType = {
 					name = "ui_scaling_bg"
-					quadTextureSprite ="GFX_generic_bg_417"
+					quadTextureSprite ="GFX_tiling_text_bg"
+					size = {x=@tiling_text_bg_width y=@tiling_text_bg_height}
 					position = { x = 0 y = 210 }
 					Orientation = CENTER_UP
 					alwaystransparent = yes
@@ -2181,9 +2188,10 @@ guiTypes = {
 				orientation = CENTER
 				origo = center
 
-				iconType = {
+				buttonType = {
 					name = "autosave_bg"
-					quadTextureSprite ="GFX_generic_bg_417"
+					quadTextureSprite ="GFX_tiling_text_bg"
+					size = {x=@tiling_text_bg_width y=@tiling_text_bg_height}
 					Orientation = CENTER_UP
 					alwaystransparent = yes
 					centerposition = yes
