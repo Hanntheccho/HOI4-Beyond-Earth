@@ -1,7 +1,7 @@
 guiTypes = {
 	containerWindowType = {
 		name = "browser_window"
-		size = { width = 1108 height = 684 }
+		size = { width = 1108 height = 677 }
 		clipping = no
 		moveable = yes
 		Orientation = CENTER
@@ -17,28 +17,36 @@ guiTypes = {
 			maxWidth = 400
 			maxHeight = 30
 		}
+		containerWindowType = {
+			name = "browser_bg"
+			position = { x = 24 y = 24 }
+			size = { width = 1060 height = 629 }
+			background = {
+				spriteType = "GFX_tiled_white"
+			}
+		}
 		browserType = {
 			name = "browser"
 			spriteType = "GFX_dummy_browser"
-			position = { x = 24 y = 60 }
+			position = { x = 24 y = 53 }
 			size = { x = 1060 y = 600 }
 		}
 		buttonType = {
 			name = "back"
 			quadTextureSprite = "GFX_browser_back"
-			position = { x = 24 y = 30 }
+			position = { x = 24 y = 24 }
 			pdx_tooltip = "BROWSER_BACK"
 		}
 		buttonType = {
 			name = "forward"
 			quadTextureSprite = "GFX_browser_forward"
-			position = { x = 54 y = 30 }
+			position = { x = 53 y = 24 }
 			pdx_tooltip = "BROWSER_FORWARD"
 		}
 		buttonType = {
 			name = "reload"
 			quadTextureSprite = "GFX_browser_refresh"
-			position = { x = 84 y = 30 }
+			position = { x = 82 y = 24 }
 			pdx_tooltip = "BROWSER_RELOAD"
 		}
 		buttonType = {
@@ -53,12 +61,10 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "close"
-			quadTextureSprite = "GFX_close"
-			position = { x = -21 y = 21 }
-			Orientation = UPPER_RIGHT
+			quadTextureSprite = "GFX_browser_close"
+			position = { x = 1025 y = 24 }
 			clicksound = click_close
 			shortcut = "ESCAPE"
-			centerposition = yes
 		}
 	}
 }

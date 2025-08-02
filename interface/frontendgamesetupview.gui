@@ -282,27 +282,18 @@ guiTypes = {
 
 	containerWindowType = {
 		name ="gamesetup_ironman_save"
-		position = { x=-210 y =-250 }
-		size = { width = 420 height = 500}
-		Orientation = center
-		clipping = no
-
+		size = { width = 360 height = 400}
+		Orientation = CENTER
+		origo = center
+		moveable = yes
 		background = {
-			name = "savedgamerules_load_bg"
-			quadTextureSprite = "GFX_savedgamerules_load_bg"
-			alwaystransparent = yes
-			position = {
-				x = 73
-				y = 70
-			}
+			quadTextureSprite = "GFX_tiled_black_bg"
 		}
-
 		instantTextBoxType={
 			name = "saves_dirs"
 			position = { x = 10 y = 375 }
 			textureFile = ""
 			font = "Arial"
-			borderSize = {x = 0 y = 4}
 			text = ""
 			maxWidth = 120
 			maxHeight = 16
@@ -310,115 +301,96 @@ guiTypes = {
 			fixedsize = yes
 			truncate = yes
 		}
-
-		instantTextBoxType={
-			position = { x = 10000 y = 379 }
-			name = "disk_quota"
-			font = "Arial"
-			borderSize = { x = 8 y = 0 }
-			maxWidth = 188
-			maxHeight = 18
-			text = "MENU_BAR_DISK_QUOTA"
-			orientation = "UPPER_LEFT"
-			format = centre
-		}
-
 		containerWindowType = {
 			name ="local_remote"
-			position = { x = 75 y = 146 }
-			size = { width = 350 height = 40}
 			verticalScrollbar = "right_vertical_slider"
-
 			background = {
-				name = "Background"
 				quadTextureSprite ="GFX_tiled_null"
 			}
 		}
-
+		checkboxType = {
+			name = "localgames_tab"
+			position = { x = -50  y = 15 }
+			quadTextureSprite ="GFX_checkbox_3frames"
+			Orientation = CENTER_UP
+			clicksound = click_checkbox
+		}
+		checkboxType = {
+			name = "remotegames_tab"
+			position = { x = 110 y = 15 }
+			quadTextureSprite ="GFX_checkbox_3frames"
+			orientation = CENTER_UP
+			clicksound = click_checkbox
+		}
+		buttonType = {
+			name = "local_bg"
+			position = { x = -80 y = 31 }
+			quadTextureSprite ="GFX_tiling_text_bg"
+			size = {x=140 y=29}
+			Orientation = CENTER_UP
+			alwaystransparent = yes
+			centerposition = yes
+		}
+		buttonType = {
+			name = "cloud_bg"
+			position = { x = 80 y = 31 }
+			quadTextureSprite ="GFX_tiling_text_bg"
+			size = {x=140 y=29}
+			Orientation = CENTER_UP
+			alwaystransparent = yes
+			centerposition = yes
+		}
+		instantTextBoxType = {
+			name = "localgames_label"
+			position = { x = -140 y = 18 }
+			font = "Arialcap"
+			text = "LOCAL"
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+			orientation = CENTER_UP
+			format = left
+		}
+		instantTextBoxType = {
+			name = "cloudgames_label"
+			position = { x = 20 y = 18 }
+			font = "Arialcap"
+			text = "CLOUD"
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+			orientation = CENTER_UP
+			format = left
+		}
 		containerWindowType = {
 			name ="games"
-			position = { x = 75 y = 126 }
+			position = { x = 0 y = 60 }
 			size = { width = 350 height = 320}
 			verticalScrollbar = "right_vertical_slider"
 			vertical_scroll_step = 5
-
 			background = {
-				name = "Background"
 				quadTextureSprite ="GFX_tiled_null"
 			}
-
 			gridBoxType = {
 				name = "games_grid"
-				position = { x=13 y =15}
-				size = { width =280 height = 400}
+				position = { x=14 y =0}
+				size = { width =280 height = 100%% }
 				slotsize = { width = 280 height = 55 }
 				format = "UPPER_LEFT"
 				max_slots_horizontal = 1
 			}
 		}
-
-		checkboxType = {
-			name = "localgames_tab"
-			position = { x = 112 y = 84 }
-			quadTextureSprite ="GFX_save_load_file_btn"
-			Orientation = "UPPER_LEFT"
-		}
-
-		checkboxType = {
-			name = "remotegames_tab"
-			position = { x = 269 y = 84 }
-			quadTextureSprite ="GFX_save_load_file_btn"
-			Orientation = "UPPER_LEFT"
-		}
-
-		instantTextBoxType = {
-			name = "localgames_label"
-			position = { x = 124 y = 88 }
-			textureFile = ""
-			font = "Arial"
-			text = "MENU_BAR_LOCALGAMES"
-			maxWidth = 100
-			maxHeight = 20
-			fixedsize = yes
-
-			Orientation = "UPPER_LEFT"
-			format = centre
-		}
-
-		instantTextBoxType = {
-			name = "cloudgames_label"
-			position = { x = 280 y = 88 }
-			textureFile = ""
-			font = "Arial"
-			text = "MENU_BAR_CLOUDGAMES"
-			maxWidth = 100
-			maxHeight = 20
-			fixedsize = yes
-
-			Orientation = "UPPER_LEFT"
-			format = centre
-		}
-
 		instantTextBoxType = {
 			name = "menu_label"
-			position = { x = 10000 y = 85 }
+			position = { x = 10 y = -20 }
 			textureFile = ""
-			font = "Arialcap"
+			font = "Arialalpha"
 			text = "MENU_BAR_IRONMAN_SAVE"
-			maxWidth = 200
+			maxWidth = 400
 			maxHeight = 20
 			fixedsize = yes
-
-			Orientation = "UPPER_LEFT"
-			format = centre
+			format = left
 		}
-
-		iconType = {
-			name = "ironman_icon"
-			spriteType = "GFX_ironman_icon"
-			position = { x = 10000 y = 80 }
-		}
-
 		instantTextBoxType={
 			position = {x = 93 y = 450 }
 			name = "filename_label"
@@ -430,7 +402,6 @@ guiTypes = {
 			orientation = "UPPER_LEFT"
 			format = centre
 		}
-
 		editBoxType = {
 			position = { x = 115 y = 465 }
 			name = "game_name"
@@ -440,7 +411,6 @@ guiTypes = {
 			text = ""
 			orientation = "UPPER_LEFT"
 		}
-
 		buttonType = {
 			name = "back_button"
 			position = { x = 100 y = 503 }
@@ -452,7 +422,6 @@ guiTypes = {
 			oversound = ui_menu_over
 			shortcut = "ESCAPE"
 		}
-
 		buttonType = {
 			name = "start_button"
 			position = { x = 253 y = 503 }
@@ -1204,7 +1173,7 @@ guiTypes = {
 			buttonType = {
 				name = "revert_button"
 				position = { x = -34 y = 10000 }
-				quadTextureSprite ="GFX_exit_button"
+				quadTextureSprite ="GFX_close"
 				orientation = "UPPER_RIGHT"
 				text = ""
 				font = "Arial"

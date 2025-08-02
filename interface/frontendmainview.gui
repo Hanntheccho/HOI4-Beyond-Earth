@@ -5,23 +5,23 @@
 guiTypes = {
 	containerWindowType = {
 		name ="frontend_background"
-		size = { width = 100% height = 100% }
+		size = {
+			width = 1920
+			height = 1080
+			min = { width = 100% height = 100% }
+			max = { width = 100% height = 10000 }
+			preserve_aspect_ratio = yes
+		}
 		Orientation = center
 		Origo = center
 		clipping = no
-		iconType = {
-			name = "background"
+		background = {
 			spriteType ="GFX_main_menu_bg"
-			orientation = CENTER
-			centerposition = yes
+			alwaystransparent = yes
 		}
-		containerWindowType = {
-			name ="bg"
-			size = { width=100%% height=100%% }
-			background = {
-				quadTextureSprite = "GFX_tiled_black"
-				alwaystransparent = yes
-			}
+		background = {
+			spriteType ="GFX_tiled_black"
+			alwaystransparent = yes
 		}
 	}
 
