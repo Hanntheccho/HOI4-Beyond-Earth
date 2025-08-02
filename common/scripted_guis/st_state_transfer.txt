@@ -1,12 +1,12 @@
 scripted_gui = {
 
 	st_state_manager_powers = {
-	
+
 		context_type = selected_state_context
 		parent_window_token = selected_state_view
-		
+
 		window_name = "st_state_manager_powers_container"
-		
+
 		visible = {
 			ROOT = {
 				is_ai = no
@@ -20,28 +20,28 @@ scripted_gui = {
 				}
 			}
 		}
-		
+
 		effects = {
-			
+
 			st_state_manager_power_mark_for_transfer_click = {
-				FROM.FROM = { 
+				FROM.FROM = {
 					set_state_flag = marked_for_transfer
 					#set_border_war = yes
 				}
 				add_to_variable = { ROOT.marked_states = 1 }
 			}
-			
+
 			st_state_manager_power_unmark_for_transfer_click = {
-				FROM.FROM = { 
-					clr_state_flag = marked_for_transfer 
+				FROM.FROM = {
+					clr_state_flag = marked_for_transfer
 					#set_border_war = no
 				}
 				subtract_from_variable = { ROOT.marked_states = 1 }
 			}
 		}
-		
+
 		triggers = {
-		
+
 			st_state_manager_power_mark_for_transfer_click_enabled = {
 				FROM.FROM = {
 					NOT = { has_state_flag = marked_for_transfer }
@@ -58,28 +58,28 @@ scripted_gui = {
 				}
 			}
 		}
-		
+
 	}
-	
+
 }
 
 scripted_gui = {
-	
+
 	st_country_powers = {
-	
+
 		context_type = selected_country_context
 		parent_window_token = selected_state_view
-		
+
 		window_name = "st_subject_powers_container"
-		
+
 		visible = {
 			ROOT = {
 				is_ai = no
 			}
 		}
-		
+
 		effects = {
-		
+
 			mark_all_states_click = {
 				set_temp_variable = { ROOT.marks = this}
 				var:marks = {
@@ -93,9 +93,9 @@ scripted_gui = {
 					}
 				}
 			}
-		
+
 			clear_all_markings_click = {
-				ROOT = { 
+				ROOT = {
 					set_variable = { marked_states = 0 }
 				}
 				every_state = {
@@ -114,13 +114,13 @@ scripted_gui = {
 					#set_border_war = no
 				}
 			}
-			
+
 			award_states_click = {
-				ROOT = { 
+				ROOT = {
 					set_variable = { marked_states = 0 }
 				}
 				set_temp_variable = { ROOT.taker = this}
-				
+
 				every_state = {
 					limit = {
 						has_state_flag = marked_for_transfer
@@ -139,15 +139,15 @@ scripted_gui = {
 				}
 			}
 		}
-		
+
 		triggers = {
-		
+
 			mark_all_states_click_enabled = {
 				any_owned_state = {
 					NOT = { has_state_flag = marked_for_transfer }
 				}
 			}
-			
+
 			mark_all_states_visible = {
 				set_temp_variable = { ROOT.taker = this}
 				OR = {
@@ -160,23 +160,23 @@ scripted_gui = {
 					}
 				}
 			}
-			
+
 			clear_all_markings_click_enabled = {
 				check_variable = { ROOT.marked_states > 0 }
 			}
-		
+
 			award_states_click_enabled = {
 				check_variable = { ROOT.marked_states > 0 }
-				NOT = { 
-					ROOT = { 
+				NOT = {
+					ROOT = {
 						all_owned_state = {
 							has_state_flag = marked_for_transfer
-						} 
+						}
 					}
 				}
 			}
-		
+
 		}
-        
+
 	}
 }

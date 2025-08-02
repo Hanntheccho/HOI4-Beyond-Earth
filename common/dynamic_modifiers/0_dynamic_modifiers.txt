@@ -2,12 +2,12 @@
 #VANILLA
 
 sabotaged_resources = {
-	remove_trigger = { 
+	remove_trigger = {
 		has_resistance = no
 	}
-	
+
 	#icon = GFX_modifiers_sabotaged_resource
-	
+
 	temporary_state_resource_energy = sabotaged_energy
 	temporary_state_resource_polymers = sabotaged_polymers
 	temporary_state_resource_lithium = sabotaged_lithium
@@ -20,9 +20,9 @@ sabotaged_resources = {
 
 arc_international_modifier = {
 	enable = { always = yes }
-	
+
 	#icon = GFX_modifiers_sabotaged_resource
-	
+
 	production_speed_military_complex_factor = global.arc_international
 	production_speed_heavy_military_complex_factor = global.arc_international
 	recruitable_population_factor = global.arc_international
@@ -32,9 +32,9 @@ arc_international_modifier = {
 
 building_resources_used = {
 	enable = { always = yes }
-	
+
 	#icon = GFX_modifiers_sabotaged_resource
-	
+
 	country_resource_cost_energy = building_resources_used_energy
  	country_resource_cost_polymers = building_resources_used_polymers
  	country_resource_cost_lithium = building_resources_used_lithium
@@ -44,11 +44,11 @@ building_resources_used = {
 }
 
 too_many_building_resources_used = {
-	enable = { 
+	enable = {
 		always = yes
 	}
 	remove_trigger = {
-		NOT = { 
+		NOT = {
 			check_variable = {
 				resource@energy < 0
 			}
@@ -69,9 +69,9 @@ too_many_building_resources_used = {
 			}
 		}
 	}
-	
+
 	#icon = GFX_modifiers_sabotaged_resource
-	
+
 	production_speed_buildings_factor = too_many_building_resources_used_var
 }
 
@@ -79,7 +79,7 @@ too_many_building_resources_used = {
 
 counter_ecobalance = {
 	enable = { always = yes }
-	
+
 	#icon = GFX_modifiers_superbug_low
 
 	custom_modifier_tooltip = minor_ecobalance_tt
@@ -87,7 +87,7 @@ counter_ecobalance = {
 
 no_ecobalance = {
 	enable = { always = yes }
-	
+
 	#icon = GFX_modifiers_superbug_no
 
 	local_supplies = 0.1
@@ -95,7 +95,7 @@ no_ecobalance = {
 
 minor_ecobalance = {
 	enable = { always = yes }
-	
+
 	#icon = GFX_modifiers_superbug_low
 
 	custom_modifier_tooltip = minor_ecobalance_tt
@@ -103,7 +103,7 @@ minor_ecobalance = {
 
 notable_ecobalance = {
 	enable = { always = yes }
-	
+
 	#icon = GFX_modifiers_superbug_low_2
 
 	local_supplies = -0.1
@@ -111,25 +111,25 @@ notable_ecobalance = {
 
 major_ecobalance = {
 	enable = { always = yes }
-	
+
 	#icon = GFX_modifiers_superbug_medium
-	
+
 	local_supplies = -0.2
 }
 
 significant_ecobalance = {
 	enable = { always = yes }
-	
+
 	#icon = GFX_modifiers_superbug_medium_2
-	
+
 	local_supplies = -0.4
 }
 
 terminal_ecobalance = {
 	enable = { always = yes }
-	
+
 	#icon = GFX_modifiers_superbug_high
-	
+
 	local_supplies = -0.8
 }
 
@@ -142,7 +142,7 @@ space_research = {
 too_many_divs = {
 	enable = { always = yes }
 
-	remove_trigger = { 
+	remove_trigger = {
 		check_variable = { num_battalions < division_limit }
 	}
 
@@ -153,27 +153,27 @@ too_many_divs = {
 
 bridge_location_modifier = {
 	enable = { always = yes }
-	
+
 	#icon = GFX_modifiers_bridge_location
 }
 quarters_location_modifier = {
 	enable = { always = yes }
-	
+
 	#icon = GFX_modifiers_quarters_location
 }
 support_location_modifier = {
 	enable = { always = yes }
-	
+
 	#icon = GFX_modifiers_support_location
 }
 storage_location_modifier = {
 	enable = { always = yes }
-	
+
 	#icon = GFX_modifiers_storage_location
 }
 engine_location_modifier = {
 	enable = { always = yes }
-	
+
 	#icon = GFX_modifiers_engine_location
 }
 
