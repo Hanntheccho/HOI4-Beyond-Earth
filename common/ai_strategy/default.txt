@@ -214,54 +214,6 @@ dont_build_spaceship_complex = {
 }
 
 ########################
-### DIVISION LIMITER ###
-########################
-
-division_limiter = {
-	enable = {
-		OR = {
-			AND = {
-        		check_variable = { num_battalions > division_limit }
-				NOT = { surrender_progress > 0.7 }
-			}
-			is_puppet = yes
-		}
-	}
-
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = build_army
-		id = artillery
-		value = -1000
-	}
-
-	ai_strategy = {
-		type = build_army
-		id = mobile
-		value = -1000
-	}
-
-	ai_strategy = {
-		type = build_army
-		id = armor
-		value = -1000
-	}
-
-	ai_strategy = {
-		type = build_army
-		id = garrison
-		value = -1000
-	}
-
-	ai_strategy = {
-		type = build_army
-		id = infantry
-		value = -1000
-	}
-}
-
-########################
 #  DEFAULT AI STRATEGY #
 ########################
 
@@ -284,22 +236,22 @@ default_naval_invasion = {
 	}
 }
 
-default_build_armies = {
-	allowed = {
-		always = yes
-	}
-	enable = {
-		check_variable = {
-			num_battalions < division_limit
-		}
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = force_build_armies
-		value = 1000
-	}
-}
+#default_build_armies = {
+#	allowed = {
+#		always = yes
+#	}
+#	enable = {
+#		check_variable = {
+#			num_battalions < division_limit
+#		}
+#	}
+#	abort_when_not_enabled = yes
+#
+#	ai_strategy = {
+#		type = force_build_armies
+#		value = 1000
+#	}
+#}
 
 default_unit_production = {
 	allowed = {
