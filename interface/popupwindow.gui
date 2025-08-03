@@ -1,3 +1,4 @@
+@button_font = Arialcap
 guiTypes = {
 
 	containerWindowType = {
@@ -908,14 +909,10 @@ guiTypes = {
 		orientation= center
 		origo = center
 		moveable = yes
-		fade_time = 200
-		fade_type = linear
 		show_sound = diplomatic_notification
 		hide_sound = menu_close_window
 		click_to_front = yes
-
 		background = {
-			name = "Background"
 			quadTextureSprite ="GFX_tiled_black_bg"
 		}
 
@@ -948,23 +945,18 @@ guiTypes = {
 			position = { x= 25 y = 30 }
 			Orientation = "UPPER_LEFT"
 		}
-
-		iconType =
-		{
+		iconType = {
 			name ="sender_flag_frame"
 			spriteType = "GFX_diplo_countrylist_flag_frame"
 			position = { x= 20 y = 26 }
 		}
-
 		iconType = {
 			name = "receiver_flag"
 			quadTextureSprite ="GFX_flag_small2"
 			position = { x= 433 y = 30 }
 			Orientation = "UPPER_LEFT"
 		}
-
-		iconType =
-		{
+		iconType = {
 			name ="receiver_flag_frame"
 			spriteType = "GFX_diplo_countrylist_flag_frame"
 			position = { x= 428 y = 26 }
@@ -975,10 +967,7 @@ guiTypes = {
 			position = { x = 40 y = 80 }
 			textureFile = ""
 			font = "Arialsmallest"
-			borderSize = {
-				x = 10
-				y = 0
-			}
+			borderSize = { x = 10 y = 0 }
 			text = "Long text here!"
 			maxWidth = 400
 			maxHeight = 150
@@ -992,7 +981,7 @@ guiTypes = {
 			size = { x = 120 y = 40 }
 			quadTextureSprite ="GFX_tiling_button"
 			buttonText = "OK"
-			buttonFont = "Arialcap"
+			buttonFont = @button_font
 			shortcut = "RETURN"
 			orientation = CENTER_DOWN
 		}
@@ -1426,23 +1415,23 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "title"
-			position = { x = 20 y = 16 }
+			position = { x = -220 y = 22 }
 			textureFile = ""
 			font = "Arialcap"
-			borderSize = {x = 0 y = 10}
 			text = "Title"
 			maxWidth = 440
 			maxHeight = 180
 			fixedsize = yes
 			format = centre
+			orientation = CENTER_UP
 		}
 		instantTextBoxType = {
 			name = "description"
-			position = { x = 39 y = 70 }
+			position = { x = 45 y = 70 }
 			textureFile = ""
 			font = "Arialsmallest"
 			text = "Long text here!"
-			maxWidth = 400
+			maxWidth = 390
 			maxHeight = 145
 			format = centre
 			scrollbartype = "standardtext_slider"
@@ -1453,8 +1442,8 @@ guiTypes = {
 			orientation = CENTER_DOWN
 			size = { x = 140 y = 40 }
 			quadTextureSprite ="GFX_tiling_button"
-			text = "CANCEL"
-			font = "Arial"
+			text = "PDXO_CANCEL"
+			font = @button_font
 			shortcut = "ESCAPE"
 			clicksound = click_close
 		}
@@ -1465,7 +1454,7 @@ guiTypes = {
 			size = { x = 140 y = 40 }
 			quadTextureSprite ="GFX_tiling_button"
 			text = "OK"
-			font = "Arial"
+			font = @button_font
 			shortcut = "RETURN"
 			clicksound = click_default
 		}

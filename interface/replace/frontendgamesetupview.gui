@@ -1,3 +1,4 @@
+@button_font = Arialcap
 guiTypes = {
 	#country entry on country selection
 	containerWindowType = {
@@ -40,7 +41,7 @@ guiTypes = {
 			position = { x = 10 y = -23 }
 			textureFile = ""
 			font = "Arialalpha"
-			text = "LOAD.SAVED_GAMES.SAVELOAD.WIN"
+			text = "SAVELOADTITLE"
 			maxWidth = 400
 			maxHeight = 20
 			fixedsize = yes
@@ -131,6 +132,17 @@ guiTypes = {
 		clipping = no
 		background = {
 			quadTextureSprite = "GFX_tiled_black_bg"
+		}
+		instantTextBoxType = {
+			name = "menu_label"
+			position = { x = 10 y = -23 }
+			textureFile = ""
+			font = "Arialalpha"
+			text = "SAVELOADTITLE"
+			maxWidth = 400
+			maxHeight = 20
+			fixedsize = yes
+			format = left
 		}
 		instantTextBoxType={
 			name = "saves_dirs"
@@ -224,17 +236,6 @@ guiTypes = {
 				max_slots_horizontal = 1
 			}
 		}
-		instantTextBoxType = {
-			name = "menu_label"
-			position = { x = 10 y = -23 }
-			textureFile = ""
-			font = "Arialalpha"
-			text = "LOAD.NIGHTMARE.SAVE_LOAD.WIN"
-			maxWidth = 400
-			maxHeight = 20
-			fixedsize = yes
-			format = left
-		}
 		instantTextBoxType={
 			position = {x = -150 y = -110 }
 			name = "filename_label"
@@ -259,7 +260,7 @@ guiTypes = {
 			quadTextureSprite ="GFX_tiling_button"
 			size = { x = 110 y = 40 }
 			text = "BACK"
-			font = "Arialcap"
+			font = @button_font
 			Orientation = CENTER_DOWN
 			clicksound = click_close
 			oversound = ui_menu_over
@@ -271,10 +272,11 @@ guiTypes = {
 			quadTextureSprite ="GFX_tiling_button"
 			size = { x = 180 y = 40 }
 			text = "MENU_BAR_SAVE_PLAY"
-			font = "Arialcap"
+			font = @button_font
 			Orientation = CENTER_DOWN
 			clicksound = click_default
 			oversound = ui_menu_over
+			shortcut = "RETURN"
 		}
 	}
 
@@ -293,7 +295,7 @@ guiTypes = {
 			name = "detail_title"
 			position = { x = -230 y = 16 }
 			font = "Arialalpha"
-			text = "POWERHOUSE.LOAD.LOBBY_SELECT_BIG_EIGHT"
+			text = "COUNTRYSELECTIONTITLE"
 			maxWidth = 460
 			maxHeight = 30
 			format = center
@@ -318,24 +320,24 @@ guiTypes = {
 		}
 		ButtonType = {
 			name = "back_button"
-			position = { x = -230 y = -60 }
+			position = { x = -250 y = -60 }
 			orientation = CENTER_DOWN
 			size = { x = 200 y = 40 }
 			quadTextureSprite ="GFX_tiling_button"
 			text = "BACK"
-			font = "Arialcap"
+			font = @button_font
 			clicksound = click_close
 			oversound = ui_menu_over
 			shortcut = "ESCAPE"
 		}
 		ButtonType = {
 			name = "select_button"
-			position = { x = 30 y = -60 }
+			position = { x = -30 y = -60 }
 			orientation = CENTER_DOWN
-			size = { x = 200 y = 40 }
+			size = { x = 280 y = 40 }
 			quadTextureSprite ="GFX_tiling_button"
-			text = "SELECT"
-			font = "Arial"
+			text = "FE_SELECT_COUNTRY"
+			font = @button_font
 			clicksound = click_default
 			oversound = ui_menu_over
 			shortcut = "RETURN"
@@ -664,11 +666,8 @@ guiTypes = {
 			instantTextboxType = {
 				name = "window_title"
 				font = "Arialalpha"
-				position = {
-					x = -250
-					y = 0
-				}
-				text = "SELECT.RANDOM_COUNTRY.WIN"
+				position = { x = -250 y = 0}
+				text = "RANDOMCOUNTRYTITLE"
 				maxWidth = 500
 				maxHeight = 36
 				format = center
@@ -713,10 +712,11 @@ guiTypes = {
 			instantTextBoxType={
 				position = {x = 60 y = 10}
 				name = "include_interesting_majors_text"
-				font = "Arialsmall"
+				font = "Arialsmallcap"
 				maxWidth = 370
 				maxHeight = 16
-				text = "INTERESTING MAJORS"
+				text = "FE_INTERESTING_MAJORS"
+				pdx_tooltip = "FE_INTERESTING_MAJORS_TOOLTIP"
 			}
 			checkboxType = {
 				name = "include_interesting_majors_cb"
@@ -727,10 +727,11 @@ guiTypes = {
 			instantTextBoxType={
 				position = {x = 60 y = 50 }
 				name = "include_interesting_minors_text"
-				font = "Arialsmall"
+				font = "Arialsmallcap"
 				maxWidth = 370
 				maxHeight = 16
-				text = "INTERESTING MINORS"
+				text = "FE_INTERESTING_MINORS"
+				pdx_tooltip = "FE_INTERESTING_MINORS_TOOLTIP"
 			}
 			checkboxType = {
 				name = "include_interesting_minors_cb"
@@ -741,10 +742,11 @@ guiTypes = {
 			instantTextBoxType={
 				position = {x = 60 y = 90 }
 				name = "include_other_countries_text"
-				font = "Arialsmall"
+				font = "Arialsmallcap"
 				maxWidth = 370
 				maxHeight = 16
-				text = "OTHER COUNTRIES"
+				text = "FE_OTHER_COUNTRIES"
+				pdx_tooltip = "FE_OTHER_COUNTRIES_TOOLTIP"
 			}
 			checkboxType = {
 				name = "include_other_countries_cb"
@@ -780,8 +782,8 @@ guiTypes = {
 				size = { x = 270 y = 40 }
 				quadTextureSprite ="GFX_tiling_button"
 				orientation = CENTER_DOWN
-				text = "SELECT RANDOM"
-				font = "Arial"
+				text = "RANDOMIZE_COUNTRY_PICK"
+				font = @button_font
 				clicksound = click_default
 			}
 		}
@@ -804,7 +806,7 @@ guiTypes = {
 			name = "detail"
 			position = { x = -200 y = 14 }
 			font = "Arialalpha"
-			text = "OPEN.GAMEPLAY_SETTINGS.CUSTOM.WIN"
+			text = "CUSTOMSETTINGSTITLE"
 			maxWidth = 400
 			maxHeight = 24
 			format = center
@@ -1163,7 +1165,7 @@ guiTypes = {
 			position = { x = -135 y = -56 }
 			orientation = CENTER_DOWN
 			font = "Arialsmallcap"
-			text = "CUSTOM SETTINGS"
+			text = "FE_CUSTOM_SETTINGS"
 			clicksound = click_default
 			oversound = ui_menu_over
 			shortcut = "k"
@@ -1444,7 +1446,7 @@ guiTypes = {
 				size = { x = 260 y = 36 }
 				quadTextureSprite ="GFX_tiling_button"
 				font = "Arialsmallcap"
-				text = "INTERESTING COUNTRIES"
+				text = "FE_INTERESTING_COUNTRIES"
 				clicksound = click_default
 				oversound = ui_menu_over
 				shortcut = "i"
@@ -1456,7 +1458,7 @@ guiTypes = {
 				size = { x = 200 y = 36 }
 				quadTextureSprite ="GFX_tiling_button"
 				font = "Arialsmallcap"
-				text = "RANDOM COUNTRY"
+				text = "FE_RANDOMIZE_COUNTRY"
 				clicksound = click_default
 				oversound = ui_menu_over
 				shortcut = "r"
@@ -1559,7 +1561,7 @@ guiTypes = {
 				quadTextureSprite ="GFX_tiling_button"
 				size = { x = 200 y = 40 }
 				Orientation = LOWER_LEFT
-				font = Arialcap
+				font = @button_font
 				text="BACK"
 				clicksound = click_close
 				oversound = ui_menu_over
@@ -1571,8 +1573,8 @@ guiTypes = {
 				quadTextureSprite ="GFX_tiling_button"
 				size = { x = 200 y = 40 }
 				Orientation = LOWER_LEFT
-				font = Arialcap
-				text="LOAD"
+				font = @button_font
+				text="MENU_BAR_LOAD_GAME"
 				clicksound = click_default
 				oversound = ui_menu_over
 				shortcut = "l"
@@ -1583,7 +1585,7 @@ guiTypes = {
 				quadTextureSprite ="GFX_tiling_button"
 				size = { x = 200 y = 40 }
 				Orientation = LOWER_LEFT
-				font = Arialcap
+				font = @button_font
 				text="OPTIONS"
 				clicksound = click_default
 				oversound = ui_menu_over
@@ -1600,7 +1602,7 @@ guiTypes = {
 				quadTextureSprite ="GFX_tiling_button"
 				size = { x = 300 y = 40 }
 				Orientation = LOWER_LEFT
-				font = Arialcap
+				font = @button_font
 				text="START"
 				shortcut = "RETURN"
 			}
@@ -1609,7 +1611,7 @@ guiTypes = {
 				position = { x = -10000 y = 12 }
 				spriteType ="GFX_play_button_ready"
 				text = "READY"
-				font = "Arialcap"
+				font = @button_font
 				Orientation = "LOWER_RIGHT"
 				shortcut = "RETURN"
 				frame = 1

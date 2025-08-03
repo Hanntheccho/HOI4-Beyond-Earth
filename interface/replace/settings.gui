@@ -2,6 +2,7 @@
 @tiling_text_bg_width = 418
 @tiling_text_bg_height = 29
 @settings_font = Arialsmall
+@button_font = Arialcap
 guiTypes = {
 	containerWindowType = {
 		name = "menu_settings_ingame"
@@ -24,7 +25,7 @@ guiTypes = {
 			name = "settings_label"
 			position = { x = -240 y = -273 }
 			font = "Arialalpha"
-			text = "PAUSE.OPEN.GAME_OPTIONS.DEFAULT"
+			text = "SETTINGSTITLE"
 			maxWidth = 400
 			maxHeight = 30
 			orientation = CENTER
@@ -34,8 +35,8 @@ guiTypes = {
 			position = { x = -230 y = 20 }
 			size = { x = 115 y = 40 }
 			quadTextureSprite ="GFX_tiling_button"
-			font = "Arial"
-			text = "GAME"
+			font = @button_font
+			text = "SM_GAME"
 			clicksound = click_checkbox
 			oversound = ui_menu_over
 			orientation = CENTER_UP
@@ -45,8 +46,8 @@ guiTypes = {
 			position = { x = -115 y = 20 }
 			size = { x = 115 y = 40 }
 			quadTextureSprite ="GFX_tiling_button"
-			font = "Arial"
-			text =	 "VIDEO"
+			font = @button_font
+			text = "SM_VIDEO"
 			clicksound = click_checkbox
 			oversound = ui_menu_over
 			orientation = CENTER_UP
@@ -56,8 +57,8 @@ guiTypes = {
 			position = { x = 0 y = 20 }
 			size = { x = 115 y = 40 }
 			quadTextureSprite ="GFX_tiling_button"
-			font = "Arial"
-			text = "AUDIO"
+			font = @button_font
+			text = "SM_AUDIO"
 			clicksound = click_checkbox
 			oversound = ui_menu_over
 			orientation = CENTER_UP
@@ -67,8 +68,8 @@ guiTypes = {
 			position = { x = 115 y = 20 }
 			size = { x = 115 y = 40 }
 			quadTextureSprite ="GFX_tiling_button"
-			font = "Arial"
-			text = "ACCESS"
+			font = @button_font
+			text = "SETTINGS_ACCESSIBILITY"
 			clicksound = click_checkbox
 			oversound = ui_menu_over
 			orientation = CENTER_UP
@@ -377,7 +378,7 @@ guiTypes = {
 				position = { x = -135 y = 10 }
 				size = { x = 270 y = 40 }
 				quadTextureSprite ="GFX_tiling_button"
-				text = "OPEN MUSIC PLAYER"
+				text = "MUSICPLAYER_OPEN_PLAYER"
 				font = "Arial"
 				clicksound = click_default
 				orientation = CENTER
@@ -1335,8 +1336,8 @@ guiTypes = {
 			position = { x = -55 y = -60}
 			size = { x = 260 y = 40 }
 			quadTextureSprite ="GFX_tiling_button"
-			text = "CONFIRM CHANGES"
-			font = "Arial"
+			text = "SM_APPLY"
+			font = @button_font
 			clicksound = click_default
 			orientation = CENTER_DOWN
 		}
@@ -1346,9 +1347,10 @@ guiTypes = {
 			size = { x = 140 y = 40 }
 			quadTextureSprite ="GFX_tiling_button"
 			text = "BACK"
-			font = "Arialcap"
+			font = @button_font
 			clicksound = click_close
 			orientation = CENTER_DOWN
+			shortcut = "ESCAPE"
 		}
 	}
 }

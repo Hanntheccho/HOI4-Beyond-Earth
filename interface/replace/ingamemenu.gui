@@ -25,7 +25,7 @@ guiTypes = {
 			position = { x = -240 y = -273 }
 			textureFile = ""
 			font = "Arialalpha"
-			text = "GAME.BEYOND_EARTH.LOADING.LOBBY"
+			text = "MAINMENUTITLE"
 			maxWidth = 400
 			maxHeight = 30
 			orientation = CENTER
@@ -58,7 +58,7 @@ guiTypes = {
 			orientation = CENTER
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"
-			text = "LOAD"
+			text = "MENU_BAR_LOAD_GAME"
 			font = @button_font
 			clicksound = click_default
 			oversound = ui_menu_over
@@ -69,7 +69,7 @@ guiTypes = {
 			orientation = CENTER
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"
-			text = "SAVE"
+			text = "MENU_BAR_SAVE_GAME"
 			font = @button_font
 			clicksound = click_default
 			oversound = ui_menu_over
@@ -91,7 +91,7 @@ guiTypes = {
 			orientation = CENTER
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"
-			text = "EXIT TO MENU"
+			text = "MENU_BAR_GAME_RESIGN"
 			font = @button_font
 			clicksound = click_default
 			oversound = ui_menu_over
@@ -102,7 +102,7 @@ guiTypes = {
 			orientation = CENTER
 			size = { x = @button_width y = @button_height }
 			quadTextureSprite ="GFX_tiling_button"
-			text = "QUIT"
+			text = "FE_EXIT"
 			font = @button_font
 			clicksound = click_default
 			oversound = ui_menu_over
@@ -122,7 +122,7 @@ guiTypes = {
 			position = { x = -150 y = 195 }
 			textureFile = ""
 			font = "Arialsmallestcap"
-			text = "Beyond Earth v0.2.0 (HOI4 v1.16.9)"
+			text = "MODVERSION"
 			orientation = CENTER
 			format = centre
 			maxWidth = 300
@@ -241,148 +241,156 @@ guiTypes = {
 		}
 	}
 
+	#ingame load win
 	containerWindowType = {
 		name ="ingamemenu_load"
-		position = { x = -250 y = -310 }
-		size = { width = 420 height = 500}
-		Orientation = center
+		position={x=-500 y=-100}
+		size = { width = 400 height = 400}
+		Orientation = CENTER
+		origo = center
+		moveable = yes
 		clipping = no
-
 		background = {
-			name = "savedgamerules_load_bg"
-			quadTextureSprite = "GFX_savedgamerules_load_bg"
-			alwaystransparent = yes
-			position = {
-				x = 73
-				y = 70
-			}
+			quadTextureSprite = "GFX_tiled_black_bg"
 		}
-
+		instantTextBoxType = {
+			name = "menu_label"
+			position = { x = 10 y = -23 }
+			textureFile = ""
+			font = "Arialalpha"
+			text = "SAVELOADTITLE"
+			maxWidth = 400
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+		checkboxType = {
+			name = "localgames_tab"
+			position = { x = -50  y = 15 }
+			quadTextureSprite ="GFX_checkbox_3frames"
+			Orientation = CENTER_UP
+			clicksound = click_checkbox
+		}
+		checkboxType = {
+			name = "remotegames_tab"
+			position = { x = 110 y = 15 }
+			quadTextureSprite ="GFX_checkbox_3frames"
+			orientation = CENTER_UP
+			clicksound = click_checkbox
+		}
+		buttonType = {
+			name = "local_bg"
+			position = { x = -80 y = 31 }
+			quadTextureSprite ="GFX_tiling_text_bg"
+			size = {x=140 y=29}
+			Orientation = CENTER_UP
+			alwaystransparent = yes
+			centerposition = yes
+		}
+		buttonType = {
+			name = "cloud_bg"
+			position = { x = 80 y = 31 }
+			quadTextureSprite ="GFX_tiling_text_bg"
+			size = {x=140 y=29}
+			Orientation = CENTER_UP
+			alwaystransparent = yes
+			centerposition = yes
+		}
+		instantTextBoxType = {
+			name = "localgames_label"
+			position = { x = -140 y = 18 }
+			font = "Arialcap"
+			text = "LOCAL"
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+			orientation = CENTER_UP
+			format = left
+		}
+		instantTextBoxType = {
+			name = "cloudgames_label"
+			position = { x = 20 y = 18 }
+			font = "Arialcap"
+			text = "CLOUD"
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+			orientation = CENTER_UP
+			format = left
+		}
 		containerWindowType = {
 			name ="games"
-			position = { x = 75 y = 126 }
-			size = { width = 350 height = 360}
+			position = { x = -180 y = 66 }
+			size = { width = 360 height = 260}
 			verticalScrollbar = "right_vertical_slider"
 			vertical_scroll_step = 5
-
+			orientation = CENTER_UP
 			background = {
-				name = "Background"
 				quadTextureSprite ="GFX_tiled_null"
 			}
-
 			gridBoxType = {
 				name = "games_grid"
-				position = { x=13 y =2}
-				size = { width =280 height = 380}
+				position = { x=10 y =0}
+				size = { width =280 height = 100%% }
 				slotsize = { width = 280 height = 55 }
 				format = "UPPER_LEFT"
 				max_slots_horizontal = 1
 			}
 		}
-
-		instantTextBoxType = {
-			name = "saves_dirs"
-			position = { x = 10 y = 375 }
-			textureFile = ""
-			font = "Arialsmall"
-			borderSize = {x = 0 y = 4}
-			text = ""
-			maxWidth = 120
-			maxHeight = 16
-			format = left
-			fixedsize = yes
-			truncate = yes
-		}
-
-		checkboxType = {
-			name = "localgames_tab"
-			position = { x = 112 y = 84 }
-			quadTextureSprite ="GFX_save_load_file_btn"
-			Orientation = "UPPER_LEFT"
-		}
-
-		checkboxType = {
-			name = "remotegames_tab"
-			position = { x = 262 y = 84 }
-			quadTextureSprite ="GFX_save_load_file_btn"
-			Orientation = "UPPER_LEFT"
-		}
-
-		instantTextBoxType = {
-			name = "localgames_label"
-			position = { x = 124 y = 88 }
-			textureFile = ""
-			font = "Arial"
-			text = "MENU_BAR_LOCALGAMES"
-			maxWidth = 100
-			maxHeight = 20
-			fixedsize = yes
-			Orientation = "UPPER_LEFT"
-			format = centre
-		}
-
-		instantTextBoxType = {
-			name = "cloudgames_label"
-			position = { x = 274 y = 88 }
-			textureFile = ""
-			font = "Arial"
-			text = "MENU_BAR_CLOUDGAMES"
-			maxWidth = 100
-			maxHeight = 20
-			fixedsize = yes
-			Orientation = "UPPER_LEFT"
-			format = centre
-		}
-
-
-		buttonType = {
-			name = "load"
-			position = { x = 253 y = 503 }
-			quadTextureSprite ="GFX_button_148x34"
-			text = "MENU_BAR_LOAD"
-			font = "Arial"
-			Orientation = "UPPER_LEFT"
-			clicksound = click_close
-			oversound = ui_menu_over
-			shortcut = "RETURN"
-		}
-
 		buttonType = {
 			name = "cancel"
-			position = { x = 100 y = 503 }
-			quadTextureSprite ="GFX_button_148x34"
+			position = { x = -150 y = -58 }
+			quadTextureSprite ="GFX_tiling_button"
+			size = { x = 110 y = 40 }
 			text = "BACK"
-			font = "Arialcap"
-			Orientation = "UPPER_LEFT"
+			font = @button_font
+			Orientation = CENTER_DOWN
 			clicksound = click_close
 			oversound = ui_menu_over
 			shortcut = "ESCAPE"
 		}
+		buttonType = {
+			name = "load"
+			position = { x = -30 y = -58 }
+			quadTextureSprite ="GFX_tiling_button"
+			size = { x = 180 y = 40 }
+			text = "MENU_BAR_LOAD"
+			font = @button_font
+			Orientation = CENTER_DOWN
+			clicksound = click_default
+			oversound = ui_menu_over
+			shortcut = "RETURN"
+		}
 	}
 
+	#ingame save win
 	containerWindowType = {
 		name ="ingamemenu_save"
-		position = { x = -250 y = -310 }
-		size = { width = 420 height = 500}
-		Orientation = center
+		position={x=-500 y=-100}
+		size = { width = 400 height = 400}
+		Orientation = CENTER
+		origo = center
+		moveable = yes
 		clipping = no
-
 		background = {
-			name = "savedgamerules_load_bg"
-			quadTextureSprite = "GFX_savedgamerules_load_bg"
-			alwaystransparent = yes
-			position = {
-				x = 73
-				y = 70
-			}
+			quadTextureSprite = "GFX_tiled_black_bg"
 		}
-
 		instantTextBoxType = {
+			name = "menu_label"
+			position = { x = 10 y = -23 }
+			textureFile = ""
+			font = "Arialalpha"
+			text = "SAVELOADTITLE"
+			maxWidth = 400
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+		instantTextBoxType={
 			name = "saves_dirs"
 			position = { x = 10 y = 375 }
 			textureFile = ""
-			font = "Arialsmall"
-			borderSize = {x = 0 y = 4}
+			font = "Arial"
 			text = ""
 			maxWidth = 120
 			maxHeight = 16
@@ -390,145 +398,135 @@ guiTypes = {
 			fixedsize = yes
 			truncate = yes
 		}
-
-		instantTextBoxType={
-			position = { x = 10000 y = 379 }
-			name = "disk_quota"
-			font = "Arialsmall"
-			borderSize = { x = 8 y = 0 }
-			maxWidth = 188
-			maxHeight = 18
-			text = "MENU_BAR_DISK_QUOTA"
-			orientation = "UPPER_LEFT"
-			format = centre
-		}
-
 		checkboxType = {
 			name = "localgames_tab"
-			position = { x = 112 y = 84 }
-			quadTextureSprite ="GFX_save_load_file_btn"
-			Orientation = "UPPER_LEFT"
+			position = { x = -50  y = 15 }
+			quadTextureSprite ="GFX_checkbox_3frames"
+			Orientation = CENTER_UP
+			clicksound = click_checkbox
 		}
-
 		checkboxType = {
 			name = "remotegames_tab"
-			position = { x = 269 y = 84 }
-			quadTextureSprite ="GFX_save_load_file_btn"
-			Orientation = "UPPER_LEFT"
+			position = { x = 110 y = 15 }
+			quadTextureSprite ="GFX_checkbox_3frames"
+			orientation = CENTER_UP
+			clicksound = click_checkbox
 		}
-
+		buttonType = {
+			name = "local_bg"
+			position = { x = -80 y = 31 }
+			quadTextureSprite ="GFX_tiling_text_bg"
+			size = {x=140 y=29}
+			Orientation = CENTER_UP
+			alwaystransparent = yes
+			centerposition = yes
+		}
+		buttonType = {
+			name = "cloud_bg"
+			position = { x = 80 y = 31 }
+			quadTextureSprite ="GFX_tiling_text_bg"
+			size = {x=140 y=29}
+			Orientation = CENTER_UP
+			alwaystransparent = yes
+			centerposition = yes
+		}
 		instantTextBoxType = {
 			name = "localgames_label"
-			position = { x = 124 y = 88 }
-			textureFile = ""
-			font = "Arial"
-			text = "MENU_BAR_LOCALGAMES"
+			position = { x = -140 y = 18 }
+			font = "Arialcap"
+			text = "LOCAL"
 			maxWidth = 100
 			maxHeight = 20
 			fixedsize = yes
-			Orientation = "UPPER_LEFT"
-			format = centre
+			orientation = CENTER_UP
+			format = left
 		}
-
 		instantTextBoxType = {
 			name = "cloudgames_label"
-			position = { x = 280 y = 88 }
-			textureFile = ""
-			font = "Arial"
-			text = "MENU_BAR_CLOUDGAMES"
+			position = { x = 20 y = 18 }
+			font = "Arialcap"
+			text = "CLOUD"
 			maxWidth = 100
 			maxHeight = 20
 			fixedsize = yes
-			Orientation = "UPPER_LEFT"
-			format = centre
+			orientation = CENTER_UP
+			format = left
 		}
-
 		containerWindowType = {
 			name ="games"
-			position = { x = 75 y = 126 }
-			size = { width = 350 height = 310}
+			position = { x = -180 y = 66 }
+			size = { width = 360 height = 210}
 			verticalScrollbar = "right_vertical_slider"
 			vertical_scroll_step = 5
-
+			orientation = CENTER_UP
 			background = {
-				name = "Background"
 				quadTextureSprite ="GFX_tiled_null"
 			}
-
 			gridBoxType = {
 				name = "games_grid"
-				position = { x=13 y =2}
-				size = { width =280 height = 380}
+				position = { x=10 y =0}
+				size = { width =280 height = 100%% }
 				slotsize = { width = 280 height = 55 }
 				format = "UPPER_LEFT"
 				max_slots_horizontal = 1
 			}
 		}
-
 		instantTextBoxType={
-			position = {x = 93 y = 450 }
+			position = {x = -150 y = -110 }
 			name = "filename_label"
 			font = "Arial16"
-			borderSize = {x = 8 y = 0}
 			maxWidth = 300
 			maxHeight = 18
 			text = "MENU_BAR_SAVE_GAME_FILENAME"
 			orientation = "UPPER_LEFT"
 			format = centre
+			orientation = CENTER_DOWN
 		}
-
 		editBoxType = {
-			position = { x = 115 y = 465 }
+			position = { x = 70 y = 310 }
 			name = "game_name"
-			font = "Arialsmallestcap"
-			borderSize = { x = 4 y = 8  }
+			font = "Arialsmallest"
 			size = { x=260 y=42 }
 			text = ""
-			orientation = "UPPER_LEFT"
 		}
-
 		buttonType = {
 			name = "cancel"
-			position = { x = 100 y = 503 }
-			quadTextureSprite ="GFX_button_148x34"
+			position = { x = -150 y = -58 }
+			quadTextureSprite ="GFX_tiling_button"
+			size = { x = 110 y = 40 }
 			text = "BACK"
-			font = "Arialcap"
-			Orientation = "UPPER_LEFT"
+			font = @button_font
+			Orientation = CENTER_DOWN
 			clicksound = click_close
 			oversound = ui_menu_over
 			shortcut = "ESCAPE"
 		}
-
 		buttonType = {
 			name = "save"
-			position = { x = 253 y = 503 }
-			quadTextureSprite ="GFX_button_148x34"
+			position = { x = -30 y = -58 }
+			quadTextureSprite ="GFX_tiling_button"
+			size = { x = 180 y = 40 }
 			text = "MENU_BAR_SAVE"
-			font = "Arialcap"
-			Orientation = "UPPER_LEFT"
-			clicksound = click_close
+			font = @button_font
+			Orientation = CENTER_DOWN
+			clicksound = click_default
 			oversound = ui_menu_over
 			shortcut = "RETURN"
 		}
 	}
 
+	#savegame item entry
+	@savegame_item_width = 314
+	@savegame_item_height = 46
 	containerWindowType = {
 		name ="savegame_item"
-		size = { width = 306 height = 46 }
+		size = { width = @savegame_item_width height = @savegame_item_height }
 		clipping = no
 		buttonType = {
 			name = "BackgroundButton"
-			quadTextureSprite ="GFX_tiled_black"
-			size = {x=306 y=46}
+			quadTextureSprite ="GFX_tiled_box"
+			size = {x=@savegame_item_width y=@savegame_item_height}
 		}
-		buttonType = {
-			name = "bg"
-			position = { x=0 y =18 }
-			quadTextureSprite ="GFX_tiling_text_bg"
-			size = {x=306 y=29}
-			alwaystransparent = yes
-		}
-
 		iconType = {
 			name ="player_shield"
 			quadTextureSprite = "GFX_flag_small2_not_masked"
@@ -584,14 +582,14 @@ guiTypes = {
 
 		buttonType = {
 			name = "delete"
-			position = { x=280 y=20 }
+			position = { x=285 y=17 }
 			spriteType = "GFX_dismantle_faction_button"
 			clicksound = disband
 		}
 		iconType = {
 			name ="missing_dlc_sign"
 			quadTextureSprite = "GFX_missing_dlc_warning_sign"
-			position = { x= -6 y = 4 }
+			position = { x= -4 y = 3 }
 		}
 	}
 }
