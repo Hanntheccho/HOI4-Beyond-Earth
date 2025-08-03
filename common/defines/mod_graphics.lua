@@ -80,5 +80,5 @@ NDefines_Graphics.NGraphics.RAILWAY_BRIDGE_GAP_LARGE_WIDTH = 0.0			-- Railways w
 NDefines_Graphics.NGraphics.TRAIN_MAP_SPEED = 4.0							-- Trains will move at this relative speed. This has no gameplay implications. Changing this value (originally 4.0) may cause audio effects to lose sync with animation.
 NDefines_Graphics.NGraphics.TUNNELBANA_TIMETABLE = { 4000, 6000 }
 
-NDefines_Graphics.NInterface.MIN_FOCUS_TREE_ZOOM = 0.5
-NDefines_Graphics.NInterface.MAX_FOCUS_TREE_ZOOM = 1.0
+--NDefines_Graphics.NInterface.MIN_FOCUS_TREE_ZOOM = 0.5
+--NDefines_Graphics.NInterface.MAX_FOCUS_TREE_ZOOM = 1.0
