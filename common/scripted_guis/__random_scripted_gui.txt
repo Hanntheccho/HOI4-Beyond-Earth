@@ -325,13 +325,6 @@ scripted_gui = {
 				}
 				else_if = {
 					limit = {
-						has_country_flag = virtues_and_culture_moment_flag
-					}
-					clr_country_flag = virtues_and_culture_moment_flag
-					set_country_flag = international_moment_flag
-				}
-				else_if = {
-					limit = {
 						has_country_flag = south_pole_moment_flag
 					}
 					clr_country_flag = south_pole_moment_flag
@@ -366,13 +359,6 @@ scripted_gui = {
 				}
 				else_if = {
 					limit = {
-						has_country_flag = virtues_and_culture_moment_flag
-					}
-					clr_country_flag = virtues_and_culture_moment_flag
-					set_country_flag = south_pole_moment_flag
-				}
-				else_if = {
-					limit = {
 						has_country_flag = international_moment_flag
 					}
 					clr_country_flag = international_moment_flag
@@ -380,47 +366,6 @@ scripted_gui = {
 				}
 				else = {
 					set_country_flag = south_pole_moment_flag
-				}
-			}
-		}
-
-		ai_enabled = {
-			always = no
-		}
-	}
-
-	virtues_button_gui = {
-		window_name = "virtues_button_window"
-		context_type = player_context
-		parent_window_token = top_bar
-
-		visible = {
-			always = yes
-		}
-		effects = {
-			virtues_button_click = {
-				if = {
-					limit = {
-						has_country_flag = south_pole_moment_flagvirtues_and_culture_moment_flag
-					}
-					clr_country_flag = south_pole_moment_flagvirtues_and_culture_moment_flag
-				}
-				else_if = {
-					limit = {
-						has_country_flag = south_pole_moment_flag
-					}
-					clr_country_flag = south_pole_moment_flag
-					set_country_flag = virtues_and_culture_moment_flag
-				}
-				else_if = {
-					limit = {
-						has_country_flag = international_moment_flag
-					}
-					clr_country_flag = international_moment_flag
-					set_country_flag = virtues_and_culture_moment_flag
-				}
-				else = {
-					set_country_flag = virtues_and_culture_moment_flag
 				}
 			}
 		}
@@ -590,25 +535,6 @@ scripted_gui = {
 		}
 
 		properties = {
-			energy_bar = {
-				frame = ROOT.resource@energy
-			}
-			polymers_bar = {
-				frame = ROOT.resource@polymers
-			}
-			lithium_bar = {
-				frame = ROOT.resource@lithium
-			}
-			electronics_bar = {
-				frame = ROOT.resource@electronics
-			}
-			superalloys_bar = {
-				frame = ROOT.resource@superalloys
-			}
-			superconductors_bar = {
-				frame = ROOT.resource@superconductors
-			}
-			#
 			stability = {
 				frame = ROOT.stability_100
 			}
