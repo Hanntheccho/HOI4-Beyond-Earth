@@ -4,531 +4,531 @@ on_actions = {
 #### HEAVY MILITARY COMPLEXES ####
 ##################################
 
-    on_startup = {
-        effect = {
-            every_country = {
-                if = {
-                    limit = {
-                        check_variable = {
-                            num_of_military_factories > 5
-                        }
-                        has_tech = heavy_weapons
-                    }
-                    capital_scope = {
-                        add_building_construction = {
-                            type = heavy_military_complex
-                            level = 2
-                            instant_build = yes
-                        }
-                    }
-                }
-                else_if = {
-                    limit = {
-                        check_variable = {
-                            num_of_military_factories > 0
-                        }
-                        has_tech = heavy_weapons
-                    }
-                    capital_scope = {
-                        add_building_construction = {
-                            type = heavy_military_complex
-                            level = 2
-                            instant_build = yes
-                        }
-                    }
-                }
-                else = {
-                    #
-                }
-            }
-        }
-    }
+	on_startup = {
+		effect = {
+			every_country = {
+				if = {
+					limit = {
+						check_variable = {
+							num_of_military_factories > 5
+						}
+						has_tech = heavy_weapons
+					}
+					capital_scope = {
+						add_building_construction = {
+							type = heavy_military_complex
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							num_of_military_factories > 0
+						}
+						has_tech = heavy_weapons
+					}
+					capital_scope = {
+						add_building_construction = {
+							type = heavy_military_complex
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					#
+				}
+			}
+		}
+	}
 
 ##################################
 ####### BUILDING RESOURCE ########
 ##################################
 
-    on_startup = {
-        effect = {
-            every_country = {
-                add_dynamic_modifier = {
-                    modifier = building_resources_used
-                }
-                set_variable = { building_resources_used_energy = 0 }
-                set_variable = { building_resources_used_polymers = 0 }
-                set_variable = { building_resources_used_lithium = 0 }
-                set_variable = { building_resources_used_electronics = 0 }
-                set_variable = { building_resources_used_superalloys = 0 }
-                set_variable = { building_resources_used_superconductors = 0 }
-                every_controlled_state = {
-                    add_to_variable = {
-                        PREV.building_resources_used_polymers = building_level@spaceship_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_polymers = building_level@spaceship_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_polymers = building_level@spaceship_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_lithium = building_level@military_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_lithium = building_level@military_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_lithium = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_lithium = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_lithium = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_lithium = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_electronics = building_level@military_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_electronics = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_electronics = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_electronics = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_electronics = building_level@spaceship_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_electronics = building_level@spaceship_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_electronics = building_level@spaceship_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_electronics = building_level@spaceship_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_superalloys = building_level@military_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_superalloys = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_superalloys = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_superalloys = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_superalloys = building_level@spaceship_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_superconductors = building_level@heavy_military_complex
-                    }
-                    add_to_variable = {
-                        PREV.building_resources_used_superconductors = building_level@spaceship_complex
-                    }
-                }
-            }
+	on_startup = {
+		effect = {
+			every_country = {
+				add_dynamic_modifier = {
+					modifier = building_resources_used
+				}
+				set_variable = { building_resources_used_energy = 0 }
+				set_variable = { building_resources_used_polymers = 0 }
+				set_variable = { building_resources_used_lithium = 0 }
+				set_variable = { building_resources_used_electronics = 0 }
+				set_variable = { building_resources_used_superalloys = 0 }
+				set_variable = { building_resources_used_superconductors = 0 }
+				every_controlled_state = {
+					add_to_variable = {
+						PREV.building_resources_used_polymers = building_level@spaceship_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_polymers = building_level@spaceship_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_polymers = building_level@spaceship_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_lithium = building_level@military_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_lithium = building_level@military_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_lithium = building_level@heavy_military_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_lithium = building_level@heavy_military_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_lithium = building_level@heavy_military_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_lithium = building_level@heavy_military_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_electronics = building_level@military_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_electronics = building_level@heavy_military_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_electronics = building_level@heavy_military_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_electronics = building_level@heavy_military_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_electronics = building_level@spaceship_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_electronics = building_level@spaceship_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_electronics = building_level@spaceship_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_electronics = building_level@spaceship_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_superalloys = building_level@military_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_superalloys = building_level@heavy_military_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_superalloys = building_level@heavy_military_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_superalloys = building_level@heavy_military_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_superalloys = building_level@spaceship_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_superconductors = building_level@heavy_military_complex
+					}
+					add_to_variable = {
+						PREV.building_resources_used_superconductors = building_level@spaceship_complex
+					}
+				}
+			}
 		}
 	}
-    on_weekly = {
+	on_weekly = {
 		effect = {
-            set_variable = { building_resources_used_energy = 0 }
-            set_variable = { building_resources_used_polymers = 0 }
-            set_variable = { building_resources_used_lithium = 0 }
-            set_variable = { building_resources_used_electronics = 0 }
-            set_variable = { building_resources_used_superalloys = 0 }
-            set_variable = { building_resources_used_superconductors = 0 }
-            every_controlled_state = {
-                add_to_variable = {
-                    PREV.building_resources_used_polymers = building_level@spaceship_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_polymers = building_level@spaceship_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_polymers = building_level@spaceship_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_lithium = building_level@military_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_lithium = building_level@military_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_lithium = building_level@heavy_military_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_lithium = building_level@heavy_military_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_lithium = building_level@heavy_military_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_lithium = building_level@heavy_military_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_electronics = building_level@military_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_electronics = building_level@heavy_military_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_electronics = building_level@heavy_military_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_electronics = building_level@heavy_military_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_electronics = building_level@spaceship_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_electronics = building_level@spaceship_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_electronics = building_level@spaceship_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_electronics = building_level@spaceship_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_superalloys = building_level@military_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_superalloys = building_level@heavy_military_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_superalloys = building_level@heavy_military_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_superalloys = building_level@heavy_military_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_superalloys = building_level@spaceship_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_superconductors = building_level@heavy_military_complex
-                }
-                add_to_variable = {
-                    PREV.building_resources_used_superconductors = building_level@spaceship_complex
-                }
-            }
-        }
-    }
-    on_weekly = {
-        effect = {
-            every_country = {
-                limit = {
-                    OR = {
-                        check_variable = {
-                            resource@energy < 0
-                        }
-                        check_variable = {
-                            resource@polymers < 0
-                        }
-                        check_variable = {
-                            resource@electronics < 0
-                        }
-                        check_variable = {
-                            resource@superalloys < 0
-                        }
-                        check_variable = {
-                            resource@superconductors < 0
-                        }
-                        check_variable = {
-                            resource@lithium < 0
-                        }
-                    }
-                }
-                set_variable = {
-                    too_many_building_resources_used_var = 0
-                }
-                if = {
-                    limit = {
-                        check_variable = {
-                            resource@energy < 0
-                        }
-                    }
-                    add_to_variable = {
-                        too_many_building_resources_used_var = resource@energy
-                    }
-                }
-                if = {
-                    limit = {
-                        check_variable = {
-                            resource@polymers < 0
-                        }
-                    }
-                    add_to_variable = {
-                        too_many_building_resources_used_var = resource@polymers
-                    }
-                }
-                if = {
-                    limit = {
-                        check_variable = {
-                            resource@electronics < 0
-                        }
-                    }
-                    add_to_variable = {
-                        too_many_building_resources_used_var = resource@electronics
-                    }
-                }
-                if = {
-                    limit = {
-                        check_variable = {
-                            resource@superalloys < 0
-                        }
-                    }
-                    add_to_variable = {
-                        too_many_building_resources_used_var = resource@superalloys
-                    }
-                }
-                if = {
-                    limit = {
-                        check_variable = {
-                            resource@superconductors < 0
-                        }
-                    }
-                    add_to_variable = {
-                        too_many_building_resources_used_var = resource@superconductors
-                    }
-                }
-                if = {
-                    limit = {
-                        check_variable = {
-                            resource@lithium < 0
-                        }
-                    }
-                    add_to_variable = {
-                        too_many_building_resources_used_var = resource@lithium
-                    }
-                }
-                divide_variable = {
-                    too_many_building_resources_used_var = 50
-                }
-                divide_variable = {
-                    too_many_building_resources_used_var = num_of_civilian_factories
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            has_dynamic_modifier = {
-                                modifier = too_many_building_resources_used
-                            }
-                        }
-                    }
-                }
-                add_dynamic_modifier = {
-                    modifier = too_many_building_resources_used
-                }
-            }
-        }
-    }
+			set_variable = { building_resources_used_energy = 0 }
+			set_variable = { building_resources_used_polymers = 0 }
+			set_variable = { building_resources_used_lithium = 0 }
+			set_variable = { building_resources_used_electronics = 0 }
+			set_variable = { building_resources_used_superalloys = 0 }
+			set_variable = { building_resources_used_superconductors = 0 }
+			every_controlled_state = {
+				add_to_variable = {
+					PREV.building_resources_used_polymers = building_level@spaceship_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_polymers = building_level@spaceship_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_polymers = building_level@spaceship_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_lithium = building_level@military_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_lithium = building_level@military_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_lithium = building_level@heavy_military_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_lithium = building_level@heavy_military_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_lithium = building_level@heavy_military_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_lithium = building_level@heavy_military_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_electronics = building_level@military_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_electronics = building_level@heavy_military_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_electronics = building_level@heavy_military_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_electronics = building_level@heavy_military_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_electronics = building_level@spaceship_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_electronics = building_level@spaceship_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_electronics = building_level@spaceship_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_electronics = building_level@spaceship_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_superalloys = building_level@military_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_superalloys = building_level@heavy_military_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_superalloys = building_level@heavy_military_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_superalloys = building_level@heavy_military_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_superalloys = building_level@spaceship_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_superconductors = building_level@heavy_military_complex
+				}
+				add_to_variable = {
+					PREV.building_resources_used_superconductors = building_level@spaceship_complex
+				}
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			every_country = {
+				limit = {
+					OR = {
+						check_variable = {
+							resource@energy < 0
+						}
+						check_variable = {
+							resource@polymers < 0
+						}
+						check_variable = {
+							resource@electronics < 0
+						}
+						check_variable = {
+							resource@superalloys < 0
+						}
+						check_variable = {
+							resource@superconductors < 0
+						}
+						check_variable = {
+							resource@lithium < 0
+						}
+					}
+				}
+				set_variable = {
+					too_many_building_resources_used_var = 0
+				}
+				if = {
+					limit = {
+						check_variable = {
+							resource@energy < 0
+						}
+					}
+					add_to_variable = {
+						too_many_building_resources_used_var = resource@energy
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							resource@polymers < 0
+						}
+					}
+					add_to_variable = {
+						too_many_building_resources_used_var = resource@polymers
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							resource@electronics < 0
+						}
+					}
+					add_to_variable = {
+						too_many_building_resources_used_var = resource@electronics
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							resource@superalloys < 0
+						}
+					}
+					add_to_variable = {
+						too_many_building_resources_used_var = resource@superalloys
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							resource@superconductors < 0
+						}
+					}
+					add_to_variable = {
+						too_many_building_resources_used_var = resource@superconductors
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							resource@lithium < 0
+						}
+					}
+					add_to_variable = {
+						too_many_building_resources_used_var = resource@lithium
+					}
+				}
+				divide_variable = {
+					too_many_building_resources_used_var = 50
+				}
+				divide_variable = {
+					too_many_building_resources_used_var = num_of_civilian_factories
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_dynamic_modifier = {
+								modifier = too_many_building_resources_used
+							}
+						}
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = too_many_building_resources_used
+				}
+			}
+		}
+	}
 
 ##################################
 ###### EQUIPMENT PRODUCTION ######
 ##################################
 
-    on_startup = {
-        effect = {
-            every_country = {
-                set_variable = { THIS.light_equipment_in_army = THIS.num_equipment_in_armies@light_equipment_0 }
-                set_variable = { THIS.heavy_equipment_in_army = THIS.num_equipment_in_armies@heavy_equipment_0 }
-                divide_variable = {
-                    THIS.light_equipment_in_army = THIS.num_target_equipment_in_armies@light_equipment_0
-                }
-                divide_variable = {
-                    THIS.heavy_equipment_in_army = THIS.num_target_equipment_in_armies@heavy_equipment_0
-                }
-                multiply_variable = { THIS.light_equipment_in_army = 100 }
-                multiply_variable = { THIS.heavy_equipment_in_army = 100 }
-            }
-        }
-    }
-    on_daily = {
-        effect = {
-            set_variable = { ROOT.light_equipment_in_army = ROOT.num_equipment_in_armies@light_equipment_0 }
-            set_variable = { ROOT.heavy_equipment_in_army = ROOT.num_equipment_in_armies@heavy_equipment_0 }
-            divide_variable = {
-                ROOT.light_equipment_in_army = ROOT.num_target_equipment_in_armies@light_equipment_0
-            }
-            divide_variable = {
-                ROOT.heavy_equipment_in_army = ROOT.num_target_equipment_in_armies@heavy_equipment_0
-            }
-            multiply_variable = { ROOT.light_equipment_in_army = 100 }
-            multiply_variable = { ROOT.heavy_equipment_in_army = 100 }
-        }
-    }
+	on_startup = {
+		effect = {
+			every_country = {
+				set_variable = { THIS.light_equipment_in_army = THIS.num_equipment_in_armies@light_equipment_0 }
+				set_variable = { THIS.heavy_equipment_in_army = THIS.num_equipment_in_armies@heavy_equipment_0 }
+				divide_variable = {
+					THIS.light_equipment_in_army = THIS.num_target_equipment_in_armies@light_equipment_0
+				}
+				divide_variable = {
+					THIS.heavy_equipment_in_army = THIS.num_target_equipment_in_armies@heavy_equipment_0
+				}
+				multiply_variable = { THIS.light_equipment_in_army = 100 }
+				multiply_variable = { THIS.heavy_equipment_in_army = 100 }
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			set_variable = { ROOT.light_equipment_in_army = ROOT.num_equipment_in_armies@light_equipment_0 }
+			set_variable = { ROOT.heavy_equipment_in_army = ROOT.num_equipment_in_armies@heavy_equipment_0 }
+			divide_variable = {
+				ROOT.light_equipment_in_army = ROOT.num_target_equipment_in_armies@light_equipment_0
+			}
+			divide_variable = {
+				ROOT.heavy_equipment_in_army = ROOT.num_target_equipment_in_armies@heavy_equipment_0
+			}
+			multiply_variable = { ROOT.light_equipment_in_army = 100 }
+			multiply_variable = { ROOT.heavy_equipment_in_army = 100 }
+		}
+	}
 
-    on_daily = {
-        effect = {
-            set_variable = { num_military_complex = 0 }
-            set_variable = { num_heavy_military_complex = 0 }
-            every_controlled_state = {
-                #add_to_variable = {
-                #    PREV.num_military_complex = building_level@military_complex
-                #}
-                add_to_variable = {
-                    PREV.num_heavy_military_complex = building_level@heavy_military_complex
-                }
-            }
-            add_to_variable = {
-                PREV.num_military_complex = num_of_military_factories
-            }
-            #
-            if = {
-                limit = {
-                    has_idea = free_trade
-                }
-                multiply_variable = { num_military_complex = 1.15 }
-            }
-            else_if = {
-                limit = {
-                    has_idea = export_focus
-                }
-                multiply_variable = { num_military_complex = 1.1 }
-            }
-            else_if = {
-                limit = {
-                    has_idea = limited_exports
-                }
-                multiply_variable = { num_military_complex = 1.05 }
-            }
-            if = {
-                limit = {
-                    has_idea = autocratic_authority
-                }
-                multiply_variable = { num_military_complex = 1.15 }
-            }
-            if = {
-                limit = {
-                    has_idea = PRU_military_decentralization_extensive
-                }
-                multiply_variable = { num_military_complex = 0.9 }
-            }
-            if = {
-                limit = {
-                    has_idea = TRE_absence_of_civilization
-                }
-                multiply_variable = { num_military_complex = 0.5 }
-            }
-            if = {
-                limit = {
-                    has_idea = TZN_legitimize_ai_planning
-                }
-                multiply_variable = { num_military_complex = 1.1 }
-            }
-            if = {
-                limit = {
-                    has_idea = AST_dented_defense_force
-                }
-                multiply_variable = { num_military_complex = 0.9 }
-            }
-            if = {
-                limit = {
-                    has_idea = GEN_specialization
-                }
-                multiply_variable = { num_military_complex = 1.05 }
-            }
+	on_daily = {
+		effect = {
+			set_variable = { num_military_complex = 0 }
+			set_variable = { num_heavy_military_complex = 0 }
+			every_controlled_state = {
+				#add_to_variable = {
+				#	PREV.num_military_complex = building_level@military_complex
+				#}
+				add_to_variable = {
+					PREV.num_heavy_military_complex = building_level@heavy_military_complex
+				}
+			}
+			add_to_variable = {
+				PREV.num_military_complex = num_of_military_factories
+			}
+			#
 			if = {
-                limit = {
-                    has_idea = GEN_synergist_governance_2
-                }
-                multiply_variable = { num_military_complex = 1.05 }
-            }
-            if = {
-                limit = {
-                    has_idea = GEN_superior_work_ethic
-                }
-                multiply_variable = { num_military_complex = 1.05 }
-            }
-#            if = {
-#                limit = {
-#                    has_idea = GEN_mind_over_matter
-#                }
-#                multiply_variable = { num_military_complex = 1.05 }
-#            }
+				limit = {
+					has_idea = free_trade
+				}
+				multiply_variable = { num_military_complex = 1.15 }
+			}
+			else_if = {
+				limit = {
+					has_idea = export_focus
+				}
+				multiply_variable = { num_military_complex = 1.1 }
+			}
+			else_if = {
+				limit = {
+					has_idea = limited_exports
+				}
+				multiply_variable = { num_military_complex = 1.05 }
+			}
 			if = {
-                limit = {
-                    has_idea = GEN_divinist_governance_2
-                }
-                multiply_variable = { num_military_complex = 1.1 }
-            }
-#            if = {
-#                limit = {
-#                    has_idea = GEN_perfectionism
-#                }
-#                multiply_variable = { num_military_complex = 1.15 }
-#            }
+				limit = {
+					has_idea = autocratic_authority
+				}
+				multiply_variable = { num_military_complex = 1.15 }
+			}
 			if = {
-                limit = {
-                    has_idea = GEN_supremacist_governance_2
-                }
-                multiply_variable = { num_military_complex = 1.15 }
-            }
-            if = {
-                limit = {
-                    has_idea = GEN_sustainable_industry
-                }
-                multiply_variable = { num_military_complex = 0.95 }
-            }
+				limit = {
+					has_idea = PRU_military_decentralization_extensive
+				}
+				multiply_variable = { num_military_complex = 0.9 }
+			}
 			if = {
-                limit = {
-                    has_idea = GEN_harmonist_governance_2
-                }
-                multiply_variable = { num_military_complex = 0.95 }
-            }
-            #
-            if = {
-                limit = {
-                    has_idea = TZN_legitimize_recycling_tanks
-                }
-                multiply_variable = { num_heavy_military_complex = 1.25 }
-            }
-            #
-            if = {
-                limit = {
-                    has_tech = military_industrial_plan
-                }
-                multiply_variable = { num_heavy_military_complex = 1.1 }
-                multiply_variable = { num_military_complex = 1.1 }
-            }
-            #
-            if = {
-                limit = {
-                    has_tech = light_weapons
-                }
-                add_equipment_to_stockpile = {
-                    type = light_equipment_1
-                    amount = num_military_complex
-                }
-            }
-            if = {
-                limit = {
-                    has_tech = heavy_weapons
-                }
-                add_equipment_to_stockpile = {
-                    type = heavy_equipment_1
-                    amount = num_heavy_military_complex
-                }
-            }
-            set_variable = {
-                total_stockpile = 0
-            }
-            add_to_variable = {
-                total_stockpile = num_equipment@light_equipment_1
-            }
-            add_to_variable = {
-                total_stockpile = num_equipment@heavy_equipment_1
-            }
-        }
-    }
+				limit = {
+					has_idea = TRE_absence_of_civilization
+				}
+				multiply_variable = { num_military_complex = 0.5 }
+			}
+			if = {
+				limit = {
+					has_idea = TZN_legitimize_ai_planning
+				}
+				multiply_variable = { num_military_complex = 1.1 }
+			}
+			if = {
+				limit = {
+					has_idea = AST_dented_defense_force
+				}
+				multiply_variable = { num_military_complex = 0.9 }
+			}
+			if = {
+				limit = {
+					has_idea = GEN_specialization
+				}
+				multiply_variable = { num_military_complex = 1.05 }
+			}
+			if = {
+				limit = {
+					has_idea = GEN_synergist_governance_2
+				}
+				multiply_variable = { num_military_complex = 1.05 }
+			}
+			if = {
+				limit = {
+					has_idea = GEN_superior_work_ethic
+				}
+				multiply_variable = { num_military_complex = 1.05 }
+			}
+#			if = {
+#				limit = {
+#					has_idea = GEN_mind_over_matter
+#				}
+#				multiply_variable = { num_military_complex = 1.05 }
+#			}
+			if = {
+				limit = {
+					has_idea = GEN_divinist_governance_2
+				}
+				multiply_variable = { num_military_complex = 1.1 }
+			}
+#			if = {
+#				limit = {
+#					has_idea = GEN_perfectionism
+#				}
+#				multiply_variable = { num_military_complex = 1.15 }
+#			}
+			if = {
+				limit = {
+					has_idea = GEN_supremacist_governance_2
+				}
+				multiply_variable = { num_military_complex = 1.15 }
+			}
+			if = {
+				limit = {
+					has_idea = GEN_sustainable_industry
+				}
+				multiply_variable = { num_military_complex = 0.95 }
+			}
+			if = {
+				limit = {
+					has_idea = GEN_harmonist_governance_2
+				}
+				multiply_variable = { num_military_complex = 0.95 }
+			}
+			#
+			if = {
+				limit = {
+					has_idea = TZN_legitimize_recycling_tanks
+				}
+				multiply_variable = { num_heavy_military_complex = 1.25 }
+			}
+			#
+			if = {
+				limit = {
+					has_tech = military_industrial_plan
+				}
+				multiply_variable = { num_heavy_military_complex = 1.1 }
+				multiply_variable = { num_military_complex = 1.1 }
+			}
+			#
+			if = {
+				limit = {
+					has_tech = light_weapons
+				}
+				add_equipment_to_stockpile = {
+					type = light_equipment_1
+					amount = num_military_complex
+				}
+			}
+			if = {
+				limit = {
+					has_tech = heavy_weapons
+				}
+				add_equipment_to_stockpile = {
+					type = heavy_equipment_1
+					amount = num_heavy_military_complex
+				}
+			}
+			set_variable = {
+				total_stockpile = 0
+			}
+			add_to_variable = {
+				total_stockpile = num_equipment@light_equipment_1
+			}
+			add_to_variable = {
+				total_stockpile = num_equipment@heavy_equipment_1
+			}
+		}
+	}
 
 ##################################
 ##################################

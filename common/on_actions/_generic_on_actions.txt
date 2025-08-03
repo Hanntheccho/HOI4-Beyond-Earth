@@ -1,213 +1,213 @@
 on_actions = {
-    on_startup = {
-        effect = {
-            every_country = {
-                set_variable = {
-                    stability_100 = stability
-                }
-                multiply_variable =  {
-                    stability_100 = 100
-                }
-                set_variable = {
-                    has_war_support_100 = has_war_support
-                }
-                multiply_variable =  {
-                    has_war_support_100 = 100
-                }
-            }
-        }
-    }
-    on_daily = {
-        effect = {
-            every_country = {
-                set_variable = {
-                    stability_100 = stability
-                }
-                multiply_variable =  {
-                    stability_100 = 100
-                }
-                set_variable = {
-                    has_war_support_100 = has_war_support
-                }
-                multiply_variable =  {
-                    has_war_support_100 = 100
-                }
-            }
-        }
-    }
+	on_startup = {
+		effect = {
+			every_country = {
+				set_variable = {
+					stability_100 = stability
+				}
+				multiply_variable =  {
+					stability_100 = 100
+				}
+				set_variable = {
+					has_war_support_100 = has_war_support
+				}
+				multiply_variable =  {
+					has_war_support_100 = 100
+				}
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			every_country = {
+				set_variable = {
+					stability_100 = stability
+				}
+				multiply_variable =  {
+					stability_100 = 100
+				}
+				set_variable = {
+					has_war_support_100 = has_war_support
+				}
+				multiply_variable =  {
+					has_war_support_100 = 100
+				}
+			}
+		}
+	}
 ###
-    on_startup = {
-        effect = {
-            every_country = {
-                limit = {
-                    has_country_leader = {
-                        name = "Unknown"
-                        ruling_only = yes
-                    }
-                }
-                create_country_leader = {
-                    name = "Goverment"
-                    picture = GFX_government_portrait
-                    ideology = purity_ideology
-                }
-                create_country_leader = {
-                    name = "Goverment"
-                    picture = GFX_government_portrait
-                    ideology = harmony_ideology
-                }
-                create_country_leader = {
-                    name = "Goverment"
-                    picture = GFX_government_portrait
-                    ideology = supremacy_ideology
-                }
-                create_country_leader = {
-                    name = "Goverment"
-                    picture = GFX_government_portrait
-                    ideology = neutral_ideology
-                }
-                create_country_leader = {
-                    name = "Goverment"
-                    picture = GFX_government_portrait
-                    ideology = synergy_ideology
-                }
-                create_country_leader = {
-                    name = "Goverment"
-                    picture = GFX_government_portrait
-                    ideology = mastery_ideology
-                }
-                create_country_leader = {
-                    name = "Goverment"
-                    picture = GFX_government_portrait
-                    ideology = divinity_ideology
-                }
-            }
-        }
-    }
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					has_country_leader = {
+						name = "Unknown"
+						ruling_only = yes
+					}
+				}
+				create_country_leader = {
+					name = "Goverment"
+					picture = GFX_government_portrait
+					ideology = purity_ideology
+				}
+				create_country_leader = {
+					name = "Goverment"
+					picture = GFX_government_portrait
+					ideology = harmony_ideology
+				}
+				create_country_leader = {
+					name = "Goverment"
+					picture = GFX_government_portrait
+					ideology = supremacy_ideology
+				}
+				create_country_leader = {
+					name = "Goverment"
+					picture = GFX_government_portrait
+					ideology = neutral_ideology
+				}
+				create_country_leader = {
+					name = "Goverment"
+					picture = GFX_government_portrait
+					ideology = synergy_ideology
+				}
+				create_country_leader = {
+					name = "Goverment"
+					picture = GFX_government_portrait
+					ideology = mastery_ideology
+				}
+				create_country_leader = {
+					name = "Goverment"
+					picture = GFX_government_portrait
+					ideology = divinity_ideology
+				}
+			}
+		}
+	}
 ###
-    on_startup = {
-        effect = {
-            every_country = {
-                if = {
-                    limit = {
-                        has_idea = digital_democracy
-                    }
-                    set_variable = {
-                        get_political_power_cost_to_declare_war = 200
-                    }
-                }
-                else_if = {
-                    limit = {
-                        has_idea = autocratic_authority
-                    }
-                    set_variable = {
-                        get_political_power_cost_to_declare_war = 100
-                    }
-                }
-                else_if = {
-                    limit = {
-                        has_idea = unstable_leadership
-                    }
-                    set_variable = {
-                        get_political_power_cost_to_declare_war = 300
-                    }
-                }
-                else = {
-                    set_variable = {
-                        get_political_power_cost_to_declare_war = 150
-                    }
-                }
-            }
-        }
-    }
+	on_startup = {
+		effect = {
+			every_country = {
+				if = {
+					limit = {
+						has_idea = digital_democracy
+					}
+					set_variable = {
+						get_political_power_cost_to_declare_war = 200
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = autocratic_authority
+					}
+					set_variable = {
+						get_political_power_cost_to_declare_war = 100
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = unstable_leadership
+					}
+					set_variable = {
+						get_political_power_cost_to_declare_war = 300
+					}
+				}
+				else = {
+					set_variable = {
+						get_political_power_cost_to_declare_war = 150
+					}
+				}
+			}
+		}
+	}
 ###
-    on_ruling_party_change = {
-        effect = {
-            reset_virtues_effect = yes
-            if = {
-                limit = {
-                    has_country_leader = {
-                        name = "Unknown"
-                        ruling_only = yes
-                    }
-                }
-                set_country_leader_name = {
-                    name = "Government"
-                }
-                set_country_leader_portrait = {
-                    portrait = GFX_government_portrait
-                }
-            }
-        }
-    }
+	on_ruling_party_change = {
+		effect = {
+			reset_virtues_effect = yes
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Unknown"
+						ruling_only = yes
+					}
+				}
+				set_country_leader_name = {
+					name = "Government"
+				}
+				set_country_leader_portrait = {
+					portrait = GFX_government_portrait
+				}
+			}
+		}
+	}
 ###
-    on_weekly = {
-        effect = {
-            if = {
-                limit = {
-                    NOT = {
-                        has_country_flag = generic_event_1
-                    }
-                    is_puppet = no
-                    is_ai = no
-                }
-                random_list = {
-                    5 = {
-                        country_event = generic_event.1
-                        set_country_flag = {
-                            flag = generic_event_1
-                            days = 200
-                            value = 1
-                        }
-                    }
-                    95 = {
-                        #
-                    }
-                }
-            }
-            if = {
-                limit = {
-                    NOT = {
-                        has_country_flag = generic_event_2
-                    }
-                    is_puppet = no
-                    is_ai = no
-                }
-                random_list = {
-                    5 = {
-                        country_event = generic_event.2
-                        set_country_flag = {
-                            flag = generic_event_2
-                            days = 200
-                            value = 1
-                        }
-                    }
-                    95 = {
-                        #
-                    }
-                }
-            }
-            if = {
-                limit = {
-                    NOT = {
-                        has_country_flag = generic_event_3
-                    }
-                    is_puppet = no
-                    is_ai = no
-                }
-                random_list = {
-                    5 = {
-                        country_event = generic_event.3
-                        set_country_flag = {
-                            flag = generic_event_3
-                            days = 200
-                            value = 1
-                        }
-                    }
-                    95 = {
-                        #
-                    }
-                }
-            }
-        }
-    }
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = generic_event_1
+					}
+					is_puppet = no
+					is_ai = no
+				}
+				random_list = {
+					5 = {
+						country_event = generic_event.1
+						set_country_flag = {
+							flag = generic_event_1
+							days = 200
+							value = 1
+						}
+					}
+					95 = {
+						#
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = generic_event_2
+					}
+					is_puppet = no
+					is_ai = no
+				}
+				random_list = {
+					5 = {
+						country_event = generic_event.2
+						set_country_flag = {
+							flag = generic_event_2
+							days = 200
+							value = 1
+						}
+					}
+					95 = {
+						#
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = generic_event_3
+					}
+					is_puppet = no
+					is_ai = no
+				}
+				random_list = {
+					5 = {
+						country_event = generic_event.3
+						set_country_flag = {
+							flag = generic_event_3
+							days = 200
+							value = 1
+						}
+					}
+					95 = {
+						#
+					}
+				}
+			}
+		}
+	}
 }

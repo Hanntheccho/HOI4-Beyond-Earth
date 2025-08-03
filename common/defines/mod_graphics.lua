@@ -48,8 +48,8 @@ NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_STATE_B = 1.0
 NDefines_Graphics.NGraphics.POLITICAL_GRID_SMALL_BOX_LIMIT = 5
 NDefines_Graphics.NGraphics.SETUP_SPIRIT_GRID_BOX_LIMIT = 0
 
-NDefines_Graphics.NGraphics.FRIEND_COLOR  = {1.0, 1.0, 1.0}
-NDefines_Graphics.NGraphics.ENEMY_COLOR   = {1.5, 0.9, 0.6}
+NDefines_Graphics.NGraphics.FRIEND_COLOR = {1.0, 1.0, 1.0}
+NDefines_Graphics.NGraphics.ENEMY_COLOR = {1.5, 0.9, 0.6}
 NDefines_Graphics.NGraphics.NEUTRAL_COLOR = {1.1, 1.1, 0.8}
 
 NDefines_Graphics.NGraphics.COUNTER_MODE_ALLEGIANCE_OURS = { 0.7, 0.6, 1.25, 1.0 }

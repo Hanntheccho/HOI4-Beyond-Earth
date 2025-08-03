@@ -114,7 +114,7 @@ static const float 	TREE_SEASON_MIN 			= 0.5f;
 static const float 	TREE_SEASON_FADE_TWEAK 		= 2.5f;
 
 // --------------------------------------------------------------
-// ------------------    HDR          	-------------------------
+// ------------------    HDR      		-------------------------
 // --------------------------------------------------------------
 static const float3 LUMINANCE_VECTOR  			= float3(0.2125f, 0.7154f, 0.0721f);
 
@@ -167,8 +167,8 @@ static const float  FOW_CAMERA_MAX				= 500;
 // --------------------------------------------------------------
 
 
-static const float  SHADOW_WEIGHT_TERRAIN    	= 0.7f;
-static const float  SHADOW_WEIGHT_MAP    		= 0.7f;
+static const float  SHADOW_WEIGHT_TERRAIN		= 0.7f;
+static const float  SHADOW_WEIGHT_MAP			= 0.7f;
 static const float  SHADOW_WEIGHT_BORDER   		= 0.7f;
 static const float  SHADOW_WEIGHT_WATER   		= 0.5f;
 static const float  SHADOW_WEIGHT_RIVER   		= 0.4f;

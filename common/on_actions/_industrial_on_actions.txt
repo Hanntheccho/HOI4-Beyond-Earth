@@ -1,289 +1,289 @@
 on_actions = {
 	on_startup = {
 		effect = {
-            set_variable = { global.industrial_power_rate_agrarian = 0.2 }
-            set_variable = { global.industrial_power_rate_developing = 1 }
-            set_variable = { global.industrial_power_rate_developed = 0.8 }
-            set_variable = { global.industrial_power_rate_regional = 0.5 }
-            set_variable = { global.industrial_power_rate_continental = 0.2 }
-            set_variable = { global.industrial_power_rate_global = 0.1 }
-            every_country = {
-                set_variable = {
-                    industrial_power_civilian_factories = num_of_civilian_factories
-                }
-                divide_variable = {
-                    industrial_power_civilian_factories = 5
-                }
-                set_variable = {
-                    industrial_power_military_factories = num_of_military_factories
-                }
-                divide_variable = {
-                    industrial_power_military_factories = 10
-                }
-                multiply_variable = {
-                    industrial_power_military_factories = -1
-                }
-                set_variable = {
-                    industrial_power_spaceship_factories = 0
-                }
-                every_controlled_state = {
-                    add_to_variable = {
-                        PREV.industrial_power_spaceship_factories = building_level@spaceship_complex
-                    }
-                }
-                divide_variable = {
-                    industrial_power_spaceship_factories = 5
-                }
-                multiply_variable = {
-                    industrial_power_spaceship_factories = -1
-                }
-                set_variable = {
-                    industrial_power_heavy_arms_factories = 0
-                }
-                every_controlled_state = {
-                    add_to_variable = {
-                        PREV.industrial_power_heavy_arms_factories = building_level@heavy_military_complex
-                    }
-                }
-                divide_variable = {
-                    industrial_power_heavy_arms_factories = 5
-                }
-                multiply_variable = {
-                    industrial_power_heavy_arms_factories = -1
-                }
-                set_variable = {
-                    industrial_power_gain = industrial_power_civilian_factories
-                }
-                add_to_variable = {
-                    industrial_power_military_factories = industrial_power_heavy_arms_factories
-                }
-                add_to_variable = {
-                    industrial_power_gain = industrial_power_military_factories
-                }
-                add_to_variable = {
-                    industrial_power_gain = industrial_power_spaceship_factories
-                }
-                add_to_variable = {
-                    industrial_power_gain = industrial_power_recycling_complex
-                }
-                add_to_variable = {
-                    industrial_power_gain = industrial_power_generator_building
-                }
-                ###
-                if = {
-                    limit = {
-                        has_idea = agrarian_stage
-                    }
-                    set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_agrarian }
-                }
-                else_if = {
-                    limit = {
-                        has_idea = developing_stage
-                    }
-                    set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_developing }
-                }
-                else_if = {
-                    limit = {
-                        has_idea = developed_stage
-                    }
-                    set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_developed }
-                }
-                else_if = {
-                    limit = {
-                        has_idea = regional_stage
-                    }
-                    set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_regional }
-                }
-                else_if = {
-                    limit = {
-                        has_idea = continental_stage
-                    }
-                    set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_continental }
-                }
-                else = {
-                    set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_global }
-                }
-                multiply_variable = {
-                    industrial_power_gain = industrial_power_gain_modifier
-                }
-                if = {
-                    limit = {
-                        OR = {
-                            has_dynamic_modifier = { modifier = EQG_morgan_industries_modifier }
-                            has_dynamic_modifier = { modifier = EQG_morgan_industries_modifier1 }
-                        }
-                    }
-                    add_to_variable = { industrial_power_gain = morgan_industries_modifier_industrial_power_gain_var }
-                }
-                add_to_variable = { industrial_power = industrial_power_gain }
-                clamp_variable = { var = industrial_power min = -999 max = 1000 }
-            }
+			set_variable = { global.industrial_power_rate_agrarian = 0.2 }
+			set_variable = { global.industrial_power_rate_developing = 1 }
+			set_variable = { global.industrial_power_rate_developed = 0.8 }
+			set_variable = { global.industrial_power_rate_regional = 0.5 }
+			set_variable = { global.industrial_power_rate_continental = 0.2 }
+			set_variable = { global.industrial_power_rate_global = 0.1 }
+			every_country = {
+				set_variable = {
+					industrial_power_civilian_factories = num_of_civilian_factories
+				}
+				divide_variable = {
+					industrial_power_civilian_factories = 5
+				}
+				set_variable = {
+					industrial_power_military_factories = num_of_military_factories
+				}
+				divide_variable = {
+					industrial_power_military_factories = 10
+				}
+				multiply_variable = {
+					industrial_power_military_factories = -1
+				}
+				set_variable = {
+					industrial_power_spaceship_factories = 0
+				}
+				every_controlled_state = {
+					add_to_variable = {
+						PREV.industrial_power_spaceship_factories = building_level@spaceship_complex
+					}
+				}
+				divide_variable = {
+					industrial_power_spaceship_factories = 5
+				}
+				multiply_variable = {
+					industrial_power_spaceship_factories = -1
+				}
+				set_variable = {
+					industrial_power_heavy_arms_factories = 0
+				}
+				every_controlled_state = {
+					add_to_variable = {
+						PREV.industrial_power_heavy_arms_factories = building_level@heavy_military_complex
+					}
+				}
+				divide_variable = {
+					industrial_power_heavy_arms_factories = 5
+				}
+				multiply_variable = {
+					industrial_power_heavy_arms_factories = -1
+				}
+				set_variable = {
+					industrial_power_gain = industrial_power_civilian_factories
+				}
+				add_to_variable = {
+					industrial_power_military_factories = industrial_power_heavy_arms_factories
+				}
+				add_to_variable = {
+					industrial_power_gain = industrial_power_military_factories
+				}
+				add_to_variable = {
+					industrial_power_gain = industrial_power_spaceship_factories
+				}
+				add_to_variable = {
+					industrial_power_gain = industrial_power_recycling_complex
+				}
+				add_to_variable = {
+					industrial_power_gain = industrial_power_generator_building
+				}
+				###
+				if = {
+					limit = {
+						has_idea = agrarian_stage
+					}
+					set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_agrarian }
+				}
+				else_if = {
+					limit = {
+						has_idea = developing_stage
+					}
+					set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_developing }
+				}
+				else_if = {
+					limit = {
+						has_idea = developed_stage
+					}
+					set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_developed }
+				}
+				else_if = {
+					limit = {
+						has_idea = regional_stage
+					}
+					set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_regional }
+				}
+				else_if = {
+					limit = {
+						has_idea = continental_stage
+					}
+					set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_continental }
+				}
+				else = {
+					set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_global }
+				}
+				multiply_variable = {
+					industrial_power_gain = industrial_power_gain_modifier
+				}
+				if = {
+					limit = {
+						OR = {
+							has_dynamic_modifier = { modifier = EQG_morgan_industries_modifier }
+							has_dynamic_modifier = { modifier = EQG_morgan_industries_modifier1 }
+						}
+					}
+					add_to_variable = { industrial_power_gain = morgan_industries_modifier_industrial_power_gain_var }
+				}
+				add_to_variable = { industrial_power = industrial_power_gain }
+				clamp_variable = { var = industrial_power min = -999 max = 1000 }
+			}
 		}
 	}
 ###
-    on_daily = {
+	on_daily = {
 		effect = {
-            clear_variable = industrial_power_gain
-            set_variable = {
-                industrial_power_civilian_factories = num_of_civilian_factories
-            }
-            divide_variable = {
-                industrial_power_civilian_factories = 5
-            }
-            set_variable = {
-                industrial_power_military_factories = num_of_military_factories
-            }
-            divide_variable = {
-                industrial_power_military_factories = 10
-            }
-            multiply_variable = {
-                industrial_power_military_factories = -1
-            }
-            set_variable = {
-                industrial_power_spaceship_factories = 0
-            }
-            every_controlled_state = {
-                add_to_variable = {
-                    PREV.industrial_power_spaceship_factories = building_level@spaceship_complex
-                }
-            }
-            divide_variable = {
-                industrial_power_spaceship_factories = 5
-            }
-            multiply_variable = {
-                industrial_power_spaceship_factories = -1
-            }
-            set_variable = {
-                industrial_power_heavy_arms_factories = 0
-            }
-            every_controlled_state = {
-                add_to_variable = {
-                    PREV.industrial_power_heavy_arms_factories = building_level@heavy_military_complex
-                }
-            }
-            divide_variable = {
-                industrial_power_heavy_arms_factories = 5
-            }
-            multiply_variable = {
-                industrial_power_heavy_arms_factories = -1
-            }
-            set_variable = {
-                industrial_power_gain = industrial_power_civilian_factories
-            }
-            add_to_variable = {
-                industrial_power_military_factories = industrial_power_heavy_arms_factories
-            }
-            add_to_variable = {
-                industrial_power_gain = industrial_power_military_factories
-            }
-            add_to_variable = {
-                industrial_power_gain = industrial_power_spaceship_factories
-            }
-            add_to_variable = {
-                industrial_power_gain = industrial_power_recycling_complex
-            }
-            add_to_variable = {
-                industrial_power_gain = industrial_power_generator_building
-            }
-            ###
+			clear_variable = industrial_power_gain
+			set_variable = {
+				industrial_power_civilian_factories = num_of_civilian_factories
+			}
+			divide_variable = {
+				industrial_power_civilian_factories = 5
+			}
+			set_variable = {
+				industrial_power_military_factories = num_of_military_factories
+			}
+			divide_variable = {
+				industrial_power_military_factories = 10
+			}
+			multiply_variable = {
+				industrial_power_military_factories = -1
+			}
+			set_variable = {
+				industrial_power_spaceship_factories = 0
+			}
+			every_controlled_state = {
+				add_to_variable = {
+					PREV.industrial_power_spaceship_factories = building_level@spaceship_complex
+				}
+			}
+			divide_variable = {
+				industrial_power_spaceship_factories = 5
+			}
+			multiply_variable = {
+				industrial_power_spaceship_factories = -1
+			}
+			set_variable = {
+				industrial_power_heavy_arms_factories = 0
+			}
+			every_controlled_state = {
+				add_to_variable = {
+					PREV.industrial_power_heavy_arms_factories = building_level@heavy_military_complex
+				}
+			}
+			divide_variable = {
+				industrial_power_heavy_arms_factories = 5
+			}
+			multiply_variable = {
+				industrial_power_heavy_arms_factories = -1
+			}
+			set_variable = {
+				industrial_power_gain = industrial_power_civilian_factories
+			}
+			add_to_variable = {
+				industrial_power_military_factories = industrial_power_heavy_arms_factories
+			}
+			add_to_variable = {
+				industrial_power_gain = industrial_power_military_factories
+			}
+			add_to_variable = {
+				industrial_power_gain = industrial_power_spaceship_factories
+			}
+			add_to_variable = {
+				industrial_power_gain = industrial_power_recycling_complex
+			}
+			add_to_variable = {
+				industrial_power_gain = industrial_power_generator_building
+			}
+			###
 			if = {
 				limit = {
-                    has_idea = agrarian_stage
-                }
-                set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_agrarian }
+					has_idea = agrarian_stage
+				}
+				set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_agrarian }
 			}
 			else_if = {
 				limit = {
-                    has_idea = developing_stage
-                }
-                set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_developing }
+					has_idea = developing_stage
+				}
+				set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_developing }
 			}
 			else_if = {
 				limit = {
-                    has_idea = developed_stage
-                }
-                set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_developed }
+					has_idea = developed_stage
+				}
+				set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_developed }
 			}
 			else_if = {
 				limit = {
-                    has_idea = regional_stage
-                }
-                set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_regional }
+					has_idea = regional_stage
+				}
+				set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_regional }
 			}
 			else_if = {
 				limit = {
-                    has_idea = continental_stage
-                }
-                set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_continental }
+					has_idea = continental_stage
+				}
+				set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_continental }
 			}
 			else = {
 				set_variable = { industrial_power_gain_modifier = global.industrial_power_rate_global }
 			}
 			if = {
 				limit = {
-                    has_idea = GEN_industrial_effort
-                }
-                add_to_variable = { industrial_power_gain = 0.1 }
+					has_idea = GEN_industrial_effort
+				}
+				add_to_variable = { industrial_power_gain = 0.1 }
 			}
 			if = {
 				limit = {
-                    has_idea = GEN_industrial_effort_2
-                }
-                add_to_variable = { industrial_power_gain = 0.2 }
+					has_idea = GEN_industrial_effort_2
+				}
+				add_to_variable = { industrial_power_gain = 0.2 }
 			}
 			if = {
 				limit = {
-                    has_idea = GEN_industrial_effort_3
-                }
-                add_to_variable = { industrial_power_gain = 0.3 }
+					has_idea = GEN_industrial_effort_3
+				}
+				add_to_variable = { industrial_power_gain = 0.3 }
 			}
 			if = {
 				limit = {
-                    has_idea = GEN_industrial_effort_4
-                }
-                add_to_variable = { industrial_power_gain = 0.5 }
+					has_idea = GEN_industrial_effort_4
+				}
+				add_to_variable = { industrial_power_gain = 0.5 }
 			}
 			if = {
 				limit = {
-                    has_idea = GEN_natural_preserves
-                }
-                subtract_from_variable  = { industrial_power_gain = 0.1 }
+					has_idea = GEN_natural_preserves
+				}
+				subtract_from_variable = { industrial_power_gain = 0.1 }
 			}
 			if = {
 				limit = {
-                    has_idea = GEN_harmonist_governance_2
-                }
-                subtract_from_variable  = { industrial_power_gain = 0.1 }
+					has_idea = GEN_harmonist_governance_2
+				}
+				subtract_from_variable = { industrial_power_gain = 0.1 }
 			}
 			if = {
 				limit = {
-                    has_idea = GEN_the_space_race
-                }
-                add_to_variable = { industrial_power_gain = 0.5 }
+					has_idea = GEN_the_space_race
+				}
+				add_to_variable = { industrial_power_gain = 0.5 }
 			}
 			if = {
 				limit = {
-                    has_idea = GEN_the_space_race_2
-                }
-                add_to_variable = { industrial_power_gain = 0.5 }
+					has_idea = GEN_the_space_race_2
+				}
+				add_to_variable = { industrial_power_gain = 0.5 }
 			}
 			if = {
 				limit = {
-                    has_idea = GEN_the_space_race_3
-                }
-                add_to_variable = { industrial_power_gain = 0.5 }
+					has_idea = GEN_the_space_race_3
+				}
+				add_to_variable = { industrial_power_gain = 0.5 }
 			}
 			if = {
 				limit = {
-                    has_idea = GEN_the_space_race_4
-                }
-                add_to_variable = { industrial_power_gain = 0.5 }
+					has_idea = GEN_the_space_race_4
+				}
+				add_to_variable = { industrial_power_gain = 0.5 }
 			}
-            multiply_variable = {
-                industrial_power_gain = industrial_power_gain_modifier
-            }
-            add_to_variable = { industrial_power = industrial_power_gain }
-            clamp_variable = { var = industrial_power min = -999 max = 1000 }
-        }
-    }
+			multiply_variable = {
+				industrial_power_gain = industrial_power_gain_modifier
+			}
+			add_to_variable = { industrial_power = industrial_power_gain }
+			clamp_variable = { var = industrial_power min = -999 max = 1000 }
+		}
+	}
 }

@@ -6,27 +6,27 @@ The following sections are made to allow a central database of all the changes a
 
 ### Table of Contents
 1. [Map](#map)
-    1. [Countries](#countries)
-    2. [State Categories](#states)
-    3. [Resources](#resources)
+	1. [Countries](#countries)
+	2. [State Categories](#states)
+	3. [Resources](#resources)
 2. [Technologies](#technologies)
-    1. [New Technologies](#newtechnologies)
-    2. [Technology Tags](#technologytags)
-    3. [Units](#units)
-    4. [Unit Tags](#unittags)
-    5. [Equipment](#equipment)
+	1. [New Technologies](#newtechnologies)
+	2. [Technology Tags](#technologytags)
+	3. [Units](#units)
+	4. [Unit Tags](#unittags)
+	5. [Equipment](#equipment)
 3. [Mechanics](#mechanics)
-    1. [Parliament](#parliament)
-    2. [Spaceship](#spaceship)
-    3. [Wonders](#wonders)
-    4. [Vritues & Culture](#virtuesandculture)
-    5. [Industrial Power](#industrialpower)
-    6. [Augments](#augments)
-    7. [Ecobalance Decay](#ecobalance)
-    8. [Scavenging](#scavenging)
-    9. [United Nations](#un)
-    10. [Bolivar](#bolivar)
-    11. [Brazil](#brazil)
+	1. [Parliament](#parliament)
+	2. [Spaceship](#spaceship)
+	3. [Wonders](#wonders)
+	4. [Vritues & Culture](#virtuesandculture)
+	5. [Industrial Power](#industrialpower)
+	6. [Augments](#augments)
+	7. [Ecobalance Decay](#ecobalance)
+	8. [Scavenging](#scavenging)
+	9. [United Nations](#un)
+	10. [Bolivar](#bolivar)
+	11. [Brazil](#brazil)
 
 ## Map <a name="map"></a>
 ---
@@ -63,14 +63,14 @@ Beyong Earth does not add any new resources but rather reskins and re-names the 
 <details>
 <summary>List of resources</summary>
 
-| Vanilla Resource | Reskinned Resource    | Localization Key                     |
+| Vanilla Resource | Reskinned Resource	| Localization Key					 |
 |------------------|-----------------------|--------------------------------------|
-| Oil              | Energy                | PRODUCTION_MATERIALS_ENERGY          |
-| Aluminium        | Polymers              | PRODUCTION_MATERIALS_POLYMERS        |
-| Rubber           | Battery Materials     | PRODUCTION_MATERIALS_LITHIUM         |
-| Chromium         | Superconductors       | PRODUCTION_MATERIALS_SUPERCONDUCTORS |
-| Steel            | Superalloys           | PRODUCTION_MATERIALS_SUPERALLOYS     |
-| Tungsten         | Electronic Components | PRODUCTION_MATERIALS_ELECTRONICS     |
+| Oil			  | Energy				| PRODUCTION_MATERIALS_ENERGY		  |
+| Aluminium		| Polymers			  | PRODUCTION_MATERIALS_POLYMERS		|
+| Rubber		   | Battery Materials	 | PRODUCTION_MATERIALS_LITHIUM		 |
+| Chromium		 | Superconductors	   | PRODUCTION_MATERIALS_SUPERCONDUCTORS |
+| Steel			| Superalloys		   | PRODUCTION_MATERIALS_SUPERALLOYS	 |
+| Tungsten		 | Electronic Components | PRODUCTION_MATERIALS_ELECTRONICS	 |
 </details>
 
 ## Technologies

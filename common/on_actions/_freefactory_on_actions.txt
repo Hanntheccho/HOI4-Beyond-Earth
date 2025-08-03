@@ -1,317 +1,317 @@
 on_actions = {
-    on_startup = {
-        effect = {
-            every_country = {
-                if = {
-                    limit = {
-                        num_of_factories > 198
-                    }
-                    add_equipment_to_stockpile = {
-                        type = crawler_equipment_1
-                        amount = 350
-                    }
-                }
-                else_if = {
-                    limit = {
-                        num_of_factories > 98
-                    }
-                    add_equipment_to_stockpile = {
-                        type = crawler_equipment_1
-                        amount = 300
-                    }
-                }
-                else_if = {
-                    limit = {
-                        num_of_factories > 28
-                    }
-                    add_equipment_to_stockpile = {
-                        type = crawler_equipment_1
-                        amount = 200
-                    }
-                }
-                else_if = {
-                    limit = {
-                        num_of_factories > 18
-                    }
-                    add_equipment_to_stockpile = {
-                        type = crawler_equipment_1
-                        amount = 100
-                    }
-                }
-                else_if = {
-                    limit = {
-                        num_of_factories > 8
-                    }
-                    add_equipment_to_stockpile = {
-                        type = crawler_equipment_1
-                        amount = 50
-                    }
-                }
-                else = {
-                    add_equipment_to_stockpile = {
-                        type = crawler_equipment_1
-                        amount = 20
-                    }
-                }
-            }
-        }
-    }
+	on_startup = {
+		effect = {
+			every_country = {
+				if = {
+					limit = {
+						num_of_factories > 198
+					}
+					add_equipment_to_stockpile = {
+						type = crawler_equipment_1
+						amount = 350
+					}
+				}
+				else_if = {
+					limit = {
+						num_of_factories > 98
+					}
+					add_equipment_to_stockpile = {
+						type = crawler_equipment_1
+						amount = 300
+					}
+				}
+				else_if = {
+					limit = {
+						num_of_factories > 28
+					}
+					add_equipment_to_stockpile = {
+						type = crawler_equipment_1
+						amount = 200
+					}
+				}
+				else_if = {
+					limit = {
+						num_of_factories > 18
+					}
+					add_equipment_to_stockpile = {
+						type = crawler_equipment_1
+						amount = 100
+					}
+				}
+				else_if = {
+					limit = {
+						num_of_factories > 8
+					}
+					add_equipment_to_stockpile = {
+						type = crawler_equipment_1
+						amount = 50
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = crawler_equipment_1
+						amount = 20
+					}
+				}
+			}
+		}
+	}
 ####
-    on_startup = {
-        effect = {
-            every_country = {
-                set_variable = { free_factory_progress = 0 }
-                set_variable = { free_factory_gain = 0 }
-                set_variable = { free_factory_base_gain = 1 }
-                set_variable = { free_factory_adjustment = 1 }
-                set_variable = { free_factory_counter = 0 }
-                if = {
-                    limit = {
-                        num_of_factories > 198
-                    }
-                    add_ideas = global_stage
-                }
-                else_if = {
-                    limit = {
-                        num_of_factories > 98
-                    }
-                    add_ideas = continental_stage
-                }
-                else_if = {
-                    limit = {
-                        num_of_factories > 28
-                    }
-                    add_ideas = regional_stage
-                }
-                else_if = {
-                    limit = {
-                        num_of_factories > 18
-                    }
-                    add_ideas = developed_stage
-                }
-                else_if = {
-                    limit = {
-                        num_of_factories > 8
-                    }
-                    add_ideas = developing_stage
-                }
-                else = {
-                    add_ideas = agrarian_stage
-                }
-            }
-        }
-    }
+	on_startup = {
+		effect = {
+			every_country = {
+				set_variable = { free_factory_progress = 0 }
+				set_variable = { free_factory_gain = 0 }
+				set_variable = { free_factory_base_gain = 1 }
+				set_variable = { free_factory_adjustment = 1 }
+				set_variable = { free_factory_counter = 0 }
+				if = {
+					limit = {
+						num_of_factories > 198
+					}
+					add_ideas = global_stage
+				}
+				else_if = {
+					limit = {
+						num_of_factories > 98
+					}
+					add_ideas = continental_stage
+				}
+				else_if = {
+					limit = {
+						num_of_factories > 28
+					}
+					add_ideas = regional_stage
+				}
+				else_if = {
+					limit = {
+						num_of_factories > 18
+					}
+					add_ideas = developed_stage
+				}
+				else_if = {
+					limit = {
+						num_of_factories > 8
+					}
+					add_ideas = developing_stage
+				}
+				else = {
+					add_ideas = agrarian_stage
+				}
+			}
+		}
+	}
 ###
-    on_daily = {
-        effect = {
-            clear_variable = free_factory_gain
-            if = {
-                limit = {
-                    has_idea = agrarian_stage
-                }
-                set_variable = { free_factory_base_gain = 0.4 }
-            }
-            else_if = {
-                limit = {
-                    has_idea = developing_stage
-                }
-                set_variable = { free_factory_base_gain = 0.8 }
-            }
-            else_if = {
-                limit = {
-                    has_idea = developed_stage
-                }
-                set_variable = { free_factory_base_gain = 1 }
-            }
-            else_if = {
-                limit = {
-                    has_idea = regional_stage
-                }
-                set_variable = { free_factory_base_gain = 0.6 }
-            }
-            else_if = {
-                limit = {
-                    has_idea = continental_stage
-                }
-                set_variable = { free_factory_base_gain = 0.4 }
-            }
-            else = {
-                set_variable = { free_factory_base_gain = 0.2 }
-            }
-            clear_variable = free_factory_adjustment
-            set_variable = { free_factory_adjustment = 1 }
-            ###
-            if = {
-                limit = {
-                    has_idea = civilian_economy
-                }
-                multiply_variable = { free_factory_adjustment = 2 }
-            }
-            else_if = {
-                limit = {
-                    has_idea = low_economic_mobilisation
-                }
-                multiply_variable = { free_factory_adjustment = 1 }
-            }
-            else_if = {
-                limit = {
-                    has_idea = partial_economic_mobilisation
-                }
-                multiply_variable = { free_factory_adjustment = 0.5 }
-            }
-            else = {
-                multiply_variable = { free_factory_adjustment = 0.1 }
-            }
-            ###
-            if = {
-                limit = {
-                    has_idea = neutral_ecobalance
-                }
-                multiply_variable = { free_factory_adjustment = 0.95 }
-            }
-            else_if = {
-                limit = {
-                    has_idea = precarious_ecobalance
-                }
-                multiply_variable = { free_factory_adjustment = 0.9 }
-            }
-            else_if = {
-                limit = {
-                    has_idea = dangerous_ecobalance
-                }
-                multiply_variable = { free_factory_adjustment = 0.8 }
-            }
-            else_if = {
-                limit = {
-                    has_idea = disastrous_ecobalance
-                }
-                multiply_variable = { free_factory_adjustment = 0.6 }
-            }
-            else = {
-                multiply_variable = { free_factory_adjustment = 1 }
-            }
-            ###
-            if = {
-                limit = {
-                    has_idea = minarchist_state
-                }
-                multiply_variable = { free_factory_adjustment = 1.15 }
-            }
-            ###
-            if = {
-                limit = {
-                    has_tech = corporate_model
-                }
-                multiply_variable = { free_factory_adjustment = 1.15 }
-            }
-            ###
-            if = {
-                limit = {
-                    has_dynamic_modifier = {
-                        modifier = too_many_building_resources_used
-                    }
-                }
-                multiply_variable = { free_factory_adjustment = 0 }
-            }
-            ###
-            add_to_variable = { free_factory_gain = free_factory_base_gain }
-            multiply_variable = { free_factory_gain = free_factory_adjustment }
-            add_to_variable = { free_factory_progress = free_factory_gain }
-            if = {
-                limit = {
-                    check_variable = { free_factory_progress > 100 }
-                    any_state = {
-                        is_fully_controlled_by = ROOT
-                        free_building_slots = {
-                            building = civilian_complex
-                            size > 1
-                            include_locked = no
-                        }
-                    }
-                }
-                add_to_variable = { free_factory_counter = 1 }
-                random_list = {
-                    50 = {
-                        random_owned_controlled_state = {
-                            limit = {
-                                is_fully_controlled_by = ROOT
-                                free_building_slots = {
-                                    building = civilian_complex
-                                    size > 1
-                                    include_locked = no
-                                }
-                            }
-                            add_building_construction = {
-                                type = civilian_complex
-                                level = 1
-                                instant_build = yes
-                            }
-                        }
-                    }
-                    50 = {
-                        random_owned_controlled_state = {
-                            limit = {
-                                is_fully_controlled_by = ROOT
-                                free_building_slots = {
-                                    building = military_complex
-                                    size > 1
-                                    include_locked = no
-                                }
-                            }
-                            add_building_construction = {
-                                type = military_complex
-                                level = 1
-                                instant_build = yes
-                            }
-                        }
-                    }
-                }
-            }
-            if = {
-                limit = {
-                    check_variable = { free_factory_progress > 100 }
-                }
-                clear_variable = free_factory_progress
-                set_variable = { free_factory_progress = 0 }
-            }
-        }
-    }
+	on_daily = {
+		effect = {
+			clear_variable = free_factory_gain
+			if = {
+				limit = {
+					has_idea = agrarian_stage
+				}
+				set_variable = { free_factory_base_gain = 0.4 }
+			}
+			else_if = {
+				limit = {
+					has_idea = developing_stage
+				}
+				set_variable = { free_factory_base_gain = 0.8 }
+			}
+			else_if = {
+				limit = {
+					has_idea = developed_stage
+				}
+				set_variable = { free_factory_base_gain = 1 }
+			}
+			else_if = {
+				limit = {
+					has_idea = regional_stage
+				}
+				set_variable = { free_factory_base_gain = 0.6 }
+			}
+			else_if = {
+				limit = {
+					has_idea = continental_stage
+				}
+				set_variable = { free_factory_base_gain = 0.4 }
+			}
+			else = {
+				set_variable = { free_factory_base_gain = 0.2 }
+			}
+			clear_variable = free_factory_adjustment
+			set_variable = { free_factory_adjustment = 1 }
+			###
+			if = {
+				limit = {
+					has_idea = civilian_economy
+				}
+				multiply_variable = { free_factory_adjustment = 2 }
+			}
+			else_if = {
+				limit = {
+					has_idea = low_economic_mobilisation
+				}
+				multiply_variable = { free_factory_adjustment = 1 }
+			}
+			else_if = {
+				limit = {
+					has_idea = partial_economic_mobilisation
+				}
+				multiply_variable = { free_factory_adjustment = 0.5 }
+			}
+			else = {
+				multiply_variable = { free_factory_adjustment = 0.1 }
+			}
+			###
+			if = {
+				limit = {
+					has_idea = neutral_ecobalance
+				}
+				multiply_variable = { free_factory_adjustment = 0.95 }
+			}
+			else_if = {
+				limit = {
+					has_idea = precarious_ecobalance
+				}
+				multiply_variable = { free_factory_adjustment = 0.9 }
+			}
+			else_if = {
+				limit = {
+					has_idea = dangerous_ecobalance
+				}
+				multiply_variable = { free_factory_adjustment = 0.8 }
+			}
+			else_if = {
+				limit = {
+					has_idea = disastrous_ecobalance
+				}
+				multiply_variable = { free_factory_adjustment = 0.6 }
+			}
+			else = {
+				multiply_variable = { free_factory_adjustment = 1 }
+			}
+			###
+			if = {
+				limit = {
+					has_idea = minarchist_state
+				}
+				multiply_variable = { free_factory_adjustment = 1.15 }
+			}
+			###
+			if = {
+				limit = {
+					has_tech = corporate_model
+				}
+				multiply_variable = { free_factory_adjustment = 1.15 }
+			}
+			###
+			if = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = too_many_building_resources_used
+					}
+				}
+				multiply_variable = { free_factory_adjustment = 0 }
+			}
+			###
+			add_to_variable = { free_factory_gain = free_factory_base_gain }
+			multiply_variable = { free_factory_gain = free_factory_adjustment }
+			add_to_variable = { free_factory_progress = free_factory_gain }
+			if = {
+				limit = {
+					check_variable = { free_factory_progress > 100 }
+					any_state = {
+						is_fully_controlled_by = ROOT
+						free_building_slots = {
+							building = civilian_complex
+							size > 1
+							include_locked = no
+						}
+					}
+				}
+				add_to_variable = { free_factory_counter = 1 }
+				random_list = {
+					50 = {
+						random_owned_controlled_state = {
+							limit = {
+								is_fully_controlled_by = ROOT
+								free_building_slots = {
+									building = civilian_complex
+									size > 1
+									include_locked = no
+								}
+							}
+							add_building_construction = {
+								type = civilian_complex
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+					50 = {
+						random_owned_controlled_state = {
+							limit = {
+								is_fully_controlled_by = ROOT
+								free_building_slots = {
+									building = military_complex
+									size > 1
+									include_locked = no
+								}
+							}
+							add_building_construction = {
+								type = military_complex
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					check_variable = { free_factory_progress > 100 }
+				}
+				clear_variable = free_factory_progress
+				set_variable = { free_factory_progress = 0 }
+			}
+		}
+	}
 ###
-    on_weekly = {
-        effect = {
-            if = {
-                limit = {
-                    num_of_factories > 198
-                }
-                add_ideas = global_stage
-            }
-            else_if = {
-                limit = {
-                    num_of_factories > 98
-                }
-                add_ideas = continental_stage
-            }
-            else_if = {
-                limit = {
-                    num_of_factories > 28
-                }
-                add_ideas = regional_stage
-            }
-            else_if = {
-                limit = {
-                    num_of_factories > 18
-                }
-                add_ideas = developed_stage
-            }
-            else_if = {
-                limit = {
-                    num_of_factories > 8
-                }
-                add_ideas = developing_stage
-            }
-            else = {
-                add_ideas = agrarian_stage
-            }
-        }
-    }
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					num_of_factories > 198
+				}
+				add_ideas = global_stage
+			}
+			else_if = {
+				limit = {
+					num_of_factories > 98
+				}
+				add_ideas = continental_stage
+			}
+			else_if = {
+				limit = {
+					num_of_factories > 28
+				}
+				add_ideas = regional_stage
+			}
+			else_if = {
+				limit = {
+					num_of_factories > 18
+				}
+				add_ideas = developed_stage
+			}
+			else_if = {
+				limit = {
+					num_of_factories > 8
+				}
+				add_ideas = developing_stage
+			}
+			else = {
+				add_ideas = agrarian_stage
+			}
+		}
+	}
 }

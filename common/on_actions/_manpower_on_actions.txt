@@ -1,45 +1,45 @@
 on_actions = {
-    on_startup = {
-        effect = {
-            every_possible_country = {
-                limit = {
-                    is_dynamic_country = no
-                }
-                if = {
-                    limit = {
-                        tag = ADU
-                    }
-                    add_ideas = volunteer_only
-                }
-                else_if = {
-                    limit = {
-                        exists = yes #all non-existing countries have 0 manpower
-                        has_manpower < 1000
-                    }
-                    add_ideas = service_by_requirement
-                }
-                else_if = {
-                    limit = {
-                        OR = {
-                            has_idea = communal_parity
-                            has_idea = autocratic_authority
-                        }
-                    }
-                    add_ideas = extensive_conscription
-                }
-                else_if = {
-                    limit = {
-                        OR = {
-                            has_idea = digital_democracy
-                            has_idea = minarchist_state
-                        }
-                    }
-                    add_ideas = volunteer_only
-                }
-                else = {
-                    add_ideas = limited_conscription
-                }
-            }
-        }
-    }
+	on_startup = {
+		effect = {
+			every_possible_country = {
+				limit = {
+					is_dynamic_country = no
+				}
+				if = {
+					limit = {
+						tag = ADU
+					}
+					add_ideas = volunteer_only
+				}
+				else_if = {
+					limit = {
+						exists = yes #all non-existing countries have 0 manpower
+						has_manpower < 1000
+					}
+					add_ideas = service_by_requirement
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_idea = communal_parity
+							has_idea = autocratic_authority
+						}
+					}
+					add_ideas = extensive_conscription
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_idea = digital_democracy
+							has_idea = minarchist_state
+						}
+					}
+					add_ideas = volunteer_only
+				}
+				else = {
+					add_ideas = limited_conscription
+				}
+			}
+		}
+	}
 }

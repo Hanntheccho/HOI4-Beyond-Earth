@@ -12,7 +12,7 @@ on_actions = {
 			every_possible_country = {
 				set_country_flag = auto_ecobalance_states
 			}
-            every_state = {
+			every_state = {
 				if = {
 					limit = {
 						OR = {
@@ -188,7 +188,7 @@ on_actions = {
 						modifier = minor_ecobalance
 					}
 				}
-            }
+			}
 			every_state = { #fires of Siberia
 				if = {
 					limit = {
@@ -209,13 +209,13 @@ on_actions = {
 				}
 			}
 			###
-            every_country = {
-                set_variable = { ecobalance_timeout = 60 }
+			every_country = {
+				set_variable = { ecobalance_timeout = 60 }
 				calculate_current_ecobalance = yes
-                set_variable = { max_ecobalance = num_owned_states }
-                multiply_variable = { max_ecobalance = 4 }
-                set_variable = { ecobalance_ratio = ROOT.current_ecobalance }
-                divide_variable = { ecobalance_ratio = max_ecobalance }
+				set_variable = { max_ecobalance = num_owned_states }
+				multiply_variable = { max_ecobalance = 4 }
+				set_variable = { ecobalance_ratio = ROOT.current_ecobalance }
+				divide_variable = { ecobalance_ratio = max_ecobalance }
 				if = {
 					limit = {
 						check_variable = { ecobalance_ratio < 0.01 }
@@ -249,16 +249,16 @@ on_actions = {
 				else = {
 					add_ideas = disastrous_ecobalance
 				}
-            }
-        }
-    }
+			}
+		}
+	}
 	on_daily_ADU = {
 		effect = {
 			random_country =  {
 				limit = {
 					owns_state = 333
 				}
-            	subtract_from_variable = { ecobalance_timeout = 1 }
+				subtract_from_variable = { ecobalance_timeout = 1 }
 				if = {
 					limit = {
 						check_variable = { ecobalance_timeout = 0 }
@@ -497,15 +497,15 @@ on_actions = {
 					#
 				}
 			}
-        }
-    }
+		}
+	}
 	on_weekly = {
 		effect = {
 			calculate_current_ecobalance = yes
-            set_variable = { max_ecobalance = num_owned_states }
-            multiply_variable = { max_ecobalance = 4 }
-            set_variable = { ecobalance_ratio = ROOT.current_ecobalance }
-            divide_variable = { ecobalance_ratio = max_ecobalance }
+			set_variable = { max_ecobalance = num_owned_states }
+			multiply_variable = { max_ecobalance = 4 }
+			set_variable = { ecobalance_ratio = ROOT.current_ecobalance }
+			divide_variable = { ecobalance_ratio = max_ecobalance }
 			if = {
 				limit = {
 					check_variable = { ecobalance_ratio < 0.01 }

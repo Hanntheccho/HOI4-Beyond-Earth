@@ -6,423 +6,423 @@ scripted_gui = {
 		window_name = "ecobalance_gui_window"
 
 		visible = {
-            always = yes
+			always = yes
 		}
 
 		effects = {
-            auto_ecobalance_button_click = {
-                ROOT = {
-                    if = {
-                        limit = {
-                            has_country_flag = auto_ecobalance_states
-                        }
-                        clr_country_flag = auto_ecobalance_states
-                    }
-                    else = {
-                        set_country_flag = auto_ecobalance_states
-                    }
-                }
-            }
-			reduce_ecobalance_button_click = {
-                THIS = {
-                    decrease_ecobalance = yes
-                    set_state_flag = {
-                        flag = ecobalance_reduction_timeout_flag
-                        value = 1
-                        days = 60
-                    }
-                }
-                ROOT = {
-                    subtract_from_variable = { industrial_power = 25 }
-                }
+			auto_ecobalance_button_click = {
+				ROOT = {
+					if = {
+						limit = {
+							has_country_flag = auto_ecobalance_states
+						}
+						clr_country_flag = auto_ecobalance_states
+					}
+					else = {
+						set_country_flag = auto_ecobalance_states
+					}
+				}
 			}
-            reduce_ecobalance_button_harmony_click = {
-                THIS = {
-                    decrease_ecobalance = yes
-                    set_state_flag = {
-                        flag = ecobalance_reduction_timeout_flag
-                        value = 1
-                        days = 60
-                    }
-                }
-                ROOT = {
-                    subtract_from_variable = { industrial_power = 15 }
-                }
-            }
-            reduce_ecobalance_button_mastery_click = {
-                THIS = {
-                    engineered_ecobalance = yes
-                    set_state_flag = {
-                        flag = ecobalance_reduction_timeout_flag
-                        value = 1
-                        days = 60
-                    }
-                }
-                ROOT = {
-                    subtract_from_variable = { industrial_power = 40 }
-                }
-            }
+			reduce_ecobalance_button_click = {
+				THIS = {
+					decrease_ecobalance = yes
+					set_state_flag = {
+						flag = ecobalance_reduction_timeout_flag
+						value = 1
+						days = 60
+					}
+				}
+				ROOT = {
+					subtract_from_variable = { industrial_power = 25 }
+				}
+			}
+			reduce_ecobalance_button_harmony_click = {
+				THIS = {
+					decrease_ecobalance = yes
+					set_state_flag = {
+						flag = ecobalance_reduction_timeout_flag
+						value = 1
+						days = 60
+					}
+				}
+				ROOT = {
+					subtract_from_variable = { industrial_power = 15 }
+				}
+			}
+			reduce_ecobalance_button_mastery_click = {
+				THIS = {
+					engineered_ecobalance = yes
+					set_state_flag = {
+						flag = ecobalance_reduction_timeout_flag
+						value = 1
+						days = 60
+					}
+				}
+				ROOT = {
+					subtract_from_variable = { industrial_power = 40 }
+				}
+			}
 		}
-        triggers = {
-            reduce_ecobalance_button_visible = {
-                ROOT = {
-                    NOT = {
-                        OR = {
-                            has_country_flag = has_mind_tier3
-                            has_country_flag = has_body_tier3
-                        }
-                    }
-                }
-            }
-            reduce_ecobalance_load_visible = {
-                ROOT = {
-                    NOT = {
-                        OR = {
-                            has_country_flag = has_mind_tier3
-                            has_country_flag = has_body_tier3
-                        }
-                    }
-                }
-            }
-            reduce_ecobalance_load_click_enabled = {
-                THIS = {
-                    OR = {
-                        is_owned_by = ROOT
-                        OWNER = { is_ally_with = ROOT }
-                    }
-                    OR = {
-                        has_dynamic_modifier = {
-                            modifier = notable_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = major_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = significant_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = terminal_ecobalance
-                        }
-                    }
-                    NOT = {
-                        has_state_flag = ecobalance_reduction_timeout_flag
-                    }
-                }
-                ROOT = {
-                    has_tech = automation
-                    check_variable = {
-                        var = industrial_power
-                        value = 25
-                        compare = greater_than_or_equals
-                    }
-                }
-            }
-            reduce_ecobalance_button_click_enabled = {
-                THIS = {
-                    OR = {
-                        is_owned_by = ROOT
-                        OWNER = { is_ally_with = ROOT }
-                    }
-                    OR = {
-                        has_dynamic_modifier = {
-                            modifier = notable_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = major_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = significant_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = terminal_ecobalance
-                        }
-                    }
-                    NOT = {
-                        has_state_flag = ecobalance_reduction_timeout_flag
-                    }
-                }
-                ROOT = {
-                    has_tech = automation
-                    check_variable = {
-                        var = industrial_power
-                        value = 25
-                        compare = greater_than_or_equals
-                    }
-                }
-            }
-            reduce_ecobalance_button_harmony_visible = {
-                ROOT = {
-                    has_country_flag = has_mind_tier3
-                }
-            }
-            reduce_ecobalance_load_harmony_visible = {
-                ROOT = {
-                    has_country_flag = has_mind_tier3
-                }
-            }
-            reduce_ecobalance_load_harmony_click_enabled = {
-                THIS = {
-                    OR = {
-                        is_owned_by = ROOT
-                        OWNER = { is_ally_with = ROOT }
-                    }
-                    NOT = {
-                        has_dynamic_modifier = {
-                            modifier = no_ecobalance
-                        }
-                    }
-                    OR = {
-                        has_dynamic_modifier = {
-                            modifier = counter_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = minor_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = notable_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = major_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = significant_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = terminal_ecobalance
-                        }
-                    }
-                    NOT = {
-                        has_state_flag = ecobalance_reduction_timeout_flag
-                    }
-                }
-                ROOT = {
-                    has_tech = automation
-                    check_variable = {
-                        var = industrial_power
-                        value = 25
-                        compare = greater_than_or_equals
-                    }
-                }
-            }
-            reduce_ecobalance_button_harmony_click_enabled = {
-                THIS = {
-                    OR = {
-                        is_owned_by = ROOT
-                        OWNER = { is_ally_with = ROOT }
-                    }
-                    NOT = {
-                        has_dynamic_modifier = {
-                            modifier = no_ecobalance
-                        }
-                    }
-                    OR = {
-                        has_dynamic_modifier = {
-                            modifier = counter_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = minor_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = notable_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = major_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = significant_ecobalance
-                        }
-                        has_dynamic_modifier = {
-                            modifier = terminal_ecobalance
-                        }
-                    }
-                    NOT = {
-                        has_state_flag = ecobalance_reduction_timeout_flag
-                    }
-                }
-                ROOT = {
-                    has_tech = automation
-                    check_variable = {
-                        var = industrial_power
-                        value = 15
-                        compare = greater_than_or_equals
-                    }
-                }
-            }
-            reduce_ecobalance_button_mastery_visible = {
-                ROOT = {
-                    has_country_flag = has_body_tier3
-                }
-            }
-            reduce_ecobalance_load_mastery_visible = {
-                ROOT = {
-                    has_country_flag = has_body_tier3
-                }
-            }
-            reduce_ecobalance_load_mastery_click_enabled = {
-                THIS = {
-                    OR = {
-                        is_owned_by = ROOT
-                        OWNER = { is_ally_with = ROOT }
-                    }
-                    NOT = {
-                        has_dynamic_modifier = {
-                            modifier = counter_ecobalance
-                        }
-                    }
-                    NOT = {
-                        has_state_flag = ecobalance_reduction_timeout_flag
-                    }
-                }
-                ROOT = {
-                    has_tech = automation
-                    check_variable = {
-                        var = industrial_power
-                        value = 40
-                        compare = greater_than_or_equals
-                    }
-                }
-            }
-            reduce_ecobalance_button_mastery_click_enabled = {
-                THIS = {
-                    OR = {
-                        is_owned_by = ROOT
-                        OWNER = { is_ally_with = ROOT }
-                    }
-                    NOT = {
-                        has_dynamic_modifier = {
-                            modifier = counter_ecobalance
-                        }
-                    }
-                    NOT = {
-                        has_state_flag = ecobalance_reduction_timeout_flag
-                    }
-                }
-                ROOT = {
-                    has_tech = automation
-                    check_variable = {
-                        var = industrial_power
-                        value = 40
-                        compare = greater_than_or_equals
-                    }
-                }
-            }
-            #
-            counter_ecobalance_icon_visible = {
-                has_dynamic_modifier = {
-                    modifier = counter_ecobalance
-                }
-            }
-            no_ecobalance_icon_visible = {
-                has_dynamic_modifier = {
-                    modifier = no_ecobalance
-                }
-            }
-            minor_ecobalance_icon_visible = {
-                has_dynamic_modifier = {
-                    modifier = minor_ecobalance
-                }
-            }
-            notable_ecobalance_icon_visible = {
-                has_dynamic_modifier = {
-                    modifier = notable_ecobalance
-                }
-            }
-            major_ecobalance_icon_visible = {
-                has_dynamic_modifier = {
-                    modifier = major_ecobalance
-                }
-            }
-            significant_ecobalance_icon_visible = {
-                has_dynamic_modifier = {
-                    modifier = significant_ecobalance
-                }
-            }
-            terminal_ecobalance_icon_visible = {
-                has_dynamic_modifier = {
-                    modifier = terminal_ecobalance
-                }
-            }
-        }
-
-        ai_enabled = {
-            always = yes
-        }
-
-        ai_test_interval = 300
-
-        ai_check = {
-            check_variable = {
-                industrial_power > 25
-            }
+		triggers = {
+			reduce_ecobalance_button_visible = {
+				ROOT = {
+					NOT = {
+						OR = {
+							has_country_flag = has_mind_tier3
+							has_country_flag = has_body_tier3
+						}
+					}
+				}
+			}
+			reduce_ecobalance_load_visible = {
+				ROOT = {
+					NOT = {
+						OR = {
+							has_country_flag = has_mind_tier3
+							has_country_flag = has_body_tier3
+						}
+					}
+				}
+			}
+			reduce_ecobalance_load_click_enabled = {
+				THIS = {
+					OR = {
+						is_owned_by = ROOT
+						OWNER = { is_ally_with = ROOT }
+					}
+					OR = {
+						has_dynamic_modifier = {
+							modifier = notable_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = major_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = significant_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = terminal_ecobalance
+						}
+					}
+					NOT = {
+						has_state_flag = ecobalance_reduction_timeout_flag
+					}
+				}
+				ROOT = {
+					has_tech = automation
+					check_variable = {
+						var = industrial_power
+						value = 25
+						compare = greater_than_or_equals
+					}
+				}
+			}
+			reduce_ecobalance_button_click_enabled = {
+				THIS = {
+					OR = {
+						is_owned_by = ROOT
+						OWNER = { is_ally_with = ROOT }
+					}
+					OR = {
+						has_dynamic_modifier = {
+							modifier = notable_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = major_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = significant_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = terminal_ecobalance
+						}
+					}
+					NOT = {
+						has_state_flag = ecobalance_reduction_timeout_flag
+					}
+				}
+				ROOT = {
+					has_tech = automation
+					check_variable = {
+						var = industrial_power
+						value = 25
+						compare = greater_than_or_equals
+					}
+				}
+			}
+			reduce_ecobalance_button_harmony_visible = {
+				ROOT = {
+					has_country_flag = has_mind_tier3
+				}
+			}
+			reduce_ecobalance_load_harmony_visible = {
+				ROOT = {
+					has_country_flag = has_mind_tier3
+				}
+			}
+			reduce_ecobalance_load_harmony_click_enabled = {
+				THIS = {
+					OR = {
+						is_owned_by = ROOT
+						OWNER = { is_ally_with = ROOT }
+					}
+					NOT = {
+						has_dynamic_modifier = {
+							modifier = no_ecobalance
+						}
+					}
+					OR = {
+						has_dynamic_modifier = {
+							modifier = counter_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = minor_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = notable_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = major_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = significant_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = terminal_ecobalance
+						}
+					}
+					NOT = {
+						has_state_flag = ecobalance_reduction_timeout_flag
+					}
+				}
+				ROOT = {
+					has_tech = automation
+					check_variable = {
+						var = industrial_power
+						value = 25
+						compare = greater_than_or_equals
+					}
+				}
+			}
+			reduce_ecobalance_button_harmony_click_enabled = {
+				THIS = {
+					OR = {
+						is_owned_by = ROOT
+						OWNER = { is_ally_with = ROOT }
+					}
+					NOT = {
+						has_dynamic_modifier = {
+							modifier = no_ecobalance
+						}
+					}
+					OR = {
+						has_dynamic_modifier = {
+							modifier = counter_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = minor_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = notable_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = major_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = significant_ecobalance
+						}
+						has_dynamic_modifier = {
+							modifier = terminal_ecobalance
+						}
+					}
+					NOT = {
+						has_state_flag = ecobalance_reduction_timeout_flag
+					}
+				}
+				ROOT = {
+					has_tech = automation
+					check_variable = {
+						var = industrial_power
+						value = 15
+						compare = greater_than_or_equals
+					}
+				}
+			}
+			reduce_ecobalance_button_mastery_visible = {
+				ROOT = {
+					has_country_flag = has_body_tier3
+				}
+			}
+			reduce_ecobalance_load_mastery_visible = {
+				ROOT = {
+					has_country_flag = has_body_tier3
+				}
+			}
+			reduce_ecobalance_load_mastery_click_enabled = {
+				THIS = {
+					OR = {
+						is_owned_by = ROOT
+						OWNER = { is_ally_with = ROOT }
+					}
+					NOT = {
+						has_dynamic_modifier = {
+							modifier = counter_ecobalance
+						}
+					}
+					NOT = {
+						has_state_flag = ecobalance_reduction_timeout_flag
+					}
+				}
+				ROOT = {
+					has_tech = automation
+					check_variable = {
+						var = industrial_power
+						value = 40
+						compare = greater_than_or_equals
+					}
+				}
+			}
+			reduce_ecobalance_button_mastery_click_enabled = {
+				THIS = {
+					OR = {
+						is_owned_by = ROOT
+						OWNER = { is_ally_with = ROOT }
+					}
+					NOT = {
+						has_dynamic_modifier = {
+							modifier = counter_ecobalance
+						}
+					}
+					NOT = {
+						has_state_flag = ecobalance_reduction_timeout_flag
+					}
+				}
+				ROOT = {
+					has_tech = automation
+					check_variable = {
+						var = industrial_power
+						value = 40
+						compare = greater_than_or_equals
+					}
+				}
+			}
+			#
+			counter_ecobalance_icon_visible = {
+				has_dynamic_modifier = {
+					modifier = counter_ecobalance
+				}
+			}
+			no_ecobalance_icon_visible = {
+				has_dynamic_modifier = {
+					modifier = no_ecobalance
+				}
+			}
+			minor_ecobalance_icon_visible = {
+				has_dynamic_modifier = {
+					modifier = minor_ecobalance
+				}
+			}
+			notable_ecobalance_icon_visible = {
+				has_dynamic_modifier = {
+					modifier = notable_ecobalance
+				}
+			}
+			major_ecobalance_icon_visible = {
+				has_dynamic_modifier = {
+					modifier = major_ecobalance
+				}
+			}
+			significant_ecobalance_icon_visible = {
+				has_dynamic_modifier = {
+					modifier = significant_ecobalance
+				}
+			}
+			terminal_ecobalance_icon_visible = {
+				has_dynamic_modifier = {
+					modifier = terminal_ecobalance
+				}
+			}
 		}
 
-        ai_weights = {
-            reduce_ecobalance_button_click = {
-                ai_will_do = {
-                    factor = 0
-                    modifier = {
-                        OWNER = {
-                            check_variable = {
-                                industrial_power > 200
-                            }
-                        }
-                        add = 100
-			        }
-                    modifier = {
-                        OWNER = {
-                            has_idea = dangerous_ecobalance
-                        }
-                        add = 10000
-			        }
-                    #
-                    modifier = {
-                        OWNER = {
-                            NOT = {
-                                has_government = harmony
-                            }
-                        }
-                        add = -90
-			        }
-                }
-            }
-            reduce_ecobalance_button_harmony_click = {
-                ai_will_do = {
-                    factor = 1
-                    modifier = {
-                        ROOT = {
-                            check_variable = {
-                                industrial_power > 200
-                            }
-                        }
-                        add = 100
-			        }
-                    modifier = {
-                        OWNER = {
-                            has_idea = precarious_ecobalance
-                        }
-                        add = 10000
-			        }
-                }
-            }
-            reduce_ecobalance_button_mastery_click = {
-                ai_will_do = {
-                    factor = 0
-                    modifier = {
-                        OWNER = {
-                            check_variable = {
-                                industrial_power > 200
-                            }
-                        }
-                        add = 100
-			        }
-                    modifier = {
-                        OWNER = {
-                            has_idea = dangerous_ecobalance
-                        }
-                        add = 10000
-			        }
-                }
-            }
-        }
+		ai_enabled = {
+			always = yes
+		}
+
+		ai_test_interval = 300
+
+		ai_check = {
+			check_variable = {
+				industrial_power > 25
+			}
+		}
+
+		ai_weights = {
+			reduce_ecobalance_button_click = {
+				ai_will_do = {
+					factor = 0
+					modifier = {
+						OWNER = {
+							check_variable = {
+								industrial_power > 200
+							}
+						}
+						add = 100
+					}
+					modifier = {
+						OWNER = {
+							has_idea = dangerous_ecobalance
+						}
+						add = 10000
+					}
+					#
+					modifier = {
+						OWNER = {
+							NOT = {
+								has_government = harmony
+							}
+						}
+						add = -90
+					}
+				}
+			}
+			reduce_ecobalance_button_harmony_click = {
+				ai_will_do = {
+					factor = 1
+					modifier = {
+						ROOT = {
+							check_variable = {
+								industrial_power > 200
+							}
+						}
+						add = 100
+					}
+					modifier = {
+						OWNER = {
+							has_idea = precarious_ecobalance
+						}
+						add = 10000
+					}
+				}
+			}
+			reduce_ecobalance_button_mastery_click = {
+				ai_will_do = {
+					factor = 0
+					modifier = {
+						OWNER = {
+							check_variable = {
+								industrial_power > 200
+							}
+						}
+						add = 100
+					}
+					modifier = {
+						OWNER = {
+							has_idea = dangerous_ecobalance
+						}
+						add = 10000
+					}
+				}
+			}
+		}
 	}
 }
