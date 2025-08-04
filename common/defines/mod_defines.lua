@@ -8,7 +8,7 @@ NDefines.NGame.HANDS_OFF_START_TAG = "GRN"
 
 NDefines.NGame.FUEL_RESOURCE = "energy"
 
-NDefines.NBuildings.MAX_SHARED_SLOTS = 20
+NDefines.NBuildings.MAX_SHARED_SLOTS = 40
 
 NDefines.NPolitics.BASE_POLITICAL_POWER_INCREASE = 1	-- Vanilla: 2
 NDefines.NCountry.POLITICAL_POWER_UPPER_CAP = 1000.0	-- Vanilla: 2000.0
