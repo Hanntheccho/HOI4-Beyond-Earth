@@ -1,0 +1,425 @@
+@radio_station_width = 96
+@radio_station_height = 96
+guiTypes = {
+	#radio musicplayer win
+	containerWindowType = {
+		name = "musicplayer_window"
+		size = { width = 440 height = 440 }
+		orientation= center
+		origo = center
+		moveable = yes
+		click_to_front = yes
+		clipping = no
+		position = { x = -220 y = -80 }
+		background = {
+			quadTextureSprite ="GFX_tiled_black_bg"
+		}
+		instantTextBoxType = {
+			name ="detail"
+			position = { x = -200 y = 18 }
+			font = "Arialalpha"
+			text = "MUSICPLAYERTITLE"
+			maxWidth = 400
+			maxHeight = 30
+			format = center
+			orientation = CENTER_UP
+		}
+
+		#???
+		containerWindowType = {
+			name = "radio_decoration"
+			size = { width = 190 height = 122 }
+
+			instantTextboxType = {
+				name = "cake"
+				position = { x = 15 y = 88 }
+				textureFile = ""
+				font = "Arialcap"
+				text = ""
+				maxWidth = 150
+				maxHeight = 20
+				format = center
+			}
+		}
+
+		#radio control buttons
+		containerWindowType = {
+			name = "faceplate"
+			size = { width = 590 height = 46 }
+			position = {x = 10000 y = 0}
+		}
+
+		#soundtrack music list
+		containerWindowType = {
+			name = "default_playlist_window"
+			position = { x = 20 y = 62 }
+			size = { width = 394 height = 348 }
+			verticalScrollbar = "right_vertical_slider"
+			background = {
+				quadTextureSprite ="GFX_tiled_null"
+			}
+			gridBoxType = {
+				name = "tracks_grid"
+				size = { width = 450 height =100 }
+				slotsize = { width = 95%% height = 30 }
+				max_slots_horizontal = 1
+			}
+		}
+
+		#radio station list
+		containerWindowType = {
+			name = "default_stations_window"
+			position = { x = -102 y = 12 }
+			size = { width = 124 height = 296 }
+			#verticalScrollbar = "right_vertical_slider"
+			clipping = no
+			background = {
+				quadTextureSprite ="GFX_tiled_null"
+			}
+			gridBoxType = {
+				name = "stations_grid"
+				size = { width = @radio_station_width height =1 }
+				slotsize = { width = @radio_station_width height = 102 }
+				max_slots_horizontal = 1
+			}
+		}
+
+		buttonType = {
+			name = "close_button"
+			position = { x = -21 y = 21 }
+			orientation = UPPER_RIGHT
+			quadTextureSprite ="GFX_close"
+			clicksound = click_close
+			shortcut = "ESCAPE"
+			centerposition = yes
+		}
+	}
+
+	#soundtrack music item entry
+	containerWindowType={
+		name = "music_track_entry"
+		size = { width = 397 height = 30 }
+		background = {
+			quadTextureSprite ="GFX_tiled_null"
+		}
+
+		iconType = {
+			name = "current_track"
+			position = {x= 0 y=-6}
+			quadTextureSprite ="GFX_selected_song"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "disabled_track"
+			position = {x=0 y=0}
+			quadTextureSprite ="GFX_disabled_song"
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "play_track_button"
+			quadTextureSprite ="GFX_tiled_null"
+			size = {x=300 y=30}
+			position = { x= 0 y = -6}
+			pdx_tooltip = "MUSICPLAYER_PLAY_TRACK"
+		}
+		buttonType = {
+			name = "disable_track_button"
+			quadTextureSprite ="GFX_accept_decline_icon"
+			position = {
+				x = 10000
+				y = 0
+			}
+		}
+		instantTextboxType = {
+			name = "track_label"
+			position = { x = 0 y = 0 }
+			font = "Arialsmallest"
+			maxWidth = 300
+			maxHeight = 20
+			format = left
+			fixedsize= yes
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "track_length"
+			position = { x = -110 y = 0 }
+			font = "Arialsmallest"
+			text = "9:33"
+			maxWidth = 60
+			maxHeight = 20
+			format = right
+			fixedsize= yes
+			orientation = "UPPER_RIGHT"
+		}
+	}
+
+	#radio station item entry
+	containerWindowType={
+		name = "base_music_stations_entry"
+		size = { width = @radio_station_width height = @radio_station_height }
+
+		iconType = {
+			name = "album_cover"
+			quadTextureSprite = "GFX_civbe_playlist"
+			position = {x=4 y=4}
+		}
+		checkBoxType = {
+			name = "select_station_button"
+			quadTextureSprite = "GFX_radio_checkbox"
+			clicksound = decisions_ui_button
+		}
+	}
+	containerWindowType={
+		name = "2205_music_stations_entry"
+		size = { width = @radio_station_width height = @radio_station_height }
+
+		iconType = {
+			name = "album_cover"
+			quadTextureSprite = "GFX_anno2205_playlist"
+			position = {x=4 y=4}
+		}
+		checkBoxType = {
+			name = "select_station_button"
+			quadTextureSprite = "GFX_radio_checkbox"
+			clicksound = decisions_ui_button
+		}
+	}
+	containerWindowType={
+		name = "2070_music_stations_entry"
+		size = { width = @radio_station_width height = @radio_station_height }
+
+		iconType = {
+			name = "album_cover"
+			quadTextureSprite = "GFX_anno2070_playlist"
+			position = {x=4 y=4}
+		}
+		checkBoxType = {
+			name = "select_station_button"
+			quadTextureSprite = "GFX_radio_checkbox"
+			clicksound = decisions_ui_button
+		}
+	}
+}
+
+guiTypes = {
+	containerWindowType = {
+		name = "2205_music_faceplate"
+		position = { x =0 y=0 }
+		size = { width = 590 height = 46 }
+
+		iconType ={
+			name ="musicplayer_header_bg"
+			spriteType = "GFX_musicplayer_header_bg"
+			position = { x= 0 y = 0 }
+			alwaystransparent = yes
+		}
+
+		instantTextboxType = {
+			name = "track_name"
+			position = { x = 72 y = 20 }
+			font = "hoi_20b"
+			text = "Roger Pontare - Nar vindarna viskar mitt namn"
+			maxWidth = 450
+			maxHeight = 25
+			format = center
+		}
+
+		instantTextboxType = {
+			name = "track_elapsed"
+			position = { x = 124 y = 30 }
+			font = "hoi_18b"
+			text = "00:00"
+			maxWidth = 50
+			maxHeight = 25
+			format = center
+		}
+
+		instantTextboxType = {
+			name = "track_duration"
+			position = { x = 420 y = 30 }
+			font = "hoi_18b"
+			text = "02:58"
+			maxWidth = 50
+			maxHeight = 25
+			format = center
+		}
+
+		buttonType = {
+			name = "prev_button"
+			position = { x = 220 y = 20 }
+			quadTextureSprite ="GFX_musicplayer_previous_button"
+			buttonFont = "Main_14_black"
+			Orientation = "LOWER_LEFT"
+			clicksound = click_close
+			pdx_tooltip = "MUSICPLAYER_PREV"
+		}
+
+		buttonType = {
+			name = "play_button"
+			position = { x = 263 y = 20 }
+			quadTextureSprite ="GFX_musicplayer_play_pause_button"
+			buttonFont = "Main_14_black"
+			Orientation = "LOWER_LEFT"
+			clicksound = click_close
+		}
+
+		buttonType = {
+			name = "next_button"
+			position = { x = 336 y = 20 }
+			quadTextureSprite ="GFX_musicplayer_next_button"
+			buttonFont = "Main_14_black"
+			Orientation = "LOWER_LEFT"
+			clicksound = click_close
+			pdx_tooltip = "MUSICPLAYER_NEXT"
+		}
+
+		extendedScrollbarType = {
+			name = "volume_slider"
+			position = { x = 100 y = 45}
+			size = { width = 75 height = 18 }
+			tileSize = { width = 12 height = 12}
+			maxValue =100
+			minValue =0
+			stepSize =1
+			startValue = 50
+			horizontal = yes
+			orientation = lower_left
+			origo = lower_left
+			setTrackFrameOnChange = yes
+
+			slider = {
+				name = "Slider"
+				quadTextureSprite = "GFX_scroll_drager"
+				position = { x=0 y = 1 }
+				pdx_tooltip = "MUSICPLAYER_ADJUST_VOL"
+			}
+
+			track = {
+				name = "Track"
+				quadTextureSprite = "GFX_volume_track"
+				position = { x=0 y = 3 }
+				alwaystransparent = yes
+				pdx_tooltip = "MUSICPLAYER_ADJUST_VOL"
+			}
+		}
+
+		buttonType = {
+			name = "shuffle_button"
+			position = { x = 425 y = 20 }
+			quadTextureSprite ="GFX_toggle_shuffle_buttons"
+			buttonFont = "Main_14_black"
+			Orientation = "LOWER_LEFT"
+			clicksound = click_close
+		}
+	}
+	containerWindowType = {
+		name = "2070_music_faceplate"
+		position = { x =0 y=0 }
+		size = { width = 590 height = 46 }
+
+		iconType ={
+			name ="musicplayer_header_bg"
+			spriteType = "GFX_musicplayer_header_bg"
+			position = { x= 0 y = 0 }
+			alwaystransparent = yes
+		}
+
+		instantTextboxType = {
+			name = "track_name"
+			position = { x = 72 y = 20 }
+			font = "hoi_20b"
+			text = "Roger Pontare - Nar vindarna viskar mitt namn"
+			maxWidth = 450
+			maxHeight = 25
+			format = center
+		}
+
+		instantTextboxType = {
+			name = "track_elapsed"
+			position = { x = 124 y = 30 }
+			font = "hoi_18b"
+			text = "00:00"
+			maxWidth = 50
+			maxHeight = 25
+			format = center
+		}
+
+		instantTextboxType = {
+			name = "track_duration"
+			position = { x = 420 y = 30 }
+			font = "hoi_18b"
+			text = "02:58"
+			maxWidth = 50
+			maxHeight = 25
+			format = center
+		}
+
+		buttonType = {
+			name = "prev_button"
+			position = { x = 220 y = 20 }
+			quadTextureSprite ="GFX_musicplayer_previous_button"
+			buttonFont = "Main_14_black"
+			Orientation = "LOWER_LEFT"
+			clicksound = click_close
+			pdx_tooltip = "MUSICPLAYER_PREV"
+		}
+
+		buttonType = {
+			name = "play_button"
+			position = { x = 263 y = 20 }
+			quadTextureSprite ="GFX_musicplayer_play_pause_button"
+			buttonFont = "Main_14_black"
+			Orientation = "LOWER_LEFT"
+			clicksound = click_close
+		}
+
+		buttonType = {
+			name = "next_button"
+			position = { x = 336 y = 20 }
+			quadTextureSprite ="GFX_musicplayer_next_button"
+			buttonFont = "Main_14_black"
+			Orientation = "LOWER_LEFT"
+			clicksound = click_close
+			pdx_tooltip = "MUSICPLAYER_NEXT"
+		}
+
+		extendedScrollbarType = {
+			name = "volume_slider"
+			position = { x = 100 y = 45}
+			size = { width = 75 height = 18 }
+			tileSize = { width = 12 height = 12}
+			maxValue =100
+			minValue =0
+			stepSize =1
+			startValue = 50
+			horizontal = yes
+			orientation = lower_left
+			origo = lower_left
+			setTrackFrameOnChange = yes
+
+			slider = {
+				name = "Slider"
+				quadTextureSprite = "GFX_scroll_drager"
+				position = { x=0 y = 1 }
+				pdx_tooltip = "MUSICPLAYER_ADJUST_VOL"
+			}
+
+			track = {
+				name = "Track"
+				quadTextureSprite = "GFX_volume_track"
+				position = { x=0 y = 3 }
+				alwaystransparent = yes
+				pdx_tooltip = "MUSICPLAYER_ADJUST_VOL"
+			}
+		}
+
+		buttonType = {
+			name = "shuffle_button"
+			position = { x = 425 y = 20 }
+			quadTextureSprite ="GFX_toggle_shuffle_buttons"
+			buttonFont = "Main_14_black"
+			Orientation = "LOWER_LEFT"
+			clicksound = click_close
+		}
+	}
+}
