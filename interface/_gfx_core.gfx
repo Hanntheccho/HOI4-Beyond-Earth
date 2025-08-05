@@ -9,6 +9,21 @@ spriteTypes = {
 	}
 
 ###############################
+######## PROGRESSBARS #########
+###############################
+
+	progressbartype = {
+		name = "GFX_strategicnavy_progressbar"
+		color = { 0.0 0.5 0.0 }
+		colortwo = { 1.0 0.0 0.0 }
+		textureFile1 = "gfx/interface/tiled/tiled_white.dds"
+		textureFile2 = "gfx/interface/tiled/tiled_white.dds"
+		size = {x=50 y=50}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+
+###############################
 ########## BUTTONS ############
 ###############################
 
@@ -80,11 +95,6 @@ spriteTypes = {
 
 	#difficulty
 	spriteType = {
-		name = "GFX_difficulty_checkbox"
-		texturefile = "gfx/interface/difficulty_checkbox.dds"
-		noOfFrames = 2
-	}
-	spriteType = {
 		name = "GFX_difficulty_strip"
 		texturefile = "gfx/interface/difficulty_strip.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
@@ -111,8 +121,26 @@ spriteTypes = {
 			animationtexturefile = "gfx/interface/ironman_icon.dds" 	# <- the animated file
 			animationrotation = 0.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = yes			# yes or no ;)
-			animationtime = 30.0			# in seconds
+			animationtime = 10.0			# in seconds
 			animationdelay = 7.0			# in seconds
+			animationblendmode = "add"	   #add, multiply, overlay
+			animationtype = "scrolling"	  #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_historical_icon"
+		texturefile = "gfx/interface/historical_icon.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/historical_icon.dds"
+			animationtexturefile = "gfx/interface/historical_icon.dds" 	# <- the animated file
+			animationrotation = 0.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 10.0			# in seconds
+			animationdelay = 9.0			# in seconds
 			animationblendmode = "add"	   #add, multiply, overlay
 			animationtype = "scrolling"	  #scrolling, rotating, pulsing
 			animationrotationoffset = { x = 0.0 y = 0.0 }
@@ -171,14 +199,6 @@ spriteTypes = {
 		size= { x=77 y=38 }
 		textureFile = "gfx/interface/tiles/tiled_line.dds"
 		borderSize = { x=8 y=8 }
-		tilingCenter = yes
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
-	corneredTileSpriteType = {
-		name = "GFX_tiled_bg_alpha"
-		size= { x=72 y=72 }
-		textureFile = "gfx/interface/tiles/tiled_bg_alpha.dds"
-		borderSize = { x=26 y=26 }
 		tilingCenter = yes
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}
@@ -871,8 +891,13 @@ spriteTypes = {
 spriteTypes = {
 
 ###############################
-######## TERRAIN TYPE #########
+########### TERRAIN ###########
 ###############################
+
+	spriteType = {
+		name = "GFX_terrain_frame"
+		textureFile = "gfx/interface/terrains/terrain_frame.dds"
+	}
 
 	spriteType = {
 		name = "GFX_terrain_great_garbage_patch_night_storm"
