@@ -424,11 +424,9 @@ guiTypes = {
 	#leader, government, ideology, elections, party
 	containerWindowType = {
 		name ="gamesetup_country_details"
-		position = { x=90 y =-10}
+		position = { x=4 y =228}
 		size = { width=506 height=132}
 		clipping = no
-		orientation = CENTER_LEFT
-		origo = center_left
 		moveable = yes
 		background = {
 			quadTextureSprite = "GFX_tiled_black_bg"
@@ -632,7 +630,7 @@ guiTypes = {
 			instantTextBoxType={
 				position = {x = 60 y = 10}
 				name = "include_interesting_majors_text"
-				font = "Arialsmallcap"
+				font = "Arialsmall"
 				maxWidth = 370
 				maxHeight = 16
 				text = "FE_INTERESTING_MAJORS"
@@ -647,7 +645,7 @@ guiTypes = {
 			instantTextBoxType={
 				position = {x = 60 y = 50 }
 				name = "include_interesting_minors_text"
-				font = "Arialsmallcap"
+				font = "Arialsmall"
 				maxWidth = 370
 				maxHeight = 16
 				text = "FE_INTERESTING_MINORS"
@@ -662,7 +660,7 @@ guiTypes = {
 			instantTextBoxType={
 				position = {x = 60 y = 90 }
 				name = "include_other_countries_text"
-				font = "Arialsmallcap"
+				font = "Arialsmall"
 				maxWidth = 370
 				maxHeight = 16
 				text = "FE_OTHER_COUNTRIES"
@@ -1057,207 +1055,93 @@ guiTypes = {
 	#game diff setup win
 	containerWindowType = {
 		name ="gamesetup_gameplay_settings_window"
-		position = { x=90 y =175}
-		size = { width=506 height=222}
-		clipping = no
-		orientation = CENTER_LEFT
-		origo = center_left
-		moveable = yes
-		background = {
-			quadTextureSprite = "GFX_tiled_black_bg"
+		size = { width = 100%% height = 100%% }
+		containerWindowType = {
+			name ="top_banner"
+			size = { width=100% height=80 }
+			background = {
+				quadTextureSprite = "GFX_tiled_no"
+				alwaystransparent = yes
+			}
 		}
-		instantTextBoxType = {
-			name = "selected_nation_label_title"
-			position = { x = -200 y = 12 }
-			textureFile = ""
-			font = "Arialsmallalpha"
-			text = "LOAD.CUSTOM_RULES.SETTINGS"
-			maxWidth = 400
-			maxHeight = 30
-			format = center
-			orientation = CENTER_UP
+		containerWindowType = {
+			name ="bottom_banner"
+			size = { width=100% height=80 }
+			position = { x = 0 y = -80 }
+			orientation = LOWER_LEFT
+			background = {
+				quadTextureSprite = "GFX_tiled_no"
+				alwaystransparent = yes
+			}
 		}
 		buttonType = {
 			name = "custom_settings_btn"
+			position = { x = 680 y = -60 }
 			quadTextureSprite ="GFX_tiling_button"
-			size = { x = 270 y = 36 }
-			position = { x = -135 y = -56 }
-			orientation = CENTER_DOWN
-			font = "Arialsmallcap"
+			size = { x = 320 y = 40 }
+			Orientation = LOWER_LEFT
+			font = @button_font
 			text = "FE_CUSTOM_SETTINGS"
 			clicksound = click_default
 			oversound = ui_menu_over
 			shortcut = "k"
 		}
+		@difficulty_y = 84
+		iconType = {
+			name = "difficulty_strip"
+			position = {x = -454 y = @difficulty_y }
+			quadTextureSprite ="GFX_difficulty_strip"
+			orientation = UPPER_RIGHT
+		}
 		checkboxType = {
 			name = "very_easy_cb"
-			position = { x = -48 y = 40 }
-			quadTextureSprite ="GFX_checkbox"
+			position = { x = -454 y = @difficulty_y }
+			quadTextureSprite ="GFX_difficulty_checkbox"
 			clicksound = click_checkbox
-			orientation = CENTER_UP
+			orientation = UPPER_RIGHT
 		}
 		checkboxType = {
 			name = "easy_cb"
-			position = { x = 182 y = 40 }
-			quadTextureSprite ="GFX_checkbox"
+			position = { x = -364 y = @difficulty_y }
+			quadTextureSprite ="GFX_difficulty_checkbox"
 			clicksound = click_checkbox
-			orientation = CENTER_UP
+			orientation = UPPER_RIGHT
 		}
 		checkboxType = {
 			name = "normal_cb"
-			position = { x = -48 y = 120 }
-			quadTextureSprite ="GFX_checkbox"
+			position = { x = -274 y = @difficulty_y }
+			quadTextureSprite ="GFX_difficulty_checkbox"
 			clicksound = click_checkbox
-			orientation = CENTER_UP
+			orientation = UPPER_RIGHT
 		}
 		checkboxType = {
 			name = "hard_cb"
-			position = { x = -48 y = 80 }
-			quadTextureSprite ="GFX_checkbox"
+			position = { x = -184 y = @difficulty_y }
+			quadTextureSprite ="GFX_difficulty_checkbox"
 			clicksound = click_checkbox
-			orientation = CENTER_UP
+			orientation = UPPER_RIGHT
 		}
 		checkboxType = {
 			name = "very_hard_cb"
-			position = { x = 182 y = 80 }
-			quadTextureSprite ="GFX_checkbox"
+			position = { x = -94 y = @difficulty_y }
+			quadTextureSprite ="GFX_difficulty_checkbox"
 			clicksound = click_checkbox
-			orientation = CENTER_UP
+			orientation = UPPER_RIGHT
 		}
-		instantTextBoxType = {
-			name = "very_easy_label"
-			position = { x = -212 y = 45 }
-			textureFile = ""
-			font = "Arialsmall"
-			text = "UTOPIAN ECOALERT"
-			maxWidth = 200
-			maxHeight = 30
-			format = left
-			orientation = CENTER_UP
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "very_easy_bg"
-			position = { x = -115 y = 54 }
-			quadTextureSprite ="GFX_tiling_text_bg"
-			size = {x=210 y=29}
-			Orientation = CENTER_UP
-			alwaystransparent = yes
-			centerposition = yes
-		}
-		instantTextBoxType = {
-			name = "easy_label"
-			position = { x = 18 y = 45 }
-			textureFile = ""
-			font = "Arialsmall"
-			text = "SIMPLE ECOALERT"
-			maxWidth = 200
-			maxHeight = 30
-			format = left
-			orientation = CENTER_UP
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "easy_bg"
-			position = { x = 115 y = 54 }
-			quadTextureSprite ="GFX_tiling_text_bg"
-			size = {x=210 y=29}
-			Orientation = CENTER_UP
-			alwaystransparent = yes
-			centerposition = yes
-		}
-		instantTextBoxType = {
-			name = "hard_label"
-			position = { x = -212 y = 85 }
-			textureFile = ""
-			font = "Arialsmall"
-			text = "CRITICAL ECOALERT"
-			maxWidth = 200
-			maxHeight = 30
-			format = left
-			orientation = CENTER_UP
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "hard_bg"
-			position = { x = -115 y = 94 }
-			quadTextureSprite ="GFX_tiling_text_bg"
-			size = {x=210 y=29}
-			Orientation = CENTER_UP
-			alwaystransparent = yes
-			centerposition = yes
-		}
-		instantTextBoxType = {
-			name = "very_hard_label"
-			position = { x = 18 y = 85 }
-			textureFile = ""
-			font = "Arialsmall"
-			text = "TERMINAL ECOALERT"
-			maxWidth = 200
-			maxHeight = 30
-			format = left
-			orientation = CENTER_UP
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "very_hard_bg"
-			position = { x = 115 y = 94 }
-			quadTextureSprite ="GFX_tiling_text_bg"
-			size = {x=210 y=29}
-			Orientation = CENTER_UP
-			alwaystransparent = yes
-			centerposition = yes
-		}
-		instantTextBoxType = {
-			name = "normal_label"
-			position = { x = -212 y = 125 }
-			textureFile = ""
-			font = "Arialsmall"
-			text = "DEFAULT ECOALERT"
-			maxWidth = 200
-			maxHeight = 30
-			format = left
-			orientation = CENTER_UP
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "normal_bg"
-			position = { x = -115 y = 134 }
-			quadTextureSprite ="GFX_tiling_text_bg"
-			size = {x=210 y=29}
-			Orientation = CENTER_UP
-			alwaystransparent = yes
-			centerposition = yes
+		iconType = {
+			name = "ironman_icon"
+			position = {x = -94 y = 174 }
+			quadTextureSprite ="GFX_ironman_icon"
+			orientation = UPPER_RIGHT
 		}
 		checkboxType = {
 			name = "ironman_cb"
-			position = { x = 182 y = 120 }
-			quadTextureSprite ="GFX_checkbox"
+			position = { x = -94 y = 174 }
+			quadTextureSprite ="GFX_difficulty_checkbox"
 			clicksound = click_checkbox
 			pdx_tooltip = "FE_IRONMAN"
 			pdx_tooltip_delayed = "FE_IRONMAN_TOOLTIP"
-			orientation = CENTER_UP
-		}
-		instantTextBoxType = {
-			name = "ironman_label"
-			position = { x = 18 y = 125 }
-			textureFile = ""
-			font = "Arialsmall"
-			text = "NIGHTMARE!"
-			maxWidth = 200
-			maxHeight = 30
-			format = left
-			orientation = CENTER_UP
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "ironman_bg"
-			position = { x = 115 y = 134 }
-			quadTextureSprite ="GFX_tiling_text_bg"
-			size = {x=210 y=29}
-			Orientation = CENTER_UP
-			alwaystransparent = yes
-			centerposition = yes
+			orientation = UPPER_RIGHT
 		}
 		#todo
 		checkboxType = {
@@ -1300,30 +1184,10 @@ guiTypes = {
 		size = { width=100% height =100%}
 		clipping = no
 		containerWindowType = {
-			name ="top_banner"
-			size = { width=100% height=80 }
-			background = {
-				quadTextureSprite = "GFX_tiled_no"
-				alwaystransparent = yes
-			}
-		}
-		containerWindowType = {
-			name ="bottom_banner"
-			size = { width=100% height=80 }
-			position = { x = 0 y = -80 }
-			orientation = LOWER_LEFT
-			background = {
-				quadTextureSprite = "GFX_tiled_no"
-				alwaystransparent = yes
-			}
-		}
-		containerWindowType = {
 			name ="top"
-			position = { x=90 y =-180}
-			size = { width=506 height=196}
+			position = { x=4 y =84}
+			size = { width=506 height=144}
 			clipping = no
-			orientation = CENTER_LEFT
-			origo = center_left
 			moveable = yes
 			background = {
 				spriteType = "GFX_tiled_black_bg"
@@ -1333,7 +1197,7 @@ guiTypes = {
 				position = { x = -200 y = 12 }
 				textureFile = ""
 				font = "Arialsmallalpha"
-				text = "LOAD.SELECTED_COUNTRY.INFO"
+				text = "LOAD.SELECTED_SPONSOR.INFO"
 				maxWidth = 400
 				maxHeight = 30
 				format = center
@@ -1366,28 +1230,26 @@ guiTypes = {
 				Orientation = CENTER_UP
 			}
 			ButtonType = {
-				name = "interesting_countries_button"
-				position = { x = -230 y = -52 }
-				orientation = CENTER_DOWN
-				size = { x = 260 y = 36 }
-				quadTextureSprite ="GFX_tiling_button"
-				font = "Arialsmallcap"
-				text = "FE_INTERESTING_COUNTRIES"
-				clicksound = click_default
-				oversound = ui_menu_over
-				shortcut = "i"
-			}
-			ButtonType = {
 				name = "randomize_country_button"
-				position = { x = 30 y = -52 }
-				orientation = CENTER_DOWN
-				size = { x = 200 y = 36 }
+				position = { x = 16 y = -64 }
+				size = { x = 360 y = 40 }
 				quadTextureSprite ="GFX_tiling_button"
-				font = "Arialsmallcap"
+				font = @button_font
 				text = "FE_RANDOMIZE_COUNTRY"
 				clicksound = click_default
 				oversound = ui_menu_over
 				shortcut = "r"
+			}
+			ButtonType = {
+				name = "interesting_countries_button"
+				position = { x = 396 y = -64 }
+				size = { x = 360 y = 40 }
+				quadTextureSprite ="GFX_tiling_button"
+				font = @button_font
+				text = "FE_INTERESTING_COUNTRIES"
+				clicksound = click_default
+				oversound = ui_menu_over
+				shortcut = "i"
 			}
 			containerWindowType = {
 				name ="scenario_window"
@@ -1524,10 +1386,10 @@ guiTypes = {
 			}
 			buttonType = {
 				name = "play_button"
-				position = { x = 680 y = -60 }
+				position = { x = -320 y = -60 }
 				quadTextureSprite ="GFX_tiling_button"
 				size = { x = 300 y = 40 }
-				Orientation = LOWER_LEFT
+				Orientation = LOWER_RIGHT
 				font = @button_font
 				text="START"
 				shortcut = "RETURN"
