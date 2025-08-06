@@ -1,0 +1,129 @@
+
+#credits frontend
+guiTypes = {
+	containerWindowType = {
+		name ="frontendcreditsview"
+		size = { width=500 height=500 }
+		Orientation = center
+		origo = center
+		background = {
+			spriteType = "GFX_thumbnail_bg"
+		}
+		background = {
+			quadTextureSprite = "GFX_tiled_black_bg"
+		}
+		ButtonType = {
+			name = "back_button"
+			position = { x = -21 y = 21 }
+			orientation = UPPER_RIGHT
+			quadTextureSprite ="GFX_close"
+			clicksound = click_close
+			shortcut = "ESCAPE"
+			centerposition = yes
+		}
+	}
+}
+
+#credits text and backend
+guiTypes = {
+	instantTextBoxType = {
+		name = "CreditsText"
+		font = "Arialsmall"
+		fixedsize = yes
+		maxwidth = 500
+		maxheight = 32
+		format = centre
+		orientation = "CENTER"
+		alwaysTransparent = yes
+	}
+	instantTextBoxType = {
+		name = "CreditsTextBold"
+		font = "Arialcap"
+		fixedsize = yes
+		maxwidth = 500
+		maxheight = 32
+		format = centre
+		orientation = "CENTER"
+		alwaysTransparent = yes
+	}
+	iconType = {
+		name = "CreditsBar"
+		buttonMesh = "MenuCreditsBg"
+	}
+	windowType = {
+		name ="CreditsWindow"
+		backGround=""
+		moveable = 0
+		dontRender = ""
+		horizontalBorder= ""
+		verticalBorder= ""
+		fullscreen=no
+		Orientation = "CENTER"
+
+		iconType = {
+			name ="credits_bg"
+			spriteType = "GFX_credits_bg"
+		}
+		guiButtonType = {
+			name = "back_button"
+			quadTextureSprite ="button_type_1"
+		}
+	}
+}
+
+#ingame real clock
+guiTypes = {
+	@clock_width = 60
+	@clock_height = 24
+	containerWindowType = {
+		name = "clock_window"
+		position = { x=-32 y=-12 }
+		animation_time = 450
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		Orientation = LOWER_RIGHT
+		origo = center
+		clipping = no
+		size = { width=@clock_width height=@clock_height }
+		background = {
+			quadTextureSprite ="GFX_tiled_null"
+		}
+		positionType = {
+			name = "peace_conference_offset"
+			position = { x=0 y=0 }
+		}
+		positionType = {
+			name = "minimap_offset"
+			position = { x=0 y=0 }
+		}
+		instantTextBoxType = {
+			name ="time_text"
+			font = "Arial"
+			text = "13:37"
+			format = right
+			maxWidth = @clock_width
+			maxHeight = @clock_height
+			fixedsize = yes
+		}
+	}
+}
+
+#alerts win properties
+guiTypes = {
+	positionType = {
+		name = "alerticon_startposition"
+		position = { x = 662 y = 38 }
+	}
+	positionType = {
+		name = "alerticon_startposition_extended"
+		position = { x = 718 y = 38 }
+	}
+	positionType = {
+		name = "alerticon_offset"
+		position = { x = 48 y = 44 }
+	}
+	positionType = {
+		name = "alerticon_endposition"
+		position = { x = 315 y = 0 }
+	}
+}
