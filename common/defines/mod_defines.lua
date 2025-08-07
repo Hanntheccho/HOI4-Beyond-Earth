@@ -6,10 +6,6 @@ NDefines.NGraphics.COUNTRY_FLAG_STRIPE_TEX_MAX_HEIGHT = 8196		-- VANILLA: 2048
 NDefines.NGraphics.COUNTRY_FLAG_TEX_MAX_SIZE = 2048				   -- VANILLA: 256
 NDefines.NGame.HANDS_OFF_START_TAG = "GRN"
 
-NDefines.NGame.FUEL_RESOURCE = "energy"
-
-NDefines.NBuildings.MAX_SHARED_SLOTS = 20
-
 NDefines.NPolitics.BASE_POLITICAL_POWER_INCREASE = 1	-- Vanilla: 2
 NDefines.NCountry.POLITICAL_POWER_UPPER_CAP = 1000.0	-- Vanilla: 2000.0
 NDefines.NCountry.POLITICAL_POWER_LOWER_CAP = -999.0	-- Vanilla: -500.0
@@ -47,8 +43,6 @@ NDefines.NOperatives.AGENCY_CREATION_FACTORIES = 1000101
 --NDefines.NCountry.WEEKLY_WAR_SUPPORT_GAIN = 0.0
 
 NDefines.NMilitary.GENERATE_AI_DIV_COMMAND_HISTORY_ENTRIES = false
-
-NDefines.NCountry.BASE_COMMAND_POWER_GAIN = -1.0	  -- Vanilla: 0.4
 
 NDefines.NCountry.DAYS_OF_WAR_BEFORE_SURRENDER = 1  -- Vanilla: 7
 
