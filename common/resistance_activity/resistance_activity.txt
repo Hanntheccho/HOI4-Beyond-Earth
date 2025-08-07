@@ -1,7 +1,7 @@
-sabotage_military_complex = {
+sabotage_arms_factory = {
 	available = {
 		non_damaged_building_level = {
-			building = military_complex
+			building = arms_factory
 			level > 0
 		}
 	}
@@ -14,6 +14,10 @@ sabotage_military_complex = {
 
 			add = 4
 		}
+		modifier = {
+			occupation_law = harsh_quotas_occupation
+			add = -0.25
+		}
 	}
 
 	effect = {
@@ -23,14 +27,14 @@ sabotage_military_complex = {
 				check_variable = { targeted_sabotage_industry > 0 }
 			}
 			damage_building = {
-				type = military_complex
+				type = arms_factory
 				damage = 0.5
 			}
 			subtract_from_variable = { var = targeted_sabotage_industry value = 1 }
 		}
 		else = {
 			damage_building = {
-				type = military_complex
+				type = arms_factory
 				damage = 0.25
 			}
 		}
@@ -80,10 +84,10 @@ sabotage_infrastructure = {
 	alert_text = building_is_sabotaged
 }
 
-sabotage_civilian_complex = {
+sabotage_industrial_complex = {
 	available = {
 		non_damaged_building_level = {
-			building = civilian_complex
+			building = industrial_complex
 			level > 0
 		}
 	}
@@ -96,6 +100,10 @@ sabotage_civilian_complex = {
 
 			add = 4
 		}
+		modifier = {
+			occupation_law = harsh_quotas_occupation
+			add = -0.25
+		}
 	}
 
 	effect = {
@@ -105,14 +113,14 @@ sabotage_civilian_complex = {
 				check_variable = { targeted_sabotage_industry > 0 }
 			}
 			damage_building = {
-				type = civilian_complex
+				type = industrial_complex
 				damage = 0.5
 			}
 			subtract_from_variable = { var = targeted_sabotage_industry value = 1 }
 		}
 		else = {
 			damage_building = {
-				type = civilian_complex
+				type = industrial_complex
 				damage = 0.25
 			}
 		}
@@ -121,10 +129,10 @@ sabotage_civilian_complex = {
 	alert_text = building_is_sabotaged
 }
 
-sabotage_recycling_complex = {
+sabotage_air_base = {
 	available = {
 		non_damaged_building_level = {
-			building = recycling_complex
+			building = air_base
 			level > 0
 		}
 	}
@@ -135,7 +143,120 @@ sabotage_recycling_complex = {
 
 	effect = {
 		damage_building = {
-			type = recycling_complex
+			type = air_base
+			damage = 0.25
+		}
+	}
+
+	alert_text = building_is_sabotaged
+}
+
+sabotage_dockyard = {
+	available = {
+		non_damaged_building_level = {
+			building = dockyard
+			level > 0
+		}
+	}
+
+	weight = {
+		base = 1
+	}
+
+	effect = {
+		damage_building = {
+			type = dockyard
+			damage = 0.25
+		}
+	}
+
+	alert_text = building_is_sabotaged
+}
+
+sabotage_anti_air_building = {
+	available = {
+		non_damaged_building_level = {
+			building = anti_air_building
+			level > 0
+		}
+	}
+
+	weight = {
+		base = 1
+	}
+
+	effect = {
+		damage_building = {
+			type = anti_air_building
+			damage = 0.25
+		}
+	}
+
+	alert_text = building_is_sabotaged
+}
+
+
+sabotage_synthetic_refinery = {
+	available = {
+		non_damaged_building_level = {
+			building = synthetic_refinery
+			level > 0
+		}
+	}
+
+	weight = {
+		base = 1
+	}
+
+	effect = {
+		damage_building = {
+			type = synthetic_refinery
+			damage = 0.25
+		}
+	}
+
+	alert_text = building_is_sabotaged
+}
+
+
+sabotage_fuel_silo = {
+	available = {
+		non_damaged_building_level = {
+			building = fuel_silo
+			level > 0
+		}
+	}
+
+	weight = {
+		base = 1
+	}
+
+	effect = {
+		damage_building = {
+			type = fuel_silo
+			damage = 0.25
+		}
+	}
+
+	alert_text = building_is_sabotaged
+}
+
+
+sabotage_radar_station = {
+	available = {
+		non_damaged_building_level = {
+			building = radar_station
+			level > 0
+		}
+	}
+
+	weight = {
+		base = 1
+	}
+
+	effect = {
+		damage_building = {
+			type = radar_station
 			damage = 0.25
 		}
 	}
@@ -146,7 +267,7 @@ sabotage_recycling_complex = {
 sabotage_rocket_site = {
 	available = {
 		non_damaged_building_level = {
-			building = spaceship_complex
+			building = rocket_site
 			level > 0
 		}
 	}
@@ -157,8 +278,74 @@ sabotage_rocket_site = {
 
 	effect = {
 		damage_building = {
-			type = spaceship_complex
+			type = rocket_site
 			damage = 0.25
+		}
+	}
+
+	alert_text = building_is_sabotaged
+}
+
+sabotage_nuclear_reactor = {
+	available = {
+		non_damaged_building_level = {
+			building = nuclear_reactor
+			level > 0
+		}
+	}
+
+	weight = {
+		base = 1
+	}
+
+	effect = {
+		damage_building = {
+			type = nuclear_reactor
+			damage = 0.15
+		}
+	}
+
+	alert_text = building_is_sabotaged
+}
+
+sabotage_nuclear_reactor_heavy_water = {
+	available = {
+		non_damaged_building_level = {
+			building = nuclear_reactor_heavy_water
+			level > 0
+		}
+	}
+
+	weight = {
+		base = 1
+	}
+
+	effect = {
+		damage_building = {
+			type = nuclear_reactor_heavy_water
+			damage = 0.15
+		}
+	}
+
+	alert_text = building_is_sabotaged
+}
+
+sabotage_commercial_nuclear_reactor = {
+	available = {
+		non_damaged_building_level = {
+			building = commercial_nuclear_reactor
+			level > 0
+		}
+	}
+
+	weight = {
+		base = 1
+	}
+
+	effect = {
+		damage_building = {
+			type = commercial_nuclear_reactor
+			damage = 0.15
 		}
 	}
 

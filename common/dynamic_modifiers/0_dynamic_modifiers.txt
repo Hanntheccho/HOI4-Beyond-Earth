@@ -23,56 +23,8 @@ arc_international_modifier = {
 
 	#icon = GFX_modifiers_sabotaged_resource
 
-	production_speed_military_complex_factor = global.arc_international
-	production_speed_heavy_military_complex_factor = global.arc_international
+	production_speed_arms_factory_factor = global.arc_international
 	recruitable_population_factor = global.arc_international
-}
-
-#BUILDING RESOURCES
-
-building_resources_used = {
-	enable = { always = yes }
-
-	#icon = GFX_modifiers_sabotaged_resource
-
-	country_resource_cost_energy = building_resources_used_energy
-	country_resource_cost_polymers = building_resources_used_polymers
-	country_resource_cost_lithium = building_resources_used_lithium
-	country_resource_cost_electronics = building_resources_used_electronics
-	country_resource_cost_superalloys = building_resources_used_superalloys
-	country_resource_cost_superconductors = building_resources_used_superconductors
-}
-
-too_many_building_resources_used = {
-	enable = {
-		always = yes
-	}
-	remove_trigger = {
-		NOT = {
-			check_variable = {
-				resource@energy < 0
-			}
-			check_variable = {
-				resource@polymers < 0
-			}
-			check_variable = {
-				resource@electronics < 0
-			}
-			check_variable = {
-				resource@superalloys < 0
-			}
-			check_variable = {
-				resource@superconductors < 0
-			}
-			check_variable = {
-				resource@lithium < 0
-			}
-		}
-	}
-
-	#icon = GFX_modifiers_sabotaged_resource
-
-	production_speed_buildings_factor = too_many_building_resources_used_var
 }
 
 #ECOBALANCE

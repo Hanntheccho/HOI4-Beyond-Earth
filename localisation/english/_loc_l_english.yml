@@ -417,7 +417,7 @@ be_industry: "Industrial Development"
 ###############################
 
 logistics_amount: "[?total_stockpile|0]"
-logistics_amount_tt: "§HMateriel§!\nYou have £light_equipment_icon  §Y[?num_equipment@light_equipment_0|0]§! §HLight Military Equipment§! and £heavy_equipment_icon  §Y[?num_equipment@heavy_equipment_0|0]§! §HHeavy Military Equipment§!\nYour current daily gain is £light_equipment_icon  §Y[?num_military_complex|2=+]§! and £heavy_equipment_icon  §Y[?num_heavy_military_complex|2=+]§! per day.\n\nThe army's materiel status is £light_equipment_icon  [GETlogistics_amount_tt_light]/§Y[?num_target_equipment_in_armies@light_equipment_0]§! and £heavy_equipment_icon  [GETlogistics_amount_tt_heavy]/§Y[?num_target_equipment_in_armies@heavy_equipment_0]§!\n--------------\nMateriel is automatically produced by your §HMilitary§! and §HAdvanced Military Complexes§!. Each one provides different types of industry for the production of either light materiel or heavy, advanced materiel."
+logistics_amount_tt: "§HMateriel§!\nYou have £light_equipment_icon  §Y[?num_equipment@light_equipment_0|0]§! §HLight Military Equipment§! and £heavy_equipment_icon  §Y[?num_equipment@heavy_equipment_0|0]§! §HHeavy Military Equipment§!\nYour current daily gain is £light_equipment_icon  §Y[?num_arms_factory|2=+]§! and £heavy_equipment_icon  §Y[?num_heavy_arms_factory|2=+]§! per day.\n\nThe army's materiel status is £light_equipment_icon  [GETlogistics_amount_tt_light]/§Y[?num_target_equipment_in_armies@light_equipment_0]§! and £heavy_equipment_icon  [GETlogistics_amount_tt_heavy]/§Y[?num_target_equipment_in_armies@heavy_equipment_0]§!\n--------------\nMateriel is automatically produced by your §HMilitary§! and §HAdvanced Military Complexes§!. Each one provides different types of industry for the production of either light materiel or heavy, advanced materiel."
 #logistics_amount_tt_delayed: "Materiel is automatically produced by your Military and Advanced Military Complexes. Each one provides different types of industry for the production of either light material or heavy, advanced materiel."
 logistics_amount_tt_delayed: "Military equipment - or materiel - is provided by Military Complexes and Advanced Military Complexes."
 logistics_amount_tt_ye_light: "§G[?num_equipment_in_armies@light_equipment_0|0]§!"
@@ -492,8 +492,8 @@ free_factory_progress_daily: "+[?free_factory_gain|2]%"
 free_factory_progress_text: "Free Factory Progress is §G[?free_factory_progress|0]%§!"
 available_factories: "We own [?num_of_civilian_factories|+0] Civilian Complexes"
 
-light_eq_production: "£light_equipment_icon  [?num_military_complex|2=+]"
-heavy_eq_production: "£heavy_equipment_icon  [?num_heavy_military_complex|2=+]"
+light_eq_production: "£light_equipment_icon  [?num_arms_factory|2=+]"
+heavy_eq_production: "£heavy_equipment_icon  [?num_heavy_arms_factory|2=+]"
 
 free_factory_time: "§HFree Factory Progress§!\n§LAll nations can benefit from their inheret, natural growth, as long as they let their members to make appropiate investments.§!\n\nOur progress is §G[?free_factory_progress]%§!, with a daily base gain of §O[?free_factory_base_gain]%§! and an extra daily gain of §O[?free_factory_gain]%§!, with a total adjustment of §O[?free_factory_adjustment|%]§!. The total amount of buildings gained from the free market is §O[?free_factory_counter]§!.\n\n§RResource deficit will cause §OHigh Default Risk§!, reducing general building speed and preventing other investments.§!"
 
@@ -851,98 +851,7 @@ country_resource_cost_superconductors: "Superconductors Consumption"
 ########### BUILDINGS ############
 ##################################
 
-building_resources_used: "From Complexes"
 too_many_building_resources_used: "High Default Risk"
-
-#MILITARY COMPLEX
-military_complex: "Military Complex"
-military_complex_plural: "Military Complexes"
-military_complex_desc: "This building provides the state with industry for production of simple, light materiel for units daily.\n\n§Y+1§! £light_equipment_icon  §CLight Military Equipment§!\n§Y+20§! §CDivision Limit§!\n§R-0.1§! §C£industrial_power  Industrial Power§!\n\n§RIt also consumes 1 £resources_strip|4 , 2 £resources_strip|3 , 1 £resources_strip|5 §!\n\n§RResource deficit will cause §OHigh Default Risk§!, reducing general building speed and preventing other investments.§!"
-
-military_complex_boost_no_005: "§OMilitary Complex§! Output: §R-5.00%§!"
-military_complex_boost_no_010: "§OMilitary Complex§! Output: §R-10.00%§!"
-military_complex_boost_no_015: "§OMilitary Complex§! Output: §R-15.00%§!"
-military_complex_boost_no_020: "§OMilitary Complex§! Output: §R-20.00%§!"
-military_complex_boost_no_025: "§OMilitary Complex§! Output: §R-25.00%§!"
-military_complex_boost_no_030: "§OMilitary Complex§! Output: §R-30.00%§!"
-military_complex_boost_no_040: "§OMilitary Complex§! Output: §R-40.00%§!"
-military_complex_boost_no_050: "§OMilitary Complex§! Output: §R-50.00%§!"
-military_complex_boost_no_060: "§OMilitary Complex§! Output: §R-60.00%§!"
-military_complex_boost_005: "§OMilitary Complex§! Output: §G+5.00%§!"
-military_complex_boost_010: "§OMilitary Complex§! Output: §G+10.00%§!"
-military_complex_boost_015: "§OMilitary Complex§! Output: §G+15.00%§!"
-military_complex_boost_020: "§OMilitary Complex§! Output: §G+20.00%§!"
-military_complex_boost_025: "§OMilitary Complex§! Output: §G+25.00%§!"
-military_complex_boost_030: "§OMilitary Complex§! Output: §G+30.00%§!"
-military_complex_boost_040: "§OMilitary Complex§! Output: §G+40.00%§!"
-military_complex_boost_050: "§OMilitary Complex§! Output: §G+50.00%§!"
-military_complex_boost_060: "§OMilitary Complex§! Output: §G+60.00%§!"
-
-heavy_military_complex_boost_no_005: "§OAdvanced Military Complex§! Output: §R-5.00%§!"
-heavy_military_complex_boost_no_010: "§OAdvanced Military Complex§! Output: §R-10.00%§!"
-heavy_military_complex_boost_no_015: "§OAdvanced Military Complex§! Output: §R-15.00%§!"
-heavy_military_complex_boost_no_020: "§OAdvanced Military Complex§! Output: §R-20.00%§!"
-heavy_military_complex_boost_no_025: "§OAdvanced Military Complex§! Output: §R-25.00%§!"
-heavy_military_complex_boost_no_030: "§OAdvanced Military Complex§! Output: §R-30.00%§!"
-heavy_military_complex_boost_no_040: "§OAdvanced Military Complex§! Output: §R-40.00%§!"
-heavy_military_complex_boost_no_050: "§OAdvanced Military Complex§! Output: §R-50.00%§!"
-heavy_military_complex_boost_no_060: "§OAdvanced Military Complex§! Output: §R-60.00%§!"
-heavy_military_complex_boost_005: "§OAdvanced Military Complex§! Output: §G+5.00%§!"
-heavy_military_complex_boost_010: "§OAdvanced Military Complex§! Output: §G+10.00%§!"
-heavy_military_complex_boost_015: "§OAdvanced Military Complex§! Output: §G+15.00%§!"
-heavy_military_complex_boost_020: "§OAdvanced Military Complex§! Output: §G+20.00%§!"
-heavy_military_complex_boost_025: "§OAdvanced Military Complex§! Output: §G+25.00%§!"
-heavy_military_complex_boost_030: "§OAdvanced Military Complex§! Output: §G+30.00%§!"
-heavy_military_complex_boost_040: "§OAdvanced Military Complex§! Output: §G+40.00%§!"
-heavy_military_complex_boost_050: "§OAdvanced Military Complex§! Output: §G+50.00%§!"
-heavy_military_complex_boost_060: "§OAdvanced Military Complex§! Output: §G+60.00%§!"
-
-#HEAVY MILITARY COMPLEX
-heavy_military_complex: "Advanced Military Complex"
-heavy_military_complex_plural: "Advanced Military Complexes"
-heavy_military_complex_desc: "This building provides the state with industry for production of advanced, heavy materiel for units daily.\n\n§Y+1§! £heavy_equipment_icon  §CHeavy Military Equipment§!\n§Y+20§! §CDivision Limit§!\n§R-0.2§! §C£industrial_power  Industrial Power§!\n\n§RIt also consumes 3 £resources_strip|4 , 4 £resources_strip|3 , 1 £resources_strip|6 , 3 £resources_strip|5 §!\n\n§RResource deficit will cause §OHigh Default Risk§!, reducing general building speed and preventing other investments.§!"
-
-#CIVILIAN COMPLEX
-civilian_complex: "Civilian Complex"
-civilian_complex_plural: "Civilian Complexes"
-civilian_complex_desc: "This building provides the state with industry for production of civilian goods or construction of new buildings.\n\n§G+0.2§! §C£industrial_power  Industrial Power§!"
-
-#GENERATOR BUILDING
-generator_building: "Generator"
-generator_building_plural: "Generators"
-generator_building_desc: "This building provides the state with"
-generator_building_amount: "$VALUE|Y0=$"
-generator_building_resource: "£resources_strip|$FRAME$"
-
-#SPACESHIP COMPLEX
-spaceship_complex: "Spaceship Complex"
-spaceship_complex_plural: "Spaceship Complexes"
-spaceship_complex_desc: "This building is capable of producing the different parts of the ISS.\n\n§Y+1§! §CSpaceship Contribution Points§!\n§Y+1§! §CResearch Speed§!\n§R-0.2§! §C£industrial_power  Industrial Power§!\n\n§RThis building is capable of producing §OKinetic Bombs§! at a rate of §O1 u./year§! if the required tech has been researched!§!\n\n§RIt also consumes 4 £resources_strip|4 , 3 £resources_strip|2 , 1 £resources_strip|6 , 1 £resources_strip|5 §!\n\n§RResource deficit will cause §OHigh Default Risk§!, reducing general building speed and preventing other investments.§!"
-
-#RECYCLING COMPLEX
-recycling_complex: "Recycling Complex"
-recycling_complex_plural: "Recycling Complexes"
-recycling_complex_desc: "This building provides the state with"
-recycling_complex_amount: "$VALUE|Y0=$"
-recycling_complex_resource: "£resources_strip|$FRAME$"
-
-#OFFSHORE HUB
-#naval_base: "Offshore Hub"
-#naval_base_plural: "Offshore Hubs"
-#naval_base_desc: "Allows overseas supply and export of resources. Higher levels increases the supply throughput."
-
-modifier_production_speed_military_complex_factor: "§YMilitary Complex§! Construction Speed"
-modifier_production_speed_military_complex_factor_desc: "Modifies the speed of Military Complex construction."
-modifier_production_speed_heavy_military_complex_factor: "§YAdvanced Military Complex§! Construction Speed"
-modifier_production_speed_heavy_military_complex_factor_desc: "Modifies the speed of Advanced Military Complex construction."
-modifier_production_speed_civilian_complex_factor: "§YCivilian Complex§! Construction Speed"
-modifier_production_speed_civilian_complex_factor_desc: "Modifies the speed of Civilian Complex construction."
-modifier_production_speed_generator_building_factor: "§YGenerator§! Construction Speed"
-modifier_production_speed_generator_building_factor_desc: "Modifies the speed of Generator construction."
-modifier_production_speed_spaceship_complex_factor: "§YSpaceship Complex§! Construction Speed"
-modifier_production_speed_spaceship_complex_factor_desc: "Modifies the speed of Spaceship Complex construction."
-modifier_production_speed_recycling_complex_factor: "§YRecycling Complex§! Construction Speed"
-modifier_production_speed_recycling_complex_factor_desc: "Modifies the speed of Recycling Complex construction."
 
 ##################################
 ########## STATE LEVEL ###########

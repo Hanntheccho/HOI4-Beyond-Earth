@@ -207,9 +207,7 @@ on_actions = {
 			###
 			if = {
 				limit = {
-					has_dynamic_modifier = {
-						modifier = too_many_building_resources_used
-					}
+					country_is_missing_any_resource = yes
 				}
 				multiply_variable = { free_factory_adjustment = 0 }
 			}
@@ -223,7 +221,7 @@ on_actions = {
 					any_state = {
 						is_fully_controlled_by = ROOT
 						free_building_slots = {
-							building = civilian_complex
+							building = industrial_complex
 							size > 1
 							include_locked = no
 						}
@@ -236,13 +234,13 @@ on_actions = {
 							limit = {
 								is_fully_controlled_by = ROOT
 								free_building_slots = {
-									building = civilian_complex
+									building = industrial_complex
 									size > 1
 									include_locked = no
 								}
 							}
 							add_building_construction = {
-								type = civilian_complex
+								type = industrial_complex
 								level = 1
 								instant_build = yes
 							}
@@ -253,13 +251,13 @@ on_actions = {
 							limit = {
 								is_fully_controlled_by = ROOT
 								free_building_slots = {
-									building = military_complex
+									building = arms_factory
 									size > 1
 									include_locked = no
 								}
 							}
 							add_building_construction = {
-								type = military_complex
+								type = arms_factory
 								level = 1
 								instant_build = yes
 							}
