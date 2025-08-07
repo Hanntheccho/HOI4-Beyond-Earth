@@ -6,6 +6,8 @@ NDefines.NGraphics.COUNTRY_FLAG_STRIPE_TEX_MAX_HEIGHT = 8196		-- VANILLA: 2048
 NDefines.NGraphics.COUNTRY_FLAG_TEX_MAX_SIZE = 2048				   -- VANILLA: 256
 NDefines.NGame.HANDS_OFF_START_TAG = "GRN"
 
+NDefines.NBuildings.MAX_SHARED_SLOTS = 20   -- Vanilla: 25
+
 NDefines.NPolitics.BASE_POLITICAL_POWER_INCREASE = 1	-- Vanilla: 2
 NDefines.NCountry.POLITICAL_POWER_UPPER_CAP = 1000.0	-- Vanilla: 2000.0
 NDefines.NCountry.POLITICAL_POWER_LOWER_CAP = -999.0	-- Vanilla: -500.0
