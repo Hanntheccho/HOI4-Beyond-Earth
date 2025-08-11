@@ -10,11 +10,19 @@ scripted_map_modes = {
 				FROM = {
 					if = {
 						limit = {
+							has_idea = isolation
+						}
+						set_temp_variable = { red = 0.1 }
+						set_temp_variable = { green = 0.41 }
+						set_temp_variable = { blue = 0.1 }
+					}
+					else_if = {
+						limit = {
 							has_idea = civilian_economy
 						}
-						set_temp_variable = { red = 0 }
-						set_temp_variable = { green = 0.41 }
-						set_temp_variable = { blue = 0 }
+						set_temp_variable = { red = 0.22 }
+						set_temp_variable = { green = 0.51 }
+						set_temp_variable = { blue = 0.22 }
 					}
 					else_if = {
 						limit = {
@@ -39,6 +47,14 @@ scripted_map_modes = {
 						set_temp_variable = { red = 0.96 }
 						set_temp_variable = { green = 0.43 }
 						set_temp_variable = { blue = 0.26 }
+					}
+					else_if = {
+						limit = {
+							has_idea = tot_economic_mobilisation
+						}
+						set_temp_variable = { red = 1 }
+						set_temp_variable = { green = 0.22 }
+						set_temp_variable = { blue = 0.22 }
 					}
 
 					set_temp_variable = { alpha = 0.25 }

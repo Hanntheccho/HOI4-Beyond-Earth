@@ -9,21 +9,6 @@ spriteTypes = {
 	}
 
 ###############################
-######## PROGRESSBARS #########
-###############################
-
-	progressbartype = {
-		name = "GFX_strategicnavy_progressbar"
-		color = { 0.0 0.5 0.0 }
-		colortwo = { 1.0 0.0 0.0 }
-		textureFile1 = "gfx/interface/tiles/tiled_white.dds"
-		textureFile2 = "gfx/interface/tiles/tiled_white.dds"
-		size = {x=50 y=50}
-		effectFile = "gfx/FX/progress.lua"
-		horizontal = yes
-	}
-
-###############################
 ########## BUTTONS ############
 ###############################
 
@@ -39,15 +24,72 @@ spriteTypes = {
 		texturefile = "gfx/interface/buttons/cancel.dds"
 	}
 
+	#warning
+	spriteType = {
+		name = "GFX_warning"
+		texturefile = "gfx/interface/buttons/warning.dds"
+	}
+	spriteType = {
+		name = "GFX_warning_red"
+		texturefile = "gfx/interface/buttons/warning_red.dds"
+	}
+
+	#info
+	spriteType = {
+		name = "GFX_info"
+		texturefile = "gfx/interface/buttons/info.dds"
+	}
+
+	#list
+	spriteType = {
+		name = "GFX_list"
+		texturefile = "gfx/interface/buttons/list.dds"
+	}
+
+	#expand
+	spriteType = {
+		name = "GFX_expand"
+		texturefile = "gfx/interface/buttons/expand.dds"
+	}
+
+	#minimize
+	spriteType = {
+		name = "GFX_minimize"
+		texturefile = "gfx/interface/buttons/minimize.dds"
+	}
+	spriteType = {
+		name = "GFX_minimize_2frames"
+		texturefile = "gfx/interface/buttons/minimize_2frames.dds"
+		noOfFrames = 2
+	}
+
+	#search
+	spriteType = {
+		name = "GFX_search"
+		texturefile = "gfx/interface/buttons/search.dds"
+	}
+
+	#checkbox
+	#spriteType = {
+	#	name = "GFX_checkbox"
+	#	texturefile = "gfx/interface/buttons/checkbox.dds"
+	#	noOfFrames = 2
+	#}
+	spriteType = {
+		name = "GFX_checkbox_light"
+		texturefile = "gfx/interface/buttons/checkbox_light.dds"
+		noOfFrames = 2
+	}
+
 	#local cloud save load checkbox
 	spriteType = {
 		name = "GFX_cloud_save_button"
-		texturefile = "gfx/interface/cloud_save_button.dds"
+		texturefile = "gfx/interface/buttons/cloud_save_button.dds"
 		noOfFrames = 3
 	}
 	spriteType = {
 		name = "GFX_local_save_button"
-		texturefile = "gfx/interface/local_save_button.dds"
+		texturefile = "gfx/interface/buttons/local_save_button.dds"
 		noOfFrames = 3
 	}
 
@@ -77,11 +119,25 @@ spriteTypes = {
 		texturefile = "gfx/interface/tvtropes_mod.dds"
 	}
 
+	#topbar
+	spriteType = {
+		name = "GFX_topbar_button"
+		texturefile = "gfx/interface/topbar/topbar_button.dds"
+		noOfFrames = 2
+	}
+
 	#tiling buttons
 	corneredTileSpriteType = {
 		name = "GFX_tiling_button"
 		size= { x=46 y=23 }
 		textureFile = "gfx/interface/buttons/tiling_button.dds"
+		borderSize = { x=8 y=8 }
+		tilingCenter = yes
+	}
+	corneredTileSpriteType = {
+		name = "GFX_tiling_button_light"
+		size= { x=46 y=23 }
+		textureFile = "gfx/interface/buttons/tiling_button_light.dds"
 		borderSize = { x=8 y=8 }
 		tilingCenter = yes
 	}
@@ -156,6 +212,24 @@ spriteTypes = {
 	}
 
 ###############################
+####### NATIONAL SPIRITS ######
+###############################
+
+	spriteType = {
+		name = "GFX_idea_pol_law_button"
+		texturefile = "gfx/interface/ideas/pol_law_button.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_unknown_good"
+		texturefile = "gfx/interface/ideas/idea_unknown_good.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_unknown_bad"
+		texturefile = "gfx/interface/ideas/idea_unknown_bad.dds"
+	}
+
+###############################
 ######## BACKGROUNDS ##########
 ###############################
 
@@ -194,7 +268,7 @@ spriteTypes = {
 	}
 	corneredTileSpriteType = {
 		name = "GFX_tiled_box"
-		size= { x=22 y=22 }
+		size= { x=24 y=24 }
 		textureFile = "gfx/interface/tiles/tiled_box.dds"
 		borderSize = { x=10 y=10 }
 		tilingCenter = yes
@@ -224,6 +298,12 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 		alwaystransparent = yes
 	}
+
+###############################
+########### TOPBAR ############
+###############################
+
+	#todo
 
 ###############################
 ########### MUSIC #############
@@ -772,25 +852,9 @@ spriteTypes = {
 bitmapfonts = {
 
 ###############################
-######## MOD FONTS ^^ #########
+############ FONTS ############
 ###############################
 
-	#fallback
-	bitmapfont = {
-		name = "center"
-		path = "gfx/fonts/Arial16"
-		color = 0xffffffff
-		textcolors = {}
-	}
-
-#ARIAL FONTS
-
-	bitmapfont = {
-		name = "Arialbig"
-		path = "gfx/fonts/Arialbig"
-		color = 0xffffffff
-		textcolors = {}
-	}
 	bitmapfont = {
 		name = "Arial"
 		path = "gfx/fonts/Arial"
@@ -820,12 +884,6 @@ bitmapfonts = {
 	}
 
 	#capsonly
-	bitmapfont = {
-		name = "Arialbigcap"
-		path = "gfx/fonts/Arialbigcap"
-		color = 0xffffffff
-		textcolors = {}
-	}
 	bitmapfont = {
 		name = "Arialcap"
 		path = "gfx/fonts/Arialcap"

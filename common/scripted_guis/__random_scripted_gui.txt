@@ -4,29 +4,14 @@ scripted_gui = {
 ######## SCRIPTED GUIS ########
 ###############################
 
-	logistics_info_gui = {
+	pol_view_gui = {
 		context_type = player_context
-		parent_window_token = top_bar
+		parent_window_token = politics_tab
 
-		window_name = "logistics_info"
+		window_name = "pol_view_scripted_gui"
 
 		visible = {
 			always = yes
-		}
-
-		properties = {
-			pol_power_bar = {
-				frame = ROOT.political_power
-			}
-			industrial_power_bar = {
-				frame = ROOT.industrial_power
-			}
-			light_weapons_bar = {
-				frame = ROOT.light_equipment_in_army
-			}
-			heavy_weapons_bar = {
-				frame = ROOT.heavy_equipment_in_army
-			}
 		}
 
 		ai_enabled = {
@@ -175,7 +160,7 @@ scripted_gui = {
 	spaceship_button_gui = {
 		window_name = "spaceship_button_window"
 		context_type = player_context
-		parent_window_token = top_bar
+		parent_window_name = "country_menu_window"
 
 		visible = {
 			always = yes
@@ -200,6 +185,9 @@ scripted_gui = {
 				}
 			}
 		}
+		properties = {
+			#todo
+		}
 
 		ai_enabled = {
 			always = no
@@ -209,7 +197,7 @@ scripted_gui = {
 	sectors_button_gui = {
 		window_name = "sectors_button_window"
 		context_type = player_context
-		parent_window_token = top_bar
+		parent_window_name = "country_menu_window"
 
 		visible = {
 			always = yes
@@ -233,6 +221,9 @@ scripted_gui = {
 					set_country_flag = south_pole_moment_flag
 				}
 			}
+		}
+		properties = {
+			#todo
 		}
 
 		ai_enabled = {

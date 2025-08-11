@@ -1,0 +1,46 @@
+#todo
+guiTypes = {
+	containerWindowType = {
+		name = "raid_filter"
+		position = { x = 10000 y = -235 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300
+
+		# Height will be dynamically set according to the number of grid elements
+		size = { width = 78 height = 0 }
+
+		clipping = no
+		orientation = lower_right
+
+        background = {
+            name = "Background"
+            quadTextureSprite = "GFX_raids_filter_tiled_bg"
+            position = { x = 0 y = 0 }
+        }
+
+		iconType = {
+		    name = "filter_top_bg"
+		    position = { x = -2 y = -38 }
+		    frame = 1
+		    spriteType = "GFX_raids_filter_header_button"
+		}
+
+		buttonType = {
+		    name = "raids_icon"
+		    position = { x = 23 y = -34 }
+		    spriteType = "GFX_raid_target_icon_generic"
+		}
+
+        gridboxtype = {
+            # contains raid_category_filter_entry
+
+            name = "raid_categories_grid"
+            position = { x = 5 y = 10 }
+            slotsize = { width = 34 height = 36 }
+			max_slots_horizontal = 2
+            orientation = upper_left
+            format = "UPPER_LEFT"
+        }
+	}
+}

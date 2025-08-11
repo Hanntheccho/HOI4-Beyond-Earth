@@ -1,5 +1,71 @@
 guiTypes = {
 
+	containerWindowType = {
+		@pol_view_text_font = Arialsmallestcap
+		name = "pol_view_scripted_gui"
+		position = {x=37 y=514}
+		instantTextBoxType = {
+			name = "economy_law"
+			position = { x = 0 y = 0 }
+			font = @pol_view_text_font
+			text = [GETeconomic_system]
+			maxWidth = 190
+			maxHeight = 40
+			multiline = no
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "mobilization_law"
+			position = { x = 252 y = 0 }
+			font = @pol_view_text_font
+			text = [GETmobilization_system]
+			maxWidth = 190
+			maxHeight = 40
+			multiline = no
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "trade_law"
+			position = { x = 0 y = 42 }
+			font = @pol_view_text_font
+			text = [GETtrade_system]
+			maxWidth = 190
+			maxHeight = 40
+			multiline = no
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "development_law"
+			position = { x = 252 y = 42 }
+			font = @pol_view_text_font
+			text = [GETdevelopment_system]
+			maxWidth = 190
+			maxHeight = 40
+			multiline = no
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ecobalance_law"
+			position = { x = 0 y = 84 }
+			font = @pol_view_text_font
+			text = [GETcultural_system]
+			maxWidth = 190
+			maxHeight = 40
+			multiline = no
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "government_law"
+			position = { x = 252 y = 84 }
+			font = @pol_view_text_font
+			text = [GETpolitical_system]
+			maxWidth = 190
+			maxHeight = 40
+			multiline = no
+			alwaystransparent = yes
+		}
+	}
+
 ###############################
 ########## LOGISTICS ##########
 ###############################
@@ -31,17 +97,6 @@ guiTypes = {
 			spriteType = "GFX_heavy_weapons_bar"
 			position = { x= 299 y = -2 }
 			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "logistics_amount_tt"
-			position = { x = 54 y = -1 }
-			font = "Beyondtop"
-			text = "???????????????????????"
-			maxWidth = 515
-			maxHeight = 40
-			multiline = no
-			pdx_tooltip = logistics_amount_tt
-			#pdx_tooltip_delayed = logistics_amount_tt_delayed
 		}
 	}
 
@@ -1152,20 +1207,9 @@ guiTypes = {
 		}
 
 		instantTextBoxType = {
-			name ="pol_power_text"
-			position = { x= 153 y = 1 }
-			font = "Beyondtop"
-			text = "pol_power"
-			format = center
-			maxWidth = 120
-			maxHeight = 24
-			alwaystransparent = yes
-		}
-
-		instantTextBoxType = {
 			name ="industrial_power_text"
 			position = { x= 383 y = 3 }
-			font = "Beyondtoppurplish"
+			font = "Arialcap"
 			text = "industrial_power"
 			format = center
 			maxWidth = 120
@@ -1189,7 +1233,7 @@ guiTypes = {
 		iconType = {
 			name = "default_risk_warning"
 			position = { x= 576 y = 4 }
-			spriteType = "GFX_warning_icon"
+			spriteType = "GFX_warning_red"
 			pdx_tooltip = default_risk_ongoing
 			pdx_tooltip_delayed = default_risk_ongoing_delayed
 		}

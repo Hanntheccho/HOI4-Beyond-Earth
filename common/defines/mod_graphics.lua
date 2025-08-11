@@ -1,20 +1,12 @@
 NDefines_Graphics.NFrontend.CAMERA_MIN_HEIGHT = 25.0
 NDefines_Graphics.NFrontend.CAMERA_MAX_HEIGHT = 2800.0
 
-NDefines_Graphics.NGraphics.TOOLTIP_DELAYED_DELAY = 0.4
+NDefines_Graphics.NGraphics.TOOLTIP_DELAYED_DELAY = 0.4    -- Vanilla: 1
 
 NDefines_Graphics.NGraphics.AIRBASE_ICON_DISTANCE_CUTOFF = 600
 NDefines_Graphics.NGraphics.NAVALBASE_ICON_DISTANCE_CUTOFF = 600
 
-NDefines_Graphics.NGraphics.COMMANDGROUP_PRESET_COLORS_HSV = {
-	--
-}
-
 NDefines_Graphics.NFrontend.NEW_GAME_BUTTON_DISABLE_DELAY_ON_INVALID_MAP_DATA = 0
-
-NDefines_Graphics.NInterface.ARMY_GROUP_PORTRAIT_SPACING = 10			-- Extra space added between portraits of different army groups
-NDefines_Graphics.NInterface.ARMY_GROUP_FIRST_MEMBER_SPACING = 0		-- Extra spacing between the army group portrait and the first member of the army group
---NDefines_Graphics.NInterface.ARMY_GROUP_COLLAPSE_EXTRA_SPACING = 10
 
 NDefines_Graphics.NGraphics.CAPITAL_ICON_CUTOFF = 700
 NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_CAPITAL_CUTOFF_MAX = 700.0	--Capitals are special snowflakes, they need their own number
@@ -45,8 +37,8 @@ NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_STATE_R = 0.4
 NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_STATE_G = 0.6
 NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_STATE_B = 1.0
 
-NDefines_Graphics.NGraphics.POLITICAL_GRID_SMALL_BOX_LIMIT = 5
-NDefines_Graphics.NGraphics.SETUP_SPIRIT_GRID_BOX_LIMIT = 0
+NDefines_Graphics.NGraphics.POLITICAL_GRID_SMALL_BOX_LIMIT = 100    -- Vanilla: 6
+NDefines_Graphics.NGraphics.SETUP_SPIRIT_GRID_BOX_LIMIT = 100   -- Vanilla: 3
 
 NDefines_Graphics.NGraphics.FRIEND_COLOR = {1.0, 1.0, 1.0}
 NDefines_Graphics.NGraphics.ENEMY_COLOR = {1.5, 0.9, 0.6}
