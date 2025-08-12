@@ -135,10 +135,10 @@ PixelShader =
 
 	float3 Hue(float H)
 	{
-	    float R = abs(H * 6 - 3) - 1;
-	    float G = 2 - abs(H * 6 - 2);
-	    float B = 2 - abs(H * 6 - 4);
-	    return saturate(float3(R,G,B));
+		float R = abs(H * 6 - 3) - 1;
+		float G = 2 - abs(H * 6 - 2);
+		float B = 2 - abs(H * 6 - 4);
+		return saturate(float3(R,G,B));
 	}
 
 	// used for manual input, converts to linear
@@ -148,7 +148,7 @@ PixelShader =
 		float3 val = (hue - vec3(1)) * S + vec3(1);
 		val *= V;
 
-	    return ToLinear( val );
+		return ToLinear( val );
 	}
 
 	float3 HSVtoRGB(float3 hsv)
@@ -377,7 +377,7 @@ PixelShader =
 
 		float3 vColor = lerp(vDayColor, vNightColor, vec3(vDesaturation));
 
-	    return vColor * NIGHT_DARKNESS;
+		return vColor * NIGHT_DARKNESS;
 	}
 
 
@@ -389,7 +389,7 @@ PixelShader =
 
 		//return vec3( DayNightFactor( vGlobeNormal ) );
 
-	    // lerp between day and night
+		// lerp between day and night
 		return lerp( vDayColor, NightifyColor(vDayColor, vBlend), DayNightFactor( vGlobeNormal ) * NIGHT_OPACITY );
 	}
 
@@ -407,7 +407,7 @@ PixelShader =
 
 		float vNightFactor = DayNightFactor( vGlobeNormal );
 
-	    // lerp between day and night
+		// lerp between day and night
 		float3 Result = lerp( vDayColor, NightifyColor(vDayColor , 0.0f), vNightFactor * NIGHT_OPACITY );
 
 		Result += vCityLightMask * float3(2.0f, 2.0f, 0.3f) * vNightFactor * (1.0f - vFogFactor * vFogFactor);
@@ -1036,7 +1036,7 @@ PixelShader =
 	#ifdef	PIXEL_SHADER
 		float dx = fwidth( uv.x * TEXELS_PER_TILE );
 		float dy = fwidth( uv.y * TEXELS_PER_TILE );
-	    float d = max( dot(dx, dx), dot(dy, dy) );
+		float d = max( dot(dx, dx), dot(dy, dy) );
 		return 0.5 * log2( d );
 	#else
 		return 3.0f;
@@ -1045,10 +1045,10 @@ PixelShader =
 	#endif // NO_SHADER_TEXTURE_LOD
 
 	#else
-	    float2 dx = ddx( uv * TEXELS_PER_TILE );
-	    float2 dy = ddy( uv * TEXELS_PER_TILE );
-	    float d = max( dot(dx, dx), dot(dy, dy) );
-	    return 0.5f * log2( d );
+		float2 dx = ddx( uv * TEXELS_PER_TILE );
+		float2 dy = ddy( uv * TEXELS_PER_TILE );
+		float d = max( dot(dx, dx), dot(dy, dy) );
+		return 0.5f * log2( d );
 	#endif //PDX_OPENGL
 	}
 
