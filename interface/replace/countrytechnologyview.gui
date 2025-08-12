@@ -1,7 +1,7 @@
 @topbarwin_x_pos = 20
 @topbarwin_y_pos = 140
 @topbarwin_width = 550
-@topbarwin_height = 650
+@topbarwin_height = 920
 @topbarwin_anim_time = 300
 guiTypes = {
 	containerWindowType = {
@@ -26,7 +26,7 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = "header"
-			size = {width=100%% height=42}
+			size = {width=480 height=42}
 			background = {
 				quadTextureSprite = "GFX_tiled_top"
 			}
@@ -79,67 +79,41 @@ guiTypes = {
 		#research slots win top
 		containerWindowType = {
 			name ="research_slots"
-			position = { x=0 y=0 }
-			size = { width=400 height=-5 }
+			size = { width=100%% height=-1 }
 			containerWindowType = {
 				name = "research_win_top"
 				size = { width = 100% height = 100% }
-				instantTextboxType = {
-					name = "limited_research_bonus_text"
-					position = { x = 50 y = 110 }
-					textureFile = ""
-					font = "hoi_18mbs"
-					borderSize = {x = 0 y = 0}
-					text = "LIMITED_RESEARCH_BONUS"
-					maxWidth = 130
-					maxHeight = 20
-					format = left
-					fixedsize = yes
+				iconType = {
+					name = "research_speed_icon"
+					spriteType = "GFX_warning"
+					position = { x = -91 y = 21 }
+					orientation = UPPER_RIGHT
+					centerposition = yes
 				}
 				iconType = {
 					name = "focus_bonuses"
-					position = { x = 180 y = 108 }
-					spriteType = "GFX_focus_bonuses_icon"
+					spriteType = "GFX_info"
+					position = { x = -56 y = 21 }
+					orientation = UPPER_RIGHT
+					centerposition = yes
 				}
 				instantTextboxType = {
 					name = "limited_research_bonus_value"
-					position = { x = 215 y = 110 }
-					textureFile = ""
-					font = "hoi_18mbs"
-					borderSize = {x = 0 y = 0}
+					position = { x = 10000 y = 0 }
+					font = "Arialsmallcap"
 					text = "999"
 					maxWidth = 50
 					maxHeight = 20
 					format = left
-				}
-
-				instantTextboxType = {
-					name = "research_speed_text"
-					position = { x = 295 y = 110 }
-					textureFile = ""
-					font = "hoi_18mbs"
-					borderSize = {x = 0 y = 0}
-					text = "RESEARCH_SPEED"
-					maxWidth = 125
-					maxHeight = 20
-					format = left
-					fixedsize = yes
-				}
-				iconType = {
-					name = "research_speed_icon"
-					position = { x = 422 y = 108 }
-					spriteType = "GFX_research_speed_icon"
 				}
 				instantTextboxType = {
 					name = "research_speed_value"
-					position = { x = 455 y = 110 }
-					textureFile = ""
-					font = "hoi_18mbs"
-					borderSize = {x = 0 y = 0}
+					position = { x = 354 y = 8 }
+					font = "Arial"
 					text = "999"
-					maxWidth = 50
+					maxWidth = 80
 					maxHeight = 20
-					format = left
+					format = right
 				}
 
 				#todo
@@ -159,7 +133,7 @@ guiTypes = {
 			@research_slot_height = 120
 			containerWindowType = {
 				name ="slots_window"
-				position = { x = 20 y=150 }
+				position = { x = 20 y=100 }
 				size = { width=@research_slot_width height=-1 }
 				#verticalScrollbar = "right_vertical_slider"
 				background = {
@@ -261,6 +235,13 @@ guiTypes = {
 			position = { x=0 y=-11 }
 			orientation = CENTER_DOWN
 			centerposition = yes
+		}
+
+		#debug
+		iconType = {
+			name = "research_progressbar_frame_icon"
+			spriteType = "GFX_research_progressbar_frame"
+			hide = yes
 		}
 	}
 }
