@@ -95,13 +95,11 @@ on_actions = {
 								resource = chromium
 								amount > 100
 							}
-							OR = {
-								check_variable = {
-									building_level@industrial_complex > 5
-								}
-								check_variable = {
-									building_level@arms_factory > 5
-								}
+							check_variable = {
+								building_level@industrial_complex > 5
+							}
+							check_variable = {
+								building_level@arms_factory > 5
 							}
 						}
 					}
@@ -136,13 +134,11 @@ on_actions = {
 								resource = chromium
 								amount > 50
 							}
-							OR = {
-								check_variable = {
-									building_level@industrial_complex > 2
-								}
-								check_variable = {
-									building_level@arms_factory > 2
-								}
+							check_variable = {
+								building_level@industrial_complex > 2
+							}
+							check_variable = {
+								building_level@arms_factory > 2
 							}
 						}
 					}
@@ -642,44 +638,6 @@ on_actions = {
 					has_country_flag = auto_ecobalance_states
 					check_variable = {
 						industrial_power > 200
-					}
-				}
-				if = {
-					limit = {
-						has_country_flag = has_mind_tier3
-					}
-					subtract_from_variable = { industrial_power = 15 }
-					random_owned_state = {
-						limit = {
-							NOT = {
-								has_state_flag = ecobalance_reduction_timeout_flag
-							}
-						}
-						decrease_ecobalance = yes
-						set_state_flag = {
-							flag = ecobalance_reduction_timeout_flag
-							value = 1
-							days = 60
-						}
-					}
-				}
-				else_if = {
-					limit = {
-						has_country_flag = has_body_tier3
-					}
-					subtract_from_variable = { industrial_power = 40 }
-					random_owned_state = {
-						limit = {
-							NOT = {
-								has_state_flag = ecobalance_reduction_timeout_flag
-							}
-						}
-						engineered_ecobalance = yes
-						set_state_flag = {
-							flag = ecobalance_reduction_timeout_flag
-							value = 1
-							days = 60
-						}
 					}
 				}
 				else = {

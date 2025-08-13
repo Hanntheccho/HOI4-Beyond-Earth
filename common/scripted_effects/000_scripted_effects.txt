@@ -1,0 +1,1804 @@
+
+calculate_development_level = {
+	if = {
+		limit = {
+			num_of_factories > 119
+		}
+		add_ideas = global_stage
+	}
+	else_if = {
+		limit = {
+			num_of_factories > 79
+		}
+		add_ideas = continental_stage
+	}
+	else_if = {
+		limit = {
+			num_of_factories > 39
+		}
+		add_ideas = regional_stage
+	}
+	else_if = {
+		limit = {
+			num_of_factories > 19
+		}
+		add_ideas = developed_stage
+	}
+	else_if = {
+		limit = {
+			num_of_factories > 4
+		}
+		add_ideas = developing_stage
+	}
+	else = {
+		add_ideas = agrarian_stage
+	}
+}
+
+###
+
+war_already = {
+	every_country = {
+		declare_war_on = {
+			target = ROOT
+			type = annex_puppet_wargoal
+		}
+	}
+}
+war_this = {
+	FROM = {
+		declare_war_on = {
+			target = ROOT
+			type = annex_puppet_wargoal
+		}
+	}
+}
+
+###
+
+replace_civ_with_arms_factories = {
+
+	random_owned_controlled_state = {
+		limit = {
+			is_fully_controlled_by = ROOT
+			industrial_complex > 0
+		}
+		remove_building = {
+			type = industrial_complex
+			level = 1
+		}
+		add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+		}
+	}
+
+	random_owned_controlled_state = {
+		limit = {
+			is_fully_controlled_by = ROOT
+			industrial_complex > 0
+		}
+		remove_building = {
+			type = industrial_complex
+			level = 1
+		}
+		add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+		}
+	}
+
+	random_owned_controlled_state = {
+		limit = {
+			is_fully_controlled_by = ROOT
+			industrial_complex > 0
+		}
+		remove_building = {
+			type = industrial_complex
+			level = 1
+		}
+		add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+		}
+	}
+
+	random_owned_controlled_state = {
+		limit = {
+			is_fully_controlled_by = ROOT
+			industrial_complex > 0
+		}
+		remove_building = {
+			type = industrial_complex
+			level = 1
+		}
+		add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+		}
+	}
+
+	random_owned_controlled_state = {
+		limit = {
+			is_fully_controlled_by = ROOT
+			industrial_complex > 0
+		}
+		remove_building = {
+			type = industrial_complex
+			level = 1
+		}
+		add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+		}
+	}
+}
+
+#Country scope
+ROOT_inherit_current_scope_wars_effect = {
+	custom_effect_tooltip = ROOT_inherit_current_scope_wars_effect
+	hidden_effect = {
+		every_country = {
+			limit = {
+				has_defensive_war_with = PREV
+			}
+			ROOT = { declare_war_on = { target = PREV type = annex_puppet_wargoal } }
+		}
+		every_country = {
+			limit = {
+				has_offensive_war_with = PREV
+			}
+			declare_war_on = { target = ROOT type = annex_puppet_wargoal }
+		}
+	}
+}
+
+print_variable_log_effect = {
+	print_variables = {
+		file = variables_yug
+		append = yes
+	}
+}
+
+civil_war_anti_exploiter_punitive_action = {
+	# Anti-exploiter punitive brigades! BET YA DIDN'T SEE THAT COMING DID YA?!
+	if = {
+		limit = {
+			has_army_size = {
+				 size < 1
+			}
+		}
+		division_template = {
+			name = "Anti-Exploit Punitive Brigade"
+			priority = 1
+			#division_names_group = ENG_MAR_01
+			is_locked = yes
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+
+				infantry = { x = 2 y = 0 }
+				artillery_brigade = { x = 2 y = 1 }
+				artillery_brigade = { x = 2 y = 2 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				recon = { x = 0 y = 1 }
+				artillery = { x = 0 y = 2 }
+			}
+		}
+		random_state = {
+			limit = {
+				is_capital = yes
+				is_fully_controlled_by = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+		}
+		random_state = {
+			limit = {
+				is_in_home_area = yes
+				is_fully_controlled_by = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+		}
+		random_state = {
+			limit = {
+				is_in_home_area = yes
+				is_fully_controlled_by = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+		}
+		random_state = {
+			limit = {
+				is_in_home_area = yes
+				is_fully_controlled_by = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+		}
+		random_state = {
+			limit = {
+				is_in_home_area = yes
+				is_fully_controlled_by = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+		}
+	}
+}
+
+clear_sabotaged_resources_if_necesary = {
+	if = {
+		limit = {
+			not = {
+				has_dynamic_modifier = {
+					modifier = sabotaged_resources
+				}
+			}
+		}
+
+		clear_variable = sabotaged_oil
+		clear_variable = sabotaged_aluminium
+		clear_variable = sabotaged_rubber
+		clear_variable = sabotaged_tungsten
+		clear_variable = sabotaged_steel
+		clear_variable = sabotaged_chromium
+	}
+}
+
+#expectes a temp variable country_to_initiate which should contain original_tag to instantiate as a collabration government
+instantiate_collaboration_government = {
+	custom_effect_tooltip = compliance_80_effect_tooltip
+	hidden_effect = {
+		set_variable = { collaboration_formed@var:country_to_initiate = 1 }
+
+		if = {
+			# if country_to_initiate does not exist, simply release it as a puppet
+			limit = {
+				var:country_to_initiate = {
+					exists = no
+				}
+			}
+			var:country_to_initiate = { set_variable = { collaboration_formed_by = PREV } }
+			release_autonomy = {
+				target = country_to_initiate
+				autonomy_state = autonomy_puppet
+				freedom_level = 0.5
+				release_non_owned_controlled = yes
+			}
+		}
+		else = {
+			# if country_to_initiate exists, create a dynamic country as our new puppet
+
+			create_dynamic_country = {
+				original_tag = country_to_initiate
+
+				set_variable = { collaboration_formed_by = PREV }
+				set_temp_variable = { new_country = this }
+
+				PREV = {
+					every_controlled_state = {
+						limit = { occupied_country_tag = country_to_initiate }
+
+						var:new_country = {
+							transfer_state = PREV
+						}
+					}
+
+					puppet = new_country
+
+					set_autonomy = {
+						target = new_country
+						autonomy_state = autonomy_puppet
+						freedom_level = 0.5
+					}
+				}
+			}
+		}
+	}
+}
+
+###
+
+puppet_government_too = {
+	THIS = {
+		if = {
+			limit = {
+				is_puppet = yes
+			}
+			color_that = yes
+			load_focus_tree = generic_focus
+			retire_ideology_leader = neutral
+			retire_ideology_leader = harmony
+			retire_ideology_leader = purity
+			retire_ideology_leader = divinity
+			retire_ideology_leader = synergy
+			retire_ideology_leader = mastery
+			retire_ideology_leader = supremacy
+			create_country_leader = {
+				name = "Goverment"
+				picture = GFX_government_portrait
+				ideology = purity_ideology
+			}
+			create_country_leader = {
+				name = "Goverment"
+				picture = GFX_government_portrait
+				ideology = harmony_ideology
+			}
+			create_country_leader = {
+				name = "Goverment"
+				picture = GFX_government_portrait
+				ideology = supremacy_ideology
+			}
+			create_country_leader = {
+				name = "Goverment"
+				picture = GFX_government_portrait
+				ideology = neutral_ideology
+			}
+			create_country_leader = {
+				name = "Goverment"
+				picture = GFX_government_portrait
+				ideology = synergy_ideology
+			}
+			create_country_leader = {
+				name = "Goverment"
+				picture = GFX_government_portrait
+				ideology = mastery_ideology
+			}
+			create_country_leader = {
+				name = "Goverment"
+				picture = GFX_government_portrait
+				ideology = divinity_ideology
+			}
+			add_ideas = volunteer_only
+			if = {
+				limit = {
+					THIS.OVERLORD = {
+						has_idea = oligarchic_government
+					}
+				}
+				add_ideas = oligarchic_government
+			}
+			else_if = {
+				limit = {
+					THIS.OVERLORD = {
+						has_idea = minarchist_state
+					}
+				}
+				add_ideas = minarchist_state
+			}
+			else_if = {
+				limit = {
+					THIS.OVERLORD = {
+						has_idea = digital_democracy
+					}
+				}
+				add_ideas = digital_democracy
+			}
+			else_if = {
+				limit = {
+					THIS.OVERLORD = {
+						has_idea = communal_parity
+					}
+				}
+				add_ideas = communal_parity
+			}
+			else_if = {
+				limit = {
+					THIS.OVERLORD = {
+						has_idea = autocratic_authority
+					}
+				}
+				add_ideas = autocratic_authority
+			}
+			else = {
+				#
+			}
+			#
+			if = {
+				limit = {
+					THIS.OVERLORD = {
+						has_idea = isolation
+					}
+				}
+				add_ideas = isolation
+			}
+			else_if = {
+				limit = {
+					THIS.OVERLORD = {
+						has_idea = civilian_economy
+					}
+				}
+				add_ideas = civilian_economy
+			}
+			else_if = {
+				limit = {
+					THIS.OVERLORD = {
+						has_idea = low_economic_mobilisation
+					}
+				}
+				add_ideas = low_economic_mobilisation
+			}
+			else_if = {
+				limit = {
+					THIS.OVERLORD = {
+						has_idea = partial_economic_mobilisation
+					}
+				}
+				add_ideas = partial_economic_mobilisation
+			}
+			else_if = {
+				limit = {
+					THIS.OVERLORD = {
+						has_idea = war_economy
+					}
+				}
+				add_ideas = war_economy
+			}
+			else_if = {
+				limit = {
+					THIS.OVERLORD = {
+						has_idea = tot_economic_mobilisation
+					}
+				}
+				add_ideas = tot_economic_mobilisation
+			}
+			else = {
+				#
+			}
+			#
+			if = {
+				limit = {
+					THIS.OVERLORD = {
+						has_idea = free_trade
+					}
+				}
+				add_ideas = free_trade
+			}
+			else_if = {
+				limit = {
+					THIS.OVERLORD = {
+						has_idea = export_focus
+					}
+				}
+				add_ideas = export_focus
+			}
+			else_if = {
+				limit = {
+					THIS.OVERLORD = {
+						has_idea = limited_exports
+					}
+				}
+				add_ideas = limited_exports
+			}
+			else_if = {
+				limit = {
+					THIS.OVERLORD = {
+						has_idea = closed_economy
+					}
+				}
+				add_ideas = closed_economy
+			}
+			else = {
+				#
+			}
+		}
+	}
+}
+
+balkanize_that = {
+	ROOT = {
+		if = {
+			limit = {
+				tag = SOV #not a cosmetic tag, but should be balkanized too
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = SIB
+						is_core_of = KAZ
+						is_core_of = UKR
+						is_core_of = BLR
+						is_core_of = URA
+					}
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				tag = AST #not a cosmetic tag, but should be balkanized too
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = SHL
+						is_core_of = NZL
+					}
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				tag = EGY #not a cosmetic tag, but should be balkanized too
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = LBA
+						is_core_of = SUD
+					}
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				tag = YUG #not a cosmetic tag, but should be balkanized too
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = BUL
+						is_core_of = ALB
+					}
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				tag = PRU #not a cosmetic tag, but should be balkanized too
+			}
+			every_state = {
+				limit = {
+					is_core_of = BOL
+					is_core_of = LAM
+					is_core_of = BRA
+					is_core_of = CHL
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_cosmetic_tag = FRA_UNION
+					has_cosmetic_tag = FRA_eu_union
+					has_cosmetic_tag = FRA_med_fed
+					has_cosmetic_tag = FRA_lys_rep
+					tag = FRA
+				}
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = IRE
+						is_core_of = ENG
+						is_core_of = SCO
+						is_core_of = SPR
+						is_core_of = PAD
+						is_core_of = ITA
+						is_core_of = TUN
+					}
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					tag = COL
+					has_cosmetic_tag = COL_bolivaria
+				}
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = VEN
+						is_core_of = LAM
+					}
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_cosmetic_tag = CHI_SCO
+					has_cosmetic_tag = CHI_SCO_united
+					has_cosmetic_tag = CHI_CENTRAL_GOVERNMENT
+				}
+			}
+			every_possible_country = {
+				limit = {
+					is_china_tag = yes
+					NOT = {
+						tag = CHI
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					remove_core_of = ROOT
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_cosmetic_tag = SCO_NSA
+					has_cosmetic_tag = SCO_EU
+				}
+			}
+			every_possible_country = {
+				limit = {
+					OR = {
+						is_nsa_tag = yes
+						tag = SPR
+						tag = FRA
+						tag = GER
+					}
+					NOT = {
+						tag = SCO
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					remove_core_of = ROOT
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = INDIA_kavithan_protectorate
+			}
+			every_possible_country = {
+				limit = {
+					OR = {
+						is_india_tag = yes
+						tag = KAV
+						tag = NEP
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					remove_core_of = ROOT
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_cosmetic_tag = BRA_brasilia
+					has_cosmetic_tag = BRA_fed
+					tag = BRA
+				}
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = URG
+						is_core_of = COL
+						is_core_of = BOL
+						is_core_of = PRU
+						is_core_of = VEN
+						is_core_of = GYA
+						is_core_of = NCB
+						is_core_of = SCB
+						is_core_of = ECB
+						is_core_of = LAM
+					}
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_cosmetic_tag = NAU_united
+					has_cosmetic_tag = USA_united #should remove more cores and reorg CAN, but since it is not meant for the AI...
+				}
+			}
+			every_possible_country = {
+				limit = {
+					OR = {
+						is_nau_tag = yes
+						if = {
+							limit = {
+								ROOT = {
+									tag = PNM
+								}
+							}
+							tag = ARC
+						}
+						else_if = {
+							limit = {
+								ROOT = {
+									tag = ARC
+								}
+							}
+							tag = PNM
+						}
+						else = {
+							OR = {
+								tag = PNM
+								tag = ARC
+							}
+						}
+					}
+				}
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = PREV
+							is_core_of = MEX
+							is_core_of = QUE
+						}
+					}
+					remove_core_of = ROOT
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = GRB_UNION
+			}
+			every_state = {
+				limit = {
+					is_core_of = SCO
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = LAT_UNION
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = LIT
+						is_core_of = POL
+					}
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = PAD_italy
+			}
+			every_state = {
+				limit = {
+					is_core_of = ITA
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_cosmetic_tag = TZN_AFRICA
+					tag = TZN #not a cosmetic tag, but should be balkanized too
+				}
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = COG
+						is_core_of = ANG
+						is_core_of = SAF
+						is_core_of = ZAM
+						is_core_of = GNB
+					}
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = OMA_al_falah
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = SAU
+						is_core_of = SYR
+						is_core_of = YEM
+						is_core_of = QAT
+						is_core_of = LEB
+						is_core_of = ISR
+						is_core_of = PAL
+						is_core_of = TUR
+						is_core_of = EGY
+					}
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				has_cosmetic_tag = INS_polystralia
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = AST
+						is_core_of = SHL
+					}
+				}
+				remove_core_of = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				is_puppet_of = ONU
+			}
+			every_possible_country = {
+				limit = {
+					NOT = {
+						tag = ROOT
+					}
+				}
+				every_core_state = {
+					remove_core_of = ROOT
+				}
+			}
+		}
+		else = {
+			#
+		}
+		drop_cosmetic_tag = yes
+	}
+}
+
+color_that = {
+	if = {
+		limit = {
+			THIS.OVERLORD = {
+				OR = {
+					is_nau_tag = yes
+					tag = PNM
+					tag = ARC
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					global.NAUcolor = 0
+				}
+			}
+			set_variable = {
+				global.NAUcolor = 1
+			}
+			set_cosmetic_tag = NAU1
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.NAUcolor = 1
+				}
+			}
+			set_variable = {
+				global.NAUcolor = 2
+			}
+			set_cosmetic_tag = NAU2
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.NAUcolor = 2
+				}
+			}
+			set_variable = {
+				global.NAUcolor = 3
+			}
+			set_cosmetic_tag = NAU3
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.NAUcolor = 3
+				}
+			}
+			set_variable = {
+				global.NAUcolor = 4
+			}
+			set_cosmetic_tag = NAU4
+		}
+		else = {
+			set_variable = {
+				global.NAUcolor = 0
+			}
+			set_cosmetic_tag = NAU5
+		}
+	}
+	else_if = {
+		limit = {
+			THIS.OVERLORD = {
+				tag = BRA
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					global.BRAcolor = 0
+				}
+			}
+			set_variable = {
+				global.BRAcolor = 1
+			}
+			set_cosmetic_tag = BRA1
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.BRAcolor = 1
+				}
+			}
+			set_variable = {
+				global.BRAcolor = 2
+			}
+			set_cosmetic_tag = BRA2
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.BRAcolor = 2
+				}
+			}
+			set_variable = {
+				global.BRAcolor = 3
+			}
+			set_cosmetic_tag = BRA3
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.BRAcolor = 3
+				}
+			}
+			set_variable = {
+				global.BRAcolor = 4
+			}
+			set_cosmetic_tag = BRA4
+		}
+		else = {
+			set_variable = {
+				global.BRAcolor = 0
+			}
+			set_cosmetic_tag = BRA5
+		}
+	}
+	else_if = {
+		limit = {
+			THIS.OVERLORD = {
+				OR = {
+					is_china_tag = yes
+					tag = CHI
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					global.CHIcolor = 0
+				}
+			}
+			set_variable = {
+				global.CHIcolor = 1
+			}
+			set_cosmetic_tag = CHI1
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.CHIcolor = 1
+				}
+			}
+			set_variable = {
+				global.CHIcolor = 2
+			}
+			set_cosmetic_tag = CHI2
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.CHIcolor = 2
+				}
+			}
+			set_variable = {
+				global.CHIcolor = 3
+			}
+			set_cosmetic_tag = CHI3
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.CHIcolor = 3
+				}
+			}
+			set_variable = {
+				global.CHIcolor = 4
+			}
+			set_cosmetic_tag = CHI4
+		}
+		else = {
+			set_variable = {
+				global.CHIcolor = 0
+			}
+			set_cosmetic_tag = CHI5
+		}
+	}
+	else_if = {
+		limit = {
+			THIS.OVERLORD = {
+				OR = {
+					is_india_tag = yes
+					tag = BHR
+					tag = KAV
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					global.KAVcolor = 0
+				}
+			}
+			set_variable = {
+				global.KAVcolor = 1
+			}
+			set_cosmetic_tag = KAV1
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.KAVcolor = 1
+				}
+			}
+			set_variable = {
+				global.KAVcolor = 2
+			}
+			set_cosmetic_tag = KAV2
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.KAVcolor = 2
+				}
+			}
+			set_variable = {
+				global.KAVcolor = 3
+			}
+			set_cosmetic_tag = KAV3
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.KAVcolor = 3
+				}
+			}
+			set_variable = {
+				global.KAVcolor = 4
+			}
+			set_cosmetic_tag = KAV4
+		}
+		else = {
+			set_variable = {
+				global.KAVcolor = 0
+			}
+			set_cosmetic_tag = KAV5
+		}
+	}
+	else_if = {
+		limit = {
+			THIS.OVERLORD = {
+				tag = TZN
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					global.TZNcolor = 0
+				}
+			}
+			set_variable = {
+				global.TZNcolor = 1
+			}
+			set_cosmetic_tag = TZN1
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.TZNcolor = 1
+				}
+			}
+			set_variable = {
+				global.TZNcolor = 2
+			}
+			set_cosmetic_tag = TZN2
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.TZNcolor = 2
+				}
+			}
+			set_variable = {
+				global.TZNcolor = 3
+			}
+			set_cosmetic_tag = TZN3
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.TZNcolor = 3
+				}
+			}
+			set_variable = {
+				global.TZNcolor = 4
+			}
+			set_cosmetic_tag = TZN4
+		}
+		else = {
+			set_variable = {
+				global.TZNcolor = 0
+			}
+			set_cosmetic_tag = TZN5
+		}
+	}
+	else_if = {
+		limit = {
+			THIS.OVERLORD = {
+				tag = SOV
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					global.SOVcolor = 0
+				}
+			}
+			set_variable = {
+				global.SOVcolor = 1
+			}
+			set_cosmetic_tag = SOV1
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.SOVcolor = 1
+				}
+			}
+			set_variable = {
+				global.SOVcolor = 2
+			}
+			set_cosmetic_tag = SOV2
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.SOVcolor = 2
+				}
+			}
+			set_variable = {
+				global.SOVcolor = 3
+			}
+			set_cosmetic_tag = SOV3
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.SOVcolor = 3
+				}
+			}
+			set_variable = {
+				global.SOVcolor = 4
+			}
+			set_cosmetic_tag = SOV4
+		}
+		else = {
+			set_variable = {
+				global.SOVcolor = 0
+			}
+			set_cosmetic_tag = SOV5
+		}
+	}
+	#else_if = {
+	#	limit = {
+	#		THIS.OVERLORD = {
+	#			tag = FRA
+	#		}
+	#	}
+	#	if = {
+	#		limit = {
+	#			check_variable = {
+	#				global.FRAcolor = 0
+	#			}
+	#		}
+	#		set_variable = {
+	#			global.FRAcolor = 1
+	#		}
+	#		set_cosmetic_tag = FRA1
+	#	}
+	#	else_if = {
+	#		limit = {
+	#			check_variable = {
+	#				global.FRAcolor = 1
+	#			}
+	#		}
+	#		set_variable = {
+	#			global.FRAcolor = 2
+	#		}
+	#		set_cosmetic_tag = FRA2
+	#	}
+	#	else_if = {
+	#		limit = {
+	#			check_variable = {
+	#				global.FRAcolor = 2
+	#			}
+	#		}
+	#		set_variable = {
+	#			global.FRAcolor = 3
+	#		}
+	#		set_cosmetic_tag = FRA3
+	#	}
+	#	else_if = {
+	#		limit = {
+	#			check_variable = {
+	#				global.FRAcolor = 3
+	#			}
+	#		}
+	#		set_variable = {
+	#			global.FRAcolor = 4
+	#		}
+	#		set_cosmetic_tag = FRA4
+	#	}
+	#	else = {
+	#		set_variable = {
+	#			global.FRAcolor = 0
+	#		}
+	#		set_cosmetic_tag = FRA5
+	#	}
+	#}
+	else_if = {
+		limit = {
+			THIS.OVERLORD = {
+				tag = OMA
+			}
+			NOT = { #they already use the color scheme
+				THIS = {
+					OR = {
+						tag = YEM
+						tag = SAU
+						tag = QAT
+						tag = SYR
+						tag = LEB
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					global.OMAcolor = 0
+				}
+			}
+			set_variable = {
+				global.OMAcolor = 1
+			}
+			set_cosmetic_tag = OMA1
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.OMAcolor = 1
+				}
+			}
+			set_variable = {
+				global.OMAcolor = 2
+			}
+			set_cosmetic_tag = OMA2
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.OMAcolor = 2
+				}
+			}
+			set_variable = {
+				global.OMAcolor = 3
+			}
+			set_cosmetic_tag = OMA3
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.OMAcolor = 3
+				}
+			}
+			set_variable = {
+				global.OMAcolor = 4
+			}
+			set_cosmetic_tag = OMA4
+		}
+		else = {
+			set_variable = {
+				global.OMAcolor = 0
+			}
+			set_cosmetic_tag = OMA5
+		}
+	}
+	else_if = {
+		limit = {
+			THIS.OVERLORD = {
+				tag = SCO
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					global.SCOcolor = 0
+				}
+			}
+			set_variable = {
+				global.SCOcolor = 1
+			}
+			set_cosmetic_tag = SCO1
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.SCOcolor = 1
+				}
+			}
+			set_variable = {
+				global.SCOcolor = 2
+			}
+			set_cosmetic_tag = SCO2
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.SCOcolor = 2
+				}
+			}
+			set_variable = {
+				global.SCOcolor = 3
+			}
+			set_cosmetic_tag = SCO3
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.SCOcolor = 3
+				}
+			}
+			set_variable = {
+				global.SCOcolor = 4
+			}
+			set_cosmetic_tag = SCO4
+		}
+		else = {
+			set_variable = {
+				global.SCOcolor = 0
+			}
+			set_cosmetic_tag = SCO5
+		}
+	}
+	else_if = {
+		limit = {
+			THIS.OVERLORD = {
+				tag = ONU
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					global.ONUcolor = 0
+				}
+			}
+			set_variable = {
+				global.ONUcolor = 1
+			}
+			set_cosmetic_tag = ONU1
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.ONUcolor = 1
+				}
+			}
+			set_variable = {
+				global.ONUcolor = 2
+			}
+			set_cosmetic_tag = ONU2
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.ONUcolor = 2
+				}
+			}
+			set_variable = {
+				global.ONUcolor = 3
+			}
+			set_cosmetic_tag = ONU3
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					global.ONUcolor = 3
+				}
+			}
+			set_variable = {
+				global.ONUcolor = 4
+			}
+			set_cosmetic_tag = ONU4
+		}
+		else = {
+			set_variable = {
+				global.ONUcolor = 0
+			}
+			set_cosmetic_tag = ONU5
+		}
+	}
+	else = {
+		#
+	}
+}
+
+###
+
+engineered_ecobalance = {
+	if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = no_ecobalance
+			}
+		}
+		remove_dynamic_modifier = { modifier = no_ecobalance }
+		add_dynamic_modifier = { modifier = counter_ecobalance }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = minor_ecobalance
+			}
+		}
+		remove_dynamic_modifier = { modifier = minor_ecobalance }
+		add_dynamic_modifier = { modifier = counter_ecobalance }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = notable_ecobalance
+			}
+		}
+		remove_dynamic_modifier = { modifier = notable_ecobalance }
+		add_dynamic_modifier = { modifier = counter_ecobalance }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = major_ecobalance
+			}
+		}
+		remove_dynamic_modifier = { modifier = major_ecobalance }
+		add_dynamic_modifier = { modifier = counter_ecobalance }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = significant_ecobalance
+			}
+		}
+		remove_dynamic_modifier = { modifier = significant_ecobalance }
+		add_dynamic_modifier = { modifier = counter_ecobalance }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = terminal_ecobalance
+			}
+		}
+		remove_dynamic_modifier = { modifier = terminal_ecobalance }
+		add_dynamic_modifier = { modifier = counter_ecobalance }
+	}
+	else = {
+
+	}
+}
+
+increase_ecobalance = {
+	if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = no_ecobalance
+			}
+		}
+		remove_dynamic_modifier = { modifier = no_ecobalance }
+		add_dynamic_modifier = { modifier = minor_ecobalance }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = minor_ecobalance
+			}
+		}
+		remove_dynamic_modifier = { modifier = minor_ecobalance }
+		add_dynamic_modifier = { modifier = notable_ecobalance }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = notable_ecobalance
+			}
+		}
+		remove_dynamic_modifier = { modifier = notable_ecobalance }
+		add_dynamic_modifier = { modifier = major_ecobalance }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = major_ecobalance
+			}
+		}
+		remove_dynamic_modifier = { modifier = major_ecobalance }
+		add_dynamic_modifier = { modifier = significant_ecobalance }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = significant_ecobalance
+			}
+		}
+		remove_dynamic_modifier = { modifier = significant_ecobalance }
+		add_dynamic_modifier = { modifier = terminal_ecobalance }
+	}
+	else = {
+
+	}
+}
+
+increase_ecobalance_random_state = {
+	random_state = {
+		if = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = minor_ecobalance
+				}
+			}
+			remove_dynamic_modifier = { modifier = minor_ecobalance }
+			add_dynamic_modifier = { modifier = notable_ecobalance }
+		}
+		else_if = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = notable_ecobalance
+				}
+			}
+			remove_dynamic_modifier = { modifier = notable_ecobalance }
+			add_dynamic_modifier = { modifier = major_ecobalance }
+		}
+		else_if = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = major_ecobalance
+				}
+			}
+			remove_dynamic_modifier = { modifier = major_ecobalance }
+			add_dynamic_modifier = { modifier = significant_ecobalance }
+		}
+		else_if = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = significant_ecobalance
+				}
+			}
+			remove_dynamic_modifier = { modifier = significant_ecobalance }
+			add_dynamic_modifier = { modifier = terminal_ecobalance }
+		}
+		else = {
+
+		}
+	}
+}
+
+decrease_ecobalance = {
+	if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = counter_ecobalance
+			}
+			ROOT = {
+				has_country_flag = has_mind_tier3
+			}
+		}
+		remove_dynamic_modifier = { modifier = counter_ecobalance }
+		add_dynamic_modifier = { modifier = no_ecobalance }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = minor_ecobalance
+			}
+			ROOT = {
+				has_country_flag = has_mind_tier3
+			}
+		}
+		remove_dynamic_modifier = { modifier = minor_ecobalance }
+		add_dynamic_modifier = { modifier = no_ecobalance }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = notable_ecobalance
+			}
+		}
+		remove_dynamic_modifier = { modifier = notable_ecobalance }
+		add_dynamic_modifier = { modifier = minor_ecobalance }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = major_ecobalance
+			}
+		}
+		remove_dynamic_modifier = { modifier = major_ecobalance }
+		add_dynamic_modifier = { modifier = notable_ecobalance }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = significant_ecobalance
+			}
+		}
+		remove_dynamic_modifier = { modifier = significant_ecobalance }
+		add_dynamic_modifier = { modifier = major_ecobalance }
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = terminal_ecobalance
+			}
+		}
+		remove_dynamic_modifier = { modifier = terminal_ecobalance }
+		add_dynamic_modifier = { modifier = significant_ecobalance }
+	}
+	else = {
+
+	}
+}
+
+calculate_current_ecobalance = {
+	clear_variable = ROOT.current_ecobalance
+	every_owned_state = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = notable_ecobalance
+			}
+		}
+		set_variable = { THIS.state_ecobalance = 1 }
+		add_to_variable = { ROOT.current_ecobalance = THIS.state_ecobalance }
+	}
+	every_owned_state = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = major_ecobalance
+			}
+		}
+		set_variable = { THIS.state_ecobalance = 2 }
+		add_to_variable = { ROOT.current_ecobalance = THIS.state_ecobalance }
+	}
+	every_owned_state = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = significant_ecobalance
+			}
+		}
+		set_variable = { THIS.state_ecobalance = 3 }
+		add_to_variable = { ROOT.current_ecobalance = THIS.state_ecobalance }
+	}
+	every_owned_state = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = terminal_ecobalance
+			}
+		}
+		set_variable = { THIS.state_ecobalance = 4 }
+		add_to_variable = { ROOT.current_ecobalance = THIS.state_ecobalance }
+	}
+}

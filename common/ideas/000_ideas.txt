@@ -379,6 +379,10 @@ ideas = {
 		agrarian_stage = {
 			default = yes
 			picture = pol_law_button
+			on_add = {
+				set_variable = { free_factory_base_gain = 0.4 }
+				set_research_slots = 1
+			}
 			cost = 9999
 			removal_cost = -1
 			modifier = {
@@ -396,6 +400,10 @@ ideas = {
 					tooltip = 9_factories_required
 				}
 			}
+			on_add = {
+				set_variable = { free_factory_base_gain = 0.8 }
+				set_research_slots = 2
+			}
 			cost = 9999
 			removal_cost = -1
 			modifier = {
@@ -410,6 +418,10 @@ ideas = {
 				custom_trigger_tooltip = {
 					tooltip = 19_factories_required
 				}
+			}
+			on_add = {
+				set_variable = { free_factory_base_gain = 1 }
+				set_research_slots = 3
 			}
 			cost = 9999
 			removal_cost = -1
@@ -428,6 +440,10 @@ ideas = {
 					tooltip = 29_factories_required
 				}
 			}
+			on_add = {
+				set_variable = { free_factory_base_gain = 0.6 }
+				set_research_slots = 4
+			}
 			cost = 9999
 			removal_cost = -1
 			modifier = {
@@ -445,6 +461,10 @@ ideas = {
 					tooltip = 99_factories_required
 				}
 			}
+			on_add = {
+				set_variable = { free_factory_base_gain = 0.4 }
+				set_research_slots = 4
+			}
 			cost = 9999
 			removal_cost = -1
 			modifier = {
@@ -461,6 +481,10 @@ ideas = {
 				custom_trigger_tooltip = {
 					tooltip = 199_factories_required
 				}
+			}
+			on_add = {
+				set_variable = { free_factory_base_gain = 0.2 }
+				set_research_slots = 4
 			}
 			cost = 9999
 			removal_cost = -1
@@ -624,4 +648,143 @@ ideas = {
 ###############################
 ###############################
 
+}
+
+###############################
+###### SOUTH POLE SECTORS #####
+###############################
+
+ideas = {
+	hidden_ideas = {
+		sector_1_idea = {
+			on_add = {
+				add_offsite_building = { type = arms_factory level = 3 }
+				add_dynamic_modifier = { modifier = sector_maintain_cost_pp_1 }
+			}
+			on_remove = {
+				add_offsite_building = { type = arms_factory level = -3 }
+				remove_dynamic_modifier = { modifier = sector_maintain_cost_pp_1 }
+			}
+			cancel = {
+				NOT = { has_country_flag = antarctic_sector_1 }
+			}
+		}
+		sector_2_idea = {
+			on_add = {
+				add_offsite_building = { type = industrial_complex level = 3 }
+				add_dynamic_modifier = { modifier = sector_maintain_cost_pp_2 }
+			}
+			on_remove = {
+				add_offsite_building = { type = industrial_complex level = -3 }
+				remove_dynamic_modifier = { modifier = sector_maintain_cost_pp_2 }
+			}
+			cancel = {
+				NOT = { has_country_flag = antarctic_sector_2 }
+			}
+		}
+		sector_3_idea = {
+			on_add = {
+				add_offsite_building = { type = arms_factory level = 3 }
+				add_dynamic_modifier = { modifier = sector_maintain_cost_pp_3 }
+			}
+			on_remove = {
+				add_offsite_building = { type = arms_factory level = -3 }
+				remove_dynamic_modifier = { modifier = sector_maintain_cost_pp_3 }
+			}
+			cancel = {
+				NOT = { has_country_flag = antarctic_sector_3 }
+			}
+		}
+		sector_4_idea = {
+			on_add = {
+				add_offsite_building = { type = industrial_complex level = 3 }
+				add_dynamic_modifier = { modifier = sector_maintain_cost_pp_4 }
+			}
+			on_remove = {
+				add_offsite_building = { type = industrial_complex level = -3 }
+				remove_dynamic_modifier = { modifier = sector_maintain_cost_pp_4 }
+			}
+			cancel = {
+				NOT = { has_country_flag = antarctic_sector_4 }
+			}
+		}
+		sector_5_idea = {
+			on_add = {
+				add_offsite_building = { type = arms_factory level = 3 }
+				add_dynamic_modifier = { modifier = sector_maintain_cost_pp_5 }
+			}
+			on_remove = {
+				add_offsite_building = { type = arms_factory level = -3 }
+				remove_dynamic_modifier = { modifier = sector_maintain_cost_pp_5 }
+			}
+			cancel = {
+				NOT = { has_country_flag = antarctic_sector_5 }
+			}
+		}
+		sector_6_idea = {
+			on_add = {
+				add_offsite_building = { type = arms_factory level = 3 }
+				add_dynamic_modifier = { modifier = sector_maintain_cost_pp_6 }
+			}
+			on_remove = {
+				add_offsite_building = { type = arms_factory level = -3 }
+				remove_dynamic_modifier = { modifier = sector_maintain_cost_pp_6 }
+			}
+			cancel = {
+				NOT = { has_country_flag = antarctic_sector_6 }
+			}
+		}
+		sector_7_idea = {
+			on_add = {
+				add_offsite_building = { type = industrial_complex level = 3 }
+				add_dynamic_modifier = { modifier = sector_maintain_cost_pp_7 }
+			}
+			on_remove = {
+				add_offsite_building = { type = industrial_complex level = -3 }
+				remove_dynamic_modifier = { modifier = sector_maintain_cost_pp_7 }
+			}
+			cancel = {
+				NOT = { has_country_flag = antarctic_sector_7 }
+			}
+		}
+		sector_8_idea = {
+			on_add = {
+				add_offsite_building = { type = arms_factory level = 3 }
+				add_dynamic_modifier = { modifier = sector_maintain_cost_pp_8 }
+			}
+			on_remove = {
+				add_offsite_building = { type = arms_factory level = -3 }
+				remove_dynamic_modifier = { modifier = sector_maintain_cost_pp_8 }
+			}
+			cancel = {
+				NOT = { has_country_flag = antarctic_sector_8 }
+			}
+		}
+		sector_9_idea = {
+			on_add = {
+				add_offsite_building = { type = industrial_complex level = 3 }
+				add_dynamic_modifier = { modifier = sector_maintain_cost_pp_9 }
+			}
+			on_remove = {
+				add_offsite_building = { type = industrial_complex level = -3 }
+				remove_dynamic_modifier = { modifier = sector_maintain_cost_pp_9 }
+			}
+			cancel = {
+				NOT = { has_country_flag = antarctic_sector_9 }
+			}
+		}
+		sector_10_idea = {
+			on_add = {
+				add_offsite_building = { type = industrial_complex level = 3 }
+				add_dynamic_modifier = { modifier = sector_maintain_cost_pp_10 }
+			}
+			on_remove = {
+				add_offsite_building = { type = industrial_complex level = -3 }
+				remove_dynamic_modifier = { modifier = sector_maintain_cost_pp_10 }
+			}
+			cancel = {
+				NOT = { has_country_flag = antarctic_sector_10 }
+			}
+		}
+	}
 }
