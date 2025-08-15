@@ -21,7 +21,7 @@ on_actions = {
 }
 
 ###############################
-######### ARMY & TECH #########
+######### TECHNOLOGY ##########
 ###############################
 
 on_actions = {
@@ -42,80 +42,10 @@ on_actions = {
 						tech_recon = 1
 						interwar_antitank = 1
 						tech_military_police = 1
-						basic_light_tank = 1
-						basic_medium_tank = 1
-						basic_heavy_tank = 1
+						gwtank = 1
 						tech_logistics_company = 1
 						popup = no
 					}
-					load_oob = "AAA_2200"
-    				every_owned_state = {
-						if = {
-							limit = {
-								is_capital = yes
-							}
-							create_unit = {
-           						division = "name = \"HBT Division\" division_template = \"HBT Division\" start_experience_factor = 0.6"
-            					owner = PREV
-								count = 2
-        					}
-							create_unit = {
-           						division = "name = \"MBT Division\" division_template = \"MBT Division\" start_experience_factor = 0.6"
-            					owner = PREV
-								count = 4
-        					}
-							create_unit = {
-           						division = "name = \"LBT Division\" division_template = \"LBT Division\" start_experience_factor = 0.6"
-            					owner = PREV
-								count = 2
-        					}
-						}
-						else_if = {
-							limit = {
-								industrial_complex > 8
-							}
-							create_unit = {
-           						division = "name = \"LBT Division\" division_template = \"LBT Division\" start_experience_factor = 0.6"
-            					owner = PREV
-								count = 2
-        					}
-							create_unit = {
-           						division = "name = \"10/4 Infantry\" division_template = \"10/4 Infantry\" start_experience_factor = 0.6"
-            					owner = PREV
-								count = 2
-        					}
-						}
-						else_if = {
-							limit = {
-								industrial_complex > 4
-							}
-							create_unit = {
-           						division = "name = \"10/4 Infantry\" division_template = \"10/4 Infantry\" start_experience_factor = 0.6"
-            					owner = PREV
-								count = 8
-        					}
-							create_unit = {
-           						division = "name = \"9 Motorized\" division_template = \"9 Motorized\" start_experience_factor = 0.6"
-            					owner = PREV
-								count = 1
-        					}
-						}
-						else_if = {
-							limit = {
-								industrial_complex > 2
-							}
-							create_unit = {
-           						division = "name = \"7/2 Infantry\" division_template = \"7/2 Infantry\" start_experience_factor = 0.6"
-            					owner = PREV
-								count = 8
-        					}
-						}
-        				create_unit = {
-           					division = "name = \"9 Infantry\" division_template = \"9 Infantry\" start_experience_factor = 0.6"
-            				owner = PREV
-							count = 1
-        				}
-    				}
 				}
 				else_if = {
 					limit = {
@@ -131,58 +61,9 @@ on_actions = {
 						tech_recon = 1
 						interwar_antitank = 1
 						tech_military_police = 1
-						basic_light_tank = 1
-						basic_medium_tank = 1
+						gwtank = 1
 						popup = no
 					}
-					load_oob = "BBB_2200"
-    				every_owned_state = {
-						if = {
-							limit = {
-								is_capital = yes
-							}
-							create_unit = {
-           						division = "name = \"MBT Division\" division_template = \"MBT Division\" start_experience_factor = 0.5"
-            					owner = PREV
-								count = 2
-        					}
-							create_unit = {
-           						division = "name = \"LBT Division\" division_template = \"LBT Division\" start_experience_factor = 0.5"
-            					owner = PREV
-								count = 6
-        					}
-						}
-						else_if = {
-							limit = {
-								industrial_complex > 4
-							}
-							create_unit = {
-           						division = "name = \"10/4 Infantry\" division_template = \"10/4 Infantry\" start_experience_factor = 0.5"
-            					owner = PREV
-								count = 6
-        					}
-							create_unit = {
-           						division = "name = \"9 Motorized\" division_template = \"9 Motorized\" start_experience_factor = 0.5"
-            					owner = PREV
-								count = 1
-        					}
-						}
-						else_if = {
-							limit = {
-								industrial_complex > 2
-							}
-							create_unit = {
-           						division = "name = \"7/2 Infantry\" division_template = \"7/2 Infantry\" start_experience_factor = 0.5"
-            					owner = PREV
-								count = 4
-        					}
-						}
-        				create_unit = {
-           					division = "name = \"9 Infantry\" division_template = \"9 Infantry\" start_experience_factor = 0.5"
-            				owner = PREV
-							count = 1
-        				}
-    				}
 				}
 				else_if = {
 					limit = {
@@ -197,52 +78,9 @@ on_actions = {
 						gw_artillery = 1
 						tech_recon = 1
 						tech_military_police = 1
-						basic_light_tank = 1
+						gwtank = 1
 						popup = no
 					}
-					load_oob = "CCC_2200"
-    				every_owned_state = {
-						if = {
-							limit = {
-								is_capital = yes
-							}
-							create_unit = {
-           						division = "name = \"LBT Division\" division_template = \"LBT Division\" start_experience_factor = 0.4"
-            					owner = PREV
-								count = 4
-        					}
-						}
-						else_if = {
-							limit = {
-								industrial_complex > 2
-							}
-							create_unit = {
-           						division = "name = \"10/4 Infantry\" division_template = \"10/4 Infantry\" start_experience_factor = 0.4"
-            					owner = PREV
-								count = 3
-        					}
-							create_unit = {
-           						division = "name = \"9 Motorized\" division_template = \"9 Motorized\" start_experience_factor = 0.4"
-            					owner = PREV
-								count = 1
-        					}
-						}
-						else_if = {
-							limit = {
-								industrial_complex > 1
-							}
-							create_unit = {
-           						division = "name = \"7/2 Infantry\" division_template = \"7/2 Infantry\" start_experience_factor = 0.4"
-            					owner = PREV
-								count = 2
-        					}
-						}
-        				create_unit = {
-           					division = "name = \"9 Infantry\" division_template = \"9 Infantry\" start_experience_factor = 0.4"
-            				owner = PREV
-							count = 1
-        				}
-    				}
 				}
 				else_if = {
 					limit = {
@@ -257,52 +95,9 @@ on_actions = {
 						gw_artillery = 1
 						tech_recon = 1
 						tech_military_police = 1
-						basic_light_tank = 1
+						gwtank = 1
 						popup = no
 					}
-					load_oob = "DDD_2200"
-    				every_owned_state = {
-						if = {
-							limit = {
-								is_capital = yes
-							}
-							create_unit = {
-           						division = "name = \"9 Motorized\" division_template = \"9 Motorized\" start_experience_factor = 0.3"
-            					owner = PREV
-								count = 3
-        					}
-							create_unit = {
-           						division = "name = \"LBT Division\" division_template = \"LBT Division\" start_experience_factor = 0.3"
-            					owner = PREV
-								count = 1
-        					}
-						}
-						else_if = {
-							limit = {
-								industrial_complex > 2
-							}
-							create_unit = {
-           						division = "name = \"7/2 Infantry\" division_template = \"7/2 Infantry\" start_experience_factor = 0.3"
-            					owner = PREV
-								count = 3
-        					}
-						}
-						else_if = {
-							limit = {
-								industrial_complex > 1
-							}
-							create_unit = {
-           						division = "name = \"7/2 Infantry\" division_template = \"7/2 Infantry\" start_experience_factor = 0.3"
-            					owner = PREV
-								count = 2
-        					}
-						}
-        				create_unit = {
-           					division = "name = \"9 Infantry\" division_template = \"9 Infantry\" start_experience_factor = 0.3"
-            				owner = PREV
-							count = 1
-        				}
-    				}
 				}
 				else_if = {
 					limit = {
@@ -317,34 +112,6 @@ on_actions = {
 						tech_recon = 1
 						popup = no
 					}
-					load_oob = "EEE_2200"
-    				every_owned_state = {
-						if = {
-							limit = {
-								is_capital = yes
-							}
-							create_unit = {
-           						division = "name = \"9 Motorized\" division_template = \"9 Motorized\" start_experience_factor = 0.2"
-            					owner = PREV
-								count = 1
-        					}
-						}
-						else_if = {
-							limit = {
-								industrial_complex > 1
-							}
-							create_unit = {
-           						division = "name = \"7/2 Infantry\" division_template = \"7/2 Infantry\" start_experience_factor = 0.2"
-            					owner = PREV
-								count = 2
-        					}
-						}
-        				create_unit = {
-           					division = "name = \"9 Infantry\" division_template = \"9 Infantry\" start_experience_factor = 0.2"
-            				owner = PREV
-							count = 1
-        				}
-    				}
 				}
 				else_if = {
 					limit = {
@@ -355,24 +122,6 @@ on_actions = {
 						infantry_weapons = 1
 						popup = no
 					}
-					load_oob = "FFF_2200"
-    				every_owned_state = {
-						if = {
-							limit = {
-								is_capital = yes
-							}
-							create_unit = {
-           						division = "name = \"9 Motorized\" division_template = \"9 Motorized\" start_experience_factor = 0.1"
-            					owner = PREV
-								count = 1
-        					}
-						}
-        				create_unit = {
-           					division = "name = \"9 Infantry\" division_template = \"9 Infantry\" start_experience_factor = 0.1"
-            				owner = PREV
-							count = 1
-        				}
-    				}
 				}
 			}
 		}
