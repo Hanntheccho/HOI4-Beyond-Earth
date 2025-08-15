@@ -1,5 +1,5 @@
-@topbarwin_x_pos = 20
-@topbarwin_y_pos = 140
+@topbarwin_x_pos = 0
+@topbarwin_y_pos = 120
 @topbarwin_width = 550
 @topbarwin_height = 920
 @topbarwin_anim_time = 300
@@ -498,45 +498,47 @@ guiTypes = {
 		iconType ={
 			name ="resources_icon"
 			spriteType = "GFX_resources_strip"
-			position = { x = 24 y = 65 }
+			position = { x = 35 y = 58 }
 		}
 		instantTextboxType = {
 			name = "trade"
-			position = { x = 75 y = 60 }
+			position = { x = 85 y = 60 }
 			font = "Arialsmallest"
 			text = ""
 			maxWidth = 300
 			maxHeight = 100
 			format = left
+			fixedsize = yes
 		}
 
 		iconType ={
 			name ="convoys_icon"
 			spriteType = "GFX_topbar_convoys"
-			position = {x=30 y=156}
+			position = {x=75 y=136}
 		}
 		instantTextboxType = {
 			name = "convoys_description"
-			position = { x = 75 y = 145 }
+			position = { x = 125 y = 138 }
 			font = "Arialsmallest"
 			text = ""
 			maxWidth = 210
-			maxHeight = 80
+			maxHeight = 100
 			format = left
+			fixedsize = yes
 		}
 
 		iconType = {
 			name = "civilian_factory_icon"
-			position = { x = 30 y = 225 }
 			spriteType = "GFX_non_available_factory_icon"
+			position = { x = 105 y = 214 }
 		}
 		instantTextboxType = {
 			name = "factories_description"
-			position = { x = 75 y = 216 }
+			position = { x = 155 y = 216 }
 			font = "Arialsmallest"
 			text = ""
 			maxWidth = 210
-			maxHeight = 80
+			maxHeight = 100
 			format = left
 			fixedsize = yes
 		}
@@ -559,25 +561,21 @@ guiTypes = {
 			}
 		}
 
-		buttonType = {
-			name = "buy_needed_amount_button"
-			position = {x=350 y=260}
-			spriteType = "GFX_set_need_amount_button"
-			pdx_tooltip = "SET_NEEDED_AMOUNT"
-		}
 		instantTextboxType = {
 			name = "trade_reset"
-			position = { x = 124 y = 348 }
+			position = { x = -150 y = -96 }
+			orientation = CENTER_DOWN
 			font = "Arial16"
 			text = "TRADE_RESET"
-			maxWidth = 290
+			maxWidth = 300
 			maxHeight = 80
 			format = center
 		}
 
 		extendedScrollbarType = {
 			name = "buy_slider"
-			position = { x = 116 y = 290 }
+			position = { x = -150 y = -118 }
+			orientation = CENTER_DOWN
 			size = { width = 300 height = 18 }
 			tileSize = { width = 12 height = 12}
 			maxValue = 1
@@ -614,40 +612,47 @@ guiTypes = {
 			}
 		}
 
-		instantTextboxType = {
-			name = "min_amount"
-			position = { x = 74 y = 320 }
-			font = "hoi_18mbs"
-			text = "0"
-			maxWidth = 35
-			maxHeight = 18
-			format = center
-		}
+		#todo
 		instantTextboxType = {
 			name = "max_amount"
-			position = { x = 424 y = 320 }
-			font = "hoi_18mbs"
+			position = { x = -10000 y = 0 }
+			font = "Arial"
 			text = "max"
 			maxWidth = 35
 			maxHeight = 18
-			format = center
+			hide = yes
 		}
 
+		#???
 		iconType ={
 			name ="warning_icon"
-			spriteType = "GFX_warning_icon"
-			position = { x = 277 y = 270 }
+			spriteType = "GFX_warning_red"
+			position = { x = -56 y = 21 }
+			orientation = UPPER_RIGHT
+			centerposition = yes
 		}
 
 		buttonType = {
+			name = "buy_needed_amount_button"
+			orientation = CENTER_DOWN
+			position = {x=-145 y=-62}
+			spriteType = "GFX_tiling_button"
+			size = {x=130 y=40}
+			font = Arialcap
+			text = "AUTOSET"
+			clicksound = click_default
+			pdx_tooltip = "SET_NEEDED_AMOUNT"
+			shortcut = "a"
+		}
+		buttonType = {
 			name = "send_button"
-			position = { x = 350 y = -55 }
-			quadTextureSprite ="GFX_button_123x34"
-			buttonFont = "hoi_16mbs"
-			buttonText = "SEND"
-			Orientation = "LOWER_LEFT"
+			orientation = CENTER_DOWN
+			position = {x=15 y=-62}
+			spriteType = "GFX_tiling_button"
+			size = {x=130 y=40}
+			font = Arialcap
+			text = "OK"
 			clicksound = click_send
-			pdx_tooltip = "SEND"
 			shortcut = "RETURN"
 		}
 	}

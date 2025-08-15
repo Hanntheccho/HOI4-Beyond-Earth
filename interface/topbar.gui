@@ -1,7 +1,11 @@
+@topbar_tab_buttons_win_x_pos = 0
+@topbar_tab_buttons_win_y_pos = 120
 guiTypes = {
 	containerWindowType = {
 		name = "topbar"
 		size = { width=100%% height=100%% }
+
+		#todo
 		iconType = {
 			name ="background"
 			spriteType = "GFX_topbar_background_extended"
@@ -17,6 +21,7 @@ guiTypes = {
 			orientation = UPPER_RIGHT
 		}
 
+		#???
 		buttonType = {
 			name = "reopen_ingame_lobby"
 			quadTextureSprite ="GFX_reopen_lobby"
@@ -44,36 +49,30 @@ guiTypes = {
 			frame = 50
 		}
 
-		#todo
+		#music commands win
 		containerWindowType = {
 			name = "toggle_music_commands_win"
-			position = { x= -10000 y = 105 }
-			size = { width=228 height=42 }
-			background = {
-				quadTextureSprite ="GFX_playlist_bg"
-			}
+			position = { x= 36 y = 72 }
+			size = { width=120 height=42 }
 			buttonType = {
 				name = "music_pause_button"
-				quadTextureSprite ="GFX_music_pause_button"
-				position = { x= -185 y = 6 }
-				Orientation = "UPPER_RIGHT"
+				quadTextureSprite ="GFX_pause"
 			}
 			buttonType = {
 				name = "music_next_button"
-				quadTextureSprite ="GFX_music_next_button"
-				position = { x= -155 y = 6 }
-				Orientation = "UPPER_RIGHT"
+				quadTextureSprite ="GFX_next"
+				position = { x= 36 y = 0 }
 				pdx_tooltip = "MUSICPLAYER_NEXT"
 			}
 			buttonType = {
 				name = "musicplayer_button"
-				quadTextureSprite ="GFX_menu_button"
-				position = { x= -115 y = 6 }
-				Orientation = "UPPER_RIGHT"
-				#pdx_tooltip = "MUSICPLAYER_OPEN_PLAYER"
+				quadTextureSprite ="GFX_list"
+				position = { x= 72 y = 0 }
+				pdx_tooltip = "MUSICPLAYER_OPEN_PLAYER"
 			}
 		}
 
+		#topbar tab buttons
 		containerWindowType = {
 			@topbar_button_gfx = GFX_topbar_button
 			@topbar_button_font = Arialsmallcap
@@ -82,7 +81,7 @@ guiTypes = {
 			@topbar_alert_gfx_red = GFX_warning_red
 			@topbar_alert_x_pos = 20
 			name = "country_menu_window"
-			position = {x=0 y=120}
+			position = {x=@topbar_tab_buttons_win_x_pos y=@topbar_tab_buttons_win_y_pos}
 			size = { width=292 height=646 }
 			clipping = no
 			moveable = yes
@@ -97,7 +96,7 @@ guiTypes = {
 				position = { x= @topbar_button_x_pos y = 20 }
 				clicksound = click_close
 				oversound = ui_menu_over
-				shortcut = "shift+q"
+				shortcut = "1" #shortcut = "shift+q"
 				text = "DECISIONSTOPBARBUTTON"
 				font = @topbar_button_font
 			}
@@ -152,7 +151,7 @@ guiTypes = {
 				position = { x= @topbar_button_x_pos y = 60 }
 				clicksound = click_close
 				oversound = ui_menu_over
-				shortcut = "shift+w"
+				shortcut = "2" #shortcut = "shift+w"
 				text = "INTELAGENCYTOPBARBUTTON"
 				font = @topbar_button_font
 			}
@@ -204,7 +203,7 @@ guiTypes = {
 					position = { x= @topbar_button_x_pos y = 100 }
 					clicksound = click_close
 					oversound = ui_menu_over
-					shortcut = "w"
+					shortcut = "3" #sshortcut = "w"
 					text = "TECHNOLOGYTOPBARBUTTON"
 					font = @topbar_button_font
 				}
@@ -233,7 +232,7 @@ guiTypes = {
 					position = { x= @topbar_button_x_pos y = 140 }
 					clicksound = click_close
 					oversound = ui_menu_over
-					shortcut = "e"
+					shortcut = "4" #sshortcut = "e"
 					text = "DIPLOMACYTOPBARBUTTON"
 					font = @topbar_button_font
 				}
@@ -284,7 +283,7 @@ guiTypes = {
 					position = { x= @topbar_button_x_pos y = 180 }
 					clicksound = click_close
 					oversound = ui_menu_over
-					shortcut = "r"
+					shortcut = "5" #sshortcut = "r"
 					text = "TRADETOPBARBUTTON"
 					font = @topbar_button_font
 				}
@@ -294,7 +293,7 @@ guiTypes = {
 					position = { x= @topbar_button_x_pos y = 220 }
 					clicksound = click_close
 					oversound = ui_menu_over
-					shortcut = "t"
+					shortcut = "6" #sshortcut = "t"
 					text = "CONSTRUCTIONTOPBARBUTTON"
 					font = @topbar_button_font
 				}
@@ -305,7 +304,7 @@ guiTypes = {
 					position = { x= @topbar_button_x_pos y = 260 }
 					clicksound = click_close
 					oversound = ui_menu_over
-					shortcut = "y"
+					shortcut = "7" #sshortcut = "y"
 					text = "PRODUCTIONTOPBARBUTTON"
 					font = @topbar_button_font
 				}
@@ -322,7 +321,7 @@ guiTypes = {
 					position = { x= @topbar_button_x_pos y = 300 }
 					clicksound = click_close
 					oversound = ui_menu_over
-					shortcut = "u"
+					shortcut = "8" #sshortcut = "u"
 					text = "DEPLOYMENTTOPBARBUTTON"
 					font = @topbar_button_font
 				}
@@ -332,7 +331,7 @@ guiTypes = {
 					position = { x= @topbar_button_x_pos y = 340 }
 					clicksound = click_close
 					oversound = ui_menu_over
-					shortcut = "i"
+					shortcut = "9" #sshortcut = "i"
 					text = "LOGISTICSTOPBARBUTTON"
 					font = @topbar_button_font
 				}
@@ -342,7 +341,7 @@ guiTypes = {
 					position = { x= @topbar_button_x_pos y = 380 }
 					clicksound = click_close
 					oversound = ui_menu_over
-					shortcut = "shift+e"
+					shortcut = "0" #sshortcut = "shift+e"
 					text = "OFFICERCORPTOPBARBUTTON"
 					font = @topbar_button_font
 				}
@@ -383,68 +382,61 @@ guiTypes = {
 		buttonType = {
 			name = "player_flag"
 			quadTextureSprite ="GFX_shield_medium"
-			position = { x= 41 y = 19 }
+			position = { x= 42 y = 19 }
 			Orientation = "UPPER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
 			shortcut = "q"
 		}
-
 		iconType = {
 			name = "player_flag_frame_mod"
 			quadTextureSprite ="GFX_large_flag_frame"
-			position = { x= 36 y = 17 }
+			position = { x= 37 y = 17 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
 
+		#todo
 		iconType = {
 			name = "observer_flag_overlay"
 			spriteType = "GFX_observer_flag_overlay"
-			position = { x= 10000 y = 15 }
-			Orientation = "UPPER_LEFT"
+			position = { x= -10000 y = 17 }
 			alwaystransparent = yes
 		}
 
+		@topbar_variable_y_pos = 6
 		instantTextBoxType = {
 			name ="pol_power"
-			position = { x= 149 y = 2 }
+			position = { x= 200 y = @topbar_variable_y_pos }
 			font = "Arialcap"
 			text = "999"
-			format = center
-			maxWidth = 120
+			maxWidth = 80
 			maxHeight = 24
 		}
-
-		instantTextBoxType = {
-			name ="manpower"
-			position = { x= 608 y = 2 }
-			font = "Arialcap"
-			text = "9999"
-			format = center
-			maxWidth = 200
-			maxHeight = 24
-			fixedsize = yes
-		}
-
 		instantTextBoxType = {
 			name ="stability"
-			position = { x= -10000 y = 60 }
+			position = { x= 400 y = @topbar_variable_y_pos }
 			font = "Arialcap"
 			text = "100%"
-			format = left
 			maxWidth = 80
-			maxHeight = 50
+			maxHeight = 24
 		}
-
 		instantTextBoxType = {
 			name ="war_support"
-			position = { x= -10000 y = 0 }
+			position = { x= 500 y = @topbar_variable_y_pos }
 			font = "Arialcap"
 			text = "100%"
-			format = left
 			maxWidth = 80
-			maxHeight = 50
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name ="manpower"
+			position = { x= 600 y = @topbar_variable_y_pos }
+			font = "Arialcap"
+			text = "9999"
+			maxWidth = 100
+			maxHeight = 24
+			fixedsize = yes
 		}
 
 		containerWindowType = {
@@ -683,29 +675,6 @@ guiTypes = {
 			text = "50%"
 			format = left
 			maxWidth = 55
-			maxHeight = 24
-		}
-
-		iconType ={
-			name ="nuke_text_bg"
-			spriteType = "GFX_generic_box_smallest"
-			position = { x=-10000 y=5 }
-			Orientation = "UPPER_LEFT"
-		}
-
-		iconType ={
-			name ="nuke_icon"
-			spriteType = "GFX_topbar_nuke"
-			position = { x=-10000 y=8 }
-			Orientation = "UPPER_LEFT"
-		}
-
-		instantTextBoxType = {
-			name ="nuke_count"
-			position = { x=-10000 y=9 }
-			font = "hoi_18mbs"
-			format = center
-			maxWidth = 44
 			maxHeight = 24
 		}
 
