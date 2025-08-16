@@ -1,126 +1,100 @@
-
-#VANILLA
-
-sabotaged_resources = {
-	remove_trigger = {
-		has_resistance = no
-	}
-
-	#icon = GFX_modifiers_sabotaged_resource
-
-	temporary_state_resource_oil = sabotaged_oil
-	temporary_state_resource_aluminium = sabotaged_aluminium
-	temporary_state_resource_rubber = sabotaged_rubber
-	temporary_state_resource_tungsten = sabotaged_tungsten
-	temporary_state_resource_steel = sabotaged_steel
-	temporary_state_resource_chromium = sabotaged_chromium
+sector_maintain_cost_pp_1 = {
+	political_power_cost = global.sector_1_cost_daily
 }
-
-#ARC INTERNATIONAL
-
+sector_maintain_cost_pp_2 = {
+	political_power_cost = global.sector_2_cost_daily
+}
+sector_maintain_cost_pp_3 = {
+	political_power_cost = global.sector_3_cost_daily
+}
+sector_maintain_cost_pp_4 = {
+	political_power_cost = global.sector_4_cost_daily
+}
+sector_maintain_cost_pp_5 = {
+	political_power_cost = global.sector_5_cost_daily
+}
+sector_maintain_cost_pp_6 = {
+	political_power_cost = global.sector_6_cost_daily
+}
+sector_maintain_cost_pp_7 = {
+	political_power_cost = global.sector_7_cost_daily
+}
+sector_maintain_cost_pp_8 = {
+	political_power_cost = global.sector_8_cost_daily
+}
+sector_maintain_cost_pp_9 = {
+	political_power_cost = global.sector_9_cost_daily
+}
+sector_maintain_cost_pp_10 = {
+	political_power_cost = global.sector_10_cost_daily
+}
 arc_international_modifier = {
 	enable = { always = yes }
-
-	#icon = GFX_modifiers_sabotaged_resource
-
 	production_speed_arms_factory_factor = global.arc_international
 	recruitable_population_factor = global.arc_international
 }
-
-#ECOBALANCE
-
+URA_no_army = {
+	icon = GFX_idea_unknown
+	enable = { always = yes }
+	conscription_factor = ura_nostate_conscription
+	stability_factor = ura_nostate_stab
+	production_speed_arms_factory_factor = ura_nostate_mil_construction
+	consumer_goods_factor = ura_nostate_consumergoods
+	recruitable_population_factor = ura_nostate_recruitablepop
+	army_org_factor = ura_nostate_org
+	war_support_factor = ura_nostate_warsupport
+	production_factory_max_efficiency_factor = ura_nostate_efficiencycap
+	command_power_gain_mult = ura_nostate_cp
+}
 counter_ecobalance = {
 	enable = { always = yes }
-
-	#icon = GFX_modifiers_superbug_low
-
 	custom_modifier_tooltip = minor_ecobalance_tt
 }
-
 no_ecobalance = {
 	enable = { always = yes }
-
-	#icon = GFX_modifiers_superbug_no
-
 	local_supplies = 0.1
 }
-
 minor_ecobalance = {
 	enable = { always = yes }
-
-	#icon = GFX_modifiers_superbug_low
-
 	custom_modifier_tooltip = minor_ecobalance_tt
 }
-
 notable_ecobalance = {
 	enable = { always = yes }
-
-	#icon = GFX_modifiers_superbug_low_2
-
 	local_supplies = -0.1
 }
-
 major_ecobalance = {
 	enable = { always = yes }
-
-	#icon = GFX_modifiers_superbug_medium
-
 	local_supplies = -0.2
 }
-
 significant_ecobalance = {
 	enable = { always = yes }
-
-	#icon = GFX_modifiers_superbug_medium_2
-
 	local_supplies = -0.4
 }
-
 terminal_ecobalance = {
 	enable = { always = yes }
-
-	#icon = GFX_modifiers_superbug_high
-
 	local_supplies = -0.8
 }
-
 space_research = {
 	enable = { always = yes }
-
 	research_speed_factor = research_boost_contribution
 }
-
 bridge_location_modifier = {
 	enable = { always = yes }
-
-	#icon = GFX_modifiers_bridge_location
 }
 quarters_location_modifier = {
 	enable = { always = yes }
-
-	#icon = GFX_modifiers_quarters_location
 }
 support_location_modifier = {
 	enable = { always = yes }
-
-	#icon = GFX_modifiers_support_location
 }
 storage_location_modifier = {
 	enable = { always = yes }
-
-	#icon = GFX_modifiers_storage_location
 }
 engine_location_modifier = {
 	enable = { always = yes }
-
-	#icon = GFX_modifiers_engine_location
 }
-
-#COUNTRIES
 EQG_morgan_industries_modifier = {
 	icon = GFX_idea_unknown
-
 	industrial_capacity_factory = morgan_industries_modifier_industrial_capacity_factory_var
 	industrial_capacity_dockyard = morgan_industries_modifier_industrial_capacity_dockyard_var
 	production_factory_max_efficiency_factor = morgan_industries_modifier_factory_max_efficiency_var
@@ -140,7 +114,6 @@ EQG_morgan_industries_modifier = {
 }
 EQG_morgan_industries_modifier1 = {
 	icon = GFX_idea_unknown
-
 	industrial_capacity_factory = morgan_industries_modifier_industrial_capacity_factory_var
 	industrial_capacity_dockyard = morgan_industries_modifier_industrial_capacity_dockyard_var
 	production_factory_max_efficiency_factor = morgan_industries_modifier_factory_max_efficiency_var
@@ -160,7 +133,6 @@ EQG_morgan_industries_modifier1 = {
 }
 EQG_morgan_industries_modifier2 = {
 	icon = GFX_idea_unknown
-
 	industrial_capacity_factory = morgan_industries_modifier_industrial_capacity_factory_var
 	industrial_capacity_dockyard = morgan_industries_modifier_industrial_capacity_dockyard_var
 	production_factory_max_efficiency_factor = morgan_industries_modifier_factory_max_efficiency_var
@@ -180,7 +152,6 @@ EQG_morgan_industries_modifier2 = {
 }
 EQG_morgan_industries_modifier3 = {
 	icon = GFX_idea_unknown
-
 	industrial_capacity_factory = morgan_industries_modifier_industrial_capacity_factory_var
 	industrial_capacity_dockyard = morgan_industries_modifier_industrial_capacity_dockyard_var
 	production_factory_max_efficiency_factor = morgan_industries_modifier_factory_max_efficiency_var
@@ -201,7 +172,6 @@ EQG_morgan_industries_modifier3 = {
 }
 EQG_morgan_security_modifier = {
 	icon = GFX_idea_unknown
-
 	conscription = morgan_security_conscription_var
 	army_attack_factor = morgan_security_army_attack_factor_var
 	army_defence_factor = morgan_security_army_defence_factor_var
