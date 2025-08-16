@@ -1,5 +1,87 @@
 @button_font = Arialcap
 guiTypes = {
+	#select bookmark win
+	containerWindowType = {
+		name ="gamesetup_scenario_window"
+		size = { width = 500 height = 500 }
+		clipping = no
+		orientation = center
+		origo = center
+		background = {
+			quadTextureSprite = "GFX_thumbnail_bg"
+		}
+		background = {
+			quadTextureSprite = "GFX_tiled_default_bg"
+		}
+		instantTextBoxType = {
+			name ="detail"
+			position = { x = -240 y = -273 }
+			font = "Arialalpha"
+			text = "BOOKMARKTITLE"
+			maxWidth = 400
+			maxHeight = 30
+			orientation = CENTER
+		}
+
+		#todo
+		containerWindowType = {
+			name ="bookmarks"
+			size = { width = 100%% height = 100%% }
+			position = {x=10000 y=0}
+			orientation = UPPER_RIGHT
+			gridboxType = {
+				name ="bookmarks_grid"
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 10000 height = 0 }
+				max_slots_horizontal = 1
+				format = "UPPER_LEFT"
+			}
+		}
+
+		instantTextBoxType = {
+			name = "bookmark_title"
+			position = { x = -72 y = -273 }
+			font = "Arialalpha"
+			maxWidth = 400
+			maxHeight = 30
+			orientation = CENTER
+		}
+		instantTextBoxType = {
+			name = "bookmark_desc"
+			position = { x = 40 y = 46 }
+			font = "Arial16"
+			maxWidth = 400
+			maxHeight = 355
+			format = left
+			scrollbarType = "standardtext_slider"
+			borderSize = {x = 10 y = 0}
+		}
+		ButtonType = {
+			name = "select_button"
+			position = { x = -50 y = -80 }
+			orientation = CENTER_DOWN
+			size = { x = 240 y = 40 }
+			quadTextureSprite ="GFX_tiling_button"
+			text = "FE_SELECT_SCENARIO"
+			font = @button_font
+			clicksound = click_default
+			oversound = ui_menu_over
+			shortcut = "RETURN"
+		}
+		ButtonType = {
+			name = "back_button"
+			position = { x = -190 y = -80 }
+			orientation = CENTER_DOWN
+			size = { x = 130 y = 40 }
+			quadTextureSprite ="GFX_tiling_button"
+			text = "BACK"
+			font = @button_font
+			clicksound = click_close
+			oversound = ui_menu_over
+			shortcut = "ESCAPE"
+		}
+	}
+
 	#country entry on country selection
 	containerWindowType = {
 		name = "country_entry"
@@ -239,18 +321,6 @@ guiTypes = {
 			format = left
 		}
 		ButtonType = {
-			name = "back_button"
-			position = { x = -250 y = -60 }
-			orientation = CENTER_DOWN
-			size = { x = 200 y = 40 }
-			quadTextureSprite ="GFX_tiling_button"
-			text = "BACK"
-			font = @button_font
-			clicksound = click_close
-			oversound = ui_menu_over
-			shortcut = "ESCAPE"
-		}
-		ButtonType = {
 			name = "select_button"
 			position = { x = -30 y = -60 }
 			orientation = CENTER_DOWN
@@ -261,6 +331,18 @@ guiTypes = {
 			clicksound = click_default
 			oversound = ui_menu_over
 			shortcut = "RETURN"
+		}
+		ButtonType = {
+			name = "back_button"
+			position = { x = -250 y = -60 }
+			orientation = CENTER_DOWN
+			size = { x = 200 y = 40 }
+			quadTextureSprite ="GFX_tiling_button"
+			text = "BACK"
+			font = @button_font
+			clicksound = click_close
+			oversound = ui_menu_over
+			shortcut = "ESCAPE"
 		}
 
 		containerWindowType = {
