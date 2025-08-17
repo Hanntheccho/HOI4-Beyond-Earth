@@ -10,7 +10,7 @@ NDefines_Graphics.NFrontend.NEW_GAME_BUTTON_DISABLE_DELAY_ON_INVALID_MAP_DATA = 
 
 NDefines_Graphics.NGraphics.CAPITAL_ICON_CUTOFF = 700
 NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_CAPITAL_CUTOFF_MAX = 700.0	--Capitals are special snowflakes, they need their own number
-NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_TEXT_CUTOFF = {150, 350, 600}  -- At what camera distance the VP name text disappears.
+NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_TEXT_CUTOFF = { 150, 350, 600 }  -- At what camera distance the VP name text disappears.
 NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_TEXT_CUTOFF_MIN = 150.0 -- Min range for victory point text
 NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_TEXT_CUTOFF_MAX = 500.0 -- Max range for victory point text
 NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_DOT_CUTOFF_MIN = 150.0 -- Min range for victory point dot
@@ -49,7 +49,7 @@ NDefines_Graphics.NGraphics.MOON_HEIGHT_WATER = 10000   -- higher means softer s
 NDefines_Graphics.NGraphics.COUNTRY_COLOR_SATURATION_MODIFIER = 1.0
 NDefines_Graphics.NGraphics.COUNTRY_COLOR_BRIGHTNESS_MODIFIER = 0.95
 
-NDefines_Graphics.NGraphics.MOON_DIFFUSE_COLOR = {0.7, 0.1, 1.0}
+NDefines_Graphics.NGraphics.MOON_DIFFUSE_COLOR = { 0.7, 0.1, 1.0 }
 NDefines_Graphics.NGraphics.MOON_INTENSITY = 1.0
 
 NDefines_Graphics.NGraphics.RAILWAY_BRIDGE_ENTITY = ""
