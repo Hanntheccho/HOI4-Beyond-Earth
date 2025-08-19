@@ -5,6 +5,11 @@
 on_actions = {
 	on_startup = {
 		effect = {
+			set_variable = { global.num_of_factories_global = 119 }
+			set_variable = { global.num_of_factories_continental = 79 }
+			set_variable = { global.num_of_factories_regional = 39 }
+			set_variable = { global.num_of_factories_developed = 19 }
+			set_variable = { global.num_of_factories_developing = 4 }
 			every_country = {
 				calculate_development_level = yes
 			}
@@ -142,148 +147,32 @@ on_actions = {
 }
 
 ###############################
-### FREE FACTORY PROGRESS #####
+######### FREE FACTORY ########
 ###############################
 
 on_actions = {
-	on_startup = {
-		effect = {
-			every_country = {
-				set_variable = { free_factory_progress = 0 }
-				set_variable = { free_factory_gain = 0 }
-				set_variable = { free_factory_base_gain = 1 }
-				set_variable = { free_factory_adjustment = 1 }
-				set_variable = { free_factory_counter = 0 }
-			}
-		}
-	}
 	on_daily = {
 		effect = {
-			clear_variable = free_factory_gain
-			clear_variable = free_factory_adjustment
-			set_variable = { free_factory_adjustment = 1 }
+			set_variable = { free_factory_adjustment = modifier@free_factory_adjustment }
 			if = {
-				limit = {
-					has_idea = isolation
-				}
-				multiply_variable = { free_factory_adjustment = 4 }
-			}
-			else_if = {
-				limit = {
-					has_idea = civilian_economy
-				}
-				multiply_variable = { free_factory_adjustment = 2 }
-			}
-			else_if = {
-				limit = {
-					has_idea = low_economic_mobilisation
-				}
-				multiply_variable = { free_factory_adjustment = 1 }
-			}
-			else_if = {
-				limit = {
-					has_idea = partial_economic_mobilisation
-				}
-				multiply_variable = { free_factory_adjustment = 0.5 }
-			}
-			else = {
+				limit = { country_is_missing_any_resource = yes }
 				multiply_variable = { free_factory_adjustment = 0.1 }
 			}
-			if = {
-				limit = {
-					has_idea = neutral_ecobalance
-				}
-				multiply_variable = { free_factory_adjustment = 0.95 }
-			}
-			else_if = {
-				limit = {
-					has_idea = precarious_ecobalance
-				}
-				multiply_variable = { free_factory_adjustment = 0.9 }
-			}
-			else_if = {
-				limit = {
-					has_idea = dangerous_ecobalance
-				}
-				multiply_variable = { free_factory_adjustment = 0.8 }
-			}
-			else_if = {
-				limit = {
-					has_idea = disastrous_ecobalance
-				}
-				multiply_variable = { free_factory_adjustment = 0.6 }
-			}
-			else = {
-				multiply_variable = { free_factory_adjustment = 1 }
-			}
-			if = {
-				limit = {
-					has_idea = minarchist_state
-				}
-				multiply_variable = { free_factory_adjustment = 1.15 }
-			}
-			if = {
-				limit = {
-					country_is_missing_any_resource = yes
-				}
-				multiply_variable = { free_factory_adjustment = 0.1 }
-			}
-			add_to_variable = { free_factory_gain = free_factory_base_gain }
+			set_variable = { free_factory_gain = free_factory_base_gain }
+			clamp_variable = { var = free_factory_adjustment min = -1 }
+			add_to_variable = { free_factory_adjustment = 1 }
 			multiply_variable = { free_factory_gain = free_factory_adjustment }
 			add_to_variable = { free_factory_progress = free_factory_gain }
 			if = {
-				limit = {
-					check_variable = { free_factory_progress > 100 }
-					any_state = {
-						is_fully_controlled_by = ROOT
-						free_building_slots = {
-							building = industrial_complex
-							size > 1
-							include_locked = no
-						}
-					}
-				}
+				limit = { check_variable = { free_factory_progress > 100 } }
 				add_to_variable = { free_factory_counter = 1 }
 				random_list = {
 					50 = {
-						random_owned_controlled_state = {
-							limit = {
-								is_fully_controlled_by = ROOT
-								free_building_slots = {
-									building = industrial_complex
-									size > 1
-									include_locked = no
-								}
-							}
-							add_building_construction = {
-								type = industrial_complex
-								level = 1
-								instant_build = yes
-							}
-						}
+						build_random_civilian_complex = yes
 					}
 					50 = {
-						random_owned_controlled_state = {
-							limit = {
-								is_fully_controlled_by = ROOT
-								free_building_slots = {
-									building = arms_factory
-									size > 1
-									include_locked = no
-								}
-							}
-							add_building_construction = {
-								type = arms_factory
-								level = 1
-								instant_build = yes
-							}
-						}
+						build_random_military_complex = yes
 					}
-				}
-			}
-			if = {
-				limit = {
-					check_variable = { free_factory_progress > 100 }
 				}
 				clear_variable = free_factory_progress
 				set_variable = { free_factory_progress = 0 }

@@ -1,3 +1,38 @@
+build_random_civilian_complex = {
+	random_controlled_state = {
+		limit = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = {
+				building = industrial_complex
+				size > 0
+				include_locked = no
+			}
+		}
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+		}
+	}
+}
+build_random_military_complex = {
+	random_controlled_state = {
+		limit = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = {
+				building = arms_factory
+				size > 0
+				include_locked = no
+			}
+		}
+		add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+		}
+	}
+}
+
 ###############################
 ######### DEVELOPMENT #########
 ###############################
@@ -5,31 +40,31 @@
 calculate_development_level = {
 	if = {
 		limit = {
-			num_of_factories > 119
+			num_of_factories > global.num_of_factories_global
 		}
 		add_ideas = global_stage
 	}
 	else_if = {
 		limit = {
-			num_of_factories > 79
+			num_of_factories > global.num_of_factories_continental
 		}
 		add_ideas = continental_stage
 	}
 	else_if = {
 		limit = {
-			num_of_factories > 39
+			num_of_factories > global.num_of_factories_regional
 		}
 		add_ideas = regional_stage
 	}
 	else_if = {
 		limit = {
-			num_of_factories > 19
+			num_of_factories > global.num_of_factories_developed
 		}
 		add_ideas = developed_stage
 	}
 	else_if = {
 		limit = {
-			num_of_factories > 4
+			num_of_factories > global.num_of_factories_developing
 		}
 		add_ideas = developing_stage
 	}

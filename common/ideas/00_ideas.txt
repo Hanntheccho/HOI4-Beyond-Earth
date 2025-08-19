@@ -22,10 +22,10 @@ ideas = {
 			modifier = {
 				consumer_goods_expected_value = 0.1
 				industry_free_repair_factor = 1
-				custom_modifier_tooltip = 400_free_factory_rate
 				war_support_weekly = -0.002
 				research_speed_factor = -0.2
 				production_speed_buildings_factor = -0.9
+				free_factory_adjustment = 4
 			}
 			ai_will_do = {
 				factor = 0
@@ -45,7 +45,7 @@ ideas = {
 			modifier = {
 				consumer_goods_expected_value = 0.4
 				industry_free_repair_factor = 0.5
-				custom_modifier_tooltip = 200_free_factory_rate
+				free_factory_adjustment = 2
 			}
 			ai_will_do = {
 				factor = 0
@@ -66,7 +66,7 @@ ideas = {
 			modifier = {
 				consumer_goods_expected_value = 0.3
 				industry_free_repair_factor = 0.25
-				custom_modifier_tooltip = 100_free_factory_rate
+				free_factory_adjustment = 1
 			}
 			ai_will_do = {
 				factor = 0
@@ -86,7 +86,7 @@ ideas = {
 			modifier = {
 				consumer_goods_expected_value = 0.2
 				industry_free_repair_factor = 0.1
-				custom_modifier_tooltip = 50_free_factory_rate
+				free_factory_adjustment = 0.5
 			}
 			ai_will_do = {
 				factor = 0
@@ -106,7 +106,7 @@ ideas = {
 			modifier = {
 				consumer_goods_expected_value = 0.1
 				industry_repair_factor = 0.5
-				custom_modifier_tooltip = 90_negative_free_factory_rate
+				free_factory_adjustment = -0.9
 			}
 			ai_will_do = {
 				factor = 0
@@ -127,7 +127,7 @@ ideas = {
 				consumer_goods_expected_value = 0.01
 				stability_weekly = -0.002
 				production_speed_buildings_factor = 0.2
-				custom_modifier_tooltip = 90_negative_free_factory_rate
+				free_factory_adjustment = -0.9
 			}
 			ai_will_do = {
 				factor = 0
@@ -391,14 +391,14 @@ ideas = {
 				research_speed_factor = -0.1
 				stability_factor = -0.1
 				conscription_factor = 0.2
-				custom_modifier_tooltip = 05_free_factory_base_rate
+				custom_modifier_tooltip = agrarian_free_factory_base_rate
 				custom_modifier_tooltip = MODIFIER_SET_RESEARCH_SLOTS_01
 			}
 		}
 		developing_stage = {
 			picture = pol_law_button
 			available = {
-				num_of_factories > 4
+				num_of_factories > global.num_of_factories_developing
 			}
 			on_add = {
 				hidden_effect = {
@@ -410,14 +410,14 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				conscription_factor = -0.05
-				custom_modifier_tooltip = 08_free_factory_base_rate
+				custom_modifier_tooltip = developing_free_factory_base_rate
 				custom_modifier_tooltip = MODIFIER_SET_RESEARCH_SLOTS_02
 			}
 		}
 		developed_stage = {
 			picture = pol_law_button
 			available = {
-				num_of_factories > 19
+				num_of_factories > global.num_of_factories_developed
 			}
 			on_add = {
 				hidden_effect = {
@@ -431,14 +431,14 @@ ideas = {
 				research_speed_factor = 0.1
 				stability_factor = 0.05
 				conscription_factor = -0.1
-				custom_modifier_tooltip = 2_free_factory_base_rate
+				custom_modifier_tooltip = developed_free_factory_base_rate
 				custom_modifier_tooltip = MODIFIER_SET_RESEARCH_SLOTS_03
 			}
 		}
 		regional_stage = {
 			picture = pol_law_button
 			available = {
-				num_of_factories > 39
+				num_of_factories > global.num_of_factories_regional
 			}
 			on_add = {
 				hidden_effect = {
@@ -452,14 +452,14 @@ ideas = {
 				research_speed_factor = 0.2
 				stability_factor = 0.1
 				conscription_factor = -0.2
-				custom_modifier_tooltip = 3_free_factory_base_rate
+				custom_modifier_tooltip = regional_free_factory_base_rate
 				custom_modifier_tooltip = MODIFIER_SET_RESEARCH_SLOTS_04
 			}
 		}
 		continental_stage = {
 			picture = pol_law_button
 			available = {
-				num_of_factories > 79
+				num_of_factories > global.num_of_factories_continental
 			}
 			on_add = {
 				hidden_effect = {
@@ -473,14 +473,14 @@ ideas = {
 				research_speed_factor = 0.25
 				stability_factor = 0.15
 				conscription_factor = -0.4
-				custom_modifier_tooltip = 15_free_factory_base_rate
+				custom_modifier_tooltip = continental_free_factory_base_rate
 				custom_modifier_tooltip = MODIFIER_SET_RESEARCH_SLOTS_04
 			}
 		}
 		global_stage = {
 			picture = pol_law_button
 			available = {
-				num_of_factories > 119
+				num_of_factories > global.num_of_factories_global
 			}
 			on_add = {
 				hidden_effect = {
@@ -494,7 +494,7 @@ ideas = {
 				research_speed_factor = 0.3
 				stability_factor = 0.2
 				conscription_factor = -0.8
-				custom_modifier_tooltip = 1_free_factory_base_rate
+				custom_modifier_tooltip = global_free_factory_base_rate
 				custom_modifier_tooltip = MODIFIER_SET_RESEARCH_SLOTS_04
 			}
 		}
@@ -522,7 +522,7 @@ ideas = {
 				consumer_goods_factor = -0.02
 				production_speed_buildings_factor = 0.15
 				global_building_slots_factor = 0.2
-				custom_modifier_tooltip = 15_free_factory_rate
+				free_factory_adjustment = 0.15
 			}
 		}
 		digital_democracy = {
@@ -607,8 +607,8 @@ ideas = {
 			modifier = {
 				stability_weekly = -0.001
 				production_speed_buildings_factor = -0.05
-				custom_modifier_tooltip = 5_free_factory_speed_decrease
 				political_power_gain = -0.1
+				free_factory_adjustment = -0.05
 			}
 		}
 		precarious_ecobalance = {
@@ -618,8 +618,8 @@ ideas = {
 			modifier = {
 				stability_weekly = -0.002
 				production_speed_buildings_factor = -0.1
-				custom_modifier_tooltip = 10_free_factory_speed_decrease
 				political_power_gain = -0.2
+				free_factory_adjustment = -0.1
 			}
 		}
 		dangerous_ecobalance = {
@@ -629,8 +629,8 @@ ideas = {
 			modifier = {
 				stability_weekly = -0.005
 				production_speed_buildings_factor = -0.2
-				custom_modifier_tooltip = 20_free_factory_speed_decrease
 				political_power_gain = -0.4
+				free_factory_adjustment = -0.2
 			}
 		}
 		disastrous_ecobalance = {
@@ -640,8 +640,8 @@ ideas = {
 			modifier = {
 				stability_weekly = -0.01
 				production_speed_buildings_factor = -0.4
-				custom_modifier_tooltip = 40_free_factory_speed_decrease
 				political_power_gain = -0.6
+				free_factory_adjustment = -0.4
 			}
 		}
 	}
