@@ -16,8 +16,6 @@ flooded_cities: "Great Flood Remnants"
 
 get_threat: "[?global.threat_debug|2]%"
 
-state_level_stuff: "[?THIS.building_level@infrastructure]"
-
 THREAT_TOOLTIP_MOD: "§HGlobal Ecobalance Decay§!: §R[?global.threat_debug|2]%§!\n§HGlobal Ecobalance Monthly Ratio§!: §R[?global.total_global_ecobalance|2]%§!"
 THREAT_TIME_SCALE_TOOLTIP_MOD: "§RGlobal Ecobalance Decay§! is calculated on a monthly basis by the §OMunich Institute of Technology§! by calculating the average §REcobalance Decay§! of all states. This variable indicates the speed at which the ecology of the states decays globally, §Ri.e. the higher the Goblal Ecobalance Decay, the faster it will grow.§!"
 
@@ -91,9 +89,9 @@ help_ss_current_contribution: "§HThe ISS-Unity§!\n§LThe Earth is the cradle o
 ########### DECISIONS #########
 ###############################
 
-state_decisions_cost_industrial_100: "£industrial_power  §Y100§! §HIndustrial Power§!"
-state_decisions_cost_industrial_60: "£industrial_power  §Y60§! §HIndustrial Power§!"
-state_decisions_cost_industrial_20: "£industrial_power  §Y20§! §HIndustrial Power§!"
+state_decisions_cost_industrial_100: "£industrial_power §Y100§! §HIndustrial Power§!"
+state_decisions_cost_industrial_60: "£industrial_power §Y60§! §HIndustrial Power§!"
+state_decisions_cost_industrial_20: "£industrial_power §Y20§! §HIndustrial Power§!"
 
 formable_decisions: "Our Destiny"
 formable_decisions_desc: "§LA nation never sleeps. It always aspires to something more transcendental. Will beyond understanding to embrace its true identity.§!"
@@ -226,15 +224,16 @@ global_free_factory_base_rate: "Free Factory Base Rate: §Y0.20%§!"
 ########## ECOBALANCE #########
 ###############################
 
-decrease_ecobalance_tt: "§GOn Click§! £industrial_power  §O25§! §HIndustrial Power§!\n[!reduce_ecobalance_button_click]\nAdd §OUndergoing Project§! for §Y60§! days.\n§RRequires §OAutomation§! technology researched.§!"
-decrease_ecobalance_tt_harmony: "§GOn Click§! £industrial_power  §O15§! §HIndustrial Power§!\n[!reduce_ecobalance_button_harmony_click]\nAdd §OUndergoing Project§! for §Y60§! days.\n§RRequires §OAutomation§! technology researched.§!"
-decrease_ecobalance_tt_mastery: "§GOn Click§! £industrial_power  §O40§! §HIndustrial Power§!\n[!reduce_ecobalance_button_mastery_click]\nAdd §OUndergoing Project§! for §Y60§! days.\n§RRequires §OAutomation§! technology researched.§!"
-
-ecobalance_tt_delayed: "Over time, states get their §OLocal Ecobalance Decay§! increased. The speed of this event depends on the §RGlobal Ecobalance Decay§!. You can reduce the decay by spending some §HIndustrial Power§! depending on your ruling ideology and adopted technologies.\n\nYou can check the §OLocal Ecobalance Decay§! of every state by opening the §LEcobalance§! mapmode."
+decrease_ecobalance_tt: "[GETdecrease_ecobalance_tt]\n[!decrease_ecobalance_button_click]"
+decrease_ecobalance_tt_neutral: "§GOn Click§! £industrial_power §Y25§! §OIndustrial Power§!\nAdd §HLocal Ecobalance Project§! for §Y60§! days."
+decrease_ecobalance_tt_mastery: "§GOn Click§! £industrial_power §Y40§! §OIndustrial Power§!\nAdd §HLocal Ecobalance Project§! for §Y120§! days."
+decrease_ecobalance_tt_harmony: "§GOn Click§! £industrial_power §Y15§! §OIndustrial Power§!\nAdd §HLocal Ecobalance Project§! for §Y30§! days."
+decrease_ecobalance_tt_delayed: "Over time, states get their §OLocal Ecobalance Decay§! increased. The speed of this event depends on the §RGlobal Ecobalance Decay§!. You can reduce the decay by spending some §OIndustrial Power§! depending on your ruling ideology and adopted technologies.\n\nYou can check the §OLocal Ecobalance Decay§! of every state by opening the §LEcobalance§! mapmode."
+auto_decrease_ecobalance_tt: "You can set your states to be automatically improved with this option enabled. It is currently set [GETauto_decrease_ecobalance_tt], and will only take effect when you have more than £industrial_power §Y200§! §OIndustrial Power§! in stock."
+auto_decrease_ecobalance_tt_dont: "§ROFF§!"
+auto_decrease_ecobalance_tt_do: "§GON§!"
 
 total_global_ecobalance_added: "Ecobalance Decay Monthly Analysis"
-
-auto_decrease_ecobalance_tt: "You can set your states to be automatically improved with this option enabled. It is set §GON§! by default, and will only take effect when you have more than £industrial_power  §O200§! §HIndustrial Power§! in stock."
 
 counter_ecobalance: "Engineered Ecobalance"
 no_ecobalance: "No Ecobalance Decay"
@@ -243,8 +242,6 @@ notable_ecobalance: "Notable Ecobalance Decay"
 major_ecobalance: "Major Ecobalance Decay"
 significant_ecobalance: "Significant Ecobalance Decay"
 terminal_ecobalance: "Terminal Ecobalance Decay"
-
-minor_ecobalance_tt: "Local Supplies: §Y0%§!"
 
 ###############################
 ########## BOOKMARKS ##########
@@ -362,12 +359,6 @@ disastrous_ecobalance: "Disastrous Ecobalance"
 disastrous_ecobalance_desc: ""
 
 ##################################
-########### BUILDINGS ############
-##################################
-
-too_many_building_resources_used: "High Default Risk"
-
-##################################
 ########## STATE LEVEL ###########
 ##################################
 
@@ -476,14 +467,7 @@ MAPMODE_ECOBALANCE_MAP_MODE: "§LEcobalance§! mapmode"
 MAPMODE_ECOBALANCE_MAP_MODE_NAME: "Ecobalance"
 MAPMODE_ECOBALANCE_MAP_MODE_DESCRIPTION: "Shows ecobalance of states in the world."
 ecobalance_map_mode_tooltip: "[FROM.GetName]"
-ecobalance_map_mode_tooltip_delayed: "[FROM.GetName] has a [FROM.GETecobalance]."
-ecobalance_counter_ecobalance: "Engineered Ecobalance"
-ecobalance_no_ecobalance: "No Ecobalance Decay"
-ecobalance_minor_ecobalance: "Minor Ecobalance Decay"
-ecobalance_notable_ecobalance: "Notable Ecobalance Decay"
-ecobalance_major_ecobalance: "Major Ecobalance Decay"
-ecobalance_significant_ecobalance: "Significant Ecobalance Decay"
-ecobalance_terminal_ecobalance: "Terminal Ecobalance Decay"
+ecobalance_map_mode_tooltip_delayed: "[FROM.GetName] has [FROM.GETecobalance]."
 
 #NAU LEGITIMACY
 MAPMODE_NAU_LEGITIMACY_MAP_MODE: "§LNAU Legitimacy§! mapmode"

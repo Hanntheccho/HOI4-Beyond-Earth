@@ -99,5 +99,62 @@ scripted_gui = {
 }
 
 ###############################
+########## ECOBALANCE #########
+###############################
+
+scripted_gui = {
+	ecobalance_gui = {
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+		window_name = "ecobalance_gui_window"
+		visible = {
+			OR = { is_owned_by = ROOT OWNER = { is_ally_with = ROOT } }
+		}
+		effects = {
+			auto_ecobalance_button_click = {
+				ROOT = {
+					if = {
+						limit = { has_country_flag = dont_auto_ecobalance_states }
+						clr_country_flag = dont_auto_ecobalance_states
+					}
+					else = { set_country_flag = dont_auto_ecobalance_states }
+				}
+			}
+			decrease_ecobalance_button_click = {
+				decrease_ecobalance = yes
+				ROOT = {
+					subtract_from_variable = { industrial_power = decrease_ecobalance_cost }
+					PREV = { set_state_flag = { flag = ecobalance_reduction_timeout_flag value = 1 days = decrease_ecobalance_days } }
+				}
+			}
+		}
+		triggers = {
+			decrease_ecobalance_button_click_enabled = {
+				OR = { is_owned_by = ROOT OWNER = { is_ally_with = ROOT } }
+				if = {
+					limit = { ROOT = { has_government = mastery } }
+					NOT = { has_dynamic_modifier = { modifier = counter_ecobalance } }
+					ROOT = { check_variable = { var = industrial_power value = 40 compare = greater_than_or_equals } }
+				}
+				else_if = {
+					limit = { ROOT = { has_government = harmony } }
+					NOT = { has_dynamic_modifier = { modifier = no_ecobalance } }
+					ROOT = { check_variable = { var = industrial_power value = 15 compare = greater_than_or_equals } }
+				}
+				else = {
+					NOT = {
+						has_dynamic_modifier = { modifier = counter_ecobalance }
+						has_dynamic_modifier = { modifier = no_ecobalance }
+						has_dynamic_modifier = { modifier = minor_ecobalance }
+					}
+					ROOT = { check_variable = { var = industrial_power value = 25 compare = greater_than_or_equals } }
+				}
+				NOT = { has_state_flag = ecobalance_reduction_timeout_flag }
+			}
+		}
+	}
+}
+
+###############################
 ###############################
 ###############################

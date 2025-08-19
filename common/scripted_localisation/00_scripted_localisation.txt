@@ -61,9 +61,32 @@ defined_text = {
 
 defined_text = {
 	name = GETfree_factory
-	text = {
-		trigger = { check_variable = { free_factory_adjustment < 1 } }
-		localization_key = free_factory_bad
-	}
+	text = { trigger = { check_variable = { free_factory_adjustment < 1 } } localization_key = free_factory_bad }
 	text = { localization_key = free_factory }
+}
+
+###############################
+########## ECOBALANCE #########
+###############################
+
+defined_text = {
+	name = GETdecrease_ecobalance_tt
+	text = { trigger = { ROOT = { has_government = mastery } } localization_key = decrease_ecobalance_tt_mastery }
+	text = { trigger = { ROOT = { has_government = harmony } } localization_key = decrease_ecobalance_tt_harmony }
+	text = { localization_key = decrease_ecobalance_tt_neutral }
+}
+defined_text = {
+	name = GETauto_decrease_ecobalance_tt
+	text = { trigger = { ROOT = { has_country_flag = dont_auto_ecobalance_states } } localization_key = auto_decrease_ecobalance_tt_dont }
+	text = { localization_key = auto_decrease_ecobalance_tt_do }
+}
+defined_text = {
+	name = GETecobalance
+	text = { trigger = { THIS = { has_dynamic_modifier = { modifier = counter_ecobalance } } } localization_key = counter_ecobalance }
+	text = { trigger = { THIS = { has_dynamic_modifier = { modifier = no_ecobalance } } } localization_key = no_ecobalance }
+	text = { trigger = { THIS = { has_dynamic_modifier = { modifier = minor_ecobalance } } } localization_key = minor_ecobalance }
+	text = { trigger = { THIS = { has_dynamic_modifier = { modifier = notable_ecobalance } } } localization_key = notable_ecobalance }
+	text = { trigger = { THIS = { has_dynamic_modifier = { modifier = major_ecobalance } } } localization_key = major_ecobalance }
+	text = { trigger = { THIS = { has_dynamic_modifier = { modifier = significant_ecobalance } } } localization_key = significant_ecobalance }
+	text = { trigger = { THIS = { has_dynamic_modifier = { modifier = terminal_ecobalance } } } localization_key = terminal_ecobalance }
 }
