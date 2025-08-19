@@ -10,16 +10,12 @@ on_actions = {
 			set_variable = { global.num_of_factories_regional = 39 }
 			set_variable = { global.num_of_factories_developed = 19 }
 			set_variable = { global.num_of_factories_developing = 4 }
-			every_country = {
-				calculate_development_level = yes
-			}
+			every_country = { calculate_development_level = yes }
 		}
 	}
 	on_weekly = {
 		effect = {
-			every_country = {
-				calculate_development_level = yes
-			}
+			every_country = { calculate_development_level = yes }
 		}
 	}
 }
@@ -66,81 +62,7 @@ on_actions = {
 					}
 					add_ideas = volunteer_only
 				}
-				else = {
-					add_ideas = limited_conscription
-				}
-			}
-		}
-	}
-}
-
-###############################
-############ LEADER ###########
-###############################
-
-on_actions = {
-	on_startup = {
-		effect = {
-			every_country = {
-				limit = {
-					has_country_leader = {
-						name = "Unknown"
-						ruling_only = yes
-					}
-				}
-				create_country_leader = {
-					name = "Goverment"
-					picture = GFX_government_portrait
-					ideology = purity_ideology
-				}
-				create_country_leader = {
-					name = "Goverment"
-					picture = GFX_government_portrait
-					ideology = harmony_ideology
-				}
-				create_country_leader = {
-					name = "Goverment"
-					picture = GFX_government_portrait
-					ideology = supremacy_ideology
-				}
-				create_country_leader = {
-					name = "Goverment"
-					picture = GFX_government_portrait
-					ideology = neutral_ideology
-				}
-				create_country_leader = {
-					name = "Goverment"
-					picture = GFX_government_portrait
-					ideology = synergy_ideology
-				}
-				create_country_leader = {
-					name = "Goverment"
-					picture = GFX_government_portrait
-					ideology = mastery_ideology
-				}
-				create_country_leader = {
-					name = "Goverment"
-					picture = GFX_government_portrait
-					ideology = divinity_ideology
-				}
-			}
-		}
-	}
-	on_ruling_party_change = {
-		effect = {
-			if = {
-				limit = {
-					has_country_leader = {
-						name = "Unknown"
-						ruling_only = yes
-					}
-				}
-				set_country_leader_name = {
-					name = "Government"
-				}
-				set_country_leader_portrait = {
-					portrait = GFX_government_portrait
-				}
+				else = { add_ideas = limited_conscription }
 			}
 		}
 	}
@@ -244,9 +166,7 @@ on_actions = {
 			set_variable = { global.sector_8_cost_daily = 0.025 }
 			set_variable = { global.sector_9_cost_daily = 0.025 }
 			set_variable = { global.sector_10_cost_daily = 0.025 }
-			every_country = {
-				set_variable = { num_southpole_sectors = 0 }
-			}
+			every_country = { set_variable = { num_southpole_sectors = 0 } }
 		}
 	}
 }

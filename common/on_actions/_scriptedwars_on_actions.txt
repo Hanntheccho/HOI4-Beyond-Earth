@@ -36,20 +36,6 @@ on_actions = {
 					}
 				}
 			} #
-			FROM = { #this is for the notification, winner side, scripted gui
-				add_to_array = {
-					array = global.winning_country
-					value = THIS.id
-					index = 0
-				}
-			} #
-			ROOT = { #this is for the notification, losser side, scripted gui
-				add_to_array = {
-					array = global.losing_country
-					value = THIS.id
-					index = 0
-				}
-			} #
 			FROM = { #capitulator annexes it all, if an enemy controls any province or state from the capitulated country they will still keep it
 				annex_country = {
 					target = ROOT
