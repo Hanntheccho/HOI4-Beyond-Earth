@@ -1,101 +1,189 @@
 guiTypes = {
+
+###############################
+######## POLITICAL LAWS #######
+###############################
+
 	containerWindowType = {
-		@pol_view_text_font = Arialsmallestcap
-		name = "pol_view_scripted_gui"
+		name = "pol_view_gui"
 		position = { x = 37 y = 514 }
+		@pol_view_text_font = Arialsmallestcap
 		instantTextBoxType = {
 			name = "economy_law"
-			font = @pol_view_text_font
-			text = [GETeconomic_system]
-			maxWidth = 190
-			maxHeight = 40
-			multiline = no
+			text = [GETeconomic_system] font = @pol_view_text_font
+			maxWidth = 190 maxHeight = 40 multiline = no
 			alwaystransparent = yes
 		}
 		instantTextBoxType = {
 			name = "mobilization_law"
 			position = { x = 252 y = 0 }
-			font = @pol_view_text_font
-			text = [GETmobilization_system]
-			maxWidth = 190
-			maxHeight = 40
-			multiline = no
+			text = [GETmobilization_system] font = @pol_view_text_font
+			maxWidth = 190 maxHeight = 40 multiline = no
 			alwaystransparent = yes
 		}
 		instantTextBoxType = {
 			name = "trade_law"
 			position = { x = 0 y = 42 }
-			font = @pol_view_text_font
-			text = [GETtrade_system]
-			maxWidth = 190
-			maxHeight = 40
-			multiline = no
+			text = [GETtrade_system] font = @pol_view_text_font
+			maxWidth = 190 maxHeight = 40 multiline = no
 			alwaystransparent = yes
 		}
 		instantTextBoxType = {
 			name = "development_law"
 			position = { x = 252 y = 42 }
-			font = @pol_view_text_font
-			text = [GETdevelopment_system]
-			maxWidth = 190
-			maxHeight = 40
-			multiline = no
+			text = [GETdevelopment_system] font = @pol_view_text_font
+			maxWidth = 190 maxHeight = 40 multiline = no
 			alwaystransparent = yes
 		}
 		instantTextBoxType = {
 			name = "ecobalance_law"
 			position = { x = 0 y = 84 }
-			font = @pol_view_text_font
-			text = [GETcultural_system]
-			maxWidth = 190
-			maxHeight = 40
-			multiline = no
+			text = [GETcultural_system] font = @pol_view_text_font
+			maxWidth = 190 maxHeight = 40 multiline = no
 			alwaystransparent = yes
 		}
 		instantTextBoxType = {
 			name = "government_law"
 			position = { x = 252 y = 84 }
-			font = @pol_view_text_font
-			text = [GETpolitical_system]
-			maxWidth = 190
-			maxHeight = 40
-			multiline = no
+			text = [GETpolitical_system] font = @pol_view_text_font
+			maxWidth = 190 maxHeight = 40 multiline = no
 			alwaystransparent = yes
 		}
 	}
 
 ###############################
-#### INDUSTRIAL POWER INFO ####
+####### RESOURCES TOPBAR ######
 ###############################
 
 	containerWindowType = {
-		name = "industrial_power_container"
+		name = "resources_topbar_gui"
+		size = { width = 100% height = 100% }
+		@resources_topbar_x_pos = 46
+		@resources_topbar_y_pos = 8
+		@resources_topbar_font = Arialcap
+		containerWindowType = {
+			name = "aluminium_win"
+			position = { x = 124 y = 36 }
+			size = { width = 110 height = 42 }
+			background = {
+				quadTextureSprite = GFX_tiling_button_light pdx_tooltip = aluminium_desc
+			}
+			iconType = {
+				name = "icon" spriteType = GFX_resources_strip frame = 2 alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "text"
+				position = { x = @resources_topbar_x_pos y = @resources_topbar_y_pos }
+				text = [?resource@aluminium|0+] font = @resources_topbar_font
+				maxWidth = 50 maxHeight = 24 format = right
+				alwaystransparent = yes
+			}
+		}
+		containerWindowType = {
+			name = "rubber_win"
+			position = { x = 228 y = 36 }
+			size = { width = 110 height = 42 }
+			background = {
+				quadTextureSprite = GFX_tiling_button_light pdx_tooltip = rubber_desc
+			}
+			iconType = {
+				name = "icon" spriteType = GFX_resources_strip frame = 3 alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "text"
+				position = { x = @resources_topbar_x_pos y = @resources_topbar_y_pos }
+				text = [?resource@rubber|0+] font = @resources_topbar_font
+				maxWidth = 50 maxHeight = 24 format = right
+				alwaystransparent = yes
+			}
+		}
+		containerWindowType = {
+			name = "tungsten_win"
+			position = { x = 332 y = 36 }
+			size = { width = 110 height = 42 }
+			background = {
+				quadTextureSprite = GFX_tiling_button_light pdx_tooltip = tungsten_desc
+			}
+			iconType = {
+				name = "icon" spriteType = GFX_resources_strip frame = 4 alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "text"
+				position = { x = @resources_topbar_x_pos y = @resources_topbar_y_pos }
+				text = [?resource@tungsten|0+] font = @resources_topbar_font
+				maxWidth = 50 maxHeight = 24 format = right
+				alwaystransparent = yes
+			}
+		}
+		containerWindowType = {
+			name = "steel_win"
+			position = { x = 436 y = 36 }
+			size = { width = 110 height = 42 }
+			background = {
+				quadTextureSprite = GFX_tiling_button_light pdx_tooltip = steel_desc
+			}
+			iconType = {
+				name = "icon" spriteType = GFX_resources_strip frame = 5 alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "text"
+				position = { x = @resources_topbar_x_pos y = @resources_topbar_y_pos }
+				text = [?resource@steel|0+] font = @resources_topbar_font
+				maxWidth = 50 maxHeight = 24 format = right
+				alwaystransparent = yes
+			}
+		}
+		containerWindowType = {
+			name = "chromium_win"
+			position = { x = 540 y = 36 }
+			size = { width = 110 height = 42 }
+			background = {
+				quadTextureSprite = GFX_tiling_button_light pdx_tooltip = chromium_desc
+			}
+			iconType = {
+				name = "icon" spriteType = GFX_resources_strip frame = 6 alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "text"
+				position = { x = @resources_topbar_x_pos y = @resources_topbar_y_pos }
+				text = [?resource@chromium|0+] font = @resources_topbar_font
+				maxWidth = 50 maxHeight = 24 format = right
+				alwaystransparent = yes
+			}
+		}
+	}
+
+###############################
+####### INDUSTRIAL POWER ######
+###############################
+
+	containerWindowType = {
+		name = "industrial_power_topbar_gui"
 		size = { width = 100% height = 100% }
 		containerWindowType = {
 			name = "industrial_power_bg"
 			position = { x = 228 y = 0 }
 			size = { width = 110 height = 42 }
-			background = { quadTextureSprite = GFX_tiling_button_light }
-		}
-		iconType = {
-			name = "industrial_power_icon"
-			spriteType = GFX_industrial
-			position = { x = 228 y = 0 }
-		}
-		instantTextBoxType = {
-			name = "industrial_power"
-			position = { x = 274 y = 8 }
-			font = "Arialcap"
-			text = "industrial_power"
-			maxWidth = 50
-			maxHeight = 24
-			format = right
-			pdx_tooltip = "industrial_power_tt"
-			pdx_tooltip_delayed = "industrial_power_tt_delayed"
+			background = {
+				quadTextureSprite = GFX_tiling_button_light
+			}
+			iconType = {
+				name = "icon" spriteType = GFX_topbar_icons frame = 2
+				pdx_tooltip = industrial_power_tt
+				pdx_tooltip_delayed = industrial_power_tt_delayed
+			}
+			instantTextBoxType = {
+				name = "text"
+				position = { x = 46 y = 8 }
+				text = industrial_power font = Arialcap
+				maxWidth = 50 maxHeight = 24 format = right
+				pdx_tooltip = industrial_power_tt
+				pdx_tooltip_delayed = industrial_power_tt_delayed
+			}
 		}
 		iconType = {
 			name = "default_risk_warning"
-			position = { x = 576 y = 4 }
+			position = { x = 228 y = 0 }
 			spriteType = GFX_warning_red
 			pdx_tooltip = default_risk_ongoing
 			pdx_tooltip_delayed = default_risk_ongoing_delayed

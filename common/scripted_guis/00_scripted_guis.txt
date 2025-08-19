@@ -4,39 +4,26 @@ scripted_gui = {
 ######## SCRIPTED GUIS ########
 ###############################
 
-	pol_view_gui = {
+	pol_view_scripted_gui = {
 		context_type = player_context
 		parent_window_token = politics_tab
-
-		window_name = "pol_view_scripted_gui"
-
-		visible = {
-			always = yes
-		}
-
-		ai_enabled = {
-			always = no
-		}
+		window_name = "pol_view_gui"
 	}
 
-	industrial_power_gui = {
+	resources_topbar_scripted_gui = {
 		context_type = player_context
 		parent_window_name = topbar
+		window_name = "resources_topbar_gui"
+	}
 
-		window_name = "industrial_power_container"
-
-		visible = {
-			always = yes
-		}
-
+	industrial_power_topbar_scripted_gui = {
+		context_type = player_context
+		parent_window_name = topbar
+		window_name = "industrial_power_topbar_gui"
 		triggers = {
 			default_risk_warning_visible = {
 				country_is_missing_any_resource = yes
 			}
-		}
-
-		ai_enabled = {
-			always = no
 		}
 	}
 
@@ -44,10 +31,6 @@ scripted_gui = {
 		window_name = "spaceship_button_window"
 		context_type = player_context
 		parent_window_name = "country_menu_window"
-
-		visible = {
-			always = yes
-		}
 		effects = {
 			spaceship_button_click = {
 				if = {
@@ -71,20 +54,12 @@ scripted_gui = {
 		properties = {
 			#todo
 		}
-
-		ai_enabled = {
-			always = no
-		}
 	}
 
 	sectors_button_gui = {
 		window_name = "sectors_button_window"
 		context_type = player_context
 		parent_window_name = "country_menu_window"
-
-		visible = {
-			always = yes
-		}
 		effects = {
 			sectors_button_click = {
 				if = {
@@ -107,10 +82,6 @@ scripted_gui = {
 		}
 		properties = {
 			#todo
-		}
-
-		ai_enabled = {
-			always = no
 		}
 	}
 }
