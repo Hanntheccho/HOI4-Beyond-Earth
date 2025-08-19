@@ -147,6 +147,41 @@ on_actions = {
 }
 
 ###############################
+###### INDUSTRIAL POWER #######
+###############################
+
+on_actions = {
+	on_daily = {
+		effect = {
+			set_variable = { industrial_power_gain = 0 }
+			set_variable = { industrial_power_civilian_factories = num_of_civilian_factories }
+			divide_variable = { industrial_power_civilian_factories = 5 }
+			set_variable = { industrial_power_military_factories = num_of_military_factories }
+			divide_variable = { industrial_power_military_factories = 10 }
+			multiply_variable = { industrial_power_military_factories = -1 }
+			set_variable = { industrial_power_spaceship_factories = 0 }
+			every_controlled_state = {
+				add_to_variable = {
+					PREV.industrial_power_spaceship_factories = building_level@commercial_nuclear_reactor
+				}
+			}
+			divide_variable = { industrial_power_spaceship_factories = 5 }
+			multiply_variable = { industrial_power_spaceship_factories = -1 }
+			add_to_variable = { industrial_power_gain = industrial_power_civilian_factories }
+			add_to_variable = { industrial_power_gain = industrial_power_military_factories }
+			add_to_variable = { industrial_power_gain = industrial_power_spaceship_factories }
+			add_to_variable = { industrial_power_gain = modifier@industrial_power_gain }
+			set_variable = { industrial_power_rate = modifier@industrial_power_rate }
+			add_to_variable = { industrial_power_rate = 1 }
+			clamp_variable = { var = industrial_power_rate min = 0 }
+			multiply_variable = { industrial_power_gain = industrial_power_gain_modifier }
+			add_to_variable = { industrial_power = industrial_power_gain }
+			clamp_variable = { var = industrial_power min = -999 max = 1000 }
+		}
+	}
+}
+
+###############################
 ######### FREE FACTORY ########
 ###############################
 
