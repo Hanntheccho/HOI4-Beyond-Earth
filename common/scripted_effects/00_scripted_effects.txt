@@ -452,28 +452,23 @@ calculate_ecobalance_status = {
 }
 
 increase_ecobalance = {
-	if = {
-		limit = { has_dynamic_modifier = { modifier = no_ecobalance } }
+	if = { limit = { has_dynamic_modifier = { modifier = no_ecobalance } }
 		remove_dynamic_modifier = { modifier = no_ecobalance }
 		add_dynamic_modifier = { modifier = minor_ecobalance }
 	}
-	else_if = {
-		limit = { has_dynamic_modifier = { modifier = minor_ecobalance } }
+	else_if = { limit = { has_dynamic_modifier = { modifier = minor_ecobalance } }
 		remove_dynamic_modifier = { modifier = minor_ecobalance }
 		add_dynamic_modifier = { modifier = notable_ecobalance }
 	}
-	else_if = {
-		limit = { has_dynamic_modifier = { modifier = notable_ecobalance } }
+	else_if = { limit = { has_dynamic_modifier = { modifier = notable_ecobalance } }
 		remove_dynamic_modifier = { modifier = notable_ecobalance }
 		add_dynamic_modifier = { modifier = major_ecobalance }
 	}
-	else_if = {
-		limit = { has_dynamic_modifier = { modifier = major_ecobalance } }
+	else_if = { limit = { has_dynamic_modifier = { modifier = major_ecobalance } }
 		remove_dynamic_modifier = { modifier = major_ecobalance }
 		add_dynamic_modifier = { modifier = significant_ecobalance }
 	}
-	else_if = {
-		limit = { has_dynamic_modifier = { modifier = significant_ecobalance } }
+	else_if = { limit = { has_dynamic_modifier = { modifier = significant_ecobalance } }
 		remove_dynamic_modifier = { modifier = significant_ecobalance }
 		add_dynamic_modifier = { modifier = terminal_ecobalance }
 	}
@@ -502,39 +497,27 @@ decrease_ecobalance = {
 		}
 		add_dynamic_modifier = { modifier = counter_ecobalance }
 	}
-	else_if = {
-		limit = {
-			ROOT = { has_government = harmony }
-			has_dynamic_modifier = { modifier = counter_ecobalance }
-		}
+	else_if = { limit = { ROOT = { has_government = harmony } has_dynamic_modifier = { modifier = counter_ecobalance } }
 		remove_dynamic_modifier = { modifier = counter_ecobalance }
 		add_dynamic_modifier = { modifier = no_ecobalance }
 	}
-	else_if = {
-		limit = {
-			ROOT = { has_government = harmony }
-			has_dynamic_modifier = { modifier = minor_ecobalance }
-		}
+	else_if = { limit = { ROOT = { has_government = harmony } has_dynamic_modifier = { modifier = minor_ecobalance } }
 		remove_dynamic_modifier = { modifier = minor_ecobalance }
 		add_dynamic_modifier = { modifier = no_ecobalance }
 	}
-	else_if = {
-		limit = { has_dynamic_modifier = { modifier = notable_ecobalance } }
+	else_if = { limit = { has_dynamic_modifier = { modifier = notable_ecobalance } }
 		remove_dynamic_modifier = { modifier = notable_ecobalance }
 		add_dynamic_modifier = { modifier = minor_ecobalance }
 	}
-	else_if = {
-		limit = { has_dynamic_modifier = { modifier = major_ecobalance } }
+	else_if = { limit = { has_dynamic_modifier = { modifier = major_ecobalance } }
 		remove_dynamic_modifier = { modifier = major_ecobalance }
 		add_dynamic_modifier = { modifier = notable_ecobalance }
 	}
-	else_if = {
-		limit = { has_dynamic_modifier = { modifier = significant_ecobalance } }
+	else_if = { limit = { has_dynamic_modifier = { modifier = significant_ecobalance } }
 		remove_dynamic_modifier = { modifier = significant_ecobalance }
 		add_dynamic_modifier = { modifier = major_ecobalance }
 	}
-	else_if = {
-		limit = { has_dynamic_modifier = { modifier = terminal_ecobalance } }
+	else_if = { limit = { has_dynamic_modifier = { modifier = terminal_ecobalance } }
 		remove_dynamic_modifier = { modifier = terminal_ecobalance }
 		add_dynamic_modifier = { modifier = significant_ecobalance }
 	}
@@ -543,20 +526,16 @@ decrease_ecobalance = {
 calculate_current_ecobalance = {
 	clear_variable = ROOT.current_ecobalance
 	every_owned_state = {
-		if = {
-			limit = { has_dynamic_modifier = { modifier = notable_ecobalance } }
+		if = { limit = { has_dynamic_modifier = { modifier = notable_ecobalance } }
 			add_to_variable = { ROOT.current_ecobalance = 1 }
 		}
-		else_if = {
-			limit = { has_dynamic_modifier = { modifier = major_ecobalance } }
+		else_if = { limit = { has_dynamic_modifier = { modifier = major_ecobalance } }
 			add_to_variable = { ROOT.current_ecobalance = 2 }
 		}
-		else_if = {
-			limit = { has_dynamic_modifier = { modifier = significant_ecobalance } }
+		else_if = { limit = { has_dynamic_modifier = { modifier = significant_ecobalance } }
 			add_to_variable = { ROOT.current_ecobalance = 3}
 		}
-		else_if = {
-			limit = { has_dynamic_modifier = { modifier = terminal_ecobalance } }
+		else_if = { limit = { has_dynamic_modifier = { modifier = terminal_ecobalance } }
 			add_to_variable = { ROOT.current_ecobalance = 4 }
 		}
 	}

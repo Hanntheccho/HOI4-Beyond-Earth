@@ -161,11 +161,7 @@ on_actions = {
 			every_country = { calculate_development_level = yes }
 		}
 	}
-	on_weekly = {
-		effect = {
-			calculate_development_level = yes
-		}
-	}
+	on_weekly = { effect = { calculate_development_level = yes } }
 }
 
 ###############################
@@ -175,10 +171,7 @@ on_actions = {
 on_actions = {
 	on_startup = {
 		effect = {
-			every_possible_country = {
-				limit = {
-					is_dynamic_country = no
-				}
+			every_possible_country = { limit = { is_dynamic_country = no }
 				if = {
 					limit = {
 						tag = ADU
@@ -260,8 +253,7 @@ on_actions = {
 	on_daily = {
 		effect = {
 			set_variable = { free_factory_adjustment = modifier@free_factory_adjustment }
-			if = {
-				limit = { country_is_missing_any_resource = yes }
+			if = { limit = { country_is_missing_any_resource = yes }
 				multiply_variable = { free_factory_adjustment = 0.1 }
 			}
 			set_variable = { free_factory_gain = free_factory_base_gain }
@@ -269,16 +261,11 @@ on_actions = {
 			add_to_variable = { free_factory_adjustment = 1 }
 			multiply_variable = { free_factory_gain = free_factory_adjustment }
 			add_to_variable = { free_factory_progress = free_factory_gain }
-			if = {
-				limit = { check_variable = { free_factory_progress > 100 } }
+			if = { limit = { check_variable = { free_factory_progress > 100 } }
 				add_to_variable = { free_factory_counter = 1 }
 				random_list = {
-					50 = {
-						build_random_civilian_complex = yes
-					}
-					50 = {
-						build_random_military_complex = yes
-					}
+					50 = { build_random_civilian_complex = yes }
+					50 = { build_random_military_complex = yes }
 				}
 				clear_variable = free_factory_progress
 				set_variable = { free_factory_progress = 0 }
@@ -363,13 +350,11 @@ on_actions = {
 				}
 			}
 			every_state = {
-				if = {
-					limit = { OR = { is_owned_by = SIB is_owned_by = URA } }
+				if = { limit = { OR = { is_owned_by = SIB is_owned_by = URA } }
 					increase_ecobalance = yes
 				}
 			}
-			every_country = {
-				limit = { has_terrain = desert }
+			every_country = { limit = { has_terrain = desert }
 				every_owned_state = { increase_ecobalance = yes }
 			}
 			set_variable = { global.ecobalance_timeout = 60 }
@@ -385,11 +370,9 @@ on_actions = {
 	}
 	on_daily = {
 		effect = {
-			if = {
-				limit = { owns_state = 333 }
+			if = { limit = { owns_state = 333 }
 				subtract_from_variable = { global.ecobalance_timeout = 1 }
-				if = {
-					limit = { check_variable = { global.ecobalance_timeout = 0 } }
+				if = { limit = { check_variable = { global.ecobalance_timeout = 0 } }
 					set_variable = { ecobalance_chance = global.threat_debug }
 					random = { chance = var:ecobalance_chance random_state = { increase_ecobalance = yes } }
 					random = { chance = var:ecobalance_chance random_state = { increase_ecobalance = yes } }
@@ -438,37 +421,29 @@ on_actions = {
 	}
 	on_monthly = {
 		effect = {
-			if = {
-				limit = { owns_state = 333 }
+			if = { limit = { owns_state = 333 }
 				set_variable = { global.total_global_ecobalance = 0 }
-				if = {
-					limit = { check_variable = { global.threat_debug < 100 } }
+				if = { limit = { check_variable = { global.threat_debug < 100 } }
 					every_state = {
-						if = {
-							limit = { has_dynamic_modifier = { modifier = terminal_ecobalance } }
+						if = { limit = { has_dynamic_modifier = { modifier = terminal_ecobalance } }
 							add_to_variable = { global.total_global_ecobalance = 4 }
 						}
-						else_if = {
-							limit = { has_dynamic_modifier = { modifier = significant_ecobalance } }
+						else_if = { limit = { has_dynamic_modifier = { modifier = significant_ecobalance } }
 							add_to_variable = { global.total_global_ecobalance = 3 }
 						}
-						else_if = {
-							limit = { has_dynamic_modifier = { modifier = major_ecobalance } }
+						else_if = { limit = { has_dynamic_modifier = { modifier = major_ecobalance } }
 							add_to_variable = { global.total_global_ecobalance = 2 }
 						}
-						else_if = {
-							limit = { has_dynamic_modifier = { modifier = notable_ecobalance } }
+						else_if = { limit = { has_dynamic_modifier = { modifier = notable_ecobalance } }
 							add_to_variable = { global.total_global_ecobalance = 1 }
 						}
-						else_if = {
-							limit = { has_dynamic_modifier = { modifier = no_ecobalance } }
+						else_if = { limit = { has_dynamic_modifier = { modifier = no_ecobalance } }
 							add_to_variable = { global.total_global_ecobalance = -4 }
 						}
 					}
 				}
 				divide_variable = { global.total_global_ecobalance = 1000 }
-				random_country = {
-					limit = { owns_state = 333 }
+				random_country = { limit = { owns_state = 333 }
 					add_to_variable = { global.threat_debug = global.total_global_ecobalance }
 				}
 			}
@@ -481,16 +456,13 @@ on_actions = {
 					NOT = { has_country_flag = dont_auto_ecobalance_states }
 					check_variable = { industrial_power > 200 }
 				}
-				random_owned_state = {
-					limit = { NOT = { has_state_flag = ecobalance_reduction_timeout_flag } }
-					if = {
-						limit = { PREV = { has_government = mastery } NOT = { has_dynamic_modifier = { modifier = counter_ecobalance } } }
+				random_owned_state = { limit = { NOT = { has_state_flag = ecobalance_reduction_timeout_flag } }
+					if = { limit = { PREV = { has_government = mastery } NOT = { has_dynamic_modifier = { modifier = counter_ecobalance } } }
 						PREV = { subtract_from_variable = { industrial_power = 40 } }
 						set_state_flag = { flag = ecobalance_reduction_timeout_flag value = 1 days = 120 }
 						decrease_ecobalance = yes
 					}
-					else_if = {
-						limit = { PREV = { has_government = harmony } NOT = { has_dynamic_modifier = { modifier = no_ecobalance } } }
+					else_if = { limit = { PREV = { has_government = harmony } NOT = { has_dynamic_modifier = { modifier = no_ecobalance } } }
 						PREV = { subtract_from_variable = { industrial_power = 15 } }
 						set_state_flag = { flag = ecobalance_reduction_timeout_flag value = 1 days = 30 }
 						decrease_ecobalance = yes
