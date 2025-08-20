@@ -123,8 +123,20 @@ scripted_gui = {
 			decrease_ecobalance_button_click = {
 				decrease_ecobalance = yes
 				ROOT = {
-					subtract_from_variable = { industrial_power = decrease_ecobalance_cost }
-					PREV = { set_state_flag = { flag = ecobalance_reduction_timeout_flag value = 1 days = decrease_ecobalance_days } }
+					if = {
+						limit = { has_government = mastery }
+						subtract_from_variable = { industrial_power = 40 }
+						PREV = { set_state_flag = { flag = ecobalance_reduction_timeout_flag value = 1 days = 120 } }
+					}
+					else_if = {
+						limit = { has_government = harmony }
+						subtract_from_variable = { industrial_power = 15 }
+						PREV = { set_state_flag = { flag = ecobalance_reduction_timeout_flag value = 1 days = 30 } }
+					}
+					else = {
+						subtract_from_variable = { industrial_power = 25 }
+						PREV = { set_state_flag = { flag = ecobalance_reduction_timeout_flag value = 1 days = 60 } }
+					}
 				}
 			}
 		}
