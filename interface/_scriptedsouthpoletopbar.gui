@@ -1,3 +1,8 @@
+@topbarwin_x_pos = 0
+@topbarwin_y_pos = 120
+@topbarwin_width = 550
+@topbarwin_height = 920
+@topbarwin_anim_time = 300
 guiTypes = {
 	containerWindowType = {
 		name = "sectors_button_window"
@@ -13,693 +18,171 @@ guiTypes = {
 			pdx_tooltip = help_southpole_sector_price
 		}
 	}
-
 	containerWindowType = {
 		name = "south_pole_stuff"
-		position = { x = -606 y = 112 }
-		show_position = { x = -6 y = 112 }
+		position = { x = -600 y = @topbarwin_y_pos }
+		show_position = { x = @topbarwin_x_pos y = @topbarwin_y_pos }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
-		animation_time = 300
-		size = { width = 550 height = 100%% }
-		clipping = yes
-
-		#hide_sound = menu_close_window
+		animation_time = @topbarwin_anim_time
+		size = { width = @topbarwin_width height = @topbarwin_height }
+		clipping = no
+		hide_sound = menu_close_window
 		show_sound = menu_open_window
-
-		background = {
-			name = "Background"
-			quadTextureSprite = GFX_tiled_null
-		}
-
+		moveable = yes
+		click_to_front = yes
+		#verticalScrollbar = right_vertical_slider_offset
+		background = { quadTextureSprite = GFX_tiled_default_bg }
+		background = { quadTextureSprite = GFX_antarctic_sectors_bg }
 		containerWindowType = {
-			name = "bgbgbg"
-			size = { width = 550 height = 100%% }
-
-			background = {
-				name = "pol_view_bg2"
-				spriteType = GFX_antarctic_sectors_bg
-				position = { x = 6 y = 0 }
-				alwaystransparent = yes
-			}
+			name = "header"
+			size = { width = 515 height = 42 }
+			background = { quadTextureSprite = GFX_tiled_top }
 		}
-
-		containerWindowType = {
-			name = "south_pole_graphics"
-			position = { x = 0 y = -40 }
-
-			iconType = {
-				name = "antarctic_sectors_bg_over"
-				spriteType = GFX_antarctic_sectors_bg_over
-				position = { x = 6 y = 420 }
-				alwaystransparent = yes
-			}
-
-			buttonType = {
-				name = "south_pole_close"
-				position = { x = 10000 y = 5 }
-				quadTextureSprite = GFX_close
-				orientation = UPPER_RIGHT
-				clicksound = click_close
-				oversound = ui_menu_over
-				shortcut = "ESCAPE"
-				pdx_tooltip = "CLOSE"
-			}
-
-			iconType = {
-				name = "antarctic_sectors_pic_back"
-				spriteType = GFX_antarctic_sectors_back
-				position = { x = -10 y = 70 }
-				alwaystransparent = yes
-			}
-
-			iconType = {
-				name = "antarctic_sectors_pic"
-				spriteType = GFX_antarctic_sectors
-				position = { x = -10 y = 30 }
-				pdx_tooltip = help_southpole_sector_price
-			}
-
-			iconType = {
-				name = "antarctic_sectors_pic_owns"
-				spriteType = GFX_antarctic_sectors_owns
-				position = { x = -10 y = 30 }
-				pdx_tooltip = help_southpole_sector_price
-			}
-
-			iconType = {
-				name = "southpole_cost_word"
-				position = { x = 15 y = 442 }
-				quadTextureSprite = GFX_southpole_cost_word
-			}
-			instantTextBoxType = {
-				name = "southpole_sector_cost_pp"
-				position = { x = 25 y = 465 }
-				font = Focusfont
-				text = "SOUTHPOLE_SECTORS_COST_PP"
-				maxWidth = 200
-				maxHeight = 60
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "southpole_sector_cost_maintain"
-				position = { x = 110 y = 465 }
-				font = Focusfont
-				text = "SOUTHPOLE_SECTORS_COST_MAINTAIN"
-				maxWidth = 200
-				maxHeight = 60
-				fixedsize = yes
-
-			}
-
-			iconType = {
-				name = "player_flag_southpole"
-				quadTextureSprite = GFX_shield_medium
-				position = { x = 267 y = 202 }
-				alwaystransparent = yes
-			}
-
-			iconType = {
-				name = "player_flag_frame_mod"
-				quadTextureSprite = GFX_large_flag_frame
-				position = { x = 262 y = 200 }
-				alwaystransparent = yes
-			}
-
-			buttonType = {
-				name = "south_pole_hostile_takeover"
-				position = { x = 75 y = 50 }
-				quadTextureSprite = GFX_south_pole_hostile_takeover
-				clicksound = click_close
-				oversound = ui_menu_over
-				pdx_tooltip = "hostile_takeover_tooltip"
-			}
+		instantTextboxType = {
+			name = "sectors_title"
+			font = Arialcap
+			position = { x = -180 y = 8 }
+			text = SECTORS_VIEW_TITLE
+			maxWidth = 360
+			maxHeight = 36
+			format = center
+			orientation = CENTER_UP
 		}
-
+		buttonType = {
+			name = "south_pole_close"
+			position = { x = -21 y = 21 }
+			orientation = UPPER_RIGHT
+			quadTextureSprite = GFX_close
+			clicksound = click_close
+			shortcut = "ESCAPE"
+			centerposition = yes
+		}
+		iconType = {
+			name = "help"
+			position = { x = -56 y = 21 }
+			quadTextureSprite = GFX_warning
+			pdx_tooltip = help_southpole_sector_price
+			orientation = UPPER_RIGHT
+			centerposition = yes
+		}
+		iconType = {
+			name = "antarctic_sectors_icon"
+			spriteType = GFX_antarctic_sectors_icon
+			position = { x = 0 y = 250 }
+			pdx_tooltip = help_southpole_sector_price
+			orientation = CENTER_UP
+			centerposition = yes
+		}
 		containerWindowType = {
 			name = "south_pole_sectors_list"
-			position = { x = -602 y = 489 }
-			show_position = { x = 20 y = 489 }
-			show_animation_type = decelerated
-			hide_animation_type = accelerated
-			animation_time = 300
+			position = { x = 20 y = 480 }
 			size = { width = 535 height = 96% }
-			clipping = yes
-			#verticalScrollbar = "right_vertical_slider"
-
-			#hide_sound = menu_close_window
-			show_sound = menu_open_window
-
-			background = {
-				name = "Background"
-				quadTextureSprite = GFX_tiled_null
-			}
-
-			buttonType = {
-				name = "antarctic_sectors_selection_1"
-				spriteType = GFX_decision_item_bg
-				position = { x = 6 y = 0 }
-				frame = 2
-				pdx_disabled_tooltip = antarctic_sectors_selection_disabled
-			}
-			iconType = {
-				name = "antarctic_sectors_selection_1_flag"
-				quadTextureSprite = GFX_construction_flag
-				position = { x = 10 y = -7 }
-			}
-			buttonType = {
-				name = "antarctic_sectors_selection_2"
-				spriteType = GFX_decision_item_bg
-				position = { x = 6 y = 45 }
-				frame = 2
-				pdx_disabled_tooltip = antarctic_sectors_selection_disabled
-			}
-			iconType = {
-				name = "antarctic_sectors_selection_2_flag"
-				quadTextureSprite = GFX_construction_flag
-				position = { x = 10 y = 38 }
-			}
-			buttonType = {
-				name = "antarctic_sectors_selection_3"
-				spriteType = GFX_decision_item_bg
-				position = { x = 6 y = 90 }
-				frame = 2
-				pdx_disabled_tooltip = antarctic_sectors_selection_disabled
-			}
-			iconType = {
-				name = "antarctic_sectors_selection_3_flag"
-				quadTextureSprite = GFX_construction_flag
-				position = { x = 10 y = 83 }
-			}
-			buttonType = {
-				name = "antarctic_sectors_selection_4"
-				spriteType = GFX_decision_item_bg
-				position = { x = 6 y = 135 }
-				frame = 2
-				pdx_disabled_tooltip = antarctic_sectors_selection_disabled
-			}
-			iconType = {
-				name = "antarctic_sectors_selection_4_flag"
-				quadTextureSprite = GFX_construction_flag
-				position = { x = 10 y = 128 }
-			}
-			buttonType = {
-				name = "antarctic_sectors_selection_5"
-				spriteType = GFX_decision_item_bg
-				position = { x = 6 y = 180 }
-				frame = 2
-				pdx_disabled_tooltip = antarctic_sectors_selection_disabled
-			}
-			iconType = {
-				name = "antarctic_sectors_selection_5_flag"
-				quadTextureSprite = GFX_construction_flag
-				position = { x = 10 y = 173 }
-			}
-			buttonType = {
-				name = "antarctic_sectors_selection_6"
-				spriteType = GFX_decision_item_bg
-				position = { x = 6 y = 225 }
-				frame = 2
-				pdx_disabled_tooltip = antarctic_sectors_selection_disabled
-			}
-			iconType = {
-				name = "antarctic_sectors_selection_6_flag"
-				quadTextureSprite = GFX_construction_flag
-				position = { x = 10 y = 218 }
-			}
-			buttonType = {
-				name = "antarctic_sectors_selection_7"
-				spriteType = GFX_decision_item_bg
-				position = { x = 6 y = 270 }
-				frame = 2
-				pdx_disabled_tooltip = antarctic_sectors_selection_disabled
-			}
-			iconType = {
-				name = "antarctic_sectors_selection_7_flag"
-				quadTextureSprite = GFX_construction_flag
-				position = { x = 10 y = 263 }
-			}
-			buttonType = {
-				name = "antarctic_sectors_selection_8"
-				spriteType = GFX_decision_item_bg
-				position = { x = 6 y = 315 }
-				frame = 2
-				pdx_disabled_tooltip = antarctic_sectors_selection_disabled
-			}
-			iconType = {
-				name = "antarctic_sectors_selection_8_flag"
-				quadTextureSprite = GFX_construction_flag
-				position = { x = 10 y = 308 }
-			}
-			buttonType = {
-				name = "antarctic_sectors_selection_9"
-				spriteType = GFX_decision_item_bg
-				position = { x = 6 y = 360 }
-				frame = 2
-				pdx_disabled_tooltip = antarctic_sectors_selection_disabled
-			}
-			iconType = {
-				name = "antarctic_sectors_selection_9_flag"
-				quadTextureSprite = GFX_construction_flag
-				position = { x = 10 y = 353 }
-			}
-			buttonType = {
-				name = "antarctic_sectors_selection_10"
-				spriteType = GFX_decision_item_bg
-				position = { x = 6 y = 405 }
-				frame = 2
-				pdx_disabled_tooltip = antarctic_sectors_selection_disabled
-			}
-			iconType = {
-				name = "antarctic_sectors_selection_10_flag"
-				quadTextureSprite = GFX_construction_flag
-				position = { x = 10 y = 398 }
-			}
-
-			instantTextBoxType = {
-				name = "sector_1_name"
-				position = { x = -10 y = 7 }
-				font = Arialcap
-				text = "WESTERN ANTARCTICA"
-				maxWidth = 500
-				maxHeight = 20
-				fixedsize = yes
-				alwaystransparent = yes
-				format = center
-			}
-			instantTextBoxType = {
-				name = "sector_2_name"
-				position = { x = -10 y = 52 }
-				font = Arialcap
-				text = "GREAT ICE FIELDS"
-				maxWidth = 500
-				maxHeight = 20
-				fixedsize = yes
-				alwaystransparent = yes
-				format = center
-			}
-			instantTextBoxType = {
-				name = "sector_3_name"
-				position = { x = -10 y = 97 }
-				font = Arialcap
-				text = "TRANSANTARCTIC ZONE"
-				maxWidth = 500
-				maxHeight = 20
-				fixedsize = yes
-				alwaystransparent = yes
-				format = center
-			}
-			instantTextBoxType = {
-				name = "sector_4_name"
-				position = { x = -10 y = 142 }
-				font = Arialcap
-				text = "HARA'S WALL"
-				maxWidth = 500
-				maxHeight = 20
-				fixedsize = yes
-				alwaystransparent = yes
-				format = center
-			}
-			instantTextBoxType = {
-				name = "sector_5_name"
-				position = { x = -10 y = 187 }
-				font = Arialcap
-				text = "MANN'S SEA"
-				maxWidth = 500
-				maxHeight = 20
-				fixedsize = yes
-				alwaystransparent = yes
-				format = center
-			}
-			instantTextBoxType = {
-				name = "sector_6_name"
-				position = { x = -10 y = 232 }
-				font = Arialcap
-				text = "POINT ZERO"
-				maxWidth = 500
-				maxHeight = 20
-				fixedsize = yes
-				alwaystransparent = yes
-				format = center
-			}
-			instantTextBoxType = {
-				name = "sector_7_name"
-				position = { x = -10 y = 277 }
-				font = Arialcap
-				text = "GRAND ICE CANYON"
-				maxWidth = 500
-				maxHeight = 20
-				fixedsize = yes
-				alwaystransparent = yes
-				format = center
-			}
-			instantTextBoxType = {
-				name = "sector_8_name"
-				position = { x = -10 y = 322 }
-				font = Arialcap
-				text = "EASTERN ANTARCTICA"
-				maxWidth = 500
-				maxHeight = 20
-				fixedsize = yes
-				alwaystransparent = yes
-				format = center
-			}
-			instantTextBoxType = {
-				name = "sector_9_name"
-				position = { x = -10 y = 367 }
-				font = Arialcap
-				text = "GREENFIELD CITY"
-				maxWidth = 500
-				maxHeight = 20
-				fixedsize = yes
-				alwaystransparent = yes
-				format = center
-			}
-			instantTextBoxType = {
-				name = "sector_10_name"
-				position = { x = -10 y = 412 }
-				font = Arialcap
-				text = "WHITE LUA MINES"
-				maxWidth = 500
-				maxHeight = 20
-				fixedsize = yes
-				alwaystransparent = yes
-				format = center
-			}
-
-			instantTextBoxType = {
-				name = "sector_1_cost_text"
-				position = { x = 150 y = 12 }
-				font = Focusfont
-				text = "SECTOR_1_COST_TEXT"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_2_cost_text"
-				position = { x = 150 y = 57 }
-				font = Focusfont
-				text = "SECTOR_2_COST_TEXT"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_3_cost_text"
-				position = { x = 150 y = 102 }
-				font = Focusfont
-				text = "SECTOR_3_COST_TEXT"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_4_cost_text"
-				position = { x = 150 y = 147 }
-				font = Focusfont
-				text = "SECTOR_4_COST_TEXT"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_5_cost_text"
-				position = { x = 150 y = 192 }
-				font = Focusfont
-				text = "SECTOR_5_COST_TEXT"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_6_cost_text"
-				position = { x = 150 y = 237 }
-				font = Focusfont
-				text = "SECTOR_6_COST_TEXT"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_7_cost_text"
-				position = { x = 150 y = 282 }
-				font = Focusfont
-				text = "SECTOR_7_COST_TEXT"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_8_cost_text"
-				position = { x = 150 y = 327 }
-				font = Focusfont
-				text = "SECTOR_8_COST_TEXT"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_9_cost_text"
-				position = { x = 150 y = 372 }
-				font = Focusfont
-				text = "SECTOR_9_COST_TEXT"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_10_cost_text"
-				position = { x = 150 y = 417 }
-				font = Focusfont
-				text = "SECTOR_10_COST_TEXT"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-
-			instantTextBoxType = {
-				name = "sector_1_cost_text_daily"
-				position = { x = 265 y = 12 }
-				font = Focusfont
-				text = "SECTOR_1_COST_TEXT_DAILY"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_2_cost_text_daily"
-				position = { x = 265 y = 57 }
-				font = Focusfont
-				text = "SECTOR_2_COST_TEXT_DAILY"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_3_cost_text_daily"
-				position = { x = 265 y = 102 }
-				font = Focusfont
-				text = "SECTOR_3_COST_TEXT_DAILY"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_4_cost_text_daily"
-				position = { x = 265 y = 147 }
-				font = Focusfont
-				text = "SECTOR_4_COST_TEXT_DAILY"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_5_cost_text_daily"
-				position = { x = 265 y = 192 }
-				font = Focusfont
-				text = "SECTOR_5_COST_TEXT_DAILY"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_6_cost_text_daily"
-				position = { x = 265 y = 237 }
-				font = Focusfont
-				text = "SECTOR_6_COST_TEXT_DAILY"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_7_cost_text_daily"
-				position = { x = 265 y = 282 }
-				font = Focusfont
-				text = "SECTOR_7_COST_TEXT_DAILY"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_8_cost_text_daily"
-				position = { x = 265 y = 327 }
-				font = Focusfont
-				text = "SECTOR_8_COST_TEXT_DAILY"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_9_cost_text_daily"
-				position = { x = 265 y = 372 }
-				font = Focusfont
-				text = "SECTOR_9_COST_TEXT_DAILY"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-			instantTextBoxType = {
-				name = "sector_10_cost_text_daily"
-				position = { x = 265 y = 417 }
-				font = Focusfont
-				text = "SECTOR_10_COST_TEXT_DAILY"
-				maxWidth = 220
-				maxHeight = 20
-				fixedsize = yes
-
-			}
-###
-			buttonType = {
-				name = "leave_sector_1"
-				spriteType = GFX_cancel
-				position = { x = 465 y = 4 }
-			}
-			buttonType = {
-				name = "leave_sector_2"
-				spriteType = GFX_cancel
-				position = { x = 465 y = 49 }
-			}
-			buttonType = {
-				name = "leave_sector_3"
-				spriteType = GFX_cancel
-				position = { x = 465 y = 94 }
-			}
-			buttonType = {
-				name = "leave_sector_4"
-				spriteType = GFX_cancel
-				position = { x = 465 y = 139 }
-			}
-			buttonType = {
-				name = "leave_sector_5"
-				spriteType = GFX_cancel
-				position = { x = 465 y = 184 }
-			}
-			buttonType = {
-				name = "leave_sector_6"
-				spriteType = GFX_cancel
-				position = { x = 465 y = 229 }
-			}
-			buttonType = {
-				name = "leave_sector_7"
-				spriteType = GFX_cancel
-				position = { x = 465 y = 274 }
-			}
-			buttonType = {
-				name = "leave_sector_8"
-				spriteType = GFX_cancel
-				position = { x = 465 y = 319 }
-			}
-			buttonType = {
-				name = "leave_sector_9"
-				spriteType = GFX_cancel
-				position = { x = 465 y = 364 }
-			}
-			buttonType = {
-				name = "leave_sector_10"
-				spriteType = GFX_cancel
-				position = { x = 465 y = 409 }
-			}
-###
-			iconType = {
-				name = "sector_type_1"
-				spriteType = GFX_decision_war
-				position = { x = 15 y = 5 }
-				pdx_tooltip = sector_add_mils
-			}
-			iconType = {
-				name = "sector_type_2"
-				spriteType = GFX_decision_unity
-				position = { x = 15 y = 50 }
-				pdx_tooltip = sector_add_civs
-			}
-			iconType = {
-				name = "sector_type_3"
-				spriteType = GFX_decision_war
-				position = { x = 15 y = 95 }
-				pdx_tooltip = sector_add_mils
-			}
-			iconType = {
-				name = "sector_type_"
-				spriteType = GFX_decision_unity
-				position = { x = 15 y = 140 }
-				pdx_tooltip = sector_add_civs
-			}
-			iconType = {
-				name = "sector_type_5"
-				spriteType = GFX_decision_war
-				position = { x = 15 y = 185 }
-				pdx_tooltip = sector_add_mils
-			}
-			iconType = {
-				name = "sector_type_6"
-				spriteType = GFX_decision_war
-				position = { x = 15 y = 230 }
-				pdx_tooltip = sector_add_mils
-			}
-			iconType = {
-				name = "sector_type_7"
-				spriteType = GFX_decision_unity
-				position = { x = 15 y = 275 }
-				pdx_tooltip = sector_add_civs
-			}
-			iconType = {
-				name = "sector_type_8"
-				spriteType = GFX_decision_war
-				position = { x = 15 y = 320 }
-				pdx_tooltip = sector_add_mils
-			}
-			iconType = {
-				name = "sector_type_9"
-				spriteType = GFX_decision_unity
-				position = { x = 15 y = 365 }
-				pdx_tooltip = sector_add_civs
-			}
-			iconType = {
-				name = "sector_type_10"
-				spriteType = GFX_decision_unity
-				position = { x = 15 y = 410 }
-				pdx_tooltip = sector_add_civs
+			clipping = no
+			background = { quadTextureSprite = GFX_tiled_null }
+			@sector_button_x_size = 510
+			@sector_button_y_size = 42
+			@sector_button_gfx = GFX_tiling_button_light
+			@sector_button_font = Arialsmallcap
+			containerWindowType = {
+				name = "sector_1"
+				size = { width = @sector_button_x_size height = @sector_button_y_size }
+				buttonType = { name = "antarctic_sectors_selection_1" spriteType = GFX_tiling_button_light size = { x = @sector_button_x_size y = @sector_button_y_size } pdx_disabled_tooltip = antarctic_sectors_selection_disabled }
+				buttonType = { name = "leave_sector_1" spriteType = GFX_cancel position = { x = 474 y = 6 } }
+				iconType = { name = "type" spriteType = GFX_topbar_icons frame = 4 pdx_tooltip = sector_add_mils }
+				iconType = { name = "flag_sector_1" quadTextureSprite = GFX_trade_entry_flag position = { x = 39 y = -6 } }
+				instantTextBoxType = { name = "text" position = { x = 120 y = 10 } text = "sector_1_text" font = @sector_button_font maxWidth = 220 maxHeight = 20 fixedsize = yes alwaystransparent = yes }
+				instantTextBoxType = { name = "cost" position = { x = -264 y = 12 } text = "sector_1_cost_text" font = Arial16 maxWidth = 220 maxHeight = 20 fixedsize = yes format = right orientation = UPPER_RIGHT alwaystransparent = yes }
+			}
+			containerWindowType = {
+				name = "sector_2"
+				size = { width = @sector_button_x_size height = @sector_button_y_size } position = { x = 0 y = 42 }
+				buttonType = { name = "antarctic_sectors_selection_2" spriteType = GFX_tiling_button_light size = { x = @sector_button_x_size y = @sector_button_y_size } pdx_disabled_tooltip = antarctic_sectors_selection_disabled }
+				buttonType = { name = "leave_sector_2" spriteType = GFX_cancel position = { x = 474 y = 6 } }
+				iconType = { name = "type" spriteType = GFX_topbar_icons frame = 3 pdx_tooltip = sector_add_civs }
+				iconType = { name = "flag_sector_2" quadTextureSprite = GFX_trade_entry_flag position = { x = 39 y = -6 } }
+				instantTextBoxType = { name = "text" position = { x = 120 y = 10 } text = "sector_2_text" font = @sector_button_font maxWidth = 220 maxHeight = 20 fixedsize = yes alwaystransparent = yes }
+				instantTextBoxType = { name = "cost" position = { x = -264 y = 12 } text = "sector_2_cost_text" font = Arial16 maxWidth = 220 maxHeight = 20 fixedsize = yes format = right orientation = UPPER_RIGHT alwaystransparent = yes }
+			}
+			containerWindowType = {
+				name = "sector_3"
+				size = { width = @sector_button_x_size height = @sector_button_y_size } position = { x = 0 y = 84 }
+				buttonType = { name = "antarctic_sectors_selection_3" spriteType = GFX_tiling_button_light size = { x = @sector_button_x_size y = @sector_button_y_size } pdx_disabled_tooltip = antarctic_sectors_selection_disabled }
+				buttonType = { name = "leave_sector_3" spriteType = GFX_cancel position = { x = 474 y = 6 } }
+				iconType = { name = "type" spriteType = GFX_topbar_icons frame = 4 pdx_tooltip = sector_add_mils }
+				iconType = { name = "flag_sector_3" quadTextureSprite = GFX_trade_entry_flag position = { x = 39 y = -6 } }
+				instantTextBoxType = { name = "text" position = { x = 120 y = 10 } text = "sector_3_text" font = @sector_button_font maxWidth = 220 maxHeight = 20 fixedsize = yes alwaystransparent = yes }
+				instantTextBoxType = { name = "cost" position = { x = -264 y = 12 } text = "sector_3_cost_text" font = Arial16 maxWidth = 220 maxHeight = 20 fixedsize = yes format = right orientation = UPPER_RIGHT alwaystransparent = yes }
+			}
+			containerWindowType = {
+				name = "sector_4"
+				size = { width = @sector_button_x_size height = @sector_button_y_size } position = { x = 0 y = 126 }
+				buttonType = { name = "antarctic_sectors_selection_4" spriteType = GFX_tiling_button_light size = { x = @sector_button_x_size y = @sector_button_y_size } pdx_disabled_tooltip = antarctic_sectors_selection_disabled }
+				buttonType = { name = "leave_sector_4" spriteType = GFX_cancel position = { x = 474 y = 6 } }
+				iconType = { name = "type" spriteType = GFX_topbar_icons frame = 3 pdx_tooltip = sector_add_civs }
+				iconType = { name = "flag_sector_4" quadTextureSprite = GFX_trade_entry_flag position = { x = 39 y = -6 } }
+				instantTextBoxType = { name = "text" position = { x = 120 y = 10 } text = "sector_4_text" font = @sector_button_font maxWidth = 220 maxHeight = 20 fixedsize = yes alwaystransparent = yes }
+				instantTextBoxType = { name = "cost" position = { x = -264 y = 12 } text = "sector_4_cost_text" font = Arial16 maxWidth = 220 maxHeight = 20 fixedsize = yes format = right orientation = UPPER_RIGHT alwaystransparent = yes }
+			}
+			containerWindowType = {
+				name = "sector_5"
+				size = { width = @sector_button_x_size height = @sector_button_y_size } position = { x = 0 y = 168 }
+				buttonType = { name = "antarctic_sectors_selection_5" spriteType = GFX_tiling_button_light size = { x = @sector_button_x_size y = @sector_button_y_size } pdx_disabled_tooltip = antarctic_sectors_selection_disabled }
+				buttonType = { name = "leave_sector_5" spriteType = GFX_cancel position = { x = 474 y = 6 } }
+				iconType = { name = "type" spriteType = GFX_topbar_icons frame = 4 pdx_tooltip = sector_add_mils }
+				iconType = { name = "flag_sector_5" quadTextureSprite = GFX_trade_entry_flag position = { x = 39 y = -6 } }
+				instantTextBoxType = { name = "text" position = { x = 120 y = 10 } text = "sector_5_text" font = @sector_button_font maxWidth = 220 maxHeight = 20 fixedsize = yes alwaystransparent = yes }
+				instantTextBoxType = { name = "cost" position = { x = -264 y = 12 } text = "sector_5_cost_text" font = Arial16 maxWidth = 220 maxHeight = 20 fixedsize = yes format = right orientation = UPPER_RIGHT alwaystransparent = yes }
+			}
+			containerWindowType = {
+				name = "sector_6"
+				size = { width = @sector_button_x_size height = @sector_button_y_size } position = { x = 0 y = 210 }
+				buttonType = { name = "antarctic_sectors_selection_6" spriteType = GFX_tiling_button_light size = { x = @sector_button_x_size y = @sector_button_y_size } pdx_disabled_tooltip = antarctic_sectors_selection_disabled }
+				buttonType = { name = "leave_sector_6" spriteType = GFX_cancel position = { x = 474 y = 6 } }
+				iconType = { name = "type" spriteType = GFX_topbar_icons frame = 4 pdx_tooltip = sector_add_mils }
+				iconType = { name = "flag_sector_6" quadTextureSprite = GFX_trade_entry_flag position = { x = 39 y = -6 } }
+				instantTextBoxType = { name = "text" position = { x = 120 y = 10 } text = "sector_6_text" font = @sector_button_font maxWidth = 220 maxHeight = 20 fixedsize = yes alwaystransparent = yes }
+				instantTextBoxType = { name = "cost" position = { x = -264 y = 12 } text = "sector_6_cost_text" font = Arial16 maxWidth = 220 maxHeight = 20 fixedsize = yes format = right orientation = UPPER_RIGHT alwaystransparent = yes }
+			}
+			containerWindowType = {
+				name = "sector_7"
+				size = { width = @sector_button_x_size height = @sector_button_y_size } position = { x = 0 y = 252 }
+				buttonType = { name = "antarctic_sectors_selection_7" spriteType = GFX_tiling_button_light size = { x = @sector_button_x_size y = @sector_button_y_size } pdx_disabled_tooltip = antarctic_sectors_selection_disabled }
+				buttonType = { name = "leave_sector_7" spriteType = GFX_cancel position = { x = 474 y = 6 } }
+				iconType = { name = "type" spriteType = GFX_topbar_icons frame = 3 pdx_tooltip = sector_add_civs }
+				iconType = { name = "flag_sector_7" quadTextureSprite = GFX_trade_entry_flag position = { x = 39 y = -6 } }
+				instantTextBoxType = { name = "text" position = { x = 120 y = 10 } text = "sector_7_text" font = @sector_button_font maxWidth = 220 maxHeight = 20 fixedsize = yes alwaystransparent = yes }
+				instantTextBoxType = { name = "cost" position = { x = -264 y = 12 } text = "sector_7_cost_text" font = Arial16 maxWidth = 220 maxHeight = 20 fixedsize = yes format = right orientation = UPPER_RIGHT alwaystransparent = yes }
+			}
+			containerWindowType = {
+				name = "sector_8"
+				size = { width = @sector_button_x_size height = @sector_button_y_size } position = { x = 0 y = 294 }
+				buttonType = { name = "antarctic_sectors_selection_8" spriteType = GFX_tiling_button_light size = { x = @sector_button_x_size y = @sector_button_y_size } pdx_disabled_tooltip = antarctic_sectors_selection_disabled }
+				buttonType = { name = "leave_sector_8" spriteType = GFX_cancel position = { x = 474 y = 6 } }
+				iconType = { name = "type" spriteType = GFX_topbar_icons frame = 4 pdx_tooltip = sector_add_mils }
+				iconType = { name = "flag_sector_8" quadTextureSprite = GFX_trade_entry_flag position = { x = 39 y = -6 } }
+				instantTextBoxType = { name = "text" position = { x = 120 y = 10 } text = "sector_8_text" font = @sector_button_font maxWidth = 220 maxHeight = 20 fixedsize = yes alwaystransparent = yes }
+				instantTextBoxType = { name = "cost" position = { x = -264 y = 12 } text = "sector_8_cost_text" font = Arial16 maxWidth = 220 maxHeight = 20 fixedsize = yes format = right orientation = UPPER_RIGHT alwaystransparent = yes }
+			}
+			containerWindowType = {
+				name = "sector_9"
+				size = { width = @sector_button_x_size height = @sector_button_y_size } position = { x = 0 y = 336 }
+				buttonType = { name = "antarctic_sectors_selection_9" spriteType = GFX_tiling_button_light size = { x = @sector_button_x_size y = @sector_button_y_size } pdx_disabled_tooltip = antarctic_sectors_selection_disabled }
+				buttonType = { name = "leave_sector_9" spriteType = GFX_cancel position = { x = 474 y = 6 } }
+				iconType = { name = "type" spriteType = GFX_topbar_icons frame = 3 pdx_tooltip = sector_add_civs }
+				iconType = { name = "flag_sector_9" quadTextureSprite = GFX_trade_entry_flag position = { x = 39 y = -6 } }
+				instantTextBoxType = { name = "text" position = { x = 120 y = 10 } text = "sector_9_text" font = @sector_button_font maxWidth = 220 maxHeight = 20 fixedsize = yes alwaystransparent = yes }
+				instantTextBoxType = { name = "cost" position = { x = -264 y = 12 } text = "sector_9_cost_text" font = Arial16 maxWidth = 220 maxHeight = 20 fixedsize = yes format = right orientation = UPPER_RIGHT alwaystransparent = yes }
+			}
+			containerWindowType = {
+				name = "sector_10"
+				size = { width = @sector_button_x_size height = @sector_button_y_size } position = { x = 0 y = 378 }
+				buttonType = { name = "antarctic_sectors_selection_10" spriteType = GFX_tiling_button_light size = { x = @sector_button_x_size y = @sector_button_y_size } pdx_disabled_tooltip = antarctic_sectors_selection_disabled }
+				buttonType = { name = "leave_sector_10" spriteType = GFX_cancel position = { x = 474 y = 6 } }
+				iconType = { name = "type" spriteType = GFX_topbar_icons frame = 3 pdx_tooltip = sector_add_civs }
+				iconType = { name = "flag_sector_10" quadTextureSprite = GFX_trade_entry_flag position = { x = 39 y = -6 } }
+				instantTextBoxType = { name = "text" position = { x = 120 y = 10 } text = "sector_10_text" font = @sector_button_font maxWidth = 220 maxHeight = 20 fixedsize = yes alwaystransparent = yes }
+				instantTextBoxType = { name = "cost" position = { x = -264 y = 12 } text = "sector_10_cost_text" font = Arial16 maxWidth = 220 maxHeight = 20 fixedsize = yes format = right orientation = UPPER_RIGHT alwaystransparent = yes }
 			}
 		}
 	}

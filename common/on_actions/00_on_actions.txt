@@ -486,32 +486,34 @@ on_actions = {
 }
 
 ###############################
-##### SOUTH POLE SECTORS ######
+######### SOUTH POLE ##########
 ###############################
 
+@sector_base_cost = 20
+@sector_daily_cost = 0.025
 on_actions = {
 	on_startup = {
 		effect = {
-			set_variable = { global.sector_1_cost = 20 }
-			set_variable = { global.sector_2_cost = 20 }
-			set_variable = { global.sector_3_cost = 20 }
-			set_variable = { global.sector_4_cost = 20 }
-			set_variable = { global.sector_5_cost = 20 }
-			set_variable = { global.sector_6_cost = 20 }
-			set_variable = { global.sector_7_cost = 20 }
-			set_variable = { global.sector_8_cost = 20 }
-			set_variable = { global.sector_9_cost = 20 }
-			set_variable = { global.sector_10_cost = 20 }
-			set_variable = { global.sector_1_cost_daily = 0.025 }
-			set_variable = { global.sector_2_cost_daily = 0.025 }
-			set_variable = { global.sector_3_cost_daily = 0.025 }
-			set_variable = { global.sector_4_cost_daily = 0.025 }
-			set_variable = { global.sector_5_cost_daily = 0.025 }
-			set_variable = { global.sector_6_cost_daily = 0.025 }
-			set_variable = { global.sector_7_cost_daily = 0.025 }
-			set_variable = { global.sector_8_cost_daily = 0.025 }
-			set_variable = { global.sector_9_cost_daily = 0.025 }
-			set_variable = { global.sector_10_cost_daily = 0.025 }
+			set_variable = { global.sector_1_cost = @sector_base_cost }
+			set_variable = { global.sector_2_cost = @sector_base_cost }
+			set_variable = { global.sector_3_cost = @sector_base_cost }
+			set_variable = { global.sector_4_cost = @sector_base_cost }
+			set_variable = { global.sector_5_cost = @sector_base_cost }
+			set_variable = { global.sector_6_cost = @sector_base_cost }
+			set_variable = { global.sector_7_cost = @sector_base_cost }
+			set_variable = { global.sector_8_cost = @sector_base_cost }
+			set_variable = { global.sector_9_cost = @sector_base_cost }
+			set_variable = { global.sector_10_cost = @sector_base_cost }
+			set_variable = { global.sector_1_cost_daily = @sector_daily_cost }
+			set_variable = { global.sector_2_cost_daily = @sector_daily_cost }
+			set_variable = { global.sector_3_cost_daily = @sector_daily_cost }
+			set_variable = { global.sector_4_cost_daily = @sector_daily_cost }
+			set_variable = { global.sector_5_cost_daily = @sector_daily_cost }
+			set_variable = { global.sector_6_cost_daily = @sector_daily_cost }
+			set_variable = { global.sector_7_cost_daily = @sector_daily_cost }
+			set_variable = { global.sector_8_cost_daily = @sector_daily_cost }
+			set_variable = { global.sector_9_cost_daily = @sector_daily_cost }
+			set_variable = { global.sector_10_cost_daily = @sector_daily_cost }
 			every_country = { set_variable = { num_southpole_sectors = 0 } }
 		}
 	}

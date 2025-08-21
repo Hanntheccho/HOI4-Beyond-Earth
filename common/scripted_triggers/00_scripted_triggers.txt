@@ -164,8 +164,6 @@ is_minor_tag = {
 	}
 }
 
-###
-
 country_is_missing_any_resource = {
 	OR = {
 		check_variable = { resource@oil < 0 }
@@ -175,4 +173,16 @@ country_is_missing_any_resource = {
 		check_variable = { resource@chromium < 0 }
 		check_variable = { resource@rubber < 0 }
 	}
+}
+
+###############################
+######### SOUTH POLE ##########
+###############################
+
+can_i_buy_a_sector = {
+	NOT = { has_idea = agrarian_stage }
+	NOT = { has_idea = developing_stage }
+	NOT = { has_idea = unstable_leadership }
+	has_war = no
+	is_puppet = no
 }
